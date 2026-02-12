@@ -164,11 +164,27 @@ class HaberSistemi:
         client = Anthropic(api_key=ANTHROPIC_API_KEY)
         prompt = get_claude_prompt(txt_content)
         
-        response = client.messages.create(
-            model="claude-sonnet-4-20250514",
-            max_tokens=8000,
-            messages=[{"role": "user", "content": prompt}]
-        )
+        # Retry mekanizması (3 deneme)
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                print(f"   Deneme {attempt + 1}/{max_retries}...")
+                response = client.messages.create(
+                    model="claude-sonnet-4-20250514",
+                    max_tokens=8000,
+                    messages=[{"role": "user", "content": prompt}],
+                    timeout=60.0
+                )
+                break  # Başarılı, döngüden çık
+            except Exception as e:
+                print(f"   ⚠️  Hata: {e}")
+                if attempt < max_retries - 1:
+                    wait_time = (attempt + 1) * 10
+                    print(f"   ⏳ {wait_time} saniye bekleyip tekrar deneniyor...")
+                    time.sleep(wait_time)
+                else:
+                    print(f"   ❌ {max_retries} deneme başarısız, fallback HTML...")
+                    return self._create_fallback_html(txt_content)
         
         html = response.content[0].text
         if html.startswith('```html'): html = html[7:]
@@ -194,6 +210,41 @@ class HaberSistemi:
         # 30 günden eski raporları sil
         self._cleanup_old_reports()
         
+        return html
+    
+    def _create_fallback_html(self, txt_content):
+        """Claude API başarısız olursa basit HTML"""
+        now = datetime.now()
+        html = f"""<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siber Güvenlik Raporu - {now.strftime('%d %B %Y')}</title>
+    <style>
+        body {{ font-family: system-ui, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; background: #f5f5f5; }}
+        .header {{ background: #1e3c72; color: white; padding: 40px; border-radius: 10px; margin-bottom: 20px; }}
+        .content {{ background: white; padding: 40px; border-radius: 10px; white-space: pre-wrap; }}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔒 Siber Güvenlik Günlük Raporu</h1>
+        <p>{now.strftime('%d %B %Y %A')}</p>
+        <p>⚠️ Claude API bağlantı hatası - TXT içeriği gösteriliyor</p>
+    </div>
+    <div class="content">{txt_content}</div>
+</body>
+</html>"""
+        
+        # Kaydet
+        os.makedirs("docs/raporlar", exist_ok=True)
+        with open("docs/index.html", 'w', encoding='utf-8') as f:
+            f.write(html)
+        with open(f"docs/raporlar/{now.strftime('%Y-%m-%d')}.html", 'w', encoding='utf-8') as f:
+            f.write(html)
+        
+        print("✅ Fallback HTML oluşturuldu")
         return html
     
     def _cleanup_old_reports(self):
