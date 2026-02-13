@@ -1,1 +1,9 @@
 
+
+================================================================================
+📅 13 FEBRUARY 2026 - GEMİNİ ÖZET RAPORU
+================================================================================
+
+GÜNLÜK ÖZET:
+Yönetici ÖzetiMicrosoft tarafından altı adet aktif olarak istismar edilen sıfır gün açığını içeren Şubat 2026 güvenlik güncellemeleri yayınlanmıştır.Apple'ın dyld bileşeninde tespit edilen CVE-2026-20700 numaralı kritik açığın casus yazılım saldırılarında kullanıldığı belirlenmiştir.UAT-9921 isimli yeni bir tehdit aktörünün finans ve teknoloji sektörlerini hedef alan VoidLink zararlı yazılımını kullandığı tespit edilmiştir.Hollandalı telekom operatörü Odido bünyesindeki 6.2 milyon müşterinin kişisel ve finansal verilerinin siber saldırı sonucunda sızdırıldığı açıklanmıştır.CISA, Microsoft SCCM ve BeyondTrust ürünlerindeki kritik zafiyetleri "Bilinen İstismar Edilen Açıklar" kataloğuna eklemiştir.Google, devlet destekli tehdit aktörlerinin Gemini AI modelini keşif ve kimlik avı operasyonlarında aktif olarak kullandığını raporlamıştır.Kimwolf botnetinin I2P anonim ağını devre dışı bırakmak amacıyla geniş çaplı bir Sybil saldırısı gerçekleştirdiği gözlemlenmiştir.BeyondTrust Remote Support ürünündeki CVE-2026-1731 numaralı açığın PoC yayınlanmasından saatler sonra istismar edildiği saptanmıştır.Kötü amaçlı tarayıcı eklentileri üzerinden Meta Business Suite ve VKontakte kullanıcı verilerinin çalındığı kapsamlı kampanyalar deşifre edilmiştir.Recorded Future tarafından yayınlanan 2026 raporunda, jeopolitik parçalanmanın siber risk ekosistemini daha karmaşık hale getirdiği vurgulanmıştır.
+

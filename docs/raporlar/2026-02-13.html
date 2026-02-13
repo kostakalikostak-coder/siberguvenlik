@@ -2,342 +2,250 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siber Güvenlik Haber Raporu - 13.02.2026</title>
+    <title>13.02.2026 Siber Güvenlik Haber Raporu</title>
     <style>
         :root {
-            --primary-color: #002b36;
-            --secondary-color: #268bd2;
-            --accent-color: #d33682;
-            --text-color: #333;
-            --bg-color: #f4f7f6;
-            --card-bg: #ffffff;
+            --primary-color: #1a237e;      /* Koyu lacivert - başlıklar */
+            --secondary-color: #283593;    /* Orta lacivert - haber başlıkları */
+            --accent-color: #3949ab;       /* Açık lacivert - vurgular */
+            --bg-color: #f5f7fa;           /* Açık gri arka plan */
+            --card-bg: #ffffff;            /* Beyaz kartlar */
+            --text-color: #2c3e50;         /* Koyu gri metin */
+            --border-color: #e1e8ed;       /* Açık gri kenarlıklar */
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
             background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
             margin: 0;
             padding: 20px;
         }
         .container {
             max-width: 1000px;
-            margin: auto;
+            margin: 0 auto;
         }
-        header {
-            background: var(--primary-color);
-            color: white;
-            padding: 30px;
-            border-radius: 8px 8px 0 0;
+        .report-header {
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 40px 0;
+            background: var(--card-bg);
+            border-bottom: 4px solid var(--primary-color);
+            margin-bottom: 30px;
         }
-        .summary-section {
-            background: #e9ecef;
-            padding: 25px;
-            border-left: 5px solid var(--secondary-color);
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        .summary-section h2 {
-            margin-top: 0;
+        .report-header h1 {
             color: var(--primary-color);
+            margin: 0;
+            font-size: 28px;
         }
-        .summary-list {
-            padding-left: 20px;
+        .executive-summary {
+            background: #e8eaf6;
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 4px 4px 0;
         }
-        .summary-list li {
-            margin-bottom: 10px;
+        .executive-summary h2 {
+            color: var(--primary-color);
+            font-size: 22px;
+            margin-top: 0;
         }
         .news-card {
             background: var(--card-bg);
+            border: 1px solid var(--border-color);
             padding: 25px;
             margin-bottom: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border-top: 3px solid var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         .news-title {
-            color: var(--primary-color);
-            font-size: 1.25rem;
+            color: var(--secondary-color);
+            font-size: 20px;
+            margin-top: 0;
             margin-bottom: 15px;
-            display: block;
+            font-weight: bold;
         }
-        .news-content {
-            text-align: justify;
+        .news-summary {
             margin-bottom: 15px;
+            text-align: justify;
         }
         .source {
-            font-size: 0.85rem;
-            color: #666;
+            font-size: 13px;
+            color: #7f8c8d;
             font-style: italic;
-            border-top: 1px solid #eee;
-            padding-top: 10px;
-            display: block;
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            color: #777;
+        .archive-section {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid var(--border-color);
         }
-        @media (max-width: 600px) {
-            body { padding: 10px; }
-            header { padding: 15px; }
+        .archive-section h3 {
+            color: var(--primary-color);
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .archive-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .archive-link {
+            display: inline-block;
+            padding: 6px 12px;
+            background: var(--bg-color);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+        .archive-link:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>13.02.2026 Siber Güvenlik Haber Özetleri</h1>
-        </header>
 
-        <section class="summary-section">
-            <h2>Yönetici Özeti</h2>
-            <ul class="summary-list">
-                <li>Microsoft, Şubat 2026 Yama Salısı kapsamında altısı aktif olarak istismar edilen 50'den fazla güvenlik açığını gidermiştir.</li>
-                <li>Apple, iOS ve iPadOS sistemlerinde on yıldır mevcut olan ve aktif olarak kullanılan kritik bir sıfır gün açığını yamalamıştır.</li>
-                <li>CISA, Microsoft Configuration Manager ve SolarWinds gibi kritik yazılımlardaki zafiyetleri bilinen istismar edilen zafiyetler kataloğuna eklemiştir.</li>
-                <li>Google, Kuzey Kore ve İran destekli aktörlerin Gemini yapay zekasını saldırı döngüsünün her aşamasında kullandığını tespit etmiştir.</li>
-                <li>Hollandalı telekom operatörü Odido, 6,2 milyon müşterisinin kişisel ve finansal verilerinin bir siber saldırı sonucu ele geçirildiğini duyurmuştur.</li>
-                <li>UAT-9921 adlı tehdit aktörünün teknoloji ve finans sektörlerini hedef alan VoidLink adlı modüler kötü amaçlı yazılımı kullandığı bildirilmektedir.</li>
-                <li>Kimwolf botnet ağının I2P anonimlik ağı üzerinde Sybil saldırısı gerçekleştirerek ağ kapasitesini önemli ölçüde düşürdüğü gözlemlenmiştir.</li>
-                <li>Nelnet servis sağlayıcısındaki bir açık nedeniyle 2,5 milyon öğrenci kredisi sahibinin hassas kişisel verilerinin sızdırıldığı ifade edilmektedir.</li>
-                <li>Fidye yazılımı gruplarının kurumsal ağlarda kalıcılık sağlamak amacıyla Net Monitor gibi çalışan izleme yazılımlarını kötüye kullandığı tespit edilmiştir.</li>
-                <li>Proofpoint, otonom yapay zeka sistemlerinin güvenliğini sağlamak ve riskleri yönetmek amacıyla Acuvity adlı girişimi satın almıştır.</li>
-            </ul>
-        </section>
-
-        <!-- Haber 1 -->
-        <div class="news-card">
-            <b class="news-title">UAT-9921 Grubunun VoidLink Yazılımı İle Finans Sektörünü Hedeflemesi</b>
-            <div class="news-content">
-                Cisco Talos araştırmacıları tarafından yapılan incelemelerde, UAT-9921 olarak tanımlanan yeni bir tehdit aktörünün teknoloji ve finans sektörlerine yönelik saldırılarında VoidLink adlı modüler bir çerçeve kullandığı tespit edilmiştir. 2019 yılından bu yana aktif olduğu değerlendirilen grubun, Linux tabanlı bulut ortamlarında gizli erişim sağlamak amacıyla Zig, C ve Go dilleriyle yazılmış bu karmaşık yazılımı kullandığı belirtilmektedir. Kötü amaçlı yazılımın geliştirilmesinde büyük dil modellerinden faydalanıldığı ve yazılımın kernel seviyesinde rootkit özellikleri barındırdığı ifade edilmektedir. Saldırganların ele geçirilen sunucularda iç keşif ve yanal hareket gerçekleştirmek için SOCKS proxy ve Fscan gibi araçları kullandığı raporlanmıştır.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - thehackernews.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 2 -->
-        <div class="news-card">
-            <b class="news-title">Kötü Amaçlı Chrome Uzantılarının Meta İşletme Verilerini Çalması</b>
-            <div class="news-content">
-                Siber güvenlik araştırmacıları, Meta Business Suite ve Facebook Business Manager verilerini çalmak üzere tasarlanmış CL Suite isimli bir Google Chrome uzantısı tespit etmiştir. Uzantının, kullanıcıların iki faktörlü kimlik doğrulama (2FA) kodlarını, kişi listelerini ve analitik verilerini saldırganların kontrolündeki sunuculara aktardığı belirlenmiştir. Ayrıca VK Styles ve AiFrame gibi kampanyalar kapsamında toplamda 750 binden fazla kullanıcının tarayıcı geçmişi ve kimlik bilgilerinin sızdırıldığı ifade edilmektedir. Yapay zeka asistanı kılığındaki 32 farklı uzantının Gmail içeriklerini okuduğu ve uzak alan adlarından komut aldığı raporlanmıştır. Kullanıcılara, resmi mağazalardan yalnızca gerekli uzantıları yüklemeleri ve mevcut izinleri periyodik olarak denetlemeleri tavsiye edilmektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - thehackernews.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 3 -->
-        <div class="news-card">
-            <b class="news-title">Npm Platformunun Tedarik Zinciri Güvenliği İçin Kimlik Doğrulamayı Güncellemesi</b>
-            <div class="news-content">
-                Sha1-Hulud vakasına yanıt olarak npm platformunun, tedarik zinciri saldırılarını azaltmak amacıyla kimlik doğrulama sisteminde kapsamlı bir revizyon gerçekleştirdiği bildirilmektedir. Klasik kalıcı jetonların iptal edildiği ve yerine kısa ömürlü oturum tabanlı jetonların getirildiği belirtilmektedir. Ancak MFA (Çok Faktörlü Kimlik Doğrulama) zorunluluğunun paket yayınlama süreçlerinde hala isteğe bağlı bırakılmasının güvenlik risklerini tamamen ortadan kaldırmadığı ifade edilmektedir. Araştırmacılar, saldırganların kimlik avı yöntemleriyle hala kısa ömürlü jetonları ele geçirebileceği konusunda uyarıda bulunmaktadır. Güvenliğin artırılması için OIDC Trusted Publishing yönteminin yaygınlaştırılması ve paketlerin doğrudan kaynak koddan derlenmesi önerilmektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - thehackernews.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 4 -->
-        <div class="news-card">
-            <b class="news-title">Criminal IP İstihbaratının IBM QRadar Sistemlerine Entegre Edilmesi</b>
-            <div class="news-content">
-                Yapay zeka destekli tehdit istihbaratı platformu Criminal IP'nin, IBM QRadar SIEM ve SOAR çözümleriyle entegre edildiği duyurulmuştur. Bu entegrasyon sayesinde güvenlik ekiplerinin, harici IP tabanlı tehdit verilerini doğrudan QRadar iş akışları içerisinde analiz edebileceği belirtilmektedir. Güvenlik operasyon merkezlerinin (SOC), güvenlik duvarı günlüklerini otomatik olarak risk seviyelerine göre sınıflandırabileceği ve kötü amaçlı IP adreslerini gerçek zamanlı olarak tespit edebileceği ifade edilmektedir. SOAR entegrasyonu kapsamında sunulan iki yeni playbook ile olay müdahale süreçlerinin hızlandırılması ve manuel inceleme yükünün azaltılması hedeflenmektedir. AI SPERA CEO'su Byungtak Kang, gerçek zamanlı istihbaratın modern güvenlik operasyonlarındaki önemini vurgulamıştır.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - bleepingcomputer.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 5 -->
-        <div class="news-card">
-            <b class="news-title">CVE-2024-43468 Açığının Microsoft Configuration Manager Sunucularını Etkilemesi</b>
-            <div class="news-content">
-                CISA, Microsoft Configuration Manager (SCCM) üzerinde tespit edilen ve aktif olarak istismar edilen CVE-2024-43468 kodlu kritik SQL enjeksiyon açığına karşı federal kurumlara acil yama talimatı vermiştir. Kimlik doğrulaması gerektirmeyen bu zafiyetin, saldırganların sunucu üzerinde en yüksek yetkilerle komut çalıştırmasına olanak tanıdığı belirtilmektedir. Microsoft'un Ekim 2024'te yama yayınlamasına rağmen, Kasım ayında kamuya açık istismar kodlarının paylaşıldığı ve saldırıların yoğunlaştığı ifade edilmektedir. Federal sivil yürütme organlarının sistemlerini 5 Mart 2026 tarihine kadar güncellemeleri zorunlu kılınmıştır. Uzmanlar, özel sektör kuruluşlarının da kritik altyapı yönetim araçlarını ivedilikle güvence altına alması gerektiğini bildirmektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - bleepingcomputer.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 6 -->
-        <div class="news-card">
-            <b class="news-title">Microsoft Family Safety Servisinin Google Chrome Başlatılmasını Engellemesi</b>
-            <div class="news-content">
-                Microsoft, Family Safety ebeveyn denetimi servisindeki bir hata nedeniyle Windows kullanıcılarının Google Chrome ve diğer tarayıcıları başlatmasını engelleyen sorunu giderdiğini açıklamıştır. Yaklaşık sekiz aydır devam eden bu hatanın, tarayıcı güncellemeleri sonrasında web filtreleme aracının yeni sürümleri otomatik olarak engellemesinden kaynaklandığı belirtilmektedir. Sorunun özellikle Windows 10 ve 11 işletim sistemlerini etkilediği ve tarayıcıların beklenmedik şekilde kapanmasına yol açtığı ifade edilmektedir. Microsoft, Şubat 2026 başında devreye alınan servis tarafı bir düzeltme ile sorunun çözüldüğünü ve cihazların internete bağlanmasıyla güncellemenin otomatik olarak uygulanacağını duyurmuştur. Çevrimdışı cihazlar için ise "Etkinlik Raporlama" özelliğinin geçici olarak açılması önerilmektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - bleepingcomputer.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 7 -->
-        <div class="news-card">
-            <b class="news-title">Kimwolf Botnet Ağının I2P Anonimlik Ağında Kesintilere Yol Açması</b>
-            <div class="news-content">
-                Milyonlarca nesnelerin interneti (IOT) cihazından oluşan Kimwolf botnet ağının, I2P (The Invisible Internet Project) anonim iletişim ağını hedef alan bir Sybil saldırısı gerçekleştirdiği tespit edilmiştir. Yaklaşık 700 bin enfekte cihazın aynı anda I2P ağına düğüm olarak katılmaya çalışması sonucu, ağın meşru kullanıcı trafiğini yönetemez hale geldiği bildirilmektedir. Saldırının, botnet operatörlerinin komuta kontrol sunucularını kapatılmaya karşı korumak amacıyla I2P ağını bir yedek iletişim kanalı olarak kullanma deneyi sırasında gerçekleştiği ifade edilmektedir. I2P geliştiricileri, ağ kapasitesinin %50 oranında düştüğünü ve stabiliteyi artırmak için yeni bir sürüm yayınladıklarını duyurmuştur. Kimwolf botnetinin son dönemde operatör hataları nedeniyle 600 bin cihaz kaybettiği de gözlemlenmiştir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - krebsonsecurity.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 8 -->
-        <div class="news-card">
-            <b class="news-title">Microsoft'un Şubat 2026 Yama Salısında Altı Sıfır Gün Açığını Gidermesi</b>
-            <div class="news-content">
-                Microsoft, Şubat 2026 Yama Salısı güncellemeleri ile Windows işletim sistemlerinde altısı aktif olarak istismar edilen toplam 50'den fazla güvenlik açığını kapatmıştır. CVE-2026-21510 kodlu Windows Shell açığının, kötü amaçlı bir bağlantıya tek bir tıklama ile korumaları devre dışı bırakabildiği belirtilmektedir. Ayrıca MSHTML motoru, Microsoft Word ve Masaüstü Pencere Yöneticisi (DWM) üzerinde yetki yükseltme sağlayan kritik açıkların yamalandığı ifade edilmektedir. Uzaktan Erişim Bağlantı Yöneticisi'ndeki bir zafiyetin ise VPN bağlantılarını kesintiye uğratabilecek hizmet dışı bırakma (DOS) saldırılarına olanak tanıdığı bildirilmektedir. Güvenlik uzmanları, özellikle GitHub Copilot ve çeşitli geliştirme ortamlarını etkileyen uzaktan kod yürütme açıklarına karşı yazılım geliştiricilerin sistemlerini hızla güncellemesini önermektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - krebsonsecurity.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 9 -->
-        <div class="news-card">
-            <b class="news-title">SLSH Grubunun Şirket Yöneticilerine Yönelik Şantaj Ve Taciz Faaliyetleri</b>
-            <div class="news-content">
-                Scattered Lapsus ShinyHunters (SLSH) olarak adlandırılan İngilizce konuşan bir fidye grubu, veri sızıntısı sonrası şirket yöneticilerini ve ailelerini hedef alan saldırgan taciz yöntemleri kullanmaktadır. Grubun, geleneksel fidye yazılımı çetelerinin aksine, çalınan verileri silme sözünü tutmadığı ve mağdurlara fiziksel şiddet tehditleri savurduğu belirtilmektedir. Saldırganların, çalışanları telefonla arayarak MFA ayarlarının güncellendiği bahanesiyle kimlik bilgilerini ele geçirdiği ifade edilmektedir. Güvenlik uzmanları, bu grupla müzakere edilmemesi gerektiğini, ödeme yapmanın tacizleri durdurmadığını ve aksine saldırganları teşvik ettiğini vurgulamaktadır. SLSH üyelerinin Telegram üzerinden yürüttüğü psikolojik baskı kampanyalarının, medya kuruluşlarını manipüle etme çabalarını da içerdiği bildirilmektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - krebsonsecurity.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 10 -->
-        <div class="news-card">
-            <b class="news-title">Nelnet Servis Sağlayıcısındaki Sızıntının 2,5 Milyon Kaydı Açığa Çıkarması</b>
-            <div class="news-content">
-                EdFinancial ve Oklahoma Öğrenci Kredisi Otoritesi (OSLA) için hizmet veren Nelnet Servicing platformunda meydana gelen bir veri ihlali sonucunda 2,5 milyon öğrenci kredisi sahibinin kişisel bilgilerinin sızdırıldığı duyurulmuştur. Haziran ve Temmuz 2022 tarihleri arasında gerçekleşen ihlalde; isim, ev adresi, e-posta adresi, telefon numarası ve sosyal güvenlik numaralarının ele geçirildiği tespit edilmiştir. Finansal bilgilerin etkilenmediği belirtilse de, sızdırılan verilerin gelecekteki sosyal mühendislik ve kimlik avı saldırılarında kullanılabileceği uyarısı yapılmıştır. Nelnet, etkilenen kullanıcılara iki yıllık ücretsiz kredi izleme hizmeti sunacağını açıklamıştır. Uzmanlar, öğrenci kredisi affı gibi güncel konuların bu verilerle birleştirilerek dolandırıcılık faaliyetlerinde kullanılabileceğine dikkat çekmektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - threatpost.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 11 -->
-        <div class="news-card">
-            <b class="news-title">APT TA423 Grubunun ScanBox Keylogger Yazılımını Su Birikintisi Saldırılarıyla Yayması</b>
-            <div class="news-content">
-                Çin merkezli APT TA423 (Red Ladon) tehdit grubunun, Avustralya'daki kuruluşları ve Güney Çin Denizi'ndeki enerji firmalarını hedef alan kapsamlı bir siber casusluk kampanyası yürüttüğü raporlanmıştır. Saldırganların, ScanBox adlı JavaScript tabanlı keşif çerçevesini yaymak için sahte haber sitelerini içeren "su birikintisi" (watering hole) saldırılarını kullandığı belirtilmektedir. ScanBox'ın, disk üzerinde herhangi bir dosya bırakmadan tarayıcı üzerinden tuş vuruşlarını kaydedebildiği ve WebRTC protokolünü kullanarak ağ geçitlerini (NAT) aşabildiği ifade edilmektedir. Phishing e-postalarıyla mağdurların sahte haber sitelerine yönlendirildiği ve burada sistem bilgilerinin toplandığı bildirilmektedir. Grubun faaliyetlerinin Çin hükümetinin bölgesel stratejik çıkarlarıyla uyumlu olduğu değerlendirilmektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - threatpost.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 12 -->
-        <div class="news-card">
-            <b class="news-title">0ktapus Tehdit Grubunun Kimlik Avı Yoluyla 130 Şirketi Mağdur Etmesi</b>
-            <div class="news-content">
-                Okta kimlik doğrulama sistemlerini taklit eden geniş kapsamlı bir kimlik avı kampanyası sonucunda, aralarında Twilio ve Cloudflare'in de bulunduğu 130'dan fazla şirkete ait yaklaşık 10 bin hesabın ele geçirildiği bildirilmektedir. "0ktapus" olarak adlandırılan saldırganların, çalışanlara gönderdikleri SMS bağlantılarıyla sahte giriş sayfalarına yönlendirme yaptığı ve MFA kodlarını çaldığı tespit edilmiştir. Kampanyanın ana hedefinin, şirketlerin müşteri listelerine ve iç sistemlerine erişerek tedarik zinciri saldırıları gerçekleştirmek olduğu ifade edilmektedir. DoorDash gibi firmaların da benzer yöntemlerle veri sızıntısına uğradığı onaylanmıştır. Uzmanlar, SMS tabanlı MFA yöntemlerinin güvensizliğini vurgulayarak, FIDO2 uyumlu güvenlik anahtarlarının kullanılmasını tavsiye etmektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - threatpost.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 13 -->
-        <div class="news-card">
-            <b class="news-title">BeyondTrust Uzaktan Destek Yazılımındaki CVE-2026-1731 Açığının İstismar Edilmesi</b>
-            <div class="news-content">
-                BeyondTrust Remote Support ve Privileged Remote Access ürünlerinde tespit edilen CVE-2026-1731 kodlu kritik zafiyetin, istismar kodlarının yayınlanmasından birkaç saat sonra aktif saldırılarda kullanıldığı bildirilmektedir. 9.9 CVSS puanına sahip olan bu ön kimlik doğrulama açığının, saldırganların sistem üzerinde uzaktan kod yürütmesine (RCE) olanak tanıdığı belirtilmektedir. İnternet üzerinde yaklaşık 11 bin BeyondTrust örneğinin açıkta olduğu ve bunların büyük bir kısmının sağlık, finans ve kamu sektörlerine ait olduğu ifade edilmektedir. GreyNoise tarafından yapılan gözlemlerde, saldırganların standart dışı portları taradığı ve VPN tünelleri kullanarak tespitlerden kaçmaya çalıştığı raporlanmıştır. Kuruluşların, veri sızıntısı ve sistem kompromisini önlemek için yayınlanan yamaları derhal uygulaması gerektiği vurgulanmaktadır.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - securityaffairs.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 14 -->
-        <div class="news-card">
-            <b class="news-title">Devlet Destekli Hackerların Gemini Yapay Zekasını Siber Keşif İçin Kullanması</b>
-            <div class="news-content">
-                Google tarafından yayınlanan raporda; Kuzey Kore, İran, Çin ve Rusya destekli tehdit aktörlerinin Gemini yapay zeka modelini siber saldırı planlama ve keşif faaliyetlerinde kullandığı bildirilmektedir. Kuzey Koreli UNC2970 grubunun, siber güvenlik şirketlerindeki çalışan profillerini analiz etmek ve hedefli kimlik avı mesajları oluşturmak için yapay zekadan faydalanıldığı belirtilmektedir. Ayrıca HONESTCUE adlı yeni bir kötü amaçlı yazılımın, Gemini API'sini kullanarak çalışma anında C# kodu ürettiği ve bu sayede geleneksel tespit yöntemlerinden kaçındığı ifade edilmektedir. İranlı APT42 grubunun ise kurbanlar üzerinde güven oluşturmak için yapay zeka ile yerel dillerde inandırıcı diyaloglar geliştirdiği tespit edilmiştir. Google, bu tür kötüye kullanımların engellenmesi için ilgili hesapların devre dışı bırakıldığını duyurmuştur.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - securityaffairs.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 15 -->
-        <div class="news-card">
-            <b class="news-title">CISA'nın SolarWinds Ve Apple Açıklarını İstismar Edilen Zafiyetler Kataloğuna Eklemesi</b>
-            <div class="news-content">
-                ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), aktif olarak istismar edildiği belirlenen dört yeni zafiyeti KEV (Known Exploited Vulnerabilities) kataloğuna eklemiştir. Bu açıklar arasında Microsoft Configuration Manager'daki SQL enjeksiyonu (CVE-2024-43468), Notepad++'daki imzasız kod indirme (CVE-2025-15556), SolarWinds Web Help Desk'teki güvenlik kontrolü atlatma (CVE-2025-40536) ve Apple cihazlarındaki bellek bozulması (CVE-2026-20700) bulunmaktadır. Federal kurumların bu açıkları 5 Mart 2026 tarihine kadar yamalamaları zorunlu kılınmıştır. Özellikle Apple'ın dyld bileşenindeki açığın, Google Tehdit Analiz Grubu tarafından tespit edildiği ve devlet destekli casus yazılım saldırılarında kullanılmış olabileceği değerlendirilmektedir. Tüm ağ yöneticilerinin bu kritik güncellemeleri önceliklendirmesi istenmektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - securityaffairs.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 16 -->
-        <div class="news-card">
-            <b class="news-title">Polonya Enerji Şebekesine Yönelik Siber Saldırı Sonrası Acil Uyarı Yayınlanması</b>
-            <div class="news-content">
-                Polonya enerji şebekesine yönelik gerçekleştirilen büyük ölçekli bir siber saldırının ardından, Birleşik Krallık ve ABD siber güvenlik ajanslarının kritik altyapı operatörlerine yönelik acil uyarılar yayınladığı bildirilmektedir. Saldırının detayları hakkında tam metin paylaşılmamış olsa da, operasyonel teknoloji (OT) sistemlerinin hedef alındığı ve bölgesel enerji arzında risk oluştuğu ifade edilmektedir. CISA ve NCSC-UK tarafından yapılan açıklamalarda, benzer saldırı vektörlerinin diğer NATO ülkelerinde de görülebileceği uyarısı yapılmıştır. Enerji sektöründeki kuruluşların ağ segmentasyonu ve erişim kontrollerini sıkılaştırması gerektiği belirtilmektedir. Olayla ilgili teknik incelemelerin devam ettiği ve uluslararası iş birliği ile tehdit aktörlerinin belirlenmeye çalışıldığı aktarılmaktadır.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - fortra.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 17 -->
-        <div class="news-card">
-            <b class="news-title">Morele.net Veri Sızıntısından Sorumlu Polonyalı Hacker Hakkında Dava Açılması</b>
-            <div class="news-content">
-                Polonya Merkezi Siber Suçlarla Mücadele Bürosu (CBZC), 2018 yılında e-ticaret sitesi Morele.net'ten 2,5 milyon müşterinin verilerini çalan 29 yaşındaki bir zanlıya karşı resmi suçlamaların yöneltildiğini duyurmuştur. Yıllar süren dijital adli tıp incelemeleri sonucunda saldırganın kimliğinin tespit edildiği ve zanlının suçunu itiraf ettiği belirtilmektedir. İhlal sırasında isimler, telefon numaraları ve parola özetlerinin yanı sıra 35 bin kişinin ulusal kimlik numaralarının sızdırıldığı ifade edilmektedir. Morele.net'in fidyeyi ödemeyi reddetmesi üzerine verilerin internette yayınlandığı ve dolandırıcılar tarafından banka kimlik bilgilerini çalmak için kullanıldığı hatırlatılmaktadır. Bu dava, siber suçluların üzerinden yıllar geçse bile dijital izler sayesinde adaletten kaçamayacağını göstermesi açısından önem taşımaktadır.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - bitdefender.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 18 -->
-        <div class="news-card">
-            <b class="news-title">Rusya Bağlantılı Hackerların Kış Olimpiyatları Öncesi İtalya'yı Hedef Alması</b>
-            <div class="news-content">
-                İtalyan yetkililer, Kış Olimpiyatları öncesinde demiryolları ve kritik altyapılara yönelik gerçekleştirilen siber saldırılardan Rusya bağlantılı hacker gruplarını sorumlu tutmaktadır. "Smashing Security" podcast'inde ele alınan konuya göre, saldırıların fiziksel sabotaj girişimleriyle eş zamanlı olarak yürütüldüğü ve ulaşım sistemlerinde ciddi aksamalara yol açtığı belirtilmektedir. Ayrıca yapay zeka tabanlı "Moltbook" adlı sosyal ağda ortaya çıkan güvenlik açıklarının, saldırganlar tarafından bilgi operasyonları için kullanıldığı ifade edilmektedir. Rusya yanlısı grupların, spor etkinliklerini jeopolitik baskı aracı olarak kullandığı ve dezenformasyon kampanyalarıyla kamuoyunu manipüle etmeye çalıştığı bildirilmektedir. Siber güvenlik uzmanları, büyük organizasyonlar sırasında artan bu tür tehditlere karşı uyanık olunması gerektiğini vurgulamaktadır.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - grahamcluley.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 19 -->
-        <div class="news-card">
-            <b class="news-title">Yapay Zeka Destekli Bilgi Grafiği Oluşturucusu İle APT Analizi Yapılması</b>
-            <div class="news-content">
-                SANS ISC araştırmacıları, yapılandırılmamış metinlerden etkileşimli bilgi grafikleri oluşturan yapay zeka destekli AIKG (AI Powered Knowledge Graph Generator) aracının APT analizlerindeki etkinliğini incelemiştir. Aracın, Rus GRU ve APT28 gruplarına ait siber saldırı raporlarını analiz ederek varlıklar arasındaki ilişkileri görselleştirdiği belirtilmektedir. Yapılan deneylerde, yapay zekanın "Özne-Yüklem-Nesne" üçlülerini başarıyla çıkardığı ve saldırganların kimlik avı portalı kullanımı ile hedef kitleleri arasındaki bağlantıları net bir şekilde ortaya koyduğu ifade edilmektedir. Bu tür görselleştirme araçlarının, tehdit avcıları ve siber istihbarat analistleri için karmaşık veri setlerinden anlamlı sonuçlar çıkarmada kritik öneme sahip olduğu vurgulanmaktadır. Aracın yerel olarak çalıştırılabilmesi veri gizliliği açısından avantaj sağlamaktadır.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - isc.sans.edu, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 20 -->
-        <div class="news-card">
-            <b class="news-title">Recorded Future 2026 Raporunda Jeopolitik Parçalanmanın Siber Risklere Etkisi</b>
-            <div class="news-content">
-                Recorded Future'ın yayınladığı "2026 Güvenlik Durumu" raporunda, küresel tehdit ortamının jeopolitik ittifakların zayıflamasıyla parçalı bir yapıya büründüğü ifade edilmektedir. 2025 yılı boyunca Rusya, Çin, İran ve Kuzey Kore destekli aktörlerin yıkıcı saldırılardan ziyade ağların uç noktalarında kalıcı erişim sağlamaya odaklandığı belirtilmektedir. Raporda, siber suç ekosisteminin kolluk kuvvetleri baskısı nedeniyle daha modüler ve dayanıklı hale geldiği, 289 yeni fidye yazılımı varyantının tespit edildiği bildirilmektedir. Yapay zekanın ise otonom saldırılardan ziyade, derin sahte (deepfake) ve sentetik kimlik dolandırıcılığı gibi alanlarda doğrulanabilirliği zorlaştırdığı aktarılmaktadır. Kuruluşların 2026 yılında artan belirsizliklere karşı kuantum sonrası kriptografi ve yapay zeka yönetişimine yatırım yapmaları önerilmektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - recordedfuture.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 21 -->
-        <div class="news-card">
-            <b class="news-title">Otonom Tehdit Operasyonları İle Tehdit Avcılığı Süreçlerinin Beş Adıma İndirilmesi</b>
-            <div class="news-content">
-                Recorded Future, geleneksel yöntemlerle 27 adım gerektiren manuel tehdit avcılığı süreçlerini otonom operasyonlar ile 5 adıma düşüren yeni bir yaklaşım duyurmuştur. Manuel süreçlerdeki zaman kaybının, saldırganların ağda yanal hareket etmesi için bir fırsat penceresi oluşturduğu belirtilmektedir. Yeni sistemin; istihbarat odaklı otomasyon, araçlar arası orkestrasyon ve 7/24 kesintisiz çalışma prensiplerine dayandığı ifade edilmektedir. Bu sayede SIEM ve EDR platformları üzerinden otomatik sorguların başlatılabildiği ve yeni tehdit istihbaratı geldikçe avcılık süreçlerinin gerçek zamanlı olarak güncellendiği bildirilmektedir. Otonom tehdit operasyonlarının, güvenlik ekiplerinin üzerindeki yükü azaltarak tespit ve müdahale sürelerinde (MTTD/MTTR) ölçülebilir iyileşme sağladığı vurgulanmaktadır.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - recordedfuture.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 22 -->
-        <div class="news-card">
-            <b class="news-title">Proofpoint Şirketinin Yapay Zeka Güvenliği İçin Acuvity Girişimini Satın Alması</b>
-            <div class="news-content">
-                Proofpoint, kurumsal dünyada yaygınlaşan otonom yapay zeka (agentic AI) sistemlerinin güvenliğini sağlamak amacıyla Acuvity adlı siber güvenlik girişimini satın aldığını duyurmuştur. Acuvity'nin, çalışanların ve otonom sistemlerin harici yapay zeka servisleriyle etkileşimlerini izleme ve kurumsal verileri koruma konularında uzmanlaştığı belirtilmektedir. Satın alma işleminin, yapay zeka sistemlerinin hassas verilere erişimi ve görev icrası sırasında oluşabilecek güvenlik açıklarını kapatmayı hedeflediği ifade edilmektedir. Prompt enjeksiyonu ve model manipülasyonu gibi yeni nesil saldırı vektörlerine karşı Acuvity'nin mühendislik ekibinin Proofpoint bünyesine katılacağı bildirilmektedir. Bu hamlenin, inovasyonu engellemeden yapay zeka yönetişimi sağlamak isteyen CISO'lar için kritik bir çözüm sunacağı değerlendirilmektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - cyberscoop.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 23 -->
-        <div class="news-card">
-            <b class="news-title">Apple'ın iOS Sistemindeki On Yıllık CVE-2026-20700 Açığını Yamalaması</b>
-            <div class="news-content">
-                Apple, iOS'in ilk sürümünden bu yana mevcut olduğu belirtilen ve "dyld" dinamik bağlayıcı bileşenini etkileyen kritik bir sıfır gün açığını (CVE-2026-20700) gidermiştir. Google Tehdit Analiz Grubu tarafından keşfedilen bu açığın, saldırganların bellek yazma yeteneği kullanarak hedef cihazlarda rastgele kod yürütmesine olanak tanıdığı ifade edilmektedir. Apple, söz konusu zafiyetin belirli kişilere yönelik son derece karmaşık saldırılarda aktif olarak kullanıldığı uyarısında bulunmuştur. Güvenlik uzmanları, bu açığın WebKit zafiyetleriyle birleştirilerek "tek tıkla" cihazın tam kontrolünün ele geçirilmesine yol açabileceğini belirtmektedir. Sorunun ticari casus yazılım endüstrisi tarafından geliştirilen araçlarla benzerlik gösterdiği raporlanmıştır. Tüm iOS 26 öncesi kullanıcıların 26.3 sürümüne güncellenmesi şiddetle tavsiye edilmektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - cyberscoop.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 24 -->
-        <div class="news-card">
-            <b class="news-title">Odido Telekom Operatörünün 6,2 Milyon Müşteri Verisinin Çalındığını Onaylaması</b>
-            <div class="news-content">
-                Hollanda'nın en büyük mobil ağ operatörü Odido, müşteri iletişim sistemine yönelik gerçekleştirilen bir saldırı sonucunda yaklaşık 6,2 milyon kişinin verilerinin etkilendiğini itiraf etmiştir. Ele geçirilen bilgiler arasında isimler, adresler, doğum tarihleri, banka hesap numaraları ve kimlik belgesi detaylarının bulunduğu bildirilmektedir. Şirket; şifrelerin, arama kayıtlarının ve konum verilerinin güvende olduğunu savunmaktadır. İhlalin 7-8 Şubat haftasında fark edildiği ve Hollanda Veri Koruma Kurumu'na bildirildiği ifade edilmektedir. Odido ve alt markası Ben müşterilerinin etkilendiği, Simpel markasının ise süreçten muaf kaldığı aktarılmaktadır. Kullanıcılar, çalınan verilerle yapılabilecek sahte fatura ve banka dolandırıcılığı girişimlerine karşı dikkatli olmaları konusunda uyarılmıştır.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - go.theregister.com, 13/02/2026)</b></span>
-        </div>
-
-        <!-- Haber 25 -->
-        <div class="news-card">
-            <b class="news-title">Fidye Yazılımı Gruplarının Kurumsal Ağlarda Çalışan İzleme Araçlarını Kullanması</b>
-            <div class="news-content">
-                Siber suçluların, kurumsal ağlarda gizlenmek ve fidye yazılımı yaymak amacıyla "Net Monitor for Employees Professional" gibi meşru çalışan izleme yazılımlarını (bossware) kötüye kullandığı tespit edilmiştir. Huntress müdahale ekipleri, saldırganların bu araçları uzaktan komut çalıştırmak ve keşif faaliyetleri yürütmek için kullandığı iki farklı vakayı raporlamıştır. Yazılımların meşru imzalı dosyalar olması nedeniyle güvenlik sistemleri tarafından fark edilmesinin zor olduğu belirtilmektedir. Bir vakada saldırganların, izleme aracını Microsoft OneDrive olarak kamufle ederek Windows Defender'ı devre dışı bırakmaya çalıştığı ve VoidCrypt fidye yazılımını dağıtmaya teşebbüs ettiği ifade edilmektedir. Kuruluşlara, ağlarındaki tüm RMM ve izleme araçlarını düzenli olarak denetlemeleri ve MFA kullanımını zorunlu tutmaları önerilmektedir.
-            </div>
-            <span class="source"><b>(XXXXXXX, AÇIK - go.theregister.com, 13/02/2026)</b></span>
-        </div>
-
-        <footer>
-            &copy; 2026 Siber Güvenlik Analiz Raporu. Tüm hakları saklıdır.
-        </footer>
+<div class="container">
+    <div class="report-header">
+        <h1>13.02.2026 Siber Güvenlik Haber Özetleri</h1>
     </div>
+
+    <div class="executive-summary">
+        <h2>Yönetici Özeti</h2>
+        <ul>
+            <li>Microsoft tarafından altı adet aktif olarak istismar edilen sıfır gün açığını içeren Şubat 2026 güvenlik güncellemeleri yayınlanmıştır.</li>
+            <li>Apple'ın dyld bileşeninde tespit edilen CVE-2026-20700 numaralı kritik açığın casus yazılım saldırılarında kullanıldığı belirlenmiştir.</li>
+            <li>UAT-9921 isimli yeni bir tehdit aktörünün finans ve teknoloji sektörlerini hedef alan VoidLink zararlı yazılımını kullandığı tespit edilmiştir.</li>
+            <li>Hollandalı telekom operatörü Odido bünyesindeki 6.2 milyon müşterinin kişisel ve finansal verilerinin siber saldırı sonucunda sızdırıldığı açıklanmıştır.</li>
+            <li>CISA, Microsoft SCCM ve BeyondTrust ürünlerindeki kritik zafiyetleri "Bilinen İstismar Edilen Açıklar" kataloğuna eklemiştir.</li>
+            <li>Google, devlet destekli tehdit aktörlerinin Gemini AI modelini keşif ve kimlik avı operasyonlarında aktif olarak kullandığını raporlamıştır.</li>
+            <li>Kimwolf botnetinin I2P anonim ağını devre dışı bırakmak amacıyla geniş çaplı bir Sybil saldırısı gerçekleştirdiği gözlemlenmiştir.</li>
+            <li>BeyondTrust Remote Support ürünündeki CVE-2026-1731 numaralı açığın PoC yayınlanmasından saatler sonra istismar edildiği saptanmıştır.</li>
+            <li>Kötü amaçlı tarayıcı eklentileri üzerinden Meta Business Suite ve VKontakte kullanıcı verilerinin çalındığı kapsamlı kampanyalar deşifre edilmiştir.</li>
+            <li>Recorded Future tarafından yayınlanan 2026 raporunda, jeopolitik parçalanmanın siber risk ekosistemini daha karmaşık hale getirdiği vurgulanmıştır.</li>
+        </ul>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">UAT-9921 Tehdit Aktörünün VoidLink Zararlı Yazılım Çerçevesini Kullanması</h3>
+        <p class="news-summary">Cisco Talos araştırmacıları, teknoloji ve finans sektörlerini hedef alan UAT-9921 adlı yeni bir tehdit aktörünü tespit etmiştir. Aktörün, Zig diliyle yazılmış ve Linux tabanlı bulut ortamlarında gizli erişim sağlayan VoidLink isimli modüler bir çerçeve kullandığı belirlenmiştir. VoidLink'in geliştirme sürecinde yapay zeka modellerinden faydalanıldığı ve yazılımın kernel seviyesinde rootkit özellikleri barındırdığı ifade edilmektedir. Tehdit aktörünün, ele geçirilen sunucularda iç keşif ve yanal hareket için Fscan gibi araçları kullandığı ve en az Eylül 2025'ten beri aktif olduğu bildirilmektedir.</p>
+        <p class="source"><b>(THE HACKER NEWS, AÇIK - thehackernews.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">Kötü Amaçlı Chrome Eklentilerinin Meta Ve Facebook Verilerini Çalması</h3>
+        <p class="news-summary">Meta Business Suite ve Facebook Business Manager verilerini hedef alan "CL Suite" isimli casus bir Chrome eklentisi tespit edilmiştir. Eklentinin, kullanıcıların iki faktörlü kimlik doğrulama (2FA) kodlarını, kişi listelerini ve analitik verilerini saldırgan kontrolündeki sunuculara ilettiği saptanmıştır. Ayrıca, VK Styles ve AiFrame gibi kampanyalar altında yaklaşık 500.000 VKontakte kullanıcısının ve 260.000 yapay zeka asistanı kullanıcısının verilerinin çalındığı bildirilmektedir. Bu eklentilerin, tarayıcı geçmişini veri komisyoncularına sızdırdığı ve Gmail içeriklerini okuyabildiği ifade edilmektedir.</p>
+        <p class="source"><b>(THE HACKER NEWS, AÇIK - thehackernews.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">npm Platformunun Tedarik Zinciri Güvenliğini Artırmaya Yönelik Güncellemeleri</h3>
+        <p class="news-summary">npm, tedarik zinciri saldırılarını azaltmak amacıyla kimlik doğrulama sisteminde köklü bir değişikliğe gitmiştir. Eski tip kalıcı jetonların iptal edildiği ve yerine kısa ömürlü oturum tabanlı jetonların getirildiği bildirilmektedir. Ayrıca, CI sistemleri için OIDC tabanlı güvenli yayınlama yönteminin teşvik edildiği belirtilmektedir. Ancak uzmanlar, MFA kimlik avı saldırılarının ve isteğe bağlı MFA kullanımının risk oluşturmaya devam ettiğini vurgulamaktadır. Chainguard tarafından yapılan analizlerde, kötü amaçlı paketlerin %98.5'inin kaynak kodda değil, yayınlanan paket dosyalarında bulunduğu tespit edilmiştir.</p>
+        <p class="source"><b>(THE HACKER NEWS, AÇIK - thehackernews.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">Criminal IP Tehdit İstihbaratının IBM QRadar İle Entegrasyonu</h3>
+        <p class="news-summary">Yapay zeka destekli tehdit istihbaratı platformu Criminal IP, IBM QRadar SIEM ve SOAR sistemleri ile entegre edilmiştir. Bu entegrasyon sayesinde, güvenlik ekiplerinin dış IP tabanlı tehdit verilerine doğrudan QRadar arayüzü üzerinden erişebildiği ifade edilmektedir. Güvenlik duvarı trafik günlüklerinin gerçek zamanlı olarak analiz edilerek risk seviyelerinin belirlendiği ve olay müdahale süreçlerinin otomatikleştirildiği belirtilmektedir. AI SPERA CEO'su Byungtak Kang, bu iş birliğinin SOC operasyonlarında tespit doğruluğunu ve operasyonel verimliliği artıracağını açıklamıştır.</p>
+        <p class="source"><b>(BLEEPINGCOMPUTER, AÇIK - bleepingcomputer.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">Microsoft Configuration Manager'daki CVE-2024-43468 Açığının Aktif İstismarı</h3>
+        <p class="news-summary">CISA, Microsoft Configuration Manager (SCCM) üzerinde bulunan kritik SQL enjeksiyonu zafiyetinin saldırılarda aktif olarak kullanıldığını doğrulamıştır. CVE-2024-43468 olarak izlenen bu açığın, kimliği doğrulanmamış saldırganların sunucu üzerinde en yüksek yetkilerle komut çalıştırmasına olanak tanıdığı bildirilmektedir. Microsoft'un Ekim 2024'te yama yayınlamasına rağmen, Kasım 2024'te PoC kodlarının sızdırılmasıyla saldırıların yoğunlaştığı ifade edilmektedir. CISA, federal kurumlara sistemlerini 5 Mart 2026 tarihine kadar güncellemeleri talimatını vermiştir.</p>
+        <p class="source"><b>(BLEEPINGCOMPUTER, AÇIK - bleepingcomputer.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">Microsoft Family Safety Servisindeki Chrome Engelleme Sorununun Giderilmesi</h3>
+        <p class="news-summary">Microsoft, Family Safety ebeveyn denetimi servisinin Google Chrome ve diğer tarayıcıların açılmasını engellediği hatayı düzelttiğini duyurmuştur. Haziran 2025'ten bu yana devam eden sorunun, web filtreleme aracının tarayıcı güncellemelerini tanımamasından kaynaklandığı belirtilmektedir. Şirket, Şubat 2026 başında servis tarafında bir düzeltme yayınladığını ve bu çözümün önümüzdeki haftalarda tüm Windows 10 ve 11 cihazlarına ulaşacağını ifade etmiştir. Kullanıcıların herhangi bir işlem yapmasına gerek kalmadan, internete bağlandıklarında güncellemenin otomatik olarak uygulanacağı bildirilmektedir.</p>
+        <p class="source"><b>(BLEEPINGCOMPUTER, AÇIK - bleepingcomputer.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">Kimwolf Botnetinin I2P Anonimlik Ağını Sybil Saldırısıyla Etkilemesi</h3>
+        <p class="news-summary">Milyonlarca IoT cihazından oluşan Kimwolf botnetinin, I2P (The Invisible Internet Project) anonim iletişim ağını aksattığı bildirilmektedir. Botnet operatörlerinin, kontrol sunucularını gizlemek amacıyla 700.000 enfekte cihazı I2P ağına dahil etmeye çalıştığı ve bu durumun ağ kapasitesini aşarak meşru kullanıcıların bağlantısını kestiği saptanmıştır. Bu durumun teknik literatürde "Sybil saldırısı" olarak adlandırıldığı ifade edilmektedir. I2P geliştiricilerinin ağ kararlılığını sağlamak için yeni bir güncelleme üzerinde çalıştığı ve Kimwolf'un son dönemde ciddi bir cihaz kaybı yaşadığı belirtilmektedir.</p>
+        <p class="source"><b>(KREBS ON SECURITY, AÇIK - krebsonsecurity.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">Şubat 2026 Yama Salısı Kapsamında Altı Sıfır Gün Açığının Kapatılması</h3>
+        <p class="news-summary">Microsoft, Şubat 2026 güvenlik güncellemeleriyle 50'den fazla açığı kapatırken, aktif olarak istismar edilen altı adet sıfır gün zafiyetini yamalamıştır. Bu açıklar arasında Windows Shell korumalarını aşan CVE-2026-21510, MSHTML motorunu hedef alan CVE-2026-21513 ve Windows Remote Desktop yetki yükseltme açığı olan CVE-2026-21533'ün bulunduğu bildirilmektedir. Ayrıca, yapay zeka destekli GitHub Copilot ve VS Code gibi geliştirici araçlarındaki uzaktan kod yürütme açıklarının da giderildiği ifade edilmektedir. Uzmanlar, kritik sistemlerin ivedilikle güncellenmesi gerektiğini vurgulamaktadır.</p>
+        <p class="source"><b>(KREBS ON SECURITY, AÇIK - krebsonsecurity.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">Scattered Lapsus ShinyHunters Grubunun Şantaj Ve Taciz Yöntemlerinin Analizi</h3>
+        <p class="news-summary">Scattered Lapsus ShinyHunters (SLSH) adlı veri hırsızlığı çetesinin, kurban şirketlere yönelik agresif şantaj taktikleri kullandığı raporlanmıştır. Grubun, şirket yöneticilerini ve ailelerini fiziksel şiddetle tehdit ettiği, sahte bomba ihbarları (swatting) yaptığı ve medya kuruluşlarına sızıntı bilgileri servis ederek baskı kurduğu belirtilmektedir. Unit 221B uzmanları, bu grubun profesyonel fidye yazılımı çetelerinin aksine güvenilmez olduğunu ve ödeme yapılsa dahi verileri silmediklerini ifade etmektedir. Kurbanlara, saldırganlarla pazarlık yapmamaları ve taciz kampanyalarına karşı dirençli olmaları tavsiye edilmektedir.</p>
+        <p class="source"><b>(KREBS ON SECURITY, AÇIK - krebsonsecurity.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">BeyondTrust Remote Support Ürünündeki CVE-2026-1731 Açığının İstismar Edilmesi</h3>
+        <p class="news-summary">BeyondTrust Remote Support ve Privileged Remote Access ürünlerinde tespit edilen kritik RCE açığı CVE-2026-1731'in, yama ve PoC yayınlanmasından kısa süre sonra istismar edilmeye başlandığı bildirilmektedir. Kimliği doğrulanmamış saldırganların, özel olarak hazırlanmış istekler göndererek sunucu üzerinde sistem komutları çalıştırabildiği saptanmıştır. GreyNoise verilerine göre, dünya genelinde yaklaşık 11.000 BeyondTrust örneğinin internete açık olduğu ve bunların büyük bir kısmının henüz yamalanmadığı ifade edilmektedir. Sağlık, finans ve kamu sektörlerinin bu saldırılardan en çok etkilenen gruplar olduğu belirtilmektedir.</p>
+        <p class="source"><b>(SECURITY AFFAIRS, AÇIK - securityaffairs.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">Devlet Destekli Hackerların Gemini AI Modelini Saldırılarda Kullanması</h3>
+        <p class="news-summary">Google'ın Tehdit İstihbarat Grubu (GTIG), Kuzey Kore, İran, Çin ve Rusya merkezli tehdit aktörlerinin Gemini AI modelini siber operasyonlarında kullandığını açıklamıştır. UNC2970 grubunun Gemini'yi hedef profilleme ve keşif faaliyetleri için kullandığı, İranlı APT42 grubunun ise AI yardımıyla inandırıcı kimlik avı mesajları oluşturduğu tespit edilmiştir. Ayrıca, HONESTCUE adlı yeni bir zararlı yazılımın Gemini API'sini kullanarak çalışma zamanında kötü amaçlı kod ürettiği ve bu sayede geleneksel tespit yöntemlerini atlattığı bildirilmektedir. Google, suistimal edilen hesapları askıya aldığını ve koruma önlemlerini artırdığını duyurmuştur.</p>
+        <p class="source"><b>(SECURITY AFFAIRS, AÇIK - securityaffairs.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">Apple Cihazlarındaki Kritik dyld Sıfır Gün Açığının Kapatılması</h3>
+        <p class="news-summary">Apple, iOS, iPadOS ve macOS işletim sistemlerinde aktif olarak istismar edilen CVE-2026-20700 numaralı bir sıfır gün açığını gidermek için acil güncellemeler yayınlamıştır. Dinamik Bağlantı Düzenleyicisi (dyld) bileşenindeki bir bellek bozulmasından kaynaklanan bu hatanın, saldırganların cihazlarda rastgele kod yürütmesine olanak tanıdığı bildirilmektedir. Google Tehdit Analiz Grubu tarafından keşfedilen bu açığın, özellikle üst düzey hedeflere yönelik sofistike casus yazılım saldırılarında kullanıldığı tahmin edilmektedir. CISA, bu zafiyeti KEV kataloğuna ekleyerek tüm kullanıcılara güncellemeleri yapmaları çağrısında bulunmuştur.</p>
+        <p class="source"><b>(CYBERSCOOP, AÇIK - cyberscoop.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">Odido Telekomünikasyon Şirketinden 6.2 Milyon Müşteri Verisinin Sızdırılması</h3>
+        <p class="news-summary">Hollanda'nın en büyük mobil operatörü Odido, müşteri iletişim sistemine yönelik bir siber saldırı sonucunda 6.2 milyon kişinin verilerinin sızdırıldığını kabul etmiştir. Sızdırılan veriler arasında isim, adres, banka hesap numaraları, doğum tarihleri ve kimlik belge detaylarının bulunduğu bildirilmektedir. Şirket, şifrelerin ve arama kayıtlarının etkilenmediğini belirtse de, çalınan verilerin gelecekte oltalama saldırılarında kullanılabileceği uyarısında bulunmuştur. Odido CEO'su Søren Abildgaard, saldırganın erişiminin kesildiğini ve etkilenen müşterilerin SMS veya e-posta yoluyla bilgilendirilmeye başlandığını açıklamıştır.</p>
+        <p class="source"><b>(THE REGISTER, AÇIK - theregister.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">Fidye Yazılımı Gruplarının Çalışan İzleme Yazılımlarını İstismar Etmesi</h3>
+        <p class="news-summary">Siber saldırganların, kurumsal ağlara sızmak ve fidye yazılımı dağıtmak için "Net Monitor for Employees" gibi meşru çalışan izleme yazılımlarını (bossware) kullandığı tespit edilmiştir. Huntress ekipleri tarafından yapılan incelemelerde, saldırganların bu araçları uzaktan komut çalıştırma ve keşif faaliyetleri için bir RAT (uzaktan erişim trojanı) gibi kullandığı saptanmıştır. Saldırganların ayrıca SimpleHelp RMM aracını kullanarak Windows Defender'ı devre dışı bırakmaya çalıştığı ve VoidCrypt fidye yazılımını yaymayı hedeflediği bildirilmektedir. Bu yöntemin, meşru yazılım imzaları sayesinde güvenlik sistemlerinden kaçmayı kolaylaştırdığı ifade edilmektedir.</p>
+        <p class="source"><b>(THE REGISTER, AÇIK - theregister.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">Polonya Merkezli Morele.net Veri Sızıntısı Davasında Hackerın Suçlanması</h3>
+        <p class="news-summary">Polonya Siber Suçlarla Mücadele Bürosu (CBZC), 2018 yılında gerçekleşen ve 2.5 milyon müşterinin verisinin sızdırıldığı Morele.net saldırısıyla ilgili 29 yaşındaki bir zanlıya dava açmıştır. Yedi yıl süren soruşturma neticesinde, saldırganın dijital ayak izlerinin takip edilerek kimliğinin belirlendiği bildirilmektedir. Saldırı sonucunda isimler, e-postalar ve şifrelerin yanı sıra 35.000 müşterinin ulusal kimlik numaraları ve finansal verilerinin çalındığı ifade edilmektedir. Zanlının suçunu itiraf ettiği ve davanın dijital adli tıp tekniklerinin soğuk vakaları çözmedeki başarısını kanıtladığı belirtilmektedir.</p>
+        <p class="source"><b>(BITDEFENDER, AÇIK - bitdefender.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="news-card">
+        <h3 class="news-title">Proofpoint Şirketinin Agentic AI Güvenliği İçin Acuvity Girişimini Satın Alması</h3>
+        <p class="news-summary">Siber güvenlik devi Proofpoint, kurumsal ortamlarda yaygınlaşan "agentic AI" (otonom yapay zeka ajanları) risklerine karşı Acuvity adlı girişimi satın aldığını duyurmuştur. Acuvity'nin, çalışanların dış yapay zeka servisleriyle etkileşimlerini izleme ve hassas verileri koruma yeteneklerinin Proofpoint portföyüne dahil edileceği bildirilmektedir. Bu hamlenin, yapay zeka modellerine yönelik komut enjeksiyonu ve veri sızıntısı gibi yeni nesil tehditlere karşı savunma hattı oluşturmayı hedeflediği belirtilmektedir. Satın alma işleminin finansal detayları açıklanmazken, Acuvity mühendislik ekibinin Proofpoint bünyesine katılacağı ifade edilmektedir.</p>
+        <p class="source"><b>(CYBERSCOOP, AÇIK - cyberscoop.com, 13.02.2026)</b></p>
+    </div>
+
+    <div class="archive-section">
+        <h3>ARŞİV LİNKLERİ</h3>
+        <div class="archive-links">
+            <a href="#" class="archive-link">12.02.2026</a>
+            <a href="#" class="archive-link">11.02.2026</a>
+            <a href="#" class="archive-link">10.02.2026</a>
+            <a href="#" class="archive-link">09.02.2026</a>
+            <a href="#" class="archive-link">08.02.2026</a>
+            <a href="#" class="archive-link">07.02.2026</a>
+        </div>
+    </div>
+</div>
+
+
+    <div class="archive-section">
+        <h3>📚 Arşiv - Son 30 Gün</h3>
+        <div class="archive-links">
+            <a href="raporlar/2026-02-13.html" class="archive-link">13.02.2026</a>
+            <a href="raporlar/2026-02-12.html" class="archive-link">12.02.2026</a>
+        </div>
+    </div>
+
 </body>
-</html>
+</html> ÇIKTI: Sadece HTML kodu döndür (<!DOCTYPE html> ile başla)
