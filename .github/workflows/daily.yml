@@ -30,3 +30,4 @@ jobs:
           git diff-index --quiet HEAD || git commit -m "📰 $(date +'%Y-%m-%d')"
           git pull --rebase origin main || git pull origin main
           git push
+          
