@@ -81,4 +81,3 @@ HABERLER:
 {news_content}
 
 ÇIKTI: Sadece HTML kodu döndür (<!DOCTYPE html> ile başla)"""
-
