@@ -293,135 +293,199 @@ Microsoft: Some Windows PCs fail to shut down after January update
 
 ================================================================================
 
-[7] Krebs on Security - Kimwolf Botnet Swamps Anonymity Network I2P
+[7] Krebs on Security - Kimwolf Botnet Lurking in Corporate, Govt. Networks
 ────────────────────────────────────────────────────────────────────────────────
-Tarih: Wed, 11 Feb 2026 16:08:11 +0000
-Link: https://krebsonsecurity.com/2026/02/kimwolf-botnet-swamps-anonymity-network-i2p/
+Tarih: Tue, 20 Jan 2026 18:19:13 +0000
+Link: https://krebsonsecurity.com/2026/01/kimwolf-botnet-lurking-in-corporate-govt-networks/
 
-[TAM METİN - 831 kelime]
-For the past week, the massive “Internet of Things” (IoT) botnet known as Kimwolf has been disrupting The Invisible Internet Project (I2P), a decentralized, encrypted communications network designed to anonymize and secure online communications. I2P users started reporting disruptions in the network around the same time the Kimwolf botmasters began relying on it to evade takedown attempts against the botnet’s control servers.
+[TAM METİN - 992 kelime]
+A new Internet-of-Things (IoT) botnet called Kimwolf has spread to more than 2 million devices, forcing infected systems to participate in massive distributed denial-of-service (DDoS) attacks and to relay other malicious and abusive Internet traffic. Kimwolf’s ability to scan the local networks of compromised systems for other IoT devices to infect makes it a sobering threat to organizations, and new research reveals Kimwolf is surprisingly prevalent in government and corporate networks.
 
-Kimwolf is a botnet that surfaced in late 2025 and quickly infected millions of systems, turning poorly secured IoT devices like TV streaming boxes, digital picture frames and routers into relays for malicious traffic and abnormally large distributed denial-of-service (DDoS) attacks.
+Image: Shutterstock, @Elzicon.
 
-I2P is a decentralized, privacy-focused network that allows people to communicate and share information anonymously.
+Kimwolf grew rapidly in the waning months of 2025 by tricking various “residential proxy” services into relaying malicious commands to devices on the local networks of those proxy endpoints. Residential proxies are sold as a way to anonymize and localize one’s Web traffic to a specific region, and the biggest of these services allow customers to route their Internet activity through devices in virtually any country or city around the globe.
 
-“It works by routing data through multiple encrypted layers across volunteer-operated nodes, hiding both the sender’s and receiver’s locations,” the I2P website explains. “The result is a secure, censorship-resistant network designed for private websites, messaging, and data sharing.”
+The malware that turns one’s Internet connection into a proxy node is often quietly bundled with various mobile apps and games, and it typically forces the infected device to relay malicious and abusive traffic — including ad fraud, account takeover attempts, and mass content-scraping.
 
-On February 3, I2P users began complaining on the organization’s GitHub page about tens of thousands of routers suddenly overwhelming the network, preventing existing users from communicating with legitimate nodes. Users reported a rapidly increasing number of new routers joining the network that were unable to transmit data, and that the mass influx of new systems had overwhelmed the network to the point where users could no longer connect.
+Kimwolf mainly targeted proxies from IPIDEA, a Chinese service that has millions of proxy endpoints for rent on any given week. The Kimwolf operators discovered they could forward malicious commands to the internal networks of IPIDEA proxy endpoints, and then programmatically scan for and infect other vulnerable devices on each endpoint’s local network.
 
-I2P users complaining about service disruptions from a rapidly increasing number of routers suddenly swamping the network.
+Most of the systems compromised through Kimwolf’s local network scanning have been unofficial Android TV streaming boxes. These are typically Android Open Source Project devices — not Android TV OS devices or Play Protect certified Android devices — and they are generally marketed as a way to watch unlimited (read:pirated) video content from popular subscription streaming services for a one-time fee.
 
-When one I2P user asked whether the network was under attack, another user replied, “Looks like it. My physical router freezes when the number of connections exceeds 60,000.”
+However, a great many of these TV boxes ship to consumers with residential proxy software pre-installed. What’s more, they have no real security or authentication built-in: If you can communicate directly with the TV box, you can also easily compromise it with malware.
 
-A graph shared by I2P developers showing a marked drop in successful connections on the I2P network around the time the Kimwolf botnet started trying to use the network for fallback communications.
+While IPIDEA and other affected proxy providers recently have taken steps to block threats like Kimwolf from going upstream into their endpoints (reportedly with varying degrees of success), the Kimwolf malware remains on millions of infected devices.
 
-The same day that I2P users began noticing the outages, the individuals in control of Kimwolf posted to their Discord channel that they had accidentally disrupted I2P after attempting to join 700,000 Kimwolf-infected bots as nodes on the network.
+A screenshot of IPIDEA’s proxy service.
 
-The Kimwolf botmaster openly discusses what they are doing with the botnet in a Discord channel with my name on it.
+Kimwolf’s close association with residential proxy networks and compromised Android TV boxes might suggest we’d find relatively few infections on corporate networks. However, the security firm Infoblox said a recent review of its customer traffic found nearly 25 percent of them made a query to a Kimwolf-related domain name since October 1, 2025, when the botnet first showed signs of life.
 
-Although Kimwolf is known as a potent weapon for launching DDoS attacks, the outages caused this week by some portion of the botnet attempting to join I2P are what’s known as a “Sybil attack,” a threat in peer-to-peer networks where a single entity can disrupt the system by creating, controlling, and operating a large number of fake, pseudonymous identities.
+Infoblox found the affected customers are based all over the world and in a wide range of industry verticals, from education and healthcare to government and finance.
 
-Indeed, the number of Kimwolf-infected routers that tried to join I2P this past week was many times the network’s normal size. I2P’s Wikipedia page says the network consists of roughly 55,000 computers distributed throughout the world, with each participant acting as both a router (to relay traffic) and a client.
+“To be clear, this suggests that nearly 25% of customers had at least one device that was an endpoint in a residential proxy service targeted by Kimwolf operators,” Infoblox explained. “Such a device, maybe a phone or a laptop, was essentially co-opted by the threat actor to probe the local network for vulnerable devices. A query means a scan was made, not that new devices were compromised. Lateral movement would fail if there were no vulnerable devices to be found or if the DNS resolution was blocked.”
 
-However, Lance James, founder of the New York City based cybersecurity consultancy Unit 221B and the original founder of I2P, told KrebsOnSecurity the entire I2P network now consists of between 15,000 and 20,000 devices on any given day.
+Synthient, a startup that tracks proxy services and was the first to disclose on January 2 the unique methods Kimwolf uses to spread, found proxy endpoints from IPIDEA were present in alarming numbers at government and academic institutions worldwide. Synthient said it spied at least 33,000 affected Internet addresses at universities and colleges, and nearly 8,000 IPIDEA proxies within various U.S. and foreign government networks.
 
-An I2P user posted this graph on Feb. 10, showing tens of thousands of routers — mostly from the United States — suddenly attempting to join the network.
+The top 50 domain names sought out by users of IPIDEA’s residential proxy service, according to Synthient.
 
-Benjamin Brundage is founder of Synthient, a startup that tracks proxy services and was the first to document Kimwolf’s unique spreading techniques. Brundage said the Kimwolf operator(s) have been trying to build a command and control network that can’t easily be taken down by security companies and network operators that are working together to combat the spread of the botnet.
+In a webinar on January 16, experts at the proxy tracking service Spur profiled Internet addresses associated with IPIDEA and 10 other proxy services that were thought to be vulnerable to Kimwolf’s tricks. Spur found residential proxies in nearly 300 government owned and operated networks, 318 utility companies, 166 healthcare companies or hospitals, and 141 companies in banking and finance.
 
-Brundage said the people in control of Kimwolf have been experimenting with using I2P and a similar anonymity network — Tor — as a backup command and control network, although there have been no reports of widespread disruptions in the Tor network recently.
+“I looked at the 298 [government] owned and operated [networks], and so many of them were DoD [U.S. Department of Defense], which is kind of terrifying that DoD has IPIDEA and these other proxy services located inside of it,” Spur Co-Founder Riley Kilmer said. “I don’t know how these enterprises have these networks set up. It could be that [infected devices] are segregated on the network, that even if you had local access it doesn’t really mean much. However, it’s something to be aware of. If a device goes in, anything that device has access to the proxy would have access to.”
 
-“I don’t think their goal is to take I2P down,” he said. “It’s more they’re looking for an alternative to keep the botnet stable in the face of takedown attempts.”
+Kilmer said Kimwolf demonstrates how a single residential proxy infection can quickly lead to bigger problems for organizations that are harboring unsecured devices behind their firewalls, noting that proxy services present a potentially simple way for attackers to probe other devices on the local network of a targeted organization.
 
-The Kimwolf botnet created challenges for Cloudflare late last year when it began instructing millions of infected devices to use Cloudflare’s domain name system (DNS) settings, causing control domains associated with Kimwolf to repeatedly usurp Amazon, Apple, Google and Microsoft in Cloudflare’s public ranking of the most frequently requested websites.
+“If you know you have [proxy] infections that are located in a company, you can chose that [network] to come out of and then locally pivot,” Kilmer said. “If you have an idea of where to start or look, now you have a foothold in a company or an enterprise based on just that.”
 
-James said the I2P network is still operating at about half of its normal capacity, and that a new release is rolling out which should bring some stability improvements over the next week for users.
+This is the third story in our series on the Kimwolf botnet. Next week, we’ll shed light on the myriad China-based individuals and companies connected to the Badbox 2.0 botnet, the collective name given to a vast number of Android TV streaming box models that ship with no discernible security or authentication built-in, and with residential proxy malware pre-installed.
 
-Meanwhile, Brundage said the good news is Kimwolf’s overlords appear to have quite recently alienated some of their more competent developers and operators, leading to a rookie mistake this past week that caused the botnet’s overall numbers to drop by more than 600,000 infected systems.
+The Kimwolf Botnet is Stalking Your Local Network
 
-“It seems like they’re just testing stuff, like running experiments in production,” he said. “But the botnet’s numbers are dropping significantly now, and they don’t seem to know what they’re doing.”
+Who Benefitted from the Aisuru and Kimwolf Botnets?
+
+A Broken System Fueling Botnets (Synthient).
 
 (XXXXXXX, AÇIK - krebsonsecurity.com, 13.02.2026)
 
 ================================================================================
 
-[8] Krebs on Security - Patch Tuesday, February 2026 Edition
+[8] Krebs on Security - Patch Tuesday, January 2026 Edition
 ────────────────────────────────────────────────────────────────────────────────
-Tarih: Tue, 10 Feb 2026 21:49:53 +0000
-Link: https://krebsonsecurity.com/2026/02/patch-tuesday-february-2026-edition/
+Tarih: Wed, 14 Jan 2026 00:47:38 +0000
+Link: https://krebsonsecurity.com/2026/01/patch-tuesday-january-2026-edition/
 
-[TAM METİN - 515 kelime]
-Microsoft today released updates to fix more than 50 security holes in its Windows operating systems and other software, including patches for a whopping six “zero-day” vulnerabilities that attackers are already exploiting in the wild.
+[TAM METİN - 910 kelime]
+Microsoft today issued patches to plug at least 113 security holes in its various Windows operating systems and supported software. Eight of the vulnerabilities earned Microsoft’s most-dire “critical” rating, and the company warns that attackers are already exploiting one of the bugs fixed today.
 
-Zero-day #1 this month is CVE-2026-21510, a security feature bypass vulnerability in Windows Shell wherein a single click on a malicious link can quietly bypass Windows protections and run attacker-controlled content without warning or consent dialogs. CVE-2026-21510 affects all currently supported versions of Windows.
+January’s Microsoft zero-day flaw — CVE-2026-20805 — is brought to us by a flaw in the Desktop Window Manager (DWM), a key component of Windows that organizes windows on a user’s screen. Kev Breen, senior director of cyber threat research at Immersive, said despite awarding CVE-2026-20805 a middling CVSS score of 5.5, Microsoft has confirmed its active exploitation in the wild, indicating that threat actors are already leveraging this flaw against organizations.
 
-The zero-day flaw CVE-2026-21513 is a security bypass bug targeting MSHTML, the proprietary engine of the default Web browser in Windows. CVE-2026-21514 is a related security feature bypass in Microsoft Word.
+Breen said vulnerabilities of this kind are commonly used to undermine Address Space Layout Randomization (ASLR), a core operating system security control designed to protect against buffer overflows and other memory-manipulation exploits.
 
-The zero-day CVE-2026-21533 allows local attackers to elevate their user privileges to “SYSTEM” level access in Windows Remote Desktop Services. CVE-2026-21519 is a zero-day elevation of privilege flaw in the Desktop Window Manager (DWM), a key component of Windows that organizes windows on a user’s screen. Microsoft fixed a different zero-day in DWM just last month.
+“By revealing where code resides in memory, this vulnerability can be chained with a separate code execution flaw, transforming a complex and unreliable exploit into a practical and repeatable attack,” Breen said. “Microsoft has not disclosed which additional components may be involved in such an exploit chain, significantly limiting defenders’ ability to proactively threat hunt for related activity. As a result, rapid patching currently remains the only effective mitigation.”
 
-The sixth zero-day is CVE-2026-21525, a potentially disruptive denial-of-service vulnerability in the Windows Remote Access Connection Manager, the service responsible for maintaining VPN connections to corporate networks.
+Chris Goettl, vice president of product management at Ivanti, observed that CVE-2026-20805 affects all currently supported and extended security update supported versions of the Windows OS. Goettl said it would be a mistake to dismiss the severity of this flaw based on its “Important” rating and relatively low CVSS score.
 
-Chris Goettl at Ivanti reminds us Microsoft has issued several out-of-band security updates since January’s Patch Tuesday. On January 17, Microsoft pushed a fix that resolved a credential prompt failure when attempting remote desktop or remote application connections. On January 26, Microsoft patched a zero-day security feature bypass vulnerability (CVE-2026-21509) in Microsoft Office.
+“A risk-based prioritization methodology warrants treating this vulnerability as a higher severity than the vendor rating or CVSS score assigned,” he said.
 
-Kev Breen at Immersive notes that this month’s Patch Tuesday includes several fixes for remote code execution vulnerabilities affecting GitHub Copilot and multiple integrated development environments (IDEs), including VS Code, Visual Studio, and JetBrains products. The relevant CVEs are CVE-2026-21516, CVE-2026-21523, and CVE-2026-21256.
+Among the critical flaws patched this month are two Microsoft Office remote code execution bugs (CVE-2026-20952 and CVE-2026-20953) that can be triggered just by viewing a booby-trapped message in the Preview Pane.
 
-Breen said the AI vulnerabilities Microsoft patched this month stem from a command injection flaw that can be triggered through prompt injection, or tricking the AI agent into doing something it shouldn’t — like executing malicious code or commands.
+Our October 2025 Patch Tuesday “End of 10” roundup noted that Microsoft had removed a modem driver from all versions after it was discovered that hackers were abusing a vulnerability in it to hack into systems. Adam Barnett at Rapid7 said Microsoft today removed another couple of modem drivers from Windows for a broadly similar reason: Microsoft is aware of functional exploit code for an elevation of privilege vulnerability in a very similar modem driver, tracked as CVE-2023-31096.
 
-“Developers are high-value targets for threat actors, as they often have access to sensitive data such as API keys and secrets that function as keys to critical infrastructure, including privileged AWS or Azure API keys,” Breen said. “When organizations enable developers and automation pipelines to use LLMs and agentic AI, a malicious prompt can have significant impact. This does not mean organizations should stop using AI. It does mean developers should understand the risks, teams should clearly identify which systems and workflows have access to AI agents, and least-privilege principles should be applied to limit the blast radius if developer secrets are compromised.”
+“That’s not a typo; this vulnerability was originally published via MITRE over two years ago, along with a credible public writeup by the original researcher,” Barnett said. “Today’s Windows patches remove agrsm64.sys and agrsm.sys. All three modem drivers were originally developed by the same now-defunct third party, and have been included in Windows for decades. These driver removals will pass unnoticed for most people, but you might find active modems still in a few contexts, including some industrial control systems.”
 
-The SANS Internet Storm Center has a clickable breakdown of each individual fix this month from Microsoft, indexed by severity and CVSS score. Enterprise Windows admins involved in testing patches before rolling them out should keep an eye on askwoody.com, which often has the skinny on wonky updates. Please don’t neglect to back up your data if it has been a while since you’ve done that, and feel free to sound off in the comments if you experience problems installing any of these fixes.
+According to Barnett, two questions remain: How many more legacy modem drivers are still present on a fully-patched Windows asset; and how many more elevation-to-SYSTEM vulnerabilities will emerge from them before Microsoft cuts off attackers who have been enjoying “living off the land[line] by exploiting an entire class of dusty old device drivers?”
+
+“Although Microsoft doesn’t claim evidence of exploitation for CVE-2023-31096, the relevant 2023 write-up and the 2025 removal of the other Agere modem driver have provided two strong signals for anyone looking for Windows exploits in the meantime,” Barnett said. “In case you were wondering, there is no need to have a modem connected; the mere presence of the driver is enough to render an asset vulnerable.”
+
+Immersive, Ivanti and Rapid7 all called attention to CVE-2026-21265, which is a critical Security Feature Bypass vulnerability affecting Windows Secure Boot. This security feature is designed to protect against threats like rootkits and bootkits, and it relies on a set of certificates that are set to expire in June 2026 and October 2026. Once these 2011 certificates expire, Windows devices that do not have the new 2023 certificates can no longer receive Secure Boot security fixes.
+
+Barnett cautioned that when updating the bootloader and BIOS, it is essential to prepare fully ahead of time for the specific OS and BIOS combination you’re working with, since incorrect remediation steps can lead to an unbootable system.
+
+“Fifteen years is a very long time indeed in information security, but the clock is running out on the Microsoft root certificates which have been signing essentially everything in the Secure Boot ecosystem since the days of Stuxnet,” Barnett said. “Microsoft issued replacement certificates back in 2023, alongside CVE-2023-24932 which covered relevant Windows patches as well as subsequent steps to remediate the Secure Boot bypass exploited by the BlackLotus bootkit.”
+
+Goettl noted that Mozilla has released updates for Firefox and Firefox ESR resolving a total of 34 vulnerabilities, two of which are suspected to be exploited (CVE-2026-0891 and CVE-2026-0892). Both are resolved in Firefox 147 (MFSA2026-01) and CVE-2026-0891 is resolved in Firefox ESR 140.7 (MFSA2026-03).
+
+“Expect Google Chrome and Microsoft Edge updates this week in addition to a high severity vulnerability in Chrome WebView that was resolved in the January 6 Chrome update (CVE-2026-0628),” Goettl said.
+
+As ever, the SANS Internet Storm Center has a per-patch breakdown by severity and urgency. Windows admins should keep an eye on askwoody.com for any news about patches that don’t quite play nice with everything. If you experience any issues related installing January’s patches, please drop a line in the comments below.
 
 (XXXXXXX, AÇIK - krebsonsecurity.com, 13.02.2026)
 
 ================================================================================
 
-[9] Krebs on Security - Please Don’t Feed the Scattered Lapsus ShinyHunters
+[9] Krebs on Security - Who Benefited from the Aisuru and Kimwolf Botnets?
 ────────────────────────────────────────────────────────────────────────────────
-Tarih: Mon, 02 Feb 2026 16:15:16 +0000
-Link: https://krebsonsecurity.com/2026/02/please-dont-feed-the-scattered-lapsus-shiny-hunters/
+Tarih: Thu, 08 Jan 2026 23:23:43 +0000
+Link: https://krebsonsecurity.com/2026/01/who-benefited-from-the-aisuru-and-kimwolf-botnets/
 
-[TAM METİN - 1200 kelime]
-A prolific data ransom gang that calls itself Scattered Lapsus ShinyHunters (SLSH) has a distinctive playbook when it seeks to extort payment from victim firms: Harassing, threatening and even swatting executives and their families, all while notifying journalists and regulators about the extent of the intrusion. Some victims reportedly are paying — perhaps as much to contain the stolen data as to stop the escalating personal attacks. But a top SLSH expert warns that engaging at all beyond a “We’re not paying” response only encourages further harassment, noting that the group’s fractious and unreliable history means the only winning move is not to pay.
+[TAM METİN - 1877 kelime]
+Our first story of 2026 revealed how a destructive new botnet called Kimwolf has infected more than two million devices by mass-compromising a vast number of unofficial Android TV streaming boxes. Today, we’ll dig through digital clues left behind by the hackers, network operators and services that appear to have benefitted from Kimwolf’s spread.
 
-Image: Shutterstock.com, @Mungujakisa
+On Dec. 17, 2025, the Chinese security firm XLab published a deep dive on Kimwolf, which forces infected devices to participate in distributed denial-of-service (DDoS) attacks and to relay abusive and malicious Internet traffic for so-called “residential proxy” services.
 
-Unlike traditional, highly regimented Russia-based ransomware affiliate groups, SLSH is an unruly and somewhat fluid English-language extortion gang that appears uninterested in building a reputation of consistent behavior whereby victims might have some measure of confidence that the criminals will keep their word if paid.
+The software that turns one’s device into a residential proxy is often quietly bundled with mobile apps and games. Kimwolf specifically targeted residential proxy software that is factory installed on more than a thousand different models of unsanctioned Android TV streaming devices. Very quickly, the residential proxy’s Internet address starts funneling traffic that is linked to ad fraud, account takeover attempts and mass content scraping.
 
-That’s according to Allison Nixon, director of research at the New York City based security consultancy Unit 221B. Nixon has been closely tracking the criminal group and individual members as they bounce between various Telegram channels used to extort and harass victims, and she said SLSH differs from traditional data ransom groups in other important ways that argue against trusting them to do anything they say they’ll do — such as destroying stolen data.
+The XLab report explained its researchers found “definitive evidence” that the same cybercriminal actors and infrastructure were used to deploy both Kimwolf and the Aisuru botnet — an earlier version of Kimwolf that also enslaved devices for use in DDoS attacks and proxy services.
 
-Like SLSH, many traditional Russian ransomware groups have employed high-pressure tactics to force payment in exchange for a decryption key and/or a promise to delete stolen data, such as publishing a dark web shaming blog with samples of stolen data next to a countdown clock, or notifying journalists and board members of the victim company. But Nixon said the extortion from SLSH quickly escalates way beyond that — to threats of physical violence against executives and their families, DDoS attacks on the victim’s website, and repeated email-flooding campaigns.
+XLab said it suspected since October that Kimwolf and Aisuru had the same author(s) and operators, based in part on shared code changes over time. But it said those suspicions were confirmed on December 8 when it witnessed both botnet strains being distributed by the same Internet address at 93.95.112[.]59.
 
-SLSH is known for breaking into companies by phishing employees over the phone, and using the purloined access to steal sensitive internal data. In a January 30 blog post, Google’s security forensics firm Mandiant said SLSH’s most recent extortion attacks stem from incidents spanning early to mid-January 2026, when SLSH members pretended to be IT staff and called employees at targeted victim organizations claiming that the company was updating MFA settings.
+Public records show the Internet address range flagged by XLab is assigned to Lehi, Utah-based Resi Rack LLC. Resi Rack’s website bills the company as a “Premium Game Server Hosting Provider.” Meanwhile, Resi Rack’s ads on the Internet moneymaking forum BlackHatWorld refer to it as a “Premium Residential Proxy Hosting and Proxy Software Solutions Company.”
 
-“The threat actor directed the employees to victim-branded credential harvesting sites to capture their SSO credentials and MFA codes, and then registered their own device for MFA,” the blog post explained.
+Resi Rack co-founder Cassidy Hales told KrebsOnSecurity his company received a notification on December 10 about Kimwolf using their network “that detailed what was being done by one of our customers leasing our servers.”
 
-Victims often first learn of the breach when their brand name is uttered on whatever ephemeral new public Telegram group chat SLSH is using to threaten, extort and harass their prey. According to Nixon, the coordinated harassment on the SLSH Telegram channels is part of a well-orchestrated strategy to overwhelm the victim organization by manufacturing humiliation that pushes them over the threshold to pay.
+“When we received this email we took care of this issue immediately,” Hales wrote in response to an email requesting comment. “This is something we are very disappointed is now associated with our name and this was not the intention of our company whatsoever.”
 
-Nixon said multiple executives at targeted organizations have been subject to “swatting” attacks, wherein SLSH communicated a phony bomb threat or hostage situation at the target’s address in the hopes of eliciting a heavily armed police response at their home or place of work.
+The Resi Rack Internet address cited by XLab on December 8 came onto KrebsOnSecurity’s radar more than two weeks before that. Benjamin Brundage is founder of Synthient, a startup that tracks proxy services. In late October 2025, Brundage shared that the people selling various proxy services which benefitted from the Aisuru and Kimwolf botnets were doing so at a new Discord server called resi[.]to.
 
-“A big part of what they’re doing to victims is the psychological aspect of it, like harassing executives’ kids and threatening the board of the company,” Nixon told KrebsOnSecurity. “And while these victims are getting extortion demands, they’re simultaneously getting outreach from media outlets saying, ‘Hey, do you have any comments on the bad things we’re going to write about you.”
+On November 24, 2025, a member of the resi-dot-to Discord channel shares an IP address responsible for proxying traffic over Android TV streaming boxes infected by the Kimwolf botnet.
 
-In a blog post today, Unit 221B argues that no one should negotiate with SLSH because the group has demonstrated a willingness to extort victims based on promises that it has no intention to keep. Nixon points out that all of SLSH’s known members hail from The Com, shorthand for a constellation of cybercrime-focused Discord and Telegram communities which serve as a kind of distributed social network that facilitates instant collaboration.
+When KrebsOnSecurity joined the resi[.]to Discord channel in late October as a silent lurker, the server had fewer than 150 members, including “Shox” — the nickname used by Resi Rack’s co-founder Mr. Hales — and his business partner “Linus,” who did not respond to requests for comment.
 
-Nixon said Com-based extortion groups tend to instigate feuds and drama between group members, leading to lying, betrayals, credibility destroying behavior, backstabbing, and sabotaging each other.
+Other members of the resi[.]to Discord channel would periodically post new IP addresses that were responsible for proxying traffic over the Kimwolf botnet. As the screenshot from resi[.]to above shows, that Resi Rack Internet address flagged by XLab was used by Kimwolf to direct proxy traffic as far back as November 24, if not earlier. All told, Synthient said it tracked at least seven static Resi Rack IP addresses connected to Kimwolf proxy infrastructure between October and December 2025.
 
-“With this type of ongoing dysfunction, often compounding by substance abuse, these threat actors often aren’t able to act with the core goal in mind of completing a successful, strategic ransom operation,” Nixon wrote. “They continually lose control with outbursts that put their strategy and operational security at risk, which severely limits their ability to build a professional, scalable, and sophisticated criminal organization network for continued successful ransoms – unlike other, more tenured and professional criminal organizations focused on ransomware alone.”
+Neither of Resi Rack’s co-owners responded to follow-up questions. Both have been active in selling proxy services via Discord for nearly two years. According to a review of Discord messages indexed by the cyber intelligence firm Flashpoint, Shox and Linus spent much of 2024 selling static “ISP proxies” by routing various Internet address blocks at major U.S. Internet service providers.
 
-Intrusions from established ransomware groups typically center around encryption/decryption malware that mostly stays on the affected machine. In contrast, Nixon said, ransom from a Com group is often structured the same as violent sextortion schemes against minors, wherein members of The Com will steal damaging information, threaten to release it, and “promise” to delete it if the victim complies without any guarantee or technical proof point that they will keep their word. She writes:
+In February 2025, AT&T announced that effective July 31, 2025, it would no longer originate routes for network blocks that are not owned and managed by AT&T (other major ISPs have since made similar moves). Less than a month later, Shox and Linus told customers they would soon cease offering static ISP proxies as a result of these policy changes.
 
-A key component of SLSH’s efforts to convince victims to pay, Nixon said, involves manipulating the media into hyping the threat posed by this group. This approach also borrows a page from the playbook of sextortion attacks, she said, which encourages predators to keep targets continuously engaged and worrying about the consequences of non-compliance.
+Shox and Linux, talking about their decision to stop selling ISP proxies.
 
-“On days where SLSH had no substantial criminal ‘win’ to announce, they focused on announcing death threats and harassment to keep law enforcement, journalists, and cybercrime industry professionals focused on this group,” she said.
+The stated owner of the resi[.]to Discord server went by the abbreviated username “D.” That initial appears to be short for the hacker handle “Dort,” a name that was invoked frequently throughout these Discord chats.
 
-An excerpt from a sextortion tutorial from a Com-based Telegram channel. Image: Unit 221B.
+Dort’s profile on resi dot to.
 
-Nixon knows a thing or two about being threatened by SLSH: For the past several months, the group’s Telegram channels have been replete with threats of physical violence against her, against Yours Truly, and against other security researchers. These threats, she said, are just another way the group seeks to generate media attention and achieve a veneer of credibility, but they are useful as indicators of compromise because SLSH members tend to name drop and malign security researchers even in their communications with victims.
+This “Dort” nickname came up in KrebsOnSecurity’s recent conversations with “Forky,” a Brazilian man who acknowledged being involved in the marketing of the Aisuru botnet at its inception in late 2024. But Forky vehemently denied having anything to do with a series of massive and record-smashing DDoS attacks in the latter half of 2025 that were blamed on Aisuru, saying the botnet by that point had been taken over by rivals.
 
-“Watch for the following behaviors in their communications to you or their public statements,” Unit 221B’s advisory reads. “Repeated abusive mentions of Allison Nixon (or “A.N”), Unit 221B, or cybersecurity journalists—especially Brian Krebs—or any other cybersecurity employee, or cybersecurity company. Any threats to kill, or commit terrorism, or violence against internal employees, cybersecurity employees, investigators, and journalists.”
+Forky asserts that Dort is a resident of Canada and one of at least two individuals currently in control of the Aisuru/Kimwolf botnet. The other individual Forky named as an Aisuru/Kimwolf botmaster goes by the nickname “Snow.”
 
-Unit 221B says that while the pressure campaign during an extortion attempt may be traumatizing to employees, executives, and their family members, entering into drawn-out negotiations with SLSH incentivizes the group to increase the level of harm and risk, which could include the physical safety of employees and their families.
+On January 2 — just hours after our story on Kimwolf was published — the historical chat records on resi[.]to were erased without warning and replaced by a profanity-laced message for Synthient’s founder. Minutes after that, the entire server disappeared.
 
-“The breached data will never go back to the way it was, but we can assure you that the harassment will end,” Nixon said. “So, your decision to pay should be a separate issue from the harassment. We believe that when you separate these issues, you will objectively see that the best course of action to protect your interests, in both the short and long term, is to refuse payment.”
+Later that same day, several of the more active members of the now-defunct resi[.]to Discord server moved to a Telegram channel where they posted Brundage’s personal information, and generally complained about being unable to find reliable “bulletproof” hosting for their botnet.
+
+Hilariously, a user by the name “Richard Remington” briefly appeared in the group’s Telegram server to post a crude “Happy New Year” sketch that claims Dort and Snow are now in control of 3.5 million devices infected by Aisuru and/or Kimwolf. Richard Remington’s Telegram account has since been deleted, but it previously stated its owner operates a website that caters to DDoS-for-hire or “stresser” services seeking to test their firepower.
+
+BYTECONNECT, PLAINPROXIES, AND 3XK TECH
+
+Reports from both Synthient and XLab found that Kimwolf was used to deploy programs that turned infected systems into Internet traffic relays for multiple residential proxy services. Among those was a component that installed a software development kit (SDK) called ByteConnect, which is distributed by a provider known as Plainproxies.
+
+ByteConnect says it specializes in “monetizing apps ethically and free,” while Plainproxies advertises the ability to provide content scraping companies with “unlimited” proxy pools. However, Synthient said that upon connecting to ByteConnect’s SDK they instead observed a mass influx of credential-stuffing attacks targeting email servers and popular online websites.
+
+A search on LinkedIn finds the CEO of Plainproxies is Friedrich Kraft, whose resume says he is co-founder of ByteConnect Ltd. Public Internet routing records show Mr. Kraft also operates a hosting firm in Germany called 3XK Tech GmbH. Mr. Kraft did not respond to repeated requests for an interview.
+
+In July 2025, Cloudflare reported that 3XK Tech (a.k.a. Drei-K-Tech) had become the Internet’s largest source of application-layer DDoS attacks. In November 2025, the security firm GreyNoise Intelligence found that Internet addresses on 3XK Tech were responsible for roughly three-quarters of the Internet scanning being done at the time for a newly discovered and critical vulnerability in security products made by Palo Alto Networks.
+
+Source: Cloudflare’s Q2 2025 DDoS threat report.
+
+LinkedIn has a profile for another Plainproxies employee, Julia Levi, who is listed as co-founder of ByteConnect. Ms. Levi did not respond to requests for comment. Her resume says she previously worked for two major proxy providers: Netnut Proxy Network, and Bright Data.
+
+Synthient likewise said Plainproxies ignored their outreach, noting that the Byteconnect SDK continues to remain active on devices compromised by Kimwolf.
+
+A post from the LinkedIn page of Plainproxies Chief Revenue Officer Julia Levi, explaining how the residential proxy business works.
+
+Synthient’s January 2 report said another proxy provider heavily involved in the sale of Kimwolf proxies was Maskify, which currently advertises on multiple cybercrime forums that it has more than six million residential Internet addresses for rent.
+
+Maskify prices its service at a rate of 30 cents per gigabyte of data relayed through their proxies. According to Synthient, that price range is insanely low and is far cheaper than any other proxy provider in business today.
+
+“Synthient’s Research Team received screenshots from other proxy providers showing key Kimwolf actors attempting to offload proxy bandwidth in exchange for upfront cash,” the Synthient report noted. “This approach likely helped fuel early development, with associated members spending earnings on infrastructure and outsourced development tasks. Please note that resellers know precisely what they are selling; proxies at these prices are not ethically sourced.”
+
+Maskify did not respond to requests for comment.
+
+The Maskify website. Image: Synthient.
+
+Hours after our first Kimwolf story was published last week, the resi[.]to Discord server vanished, Synthient’s website was hit with a DDoS attack, and the Kimwolf botmasters took to doxing Brundage via their botnet.
+
+The harassing messages appeared as text records uploaded to the Ethereum Name Service (ENS), a distributed system for supporting smart contracts deployed on the Ethereum blockchain. As documented by XLab, in mid-December the Kimwolf operators upgraded their infrastructure and began using ENS to better withstand the near-constant takedown efforts targeting the botnet’s control servers.
+
+An ENS record used by the Kimwolf operators taunts security firms trying to take down the botnet’s control servers. Image: XLab.
+
+By telling infected systems to seek out the Kimwolf control servers via ENS, even if the servers that the botmasters use to control the botnet are taken down the attacker only needs to update the ENS text record to reflect the new Internet address of the control server, and the infected devices will immediately know where to look for further instructions.
+
+“This channel itself relies on the decentralized nature of blockchain, unregulated by Ethereum or other blockchain operators, and cannot be blocked,” XLab wrote.
+
+The text records included in Kimwolf’s ENS instructions can also feature short messages, such as those that carried Brundage’s personal information. Other ENS text records associated with Kimwolf offered some sage advice: “If flagged, we encourage the TV box to be destroyed.”
+
+An ENS record tied to the Kimwolf botnet advises, “If flagged, we encourage the TV box to be destroyed.”
+
+Both Synthient and XLabs say Kimwolf targets a vast number of Android TV streaming box models, all of which have zero security protections, and many of which ship with proxy malware built in. Generally speaking, if you can send a data packet to one of these devices you can also seize administrative control over it.
+
+If you own a TV box that matches one of these model names and/or numbers, please just rip it out of your network. If you encounter one of these devices on the network of a family member or friend, send them a link to this story (or to our January 2 story on Kimwolf) and explain that it’s not worth the potential hassle and harm created by keeping them plugged in.
 
 (XXXXXXX, AÇIK - krebsonsecurity.com, 13.02.2026)
 
