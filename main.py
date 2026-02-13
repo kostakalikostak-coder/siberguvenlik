@@ -172,7 +172,7 @@ class HaberSistemi:
                 
                 prompt = get_claude_prompt(txt_content)
                 
-                model = genai.GenerativeModel('gemini-1.5-flash-latest')
+                model = genai.GenerativeModel('gemini-flash-latest')
                 
                 response = model.generate_content(
                     prompt,
