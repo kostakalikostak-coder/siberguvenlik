@@ -3,7 +3,93 @@
 📅 13 FEBRUARY 2026 - SİBER GÜVENLİK HABERLERİ (HAM RSS)
 ================================================================================
 
-[1] The Hacker News - UAT-9921 Deploys VoidLink Malware to Target Technology and Financial Sectors
+[1] The Hacker News - Google Ties Suspected Russian Actor to CANFAIL Malware Attacks on Ukrainian Orgs
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 13 Feb 2026 22:57:00 +0530
+Link: https://thehackernews.com/2026/02/google-ties-suspected-russian-actor-to.html
+
+[TAM METİN - 343 kelime]
+A previously undocumented threat actor has been attributed to attacks targeting Ukrainian organizations with malware known as CANFAIL.
+
+Google Threat Intelligence Group (GTIG) described the hack group as possibly affiliated with Russian intelligence services. The threat actor is assessed to have targeted defense, military, government, and energy organizations within the Ukrainian regional and national governments.
+
+However, the group has also exhibited growing interest in aerospace organizations, manufacturing companies with military and drone ties, nuclear and chemical research organizations, and international organizations involved in conflict monitoring and humanitarian aid in Ukraine, GTIG added.
+
+"Despite being less sophisticated and resourced than other Russian threat groups, this actor recently began to overcome some technical limitations using LLMs [large language models]," GTIG said.
+
+"Through prompting, they conduct reconnaissance, create lures for social engineering, and seek answers to basic technical questions for post-compromise activity and C2 infrastructure setup."
+
+Recent phishing campaigns have involved the threat actor impersonating legitimate national and local Ukrainian energy organizations to obtain unauthorized access to organizational and personal email accounts.
+
+The group is also said to have masqueraded as a Romanian energy company that works with customers in Ukraine, in addition to targeting a Romanian firm and conducting reconnaissance on Moldovan organizations.
+
+To enable its operations, the threat actor generates email address lists tailored to specific regions and industries based on their research. The attack chains seemingly contain LLM-generated lures and embed Google Drive links pointing to a RAR archive containing CANFAIL malware.
+
+Typically disguised with a double extension to pass off as a PDF document (*.pdf.js), CANFAIL is an obfuscated JavaScript malware that's designed to execute a PowerShell script that, in turn, downloads and executes a memory-only PowerShell dropper. In parallel, it displays a fake "error" message to the victim.
+
+Google said the threat actor is also linked to a campaign called PhantomCaptcha that was disclosed by SentinelOne SentinelLABS in October 2025 as targeting organizations associated with Ukraine's war relief efforts through phishing emails that direct recipients to fake pages hosting ClickFix-style instructions to activate the infection sequence and deliver a WebSocket-based trojan.
+
+(XXXXXXX, AÇIK - thehackernews.com, 13.02.2026)
+
+================================================================================
+
+[2] The Hacker News - Google Links China, Iran, Russia, North Korea to Coordinated Defense Sector Cyber Operations
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 13 Feb 2026 21:53:00 +0530
+Link: https://thehackernews.com/2026/02/google-links-china-iran-russia-north.html
+
+[TAM METİN - 891 kelime]
+Several state-sponsored actors, hacktivist entities, and criminal groups from China, Iran, North Korea, and Russia have trained their sights on the defense industrial base (DIB) sector, according to findings from Google Threat Intelligence Group (GTIG).
+
+The tech giant's threat intelligence division said the adversarial targeting of the sector is centered around four key themes: striking defense entities deploying technologies on the battlefield in the Russia-Ukraine War, directly approaching employees and exploitation of the hiring process by North Korean and Iranian actors, use of edge devices and appliances as initial access pathways for China-nexus groups, and supply chain risk stemming from the breach of the manufacturing sector.
+
+"Many of the chief state-sponsors of cyber espionage and hacktivist actors have shown an interest in autonomous vehicles and drones, as these platforms play an increasing role in modern warfare," GTIG said. "Further, the 'evasion of detection' trend [...] continues, as actors focus on single endpoints and individuals, or carry out intrusions in a manner that seeks to avoid endpoint detection and response (EDR) tools altogether."
+
+Some of the notable threat actors that have participated in the activity include -
+
+APT44 (aka Sandworm) has attempted to exfiltrate information from Telegram and Signal encrypted messaging applications, likely after securing physical access to devices obtained during on-ground operations in Ukraine. This includes the use of a Windows batch script called WAVESIGN to decrypt and exfiltrate data from Signal's desktop app.
+
+TEMP.Vermin (aka UAC-0020) has used malware like VERMONSTER, SPECTRUM (aka SPECTR), and FIRMACHAGENT using lure content revolving around drone production and development, anti-drone defense systems, and video surveillance security systems.
+
+UNC5125 (aka FlyingYeti and UAC-0149) has conducted highly targeted campaigns focusing on frontline drone units. It has used a questionnaire hosted on Google Forms to conduct reconnaissance against prospective drone operators, and distributed via messaging apps malware like MESSYFORK (aka COOKBOX) to an Unmanned Aerial Vehicle (UAV) operator based in Ukraine.
+
+UNC5125 is also said to have leveraged an Android malware called GREYBATTLE, a bespoke version of the Hydra banking trojan, to steal credentials and data by distributing it via a website spoofing a Ukrainian military artificial intelligence company.
+
+UNC5792 (aka UAC-0195) has exploited secure messaging apps to target Ukrainian military and government entities, as well as individuals and organizations in Moldova, Georgia, France, and the U.S. The threat actor is notable for weaponizing Signal's device linking feature to hijack victim accounts.
+
+UNC5976, a Russian espionage cluster that has conducted a phishing campaign delivering malicious RDP connection files that are configured to communicate with actor-controlled domains mimicking a Ukrainian telecommunications company.
+
+UNC6096, a Russian espionage cluster that has conducted malware delivery operations via WhatsApp using DELTA-related themes to deliver a malicious LNK shortcut within an archive file that downloads a secondary payload. Attacks aimed at Android devices have been found to deliver malware called GALLGRAB that collects locally stored files, contact information, and potentially encrypted user data from specialized battlefield applications.
+
+UNC5114, a suspected Russian espionage cluster that has delivered a variant of an off-the-shelf Android malware called CraxsRAT by masquerading it as an update for Kropyva, a combat control system used in Ukraine.
+
+APT45 (aka Andariel) has targeted South Korean defense, semiconductor, and automotive manufacturing entities with SmallTiger malware.
+
+APT43 (aka Kimsuky) has likely leveraged infrastructure mimicking German and U.S. defense-related entities to deploy a backdoor called THINWAVE.
+
+UNC2970 (aka Lazarus Group) has conducted the Operation Dream Job campaign to target aerospace, defense, and energy sectors, in addition to relying on artificial intelligence (AI) tools to conduct reconnaissance on its targets.
+
+UNC1549 (aka Nimbus Manticore) has targeted aerospace, aviation, and defense industries in the Middle East with malware families like MINIBIKE, TWOSTROKE, DEEPROOT, and CRASHPAD. The group is known to orchestrate Lazarus Group-style Dream Job campaigns to trick users into executing malware or giving up credentials under the guise of legitimate employment opportunities.
+
+UNC6446, an Iranian-nexus threat actor that has used resume builder and personality test applications to distribute custom malware to targets in the aerospace and defense vertical across the U.S. and the Middle East.
+
+APT5 (aka Keyhole Panda and Mulberry Typhoon) has targeted current and former employees of major aerospace and defense contractors with tailored phishing lures.
+
+UNC3236 (aka Volt Typhoon) has conducted reconnaissance activity against publicly hosted login portals of North American military and defense contractors, while using the ARCMAZE obfuscation framework to conceal its origin.
+
+UNC6508, a China-nexus threat cluster that targeted a U.S.-based research institution in late 2023 by leveraging a REDCap exploit to drop a custom malware named INFINITERED that's capable of persistent remote access and credential theft after intercepting the application's software upgrade process.
+
+In addition, Google said it has also observed China-nexus threat groups utilizing operational relay box (ORB) networks for reconnaissance against defense industrial targets, thereby complicating detection and attribution efforts.
+
+"While specific risks vary by geographic footprint and sub-sector specialization, the broader trend is clear: the defense industrial base is under a state of constant, multi-vector siege," Google said. "Financially motivated actors carry out extortion against this sector and the broader manufacturing base, like many of the other verticals they target for monetary gain."
+
+"The campaigns against defense contractors in Ukraine, threats to or exploitation of defense personnel, the persistent volume of intrusions by China-nexus actors, and the hack, leak, and disruption of the manufacturing base are some of the leading threats to this industry today."
+
+(XXXXXXX, AÇIK - thehackernews.com, 13.02.2026)
+
+================================================================================
+
+[3] The Hacker News - UAT-9921 Deploys VoidLink Malware to Target Technology and Financial Sectors
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 13 Feb 2026 20:53:00 +0530
 Link: https://thehackernews.com/2026/02/uat-9921-deploys-voidlink-malware-to.html
@@ -38,216 +124,6 @@ Another defining trait of VoidLink is its auditability and the existence of a ro
 What's more, there are signs that there exists a main implant that has been compiled for Windows and can load plugins via a technique called DLL side-loading.
 
 "This is a near-production-ready proof of concept," Talos said. "VoidLink is positioned to become an even more powerful framework based on its capabilities and flexibility."
-
-(XXXXXXX, AÇIK - thehackernews.com, 13.02.2026)
-
-================================================================================
-
-[2] The Hacker News - Malicious Chrome Extensions Caught Stealing Business Data, Emails, and Browsing History
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Fri, 13 Feb 2026 16:55:00 +0530
-Link: https://thehackernews.com/2026/02/malicious-chrome-extensions-caught.html
-
-[TAM METİN - 1367 kelime]
-Cybersecurity researchers have discovered a malicious Google Chrome extension that's designed to steal data associated with Meta Business Suite and Facebook Business Manager.
-
-The extension, named CL Suite by @CLMasters (ID: jkphinfhmfkckkcnifhjiplhfoiefffl), is marketed as a way to scrape Meta Business Suite data, remove verification pop-ups, and generate two-factor authentication (2FA) codes. The extension has 33 users as of writing. It was first uploaded to the Chrome Web Store on March 1, 2025.
-
-However, the browser add-on also exfiltrates TOTP codes for Facebook and Meta Business accounts, Business Manager contact lists, and analytics data to infrastructure controlled by the threat actor, Socket said.
-
-"The extension requests broad access to meta.com and facebook.com and claims in its privacy policy that 2FA secrets and Business Manager data remain local," security researcher Kirill Boychenko said.
-
-"In practice, the code transmits TOTP seeds and current one-time security codes, Meta Business 'People' CSV exports, and Business Manager analytics data to a backend at getauth[.]pro, with an option to forward the same payloads to a Telegram channel controlled by the threat actor."
-
-By targeting users of Meta Business Suite and Facebook Business Manager, the threat actor behind the operation has leveraged the extension to conduct data collection and exfiltration without users' knowledge or consent.
-
-While the extension does not have capabilities to steal password-related information, the attacker could obtain such information beforehand from other sources, such as infostealer logs or credential dumps, and then use the stolen codes to gain unauthorized access to victims' accounts.
-
-The full scope of the malicious add-on's capabilities is listed below -
-
-Steal TOTP seed (a unique, alphanumeric code that's used to generate time-based one-time passwords) and 2FA code
-
-Target Business Manager "People" view by navigating to facebook[.]com and meta[.]com and build a CSV file with names, email addresses, roles and permissions, and their status and access details.
-
-Enumerate Business Manager-level entities and their linked assets and build a CSV file of Business Manager IDs and names, attached ad accounts, connected pages and assets, and billing and payment configuration details.
-
-Socket warned that despite the low number of installs, the extension gives the threat actor enough information to identify high-value targets and mount follow-on attacks.
-
-"CL Suite by @CLMasters shows how a narrow browser extension can repackage data scraping as a 'tool' for Meta Business Suite and Facebook Business Manager," Boychenko said.
-
-"Its people extraction, Business Manager analytics, popup suppression, and in-browser 2FA generation are not neutral productivity features, they are purpose-built scrapers for high-value Meta surfaces that collect contact lists, access metadata, and 2FA material straight from authenticated pages."
-
-Chrome Extensions Hijack VKontakte Accounts
-
-The disclosure comes as Koi Security found that about 500,000 VKontakte users have had their accounts silently hijacked through Chrome extensions masquerading as VK customization tools. The large-scale campaign has been codenamed VK Styles.
-
-The malware embedded in the extensions is designed to engage in active account manipulation by automatically subscribing users to the attacker's VK groups, resetting account settings every 30 days to override user preferences, manipulating Cross-Site Request Forgery (CSRF) tokens to bypass VK's security protections, and maintaining persistent control.
-
-The activity has been traced to a threat actor operating under the GitHub username 2vk, who has relied on VK's own social network to distribute malicious payloads and build a follower base through forced subscriptions. The names of the extensions are listed below -
-
-VK Styles - Themes for vk.com (ID: ceibjdigmfbbgcpkkdpmjokkokklodmc)
-
-VK Music - audio saver (ID: mflibpdjoodmoppignjhciadahapkoch)
-
-Music Downloader - VKsaver (ID: lgakkahjfibfgmacigibnhcgepajgfdb)
-
-vksaver - music saver vk (ID: bndkfmmbidllaiccmpnbdonijmicaafn)
-
-VKfeed - Download Music and Video from VK (ID: pcdgkgbadeggbnodegejccjffnoakcoh)
-
-One of the defining traits of the campaign is the use of a VK profile's ("vk[.]com/m0nda") HTML metadata tags as a dead drop resolver to conceal the next-stage payload URLs and, therefore, evade detection. The next-stage payload is hosted in a public repository named "-" that's associated with 2vk. Present in the payload is obfuscated JavaScript that's injected into every VK page the victim visits.
-
-The repository is still accessible as of writing, with the file, simply named "C," receiving a total of 17 commits between June 2025 and January 2026, as the operator refined and added new functionality.
-
-"Each commit shows deliberate refinement," security researcher Ariel Cohen said. "This isn't sloppy malware - it's a maintained software project with version control, testing, and iterative improvements."
-
-VK Styles has primarily affected Russian-speaking users, who are VK's main demographic, as well as users across Eastern Europe, Central Asia, and Russian diaspora communities globally. The campaign is assessed to be active since at least June 22, 2025, when the initial version of the payload was pushed to the "-" repository.
-
-Fake AI Chrome Extensions Steal Credentials, Emails
-
-The findings also coincide with the discovery of another coordinated campaign dubbed AiFrame, where a cluster of 32 browser add-ons advertised as artificial intelligence (AI) assistants for summarization, chat, writing, and Gmail assistance are being used to siphon sensitive data. These extensions have been collectively installed by more than 260,000 users.
-
-"While these tools appear legitimate on the surface, they hide a dangerous architecture: instead of implementing core functionality locally, they embed remote, server-controlled interfaces inside extension-controlled surfaces and act as privileged proxies, granting remote infrastructure access to sensitive browser capabilities," LayerX researcher Natalie Zargarov said.
-
-The names of the malicious extensions are as follows -
-
-AI Assistant (ID: nlhpidbjmmffhoogcennoiopekbiglbp)
-
-Llama (ID: gcfianbpjcfkafpiadmheejkokcmdkjl)
-
-Gemini AI Sidebar (ID: fppbiomdkfbhgjjdmojlogeceejinadg)
-
-AI Sidebar (ID: djhjckkfgancelbmgcamjimgphaphjdl)
-
-ChatGPT Sidebar (ID: llojfncgbabajmdglnkbhmiebiinohek)
-
-AI Sidebar (ID: gghdfkafnhfpaooiolhncejnlgglhkhe)
-
-Grok (ID: cgmmcoandmabammnhfnjcakdeejbfimn)
-
-Asking Chat Gpt (ID: phiphcloddhmndjbdedgfbglhpkjcffh)
-
-ChatGBT (ID: pgfibniplgcnccdnkhblpmmlfodijppg)
-
-Chat Bot GPT (ID: nkgbfengofophpmonladgaldioelckbe)
-
-Grok Chatbot (ID: gcdfailafdfjbailcdcbjmeginhncjkb)
-
-Chat With Gemini (ID: ebmmjmakencgmgoijdfnbailknaaiffh)
-
-XAI (ID: baonbjckakcpgliaafcodddkoednpjgf)
-
-Google Gemini (ID: fdlagfnfaheppaigholhoojabfaapnhb)
-
-Ask Gemini (ID: gnaekhndaddbimfllbgmecjijbbfpabc)
-
-AI Letter Generator (ID: hgnjolbjpjmhepcbjgeeallnamkjnfgi)
-
-AI Message Generator (ID: lodlcpnbppgipaimgbjgniokjcnpiiad)
-
-AI Translator (ID: cmpmhhjahlioglkleiofbjodhhiejhei)
-
-AI For Translation (ID: bilfflcophfehljhpnklmcelkoiffapb)
-
-AI Cover Letter Generator (ID: cicjlpmjmimeoempffghfglndokjihhn)
-
-AI Image Generator Chat GPT (ID: ckneindgfbjnbbiggcmnjeofelhflhaj)
-
-Ai Wallpaper Generator (ID: dbclhjpifdfkofnmjfpheiondafpkoed)
-
-Ai Picture Generator (ID: ecikmpoikkcelnakpgaeplcjoickgacj)
-
-DeepSeek Download (ID: kepibgehhljlecgaeihhnmibnmikbnga)
-
-AI Email Writer (ID: ckicoadchmmndbakbokhapncehanaeni)
-
-Email Generator AI (ID: fnjinbdmidgjkpmlihcginjipjaoapol)
-
-DeepSeek Chat (ID: gohgeedemmaohocbaccllpkabadoogpl)
-
-ChatGPT Picture Generator (ID: flnecpdpbhdblkpnegekobahlijbmfok)
-
-ChatGPT Translate (ID: acaeafediijmccnjlokgcdiojiljfpbe)
-
-AI GPT (ID: kblengdlefjpjkekanpoidgoghdngdgl)
-
-ChatGPT Translation (ID: idhknpoceajhnjokpnbicildeoligdgh)
-
-Chat GPT for Gmail (ID: fpmkabpaklbhbhegegapfkenkmpipick)
-
-Once installed, these extensions render a full-screen iframe overlay pointing to a remote domain ("claude.tapnetic[.]pro"), allowing the attackers to remotely introduce new capabilities without requiring a Chrome Web Store update. When instructed by the iframe, the add-ons query the active browser tab and invoke a content script to extract readable article content using Mozilla's Readability library.
-
-The malware also supports the capability to start speech recognition and exfiltrate the resulting transcript to the remote page. What's more, a smaller set of the extensions contain functionality to specifically target Gmail by reading visible email content directly from the document object model (DOM) when a victim visits mail.google[.]com.
-
-"When Gmail-related features such as AI-assisted replies or summaries are invoked, the extracted email content is passed into the extension's logic and transmitted to third-party backend infrastructure controlled by the extension operator," LayerX said. "As a result, email message text and related contextual data may be sent off-device, outside of Gmail’s security boundary, to remote servers."
-
-287 Chrome Extensions Exfiltrate Browsing History
-
-The developments show how web browser extensions are increasingly being abused by bad actors to harvest and exfiltrate sensitive data by passing them off as seemingly legitimate tools and utilities.
-
-A report published by Q Continuum last week found a huge collection of 287 Chrome extensions that exfiltrate browsing history to data brokers. These extensions have 37.4 million installations, representing roughly 1% of the global Chrome userbase.
-
-"It was shown in the past that Chrome extensions are used to exfiltrate user browser history that is then collected by data brokers such as Similarweb and Alexa," the researcher said.
-
-Given the risks involved, users are recommended to adopt a minimalist approach by only installing necessary, well-reviewed tools from official stores. It's also essential to periodically audit installed extensions for any signs of malicious behavior or excessive permission requests.
-
-Other ways that users and organizations can ensure greater security include using separate browser profiles for sensitive tasks and implementing extension allowlisting to block those that are malicious or non-compliant.
-
-(XXXXXXX, AÇIK - thehackernews.com, 13.02.2026)
-
-================================================================================
-
-[3] The Hacker News - npm’s Update to Harden Their Supply Chain, and Points to Consider
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Fri, 13 Feb 2026 16:15:00 +0530
-Link: https://thehackernews.com/2026/02/npms-update-to-harden-their-supply.html
-
-[TAM METİN - 833 kelime]
-In December 2025, in response to the Sha1-Hulud incident, npm completed a major authentication overhaul intended to reduce supply-chain attacks. While the overhaul is a solid step forward, the changes don’t make npm projects immune from supply-chain attacks. npm is still susceptible to malware attacks – here’s what you need to know for a safer Node community.
-
-Let’s start with the original problem
-
-Historically, npm relied on classic tokens: long-lived, broadly scoped credentials that could persist indefinitely. If stolen, attackers could directly publish malicious versions to the author’s packages (no publicly verifiable source code needed). This made npm a prime vector for supply-chain attacks. Over time, numerous real-world incidents demonstrated this point. Shai-Hulud, Sha1-Hulud, and chalk/debug are examples of recent, notable attacks.
-
-To address this, npm made the following changes:
-
-npm revoked all classic tokens and defaulted to session-based tokens instead. The npm team also improved token management. Interactive workflows now use short-lived session tokens (typically two hours) obtained via npm login, which defaults to MFA for publishing.
-
-The npm team also encourages OIDC Trusted Publishing, in which CI systems obtain short-lived, per-run credentials rather than storing secrets at rest.
-
-In combination, these practices improve security. They ensure credentials expire quickly and require a second factor during sensitive operations.
-
-Two important issues remain
-
-First, people need to remember that the original attack on tools like ChalkJS was a successful MFA phishing attempt on npm’s console. If you look at the original email attached below, you can see it was an MFA-focused phishing email (nothing like trying to do the right thing and still getting burned). The campaign tricked the maintainer into sharing both the user login and one-time password. This means in the future, similar emails could get short-lived tokens, which still give attackers enough time to upload malware (since that would only take minutes).
-
-Second, MFA on publish is optional. Developers can still create 90-day tokens with MFA bypass enabled in the console, which are extremely similar to the classic tokens from before.
-
-These tokens allow you to read and write to a token author’s maintained packages. This means that if bad actors gain access to a maintainer’s console with these token settings, they can publish new, malicious packages (and versions) on that author’s behalf. This circles us back to the original issue with npm before they adjusted their credential policies.
-
-To be clear, more developers using MFA on publish is good news, and future attacks should be fewer and smaller. However, making OIDC and MFA on-publish optional still leaves the core issue unresolved.
-
-In conclusion, if (1) MFA phishing attempts to npm’s console still work and (2) access to the console equals access to publish new packages/versions, then developers need to be aware of the supply-chain risks that still exist.
-
-In the spirit of open source security, here are three recommendations that we hope GitHub and npm will consider in the future.
-
-Ideally, they continue to push for the ubiquity of OIDC in the long term. OIDC is very hard to compromise and would almost completely erase the issues surrounding supply-chain attacks.
-
-More realistically, enforcing MFA for local package uploads (either via an email code or a one-time password) would further reduce the blast radius of worms like Shai-Hulud. In other words, it would be an improvement to not allow custom tokens that bypass MFA.
-
-At a minimum, it would be nice to add metadata to package releases, so developers can take precautions and avoid packages (or maintainers) who do not take supply chain security measures.
-
-In short, npm has taken an important step forward by eliminating permanent tokens and improving defaults. Until short-lived, identity-bound credentials become the norm — and MFA bypass is no longer required for automation — supply-chain risk from compromised build systems remains materially present.
-
-This entire time, we’ve been talking about supply-chain attacks by uploading packages to npm on a maintainer’s behalf. If we could build every npm package from verifiable upstream source code rather than downloading the artifact from npm, we’d be better off. That’s exactly what Chainguard does for its customers with Chainguard Libraries for JavaScript.
-
-We’ve looked at the public database for compromised packages across npm and discovered that for 98.5% of malicious packages, the malware was not present in the upstream source code (just the published artifact). This means an approach of building from source would reduce your attack surface by some 98.5%, based on past data, because Chainguard’s JavaScript repository would never publish the malicious versions available on npm.
-
-In an ideal world, customers are most secure when they use Chainguard Libraries and apply the recommendations above. Per the “Swiss cheese model of security,” all of these features are layers of additive security measures, and companies would be best off using a combination of them.
-
-If you’d like to learn more about Chainguard Libraries for JavaScript, reach out to our team.
-
-Note: This article was thoughtfully written and contributed for our audience by Adam La Morre, Senior Solutions Engineer at Chainguard.
 
 (XXXXXXX, AÇIK - thehackernews.com, 13.02.2026)
 
