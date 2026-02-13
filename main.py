@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 from xml.etree import ElementTree as ET
 from urllib.parse import urlparse
-from anthropic import Anthropic
+import google.generativeai as genai
 from src.config import *
 
 class HaberSistemi:
@@ -156,12 +156,13 @@ class HaberSistemi:
         return txt
     
     def create_html(self, txt_content):
-        """Claude ile HTML oluştur"""
-        print("🤖 Claude API...")
-        if not ANTHROPIC_API_KEY:
-            raise ValueError("❌ ANTHROPIC_API_KEY yok!")
+        """Gemini ile HTML oluştur"""
+        print("🤖 Gemini API...")
+        if not GEMINI_API_KEY:
+            raise ValueError("❌ GEMINI_API_KEY yok!")
         
-        client = Anthropic(api_key=ANTHROPIC_API_KEY)
+        genai.configure(api_key=GEMINI_API_KEY)
+        model = genai.GenerativeModel('gemini-1.5-flash')
         prompt = get_claude_prompt(txt_content)
         
         # Retry mekanizması (3 deneme)
@@ -169,12 +170,14 @@ class HaberSistemi:
         for attempt in range(max_retries):
             try:
                 print(f"   Deneme {attempt + 1}/{max_retries}...")
-                response = client.messages.create(
-                    model="claude-sonnet-4-20250514",
-                    max_tokens=8000,
-                    messages=[{"role": "user", "content": prompt}],
-                    timeout=60.0
+                response = model.generate_content(
+                    prompt,
+                    generation_config=genai.types.GenerationConfig(
+                        max_output_tokens=8000,
+                        temperature=0.7,
+                    )
                 )
+                html = response.text
                 break  # Başarılı, döngüden çık
             except Exception as e:
                 print(f"   ⚠️  Hata: {e}")
@@ -186,13 +189,13 @@ class HaberSistemi:
                     print(f"   ❌ {max_retries} deneme başarısız, fallback HTML...")
                     return self._create_fallback_html(txt_content)
         
-        html = response.content[0].text
+        # HTML temizle
         if html.startswith('```html'): html = html[7:]
         if html.startswith('```'): html = html[3:]
         if html.endswith('```'): html = html[:-3]
         html = html.strip()
         
-        print(f"✅ {response.usage.input_tokens} → {response.usage.output_tokens} tokens")
+        print(f"✅ HTML oluşturuldu ({len(html)} karakter)")
         
         # Kaydet
         os.makedirs("docs/raporlar", exist_ok=True)
@@ -231,7 +234,7 @@ class HaberSistemi:
     <div class="header">
         <h1>🔒 Siber Güvenlik Günlük Raporu</h1>
         <p>{now.strftime('%d %B %Y %A')}</p>
-        <p>⚠️ Claude API bağlantı hatası - TXT içeriği gösteriliyor</p>
+        <p>⚠️ Gemini API bağlantı hatası - TXT içeriği gösteriliyor</p>
     </div>
     <div class="content">{txt_content}</div>
 </body>
