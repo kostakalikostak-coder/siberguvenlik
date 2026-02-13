@@ -55,7 +55,7 @@ FORMAT:
 1. GÜNLÜK ÖZET (en üstte):
    Başlık: "{now.strftime('%d.%m.%Y')} Siber Güvenlik Haber Özetleri"
     Başlık: "Yönetici Özeti"
-   Özetlediğin her ahber için 1 cümle, yönetici özeti tarzı, NORMAL cümle (sadece ilk harf büyük), maddeler halinde
+   O günkü EN ÖNEMLİ HABERLER için 1'er cümle, toplam 10 cümle, yönetici özeti tarzı, NORMAL cümle (sadece ilk harf büyük), maddeler halinde
 
 TASARIM KURALLARI:
 - Ana başlık: Merkeze hizalı, büyük ve belirgin, alt çizgi yok
@@ -76,7 +76,7 @@ TASARIM KURALLARI:
      DOĞRU:  <b>Microsoft Exchange'de Kritik Güvenlik Açığının Tespit Edilmesi</b>
      DOĞRU:  <b>CVE-2024-1234'ün 100 Bin Sunucuyu Etkilemesi</b>
    
-   • ÖZET PARAGRAF: Normal cümle yapısı, resmi Türkçe, 150 kelime max, 5N1K dahil
+   • ÖZET PARAGRAF: Normal cümle yapısı, resmi Türkçe, 120 kelime min, 150 kelime max, 5N1K dahil
      Sadece cümle başları ve özel isimler büyük
    
    • KAYNAK: <b>(XXXXXXX, AÇIK - domain.com, {now.strftime('%d.%m.%Y')})</b>
