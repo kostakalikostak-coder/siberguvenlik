@@ -54,7 +54,9 @@ KRİTİK DİL KURALI - RESMİ TÜRKÇE:
 ANTİ-HALÜSİNASYON:
 - SADECE verilen metni kullan
 - TAHMİN YAPMA, VARSAYIMDA BULUNMA, KISALTMA YAPMA
-- TÜM HABERLERİ YAZ! Asla yarıda kesme!
+- ZORUNLU: VERİLEN TÜM HABERLERİ YAZ!
+- ASLA YARIDA KESME! SON HABERE KADAR DEVAM ET!
+- Haberleri numaralandır: [1], [2], [3]... [SON]
 
 FORMAT:
 1. GÜNLÜK ÖZET (en üstte):
@@ -269,15 +271,21 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
 
 BU ŞABLONU KULLANARAK:
 - [TARİH] yerine tarihi yaz
-- [ÖZET MADDELER BURAYA] yerine maddeler halinde özeti yaz
-- [HABERLER BURAYA] yerine her haberi şu formatta ekle:
+- [ÖZET MADDELER BURAYA] yerine her haber için 1 madde yaz (TÜM HABERLER!)
+- [HABERLER BURAYA] yerine TÜM HABERLERİ şu formatta ekle:
   <div class="news-item">
       <div class="news-title"><b>Başlık</b></div>
       <p class="news-content">Özet paragraf...</p>
-      <p class="source"><b>(KAYNAK)</b></p>
+      <p class="source"><b>(KAYNAK + LİNK)</b></p>
   </div>
 
 NOT: Arşiv linkleri otomatik eklenecek, sen sadece </body>'den önce bitir.
+
+KRİTİK UYARI: 
+🚨 AŞAĞIDA VERİLEN TÜM HABERLERİ YAZ! 
+🚨 İLK HABERDEN SON HABERE KADAR HEPSİNİ EKLE!
+🚨 YARIDA KESERSEN HATA OLUR!
+🚨 Her haberi kontrol et: [1], [2], [3]... son numara
 
 ═══════════════════════════════════════════════════════════
 
@@ -286,4 +294,4 @@ HABERLER:
 
 ═══════════════════════════════════════════════════════════
 
-SADECE yukarıdaki şablonu doldurarak temiz HTML döndür (hiç açıklama ekleme)"""
+ZORUNLU: Yukarıdaki TÜM haberleri HTML'e ekle! Hiçbirini atlama!"""
