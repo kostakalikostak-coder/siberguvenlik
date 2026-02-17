@@ -63,19 +63,25 @@ FORMAT:
    Başlık: "{now.strftime('%d.%m.%Y')} Siber Güvenlik Haber Özetleri"
    Başlık: "Yönetici Özeti"
    
-   Düz paragraf yazı - Her haber için 1 cümle özet
+   Düz paragraf yazı - Her haber için 1 tam cümle özet
    Her özet cümlesi, sayfadaki ilgili habere link olacak
    
-   ÖRNEK FORMAT:
-   <p><a href="#haber-1">Microsoft Exchange'de tespit edilen CVE-2024-1234 güvenlik açığının 100 bin sunucuyu etkilemesi.</a> <a href="#haber-2">LockBit 4.0 fidye yazılımının sağlık sektörünü hedef alması.</a> <a href="#haber-3">...</a></p>
+   ZORUNLU FORMAT:
+   <p><a href="#haber-1">Microsoft Exchange'de tespit edilen CVE-2024-1234 güvenlik açığının 100 bin sunucuyu etkilemesi.</a> <a href="#haber-2">LockBit 4.0 fidye yazılımının sağlık sektörünü hedef alması.</a> <a href="#haber-3">Google Chrome'da aktif olarak istismar edilen sıfır gün açığının tespit edilmesi.</a></p>
+   
+   YASAK:
+   - 1., 2., 3. gibi NUMARA KULLANMA
+   - •, -, * gibi madde işareti KULLANMA
+   - <ul>, <ol>, <li> KULLANMA
+   - Satır atlamalar YAPMA
    
    ZORUNLU:
-   - Madde işareti YOK (•, -, 1., vb.)
-   - <ul> veya <ol> KULLANMA
-   - Düz <p> paragraf içinde <a> linkleri
+   - Sadece <p> paragraf içinde <a> linkleri
+   - Her cümle tam, anlamlı, bağımsız cümle
    - Her cümle sonunda nokta
    - Her link: href="#haber-N" (N = haber sırası)
    - Tüm cümleler yan yana, akıcı paragraf
+   - Düz metin, numara yok!
 
 TASARIM KURALLARI:
 - Ana başlık: Merkeze hizalı, büyük ve belirgin, alt çizgi yok
@@ -281,8 +287,12 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
 BU ŞABLONU KULLANARAK:
 - [TARİH] yerine tarihi yaz
 - [DÜZ PARAGRAF - HER CÜMLE LİNKLİ] yerine:
-  Her haber için 1 cümle, <a href="#haber-1">cümle</a> formatında
-  Örnek: <a href="#haber-1">Microsoft'ta güvenlik açığı.</a> <a href="#haber-2">LockBit saldırısı.</a>
+  
+  ÖRNEK (TAM OLARAK BÖYLE):
+  <a href="#haber-1">Microsoft Exchange'de kritik güvenlik açığının tespit edilmesi.</a> <a href="#haber-2">LockBit 4.0'ın sağlık sistemlerini hedef alması.</a> <a href="#haber-3">...</a>
+  
+  YASAK: 1., 2., 3. veya •, -, * KULLANMA!
+  SADECE: Yan yana tam cümleler, her biri link
   
 - [HABERLER BURAYA] yerine her haberi şu formatta ekle:
   <div class="news-item" id="haber-1">  ← ID EKLE!
