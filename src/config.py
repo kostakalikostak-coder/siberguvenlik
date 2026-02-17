@@ -39,97 +39,70 @@ CONTENT_SELECTORS = {
     'Infoblox Blog': [{'class': 'entry-content'}],
 }
 
-# Gemini prompt (RESMİ TÜRKÇE)
+# Gemini prompt (RESMİ TÜRKÇE) - YENİ GELİŞTİRİLMİŞ VERSİYON
 def get_claude_prompt(news_content):
     now = datetime.now()
     return f"""Sen profesyonel siber güvenlik analistisin.
 
-GÖREV: Günlük haberleri HTML raporuna dönüştür.
+GÖREV: 130 haberi analiz et → En önemli 5'ini seç → Kalanları önem sırasına koy → HTML raporu oluştur.
+
+🚨 KRİTİK AŞAMA 1 - HABERLERİ FİLTRELE:
+Aşağıdaki türleri ÇIKAR (raporda gösterme):
+❌ "Podcast yayınlandı", "Webinar duyurusu", "Ürün lansmanı", "Beta sürüm" 
+❌ "İndirilebilir rapor", "Etkinlik katılımı", "Konferans programı"
+❌ Basit patch/güncelleme haberleri (kritik olmayan)
+❌ İnceleme yazıları, röportajlar, genel tavsiye makaleleri
+✅ SADECE aktif tehdit, açık, saldırı, veri ihlali, kritik güncelleme haberlerini AL
+
+🚨 KRİTİK AŞAMA 2 - EN ÖNEMLİ 5 HABERİ BELIRLE:
+Bu 6 kritere göre en kritik 5 haberi seç:
+
+1️⃣ **CVSS 9.0+ AÇIKLAR + AKTİF EXPLOIT** (Highest Priority)
+   - CVE numarası var + "actively exploited", "in the wild"
+   - CVSS 9.0-10.0 arası puanlar
+   - "Zero-day", "0-day" içeren haberler
+
+2️⃣ **KRİTİK ALTYAPI SALDIRISI** 
+   - Enerji, sağlık, finans, hükümet sektörü
+   - "Critical infrastructure", "power grid", "hospital systems"
+   - APT grupları + devlet destekli saldırılar
+
+3️⃣ **5 MİLYON+ KULLANICI VERİ İHLALİ**
+   - "5 million", "10 million", "data breach" 
+   - Büyük şirketler (Microsoft, Google, Amazon, Apple)
+   - "Personal information", "credit card", "SSN"
+
+4️⃣ **ZERO-DAY + APT GRUBU AKTİVİTESİ**
+   - APT28, APT29, Lazarus, etc.
+   - Nation-state actors
+   - "Previously unknown vulnerability"
+
+5️⃣ **ULUSAL GÜVENLİK / TÜRKİYE**
+   - "National security", "government agencies"
+   - Türkiye ile ilgili siber güvenlik haberleri
+   - NATO, AB, Türk kurumları
+
+6️⃣ **JEOPOLİTİK KRİTİK DURUMLAR**
+   - Ülkeler arası siber savaş, siber diplomasi krizi
+   - "Cyber warfare", "nation-state conflict", "diplomatic crisis"
+   - Kritik ülke sistemlerine saldırı (Rusya-Ukrayna, ABD-Çin, İran, Kuzey Kore)
+   - Seçim sistemleri, kritik altyapı hedefleme
+   - Uluslararası hukuk/anlaşma ihlalleri
+
+🚨 AŞAMA 3 - SIRALAMA:
+- İlk 5 haber → "Önemli Gelişmeler" (kırmızı kutu)
+- Kalan haberler → Önem derecesine göre sırala (kritik → orta → düşük)
 
 KRİTİK DİL KURALI - RESMİ TÜRKÇE:
 - yapılmıştır, edilmiştir, belirtilmektedir, ifade edilmektedir, tespit edilmiştir
 - ASLA: yaptı, etti, söyledi, bulundu (günlük dil yasak)
-- USS, NPC, FBI gibi kısaltmaların tamamı büyük harf
+- CVE, FBI, NSA, APT gibi kısaltmaların tamamı büyük harf
 
 ANTİ-HALÜSİNASYON:
 - SADECE verilen metni kullan
-- TAHMİN YAPMA, VARSAYIMDA BULUNMA, KISALTMA YAPMA
-- ZORUNLU: VERİLEN TÜM HABERLERİ YAZ!
+- TAHMİN YAPMA, VARSAYIMDA BULUNMA, KISALTMA YAPMA  
+- VERİLEN TÜM UYGUN HABERLERİ YAZ! (Filtrelenenler hariç)
 - ASLA YARIDA KESME! SON HABERE KADAR DEVAM ET!
-- Haberleri numaralandır: [1], [2], [3]... [SON]
-
-FORMAT:
-1. GÜNLÜK ÖZET (en üstte):
-   Başlık: "{now.strftime('%d.%m.%Y')} Siber Güvenlik Haber Özetleri"
-   Başlık: "Yönetici Özeti"
-   
-   İki sütunlu tablo - Her haber için 1 satır, NUMARALI + TAM CÜMLE özet
-   Haberler sırayla iki sütuna yerleştirilsin
-   
-   TABLO FORMATI:
-   <table class="executive-table">
-       <tr>
-           <td><a href="#haber-1">1. Microsoft Exchange'de CVE-2024-1234 güvenlik açığı tespit edilmiştir.</a></td>
-           <td><a href="#haber-2">2. LockBit 4.0 fidye yazılımı sağlık sektörünü hedef almıştır.</a></td>
-       </tr>
-       <tr>
-           <td><a href="#haber-3">3. Google Chrome'da sıfır gün açığı istismar edilmektedir.</a></td>
-           <td><a href="#haber-4">4. Cisco cihazları için kritik güvenlik güncellemesi yayınlanmıştır.</a></td>
-       </tr>
-   </table>
-   
-   ZORUNLU KURALLAR:
-   - Her hücre <a href="#haber-N"> ile başlar (N = haber numarası)
-   - Link içinde NUMARA + TAM CÜMLE: "1. Microsoft..."
-   - Her hücrenin tamamı tıklanabilir link olmalı
-   - Her haber NUMARA ile başlar: 1., 2., 3., 4...
-   - TAM CÜMLE yapısı: "Özne + yüklem + nesne"
-   - RESMİ TÜRKÇE: -mıştır, -miştir, -edilmektedir, -almıştır
-   - Her cümle nokta ile biter
-   - KISA VE ÖZ: 6-10 kelime (gereksiz detay yok!)
-   - Haberler sırayla: 1. sol, 2. sağ, 3. sol, 4. sağ...
-   - Tek sayıda haber varsa son hücre boş
-   
-   YANLIŞ:
-   • Microsoft Exchange açığı (eksik cümle)
-   Microsoft açığı bulundu (günlük dil)
-   Microsoft Exchange Server'da CVE-2024-1234 güvenlik açığının 100 bin sunucuyu etkilemesi tespit edilmiştir (çok uzun!)
-   
-   DOĞRU:
-   1. Microsoft Exchange'de kritik açık tespit edilmiştir.
-   2. LockBit 4.0 sağlık sektörünü hedef almıştır.
-   3. Chrome'da sıfır gün açığı istismar edilmektedir.
-
-TASARIM KURALLARI:
-- Ana başlık: Merkeze hizalı, büyük ve belirgin, alt çizgi yok
-- Yönetici özeti kutusu: Yumuşak gri arka plan, solda ince lacivert şerit (3px), yuvarlatılmış köşeler
-- Temiz, modern, kurumsal görünüm
-- Aşırı çizgi, kalın border kullanma
-
-2. HER HABER:
-   • BAŞLIK: <b>Her Kelimenin İlk Harfi Büyük (Title Case)</b> - 7-9 kelime
-     
-     BAŞLIK KURALLARI:
-     ✓ İsim-fiil yapısı kullan (-mA, -mAsI, -İşİ)
-     ✓ SOMUT detaylar: şirket/yazılım/kişi adları, CVE numaraları, ülke isimleri
-     ✓ "Yeni", "bir", "bazı" gibi belirsiz kelimeler KULLANMA
-     
-     YANLIŞ: <b>Yeni Fidye Yazılımı Hastane Sistemlerini Hedef Almıştır</b>
-     DOĞRU:  <b>LockBit 4.0'ın Sağlık Sektörünü Hedef Alması</b>
-     DOĞRU:  <b>Microsoft Exchange'de Kritik Güvenlik Açığının Tespit Edilmesi</b>
-     DOĞRU:  <b>CVE-2024-1234'ün 100 Bin Sunucuyu Etkilemesi</b>
-   
-   • ÖZET PARAGRAF: Normal cümle yapısı, resmi Türkçe, 100-130 kelime (MIN 100, MAX 130!), 5N1K dahil
-     Sadece cümle başları ve özel isimler büyük
-   
-   • KAYNAK: <b>(XXXXXXX, AÇIK - <a href="[ORIJINAL_LINK]" target="_blank">[DOMAIN]</a>, {now.strftime('%d.%m.%Y')})</b>
-     ÖNEMLI: [ORIJINAL_LINK] yerine gerçek URL, [DOMAIN] yerine site adı yaz!
-
-KRİTİK: 
-- Başlıklar: İsim-fiil yapısı (LockBit 4.0'ın Yayılması), somut detaylar
-- Özet paragraflar: Normal cümle, resmi Türkçe
-- ASLA prompt metnini HTML'e ekleme!
-- HER SEFERINDE AYNI HTML YAPISINI KULLAN!
 
 ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
 ```html
@@ -138,12 +111,10 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siber Güvenlik Raporu - [TARİH]</title>
+    <title>Siber Güvenlik Raporu - {now.strftime('%d.%m.%Y')}</title>
     <style>
         * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        html {{
-            scroll-behavior: smooth;
-        }}
+        html {{ scroll-behavior: smooth; }}
         body {{
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
@@ -160,7 +131,7 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
             box-shadow: 0 4px 6px rgba(0,0,0,0.07);
         }}
         
-        /* ŞIK BAŞLIK - Gradient arka plan */
+        /* ŞIK BAŞLIK */
         .report-header {{
             background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
             padding: 50px 30px;
@@ -174,202 +145,194 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
             letter-spacing: 0.3px;
         }}
         
-        /* YÖNETİCİ ÖZETİ - Kompakt ve optimal */
+        /* ÖNEMLİ GELİŞMELER KUTUSU - KIRMIZI/TURUNCU */
+        .critical-news {{
+            background: linear-gradient(135deg, #d32f2f 0%, #f57c00 100%);
+            color: white;
+            padding: 25px 30px;
+            margin: 0;
+            border-bottom: 3px solid #b71c1c;
+        }}
+        .critical-news h2 {{
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }}
+        .critical-news h2::before {{
+            content: "⚠️";
+            margin-right: 10px;
+            font-size: 24px;
+        }}
+        .critical-summary {{
+            display: grid;
+            gap: 12px;
+        }}
+        .critical-item {{
+            background: rgba(255,255,255,0.15);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid #ffeb3b;
+        }}
+        .critical-item a {{
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+        }}
+        .critical-item a:hover {{
+            text-decoration: underline;
+        }}
+        
+        /* YÖNETİCİ ÖZETİ */
         .executive-summary {{
             background: #f8f9fa;
-            padding: 25px 30px;  /* Azaltıldı: 35px → 25px */
+            padding: 25px 30px;
             margin: 0;
             border-bottom: 1px solid #e1e8ed;
         }}
         .executive-summary h2 {{
             color: #1a237e;
-            font-size: 18px;  /* Azaltıldı: 20px → 18px */
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 15px;  /* Azaltıldı: 20px → 15px */
-            padding-bottom: 8px;  /* Azaltıldı: 12px → 8px */
+            margin-bottom: 15px;
+            padding-bottom: 8px;
             border-bottom: 2px solid #1a237e;
         }}
-        
-        /* İki sütunlu tablo - Kompakt */
         .executive-table {{
             width: 100%;
-            border-collapse: collapse;
+            border-spacing: 8px;
         }}
         .executive-table td {{
-            width: 50%;
-            padding: 8px 12px;  /* Azaltıldı: 12px 15px → 8px 12px */
+            background: white;
+            padding: 12px 16px;
+            border-radius: 6px;
+            border-left: 3px solid #1a237e;
             vertical-align: top;
-            color: #4a5568;
-            font-size: 13px;  /* Azaltıldı: 14px → 13px */
-            line-height: 1.5;  /* Azaltıldı: 1.6 → 1.5 */
-            border-bottom: 1px solid #e1e8ed;
-        }}
-        .executive-table tr:last-child td {{
-            border-bottom: none;
+            width: 50%;
         }}
         .executive-table a {{
-            color: #283593;
+            color: #1a237e;
             text-decoration: none;
-            display: block;
-            transition: all 0.2s;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.4;
         }}
         .executive-table a:hover {{
-            color: #1a237e;
-            background: #e8eaf6;
-            padding: 4px 8px;
-            margin: -4px -8px;
-            border-radius: 4px;
+            text-decoration: underline;
         }}
         
         /* HABERLER BÖLÜMÜ */
         .news-section {{
-            padding: 40px;
+            padding: 30px;
         }}
         .news-item {{
-            margin-bottom: 35px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #e1e8ed;
-        }}
-        .news-item:last-child {{
-            border-bottom: none;
+            background: #f8f9fa;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #1a237e;
         }}
         .news-title {{
-            color: #283593;
-            font-size: 20px;
+            color: #1a237e;
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 15px;
-            line-height: 1.4;
+            margin-bottom: 12px;
+            line-height: 1.3;
         }}
         .news-content {{
-            color: #4a5568;
+            color: #2c3e50;
             font-size: 15px;
-            line-height: 1.8;
-            text-align: justify;
-            margin-bottom: 12px;
+            line-height: 1.6;
+            margin-bottom: 10px;
         }}
         .source {{
-            color: #718096;
+            color: #666;
             font-size: 13px;
-            font-style: italic;
+            margin: 0;
         }}
-        
-        /* ARŞİV LİNKLERİ */
-        .archive-section {{
-            padding: 30px 40px;
-            background: #f8f9fa;
-            border-top: 1px solid #e1e8ed;
-        }}
-        .archive-section h3 {{
+        .source a {{
             color: #1a237e;
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }}
-        .archive-links {{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }}
-        .archive-link {{
-            display: inline-block;
-            padding: 8px 14px;
-            background: white;
-            color: #4a5568;
             text-decoration: none;
-            border-radius: 6px;
-            font-size: 13px;
-            border: 1px solid #e1e8ed;
-            transition: all 0.2s;
         }}
-        .archive-link:hover {{
-            background: #1a237e;
-            color: white;
-            border-color: #1a237e;
-            transform: translateY(-1px);
-        }}
-        
-        @media (max-width: 600px) {{
-            .container {{ border-radius: 0; }}
-            .report-header {{ padding: 30px 20px; }}
-            .executive-summary, .news-section {{ padding: 25px; }}
-            .news-title {{ font-size: 18px; }}
+        .source a:hover {{
+            text-decoration: underline;
         }}
     </style>
 </head>
 <body>
     <div class="container">
         <div class="report-header">
-            <h1>[TARİH] Siber Güvenlik Haber Özetleri</h1>
+            <h1>{now.strftime('%d.%m.%Y')} Siber Güvenlik Haber Özetleri</h1>
         </div>
         
+        <!-- ÖNEMLİ GELİŞMELER KUTUSU -->
+        <div class="critical-news">
+            <h2>Kritik Gelişmeler</h2>
+            <div class="critical-summary">
+                [EN ÖNEMLİ 5 HABER BURADA - HER BİRİ İÇİN:]
+                <div class="critical-item">
+                    <a href="#haber-N">N. Kısa tek cümle özet...</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- YÖNETİCİ ÖZETİ -->
         <div class="executive-summary">
             <h2>Yönetici Özeti</h2>
             <table class="executive-table">
-                [TABLO SATIRLARI BURAYA]
+                [TÜM HABERLERİN 2 SÜTUNLU TABLOSU BURADA]
+                <tr>
+                    <td><a href="#haber-1">1. Haber özet cümlesi...</a></td>
+                    <td><a href="#haber-2">2. Haber özet cümlesi...</a></td>
+                </tr>
             </table>
         </div>
         
+        <!-- HABERLER -->
         <div class="news-section">
-            [HABERLER BURAYA]
+            [TÜM HABERLER BURADA - ÖNEMLİ 5'İ EN ÜSTTE]
+            <div class="news-item" id="haber-1">
+                <div class="news-title"><b>İsim-Fiil Yapısı Başlık</b></div>
+                <p class="news-content">100-130 kelime özet, resmi Türkçe...</p>
+                <p class="source"><b>(KAYNAK, AÇIK - <a href="URL" target="_blank">domain.com</a>, {now.strftime('%d.%m.%Y')})</b></p>
+            </div>
         </div>
     </div>
 </body>
 </html>
 ```
 
-BU ŞABLONU KULLANARAK:
-- [TARİH] yerine tarihi yaz
+BAŞLIK KURALLARI:
+✓ İsim-fiil yapısı: "CVE-2024-1234'ün Microsoft Exchange Sunucularını Etkilemesi"
+✓ SOMUT detaylar: Şirket/CVE/ülke adları dahil
+✓ 7-9 kelime, her kelimenin ilk harfi büyük
 
-- [TABLO SATIRLARI BURAYA] yerine:
-  Her satırda 2 haber, NUMARALI TAM CÜMLE + LİNKLİ
-  
-  ÖRNEK:
-  <tr>
-      <td><a href="#haber-1">1. Microsoft Exchange Server'da CVE-2024-1234 güvenlik açığı tespit edilmiştir.</a></td>
-      <td><a href="#haber-2">2. LockBit 4.0 fidye yazılımı sağlık sektörünü hedef almıştır.</a></td>
-  </tr>
-  <tr>
-      <td><a href="#haber-3">3. Google Chrome'da sıfır gün açığı aktif olarak istismar edilmektedir.</a></td>
-      <td><a href="#haber-4">4. Cisco ağ cihazları için kritik güvenlik güncellemesi yayınlanmıştır.</a></td>
-  </tr>
-  
-  ZORUNLU:
-  - Her hücre <a href="#haber-N">...</a> ile sarılı (tıklanabilir)
-  - NUMARA: 1., 2., 3., 4... (sürekli artan)
-  - TAM CÜMLE: Özne + fiil + nesne
-  - RESMİ DİL: -mıştır, -edilmiştir, -almaktadır
-  
-  Son satır tek haberse:
-  <tr>
-      <td><a href="#haber-39">39. Son haber tespit edilmiştir.</a></td>
-      <td></td>
-  </tr>
-  
-- [HABERLER BURAYA] yerine her haberi şu formatta ekle:
-  <div class="news-item" id="haber-1">  ← HER HABERE ID EKLE!
-      <div class="news-title"><b>Başlık</b></div>
-      <p class="news-content">Özet paragraf...</p>
-      <p class="source"><b>(KAYNAK + LİNK)</b></p>
-  </div>
-  
-  KRİTİK: 
-  - 1. haber → id="haber-1"
-  - 2. haber → id="haber-2"
-  - Her haber div'ine mutlaka id="haber-N" ekle!
+ÖZET PARAGRAF KURALLARI:
+✓ 100-130 kelime (MIN 100, MAX 130)
+✓ 5N1K tüm sorular cevaplansın
+✓ Resmi Türkçe (-mıştır, -edilmiştir)
+✓ Normal cümle yapısı (başlık değil)
 
-NOT: Arşiv linkleri otomatik eklenecek, sen sadece </body>'den önce bitir.
-
-KRİTİK UYARI: 
-🚨 AŞAĞIDA VERİLEN TÜM HABERLERİ YAZ! 
-🚨 İLK HABERDEN SON HABERE KADAR HEPSİNİ EKLE!
-🚨 YARIDA KESERSEN HATA OLUR!
-🚨 Her haberi kontrol et: [1], [2], [3]... son numara
+KRİTİK: 
+- EN ÖNEMLİ 5 HABER → Hem "Kritik Gelişmeler" kutusunda HEM de haber paragraflarının en üstünde
+- Kalan haberler → Önem sırasına göre sıralanmış
+- Her habere id="haber-N" ve sayfa içi linkler
+- Filtrelenenler (podcast/webinar/vb) raporda YOK
 
 ═══════════════════════════════════════════════════════════
 
-HABERLER:
+HAM HABERLER:
 {news_content}
 
 ═══════════════════════════════════════════════════════════
 
-ZORUNLU: Yukarıdaki TÜM haberleri HTML'e ekle! Hiçbirini atlama!"""
+ŞİMDİ SIRAYLA YAP:
+1. Filtreleme → Uygun haberleri seç
+2. En önemli 5'ini belirle (yukarıdaki 5 kritere göre)
+3. Kalanları önem sırasına koy
+4. HTML şablonunu doldur
+
+ZORUNLU: Yukarıdaki şablonu AYNEN kullan, TÜM uygun haberleri dahil et!"""
