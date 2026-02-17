@@ -89,9 +89,31 @@ Bu 6 kritere göre en kritik 5 haberi seç:
    - Seçim sistemleri, kritik altyapı hedefleme
    - Uluslararası hukuk/anlaşma ihlalleri
 
-🚨 AŞAMA 3 - SIRALAMA:
-- İlk 5 haber → "Önemli Gelişmeler" (kırmızı kutu)
-- Kalan haberler → Önem derecesine göre sırala (kritik → orta → düşük)
+🚨 AŞAMA 3 - YAPILANDIRILMIŞ RAPOR OLUŞTUR:
+
+RAPOR YAPISI (SIRAYLA):
+
+1️⃣ **BAŞLIK**: "{now.strftime('%d.%m.%Y')} Siber Güvenlik Haber Özetleri"
+
+2️⃣ **YÖNETİCİ ÖZETİ BAŞLIĞI**
+
+3️⃣ **"ÖNEMLİ GELİŞMELER" KUTUSU**: 
+   - En kritik 5 haberin tek cümlelik özeti
+   - Her biri sayfa içi link: <a href="#haber-N">N. Tek cümle...</a>
+
+4️⃣ **GERİ KALAN 35 HABERİN 2 SÜTUNLU TABLOSU**:
+   - 6. haber → id="haber-6", 7. haber → id="haber-7" vs.
+   - Her biri tek cümlelik özet + sayfa içi link
+
+5️⃣ **HABER PARAGRAFLARI (SIRALAMA ÖNEMLİ!)**:
+   - ÖNCE: En önemli 5 haberin 100-130 kelime paragraf özetleri (id="haber-1" dan haber-5'e)
+   - SONRA: Geri kalan 35 haberin paragraf özetleri (id="haber-6" dan haber-40'a)
+
+KRİTİK KURALLALAR:
+✅ 40 haber toplam (5 önemli + 35 normal)
+✅ Önemli gelişmelerdeki haberler tekrar etmesin tabloda
+✅ ID numaraları: 1-40 arası sürekli
+✅ Sayfa içi linkler doğru çalışsın
 
 KRİTİK DİL KURALI - RESMİ TÜRKÇE:
 - yapılmıştır, edilmiştir, belirtilmektedir, ifade edilmektedir, tespit edilmiştir
@@ -145,45 +167,48 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
             letter-spacing: 0.3px;
         }}
         
-        /* ÖNEMLİ GELİŞMELER KUTUSU - KIRMIZI/TURUNCU */
-        .critical-news {{
-            background: linear-gradient(135deg, #d32f2f 0%, #f57c00 100%);
-            color: white;
+        /* ÖNEMLİ GELİŞMELER KUTUSU - AÇIK PASTEL RENK */
+        .important-news {{
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+            color: #4a4a4a;
             padding: 25px 30px;
             margin: 0;
-            border-bottom: 3px solid #b71c1c;
+            border: 1px solid #e1bee7;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }}
-        .critical-news h2 {{
-            color: white;
+        .important-news h2 {{
+            color: #6a1b9a;
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
         }}
-        .critical-news h2::before {{
-            content: "⚠️";
+        .important-news h2::before {{
+            content: "⭐";
             margin-right: 10px;
             font-size: 24px;
         }}
-        .critical-summary {{
+        .important-summary {{
             display: grid;
             gap: 12px;
         }}
-        .critical-item {{
-            background: rgba(255,255,255,0.15);
+        .important-item {{
+            background: rgba(255,255,255,0.7);
             padding: 12px 16px;
-            border-radius: 8px;
-            border-left: 4px solid #ffeb3b;
+            border-radius: 6px;
+            border-left: 4px solid #ba68c8;
         }}
-        .critical-item a {{
-            color: #fff;
+        .important-item a {{
+            color: #4a4a4a;
             text-decoration: none;
             font-weight: 500;
             font-size: 15px;
         }}
-        .critical-item a:hover {{
+        .important-item a:hover {{
             text-decoration: underline;
+            color: #6a1b9a;
         }}
         
         /* YÖNETİCİ ÖZETİ */
@@ -268,35 +293,44 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
             <h1>{now.strftime('%d.%m.%Y')} Siber Güvenlik Haber Özetleri</h1>
         </div>
         
-        <!-- ÖNEMLİ GELİŞMELER KUTUSU -->
-        <div class="critical-news">
-            <h2>Kritik Gelişmeler</h2>
-            <div class="critical-summary">
-                [EN ÖNEMLİ 5 HABER BURADA - HER BİRİ İÇİN:]
-                <div class="critical-item">
-                    <a href="#haber-N">N. Kısa tek cümle özet...</a>
-                </div>
-            </div>
-        </div>
-        
         <!-- YÖNETİCİ ÖZETİ -->
         <div class="executive-summary">
             <h2>Yönetici Özeti</h2>
+            
+            <!-- ÖNEMLİ GELİŞMELER KUTUSU -->
+            <div class="important-news">
+                <h2>Önemli Gelişmeler</h2>
+                <div class="important-summary">
+                    [EN ÖNEMLİ 5 HABER BURADA - HER BİRİ İÇİN:]
+                    <div class="important-item">
+                        <a href="#haber-N">N. Kısa tek cümle özet...</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GERİ KALAN 35 HABERİN 2 SÜTUNLU TABLOSU -->
             <table class="executive-table">
-                [TÜM HABERLERİN 2 SÜTUNLU TABLOSU BURADA]
+                [GERİ KALAN 35 HABERİN 2 SÜTUNLU TABLOSU BURADA]
                 <tr>
-                    <td><a href="#haber-1">1. Haber özet cümlesi...</a></td>
-                    <td><a href="#haber-2">2. Haber özet cümlesi...</a></td>
+                    <td><a href="#haber-6">6. Altıncı haber tek cümle özet...</a></td>
+                    <td><a href="#haber-7">7. Yedinci haber tek cümle özet...</a></td>
                 </tr>
             </table>
         </div>
         
         <!-- HABERLER -->
         <div class="news-section">
-            [TÜM HABERLER BURADA - ÖNEMLİ 5'İ EN ÜSTTE]
+            [ÖNEMLİ 5 HABERİN PARAGRAF ÖZETLERİ - ÖNCE BUNLAR]
             <div class="news-item" id="haber-1">
-                <div class="news-title"><b>İsim-Fiil Yapısı Başlık</b></div>
-                <p class="news-content">100-130 kelime özet, resmi Türkçe...</p>
+                <div class="news-title"><b>Birinci Önemli Haberin Başlığı</b></div>
+                <p class="news-content">100-130 kelime paragraf özet, resmi Türkçe...</p>
+                <p class="source"><b>(KAYNAK, AÇIK - <a href="URL" target="_blank">domain.com</a>, {now.strftime('%d.%m.%Y')})</b></p>
+            </div>
+            
+            [SONRA GERİ KALAN 35 HABERİN PARAGRAF ÖZETLERİ]
+            <div class="news-item" id="haber-6">
+                <div class="news-title"><b>Altıncı Haberin Başlığı</b></div>
+                <p class="news-content">100-130 kelime paragraf özet, resmi Türkçe...</p>
                 <p class="source"><b>(KAYNAK, AÇIK - <a href="URL" target="_blank">domain.com</a>, {now.strftime('%d.%m.%Y')})</b></p>
             </div>
         </div>
