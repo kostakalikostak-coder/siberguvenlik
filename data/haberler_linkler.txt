@@ -17,7 +17,7 @@
 2026-02-17	https://www.bleepingcomputer.com/news/security/eurail-says-stolen-traveler-data-now-up-for-sale-on-dark-web/	Eurail says stolen traveler data now up for sale on dark web
 2026-02-17	https://www.bleepingcomputer.com/news/security/man-arrested-for-demanding-reward-after-accidental-police-data-leak/	Man arrested for demanding reward after accidental police data leak
 2026-02-17	https://www.bleepingcomputer.com/news/security/infostealer-malware-found-stealing-openclaw-secrets-for-first-time/	Infostealer malware found stealing OpenClaw secrets for first time
-2026-02-17	https://www.bleepingcomputer.com/news/security/passwords-to-passkeys-staying-iso-27001-compliant-in-a-passwordless-era/	Passwords to passkeys: Staying ISO 27001 compliant in a passwordless era 
+2026-02-17	https://www.bleepingcomputer.com/news/security/passwords-to-passkeys-staying-iso-27001-compliant-in-a-passwordless-era/	Passwords to passkeys: Staying ISO 27001 compliant in a passwordless era
 2026-02-17	https://krebsonsecurity.com/2026/01/kimwolf-botnet-lurking-in-corporate-govt-networks/	Kimwolf Botnet Lurking in Corporate, Govt. Networks
 2026-02-17	https://krebsonsecurity.com/2026/01/patch-tuesday-january-2026-edition/	Patch Tuesday, January 2026 Edition
 2026-02-17	https://krebsonsecurity.com/2026/01/who-benefited-from-the-aisuru-and-kimwolf-botnets/	Who Benefited from the Aisuru and Kimwolf Botnets?
@@ -83,7 +83,7 @@
 2026-02-17	https://cyberscoop.com/data-center-security-ai-infrastructure-investment-op-ed/	Why ‘secure-by-design’ systems are non-negotiable in the AI era
 2026-02-17	https://cyberscoop.com/proofpoint-acuvity-deal-agentic-ai-security/	Proofpoint acquires Acuvity to tackle the security risks of agentic AI
 2026-02-17	https://cyberscoop.com/apple-zero-day-vulnerability-cve-2026-20700/	Apple discloses first actively exploited zero-day of 2026
-2026-02-17	https://cyberscoop.com/state-hackers-using-gemini-google-ai/	Google finds state-sponsored hackers use AI at ‘all stages’ of attack cycle 
+2026-02-17	https://cyberscoop.com/state-hackers-using-gemini-google-ai/	Google finds state-sponsored hackers use AI at ‘all stages’ of attack cycle
 2026-02-17	https://cyberscoop.com/cisa-circia-town-halls-cyber-incident-reporting-rule/	CISA to host industry feedback sessions on cyber incident reporting regulation
 2026-02-17	https://cyberscoop.com/0apt-ransomware-group-hoax-technical-capabilities/	0APT ransomware group rises swiftly with bluster, along with genuine threat of attack
 2026-02-17	https://cyberscoop.com/cisa-shutdown-impact-dhs-funding-testimony/	Acting CISA chief says DHS funding lapse would limit, halt some agency work
@@ -128,3 +128,27 @@
 2026-02-17	https://www.infoblox.com/blog/community/global-system-integrators-architect-the-secure-cloud-first-infrastructures-that-global-enterprises-depend-on/	Global System Integrators Architect the Secure, Cloud-first Infrastructures that Global Enterprises Depend on
 2026-02-17	https://www.infoblox.com/blog/security/hallucinating-for-fun-and-profit-using-llms-to-find-lookalikes-without-targets/	Hallucinating for Fun and Profit: Using LLMs to Find Lookalikes without Targets
 2026-02-17	https://www.infoblox.com/blog/community/raising-the-bar-for-service-providers-introducing-gsi-and-mssp-tracks-in-skilled-to-secure-partner-program/	Raising the Bar for Service Providers: Introducing GSI and MSSP Tracks in Skilled to Secure Partner Program
+2026-02-18	https://thehackernews.com/2026/02/notepad-fixes-hijacked-update-mechanism.html	Notepad++ Fixes Hijacked Update Mechanism Used to Deliver Targeted Malware
+2026-02-18	https://thehackernews.com/2026/02/cisa-flags-four-security-flaws-under.html	CISA Flags Four Security Flaws Under Active Exploitation in Latest KEV Update
+2026-02-18	https://thehackernews.com/2026/02/researchers-show-copilot-and-grok-can.html	Researchers Show Copilot and Grok Can Be Abused as Malware C2 Proxies
+2026-02-18	https://thehackernews.com/2026/02/keenadu-firmware-backdoor-infects.html	Keenadu Firmware Backdoor Infects Android Tablets via Signed OTA Updates
+2026-02-18	https://www.bleepingcomputer.com/news/legal/spain-orders-nordvpn-protonvpn-to-block-laliga-piracy-sites/	Spain orders NordVPN, ProtonVPN to block LaLiga piracy sites
+2026-02-18	https://www.bleepingcomputer.com/news/security/flaws-in-popular-vscode-extensions-expose-developers-to-attacks/	Flaws in popular VSCode extensions expose developers to attacks
+2026-02-18	https://www.bleepingcomputer.com/news/security/chinese-hackers-exploiting-dell-zero-day-flaw-since-mid-2024/	Chinese hackers exploiting Dell zero-day flaw since mid-2024
+2026-02-18	https://www.bleepingcomputer.com/news/security/notepad-plus-plus-boosts-update-security-with-double-lock-mechanism/	Notepad++ boosts update security with ‘double-lock’ mechanism
+2026-02-18	https://krebsonsecurity.com/2026/02/kimwolf-botnet-swamps-anonymity-network-i2p/	Kimwolf Botnet Swamps Anonymity Network I2P
+2026-02-18	https://krebsonsecurity.com/2026/02/please-dont-feed-the-scattered-lapsus-shiny-hunters/	Please Don’t Feed the Scattered Lapsus ShinyHunters
+2026-02-18	https://krebsonsecurity.com/2026/01/who-operates-the-badbox-2-0-botnet/	Who Operates the Badbox 2.0 Botnet?
+2026-02-18	https://securityaffairs.com/188147/malware/keenadu-backdoor-found-preinstalled-on-android-devices-powers-ad-fraud-campaign.html	Keenadu backdoor found preinstalled on Android devices, powers Ad fraud campaign
+2026-02-18	https://securityaffairs.com/188135/ai/smartloader-hackers-clone-oura-mcp-project-to-spread-stealc-malware.html	SmartLoader hackers clone Oura MCP project to spread StealC malware
+2026-02-18	https://isc.sans.edu/diary/rss/32726	Tracking Malware Campaigns With Reused Material, (Wed, Feb 18th)
+2026-02-18	https://cyberscoop.com/china-brickstorm-grimbolt-dell-zero-day/	Chinese hackers exploited a Dell zero-day for 18 months before anyone noticed
+2026-02-18	https://cyberscoop.com/phobos-ransomware-affiliate-arrested-poland/	Polish authorities arrest alleged Phobos ransomware affiliate
+2026-02-18	https://cyberscoop.com/palo-alto-networks-acquires-koi-agentic-ai-security/	Palo Alto Networks’ Koi acquisition is all about keeping AI agents in check
+2026-02-18	https://go.theregister.com/feed/www.theregister.com/2026/02/18/dell_0day_brickstorm_campaign/	China-linked snoops have been exploiting Dell 0-day since mid-2024, using 'ghost NICs' to avoid detection
+2026-02-18	https://go.theregister.com/feed/www.theregister.com/2026/02/17/volt_typhoon_dragos/	China remains embedded in US energy networks 'for the purpose of taking it down'
+2026-02-18	https://techcrunch.com/2026/02/17/intellexas-predator-spyware-used-to-hack-iphone-of-journalist-in-angola-research-says/	Intellexa’s Predator spyware used to hack iPhone of journalist in Angola, research says
+2026-02-18	https://www.csoonline.com/article/4133243/a-new-approach-for-genai-risk-protection.html	A new approach for GenAI risk protection
+2026-02-18	https://www.csoonline.com/article/4129134/the-new-paradigm-for-raising-up-secure-software-engineers.html	The new paradigm for raising up secure software engineers
+2026-02-18	https://www.csoonline.com/article/4130820/13-fragen-gegen-drittanbieterrisiken.html	13 Fragen gegen Drittanbieterrisiken
+2026-02-18	https://www.csoonline.com/article/4133342/cyber-attacks-enabled-by-basic-failings-palo-alto-analysis-finds.html	Cyber attacks enabled by basic failings, Palo Alto analysis finds
