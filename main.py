@@ -457,7 +457,7 @@ class HaberSistemi:
         <div class="archive-links">
 """
         for report in reports:
-            archive_html += f'            <a href="/raporlar/{report["filename"]}.html" class="archive-link">{report["date"]}</a>\n'
+            archive_html += f'            <a href="./raporlar/{report["filename"]}.html" class="archive-link">{report["date"]}</a>\n'
         
         archive_html += """        </div>
     </div>
