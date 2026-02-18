@@ -1,130 +1,629 @@
-2026-02-18	https://thehackernews.com/2026/02/notepad-fixes-hijacked-update-mechanism.html	Notepad++ Fixes Hijacked Update Mechanism Used to Deliver Targeted Malware
-2026-02-18	https://thehackernews.com/2026/02/cisa-flags-four-security-flaws-under.html	CISA Flags Four Security Flaws Under Active Exploitation in Latest KEV Update
-2026-02-18	https://thehackernews.com/2026/02/cloud-forensics-webinar-learn-how-ai.html	Webinar: How Modern SOC Teams Use AI and Context to Investigate Cloud Breaches Faster
-2026-02-18	https://thehackernews.com/2026/02/researchers-show-copilot-and-grok-can.html	Researchers Show Copilot and Grok Can Be Abused as Malware C2 Proxies
-2026-02-18	https://thehackernews.com/2026/02/keenadu-firmware-backdoor-infects.html	Keenadu Firmware Backdoor Infects Android Tablets via Signed OTA Updates
-2026-02-18	https://thehackernews.com/2026/02/smartloader-attack-uses-trojanized-oura.html	SmartLoader Attack Uses Trojanized Oura MCP Server to Deploy StealC Infostealer
-2026-02-18	https://thehackernews.com/2026/02/my-day-getting-my-hands-dirty-with-ndr.html	My Day Getting My Hands Dirty with an NDR System
-2026-02-18	https://thehackernews.com/2026/02/microsoft-finds-summarize-with-ai.html	Microsoft Finds “Summarize with AI” Prompts Manipulating Chatbot Recommendations
-2026-02-18	https://thehackernews.com/2026/02/apple-tests-end-to-end-encrypted-rcs.html	Apple Tests End-to-End Encrypted RCS Messaging in iOS 26.4 Developer Beta
-2026-02-18	https://thehackernews.com/2026/02/infostealer-steals-openclaw-ai-agent.html	Infostealer Steals OpenClaw AI Agent Configuration Files and Gateway Tokens
-2026-02-18	https://www.bleepingcomputer.com/news/legal/spain-orders-nordvpn-protonvpn-to-block-laliga-piracy-sites/	Spain orders NordVPN, ProtonVPN to block LaLiga piracy sites
-2026-02-18	https://www.bleepingcomputer.com/news/security/flaws-in-popular-vscode-extensions-expose-developers-to-attacks/	Flaws in popular VSCode extensions expose developers to attacks
-2026-02-18	https://www.bleepingcomputer.com/news/security/chinese-hackers-exploiting-dell-zero-day-flaw-since-mid-2024/	Chinese hackers exploiting Dell zero-day flaw since mid-2024
-2026-02-18	https://www.bleepingcomputer.com/news/security/notepad-plus-plus-boosts-update-security-with-double-lock-mechanism/	Notepad++ boosts update security with ‘double-lock’ mechanism
-2026-02-18	https://www.bleepingcomputer.com/news/microsoft/microsoft-teams-outage-affects-users-in-united-states-europe/	Microsoft Teams outage affects users in United States, Europe
-2026-02-18	https://www.bleepingcomputer.com/news/security/what-5-million-apps-revealed-about-secrets-in-javascript/	What 5 Million Apps Revealed About Secrets in JavaScript
-2026-02-18	https://www.bleepingcomputer.com/news/security/new-keenadu-backdoor-found-in-android-firmware-google-play-apps/	New Keenadu backdoor found in Android firmware, Google Play apps
-2026-02-18	https://www.bleepingcomputer.com/news/security/poland-arrests-suspect-linked-to-phobos-ransomware-operation/	Poland arrests suspect linked to Phobos ransomware operation
-2026-02-18	https://www.bleepingcomputer.com/news/security/ireland-now-also-investigating-x-over-grok-made-sexual-images/	Ireland now also investigating X over Grok-made sexual images
-2026-02-18	https://www.bleepingcomputer.com/news/security/washington-hotel-in-japan-discloses-ransomware-infection-incident/	Washington Hotel in Japan discloses ransomware infection incident
-2026-02-18	https://krebsonsecurity.com/2026/02/kimwolf-botnet-swamps-anonymity-network-i2p/	Kimwolf Botnet Swamps Anonymity Network I2P
-2026-02-18	https://krebsonsecurity.com/2026/02/patch-tuesday-february-2026-edition/	Patch Tuesday, February 2026 Edition
-2026-02-18	https://krebsonsecurity.com/2026/02/please-dont-feed-the-scattered-lapsus-shiny-hunters/	Please Don’t Feed the Scattered Lapsus ShinyHunters
-2026-02-18	https://krebsonsecurity.com/2026/01/who-operates-the-badbox-2-0-botnet/	Who Operates the Badbox 2.0 Botnet?
-2026-02-18	https://krebsonsecurity.com/2026/01/kimwolf-botnet-lurking-in-corporate-govt-networks/	Kimwolf Botnet Lurking in Corporate, Govt. Networks
-2026-02-18	https://krebsonsecurity.com/2026/01/patch-tuesday-january-2026-edition/	Patch Tuesday, January 2026 Edition
-2026-02-18	https://krebsonsecurity.com/2026/01/who-benefited-from-the-aisuru-and-kimwolf-botnets/	Who Benefited from the Aisuru and Kimwolf Botnets?
-2026-02-18	https://krebsonsecurity.com/2026/01/the-kimwolf-botnet-is-stalking-your-local-network/	The Kimwolf Botnet is Stalking Your Local Network
-2026-02-18	https://krebsonsecurity.com/2025/12/happy-16th-birthday-krebsonsecurity-com/	Happy 16th Birthday, KrebsOnSecurity.com!
-2026-02-18	https://krebsonsecurity.com/2025/12/dismantling-defenses-trump-2-0-cyber-year-in-review/	Dismantling Defenses: Trump 2.0 Cyber Year in Review
-2026-02-18	https://threatpost.com/student-loan-breach-exposes-2-5m-records/180492/	Student Loan Breach Exposes 2.5M Records
-2026-02-18	https://threatpost.com/watering-hole-attacks-push-scanbox-keylogger/180490/	Watering Hole Attacks Push ScanBox Keylogger
-2026-02-18	https://threatpost.com/0ktapus-victimize-130-firms/180487/	Tentacles of ‘0ktapus’ Threat Group Victimize 130 Firms
-2026-02-18	https://threatpost.com/ransomware-attacks-are-on-the-rise/180481/	Ransomware Attacks are on the Rise
-2026-02-18	https://threatpost.com/cybercriminals-are-selling-access-to-chinese-surveillance-cameras/180478/	Cybercriminals Are Selling Access to Chinese Surveillance Cameras
-2026-02-18	https://threatpost.com/twitter-whistleblower-tldr-version/180472/	Twitter Whistleblower Complaint: The TL;DR Version
-2026-02-18	https://threatpost.com/firewall-bug-under-active-attack-cisa-warning/180467/	Firewall Bug Under Active Attack Triggers CISA Warning
-2026-02-18	https://threatpost.com/reservation-links-prey-on-travelers/180462/	Fake Reservation Links Prey on Weary Travelers
-2026-02-18	https://threatpost.com/iphone-users-urged-to-update-to-patch-2-zero-days-under-attack/180448/	iPhone Users Urged to Update to Patch 2 Zero-Days
-2026-02-18	https://threatpost.com/google-patches-chromes-fifth-zero-day-of-the-year/180432/	Google Patches Chrome’s Fifth Zero-Day of the Year
-2026-02-18	https://securityaffairs.com/188147/malware/keenadu-backdoor-found-preinstalled-on-android-devices-powers-ad-fraud-campaign.html	Keenadu backdoor found preinstalled on Android devices, powers Ad fraud campaign
-2026-02-18	https://securityaffairs.com/188135/ai/smartloader-hackers-clone-oura-mcp-project-to-spread-stealc-malware.html	SmartLoader hackers clone Oura MCP project to spread StealC malware
-2026-02-18	https://securityaffairs.com/188128/cyber-crime/polish-cybercrime-police-arrest-man-linked-to-phobos-ransomware-operation.html	Polish cybercrime Police arrest man linked to Phobos ransomware operation
-2026-02-18	https://securityaffairs.com/188116/security/poorly-crafted-phishing-campaign-leverages-bogus-security-incident-report.html	Poorly crafted phishing campaign leverages bogus security incident report
-2026-02-18	https://securityaffairs.com/188064/hacking/south-korea-slaps-25m-fine-on-dior-louis-vuitton-tiffany-over-salesforce-breach.html	South Korea slaps $25M fine on Dior, Louis Vuitton, Tiffany over Salesforce breach
-2026-02-18	https://securityaffairs.com/188105/security/encrypted-rcs-messaging-support-lands-in-apples-ios-26-4-developer-build.html	Encrypted RCS messaging support lands in Apple’s iOS 26.4 developer build
-2026-02-18	https://securityaffairs.com/188097/malware/hackers-steal-openclaw-configuration-in-emerging-ai-agent-threat.html	Hackers steal OpenClaw configuration in emerging AI agent threat
-2026-02-18	https://securityaffairs.com/188075/data-breach/hackers-sell-stolen-eurail-traveler-information-on-dark-web.html	Hackers sell stolen Eurail traveler information on dark web
-2026-02-18	https://securityaffairs.com/188056/security/a-security-flaw-at-davaindia-pharmacy-allowed-attackers-to-access-customers-data-and-more.html	A security flaw at DavaIndia Pharmacy allowed attackers to access customers’ data and more
-2026-02-18	https://securityaffairs.com/188046/data-breach/shinyhunters-leaked-600k-canada-goose-customer-records-but-the-firm-denies-it-was-breached.html	ShinyHunters leaked 600K+ Canada Goose customer records, but the firm denies it was breached
-2026-02-18	https://www.fortra.com/blog/urgent-warnings-uk-and-us-cyber-agencies-after-polish-energy-grid-attack	Urgent warnings from UK and US cyber agencies after Polish energy grid attack
-2026-02-18	https://www.bitdefender.com/en-us/blog/hotforsecurity/polish-hacker-charged-seven-years-after-massive-morele-net-data-breach	Polish hacker charged seven years after massive Morele.net data breach
-2026-02-18	https://grahamcluley.com/smashing-security-podcast-454/	Smashing Security podcast #454: AI was not plotting humanity’s demise. Humans were
-2026-02-18	https://www.bitdefender.com/en-us/blog/hotforsecurity/fake-dubai-crown-prince-tracked-to-nigerian-mansion-after-2-5m-romance-scam	Fake Dubai Crown Prince tracked to Nigerian mansion after $2.5M romance scam
-2026-02-18	https://www.bitdefender.com/en-us/blog/hotforsecurity/incognito-market-admin-sentenced-30-years-105-million-dark-web-drug-empire	Incognito Market admin sentenced to 30 years for running $105 million dark web drug empire
-2026-02-18	https://grahamcluley.com/smashing-security-podcast-453/	Smashing Security podcast #453: The Epstein Files didn’t hide this hacker very well
-2026-02-18	https://www.bitdefender.com/en-us/blog/hotforsecurity/fbi-takes-notorious-ramp-ransomware-forum-offline	FBI takes notorious RAMP ransomware forum offline
-2026-02-18	https://www.fortra.com/blog/hacking-attack-leaves-russian-car-owners-locked-out-their-vehicles	Hacking attack leaves Russian car owners locked out of their vehicles
-2026-02-18	https://grahamcluley.com/smashing-security-podcast-452/	Smashing Security podcast #452: The dark web’s worst assassins, and Pegasus in the dock
-2026-02-18	https://www.bitdefender.com/en-us/blog/hotforsecurity/four-arrested-crackdown-discord-swatting-doxing	Four arrested in crackdown on Discord-based SWATting and doxing
-2026-02-18	https://isc.sans.edu/diary/rss/32726	Tracking Malware Campaigns With Reused Material, (Wed, Feb 18th)
-2026-02-18	https://isc.sans.edu/diary/rss/32724	ISC Stormcast For Wednesday, February 18th, 2026 https://isc.sans.edu/podcastdetail/9814, (Wed, Feb 18th)
-2026-02-18	https://isc.sans.edu/diary/rss/32722	Fake Incident Report Used in Phishing Campaign, (Tue, Feb 17th)
-2026-02-18	https://isc.sans.edu/diary/rss/32720	ISC Stormcast For Tuesday, February 17th, 2026 https://isc.sans.edu/podcastdetail/9812, (Tue, Feb 17th)
-2026-02-18	https://isc.sans.edu/diary/rss/32718	2026 64-Bits Malware Trend, (Mon, Feb 16th)
-2026-02-18	https://isc.sans.edu/diary/rss/32716	ISC Stormcast For Monday, February 16th, 2026 https://isc.sans.edu/podcastdetail/9810, (Mon, Feb 16th)
-2026-02-18	https://isc.sans.edu/diary/rss/32712	&#x26;#xa;AI-Powered Knowledge Graph Generator &#x26; APTs, (Thu, Feb 12th)
-2026-02-18	https://isc.sans.edu/diary/rss/32714	ISC Stormcast For Friday, February 13th, 2026 https://isc.sans.edu/podcastdetail/9808, (Fri, Feb 13th)
-2026-02-18	https://isc.sans.edu/diary/rss/32710	ISC Stormcast For Thursday, February 12th, 2026 https://isc.sans.edu/podcastdetail/9806, (Thu, Feb 12th)
-2026-02-18	https://isc.sans.edu/diary/rss/32708	Four Seconds to Botnet - Analyzing a Self Propagating SSH Worm with Cryptographically Signed C2 &#x5b;Guest Diary&#x5d;, (Wed, Feb 11th)
-2026-02-18	https://www.recordedfuture.com/blog/network-intelligence-questions-answered	Network Intelligence: Your Questions, Global Answers
-2026-02-18	https://www.recordedfuture.com/research/state-of-security	State of Security Report | Recorded Future
-2026-02-18	https://www.recordedfuture.com/blog/fragmentation-in-2025-what-it-means-for-2026	Fragmentation Defined 2025's Threat Landscape. Here's What It Means for 2026
-2026-02-18	https://www.recordedfuture.com/blog/threat-hunting-27-steps-to-5	From 27 Steps to 5: How Recorded Future Reimagined Threat Hunting with Autonomous Threat Operations
-2026-02-18	https://www.recordedfuture.com/research/rublevka-team-anatomy-russian-crypto-drainer-operation	Rublevka Team: Anatomy of a Russian Crypto Drainer Operation
-2026-02-18	https://www.recordedfuture.com/blog/autonomous-threat-operations-in-action	Autonomous Threat Operations in action: Real results from Recorded Future’s own SOC team | Recorded Future
-2026-02-18	https://www.recordedfuture.com/research/purplebravos-targeting-it-software-supply-chain	PurpleBravo’s Targeting of the IT Software Supply Chain
-2026-02-18	https://www.recordedfuture.com/blog/threat-and-vulnerability-management	Threat and Vulnerability Management in 2026
-2026-02-18	https://www.recordedfuture.com/blog/best-ransomware-detection-tools	Best Ransomware Detection Tools
-2026-02-18	https://www.recordedfuture.com/blog/december-2025-cve-landscape	December 2025 CVE Landscape: 22 Critical Vulnerabilities Mark 120% Surge, React2Shell Dominates Threat Activity
-2026-02-18	https://cyberscoop.com/china-brickstorm-grimbolt-dell-zero-day/	Chinese hackers exploited a Dell zero-day for 18 months before anyone noticed
-2026-02-18	https://cyberscoop.com/phobos-ransomware-affiliate-arrested-poland/	Polish authorities arrest alleged Phobos ransomware affiliate
-2026-02-18	https://cyberscoop.com/palo-alto-networks-acquires-koi-agentic-ai-security/	Palo Alto Networks’ Koi acquisition is all about keeping AI agents in check
-2026-02-18	https://cyberscoop.com/citizen-lab-kenya-cellebrite-phone-cracking-boniface-mwangi-forensic-evidence/	Citizen Lab links Cellebrite to the hacking of a Kenyan presidential candidate’s phone
-2026-02-18	https://cyberscoop.com/attackers-abuse-identity-unit42-palo-alto-networks-incident-response-report/	Unit 42: Nearly two-thirds of breaches now start with identity abuse
-2026-02-18	https://cyberscoop.com/data-center-security-ai-infrastructure-investment-op-ed/	Why ‘secure-by-design’ systems are non-negotiable in the AI era
-2026-02-18	https://cyberscoop.com/proofpoint-acuvity-deal-agentic-ai-security/	Proofpoint acquires Acuvity to tackle the security risks of agentic AI
-2026-02-18	https://cyberscoop.com/apple-zero-day-vulnerability-cve-2026-20700/	Apple discloses first actively exploited zero-day of 2026
-2026-02-18	https://cyberscoop.com/state-hackers-using-gemini-google-ai/	Google finds state-sponsored hackers use AI at ‘all stages’ of attack cycle 
-2026-02-18	https://cyberscoop.com/cisa-circia-town-halls-cyber-incident-reporting-rule/	CISA to host industry feedback sessions on cyber incident reporting regulation
-2026-02-18	https://go.theregister.com/feed/www.theregister.com/2026/02/18/dell_0day_brickstorm_campaign/	China-linked snoops have been exploiting Dell 0-day since mid-2024, using 'ghost NICs' to avoid detection
-2026-02-18	https://go.theregister.com/feed/www.theregister.com/2026/02/17/volt_typhoon_dragos/	China remains embedded in US energy networks 'for the purpose of taking it down'
-2026-02-18	https://go.theregister.com/feed/www.theregister.com/2026/02/17/poland_phobos_ransomware_arrest/	Polish cops nab 47-year-old man in Phobos ransomware raid
-2026-02-18	https://go.theregister.com/feed/www.theregister.com/2026/02/16/canada_goose_shinyhunters/	Canada Goose ruffles feathers over 600K record dump, says leak is old news
-2026-02-18	https://go.theregister.com/feed/www.theregister.com/2026/02/16/chromes_zeroday/	Google patches Chrome zero-day as in-the-wild exploits surface
-2026-02-18	https://go.theregister.com/feed/www.theregister.com/2026/02/15/exl3harris_exec_sold_8_zeroday/	Infosec exec sold eight zero-day exploit kits to Russia, says DoJ
-2026-02-18	https://go.theregister.com/feed/www.theregister.com/2026/02/13/odido_breach/	Top Dutch telco Odido admits 6.2M customers caught in contact system caper
-2026-02-18	https://go.theregister.com/feed/www.theregister.com/2026/02/12/ransomware_slingers_bossware/	Who's the bossware? Ransomware slingers like employee monitoring tools, too
-2026-02-18	https://go.theregister.com/feed/www.theregister.com/2026/02/12/apple_ios_263/	Apple patches decade-old iOS zero-day, possibly exploited by commercial spyware
-2026-02-18	https://go.theregister.com/feed/www.theregister.com/2026/02/12/supply_chain_attacks/	Supply chain attacks now fuel a 'self-reinforcing' cybercrime economy
-2026-02-18	https://techcrunch.com/2026/02/17/intellexas-predator-spyware-used-to-hack-iphone-of-journalist-in-angola-research-says/	Intellexa’s Predator spyware used to hack iPhone of journalist in Angola, research says
-2026-02-18	https://techcrunch.com/2026/02/17/european-parliament-blocks-ai-on-lawmakers-devices-citing-security-risks/	European Parliament blocks AI on lawmakers’ devices, citing security risks
-2026-02-18	https://techcrunch.com/2026/02/14/homeland-security-reportedly-sent-hundreds-of-subpoenas-seeking-to-unmask-anti-ice-accounts/	Homeland Security reportedly sent hundreds of subpoenas seeking to unmask anti-ICE accounts
-2026-02-18	https://techcrunch.com/2026/02/13/indias-major-pharmacy-chain-exposed-customer-data-and-internal-systems/	Indian pharmacy chain giant exposed customer data and internal systems
-2026-02-18	https://techcrunch.com/2026/02/13/fintech-lending-giant-figure-confirms-data-breach/	Fintech lending giant Figure confirms data breach
-2026-02-18	https://techcrunch.com/2026/02/13/sex-toys-maker-tenga-says-hacker-stole-customer-information/	Sex toys maker Tenga says hacker stole customer information
-2026-02-18	https://techcrunch.com/2026/02/13/dutch-phone-giant-odido-says-millions-of-customers-affected-by-data-breach/	Dutch phone giant Odido says millions of customers affected by data breach
-2026-02-18	https://techcrunch.com/2026/02/13/amazons-ring-cancels-partnership-with-flock-a-network-of-ai-cameras-used-by-ice-feds-and-police/	Amazon’s Ring cancels partnership with Flock, a network of AI cameras used by ICE, feds, and police
-2026-02-18	https://techcrunch.com/2026/02/12/hacker-linked-to-epstein-removed-from-black-hat-cyber-conference-website/	Hacker linked to Epstein removed from Black Hat cyber conference website
-2026-02-18	https://techcrunch.com/2026/02/12/more-u-s-investors-sue-south-korean-government-over-handling-of-coupang-data-breach/	More US investors sue South Korean government over handling of Coupang data breach
-2026-02-18	https://www.csoonline.com/article/4133243/a-new-approach-for-genai-risk-protection.html	A new approach for GenAI risk protection
-2026-02-18	https://www.csoonline.com/article/4129134/the-new-paradigm-for-raising-up-secure-software-engineers.html	The new paradigm for raising up secure software engineers
-2026-02-18	https://www.csoonline.com/article/4130820/13-fragen-gegen-drittanbieterrisiken.html	13 Fragen gegen Drittanbieterrisiken
-2026-02-18	https://www.csoonline.com/article/4133342/cyber-attacks-enabled-by-basic-failings-palo-alto-analysis-finds.html	Cyber attacks enabled by basic failings, Palo Alto analysis finds
-2026-02-18	https://www.csoonline.com/article/4133182/mcsc-2026-politik-und-wirtschaft-mussen-zusammenarbeiten.html	MCSC 2026: „Politik und Wirtschaft müssen zusammenarbeiten“
-2026-02-18	https://www.csoonline.com/article/4133122/zerodayrat-spyware-targets-android-and-ios-devices-via-commercial-toolkit.html	ZeroDayRAT spyware targets Android and iOS devices via commercial toolkit
-2026-02-18	https://www.csoonline.com/article/4128992/with-cisos-stretched-thin-re-envisioning-enterprise-risk-may-be-the-only-fix.html	With CISOs stretched thin, re-envisioning enterprise risk may be the only fix
-2026-02-18	https://www.csoonline.com/article/4132860/why-2025s-agentic-ai-boom-is-a-cisos-worst-nightmare.html	Why 2025’s agentic AI boom is a CISO’s worst nightmare
-2026-02-18	https://www.csoonline.com/article/4132879/exploit-available-for-new-chrome-zero-day-vulnerability-says-google.html	Exploit available for new Chrome zero-day vulnerability, says Google
-2026-02-18	https://www.csoonline.com/article/4132781/was-cisos-uber-openclaw-wissen-sollten.html	Was CISOs über OpenClaw wissen sollten
-2026-02-18	https://www.infoblox.com/blog/threat-intelligence/banners-bots-and-butchers-an-automated-long-con-targeting-japan-asia-and-beyond/	Banners, Bots and Butchers: An Automated Long Con Targeting Japan, Asia, and Beyond
-2026-02-18	https://www.infoblox.com/blog/company/leveraging-infoblox-universal-asset-insights-to-visualize-servicenow-cmdb-accuracy/	Leveraging Infoblox Universal Asset Insights™ to Visualize ServiceNow CMDB Accuracy
-2026-02-18	https://www.infoblox.com/blog/company/closing-the-cmdb-trust-gap-starts-with-the-network/	Closing the CMDB Trust Gap Starts with the Network
-2026-02-18	https://www.infoblox.com/blog/security/novel-ai-techniques-for-dns-tunnel-security/	Novel AI Techniques for DNS Tunnel Security
-2026-02-18	https://www.infoblox.com/blog/security/dns-armor-now-generally-available/	DNS Armor Now Generally Available
-2026-02-18	https://www.infoblox.com/blog/threat-intelligence/compromised-routers-dns-and-a-tds-hidden-in-aeza-networks/	Compromised Routers, DNS, and a TDS Hidden in Aeza Networks
-2026-02-18	https://www.infoblox.com/blog/community/managed-security-service-providers-are-redefining-how-enterprises-detect-disrupt-and-respond-to-modern-threats/	Managed Security Service Providers are Redefining How Enterprises Detect, Disrupt and Respond to Modern Threats
-2026-02-18	https://www.infoblox.com/blog/community/global-system-integrators-architect-the-secure-cloud-first-infrastructures-that-global-enterprises-depend-on/	Global System Integrators Architect the Secure, Cloud-first Infrastructures that Global Enterprises Depend on
-2026-02-18	https://www.infoblox.com/blog/security/hallucinating-for-fun-and-profit-using-llms-to-find-lookalikes-without-targets/	Hallucinating for Fun and Profit: Using LLMs to Find Lookalikes without Targets
-2026-02-18	https://www.infoblox.com/blog/community/raising-the-bar-for-service-providers-introducing-gsi-and-mssp-tracks-in-skilled-to-secure-partner-program/	Raising the Bar for Service Providers: Introducing GSI and MSSP Tracks in Skilled to Secure Partner Program
+#!/usr/bin/env python3
+"""Siber Güvenlik Haberleri - Otomatik Günlük Rapor"""
+import requests, time, os, json, hashlib
+from bs4 import BeautifulSoup
+from datetime import datetime, timedelta
+from xml.etree import ElementTree as ET
+from urllib.parse import urlparse
+import google.generativeai as genai
+from difflib import SequenceMatcher
+from src.config import *
+
+class HaberSistemi:
+    def __init__(self):
+        self.headers = HEADERS
+        self.sources = NEWS_SOURCES
+        self.selectors = CONTENT_SELECTORS
+        self.rss_errors = []  # RSS hataları için
+        self.used_links_file = "data/haberler_linkler.txt"
+        self.rss_errors_file = "data/rss_errors.txt"
+        
+    def fetch_full_article(self, url, source_name):
+        """Tam metin çeker"""
+        try:
+            print(f"      📄 Tam metin...", end='', flush=True)
+            r = requests.get(url, headers=self.headers, timeout=15)
+            soup = BeautifulSoup(r.content, 'html.parser')
+            for el in soup(['script','style','nav','header','footer','aside']):
+                el.decompose()
+            
+            text = ""
+            if source_name in self.selectors:
+                for sel in self.selectors[source_name]:
+                    content = soup.find('div', sel) or soup.find('article', sel)
+                    if content:
+                        text = self._extract(content)
+                        if len(text) > 500: break
+            
+            if not text or len(text) < 500:
+                for el in [soup.find('article'), soup.find('div', class_='content'), soup.find('main')]:
+                    if el:
+                        t = self._extract(el)
+                        if len(t) > len(text): text = t
+            
+            if not text or len(text) < 200:
+                text = '\n\n'.join([p.get_text().strip() for p in soup.find_all('p') if len(p.get_text().strip()) > 50])
+            
+            wc = len(text.split())
+            domain = urlparse(url).netloc.replace('www.', '')
+            
+            if wc > 100:
+                print(f" ✅ ({wc})")
+                return {'full_text': text, 'word_count': wc, 'success': True, 'domain': domain}
+            print(f" ⚠️  ({wc})")
+            return {'full_text': "", 'word_count': 0, 'success': False, 'domain': domain}
+        except Exception as e:
+            print(f" ❌ ({str(e)[:20]})")
+            return {'full_text': "", 'word_count': 0, 'success': False, 'domain': ''}
+    
+    def _extract(self, element):
+        """Temiz metin"""
+        if not element: return ""
+        parts = []
+        for p in element.find_all(['p','h1','h2','h3','li']):
+            t = p.get_text().strip()
+            if len(t) > 20 and not any(x in t.lower() for x in ['cookie','subscribe','newsletter']):
+                parts.append(t)
+        return '\n\n'.join(parts)
+    
+    def fetch_rss(self, url, source_name):
+        """RSS çeker"""
+        try:
+            r = requests.get(url, headers=self.headers, timeout=15)
+            root = ET.fromstring(r.content)
+            articles = []
+            
+            if root.tag.endswith('feed'):  # Atom
+                for entry in root.findall('.//{http://www.w3.org/2005/Atom}entry')[:10]:
+                    t = entry.find('{http://www.w3.org/2005/Atom}title')
+                    l = entry.find('{http://www.w3.org/2005/Atom}link')
+                    s = entry.find('{http://www.w3.org/2005/Atom}summary')
+                    d = entry.find('{http://www.w3.org/2005/Atom}published')
+                    if t is not None:
+                        articles.append({'title': t.text, 'link': l.get('href') if l is not None else '',
+                                       'description': s.text if s is not None else '', 'date': d.text if d is not None else '',
+                                       'source': source_name})
+            else:  # RSS
+                for item in root.findall('.//item')[:10]:
+                    t = item.find('title')
+                    l = item.find('link')
+                    d = item.find('description')
+                    p = item.find('pubDate')
+                    if t is not None:
+                        articles.append({'title': t.text, 'link': l.text if l is not None else '',
+                                       'description': d.text if d is not None else '', 'date': p.text if p is not None else '',
+                                       'source': source_name})
+            return articles
+        except Exception as e:
+            error_msg = f"RSS hatası - {source_name}: {str(e)[:100]}"
+            self.rss_errors.append(error_msg)
+            print(f"      ❌ RSS HATA: {str(e)[:50]}")
+            return []
+    
+    def _load_used_links(self):
+        """Kullanılan linkleri 7 günden yükle"""
+        if not os.path.exists(self.used_links_file):
+            return set(), {}
+        
+        cutoff = datetime.now() - timedelta(days=7)
+        used_links = set()
+        used_titles = {}
+        
+        with open(self.used_links_file, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if not line: continue
+                try:
+                    parts = line.split('\t')
+                    if len(parts) >= 3:
+                        date_str, link, title = parts[0], parts[1], '\t'.join(parts[2:])
+                        date = datetime.strptime(date_str, '%Y-%m-%d')
+                        if date >= cutoff:
+                            used_links.add(link)
+                            used_titles[link] = title
+                except:
+                    pass
+        
+        return used_links, used_titles
+    
+    def _similarity(self, a, b):
+        """Başlık benzerliği"""
+        return SequenceMatcher(None, a.lower(), b.lower()).ratio()
+    
+    def _save_used_links(self, articles):
+        """Kullanılan linkleri kaydet (7 günden eski olanları sil)"""
+        if not articles:
+            return
+        
+        now = datetime.now()
+        cutoff = now - timedelta(days=7)
+        
+        # Eski linkleri oku
+        existing = []
+        if os.path.exists(self.used_links_file):
+            with open(self.used_links_file, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        date_str = line.split('\t')[0]
+                        date = datetime.strptime(date_str, '%Y-%m-%d')
+                        if date >= cutoff:
+                            existing.append(line)
+                    except:
+                        pass
+        
+        # Yeni linkleri ekle
+        today = now.strftime('%Y-%m-%d')
+        for art in articles:
+            if art.get('link'):
+                existing.append(f"{today}\t{art['link']}\t{art['title']}")
+        
+        # Kaydet
+        os.makedirs("data", exist_ok=True)
+        with open(self.used_links_file, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(existing) + '\n')
+    
+    def _save_rss_errors(self):
+        """RSS hatalarını kaydet (7 günden eski olanları sil)"""
+        if not self.rss_errors:
+            return
+        
+        now = datetime.now()
+        cutoff = now - timedelta(days=7)
+        
+        # Eski hataları oku
+        existing = []
+        if os.path.exists(self.rss_errors_file):
+            with open(self.rss_errors_file, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        date_str = line.split(' | ')[0]
+                        date = datetime.strptime(date_str, '%Y-%m-%d %H:%M')
+                        if date >= cutoff:
+                            existing.append(line)
+                    except:
+                        pass
+        
+        # Yeni hataları ekle
+        timestamp = now.strftime('%Y-%m-%d %H:%M')
+        for error in self.rss_errors:
+            existing.append(f"{timestamp} | {error}")
+        
+        # Kaydet
+        os.makedirs("data", exist_ok=True)
+        with open(self.rss_errors_file, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(existing) + '\n')
+        
+        print(f"⚠️  {len(self.rss_errors)} RSS hatası kaydedildi: {self.rss_errors_file}")
+    
+    def _filter_duplicates(self, all_news):
+        """Tekrar eden haberleri filtrele (link + başlık benzerliği)"""
+        used_links, used_titles = self._load_used_links()
+        
+        filtered = {}
+        removed_count = 0
+        
+        for src, articles in all_news.items():
+            filtered_articles = []
+            for art in articles:
+                link = art.get('link', '')
+                title = art.get('title', '')
+                
+                # Link kontrolü
+                if link in used_links:
+                    removed_count += 1
+                    continue
+                
+                # Başlık benzerliği kontrolü (%80+)
+                is_similar = False
+                for used_link, used_title in used_titles.items():
+                    if self._similarity(title, used_title) >= 0.80:
+                        is_similar = True
+                        removed_count += 1
+                        break
+                
+                if not is_similar:
+                    filtered_articles.append(art)
+            
+            if filtered_articles:
+                filtered[src] = filtered_articles
+        
+        if removed_count > 0:
+            print(f"🔄 {removed_count} tekrar eden haber filtrelendi")
+        
+        return filtered
+    
+    def topla(self):
+        """Tüm haberleri topla"""
+        print("="*70)
+        print("📰 HABERLERİ TOPLAMA")
+        print("="*70)
+        print(f"🔍 {len(self.sources)} kaynak | ⏱️  15-25 dakika\n")
+        
+        all_news = {}
+        total = 0
+        full_text_success = 0
+        
+        for idx, (src, url) in enumerate(self.sources.items(), 1):
+            print(f"[{idx}/{len(self.sources)}] 🔍 {src}")
+            articles = self.fetch_rss(url, src)
+            
+            if articles:
+                print(f"   └─ ✅ {len(articles)} haber")
+                total += len(articles)
+                print(f"   └─ 📄 Tam metinler:")
+                for i, art in enumerate(articles, 1):
+                    if art['link']:
+                        print(f"      [{i}/{len(articles)}]", end=' ', flush=True)
+                        res = self.fetch_full_article(art['link'], src)
+                        art.update(res)
+                        if res['success']: full_text_success += 1
+                        time.sleep(2)
+                all_news[src] = articles
+            else:
+                print(f"   └─ ❌ Bulunamadı")
+            
+            time.sleep(1)
+        
+        # RSS hatalarını kaydet
+        if self.rss_errors:
+            self._save_rss_errors()
+        
+        # Tekrar edenleri filtrele
+        all_news = self._filter_duplicates(all_news)
+        
+        # Toplam yeniden hesapla
+        total = sum(len(arts) for arts in all_news.values())
+        full_text_success = sum(1 for arts in all_news.values() for art in arts if art.get('success'))
+        
+        print(f"\n{'='*70}")
+        print(f"📊 {total} haber (tekrarsız) | {full_text_success} tam metin")
+        print(f"{'='*70}\n")
+        return all_news
+    
+    def save_txt(self, news_data):
+        """Ham RSS'i günlük kaydet (üzerine yaz)"""
+        print("💾 TXT dosyaları kaydediliyor...")
+        now = datetime.now()
+        os.makedirs("data", exist_ok=True)
+        
+        txt = f"\n{'='*80}\n📅 {now.strftime('%d %B %Y').upper()} - SİBER GÜVENLİK HABERLERİ (HAM RSS)\n{'='*80}\n\n"
+        
+        # Kullanılan haberleri topla
+        all_articles = []
+        num = 0
+        for src, articles in news_data.items():
+            for art in articles:
+                num += 1
+                all_articles.append(art)
+                txt += f"[{num}] {src} - {art['title']}\n{'─'*80}\n"
+                txt += f"Tarih: {art['date']}\nLink: {art['link']}\n"
+                if art.get('full_text') and art.get('word_count', 0) > 0:
+                    txt += f"\n[TAM METİN - {art['word_count']} kelime]\n{art['full_text']}\n"
+                else:
+                    txt += f"\n⚠️  Tam metin çekilemedi\n"
+                txt += f"\n(XXXXXXX, AÇIK - {art.get('domain','')}, {now.strftime('%d.%m.%Y')})\n\n{'='*80}\n\n"
+        
+        # HAM RSS - GÜNLÜK (Üzerine Yaz)
+        with open("data/haberler_ham.txt", 'w', encoding='utf-8') as f:
+            f.write(txt)
+        
+        print(f"✅ data/haberler_ham.txt (günlük - üzerine yazıldı)")
+        
+        # Kullanılan linkleri kaydet
+        self._save_used_links(all_articles)
+        
+        return txt
+    
+    def save_summary_to_archive(self, html_content):
+        """Gemini'nin seçtiği EN ÖNEMLİ 40 HABERİ TXT arşivine EKLE (sürekli birikim)"""
+        print("📚 En önemli 40 haber arşive ekleniyor...")
+        now = datetime.now()
+        
+        # HTML'den text özeti çıkar
+        soup = BeautifulSoup(html_content, 'html.parser')
+        
+        archive_entry = f"\n{'='*80}\n📅 {now.strftime('%d %B %Y').upper()} - EN ÖNEMLİ 40 HABER (SEÇİLMİŞ)\n{'='*80}\n\n"
+        
+        # Sadece ilk 40 haberi al (Gemini önem sırasına göre düzenlemiş)
+        news_items = soup.find_all('div', class_='news-item')[:40]
+        
+        for idx, item in enumerate(news_items, 1):
+            title_elem = item.find('div', class_='news-title')
+            content_elem = item.find('p', class_='news-content')
+            source_elem = item.find('p', class_='source')
+            
+            if title_elem and content_elem:
+                title = title_elem.get_text(strip=True).replace('<b>', '').replace('</b>', '')
+                content = content_elem.get_text(strip=True)
+                source = source_elem.get_text(strip=True) if source_elem else ""
+                
+                archive_entry += f"[{idx:2d}] {title}\n"
+                archive_entry += f"─────────────────────────────────────────────────────────\n"
+                archive_entry += f"{content}\n"
+                if source:
+                    archive_entry += f"{source}\n"
+                archive_entry += "\n" + "─"*80 + "\n\n"
+        
+        # ARŞİVE EKLE (append - sürekli birikim)
+        os.makedirs("data", exist_ok=True)
+        with open(ARCHIVE_FILE, 'a', encoding='utf-8') as f:
+            f.write(archive_entry)
+        
+        print(f"✅ {ARCHIVE_FILE} (en önemli {len(news_items)} haber arşivlendi)")
+        
+        # Arşiv dosyası çok büyürse eski kayıtları temizle (6 aydan eski)
+        self._cleanup_old_archive_entries()
+    
+    def create_html(self, txt_content):
+        """Gemini ile HTML oluştur"""
+        print("🤖 Gemini API...")
+        if not GEMINI_API_KEY:
+            raise ValueError("❌ GEMINI_API_KEY yok!")
+        
+        genai.configure(api_key=GEMINI_API_KEY)
+        
+        # Retry mekanizması (3 deneme)
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                print(f"   Deneme {attempt + 1}/{max_retries}...")
+                
+                prompt = get_claude_prompt(txt_content)
+                
+                model = genai.GenerativeModel('gemini-flash-latest')
+                
+                response = model.generate_content(
+                    prompt,
+                    generation_config=genai.GenerationConfig(
+                        max_output_tokens=100000,
+                        temperature=0.7,
+                    )
+                )
+                
+                html = response.text
+                break  # Başarılı, döngüden çık
+            except Exception as e:
+                print(f"   ⚠️  Hata: {e}")
+                if attempt < max_retries - 1:
+                    wait_time = (attempt + 1) * 10
+                    print(f"   ⏳ {wait_time} saniye bekleyip tekrar deneniyor...")
+                    time.sleep(wait_time)
+                else:
+                    print(f"   ❌ {max_retries} deneme başarısız, fallback HTML...")
+                    return self._create_fallback_html(txt_content)
+        
+        # HTML temizle
+        if html.startswith('```html'): html = html[7:]
+        if html.startswith('```'): html = html[3:]
+        if html.endswith('```'): html = html[:-3]
+        html = html.strip()
+        
+        print(f"✅ HTML oluşturuldu ({len(html)} karakter)")
+        
+        # Son 30 gün linklerini ekle
+        html = self._add_archive_links(html)
+        
+        # Kaydet
+        os.makedirs("docs/raporlar", exist_ok=True)
+        now = datetime.now()
+        
+        with open("docs/index.html", 'w', encoding='utf-8') as f:
+            f.write(html)
+        
+        with open(f"docs/raporlar/{now.strftime('%Y-%m-%d')}.html", 'w', encoding='utf-8') as f:
+            f.write(html)
+        
+        print("✅ docs/index.html")
+        print(f"✅ docs/raporlar/{now.strftime('%Y-%m-%d')}.html")
+        
+        # Gemini özetini arşive ekle
+        self.save_summary_to_archive(html)
+        
+        # 30 günden eski raporları sil
+        self._cleanup_old_reports()
+        
+        return html
+    
+    def _add_archive_links(self, html):
+        """HTML'e son 30 günün linklerini ekle"""
+        from datetime import timedelta
+        
+        # Son 30 günün raporlarını bul
+        reports = []
+        for i in range(30):
+            date = datetime.now() - timedelta(days=i)
+            filepath = f"docs/raporlar/{date.strftime('%Y-%m-%d')}.html"
+            if os.path.exists(filepath):
+                reports.append({
+                    'date': date.strftime('%d.%m.%Y'),
+                    'filename': date.strftime('%Y-%m-%d')
+                })
+        
+        # Hiç rapor yoksa (ilk gün) linkler ekleme
+        if not reports:
+            print("   ℹ️  Henüz arşiv yok (ilk gün)")
+            return html
+        
+        # Arşiv linkleri HTML'i
+        archive_html = """
+    <div class="archive-section">
+        <h3>📚 Arşiv - Son 30 Gün</h3>
+        <div class="archive-links">
+"""
+        for report in reports:
+            archive_html += f'            <a href="./raporlar/{report["filename"]}.html" class="archive-link">{report["date"]}</a>\n'
+        
+        archive_html += """        </div>
+    </div>
+"""
+        
+        # </body> etiketinden önce ekle
+        if '</body>' in html:
+            html = html.replace('</body>', archive_html + '\n</body>')
+        elif '</html>' in html:
+            # </body> yoksa </html>'den önce ekle
+            html = html.replace('</html>', archive_html + '\n</html>')
+        else:
+            # İkisi de yoksa sona ekle
+            html += archive_html
+        
+        print(f"   ✅ {len(reports)} günlük arşiv linki eklendi")
+        return html
+    
+    def _create_fallback_html(self, txt_content):
+        """Claude API başarısız olursa basit HTML"""
+        now = datetime.now()
+        html = f"""<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siber Güvenlik Raporu - {now.strftime('%d %B %Y')}</title>
+    <style>
+        body {{ font-family: system-ui, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; background: #f5f5f5; }}
+        .header {{ background: #1e3c72; color: white; padding: 40px; border-radius: 10px; margin-bottom: 20px; }}
+        .content {{ background: white; padding: 40px; border-radius: 10px; white-space: pre-wrap; }}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔒 Siber Güvenlik Günlük Raporu</h1>
+        <p>{now.strftime('%d %B %Y %A')}</p>
+        <p>⚠️ Gemini API bağlantı hatası - TXT içeriği gösteriliyor</p>
+    </div>
+    <div class="content">{txt_content}</div>
+</body>
+</html>"""
+        
+        # Kaydet
+        os.makedirs("docs/raporlar", exist_ok=True)
+        with open("docs/index.html", 'w', encoding='utf-8') as f:
+            f.write(html)
+        with open(f"docs/raporlar/{now.strftime('%Y-%m-%d')}.html", 'w', encoding='utf-8') as f:
+            f.write(html)
+        
+        print("✅ Fallback HTML oluşturuldu")
+        return html
+    
+    def _cleanup_old_reports(self):
+        """30 günden eski raporları sil"""
+        import glob
+        from datetime import timedelta
+        
+        cutoff = datetime.now() - timedelta(days=30)
+        deleted = 0
+        
+        for filepath in glob.glob("docs/raporlar/*.html"):
+            try:
+                filename = os.path.basename(filepath)
+                if filename == '.gitkeep': continue
+                
+                # Dosya adından tarihi çıkar (YYYY-MM-DD.html)
+                date_str = filename.replace('.html', '')
+                file_date = datetime.strptime(date_str, '%Y-%m-%d')
+                
+                if file_date < cutoff:
+                    os.remove(filepath)
+                    deleted += 1
+            except:
+                pass
+        
+        if deleted > 0:
+            print(f"🗑️  {deleted} eski rapor silindi (30+ gün)")
+        else:
+            print("📁 Arşiv temiz (30 gün içinde)")
+    
+    def _cleanup_old_archive_entries(self):
+        """6 aydan eski arşiv kayıtlarını temizle (TXT dosyası çok büyürse)"""
+        if not os.path.exists(ARCHIVE_FILE):
+            return
+        
+        # Dosya boyutunu kontrol et
+        file_size = os.path.getsize(ARCHIVE_FILE) / (1024 * 1024)  # MB
+        if file_size < 50:  # 50MB'dan küçükse temizlik yapma
+            return
+        
+        from datetime import timedelta
+        cutoff = datetime.now() - timedelta(days=180)  # 6 ay
+        
+        try:
+            # Dosyayı oku
+            with open(ARCHIVE_FILE, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Günlük blokları ayır
+            blocks = content.split('\n📅 ')
+            new_content = blocks[0]  # İlk kısmı koru
+            
+            kept_count = 0
+            removed_count = 0
+            
+            for block in blocks[1:]:
+                if not block.strip():
+                    continue
+                
+                try:
+                    # Tarih satırından tarihi çıkar
+                    first_line = block.split('\n')[0]
+                    date_part = first_line.split(' - ')[0].strip()
+                    # Türkçe ay isimleri → İngilizce
+                    date_part = date_part.replace('OCAK', 'JANUARY').replace('ŞUBAT', 'FEBRUARY').replace('MART', 'MARCH').replace('NİSAN', 'APRIL').replace('MAYIS', 'MAY').replace('HAZİRAN', 'JUNE').replace('TEMMUZ', 'JULY').replace('AĞUSTOS', 'AUGUST').replace('EYLÜL', 'SEPTEMBER').replace('EKİM', 'OCTOBER').replace('KASIM', 'NOVEMBER').replace('ARALIK', 'DECEMBER')
+                    
+                    entry_date = datetime.strptime(date_part, '%d %B %Y')
+                    
+                    if entry_date >= cutoff:
+                        new_content += '\n📅 ' + block
+                        kept_count += 1
+                    else:
+                        removed_count += 1
+                except:
+                    # Tarih parse edemezse koru
+                    new_content += '\n📅 ' + block
+                    kept_count += 1
+            
+            if removed_count > 0:
+                # Temizlenmiş içeriği kaydet
+                with open(ARCHIVE_FILE, 'w', encoding='utf-8') as f:
+                    f.write(new_content)
+                print(f"🗑️  Arşiv temizlendi: {removed_count} eski kayıt silindi, {kept_count} korundu")
+        
+        except Exception as e:
+            print(f"⚠️  Arşiv temizlik hatası: {e}")
+
+def main():
+    print("\n"+"="*70)
+    print("🔒 SİBER GÜVENLİK HABERLERİ")
+    print("="*70)
+    print(f"📅 {datetime.now().strftime('%d %B %Y %H:%M')}")
+    print("="*70+"\n")
+    
+    sistem = HaberSistemi()
+    
+    # 1. Topla
+    haberler = sistem.topla()
+    if not haberler:
+        print("❌ Haber yok!")
+        return 1
+    
+    # 2. TXT
+    txt = sistem.save_txt(haberler)
+    
+    # 3. HTML
+    sistem.create_html(txt)
+    
+    print("\n"+"="*70)
+    print("✨ TAMAMLANDI!")
+    print("="*70)
+    print("🌐 https://siberguvenlikhaberler.github.io/siberguvenlik/")
+    print("="*70+"\n")
+    
+    return 0
+
+if __name__ == "__main__":
+    exit(main())
