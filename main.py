@@ -350,15 +350,40 @@ class HaberSistemi:
                     archive_entry += f"{source}\n"
                 archive_entry += "\n" + "─"*80 + "\n\n"
         
-        # ARŞİVE EKLE (append - sürekli birikim)
+        # ARŞİVE EKLE (append - sürekli birikim, ASLA OTOMATİK SİLİNMEZ)
         os.makedirs("data", exist_ok=True)
         with open(ARCHIVE_FILE, 'a', encoding='utf-8') as f:
             f.write(archive_entry)
         
         print(f"✅ {ARCHIVE_FILE} (en önemli {len(news_items)} haber arşivlendi)")
         
-        # Arşiv dosyası çok büyürse eski kayıtları temizle (6 aydan eski)
-        self._cleanup_old_archive_entries()
+        # Arşiv boyutunu kontrol et - sadece bilgi verir, SİLMEZ
+        self._check_archive_size()
+    
+    def _check_archive_size(self):
+        """Arşiv boyutunu kontrol et ve 100 MB'ı geçince uyar (SİLMEZ)"""
+        if not os.path.exists(ARCHIVE_FILE):
+            return
+        
+        file_size = os.path.getsize(ARCHIVE_FILE) / (1024 * 1024)  # MB
+        print(f"📦 Arşiv boyutu: {file_size:.1f} MB")
+        
+        if file_size >= 100:
+            print("")
+            print("=" * 70)
+            print("🚨 UYARI: ARŞİV DOSYASI 100 MB'I AŞTI!")
+            print("=" * 70)
+            print(f"📁 Dosya: {ARCHIVE_FILE}")
+            print(f"📏 Boyut: {file_size:.1f} MB")
+            print(f"📅 Tarih: {datetime.now().strftime('%d.%m.%Y %H:%M')}")
+            print("")
+            print("⚠️  Lütfen aşağıdaki adımlardan birini uygulayın:")
+            print("   1. Dosyayı yedekleyip harici depolamaya taşıyın")
+            print("   2. Eski kayıtları manuel olarak arşivleyin")
+            print("")
+            print("❌ Arşiv otomatik olarak SİLİNMEYECEKTİR.")
+            print("=" * 70)
+            print("")
     
     def create_html(self, txt_content):
         """Gemini ile HTML oluştur"""
@@ -467,10 +492,8 @@ class HaberSistemi:
         if '</body>' in html:
             html = html.replace('</body>', archive_html + '\n</body>')
         elif '</html>' in html:
-            # </body> yoksa </html>'den önce ekle
             html = html.replace('</html>', archive_html + '\n</html>')
         else:
-            # İkisi de yoksa sona ekle
             html += archive_html
         
         print(f"   ✅ {len(reports)} günlük arşiv linki eklendi")
@@ -538,63 +561,6 @@ class HaberSistemi:
             print(f"🗑️  {deleted} eski rapor silindi (30+ gün)")
         else:
             print("📁 Arşiv temiz (30 gün içinde)")
-    
-    def _cleanup_old_archive_entries(self):
-        """6 aydan eski arşiv kayıtlarını temizle (TXT dosyası çok büyürse)"""
-        if not os.path.exists(ARCHIVE_FILE):
-            return
-        
-        # Dosya boyutunu kontrol et
-        file_size = os.path.getsize(ARCHIVE_FILE) / (1024 * 1024)  # MB
-        if file_size < 50:  # 50MB'dan küçükse temizlik yapma
-            return
-        
-        from datetime import timedelta
-        cutoff = datetime.now() - timedelta(days=180)  # 6 ay
-        
-        try:
-            # Dosyayı oku
-            with open(ARCHIVE_FILE, 'r', encoding='utf-8') as f:
-                content = f.read()
-            
-            # Günlük blokları ayır
-            blocks = content.split('\n📅 ')
-            new_content = blocks[0]  # İlk kısmı koru
-            
-            kept_count = 0
-            removed_count = 0
-            
-            for block in blocks[1:]:
-                if not block.strip():
-                    continue
-                
-                try:
-                    # Tarih satırından tarihi çıkar
-                    first_line = block.split('\n')[0]
-                    date_part = first_line.split(' - ')[0].strip()
-                    # Türkçe ay isimleri → İngilizce
-                    date_part = date_part.replace('OCAK', 'JANUARY').replace('ŞUBAT', 'FEBRUARY').replace('MART', 'MARCH').replace('NİSAN', 'APRIL').replace('MAYIS', 'MAY').replace('HAZİRAN', 'JUNE').replace('TEMMUZ', 'JULY').replace('AĞUSTOS', 'AUGUST').replace('EYLÜL', 'SEPTEMBER').replace('EKİM', 'OCTOBER').replace('KASIM', 'NOVEMBER').replace('ARALIK', 'DECEMBER')
-                    
-                    entry_date = datetime.strptime(date_part, '%d %B %Y')
-                    
-                    if entry_date >= cutoff:
-                        new_content += '\n📅 ' + block
-                        kept_count += 1
-                    else:
-                        removed_count += 1
-                except:
-                    # Tarih parse edemezse koru
-                    new_content += '\n📅 ' + block
-                    kept_count += 1
-            
-            if removed_count > 0:
-                # Temizlenmiş içeriği kaydet
-                with open(ARCHIVE_FILE, 'w', encoding='utf-8') as f:
-                    f.write(new_content)
-                print(f"🗑️  Arşiv temizlendi: {removed_count} eski kayıt silindi, {kept_count} korundu")
-        
-        except Exception as e:
-            print(f"⚠️  Arşiv temizlik hatası: {e}")
 
 def main():
     print("\n"+"="*70)
