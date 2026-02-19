@@ -132,6 +132,11 @@ ANTİ-HALÜSİNASYON:
 - VERİLEN TÜM UYGUN HABERLERİ YAZ! (Filtrelenenler hariç)
 - ASLA YARIDA KESME! SON HABERE KADAR DEVAM ET!
 
+⚠️ KAYNAK LİNKİ KURALI - KRİTİK:
+- Her haberin kaynak satırındaki href değeri = haberin TAM URL'İ (https://... ile başlayan)
+- Her haberin ham verisinde "Link: https://..." satırı var → O URL'i kullan
+- ASLA domain.com yazmayacaksın href içine, SADECE tam URL!
+
 ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
 ```html
 <!DOCTYPE html>
@@ -326,14 +331,14 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
             <div class="news-item" id="haber-1">
                 <div class="news-title"><b>Birinci Önemli Haberin Başlığı</b></div>
                 <p class="news-content">100-130 kelime paragraf özet, resmi Türkçe...</p>
-                <p class="source"><b>(KAYNAK, AÇIK - <a href="URL" target="_blank">domain.com</a>, {now.strftime('%d.%m.%Y')})</b></p>
+                <p class="source"><b>(KAYNAK, AÇIK - <a href="HABERİN TAM URL LİNKİ (https://...)" target="_blank">domain.com</a>, {now.strftime('%d.%m.%Y')})</b></p>
             </div>
             
             [SONRA GERİ KALAN 38 HABERİN PARAGRAF ÖZETLERİ]
             <div class="news-item" id="haber-6">
                 <div class="news-title"><b>Altıncı Haberin Başlığı</b></div>
                 <p class="news-content">100-130 kelime paragraf özet, resmi Türkçe...</p>
-                <p class="source"><b>(KAYNAK, AÇIK - <a href="URL" target="_blank">domain.com</a>, {now.strftime('%d.%m.%Y')})</b></p>
+                <p class="source"><b>(KAYNAK, AÇIK - <a href="HABERİN TAM URL LİNKİ (https://...)" target="_blank">domain.com</a>, {now.strftime('%d.%m.%Y')})</b></p>
             </div>
         </div>
     </div>
