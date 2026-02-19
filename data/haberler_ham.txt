@@ -1357,7 +1357,7 @@ The attack was detected overnight between December 11 and 12, and according to t
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
-(XXXXXXX, AÇIK - https://securityaffairs.com/188200/hacking/french-ministry-confirms-data-access-to-1-2-million-bank-accounts.html, securityaffairs.com, 18.02.2026)
+(XXXXXXX, AÇIK - https://securityaffairs.com/188200/hacking/french-ministry-confirms-data-access-to-1-2-million-bank-accounts.html, securityaffairs.com, 19.02.2026)
 
 ================================================================================
 
@@ -2001,7 +2001,7 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 Tarih: Wed, 18 Feb 2026 23:47:14 +0000
 Link: https://cyberscoop.com/nigerian-matthew-akande-tax-refund-fraud/
 
-[TAM METİN - 533 kelime]
+[TAM METİN - 529 kelime]
 A 37-year-old Nigerian man was sentenced to eight years in prison for participating in a five-year cybercrime spree to steal money from the U.S. government through fraudulent tax returns, the Justice Department said Wednesday.
 
 Matthew Abiodun Akande was living in Mexico when he and at least four co-conspirators broke into the networks of tax preparation firms, stole sensitive data on their clients and filed fraudulent tax returns, claiming tax refunds with victims’ personal data, according to court records.
@@ -2020,13 +2020,13 @@ In a sentencing memo submitted to the court, Akande’s lawyer insisted his clie
 
 You can read the full indictment below.
 
-The Caracas operation suggests cyber was part of the plan – just not the whole operation
-
 CISA to host industry feedback sessions on cyber incident reporting regulation
 
 Acting CISA chief says DHS funding lapse would limit, halt some agency work
 
 GOP Congress moves to shape election law in Trump’s image
+
+After major Poland energy grid cyberattack, CISA issues warning to U.S. audience
 
 Google finds state-sponsored hackers use AI at 'all stages' of attack cycle
 
@@ -2052,7 +2052,7 @@ Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
 
-(XXXXXXX, AÇIK - https://cyberscoop.com/nigerian-matthew-akande-tax-refund-fraud/, cyberscoop.com, 18.02.2026)
+(XXXXXXX, AÇIK - https://cyberscoop.com/nigerian-matthew-akande-tax-refund-fraud/, cyberscoop.com, 19.02.2026)
 
 ================================================================================
 
@@ -2061,7 +2061,7 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 Tarih: Wed, 18 Feb 2026 15:59:15 +0000
 Link: https://cyberscoop.com/fulton-county-election-raid-expert-testimony-ryan-macias/
 
-[TAM METİN - 789 kelime]
+[TAM METİN - 783 kelime]
 A former federal official who tested and certified voting machines used in Fulton County, Georgia for the 2020 presidential election told a court that the federal government misrepresented key facts and omitted exculpatory public evidence while seeking a warrant in last month’s law enforcement raid.
 
 The raid, carried out by the FBI and overseen by Director of National Intelligence Tulsi Gabbard, saw agents seize ballots and other documentation from the Fulton County election offices. A public affidavit cited five core allegations related to the county’s recordkeeping, electronic ballot image storage,  and election night reporting. Authorities allege these issues point to a potential conspiracy to intentionally manipulate the vote count in favor of Democrat Joe Biden.
@@ -2088,13 +2088,13 @@ But the federal government again failed to mention in its petition for a warrant
 
 According to Macias, the government’s affidavit also contains errors about basic facts about Fulton County’s reporting process. This includes misreporting the correct official vote count and the date and time it was transmitted to state officials for tabulation.
 
-The Caracas operation suggests cyber was part of the plan – just not the whole operation
-
 CISA to host industry feedback sessions on cyber incident reporting regulation
 
 After major Poland energy grid cyberattack, CISA issues warning to U.S. audience
 
 Critics warn America’s 'move fast' AI strategy could cost it the global market
+
+CISA tells agencies to stop using unsupported edge devices
 
 Unit 42: Nearly two-thirds of breaches now start with identity abuse
 
@@ -2104,21 +2104,21 @@ DHS privacy probe will focus on biometric tracking by ICE, OBIM
 
 WhatsApp releases account feature that looks to combat spyware
 
+Chinese hackers exploited a Dell zero-day for 18 months before anyone noticed
+
 Polish authorities arrest alleged Phobos ransomware affiliate
 
 Apple discloses first actively exploited zero-day of 2026
 
 0APT ransomware group rises swiftly with bluster, along with genuine threat of attack
 
-Microsoft Patch Tuesday matches last year’s zero-day high with six actively exploited vulnerabilities
-
-CISA tells agencies to stop using unsupported edge devices
-
 What’s next for DHS’s forthcoming replacement critical infrastructure protection panel, AI information sharing
 
 Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
+
+Lawmakers wonder when Trump administration will weigh on soon-expired surveillance powers
 
 (XXXXXXX, AÇIK - https://cyberscoop.com/fulton-county-election-raid-expert-testimony-ryan-macias/, cyberscoop.com, 18.02.2026)
 
@@ -3101,7 +3101,7 @@ A Stanford grad student created an algorithm to help his classmates find love; n
 
 A Stanford grad student created an algorithm to help his classmates find love; now, Date Drop is the basis of his new startup
 
-(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/18/hacking-conference-def-con-bans-three-people-linked-to-epstein/, techcrunch.com, 18.02.2026)
+(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/18/hacking-conference-def-con-bans-three-people-linked-to-epstein/, techcrunch.com, 19.02.2026)
 
 ================================================================================
 
@@ -3149,7 +3149,7 @@ Hacking conference Def Con bans three people linked to Epstein
 Lorenzo Franceschi-Bicchierai
 
 
-	14 hours ago
+	15 hours ago
 
 Hacking conference Def Con bans three people linked to Epstein
 
@@ -3165,7 +3165,7 @@ Mastodon, a decentralized alternative to X, plans to target creators with new fe
 Sarah Perez
 
 
-	18 hours ago
+	19 hours ago
 
 Mastodon, a decentralized alternative to X, plans to target creators with new features
 
@@ -3193,7 +3193,7 @@ Hacking conference Def Con bans three people linked to Epstein
 Lorenzo Franceschi-Bicchierai
 
 
-	14 hours ago
+	15 hours ago
 
 Hacking conference Def Con bans three people linked to Epstein
 
@@ -3211,7 +3211,7 @@ Data breach at fintech giant Figure affects close to a million customers
 Lorenzo Franceschi-Bicchierai
 
 
-	18 hours ago
+	19 hours ago
 
 Data breach at fintech giant Figure affects close to a million customers
 
@@ -3227,7 +3227,7 @@ This former Microsoft PM thinks she can unseat CyberArk in 18 months
 Connie Loizos
 
 
-	21 hours ago
+	22 hours ago
 
 This former Microsoft PM thinks she can unseat CyberArk in 18 months
 
@@ -3463,7 +3463,7 @@ Data breach at fintech giant Figure affects close to a million customers
 Lorenzo Franceschi-Bicchierai
 
 
-	18 hours ago
+	19 hours ago
 
 Data breach at fintech giant Figure affects close to a million customers
 
@@ -4179,7 +4179,7 @@ Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Busi
 
 CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
 
-(XXXXXXX, AÇIK - https://www.csoonline.com/article/4134135/notepad-author-says-fixes-make-update-mechanism-effectively-unexploitable.html, csoonline.com, 18.02.2026)
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4134135/notepad-author-says-fixes-make-update-mechanism-effectively-unexploitable.html, csoonline.com, 19.02.2026)
 
 ================================================================================
 
@@ -4293,7 +4293,7 @@ Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Busi
 
 CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
 
-(XXXXXXX, AÇIK - https://www.csoonline.com/article/4134158/chinese-hackers-exploited-zero-day-dell-recoverpoint-flaw-for-1-5-years.html, csoonline.com, 18.02.2026)
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4134158/chinese-hackers-exploited-zero-day-dell-recoverpoint-flaw-for-1-5-years.html, csoonline.com, 19.02.2026)
 
 ================================================================================
 
