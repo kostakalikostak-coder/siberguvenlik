@@ -189,7 +189,7 @@ Predator has also been found to incorporate various undocumented anti-analysis m
 
 "These findings demonstrate that Predator's operators have granular visibility into failed deployments, [...] enabling them to adapt their approaches for specific targets," Jamf Threat Labs researchers Shen Yuan and Nir Avraham said. "This error code system transforms failed deployments from black boxes into diagnostic events."
 
-(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/citizen-lab-finds-cellebrite-tool-used.html, thehackernews.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/citizen-lab-finds-cellebrite-tool-used.html, thehackernews.com, 18.02.2026)
 
 ================================================================================
 
@@ -221,7 +221,7 @@ Furthermore, the remote code execution capabilities can be weaponized to reconfi
 
 "This isn't a one-click exploit with fireworks and a victory banner," Rapid7's Douglas McKee said. "But the underlying vulnerability lowers the barrier in a way that should concern anyone operating these devices in exposed or lightly-segmented environments."
 
-(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/grandstream-gxp1600-voip-phones-exposed.html, thehackernews.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/grandstream-gxp1600-voip-phones-exposed.html, thehackernews.com, 18.02.2026)
 
 ================================================================================
 
@@ -251,7 +251,7 @@ To secure the development environment, it's essential to avoid applying untruste
 
 "Poorly written extensions, overly permissive extensions, or malicious ones can execute code, modify files, and allow attackers to take over a machine and exfiltrate information," OX Security said. "Keeping vulnerable extensions installed on a machine is an immediate threat to an organization's security posture: it may take only one click, or a downloaded repository, to compromise everything."
 
-(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/critical-flaws-found-in-four-vs-code.html, thehackernews.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/critical-flaws-found-in-four-vs-code.html, thehackernews.com, 18.02.2026)
 
 ================================================================================
 
@@ -357,7 +357,7 @@ Turbulence is no longer exceptional. It’s the baseline. The organizations that
 
 Read Digital Security Magazine – 18th Edition.
 
-(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/cybersecurity-tech-predictions-for-2026.html, thehackernews.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/cybersecurity-tech-predictions-for-2026.html, thehackernews.com, 18.02.2026)
 
 ================================================================================
 
@@ -423,7 +423,7 @@ The activity, according to the cybersecurity company, took place in July 2025. T
 
 The U.S. Cybersecurity and Infrastructure Security Agency (CISA), on February 18, 2026, added CVE-2026-22769 to its Known Exploited Vulnerabilities (KEV) catalog, requiring Federal Civilian Executive Branch (FCEB) agencies to apply the patch by February 21, 2026.
 
-(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/dell-recoverpoint-for-vms-zero-day-cve.html, thehackernews.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/dell-recoverpoint-for-vms-zero-day-cve.html, thehackernews.com, 18.02.2026)
 
 ================================================================================
 
@@ -469,7 +469,7 @@ Tines’ intelligent workflow platform unites automation, AI agents, and human-i
 
 Get started today with one of these pre-built workflows or another from our broader story library. Prove the value first-hand and use it as a blueprint to scale an intelligent workflow program that drives meaningful impact across your organization.
 
-(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/3-ways-to-start-your-intelligent.html, thehackernews.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/3-ways-to-start-your-intelligent.html, thehackernews.com, 18.02.2026)
 
 ================================================================================
 
@@ -503,7 +503,7 @@ The attack is assessed to have targeted individuals and organizations located in
 
 Notepad++ users are recommended to update to version 8.9.2, and make sure that the installers are downloaded from the official domain.
 
-(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/notepad-fixes-hijacked-update-mechanism.html, thehackernews.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/notepad-fixes-hijacked-update-mechanism.html, thehackernews.com, 18.02.2026)
 
 ================================================================================
 
@@ -535,11 +535,57 @@ The worm comes with capabilities to retrieve and run additional binaries, overwr
 
 It's presently unclear how the TeamT5 ThreatSonar Anti-Ransomware vulnerability is being exploited. Federal Civilian Executive Branch (FCEB) agencies are recommended to apply the necessary fixes by March 10, 2026, for optimal protection.
 
-(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/cisa-flags-four-security-flaws-under.html, thehackernews.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/cisa-flags-four-security-flaws-under.html, thehackernews.com, 18.02.2026)
 
 ================================================================================
 
-[11] BleepingComputer - New 'Massiv' Android banking malware poses as an IPTV app
+[11] BleepingComputer - Police arrests 651 suspects in African cybercrime crackdown
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 06:24:17 -0500
+Link: https://www.bleepingcomputer.com/news/security/police-arrests-651-suspects-in-african-cybercrime-crackdown/
+
+[TAM METİN - 398 kelime]
+African law enforcement agencies arrested 651 suspects and recovered over $4.3 million in a joint operation targeting investment fraud, mobile money scams, and fake loan applications.
+
+As INTERPOL revealed on Wednesday, Operation Red Card 2.0 identified 1,247 victims between December 8 and January 30 while targeting cybercrime operations linked to over $45 million in financial losses.
+
+Authorities across 16 countries also seized 2,341 devices and took down 1,442 malicious websites, domains, and servers during this joint action coordinated by the African Joint Operation against Cybercrime (AFJOC).
+
+In Nigeria, police officers dismantled an investment fraud ring that was recruiting young people to run phishing, identity theft, and fake investment schemes, taking down over 1,000 fraudulent social media accounts in the process. They also arrested six members of a Nigerian cybercrime gang that used stolen employee credentials to breach a major telecom provider.
+
+Kenyan investigators also apprehended 27 suspects while investigating fraud networks that used social media and messaging platforms to lure victims into fake investment schemes.
+
+In Côte d'Ivoire, 58 suspects were arrested as part of a crackdown on predatory mobile loan apps that targeted victims with hidden fees and abusive debt-collection practices.
+
+"These organized cybercriminal syndicates inflict devastating financial and psychological harm on individuals, businesses and entire communities with their false promises," said Neal Jetton, the head of INTERPOL's Cybercrime Directorate.
+
+"Operation Red Card highlights the importance of collaboration when combatting transnational cybercrime. I encourage all victims of cybercrime to reach out to law enforcement for help."
+
+One year ago, African law enforcement arrested another 306 suspects in the first stage of this INTERPOL-led operation targeting cross-border cybercriminal networks.
+
+This is the latest INTERPOL operation targeting African cybercrime, with thousands of arrests and multiple multimillion-dollar operations disrupted or dismantled in recent years, following Operation Serengeti and Operation Africa Cyber Surge.
+
+The future of IT infrastructure is here
+
+Modern IT infrastructure moves faster than manual workflows can handle.
+
+In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
+
+Police arrests 300 suspects linked to African cybercrime rings
+
+Crypto wallets received a record $158 billion in illicit funds last year
+
+Interpol-led action decrypts 6 ransomware strains, arrests hundreds
+
+Fugitive behind $73M 'pig butchering' scheme gets 20 years in prison
+
+Cloud storage payment scam floods inboxes with fake renewals
+
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/police-arrests-651-suspects-in-african-cybercrime-crackdown/, bleepingcomputer.com, 19.02.2026)
+
+================================================================================
+
+[12] BleepingComputer - New 'Massiv' Android banking malware poses as an IPTV app
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 05:00:00 -0500
 Link: https://www.bleepingcomputer.com/news/security/new-massiv-android-banking-malware-poses-as-an-iptv-app/
@@ -595,7 +641,7 @@ Operation Switch Off dismantles major pirate TV streaming services
 
 ================================================================================
 
-[12] BleepingComputer - Critical infra Honeywell CCTVs vulnerable to auth bypass flaw
+[13] BleepingComputer - Critical infra Honeywell CCTVs vulnerable to auth bypass flaw
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 15:58:20 -0500
 Link: https://www.bleepingcomputer.com/news/security/critical-infra-honeywell-cctvs-vulnerable-to-auth-bypass-flaw/
@@ -647,11 +693,11 @@ CISA confirms active exploitation of four enterprise software bugs
 
 Hackers exploit critical telnetd auth bypass flaw to get root
 
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/critical-infra-honeywell-cctvs-vulnerable-to-auth-bypass-flaw/, bleepingcomputer.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/critical-infra-honeywell-cctvs-vulnerable-to-auth-bypass-flaw/, bleepingcomputer.com, 18.02.2026)
 
 ================================================================================
 
-[13] BleepingComputer - AI platforms can be abused for stealthy malware communication
+[14] BleepingComputer - AI platforms can be abused for stealthy malware communication
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 15:18:24 -0500
 Link: https://www.bleepingcomputer.com/news/security/ai-platforms-can-be-abused-for-stealthy-malware-communication/
@@ -713,11 +759,11 @@ EU launches investigation into X over Grok-generated sexual images
 
 Viral Moltbot AI assistant raises concerns over data security
 
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/ai-platforms-can-be-abused-for-stealthy-malware-communication/, bleepingcomputer.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/ai-platforms-can-be-abused-for-stealthy-malware-communication/, bleepingcomputer.com, 18.02.2026)
 
 ================================================================================
 
-[14] BleepingComputer - Telegram channels expose rapid weaponization of SmarterMail flaws
+[15] BleepingComputer - Telegram channels expose rapid weaponization of SmarterMail flaws
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 11:27:38 -0500
 Link: https://www.bleepingcomputer.com/news/security/telegram-channels-expose-rapid-weaponization-of-smartermail-flaws/
@@ -881,11 +927,11 @@ Learn more by signing up for our free trial.
 
 Sponsored and written by Flare.
 
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/telegram-channels-expose-rapid-weaponization-of-smartermail-flaws/, bleepingcomputer.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/telegram-channels-expose-rapid-weaponization-of-smartermail-flaws/, bleepingcomputer.com, 18.02.2026)
 
 ================================================================================
 
-[15] BleepingComputer - Microsoft: Anti-phishing rules mistakenly blocked emails, Teams messages
+[16] BleepingComputer - Microsoft: Anti-phishing rules mistakenly blocked emails, Teams messages
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 11:26:53 -0500
 Link: https://www.bleepingcomputer.com/news/microsoft/microsoft-anti-phishing-rules-mistakenly-blocked-emails-teams-messages/
@@ -933,11 +979,11 @@ Microsoft Store Outlook add-in hijacked to steal 4,000 Microsoft accounts
 
 Snail mail letters target Trezor and Ledger users in crypto-theft attacks
 
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/microsoft/microsoft-anti-phishing-rules-mistakenly-blocked-emails-teams-messages/, bleepingcomputer.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/microsoft/microsoft-anti-phishing-rules-mistakenly-blocked-emails-teams-messages/, bleepingcomputer.com, 18.02.2026)
 
 ================================================================================
 
-[16] BleepingComputer - Data breach at fintech firm Figure affects nearly 1 million accounts
+[17] BleepingComputer - Data breach at fintech firm Figure affects nearly 1 million accounts
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 09:01:08 -0500
 Link: https://www.bleepingcomputer.com/news/security/data-breach-at-fintech-firm-figure-affects-nearly-1-million-accounts/
@@ -985,11 +1031,11 @@ NordVPN denies breach claims, says attackers have "dummy data"
 
 Canada Goose investigating as hackers leak 600K customer records
 
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/data-breach-at-fintech-firm-figure-affects-nearly-1-million-accounts/, bleepingcomputer.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/data-breach-at-fintech-firm-figure-affects-nearly-1-million-accounts/, bleepingcomputer.com, 18.02.2026)
 
 ================================================================================
 
-[17] BleepingComputer - Microsoft says bug causes Copilot to summarize confidential emails
+[18] BleepingComputer - Microsoft says bug causes Copilot to summarize confidential emails
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 07:03:05 -0500
 Link: https://www.bleepingcomputer.com/news/microsoft/microsoft-says-bug-causes-copilot-to-summarize-confidential-emails/
@@ -1029,11 +1075,11 @@ Microsoft 365 outage takes down admin center in North America
 
 Microsoft announces new mobile-style Windows security controls
 
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/microsoft/microsoft-says-bug-causes-copilot-to-summarize-confidential-emails/, bleepingcomputer.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/microsoft/microsoft-says-bug-causes-copilot-to-summarize-confidential-emails/, bleepingcomputer.com, 18.02.2026)
 
 ================================================================================
 
-[18] BleepingComputer - Glendale man gets 5 years in prison for role in darknet drug ring
+[19] BleepingComputer - Glendale man gets 5 years in prison for role in darknet drug ring
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 05:50:50 -0500
 Link: https://www.bleepingcomputer.com/news/security/glendale-man-gets-5-years-in-prison-for-role-in-darknet-drug-trafficking-operation/
@@ -1077,11 +1123,11 @@ Microsoft disrupts massive RedVDS cybercrime virtual desktop service
 
 Hacker gets seven years for breaching Rotterdam and Antwerp ports
 
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/glendale-man-gets-5-years-in-prison-for-role-in-darknet-drug-trafficking-operation/, bleepingcomputer.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/glendale-man-gets-5-years-in-prison-for-role-in-darknet-drug-trafficking-operation/, bleepingcomputer.com, 18.02.2026)
 
 ================================================================================
 
-[19] BleepingComputer - Spain orders NordVPN, ProtonVPN to block LaLiga piracy sites
+[20] BleepingComputer - Spain orders NordVPN, ProtonVPN to block LaLiga piracy sites
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Tue, 17 Feb 2026 18:15:49 -0500
 Link: https://www.bleepingcomputer.com/news/legal/spain-orders-nordvpn-protonvpn-to-block-laliga-piracy-sites/
@@ -1137,275 +1183,11 @@ Louis Vuitton, Dior, and Tiffany fined $25 million over data breaches
 
 Russia tries to block WhatsApp, Telegram in communication blockade
 
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/legal/spain-orders-nordvpn-protonvpn-to-block-laliga-piracy-sites/, bleepingcomputer.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/legal/spain-orders-nordvpn-protonvpn-to-block-laliga-piracy-sites/, bleepingcomputer.com, 17.02.2026)
 
 ================================================================================
 
-[20] BleepingComputer - Flaws in popular VSCode extensions expose developers to attacks
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Tue, 17 Feb 2026 16:27:12 -0500
-Link: https://www.bleepingcomputer.com/news/security/flaws-in-popular-vscode-extensions-expose-developers-to-attacks/
-
-[TAM METİN - 492 kelime]
-Vulnerabilities with high to critical severity ratings affecting popular Visual Studio Code (VSCode) extensions collectively downloaded more than 128 million times could be exploited to steal local files and execute code remotely.
-
-The security issues impact Code Runner (CVE-2025-65715), Markdown Preview Enhanced (CVE-2025-65716), Markdown Preview Enhanced (CVE-2025-65717), and Microsoft Live Preview (no identifier assigned).
-
-Researchers at application security company Ox Security discovered the flaws and tried to disclose them since June 2025. However, the researchers say that no maintainer responded.
-
-Remote code execution in IDE
-
-VSCode extensions are add-ons that expand the functionality of Microsoft's integrated development environment (IDE). They can add language support, debugging tools, themes, and other functionality or customization options.
-
-They run with significant access to the local development environment, including files, terminals, and network resources.
-
-Ox Security published reports for each of the discovered flaws and warned that keeping the vulnerable extensions could expose the corporate environment to lateral movement, data exfiltration, and system takeover.
-
-An attacker exploiting the CVE-2025-65717 critical vulnerability in the Live Server extension (over 72 million downloads on VSCode) can steal local files by directing the target to a malicious webpage.
-
-The CVE-2025-65715 vulnerability in the Code Runner VSCode extension, with 37 million downloads, allows remote code execution by changing the extension's configuration file. This could be achieved through tricking the target into pasting or applying a maliciously configuration snippet in the global settings.json file.
-
-Rated with a high-severity score of 8.8, CVE-2025-65716 affects the Markdown Preview Enhanced (8.5 million downloads) and can be leveraged to execute JavaScript via maliciously crafted Markdown file.
-
-Ox Security researchers discovered a one-click XSS vulnerability in versions of Microsoft Live Preview before 0.4.16. It can be exploited to access sensitive files on a developer's machine. The extension has more than 11 million downloads on VSCode.
-
-The flaws in the extensions also apply to Cursor and Windsurf, which are AI-powered VSCode-compatible alternative IDEs.
-
-Ox Security's report highlights that the risks associated with a threat actor leveraging the issues include pivoting on the network and stealing sensitive details like API keys and configuration files.
-
-Developers are advised to avoid running localhost servers unless necessary, opening untrusted HTML while they’re running, and applying untrusted configurations or pasting snippets into settings.json.
-
-Also, it is advisable to remove unnecessary extensions and only install those from reputable publishers, while monitoring for unexpected setting changes.
-
-The future of IT infrastructure is here
-
-Modern IT infrastructure moves faster than manual workflows can handle.
-
-In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
-
-VSCode IDE forks expose users to "recommended extension" attacks
-
-One threat actor responsible for 83% of recent Ivanti RCE attacks
-
-CISA gives feds 3 days to patch actively exploited BeyondTrust flaw
-
-Critical BeyondTrust RCE flaw now exploited in attacks, patch now
-
-BeyondTrust warns of critical RCE flaw in remote support software
-
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/flaws-in-popular-vscode-extensions-expose-developers-to-attacks/, bleepingcomputer.com, 19.02.2026)
-
-================================================================================
-
-[21] Krebs on Security - Kimwolf Botnet Swamps Anonymity Network I2P
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Wed, 11 Feb 2026 16:08:11 +0000
-Link: https://krebsonsecurity.com/2026/02/kimwolf-botnet-swamps-anonymity-network-i2p/
-
-[TAM METİN - 831 kelime]
-For the past week, the massive “Internet of Things” (IoT) botnet known as Kimwolf has been disrupting The Invisible Internet Project (I2P), a decentralized, encrypted communications network designed to anonymize and secure online communications. I2P users started reporting disruptions in the network around the same time the Kimwolf botmasters began relying on it to evade takedown attempts against the botnet’s control servers.
-
-Kimwolf is a botnet that surfaced in late 2025 and quickly infected millions of systems, turning poorly secured IoT devices like TV streaming boxes, digital picture frames and routers into relays for malicious traffic and abnormally large distributed denial-of-service (DDoS) attacks.
-
-I2P is a decentralized, privacy-focused network that allows people to communicate and share information anonymously.
-
-“It works by routing data through multiple encrypted layers across volunteer-operated nodes, hiding both the sender’s and receiver’s locations,” the I2P website explains. “The result is a secure, censorship-resistant network designed for private websites, messaging, and data sharing.”
-
-On February 3, I2P users began complaining on the organization’s GitHub page about tens of thousands of routers suddenly overwhelming the network, preventing existing users from communicating with legitimate nodes. Users reported a rapidly increasing number of new routers joining the network that were unable to transmit data, and that the mass influx of new systems had overwhelmed the network to the point where users could no longer connect.
-
-I2P users complaining about service disruptions from a rapidly increasing number of routers suddenly swamping the network.
-
-When one I2P user asked whether the network was under attack, another user replied, “Looks like it. My physical router freezes when the number of connections exceeds 60,000.”
-
-A graph shared by I2P developers showing a marked drop in successful connections on the I2P network around the time the Kimwolf botnet started trying to use the network for fallback communications.
-
-The same day that I2P users began noticing the outages, the individuals in control of Kimwolf posted to their Discord channel that they had accidentally disrupted I2P after attempting to join 700,000 Kimwolf-infected bots as nodes on the network.
-
-The Kimwolf botmaster openly discusses what they are doing with the botnet in a Discord channel with my name on it.
-
-Although Kimwolf is known as a potent weapon for launching DDoS attacks, the outages caused this week by some portion of the botnet attempting to join I2P are what’s known as a “Sybil attack,” a threat in peer-to-peer networks where a single entity can disrupt the system by creating, controlling, and operating a large number of fake, pseudonymous identities.
-
-Indeed, the number of Kimwolf-infected routers that tried to join I2P this past week was many times the network’s normal size. I2P’s Wikipedia page says the network consists of roughly 55,000 computers distributed throughout the world, with each participant acting as both a router (to relay traffic) and a client.
-
-However, Lance James, founder of the New York City based cybersecurity consultancy Unit 221B and the original founder of I2P, told KrebsOnSecurity the entire I2P network now consists of between 15,000 and 20,000 devices on any given day.
-
-An I2P user posted this graph on Feb. 10, showing tens of thousands of routers — mostly from the United States — suddenly attempting to join the network.
-
-Benjamin Brundage is founder of Synthient, a startup that tracks proxy services and was the first to document Kimwolf’s unique spreading techniques. Brundage said the Kimwolf operator(s) have been trying to build a command and control network that can’t easily be taken down by security companies and network operators that are working together to combat the spread of the botnet.
-
-Brundage said the people in control of Kimwolf have been experimenting with using I2P and a similar anonymity network — Tor — as a backup command and control network, although there have been no reports of widespread disruptions in the Tor network recently.
-
-“I don’t think their goal is to take I2P down,” he said. “It’s more they’re looking for an alternative to keep the botnet stable in the face of takedown attempts.”
-
-The Kimwolf botnet created challenges for Cloudflare late last year when it began instructing millions of infected devices to use Cloudflare’s domain name system (DNS) settings, causing control domains associated with Kimwolf to repeatedly usurp Amazon, Apple, Google and Microsoft in Cloudflare’s public ranking of the most frequently requested websites.
-
-James said the I2P network is still operating at about half of its normal capacity, and that a new release is rolling out which should bring some stability improvements over the next week for users.
-
-Meanwhile, Brundage said the good news is Kimwolf’s overlords appear to have quite recently alienated some of their more competent developers and operators, leading to a rookie mistake this past week that caused the botnet’s overall numbers to drop by more than 600,000 infected systems.
-
-“It seems like they’re just testing stuff, like running experiments in production,” he said. “But the botnet’s numbers are dropping significantly now, and they don’t seem to know what they’re doing.”
-
-(XXXXXXX, AÇIK - https://krebsonsecurity.com/2026/02/kimwolf-botnet-swamps-anonymity-network-i2p/, krebsonsecurity.com, 19.02.2026)
-
-================================================================================
-
-[22] Krebs on Security - Patch Tuesday, February 2026 Edition
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Tue, 10 Feb 2026 21:49:53 +0000
-Link: https://krebsonsecurity.com/2026/02/patch-tuesday-february-2026-edition/
-
-[TAM METİN - 515 kelime]
-Microsoft today released updates to fix more than 50 security holes in its Windows operating systems and other software, including patches for a whopping six “zero-day” vulnerabilities that attackers are already exploiting in the wild.
-
-Zero-day #1 this month is CVE-2026-21510, a security feature bypass vulnerability in Windows Shell wherein a single click on a malicious link can quietly bypass Windows protections and run attacker-controlled content without warning or consent dialogs. CVE-2026-21510 affects all currently supported versions of Windows.
-
-The zero-day flaw CVE-2026-21513 is a security bypass bug targeting MSHTML, the proprietary engine of the default Web browser in Windows. CVE-2026-21514 is a related security feature bypass in Microsoft Word.
-
-The zero-day CVE-2026-21533 allows local attackers to elevate their user privileges to “SYSTEM” level access in Windows Remote Desktop Services. CVE-2026-21519 is a zero-day elevation of privilege flaw in the Desktop Window Manager (DWM), a key component of Windows that organizes windows on a user’s screen. Microsoft fixed a different zero-day in DWM just last month.
-
-The sixth zero-day is CVE-2026-21525, a potentially disruptive denial-of-service vulnerability in the Windows Remote Access Connection Manager, the service responsible for maintaining VPN connections to corporate networks.
-
-Chris Goettl at Ivanti reminds us Microsoft has issued several out-of-band security updates since January’s Patch Tuesday. On January 17, Microsoft pushed a fix that resolved a credential prompt failure when attempting remote desktop or remote application connections. On January 26, Microsoft patched a zero-day security feature bypass vulnerability (CVE-2026-21509) in Microsoft Office.
-
-Kev Breen at Immersive notes that this month’s Patch Tuesday includes several fixes for remote code execution vulnerabilities affecting GitHub Copilot and multiple integrated development environments (IDEs), including VS Code, Visual Studio, and JetBrains products. The relevant CVEs are CVE-2026-21516, CVE-2026-21523, and CVE-2026-21256.
-
-Breen said the AI vulnerabilities Microsoft patched this month stem from a command injection flaw that can be triggered through prompt injection, or tricking the AI agent into doing something it shouldn’t — like executing malicious code or commands.
-
-“Developers are high-value targets for threat actors, as they often have access to sensitive data such as API keys and secrets that function as keys to critical infrastructure, including privileged AWS or Azure API keys,” Breen said. “When organizations enable developers and automation pipelines to use LLMs and agentic AI, a malicious prompt can have significant impact. This does not mean organizations should stop using AI. It does mean developers should understand the risks, teams should clearly identify which systems and workflows have access to AI agents, and least-privilege principles should be applied to limit the blast radius if developer secrets are compromised.”
-
-The SANS Internet Storm Center has a clickable breakdown of each individual fix this month from Microsoft, indexed by severity and CVSS score. Enterprise Windows admins involved in testing patches before rolling them out should keep an eye on askwoody.com, which often has the skinny on wonky updates. Please don’t neglect to back up your data if it has been a while since you’ve done that, and feel free to sound off in the comments if you experience problems installing any of these fixes.
-
-(XXXXXXX, AÇIK - https://krebsonsecurity.com/2026/02/patch-tuesday-february-2026-edition/, krebsonsecurity.com, 19.02.2026)
-
-================================================================================
-
-[23] Krebs on Security - Please Don’t Feed the Scattered Lapsus ShinyHunters
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Mon, 02 Feb 2026 16:15:16 +0000
-Link: https://krebsonsecurity.com/2026/02/please-dont-feed-the-scattered-lapsus-shiny-hunters/
-
-[TAM METİN - 1200 kelime]
-A prolific data ransom gang that calls itself Scattered Lapsus ShinyHunters (SLSH) has a distinctive playbook when it seeks to extort payment from victim firms: Harassing, threatening and even swatting executives and their families, all while notifying journalists and regulators about the extent of the intrusion. Some victims reportedly are paying — perhaps as much to contain the stolen data as to stop the escalating personal attacks. But a top SLSH expert warns that engaging at all beyond a “We’re not paying” response only encourages further harassment, noting that the group’s fractious and unreliable history means the only winning move is not to pay.
-
-Image: Shutterstock.com, @Mungujakisa
-
-Unlike traditional, highly regimented Russia-based ransomware affiliate groups, SLSH is an unruly and somewhat fluid English-language extortion gang that appears uninterested in building a reputation of consistent behavior whereby victims might have some measure of confidence that the criminals will keep their word if paid.
-
-That’s according to Allison Nixon, director of research at the New York City based security consultancy Unit 221B. Nixon has been closely tracking the criminal group and individual members as they bounce between various Telegram channels used to extort and harass victims, and she said SLSH differs from traditional data ransom groups in other important ways that argue against trusting them to do anything they say they’ll do — such as destroying stolen data.
-
-Like SLSH, many traditional Russian ransomware groups have employed high-pressure tactics to force payment in exchange for a decryption key and/or a promise to delete stolen data, such as publishing a dark web shaming blog with samples of stolen data next to a countdown clock, or notifying journalists and board members of the victim company. But Nixon said the extortion from SLSH quickly escalates way beyond that — to threats of physical violence against executives and their families, DDoS attacks on the victim’s website, and repeated email-flooding campaigns.
-
-SLSH is known for breaking into companies by phishing employees over the phone, and using the purloined access to steal sensitive internal data. In a January 30 blog post, Google’s security forensics firm Mandiant said SLSH’s most recent extortion attacks stem from incidents spanning early to mid-January 2026, when SLSH members pretended to be IT staff and called employees at targeted victim organizations claiming that the company was updating MFA settings.
-
-“The threat actor directed the employees to victim-branded credential harvesting sites to capture their SSO credentials and MFA codes, and then registered their own device for MFA,” the blog post explained.
-
-Victims often first learn of the breach when their brand name is uttered on whatever ephemeral new public Telegram group chat SLSH is using to threaten, extort and harass their prey. According to Nixon, the coordinated harassment on the SLSH Telegram channels is part of a well-orchestrated strategy to overwhelm the victim organization by manufacturing humiliation that pushes them over the threshold to pay.
-
-Nixon said multiple executives at targeted organizations have been subject to “swatting” attacks, wherein SLSH communicated a phony bomb threat or hostage situation at the target’s address in the hopes of eliciting a heavily armed police response at their home or place of work.
-
-“A big part of what they’re doing to victims is the psychological aspect of it, like harassing executives’ kids and threatening the board of the company,” Nixon told KrebsOnSecurity. “And while these victims are getting extortion demands, they’re simultaneously getting outreach from media outlets saying, ‘Hey, do you have any comments on the bad things we’re going to write about you.”
-
-In a blog post today, Unit 221B argues that no one should negotiate with SLSH because the group has demonstrated a willingness to extort victims based on promises that it has no intention to keep. Nixon points out that all of SLSH’s known members hail from The Com, shorthand for a constellation of cybercrime-focused Discord and Telegram communities which serve as a kind of distributed social network that facilitates instant collaboration.
-
-Nixon said Com-based extortion groups tend to instigate feuds and drama between group members, leading to lying, betrayals, credibility destroying behavior, backstabbing, and sabotaging each other.
-
-“With this type of ongoing dysfunction, often compounding by substance abuse, these threat actors often aren’t able to act with the core goal in mind of completing a successful, strategic ransom operation,” Nixon wrote. “They continually lose control with outbursts that put their strategy and operational security at risk, which severely limits their ability to build a professional, scalable, and sophisticated criminal organization network for continued successful ransoms – unlike other, more tenured and professional criminal organizations focused on ransomware alone.”
-
-Intrusions from established ransomware groups typically center around encryption/decryption malware that mostly stays on the affected machine. In contrast, Nixon said, ransom from a Com group is often structured the same as violent sextortion schemes against minors, wherein members of The Com will steal damaging information, threaten to release it, and “promise” to delete it if the victim complies without any guarantee or technical proof point that they will keep their word. She writes:
-
-A key component of SLSH’s efforts to convince victims to pay, Nixon said, involves manipulating the media into hyping the threat posed by this group. This approach also borrows a page from the playbook of sextortion attacks, she said, which encourages predators to keep targets continuously engaged and worrying about the consequences of non-compliance.
-
-“On days where SLSH had no substantial criminal ‘win’ to announce, they focused on announcing death threats and harassment to keep law enforcement, journalists, and cybercrime industry professionals focused on this group,” she said.
-
-An excerpt from a sextortion tutorial from a Com-based Telegram channel. Image: Unit 221B.
-
-Nixon knows a thing or two about being threatened by SLSH: For the past several months, the group’s Telegram channels have been replete with threats of physical violence against her, against Yours Truly, and against other security researchers. These threats, she said, are just another way the group seeks to generate media attention and achieve a veneer of credibility, but they are useful as indicators of compromise because SLSH members tend to name drop and malign security researchers even in their communications with victims.
-
-“Watch for the following behaviors in their communications to you or their public statements,” Unit 221B’s advisory reads. “Repeated abusive mentions of Allison Nixon (or “A.N”), Unit 221B, or cybersecurity journalists—especially Brian Krebs—or any other cybersecurity employee, or cybersecurity company. Any threats to kill, or commit terrorism, or violence against internal employees, cybersecurity employees, investigators, and journalists.”
-
-Unit 221B says that while the pressure campaign during an extortion attempt may be traumatizing to employees, executives, and their family members, entering into drawn-out negotiations with SLSH incentivizes the group to increase the level of harm and risk, which could include the physical safety of employees and their families.
-
-“The breached data will never go back to the way it was, but we can assure you that the harassment will end,” Nixon said. “So, your decision to pay should be a separate issue from the harassment. We believe that when you separate these issues, you will objectively see that the best course of action to protect your interests, in both the short and long term, is to refuse payment.”
-
-(XXXXXXX, AÇIK - https://krebsonsecurity.com/2026/02/please-dont-feed-the-scattered-lapsus-shiny-hunters/, krebsonsecurity.com, 19.02.2026)
-
-================================================================================
-
-[24] Krebs on Security - Who Operates the Badbox 2.0 Botnet?
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Mon, 26 Jan 2026 16:11:38 +0000
-Link: https://krebsonsecurity.com/2026/01/who-operates-the-badbox-2-0-botnet/
-
-[TAM METİN - 1452 kelime]
-The cybercriminals in control of Kimwolf — a disruptive botnet that has infected more than 2 million devices — recently shared a screenshot indicating they’d compromised the control panel for Badbox 2.0, a vast China-based botnet powered by malicious software that comes pre-installed on many Android TV streaming boxes. Both the FBI and Google say they are hunting for the people behind Badbox 2.0, and thanks to bragging by the Kimwolf botmasters we may now have a much clearer idea about that.
-
-Our first story of 2026, The Kimwolf Botnet is Stalking Your Local Network, detailed the unique and highly invasive methods Kimwolf uses to spread. The story warned that the vast majority of Kimwolf infected systems were unofficial Android TV boxes that are typically marketed as a way to watch unlimited (pirated) movie and TV streaming services for a one-time fee.
-
-Our January 8 story, Who Benefitted from the Aisuru and Kimwolf Botnets?, cited multiple sources saying the current administrators of Kimwolf went by the nicknames “Dort” and “Snow.” Earlier this month, a close former associate of Dort and Snow shared what they said was a screenshot the Kimwolf botmasters had taken while logged in to the Badbox 2.0 botnet control panel.
-
-That screenshot, a portion of which is shown below, shows seven authorized users of the control panel, including one that doesn’t quite match the others: According to my source, the account “ABCD” (the one that is logged in and listed in the top right of the screenshot) belongs to Dort, who somehow figured out how to add their email address as a valid user of the Badbox 2.0 botnet.
-
-The control panel for the Badbox 2.0 botnet lists seven authorized users and their email addresses. Click to enlarge.
-
-Badbox has a storied history that well predates Kimwolf’s rise in October 2025. In July 2025, Google filed a “John Doe” lawsuit (PDF) against 25 unidentified defendants accused of operating Badbox 2.0, which Google described as a botnet of over ten million unsanctioned Android streaming devices engaged in advertising fraud. Google said Badbox 2.0, in addition to compromising multiple types of devices prior to purchase, also can infect devices by requiring the download of malicious apps from unofficial marketplaces.
-
-Google’s lawsuit came on the heels of a June 2025 advisory from the Federal Bureau of Investigation (FBI), which warned that cyber criminals were gaining unauthorized access to home networks by either configuring the products with malware prior to the user’s purchase, or infecting the device as it downloads required applications that contain backdoors — usually during the set-up process.
-
-The FBI said Badbox 2.0 was discovered after the original Badbox campaign was disrupted in 2024. The original Badbox was identified in 2023, and primarily consisted of Android operating system devices (TV boxes) that were compromised with backdoor malware prior to purchase.
-
-KrebsOnSecurity was initially skeptical of the claim that the Kimwolf botmasters had hacked the Badbox 2.0 botnet. That is, until we began digging into the history of the qq.com email addresses in the screenshot above.
-
-An online search for the address 34557257@qq.com (pictured in the screenshot above as the user “Chen“) shows it is listed as a point of contact for a number of China-based technology companies, including:
-
-–Beijing Hong Dake Wang Science & Technology Co Ltd.
-–Beijing Hengchuang Vision Mobile Media Technology Co. Ltd.
-–Moxin Beijing Science and Technology Co. Ltd.
-
-The website for Beijing Hong Dake Wang Science is asmeisvip[.]net, a domain that was flagged in a March 2025 report by HUMAN Security as one of several dozen sites tied to the distribution and management of the Badbox 2.0 botnet. Ditto for moyix[.]com, a domain associated with Beijing Hengchuang Vision Mobile.
-
-A search at the breach tracking service Constella Intelligence finds 34557257@qq.com at one point used the password “cdh76111.” Pivoting on that password in Constella shows it is known to have been used by just two other email accounts: daihaic@gmail.com and cathead@gmail.com.
-
-Constella found cathead@gmail.com registered an account at jd.com (China’s largest online retailer) in 2021 under the name “陈代海,” which translates to “Chen Daihai.” According to DomainTools.com, the name Chen Daihai is present in the original registration records (2008) for moyix[.]com, along with the email address cathead@astrolink[.]cn.
-
-Incidentally, astrolink[.]cn also is among the Badbox 2.0 domains identified in HUMAN Security’s 2025 report. DomainTools finds cathead@astrolink[.]cn was used to register more than a dozen domains, including vmud[.]net, yet another Badbox 2.0 domain tagged by HUMAN Security.
-
-A cached copy of astrolink[.]cn preserved at archive.org shows the website belongs to a mobile app development company whose full name is Beijing Astrolink Wireless Digital Technology Co. Ltd. The archived website reveals a “Contact Us” page that lists a Chen Daihai as part of the company’s technology department. The other person featured on that contact page is Zhu Zhiyu, and their email address is listed as xavier@astrolink[.]cn.
-
-A Google-translated version of Astrolink’s website, circa 2009. Image: archive.org.
-
-Astute readers will notice that the user Mr.Zhu in the Badbox 2.0 panel used the email address xavierzhu@qq.com. Searching this address in Constella reveals a jd.com account registered in the name of Zhu Zhiyu. A rather unique password used by this account matches the password used by the address xavierzhu@gmail.com, which DomainTools finds was the original registrant of astrolink[.]cn.
-
-The very first account listed in the Badbox 2.0 panel — “admin,” registered in November 2020 — used the email address 189308024@qq.com. DomainTools shows this email is found in the 2022 registration records for the domain guilincloud[.]cn, which includes the registrant name “Huang Guilin.”
-
-Constella finds 189308024@qq.com is associated with the China phone number 18681627767. The open-source intelligence platform osint.industries reveals this phone number is connected to a Microsoft profile created in 2014 under the name Guilin Huang (桂林 黄). The cyber intelligence platform Spycloud says that phone number was used in 2017 to create an account at the Chinese social media platform Weibo under the username “h_guilin.”
-
-The public information attached to Guilin Huang’s Microsoft account, according to the breach tracking service osintindustries.com.
-
-The remaining three users and corresponding qq.com email addresses were all connected to individuals in China. However, none of them (nor Mr. Huang) had any apparent connection to the entities created and operated by Chen Daihai and Zhu Zhiyu — or to any corporate entities for that matter. Also, none of these individuals responded to requests for comment.
-
-The mind map below includes search pivots on the email addresses, company names and phone numbers that suggest a connection between Chen Daihai, Zhu Zhiyu, and Badbox 2.0.
-
-This mind map includes search pivots on the email addresses, company names and phone numbers that appear to connect Chen Daihai and Zhu Zhiyu to Badbox 2.0. Click to enlarge.
-
-The idea that the Kimwolf botmasters could have direct access to the Badbox 2.0 botnet is a big deal, but explaining exactly why that is requires some background on how Kimwolf spreads to new devices. The botmasters figured out they could trick residential proxy services into relaying malicious commands to vulnerable devices behind the firewall on the unsuspecting user’s local network.
-
-The vulnerable systems sought out by Kimwolf are primarily Internet of Things (IoT) devices like unsanctioned Android TV boxes and digital photo frames that have no discernible security or authentication built-in. Put simply, if you can communicate with these devices, you can compromise them with a single command.
-
-Our January 2 story featured research from the proxy-tracking firm Synthient, which alerted 11 different residential proxy providers that their proxy endpoints were vulnerable to being abused for this kind of local network probing and exploitation.
-
-Most of those vulnerable proxy providers have since taken steps to prevent customers from going upstream into the local networks of residential proxy endpoints, and it appeared that Kimwolf would no longer be able to quickly spread to millions of devices simply by exploiting some residential proxy provider.
-
-However, the source of that Badbox 2.0 screenshot said the Kimwolf botmasters had an ace up their sleeve the whole time: Secret access to the Badbox 2.0 botnet control panel.
-
-“Dort has gotten unauthorized access,” the source said. “So, what happened is normal proxy providers patched this. But Badbox doesn’t sell proxies by itself, so it’s not patched. And as long as Dort has access to Badbox, they would be able to load” the Kimwolf malware directly onto TV boxes associated with Badbox 2.0.
-
-The source said it isn’t clear how Dort gained access to the Badbox botnet panel. But it’s unlikely that Dort’s existing account will persist for much longer: All of our notifications to the qq.com email addresses listed in the control panel screenshot received a copy of that image, as well as questions about the apparently rogue ABCD account.
-
-(XXXXXXX, AÇIK - https://krebsonsecurity.com/2026/01/who-operates-the-badbox-2-0-botnet/, krebsonsecurity.com, 19.02.2026)
-
-================================================================================
-
-[25] Krebs on Security - Kimwolf Botnet Lurking in Corporate, Govt. Networks
+[21] Krebs on Security - Kimwolf Botnet Lurking in Corporate, Govt. Networks
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Tue, 20 Jan 2026 18:19:13 +0000
 Link: https://krebsonsecurity.com/2026/01/kimwolf-botnet-lurking-in-corporate-govt-networks/
@@ -1455,11 +1237,11 @@ Who Benefitted from the Aisuru and Kimwolf Botnets?
 
 A Broken System Fueling Botnets (Synthient).
 
-(XXXXXXX, AÇIK - https://krebsonsecurity.com/2026/01/kimwolf-botnet-lurking-in-corporate-govt-networks/, krebsonsecurity.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://krebsonsecurity.com/2026/01/kimwolf-botnet-lurking-in-corporate-govt-networks/, krebsonsecurity.com, 20.01.2026)
 
 ================================================================================
 
-[26] Krebs on Security - Patch Tuesday, January 2026 Edition
+[22] Krebs on Security - Patch Tuesday, January 2026 Edition
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 14 Jan 2026 00:47:38 +0000
 Link: https://krebsonsecurity.com/2026/01/patch-tuesday-january-2026-edition/
@@ -1499,11 +1281,11 @@ Goettl noted that Mozilla has released updates for Firefox and Firefox ESR reso
 
 As ever, the SANS Internet Storm Center has a per-patch breakdown by severity and urgency. Windows admins should keep an eye on askwoody.com for any news about patches that don’t quite play nice with everything. If you experience any issues related installing January’s patches, please drop a line in the comments below.
 
-(XXXXXXX, AÇIK - https://krebsonsecurity.com/2026/01/patch-tuesday-january-2026-edition/, krebsonsecurity.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://krebsonsecurity.com/2026/01/patch-tuesday-january-2026-edition/, krebsonsecurity.com, 14.01.2026)
 
 ================================================================================
 
-[27] Krebs on Security - Who Benefited from the Aisuru and Kimwolf Botnets?
+[23] Krebs on Security - Who Benefited from the Aisuru and Kimwolf Botnets?
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 08 Jan 2026 23:23:43 +0000
 Link: https://krebsonsecurity.com/2026/01/who-benefited-from-the-aisuru-and-kimwolf-botnets/
@@ -1599,11 +1381,11 @@ Both Synthient and XLabs say Kimwolf targets a vast number of Android TV streami
 
 If you own a TV box that matches one of these model names and/or numbers, please just rip it out of your network. If you encounter one of these devices on the network of a family member or friend, send them a link to this story (or to our January 2 story on Kimwolf) and explain that it’s not worth the potential hassle and harm created by keeping them plugged in.
 
-(XXXXXXX, AÇIK - https://krebsonsecurity.com/2026/01/who-benefited-from-the-aisuru-and-kimwolf-botnets/, krebsonsecurity.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://krebsonsecurity.com/2026/01/who-benefited-from-the-aisuru-and-kimwolf-botnets/, krebsonsecurity.com, 08.01.2026)
 
 ================================================================================
 
-[28] Krebs on Security - The Kimwolf Botnet is Stalking Your Local Network
+[24] Krebs on Security - The Kimwolf Botnet is Stalking Your Local Network
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 02 Jan 2026 14:20:10 +0000
 Link: https://krebsonsecurity.com/2026/01/the-kimwolf-botnet-is-stalking-your-local-network/
@@ -1785,11 +1567,11 @@ It is somewhat remarkable that we haven’t yet seen the entertainment industry 
 
 Stay tuned for Part II in this series, which will poke through clues left behind by the people who appear to have built Kimwolf and benefited from it the most.
 
-(XXXXXXX, AÇIK - https://krebsonsecurity.com/2026/01/the-kimwolf-botnet-is-stalking-your-local-network/, krebsonsecurity.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://krebsonsecurity.com/2026/01/the-kimwolf-botnet-is-stalking-your-local-network/, krebsonsecurity.com, 02.01.2026)
 
 ================================================================================
 
-[29] Krebs on Security - Happy 16th Birthday, KrebsOnSecurity.com!
+[25] Krebs on Security - Happy 16th Birthday, KrebsOnSecurity.com!
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 29 Dec 2025 20:23:26 +0000
 Link: https://krebsonsecurity.com/2025/12/happy-16th-birthday-krebsonsecurity-com/
@@ -1839,11 +1621,11 @@ Thank you once again for your continued readership, encouragement and support. I
 
 Thanks again, and Happy New Year everyone! Be safe out there.
 
-(XXXXXXX, AÇIK - https://krebsonsecurity.com/2025/12/happy-16th-birthday-krebsonsecurity-com/, krebsonsecurity.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://krebsonsecurity.com/2025/12/happy-16th-birthday-krebsonsecurity-com/, krebsonsecurity.com, 29.12.2025)
 
 ================================================================================
 
-[30] Krebs on Security - Dismantling Defenses: Trump 2.0 Cyber Year in Review
+[26] Krebs on Security - Dismantling Defenses: Trump 2.0 Cyber Year in Review
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 19 Dec 2025 15:14:55 +0000
 Link: https://krebsonsecurity.com/2025/12/dismantling-defenses-trump-2-0-cyber-year-in-review/
@@ -1977,7 +1759,268 @@ Where is DOGE now? Reuters reported last month that as far as the White House is
 
 KrebsOnSecurity would like to thank the anonymous researcher NatInfoSec for assisting with the research on this story.
 
-(XXXXXXX, AÇIK - https://krebsonsecurity.com/2025/12/dismantling-defenses-trump-2-0-cyber-year-in-review/, krebsonsecurity.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://krebsonsecurity.com/2025/12/dismantling-defenses-trump-2-0-cyber-year-in-review/, krebsonsecurity.com, 19.12.2025)
+
+================================================================================
+
+[27] Krebs on Security - Most Parked Domains Now Serving Malicious Content
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Tue, 16 Dec 2025 14:14:48 +0000
+Link: https://krebsonsecurity.com/2025/12/most-parked-domains-now-serving-malicious-content/
+
+[TAM METİN - 1002 kelime]
+Direct navigation — the act of visiting a website by manually typing a domain name in a web browser — has never been riskier: A new study finds the vast majority of “parked” domains — mostly expired or dormant domain names, or common misspellings of popular websites — are now configured to redirect visitors to sites that foist scams and malware.
+
+A lookalike domain to the FBI Internet Crime Complaint Center website, returned a non-threatening parking page (left) whereas a mobile user was instantly directed to deceptive content in October 2025 (right). Image: Infoblox.
+
+When Internet users try to visit expired domain names or accidentally navigate to a lookalike “typosquatting” domain, they are typically brought to a placeholder page at a domain parking company that tries to monetize the wayward traffic by displaying links to a number of third-party websites that have paid to have their links shown.
+
+A decade ago, ending up at one of these parked domains came with a relatively small chance of being redirected to a malicious destination: In 2014, researchers found (PDF) that parked domains redirected users to malicious sites less than five percent of the time — regardless of whether the visitor clicked on any links at the parked page.
+
+But in a series of experiments over the past few months, researchers at the security firm Infoblox say they discovered the situation is now reversed, and that malicious content is by far the norm now for parked websites.
+
+“In large scale experiments, we found that over 90% of the time, visitors to a parked domain would be directed to illegal content, scams, scareware and anti-virus software subscriptions, or malware, as the ‘click’ was sold from the parking company to advertisers, who often resold that traffic to yet another party,” Infoblox researchers wrote in a paper published today.
+
+Infoblox found parked websites are benign if the visitor arrives at the site using a virtual private network (VPN), or else via a non-residential Internet address. For example, Scotiabank.com customers who accidentally mistype the domain as scotaibank[.]com will see a normal parking page if they’re using a VPN, but will be redirected to a site that tries to foist scams, malware or other unwanted content if coming from a residential IP address. Again, this redirect happens just by visiting the misspelled domain with a mobile device or desktop computer that is using a residential IP address.
+
+According to Infoblox, the person or entity that owns scotaibank[.]com has a portfolio of nearly 3,000 lookalike domains, including gmai[.]com, which demonstrably has been configured with its own mail server for accepting incoming email messages. Meaning, if you send an email to a Gmail user and accidentally omit the “l” from “gmail.com,” that missive doesn’t just disappear into the ether or produce a bounce reply: It goes straight to these scammers. The report notices this domain also has been leveraged in multiple recent business email compromise campaigns, using a lure indicating a failed payment with trojan malware attached.
+
+Infoblox found this particular domain holder (betrayed by a common DNS server — torresdns[.]com) has set up typosquatting domains targeting dozens of top Internet destinations, including Craigslist, YouTube, Google, Wikipedia, Netflix, TripAdvisor, Yahoo, eBay, and Microsoft. A defanged list of these typosquatting domains is available here (the dots in the listed domains have been replaced with commas).
+
+“It was often a chain of redirects — one or two domains outside the parking company — before threat arrives,” Brunsdon said. “Each time in the handoff the device is profiled again and again, before being passed off to a malicious domain or else a decoy page like Amazon.com or Alibaba.com if they decide it’s not worth targeting.”
+
+Brunsdon said domain parking services claim the search results they return on parked pages are designed to be relevant to their parked domains, but that almost none of this displayed content was related to the lookalike domain names they tested.
+
+Samples of redirection paths when visiting scotaibank dot com. Each branch includes a series of domains observed, including the color-coded landing page. Image: Infoblox.
+
+Infoblox said a different threat actor who owns domaincntrol[.]com — a domain that differs from GoDaddy’s name servers by a single character — has long taken advantage of typos in DNS configurations to drive users to malicious websites. In recent months, however, Infoblox discovered the malicious redirect only happens when the query for the misconfigured domain comes from a visitor who is using Cloudflare’s DNS resolvers (1.1.1.1), and that all other visitors will get a page that refuses to load.
+
+The researchers found that even variations on well-known government domains are being targeted by malicious ad networks.
+
+“When one of our researchers tried to report a crime to the FBI’s Internet Crime Complaint Center (IC3), they accidentally visited ic3[.]org instead of ic3[.]gov,” the report notes. “Their phone was quickly redirected to a false ‘Drive Subscription Expired’ page. They were lucky to receive a scam; based on what we’ve learnt, they could just as easily receive an information stealer or trojan malware.”
+
+The Infoblox report emphasizes that the malicious activity they tracked is not attributed to any known party, noting that the domain parking or advertising platforms named in the study were not implicated in the malvertising they documented.
+
+However, the report concludes that while the parking companies claim to only work with top advertisers, the traffic to these domains was frequently sold to affiliate networks, who often resold the traffic to the point where the final advertiser had no business relationship with the parking companies.
+
+Infoblox also pointed out that recent policy changes by Google may have inadvertently increased the risk to users from direct search abuse. Brunsdon said Google Adsense previously defaulted to allowing their ads to be placed on parked pages, but that in early 2025 Google implemented a default setting that had their customers opt-out by default on presenting ads on parked domains — requiring the person running the ad to voluntarily go into their settings and turn on parking as a location.
+
+(XXXXXXX, AÇIK - https://krebsonsecurity.com/2025/12/most-parked-domains-now-serving-malicious-content/, krebsonsecurity.com, 16.12.2025)
+
+================================================================================
+
+[28] Krebs on Security - Microsoft Patch Tuesday, December 2025 Edition
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Tue, 09 Dec 2025 23:18:29 +0000
+Link: https://krebsonsecurity.com/2025/12/microsoft-patch-tuesday-december-2025-edition/
+
+[TAM METİN - 563 kelime]
+Microsoft today pushed updates to fix at least 56 security flaws in its Windows operating systems and supported software. This final Patch Tuesday of 2025 tackles one zero-day bug that is already being exploited, as well as two publicly disclosed vulnerabilities.
+
+Despite releasing a lower-than-normal number of security updates these past few months, Microsoft patched a whopping 1,129 vulnerabilities in 2025, an 11.9% increase from 2024. According to Satnam Narang at Tenable, this year marks the second consecutive year that Microsoft patched over one thousand vulnerabilities, and the third time it has done so since its inception.
+
+The zero-day flaw patched today is CVE-2025-62221, a privilege escalation vulnerability affecting Windows 10 and later editions. The weakness resides in a component called the “Windows Cloud Files Mini Filter Driver” — a system driver that enables cloud applications to access file system functionalities.
+
+“This is particularly concerning, as the mini filter is integral to services like OneDrive, Google Drive, and iCloud, and remains a core Windows component, even if none of those apps were installed,” said Adam Barnett, lead software engineer at Rapid7.
+
+Only three of the flaws patched today earned Microsoft’s most-dire “critical” rating: Both CVE-2025-62554 and CVE-2025-62557 involve Microsoft Office, and both can exploited merely by viewing a booby-trapped email message in the Preview Pane. Another critical bug — CVE-2025-62562 — involves Microsoft Outlook, although Redmond says the Preview Pane is not an attack vector with this one.
+
+But according to Microsoft, the vulnerabilities most likely to be exploited from this month’s patch batch are other (non-critical) privilege escalation bugs, including:
+
+–CVE-2025-62458 — Win32k
+–CVE-2025-62470 — Windows Common Log File System Driver
+–CVE-2025-62472 — Windows Remote Access Connection Manager
+–CVE-2025-59516 — Windows Storage VSP Driver
+–CVE-2025-59517 — Windows Storage VSP Driver
+
+Kev Breen, senior director of threat research at Immersive, said privilege escalation flaws are observed in almost every incident involving host compromises.
+
+“We don’t know why Microsoft has marked these specifically as more likely, but the majority of these components have historically been exploited in the wild or have enough technical detail on previous CVEs that it would be easier for threat actors to weaponize these,” Breen said. “Either way, while not actively being exploited, these should be patched sooner rather than later.”
+
+One of the more interesting vulnerabilities patched this month is CVE-2025-64671, a remote code execution flaw in the Github Copilot Plugin for Jetbrains AI-based coding assistant that is used by Microsoft and GitHub. Breen said this flaw would allow attackers to execute arbitrary code by tricking the large language model (LLM) into running commands that bypass the user’s “auto-approve” settings.
+
+CVE-2025-64671 is part of a broader, more systemic security crisis that security researcher Ari Marzuk has branded IDEsaster (IDE  stands for “integrated development environment”), which encompasses more than 30 separate vulnerabilities reported in nearly a dozen market-leading AI coding platforms, including Cursor, Windsurf, Gemini CLI, and Claude Code.
+
+The other publicly-disclosed vulnerability patched today is CVE-2025-54100, a remote code execution bug in Windows Powershell on Windows Server 2008 and later that allows an unauthenticated attacker to run code in the security context of the user.
+
+For anyone seeking a more granular breakdown of the security updates Microsoft pushed today, check out the roundup at the SANS Internet Storm Center. As always, please leave a note in the comments if you experience problems applying any of this month’s Windows patches.
+
+(XXXXXXX, AÇIK - https://krebsonsecurity.com/2025/12/microsoft-patch-tuesday-december-2025-edition/, krebsonsecurity.com, 09.12.2025)
+
+================================================================================
+
+[29] Krebs on Security - Drones to Diplomas: How Russia’s Largest Private University is Linked to a $25M Essay Mill
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Sat, 06 Dec 2025 14:45:03 +0000
+Link: https://krebsonsecurity.com/2025/12/drones-to-diplomas-how-russias-largest-private-university-is-linked-to-a-25m-essay-mill/
+
+[TAM METİN - 1970 kelime]
+A sprawling academic cheating network turbocharged by Google Ads that has generated nearly $25 million in revenue has curious ties to a Kremlin-connected oligarch whose Russian university builds drones for Russia’s war against Ukraine.
+
+The Nerdify homepage.
+
+The link between essay mills and Russian attack drones might seem improbable, but understanding it begins with a simple question: How does a human-intensive academic cheating service stay relevant in an era when students can simply ask AI to write their term papers? The answer – recasting the business as an AI company – is just the latest chapter in a story of many rebrands that link the operation to Russia’s largest private university.
+
+Search in Google for any terms related to academic cheating services — e.g., “help with exam online” or “term paper online” — and you’re likely to encounter websites with the words “nerd” or “geek” in them, such as thenerdify[.]com and geekly-hub[.]com. With a simple request sent via text message, you can hire their tutors to help with any assignment.
+
+These nerdy and geeky-branded websites frequently cite their “honor code,” which emphasizes they do not condone academic cheating, will not write your term papers for you, and will only offer support and advice for customers. But according to This Isn’t Fine, a Substack blog about contract cheating and essay mills, the Nerdify brand of websites will happily ignore that mantra.
+
+“We tested the quick SMS for a price quote,” wrote This Isn’t Fine author Joseph Thibault. “The honor code references and platitudes apparently stop at the website. Within three minutes, we confirmed that a full three-page, plagiarism- and AI-free MLA formatted Argumentative essay could be ours for the low price of $141.”
+
+A screenshot from Joseph Thibault’s Substack post shows him purchasing a 3-page paper with the Nerdify service.
+
+Google prohibits ads that “enable dishonest behavior.” Yet, a sprawling global essay and homework cheating network run under the Nerdy brands has quietly bought its way to the top of Google searches – booking revenues of almost $25 million through a maze of companies in Cyprus, Malta and Hong Kong, while pitching “tutoring” that delivers finished work that students can turn in.
+
+When one Nerdy-related Google Ads account got shut down, the group behind the company would form a new entity with a front-person (typically a young Ukrainian woman), start a new ads account along with a new website and domain name (usually with “nerdy” in the brand), and resume running Google ads for the same set of keywords.
+
+UK companies belonging to the group that have been shut down by Google Ads since Jan 2025 include:
+
+–Proglobal Solutions LTD (advertised nerdifyit[.]com);
+–AW Tech Limited (advertised thenerdify[.]com);
+–Geekly Solutions Ltd (advertised geekly-hub[.]com).
+
+Currently active Google Ads accounts for the Nerdify brands include:
+
+-OK Marketing LTD (advertising geekly-hub[.]net⁩), formed in the name of Olha Karpenko, a young Ukrainian woman;
+–Two Sigma Solutions LTD (advertising litero[.]ai), formed in the name of Olekszij (Alexey) Pokatilo.
+
+Google’s Ads Transparency page for current Nerdify advertiser OK Marketing LTD.
+
+Mr. Pokatilo has been in the essay-writing business since at least 2009, operating a paper-mill enterprise called Livingston Research alongside Alexander Korsukov, who is listed as an owner. According to a lengthy account from a former employee, Livingston Research mainly farmed its writing tasks out to low-cost workers from Kenya, Philippines, Pakistan, Russia and Ukraine.
+
+Pokatilo moved from Ukraine to the United Kingdom in Sept. 2015 and co-founded a company called Awesome Technologies, which pitched itself as a way for people to outsource tasks by sending a text message to the service’s assistants.
+
+The other co-founder of Awesome Technologies is 36-year-old Filip Perkon, a Swedish man living in London who touts himself as a serial entrepreneur and investor. Years before starting Awesome together, Perkon and Pokatilo co-founded a student group called Russian Business Week while the two were classmates at the London School of Economics. According to the Bulgarian investigative journalist Christo Grozev, Perkon’s birth certificate was issued by the Soviet Embassy in Sweden.
+
+Alexey Pokatilo (left) and Filip Perkon at a Facebook event for startups in San Francisco in mid-2015.
+
+Perkon was praised by the Russian Embassy in London for his efforts: During the contentious Brexit vote that ultimately led to the United Kingdom leaving the European Union, the Russian embassy in London used this spam tweeting tool to auto-retweet the Russian ambassador’s posts from supporters’ accounts.
+
+Neither Mr. Perkon nor Mr. Pokatilo replied to requests for comment.
+
+A review of corporations tied to Mr. Perkon as indexed by the business research service North Data finds he holds or held director positions in several U.K. subsidiaries of Synergy University, Russia’s largest private education provider. Synergy has more than 35,000 students, and sells T-shirts with patriotic slogans such as “Crimea is Ours,” and “The Russian Empire — Reloaded.”
+
+The president of Synergy University is Vadim Lobov, a Kremlin insider whose headquarters on the outskirts of Moscow reportedly features a wall-sized portrait of Russian President Vladimir Putin in the pop-art style of Andy Warhol. For a number of years, Lobov and Perkon co-produced a cross-cultural event in the U.K. called Russian Film Week.
+
+Synergy President Vadim Lobov and Filip Perkon, speaking at a press conference for Russian Film Week, a cross-cultural event in the U.K. co-produced by both men.
+
+Mr. Lobov was one of 11 individuals reportedly hand-picked by the convicted Russian spy Marina Butina to attend the 2017 National Prayer Breakfast held in Washington D.C. just two weeks after President Trump’s first inauguration.
+
+While Synergy University promotes itself as Russia’s largest private educational institution, hundreds of international students tell a different story. Online reviews from students paint a picture of unkept promises: Prospective students from Nigeria, Kenya, Ghana, and other nations paying thousands in advance fees for promised study visas to Russia, only to have their applications denied with no refunds offered.
+
+“My experience with Synergy University has been nothing short of heartbreaking,” reads one such account. “When I first discovered the school, their representative was extremely responsive and eager to assist. He communicated frequently and made me believe I was in safe hands. However, after paying my hard-earned tuition fees, my visa was denied. It’s been over 9 months since that denial, and despite their promises, I have received no refund whatsoever. My messages are now ignored, and the same representative who once replied instantly no longer responds at all. Synergy University, how can an institution in Europe feel comfortable exploiting the hopes of Africans who trust you with their life savings? This is not just unethical — it’s predatory.”
+
+This pattern repeats across reviews by multilingual students from Pakistan, Nepal, India, and various African nations — all describing the same scheme: Attractive online marketing, promises of easy visa approval, upfront payment requirements, and then silence after visa denials.
+
+Reddit discussions in r/Moscow and r/AskARussian are filled with warnings. “It’s a scam, a diploma mill,” writes one user. “They literally sell exams. There was an investigation on Rossiya-1 television showing students paying to pass tests.”
+
+The Nerdify website’s “About Us” page says the company was co-founded by Pokatilo and an American named Brian Mellor. The latter identity seems to have been fabricated, or at least there is no evidence that a person with this name ever worked at Nerdify.
+
+Rather, it appears that the SMS assistance company co-founded by Messrs. Pokatilo and Perkon (Awesome Technologies) fizzled out shortly after its creation, and that Nerdify soon adopted the process of accepting assignment requests via text message and routing them to freelance writers.
+
+A closer look at an early “About Us” page for Nerdify in The Wayback Machine suggests that Mr. Perkon was the real co-founder of the company: The photo at the top of the page shows four people wearing Nerdify T-shirts seated around a table on a rooftop deck in San Francisco, and the man facing the camera is Perkon.
+
+Filip Perkon, top right, is pictured wearing a Nerdify T-shirt in an archived copy of the company’s About Us page. Image: archive.org.
+
+Where are they now? Pokatilo is currently running a startup called Litero.Ai, which appears to be an AI-based essay writing service. In July 2025, Mr. Pokatilo received pre-seed funding of $800,000 for Litero from an investment program backed by the venture capital firms AltaIR Capital, Yellow Rocks, Smart Partnership Capital, and I2BF Global Ventures.
+
+Meanwhile, Filip Perkon is busy setting up toy rubber duck stores in Miami and in at least three locations in the United Kingdom. These “Duck World” shops market themselves as “the world’s largest duck store.”
+
+This past week, Mr. Lobov was in India with Putin’s entourage on a charm tour with India’s Prime Minister Narendra Modi. Although Synergy is billed as an educational institution, a review of the company’s sprawling corporate footprint (via DNS) shows it also is assisting the Russian government in its war against Ukraine.
+
+Synergy University President Vadim Lobov (right) pictured this week in India next to Natalia Popova, a Russian TV presenter known for her close ties to Putin’s family, particularly Putin’s daughter, who works with Popova at the education and culture-focused Innopraktika Foundation.
+
+The website bpla.synergy[.]bot, for instance, says the company is involved in developing combat drones to aid Russian forces and to evade international sanctions on the supply and re-export of high-tech products.
+
+A screenshot from the website of synergy,bot shows the company is actively engaged in building armed drones for the war in Ukraine.
+
+KrebsOnSecurity would like to thank the anonymous researcher NatInfoSec for their assistance in this investigation.
+
+Update, Dec. 8, 10:06 a.m. ET: Mr. Pokatilo responded to requests for comment after the publication of this story. Pokatilo said he has no relation to Synergy nor to Mr. Lobov, and that his work with Mr. Perkon ended with the dissolution of Awesome Technologies.
+
+“I have had no involvement in any of his projects and business activities mentioned in the article and he has no involvement in Litero.ai,” Pokatilo said of Perkon.
+
+Mr. Pokatilo said his new company Litero “does not provide contract cheating services and is built specifically to improve transparency and academic integrity in the age of universal use of AI by students.”
+
+“I am Ukrainian,” he said in an email. “My close friends, colleagues, and some family members continue to live in Ukraine under the ongoing invasion. Any suggestion that I or my company may be connected in any way to Russia’s war efforts is deeply offensive on a personal level and harmful to the reputation of Litero.ai, a company where many team members are Ukrainian.”
+
+Update, Dec. 11, 12:07 p.m. ET: Mr. Perkon responded to requests for comment after the publication of this story. Perkon said the photo of him in a Nerdify T-shirt (see screenshot above) was taken after a startup event in San Francisco, where he volunteered to act as a photo model to help friends with their project.
+
+“I have no business or other relations to Nerdify or any other ventures in that space,” Mr. Perkon said in an email response. “As for Vadim Lobov, I worked for Venture Capital arm at Synergy until 2013 as well as his business school project in the UK, that didn’t get off the ground, so the company related to this was made dormant. Then Synergy kindly provided sponsorship for my Russian Film Week event that I created and ran until 2022 in the U.K., an event that became the biggest independent Russian film festival outside of Russia. Since the start of the Ukraine war in 2022 I closed the festival down.”
+
+“I have had no business with Vadim Lobov since 2021 (the last film festival) and I don’t keep track of his endeavours,” Perkon continued. “As for Alexey Pokatilo, we are university friends. Our business relationship has ended after the concierge service Awesome Technologies didn’t work out, many years ago.”
+
+(XXXXXXX, AÇIK - https://krebsonsecurity.com/2025/12/drones-to-diplomas-how-russias-largest-private-university-is-linked-to-a-25m-essay-mill/, krebsonsecurity.com, 06.12.2025)
+
+================================================================================
+
+[30] Krebs on Security - SMS Phishers Pivot to Points, Taxes, Fake Retailers
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 04 Dec 2025 23:02:34 +0000
+Link: https://krebsonsecurity.com/2025/12/sms-phishers-pivot-to-points-taxes-fake-retailers/
+
+[TAM METİN - 1315 kelime]
+China-based phishing groups blamed for non-stop scam SMS messages about a supposed wayward package or unpaid toll fee are promoting a new offering, just in time for the holiday shopping season: Phishing kits for mass-creating fake but convincing e-commerce websites that convert customer payment card data into mobile wallets from Apple and Google. Experts say these same phishing groups also are now using SMS lures that promise unclaimed tax refunds and mobile rewards points.
+
+Over the past week, thousands of domain names were registered for scam websites that purport to offer T-Mobile customers the opportunity to claim a large number of rewards points. The phishing domains are being promoted by scam messages sent via Apple’s iMessage service or the functionally equivalent RCS messaging service built into Google phones.
+
+An instant message spoofing T-Mobile says the recipient is eligible to claim thousands of rewards points.
+
+The website scanning service urlscan.io shows thousands of these phishing domains have been deployed in just the past few days alone. The phishing websites will only load if the recipient visits with a mobile device, and they ask for the visitor’s name, address, phone number and payment card data to claim the points.
+
+A phishing website registered this week that spoofs T-Mobile.
+
+If card data is submitted, the site will then prompt the user to share a one-time code sent via SMS by their financial institution. In reality, the bank is sending the code because the fraudsters have just attempted to enroll the victim’s phished card details in a mobile wallet from Apple or Google. If the victim also provides that one-time code, the phishers can then link the victim’s card to a mobile device that they physically control.
+
+Pivoting off these T-Mobile phishing domains in urlscan.io reveals a similar scam targeting AT&T customers:
+
+An SMS phishing or “smishing” website targeting AT&T users.
+
+Ford Merrill works in security research at SecAlliance, a CSIS Security Group company. Merrill said multiple China-based cybercriminal groups that sell phishing-as-a-service platforms have been using the mobile points lure for some time, but the scam has only recently been pointed at consumers in the United States.
+
+“These points redemption schemes have not been very popular in the U.S., but have been in other geographies like EU and Asia for a while now,” Merrill said.
+
+A review of other domains flagged by urlscan.io as tied to this Chinese SMS phishing syndicate shows they are also spoofing U.S. state tax authorities, telling recipients they have an unclaimed tax refund. Again, the goal is to phish the user’s payment card information and one-time code.
+
+A text message that spoofs the District of Columbia’s Office of Tax and Revenue.
+
+Many SMS phishing or “smishing” domains are quickly flagged by browser makers as malicious. But Merrill said one burgeoning area of growth for these phishing kits — fake e-commerce shops — can be far harder to spot because they do not call attention to themselves by spamming the entire world.
+
+Merrill said the same Chinese phishing kits used to blast out package redelivery message scams are equipped with modules that make it simple to quickly deploy a fleet of fake but convincing e-commerce storefronts. Those phony stores are typically advertised on Google and Facebook, and consumers usually end up at them by searching online for deals on specific products.
+
+A machine-translated screenshot of an ad from a China-based phishing group promoting their fake e-commerce shop templates.
+
+With these fake e-commerce stores, the customer is supplying their payment card and personal information as part of the normal check-out process, which is then punctuated by a request for a one-time code sent by your financial institution. The fake shopping site claims the code is required by the user’s bank to verify the transaction, but it is sent to the user because the scammers immediately attempt to enroll the supplied card data in a mobile wallet.
+
+According to Merrill, it is only during the check-out process that these fake shops will fetch the malicious code that gives them away as fraudulent, which tends to make it difficult to locate these stores simply by mass-scanning the web. Also, most customers who pay for products through these sites don’t realize they’ve been snookered until weeks later when the purchased item fails to arrive.
+
+“The fake e-commerce sites are tough because a lot of them can fly under the radar,” Merrill said. “They can go months without being shut down, they’re hard to discover, and they generally don’t get flagged by safe browsing tools.”
+
+Happily, reporting these SMS phishing lures and websites is one of the fastest ways to get them properly identified and shut down. Raymond Dijkxhoorn is the CEO and a founding member of SURBL, a widely-used blocklist that flags domains and IP addresses known to be used in unsolicited messages, phishing and malware distribution. SURBL has created a website called smishreport.com that asks users to forward a screenshot of any smishing message(s) received.
+
+“If [a domain is] unlisted, we can find and add the new pattern and kill the rest” of the matching domains, Dijkxhoorn said. “Just make a screenshot and upload. The tool does the rest.”
+
+The SMS phishing reporting site smishreport.com.
+
+Merrill said the last few weeks of the calendar year typically see a big uptick in smishing — particularly package redelivery schemes that spoof the U.S. Postal Service or commercial shipping companies.
+
+“Every holiday season there is an explosion in smishing activity,” he said. “Everyone is in a bigger hurry, frantically shopping online, paying less attention than they should, and they’re just in a better mindset to get phished.”
+
+SHOP ONLINE LIKE A SECURITY PRO
+
+As we can see, adopting a shopping strategy of simply buying from the online merchant with the lowest advertised prices can be a bit like playing Russian Roulette with your wallet. Even people who shop mainly at big-name online stores can get scammed if they’re not wary of too-good-to-be-true offers (think third-party sellers on these platforms).
+
+If you don’t know much about the online merchant that has the item you wish to buy, take a few minutes to investigate its reputation. If you’re buying from an online store that is brand new, the risk that you will get scammed increases significantly. How do you know the lifespan of a site selling that must-have gadget at the lowest price? One easy way to get a quick idea is to run a basic WHOIS search on the site’s domain name. The more recent the site’s “created” date, the more likely it is a phantom store.
+
+If you receive a message warning about a problem with an order or shipment, visit the e-commerce or shipping site directly, and avoid clicking on links or attachments — particularly missives that warn of some dire consequences unless you act quickly. Phishers and malware purveyors typically seize upon some kind of emergency to create a false alarm that often causes recipients to temporarily let their guard down.
+
+But it’s not just outright scammers who can trip up your holiday shopping: Often times, items that are advertised at steeper discounts than other online stores make up for it by charging way more than normal for shipping and handling.
+
+So be careful what you agree to: Check to make sure you know how long the item will take to be shipped, and that you understand the store’s return policies. Also, keep an eye out for hidden surcharges, and be wary of blithely clicking “ok” during the checkout process.
+
+Most importantly, keep a close eye on your monthly statements. If I were a fraudster, I’d most definitely wait until the holidays to cram through a bunch of unauthorized charges on stolen cards, so that the bogus purchases would get buried amid a flurry of other legitimate transactions. That’s why it’s key to closely review your credit card bill and to quickly dispute any charges you didn’t authorize.
+
+(XXXXXXX, AÇIK - https://krebsonsecurity.com/2025/12/sms-phishers-pivot-to-points-taxes-fake-retailers/, krebsonsecurity.com, 04.12.2025)
 
 ================================================================================
 
@@ -2025,7 +2068,7 @@ According to the breach disclosure Nelnet Servicing informed Edfinancial and OSL
 
 Remediation also included two years of free credit monitoring, credit reports and up to $1 million in identity theft insurance.
 
-(XXXXXXX, AÇIK - https://threatpost.com/student-loan-breach-exposes-2-5m-records/180492/, threatpost.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://threatpost.com/student-loan-breach-exposes-2-5m-records/180492/, threatpost.com, 31.08.2022)
 
 ================================================================================
 
@@ -2081,7 +2124,7 @@ The group has, in the past, expanded well beyond Australasia. According to a Dep
 
 Despite the DoJ indictment, analysts “have not observed a distinct disruption of operational tempo” from TA423, and they “collectively expect TA423 / Red Ladon to continue pursuing its intelligence-gathering and espionage mission.”
 
-(XXXXXXX, AÇIK - https://threatpost.com/watering-hole-attacks-push-scanbox-keylogger/180490/, threatpost.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://threatpost.com/watering-hole-attacks-push-scanbox-keylogger/180490/, threatpost.com, 30.08.2022)
 
 ================================================================================
 
@@ -2129,7 +2172,7 @@ To mitigate 0ktapus-style campaigns, the researchers recommended good hygiene ar
 
 “Whatever MFA someone uses,” Grimes advised, “the user should be taught about the common types of attacks that are committed against their form of MFA, how to recognize those attacks, and how to respond. We do the same when we tell users to pick passwords but don’t when we tell them to use supposedly more secure MFA.”
 
-(XXXXXXX, AÇIK - https://threatpost.com/0ktapus-victimize-130-firms/180487/, threatpost.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://threatpost.com/0ktapus-victimize-130-firms/180487/, threatpost.com, 29.08.2022)
 
 ================================================================================
 
@@ -2159,7 +2202,7 @@ Hiveleaks and BlackBasta are the result of that restructuring. Both groups are �
 
 Now that Conti’s properly split in two, the authors speculated, “it would not be surprising to see these figures further increase as we move into August.”
 
-(XXXXXXX, AÇIK - https://threatpost.com/ransomware-attacks-are-on-the-rise/180481/, threatpost.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://threatpost.com/ransomware-attacks-are-on-the-rise/180481/, threatpost.com, 26.08.2022)
 
 ================================================================================
 
@@ -2193,7 +2236,7 @@ While users are none the wiser, cybercriminals can scan for their vulnerable dev
 
 Between weak security, insufficient visibility and oversight, it’s unclear when or if these tens of thousands of cameras will ever be secured.
 
-(XXXXXXX, AÇIK - https://threatpost.com/cybercriminals-are-selling-access-to-chinese-surveillance-cameras/180478/, threatpost.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://threatpost.com/cybercriminals-are-selling-access-to-chinese-surveillance-cameras/180478/, threatpost.com, 25.08.2022)
 
 ================================================================================
 
@@ -2251,7 +2294,7 @@ The whistleblower’s allegations of widespread security failures at Twitter, wi
 
 — Senator Dick Durbin (@SenatorDurbin) August 23, 2022
 
-(XXXXXXX, AÇIK - https://threatpost.com/twitter-whistleblower-tldr-version/180472/, threatpost.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://threatpost.com/twitter-whistleblower-tldr-version/180472/, threatpost.com, 24.08.2022)
 
 ================================================================================
 
@@ -2297,7 +2340,7 @@ Unlike limited volume DDoS attacks, reflective and amplified DoS attacks can pro
 
 A TCP attack, believed used in the recent Palo Alto Networks attack, is when an attacker sends a spoofed SYN packet, with the original source IP replaced by the victim’s IP address, to a range of random or pre-selected reflection IP addresses. The services at the reflection addresses reply with a SYN-ACK packet to the victim of the spoofed attack. If the victim does not respond, the reflection service will continue to retransmit the SYN-ACK packet, resulting in amplification. The amount of amplification depends on the number of SYN-ACK retransmits by the reflection service, which can be defined by the attacker.
 
-(XXXXXXX, AÇIK - https://threatpost.com/firewall-bug-under-active-attack-cisa-warning/180467/, threatpost.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://threatpost.com/firewall-bug-under-active-attack-cisa-warning/180467/, threatpost.com, 23.08.2022)
 
 ================================================================================
 
@@ -2343,7 +2386,7 @@ Early 2020 was TA558’s most prolific period, as they churned out 25 malicious 
 
 “Organizations, especially those operating in targeted sectors in Latin America, North America, and Western Europe should be aware of this actor’s tactics, techniques, and procedures,” researchers advise.
 
-(XXXXXXX, AÇIK - https://threatpost.com/reservation-links-prey-on-travelers/180462/, threatpost.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://threatpost.com/reservation-links-prey-on-travelers/180462/, threatpost.com, 22.08.2022)
 
 ================================================================================
 
@@ -2385,7 +2428,7 @@ At the same time, developers of apps for iPhones and other mobile devices also s
 
 “Our experience shows that this is not happening enough, potentially leaving banking and other customers vulnerable,” he said.
 
-(XXXXXXX, AÇIK - https://threatpost.com/iphone-users-urged-to-update-to-patch-2-zero-days-under-attack/180448/, threatpost.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://threatpost.com/iphone-users-urged-to-update-to-patch-2-zero-days-under-attack/180448/, threatpost.com, 19.08.2022)
 
 ================================================================================
 
@@ -2431,7 +2474,7 @@ In April, Google patched CVE-2022-1364, a type confusion flaw affecting Chrome�
 
 February saw a fix for the first of this year’s Chrome zero-days, a use-after-free flaw in Chrome’s Animation component tracked as CVE-2022-0609 that already was under attack. Later it was revealed that North Korean hackers were exploiting the flaw weeks before it was discovered and patched.
 
-(XXXXXXX, AÇIK - https://threatpost.com/google-patches-chromes-fifth-zero-day-of-the-year/180432/, threatpost.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://threatpost.com/google-patches-chromes-fifth-zero-day-of-the-year/180432/, threatpost.com, 18.08.2022)
 
 ================================================================================
 
@@ -2521,7 +2564,7 @@ The attack was detected overnight between December 11 and 12, and according to t
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
-(XXXXXXX, AÇIK - https://securityaffairs.com/188200/hacking/french-ministry-confirms-data-access-to-1-2-million-bank-accounts.html, securityaffairs.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://securityaffairs.com/188200/hacking/french-ministry-confirms-data-access-to-1-2-million-bank-accounts.html, securityaffairs.com, 18.02.2026)
 
 ================================================================================
 
@@ -2571,7 +2614,7 @@ Version 8.9.2 also addressed an Unsafe Search Path vulnerability, tracked as CVE
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
-(XXXXXXX, AÇIK - https://securityaffairs.com/188192/hacking/notepad-patches-flaw-used-to-hijack-update-system.html, securityaffairs.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://securityaffairs.com/188192/hacking/notepad-patches-flaw-used-to-hijack-update-system.html, securityaffairs.com, 18.02.2026)
 
 ================================================================================
 
@@ -2597,7 +2640,7 @@ The experts recommend users should avoid opening untrusted HTML while localhost 
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
-(XXXXXXX, AÇIK - https://securityaffairs.com/188185/security/vs-code-extensions-with-125m-installs-expose-users-to-cyberattacks.html, securityaffairs.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://securityaffairs.com/188185/security/vs-code-extensions-with-125m-installs-expose-users-to-cyberattacks.html, securityaffairs.com, 18.02.2026)
 
 ================================================================================
 
@@ -2629,7 +2672,7 @@ Google released Indicators of Compromise (IOCs) and Yara rules for this campaign
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
-(XXXXXXX, AÇIK - https://securityaffairs.com/188176/apt/china-linked-apt-weaponized-dell-recoverpoint-zero-day-since-2024.html, securityaffairs.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://securityaffairs.com/188176/apt/china-linked-apt-weaponized-dell-recoverpoint-zero-day-since-2024.html, securityaffairs.com, 18.02.2026)
 
 ================================================================================
 
@@ -2665,7 +2708,7 @@ CISA orders federal agencies to fix the vulnerabilities by March 10, 2026.
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
-(XXXXXXX, AÇIK - https://securityaffairs.com/188163/uncategorized/u-s-cisa-adds-google-chromium-css-microsoft-windows-teamt5-threatsonar-anti-ransomware-and-zimbra-flaws-to-its-known-exploited-vulnerabilities-catalog.html, securityaffairs.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://securityaffairs.com/188163/uncategorized/u-s-cisa-adds-google-chromium-css-microsoft-windows-teamt5-threatsonar-anti-ransomware-and-zimbra-flaws-to-its-known-exploited-vulnerabilities-catalog.html, securityaffairs.com, 18.02.2026)
 
 ================================================================================
 
@@ -2705,7 +2748,7 @@ As of February 2026, Kaspersky detected more than 13,000 Android devices infecte
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
-(XXXXXXX, AÇIK - https://securityaffairs.com/188147/malware/keenadu-backdoor-found-preinstalled-on-android-devices-powers-ad-fraud-campaign.html, securityaffairs.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://securityaffairs.com/188147/malware/keenadu-backdoor-found-preinstalled-on-android-devices-powers-ad-fraud-campaign.html, securityaffairs.com, 18.02.2026)
 
 ================================================================================
 
@@ -2739,7 +2782,7 @@ SmartLoader, a malware group known for spreading info-stealers through fake inst
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
-(XXXXXXX, AÇIK - https://securityaffairs.com/188135/ai/smartloader-hackers-clone-oura-mcp-project-to-spread-stealc-malware.html, securityaffairs.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://securityaffairs.com/188135/ai/smartloader-hackers-clone-oura-mcp-project-to-spread-stealc-malware.html, securityaffairs.com, 17.02.2026)
 
 ================================================================================
 
@@ -2769,7 +2812,7 @@ Ptitsyn and his conspirators used a ransomware-as-a-service (RaaS) model to dist
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
-(XXXXXXX, AÇIK - https://securityaffairs.com/188128/cyber-crime/polish-cybercrime-police-arrest-man-linked-to-phobos-ransomware-operation.html, securityaffairs.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://securityaffairs.com/188128/cyber-crime/polish-cybercrime-police-arrest-man-linked-to-phobos-ransomware-operation.html, securityaffairs.com, 17.02.2026)
 
 ================================================================================
 
@@ -2909,7 +2952,7 @@ Mistakes like the one which has befallen the Dutch police are painful reminder o
 
 Right now the unnamed man faces a potential future prospecution for accessing files that he was in a very real sense, invited to access. Whatever the outcome of any court case (if it gets that far), one has to hope that the police will be more careful with the links that they send out in future.
 
-(XXXXXXX, AÇIK - https://www.bitdefender.com/en-us/blog/hotforsecurity/dutch-police-arrest-man-hacking-accidentally-sending-confidential-files, bitdefender.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.bitdefender.com/en-us/blog/hotforsecurity/dutch-police-arrest-man-hacking-accidentally-sending-confidential-files, bitdefender.com, 18.02.2026)
 
 ================================================================================
 
@@ -2920,7 +2963,7 @@ Link: https://www.fortra.com/blog/urgent-warnings-uk-and-us-cyber-agencies-after
 
 ⚠️  Tam metin çekilemedi
 
-(XXXXXXX, AÇIK - https://www.fortra.com/blog/urgent-warnings-uk-and-us-cyber-agencies-after-polish-energy-grid-attack, fortra.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.fortra.com/blog/urgent-warnings-uk-and-us-cyber-agencies-after-polish-energy-grid-attack, fortra.com, 12.02.2026)
 
 ================================================================================
 
@@ -2956,7 +2999,7 @@ Now, however, it is the alleged hacker who will be hoping he can escape receivin
 
 If anything, this case serves as a timely reminder to cybercriminals that they should not assume that they have evaded justice just because years have passed since their offence. Digital forensics techniques continue to improve, and law enforcement agencies are increasingly willing to pursue cold cases when new leads emerge.
 
-(XXXXXXX, AÇIK - https://www.bitdefender.com/en-us/blog/hotforsecurity/polish-hacker-charged-seven-years-after-massive-morele-net-data-breach, bitdefender.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.bitdefender.com/en-us/blog/hotforsecurity/polish-hacker-charged-seven-years-after-massive-morele-net-data-breach, bitdefender.com, 12.02.2026)
 
 ================================================================================
 
@@ -3064,7 +3107,7 @@ Graham Cluley is an award-winning keynote speaker who has given presentations ar
 
 Follow him on LinkedIn, Bluesky and Mastodon, or drop him an email.
 
-(XXXXXXX, AÇIK - https://grahamcluley.com/smashing-security-podcast-454/, grahamcluley.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://grahamcluley.com/smashing-security-podcast-454/, grahamcluley.com, 12.02.2026)
 
 ================================================================================
 
@@ -3112,7 +3155,7 @@ The FBI's Internet Crime Complaint Center consistently ranks romance scams among
 
 Whether Ikeji or Dr. Abhulimhen will face justice remains unclear. But at least one fake prince has discovered that his Nigerian mansion offers rather less sanctuary than he had hoped.
 
-(XXXXXXX, AÇIK - https://www.bitdefender.com/en-us/blog/hotforsecurity/fake-dubai-crown-prince-tracked-to-nigerian-mansion-after-2-5m-romance-scam, bitdefender.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.bitdefender.com/en-us/blog/hotforsecurity/fake-dubai-crown-prince-tracked-to-nigerian-mansion-after-2-5m-romance-scam, bitdefender.com, 07.02.2026)
 
 ================================================================================
 
@@ -3148,7 +3191,7 @@ According to US Attorney Jay Clayton, Lin was "responsible for at least one trag
 
 Lin has three decades in a US federal prison to ponder whether training the police in cybercrime while simultaneously running a massive drug marketplace was perhaps not the wisest decision of his life.
 
-(XXXXXXX, AÇIK - https://www.bitdefender.com/en-us/blog/hotforsecurity/incognito-market-admin-sentenced-30-years-105-million-dark-web-drug-empire, bitdefender.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.bitdefender.com/en-us/blog/hotforsecurity/incognito-market-admin-sentenced-30-years-105-million-dark-web-drug-empire, bitdefender.com, 05.02.2026)
 
 ================================================================================
 
@@ -3274,7 +3317,7 @@ Graham Cluley is an award-winning keynote speaker who has given presentations ar
 
 Follow him on LinkedIn, Bluesky and Mastodon, or drop him an email.
 
-(XXXXXXX, AÇIK - https://grahamcluley.com/smashing-security-podcast-453/, grahamcluley.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://grahamcluley.com/smashing-security-podcast-453/, grahamcluley.com, 05.02.2026)
 
 ================================================================================
 
@@ -3314,7 +3357,7 @@ A seizure like this is not going to eliminate ransomware overnight, but it does 
 
 After all, the seizure of RAMP suggests that the authorities now have access to the site's user data - which is likely to include email and IP addresses, private messages, and more, which could lead to arrests in the coming months.
 
-(XXXXXXX, AÇIK - https://www.bitdefender.com/en-us/blog/hotforsecurity/fbi-takes-notorious-ramp-ransomware-forum-offline, bitdefender.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.bitdefender.com/en-us/blog/hotforsecurity/fbi-takes-notorious-ramp-ransomware-forum-offline, bitdefender.com, 31.01.2026)
 
 ================================================================================
 
@@ -3325,7 +3368,7 @@ Link: https://www.fortra.com/blog/hacking-attack-leaves-russian-car-owners-locke
 
 ⚠️  Tam metin çekilemedi
 
-(XXXXXXX, AÇIK - https://www.fortra.com/blog/hacking-attack-leaves-russian-car-owners-locked-out-their-vehicles, fortra.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.fortra.com/blog/hacking-attack-leaves-russian-car-owners-locked-out-their-vehicles, fortra.com, 29.01.2026)
 
 ================================================================================
 
@@ -3375,7 +3418,7 @@ Xameco
 Senior ISC Handler - Freelance Cyber Security Consultant
 PGP Key
 
-(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32726, isc.sans.edu, 19.02.2026)
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32726, isc.sans.edu, 18.02.2026)
 
 ================================================================================
 
@@ -3386,7 +3429,7 @@ Link: https://isc.sans.edu/diary/rss/32724
 
 ⚠️  Tam metin çekilemedi
 
-(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32724, isc.sans.edu, 19.02.2026)
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32724, isc.sans.edu, 18.02.2026)
 
 ================================================================================
 
@@ -3424,7 +3467,7 @@ Xameco
 Senior ISC Handler - Freelance Cyber Security Consultant
 PGP Key
 
-(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32722, isc.sans.edu, 19.02.2026)
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32722, isc.sans.edu, 17.02.2026)
 
 ================================================================================
 
@@ -3435,7 +3478,7 @@ Link: https://isc.sans.edu/diary/rss/32720
 
 ⚠️  Tam metin çekilemedi
 
-(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32720, isc.sans.edu, 19.02.2026)
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32720, isc.sans.edu, 17.02.2026)
 
 ================================================================================
 
@@ -3486,7 +3529,7 @@ Xameco
 Senior ISC Handler - Freelance Cyber Security Consultant
 PGP Key
 
-(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32718, isc.sans.edu, 19.02.2026)
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32718, isc.sans.edu, 16.02.2026)
 
 ================================================================================
 
@@ -3497,7 +3540,7 @@ Link: https://isc.sans.edu/diary/rss/32716
 
 ⚠️  Tam metin çekilemedi
 
-(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32716, isc.sans.edu, 19.02.2026)
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32716, isc.sans.edu, 16.02.2026)
 
 ================================================================================
 
@@ -3569,7 +3612,7 @@ Russia’s APT28 Targeting Energy Research, Defense Collaboration Entities
 [1] McDermott, R. (2025) AI Knowledge Graph. Available at: https://github.com/robert-mcdermott/ai-knowledge-graph (Accessed: 18 January 2026 - 11 February 2026).
 [2] Reduan, M.H., (2025) Semantic Triples: Definition, Function, Components, Applications, Benefits, Drawbacks and Best Practices for SEO. Available at: https://www.linkedin.com/pulse/semantic-triples-definition-function-components-benefits-reduan-nqmec/ (Accessed: 11 February 2026).
 
-(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32712, isc.sans.edu, 19.02.2026)
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32712, isc.sans.edu, 13.02.2026)
 
 ================================================================================
 
@@ -3580,7 +3623,7 @@ Link: https://isc.sans.edu/diary/rss/32714
 
 ⚠️  Tam metin çekilemedi
 
-(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32714, isc.sans.edu, 19.02.2026)
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32714, isc.sans.edu, 13.02.2026)
 
 ================================================================================
 
@@ -3591,7 +3634,7 @@ Link: https://isc.sans.edu/diary/rss/32710
 
 ⚠️  Tam metin çekilemedi
 
-(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32710, isc.sans.edu, 19.02.2026)
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32710, isc.sans.edu, 12.02.2026)
 
 ================================================================================
 
@@ -3733,7 +3776,7 @@ Insikt Group will continue to closely monitor GrayCharlie to detect emerging thr
 
 Appendix A: Indicators of Compromise
 
-(XXXXXXX, AÇIK - https://www.recordedfuture.com/research/graycharlie-hijacks-law-firm-sites-suspected-supply-chain-attack, recordedfuture.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.recordedfuture.com/research/graycharlie-hijacks-law-firm-sites-suspected-supply-chain-attack, recordedfuture.com, 18.02.2026)
 
 ================================================================================
 
@@ -3801,7 +3844,7 @@ What matters now is recognizing that your questions matter more than their answe
 
 For information about Recorded Future's network intelligence capabilities, contact your account team.
 
-(XXXXXXX, AÇIK - https://www.recordedfuture.com/blog/network-intelligence-questions-answered, recordedfuture.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.recordedfuture.com/blog/network-intelligence-questions-answered, recordedfuture.com, 16.02.2026)
 
 ================================================================================
 
@@ -3891,7 +3934,7 @@ Intelligence doesn't eliminate uncertainty—it makes uncertainty manageable. Ge
 
 The 2026 State of Security report was produced by Recorded Future's Insikt Group, comprising analysts and security researchers with deep government, law enforcement, military, and intelligence agency experience.
 
-(XXXXXXX, AÇIK - https://www.recordedfuture.com/research/state-of-security, recordedfuture.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.recordedfuture.com/research/state-of-security, recordedfuture.com, 12.02.2026)
 
 ================================================================================
 
@@ -4003,7 +4046,7 @@ Download the full 2026 State of Security report
 
 The 2026 State of Security report was produced by Recorded Future's Insikt Group, which comprises analysts and security researchers with deep experience in government, law enforcement, the military, and intelligence agencies.
 
-(XXXXXXX, AÇIK - https://www.recordedfuture.com/blog/fragmentation-in-2025-what-it-means-for-2026, recordedfuture.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.recordedfuture.com/blog/fragmentation-in-2025-what-it-means-for-2026, recordedfuture.com, 12.02.2026)
 
 ================================================================================
 
@@ -4057,7 +4100,7 @@ Discover how to eliminate workflow bottlenecks, achieve 24/7 threat coverage, an
 
 Download: Reduce 27-step Threat Hunts to 5 Simple Steps
 
-(XXXXXXX, AÇIK - https://www.recordedfuture.com/blog/threat-hunting-27-steps-to-5, recordedfuture.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.recordedfuture.com/blog/threat-hunting-27-steps-to-5, recordedfuture.com, 11.02.2026)
 
 ================================================================================
 
@@ -4722,7 +4765,7 @@ abvgNpWrqMPsZ8yequUm2795boKrZ6yj7g5w7wih3Ag
 
 23KfDBTdpaBqfn8aUeoEDgfGJ5368gpnyYGfNkKcECqM
 
-(XXXXXXX, AÇIK - https://www.recordedfuture.com/research/rublevka-team-anatomy-russian-crypto-drainer-operation, recordedfuture.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.recordedfuture.com/research/rublevka-team-anatomy-russian-crypto-drainer-operation, recordedfuture.com, 04.02.2026)
 
 ================================================================================
 
@@ -4796,7 +4839,7 @@ We saw a need for Autonomous Threat Operations, so we built it. Being Customer Z
 
 Learn more about Autonomous Threat Operations by clicking here, or start operationalizing your threat intelligence now by booking a custom demo.
 
-(XXXXXXX, AÇIK - https://www.recordedfuture.com/blog/autonomous-threat-operations-in-action, recordedfuture.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.recordedfuture.com/blog/autonomous-threat-operations-in-action, recordedfuture.com, 01.02.2026)
 
 ================================================================================
 
@@ -5086,7 +5129,7 @@ Appendix C: Astrill VPN Nodes
 
 Appendix D: IP Ranges in China Observed Administering PurpleBravo Infrastructure
 
-(XXXXXXX, AÇIK - https://www.recordedfuture.com/research/purplebravos-targeting-it-software-supply-chain, recordedfuture.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.recordedfuture.com/research/purplebravos-targeting-it-software-supply-chain, recordedfuture.com, 21.01.2026)
 
 ================================================================================
 
@@ -5272,7 +5315,7 @@ Scan for Vulnerabilities
 
 Enrich with Threat Context
 
-(XXXXXXX, AÇIK - https://www.recordedfuture.com/blog/threat-and-vulnerability-management, recordedfuture.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.recordedfuture.com/blog/threat-and-vulnerability-management, recordedfuture.com, 16.01.2026)
 
 ================================================================================
 
@@ -5432,7 +5475,7 @@ Is a dedicated deception technology platform considered a primary ransomware det
 
 Deception technology is not a primary prevention tool, but it is an extremely effective early detection tool. It places fake assets (honeypots, fake credentials) within the network. When an attacker, particularly ransomware moving laterally, interacts with a decoy, it immediately triggers a high-fidelity alert, providing security teams with crucial seconds to isolate the endpoint and stop the attack before encryption begins.
 
-(XXXXXXX, AÇIK - https://www.recordedfuture.com/blog/best-ransomware-detection-tools, recordedfuture.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.recordedfuture.com/blog/best-ransomware-detection-tools, recordedfuture.com, 13.01.2026)
 
 ================================================================================
 
@@ -5549,7 +5592,7 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 Tarih: Wed, 18 Feb 2026 23:47:14 +0000
 Link: https://cyberscoop.com/nigerian-matthew-akande-tax-refund-fraud/
 
-[TAM METİN - 529 kelime]
+[TAM METİN - 533 kelime]
 A 37-year-old Nigerian man was sentenced to eight years in prison for participating in a five-year cybercrime spree to steal money from the U.S. government through fraudulent tax returns, the Justice Department said Wednesday.
 
 Matthew Abiodun Akande was living in Mexico when he and at least four co-conspirators broke into the networks of tax preparation firms, stole sensitive data on their clients and filed fraudulent tax returns, claiming tax refunds with victims’ personal data, according to court records.
@@ -5568,13 +5611,13 @@ In a sentencing memo submitted to the court, Akande’s lawyer insisted his clie
 
 You can read the full indictment below.
 
+The Caracas operation suggests cyber was part of the plan – just not the whole operation
+
 CISA to host industry feedback sessions on cyber incident reporting regulation
 
 Acting CISA chief says DHS funding lapse would limit, halt some agency work
 
 GOP Congress moves to shape election law in Trump’s image
-
-After major Poland energy grid cyberattack, CISA issues warning to U.S. audience
 
 Google finds state-sponsored hackers use AI at 'all stages' of attack cycle
 
@@ -5600,7 +5643,7 @@ Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
 
-(XXXXXXX, AÇIK - https://cyberscoop.com/nigerian-matthew-akande-tax-refund-fraud/, cyberscoop.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://cyberscoop.com/nigerian-matthew-akande-tax-refund-fraud/, cyberscoop.com, 18.02.2026)
 
 ================================================================================
 
@@ -5668,7 +5711,7 @@ Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
 
-(XXXXXXX, AÇIK - https://cyberscoop.com/fulton-county-election-raid-expert-testimony-ryan-macias/, cyberscoop.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://cyberscoop.com/fulton-county-election-raid-expert-testimony-ryan-macias/, cyberscoop.com, 18.02.2026)
 
 ================================================================================
 
@@ -5677,7 +5720,7 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 Tarih: Wed, 18 Feb 2026 00:32:44 +0000
 Link: https://cyberscoop.com/china-brickstorm-grimbolt-dell-zero-day/
 
-[TAM METİN - 770 kelime]
+[TAM METİN - 774 kelime]
 Researchers uncovered more worrying details about a long-running cyber espionage campaign suspected to be backed by the Chinese government, exemplifying how such attacks often go undetected until they’ve already caused significant damage.
 
 Google Threat Intelligence Group and Mandiant said the Chinese threat group UNC6201 has been exploiting a zero-day vulnerability in Dell RecoverPoint for Virtual Machines since at least mid-2024. The group overlaps with UNC5221, also known as Silk Typhoon, which has been burrowing into critical infrastructure and government agency networks undetected since at least 2022.
@@ -5710,13 +5753,13 @@ Researchers only have a narrow view of the threat groups’ activities at large.
 
 “We suspect a significant portion of UNC5221 and UNC6201’s activity likely remains unknown, and there is a strong probability that they are developing or using undiscovered zero-days and malware,” Larsen said. “The most concerning aspect of this campaign is that additional organizations were likely compromised as part of this campaign and do not know it yet.”
 
+The Caracas operation suggests cyber was part of the plan – just not the whole operation
+
 CISA to host industry feedback sessions on cyber incident reporting regulation
 
 Acting CISA chief says DHS funding lapse would limit, halt some agency work
 
 GOP Congress moves to shape election law in Trump’s image
-
-After major Poland energy grid cyberattack, CISA issues warning to U.S. audience
 
 Unit 42: Nearly two-thirds of breaches now start with identity abuse
 
@@ -5742,7 +5785,7 @@ Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
 
-(XXXXXXX, AÇIK - https://cyberscoop.com/china-brickstorm-grimbolt-dell-zero-day/, cyberscoop.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://cyberscoop.com/china-brickstorm-grimbolt-dell-zero-day/, cyberscoop.com, 18.02.2026)
 
 ================================================================================
 
@@ -5751,7 +5794,7 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 Tarih: Tue, 17 Feb 2026 18:23:04 +0000
 Link: https://cyberscoop.com/phobos-ransomware-affiliate-arrested-poland/
 
-[TAM METİN - 525 kelime]
+[TAM METİN - 529 kelime]
 Polish officials arrested a 47-year-old man accused of participating in ransomware attacks as an affiliate for the Phobos ransomware group, the country’s Central Bureau for Combating Cybercrime said Tuesday.
 
 Authorities did not name the man who was arrested during a raid on his apartment in the Małopolskie province, but said he faces up to five years in prison for his alleged crimes.
@@ -5770,13 +5813,13 @@ Ptitsyn, also known as “derxan” and “zimmermanx,” was charged with multi
 
 Pretrial motions for his case are due this week in the U.S. District Court of Maryland.
 
+The Caracas operation suggests cyber was part of the plan – just not the whole operation
+
 CISA to host industry feedback sessions on cyber incident reporting regulation
 
 Acting CISA chief says DHS funding lapse would limit, halt some agency work
 
 GOP Congress moves to shape election law in Trump’s image
-
-After major Poland energy grid cyberattack, CISA issues warning to U.S. audience
 
 Unit 42: Nearly two-thirds of breaches now start with identity abuse
 
@@ -5802,7 +5845,7 @@ Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
 
-(XXXXXXX, AÇIK - https://cyberscoop.com/phobos-ransomware-affiliate-arrested-poland/, cyberscoop.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://cyberscoop.com/phobos-ransomware-affiliate-arrested-poland/, cyberscoop.com, 17.02.2026)
 
 ================================================================================
 
@@ -5811,7 +5854,7 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 Tarih: Tue, 17 Feb 2026 16:55:47 +0000
 Link: https://cyberscoop.com/palo-alto-networks-acquires-koi-agentic-ai-security/
 
-[TAM METİN - 613 kelime]
+[TAM METİN - 617 kelime]
 Palo Alto Networks announced Tuesday its plans to buy security startup Koi, a deal aimed at addressing the security risks emerging as organizations rapidly adopt agentic AI.
 
 Terms were not disclosed, but Israeli business outlet Globes reported that Palo Alto will pay approximately $400 million. The deal is another among a trend of larger cybersecurity industry companies buying AI-focused security startups.
@@ -5828,13 +5871,13 @@ The proposed acquisition also signals how major security vendors may respond to 
 
 The acquisition is the second AI-focused deal for Palo Alto in the plast six months. In November, the company announced it was acquiring Chronosphere, an AI-focused observability firm, for $3.35 billion.
 
+The Caracas operation suggests cyber was part of the plan – just not the whole operation
+
 CISA to host industry feedback sessions on cyber incident reporting regulation
 
 Acting CISA chief says DHS funding lapse would limit, halt some agency work
 
 GOP Congress moves to shape election law in Trump’s image
-
-After major Poland energy grid cyberattack, CISA issues warning to U.S. audience
 
 Google finds state-sponsored hackers use AI at 'all stages' of attack cycle
 
@@ -5860,7 +5903,7 @@ Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
 
-(XXXXXXX, AÇIK - https://cyberscoop.com/palo-alto-networks-acquires-koi-agentic-ai-security/, cyberscoop.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://cyberscoop.com/palo-alto-networks-acquires-koi-agentic-ai-security/, cyberscoop.com, 17.02.2026)
 
 ================================================================================
 
@@ -5869,7 +5912,7 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 Tarih: Tue, 17 Feb 2026 11:00:00 +0000
 Link: https://cyberscoop.com/citizen-lab-kenya-cellebrite-phone-cracking-boniface-mwangi-forensic-evidence/
 
-[TAM METİN - 642 kelime]
+[TAM METİN - 645 kelime]
 Researchers have found forensic evidence suggesting that Kenyan authorities used Cellebrite’s phone-cracking technology on the device of a prominent human rights activist after arresting him, according to a report published Tuesday.
 
 The University of Toronto’s Citizen Lab said the intrusion is a sign of growing abuse of Cellebrite’s technology. According to the report, after his widely criticized  arrest in July amid mass protest, Boniface Mwangi noticed that his personal phone no longer required a password to access. The government initially suggested it might pursue  terrorism charges, but  later backed away from that and instead filed lesser offenses.
@@ -5896,13 +5939,13 @@ Citizen Lab sent Cellebrite a list of questions, but the company did not respond
 
 Neither a spokesperson for the Kenyan government nor the Kenyan embassy in Washington, D.C. answered requests for comment Monday.
 
+The Caracas operation suggests cyber was part of the plan – just not the whole operation
+
 CISA to host industry feedback sessions on cyber incident reporting regulation
 
 GOP Congress moves to shape election law in Trump’s image
 
 After major Poland energy grid cyberattack, CISA issues warning to U.S. audience
-
-Critics warn America’s 'move fast' AI strategy could cost it the global market
 
 Unit 42: Nearly two-thirds of breaches now start with identity abuse
 
@@ -5928,7 +5971,7 @@ Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
 
-(XXXXXXX, AÇIK - https://cyberscoop.com/citizen-lab-kenya-cellebrite-phone-cracking-boniface-mwangi-forensic-evidence/, cyberscoop.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://cyberscoop.com/citizen-lab-kenya-cellebrite-phone-cracking-boniface-mwangi-forensic-evidence/, cyberscoop.com, 17.02.2026)
 
 ================================================================================
 
@@ -5937,7 +5980,7 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 Tarih: Tue, 17 Feb 2026 11:00:00 +0000
 Link: https://cyberscoop.com/attackers-abuse-identity-unit42-palo-alto-networks-incident-response-report/
 
-[TAM METİN - 911 kelime]
+[TAM METİN - 914 kelime]
 Identity is still the primary entry point for cyberattacks, according to Palo Alto Networks’ threat intelligence firm Unit 42. In its annual incident response report released Tuesday, Unit 42 found that identity-based techniques accounted for nearly two-thirds of all initial network intrusions last year.
 
 Social engineering was the leading attack method, accounting for one-third of the 750 incidents Unit 42 responded to in the one-year period ending in September 2025. Attackers also bypassed security controls with compromised credentials, brute-force attacks, overly permissive identity policies and insider threats, researchers said.
@@ -5974,13 +6017,13 @@ Unit 42’s annual look-back spotlights critical areas of concern and attack tre
 
 “The hardest thing about incident response in cybersecurity,” Rubin said, “is there is no one global spot for how much is going on.”
 
+The Caracas operation suggests cyber was part of the plan – just not the whole operation
+
 CISA to host industry feedback sessions on cyber incident reporting regulation
 
 Acting CISA chief says DHS funding lapse would limit, halt some agency work
 
 GOP Congress moves to shape election law in Trump’s image
-
-Critics warn America’s 'move fast' AI strategy could cost it the global market
 
 Google finds state-sponsored hackers use AI at 'all stages' of attack cycle
 
@@ -6006,7 +6049,7 @@ Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
 
-(XXXXXXX, AÇIK - https://cyberscoop.com/attackers-abuse-identity-unit42-palo-alto-networks-incident-response-report/, cyberscoop.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://cyberscoop.com/attackers-abuse-identity-unit42-palo-alto-networks-incident-response-report/, cyberscoop.com, 17.02.2026)
 
 ================================================================================
 
@@ -6015,7 +6058,7 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 Tarih: Tue, 17 Feb 2026 11:00:00 +0000
 Link: https://cyberscoop.com/data-center-security-ai-infrastructure-investment-op-ed/
 
-[TAM METİN - 1847 kelime]
+[TAM METİN - 1846 kelime]
 Moody’s recently reported that global investment in data centers will surpass $3 trillion over the next five years, driven by AI capacity growth and hyperscaler demand. As big tech companies, banks, and institutional investors pour capital into these projects, data center developers and their financial sponsors must prioritze cybersecurity.
 
 Moody’s said that data center investments made by the six largest U.S. cloud computing providers  — Microsoft, Amazon, Alphabet, Oracle, Meta, and CoreWeave — approached $400 billion last year. The firm anticipates that annual global investment will grow by $200 billion over the next two years.
@@ -6086,7 +6129,7 @@ Acting CISA chief says DHS funding lapse would limit, halt some agency work
 
 GOP Congress moves to shape election law in Trump’s image
 
-Critics warn America’s 'move fast' AI strategy could cost it the global market
+After major Poland energy grid cyberattack, CISA issues warning to U.S. audience
 
 Unit 42: Nearly two-thirds of breaches now start with identity abuse
 
@@ -6112,7 +6155,7 @@ Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
 
-(XXXXXXX, AÇIK - https://cyberscoop.com/data-center-security-ai-infrastructure-investment-op-ed/, cyberscoop.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://cyberscoop.com/data-center-security-ai-infrastructure-investment-op-ed/, cyberscoop.com, 17.02.2026)
 
 ================================================================================
 
@@ -6121,7 +6164,7 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 Tarih: Fri, 13 Feb 2026 00:04:18 +0000
 Link: https://cyberscoop.com/proofpoint-acuvity-deal-agentic-ai-security/
 
-[TAM METİN - 580 kelime]
+[TAM METİN - 584 kelime]
 Proofpoint announced Thursday it has acquired Acuvity, an AI security startup, as the cybersecurity company moves to address security risks stemming from widespread corporate adoption of agentic AI.
 
 The acquisition strengthens Proofpoint‘s capabilities in monitoring and securing AI-powered systems that are increasingly handling sensitive business functions across enterprises.
@@ -6142,13 +6185,13 @@ Last May, Proofpoint acquired Hornetsecurity Group, a Germany-based provider of 
 
 “That is going to be a world in which, independent of the size of the organization, they are going to very much leverage AI, and some of that will be built into the tools like M365 that is tightly coupled with the Hornetsecurity architecture,” Kalember said.The acquisition follows a theme within the industry where larger security companies are buying AI-focused security startups. Just last week, data security firm Varonis acquired AI security firm AllTrue.ai for $150 million.
 
+The Caracas operation suggests cyber was part of the plan – just not the whole operation
+
 CISA to host industry feedback sessions on cyber incident reporting regulation
 
 Acting CISA chief says DHS funding lapse would limit, halt some agency work
 
 GOP Congress moves to shape election law in Trump’s image
-
-After major Poland energy grid cyberattack, CISA issues warning to U.S. audience
 
 Unit 42: Nearly two-thirds of breaches now start with identity abuse
 
@@ -6174,7 +6217,7 @@ Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
 
 US wants to push its view of AI cybersecurity standards to the rest of the world
 
-(XXXXXXX, AÇIK - https://cyberscoop.com/proofpoint-acuvity-deal-agentic-ai-security/, cyberscoop.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://cyberscoop.com/proofpoint-acuvity-deal-agentic-ai-security/, cyberscoop.com, 13.02.2026)
 
 ================================================================================
 
@@ -7081,7 +7124,7 @@ A Stanford grad student created an algorithm to help his classmates find love; n
 
 A Stanford grad student created an algorithm to help his classmates find love; now, Date Drop is the basis of his new startup
 
-(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/18/hacking-conference-def-con-bans-three-people-linked-to-epstein/, techcrunch.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/18/hacking-conference-def-con-bans-three-people-linked-to-epstein/, techcrunch.com, 18.02.2026)
 
 ================================================================================
 
@@ -7145,7 +7188,7 @@ Mastodon, a decentralized alternative to X, plans to target creators with new fe
 Sarah Perez
 
 
-	16 hours ago
+	17 hours ago
 
 Mastodon, a decentralized alternative to X, plans to target creators with new features
 
@@ -7191,7 +7234,7 @@ Data breach at fintech giant Figure affects close to a million customers
 Lorenzo Franceschi-Bicchierai
 
 
-	16 hours ago
+	17 hours ago
 
 Data breach at fintech giant Figure affects close to a million customers
 
@@ -7211,7 +7254,7 @@ Connie Loizos
 
 This former Microsoft PM thinks she can unseat CyberArk in 18 months
 
-(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/18/data-breach-at-fintech-giant-figure-affects-close-to-a-million-customers/, techcrunch.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/18/data-breach-at-fintech-giant-figure-affects-close-to-a-million-customers/, techcrunch.com, 18.02.2026)
 
 ================================================================================
 
@@ -7220,7 +7263,7 @@ This former Microsoft PM thinks she can unseat CyberArk in 18 months
 Tarih: Wed, 18 Feb 2026 15:00:00 +0000
 Link: https://techcrunch.com/2026/02/18/the-former-microsoft-pm-who-thinks-she-can-unseat-cyberark-in-18-months/
 
-[TAM METİN - 1352 kelime]
+[TAM METİN - 1334 kelime]
 The internet today has a permissions problem. As non-humans — chatbots, AI agents, and automated systems — have proliferated on the web, so has the need to provide them with credentials, permissions, and identities. That’s one major reason identity and access management startups that help manage this new kind of digital workforce are raking in venture capital.
 
 Now, a 35-person Israeli-American startup called Venice is emerging from stealth with fresh cash and a plucky claim: that it’s already replacing industry stalwarts like CyberArk and Okta at Fortune 500 companies.
@@ -7307,6 +7350,16 @@ OpenClaw creator Peter Steinberger joins OpenAI
 
 OpenClaw creator Peter Steinberger joins OpenAI
 
+Hollywood isn’t happy about the new Seedance 2.0 video generator
+
+
+
+Anthony Ha
+
+Hollywood isn’t happy about the new Seedance 2.0 video generator
+
+Hollywood isn’t happy about the new Seedance 2.0 video generator
+
 The great computer science exodus (and where students are going instead)
 
 
@@ -7327,17 +7380,7 @@ A Stanford grad student created an algorithm to help his classmates find love; n
 
 A Stanford grad student created an algorithm to help his classmates find love; now, Date Drop is the basis of his new startup
 
-Spotify says its best developers haven’t written a line of code since December, thanks to AI
-
-
-
-Sarah Perez
-
-Spotify says its best developers haven’t written a line of code since December, thanks to AI
-
-Spotify says its best developers haven’t written a line of code since December, thanks to AI
-
-(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/18/the-former-microsoft-pm-who-thinks-she-can-unseat-cyberark-in-18-months/, techcrunch.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/18/the-former-microsoft-pm-who-thinks-she-can-unseat-cyberark-in-18-months/, techcrunch.com, 18.02.2026)
 
 ================================================================================
 
@@ -7383,7 +7426,7 @@ Kana emerges from stealth with $15M to build flexible AI agents for marketers
 Ram Iyer
 
 
-	19 hours ago
+	20 hours ago
 
 Kana emerges from stealth with $15M to build flexible AI agents for marketers
 
@@ -7425,7 +7468,7 @@ Hacking conference Def Con bans three people linked to Epstein
 Lorenzo Franceschi-Bicchierai
 
 
-	12 hours ago
+	13 hours ago
 
 Hacking conference Def Con bans three people linked to Epstein
 
@@ -7443,7 +7486,7 @@ Data breach at fintech giant Figure affects close to a million customers
 Lorenzo Franceschi-Bicchierai
 
 
-	16 hours ago
+	17 hours ago
 
 Data breach at fintech giant Figure affects close to a million customers
 
@@ -7459,11 +7502,11 @@ This former Microsoft PM thinks she can unseat CyberArk in 18 months
 Connie Loizos
 
 
-	19 hours ago
+	20 hours ago
 
 This former Microsoft PM thinks she can unseat CyberArk in 18 months
 
-(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/18/microsoft-says-office-bug-exposed-customers-confidential-emails-to-copilot-ai/, techcrunch.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/18/microsoft-says-office-bug-exposed-customers-confidential-emails-to-copilot-ai/, techcrunch.com, 18.02.2026)
 
 ================================================================================
 
@@ -7588,7 +7631,7 @@ A Stanford grad student created an algorithm to help his classmates find love; n
 
 A Stanford grad student created an algorithm to help his classmates find love; now, Date Drop is the basis of his new startup
 
-(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/17/intellexas-predator-spyware-used-to-hack-iphone-of-journalist-in-angola-research-says/, techcrunch.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/17/intellexas-predator-spyware-used-to-hack-iphone-of-journalist-in-angola-research-says/, techcrunch.com, 18.02.2026)
 
 ================================================================================
 
@@ -7690,7 +7733,7 @@ A Stanford grad student created an algorithm to help his classmates find love; n
 
 A Stanford grad student created an algorithm to help his classmates find love; now, Date Drop is the basis of his new startup
 
-(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/17/european-parliament-blocks-ai-on-lawmakers-devices-citing-security-risks/, techcrunch.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/17/european-parliament-blocks-ai-on-lawmakers-devices-citing-security-risks/, techcrunch.com, 17.02.2026)
 
 ================================================================================
 
@@ -7810,7 +7853,7 @@ Ivan Mehta
 
 All the important news from the ongoing India AI Impact Summit
 
-(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/14/homeland-security-reportedly-sent-hundreds-of-subpoenas-seeking-to-unmask-anti-ice-accounts/, techcrunch.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/14/homeland-security-reportedly-sent-hundreds-of-subpoenas-seeking-to-unmask-anti-ice-accounts/, techcrunch.com, 14.02.2026)
 
 ================================================================================
 
@@ -7819,7 +7862,7 @@ All the important news from the ongoing India AI Impact Summit
 Tarih: Sat, 14 Feb 2026 03:30:00 +0000
 Link: https://techcrunch.com/2026/02/13/indias-major-pharmacy-chain-exposed-customer-data-and-internal-systems/
 
-[TAM METİN - 803 kelime]
+[TAM METİN - 785 kelime]
 A security lapse by one of India’s largest pharmacy chains allowed outsiders to gain full administrative control of its platform, exposing customer order data and sensitive drug-control functions, TechCrunch has exclusively learned.
 
 The issue affected DavaIndia Pharmacy, the pharmacy arm of Zota Healthcare, which operates a large network of retail outlets across India. Security researcher Eaton Zveare told TechCrunch that he discovered the flaw after identifying insecure “super admin” application programming interfaces on DavaIndia’s website and privately shared details with Indian cybersecurity authorities.
@@ -7888,6 +7931,16 @@ OpenClaw creator Peter Steinberger joins OpenAI
 
 OpenClaw creator Peter Steinberger joins OpenAI
 
+Hollywood isn’t happy about the new Seedance 2.0 video generator
+
+
+
+Anthony Ha
+
+Hollywood isn’t happy about the new Seedance 2.0 video generator
+
+Hollywood isn’t happy about the new Seedance 2.0 video generator
+
 The great computer science exodus (and where students are going instead)
 
 
@@ -7908,17 +7961,7 @@ A Stanford grad student created an algorithm to help his classmates find love; n
 
 A Stanford grad student created an algorithm to help his classmates find love; now, Date Drop is the basis of his new startup
 
-Spotify says its best developers haven’t written a line of code since December, thanks to AI
-
-
-
-Sarah Perez
-
-Spotify says its best developers haven’t written a line of code since December, thanks to AI
-
-Spotify says its best developers haven’t written a line of code since December, thanks to AI
-
-(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/13/indias-major-pharmacy-chain-exposed-customer-data-and-internal-systems/, techcrunch.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/13/indias-major-pharmacy-chain-exposed-customer-data-and-internal-systems/, techcrunch.com, 14.02.2026)
 
 ================================================================================
 
@@ -7972,7 +8015,7 @@ Hacking conference Def Con bans three people linked to Epstein
 Lorenzo Franceschi-Bicchierai
 
 
-	12 hours ago
+	13 hours ago
 
 Hacking conference Def Con bans three people linked to Epstein
 
@@ -8004,7 +8047,7 @@ Hacking conference Def Con bans three people linked to Epstein
 Lorenzo Franceschi-Bicchierai
 
 
-	12 hours ago
+	13 hours ago
 
 Hacking conference Def Con bans three people linked to Epstein
 
@@ -8022,7 +8065,7 @@ Data breach at fintech giant Figure affects close to a million customers
 Lorenzo Franceschi-Bicchierai
 
 
-	15 hours ago
+	17 hours ago
 
 Data breach at fintech giant Figure affects close to a million customers
 
@@ -8038,11 +8081,11 @@ This former Microsoft PM thinks she can unseat CyberArk in 18 months
 Connie Loizos
 
 
-	19 hours ago
+	20 hours ago
 
 This former Microsoft PM thinks she can unseat CyberArk in 18 months
 
-(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/13/fintech-lending-giant-figure-confirms-data-breach/, techcrunch.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/13/fintech-lending-giant-figure-confirms-data-breach/, techcrunch.com, 13.02.2026)
 
 ================================================================================
 
@@ -8051,7 +8094,7 @@ This former Microsoft PM thinks she can unseat CyberArk in 18 months
 Tarih: Fri, 13 Feb 2026 20:19:05 +0000
 Link: https://techcrunch.com/2026/02/13/sex-toys-maker-tenga-says-hacker-stole-customer-information/
 
-[TAM METİN - 746 kelime]
+[TAM METİN - 728 kelime]
 Sex toy maker Tenga notified customers of a data breach on Friday, according to an email obtained by TechCrunch.
 
 In the message, the Japanese company said that “an unauthorized party gained access to the professional email account of one of our employees,” which gave the hacker access to the contents of the employee’s inbox. This access potentially allowed the hacker to see and steal customer names, email addresses, and historical email correspondence, “which may include order details or customer service inquiries.”
@@ -8122,6 +8165,16 @@ OpenClaw creator Peter Steinberger joins OpenAI
 
 OpenClaw creator Peter Steinberger joins OpenAI
 
+Hollywood isn’t happy about the new Seedance 2.0 video generator
+
+
+
+Anthony Ha
+
+Hollywood isn’t happy about the new Seedance 2.0 video generator
+
+Hollywood isn’t happy about the new Seedance 2.0 video generator
+
 The great computer science exodus (and where students are going instead)
 
 
@@ -8142,17 +8195,7 @@ A Stanford grad student created an algorithm to help his classmates find love; n
 
 A Stanford grad student created an algorithm to help his classmates find love; now, Date Drop is the basis of his new startup
 
-Spotify says its best developers haven’t written a line of code since December, thanks to AI
-
-
-
-Sarah Perez
-
-Spotify says its best developers haven’t written a line of code since December, thanks to AI
-
-Spotify says its best developers haven’t written a line of code since December, thanks to AI
-
-(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/13/sex-toys-maker-tenga-says-hacker-stole-customer-information/, techcrunch.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/13/sex-toys-maker-tenga-says-hacker-stole-customer-information/, techcrunch.com, 13.02.2026)
 
 ================================================================================
 
@@ -8623,7 +8666,7 @@ Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Busi
 
 CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
 
-(XXXXXXX, AÇIK - https://www.csoonline.com/article/4134135/notepad-author-says-fixes-make-update-mechanism-effectively-unexploitable.html, csoonline.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4134135/notepad-author-says-fixes-make-update-mechanism-effectively-unexploitable.html, csoonline.com, 18.02.2026)
 
 ================================================================================
 
@@ -8737,7 +8780,7 @@ Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Busi
 
 CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
 
-(XXXXXXX, AÇIK - https://www.csoonline.com/article/4134158/chinese-hackers-exploited-zero-day-dell-recoverpoint-flaw-for-1-5-years.html, csoonline.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4134158/chinese-hackers-exploited-zero-day-dell-recoverpoint-flaw-for-1-5-years.html, csoonline.com, 18.02.2026)
 
 ================================================================================
 
@@ -8827,7 +8870,7 @@ Millionen Chrome-Erweiterungen geben Browserverlauf preis
 
 Was CISOs über OpenClaw wissen sollten
 
-(XXXXXXX, AÇIK - https://www.csoonline.com/article/4133881/millionen-chrome-erweiterungen-geben-browserverlauf-preis.html, csoonline.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4133881/millionen-chrome-erweiterungen-geben-browserverlauf-preis.html, csoonline.com, 18.02.2026)
 
 ================================================================================
 
@@ -8945,7 +8988,7 @@ Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Busi
 
 CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
 
-(XXXXXXX, AÇIK - https://www.csoonline.com/article/4133800/flaws-in-four-popular-vs-code-extensions-left-128-million-installs-open-to-attack.html, csoonline.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4133800/flaws-in-four-popular-vs-code-extensions-left-128-million-installs-open-to-attack.html, csoonline.com, 18.02.2026)
 
 ================================================================================
 
@@ -9053,7 +9096,7 @@ Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Busi
 
 CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
 
-(XXXXXXX, AÇIK - https://www.csoonline.com/article/4133774/keenadu-android-malware-that-comes-preinstalled-and-cant-be-removed-by-users.html, csoonline.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4133774/keenadu-android-malware-that-comes-preinstalled-and-cant-be-removed-by-users.html, csoonline.com, 18.02.2026)
 
 ================================================================================
 
@@ -9062,7 +9105,7 @@ CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Wo
 Tarih: Wed, 18 Feb 2026 11:04:39 +0000
 Link: https://www.csoonline.com/article/4133725/cyberangriff-auf-bahn-stort-auskunftssysteme.html
 
-[TAM METİN - 417 kelime]
+[TAM METİN - 419 kelime]
 Cyberangriff auf Bahn stört Auskunftssysteme
 
 Der Grund für IT-Störungen bei Bahn-App und Website war eine Cyberattacke. Nach Angaben der Bahn laufen die Systeme wieder.
@@ -9082,6 +9125,10 @@ Bei der Attacke handelte es sich nach Angaben der Bahn um einen DDoS-Angriff. Ei
 Von unseren Redakteuren direkt in Ihren Posteingang
 
 Mehr von diesem Autor
+
+newsNeue Kooperation soll souveräne Cloud-Lösungen bringen 16. Feb. 2026 2 Minuten
+
+Neue Kooperation soll souveräne Cloud-Lösungen bringen
 
 newsBehörden warnen vor Hackerangriffen auf Politik und Militär 9. Feb. 2026 3 Minuten
 
@@ -9111,17 +9158,13 @@ newsFahndung nach Kopf von Black Basta 19. Jan. 2026 2 Minuten
 
 Fahndung nach Kopf von Black Basta
 
-newsSchlag gegen Cyberkriminelle in Deutschland 15. Jan. 2026 3 Minuten
-
-Schlag gegen Cyberkriminelle in Deutschland
-
 Cyberangriff auf Bahn stört Auskunftssysteme
 
 13 Fragen gegen Drittanbieterrisiken
 
 Was CISOs über OpenClaw wissen sollten
 
-(XXXXXXX, AÇIK - https://www.csoonline.com/article/4133725/cyberangriff-auf-bahn-stort-auskunftssysteme.html, csoonline.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4133725/cyberangriff-auf-bahn-stort-auskunftssysteme.html, csoonline.com, 18.02.2026)
 
 ================================================================================
 
@@ -9219,7 +9262,7 @@ Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Busi
 
 CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
 
-(XXXXXXX, AÇIK - https://www.csoonline.com/article/4133280/discipline-is-the-new-power-move-in-cybersecurity-leadership.html, csoonline.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4133280/discipline-is-the-new-power-move-in-cybersecurity-leadership.html, csoonline.com, 18.02.2026)
 
 ================================================================================
 
@@ -9295,7 +9338,7 @@ Start by mapping your incident response flow. Ask: Where do you already rely on 
 
 Want to learn more? Explore DNS-layer defense and practical use cases at https://www.infoblox.com/blog/. For deeper insights into DNS-driven threat research and intelligence, visit the Infoblox Threat Intel page at https://www.infoblox.com/threat-intel/ to see how real-world threat actor tracking translates into actionable indicators for strengthening your defenses.
 
-(XXXXXXX, AÇIK - https://www.infoblox.com/blog/security/protective-dns-harnessing-dns-as-a-core-weapon-in-mssp-cyber-defense-and-incident-response/, infoblox.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.infoblox.com/blog/security/protective-dns-harnessing-dns-as-a-core-weapon-in-mssp-cyber-defense-and-incident-response/, infoblox.com, 18.02.2026)
 
 ================================================================================
 
@@ -9399,7 +9442,7 @@ Manufacturer Usage Description Specification (RFC8250), Lear, Eliot, Droms, Ralp
 
 Zero Trust DNS, Microsoft. https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/zero-trust-dns/
 
-(XXXXXXX, AÇIK - https://www.infoblox.com/blog/security/iot-dns-security-and-privacy-with-ucl-and-inria/, infoblox.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.infoblox.com/blog/security/iot-dns-security-and-privacy-with-ucl-and-inria/, infoblox.com, 18.02.2026)
 
 ================================================================================
 
@@ -9549,7 +9592,7 @@ https://www.duras.jp/morihuyuko/
 
 https://diamond.jp/zai/articles/-/1036609
 
-(XXXXXXX, AÇIK - https://www.infoblox.com/blog/threat-intelligence/banners-bots-and-butchers-an-automated-long-con-targeting-japan-asia-and-beyond/, infoblox.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.infoblox.com/blog/threat-intelligence/banners-bots-and-butchers-an-automated-long-con-targeting-japan-asia-and-beyond/, infoblox.com, 17.02.2026)
 
 ================================================================================
 
@@ -9659,7 +9702,7 @@ Check out the high-level overview and demos showcasing CMDB reconciliation and a
 
 For detailed, step-by-step guidance on configuring the ServiceNow provider and downloading or scheduling reconciliation reports, refer to the deployment guide here.
 
-(XXXXXXX, AÇIK - https://www.infoblox.com/blog/company/leveraging-infoblox-universal-asset-insights-to-visualize-servicenow-cmdb-accuracy/, infoblox.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.infoblox.com/blog/company/leveraging-infoblox-universal-asset-insights-to-visualize-servicenow-cmdb-accuracy/, infoblox.com, 17.02.2026)
 
 ================================================================================
 
@@ -9723,7 +9766,7 @@ Asset Insights and directly measure how your CMDB aligns with what is actually p
 
 Read the blog post, Leveraging Infoblox Universal Asset Insights™ to Visualize ServiceNow CMDB Accuracy to learn more about the new enhancement in detail.
 
-(XXXXXXX, AÇIK - https://www.infoblox.com/blog/company/closing-the-cmdb-trust-gap-starts-with-the-network/, infoblox.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.infoblox.com/blog/company/closing-the-cmdb-trust-gap-starts-with-the-network/, infoblox.com, 17.02.2026)
 
 ================================================================================
 
@@ -9831,7 +9874,7 @@ Behavioral Correlation: Cross-referencing with threat intelligence and historica
 
 The secondary validation layer operates as a scalable microservice architecture, providing resilient processing of flagged domains. After completing both primary detection and secondary validation, the system performs final actions including alerting, blocking or forwarding to security teams for investigation.
 
-(XXXXXXX, AÇIK - https://www.infoblox.com/blog/security/novel-ai-techniques-for-dns-tunnel-security/, infoblox.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.infoblox.com/blog/security/novel-ai-techniques-for-dns-tunnel-security/, infoblox.com, 05.02.2026)
 
 ================================================================================
 
@@ -9891,7 +9934,7 @@ Infoblox’s collaboration with Google Cloud goes beyond delivering DNS Armor. I
 
 Learn more about how Infoblox partners with Google Cloud here.
 
-(XXXXXXX, AÇIK - https://www.infoblox.com/blog/security/dns-armor-now-generally-available/, infoblox.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.infoblox.com/blog/security/dns-armor-now-generally-available/, infoblox.com, 03.02.2026)
 
 ================================================================================
 
@@ -9979,7 +10022,7 @@ Overlay networks like this one can also impact DNS research because the false re
 
 In our case, a third-party “port 53” collection helped us recognize this overlay network. There were Kimwolf botnet domains in that database, which resolved incorrectly to 89[.]208[.]107[.]49, an IP address we had already been monitoring for a few years. Independently, we had been “noodling” over mysterious DNS resolutions for domains like gettranslate[.]ir. Suddenly, we were able to put these two puzzles together and once we had the EDNS0 trick, the mystery quickly unraveled. How fun is that?
 
-(XXXXXXX, AÇIK - https://www.infoblox.com/blog/threat-intelligence/compromised-routers-dns-and-a-tds-hidden-in-aeza-networks/, infoblox.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.infoblox.com/blog/threat-intelligence/compromised-routers-dns-and-a-tds-hidden-in-aeza-networks/, infoblox.com, 03.02.2026)
 
 ================================================================================
 
@@ -10009,7 +10052,7 @@ Stand out with invite-only positioning, security badging and a co-sell model bui
 
 The Skilled to Secure philosophy puts technical competency at the core and rewards partners who invest in the skills that drive measurable security outcomes and customer trust. Connect with your Infoblox team to discuss MSSP track readiness and invite criteria in your region.
 
-(XXXXXXX, AÇIK - https://www.infoblox.com/blog/community/managed-security-service-providers-are-redefining-how-enterprises-detect-disrupt-and-respond-to-modern-threats/, infoblox.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.infoblox.com/blog/community/managed-security-service-providers-are-redefining-how-enterprises-detect-disrupt-and-respond-to-modern-threats/, infoblox.com, 28.01.2026)
 
 ================================================================================
 
@@ -10043,7 +10086,7 @@ Skilled to Secure rewards integrators who invest in technical competency with hi
 
 Engage your Infoblox team to map your GSI sub-track plan across target countries and regions.
 
-(XXXXXXX, AÇIK - https://www.infoblox.com/blog/community/global-system-integrators-architect-the-secure-cloud-first-infrastructures-that-global-enterprises-depend-on/, infoblox.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://www.infoblox.com/blog/community/global-system-integrators-architect-the-secure-cloud-first-infrastructures-that-global-enterprises-depend-on/, infoblox.com, 22.01.2026)
 
 ================================================================================
 
