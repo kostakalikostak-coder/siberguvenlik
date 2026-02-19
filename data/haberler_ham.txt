@@ -1893,7 +1893,7 @@ Appendix A: Indicators of Compromise
 Tarih: Thu, 19 Feb 2026 11:00:00 +0000
 Link: https://cyberscoop.com/venezuela-blackout-cyberattack-vs-kinetic-damage-operation-absolute-resolve/
 
-[TAM METİN - 1989 kelime]
+[TAM METİN - 1988 kelime]
 The dominant narrative has framed the Jan. 3 Caracas power outage during the mission to capture Venezuelan leader Nicolás Maduro as a “precision cyberattack.” But publicly available information points to a more complicated picture: videos, photographs, and accounts published from Caracas show significant physical damage to at least three Venezuelan substations. Experts who reviewed that material say the observed kinetic damage could, on its own, account for the outages—raising questions about how much of the outage can be confidently attributed to cyber activity alone.
 
 These experts say Operation Absolute Resolve appears to have involved more than a stand-alone “cyber blackout,” despite the framing of many early accounts. In their view, cyber operations may have played some role, but the visible physical attacks alone could plausibly explain the outages—and that kinetic dimension is largely absent from the dominant narrative.
@@ -1976,13 +1976,13 @@ DHS privacy probe will focus on biometric tracking by ICE, OBIM
 
 WhatsApp releases account feature that looks to combat spyware
 
+Chinese hackers exploited a Dell zero-day for 18 months before anyone noticed
+
 Polish authorities arrest alleged Phobos ransomware affiliate
 
 Apple discloses first actively exploited zero-day of 2026
 
 0APT ransomware group rises swiftly with bluster, along with genuine threat of attack
-
-Microsoft Patch Tuesday matches last year’s zero-day high with six actively exploited vulnerabilities
 
 CISA tells agencies to stop using unsupported edge devices
 
@@ -2129,7 +2129,7 @@ Lawmakers wonder when Trump administration will weigh on soon-expired surveillan
 Tarih: Wed, 18 Feb 2026 00:32:44 +0000
 Link: https://cyberscoop.com/china-brickstorm-grimbolt-dell-zero-day/
 
-[TAM METİN - 774 kelime]
+[TAM METİN - 770 kelime]
 Researchers uncovered more worrying details about a long-running cyber espionage campaign suspected to be backed by the Chinese government, exemplifying how such attacks often go undetected until they’ve already caused significant damage.
 
 Google Threat Intelligence Group and Mandiant said the Chinese threat group UNC6201 has been exploiting a zero-day vulnerability in Dell RecoverPoint for Virtual Machines since at least mid-2024. The group overlaps with UNC5221, also known as Silk Typhoon, which has been burrowing into critical infrastructure and government agency networks undetected since at least 2022.
@@ -2162,13 +2162,13 @@ Researchers only have a narrow view of the threat groups’ activities at large.
 
 “We suspect a significant portion of UNC5221 and UNC6201’s activity likely remains unknown, and there is a strong probability that they are developing or using undiscovered zero-days and malware,” Larsen said. “The most concerning aspect of this campaign is that additional organizations were likely compromised as part of this campaign and do not know it yet.”
 
-The Caracas operation suggests cyber was part of the plan – just not the whole operation
-
 CISA to host industry feedback sessions on cyber incident reporting regulation
 
 Acting CISA chief says DHS funding lapse would limit, halt some agency work
 
 GOP Congress moves to shape election law in Trump’s image
+
+After major Poland energy grid cyberattack, CISA issues warning to U.S. audience
 
 Unit 42: Nearly two-thirds of breaches now start with identity abuse
 
@@ -2370,7 +2370,7 @@ Software Bill of Materials
 
 Trusted Platform Module
 
-(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/18/shinyhunters_cargurus_breach/, go.theregister.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/18/shinyhunters_cargurus_breach/, go.theregister.com, 18.02.2026)
 
 ================================================================================
 
@@ -2454,7 +2454,7 @@ Software Bill of Materials
 
 Trusted Platform Module
 
-(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/18/fraudster_hotel_hack_one_cent_luxury_room/, go.theregister.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/18/fraudster_hotel_hack_one_cent_luxury_room/, go.theregister.com, 18.02.2026)
 
 ================================================================================
 
@@ -2500,7 +2500,7 @@ Financially motivated crooks often opt for some kind of extortion, which involve
 
 While DDoS attacks can be carried out by cybercriminals of all stripes, they are most often deployed by hacktivists – digital nuisance-makers – and typically only last for a few hours before traffic tails off, as was the case with Deutsche Bahn. ®
 
-(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/18/deutsche_bahn_ddos/, go.theregister.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/18/deutsche_bahn_ddos/, go.theregister.com, 18.02.2026)
 
 ================================================================================
 
@@ -2626,7 +2626,7 @@ Software Bill of Materials
 
 Trusted Platform Module
 
-(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/18/dell_0day_brickstorm_campaign/, go.theregister.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/18/dell_0day_brickstorm_campaign/, go.theregister.com, 18.02.2026)
 
 ================================================================================
 
@@ -2746,243 +2746,11 @@ Software Bill of Materials
 
 Trusted Platform Module
 
-(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/17/volt_typhoon_dragos/, go.theregister.com, 19.02.2026)
+(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/17/volt_typhoon_dragos/, go.theregister.com, 18.02.2026)
 
 ================================================================================
 
-[46] The Register - Polish cops nab 47-year-old man in Phobos ransomware raid
-────────────────────────────────────────────────────────────────────────────────
-Tarih: 2026-02-17T13:14:33.00Z
-Link: https://go.theregister.com/feed/www.theregister.com/2026/02/17/poland_phobos_ransomware_arrest/
-
-[TAM METİN - 408 kelime]
-Polish cops nab 47-year-old man in Phobos ransomware raid
-
-Police say seized kit contained logins, passwords, and server IP addresses
-
-Polish police have arrested and charged a man over ties to the Phobos ransomware group following a property raid.
-
-The 47-year-old was cuffed after cops visited his apartment in the Lesser Poland Voivodeship, and looked through his devices, finding various artifacts that investigators believe are linked to cybercrime.
-
-Officials said Tuesday the man's devices contained logins, passwords, credit card numbers, and server IP addresses that could have been used to launch "various attacks, including ransomware."
-
-"After conducting technical investigations, it was discovered that the data contained information that could be used to breach electronic security," police said.
-
-"Furthermore, according to information gathered in the case, the 47-year-old used encrypted messaging to contact the Phobos criminal group, known for conducting ransomware attacks."
-
-Image of the devices and contraband seized by CBZC police after raiding suspected Phobos associate's apartment (courtesy of CBZC)
-
-According to an image shared by Poland's Central Office for Combating Cybercrime (CBZC), police seized one laptop, four smartphones, an array of payment cards, and a small amount of cannabis.
-
-The man was detained and charged with creating, acquiring, and sharing computer programs used to unlawfully obtain information, including data enabling unauthorized access to information stored in a computer system.
-
-Dutch cops arrest man after sending him confidential files by mistake
-
-Polish cops bail 20-year-old bedroom botnet operator
-
-Dutch cops cuff alleged AVCheck malware kingpin in Amsterdam
-
-Indian cops cuff ex-Coinbase rep over selling customer info to crims
-
-If convicted, he could receive a maximum prison sentence of five years, police said.
-
-The arrest stems from Europol's ongoing Operation Aether, which targets the 8Base ransomware group, believed to be linked to Phobos. It comes almost exactly a year since international law enforcement dismantled the 8Base crew, which was first assembled in 2022.
-
-Bavarian police seized the group's infrastructure used to host its data leak site, while four arrests were made in Thailand.
-
-Before then, Phobos's alleged administrator, Russian national Evgenii Ptitsyn, aged 42 at the time, was arrested in South Korea in 2024 and extradited to the US that same year.
-
-The CBZC said Phobos had recorded more than 1,000 victims during its time on the ransomware scene, including hospitals, schools, nonprofits, and others.
-
-Current estimates peg the total revenue generated by the group at $16 million, securing an average of $54,000 in ransom payments per attack. ®
-
-(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/17/poland_phobos_ransomware_arrest/, go.theregister.com, 19.02.2026)
-
-================================================================================
-
-[47] The Register - Canada Goose ruffles feathers over 600K record dump, says leak is old news
-────────────────────────────────────────────────────────────────────────────────
-Tarih: 2026-02-16T18:01:07.00Z
-Link: https://go.theregister.com/feed/www.theregister.com/2026/02/16/canada_goose_shinyhunters/
-
-[TAM METİN - 403 kelime]
-Canada Goose ruffles feathers over 600K record dump, says leak is old news
-
-Fashion brand latest to succumb to ShinyHunters' tricks
-
-Canada Goose says an advertised breach of 600,000 records is an old raid and there are no signs of a recent compromise.
-
-The down-filled jacket purveyor did not answer questions about how old the data is or how it was originally taken, but told us it relates to past customer purcahses.
-
-"Canada Goose is aware that a historical dataset relating to past customer transactions has recently been published online," a spokesperson said. "At this time, we have no indication of any breach of our own systems. We are currently reviewing the newly released dataset to assess its accuracy and scope, and will take any further steps as may be appropriate."
-
-"To be clear, our review shows no evidence that unmasked financial data was involved. Canada Goose remains committed to protecting customer information."
-
-ShinyHunters posted the company's data for download on February 14 via their leak site. The criminals' advert for the data claimed there were more than 600,000 records, each containing personally identifiable information, as well as payment/financial details.
-
-The Register reviewed a number of the records available online via a JSON file, and ShinyHunters' description of the data appears accurate.
-
-It includes names and other usual PII data points, as well as partial payment information and order details, such as price and delivery address.
-
-Betterment breach may expose 1.4M users after social engineering attack
-
-ShinyHunters swipes right on 10M records in alleged dating app data grab
-
-Let them eat sourdough: ShinyHunters claims Panera Bread as stolen credentials victim
-
-Canva among ~100 targets of ShinyHunters Okta identity-theft campaign
-
-A cursory scan suggests affected individuals appear to be based across North America and Europe.
-
-ShinyHunters has had a busy start to 2026: the cybercriminals now have their own data leak site, and have posted a number of high-profile victims this year alone.
-
-Crunchbase and Betterment, two examples of these scalps, were raided as part of the group's targeting of Okta accounts through voice phishing.
-
-Among the other victims are SoundCloud, Match Group, Panera Bread, Harvard University, and wealth management firm Mercer Advisors.
-
-Last year, the criminal crew was linked to attacks on Salesforce, which led to the theft of data belonging to more than 200 of the company's customers, as well as SalesLoft Drift, a Salesforce integration that compromised various Salesforce instances. ®
-
-(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/16/canada_goose_shinyhunters/, go.theregister.com, 19.02.2026)
-
-================================================================================
-
-[48] The Register - Google patches Chrome zero-day as in-the-wild exploits surface
-────────────────────────────────────────────────────────────────────────────────
-Tarih: 2026-02-16T12:39:06.00Z
-Link: https://go.theregister.com/feed/www.theregister.com/2026/02/16/chromes_zeroday/
-
-[TAM METİN - 391 kelime]
-Google patches Chrome zero-day as in-the-wild exploits surface
-
-High-severity CSS flaw let malicious webpages run code inside the sandbox
-
-Google has quietly pushed out an emergency Chrome fix after attackers were caught exploiting the browser's first reported zero-day of 2026.
-
-The flaw, tracked as CVE-2026-2441 and assigned a "high" CVSS score of 8.8, stems from a use-after-free bug in Chrome's CSS handling that could allow a remote attacker to execute arbitrary code inside the browser's sandbox using a specially crafted HTML page. In other words, a dodgy webpage could be all an attacker needs to get malicious code running inside a victim's browser.
-
-Unsurprisingly, Google has rushed out fixes for Chrome with version 145.0.7632.75 for Windows and Mac, and 144.0.7559.75 for Linux, which the Chocolate Factory says will "roll out in the coming days/weeks."
-
-Security researcher Shaheen Fazim reported the flaw on February 11, and Google acknowledged that attackers were already exploiting it just two days later – though it's staying tight-lipped on the specifics. The company has not said whether the attacks were targeted or part of a broader exploitation campaign, only that the vulnerability was being abused before a fix was ready.
-
-30+ Chrome extensions disguised as AI chatbots steal users' API keys, emails, other sensitive data
-
-Devilish devs spawn 287 Chrome extensions to flog your browser history to data brokers
-
-Ad blocking is alive and well, despite Chrome's attempts to make it harder
-
-Google to foist Gemini pane on Chrome users in automated browsing push
-
-"Google is aware that an exploit for CVE-2026-2441 exists in the wild," its security advisory stated.
-
-Google said access to further details about the bug will remain under wraps until most users are patched, and potentially longer if third-party dependencies are involved, a standard move aimed at stopping others from quickly weaponizing the bug.
-
-If this all feels a bit familiar, that's because it is. Google spent much of last year playing Whac-A-Mole with actively exploited Chrome bugs, ultimately patching eight zero-days across 2025.
-
-The fix also lands days after researchers revealed that at least 287 Chrome extensions, with tens of millions of installs between them, were quietly siphoning off users' browsing histories to a long list of outside recipients – a handy reminder that data can leak not just through software flaws but through the sprawling ecosystem bolted onto the browser. ®
-
-(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/16/chromes_zeroday/, go.theregister.com, 19.02.2026)
-
-================================================================================
-
-[49] The Register - Infosec exec sold eight zero-day exploit kits to Russia, says DoJ
-────────────────────────────────────────────────────────────────────────────────
-Tarih: 2026-02-15T23:22:14.00Z
-Link: https://go.theregister.com/feed/www.theregister.com/2026/02/15/exl3harris_exec_sold_8_zeroday/
-
-[TAM METİN - 1009 kelime]
-Infosec exec sold eight zero-day exploit kits to Russia, says DoJ
-
-PLUS: Fake ransomware group exposed; EC blesses Google's big Wiz deal; Alleged sewage hacker cuffed; And more
-
-Infosec in Brief The former General Manager of defense contractor L3Harris’s cyber subsidiary Trenchant sold eight zero-day exploit kits to Russia, according to a court filing last week.
-
-We first wrote about this case in October 2025, when former Trenchant boss Peter Williams pleaded guilty to two counts of theft of trade secrets – but court records didn’t detail exactly what he stole.
-
-That changed last week when the US Department of Justice published a sentencing memorandum [PDF] that frames Williams’ conduct as a betrayal of his employer and the US government, and the cause of significant harm to US national security.
-
-Williams "made it possible for the Russian Broker to arm its clients with powerful cyber exploits that could be used against any manner of victim, civilian or military around the world," the DoJ said. The broker Williams worked with regularly provided exploits to the Russian government, the DoJ alleged.
-
-Along with the damage he caused to US national security, the DoJ said that Williams' actions also led to the loss of more than $35 million for L3Harris and Trenchant, contributing to the government's call to sentence him to the maximum term allowed under federal guidelines.
-
-The sentencing memo notes that Williams could be incarcerated for up to 108 months (9 years), followed by three years of supervised release. An Australian citizen, Williams has agreed to be deported to his home country after his prison term.
-
-In addition to his time behind bars, the DoJ has also asked the judge to force Williams to pay $35 million in restitution and additional forfeitures of items linked to his crimes.
-
-Ransomware gang turns out to be a couple of kids in a trench coat
-
-A recently emerged ransomware group calling itself 0APT is just a bunch of liars who haven't hacked anyone, cybersecurity researchers have determined.
-
-According to GuidePoint Security, 0APT's claim of having successfully attacked over 200 entities in the course of a single week in late January was a total fabrication, with most claimed victims having ridiculous names like "Metropolis City Municipal." As reports emerged that people thought the group was lying, its data leak site went offline before returning to life a day later with a list of around 15 high-profile multinational victims listed.
-
-GuidePoint says companies on the shortlist also appear to have escaped infection by 0APT – the alleged victims found no evidence of intrusion after the group published their names.
-
-GuidePoint believes there could be two reasons for the scam: Either to fool other cybercriminals into paying it for ransomware-as-a-service tools that don't exist, or to trick organizations into believing they have suffered an attack so they pay ransoms out of fear.
-
-In other words, if 0APT claims to have hit your organization, it probably hasn't – but review your logs just in case.
-
-Payment deadlines extended after actual ransomware attack hits BridgePay
-
-People around the United States are getting a little more time to pay their local government bills following a ransomware attack that's taken payment service provider BridgePay offline for more than a week.
-
-BridgePay provides payment services for local governments and utilities around the country – or it did until knocked offline on February 6 due to a ransomware attack. BridgePay remains offline at the time of publication and warns restoring services could take the better part of another week.
-
-The company said attackers did not compromise payment information, but it still doesn't appear to understand the full extent of the incident. BridgePay said it will provide updates as it learns more.
-
-At least one city, Frisco, Texas, has suspended shutoffs and late fees until the situation is resolved, but not everyone is so fortunate – Palm Bay, Florida's advice on the outage suggests residents ought to hoof it to a city building to pay what's owed.
-
-Telcos aren't saying how they fought back against China's Salt Typhoon attacks
-
-Open-source AI is a global security nightmare waiting to happen, say researchers
-
-Pwn2Own Automotive 2026 uncovers 76 zero-days, pays out more than $1M
-
-Mandiant releases quick credential cracker, to hasten the death of a bad protocol
-
-Polish police nab critical infrastructure hacker
-
-Polish cyber cops have arrested a suspect believed to have attacked a water and sewage infrastructure operator.
-
-The Central Bureau for Combatting Cybercrime's (CBZC’s) statement on the matter doesn’t say when the attack took place, but does reveal authorities apprehended the suspect in early February.
-
-The CBZC said that the suspect gained unauthorized access to the critical infrastructure provider, logged into an administrator account and stole data. The data later appeared on the dark web.
-
-Polish police claim that their actions in the western Polish city of Poznań enabled them to locate and delete the data and to make the arrest.
-
-EU clears Google's Wiz acquisition
-
-Google's acquisition of cloud security firm Wiz is one step closer to completion, with the EU last week clearing the deal.
-
-The EU said that Google's acquisition of Wiz wouldn't raise competition concerns in Europe, as the likes of AWS and Azure offer their own strong cloud security packages.
-
-"There are several credible competitors that customers could switch to if Google were to bundle Wiz's multi-cloud security platform with its existing products, or in case Wiz's platform no longer worked with clouds other than Google's," the European Commission said. The deal was also cleared by the US Department of Justice in November 2025.
-
-Google previously tried to acquire Wiz in 2024 for $23 billion, but the cloudy security outfit rejected the offer. Google's second offer of $32 billion was enough to change the Wiz team's mind. The deal marks Google's most expensive acquisition to date. ®
-
-Google Cloud Platform
-
-Google Cloud Platform
-
-Center for Internet Security
-
-Immigration and Nationality Act of 1965
-
-Telecommunications Act of 1996
-
-Google Cloud Platform
-
-Google Cloud Platform
-
-Center for Internet Security
-
-Immigration and Nationality Act of 1965
-
-Telecommunications Act of 1996
-
-(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/15/exl3harris_exec_sold_8_zeroday/, go.theregister.com, 19.02.2026)
-
-================================================================================
-
-[50] TechCrunch Security - Hacking conference Def Con bans three people linked to Epstein
+[46] TechCrunch Security - Hacking conference Def Con bans three people linked to Epstein
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 22:04:13 +0000
 Link: https://techcrunch.com/2026/02/18/hacking-conference-def-con-bans-three-people-linked-to-epstein/
@@ -3105,7 +2873,7 @@ A Stanford grad student created an algorithm to help his classmates find love; n
 
 ================================================================================
 
-[51] TechCrunch Security - Data breach at fintech giant Figure affects close to a million customers
+[47] TechCrunch Security - Data breach at fintech giant Figure affects close to a million customers
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 18:14:07 +0000
 Link: https://techcrunch.com/2026/02/18/data-breach-at-fintech-giant-figure-affects-close-to-a-million-customers/
@@ -3235,7 +3003,7 @@ This former Microsoft PM thinks she can unseat CyberArk in 18 months
 
 ================================================================================
 
-[52] TechCrunch Security - This former Microsoft PM thinks she can unseat CyberArk in 18 months
+[48] TechCrunch Security - This former Microsoft PM thinks she can unseat CyberArk in 18 months
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 15:00:00 +0000
 Link: https://techcrunch.com/2026/02/18/the-former-microsoft-pm-who-thinks-she-can-unseat-cyberark-in-18-months/
@@ -3361,12 +3129,12 @@ A Stanford grad student created an algorithm to help his classmates find love; n
 
 ================================================================================
 
-[53] TechCrunch Security - Microsoft says Office bug exposed customers’ confidential emails to Copilot AI
+[49] TechCrunch Security - Microsoft says Office bug exposed customers’ confidential emails to Copilot AI
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 14:44:28 +0000
 Link: https://techcrunch.com/2026/02/18/microsoft-says-office-bug-exposed-customers-confidential-emails-to-copilot-ai/
 
-[TAM METİN - 493 kelime]
+[TAM METİN - 481 kelime]
 Microsoft says Office bug exposed customers’ confidential emails to Copilot AI
 
 Microsoft has confirmed that a bug allowed its Copilot AI to summarize customers’ confidential emails for weeks without permission.
@@ -3403,9 +3171,23 @@ Kana emerges from stealth with $15M to build flexible AI agents for marketers
 Ram Iyer
 
 
-	22 hours ago
+	23 hours ago
 
 Kana emerges from stealth with $15M to build flexible AI agents for marketers
+
+Fundraising
+
+
+This former Microsoft PM thinks she can unseat CyberArk in 18 months
+
+
+
+Connie Loizos
+
+
+	23 hours ago
+
+This former Microsoft PM thinks she can unseat CyberArk in 18 months
 
 Security
 
@@ -3421,20 +3203,6 @@ Zack Whittaker
 
 European Parliament blocks AI on lawmakers’ devices, citing security risks
 
-AI
-
-
-Adani pledges $100B to build AI data centers as India seeks bigger role in the global AI race
-
-
-
-Jagmeet Singh
-
-
-	2 days ago
-
-Adani pledges $100B to build AI data centers as India seeks bigger role in the global AI race
-
 Security
 
 
@@ -3445,7 +3213,7 @@ Hacking conference Def Con bans three people linked to Epstein
 Lorenzo Franceschi-Bicchierai
 
 
-	15 hours ago
+	16 hours ago
 
 Hacking conference Def Con bans three people linked to Epstein
 
@@ -3463,7 +3231,7 @@ Data breach at fintech giant Figure affects close to a million customers
 Lorenzo Franceschi-Bicchierai
 
 
-	19 hours ago
+	20 hours ago
 
 Data breach at fintech giant Figure affects close to a million customers
 
@@ -3479,7 +3247,7 @@ This former Microsoft PM thinks she can unseat CyberArk in 18 months
 Connie Loizos
 
 
-	22 hours ago
+	23 hours ago
 
 This former Microsoft PM thinks she can unseat CyberArk in 18 months
 
@@ -3487,7 +3255,7 @@ This former Microsoft PM thinks she can unseat CyberArk in 18 months
 
 ================================================================================
 
-[54] TechCrunch Security - Intellexa’s Predator spyware used to hack iPhone of journalist in Angola, research says
+[50] TechCrunch Security - Intellexa’s Predator spyware used to hack iPhone of journalist in Angola, research says
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 00:01:00 +0000
 Link: https://techcrunch.com/2026/02/17/intellexas-predator-spyware-used-to-hack-iphone-of-journalist-in-angola-research-says/
@@ -3612,7 +3380,7 @@ A Stanford grad student created an algorithm to help his classmates find love; n
 
 ================================================================================
 
-[55] CSO Online - Six flaws found hiding in OpenClaw’s plumbing
+[51] CSO Online - Six flaws found hiding in OpenClaw’s plumbing
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 12:14:23 +0000
 Link: https://www.csoonline.com/article/4134540/six-flaws-found-hiding-in-openclaws-plumbing.html
@@ -3712,7 +3480,7 @@ CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Wo
 
 ================================================================================
 
-[56] CSO Online - Hackers can turn Grok, Copilot into covert command-and-control channels, researchers warn
+[52] CSO Online - Hackers can turn Grok, Copilot into covert command-and-control channels, researchers warn
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 10:22:03 +0000
 Link: https://www.csoonline.com/article/4134419/hackers-can-turn-grok-copilot-into-covert-command-and-control-channels-researchers-warn.html
@@ -3828,7 +3596,7 @@ CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Wo
 
 ================================================================================
 
-[57] CSO Online - Cybersicherheit braucht Reife und keine Checklisten
+[53] CSO Online - Cybersicherheit braucht Reife und keine Checklisten
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 09:25:42 +0000
 Link: https://www.csoonline.com/article/4133975/cybersicherheit-braucht-reife-und-keine-checklisten.html
@@ -3910,7 +3678,7 @@ Was CISOs über OpenClaw wissen sollten
 
 ================================================================================
 
-[58] CSO Online - From in-house CISO to consultant. What you need to know before making the leap
+[54] CSO Online - From in-house CISO to consultant. What you need to know before making the leap
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 07:00:00 +0000
 Link: https://www.csoonline.com/article/4132950/from-in-house-ciso-to-consultant-what-you-need-to-know-before-making-the-leap.html
@@ -4069,7 +3837,7 @@ CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Wo
 
 ================================================================================
 
-[59] CSO Online - Notepad++ author says fixes make update mechanism ‘effectively unexploitable’
+[55] CSO Online - Notepad++ author says fixes make update mechanism ‘effectively unexploitable’
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 22:18:27 +0000
 Link: https://www.csoonline.com/article/4134135/notepad-author-says-fixes-make-update-mechanism-effectively-unexploitable.html
@@ -4183,7 +3951,7 @@ CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Wo
 
 ================================================================================
 
-[60] CSO Online - Chinese hackers exploited zero-day Dell RecoverPoint flaw for 1.5 years
+[56] CSO Online - Chinese hackers exploited zero-day Dell RecoverPoint flaw for 1.5 years
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 21:43:40 +0000
 Link: https://www.csoonline.com/article/4134158/chinese-hackers-exploited-zero-day-dell-recoverpoint-flaw-for-1-5-years.html
@@ -4297,7 +4065,7 @@ CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Wo
 
 ================================================================================
 
-[61] CSO Online - Millionen Chrome-Erweiterungen geben Browserverlauf preis
+[57] CSO Online - Millionen Chrome-Erweiterungen geben Browserverlauf preis
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 15:16:32 +0000
 Link: https://www.csoonline.com/article/4133881/millionen-chrome-erweiterungen-geben-browserverlauf-preis.html
@@ -4387,7 +4155,7 @@ Was CISOs über OpenClaw wissen sollten
 
 ================================================================================
 
-[62] CSO Online - Flaws in four popular VS Code extensions left 128 million installs open to attack
+[58] CSO Online - Flaws in four popular VS Code extensions left 128 million installs open to attack
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 12:30:06 +0000
 Link: https://www.csoonline.com/article/4133800/flaws-in-four-popular-vs-code-extensions-left-128-million-installs-open-to-attack.html
@@ -4505,7 +4273,7 @@ CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Wo
 
 ================================================================================
 
-[63] CSO Online - Keenadu: Android malware that comes preinstalled and can’t be removed by users
+[59] CSO Online - Keenadu: Android malware that comes preinstalled and can’t be removed by users
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 12:14:35 +0000
 Link: https://www.csoonline.com/article/4133774/keenadu-android-malware-that-comes-preinstalled-and-cant-be-removed-by-users.html
@@ -4613,7 +4381,7 @@ CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Wo
 
 ================================================================================
 
-[64] CSO Online - Cyberangriff auf Bahn stört Auskunftssysteme
+[60] CSO Online - Cyberangriff auf Bahn stört Auskunftssysteme
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 11:04:39 +0000
 Link: https://www.csoonline.com/article/4133725/cyberangriff-auf-bahn-stort-auskunftssysteme.html
@@ -4681,7 +4449,7 @@ Was CISOs über OpenClaw wissen sollten
 
 ================================================================================
 
-[65] Infoblox Blog - Protective DNS: Harnessing DNS as a Core Weapon in MSSP Cyber Defense and Incident Response
+[61] Infoblox Blog - Protective DNS: Harnessing DNS as a Core Weapon in MSSP Cyber Defense and Incident Response
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 17:51:56 +0000
 Link: https://www.infoblox.com/blog/security/protective-dns-harnessing-dns-as-a-core-weapon-in-mssp-cyber-defense-and-incident-response/
@@ -4757,7 +4525,7 @@ Want to learn more? Explore DNS-layer defense and practical use cases at https:/
 
 ================================================================================
 
-[66] Infoblox Blog - IoT DNS Security and Privacy with UCL and Inria
+[62] Infoblox Blog - IoT DNS Security and Privacy with UCL and Inria
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 18 Feb 2026 15:55:11 +0000
 Link: https://www.infoblox.com/blog/security/iot-dns-security-and-privacy-with-ucl-and-inria/
