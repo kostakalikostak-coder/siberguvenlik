@@ -571,6 +571,7 @@ class HaberSistemi:
         fixed_html = source_pattern.sub(fix_source, html)
         print("   ✅ Kaynak tarihleri düzeltildi")
         return fixed_html
+    
     def _add_archive_links(self, html):
         """HTML'e son 30 günün linklerini ekle"""
         from datetime import timedelta
