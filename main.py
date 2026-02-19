@@ -13,6 +13,7 @@ def _parse_article_date(date_str, fallback):
     """RSS tarihini DD.MM.YYYY formatına çevirir, parse edilemezse bugünün tarihini kullanır"""
     if not date_str:
         return fallback.strftime('%d.%m.%Y')
+    date_str = date_str.strip()
     for fmt in [
         '%a, %d %b %Y %H:%M:%S %z',
         '%a, %d %b %Y %H:%M:%S %Z',
@@ -21,7 +22,7 @@ def _parse_article_date(date_str, fallback):
         '%Y-%m-%d',
     ]:
         try:
-            return datetime.strptime(date_str[:25], fmt).strftime('%d.%m.%Y')
+            return datetime.strptime(date_str, fmt).strftime('%d.%m.%Y')
         except:
             pass
     return fallback.strftime('%d.%m.%Y')
