@@ -1,1 +1,22 @@
-
+2026-02-19	https://thehackernews.com/2026/02/fake-iptv-apps-spread-massiv-android.html	Fake IPTV Apps Spread Massiv Android Malware Targeting Mobile Banking Users
+2026-02-19	https://thehackernews.com/2026/02/crescentharvest-campaign-targets-iran.html	CRESCENTHARVEST Campaign Targets Iran Protest Supporters With RAT Malware
+2026-02-19	https://www.bleepingcomputer.com/news/security/police-arrests-651-suspects-in-african-cybercrime-crackdown/	Police arrests 651 suspects in African cybercrime crackdown
+2026-02-19	https://www.bleepingcomputer.com/news/security/new-massiv-android-banking-malware-poses-as-an-iptv-app/	New 'Massiv' Android banking malware poses as an IPTV app
+2026-02-19	https://securityaffairs.com/188226/ai/irish-regulator-probes-x-after-grok-allegedly-generated-sexual-images-of-children.html	Irish regulator probes X after Grok allegedly generated sexual images of children
+2026-02-19	https://securityaffairs.com/188215/malware/intellexas-predator-spyware-infected-angolan-journalists-device-amnesty-reports.html	Intellexa’s Predator spyware infected Angolan journalist’s device, Amnesty reports
+2026-02-19	https://grahamcluley.com/smashing-security-podcast-455/	Smashing Security podcast #455: Face off: Meta’s Glasses and America’s internet kill switch
+2026-02-19	https://isc.sans.edu/diary/rss/32728	ISC Stormcast For Thursday, February 19th, 2026 https://isc.sans.edu/podcastdetail/9816, (Thu, Feb 19th)
+2026-02-19	https://cyberscoop.com/venezuela-blackout-cyberattack-vs-kinetic-damage-operation-absolute-resolve/	The Caracas operation suggests cyber was part of the plan – just not the whole operation
+2026-02-19	https://go.theregister.com/feed/www.theregister.com/2026/02/18/adidas_investigates_thirdparty_data_breach/	Adidas investigates third-party data breach after criminals claim they pwned the sportswear giant
+2026-02-19	https://go.theregister.com/feed/www.theregister.com/2026/02/18/shinyhunters_cargurus_breach/	ShinyHunters allegedly drove off with 1.7M CarGurus records
+2026-02-19	https://go.theregister.com/feed/www.theregister.com/2026/02/18/fraudster_hotel_hack_one_cent_luxury_room/	Fraudster hacked hotel system, paid 1 cent for luxury rooms, Spanish cops say
+2026-02-19	https://go.theregister.com/feed/www.theregister.com/2026/02/18/deutsche_bahn_ddos/	Deutsche Bahn back on track after DDoS yanks the brakes
+2026-02-19	https://go.theregister.com/feed/www.theregister.com/2026/02/18/dell_0day_brickstorm_campaign/	China-linked snoops have been exploiting Dell 0-day since mid-2024, using 'ghost NICs' to avoid detection
+2026-02-19	https://go.theregister.com/feed/www.theregister.com/2026/02/17/volt_typhoon_dragos/	China remains embedded in US energy networks 'for the purpose of taking it down'
+2026-02-19	https://go.theregister.com/feed/www.theregister.com/2026/02/17/poland_phobos_ransomware_arrest/	Polish cops nab 47-year-old man in Phobos ransomware raid
+2026-02-19	https://go.theregister.com/feed/www.theregister.com/2026/02/16/canada_goose_shinyhunters/	Canada Goose ruffles feathers over 600K record dump, says leak is old news
+2026-02-19	https://go.theregister.com/feed/www.theregister.com/2026/02/16/chromes_zeroday/	Google patches Chrome zero-day as in-the-wild exploits surface
+2026-02-19	https://go.theregister.com/feed/www.theregister.com/2026/02/15/exl3harris_exec_sold_8_zeroday/	Infosec exec sold eight zero-day exploit kits to Russia, says DoJ
+2026-02-19	https://www.csoonline.com/article/4134419/hackers-can-turn-grok-copilot-into-covert-command-and-control-channels-researchers-warn.html	Hackers can turn Grok, Copilot into covert command-and-control channels, researchers warn
+2026-02-19	https://www.csoonline.com/article/4133975/cybersicherheit-braucht-reife-und-keine-checklisten.html	Cybersicherheit braucht Reife und keine Checklisten
+2026-02-19	https://www.csoonline.com/article/4132950/from-in-house-ciso-to-consultant-what-you-need-to-know-before-making-the-leap.html	From in-house CISO to consultant. What you need to know before making the leap

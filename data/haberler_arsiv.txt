@@ -4134,3 +4134,141 @@ Polonya polisi, Phobos fidye yazılımı grubuyla bağlantılı olduğu ve sunuc
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 19 FEBRUARY 2026 - EN ÖNEMLİ 43 HABER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Dell RecoverPoint Yazılımındaki Kritik Sıfır Gün Açığının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Google Mandiant tarafından yapılan teknik incelemeler sonucunda, Çin bağlantılı UNC6201 tehdit grubunun Dell RecoverPoint for Virtual Machines yazılımındaki kritik bir açığı (CVE-2026-22769) 2024 yılının ortalarından bu yana sıfır gün olarak kullandığı tespit edilmiştir. Saldırganların sistemlerde kalıcılık sağlamak amacıyla Brickstorm ve Grimbolt adlı gelişmiş arka kapı yazılımlarını kullandığı ifade edilmektedir. Tespitten kaçınmak amacıyla sanal makinelerde hayalet ağ kartları oluşturulduğu ve ağ içerisinde gizli hareket kabiliyeti kazanıldığı belirtilmektedir. Dell tarafından yayınlanan acil güvenlik güncellemesinin tüm kullanıcılar tarafından vakit kaybetmeden uygulanması gerektiği vurgulanmıştır. Bu faaliyetlerin özellikle ABD'deki kritik ağlara sızma amacı taşıdığı bildirilmektedir.
+(THE REGISTER, AÇIK -theregister.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Volt Typhoon Grubunun ABD Enerji Altyapılarına Sızması
+─────────────────────────────────────────────────────────
+Dragos'un yıllık tehdit raporuna göre, Çin destekli Volt Typhoon (Voltzite) grubunun ABD'nin elektrik, petrol ve gaz ağlarına yönelik sızma faaliyetlerini 2025 yılında da sürdürdüğü bildirilmiştir. Saldırganların geleneksel casusluk faaliyetlerinden ziyade, kritik sistemleri devre dışı bırakmak ve gelecekteki olası bir çatışma anında yıkıcı etkiler oluşturmak amacıyla altyapılara yerleştiği tespit edilmiştir. Grubun, operasyonel teknoloji (OT) ağlarındaki sensör verilerini ve alarm yapılandırmalarını ele geçirdiği ifade edilmektedir. Raporda ayrıca Sylvanite ve Azurite gibi yeni tehdit gruplarının da kritik altyapı sağlayıcılarını hedef almaya başladığı vurgulanmaktadır. Bu durumun ulusal güvenlik stratejileri açısından en yüksek öncelikli tehditlerden biri olduğu belirtilmektedir.
+(THE REGISTER, AÇIK -theregister.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Caracas Elektrik Kesintisinin Siber Ve Fiziksel Saldırı Analizi
+─────────────────────────────────────────────────────────
+Venezuela'nın başkenti Caracas'ta meydana gelen büyük çaplı elektrik kesintisinin, siber operasyonlar ile koordineli fiziksel sabotajların birleşimiyle gerçekleştirildiği analiz edilmiştir. Uzmanlar, trafo merkezlerine yönelik ağır silahlarla düzenlenen saldırıların tek başına kesintiye neden olabilecek düzeyde olduğunu, siber bileşenin ise durum farkındalığını körleştirmek amacıyla kullanıldığını ifade etmektedir. "Operation Absolute Resolve" kapsamında gerçekleştirilen bu hibrit saldırının, modern savaş doktrinlerinde siber ve kinetik etkilerin nasıl entegre edildiğini gösterdiği belirtilmektedir. Pentagon ve Siber Komutanlık tarafından yürütülen faaliyetlerin, altyapının onarılmasını geciktirecek kalıcı hasarlar bıraktığı tespit edilmiştir. Kritik altyapı güvenliğinin sadece dijital değil, fiziksel boyutuyla da ele alınması gerektiği vurgulanmaktadır.
+(CYBERSCOOP, AÇIK -cyberscoop.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Google Chrome Tarayıcısındaki Aktif İstismar Edilen Sıfır Gün Açığı
+─────────────────────────────────────────────────────────
+Google, Chrome tarayıcısında aktif olarak istismar edildiği belirlenen 2026 yılının ilk sıfır gün açığını (CVE-2026-2441) kapatmak amacıyla acil bir güvenlik yaması yayınlamıştır. CSS işleme motorundaki bir "use-after-free" hatasından kaynaklanan bu açığın, saldırganların kurbanları kötü niyetli bir web sayfasına yönlendirerek tarayıcı korumalı alanında rastgele kod yürütmesine olanak tanıdığı tespit edilmiştir. Açığın 8.8 gibi yüksek bir CVSS puanına sahip olduğu ve hem kurumsal hem de bireysel kullanıcılar için ciddi risk teşkil ettiği ifade edilmektedir. Google, kullanıcıların büyük bir kısmının güncellemeyi tamamlamasına kadar teknik detayları kısıtlı tutacağını bildirmiştir. Windows, Mac ve Linux sistemlerindeki tüm Chrome kullanıcılarının tarayıcılarını 145.0.7632.75 sürümüne yükseltmeleri istenmiştir.
+(THE REGISTER, AÇIK -theregister.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] L3Harris Yöneticisinin Rusya'ya Sıfır Gün Açığı Satması
+─────────────────────────────────────────────────────────
+ABD Adalet Bakanlığı, savunma sanayi yüklenicisi L3Harris'in siber birimi Trenchant'ın eski genel müdürü Peter Williams'ın sekiz adet kritik sıfır gün exploit kitini Rusya ile bağlantılı aracılara sattığını duyurmuştur. Williams'ın bu eylemiyle ABD ulusal güvenliğine telafisi güç zararlar verdiği ve 35 milyon dolarlık ticari sır hırsızlığına yol açtığı tespit edilmiştir. Söz konusu exploitlerin Rus hükümeti tarafından askeri ve sivil hedeflere karşı kullanılabileceği uyarısı yapılmıştır. Williams'ın suçunu kabul ettiği ve dokuz yıla kadar hapis cezası ile karşı karşıya olduğu ifade edilmektedir. Bu olay, siber güvenlik sektöründe içeriden gelen tehditlerin (insider threat) ne derece yıkıcı olabileceğini ve hassas teknolojilerin korunmasının önemini bir kez daha gündeme getirmiştir.
+(THE REGISTER, AÇIK -theregister.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Massiv Zararlı Yazılımının Türkiye Ve Avrupa Bankalarını Hedeflemesi
+─────────────────────────────────────────────────────────
+ThreatFabric tarafından yayınlanan rapora göre, Massiv adlı yeni bir Android bankacılık trojanı, sahte IPTV uygulamaları kılığına girerek kullanıcıların finansal bilgilerini ele geçirmektedir. Yazılımın özellikle Türkiye, İspanya, Portekiz ve Fransa'daki kullanıcıları hedef aldığı tespit edilmiştir. Zararlı yazılımın ekran yansıtma, tuş vuruşu kaydetme ve SMS engelleme gibi gelişmiş özelliklere sahip olduğu ifade edilmektedir. Saldırganların bu yöntemle mağdurlar adına yeni banka hesapları açtığı ve kredi başvuruları gerçekleştirdiği bildirilmiştir. Yazılımın tespitten kaçınmak için erişilebilirlik servislerini suistimal ettiği ve ekran yakalama korumalarını devre dışı bıraktığı vurgulanmaktadır. Kullanıcıların güvenilmeyen kaynaklardan APK dosyası indirmemeleri konusunda ciddi uyarılar yapılmaktadır.
+(THE HACKER NEWS, AÇIK -thehackernews.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] CRESCENTHARVEST Kampanyasının İranlı Muhalifleri Hedef Alan Casusluk Faaliyeti
+─────────────────────────────────────────────────────────
+Acronis tehdit araştırma birimi, İran'daki protesto destekçilerini hedef alan CRESCENTHARVEST kod adlı yeni bir siber casusluk kampanyasını ortaya çıkarmıştır. Saldırganların, protesto içerikli sahte görseller ve raporlar içeren zararlı arşiv dosyaları aracılığıyla RAT (Uzaktan Erişim Truvası) bulaştırdığı tespit edilmiştir. Yazılımın kurbanların cihazlarından ekran görüntüleri aldığı, Telegram oturum verilerini çaldığı ve tuş vuruşlarını kaydettiği ifade edilmektedir. Kampanyanın arkasında İran hükümetiyle bağlantılı APT gruplarının bulunduğu değerlendirilmektedir. Saldırı zincirinde meşru Google yazılımlarının yan yükleme (side-loading) yöntemiyle suistimal edildiği bildirilmiştir. Bu faaliyetlerin muhalif sesleri susturmak ve istihbarat toplamak amacıyla yürütülen sistematik bir operasyonun parçası olduğu vurgulanmaktadır.
+(THE HACKER NEWS, AÇIK -thehackernews.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] Interpol Tarafından Afrika Merkezli Siber Suç Şebekelerine Operasyon
+─────────────────────────────────────────────────────────
+Interpol koordinasyonunda 16 ülkede düzenlenen "Operation Red Card 2.0" kapsamında, yatırım dolandırıcılığı ve mobil ödeme sistemlerini hedef alan 651 şüphelinin yakalandığı bildirilmiştir. Operasyon süresince 1.200'den fazla mağdurun tespit edildiği ve 4,3 milyon dolardan fazla suç gelirine el konulduğu ifade edilmektedir. Nijerya, Kenya ve Fildişi Sahili gibi ülkelerde yoğunlaşan baskınlarda 2.300'den fazla dijital cihaza el konulduğu ve 1.400'den fazla kötü niyetli web sitesinin kapatıldığı belirtilmiştir. Şebekelerin özellikle sahte yatırım vaatleri ve yasadışı kredi uygulamaları üzerinden milyonlarca dolarlık finansal kayba neden olduğu tespit edilmiştir. Interpol, uluslararası iş birliğinin sınır ötesi siber suçlarla mücadeledeki kritik önemine dikkat çekmiştir.
+(BLEEPING COMPUTER, AÇIK -bleepingcomputer.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Intellexa Predator Casus Yazılımının Angolalı Gazetecilere Yönelik Saldırısı
+─────────────────────────────────────────────────────────
+Uluslararası Af Örgütü, Angolalı gazeteci Teixeira Cândido'nun iPhone cihazına Intellexa tarafından geliştirilen Predator casus yazılımının bulaştırıldığını raporlamıştır. Saldırının, WhatsApp üzerinden gönderilen kötü niyetli bir bağlantı aracılığıyla gerçekleştirildiği ve cihazın tam kontrolünün ele geçirildiği tespit edilmiştir. Predator yazılımının mesajlara, aramalara, konuma ve mikrofona sınırsız erişim sağladığı ifade edilmektedir. Bu olayın Angola'da onaylanmış ilk Predator saldırısı olduğu ve yazılımın 2025 yılında da aktif olarak kullanılmaya devam ettiğini kanıtladığı belirtilmiştir. Gazetecilere ve sivil toplum kuruluşu üyelerine yönelik bu tür dijital gözetim faaliyetlerinin ifade özgürlüğü ve insan hakları üzerinde ciddi bir baskı oluşturduğu vurgulanmaktadır. Intellexa'nın yasadışı satış faaliyetleri eleştirilmektedir.
+(SECURITY AFFAIRS, AÇIK -securityaffairs.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Adidas'ın Üçüncü Taraf İş Ortağı Kaynaklı Veri İhlali
+─────────────────────────────────────────────────────────
+Spor giyim devi Adidas, bir lisans ortağı ve distribütörü üzerinden teknik verilerin ve müşteri bilgilerinin sızdırıldığına dair iddiaları incelediğini duyurmuştur. Lapsus$ grubunun bir parçası olduğunu iddia eden saldırganların, Adidas'ın extranet sisteminden 815 bin satırlık veri çaldığını öne sürdüğü bildirilmiştir. Sızdırılan veriler arasında isimler, e-posta adresleri, şifreler ve çeşitli teknik detayların bulunduğu ifade edilmektedir. Adidas sözcüsü, şirketin ana BT altyapısının veya e-ticaret platformlarının bu olaydan etkilenmediğini belirtmiştir. Ancak uzmanlar, üçüncü taraf tedarikçiler üzerinden gerçekleştirilen bu tür saldırıların büyük markalar için ciddi bir tedarik zinciri riski oluşturduğuna dikkat çekmektedir. İhlalin kapsamını belirlemek üzere adli bilişim çalışmalarının sürdürüldüğü ifade edilmektedir.
+(THE REGISTER, AÇIK -theregister.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] ShinyHunters Grubunun Çok Sayıda Şirketten Veri Sızdırması
+─────────────────────────────────────────────────────────
+ShinyHunters adlı siber suç grubu, CarGurus platformundan 1,7 milyon, Mercer Advisors firmasından ise 5 milyon kayıt çaldığını iddia ederek şirketleri tehdit etmiştir. Saldırganların, çalışanlara yönelik sesli kimlik avı (vishing) yöntemini kullanarak Okta ve Microsoft Entra SSO kodlarını ele geçirdiği tespit edilmiştir. Grubun son haftalarda Match Group, Panera Bread ve Harvard Üniversitesi gibi prestijli kurumları da hedef aldığı bildirilmiştir. Sızdırılan verilerin kişisel tanımlayıcı bilgiler (PII) ve finansal detaylar içerdiği ifade edilmektedir. Güvenlik uzmanları, saldırganların çok faktörlü kimlik doğrulama (MFA) sistemlerini aşmak için gelişmiş sosyal mühendislik teknikleri kullandığı konusunda uyarıda bulunmuştur. Birçok kurban şirketin fidye ödemeyi reddetmesi üzerine verilerin karanlık webde paylaşıldığı belirtilmiştir.
+(THE REGISTER, AÇIK -theregister.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] Deutsche Bahn Sistemlerine Yönelik Kapsamlı DDoS Saldırısı
+─────────────────────────────────────────────────────────
+Almanya'nın ulusal demiryolu şirketi Deutsche Bahn (DB), rezervasyon ve tarife sistemlerinin kapsamlı bir DDoS (Dağıtık Hizmet Reddi) saldırısı nedeniyle saatlerce hizmet dışı kaldığını açıklamıştır. Saldırının hem web sitesini hem de mobil uygulama olan DB Navigator'ı etkilediği, yüz binlerce yolcunun bilet işlemlerini gerçekleştiremediği ifade edilmektedir. Şirket, savunma mekanizmalarının devreye girdiğini ve müşteri verilerinin güvende olduğunu belirtmiştir. Saldırının dalgalar halinde gerçekleştirildiği ve arkasında siyasi motivasyonlu aktivist grupların olabileceği değerlendirilmektedir. Federal yetkililerle koordineli bir inceleme başlatıldığı bildirilmiştir. Bu olay, kritik ulaşım altyapılarının siber dayanıklılığının ulusal ölçekteki önemini bir kez daha kanıtlamıştır. Sistemlerin kademeli olarak normale döndüğü ifade edilmektedir.
+(THE REGISTER, AÇIK -theregister.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Polonya'da Phobos Fidye Yazılımı Şebekesiyle Bağlantılı Şüphelinin Yakalanması
+─────────────────────────────────────────────────────────
+Polonya Siber Suçlarla Mücadele Bürosu (CBZC), Phobos fidye yazılımı grubuyla bağlantılı olduğu tespit edilen 47 yaşındaki bir şüpheliyi yakalamıştır. Operasyon kapsamında ele geçirilen cihazlarda çok sayıda kullanıcı adı, şifre, kredi kartı bilgisi ve sunucu IP adresinin bulunduğu bildirilmiştir. Şüphelinin, şifreli mesajlaşma uygulamaları üzerinden Phobos grubuyla iletişim kurduğu ve saldırılarda kullanılan araçları temin ettiği ifade edilmektedir. Phobos grubunun dünya genelinde hastaneler ve okullar dahil olmak üzere binden fazla kurbanı hedef aldığı ve yaklaşık 16 milyon dolar gelir elde ettiği tahmin edilmektedir. Şüphelinin beş yıla kadar hapis cezası istemiyle yargılanacağı belirtilmiştir. Uluslararası "Operation Aether" kapsamında yürütülen bu operasyonun, fidye yazılımı ekosistemine ağır bir darbe vurduğu vurgulanmaktadır.
+(THE REGISTER, AÇIK -theregister.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] Canada Goose Müşteri Verilerinin İnternet Ortamında Paylaşılması
+─────────────────────────────────────────────────────────
+Ünlü moda markası Canada Goose, 600 bin müşterisine ait geçmiş işlem kayıtlarının internet ortamında sızdırıldığını doğrulamıştır. ShinyHunters grubu tarafından sızdırılan verilerin isimler, teslimat adresleri ve kısmi ödeme bilgilerini içerdiği tespit edilmiştir. Şirket, sızıntının güncel bir sistem ihlalinden değil, geçmiş bir veri setinden kaynaklandığını ifade etmektedir. Ancak güvenlik uzmanları, sızdırılan bilgilerin kimlik avı saldırılarında kullanılabileceği konusunda müşterileri uyarmıştır. İhlalden etkilenen kullanıcıların ağırlıklı olarak Kuzey Amerika ve Avrupa bölgesinde bulunduğu bildirilmiştir. Şirket, veri güvenliğini artırmak amacıyla ek önlemler aldığını ve adli incelemelerin devam ettiğini açıklamıştır. Bu olay, şirketlerin eski veri setlerini imha etme konusundaki eksikliklerini bir kez daha ortaya çıkarmıştır.
+(THE REGISTER, AÇIK -theregister.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] BridgePay Fidye Yazılımı Saldırısının Yerel Yönetim Ödemelerini Aksatması
+─────────────────────────────────────────────────────────
+Ödeme hizmeti sağlayıcısı BridgePay'e yönelik gerçekleştirilen fidye yazılımı saldırısı, ABD genelindeki birçok yerel yönetimin ve kamu hizmetinin ödeme sistemlerini devre dışı bırakmıştır. Saldırı nedeniyle vatandaşların fatura ödemelerini gerçekleştiremediği ve sistemlerin bir haftadan uzun süredir kapalı olduğu bildirilmiştir. Bazı şehirlerin gecikme zamlarını ve hizmet kesintilerini geçici olarak durdurduğu ifade edilmektedir. BridgePay, ödeme bilgilerinin sızdırıldığına dair bir kanıt bulunmadığını ancak sistemlerin tamamen geri yüklenmesinin zaman alacağını açıklamıştır. Bu olay, kritik finansal ara katman yazılımlarının siber saldırılara karşı ne kadar savunmasız olduğunu göstermiştir. Kamu kurumlarının tek bir ödeme sağlayıcısına bağımlı olmasının yarattığı riskler tartışılmaya başlanmıştır. Olayla ilgili soruşturma devam etmektedir.
+(THE REGISTER, AÇIK -theregister.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] Polonya'daki Kritik Su Altyapısına Yönelik Siber Saldırı
+─────────────────────────────────────────────────────────
+Polonya Siber Suçlarla Mücadele Bürosu, bir su ve kanalizasyon altyapı operatörüne yönelik siber saldırı düzenleyen şüphelinin yakalandığını duyurmuştur. Saldırganın yönetici hesaplarına yetkisiz erişim sağlayarak hassas verileri çaldığı ve bu verileri karanlık webde paylaştığı tespit edilmiştir. Polonya polisinin Poznań şehrinde gerçekleştirdiği operasyonla verilerin yayılmasının engellendiği ve çalınan dosyaların silindiği ifade edilmektedir. Kritik altyapı tesislerine yönelik bu tür saldırıların kamu sağlığı ve güvenliği için büyük tehdit oluşturduğu vurgulanmaktadır. Şüphelinin bilişim sistemlerine izinsiz girme ve veri hırsızlığı suçlarından yargılanacağı bildirilmiştir. Yetkililer, kritik tesislerin siber güvenlik standartlarını yükseltmeleri ve erişim kontrollerini sıkılaştırmaları konusunda uyarıda bulunmuştur.
+(THE REGISTER, AÇIK -theregister.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] Yapay Zeka Asistanlarının Komuta Kontrol Kanalı Olarak Suistimali
+─────────────────────────────────────────────────────────
+Check Point Research tarafından yapılan bir çalışma, Grok ve Microsoft Copilot gibi yapay zeka asistanlarının kötü niyetli kişiler tarafından komuta kontrol (C2) kanalı olarak kullanılabileceğini ortaya koymuştur. Saldırganların, bu platformların web tarama yeteneklerini suistimal ederek zararlı yazılım talimatlarını güvenilir trafik içerisine gizleyebildiği tespit edilmiştir. Bu yöntemin, kurumsal ağlardaki güvenlik denetimlerini ve URL filtreleme sistemlerini kolayca aşabildiği ifade edilmektedir. Yapay zeka asistanlarının API anahtarı veya kimlik doğrulama gerektirmeden bu tür iletişimlere olanak tanıması ciddi bir güvenlik açığı olarak nitelendirilmektedir. Uzmanlar, kurumların yapay zeka kullanımına yönelik trafik izleme ve davranışsal analiz kurallarını sıkılaştırması gerektiğini belirtmiştir. AI tabanlı tehditlerin evrimi, savunma stratejilerinin de değişmesini zorunlu kılmaktadır.
+(CSO ONLINE, AÇIK -csoonline.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] 0APT Fidye Yazılımı Grubunun Sahte Saldırı İddiaları
+─────────────────────────────────────────────────────────
+Güvenlik araştırmacıları, son dönemde ortaya çıkan 0APT adlı fidye yazılımı grubunun iddialarının büyük ölçüde asılsız olduğunu ve bir blöf operasyonu yürüttüğünü tespit etmiştir. Grubun 200'den fazla kurumu hacklediğine dair yayınladığı listenin uydurma olduğu ve listedeki şirketlerin sistemlerinde herhangi bir sızıntı izine rastlanmadığı ifade edilmektedir. Bu stratejinin, şirketleri korkutarak fidye ödemeye zorlamak veya diğer siber suçluları "Ransomware-as-a-Service" araçlarını almaya ikna etmek için kullanıldığı değerlendirilmektedir. Ancak araştırmacılar, grubun iddiaları sahte olsa bile şirketlerin log kayıtlarını kontrol etmeleri ve bu tür manipülasyonlara karşı dikkatli olmaları gerektiğini vurgulamaktadır. Siber suç dünyasında "itibar dolandırıcılığı" olarak adlandırılan bu yöntemin giderek yaygınlaştığı gözlemlenmektedir.
+(THE REGISTER, AÇIK -theregister.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] İspanya'da Otel Rezervasyon Sistemlerine Yönelik Siber Dolandırıcılık
+─────────────────────────────────────────────────────────
+İspanyol polisi, lüks otellerin rezervasyon sistemlerini manipüle ederek konaklama bedellerini 1 cente düşüren 20 yaşındaki bir hackerı yakalamıştır. Saldırganın, ödeme doğrulama sistemlerini bypass eden özel bir yöntem kullandığı ve bu yolla Madrid'deki lüks otellerde binlerce euroluk ücretsiz konaklama gerçekleştirdiği tespit edilmiştir. Otellerin toplam zararının 20 bin eurodan fazla olduğu ifade edilmektedir. Polis yetkilileri, bu tür bir ödeme manipülasyonu yönteminin ilk kez tespit edildiğini ve oldukça sofistike olduğunu belirtmiştir. Şüphelinin ayrıca otellerin mini bar ve diğer ek hizmetlerini de ücretsiz olarak kullandığı bildirilmiştir. Bu olay, konaklama sektöründeki dijital ödeme altyapılarının ve üçüncü taraf rezervasyon sitelerinin güvenlik açıklarını bir kez daha tartışmaya açmıştır.
+(THE REGISTER, AÇIK -theregister.com, 19.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
