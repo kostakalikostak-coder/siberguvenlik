@@ -133,9 +133,11 @@ ANTİ-HALÜSİNASYON:
 - ASLA YARIDA KESME! SON HABERE KADAR DEVAM ET!
 
 ⚠️ KAYNAK SATIRI KURALI - KRİTİK:
-- href değeri = ham verideki "Link: https://..." satırındaki TAM URL (ASLA domain.com değil)
-- Tarih = ham verideki kaynak satırında "(XXXXXXX, AÇIK - ..., ..., GG.AA.YYYY)" içindeki GG.AA.YYYY tarihi → AYNEN kopyala, ASLA bugünün tarihini yazma
-- Her haberin tarihi farklı olabilir, ham veriden oku!
+Her haberin altında şu format var: (XXXXXXX, AÇIK - https://link, domain.com, GG.AA.YYYY)
+  → href içine: tam https://... linkini yaz (ASLA domain.com değil)
+  → görünen metin: domain.com
+  → tarih: o satırdaki GG.AA.YYYY değerini AYNEN kopyala
+⛔ ASLA bugünün tarihini yazma — her haberin tarihi farklıdır, ham veriden oku
 
 ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
 ```html
@@ -331,14 +333,14 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
             <div class="news-item" id="haber-1">
                 <div class="news-title"><b>Birinci Önemli Haberin Başlığı</b></div>
                 <p class="news-content">100-130 kelime paragraf özet, resmi Türkçe...</p>
-                <p class="source"><b>(KAYNAK, AÇIK - <a href="HABERİN TAM URL LİNKİ (https://...)" target="_blank">domain.com</a>, HABERİN_ORİJİNAL_TARİHİ)</b></p>
+                <p class="source"><b>(KAYNAK, AÇIK - <a href="[KAYNAK_LINK değeri]" target="_blank">[KAYNAK_DOMAIN değeri]</a>, [HABER_TARİHİ değeri])</b></p>
             </div>
             
             [SONRA GERİ KALAN 38 HABERİN PARAGRAF ÖZETLERİ]
             <div class="news-item" id="haber-6">
                 <div class="news-title"><b>Altıncı Haberin Başlığı</b></div>
                 <p class="news-content">100-130 kelime paragraf özet, resmi Türkçe...</p>
-                <p class="source"><b>(KAYNAK, AÇIK - <a href="HABERİN TAM URL LİNKİ (https://...)" target="_blank">domain.com</a>, HABERİN_ORİJİNAL_TARİHİ)</b></p>
+                <p class="source"><b>(KAYNAK, AÇIK - <a href="[KAYNAK_LINK değeri]" target="_blank">[KAYNAK_DOMAIN değeri]</a>, [HABER_TARİHİ değeri])</b></p>
             </div>
         </div>
     </div>
