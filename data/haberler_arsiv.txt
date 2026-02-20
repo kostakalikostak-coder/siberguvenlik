@@ -6223,3 +6223,36 @@ ThreatFabric araştırmacıları, Portekiz ve Yunanistan'daki mobil bankacılık
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 20 FEBRUARY 2026 - EN ÖNEMLİ 43 HABER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] PayPal'da Altı Ay Süren Kritik Veri İhlali Bildirimi
+─────────────────────────────────────────────────────────
+PayPal, kredi başvurusu yazılımındaki teknik bir hata nedeniyle yaklaşık altı ay boyunca kullanıcıların Sosyal Güvenlik numaraları dahil hassas kişisel verilerinin sızdırıldığını resmen açıklamıştır. Söz konusu veri ihlalinin Temmuz 2025 ile Aralık 2025 tarihleri arasında gerçekleştiği ve özellikle PayPal Working Capital uygulaması üzerinden finansman sağlayan küçük işletme sahiplerini etkilediği belirtilmiştir. Şirket tarafından yapılan incelemelerde, sızıntıya neden olan hatalı kod değişikliğinin geri alındığı ve etkilenen hesaplarda tespit edilen yetkisiz işlemler için iade süreçlerinin başlatıldığı ifade edilmiştir. Mağdur olan kullanıcılara iki yıl süreli ücretsiz kredi izleme ve kimlik koruma hizmeti sunulmaktadır. Finansal kuruluşun siber güvenlik regülasyonlarına uyumu ve veri koruma prosedürleri, bu büyük ölçekli sızıntı sonrasında denetleyici kurumlar tarafından yeniden inceleme altına alınmıştır.
+(BleepingComputer, AÇIK -bleepingcomputer.com, 20.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Kuzey Koreli BT Çalışanı Şemasına Yönelik Hapis Cezası
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri mahkemesi, Kuzey Kore hükümetinin yasa dışı BT çalışanı şemasına teknik destek ve altyapı sağlayan Ukrayna vatandaşı Oleksandr Didenko'yu beş yıl hapis cezasına çarptırmıştır. Didenko'nun, çalıntı ABD kimliklerini kullanarak Kuzey Koreli bilişim uzmanlarının Amerikan şirketlerinde hileli yollarla iş bulmasını sağladığı ve kazanılan maaşların Pyongyang'ın nükleer silah programını finanse etmek üzere aktarıldığı tespit edilmiştir. Sanığın Upworksell.com adlı platform üzerinden 871 farklı proxy kimliği yönettiği ve "laptop çiftlikleri" kurarak çalışanların gerçek fiziksel konumlarını gizlediği ifade edilmiştir. ABD Adalet Bakanlığı yetkilileri, bu operasyonun sadece bir finansal suç değil, aynı zamanda ulusal güvenliği doğrudan hedef alan bir casusluk ve finansman faaliyeti olduğunu vurgulamıştır. Operasyon kapsamında sanığın 1,4 milyon dolarlık varlığına el koyulmuştur.
+(Security Affairs, AÇIK -securityaffairs.com, 20.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Cline CLI Paketinde Tespit Edilen Tedarik Zinciri Saldırısı
+─────────────────────────────────────────────────────────
+Yapay zeka destekli popüler kodlama asistanı Cline CLI'nın NPM kayıt dosyasının, bir tedarik zinciri saldırısı sonucunda yetkisiz kişilerce kompromize edildiği bildirilmiştir. Saldırganların, ele geçirdikleri bir yayınlama belirteci aracılığıyla Cline 2.3.0 sürümüne OpenClaw adlı otonom bir yapay zeka ajanını gizlice yükleyen bir "postinstall" betiği ekledikleri tespit edilmiştir. Yaklaşık sekiz saat süren ihlal penceresinde paketin 4.000'den fazla kez indirildiği ve geliştiricilerin yerel sistemlerinde yetkisiz yazılım kurulumlarına yol açtığı ifade edilmiştir. Microsoft Tehdit İstihbaratı birimi, bu süreçte OpenClaw kurulumlarında olağan dışı bir artış gözlemlediklerini doğrulamıştır. Geliştiricilerin, güvenlik açıklarını kapatan 2.4.0 sürümüne acilen yükseltme yapmaları ve sistemlerindeki yetkisiz OpenClaw bileşenlerini manuel olarak temizlemeleri gerektiği belirtilmektedir. Olay, yapay zeka araçlarının tedarik zinciri güvenliğindeki kritik zafiyetleri göz önüne sermiştir.
+(The Hacker News, AÇIK -thehackernews.com, 20.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] ClickFix Kampanyası Aracılığıyla MIMICRAT Zararlı Yazılımı Dağıtımı
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacıları, meşru web sitelerini istismar ederek MIMICRAT (AstarionRAT) adlı gelişmiş bir uzaktan erişim truva atını yayan "ClickFix" saldırı kampanyasının ayrıntılarını paylaşmıştır. Saldırı zincirinin, kurbanları sahte bir bulut güvenlik doğrulama sayfası üzerinden Windows Çalıştır iletişim kutusuna kötü amaçlı PowerShell komutları yapıştırmaya ikna eden sosyal mühendislik tekniklerine dayandığı belirtilmiştir. Yürütülen betiklerin, Windows olay günlüklerini (ETW) ve antivirüs tarama arayüzünü (AMSI) devre dışı bırakarak savunma mekanizmalarını baypas ettiği tespit edilmiştir. MIMICRAT'ın, bulaştığı sistemlerde tam dosya kontrolü, etkileşimli kabuk erişimi ve SOCKS5 tünelleme gibi kapsamlı yeteneklere sahip olduğu ifade edilmektedir. Kampanyanın 17 farklı dili desteklediği ve dünya genelindeki eğitim kurumları ile ticari işletmeleri hedef aldığı bildirilerek, saldırganların operasyonel yetkinliklerinin arttığına dikkat çekilmiştir.
+(The Hacker News, AÇIK -thehackernews.com, 20.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

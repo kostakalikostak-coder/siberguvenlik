@@ -59,3 +59,10 @@
 2026-02-20	https://www.csoonline.com/article/4132950/from-in-house-ciso-to-consultant-what-you-need-to-know-before-making-the-leap.html	From in-house CISO to consultant. What you need to know before making the leap
 2026-02-20	https://www.csoonline.com/article/4134135/notepad-author-says-fixes-make-update-mechanism-effectively-unexploitable.html	Notepad++ author says fixes make update mechanism ‘effectively unexploitable’
 2026-02-20	https://www.infoblox.com/blog/company/november-2025-january-2026-innovations-whats-new-in-infoblox-ddi/	November 2025–January 2026 Innovations: What’s New in Infoblox DDI™
+2026-02-20	https://thehackernews.com/2026/02/cline-cli-230-supply-chain-attack.html	Cline CLI 2.3.0 Supply Chain Attack Installed OpenClaw on Developer Systems	23640da4d96359bf
+2026-02-20	https://thehackernews.com/2026/02/clickfix-campaign-abuses-compromised.html	ClickFix Campaign Abuses Compromised Sites to Deploy MIMICRAT Malware	ab358260395b2e01
+2026-02-20	https://www.bleepingcomputer.com/news/security/why-the-shift-left-dream-has-become-a-nightmare-for-security-and-developers/	Why the shift left dream has become a nightmare for security and developers	5c5b02d37637951e
+2026-02-20	https://www.bleepingcomputer.com/news/security/paypal-discloses-data-breach-exposing-users-personal-information/	PayPal discloses data breach that exposed user info for 6 months	178bb7bdd9a3af64
+2026-02-20	https://securityaffairs.com/188305/cyber-crime/north-korean-it-worker-scam-nets-ukrainian-five-year-sentence-in-the-u-s.html	North Korean IT worker scam nets Ukrainian five-year sentence in the U.S.	9c7244cb5599993d
+2026-02-20	https://go.theregister.com/feed/www.theregister.com/2026/02/20/north_korean_it_worker_prison/	Ukrainian gets five years for helping North Koreans secure US tech jobs	ddd4e1cf185df0ca
+2026-02-20	https://www.csoonline.com/article/4135199/ki-und-komplexitat-als-brandbeschleuniger-fur-cyberkriminelle.html	KI und Komplexität als Brandbeschleuniger für Cyberkriminelle	999045f1ab99495c
