@@ -1,0 +1,63 @@
+2026-02-20	https://thehackernews.com/2026/02/cline-cli-230-supply-chain-attack.html	Cline CLI 2.3.0 Supply Chain Attack Installed OpenClaw on Developer Systems	23640da4d96359bf
+2026-02-20	https://thehackernews.com/2026/02/clickfix-campaign-abuses-compromised.html	ClickFix Campaign Abuses Compromised Sites to Deploy MIMICRAT Malware	ab358260395b2e01
+2026-02-20	https://thehackernews.com/2026/02/identity-cyber-scores-new-metric.html	Identity Cyber Scores: The New Metric Shaping Cyber Insurance in 2026	82c027f030267e65
+2026-02-20	https://thehackernews.com/2026/02/ukrainian-national-sentenced-to-5-years.html	Ukrainian National Sentenced to 5 Years in North Korea IT Worker Fraud Case	e975a7a79e342924
+2026-02-20	https://thehackernews.com/2026/02/fbi-reports-1900-atm-jackpotting.html	FBI Reports 1,900 ATM Jackpotting Incidents Since 2020, $20M Lost in 2025	fdbad43e89801f36
+2026-02-20	https://thehackernews.com/2026/02/three-former-google-engineers-indicted.html	Former Google Engineers Indicted Over Trade Secret Transfers to Iran	dabd56d3b2eaa000
+2026-02-20	https://thehackernews.com/2026/02/promptspy-android-malware-abuses-google.html	PromptSpy Android Malware Abuses Gemini AI to Automate Recent-Apps Persistence	a7a7bf373b2a908c
+2026-02-20	https://thehackernews.com/2026/02/interpol-operation-red-card-20-arrests.html	INTERPOL Operation Red Card 2.0 Arrests 651 in African Cybercrime Crackdown	e76456e10e08af03
+2026-02-20	https://thehackernews.com/2026/02/microsoft-patches-cve-2026-26119.html	Microsoft Patches CVE-2026-26119 Privilege Escalation in Windows Admin Center	9d562bc15c21ed88
+2026-02-20	https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html	ThreatsDay Bulletin: OpenSSL RCE, Foxit 0-Days, Copilot Leak, AI Password Flaws & 20+ Stories	7b5d1472e1e5930e
+2026-02-20	https://www.bleepingcomputer.com/news/security/why-the-shift-left-dream-has-become-a-nightmare-for-security-and-developers/	Why the shift left dream has become a nightmare for security and developers	5c5b02d37637951e
+2026-02-20	https://www.bleepingcomputer.com/news/security/paypal-discloses-data-breach-exposing-users-personal-information/	PayPal discloses data breach that exposed user info for 6 months	178bb7bdd9a3af64
+2026-02-20	https://www.bleepingcomputer.com/news/security/university-of-mississippi-medical-center-closes-clinics-after-ransomware-attack/	Mississippi medical center closes all clinics after ransomware attack	35615065b8210dd0
+2026-02-20	https://www.bleepingcomputer.com/news/security/fbi-over-20-million-stolen-in-surge-of-atm-malware-attacks-in-2025/	FBI: Over $20 million stolen in surge of ATM malware attacks in 2025	aa4cc1eff19f1687
+2026-02-20	https://www.bleepingcomputer.com/news/security/ukrainian-gets-5-years-for-helping-north-koreans-infiltrate-us-firms/	Ukrainian gets 5 years for helping North Koreans infiltrate US firms	834ccf13801e2795
+2026-02-20	https://www.bleepingcomputer.com/news/security/promptspy-is-the-first-known-android-malware-to-use-generative-ai-at-runtime/	PromptSpy is the first known Android malware to use generative AI at runtime	c3284453821f8a74
+2026-02-20	https://www.bleepingcomputer.com/news/security/flaw-in-grandstream-voip-phones-allows-stealthy-eavesdropping/	Flaw in Grandstream VoIP phones allows stealthy eavesdropping	31f7e162a01854d1
+2026-02-20	https://www.bleepingcomputer.com/news/security/google-blocked-over-175-million-play-store-app-submissions-in-2025/	Google blocked over 1.75 million Play Store app submissions in 2025	ccad3e3a70bfb35e
+2026-02-20	https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-dell-flaw-within-3-days/	CISA orders feds to patch actively exploited Dell flaw within 3 days	1e9c038ea9bcde55
+2026-02-20	https://www.bleepingcomputer.com/news/security/how-infostealers-turn-stolen-credentials-into-real-identities/	How infostealers turn stolen credentials into real identities	1df3653d85eaa532
+2026-02-20	https://securityaffairs.com/188305/cyber-crime/north-korean-it-worker-scam-nets-ukrainian-five-year-sentence-in-the-u-s.html	North Korean IT worker scam nets Ukrainian five-year sentence in the U.S.	9c7244cb5599993d
+2026-02-20	https://securityaffairs.com/188281/cyber-crime/fbi-warns-of-surge-in-atm-jackpotting-20-million-lost-in-2025.html	FBI warns of surge in ATM Jackpotting, $20 Million lost in 2025	531fd46db42ed3e3
+2026-02-20	https://securityaffairs.com/188272/cyber-crime/red-card-2-0-interpol-busts-scam-networks-across-africa-seizes-millions.html	Red Card 2.0: INTERPOL busts scam networks across Africa, seizes millions	b288505567f8d607
+2026-02-20	https://securityaffairs.com/188261/ai/promptspy-abuses-gemini-ai-to-gain-persistent-access-on-android.html	PromptSpy abuses Gemini AI to gain persistent access on Android	a80090d25429c2ac
+2026-02-20	https://securityaffairs.com/188254/breaking-news/germanys-national-rail-operator-deutsche-bahn-hit-by-a-ddos-attack.html	Germany’s national rail operator Deutsche Bahn hit by a DDoS attack	12875ad414d7d824
+2026-02-20	https://securityaffairs.com/188243/hacking/u-s-cisa-adds-dell-recoverpoint-and-gitlab-flaws-to-its-known-exploited-vulnerabilities-catalog.html	U.S. CISA adds Dell RecoverPoint and GitLab flaws to its Known Exploited Vulnerabilities catalog	b52b63045d88d4ae
+2026-02-20	https://securityaffairs.com/188234/security/cisa-alerts-to-critical-auth-bypass-cve-2026-1670-in-honeywell-cctvs.html	CISA alerts to critical auth bypass CVE-2026-1670 in Honeywell CCTVs	8f34683c623d6749
+2026-02-20	https://securityaffairs.com/188226/ai/irish-regulator-probes-x-after-grok-allegedly-generated-sexual-images-of-children.html	Irish regulator probes X after Grok allegedly generated sexual images of children	01e10270ddd97a01
+2026-02-20	https://securityaffairs.com/188215/malware/intellexas-predator-spyware-infected-angolan-journalists-device-amnesty-reports.html	Intellexa’s Predator spyware infected Angolan journalist’s device, Amnesty reports	fc1c8468629348db
+2026-02-20	https://securityaffairs.com/188200/hacking/french-ministry-confirms-data-access-to-1-2-million-bank-accounts.html	French Ministry confirms data access to 1.2 Million bank accounts	85c385a26fb58c46
+2026-02-20	https://grahamcluley.com/smashing-security-podcast-455/	Smashing Security podcast #455: Face off: Meta’s Glasses and America’s internet kill switch	d211d951c9d4e33b
+2026-02-20	https://isc.sans.edu/diary/rss/32732	ISC Stormcast For Friday, February 20th, 2026 https://isc.sans.edu/podcastdetail/9818, (Fri, Feb 20th)	959a72b6cc7a8f87
+2026-02-20	https://isc.sans.edu/diary/rss/32730	Under the Hood of DynoWiper, (Thu, Feb 19th)	e3829ff5d00da2f8
+2026-02-20	https://isc.sans.edu/diary/rss/32728	ISC Stormcast For Thursday, February 19th, 2026 https://isc.sans.edu/podcastdetail/9816, (Thu, Feb 19th)	cf23a2746f3694c3
+2026-02-20	https://www.recordedfuture.com/research/2025-cloud-threat-hunting-defense-landscape	2025 Cloud Threat Hunting and Defense Landscape	6ac875b55a36c958
+2026-02-20	https://cyberscoop.com/doj-ukrainian-north-korea-remote-worker-scheme-facilitator-sentenced/	Ukrainian sentenced to 5 years in prison for facilitating North Korean remote worker scheme	e56851b88108d57d
+2026-02-20	https://cyberscoop.com/post-quantum-state-department-transition-plans-outlive-leadership-cycles/	State Dept. official says post-quantum transition plans will outlive current leadership	d67d59dce9f17d60
+2026-02-20	https://cyberscoop.com/fbi-salt-typhoon-ongoing-threat-cybertalks-2026/	FBI: Threats from Salt Typhoon are ‘still very much ongoing’	8d325f787d2260da
+2026-02-20	https://cyberscoop.com/hhs-burrows-into-identifying-risks-to-health-sector-from-third-party-vendors/	HHS burrows into identifying risks to health sector from third-party vendors	7e5379c4c27ff826
+2026-02-20	https://cyberscoop.com/trump-administration-ai-cybersecurity-oncd-strategy/	ONCD official says Trump administration aims to bolster AI use for defense without increasing risk	78516ee6a8a0b153
+2026-02-20	https://cyberscoop.com/venezuela-blackout-cyberattack-vs-kinetic-damage-operation-absolute-resolve/	The Caracas operation suggests cyber was part of the plan – just not the whole operation	5a5bae053d14d24e
+2026-02-20	https://cyberscoop.com/nigerian-matthew-akande-tax-refund-fraud/	Nigerian man sentenced to 8 years in prison for running phony tax refund scheme	2f8382c64bbb82a2
+2026-02-20	https://go.theregister.com/feed/www.theregister.com/2026/02/20/north_korean_it_worker_prison/	Ukrainian gets five years for helping North Koreans secure US tech jobs	ddd4e1cf185df0ca
+2026-02-20	https://go.theregister.com/feed/www.theregister.com/2026/02/19/rmm_rat_trustconnect/	Crims create fake remote management vendor that actually sells a RAT	05723b1abbac0e4d
+2026-02-20	https://go.theregister.com/feed/www.theregister.com/2026/02/19/crims_atm_jackpotting/	Crims hit a $20M jackpot via malware-stuffed ATMs	dd489cd923250178
+2026-02-20	https://go.theregister.com/feed/www.theregister.com/2026/02/18/adidas_investigates_thirdparty_data_breach/	Adidas investigates third-party data breach after criminals claim they pwned the sportswear giant	78016f9e9b63e189
+2026-02-20	https://techcrunch.com/2026/02/19/fbi-says-atm-jackpotting-attacks-are-on-the-rise-and-netting-hackers-millions-in-stolen-cash/	FBI says ATM ‘jackpotting’ attacks are on the rise, and netting hackers millions in stolen cash	9a1d2819cb7c04af
+2026-02-20	https://techcrunch.com/2026/02/19/cellebrite-cut-off-serbia-citing-abuse-of-its-phone-unlocking-tools-why-not-others/	Cellebrite cut off Serbia citing abuse of its phone unlocking tools. Why not others?	eaad830ce3f4707f
+2026-02-20	https://techcrunch.com/2026/02/19/google-says-its-ai-systems-helped-deter-play-store-malware-in-2025/	Google says its AI systems helped deter Play Store malware in 2025	3a9b1d3d13c91d8c
+2026-02-20	https://techcrunch.com/2026/02/19/sex-toys-maker-tenga-says-hacker-stole-customer-information/	Sex toys maker Tenga says hacker stole customer information	093a92b9f72cb8ae
+2026-02-20	https://techcrunch.com/2026/02/19/bug-in-student-admissions-website-exposed-childrens-personal-information/	Bug in student admissions website exposed children’s personal information	a2639a0d41d7b7e6
+2026-02-20	https://techcrunch.com/2026/02/18/hacking-conference-def-con-bans-three-people-linked-to-epstein/	Hacking conference Def Con bans three people linked to Epstein	848dbfd40f02afc2
+2026-02-20	https://www.csoonline.com/article/4135199/ki-und-komplexitat-als-brandbeschleuniger-fur-cyberkriminelle.html	KI und Komplexität als Brandbeschleuniger für Cyberkriminelle	999045f1ab99495c
+2026-02-20	https://www.csoonline.com/article/4135073/sonderkommission-ermittelt-zu-cyberangriff-auf-kunstsammlungen-dresden-2.html	Sonderkommission ermittelt zu Cyberangriff auf Kunstsammlungen Dresden	c87d0ec59555beef
+2026-02-20	https://www.csoonline.com/article/4134258/paypal-launches-latest-struggle-to-get-rid-of-sms-for-mfa.html	PayPal launches latest struggle to get rid of SMS for MFA	2f1e5fb21ed11be5
+2026-02-20	https://www.csoonline.com/article/3492200/authentifizierungslosungen-10-passwordless-optionen-fur-unternehmen.html	10 Passwordless-Optionen für Unternehmen	3e12e99179f96f21
+2026-02-20	https://www.csoonline.com/article/4134874/new-phishing-campaign-tricks-employees-into-bypassing-microsoft-365-mfa.html	New phishing campaign tricks employees into bypassing Microsoft 365 MFA	332658920e18552b
+2026-02-20	https://www.csoonline.com/article/4134743/us-dominance-of-agentic-ai-at-the-heart-of-new-nist-initiative.html	US dominance of agentic AI at the heart of new NIST initiative	d765fe8467ec2f9b
+2026-02-20	https://www.csoonline.com/article/4134540/six-flaws-found-hiding-in-openclaws-plumbing.html	Six flaws found hiding in OpenClaw’s plumbing	fab29e35983e3713
+2026-02-20	https://www.csoonline.com/article/4134419/hackers-can-turn-grok-copilot-into-covert-command-and-control-channels-researchers-warn.html	Hackers can turn Grok, Copilot into covert command-and-control channels, researchers warn	6519a87bf197956d
+2026-02-20	https://www.csoonline.com/article/4133975/cybersicherheit-braucht-reife-und-keine-checklisten.html	Cybersicherheit braucht Reife und keine Checklisten	35bfde2a5a62e245
+2026-02-20	https://www.csoonline.com/article/4132950/from-in-house-ciso-to-consultant-what-you-need-to-know-before-making-the-leap.html	From in-house CISO to consultant. What you need to know before making the leap	f5be4c84c1cc8aa4
+2026-02-20	https://www.infoblox.com/blog/company/november-2025-january-2026-innovations-whats-new-in-infoblox-ddi/	November 2025–January 2026 Innovations: What’s New in Infoblox DDI™	1d1b469790a21948
