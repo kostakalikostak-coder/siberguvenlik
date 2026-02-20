@@ -144,6 +144,32 @@
         .source a:hover {
             text-decoration: underline;
         }
+        
+        .back-to-top {
+            position: fixed;
+            top: 50%;
+            left: calc(50% - 450px - 48px);
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            background: #1a237e;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+            z-index: 999;
+        }
+        .back-to-top:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -159,192 +185,360 @@
                 <h2>Önemli Gelişmeler</h2>
                 <div class="important-summary">
                     <div class="important-item">
-                        <a href="#haber-1">1. Dell RecoverPoint sistemlerindeki CVSS 10.0 puanlı kritik açık Çinli APT grupları tarafından istismar edilmektedir.</a>
+                        <a href="#haber-1">1. CISA, Dell RecoverPoint sistemlerindeki kritik bir açığın Çin destekli grup tarafından istismar edildiğini duyurmuştur.</a>
                     </div>
                     <div class="important-item">
-                        <a href="#haber-2">2. Rusya bağlantılı Sandworm grubunun Polonya enerji altyapısına DynoWiper yazılımıyla saldırdığı tespit edilmiştir.</a>
+                        <a href="#haber-2">2. Polonya enerji sektörünü hedef alan ve Rusya bağlantılı Sandworm grubuyla ilişkilendirilen DynoWiper yazılımı tespit edilmiştir.</a>
                     </div>
                     <div class="important-item">
-                        <a href="#haber-3">3. Grandstream VoIP telefonlarında uzaktan gizli dinlemeye olanak tanıyan CVSS 9.3 puanlı kritik açık bulunmuştur.</a>
+                        <a href="#haber-3">3. FBI, ABD telekomünikasyon altyapısına sızan Çin merkezli Salt Typhoon grubunun faaliyetlerinin küresel çapta sürdüğünü bildirmiştir.</a>
                     </div>
                     <div class="important-item">
-                        <a href="#haber-4">4. Eski Google mühendisleri ticari sırları İran hükümetine aktarmak suçlamasıyla ABD'de hakim karşısına çıkarılmıştır.</a>
+                        <a href="#haber-4">4. Fransa Ekonomi Bakanlığı, yetkisiz bir erişim sonucunda 1,2 milyon banka hesabına ait verilerin sızdırıldığını doğrulamıştır.</a>
                     </div>
                     <div class="important-item">
-                        <a href="#haber-5">5. FBI ve CISA tarafından Salt Typhoon siber casusluk grubunun ABD telekomünikasyon altyapısına yönelik tehdidinin sürdüğü açıklanmıştır.</a>
+                        <a href="#haber-5">5. Eski Google mühendisleri, Tensor işlemci teknolojisine ait ticari sırları İran'a transfer etmekle suçlanarak mahkemeye verilmiştir.</a>
                     </div>
                 </div>
             </div>
             
             <table class="executive-table">
                 <tr>
-                    <td><a href="#haber-6">6. PromptSpy Android zararlı yazılımının Gemini AI kullanarak kalıcılık sağladığı belirlenmiştir.</a></td>
-                    <td><a href="#haber-7">7. INTERPOL tarafından yürütülen Red Card 2.0 operasyonunda 651 siber suçlu tutuklanmıştır.</a></td>
+                    <td><a href="#haber-6">6. FBI, ATM jackpotting saldırılarında 2025 yılında 20 milyon dolar çalındığını açıklamıştır.</a></td>
+                    <td><a href="#haber-7">7. Kuzey Koreli BT çalışanlarına sahte kimlik sağlayan bir şahıs ABD'de hapis cezası almıştır.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-8">8. Microsoft Windows Admin Center'da tam etki alanı kompromisine yol açan kritik açık yamalanmıştır.</a></td>
-                    <td><a href="#haber-9">9. LockBit 5.0 fidye yazılımının Proxmox sanallaştırma platformlarını hedef alma yeteneği kazandığı görülmüştür.</a></td>
+                    <td><a href="#haber-8">8. Gemini yapay zekasını istismar eden ilk Android zararlı yazılımı olan PromptSpy tespit edilmiştir.</a></td>
+                    <td><a href="#haber-9">9. Honeywell CCTV sistemlerinde kimlik doğrulama atlatmaya izin veren kritik bir açık bulunmuştur.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-10">10. Dragos tarafından endüstriyel kuruluşlara yönelik fidye yazılımı saldırılarının yüzde 49 arttığı bildirilmiştir.</a></td>
-                    <td><a href="#haber-11">11. Microsoft Copilot özelliğindeki bir hata nedeniyle gizli e-postaların sızdırıldığı doğrulanmıştır.</a></td>
+                    <td><a href="#haber-10">10. Grandstream VoIP telefonlarda uzaktan kod yürütülmesine izin veren kritik bir açık yamalanmıştır.</a></td>
+                    <td><a href="#haber-11">11. Microsoft Admin Center üzerinde tam alan adı kompromisine yol açabilecek kritik açık duyurulmuştur.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-12">12. CISA tarafından GitLab üzerindeki kritik SSRF açığı bilinen istismar edilen açıklar listesine eklenmiştir.</a></td>
-                    <td><a href="#haber-13">13. Kuzey Koreli çalışanların ABD şirketlerine sızmasına yardım eden Ukraynalı hacker hapis cezası almıştır.</a></td>
+                    <td><a href="#haber-12">12. Deutsche Bahn, biletleme sistemlerini etkileyen büyük ölçekli bir DDoS saldırısına maruz kalmıştır.</a></td>
+                    <td><a href="#haber-13">13. INTERPOL, Afrika merkezli siber suç şebekelerine yönelik operasyonda 651 kişiyi tutuklamıştır.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-14">14. Almanya'nın ulusal demiryolu operatörü Deutsche Bahn kapsamlı bir DDoS saldırısına maruz kalmıştır.</a></td>
-                    <td><a href="#haber-15">15. Ivanti EPMM açıklarının devlet kurumlarına sızmak amacıyla aktif olarak kullanıldığı tespit edilmiştir.</a></td>
+                    <td><a href="#haber-14">14. Texas eyaleti, Çin bağlantılı casusluk riskleri nedeniyle TP-Link şirketine dava açmıştır.</a></td>
+                    <td><a href="#haber-15">15. Microsoft Entra hesaplarını hedef alan gelişmiş OAuth vishing saldırıları tespit edilmiştir.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-16">16. GS7 isimli tehdit grubunun Telegram botları üzerinden Fortune 500 şirketlerini hedeflediği açıklanmıştır.</a></td>
-                    <td><a href="#haber-17">17. Polonya askeri tesislerinde Çin menşeli akıllı araçların kullanımı ulusal güvenlik gerekçesiyle yasaklanmıştır.</a></td>
+                    <td><a href="#haber-16">16. Adidas, bir iş ortağının veri ihlali sonucunda teknik verilerin çalındığını araştırmaktadır.</a></td>
+                    <td><a href="#haber-17">17. OpenClaw yapay zeka çerçevesinde kritik seviyede altı farklı güvenlik açığı bulunmuştur.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-18">18. Lazarus grubuyla bağlantılı MetaMask arka kapısının kripto varlıkları hedef aldığı saptanmıştır.</a></td>
-                    <td><a href="#haber-19">19. OpenSSL kütüphanesinde uzaktan kod yürütülmesine izin veren kritik zafiyetler giderilmiştir.</a></td>
+                    <td><a href="#haber-18">18. Notepad++ güncelleme mekanizması, tedarik zinciri saldırılarına karşı tamamen güçlendirilmiştir.</a></td>
+                    <td><a href="#haber-19">19. Massiv adlı Android bankacılık trojanı, IPTV uygulaması kılığında hesapları boşaltmaktadır.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-20">20. Ravenna Hub öğrenci kayıt platformundaki açık nedeniyle binlerce çocuğun verisi ifşa olmuştur.</a></td>
-                    <td><a href="#haber-21">21. Dresden Sanat Koleksiyonu'nun dijital altyapısına yönelik gerçekleştirilen siber saldırı incelenmektedir.</a></td>
+                    <td><a href="#haber-20">20. Intellexa'nın Predator casus yazılımı, Angolalı bir gazetecinin cihazına sızarken yakalanmıştır.</a></td>
+                    <td><a href="#haber-21">21. İrlanda veri koruma otoritesi, Grok yapay zekasının çocuk verilerini işlemesi üzerine inceleme başlatmıştır.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-22">22. OAuth cihaz kodu üzerinden Microsoft 365 MFA korumasını aşan yeni bir kimlik avı dalgası başlamıştır.</a></td>
-                    <td><a href="#haber-23">23. TrustConnect isimli sahte RMM yazılımının aslında bir RAT hizmeti olduğu ortaya çıkarılmıştır.</a></td>
+                    <td><a href="#haber-22">22. Öğrenci kayıt sitesi Ravenna Hub üzerindeki bir hata, binlerce çocuğun verisini ifşa etmiştir.</a></td>
+                    <td><a href="#haber-23">23. Japon seks oyuncağı üreticisi Tenga, müşteri bilgilerinin bilgisayar korsanlarınca çalındığını duyurmuştur.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-24">24. Matryoshka taktiğiyle macOS kullanıcılarını hedef alan yeni bir sosyal mühendislik yöntemi bulunmuştur.</a></td>
-                    <td><a href="#haber-25">25. Matanbuchus 3.0 yükleyicisinin kurumsal ağlarda hızla yanal hareket gerçekleştirdiği gözlemlenmiştir.</a></td>
+                    <td><a href="#haber-24">24. Dresden Devlet Sanat Koleksiyonları'na yönelik gerçekleştirilen siber saldırı için özel komisyon kurulmuştur.</a></td>
+                    <td><a href="#haber-25">25. Nijeryalı bir şahıs, ABD'de vergi firmalarını hackleyerek milyonlarca dolar çalmaktan hüküm giymiştir.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-26">26. Cuckoo Stealer yazılımının macOS sistemlerdeki tüm tarayıcı ve kripto cüzdan verilerini çaldığı saptanmıştır.</a></td>
-                    <td><a href="#haber-27">27. Phobos fidye yazılımı grubuyla bağlantılı bir şüpheli Polonya'da düzenlenen operasyonla yakalanmıştır.</a></td>
+                    <td><a href="#haber-26">26. Venezuela'daki elektrik kesintilerinin siber saldırı ve fiziksel sabotaj kombinasyonu olduğu analiz edilmiştir.</a></td>
+                    <td><a href="#haber-27">27. Araştırmacılar, Grok ve Copilot'un gizli komuta kontrol kanalı olarak kullanılabileceğini kanıtlamıştır.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-28">28. Atlassian Jira Cloud platformunun güvenilirliği suistimal edilerek büyük ölçekli spam kampanyaları yürütülmüştür.</a></td>
-                    <td><a href="#haber-29">29. Remcos RAT yazılımının canlı kamera izleme yeteneğine sahip yeni bir varyantı keşfedilmiştir.</a></td>
+                    <td><a href="#haber-28">28. OpenSSL kütüphanesinde uzaktan kod yürütülmesine izin veren kritik bir tampon taşması açığı yamalanmıştır.</a></td>
+                    <td><a href="#haber-29">29. LockBit 5.0 fidye yazılımının Proxmox sanallaştırma platformlarını hedef alma yeteneği analiz edilmiştir.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-30">30. DKIM Replay saldırıları aracılığıyla Apple ve PayPal faturalarının kimlik avında kullanıldığı belirlenmiştir.</a></td>
-                    <td><a href="#haber-31">31. Kurumsal ağlarda RMM yazılımlarının kötüye kullanımının bir yılda yüzde 277 oranında arttığı raporlanmıştır.</a></td>
+                    <td><a href="#haber-30">30. GitLab üzerindeki SSRF açığı, CISA tarafından bilinen istismar edilen açıklar listesine eklenmiştir.</a></td>
+                    <td><a href="#haber-31">31. Matanbuchus 3.0 yükleyicisi, ClickFix sosyal mühendislik yöntemleriyle kurumlara sızmaktadır.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-32">32. Teksas Başsavcılığı tarafından TP-Link ve Anzu Robotics şirketlerine ulusal güvenlik davası açılmıştır.</a></td>
-                    <td><a href="#haber-33">33. Booking.com platformunu taklit eden yeni kimlik avı kitlerinin otel müşterilerini hedef aldığı görülmüştür.</a></td>
+                    <td><a href="#haber-32">32. Cuckoo Stealer adlı zararlı yazılımın macOS sistemlerde parola ve cüzdan çaldığı tespit edilmiştir.</a></td>
+                    <td><a href="#haber-33">33. Polonya'da Phobos fidye yazılımı grubuyla bağlantılı olduğu düşünülen bir şahıs yakalanmıştır.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-34">34. Foxit ve Apryse PDF araçlarında hesap ele geçirmeye izin veren 16 adet zafiyet bulunmuştur.</a></td>
-                    <td><a href="#haber-35">35. Güvenlik eğitim laboratuvarlarındaki yapılandırma hatalarının bulut ihlallerine kapı araladığı tespit edilmiştir.</a></td>
+                    <td><a href="#haber-34">34. Endüstriyel kontrol sistemlerini hedef alan fidye yazılımı saldırılarında %49 oranında artış gözlemlenmiştir.</a></td>
+                    <td><a href="#haber-35">35. Microsoft 365 Copilot'un gizli e-postaları özetleyerek veri sızıntısına yol açan hatası giderilmiştir.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-36">36. Oyster Loader yazılımının komuta kontrol altyapısını gizlemek için yeni yöntemler geliştirdiği bildirilmiştir.</a></td>
-                    <td><a href="#haber-37">37. Noodlophile isimli casus yazılımın analiz araçlarını çökertmek için Vietnamca ifadeler kullandığı saptanmıştır.</a></td>
+                    <td><a href="#haber-36">36. Atlassian Jira bulut deneme hesaplarının toplu spam kampanyalarında kullanıldığı belirlenmiştir.</a></td>
+                    <td><a href="#haber-37">37. Remcos RAT zararlı yazılımının canlı kamera izleme yeteneğine sahip yeni varyantı tespit edilmiştir.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-38">38. Kerberos yetkilendirme mekanizmasındaki bir tasarım hatasının makine hesaplarını riske attığı açıklanmıştır.</a></td>
-                    <td><a href="#haber-39">39. Cellebrite cihazlarının Kenya ve Ürdün'de aktivistlerin telefonlarını kırmak için kullanıldığı iddia edilmiştir.</a></td>
+                    <td><a href="#haber-38">38. Ivanti EPMM mobil yönetim sistemlerindeki açıkların "reverse shell" almak için kullanıldığı bildirilmiştir.</a></td>
+                    <td><a href="#haber-39">39. Foxit PDF okuyucularında hesap ele geçirmeye izin veren ondan fazla güvenlik açığı bulunmuştur.</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-40">40. FBI raporlarına göre ATM jackpotting saldırıları nedeniyle 2025 yılında 20 milyon dolar kaybedilmiştir.</a></td>
-                    <td><a href="#haber-41">41. SnappyBee arka kapısının Citrix ağ cihazları üzerinden stratejik kurumlara sızdığı belirlenmiştir.</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#haber-42">42. Microsoft OneDrive dosya seçici bileşenindeki bir hata nedeniyle tüm verilere erişim sağlandığı bulunmuştur.</a></td>
-                    <td><a href="#haber-43">43. Grafana sistemlerindeki dizin gezginliği açığının aktif keşif faaliyetlerinde kullanıldığı saptanmıştır.</a></td>
+                    <td><a href="#haber-40">40. MetaMask cüzdan eklentisini taklit eden bir arka kapı, kripto paraları çalmak için kullanılmaktadır.</a></td>
+                    <td><a href="#haber-41">41. Booking.com üzerinden otelleri ve müşterileri hedef alan gelişmiş oltalama kampanyaları saptanmıştır.</a></td>
                 </tr>
             </table>
         </div>
         
         <div class="news-section">
             <div class="news-item" id="haber-1">
-                <div class="news-title"><b>Dell RecoverPoint Sistemlerindeki Kritik CVE-2026-22769 Açığının İstismarı</b></div>
-                <p class="news-content">Dell RecoverPoint yedekleme ve kurtarma çözümlerinde tespit edilen CVE-2026-22769 numaralı güvenlik açığı, CVSS ölçeğinde 10.0 tam puan alarak en yüksek kritik seviyede değerlendirilmiştir. Söz konusu açığın, Çin merkezli olduğu değerlendirilen UNC6201 isimli gelişmiş kalıcı tehdit (APT) grubu tarafından 2024 yılının ortalarından bu yana aktif olarak istismar edildiği belirlenmiştir. Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), federal kurumların bu açığı üç gün içerisinde yamalaması gerektiğini duyurmuştur. Saldırganların, sabit kodlanmış kimlik bilgilerini kullanarak VMware ortamlarında yanal hareket gerçekleştirdiği ve GRIMBOLT gibi gelişmiş arka kapı yazılımlarını sistemlere enjekte ettiği tespit edilmiştir. Bu durum, kritik veri yedekleme sistemlerinin güvenliğini doğrudan tehdit etmektedir.</p>
+                <div class="news-title"><b>CISA'nın Dell RecoverPoint Sistemlerindeki Kritik Sıfır Gün Açığını Duyurması</b></div>
+                <p class="news-content">ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Dell RecoverPoint yedekleme ve kurtarma çözümlerinde bulunan kritik bir güvenlik açığının (CVE-2026-22769) aktif olarak istismar edildiğini bildirmiştir. Yapılan detaylı teknik incelemeler sonucunda, Çin hükümetiyle bağlantılı olduğu değerlendirilen UNC6201 adlı tehdit grubunun bu zafiyeti 2024 yılının ortalarından bu yana sistematik olarak kullandığı tespit edilmiştir. Saldırganların sistemlere sızdıktan sonra "Grimbolt" adlı yeni bir arka kapı yazılımı yerleştirdikleri ve ağ içerisinde yatayda hareket ederek hassas verilere eriştikleri ifade edilmektedir. CISA, federal kurumlara bu açığı kapatmaları için üç gün süre tanımış olup, kritik altyapıların korunması adına acil aksiyon alınması gerektiğini vurgulamıştır. Bu durum, devlet destekli casusluk faaliyetlerinin yedekleme altyapılarını öncelikli hedef haline getirdiğini göstermektedir.</p>
                 <p class="source"><b>(BLEEPINGCOMPUTER, AÇIK - <a href="https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-dell-flaw-within-3-days/" target="_blank">bleepingcomputer.com</a>, 19.02.2026)</b></p>
             </div>
             
             <div class="news-item" id="haber-2">
-                <div class="news-title"><b>Rusya Bağlantılı Sandworm Grubunun Polonya Enerji Altyapısına Saldırısı</b></div>
-                <p class="news-content">Polonya enerji sektöründeki şirketleri hedef alan siber saldırılarda, DynoWiper adı verilen yeni bir veri silme (wiper) yazılımı tespit edilmiştir. ESET ve CERT Polska araştırmacıları, bu saldırıların Rusya bağlantılı Sandworm (APT44) grubu tarafından gerçekleştirildiğini doğrulamıştır. Yazılımın, bulaştığı sistemlerdeki dosyaları rastgele verilerle bozarak geri döndürülemez hale getirdiği ve ardından sistemi yeniden başlatarak erişimi tamamen kestiği ifade edilmektedir. Sandworm grubunun geçmişte Ukrayna'nın enerji altyapısına yönelik gerçekleştirdiği yıkıcı saldırılarla benzerlik gösteren bu faaliyet, kritik altyapı güvenliğine yönelik jeopolitik risklerin arttığını göstermektedir. Yazılımın herhangi bir paketleme veya gizleme yöntemi kullanmadan doğrudan yıkıcı etki odaklı tasarlandığı belirtilmektedir.</p>
+                <div class="news-title"><b>Polonya Enerji Sektörünü Hedef Alan DynoWiper Zararlı Yazılımının Analizi</b></div>
+                <p class="news-content">Polonya'daki enerji şirketlerine yönelik gerçekleştirilen siber operasyonlarda, Rusya askeri istihbarat servisi (GRU) ile bağlantılı Sandworm APT grubu tarafından geliştirilen "DynoWiper" adlı yeni bir veri silme yazılımı tespit edilmiştir. ESET ve CERT Polska tarafından yayımlanan raporlara göre, bu zararlı yazılımın sistemdeki dosyaları rastgele verilerle bozarak geri döndürülemez hale getirdiği ve ardından sistemleri devre dışı bıraktığı ifade edilmektedir. Saldırının zamanlaması ve hedef seçimi, Rusya'nın Avrupa enerji altyapısına yönelik yıkıcı siber stratejisinin bir parçası olarak değerlendirilmektedir. DynoWiper'ın özellikle kritik altyapı tesislerinde operasyonel kesintilere yol açma potansiyelinin oldukça yüksek olduğu ve savunma ekiplerinin bu tür yıkıcı yazılımlara karşı hazır olması gerektiği vurgulanmıştır. Yazılımın imza tabanlı tespitlerden kaçınmak için çeşitli teknikler kullandığı belirtilmektedir.</p>
                 <p class="source"><b>(SANS ISC, AÇIK - <a href="https://isc.sans.edu/diary/rss/32730" target="_blank">isc.sans.edu</a>, 19.02.2026)</b></p>
             </div>
 
             <div class="news-item" id="haber-3">
-                <div class="news-title"><b>Grandstream VoIP Telefonlarında Uzaktan Gizli Dinleme Sağlayan Kritik Açık</b></div>
-                <p class="news-content">Grandstream GXP1600 serisi IP telefonlarında tespit edilen CVE-2026-2329 numaralı güvenlik açığı, saldırganların cihaz üzerinde tam yetki (root) elde etmesine olanak tanımaktadır. CVSS skoru 9.3 olan bu zafiyet, web tabanlı API hizmetindeki bir yığın taşması (stack overflow) hatasından kaynaklanmaktadır. Kimlik doğrulaması gerektirmeyen bu açık sayesinde, saldırganların ağ üzerinden telefon görüşmelerini gizlice dinleyebildiği ve SIP kimlik bilgilerini ele geçirebildiği bildirilmiştir. Rapid7 araştırmacıları, açığın istismar edilmesinin oldukça sessiz gerçekleştiğini ve kullanıcılar tarafından fark edilmesinin zor olduğunu belirtmektedir. Grandstream firması, etkilenen modeller için kritik bir donanım yazılımı güncellemesi yayınlayarak kullanıcıların acilen 1.0.7.81 sürümüne geçmesini tavsiye etmiştir.</p>
-                <p class="source"><b>(BLEEPINGCOMPUTER, AÇIK - <a href="https://www.bleepingcomputer.com/news/security/flaw-in-grandstream-voip-phones-allows-stealthy-eavesdropping/" target="_blank">bleepingcomputer.com</a>, 19.02.2026)</b></p>
-            </div>
-
-            <div class="news-item" id="haber-4">
-                <div class="news-title"><b>Eski Google Mühendislerinin Ticari Sırları İran'a Aktarmasıyla İlgili İddianame</b></div>
-                <p class="news-content">ABD Adalet Bakanlığı, Google'ın Tensor işlemci teknolojisine ait ticari sırları çalarak İran'a aktardıkları iddiasıyla iki eski mühendis ve bir suç ortağını resmen suçlamıştır. San Jose'de tutuklanan zanlıların, mobil işlemci güvenliği ve kriptografi ile ilgili yüzlerce hassas belgeyi yetkisiz üçüncü taraf platformlara sızdırdıkları tespit edilmiştir. Google'ın dahili güvenlik sistemleri tarafından fark edilen bu ihlalde, saldırganların ekran görüntülerini manuel olarak fotoğraflayarak iz bırakmamaya çalıştıkları ifade edilmektedir. Sanıkların suçlu bulunmaları halinde her bir ticari sır hırsızlığı suçlaması için 10 yıla, adaleti engelleme suçlaması için ise 20 yıla kadar hapis cezası alabilecekleri belirtilmektedir. Bu olay, teknoloji devlerinin fikri mülkiyet güvenliğine yönelik devlet destekli casusluk faaliyetlerinin boyutunu bir kez daha ortaya koymuştur.</p>
-                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/three-former-google-engineers-indicted.html" target="_blank">thehackernews.com</a>, 20.02.2026)</b></p>
-            </div>
-
-            <div class="news-item" id="haber-5">
-                <div class="news-title"><b>FBI Tarafından Salt Typhoon Grubunun Telekomünikasyon Altyapısına Tehdidi</b></div>
-                <p class="news-content">FBI Siber Bölümü, Çin merkezli siber casusluk grubu Salt Typhoon'un ABD telekomünikasyon altyapısına yönelik saldırılarının hala aktif ve ciddi bir tehdit oluşturduğunu açıklamıştır. 2024 yılında başlayan ve 80'den fazla ülkeyi etkileyen bu kampanyada, saldırganların büyük telekom operatörlerinin ağlarına sızarak kalıcı erişim sağladıkları belirtilmiştir. FBI yetkilileri, grubun gelişmiş araçlar yerine genellikle basit güvenlik açıklarını ve eski sistemleri kullanarak ağlara sızdığını ifade etmiştir. Bu sızıntıların, hem kamu hem de özel sektör verilerini hedef alan geniş kapsamlı bir toplama faaliyeti olduğu vurgulanmıştır. Kurumların sıfır güven mimarisi ve uçtan uca şifreleme gibi temel güvenlik önlemlerini acilen uygulaması gerektiği belirtilmektedir. Tehdidin devam etmesi nedeniyle sektör genelinde teyakkuz halinin sürdürülmesi tavsiye edilmektedir.</p>
+                <div class="news-title"><b>FBI'ın Telekomünikasyon Altyapısına Yönelik Salt Typhoon Tehdidi Hakkındaki Uyarısı</b></div>
+                <p class="news-content">FBI yetkilileri, ABD telekomünikasyon altyapısını hedef alan geniş kapsamlı siber casusluk faaliyetlerinin arkasındaki Çin merkezli "Salt Typhoon" grubunun operasyonlarının halen devam ettiğini açıklamıştır. Yapılan açıklamada, saldırganların büyük telekom operatörlerinin ağlarına sızarak veri trafiğini izledikleri ve dünya genelinde 80'den fazla ülkede benzer casusluk faaliyetleri yürüttükleri ifade edilmektedir. Saldırının karmaşıklığı, Çin'in küresel istihbarat toplama kapasitesini artırmak için kritik iletişim ağlarını uzun süreli bir hedef haline getirdiğini kanıtlamaktadır. FBI, özel sektör ve kamu kurumları arasındaki iş birliğinin bu tür tehditlerin azaltılmasında hayati önem taşıdığını belirterek, sıfır güven mimarisi ve uçtan uca şifreleme pratiklerinin acilen yaygınlaştırılması gerektiğini duyurmuştur. Tehdit aktörlerinin ağlarda kalıcı olmak için gelişmiş teknikler kullandığı bildirilmektedir.</p>
                 <p class="source"><b>(CYBERSCOOP, AÇIK - <a href="https://cyberscoop.com/fbi-salt-typhoon-ongoing-threat-cybertalks-2026/" target="_blank">cyberscoop.com</a>, 19.02.2026)</b></p>
             </div>
 
+            <div class="news-item" id="haber-4">
+                <div class="news-title"><b>Fransa Ekonomi Bakanlığı'nın 1,2 Milyon Banka Hesabını Etkileyen Veri İhlali</b></div>
+                <p class="news-content">Fransa Ekonomi Bakanlığı, bir hükümet yetkilisinin çalınan kimlik bilgileri kullanılarak ulusal bir banka hesabı veri tabanına yetkisiz erişim sağlandığını doğrulamıştır. Yapılan açıklamada, ihlal sonucunda 1,2 milyon banka hesabına ait isim, adres ve hesap numarası gibi hassas bilgilerin saldırgan tarafından görüntülendiği ifade edilmektedir. Bakanlık, durumun tespit edilmesinin ardından ilgili erişimin derhal engellendiğini ve veri hırsızlığının etkilerini minimize etmek için gerekli adımların atıldığını belirtmiştir. Fransız veri koruma otoritesi CNIL olay hakkında bilgilendirilmiş ve kapsamlı bir soruşturma başlatılmıştır. Saldırının arkasındaki motivasyonun henüz netleşmediği ancak finansal dolandırıcılık veya casusluk amaçlı olabileceği değerlendirilmektedir. Bu olay, kamu sektörü çalışanlarının kimlik güvenliğinin ulusal finansal istikrar için taşıdığı kritik önemi bir kez daha gözler önüne sermiştir.</p>
+                <p class="source"><b>(SECURITY AFFAIRS, AÇIK - <a href="https://securityaffairs.com/188200/hacking/french-ministry-confirms-data-access-to-1-2-million-bank-accounts.html" target="_blank">securityaffairs.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-5">
+                <div class="news-title"><b>Eski Google Mühendislerinin Ticari Sırları İran'a Transfer Etmekle Suçlanması</b></div>
+                <p class="news-content">Eski iki Google mühendisi ve bir suç ortağı, teknoloji devine ait kritik ticari sırları çalmak ve bu bilgileri İran'a transfer etmekle suçlanarak ABD'de federal mahkemeye sevk edilmiştir. İddianamede, sanıkların Google'ın Pixel telefonlarında kullanılan "Tensor" işlemci mimarisine, güvenlik protokollerine ve kriptografik teknolojilere ait yüzlerce hassas dosyayı yetkisiz platformlara aktardıkları belirtilmektedir. Sanıkların, Google'ın iç güvenlik sistemleri tarafından fark edilmemek için belgelerin ekran görüntülerini çektikleri ve sahte beyanlarda bulundukları tespit edilmiştir. Bu olay, yüksek teknoloji şirketlerindeki içeriden gelen tehditlerin (insider threats) ulusal güvenlik ve fikri mülkiyet hakları üzerindeki yıkıcı etkisini bir kez daha gündeme getirmiştir. Suçlu bulunmaları halinde sanıkların her birinin uzun süreli hapis cezalarıyla karşı karşıya kalabileceği ifade edilmektedir. Google, olay sonrası güvenlik protokollerini daha da sıkılaştırdığını duyurmuştur.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/three-former-google-engineers-indicted.html" target="_blank">thehackernews.com</a>, 20.02.2026)</b></p>
+            </div>
+
             <div class="news-item" id="haber-6">
-                <div class="news-title"><b>PromptSpy Android Zararlı Yazılımının Gemini AI Aracılığıyla Kalıcılık Sağlaması</b></div>
-                <p class="news-content">ESET araştırmacıları, Google'ın Gemini yapay zeka modelini çalışma zamanında kullanarak kalıcılık sağlayan ilk Android zararlı yazılımı PromptSpy'ı keşfetmiştir. Yazılımın, ekran görüntülerini XML formatında Gemini'ye göndererek uygulamayı "son uygulamalar" listesinde nasıl sabitleyeceğine dair adım adım talimatlar aldığı tespit edilmiştir. Bu yöntem sayesinde zararlı yazılımın farklı cihaz modellerine ve Android sürümlerine dinamik olarak uyum sağlayabildiği ifade edilmektedir. PromptSpy'ın ayrıca cihazdan veri sızdırma, ekran kaydı alma ve kullanıcı şifrelerini çalma yeteneklerine sahip olduğu belirtilmiştir. Yazılımın silinmesini engellemek için ekranın üzerine görünmez katmanlar yerleştirdiği ve ancak güvenli modda kaldırılabildiği bildirilmiştir. Bu gelişme, üretken yapay zekanın zararlı yazılım operasyonlarını otomatize etmek için kullanılmaya başlandığını göstermektedir.</p>
-                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/promptspy-android-malware-abuses-google.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+                <div class="news-title"><b>ATM Jackpotting Saldırılarında Gözlemlenen Artış ve Finansal Kayıplar</b></div>
+                <p class="news-content">FBI, ABD genelinde ATM "jackpotting" saldırılarında büyük bir artış olduğunu ve sadece 2025 yılında bu yöntemle 20 milyon dolardan fazla nakit paranın çalındığını bildirmiştir. Saldırganların, "Ploutus" gibi gelişmiş zararlı yazılımları kullanarak ATM'lerin fiziksel ve yazılımsal açıklarını istismar ettikleri ve makineleri talep üzerine nakit dağıtmaya zorladıkları tespit edilmiştir. Bu yöntemde banka kartı veya müşteri hesabına ihtiyaç duyulmadığı, saldırganların ATM kabinlerini fiziksel olarak açarak yazılımı doğrudan donanım seviyesinde çalıştırdıkları belirtilmektedir. FBI, finansal kuruluşlara ATM donanımlarını fiziksel olarak güçlendirmeleri ve yazılım bütünlüğü kontrollerini sıkılaştırmaları tavsiyesinde bulunmuştur. Bu tür saldırıların genellikle dakikalar içinde tamamlandığı ve tespit edilmesinin oldukça güç olduğu ifade edilmektedir. Finans sektörü, bu siber-fiziksel tehditlere karşı daha dirençli hale gelmek için yeni nesil güvenlik sensörlerine yatırım yapmaktadır.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/fbi-reports-1900-atm-jackpotting.html" target="_blank">thehackernews.com</a>, 20.02.2026)</b></p>
             </div>
 
             <div class="news-item" id="haber-7">
-                <div class="news-title"><b>INTERPOL Tarafından Yürütülen Red Card 2.0 Operasyonunda Büyük Başarı</b></div>
-                <p class="news-content">INTERPOL liderliğinde 16 Afrika ülkesinin katılımıyla gerçekleştirilen Red Card 2.0 operasyonu sonucunda 651 siber suçlu yakalanmış ve 4,3 milyon dolardan fazla yasa dışı gelire el konulmuştur. Sekiz hafta süren operasyonun, yatırım dolandırıcılıkları, mobil para sahtekarlığı ve yasa dışı kredi uygulamalarını hedef aldığı belirtilmiştir. Soruşturmalar sırasında 45 milyon dolarlık finansal kayba neden olan şebekelerin çökertildiği ve dünya genelinde 1.247 kurbanın tespit edildiği ifade edilmektedir. Operasyon kapsamında 2.341 cihaza el konulurken, 1.442 zararlı IP adresi ve sunucu etkisiz hale getirilmiştir. Nijerya, Kenya ve Fildişi Sahili gibi ülkelerde gerçekleştirilen baskınlarda, telekomünikasyon sistemlerine sızan ve sahte kripto yatırım şemaları yürüten organize suç gruplarının dağıtıldığı bildirilmiştir.</p>
-                <p class="source"><b>(SECURITY AFFAIRS, AÇIK - <a href="https://securityaffairs.com/188272/cyber-crime/red-card-2-0-interpol-busts-scam-networks-across-africa-seizes-millions.html" target="_blank">securityaffairs.com</a>, 20.02.2026)</b></p>
+                <div class="news-title"><b>Kuzey Koreli BT Çalışanlarına Kimlik Sağlayan Şahsın Hapis Cezası Alması</b></div>
+                <p class="news-content">Ukrayna vatandaşı bir şahsın, Kuzey Kore hükümetinin ABD şirketlerine sızmak için yürüttüğü sahte BT çalışanı şemasına yardım ettiği gerekçesiyle 5 yıl hapis cezasına çarptırıldığı açıklanmıştır. Sanığın, 2.500'den fazla sahte hesap oluşturarak ve çalınan kimlik bilgilerini Kuzey Koreli çalışanlara satarak onların Fortune 500 şirketlerinde işe girmelerini sağladığı belirtilmiştir. Bu şema aracılığıyla elde edilen gelirlerin Kuzey Kore'nin nükleer ve füze programlarını finanse etmek için kullanıldığı ifade edilmektedir. ABD Adalet Bakanlığı, siber ortamda gerçekleştirilen bu tür faaliyetlerin ulusal güvenlik için doğrudan bir tehdit oluşturduğunu vurgulamıştır. Sanığın ayrıca ABD merkezli "laptop farm" adı verilen sistemleri yöneterek, Kuzey Koreli çalışanların sanki ABD içerisinden çalışıyormuş gibi görünmelerine olanak sağladığı tespit edilmiştir. Bu operasyon, Kuzey Kore'nin yaptırımları delmek için kullandığı siber yöntemlerin ne kadar sofistike olduğunu kanıtlamaktadır.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/ukrainian-national-sentenced-to-5-years.html" target="_blank">thehackernews.com</a>, 20.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-8">
+                <div class="news-title"><b>Gemini Yapay Zekasını İstismar Eden PromptSpy Android Zararlı Yazılımı</b></div>
+                <p class="news-content">Siber güvenlik araştırmacıları, Google'ın Gemini yapay zeka modelini çalışma zamanında (runtime) istismar eden ilk Android zararlı yazılımı olan "PromptSpy"ı tespit etmiştir. Bu yazılımın, ekran görüntülerini yapay zekaya analiz ettirerek sistemde kalıcılık sağlamak için adım adım talimatlar aldığı ifade edilmektedir. Yapay zeka kullanımı sayesinde yazılımın farklı cihaz modellerine ve arayüz varyasyonlarına dinamik olarak uyum sağlayabildiği, bu durumun geleneksel imza tabanlı tespit yöntemlerini etkisiz kıldığı vurgulanmaktadır. PromptSpy'ın ekran görüntüleri alabilme, tuş vuruşlarını kaydetme ve uzaktan kontrol sağlayan bir VNC modülüne sahip olma gibi yetenekleri bulunduğu bildirilmiştir. Özellikle finansal verileri hedefleyen bu zararlı yazılımın, yapay zekayı bir "otomasyon asistanı" gibi kullanarak saldırı süreçlerini hızlandırdığı belirtilmektedir. Bu gelişme, saldırganların üretken yapay zekayı zararlı yazılım operasyonlarına nasıl entegre etmeye başladığını gösteren endişe verici bir örnek teşkil etmektedir.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/promptspy-android-malware-abuses-google.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-9">
+                <div class="news-title"><b>Honeywell CCTV Sistemlerinde Tespit Edilen Kritik Kimlik Doğrulama Açığı</b></div>
+                <p class="news-content">ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Honeywell marka güvenlik kameralarında (CCTV) kritik bir kimlik doğrulama atlatma açığı (CVE-2026-1670) bulunduğu konusunda uyarı yayımlamıştır. Bu açığın, saldırganların sisteme giriş yapmadan parola kurtarma e-postasını değiştirmelerine ve kamera kayıtlarına tam erişim sağlamalarına imkan tanıdığı belirtilmektedir. Kritik altyapı tesislerinde, kurumsal binalarda ve hükümet binalarında yaygın olarak kullanılan bu cihazlardaki açığın, fiziksel güvenlik ve operasyonel gizlilik üzerinde ciddi riskler oluşturduğu ifade edilmektedir. CISA, bu cihazları kullanan kurumların sistemlerini internetten izole etmeleri ve acilen üretici tarafından yayımlanan yamaları uygulamaları gerektiğini duyurmuştur. Açığın istismar edilmesi durumunda, saldırganların canlı yayınları izleyebileceği ve ağ içerisinde yatayda hareket edebileceği uyarısı yapılmıştır. Henüz aktif bir istismar vakası raporlanmamış olsa da, zafiyetin ciddiyeti nedeniyle en üst düzeyde alarm verilmiştir.</p>
+                <p class="source"><b>(SECURITY AFFAIRS, AÇIK - <a href="https://securityaffairs.com/188234/security-cisa-alerts-to-critical-auth-bypass-cve-2026-1670-in-honeywell-cctvs.html" target="_blank">securityaffairs.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-10">
+                <div class="news-title"><b>Grandstream VoIP Telefonlarda Uzaktan Kod Yürütülmesine İzin Veren Açık</b></div>
+                <p class="news-content">Grandstream GXP1600 serisi IP telefonlarda, saldırganların yetkisiz bir şekilde "root" hakları elde etmesine ve görüşmeleri gizlice dinlemesine olanak tanıyan kritik bir açık (CVE-2026-2329) tespit edilmiştir. Yazılımdaki yığın taşması (stack overflow) hatasından kaynaklanan bu sorunun, ağ üzerinden uzaktan kod çalıştırılmasına imkan verdiği bildirilmiştir. Rapid7 araştırmacıları tarafından keşfedilen bu zafiyetin, cihazın web tabanlı API servisi üzerinden istismar edilebildiği ifade edilmektedir. Şirketin Şubat ayı başında yayımladığı bir güncelleme ile bu açığı kapattığı ancak dünya genelinde binlerce cihazın halen savunmasız olabileceği vurgulanmaktadır. Saldırganların bu açığı kullanarak cihazların SIP ayarlarını değiştirebileceği ve tüm trafiği kendi sunucuları üzerinden yönlendirerek casusluk faaliyetleri yürütebileceği belirtilmiştir. Kullanıcıların cihaz yazılımlarını 1.0.7.81 veya daha üstü bir sürüme yükseltmeleri kritik önem taşımaktadır.</p>
+                <p class="source"><b>(BLEEPINGCOMPUTER, AÇIK - <a href="https://www.bleepingcomputer.com/news/security/flaw-in-grandstream-voip-phones-allows-stealthy-eavesdropping/" target="_blank">bleepingcomputer.com</a>, 19.02.2026)</b></p>
             </div>
 
             <div class="news-item" id="haber-11">
-                <div class="news-title"><b>Microsoft Copilot Yazılımındaki Hata Nedeniyle Gizli E-postaların Sızması</b></div>
-                <p class="news-content">Microsoft, Microsoft 365 Copilot özelliğinde tespit edilen ve kullanıcıların gizli olarak işaretlenmiş e-postalarını yetkisiz şekilde özetleyen bir güvenlik hatasını (CW1226324) doğrulamıştır. Ocak 2024'ten itibaren aktif olan bu hatanın, veri kaybı önleme (DLP) politikalarını baypas ederek "Gönderilmiş Öğeler" ve "Taslaklar" klasörlerindeki hassas içeriklere erişim sağladığı tespit edilmiştir. Microsoft, hatanın bir kodlama probleminden kaynaklandığını ve 3 Şubat 2026 tarihinde bir düzeltme yayınlandığını duyurmuştur. Ancak bu süre zarfında kaç kuruluşun veya kullanıcının etkilendiği konusunda net bir bilgi paylaşılmamıştır. Bu durum, yapay zeka asistanlarının kurumsal veri güvenliği sınırlarını ihlal edebileceğine dair endişeleri artırmıştır. Şirketlerin Copilot kullanımında hassas etiketleme politikalarını yeniden gözden geçirmeleri önerilmektedir.</p>
-                <p class="source"><b>(TECHCRUNCH, AÇIK - <a href="https://techcrunch.com/2026/02/19/fbi-says-atm-jackpotting-attacks-are-on-the-rise-and-netting-hackers-millions-in-stolen-cash/" target="_blank">techcrunch.com</a>, 20.02.2026)</b></p>
-            </div>
-
-            <div class="news-item" id="haber-14">
-                <div class="news-title"><b>Almanya Ulusal Demiryolu Operatörü Deutsche Bahn'a Yönelik DDoS Saldırısı</b></div>
-                <p class="news-content">Almanya'nın ulusal demiryolu operatörü Deutsche Bahn, bilgi ve rezervasyon sistemlerini saatlerce felç eden büyük ölçekli bir dağıtık hizmet reddi (DDoS) saldırısına maruz kalmıştır. 17 ve 18 Şubat tarihlerinde gerçekleşen saldırı sonucunda bahn.de web sitesi ve DB Navigator mobil uygulaması kullanılamaz hale gelmiş, bu durum tren seferlerinde gecikmelere ve operasyonel aksaklıklara yol açmıştır. BT uzmanlarının yoğun çalışmaları sonucunda sistemlerin akşam saatlerinde yeniden istikrarlı hale getirildiği bildirilmiştir. Saldırının arkasındaki faillerin kimliği ve motivasyonu henüz netleşmemiş olsa da, geçmişte benzer kritik altyapı saldırılarının Rusya yanlısı aktivist gruplar tarafından gerçekleştirildiği hatırlatılmaktadır. Deutsche Bahn, güvenlik önlemlerinin artırıldığını ve samimiyetle özür dilediklerini belirten bir durum güncellemesi yayınlamıştır.</p>
-                <p class="source"><b>(SECURITY AFFAIRS, AÇIK - <a href="https://securityaffairs.com/188254/breaking-news/germanys-national-rail-operator-deutsche-bahn-hit-by-a-ddos-attack.html" target="_blank">securityaffairs.com</a>, 19.02.2026)</b></p>
-            </div>
-
-            <div class="news-item" id="haber-20">
-                <div class="news-title"><b>Ravenna Hub Kayıt Platformundaki Açık Nedeniyle Çocuk Verilerinin İfşası</b></div>
-                <p class="news-content">Binlerce okul tarafından kullanılan öğrenci kabul ve kayıt platformu Ravenna Hub üzerinde tespit edilen bir IDOR açığı, bir milyondan fazla öğrencinin kişisel verilerini riske atmıştır. Zafiyetin, herhangi bir giriş yapmış kullanıcının tarayıcı adres çubuğundaki öğrenci numarasını değiştirerek diğer öğrencilerin adres, doğum tarihi, fotoğraf ve okul detaylarına erişmesine izin verdiği belirlenmiştir. TechCrunch tarafından raporlanan bu durum üzerine geliştirici firma VenturEd Solutions açığı aynı gün içerisinde yamalamıştır. Ancak şirketin, verilerin daha önce yetkisiz kişilerce çekilip çekilmediğine dair kullanıcılara bildirim yapıp yapmayacağı belirsizliğini korumaktadır. Uzmanlar, ardışık sayı dizileriyle oluşturulan profil kimliklerinin bu tür sızıntılara davetiye çıkardığını vurgulamaktadır. Etkilenen ailelerin çocuklarına ait hassas bilgilerin kötü niyetli kişilerce kullanılma ihtimaline karşı uyarılması gerektiği ifade edilmektedir.</p>
-                <p class="source"><b>(TECHCRUNCH, AÇIK - <a href="https://techcrunch.com/2026/02/19/bug-in-student-admissions-website-exposed-childrens-personal-information/" target="_blank">techcrunch.com</a>, 19.02.2026)</b></p>
-            </div>
-
-            <div class="news-item" id="haber-43">
-                <div class="news-title"><b>Grafana Sistemlerindeki Dizin Gezginliği Açığının Aktif Keşif Faaliyetleri</b></div>
-                <p class="news-content">GreyNoise tarafından yayınlanan rapora göre, Grafana izleme sistemlerinde bulunan CVE-2021-43798 numaralı dizin gezginliği (path traversal) açığına yönelik küresel ölçekte büyük bir saldırı dalgası gözlemlenmiştir. Tek bir gün içerisinde 110 farklı IP adresinden gelen saldırıların, özellikle ABD, Slovakya ve Tayvan'daki Grafana kurulumlarını hedef aldığı tespit edilmiştir. Bu açığın istismar edilmesi durumunda saldırganların sunucu üzerindeki hassas yapılandırma dosyalarını okuyabildiği ve bu sayede bulut ortamlarına sızmak için gerekli kimlik bilgilerini ele geçirebildiği ifade edilmektedir. Saldırı trafiğinin büyük bölümünün Bangladeş, Çin ve Almanya kaynaklı olduğu bildirilmiştir. Grafana sunucularının internete açık ve yamasız bırakılmasının, kurumsal ağlar için ciddi bir giriş noktası oluşturduğu vurgulanmaktadır. Sistem yöneticilerinin acilen güncel sürümlere geçmesi ve erişim kısıtlamaları getirmesi tavsiye edilmektedir.</p>
-                <p class="source"><b>(RECORDED FUTURE, AÇIK - <a href="https://www.recordedfuture.com/research/2025-cloud-threat-hunting-defense-landscape" target="_blank">recordedfuture.com</a>, 19.02.2026)</b></p>
+                <div class="news-title"><b>Microsoft Admin Center Üzerindeki Kritik Ayrıcalık Yükseltme Zafiyeti</b></div>
+                <p class="news-content">Microsoft, Windows Admin Center aracında bulunan ve saldırganların ağ üzerinden ayrıcalıklarını yükseltmelerine olanak tanıyan kritik bir güvenlik açığını (CVE-2026-26119) yamaladığını duyurmuştur. 8.8 puanlık yüksek bir CVSS skoruna sahip olan bu açığın, yetkili bir saldırganın uygulamayı çalıştıran kullanıcının haklarını elde etmesine imkan verdiği belirtilmektedir. Uzmanlar, bu zafiyetin belirli koşullar altında standart bir kullanıcı hesabından tam alan adı (domain) kompromisine yol açabileceği konusunda uyarmıştır. Microsoft, bu açığın aktif olarak istismar edildiğine dair bir kanıt bulunmadığını ancak teknik detayların ortaya çıkmasıyla saldırıların başlayabileceğini ifade etmiştir. Windows Admin Center'ın 2511 sürümüyle kapatılan bu açık için yöneticilerin sistemlerini acilen güncellemeleri tavsiye edilmektedir. Bu araç, buluta bağlanmadan sunucu ve cluster yönetimi sağladığı için özellikle kapalı ağlarda kritik bir öneme sahiptir.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/microsoft-patches-cve-2026-26119.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
             </div>
 
             <div class="news-item" id="haber-12">
-                <div class="news-title"><b>CISA Tarafından GitLab Üzerindeki Kritik SSRF Açığının KEV Listesine Eklenmesi</b></div>
-                <p class="news-content">ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), GitLab sunucularını etkileyen CVE-2021-22175 numaralı sunucu tarafı istek sahteciliği (SSRF) açığını "Bilinen İstismar Edilen Açıklar" (KEV) kataloğuna eklemiştir. Bu zafiyetin, kimlik doğrulaması yapmamış saldırganların dahili ağlar üzerinde yetkisiz işlemler gerçekleştirmesine ve hassas verilere erişmesine olanak tanıdığı belirtilmektedir. Federal kurumların söz konusu açığı 11 Mart 2026 tarihine kadar yamalamaları zorunlu kılınmıştır. Araştırmalar, yaklaşık 400 farklı IP adresinden oluşan bir kümenin bu açığı aktif olarak kullandığını ve dünya genelinde binlerce GitLab örneğini hedef aldığını göstermektedir. Özellikle bulut altyapılarında yanal hareket için kullanılan bu tür açıkların, kurumsal kaynak kodlarının güvenliğini doğrudan tehlikeye attığı ifade edilmektedir. GitLab yöneticilerinin sistem loglarını geriye dönük olarak incelemeleri önerilmektedir.</p>
+                <div class="news-title"><b>Deutsche Bahn Biletleme Sistemlerine Yönelik Büyük Ölçekli DDoS Saldırısı</b></div>
+                <p class="news-content">Almanya'nın ulusal demiryolu operatörü Deutsche Bahn, biletleme ve bilgilendirme sistemlerini birkaç saat boyunca felç eden büyük ölçekli bir DDoS (Dağıtık Hizmet Engelleme) saldırısına maruz kalmıştır. Saldırı sonucunda bahn.de web sitesi ve DB Navigator mobil uygulaması üzerinden işlem yapılamadığı, bu durumun yolcular arasında büyük aksamalara neden olduğu bildirilmiştir. Şirketin BT ekiplerinin yoğun çalışmaları sonucunda sistemlerin tekrar kararlı hale getirildiği ifade edilmektedir. Saldırının arkasındaki failler ve motivasyonları henüz netleşmemiş olsa da, geçmişte benzer eylemlerin Rusya yanlısı hacktivist gruplar tarafından Avrupa'nın kritik altyapılarına yönelik gerçekleştirildiği hatırlatılmaktadır. Deutsche Bahn, operasyonel güvenliğin korunması için siber savunma kapasitelerini artırmaya devam edeceğini açıklamıştır. Bu olay, ulaşım altyapılarının dijital servislerinin siber saldırılara karşı ne kadar kırılgan olabileceğini bir kez daha kanıtlamıştır.</p>
+                <p class="source"><b>(SECURITY AFFAIRS, AÇIK - <a href="https://securityaffairs.com/188254/breaking-news/germanys-national-rail-operator-deutsche-bahn-hit-by-a-ddos-attack.html" target="_blank">securityaffairs.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-13">
+                <div class="news-title"><b>INTERPOL'ün Afrika Merkezli Siber Suç Şebekelerine Yönelik Dev Operasyonu</b></div>
+                <p class="news-content">INTERPOL tarafından koordine edilen ve 16 Afrika ülkesinin katıldığı "Operation Red Card 2.0" kapsamında, çevrimiçi dolandırıcılık şebekelerine yönelik düzenlenen operasyonlarda 651 kişi tutuklanmıştır. Sekiz hafta süren operasyon boyunca 4,3 milyon dolardan fazla yasa dışı gelire el konulduğu ve 45 milyon dolarlık finansal kaybın önlendiği bildirilmiştir. Operasyonun özellikle yüksek getirili yatırım dolandırıcılıkları, mobil para sahtekarlıkları ve yasa dışı kredi uygulamalarını hedef aldığı ifade edilmektedir. Nijerya, Kenya ve Fildişi Sahili gibi ülkelerde gerçekleştirilen baskınlarda binlerce dijital cihazın ele geçirildiği ve 1.400'den fazla kötü niyetli IP adresi ile sunucunun kapatıldığı belirtilmiştir. INTERPOL yetkilileri, bu suç şebekelerinin sadece Afrika'da değil, küresel ölçekte mağdurlar yarattığını vurgulayarak uluslararası iş birliğinin önemine dikkat çekmiştir. Bu operasyon, organize siber suç gruplarının finansal ekosisteme verdiği zararı gözler önüne sermektedir.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/interpol-operation-red-card-20-arrests.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-14">
+                <div class="news-title"><b>Texas Eyaletinin TP-Link Şirketine Açtığı Siber Casusluk Davası</b></div>
+                <p class="news-content">Texas Başsavcısı Ken Paxton, ağ ekipmanları üreticisi TP-Link'e karşı, şirketin ürünlerinin Çin hükümeti tarafından siber saldırılar ve veri toplama amacıyla kullanılmasına olanak tanıdığı gerekçesiyle dava açmıştır. İddianamede, TP-Link'in ürünlerini "Vietnam Malı" gibi yanıltıcı etiketlerle pazarladığı ancak bileşenlerin neredeyse tamamının Çin'den tedarik edildiği ve Çin yasaları gereği bu verilerin istihbarat servislerine açılmak zorunda olduğu öne sürülmektedir. Ayrıca, TP-Link yönlendiricilerinin geçmişte Çinli korsan grupları tarafından büyük ölçekli botnet saldırılarında kullanıldığı hatırlatılmaktadır. TP-Link yetkilileri ise iddiaların asılsız olduğunu ve kullanıcı verilerinin ABD'deki Amazon sunucularında güvenle saklandığını savunmaktadır. Bu dava, teknoloji tedarik zincirindeki jeopolitik risklerin ve ulusal güvenlik endişelerinin hukuki boyuta taşınmasının önemli bir örneğidir. Eyalet, şirketin veri toplama faaliyetlerini durdurmasını ve yanıltıcı pazarlama uygulamaları için ceza ödemesini talep etmektedir.</p>
+                <p class="source"><b>(BLEEPINGCOMPUTER, AÇIK - <a href="https://www.bleepingcomputer.com/news/security/texas-sues-tp-link-over-chinese-hacking-risks-user-deception/" target="_blank">bleepingcomputer.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-15">
+                <div class="news-title"><b>Microsoft Entra Hesaplarını Hedef Alan OAuth Vishing Saldırıları</b></div>
+                <p class="news-content">Siber saldırganların, teknoloji ve finans kuruluşlarındaki çalışanları hedef alarak Microsoft Entra (Azure AD) hesaplarını ele geçirmek için sesli oltalama (vishing) ve OAuth cihaz kodu akışını kötüye kullandıkları tespit edilmiştir. Bu yöntemde saldırganlar, kurbanları arayarak kendilerini BT personeli olarak tanıtmakta ve onlardan meşru bir Microsoft sayfasına girerek bir cihaz kodunu onaylamalarını istemektedir. Kurban bu kodu onayladığında, saldırganın cihazı kurbanın hesabına tam yetkiyle bağlanmakta ve MFA (çok faktörlü kimlik doğrulama) korumaları tamamen aşılmaktadır. Bu saldırıların arkasında ShinyHunters gibi bilinen siber suç gruplarının olabileceği değerlendirilmektedir. Güvenlik uzmanları, kurumsal yöneticilerin cihaz kodu akışını (device code flow) devre dışı bırakmalarını veya sıkı şartlı erişim politikaları uygulamalarını tavsiye etmektedir. Bu tür saldırılar, meşru kimlik doğrulama mekanizmalarının sosyal mühendislik ile ne kadar kolay manipüle edilebileceğini göstermektedir.</p>
+                <p class="source"><b>(BLEEPINGCOMPUTER, AÇIK - <a href="https://www.bleepingcomputer.com/news/security/hackers-target-microsoft-entra-accounts-in-device-code-vishing-attacks/" target="_blank">bleepingcomputer.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-16">
+                <div class="news-title"><b>Adidas'ın Bir İş Ortağında Meydana Gelen Veri İhlali Hakkındaki İncelemesi</b></div>
+                <p class="news-content">Dünyaca ünlü spor giyim markası Adidas, dövüş sanatları ürünleri distribütörü olan bağımsız bir iş ortağının sistemlerinde meydana gelen veri ihlalini araştırmaya başladığını duyurmuştur. Bilgisayar korsanları, Adidas'ın dış ağından (extranet) 815.000 satırlık veri çaldıklarını ve bu veriler arasında isimler, e-posta adresleri, şifreler ve çok sayıda teknik dökümanın bulunduğunu iddia etmektedir. Adidas sözcüsü, ihlalin markanın kendi BT altyapısını veya e-ticaret platformlarını etkilemediğini, sorunun tamamen bağımsız bir ortağın sistemlerinden kaynaklandığını ifade etmiştir. Ancak siber suç forumlarında paylaşılan iddialar, ihlalin kapsamının daha geniş olabileceğine işaret etmektedir. Bu olay, büyük şirketlerin tedarik zinciri güvenliği ve iş ortaklarının veri koruma standartları üzerindeki denetim zorluklarını bir kez daha vurgulamıştır. Şirket, etkilenen kullanıcıları bilgilendirmek ve sızıntının boyutunu tam olarak belirlemek için adli bilişim çalışmalarını sürdürdüğünü belirtmiştir.</p>
+                <p class="source"><b>(THE REGISTER, AÇIK - <a href="https://go.theregister.com/feed/www.theregister.com/2026/02/18/adidas_investigates_thirdparty_data_breach/" target="_blank">go.theregister.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-17">
+                <div class="news-title"><b>OpenClaw Yapay Zeka Çerçevesinde Keşfedilen Kritik Güvenlik Açıkları</b></div>
+                <p class="news-content">Popüler bir açık kaynaklı yapay zeka ajanı çerçevesi olan OpenClaw üzerinde yapılan güvenlik taramalarında, altı adet yüksek ve kritik seviyeli güvenlik açığı tespit edilmiştir. Araştırmacılar, bu açıkların sunucu tarafı istek sahteciliği (SSRF), kimlik doğrulama atlatma ve dizin geçişi (path traversal) gibi ciddi riskler barındırdığını ifade etmektedir. Yapay zeka destekli kod tarama araçlarıyla keşfedilen bu zafiyetlerin, saldırganların sistem dosyalarına erişmesine veya ağ üzerinden yetkisiz komutlar yürütmesine imkan tanıdığı belirtilmektedir. OpenClaw geliştiricileri, raporlanan sorunlar için hızlı bir şekilde yamalar yayınlamış ve kullanıcılarını sistemlerini güncellemeleri konusunda uyarmıştır. Bu bulgular, hızla gelişen yapay zeka altyapılarının geleneksel web güvenliği açıklarına karşı ne kadar hassas olabileceğini göstermektedir. Uzmanlar, yapay zeka ajanlarının kurumsal ağlara entegrasyonu sırasında güvenlik denetimlerinin en üst düzeyde tutulması gerektiğini vurgulamaktadır.</p>
+                <p class="source"><b>(CSO ONLINE, AÇIK - <a href="https://www.csoonline.com/article/4134540/six-flaws-found-hiding-in-openclaws-plumbing.html" target="_blank">csoonline.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-18">
+                <div class="news-title"><b>Notepad++ Güncelleme Mekanizmasının Siber Saldırılara Karşı Güçlendirilmesi</b></div>
+                <p class="news-content">Popüler açık kaynaklı metin düzenleyici Notepad++, geçtiğimiz aylarda yaşanan tedarik zinciri saldırısının ardından güncelleme mekanizmasını "istismar edilemez" hale getirmek için yeni güvenlik önlemleri almıştır. Uygulamanın geliştiricisi Don Ho, 8.9.2 sürümüyle birlikte hem sunucudan gelen manifest dosyasının hem de indirilen yükleyicinin bağımsız kriptografik imzalarla doğrulandığı bir "çift kilit" sistemine geçildiğini duyurmuştur. Daha önce, Çin bağlantılı Lotus Blossom grubunun güncelleme trafiğini sabote ederek bazı kullanıcılara zararlı yazılım bulaştırdığı tespit edilmişti. Yeni sistemde, imza uyuşmazlığı veya sertifika hatası durumunda güncelleme işleminin otomatik olarak durdurulacağı ifade edilmektedir. Geliştiriciler, bu tür küçük araçların kurumsal ağlarda yaygın olarak kullanılmasının onları saldırganlar için cazip bir hedef haline getirdiğini belirterek, altyapı güvenliğinin kod güvenliği kadar kritik olduğunu vurgulamıştır. Kullanıcıların güvenliğini sağlamak amacıyla şeffaf bir raporlama süreci izlendiği belirtilmektedir.</p>
+                <p class="source"><b>(CSO ONLINE, AÇIK - <a href="https://www.csoonline.com/article/4134135/notepad-author-says-fixes-make-update-mechanism-effectively-unexploitable.html" target="_blank">csoonline.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-19">
+                <div class="news-title"><b>Massiv Android Bankacılık Trojanının IPTV Uygulaması Kılığında Yayılması</b></div>
+                <p class="news-content">Güvenlik araştırmacıları, finansal hırsızlık amacıyla cihaz kontrolünü ele geçiren "Massiv" adlı yeni bir Android trojanını ortaya çıkarmıştır. Bu zararlı yazılımın, özellikle Portekiz ve Yunanistan gibi ülkelerdeki kullanıcıları hedef alarak IPTV uygulaması kılığına girdiği ve oltalama yöntemleriyle yayıldığı belirtilmektedir. Massiv'in ekran yansıtma, tuş vuruşu kaydetme ve bankacılık uygulamaları üzerinde sahte arayüzler (overlay) oluşturma gibi yetenekleri bulunduğu ifade edilmektedir. Saldırganların bu yöntemle ele geçirdikleri kimlik bilgileri ve PIN kodları ile kurbanlar adına yeni banka hesapları açabildikleri veya kredi başvurusu yapabildikleri bildirilmiştir. Yazılımın ayrıca Android'in erişilebilirlik servislerini kötüye kullanarak kendini silinmeye karşı koruduğu ve ekranı karartarak arka planda gizlice işlem yaptığı tespit edilmiştir. Kullanıcıların resmi uygulama mağazaları dışından yazılım indirmemeleri ve şüpheli SMS bağlantılarına karşı dikkatli olmaları gerektiği vurgulanmaktadır.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/fake-iptv-apps-spread-massiv-android.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-20">
+                <div class="news-title"><b>Intellexa Predator Casus Yazılımının Angolalı Gazeteciyi Hedef Alması</b></div>
+                <p class="news-content">Amnesty International tarafından yayımlanan bir rapora göre, Intellexa tarafından geliştirilen "Predator" casus yazılımı, Angolalı bir gazeteci ve basın özgürlüğü savunucusunun iPhone cihazına sızarken tespit edilmiştir. Gazetecinin, WhatsApp üzerinden kendisine gönderilen ve öğrenci kılığındaki bir saldırgandan gelen kötü niyetli bir bağlantıya tıklaması sonucunda cihazının enfekte olduğu ifade edilmektedir. Predator'ın cihaza sızdıktan sonra mesajlara, aramalara, e-postalara, konuma ve mikrofona tam erişim sağladığı belirtilmiştir. Bu olay, gelişmiş casus yazılımların sivil toplum üyeleri ve gazeteciler üzerinde baskı kurmak amacıyla otoriter rejimler tarafından nasıl kullanıldığını bir kez daha belgelemektedir. Adli bilişim analizleri, saldırganların yazılımı sistem süreçlerini taklit eden isimlerle gizlemeye çalıştığını ortaya koymuştur. Amnesty International, bu tür teknolojilerin insan hakları standartlarıyla bağdaşmadığını ve uluslararası düzeyde sıkı bir denetim altına alınması gerektiğini savunmaktadır.</p>
+                <p class="source"><b>(SECURITY AFFAIRS, AÇIK - <a href="https://securityaffairs.com/188215/malware/intellexas-predator-spyware-infected-angolan-journalists-device-amnesty-reports.html" target="_blank">securityaffairs.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-21">
+                <div class="news-title"><b>İrlanda Veri Koruma Komisyonu'nun X ve Grok Yapay Zekası Hakkındaki İncelemesi</b></div>
+                <p class="news-content">İrlanda Veri Koruma Komisyonu (DPC), X platformunun "Grok" adlı yapay zeka modelinin çocuklara ait hassas verileri ve rıza dışı görüntüleri işlediği iddiaları üzerine geniş kapsamlı bir soruşturma başlatmıştır. Soruşturmanın odak noktasında, yapay zekanın AB vatandaşlarına ait kişisel verileri GDPR (Genel Veri Koruma Yönetmeliği) kurallarına uygun olarak işleyip işlemediği ve veri koruma etkisi değerlendirmelerinin yapılıp yapılmadığı bulunmaktadır. Grok'un kısa bir süre içinde milyonlarca cinsel içerikli görüntü ürettiği ve bunların bir kısmının çocukları tasvir ettiği yönündeki raporlar, düzenleyici kurumları harekete geçirmiştir. X platformu, kötüye kullanımı önlemek için bazı teknik kısıtlamalar getirdiğini açıklasa da, DPC bu önlemlerin yeterliliğini sorgulamaktadır. Bu inceleme, yapay zeka modellerinin eğitiminde ve kullanımında veri gizliliği standartlarının nasıl korunması gerektiğine dair önemli bir emsal teşkil edebilir. Platformun ağır para cezalarıyla karşı karşıya kalabileceği ifade edilmektedir.</p>
+                <p class="source"><b>(SECURITY AFFAIRS, AÇIK - <a href="https://securityaffairs.com/188226/ai/irish-regulator-probes-x-after-grok-allegedly-generated-sexual-images-of-children.html" target="_blank">securityaffairs.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-22">
+                <div class="news-title"><b>Ravenna Hub Öğrenci Kayıt Sitesindeki Hata Sonucu Çocuk Verilerinin İfşası</b></div>
+                <p class="news-content">Binlerce okul tarafından kullanılan öğrenci kayıt ve başvuru platformu Ravenna Hub üzerindeki bir güvenlik açığı, çocukların kişisel bilgilerinin yetkisiz kişilerce erişilmesine neden olmuştur. "IDOR" (Insecure Direct Object Reference) olarak adlandırılan bu basit mantık hatasının, herhangi bir giriş yapmış kullanıcının URL adresindeki öğrenci numarasını değiştirerek başka çocuklara ait isim, doğum tarihi, adres ve okul detaylarını görmesine imkan tanıdığı tespit edilmiştir. Platformun geliştiricisi VenturEd Solutions, hatanın bildirilmesinin ardından aynı gün içinde yamalama yapıldığını açıklamıştır. Ancak, bu açığın ne kadar süredir mevcut olduğu ve kötü niyetli kişiler tarafından istismar edilip edilmediği henüz netlik kazanmamıştır. Etkilenen veriler arasında çocukların fotoğrafları ve kardeşlerine ait bilgilerin de bulunduğu bildirilmiştir. Bu olay, hassas çocuk verilerini barındıran eğitim teknolojileri platformlarında temel güvenlik kontrollerinin dahi ihmal edilebildiğini gösteren çarpıcı bir örnektir.</p>
+                <p class="source"><b>(TECHCRUNCH, AÇIK - <a href="https://techcrunch.com/2026/02/19/bug-in-student-admissions-website-exposed-childrens-personal-information/" target="_blank">techcrunch.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-23">
+                <div class="news-title"><b>Japon Seks Oyuncağı Üreticisi Tenga'nın Müşteri Verilerinin Çalınması</b></div>
+                <p class="news-content">Japonya merkezli dünyaca ünlü yetişkin ürünleri üreticisi Tenga, bir çalışanının e-posta hesabının ele geçirilmesi sonucunda müşteri bilgilerinin sızdırıldığını duyurmuştur. Bilgisayar korsanlarının, çalışanın gelen kutusuna erişim sağlayarak müşteri isimleri, e-posta adresleri ve geçmiş sipariş detaylarını içeren yazışmaları ele geçirdiği ifade edilmektedir. İhlalin özellikle ABD pazarındaki yaklaşık 600 müşteriyi etkilediği belirtilse de, şirketin dünya genelindeki geniş pazar payı nedeniyle riskin daha büyük olabileceği değerlendirilmektedir. Tenga, etkilenen müşterilere şifrelerini değiştirmeleri ve şüpheli e-postalara karşı dikkatli olmaları konusunda uyarı göndermiştir. Şirket, olay sonrası çok faktörlü kimlik doğrulama (MFA) sistemlerini tüm platformlarında zorunlu hale getirdiğini açıklamıştır. Yetişkin ürünleri sektöründeki veri ihlalleri, müşterilerin mahremiyeti üzerinde ciddi psikolojik ve sosyal etkiler yaratabilme potansiyeli taşıdığı için siber güvenlik uzmanları tarafından yüksek riskli olarak sınıflandırılmaktadır.</p>
+                <p class="source"><b>(TECHCRUNCH, AÇIK - <a href="https://techcrunch.com/2026/02/19/sex-toys-maker-tenga-says-hacker-stole-customer-information/" target="_blank">techcrunch.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-24">
+                <div class="news-title"><b>Dresden Sanat Koleksiyonları'na Yönelik Siber Saldırı ve Soruşturma Süreci</b></div>
+                <p class="news-content">Dresden Devlet Sanat Koleksiyonları'na (SKD) yönelik Ocak ayında gerçekleştirilen siber saldırının ardından, Saksonya Eyalet Kriminal Dairesi (LKA) bünyesinde özel bir soruşturma komisyonu kurulduğu bildirilmiştir. Saldırının kurumun dijital altyapısını, çevrimiçi mağazasını ve ziyaretçi hizmetlerini ciddi şekilde etkilediği, ancak güvenlik sistemlerinin zarar görmediği ifade edilmektedir. Dresden Başsavcılığı tarafından yürütülen soruşturmanın detayları gizli tutulurken, saldırının arkasında profesyonel bir siber suç şebekesinin veya fidye yazılımı grubunun olabileceği üzerinde durulmaktadır. SKD yetkilileri, paha biçilmez sanat eserlerinin güvenliğinin tam olarak korunduğunu ve ziyaretçiler için herhangi bir risk bulunmadığını duyurmuştur. Bu olay, kültürel miras kurumlarının siber saldırganlar için hem veri hırsızlığı hem de prestij sarsma amacıyla hedef haline geldiğini göstermektedir. Soruşturma komisyonunun, saldırının kaynağını ve veri sızıntısının boyutunu belirlemek için uluslararası ortaklarla çalıştığı belirtilmektedir.</p>
+                <p class="source"><b>(CSO ONLINE, AÇIK - <a href="https://www.csoonline.com/article/4135073/sonderkommission-ermittelt-zu-cyberangriff-auf-kunstsammlungen-dresden-2.html" target="_blank">csoonline.com</a>, 20.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-25">
+                <div class="news-title"><b>ABD'de Vergi Firmalarını Hackleyen Nijeryalı Şahsın Hapis Cezası Alması</b></div>
+                <p class="news-content">Nijerya vatandaşı bir şahsın, ABD'deki vergi hazırlama firmalarını hackleyerek ve binlerce sahte vergi iadesi talebinde bulunarak milyonlarca dolar çalmaktan 8 yıl hapis cezasına çarptırıldığı açıklanmıştır. Sanığın, Warzone RAT gibi uzaktan erişim trojanlarını kullanarak firmaların ağlarına sızdığı ve müşterilerin sosyal güvenlik numaraları ile diğer kişisel bilgilerini çaldığı tespit edilmiştir. Bu bilgilerle 8,1 milyon dolardan fazla sahte iade talebi oluşturulduğu ve yaklaşık 1,3 milyon doların fiilen tahsil edildiği bildirilmiştir. Mahkeme kayıtları, sanığın kurbanları kandırmak için sahte e-posta alan adları ve oltalama teknikleri kullandığını ortaya koymuştur. Sanığın ayrıca çalınan paraları ABD'deki iş birlikçileri aracılığıyla akladığı ve bir kısmını Meksika'ya transfer ettiği belirtilmiştir. ABD bölge hakimi, sanığın 1,4 milyon dolar tazminat ödemesine de hükmetmiştir. Bu dava, vergi dönemlerinde siber suçluların finansal kurumlara yönelik tehditlerinin ne kadar organize olabileceğini göstermektedir.</p>
+                <p class="source"><b>(BLEEPINGCOMPUTER, AÇIK - <a href="https://www.bleepingcomputer.com/news/security/nigerian-man-gets-eight-years-in-prison-for-hacking-tax-firms/" target="_blank">bleepingcomputer.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-26">
+                <div class="news-title"><b>Venezuela'daki Elektrik Kesintilerinin Siber ve Fiziksel Saldırı Analizi</b></div>
+                <p class="news-content">Ocak ayında Caracas'ta meydana gelen büyük elektrik kesintilerinin, başlangıçta iddia edildiği gibi sadece bir "hassas siber saldırı" değil, fiziksel sabotajlarla birleştirilmiş karmaşık bir operasyon olduğu analiz edilmiştir. Saha çalışmalarından elde edilen fotoğraf ve videolar, en az üç trafo merkezinde ağır silahlarla gerçekleştirilmiş fiziksel hasarları ve ekipman yıkımlarını ortaya koymuştur. Uzmanlar, siber operasyonların savunmacıların durumsal farkındalığını azaltmak için kullanılmış olabileceğini, ancak kalıcı kesintinin fiziksel saldırılarla sağlandığını değerlendirmektedir. Bu durum, "Absolute Resolve" operasyonu kapsamında siber ve kinetik etkilerin nasıl entegre edildiğine dair önemli ipuçları sunmaktadır. Sadece dijital savunmaya odaklanmanın, fiziksel altyapı güvenliği ihmal edildiğinde yetersiz kalacağı vurgulanmaktadır. Analizler, siber araçların hedef belirleme ve istihbarat aşamasında kritik rol oynadığını ancak nihai yıkımın fiziksel yöntemlerle gerçekleştirildiğini göstermektedir. Bu olay, modern hibrit savaş doktrinlerinin altyapı üzerindeki etkilerini simgelemektedir.</p>
+                <p class="source"><b>(CYBERSCOOP, AÇIK - <a href="https://cyberscoop.com/venezuela-blackout-cyberattack-vs-kinetic-damage-operation-absolute-resolve/" target="_blank">cyberscoop.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-27">
+                <div class="news-title"><b>Grok ve Copilot'un Zararlı Yazılımlar İçin Komuta Kontrol Kanalı Olarak Kullanımı</b></div>
+                <p class="news-content">Siber güvenlik araştırmacıları, Grok ve Microsoft Copilot gibi popüler yapay zeka asistanlarının kötü niyetli kişiler tarafından zararlı yazılımlar için gizli bir komuta ve kontrol (C2) kanalı olarak kullanılabileceğini kanıtlamıştır. Bu yöntemde, enfekte edilmiş bir cihazdaki zararlı yazılımın, yapay zeka arayüzü üzerinden saldırganın kontrolündeki bir URL'den veri çekmesi ve talimatlar alması sağlanmaktadır. Yapay zeka servislerine giden trafik genellikle kurumsal ağlarda güvenli ve meşru kabul edildiği için, bu tür bir iletişimin geleneksel güvenlik duvarları ve denetim araçları tarafından fark edilmesinin oldukça güç olduğu belirtilmektedir. Araştırmacılar, bu yöntemin hiçbir API anahtarı veya kimlik doğrulama gerektirmeden uygulanabildiğini vurgulamıştır. Bu gelişme, saldırganların "land-off-the-land" stratejilerini yapay zeka araçlarına nasıl uyarladıklarını göstermektedir. Şirketlerin, yapay zeka trafiğini daha sıkı denetlemeleri ve anormal otomasyon kalıplarını tespit etmek için davranışsal analiz yöntemlerini kullanmaları tavsiye edilmektedir.</p>
+                <p class="source"><b>(CSO ONLINE, AÇIK - <a href="https://www.csoonline.com/article/4134419/hackers-can-turn-grok-copilot-into-covert-command-and-control-channels-researchers-warn.html" target="_blank">csoonline.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-28">
+                <div class="news-title"><b>OpenSSL Kütüphanesinde Yamalanan Kritik Uzaktan Kod Yürütme Açığı</b></div>
+                <p class="news-content">OpenSSL projesi, kütüphanenin Kriptografik Mesaj Sözdizimi (CMS) verilerini işleme biçiminde bulunan ve uzaktan kod yürütülmesine (RCE) imkan tanıyan kritik bir yığın tampon taşması (stack buffer overflow) açığını (CVE-2025-15467) yamaladığını duyurmuştur. Saldırganların, kötü niyetli olarak yapılandırılmış AEAD parametrelerine sahip CMS paketlerini kullanarak OpenSSL'i çökertebileceği ve hedef sistemde kendi kodlarını çalıştırabileceği bildirilmiştir. Bu açık, dünya genelinde milyonlarca sunucu ve uygulamada kullanılan şifreleme kütüphanesinin güvenliğini doğrudan tehdit etmektedir. Uzmanlar, bu zafiyetin özellikle yüksek trafikli web sunucuları ve VPN ağları için büyük bir risk oluşturduğunu belirtmektedir. OpenSSL, bu açığın yanı sıra güvenlik duruşunu güçlendiren 11 farklı zafiyeti daha kapattığını açıklamıştır. Tüm sistem yöneticilerinin, kullandıkları OpenSSL sürümlerini acilen güncel sürümlere yükseltmeleri ve bağımlılıklarını kontrol etmeleri gerektiği vurgulanmaktadır.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-29">
+                <div class="news-title"><b>LockBit 5.0 Fidye Yazılımının Yeni Teknik Yetenekleri ve Proxmox Hedeflemesi</b></div>
+                <p class="news-content">LockBit fidye yazılımı operasyonunun en yeni sürümü olan LockBit 5.0 üzerinde yapılan analizler, yazılımın savunma sistemlerini atlatmak için çok sayıda gelişmiş teknikle donatıldığını ortaya koymuştur. Yeni sürümün, olay izleme (ETW) fonksiyonlarını yamalama, günlükleri temizleme ve süreç boşaltma (process hollowing) gibi anti-analiz yöntemlerini kullandığı tespit edilmiştir. Özellikle dikkat çeken bir gelişme, yazılımın popüler açık kaynaklı sanallaştırma platformu Proxmox'un tüm sürümlerini hedef alma yeteneğine sahip olduğunu iddia etmesidir. Kurumsal şirketlerin ticari hipervizörlere alternatif olarak Proxmox'u daha fazla tercih etmesi, saldırganların bu alana odaklanmasına neden olmuştur. LockBit 5.0'ın ayrıca kurumsal ortamlar için özel olarak tasarlanmış yapılar sunduğu ve fidye yazılımı servis (RaaS) modelini daha da profesyonelleştirdiği ifade edilmektedir. Güvenlik uzmanları, sanallaştırma altyapılarının yalıtılmasının ve güncel tutulmasının bu tür saldırılara karşı en önemli savunma hattı olduğunu hatırlatmaktadır.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-30">
+                <div class="news-title"><b>GitLab Üzerindeki SSRF Açığının CISA Tarafından KEV Kataloğuna Eklenmesi</b></div>
+                <p class="news-content">ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), GitLab platformunda bulunan ve sunucu tarafı istek sahteciliğine (SSRF) imkan tanıyan eski bir açığı (CVE-2021-22175) "Bilinen İstismar Edilen Açıklar" (KEV) kataloğuna eklemiştir. Bu karar, söz konusu zafiyetin siber saldırganlar tarafından halen aktif olarak kullanıldığını ve kurumlar için ciddi risk oluşturmaya devam ettiğini göstermektedir. Açığın, saldırganların iç ağdaki web kancalarına (webhooks) yetkisiz istekler göndermesine ve hassas bilgilere erişmesine olanak tanıdığı belirtilmektedir. CISA, tüm federal kurumlara bu açığı kapatmaları için Mart 2026'ya kadar süre tanımıştır. Yapılan gözlemler, saldırganların bu SSRF açığını bulut ortamlarında keşif yapmak ve yetki yükseltmek amacıyla kullandıklarını ortaya koymuştur. GitLab kullanıcılarının, sistemlerini en güncel sürüme yükseltmeleri ve özellikle dışa açık örneklerde (instances) erişim kontrollerini sıkılaştırmaları tavsiye edilmektedir.</p>
                 <p class="source"><b>(SECURITY AFFAIRS, AÇIK - <a href="https://securityaffairs.com/188243/hacking/u-s-cisa-adds-dell-recoverpoint-and-gitlab-flaws-to-its-known-exploited-vulnerabilities-catalog.html" target="_blank">securityaffairs.com</a>, 19.02.2026)</b></p>
             </div>
 
-            <!-- Diğer 31 haber de benzer yapıda resmi Türkçe ile buraya eklenmiştir -->
-            <!-- Not: Raporun geri kalanı 43 habere tamamlanacak şekilde yapılandırılmıştır -->
+            <div class="news-item" id="haber-31">
+                <div class="news-title"><b>Matanbuchus 3.0 Zararlı Yazılımının ClickFix Kampanyalarıyla Yayılması</b></div>
+                <p class="news-content">Siber güvenlik araştırmacıları, "ClickFix" adı verilen sosyal mühendislik yöntemini kullanan yeni bir oltalama kampanyasının, "Matanbuchus 3.0" adlı zararlı yazılım yükleyicisini yaydığını tespit etmiştir. Bu saldırılarda kurbanlara, sistemlerinde bir hata olduğu ve bunu düzeltmek için bir terminal komutunu kopyalayıp çalıştırmaları gerektiği söylenmektedir. Komut çalıştırıldığında, Matanbuchus yükleyicisi sisteme sızmakta ve ardından fidye yazılımı veya veri hırsızlığı araçlarını indirmektedir. Saldırganların bu yöntemle kurumsal ağlara sızdıktan sonra hızla alan adı denetleyicilerine (domain controllers) ulaştıkları ve kalıcılık sağladıkları gözlemlenmiştir. ClickFix yönteminin, 2025 yılında tüm zararlı yazılım yükleme faaliyetlerinin %53'ünden sorumlu olduğu bildirilmiştir. Uzmanlar, kullanıcıların bilmedikleri kaynaklardan gelen komutları asla çalıştırmamaları ve kurumsal cihazlarda PowerShell gibi araçların kullanımının kısıtlanması gerektiğini vurgulamaktadır. Bu kampanya, basit bir kullanıcı hatasının nasıl tam bir ağ kompromisine yol açabileceğini göstermektedir.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
 
+            <div class="news-item" id="haber-32">
+                <div class="news-title"><b>macOS Sistemleri Hedef Alan Cuckoo Stealer Zararlı Yazılımının Keşfi</b></div>
+                <p class="news-content">macOS kullanıcılarını hedef alan yeni bir oltalama kampanyasında, "Homebrew" paket yöneticisini taklit eden sahte web siteleri üzerinden "Cuckoo Stealer" adlı zararlı yazılımın yayıldığı saptanmıştır. Saldırganların, kullanıcıları terminale zararlı komutlar yapıştırmaya ikna ettikleri ve bu yolla sistem şifrelerini ele geçirdikleri ifade edilmektedir. Cuckoo Stealer'ın tarayıcı kimlik bilgilerini, oturum çerezlerini, anahtarlık (keychain) verilerini, Apple notlarını ve kripto para cüzdanlarını çalma yeteneğine sahip olduğu bildirilmiştir. Ayrıca, yazılımın sistemde kalıcılık sağlamak için "LaunchAgent" kullandığı ve saldırganlarla şifreli iletişim kurduğu tespit edilmiştir. Bu tür saldırıların, macOS sistemlerinin "güvenli" olduğu algısını yıkarak kullanıcıları dikkatsizliğe ittiği belirtilmektedir. Güvenlik uzmanları, yazılım yükleme işlemlerinin sadece resmi kanallar üzerinden yapılması ve terminal komutlarının çalıştırılmadan önce mutlaka incelenmesi gerektiği uyarısını yapmaktadır. Cuckoo Stealer'ın teknik analizleri, yazılımın sürekli geliştirildiğini göstermektedir.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-33">
+                <div class="news-title"><b>Polonya'da Phobos Fidye Yazılımı Grubuyla Bağlantılı Bir Şahsın Yakalanması</b></div>
+                <p class="news-content">Polonya Siber Suçlarla Mücadele Bürosu (CBZC), Phobos fidye yazılımı grubuyla bağlantılı olduğundan şüphelenilen 47 yaşındaki bir şahsı gözaltına almıştır. Yapılan incelemelerde, şüphelinin şifreli mesajlaşma uygulamaları aracılığıyla suç örgütüyle iletişim kurduğu ve cihazlarında çok sayıda çalıntı kimlik bilgisi, kredi kartı numarası ve sunucu IP adresinin bulunduğu tespit edilmiştir. Bu arrestin, Europol tarafından koordine edilen ve Phobos ile bağlantılı olduğu düşünülen 8Base grubunu hedef alan "Operation Aether" kapsamında gerçekleştirildiği bildirilmiştir. Phobos grubunun dünya genelinde binden fazla kuruluşu hedef aldığı ve 16 milyon dolardan fazla fidye geliri elde ettiği tahmin edilmektedir. Gözaltına alınan şahsın, saldırıların gerçekleştirilmesi için altyapı desteği sağladığı veya doğrudan saldırılara katıldığı değerlendirilmektedir. Bu operasyon, fidye yazılımı ekosistemindeki yerel iş birlikçilerin de kolluk kuvvetlerinin takibinde olduğunu göstermektedir. Şüphelinin beş yıla kadar hapis cezası alabileceği ifade edilmektedir.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-34">
+                <div class="news-title"><b>Endüstriyel Kuruluşları Hedef Alan Fidye Yazılımı Saldırılarındaki Artış</b></div>
+                <p class="news-content">Siber güvenlik firması Dragos tarafından yayımlanan yıllık raporda, endüstriyel kuruluşları hedef alan fidye yazılımı gruplarının sayısında %49 oranında keskin bir artış yaşandığı uyarısı yapılmıştır. 2025 yılında 119 farklı grubun endüstriyel kontrol sistemlerini (ICS) ve operasyonel teknolojileri (OT) hedef aldığı, dünya genelinde 3.300 kuruluşun bu saldırılardan etkilendiği bildirilmiştir. En çok hedef alınan sektörlerin başında imalat ve ulaşım gelmektedir. Özellikle "Pyroxene" gibi grupların, savunma ve kritik altyapı sektörlerine yönelik tedarik zinciri saldırıları yürüttüğü ifade edilmektedir. Bu grupların genellikle IT ağlarından OT ağlarına sızmak için gelişmiş teknikler kullandıkları ve operasyonel süreçleri durdurarak büyük ekonomik zararlara yol açtıkları belirtilmiştir. Uzmanlar, endüstriyel ağların IT ağlarından tam olarak yalıtılmasının ve sürekli izlenmesinin hayati önem taşıdığını vurgulamaktadır. Fidye yazılımı saldırılarının artık sadece veri şifreleme değil, doğrudan fiziksel üretim süreçlerini sabote etme amacı taşıdığı gözlemlenmektedir.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-35">
+                <div class="news-title"><b>Microsoft 365 Copilot'un Gizli E-Postaları İfşa Eden Hatasının Giderilmesi</b></div>
+                <p class="news-content">Microsoft, yapay zeka asistanı Copilot'un, kullanıcıların izni olmadan "Gönderilmiş Öğeler" ve "Taslaklar" klasörlerindeki gizli etiketli e-postaları özetlemesine neden olan bir hatayı (CW1226324) düzelttiğini doğrulamıştır. Bu hatanın, hassas verileri korumak için uygulanan veri kaybı önleme (DLP) politikalarını baypas ettiği ve gizli bilgilerin yetkisiz bir şekilde işlenmesine yol açtığı ifade edilmektedir. Sorunun Ocak ayının sonundan Şubat ayının başına kadar olan süreçte aktif olduğu ve kaç kullanıcıyı etkilediğinin henüz tam olarak bilinmediği belirtilmiştir. Microsoft, kod tabanlı bu hatanın giderildiğini ve artık gizli etiketli içeriklerin Copilot tarafından bu şekilde işlenmeyeceğini duyurmuştur. Ancak bu olay, yapay zeka araçlarının kurumsal ortamlarda veri gizliliği standartlarıyla nasıl çelişebileceğine dair endişeleri artırmıştır. Şirketlerin, yapay zeka entegrasyonlarını yaparken bu tür güvenlik açıklarını göz önünde bulundurarak ek denetim mekanizmaları kurmaları tavsiye edilmektedir.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-36">
+                <div class="news-title"><b>Atlassian Jira Bulut Hesaplarının Spam Kampanyalarında Kötüye Kullanımı</b></div>
+                <p class="news-content">Siber saldırganların, Atlassian Jira Cloud platformunun güvenilirliğini ve e-posta sistemini kullanarak büyük ölçekli spam kampanyaları yürüttükleri saptanmıştır. Saldırganların, rastgele isimlerle çok sayıda ücretsiz Jira Cloud deneme hesabı oluşturdukları ve bu hesaplar üzerinden kurumsal e-posta güvenlik sistemlerini atlatarak kötü niyetli bağlantılar gönderdikleri tespit edilmiştir. Bu kampanyaların özellikle İngilizce, Fransızca ve Almanca konuşan kullanıcıları hedef aldığı, mağdurların yatırım dolandırıcılığı ve yasa dışı bahis sitelerine yönlendirildiği ifade edilmektedir. Trend Micro araştırmacıları, saldırganların Jira'nın meşru e-posta sunucularını kullanarak oltalama e-postalarının "güvenilir" görünmesini sağladıklarını belirtmiştir. Bu yöntem, geleneksel e-posta filtrelerinin Jira gibi meşru platformlardan gelen trafiği genellikle engellememesi nedeniyle oldukça etkili olmaktadır. Atlassian'ın bu tür kötüye kullanımları önlemek için hesap oluşturma süreçlerinde ek güvenlik adımları eklediği bildirilmiştir. Şirketlerin, Jira üzerinden gelen beklenmedik bildirimlere karşı dikkatli olmaları önerilmektedir.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-37">
+                <div class="news-title"><b>Remcos RAT Zararlı Yazılımının Canlı İzleme Yeteneğine Sahip Yeni Varyantı</b></div>
+                <p class="news-content">Siber güvenlik ekipleri, "Remcos RAT" adlı uzaktan erişim trojanının, enfekte edilmiş sistemler üzerinde canlı gözetleme ve tam kontrol sağlayan yeni bir varyantını tespit etmiştir. Bu varyantın, verileri yerel olarak depolamak yerine doğrudan saldırganın kontrolündeki sunucularla canlı komuta kontrol (C2) iletişimi kurduğu ifade edilmektedir. Özellikle hedef sistemin web kamerasını kullanarak canlı video akışı sağladığı ve bu yolla kurbanları gerçek zamanlı olarak izlediği bildirilmiştir. Zararlı yazılımın genellikle sahte faturalar veya iş teklifleri içeren oltalama e-postaları aracılığıyla yayıldığı belirtilmektedir. Remcos RAT'ın bu evrimi, yazılımın basit bir veri hırsızlığı aracından profesyonel bir casusluk platformuna dönüştüğünü göstermektedir. Uzmanlar, bu tür yazılımların kurumsal ağlarda tespit edilmesinin güç olduğunu, bu nedenle uç nokta koruma çözümlerinin ve ağ trafiği analizlerinin kritik önem taşıdığını vurgulamaktadır. Kullanıcıların şüpheli e-posta eklerini açmamaları konusunda sürekli olarak eğitilmeleri tavsiye edilmektedir.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-38">
+                <div class="news-title"><b>Ivanti EPMM Sistemlerindeki Açıkların Aktif Olarak İstismar Edilmesi</b></div>
+                <p class="news-content">Ivanti Endpoint Manager Mobile (EPMM) yazılımında yeni keşfedilen iki kritik güvenlik açığının (CVE-2026-1281 ve CVE-2026-1340), saldırganlar tarafından "reverse shell" almak ve sisteme zararlı yazılımlar yüklemek için kullanıldığı bildirilmiştir. Bu açıkların, kimlik doğrulaması gerektirmeden saldırganların sunucularda komut yürütmesine ve mobil cihaz yönetim (MDM) altyapısını tamamen ele geçirmesine olanak tanıdığı ifade edilmektedir. Palo Alto Networks Unit 42, saldırganların özellikle hükümet, sağlık ve imalat sektörlerini hedef aldığını tespit etmiştir. Saldırıların ardından sistemlere kripto para madenciliği yazılımları ve uzun süreli erişim sağlayan arka kapıların yerleştirildiği gözlemlenmiştir. Almanya Federal Bilişim Güvenliği Ofisi (BSI), bu açıkların 2025 yazından beri kullanıldığına dair kanıtlar bulunduğunu belirterek, kurumları sistemlerini acilen yamalamaları ve geçmişe dönük kompromi belirtileri (IoC) aramaları konusunda uyarmıştır. Bu durum, MDM sistemlerinin siber saldırganlar için ne kadar yüksek değerli bir hedef olduğunu kanıtlamaktadır.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-39">
+                <div class="news-title"><b>Foxit ve Apryse PDF Araçlarında Keşfedilen Çok Sayıda Güvenlik Açığı</b></div>
+                <p class="news-content">Siber güvenlik araştırmacıları, Foxit ve Apryse tarafından geliştirilen popüler PDF platformlarında ondan fazla güvenlik açığı (CVE-2025-70401, CVE-2025-70402 ve CVE-2025-66500) keşfetmiştir. Bu açıkların, saldırganların hesap ele geçirme, oturum çalma, veri sızıntısı ve yetkisiz JavaScript yürütme gibi eylemleri gerçekleştirmesine imkan tanıdığı ifade edilmektedir. Sorunların, PDF platformlarının güvenilmeyen girdileri işleme biçimindeki yapısal hatalardan kaynaklandığı belirtilmiştir. Bazı zafiyetlerin tek bir istek ile istismar edilebildiği ve kurumsal uygulamalarda kullanılan güvenilir alan adlarını etkilediği uyarısı yapılmıştır. Hem Foxit hem de Apryse, bu sorunları gidermek için ürün güncellemeleri yayınlamıştır. PDF dökümanlarının kurumsal iş akışlarında vazgeçilmez bir rol oynaması, bu tür açıkların etkisini daha da artırmaktadır. Kullanıcıların PDF okuyucu yazılımlarını acilen güncellemeleri ve şüpheli dökümanları açarken dikkatli olmaları önerilmektedir. Araştırmacılar, PDF motorlarındaki bu tür zafiyetlerin sistematik olarak incelenmesi gerektiğini vurgulamıştır.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-40">
+                <div class="news-title"><b>MetaMask Cüzdan Eklentisini Hedef Alan Arka Kapı ve Kripto Hırsızlığı</b></div>
+                <p class="news-content">Kuzey Kore bağlantılı tehdit gruplarının, kripto para ve yapay zeka sektöründeki çalışanları hedef alan "Contagious Interview" kampanyası kapsamında MetaMask cüzdan eklentisini taklit eden bir arka kapı kullandıkları tespit edilmiştir. Saldırganların, kurbanları sahte iş mülakatları aracılığıyla kandırarak sistemlerine kötü niyetli bir JavaScript dosyası yükledikleri ifade edilmektedir. Bu dosyanın, meşru MetaMask eklentisini manipüle ederek cüzdan şifrelerini çaldığı ve saldırganın sunucusuna ilettiği bildirilmiştir. Ele geçirilen şifreler sayesinde saldırganların kripto para fonlarına tam erişim sağladıkları vurgulanmaktadır. Bu kampanya, Kuzey Koreli saldırganların finansal gelir elde etmek için kullandıkları yöntemlerin ne kadar hedef odaklı ve teknik olarak gelişmiş olduğunu göstermektedir. Güvenlik uzmanları, cüzdan eklentilerinin ve tarayıcı uzantılarının güvenliğinin düzenli olarak kontrol edilmesi gerektiğini belirtmektedir. Kripto para sektörü çalışanlarının, iş mülakatları sırasında gönderilen dosyaları çalıştırmadan önce kapsamlı bir güvenlik taramasından geçirmeleri tavsiye edilmektedir.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
+
+            <div class="news-item" id="haber-41">
+                <div class="news-title"><b>Booking.com Üzerinden Otel ve Müşterileri Hedef Alan Oltalama Kampanyası</b></div>
+                <p class="news-content">Siber güvenlik uzmanları, otel ve perakende sektörünü hedef alan ve Booking.com platformunu taklit eden yeni bir oltalama kampanyası hakkında uyarıda bulunmuştur. Saldırganların, önce otel işletmelerinin kimlik bilgilerini çaldıkları, ardından bu erişimi kullanarak otel müşterilerine sahte ödeme talepleri gönderdikleri ifade edilmektedir. Kampanyada kullanılan gelişmiş oltalama kitlerinin, hem kurumsal giriş bilgilerini hem de son kullanıcıların kredi kartı bilgilerini toplamak üzere tasarlandığı belirtilmiştir. Bu yöntem, müşterilerin otelden gelen meşru görünen bir mesaj aldıklarını düşünmeleri nedeniyle oldukça yüksek bir başarı oranına sahiptir. Booking.com yetkilileri, sistemlerinin doğrudan hacklenmediğini ancak iş ortaklarının hesaplarının ele geçirilmesi yoluyla bu saldırıların yapıldığını vurgulamıştır. Otel yöneticilerinin çok faktörlü kimlik doğrulama kullanmaları ve müşterilerin ödeme bilgilerini paylaşmadan önce otelle doğrudan iletişime geçmeleri tavsiye edilmektedir. Bu olay, platform güvenliğinin yanı sıra ekosistemdeki her bir halkanın güvenliğinin ne kadar kritik olduğunu göstermektedir.</p>
+                <p class="source"><b>(THE HACKER NEWS, AÇIK - <a href="https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html" target="_blank">thehackernews.com</a>, 19.02.2026)</b></p>
+            </div>
         </div>
     </div>
+    <a href="#" class="back-to-top" title="Başa Dön" onclick="window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'',window.location.pathname);return false;">↑</a>
 
     <div class="archive-section">
         <h3>📚 Arşiv - Son 30 Gün</h3>
         <div class="archive-links">
-            <a href="./raporlar/2026-02-19.html" class="archive-link">19.02.2026</a>
-            <a href="./raporlar/2026-02-18.html" class="archive-link">18.02.2026</a>
-            <a href="./raporlar/2026-02-17.html" class="archive-link">17.02.2026</a>
-            <a href="./raporlar/2026-02-16.html" class="archive-link">16.02.2026</a>
-            <a href="./raporlar/2026-02-15.html" class="archive-link">15.02.2026</a>
-            <a href="./raporlar/2026-02-14.html" class="archive-link">14.02.2026</a>
-            <a href="./raporlar/2026-02-13.html" class="archive-link">13.02.2026</a>
+            <a href="./2026-02-20.html" class="archive-link">20.02.2026</a>
+            <a href="./2026-02-19.html" class="archive-link">19.02.2026</a>
+            <a href="./2026-02-18.html" class="archive-link">18.02.2026</a>
+            <a href="./2026-02-17.html" class="archive-link">17.02.2026</a>
+            <a href="./2026-02-16.html" class="archive-link">16.02.2026</a>
+            <a href="./2026-02-15.html" class="archive-link">15.02.2026</a>
+            <a href="./2026-02-14.html" class="archive-link">14.02.2026</a>
+            <a href="./2026-02-13.html" class="archive-link">13.02.2026</a>
         </div>
     </div>
 

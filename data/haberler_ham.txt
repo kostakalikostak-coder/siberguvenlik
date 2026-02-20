@@ -3,7 +3,117 @@
 📅 20 FEBRUARY 2026 - SİBER GÜVENLİK HABERLERİ (HAM RSS)
 ================================================================================
 
-[1] The Hacker News - FBI Reports 1,900 ATM Jackpotting Incidents Since 2020, $20M Lost in 2025
+[1] The Hacker News - Identity Cyber Scores: The New Metric Shaping Cyber Insurance in 2026
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 20 Feb 2026 16:00:00 +0530
+Link: https://thehackernews.com/2026/02/identity-cyber-scores-new-metric.html
+
+[TAM METİN - 920 kelime]
+With one in three cyber-attacks now involving compromised employee accounts, insurers and regulators are placing far greater emphasis on identity posture when assessing cyber risk.
+
+For many organizations, however, these assessments remain largely opaque. Elements such as password hygiene, privileged access management, and the extent of multi-factor authentication (MFA) coverage are increasingly influential in how cyber risk and insurance costs are evaluated.
+
+Understanding the identity-centric factors behind these assessments is critical for organizations seeking to demonstrate lower risk exposure and secure more favorable insurance terms.
+
+Why identity posture now drives underwriting
+
+With the global average cost of a data breach reaching $4.4 million in 2025, more organizations are turning to cyber insurance to manage financial exposure. In the UK, coverage has increased from 37% in 2023 to 45% in 2025, but rising claims volumes are prompting insurers to tighten underwriting requirements.
+
+Credential compromise remains one of the most reliable ways for attackers to gain access, escalate privileges, and persist within an environment. For insurers, strong identity controls reduce the likelihood that a single compromised account can lead to widespread disruption or data loss, supporting more sustainable underwriting decisions.
+
+What insurers want to see in identity security
+
+Password hygiene and credential exposure
+
+Despite the growing use of multi-factor authentication and passwordless initiatives, passwords still play a key role in authentication. Organizations should pay particular attention to the behaviors and issues that increase the risk of credential theft and abuse, including:
+
+Password reuse across identities, particularly among administrative or service accounts, increases the likelihood that one stolen credential leads to broader access.
+
+Legacy authentication protocols are still common in networks and frequently abused to harvest credentials. NTLM persists in many environments despite being functionally replaced by Kerberos in Windows 2000.
+
+Dormant accounts with valid credentials, which act as unmonitored entry points and often retain unnecessary access.
+
+Service accounts with never-expiring passwords, creating long-lived, low-visibility attack paths.
+
+Shared administrative credentials, reduce accountability and amplify the impact of compromise.
+
+From an underwriting perspective, evidence that an organization understands and actively manages these risks is often more important than the presence of individual technical controls. Regular audits of password hygiene and credential exposure help demonstrate maturity and intent to reduce identity-driven risk.
+
+Privileged access management
+
+Privileged access management is a critical measure of an organization’s ability to prevent and mitigate breaches. Privileged accounts can have high-level access to systems and data, but are frequently over-permissioned. As a result, insurers pay close attention to how these accounts are governed.
+
+Service accounts, cloud administrators, and delegated privileges outside central monitoring significantly elevate risk. This is especially true when they operate without MFA or logging.
+
+Excessive membership in Domain Admin or Global Administrator roles and overlapping administrative scopes all suggest that privilege escalation would be both rapid and difficult to contain.
+
+Poorly governed or unknown privileged access is typically viewed as higher risk than a small number of tightly controlled administrators. Security teams can use tools such as Specops Password Auditor to identify stale, inactive, or over-privileged administrative accounts and prioritize remediation before those credentials are abused.
+
+When determining the likelihood of a damaging breach, the question is straightforward: if an attacker compromises a single account, how quickly can they become an administrator? Where the answer is “immediately” or “with minimal effort,” premiums tend to reflect that exposure.
+
+Most organizations can credibly state that MFA has been deployed. However, MFA only meaningfully reduces risk when it is consistently enforced across all critical systems and accounts. In one documented case, the City of Hamilton was denied an $18 million cyber insurance payout after a ransomware attack because MFA had not been fully implemented across affected systems.
+
+While MFA isn’t infallible, fatigue attacks first require valid account credentials and then depend on a user approving an unfamiliar authentication request, an outcome that is far from guaranteed.
+
+Meanwhile, accounts that authenticate via older protocols, non-interactive service accounts, or privileged roles exempted for convenience all offer viable bypass paths once initial access is achieved.
+
+That’s why insurers increasingly require MFA for all privileged accounts, as well as for email and remote access. Organizations that neglect it may face higher premiums.
+
+Four steps to improve your identity cyber score
+
+There are many ways organizations can improve identity security, but insurers look for evidence of progress in a few key areas:
+
+Eliminate weak and shared passwords: Enforce minimum password standards and reduce password reuse, particularly for administrative and service accounts. Strong password hygiene limits the impact of credential theft and reduces the risk of lateral movement following initial access.
+
+Apply MFA across all critical access paths: Ensure MFA is enforced on remote access, cloud applications, VPNs, and all privileged accounts. Insurers increasingly expect MFA coverage to be comprehensive rather than selectively applied.
+
+Reduce permanent privileged access: Limit permanent administrative rights wherever practical and adopt just-in-time or time-bound access for elevated tasks. Fewer always-on privileged accounts directly reduce the impact of credential compromise.
+
+Regularly review and certify access: Conduct routine reviews of user and privileged permissions to ensure they align with current roles. Stale access and orphaned accounts are common red flags in insurance assessments.
+
+Insurers increasingly expect organizations to demonstrate not only that identity controls exist, but that they are actively monitored and improved over time.
+
+Specops Password Auditor supports this by providing clear visibility into password exposure within Active Directory and enforcing controls that reduce credential-based risk.
+
+To understand how these controls can be applied in your environment and aligned with insurer expectations, speak with a Specops expert or request a live demo.
+
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/identity-cyber-scores-new-metric.html, thehackernews.com, 20.02.2026)
+
+================================================================================
+
+[2] The Hacker News - Ukrainian National Sentenced to 5 Years in North Korea IT Worker Fraud Case
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 20 Feb 2026 15:22:00 +0530
+Link: https://thehackernews.com/2026/02/ukrainian-national-sentenced-to-5-years.html
+
+[TAM METİN - 528 kelime]
+A 29-year-old Ukrainian national has been sentenced to five years in prison in the U.S. for his role in facilitating North Korea's fraudulent information technology (IT) worker scheme.
+
+In November 2025, Oleksandr "Alexander" Didenko pleaded guilty to wire fraud conspiracy and aggravated identity theft for stealing the identities of U.S. citizens and selling them to IT workers to help them land jobs at 40 U.S. companies and draw regular salaries, which were then funneled back to the regime to support its weapons programs. He was apprehended by Polish authorities in late 2024, and later extradited to the U.S.
+
+Didenko has also been ordered to serve 12 months of supervised release and to pay $46,547.28 in restitution. Last year, Didenko also agreed to forfeit more than $1.4 million, which includes about $181,438 in U.S. dollars and cryptocurrency seized from him and his co-conspirators.
+
+The defendant is said to have run a website named Upworksell[.]com to help overseas IT workers buy or rent stolen or borrowed identities since the start of 2021. The IT workers abused these identities to apply for jobs on freelance work platforms based in California and Pennsylvania. The site was seized by authorities on May 16, 2024.
+
+In addition, Didenko paid individuals in the U.S. to receive and host laptops at their residences in Virginia, Tennessee and California. The idea was to give the impression that the workers were located in the country, when, in reality, they were connecting remotely from countries like China, where they were dispatched to.
+
+As part of the criminal scheme, Didenko managed as many as 871 proxy identities and facilitated the operation of at least three U.S.-based laptop farms. One of the computers was sent to a laptop farm run by Christina Marie Chapman in Arizona. Chapman was arrested in May 2024 and sentenced to 102 months in prison in July 2025 for participating in the scheme.
+
+Furthermore, he enabled his North Korean clients to access the U.S. financial system through Money Service Transmitters instead of having to open an account at a bank within the U.S. These money transfer services were used to move employment income to foreign bank accounts. Officials said Didenko's clients were paid hundreds of thousands of dollars for their work.
+
+"Defendant Didenko's scheme funneled money from Americans and U.S. businesses, into the coffers of North Korea, a hostile regime," said U.S. Attorney Jeanine Ferris Pirro. "Today, North Korea is not only a threat to the homeland from afar, it is an enemy within."
+
+"By using stolen and fraudulent identities, North Korean actors are infiltrating American companies, stealing information, licensing, and data that is harmful to any business. But more than that, money paid to these so-called employees goes directly to munitions programs in North Korea."
+
+Despite continued law enforcement actions, the Hermit Kingdom's conspiracy shows no signs of stopping. If anything, the operation has continued to evolve with new tactics and techniques to evade detection.
+
+According to a report from threat intelligence firm Security Alliance (SEAL) last week, the IT workers have begun to apply for remote positions using real LinkedIn accounts of individuals they're impersonating in an effort to make their fraudulent applications look authentic.
+
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/ukrainian-national-sentenced-to-5-years.html, thehackernews.com, 20.02.2026)
+
+================================================================================
+
+[3] The Hacker News - FBI Reports 1,900 ATM Jackpotting Incidents Since 2020, $20M Lost in 2025
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 20 Feb 2026 13:35:00 +0530
 Link: https://thehackernews.com/2026/02/fbi-reports-1900-atm-jackpotting.html
@@ -37,7 +147,7 @@ Other measures involve auditing ATM devices, changing default credentials, confi
 
 ================================================================================
 
-[2] The Hacker News - Former Google Engineers Indicted Over Trade Secret Transfers to Iran
+[4] The Hacker News - Former Google Engineers Indicted Over Trade Secret Transfers to Iran
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 20 Feb 2026 10:57:00 +0530
 Link: https://thehackernews.com/2026/02/three-former-google-engineers-indicted.html
@@ -77,7 +187,7 @@ The development comes less than a month after another ex-Google engineer, Linwei
 
 ================================================================================
 
-[3] The Hacker News - PromptSpy Android Malware Abuses Gemini AI to Automate Recent-Apps Persistence
+[5] The Hacker News - PromptSpy Android Malware Abuses Gemini AI to Automate Recent-Apps Persistence
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 23:22:00 +0530
 Link: https://thehackernews.com/2026/02/promptspy-android-malware-abuses-google.html
@@ -121,7 +231,7 @@ Because PromptSpy prevents itself from being uninstalled by overlaying invisible
 
 ================================================================================
 
-[4] The Hacker News - INTERPOL Operation Red Card 2.0 Arrests 651 in African Cybercrime Crackdown
+[6] The Hacker News - INTERPOL Operation Red Card 2.0 Arrests 651 in African Cybercrime Crackdown
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 23:20:00 +0530
 Link: https://thehackernews.com/2026/02/interpol-operation-red-card-20-arrests.html
@@ -155,7 +265,7 @@ The second phase of Red Card comes almost a year after INTERPOL announced the ar
 
 ================================================================================
 
-[5] The Hacker News - Microsoft Patches CVE-2026-26119 Privilege Escalation in Windows Admin Center
+[7] The Hacker News - Microsoft Patches CVE-2026-26119 Privilege Escalation in Windows Admin Center
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 23:10:00 +0530
 Link: https://thehackernews.com/2026/02/microsoft-patches-cve-2026-26119.html
@@ -179,7 +289,7 @@ Technical details related to CVE-2026-26119 are presently under wraps, but that 
 
 ================================================================================
 
-[6] The Hacker News - ThreatsDay Bulletin: OpenSSL RCE, Foxit 0-Days, Copilot Leak, AI Password Flaws & 20+ Stories
+[8] The Hacker News - ThreatsDay Bulletin: OpenSSL RCE, Foxit 0-Days, Copilot Leak, AI Password Flaws & 20+ Stories
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 20:05:00 +0530
 Link: https://thehackernews.com/2026/02/threatsday-bulletin-openssl-rce-foxit-0.html
@@ -433,7 +543,183 @@ This roundup pulls those signals together into a single, readable snapshot. Go t
 
 ================================================================================
 
-[7] BleepingComputer - Ukrainian gets 5 years for helping North Koreans infiltrate US firms
+[9] The Hacker News - From Exposure to Exploitation: How AI Collapses Your Response Window
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 17:25:00 +0530
+Link: https://thehackernews.com/2026/02/from-exposure-to-exploitation-how-ai.html
+
+[TAM METİN - 858 kelime]
+We’ve all seen this before: a developer deploys a new cloud workload and grants overly broad permissions just to keep the sprint moving. An engineer generates a "temporary" API key for testing and forgets to revoke it. In the past, these were minor operational risks, debts you’d eventually pay down during a slower cycle.
+
+In 2026, “Eventually” is Now
+
+But today, within minutes, AI-powered adversarial systems can find that over-permissioned workload, map its identity relationships, and calculate a viable route to your critical assets. Before your security team has even finished their morning coffee, AI agents have simulated thousands of attack sequences and moved toward execution.
+
+AI compresses reconnaissance, simulation, and prioritization into a single automated sequence. The exposure you created this morning can be modeled, validated, and positioned inside a viable attack path before your team has lunch.
+
+The Collapse of the Exploitation Window
+
+Historically, the exploitation window favored the defender. A vulnerability was disclosed, teams assessed their exposure, and remediation followed a predictable patch cycle. AI has shattered that timeline.
+
+In 2025, over 32% of vulnerabilities were exploited on or before the day the CVE was issued. The infrastructure powering this is massive, with AI-powered scan activity reaching 36,000 scans per second.
+
+But it’s not just about speed; it’s about context. Only 0.47% of identified security issues are actually exploitable. While your team burns cycles reviewing the 99.5% of "noise," AI is laser-focused on the 0.5% that matters, isolating the small fraction of exposures that can be chained into a viable route to your critical assets.
+
+To understand the threat, we must look at it through two distinct lenses: how AI accelerates attacks on your infrastructure, and how your AI infrastructure itself introduces a new attack surface.
+
+Scenario #1: AI as an Accelerator
+
+AI attackers aren't necessarily using "new" exploits. They are exploiting the exact same CVEs and misconfigurations they always have, but they are doing it with machine speed and scale.
+
+Attackers no longer need a "Critical" vulnerability to breach you. They use AI to chain together "Low" and "Medium" issues, a stale credential here, a misconfigured S3 bucket there. AI agents can ingest identity graphs and telemetry to find these convergence points in seconds, doing work that used to take human analysts weeks.
+
+Machine identities now outnumber human employees 82 to 1. This creates a massive web of keys, tokens, and service accounts. AI-driven tools excel at "identity hopping", mapping token exchange paths from a low-security dev container to an automated backup script, and finally to a high-value production database.
+
+Phishing has surged 1,265% because AI allows attackers to mirror your company’s internal tone and operational "vibe" perfectly. These aren't generic spam emails; they are context-aware messages that bypass the usual "red flags" employees are trained to spot.
+
+Scenario #2: AI as the New Attack Surface
+
+While AI accelerates attacks on legacy systems, your own AI adoption is creating entirely new vulnerabilities. Attackers aren't just using AI; they are targeting it.
+
+When you connect internal agents to your data, you introduce the risk that it will be targeted and turned into a "confused deputy." Attackers can use prompt injection to trick your public-facing support agents into querying internal databases they should never access. Sensitive data surfaces and is exfiltrated by the very systems you trusted to protect it, all while looking like authorized traffic.
+
+The results of these attacks extend far beyond the moment of exploitation. By feeding false data into an agent's long-term memory (Vector Store), attackers create a dormant payload. The AI agent absorbs this poisoned information and later serves it to users. Your EDR tools see only normal activity, but the AI is now acting as an insider threat.
+
+Finally, attackers can poison your supply chain before they ever touch your systems. They use LLMs to predict the "hallucinated" package names that AI coding assistants will suggest to developers. By registering these malicious packages first (slopsquatting), they ensure developers inject backdoors directly into your CI/CD pipeline.
+
+Traditional defense cannot match AI speed because it measures success by the wrong metrics. Teams count alerts and patches, treating volume as progress, while adversaries exploit the gaps that accumulate from all this noise.
+
+An effective strategy for staying ahead of attackers in the era of AI must focus on one simple, yet critical question: which exposures actually matter for an attacker moving laterally through your environment?
+
+To answer this, organizations must shift from reactive patching to Continuous Threat Exposure Management (CTEM). It is an operational pivot designed to align security exposure with actual business risk.
+
+AI-enabled attackers don’t care about isolated findings. They chain exposures together into viable paths to your most critical assets. Your remediation strategy needs to account for that same reality: focus on the convergence points where multiple exposures intersect, where one fix eliminates dozens of routes.
+
+The ordinary operational decisions your teams made this morning can become a viable attack path before lunch. Close the paths faster than AI can compute them, and you reclaim the window of exploitation.
+
+Note: This article was thoughtfully written and contributed for our audience by Erez Hasson, Director of Product Marketing at XM Cyber.
+
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/from-exposure-to-exploitation-how-ai.html, thehackernews.com, 19.02.2026)
+
+================================================================================
+
+[10] The Hacker News - Fake IPTV Apps Spread Massiv Android Malware Targeting Mobile Banking Users
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 15:54:00 +0530
+Link: https://thehackernews.com/2026/02/fake-iptv-apps-spread-massiv-android.html
+
+[TAM METİN - 744 kelime]
+Cybersecurity researchers have disclosed details of a new Android trojan called Massiv that's designed to facilitate device takeover (DTO) attacks for financial theft.
+
+The malware, according to ThreatFabric, masquerades as seemingly harmless IPTV apps to deceive victims, indicating that the activity is primarily singling out users looking for the online TV applications.
+
+"This new threat, while only seen in a limited number of rather targeted campaigns, already poses a great risk to the users of mobile banking, allowing its operators to remotely control infected devices and perform device takeover attacks with further fraudulent transactions performed from the victim's banking accounts," the Dutch mobile security company said in a report shared with The Hacker News.
+
+ThreatFabric told The Hacker News via email that the malware was first spotted in a campaign targeting users in Portugal and Greece earlier this year, although it has observed samples dating back to the start of 2025 as part of smaller test campaigns.
+
+Like various Android banking malware families, Massiv supports a wide range of features to facilitate credential theft through a number of methods: screen streaming through Android's MediaProjection API, keylogging, SMS interception, and fake overlays served atop banking and financial apps. The overlay asks users to enter their credentials and credit card details.
+
+One such campaign has been found to target gov.pt, a Portuguese public administration app that allows users to store identification documents and manage the Digital Mobile Key (aka Chave Móvel Digital or CMD). The overlay tricks users into entering their phone number and PIN code, likely in an effort to bypass Know Your Customer (KYC) verification.
+
+ThreatFabric said it identified cases where scammers used the information captured through these overlays to open new banking accounts in the victim's name, allowing them to be used for money laundering or getting loans approved without the actual victim's knowledge.
+
+In addition, it serves as a fully functional remote-control tool, granting the operator the ability to access the victim's device stealthily while showing a black screen overlay to conceal the malicious activity. These techniques, realized by abusing Android's accessibility services, have also been observed in several other Android bankers like Crocodilus, Datzbro, and Klopatra.
+
+"However, some applications implement protection against screen capture," the company explained. "To bypass it, Massiv uses so-called UI-tree mode -- it traverses AccessibilityWindowInfo roots and recursively processes AccessibilityNodeInfo objects."
+
+This is done so as to build a JSON representation of visible text and content descriptions, UI elements, screen coordinates, and interaction flags that indicate whether the UI element is clickable, editable, focused, or enabled. Only nodes that are visible and have text are exported to the attacker, who can then determine the next course of action by issuing specific commands to interact with the device.
+
+The malware is equipped to carry out a wide range of malicious actions -
+
+Enable black overlay, mute sounds and vibration
+
+Send device information
+
+Perform click and swipe actions
+
+Alter clipboard with specific text
+
+Turn on/off screen streaming
+
+Unlock device with pattern
+
+Serve overlays for an app, device pattern lock, or PIN
+
+Download ZIP archive with overlays for targeted applications
+
+Download and install APK files
+
+Open Battery Optimization, Device Admin, and Play Protect settings screens
+
+Request for permissions to access SMS messages, install APK packages,
+
+Clear log databases on the device
+
+Massiv is distributed in the form of dropper apps mimicking IPTV apps via SMS phishing. Once installed and launched, the dropper prompts the victim to install an "important" update by granting it permissions to install software from external sources. The names of the malicious artifacts are listed below -
+
+IPTV24 (hfgx.mqfy.fejku) - Dropper
+
+Google Play (hobfjp.anrxf.cucm) - Massiv
+
+"In most of the cases observed, it is just masquerading," ThreatFabric said. "No actual IPTV applications were infected or initially contained malicious code. Usually, the dropper that mimics an IPTV app opens a WebView with an IPTV website in it, while the actual malware is already installed and running on the device."
+
+The majority of Android malware campaigns using TV-related droppers have targeted Spain, Portugal, France, and Turkey over the past six months.
+
+Massiv is the latest entrant to an already crowded Android threat landscape, reflecting the continuing demand for such turnkey solutions among cybercriminals.
+
+"While not yet observed being promoted as Malware-as-a-Service, Massiv's operator shows clear signs of going this path, introducing API keys to be used in malware communication with the backend," ThreatFabric said. "Code analysis revealed ongoing development, with more features likely to be introduced in the future."
+
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/fake-iptv-apps-spread-massiv-android.html, thehackernews.com, 19.02.2026)
+
+================================================================================
+
+[11] BleepingComputer - FBI: Over $20 million stolen in surge of ATM malware attacks in 2025
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 20 Feb 2026 05:08:49 -0500
+Link: https://www.bleepingcomputer.com/news/security/fbi-over-20-million-stolen-in-surge-of-atm-malware-attacks-in-2025/
+
+[TAM METİN - 505 kelime]
+The FBI warned that Americans lost more than $20 million last year amid a massive surge in ATM "jackpotting" attacks, in which criminals use malware to force cash machines to dispense money.
+
+According to a Thursday FBI flash alert, more than 700 ATM jackpotting incidents were reported last year alone in a significant spike compared to the roughly 1,900 total incidents reported across the United States since 2020.
+
+These attacks can be carried out in minutes and target the software layer controlling an ATM's physical hardware, using malicious tools such as the Ploutus malware. Most often, they go undetected by financial institutions and ATM operators until the cash is already gone.
+
+As the FBI explained, cash machines are designed to verify transactions through their bank before dispensing cash. However, Ploutus bypasses this process entirely, allowing the criminals to issue commands directly to the ATM and trigger withdrawals on demand without a bank card, a customer account, or the bank's approval.
+
+"Ploutus malware exploits the eXtensions for Financial Services (XFS), the layer of software that instructs an ATM what to physically do. When a legitimate transaction occurs, the ATM application sends instructions through XFS for bank authorization," the FBI said. "If a threat actor can issue their own commands to XFS, they can bypass bank authorization entirely and instruct the ATM to dispense cash on demand."
+
+To install the malware, the attackers usually gain physical access to the targeted ATM using widely available generic keys. Once inside, they remove the machine's hard drive, copy malware onto it and reinstall it, or even swap the original drive out entirely for another one preloaded with the malicious software.
+
+To defend against these attacks, the FBI encouraged financial institutions to audit their ATM systems for signs of unauthorized removable storage use and unauthorized processes.
+
+"When combined with gold image integrity validation, this approach enables early identification of physical intrusion and malware staging events that would otherwise evade network-based monitoring," the law enforcement agency added.
+
+FBI's warning comes after a wave of arrests targeting members of the Tren de Aragua (TdA) gang, all linked to a massive ATM jackpotting scheme that used Ploutus malware to steal millions in cash from bank ATMs across the United States.
+
+In total, the U.S. Department of Justice has charged 87 Tren de Aragua members over the past six months, who are now facing maximum prison terms ranging from 20 to 335 years each.
+
+The future of IT infrastructure is here
+
+Modern IT infrastructure moves faster than manual workflows can handle.
+
+In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
+
+US charges 31 more suspects linked to ATM malware attacks
+
+US to deport Venezuelans who emptied bank ATMs using malware
+
+FBI: US officials targeted in voice deepfake attacks since April
+
+Ukrainian gets 5 years for helping North Koreans infiltrate US firms
+
+CISA gives feds 3 days to patch actively exploited BeyondTrust flaw
+
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/fbi-over-20-million-stolen-in-surge-of-atm-malware-attacks-in-2025/, bleepingcomputer.com, 20.02.2026)
+
+================================================================================
+
+[12] BleepingComputer - Ukrainian gets 5 years for helping North Koreans infiltrate US firms
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 20 Feb 2026 04:00:15 -0500
 Link: https://www.bleepingcomputer.com/news/security/ukrainian-gets-5-years-for-helping-north-koreans-infiltrate-us-firms/
@@ -479,7 +765,7 @@ North Korean hackers use new macOS malware in crypto-theft attacks
 
 ================================================================================
 
-[8] BleepingComputer - PromptSpy is the first known Android malware to use generative AI at runtime
+[13] BleepingComputer - PromptSpy is the first known Android malware to use generative AI at runtime
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 17:36:25 -0500
 Link: https://www.bleepingcomputer.com/news/security/promptspy-is-the-first-known-android-malware-to-use-generative-ai-at-runtime/
@@ -571,7 +857,7 @@ Google blocked over 1.75 million Play Store app submissions in 2025
 
 ================================================================================
 
-[9] BleepingComputer - Flaw in Grandstream VoIP phones allows stealthy eavesdropping
+[14] BleepingComputer - Flaw in Grandstream VoIP phones allows stealthy eavesdropping
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 12:16:32 -0500
 Link: https://www.bleepingcomputer.com/news/security/flaw-in-grandstream-voip-phones-allows-stealthy-eavesdropping/
@@ -629,7 +915,7 @@ Critical BeyondTrust RCE flaw now exploited in attacks, patch now
 
 ================================================================================
 
-[10] BleepingComputer - Google blocked over 1.75 million Play Store app submissions in 2025
+[15] BleepingComputer - Google blocked over 1.75 million Play Store app submissions in 2025
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 12:00:00 -0500
 Link: https://www.bleepingcomputer.com/news/security/google-blocked-over-175-million-play-store-app-submissions-in-2025/
@@ -679,7 +965,7 @@ Cellik Android malware builds malicious versions from Google Play apps
 
 ================================================================================
 
-[11] BleepingComputer - CISA orders feds to patch actively exploited Dell flaw within 3 days
+[16] BleepingComputer - CISA orders feds to patch actively exploited Dell flaw within 3 days
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 10:30:37 -0500
 Link: https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-dell-flaw-within-3-days/
@@ -731,7 +1017,7 @@ CISA warns of five-year-old GitLab flaw exploited in attacks
 
 ================================================================================
 
-[12] BleepingComputer - How infostealers turn stolen credentials into real identities
+[17] BleepingComputer - How infostealers turn stolen credentials into real identities
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 10:05:15 -0500
 Link: https://www.bleepingcomputer.com/news/security/how-infostealers-turn-stolen-credentials-into-real-identities/
@@ -819,7 +1105,225 @@ Sponsored and written by Specops Software.
 
 ================================================================================
 
-[13] Security Affairs - Red Card 2.0: INTERPOL busts scam networks across Africa, seizes millions
+[18] BleepingComputer - Nigerian man gets eight years in prison for hacking tax firms
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 08:51:49 -0500
+Link: https://www.bleepingcomputer.com/news/security/nigerian-man-gets-eight-years-in-prison-for-hacking-tax-firms/
+
+[TAM METİN - 508 kelime]
+A Nigerian national was sentenced to eight years in prison for hacking multiple tax preparation firms in Massachusetts and filing fraudulent tax returns seeking over $8.1 million in refunds.
+
+37-year-old Matthew Abiodun Akande was arrested in October 2024 at London's Heathrow Airport and extradited to the United States in March 2025. He was indicted by a federal grand jury in July 2022 before his arrest, while he was still living in Mexico.
+
+According to court documents, after gaining access to the companies' systems, Akande stole their clients' personal information and used it to file over 1,000 fraudulent tax returns and collect more than $1.3 million in fraudulent refunds between June 2016 and June 2021.
+
+To gain access to the targeted firms' computer networks, Akande bought licenses for the Warzone remote-access trojan malware (whose infrastructure was seized by the FBI in February 2024) and encryption software known as a crypter to make the malware undetectable by antivirus solutions installed on the victims' devices.
+
+He then sent phishing emails impersonating the Chief Executive Officer of a Massachusetts architectural engineering company to four tax preparation firms, using a web domain and email account mimicking the CEO's name to make the messages appear authentic.
+
+Akande attached the executive's 2019 tax documents to the phishing emails (including W-2 and 1099 forms) to add credibility, and directed recipients to a Dropbox link allegedly containing the CEO's prior-year tax information that, when clicked, silently installed the malware on their systems.
+
+"In reality, the Dropbox account contained a disguised executable file that, when downloaded and executed, would cause the Victim CPA Firms to unknowingly download RAT malware onto their computer networks," the indictment reveals. "The owners of each of Victim CPA Firms [..] accessed the link and, as AKANDE intended, unknowingly downloaded RAT malware, which was used to collect each firm's client PIl and prior years' tax information."
+
+Once inside the firms' networks, Akande used the Warzone RAT malware to steal their clients' Social Security numbers and prior-year tax data, then used the harvested information to file fraudulent returns seeking over $8.1 million in refunds.
+
+The refunds were directed to bank accounts controlled by co-conspirators in the United States, who withdrew the funds in cash and transferred a portion to associates in Mexico, as instructed by Akande.
+
+U.S. District Court Judge Indira Talwani in Boston sentenced Akande to eight years in prison and three years of supervised release, and ordered him to pay nearly $1.4 million in restitution.
+
+The future of IT infrastructure is here
+
+Modern IT infrastructure moves faster than manual workflows can handle.
+
+In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
+
+Hugging Face abused to spread thousands of Android malware variants
+
+Police arrests 300 suspects linked to African cybercrime rings
+
+Fake job recruiters hide malware in developer coding challenges
+
+Man pleads guilty to hacking nearly 600 women’s Snapchat accounts
+
+Illinois man charged with hacking Snapchat accounts to steal nude photos
+
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/nigerian-man-gets-eight-years-in-prison-for-hacking-tax-firms/, bleepingcomputer.com, 19.02.2026)
+
+================================================================================
+
+[19] BleepingComputer - Texas sues TP-Link over Chinese hacking risks, user deception
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 07:36:51 -0500
+Link: https://www.bleepingcomputer.com/news/security/texas-sues-tp-link-over-chinese-hacking-risks-user-deception/
+
+[TAM METİN - 703 kelime]
+Texas sued networking giant TP-Link Systems, accusing the company of deceptively marketing its routers as secure while allowing Chinese state-backed hackers to exploit firmware vulnerabilities and access users' devices.
+
+The lawsuit follows an investigation launched in October and claims that TP-Link misled buyers by labeling its products "Made in Vietnam" while sourcing nearly all components from China. According to Texas Attorney General Paxton, this is important because Chinese law can compel companies with Chinese supply-chain ties to cooperate with government intelligence requests and hand over user data.
+
+"This week, my office is launching a coordinated series of actions against CCP-aligned companies to send a clear message that in the Lone Star State we will always put Texas and America First," said Paxton. "TP Link will face the full force of the law for putting Americans' security at risk. Let this serve as a clear warning to any Chinese entity seeking to compromise our nation's security."
+
+The suit points to a history of security failures, including firmware vulnerabilities exploited by Chinese hacking groups and the company's routers being used in a large-scale credential-theft botnet later linked to password-spray attacks.
+
+As Microsoft reported in October 2024, this botnet (tracked as Quad7, CovertNetwork-1658, or xlogin) was built from hacked home and small-business routers (primarily TP-Link devices) and operated by Chinese threat actors.
+
+"Despite its claims of privacy and security, TP Link's products have been used by People's Republic of China's ("PRC") state-sponsored hacking entities to launch multiple cyber-attack operations against the United States," Paxton added.
+
+"With nearly all of its products' parts imported from China, TP Link's deliberate deception towards Texans regarding the nationality, privacy, and security capabilities of its networking devices is not just illegal—it is also a national security threat that enables the secret surveillance and exploitation of Texas consumers."
+
+Paxton now seeks civil monetary penalties and injunctions that would require TP-Link to disclose the Chinese origins of its devices and stop collecting consumer data without informed consent.
+
+Federal agencies have previously flagged actively exploited flaws in TP-Link hardware, and CISA currently lists half a dozen TP-Link security flaws in its catalog of vulnerabilities known to be exploited in attacks.
+
+In December 2024, the U.S. government was also reportedly considering banning TP-Link routers, with the U.S. Departments of Justice, Commerce, and Defense investigating the issue, and at least one Commerce Department office having subpoenaed the company.
+
+More recently, in December 2025, the Texas Attorney General sued five major television manufacturers (i.e., Sony, Samsung, LG, and China-based companies Hisense and TCL Technology Group Corporation), accusing them of secretly and illegally collecting their users' data using Automated Content Recognition (ACR) technology.
+
+A TP-Link spokesperson told BleepingComputer today that Texas Attorney General Paxton's allegations are "without merit and will be proven false," that neither the Chinese government nor the Chinese Communist Party (CCP) exercises control over the company, its products, or user data, and added that all U.S. user data is stored on Amazon Web Services servers.
+
+"TP-Link Systems Inc. is an independent American company. Neither the Chinese government nor the CCP exercises any form of ownership or control over TP-Link, its products, or its user data. TP-Link’s founder and CEO, Jeffrey Chao, resides in Irvine, CA, and is not and never has been a member of the CCP," the spokesperson said.
+
+"To ensure the highest level of security, our core operations and infrastructure are located entirely within the United States, and all U.S. users' networking data is stored securely on Amazon Web Services servers. We will continue to vigorously defend our reputation as a trusted provider of secure connectivity for American families."
+
+Update February 19, 11:19 EST: Added TP-Link statement.
+
+The future of IT infrastructure is here
+
+Modern IT infrastructure moves faster than manual workflows can handle.
+
+In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
+
+CISA orders feds to patch actively exploited Dell flaw within 3 days
+
+Nigerian man gets eight years in prison for hacking tax firms
+
+Chinese hackers exploiting Dell zero-day flaw since mid-2024
+
+Police arrests 300 suspects linked to African cybercrime rings
+
+Chinese cyberspies breach Singapore's four largest telcos
+
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/texas-sues-tp-link-over-chinese-hacking-risks-user-deception/, bleepingcomputer.com, 19.02.2026)
+
+================================================================================
+
+[20] BleepingComputer - Hackers target Microsoft Entra accounts in device code vishing attacks
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 07:30:37 -0500
+Link: https://www.bleepingcomputer.com/news/security/hackers-target-microsoft-entra-accounts-in-device-code-vishing-attacks/
+
+[TAM METİN - 912 kelime]
+Threat actors are targeting technology, manufacturing, and financial organizations in campaigns that combine device code phishing and voice phishing (vishing) to abuse the OAuth 2.0 Device Authorization flow and compromise Microsoft Entra accounts.
+
+Unlike previous attacks that utilized malicious OAuth applications to compromise accounts, these campaigns instead leverage legitimate Microsoft OAuth client IDs and the device authorization flow to trick victims into authenticating.
+
+This provides attackers with valid authentication tokens that can be used to access the victim's account without relying on regular phishing sites that steal passwords or intercept multi-factor authentication codes.
+
+A source told BleepingComputer they believed the ShinyHunters extortion gang was behind the new device code vishing attacks, which the threat actors later confirmed. BleepingComputer has not been able to confirm this independently.
+
+ShinyHunters was recently linked to vishing attacks used to  breack Okta and Microsoft Entra SSO accounts for data theft attacks.
+
+BleepingComputer contacted Microsoft about these attacks but was told it had nothing to share at this time.
+
+Device code social engineering attacks
+
+BleepingComputer has learned from multiple sources that threat actors have begun using vishing social engineering attacks that no longer require attacker-controlled infrastructure, instead leveraging legitimate Microsoft login forms and standard device code authentication workflows to breach corporate accounts.
+
+A device code phishing attack is when the legitimate OAuth 2.0 device authorization grant flow is abused to obtain authentication tokens for the victim's Microsoft Entra account.
+
+This can then be used to gain access to the user's resources and connected SSO applications, like Microsoft 365, Salesforce, Google Workspace, Dropbox, Adobe, SAP, Slack, Zendesk, Atlassian, and many others.
+
+This grant flow was designed to make it easy to connect devices that lack accessible input options, such as IoT devices, printers, streaming devices, and TVs.
+
+"The Microsoft identity platform supports the device authorization grant, which allows users to sign in to input-constrained devices such as a smart TV, IoT device, or a printer," explains Microsoft.
+
+"To enable this flow, the device has the user visit a webpage in a browser on another device to sign in. Once the user signs in, the device is able to get access tokens and refresh tokens as needed."
+
+This authentication flow is similar to what you see when logging into a streaming service, such as Netflix or Apple TV, where the streaming device displays a short code and instructs you to visit a website on your phone or computer to complete sign-in.
+
+After you enter the code and authenticate, the device is automatically linked to your account without ever handling your password directly.
+
+To conduct a device-code phishing attack, threat actors need the client_id of an existing OAuth app, which can be their own or one of Microsoft's existing apps.
+
+Using open-source tools, the attackers generate a "device_code" and "user_code" that will be shared with the target for the specified OAuth app.
+
+The threat actors then contact a targeted employee and attempt to convince them to enter the generated user_code on the Microsoft device authentication page, microsoft.com/devicelogin.
+
+When the targeted person enters the code, they will be prompted to log in with their credentials and complete any MFA verifications, just as they normally would when logging in. After authenticating, Microsoft displays the name of the OAuth application that was authorized.
+
+However, because threat actors can use legitimate apps, even those from Microsoft, this can lend more legitimacy and trust to the authentication process.
+
+Once the OAuth app is connected to an account, threat actors can use the device_code to retrieve the targeted employee's refresh token, which can then be exchanged for access tokens.
+
+Those access tokens allow attackers to access the employee's Microsoft services without having to complete multi-factor authentication again, since MFA was already completed during the initial login.
+
+The threat actors can now authenticate as the user in Microsoft Entra and access SaaS applications configured with SSO (single sign-on) in the victim's tenant, enabling the theft of corporate data for extortion.
+
+KnowBe4 Threat Labs also discovered a recent campaign that uses traditional phishing emails and websites to deliver device code attacks.
+
+The company first spotted the campaign in December 2025 and said it relies heavily on social engineering lures such as fake payment configuration prompts, document-sharing alerts, and bogus voicemail notifications.
+
+KnowBe4 recommends that Microsoft 365 account holders block the malicious domains and sender addresses, audit and revoke suspicious OAuth app consents, and review Azure AD sign-in logs for device code authentication events.
+
+Administrators are also recommended to turn off the device code flow option when not required and to enforce conditional access policies.
+
+Device code phishing is not new, with multiple threat actors having used this method to breach accounts in the past.
+
+In February 2025, the Microsoft Threat Intelligence Center warned that Russian hackers were targeting Microsoft 365 accounts using device code phishing.
+
+In December, ProofPoint reported similar attacks that use a similar phishing kit seen by KnowBe4 to breach Microsoft accounts.
+
+The future of IT infrastructure is here
+
+Modern IT infrastructure moves faster than manual workflows can handle.
+
+In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
+
+New ConsentFix attack hijacks Microsoft accounts via Azure CLI
+
+Germany warns of Signal account hijacking targeting senior figures
+
+Fortinet confirms critical FortiCloud auth bypass not fully patched
+
+Betterment confirms data breach after wave of crypto scam emails
+
+ConsentFix debrief: Insights from the new OAuth phishing attack
+
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/hackers-target-microsoft-entra-accounts-in-device-code-vishing-attacks/, bleepingcomputer.com, 19.02.2026)
+
+================================================================================
+
+[21] Security Affairs - FBI warns of surge in ATM Jackpotting, $20 Million lost in 2025
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 20 Feb 2026 09:27:55 +0000
+Link: https://securityaffairs.com/188281/cyber-crime/fbi-warns-of-surge-in-atm-jackpotting-20-million-lost-in-2025.html
+
+[TAM METİN - 358 kelime]
+The FBI has warned of a sharp rise in ATM jackpotting attacks across the U.S., with losses exceeding $20 million in 2025 alone. Since 2020, about 1,900 incidents have been reported, including 700 last year. According to the Department of Justice (DoJ), total losses tied to jackpotting have reached roughly $40.7 million since 2021.
+
+“The Federal Bureau of Investigation (FBI) is releasing this FLASH to disseminate indicators of compromise (IOCs) and technical details associated with malware enabled ATM jackpotting.” reads the FLASH alert published by the FBI. “Threat actors exploit physical and software vulnerabilities in ATMs and deploy malware to dispense cash without a legitimate transaction.”
+
+Criminals are deploying ATM jackpotting malware such as Ploutus to force cash machines to dispense money without authorization. The malware targets the eXtensions for Financial Services (XFS) layer, which controls ATM hardware. By sending rogue commands directly to XFS, attackers bypass bank approval and trigger withdrawals without cards or accounts. Once installed, Ploutus gives full control of the ATM, enabling fast cash-outs in minutes.
+
+To infect machines, attackers usually gain physical access, open the cabinet with generic keys, and either copy malware onto the hard drive or replace it with a preloaded one. Exploiting Windows systems, the malware works across different ATM brands with minimal changes.
+
+The Flash alert includes Indicators of Compromise (IOCs) for these attacks.
+
+The jackpotting technique was first proposed by white-hat hacker Barnaby Jack in 2010.
+
+Ploutus is one of the most sophisticated ATM malware that was first discovered in Mexico back in 2013. The malicious code allows crooks to steal cash from ATMs using either an external keyboard attached to the machine or by sending SMS messages.
+
+In January 2018, experts at FireEye Labs discovered a new version of the Ploutus ATM malware, the so-called Ploutus-D, that works on the KAL’s Kalignite multivendor ATM platform.
+
+The experts observed the Ploutus-D in attacks against ATM of the vendor Diebold, but the most worrisome aspect of the story is that minor changes to the malware code could allow Ploutus-D to target a wide range of ATM vendors in 80 countries.
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(XXXXXXX, AÇIK - https://securityaffairs.com/188281/cyber-crime/fbi-warns-of-surge-in-atm-jackpotting-20-million-lost-in-2025.html, securityaffairs.com, 20.02.2026)
+
+================================================================================
+
+[22] Security Affairs - Red Card 2.0: INTERPOL busts scam networks across Africa, seizes millions
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 20 Feb 2026 08:15:17 +0000
 Link: https://securityaffairs.com/188272/cyber-crime/red-card-2-0-interpol-busts-scam-networks-across-africa-seizes-millions.html
@@ -845,7 +1349,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[14] Security Affairs - PromptSpy abuses Gemini AI to gain persistent access on Android
+[23] Security Affairs - PromptSpy abuses Gemini AI to gain persistent access on Android
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 20 Feb 2026 07:49:37 +0000
 Link: https://securityaffairs.com/188261/ai/promptspy-abuses-gemini-ai-to-gain-persistent-access-on-android.html
@@ -883,7 +1387,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[15] Security Affairs - Germany’s national rail operator Deutsche Bahn hit by a DDoS attack
+[24] Security Affairs - Germany’s national rail operator Deutsche Bahn hit by a DDoS attack
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 18:45:56 +0000
 Link: https://securityaffairs.com/188254/breaking-news/germanys-national-rail-operator-deutsche-bahn-hit-by-a-ddos-attack.html
@@ -903,7 +1407,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[16] Security Affairs - U.S. CISA adds Dell RecoverPoint and GitLab flaws to its Known Exploited Vulnerabilities catalog
+[25] Security Affairs - U.S. CISA adds Dell RecoverPoint and GitLab flaws to its Known Exploited Vulnerabilities catalog
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 15:16:39 +0000
 Link: https://securityaffairs.com/188243/hacking/u-s-cisa-adds-dell-recoverpoint-and-gitlab-flaws-to-its-known-exploited-vulnerabilities-catalog.html
@@ -945,7 +1449,238 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[17] SANS ISC - Under the Hood of DynoWiper, (Thu, Feb 19th)
+[26] Security Affairs - CISA alerts to critical auth bypass CVE-2026-1670 in Honeywell CCTVs
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 11:54:01 +0000
+Link: https://securityaffairs.com/188234/security/cisa-alerts-to-critical-auth-bypass-cve-2026-1670-in-honeywell-cctvs.html
+
+[TAM METİN - 274 kelime]
+The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warns that Honeywell CCTVs are affected by a critical authentication bypass flaw, tracked as CVE-2026-1670 (CVSS score of 9.8), that lets attackers change the recovery email without logging in. This vulnerability enables account takeovers and unauthorized access to camera feeds by exploiting an unauthenticated API endpoint for password recovery.
+
+“Successful exploitation of this vulnerability could lead to account takeovers and unauthorized access to camera feeds; an unauthenticated attacker may change the recovery email address, potentially leading to further network compromise.” reads the alert published by CISA.
+
+The vulnerability was discovered by cybersecurity researcher Souvik Kandar.
+
+The vulnerability impacts the following Honeywell CCTVs models:
+
+A critical auth bypass flaw in Honeywell CCTV models could allow attackers to take over accounts, granting unauthorized access to live feeds. Many of these cameras are used in critical infrastructure, corporate sites, and government facilities worldwide. The flaw can be exploited remotely, risking sensitive surveillance data and enabling attackers to move laterally within networks, making it a severe threat to security, privacy, and operational integrity.
+
+CISA advises organizations to reduce risk from this Honeywell CCTV flaw by isolating control system devices from the Internet, using firewalls, and placing remote devices behind secure networks. When remote access is needed, employ updated VPNs and ensure connected devices are secure. Organizations should perform risk assessments before deploying defenses, follow ICS security best practices from cisa.gov/ics, and report suspicious activity. Users should avoid phishing and unsolicited links; no active exploitation has been reported.
+
+The US agency is not aware of attacks exploiting this flaw in the wild.
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(XXXXXXX, AÇIK - https://securityaffairs.com/188234/security/cisa-alerts-to-critical-auth-bypass-cve-2026-1670-in-honeywell-cctvs.html, securityaffairs.com, 19.02.2026)
+
+================================================================================
+
+[27] Security Affairs - Irish regulator probes X after Grok allegedly generated sexual images of children
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 09:53:32 +0000
+Link: https://securityaffairs.com/188226/ai/irish-regulator-probes-x-after-grok-allegedly-generated-sexual-images-of-children.html
+
+[TAM METİN - 622 kelime]
+Ireland’s Data Protection Commission has launched another investigation into X over Grok’s AI image generator. The probe focuses on reports that the tool created large volumes of non-consensual and sexualized images, including content involving children, potentially violating EU data protection laws.
+
+“The Data Protection Commission (DPC) has today announced that it has opened an inquiry into X Internet Unlimited Company (XIUC) under section 110 of the Data Protection Act 2018.” reads the Ireland’s DPC’s press release. “The inquiry concerns the apparent creation, and publication on the X platform, of potentially harmful, non-consensual intimate and/or sexualised images, containing or otherwise involving the processing of personal data of EU/EEA data subjects, including children, using generative artificial intelligence functionality associated with the Grok large language model within the X platform.”
+
+In January, X’s safety team blocked the @Grok account from editing images of real people to add revealing clothing, such as bikinis, for all users. Image creation and editing features now remain available only to paid subscribers, adding an accountability layer to deter abuse and policy violations.
+
+“We have implemented technological measures to prevent the [@]Grok account on X globally from allowing the editing of images of real people in revealing clothing such as bikinis. This restriction applies to all users, including paid subscribers.” reads the X announcement. “Image creation and the ability to edit images via the [@]Grok account on X are now only available to paid subscribers globally. This adds an extra layer of protection by helping to ensure that individuals who attempt to abuse the [@]Grok account to violate the law or our policies can be held accountable.”
+
+Ireland’s Data Protection Commission’s probe will assess whether X breached key GDPR provisions on lawful data processing, privacy by design, and impact assessments. As X’s lead EU regulator, the DPC said it had already engaged with the company and will now conduct a large-scale investigation into its compliance with fundamental data protection obligations.
+
+“The decision to commence the inquiry was notified to XIUC on Monday 16 February.” Ireland’s DPC  continues. “The purpose of the inquiry is to determine whether XIUC has complied with its obligations under the GDPR, including its obligations under Article 5 (principles of processing), Article 6 (lawfulness of processing), Article 25 (Data Protection by Design and by Default) and Article 35 (requirement to carry out a Data Protection Impact Assessment) with regard to the personal data processed of EU/EEA data subjects.”
+
+The Irish DPC joins a growing list of regulators investigating X, including the European Commission, the UK’s ICO and Ofcom, and authorities in Australia, Canada, India, Indonesia, and Malaysia. France has also been conducting a broad investigation since January, expanding its scope as new concerns arise.
+
+“The DPC has been engaging with XIUC since media reports first emerged a number of weeks ago concerning the alleged ability of X users to prompt the @Grok account on X to generate sexualised images of real people, including children. As the Lead Supervisory Authority for XIUC across the EU/EEA, the DPC has commenced a large-scale inquiry which will examine XIUC’s compliance with some of their fundamental obligations under the GDPR in relation to the matters at hand.” said Deputy Commissioner Graham Doyle.
+
+An interesting report published by the nonprofit watch group Center for Countering Digital Hate (CCDH) estimates that Grok generated around 3 million sexualized images in just 11 days after X launched its image-editing feature, an average of about 190 per minute. Among them, roughly 23,000 appeared to depict children, or one every 41 seconds, plus another 9,900 cartoon sexualized images of minors. Researchers found that 29% of identified child images remained publicly accessible, highlighting the scale and speed of the content spread.
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(XXXXXXX, AÇIK - https://securityaffairs.com/188226/ai/irish-regulator-probes-x-after-grok-allegedly-generated-sexual-images-of-children.html, securityaffairs.com, 19.02.2026)
+
+================================================================================
+
+[28] Security Affairs - Intellexa’s Predator spyware infected Angolan journalist’s device, Amnesty reports
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 08:17:16 +0000
+Link: https://securityaffairs.com/188215/malware/intellexas-predator-spyware-infected-angolan-journalists-device-amnesty-reports.html
+
+[TAM METİN - 619 kelime]
+Amnesty International reports that in May 2024, Intellexa’s Predator spyware infected the iPhone of Teixeira Cândido, an Angolan journalist and press freedom advocate, after he opened a malicious link sent via WhatsApp. This incident highlights how attackers actively target journalists for surveillance.
+
+Predator is a powerful mobile spyware by Intellexa, sold to governments for surveillance. Investigations over five years documented abuses worldwide, despite Intellexa rebranding and shifting its corporate structure. The Angola case marks the first confirmed Predator attack there, showing the spyware remained active through 2025. Amnesty International and partners exposed Intellexa’s operations, but the responsible customers remain unknown.
+
+Since 2022, Angolan journalist Teixeira Cândido faced multiple attacks and break-ins, raising suspicions of surveillance. From April to June 2024, an attacker posing as students sent him WhatsApp messages to gain his trust, eventually sending malicious links. On 4 May 2024, he clicked one link, infecting his iPhone with Intellexa’s Predator spyware. Once installed, the spyware gave attackers full access to his device, including messages, calls, emails, location, camera, microphone, passwords, and other sensitive data, illustrating a targeted and highly invasive surveillance operation.
+
+“Through forensic analysis of the links and associated domain names, Amnesty International’s Security Lab determined with high confidence that all the links sent to Teixeira Cândido to this WhatsApp number were attempts to infect his phone with the Predator spyware. All infection domains matched a network fingerprint used to track Intellexa infection servers.” reads the report published by Amnesty International. “On 4 May 2024, one day after the first Predator infection link was received (Figure 4), Teixeira Cândido appears to have opened the infection link received, which would have resulted in the successful infection of the journalist’s phone with the Predator spyware.
+
+On 4 May 2024, Amnesty International confirmed Predator spyware ran on Teixeira Cândido’s iPhone, executing from the directory /private/var/containers/Bundle/ under the name “iconservicesagent” to impersonate a system process.
+
+His device ran the outdated iOS 16.2, potentially exposing it to known exploits, though Intellexa could also use zero-day vulnerabilities. The spyware remained active less than a day, but attackers sent 11 further malicious WhatsApp links through mid-June 2024. Forensic traces, network activity, and infection domains confirm this attack as Predator.
+
+Amnesty International’s research shows Intellexa’s Predator spyware has targeted Angola since at least early 2023, with the attack on journalist Teixeira Cândido representing just part of broader activity. Predator communicates with spyware servers via domain names, many in Portuguese, revealing a regional focus. Technical analysis linked the domains used against Cândido to Predator, with earlier Angola-linked domains dating back to March 2023. Predator grants total access to devices, making independent audits nearly impossible.
+
+Amnesty considers such spyware fundamentally incompatible with human rights. The Angola attack violates journalists’ rights to privacy and free expression, chilling civil society in a context of growing authoritarianism under President João Lourenço. Amnesty’s inquiries to Intellexa about its role and access to customer systems remain unanswered, raising concerns over the company’s legal and ethical responsibility in these abuses.
+
+“While it remains unclear if Intellexa could access the specific Angolan deployment in 2024, the finding from Intellexa Leaks that the company had potential visibility into active surveillance operations of their customers, including seeing technical information about the targets, raises new legal questions about Intellexa’s role in relation to the spyware and the company’s potential legal or criminal responsibility for unlawful surveillance operations carried out using their products.” concludes the report. “This new case of spyware use against a journalist in Angola makes clear – yet again – that the unchecked sale and use of surveillance technologies continue to facilitate human rights abuses at a global scale. “
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(SecurityAffairs – hacking, Intellexa’s Predator spyware)
+
+(XXXXXXX, AÇIK - https://securityaffairs.com/188215/malware/intellexas-predator-spyware-infected-angolan-journalists-device-amnesty-reports.html, securityaffairs.com, 19.02.2026)
+
+================================================================================
+
+[29] Security Affairs - French Ministry confirms data access to 1.2 Million bank accounts
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Wed, 18 Feb 2026 21:25:19 +0000
+Link: https://securityaffairs.com/188200/hacking/french-ministry-confirms-data-access-to-1-2-million-bank-accounts.html
+
+[TAM METİN - 318 kelime]
+A hacker gained access to data from 1.2 million French bank accounts using stolen credentials belonging to a government official, according to the French Economy Ministry. French authorities said affected account holders will be notified in the coming days.
+
+“The French Economy Ministry said on Wednesday, February 18, that a hacker gained access to a national bank account database and consulted information on 1.2 million accounts.” reports French daily newspaper LeMonde. “Since the end of January, the hacker used the stolen credentials of an official to access and consult “parts of the file of all of the accounts open in French banks and which contains personal data such as bank account numbers, name of the account holder, address and in certain cases the account owner’s tax number,” the ministry said in a statement.”
+
+France’s Public Finances chief said the security breach did not allow access to account balances or transactions. After detecting the intrusion, the ministry immediately blocked the threat actor and acted to prevent any data from being removed.
+
+Authorities filed a criminal complaint and notified the CNIL, France’s data protection authority, about the incident.
+
+The Economy Ministry has not yet disclosed the hacker’s motivation. It remains unclear whether the attacker is a nation-state actor or a cybercriminal.
+
+In December, a major cyber incident knocked offline the information systems at the French national postal service La Poste. The attack disrupted digital banking and online services for millions of customers.
+
+The outage followed another cyberattack on France’s Interior Ministry, where a suspected hacker accessed sensitive police data; a 22-year-old was detained. The French Interior Minister Laurent Nunez announced that threat actors compromised email servers at the Ministry of the Interior.
+
+The attack was detected overnight between December 11 and 12, and according to the French interior minister, attackers gained access to some document files, though data theft remains unconfirmed.
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(XXXXXXX, AÇIK - https://securityaffairs.com/188200/hacking/french-ministry-confirms-data-access-to-1-2-million-bank-accounts.html, securityaffairs.com, 19.02.2026)
+
+================================================================================
+
+[30] Graham Cluley - Smashing Security podcast #455: Face off: Meta’s Glasses and America’s internet kill switch
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 00:30:44 +0000
+Link: https://grahamcluley.com/smashing-security-podcast-455/
+
+[TAM METİN - 702 kelime]
+Could America turn off Europe’s internet?
+
+That’s one of the questions that Graham and special guest James Ball will be exploring as they discuss tech sovereignty.  Could Gmail, cloud services, and critical infrastructure really become geopolitical leverage? And is anyone actually building a Plan B?
+
+Plus we explore if Meta is quietly plotting to turn its smart glasses into face-recognising surveillance specs? With reports of internal memos suggesting they plan to launch controversial features while everyone’s distracted by political chaos, we ask: is this innovation really wanted by the public… or something far creepier?
+
+All of this, and much more, in episode 455 of the award-winning “Smashing Security” podcast with cybersecurity veteran Graham Cluley, joined this week by journalist and author James Ball.
+
+Smashing Security #455: Face off: Meta’s Glasses and America’s internet kill switch
+
+@grahamcluley.com
+ @*protected email*
+ / grahamcluley
+
+James Ball:
+ @jamesrball.com
+Episode links:
+
+Meta Plans to Add Facial Recognition Technology to Its Smart Glasses – New York Times.
+Trading Sovereignty for Scale? The Costs of the US – UK Tech Prosperity Deal – Just Security.
+Just Mercy – Wikipedia.
+Just Mercy trailer – YouTube.
+Bryan Stevenson’s TED talk: We need to talk about an injustice – YouTube.
+The Residence – Netflix.
+Smashing Security merchandise (t-shirts, mugs, stickers and stuff)
+
+Sponsored by:
+
+Vanta – Expand the scope of your security program with market-leading compliance automation… while saving time and money. Smashing Security listeners get $1000 off!
+Passwork – a reliable secrets manager and password management solution.
+Adaptive Security – request a custom demo featuring a real CEO deepfake simulation.
+
+Support the show:
+You can help the podcast by telling your friends and colleagues about “Smashing Security”, and leaving us a review on Apple Podcasts or Podchaser.
+Join Smashing Security PLUS for ad-free episodes and our early-release feed!
+Follow us:
+Follow the show on Bluesky, or join us on the Smashing Security subreddit, or visit our website for more episodes.
+Thanks:
+Theme tune: “Vinyl Memories” by Mikael Manvelyan.
+Assorted sound effects: AudioBlocks.
+Found this article interesting? Follow Graham Cluley on LinkedIn, Bluesky, or Mastodon to read more of the exclusive content we post.
+
+
+
+Facebook
+Law & order
+Podcast
+Privacy
+
+#Meta #Podcast #Ray-Ban #smart glasses #Smashing Security 
+
+
+
+Graham Cluley 
+
+			Graham Cluley is an award-winning keynote speaker who has given presentations around the world about cybersecurity, hackers, and online privacy. A veteran of the computer security industry since the early 1990s, he wrote the first ever version of Dr Solomon's Anti-Virus Toolkit for Windows, makes regular media appearances, and hosts the popular "Smashing Security" podcast.
+
+Follow him on LinkedIn, Bluesky and Mastodon, or drop him an email.
+
+Meta Plans to Add Facial Recognition Technology to Its Smart Glasses – New York Times.
+
+Trading Sovereignty for Scale? The Costs of the US – UK Tech Prosperity Deal – Just Security.
+
+Just Mercy – Wikipedia.
+
+Just Mercy trailer – YouTube.
+
+Bryan Stevenson’s TED talk: We need to talk about an injustice – YouTube.
+
+The Residence – Netflix.
+
+Smashing Security merchandise (t-shirts, mugs, stickers and stuff)
+
+Vanta – Expand the scope of your security program with market-leading compliance automation… while saving time and money. Smashing Security listeners get $1000 off!
+
+Passwork – a reliable secrets manager and password management solution.
+
+Adaptive Security – request a custom demo featuring a real CEO deepfake simulation.
+
+You can help the podcast by telling your friends and colleagues about “Smashing Security”, and leaving us a review on Apple Podcasts or Podchaser.
+
+Join Smashing Security PLUS for ad-free episodes and our early-release feed!
+
+Follow the show on Bluesky, or join us on the Smashing Security subreddit, or visit our website for more episodes.
+
+Theme tune: “Vinyl Memories” by Mikael Manvelyan.
+Assorted sound effects: AudioBlocks.
+
+Found this article interesting? Follow Graham Cluley on LinkedIn, Bluesky, or Mastodon to read more of the exclusive content we post.
+
+Graham Cluley is an award-winning keynote speaker who has given presentations around the world about cybersecurity, hackers, and online privacy. A veteran of the computer security industry since the early 1990s, he wrote the first ever version of Dr Solomon's Anti-Virus Toolkit for Windows, makes regular media appearances, and hosts the popular "Smashing Security" podcast.
+
+Follow him on LinkedIn, Bluesky and Mastodon, or drop him an email.
+
+(XXXXXXX, AÇIK - https://grahamcluley.com/smashing-security-podcast-455/, grahamcluley.com, 19.02.2026)
+
+================================================================================
+
+[31] SANS ISC - ISC Stormcast For Friday, February 20th, 2026 https://isc.sans.edu/podcastdetail/9818, (Fri, Feb 20th)
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 20 Feb 2026 02:00:02 GMT
+Link: https://isc.sans.edu/diary/rss/32732
+
+⚠️  Tam metin çekilemedi
+
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32732, isc.sans.edu, 20.02.2026)
+
+================================================================================
+
+[32] SANS ISC - Under the Hood of DynoWiper, (Thu, Feb 19th)
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 19:43:30 GMT
 Link: https://isc.sans.edu/diary/rss/32730
@@ -1057,7 +1792,18 @@ T1529: System Shutdown/Reboot
 
 ================================================================================
 
-[18] Recorded Future - 2025 Cloud Threat Hunting and Defense Landscape
+[33] SANS ISC - ISC Stormcast For Thursday, February 19th, 2026 https://isc.sans.edu/podcastdetail/9816, (Thu, Feb 19th)
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 02:00:03 GMT
+Link: https://isc.sans.edu/diary/rss/32728
+
+⚠️  Tam metin çekilemedi
+
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32728, isc.sans.edu, 19.02.2026)
+
+================================================================================
+
+[34] Recorded Future - 2025 Cloud Threat Hunting and Defense Landscape
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 00:00:00 GMT
 Link: https://www.recordedfuture.com/research/2025-cloud-threat-hunting-defense-landscape
@@ -1907,7 +2653,7 @@ Finally, data theft remains the most significant outcome of attacks on cloud env
 
 ================================================================================
 
-[19] Cyberscoop - Ukrainian sentenced to 5 years in prison for facilitating North Korean remote worker scheme
+[35] Cyberscoop - Ukrainian sentenced to 5 years in prison for facilitating North Korean remote worker scheme
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 22:59:27 +0000
 Link: https://cyberscoop.com/doj-ukrainian-north-korea-remote-worker-scheme-facilitator-sentenced/
@@ -1975,7 +2721,7 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 
 ================================================================================
 
-[20] Cyberscoop - State Dept. official says post-quantum transition plans will outlive current leadership
+[36] Cyberscoop - State Dept. official says post-quantum transition plans will outlive current leadership
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 20:43:08 +0000
 Link: https://cyberscoop.com/post-quantum-state-department-transition-plans-outlive-leadership-cycles/
@@ -2039,7 +2785,7 @@ Lawmakers wonder when Trump administration will weigh on soon-expired surveillan
 
 ================================================================================
 
-[21] Cyberscoop -  FBI: Threats from Salt Typhoon are ‘still very much ongoing’
+[37] Cyberscoop -  FBI: Threats from Salt Typhoon are ‘still very much ongoing’
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 18:44:16 +0000
 Link: https://cyberscoop.com/fbi-salt-typhoon-ongoing-threat-cybertalks-2026/
@@ -2101,7 +2847,7 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 
 ================================================================================
 
-[22] Cyberscoop - HHS burrows into identifying risks to health sector from third-party vendors
+[38] Cyberscoop - HHS burrows into identifying risks to health sector from third-party vendors
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 18:15:48 +0000
 Link: https://cyberscoop.com/hhs-burrows-into-identifying-risks-to-health-sector-from-third-party-vendors/
@@ -2157,7 +2903,7 @@ US wants to push its view of AI cybersecurity standards to the rest of the world
 
 ================================================================================
 
-[23] Cyberscoop - ONCD official says Trump administration aims to bolster AI use for defense without increasing risk
+[39] Cyberscoop - ONCD official says Trump administration aims to bolster AI use for defense without increasing risk
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 18:12:04 +0000
 Link: https://cyberscoop.com/trump-administration-ai-cybersecurity-oncd-strategy/
@@ -2221,7 +2967,175 @@ Lawmakers wonder when Trump administration will weigh on soon-expired surveillan
 
 ================================================================================
 
-[24] The Register - Crims create fake remote management vendor that actually sells a RAT
+[40] Cyberscoop - The Caracas operation suggests cyber was part of the plan – just not the whole operation
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 11:00:00 +0000
+Link: https://cyberscoop.com/venezuela-blackout-cyberattack-vs-kinetic-damage-operation-absolute-resolve/
+
+[TAM METİN - 1993 kelime]
+The dominant narrative has framed the Jan. 3 Caracas power outage during the mission to capture Venezuelan leader Nicolás Maduro as a “precision cyberattack.” But publicly available information points to a more complicated picture: videos, photographs, and accounts published from Caracas show significant physical damage to at least three Venezuelan substations. Experts who reviewed that material say the observed kinetic damage could, on its own, account for the outages—raising questions about how much of the outage can be confidently attributed to cyber activity alone.
+
+These experts say Operation Absolute Resolve appears to have involved more than a stand-alone “cyber blackout,” despite the framing of many early accounts. In their view, cyber operations may have played some role, but the visible physical attacks alone could plausibly explain the outages—and that kinetic dimension is largely absent from the dominant narrative.
+
+Retired Rear Adm. Mark Montgomery, a former director of operations at US Indo-Pacific Command and now a senior cybersecurity expert at the Foundation for the Defense of Democracies, described the outage to CyberScoop as part of “a campaign that likely took months to source cyber targets, days to work kinetic targets, and then integrated them into a single campaign plan that took a night.”
+
+How the outage is framed matters because it can shape accountability, influence how governments and utilities prioritize grid security, and affect perceptions of offensive cyber capabilities. If the episode is widely presented as a “cyber-only” success without clear, corroborated evidence, it may encourage outsized conclusions about what cyber tools can accomplish on their own. Over time, that framing can steer policy and spending toward the wrong lessons—emphasizing digital defenses while giving less attention to physical vulnerabilities that may be just as consequential.
+
+Immediate coverage of the operation largely treated cyber as the decisive cause of the outage. Much of that framing traced back to a cryptic line from President Donald Trump  at a post-operation press conference: “It was dark, the lights of Caracas were largely turned off due to a certain expertise [emphasis added] that we have, it was dark, and it was deadly.” (Later Trump suggested that the lights were turned out in Caracas by a “discombobulator.”)
+
+The cyber narrative gained further momentum when Chairman of the Joint Chiefs of Staff Gen. Dan Caine said at the same press conference that US Cyber Command and Space Command provided “layering effects” for the operation. One widely cited report went further, citing anonymous “people briefed on the matter” to assert that a US cyberattack caused the blackout without offering forensic evidence, technical details, or independent corroboration.
+
+Neither the Pentagon nor Cyber Command has yet to publicly confirm that a cyberattack caused the grid outage. US Cyber Command referred CyberScoop to the Department of War, which did not respond to our queries.
+
+While cyber attribution largely rested on anonymous sourcing and inference, the evidence of physical damage was public, visual, and documented shortly after the attack.
+
+Beginning on Jan. 5, publicly shared videos and photos appeared to show extensive physical damage at substations in Caracas owned by the government’s energy utility company, Corpoelec. The images included apparent bullet impacts, destroyed equipment, blown doors, and oil leaks at the Panamericana 69 kV and Escuela Militar 4.8 kV sites. In Venezuelan government statements, officials attributed the incidents to an attack and said the damage took multiple transmission lines out of service, including the OAM-Vega Caricuao-Panamericana 1 and 2 (69 kV) and Junquito-Panamericana 1 and 2 (69 kV). Electric grid security experts who reviewed the footage told CyberScoop it appeared credible and consistent with the kind of damage that could contribute to localized outages.
+
+Local journalists noted physical attacks on these facilities, as well as a third substation at Fuerte Tiuna, a military installation in Caracas. Videos showing damage to the Fuerte Tiuna substation—some with fires still burning—were uploaded to YouTube on Jan. 12.  AirWars, a not-for-profit group that describes itself as a civilian harm watchdog in conflict-affected nations, confirmed the geolocation of the affected substations and said “heavy weapons and explosive munitions” were used, though it reported no civilian harm.
+
+The Venezuelan government did not respond to CyberScoop’s requests for comment, but it said in a press release that the damage was caused by “missiles.” Several experts with military or electric-sector cybersecurity backgrounds told CyberScoop that, based on what’s visible in the videos, the damage appears consistent with a kinetic attack—most likely carried out via helicopters and planes.
+
+“There were obviously pretty large .50-caliber bullet holes in the walls,” Earl Shockley, president and CEO of INPOWERD, a military veteran and cybersecurity expert who worked for forty years as a power-grid operations engineer, told CyberScoop after viewing one of the videos.
+
+“That’s a kinetic attack,” FDD’s Montgomery told CyberScoop after watching video of the Fuerte Tiuna substation incident.
+
+Across interviews, grid operators, cybersecurity specialists, and military experts independently reached the same conclusion: the visible physical damage alone was enough to cause the outages observed.
+
+Experts note that cyber operations can sometimes produce kinetic effects—as they did in the highly complex US-Israeli operation known as Stuxnet—but they also say that taking down Caracas’s already fragile power grid would not necessarily have required that level of sophistication.
+
+“All of us who are electric sector people, we’ve seen the videos,” Patrick Miller, president and CEO of Ampyx Cyber, told CyberScoop. “We’re all pretty much convinced that would definitely cause an outage. If you’re going to go in and shoot up the substations, why do you need cyber again?”
+
+Miller said that temporarily disrupting the flow of power is a well-understood capability for any nation with the interest to do it–and that it often requires almost no precision or skill. “These are fragile systems, he said.
+
+“This was not a hard cyber target,” Montgomery said. “It’s an easy cyber target. These are older systems that we have worked on before in other countries. They’re not unique. We’re not talking about taking down Idaho National Labs here. We’re talking about taking down a poorly defended, underfunded, under-resourced network.”
+
+Ron Brash, operational technology and industrial control system expert, told CyberScoop, “These energy management systems are probably relatively easy to infiltrate either because they haven’t updated the software or updated what they need to update, and you can exploit the vulnerabilities, or because you buy insider access.” Moreover, he said, “There’s probably so much analog stuff in there from the 1960s.”
+
+Experts generally agree that physical damage likely disabled at least parts of the power grid. But they also think cyber activity may still have played an important supporting role in Operation Absolute Resolve—one that could have enabled or amplified the operation, even if it wouldn’t fully account for where the outages occurred or how long they lasted without accompanying physical damage.
+
+Some experts say that it’s possible the US used cyber capabilities to briefly disrupt power transmission in specific areas—potentially to reduce Venezuelan defenders’ situational awareness as they moved toward Maduro’s compound. “You want to reduce situational awareness, blind the enemy, break their coordination, and enable yourself to maneuver where you need to be. And all of those things just played out with that operation,” Shockley said.
+
+“If we shut down the radars, if we shut down the power grid, they don’t see what’s going on,” he said. “Then we do some kinetic damage to prevent them from bringing the grid back up quickly. That way, we have plenty of time to do what we need to do.”
+
+“A cyberattack is reversible, so it’s temporary,” Montgomery said. “It’s possible that cyber was attempted to take down power stations and equipment before the missiles came in to take down the power stations and equipment,” he added. “You have missiles coming in and taking down power, so nothing works. And before that, you do cyber so that more of your missiles get through. It is kind of a layer to the attack.”
+
+Vice Adm. Heidi Berg, commander of 10th Fleet/Fleet Cyber Command, hinted at such layering at the WEST conference in San Diego earlier this week.
+
+Cyber-based surveillance may also have been used for months in advance, giving the US military visibility into the grid’s weak points and helping inform where kinetic strikes have the greatest effect. “It takes months to identify what the system does, what the software does, do we have access to their older systems,” and so forth, Montgomery said.
+
+“If you monitor that system, you learn where the power flows go, you learn where the single points of failure are, you learn that if this thing blows up, man, I’m in trouble because I can’t get power from this area to that area,” Shockley said.
+
+Trump said at the press briefing that the lights went out in Caracas, and some coverage interpreted that as widespread darkness across large parts of the city. That framing sits uneasily with the idea of narrowly targeted, area-specific disruption. At the same time, social media posts and news accounts from the incident did not indicate that a large portion of Caracas was plunged into darkness.
+
+Valentina Aguana, a Venezuelan digital rights advocate and systems engineer now working in Spain, told CyberScoop that a widespread blackout “was never a thing for my team working in Venezuela. There were very few areas in which the power went down and it came back on in a few minutes,” which you would expect with a pure cyberattack. “All the areas that were left without power were left without power for a couple of hours,” she added, which experts say is consistent with a kinetic attack.
+
+“I haven’t seen any real proof or even correlating proof that the outage was widespread,” Miller said, adding that he has an extensive network of electric system security contacts throughout South America.
+
+Given how quickly and widely videos, press releases, and other confirmation of physical damage to the Venezuelan substations circulated, it remains unclear why so many outlets gave little attention to the kinetic dimension of the outage.
+
+Whatever the source of the omissions, recent reporting on Pentagon computer warfare doctrine has underscored that cyber operations are increasingly designed to shape battlefield conditions rather than function as stand-alone weapons, an approach that aligns with the expert assessments of the role of kinetic attacks in the Caracas operation.
+
+However, continued accounts of what happened in Caracas that treat the sabotage as primarily “cyber” could skew risk assessments and preparedness—potentially leaving substations, transmission lines, and transformers less protected than they should be against the kind of real-world attacks that visible damage suggests are possible.
+
+“This was a very complex thing, and it wasn’t just one thing; it wasn’t just a cyberattack,” Shockley said. “In my industry, we have regulations around how we’re supposed to protect our critical infrastructure, our substations, our power plants, our control centers. Physical security is a big thing that we do. We do physical security inspections, and we make recommendations.”
+
+HHS burrows into identifying risks to health sector from third-party vendors
+
+Fulton County lawsuit claims feds used ‘gross mischaracterizations’ to justify raid
+
+CISA to host industry feedback sessions on cyber incident reporting regulation
+
+Acting CISA chief says DHS funding lapse would limit, halt some agency work
+
+Unit 42: Nearly two-thirds of breaches now start with identity abuse
+
+Google finds state-sponsored hackers use AI at 'all stages' of attack cycle
+
+DHS privacy probe will focus on biometric tracking by ICE, OBIM
+
+WhatsApp releases account feature that looks to combat spyware
+
+Ukrainian sentenced to 5 years in prison for facilitating North Korean remote worker scheme
+
+Nigerian man sentenced to 8 years in prison for running phony tax refund scheme
+
+Chinese hackers exploited a Dell zero-day for 18 months before anyone noticed
+
+Polish authorities arrest alleged Phobos ransomware affiliate
+
+CISA tells agencies to stop using unsupported edge devices
+
+What’s next for DHS’s forthcoming replacement critical infrastructure protection panel, AI information sharing
+
+Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
+
+US wants to push its view of AI cybersecurity standards to the rest of the world
+
+(XXXXXXX, AÇIK - https://cyberscoop.com/venezuela-blackout-cyberattack-vs-kinetic-damage-operation-absolute-resolve/, cyberscoop.com, 19.02.2026)
+
+================================================================================
+
+[41] Cyberscoop - Nigerian man sentenced to 8 years in prison for running phony tax refund scheme
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Wed, 18 Feb 2026 23:47:14 +0000
+Link: https://cyberscoop.com/nigerian-matthew-akande-tax-refund-fraud/
+
+[TAM METİN - 526 kelime]
+A 37-year-old Nigerian man was sentenced to eight years in prison for participating in a five-year cybercrime spree to steal money from the U.S. government through fraudulent tax returns, the Justice Department said Wednesday.
+
+Matthew Abiodun Akande was living in Mexico when he and at least three co-conspirators broke into the networks of tax preparation firms, stole sensitive data on their clients and filed fraudulent tax returns, claiming tax refunds with victims’ personal data, according to court records.
+
+Akande and his co-conspirators filed more than 1,000 fraudulent tax returns seeking more than $8.1 million in phony tax refunds during a five-year period ending in June 2021, prosecutors said. The crew collectively obtained more than $1.3 million in fraudulent tax refunds.
+
+Officials said Akande also advanced the scheme by sending phishing emails to five Massachusetts-based tax preparation firms that were designed to trick employees into downloading remote access trojan malware, including Warzone RAT. Four of those firms were listed as victims in the indictment.
+
+Akande has been in detention since he was arrested at Heathrow Airport in the United Kingdom in October 2024 and extradited to the United States in March 2025. A month later, Akande pleaded guilty to all 33 counts in the indictment prosecutors filed against him in July 2022.
+
+His crimes include conspiracy to obtain unauthorized access to protected computers, wire fraud, unauthorized access to protected computers, theft of government money, and aggravated identity theft.
+
+Akande and his alleged co-conspirators — Kehinde Hussein Oyetunji, a Nigerian national living in North Dakota, and two people that prosecutors declined to name — directed the fraudulent tax refunds to be deposited in U.S. bank accounts. Co-conspirators living in the United States withdrew some of the stolen money in cash then, at Akande’s direction, transferred a portion of the funds to third parties in Mexico, officials said.
+
+In a sentencing memo submitted to the court, Akande’s lawyer insisted his client was not living an extravagant lifestyle in Mexico. Yet, he was ordered to pay almost $1.4 million in restitution as part of his sentencing.
+
+You can read the full indictment below.
+
+State Dept. official says post-quantum transition plans will outlive current leadership
+
+HHS burrows into identifying risks to health sector from third-party vendors
+
+Fulton County lawsuit claims feds used ‘gross mischaracterizations’ to justify raid
+
+CISA to host industry feedback sessions on cyber incident reporting regulation
+
+Unit 42: Nearly two-thirds of breaches now start with identity abuse
+
+Google finds state-sponsored hackers use AI at 'all stages' of attack cycle
+
+DHS privacy probe will focus on biometric tracking by ICE, OBIM
+
+WhatsApp releases account feature that looks to combat spyware
+
+Apple discloses first actively exploited zero-day of 2026
+
+0APT ransomware group rises swiftly with bluster, along with genuine threat of attack
+
+Microsoft Patch Tuesday matches last year’s zero-day high with six actively exploited vulnerabilities
+
+Fallout from latest Ivanti zero-days spreads to nearly 100 victims
+
+CISA tells agencies to stop using unsupported edge devices
+
+What’s next for DHS’s forthcoming replacement critical infrastructure protection panel, AI information sharing
+
+Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
+
+US wants to push its view of AI cybersecurity standards to the rest of the world
+
+(XXXXXXX, AÇIK - https://cyberscoop.com/nigerian-matthew-akande-tax-refund-fraud/, cyberscoop.com, 19.02.2026)
+
+================================================================================
+
+[42] The Register - Crims create fake remote management vendor that actually sells a RAT
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: 2026-02-19T23:46:21.00Z
 Link: https://go.theregister.com/feed/www.theregister.com/2026/02/19/rmm_rat_trustconnect/
@@ -2333,7 +3247,7 @@ Trusted Platform Module
 
 ================================================================================
 
-[25] The Register - Crims hit a $20M jackpot via malware-stuffed ATMs
+[43] The Register - Crims hit a $20M jackpot via malware-stuffed ATMs
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: 2026-02-19T18:39:04.00Z
 Link: https://go.theregister.com/feed/www.theregister.com/2026/02/19/crims_atm_jackpotting/
@@ -2419,7 +3333,89 @@ United States Department of Justice
 
 ================================================================================
 
-[26] TechCrunch Security - FBI says ATM ‘jackpotting’ attacks are on the rise, and netting hackers millions in stolen cash
+[44] The Register - Adidas investigates third-party data breach after criminals claim they pwned the sportswear giant
+────────────────────────────────────────────────────────────────────────────────
+Tarih: 2026-02-18T23:57:30.00Z
+Link: https://go.theregister.com/feed/www.theregister.com/2026/02/18/adidas_investigates_thirdparty_data_breach/
+
+[TAM METİN - 536 kelime]
+Adidas investigates third-party data breach after criminals claim they pwned the sportswear giant
+
+'Potential data protection incident' at an 'independent licensing partner,' we're told
+
+Adidas has confirmed it is investigating a third-party breach at one of its partner companies after digital thieves claimed they stole information and technical data from the German sportswear giant.
+
+"We have been made aware of a potential data protection incident at one of our independent licensing partners and distributor for martial arts products," an Adidas spokesperson told The Register. "This is an independent company with its own IT systems."
+
+Adidas declined to answer our questions about when the compromise occurred, or what information the crooks pilfered during the intrusion. The spokesperson added that there's "no indication that the adidas IT infrastructure, our own e-commerce platforms, or any of our consumer data are affected by the incident."
+
+Allegations of an incident at Adidas emerged on February 16, when someone claiming to be the Lapsus$ Group posted on BreachForums (screenshot shared here on Daily Dark Web) that they compromised the sportswear giant’s extranet. According to the crooks, the stolen files – 815,000 rows of information – allegedly include: first and last names, email addresses, passwords, birthdays, company names, and "a lot of technical data."
+
+This latest breach follows a similar, third-party security incident last year affecting the sportswear multinational in May 2025. As we reported at the time, Adidas notified customers that some of their data was stolen after an "unauthorized" person swiped it from a "third-party customer service provider."
+
+Adidas confirms criminals stole data from customer service provider
+
+Oh, great. Three notorious cybercrime gangs appear to be collaborating
+
+ShinyHunters allegedly drove off with 1.7M CarGurus records
+
+Fraudster hacked hotel system, paid 1 cent for luxury rooms, Spanish cops say
+
+Lapsus$ is a chaotic crew of teens and young people that gained notoriety during a 2021-2022 crime spree. The gang broke into and attempted to extort telecoms giant BT, Nvidia, Microsoft, Samsung, Vodafone, fintech firm Revolut, and Okta, using a mix of phone-based social engineering, SIM swapping, and even paying employees of target organizations for access to credentials and multi-factor authentication (MFA) codes.
+
+In March 2022, UK police arrested and then released seven people, aged 16 to 21, for their alleged role in Lapsus$ activities. Police re-arrested and charged two of the teens for their involvement with the cybercrime gang later that month.
+
+More recently, in early August 2025, the crew – or at least some of its members – joined a cybercrime collective with Scattered Spider and ShinyHunters, operating under the name Scattered Lapsus$ Hunters. Two months later, in October 2025, the extortion collab listed Adidas on its leak site, and claimed to have stolen more than 20 million sensitive records back in February 2024. ®
+
+Advanced persistent threat
+
+Application Delivery Controller
+
+Center for Internet Security
+
+Common Vulnerability Scoring System
+
+Cybersecurity and Infrastructure Security Agency
+
+Cybersecurity Information Sharing Act
+
+Infrastructure Security
+
+Personally Identifiable Information
+
+Quantum key distribution
+
+Software Bill of Materials
+
+Trusted Platform Module
+
+Advanced persistent threat
+
+Application Delivery Controller
+
+Center for Internet Security
+
+Common Vulnerability Scoring System
+
+Cybersecurity and Infrastructure Security Agency
+
+Cybersecurity Information Sharing Act
+
+Infrastructure Security
+
+Personally Identifiable Information
+
+Quantum key distribution
+
+Software Bill of Materials
+
+Trusted Platform Module
+
+(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/18/adidas_investigates_thirdparty_data_breach/, go.theregister.com, 19.02.2026)
+
+================================================================================
+
+[45] TechCrunch Security - FBI says ATM ‘jackpotting’ attacks are on the rise, and netting hackers millions in stolen cash
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 22:31:34 +0000
 Link: https://techcrunch.com/2026/02/19/fbi-says-atm-jackpotting-attacks-are-on-the-rise-and-netting-hackers-millions-in-stolen-cash/
@@ -2521,7 +3517,7 @@ The great computer science exodus (and where students are going instead)
 
 ================================================================================
 
-[27] TechCrunch Security - Cellebrite cut off Serbia citing abuse of its phone unlocking tools. Why not others?
+[46] TechCrunch Security - Cellebrite cut off Serbia citing abuse of its phone unlocking tools. Why not others?
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 22:04:52 +0000
 Link: https://techcrunch.com/2026/02/19/cellebrite-cut-off-serbia-citing-abuse-of-its-phone-unlocking-tools-why-not-others/
@@ -2642,7 +3638,7 @@ The great computer science exodus (and where students are going instead)
 
 ================================================================================
 
-[28] TechCrunch Security - Google says its AI systems helped deter Play Store malware in 2025
+[47] TechCrunch Security - Google says its AI systems helped deter Play Store malware in 2025
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 21:27:39 +0000
 Link: https://techcrunch.com/2026/02/19/google-says-its-ai-systems-helped-deter-play-store-malware-in-2025/
@@ -2742,7 +3738,7 @@ The great computer science exodus (and where students are going instead)
 
 ================================================================================
 
-[29] TechCrunch Security - Sex toys maker Tenga says hacker stole customer information
+[48] TechCrunch Security - Sex toys maker Tenga says hacker stole customer information
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 15:25:00 +0000
 Link: https://techcrunch.com/2026/02/19/sex-toys-maker-tenga-says-hacker-stole-customer-information/
@@ -2858,7 +3854,7 @@ The great computer science exodus (and where students are going instead)
 
 ================================================================================
 
-[30] TechCrunch Security - Bug in student admissions website exposed children’s personal information
+[49] TechCrunch Security - Bug in student admissions website exposed children’s personal information
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 15:05:35 +0000
 Link: https://techcrunch.com/2026/02/19/bug-in-student-admissions-website-exposed-childrens-personal-information/
@@ -2968,7 +3964,134 @@ The great computer science exodus (and where students are going instead)
 
 ================================================================================
 
-[31] CSO Online - Sonderkommission ermittelt zu Cyberangriff auf Kunstsammlungen Dresden
+[50] TechCrunch Security - Hacking conference Def Con bans three people linked to Epstein
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Wed, 18 Feb 2026 22:04:13 +0000
+Link: https://techcrunch.com/2026/02/18/hacking-conference-def-con-bans-three-people-linked-to-epstein/
+
+[TAM METİN - 922 kelime]
+Def Con, one of the largest and longest-running hacking conferences in the world, announced on Wednesday that three people linked to Jeffrey Epstein are no longer allowed to attend.
+
+The conference justified adding Pablos Holman, Vincenzo Iozzo, and Joichi Ito to its public list of banned individuals, citing the three as appearing in the Department of Justice’s latest release of files related to its investigation of the late investor and convicted sex offender. Def Con also cited an article in Politico based on emails that the three exchanged with Epstein.
+
+Joan Vollero, a spokesperson for Iozzo, told TechCrunch in a statement that Def Con’s actions are “entirely performative, given that Mr. Iozzo has barely attended the conference in the past twenty years.”
+
+“It was a rush to judgment not based on any investigation or wrongdoing by Mr. Iozzo,” the spokesperson said.
+
+A Def Con spokesperson declined to comment.
+
+Holman and Ito did not immediately respond to TechCrunch’s request for comment.
+
+The move to ban the three comes days after TechCrunch reported that cybersecurity conferences Black Hat and Code Blue removed Iozzo from their official review board pages, amid new and emerging revelations linking the prominent hacker, among others, to Epstein.
+
+Save up to $300 or 30% to TechCrunch Founder Summit
+
+Save up to $300 or 30% to TechCrunch Founder Summit
+
+Contact Us
+			Do you have more information about Epstein’s connections in the cybersecurity world? From a non-work device, you can contact Lorenzo Franceschi-Bicchierai securely on Signal at +1 917 257 1382, or via Telegram, Keybase and Wire @lorenzofb, or by email.
+
+Iozzo is a veteran of the cybersecurity industry who is currently the founder and chief executive of identity startup SlashID. He previously served as a director at CrowdStrike after the security giant acquired his cybersecurity startup IperLane in 2017. As TechCrunch previously reported, Iozzo interacted with Epstein between 2014 and 2018, including after the Miami Herald reported new allegations that Epstein had abused dozens of women and children.
+
+Epstein pleaded guilty in 2008 to soliciting sex from girls and registered as a sex offender in New York and Florida. In 2019, the Department of Justice accused Epstein of trafficking, exploiting, and abusing dozens of underage girls. Epstein died in jail.
+
+Iozzo previously told TechCrunch that his interactions with Epstein were “limited to business opportunities that never materialized, as well as discussion of the markets and emerging technologies,” and that he “never observed nor participated in any illegal activity or behavior.”
+
+Prior to his startups, Iozzo was a research affiliate at MIT Media Lab, which was overseen by Ito at the time. The two appear in several Epstein emails together.
+
+Joichi Ito was the director of the MIT Media Lab until 2019, when he resigned after it was reported that he was aware that Epstein was a convicted sex offender and that he and the university had extensive personal and financial relationships with Epstein.
+
+Holman, meanwhile, is the general partner at venture capital firm Deep Future and describes himself on his website as “a hacker, inventor & technology futurist.”
+
+Holman was in contact with Epstein since 2010, planned to stay at one of his apartments in New York City in 2013, and tried to help Epstein hide negative online news stories about himself.
+
+According to an email, Epstein made plans to attend Def Con along with Holman in 2013, but it’s unclear if they attended. Def Con founder Jeff Moss said that as far as he knows, “Epstein never attended.”
+
+This story was updated to include Def Con’s no comment.
+
+Senior Reporter, Cybersecurity
+
+Lorenzo Franceschi-Bicchierai is a Senior Writer at TechCrunch, where he covers hacking, cybersecurity, surveillance, and privacy.
+
+You can contact or verify outreach from Lorenzo by emailing lorenzo@techcrunch.com, via encrypted message at +1 917 257 1382 on Signal, and @lorenzofb on Keybase/Telegram.
+
+Save up to $680 on your pass before February 27.Meet investors. Discover your next portfolio company. Hear from 250+ tech leaders, dive into 200+ sessions, and explore 300+ startups building what’s next. Don’t miss these one-time savings.
+
+Microsoft says Office bug exposed customers’ confidential emails to Copilot AI
+
+
+
+Zack Whittaker
+
+Microsoft says Office bug exposed customers’ confidential emails to Copilot AI
+
+Microsoft says Office bug exposed customers’ confidential emails to Copilot AI
+
+Meta’s own research found parental supervision doesn’t really help curb teens’ compulsive social media use
+
+
+
+Sarah Perez
+
+Meta’s own research found parental supervision doesn’t really help curb teens’ compulsive social media use
+
+Meta’s own research found parental supervision doesn’t really help curb teens’ compulsive social media use
+
+How Ricursive Intelligence raised $335M at a $4B valuation in 4 months
+
+
+
+Julie Bort
+
+How Ricursive Intelligence raised $335M at a $4B valuation in 4 months
+
+How Ricursive Intelligence raised $335M at a $4B valuation in 4 months
+
+After all the hype, some AI experts don’t think OpenClaw is all that exciting
+
+
+
+Amanda Silberling
+
+After all the hype, some AI experts don’t think OpenClaw is all that exciting
+
+After all the hype, some AI experts don’t think OpenClaw is all that exciting
+
+OpenClaw creator Peter Steinberger joins OpenAI
+
+
+
+Anthony Ha
+
+OpenClaw creator Peter Steinberger joins OpenAI
+
+OpenClaw creator Peter Steinberger joins OpenAI
+
+Hollywood isn’t happy about the new Seedance 2.0 video generator
+
+
+
+Anthony Ha
+
+Hollywood isn’t happy about the new Seedance 2.0 video generator
+
+Hollywood isn’t happy about the new Seedance 2.0 video generator
+
+The great computer science exodus (and where students are going instead)
+
+
+
+Connie Loizos
+
+The great computer science exodus (and where students are going instead)
+
+The great computer science exodus (and where students are going instead)
+
+(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/18/hacking-conference-def-con-bans-three-people-linked-to-epstein/, techcrunch.com, 19.02.2026)
+
+================================================================================
+
+[51] CSO Online - Sonderkommission ermittelt zu Cyberangriff auf Kunstsammlungen Dresden
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 20 Feb 2026 08:44:39 +0000
 Link: https://www.csoonline.com/article/4135073/sonderkommission-ermittelt-zu-cyberangriff-auf-kunstsammlungen-dresden-2.html
@@ -3034,7 +4157,7 @@ Sonderkommission ermittelt zu Cyberangriff auf Kunstsammlungen Dresden
 
 ================================================================================
 
-[32] CSO Online - PayPal launches latest struggle to get rid of SMS for MFA
+[52] CSO Online - PayPal launches latest struggle to get rid of SMS for MFA
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 20 Feb 2026 07:00:00 +0000
 Link: https://www.csoonline.com/article/4134258/paypal-launches-latest-struggle-to-get-rid-of-sms-for-mfa.html
@@ -3178,7 +4301,7 @@ CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Wo
 
 ================================================================================
 
-[33] CSO Online - 10 Passwordless-Optionen für Unternehmen
+[53] CSO Online - 10 Passwordless-Optionen für Unternehmen
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 20 Feb 2026 03:49:00 +0000
 Link: https://www.csoonline.com/article/3492200/authentifizierungslosungen-10-passwordless-optionen-fur-unternehmen.html
@@ -3327,7 +4450,7 @@ Cybersicherheit braucht Reife und keine Checklisten
 
 ================================================================================
 
-[34] CSO Online - New phishing campaign tricks employees into bypassing Microsoft 365 MFA
+[54] CSO Online - New phishing campaign tricks employees into bypassing Microsoft 365 MFA
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 20 Feb 2026 00:20:17 +0000
 Link: https://www.csoonline.com/article/4134874/new-phishing-campaign-tricks-employees-into-bypassing-microsoft-365-mfa.html
@@ -3447,7 +4570,7 @@ CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Wo
 
 ================================================================================
 
-[35] CSO Online - US dominance of agentic AI at the heart of new NIST initiative
+[55] CSO Online - US dominance of agentic AI at the heart of new NIST initiative
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 21:30:36 +0000
 Link: https://www.csoonline.com/article/4134743/us-dominance-of-agentic-ai-at-the-heart-of-new-nist-initiative.html
@@ -3552,7 +4675,578 @@ CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Wo
 
 ================================================================================
 
-[36] Infoblox Blog - November 2025–January 2026 Innovations: What’s New in Infoblox DDI™
+[56] CSO Online - Six flaws found hiding in OpenClaw’s plumbing
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 12:14:23 +0000
+Link: https://www.csoonline.com/article/4134540/six-flaws-found-hiding-in-openclaws-plumbing.html
+
+[TAM METİN - 910 kelime]
+Six flaws found hiding in OpenClaw’s plumbing
+
+Researchers say an AI-powered code scanner traced untrusted data across layers of OpenClaw, exposing exploitable weaknesses including SSRF, authentication bypass, and path traversal.
+
+Security researchers have uncovered six high-to-critical flaws affecting the open-source AI agent framework OpenClaw, popularly known as a “social media for AI agents.” The flaws were discovered by Endor Labs as its researchers ran the platform through an AI-driven static application security testing (SAST) engine designed to follow how data actually moves through the agentic AI software.
+
+The bugs span several web security categories, including server-side request forgery (SSRF), missing webhook authentication, authentication bypasses, and path traversal, affecting the complex agentic system that combines large language models (LLMs) with tool execution and external integrations.
+
+The researchers also published working proof-of-concept exploits for each of the flaws, confirming real-world exploitability. OpenClaw has published patches and security advisories for the issues.
+
+Flaws included SSRF paths, auth bypass, and file escapes
+
+Endor Labs’ disclosure characterized the six OpenClaw vulnerabilities by weakness type and individual severity rather than CVE identifiers.
+
+Several of the issues are SSRF bugs affecting different tools, including a gateway component (CVSS 7.6) that accepts user-supplied URLs to establish outbound WebSocket connections. The other two included an SSRF in Urbit Authentication (CVSS 6.5) and an Image Tool SSRF (CVSS 7.6). These SSRF paths were rated medium to high severity because they could allow access to internal services or cloud metadata endpoints, depending on deployment.
+
+Access control failures accounted for another cluster of findings. A webhook handler “Telnyx” designed to receive external events lacked proper webhook verification (CVSS 7.5), enabling forged requests from untrusted sources. Separately, an authentication bypass (CVSS 6.5) allowed unauthenticated users to invoke a protected webhook functionality “Twilio” without valid credentials.
+
+The disclosure also detailed a path traversal vulnerability (CVSS not assigned) in browser upload handling, where insufficient sanitization of file paths could allow writes outside intended directories.
+
+“The combination of AI-powered analysis and systematic manual validation provides a practical path forward for securing AI infrastructure,” the researchers said. “As AI agent frameworks become more prevalent in enterprise environments, security analysis must evolve to address both traditional vulnerabilities and AI-specific attack surfaces.”
+
+Following the data revealed the danger
+
+To overcome the limitations of “traditional static analysis” tools that reportedly struggle with modern software stacks where inputs pass through numerous transformations before reaching risky operations, Endor Labs implemented the AI SAST approach, which, it claimed, maintains context across these transformations.
+
+This helped the researchers understand “not only where dangerous operations exist but also whether attacker-controlled data can reach them.” The test engine mapped the full journey of “untrusted data”, from entry points such as HTTP parameters, configuration values, or external API responses to security-sensitive “sinks” like network requests, file operations, or command execution.
+
+Endor Labs said it responsibly disclosed the vulnerabilities to the OpenClaw maintainers, who subsequently addressed the issues, allowing the researchers to publish technical details. The disclosure did not provide extensive mitigation guidance but noted that fixes were implemented across the affected components.
+
+From our editors straight to your inbox
+
+Follow Shweta Sharma on X
+
+Follow Shweta Sharma on LinkedIn
+
+Shweta has been writing about enterprise technology since 2017, most recently reporting on cybersecurity for CSO online. She breaks down complex topics from ransomware to zero trust architecture for both experts and everyday readers. She has a postgraduate diploma in journalism from the Asian College of Journalism, and enjoys reading fiction, watching movies, and experimenting with new recipes when she’s not busy decoding cyber threats.
+
+More from this author
+
+newsKeenadu: Android malware that comes preinstalled and can’t be removed by users Feb 18, 2026 4 mins
+
+Keenadu: Android malware that comes preinstalled and can’t be removed by users
+
+newsZeroDayRAT spyware targets Android and iOS devices via commercial toolkit Feb 17, 2026 4 mins
+
+ZeroDayRAT spyware targets Android and iOS devices via commercial toolkit
+
+newsLeaky Chrome extensions with 37M installs caught divulging your browsing history Feb 16, 2026 3 mins
+
+Leaky Chrome extensions with 37M installs caught divulging your browsing history
+
+newsFour new reasons why Windows LNK files cannot be trusted Feb 13, 2026 4 mins
+
+Four new reasons why Windows LNK files cannot be trusted
+
+newsPhishing campaign chains old Office flaw with fileless XWorm RAT to evade detection Feb 12, 2026 4 mins
+
+Phishing campaign chains old Office flaw with fileless XWorm RAT to evade detection
+
+newsNorth Korean actors blend ClickFix with new macOS backdoors in Crypto campaign Feb 11, 2026 4 mins
+
+North Korean actors blend ClickFix with new macOS backdoors in Crypto campaign
+
+newsWindows shortcut weaponized in Phorpiex-linked ransomware campaign Feb 10, 2026 4 mins
+
+Windows shortcut weaponized in Phorpiex-linked ransomware campaign
+
+newsDKnife targets network gateways in long running AitM campaign Feb 9, 2026 4 mins
+
+DKnife targets network gateways in long running AitM campaign
+
+Six flaws found hiding in OpenClaw’s plumbing
+
+Hackers can turn Grok, Copilot into covert command-and-control channels, researchers warn
+
+What CISOs need to know before moving into consulting
+
+How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
+
+Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
+
+CSO Executive Session ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
+
+How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
+
+Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
+
+CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
+
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4134540/six-flaws-found-hiding-in-openclaws-plumbing.html, csoonline.com, 19.02.2026)
+
+================================================================================
+
+[57] CSO Online - Hackers can turn Grok, Copilot into covert command-and-control channels, researchers warn
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 10:22:03 +0000
+Link: https://www.csoonline.com/article/4134419/hackers-can-turn-grok-copilot-into-covert-command-and-control-channels-researchers-warn.html
+
+[TAM METİN - 1217 kelime]
+Hackers can turn Grok, Copilot into covert command-and-control channels, researchers warn
+
+Permissive AI access and limited monitoring could allow malware to hide within trusted enterprise traffic, thereby accelerating adaptive, AI-driven attacks.
+
+Enterprise security teams racing to enable generative AI tools may be overlooking a new risk: attackers can abuse web-based AI assistants such as Grok and Microsoft Copilot to quietly relay malware communications through domains that are often exempt from deeper inspection.
+
+The technique, outlined by Check Point Research (CPR), exploits the web-browsing and URL-fetch capabilities of these platforms to create a bidirectional command-and-control channel that blends into routine AI traffic and requires neither an API key nor an authenticated account.
+
+“Our proposed attack scenario is quite simple: an attacker infects a machine and installs a piece of malware,” CPR said. The malware then communicates with the AI assistant through the web interface, prompting it to fetch content from an attacker-controlled URL and return embedded instructions to the implant.
+
+Because many organizations allow outbound access to AI services by default and apply limited inspection to that traffic, the approach effectively turns trusted AI domains into covert egress infrastructure.
+
+Security analysts said the findings expose a growing blind spot in enterprise AI governance.
+
+“Enterprises that allow unrestricted outbound access to public AI web services without inspection, identity controls, or strong logging are more exposed than many realize,” said Sakshi Grover, senior research manager for IDC Asia Pacific Cybersecurity Services.
+
+“These platforms can effectively function as trusted external endpoints, meaning malicious activity can be concealed within normal network traffic, including routine HTTPS sessions to widely used AI domains,” she added.
+
+Sunil Varkey, a cybersecurity analyst, said the technique echoes past evasion strategies such as steganography and “living off the land” attacks, where adversaries abuse legitimate tools and trusted infrastructure to avoid detection.
+
+CPR said using AI platforms as C2 relays is only one potential abuse case. The same interfaces could be prompted to generate operational commands on demand, from locating files and enumerating systems to producing PowerShell scripts for lateral movement, allowing malware to determine its next steps without direct human control.
+
+In a more advanced scenario, an implant could transmit a brief profile of the infected host and rely on the model to determine how the attack should progress.
+
+A structural shift in detection
+
+The research also points to a broader shift in how malware may evolve as AI becomes embedded in runtime operations rather than just development workflows.
+
+“When AI moves from assisting development to actively guiding malware behavior at runtime, detection can no longer rely solely on static signatures or known infrastructure indicators,” said Krutik Poojara, a cybersecurity practitioner. “Instead of hardcoded logic, you are dealing with adaptive, polymorphic, context-aware behavior that can change without modifying the malware itself.”
+
+Grover said this makes attacks harder to fingerprint, forcing defenders to rely more on behavioral detection and tighter correlation across endpoint, network, identity, and SaaS telemetry.
+
+More significantly, this changes the tempo of defense. If attackers can dynamically adjust commands and execution paths based on the environment they encounter, security teams are no longer responding to a fixed playbook but to a continuously evolving interaction.
+
+“This compresses the window between intrusion and impact and increases the importance of real-time detection, automated response, and tighter feedback loops between threat intelligence and SOC operations,” Grover said.
+
+Security leaders should not respond by blocking AI outright, analysts said, but by applying the same governance discipline used for other high-risk SaaS platforms.
+
+Varkey recommended starting with a comprehensive inventory of all AI tools in use and establishing a clear policy framework for approving and enabling them.
+
+Organizations should also implement AI-specific traffic monitoring and sequence-based detection rules to identify abnormal automation patterns. Other options to consider include rolling out phased awareness programs. “From an architectural standpoint, organizations should also invest in platforms that provide unified visibility across network, cloud, identity, and application layers, enabling security teams to correlate signals and trace activity across domains rather than treating AI usage as isolated web traffic,” Grover said.
+
+From our editors straight to your inbox
+
+Prasanth Aby Thomas is a freelance technology journalist who specializes in semiconductors, security, AI, and EVs. His work has appeared in DigiTimes Asia and asmag.com, among other publications.
+Earlier in his career, Prasanth was a correspondent for Reuters covering the energy sector. Prior to that, he was a correspondent for International Business Times UK covering Asian and European markets and macroeconomic developments.
+He holds a Master's degree in international journalism from Bournemouth University, a Master's degree in visual communication from Loyola College, a Bachelor's degree in English from Mahatma Gandhi University, and studied Chinese language at National Taiwan University.
+
+Prasanth Aby Thomas is a freelance technology journalist who specializes in semiconductors, security, AI, and EVs. His work has appeared in DigiTimes Asia and asmag.com, among other publications.
+
+Earlier in his career, Prasanth was a correspondent for Reuters covering the energy sector. Prior to that, he was a correspondent for International Business Times UK covering Asian and European markets and macroeconomic developments.
+
+He holds a Master's degree in international journalism from Bournemouth University, a Master's degree in visual communication from Loyola College, a Bachelor's degree in English from Mahatma Gandhi University, and studied Chinese language at National Taiwan University.
+
+More from this author
+
+newsEU clears Google’s $32B Wiz acquisition, intensifying cloud security competition Feb 11, 2026 4 mins
+
+EU clears Google’s $32B Wiz acquisition, intensifying cloud security competition
+
+newsMicrosoft develops a new scanner to detect hidden backdoors in LLMs Feb 5, 2026 4 mins
+
+Microsoft develops a new scanner to detect hidden backdoors in LLMs
+
+newsGoogle Gemini flaw exposes new AI prompt injection risks for enterprises Jan 20, 2026 5 mins
+
+Google Gemini flaw exposes new AI prompt injection risks for enterprises
+
+newsCisco confirms zero-day exploitation of Secure Email products Dec 18, 2025 4 mins
+
+Cisco confirms zero-day exploitation of Secure Email products
+
+newsAzure blocks record 15 Tbps DDoS attack as IoT botnets gain new firepower Nov 18, 2025 4 mins
+
+Azure blocks record 15 Tbps DDoS attack as IoT botnets gain new firepower
+
+newsIndia’s new data privacy rules turn privacy compliance into an engineering challenge Nov 17, 2025 4 mins
+
+India’s new data privacy rules turn privacy compliance into an engineering challenge
+
+newsAI startups leak sensitive credentials on GitHub, exposing models and training data Nov 11, 2025 4 mins
+
+AI startups leak sensitive credentials on GitHub, exposing models and training data
+
+news‘I am not a robot’: Russian hackers use fake CAPTCHA lures to deploy espionage tools Oct 22, 2025 6 mins
+
+‘I am not a robot’: Russian hackers use fake CAPTCHA lures to deploy espionage tools
+
+Hackers can turn Grok, Copilot into covert command-and-control channels, researchers warn
+
+What CISOs need to know before moving into consulting
+
+Notepad++ author says fixes make update mechanism ‘effectively unexploitable’
+
+How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
+
+Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
+
+CSO Executive Session ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
+
+How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
+
+Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
+
+CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
+
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4134419/hackers-can-turn-grok-copilot-into-covert-command-and-control-channels-researchers-warn.html, csoonline.com, 19.02.2026)
+
+================================================================================
+
+[58] CSO Online - Cybersicherheit braucht Reife und keine Checklisten
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 09:25:42 +0000
+Link: https://www.csoonline.com/article/4133975/cybersicherheit-braucht-reife-und-keine-checklisten.html
+
+[TAM METİN - 600 kelime]
+Cybersicherheit braucht Reife und keine Checklisten
+
+CISOs wissen: Der Reifegrad ihres Programms ist für die Wirksamkeit der Cybersicherheitsmaßnahmen entscheidend. Dies erfordert eine entsprechende Führung.
+
+Overearth – shutterstock.com
+
+Cybersicherheit wird oft wie ein Spiel behandelt. Unternehmen jagen schnellen Erfolgen hinterher, haken Compliance-Listen ab oder klopfen sich nach einem einzigen erfolgreichen Audit selbst auf die Schulter. Auf dem Papier mag das produktiv aussehen, aber in Wirklichkeit schafft es ein falsches Gefühl der Sicherheit. Der CISO stellt in diesem Bild den Quarterback dar, auf dem die ganze Verantwortung lastet.
+
+Cybersecurity ist jedoch kein Spiel. Sie erfordert eine ausgereifte Führung, langfristiges Denken und klare Verantwortlichkeiten. Alles andere setzt Unternehmen unnötigen Risiken aus. CISOs wissen um diesen Umstand, müssen ihn aber immer wieder in ihren Organisationen zur Sprache bringen.
+
+Zu viele Sicherheitsteams verlassen sich auf Aktivitäten, die wie Fortschritte aussehen und dargestellt werden, aber das Risiko nicht wesentlich verringern. Dinge wie gelegentliche simulierte Phishing-Tests, auffällige neue Sicherheitstools oder die Erfüllung grundlegender Compliance-Anforderungen können ein beruhigendes Gefühl vermitteln. Das Problem ist, dass diese Aktivitäten oft nur die Symptome bekämpfen, nicht aber die Ursachen.
+
+Häufige Beispiele hierfür sind:
+
+Compliance als Errungenschaft statt als Ausgangspunkt betrachten.
+
+Vorfälle als isolierte Ereignisse statt als Indikatoren für systemische Probleme behandeln.
+
+Kennzahlen verfolgen, die gut aussehen, aber nicht die tatsächliche Widerstandsfähigkeit messen.
+
+Glauben, dass Technologie Lücken schließen kann, die durch schwache Governance oder unklare Prozesse entstanden sind.
+
+Das alles ist nur Scheinsicherheit. Es schafft Sichtbarkeit, aber keinen echten Schutz. CISOs sollten Risiken als real und gegenwärtig behandeln. Sie müssen Sicherheitsprogramme entwickeln, die wechselnden Bedrohungen, Personalfluktuation und unerfahrenen Teams standhalten können. Starke Führung ist nicht reaktiv. Sie ist stattdessen bewusst und informiert.
+
+Erfolgreiche CISOs konzentrieren sich auf:
+
+Menschen und Prozesse und priorisieren diese vor technischen Hilfsmitteln
+
+Kulturelle Erwartungen und Verantwortlichkeiten
+
+Klare Zuständigkeiten
+
+Entscheidungsfindung auf der Grundlage von Cyberrisiken und ihren Datenanalysen
+
+Langfristige Resilienz anstatt kurzfristiger Erfolg
+
+Das ist der Unterschied zwischen einem Sicherheitsprogramm, das wirklich funktioniert, und einem, das nur Checklisten abhakt.
+
+Der Wandel vom Spiel zum echten Programm
+
+Der Übergang von einem reaktiven Ansatz zu einem ausgereiften Sicherheitsprogramm beginnt mit einer Änderung der Denkweise. CISOs müssen sich dafür entscheiden, aus dem „Spielmodus“ auszusteigen. Das Ziel besteht bislang darin, mögliche Probleme für ein weiteres Quartal zu vermeiden. Stattdessen müssen sie sich dazu verpflichten, Programme zu entwickeln, die echten Bedrohungen standhalten können.
+
+Zu den wichtigsten Grundsätzen eines solchen Programmes gehören:
+
+Compliance ist die Mindestanforderung, nicht das Endziel.
+
+Sicherheitsmetriken sollten reale Ergebnisse messen, wie die Zeit bis zur Erkennung und Reaktion.
+
+Jeder Vorfall sollte Erkenntnisse liefern, die das Programm verbessern.
+
+Die Planung der Ausfallsicherheit sollte genauso wichtig sein wie die Prävention.
+
+Die Verantwortlichkeit sollte geteilt, sichtbar und messbar sein.
+
+Dies sind die Grundlagen eines ausgereiften Sicherheitsprogramms. Denn die Notwendigkeit wird jeden Tag sichtbar, die Bedrohungslandschaft entwickelt sich mit einer Geschwindigkeit weiter, die jeden Checklistenansatz übertrifft. Hochprofessionelle Angreifer gehen zielgerichtet vor. Sie arbeiten zusammen, automatisieren und innovieren. Sie spielen kein Spiel, verlassen sich nicht auf Checklisten.
+
+Wenn Unternehmen Sicherheit weiterhin als eine Reihe von Aufgaben und nicht als strategische Disziplin behandeln, werden sie ins Hintertreffen geraten. Sicherheitsvorfälle sind keine Zufälle. Sie sind das vorhersehbare Ergebnis einer unreifen Führung.
+
+CISOs müssen daher die Ernsthaftigkeit vorleben, die diese Aufgabe erfordert. Sicherheit ist kein Spiel. Es gibt keine Auszeiten und keine einfachen Neustarts. Was Unternehmen heute aufbauen, wird darüber entscheiden, ob sie den Bedrohungen von morgen standhalten können. Eine Führung mit entsprechender Reife macht den Unterschied zwischen scheinbarer Sicherheit und tatsächlicher Sicherheit aus. (jm)
+
+Lesetipp: Vom CISO zum Chief Risk Architect
+
+Von unseren Redakteuren direkt in Ihren Posteingang
+
+Mark Orlando, Certified Instructor beim SANS Institute
+
+10 Passwordless-Optionen für Unternehmen
+
+Cybersicherheit braucht Reife und keine Checklisten
+
+13 Fragen gegen Drittanbieterrisiken
+
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4133975/cybersicherheit-braucht-reife-und-keine-checklisten.html, csoonline.com, 19.02.2026)
+
+================================================================================
+
+[59] CSO Online - From in-house CISO to consultant. What you need to know before making the leap
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 19 Feb 2026 07:00:00 +0000
+Link: https://www.csoonline.com/article/4132950/from-in-house-ciso-to-consultant-what-you-need-to-know-before-making-the-leap.html
+
+[TAM METİN - 2132 kelime]
+From in-house CISO to consultant. What you need to know before making the leap
+
+The move from in-house CISO to consultant promises autonomy and impact, but it also forces security leaders to rethink both their skill set and their mindset.
+
+What ultimately crystallized the decision was the thought that his impact didn’t have to stop at the edge of one organization. “I was solving the same problems repeatedly in one company,” he says, “when I could solve them for multiple companies simultaneously, multiplying my impact and helping more businesses grow through pragmatic security leadership.”
+
+In August 2025, Kokhreidze launched his consulting business, Mandos. But he’s careful not to romanticize the move. “It’s important to stay realistic,” he says. Going solo takes time and patience. It means figuring out where you can be most useful. And being willing to stay flexible. “You have to be ready to pivot when you have new ideas, or when things don’t work out,” he says.
+
+Like Kokhreidze, a growing number of CISOs are either moving into consulting roles or seriously considering it. The appeal is easy to see: more flexibility and quicker learning, alongside steady demand for experienced security leaders.
+
+Some of these professionals work as virtual CISOs (vCISOs), advising companies from a distance. Others operate as fractional CISOs, embedding into the organization one or two days a week.
+
+“Consulting gives me more autonomy and control over how I work, while still letting me apply the same strategic approach to improving resilience, governance, and practical security execution,” says Antanas Kedys, founder and CEO at ACyber. He made the shift from an in-house CISO role to consulting in 2022, because he wanted to grow and work across different environments.
+
+When a CISO transitions into consulting, their role changes in ways that aren’t always obvious at first. The new job means sharpening some skills, building entirely new ones and, perhaps hardest of all, learning to let go of control.
+
+“As a CISO, you can mandate; as a consultant, you can only influence,” says Nigel Gibbons, director and senior advisor at NCC Group.
+
+How to prepare to make the leap from security leader to consultant
+
+Long before stepping away from a full-time role, Kokhreidze and other security leaders tried to quietly plan ahead. They tested ideas, built visibility, reconnected with old contacts, and began mapping out who their potential clients might be. The list of potential should be a long one, because few conversations tend to turn into actual work.
+
+“If someone is not asking you right now to consult for them, it can take 12-18 months before you land your first client,” says Carlota Sage. She held a part-time CISO role at a nonprofit before transitioning into vCISO work. Later, she went on to found Pocket CISO, which provides cybersecurity services to early-stage startups and small organizations.
+
+Kokhreidze agrees with her. For a smoother transition, he suggests CISOs line up their first clients while they’re still employed. Otherwise, he says, it can take a long time to build momentum. And the pressure to make it work can quickly turn into panic. In that moment, security professionals may start “underpricing themselves because they need money immediately,” he says. Once rates are set out of desperation, they’re often hard to reset without straining the relationship.
+
+Other CISOs-turned-consultants also emphasize preparation. Kedys, for instance, stresses the need for a go-to-market focus. “Decide who you want to advise (industry, company size, maturity), what problems you’ll solve, and why you’re credible for that,” he says. “The combination of strong soft skills and a clear focus — who, how, and why — is the best starting point for a successful transition.”
+
+Gibbons adds that consulting should grow out of a CISO’s existing experience. He suggests treating that experience as a set of real-world case studies worth talking about, capturing the decisions, the trade-offs, what went wrong and what worked. He also stresses the importance of building relationships beyond the security function, including legal teams, auditors, regulators and investors. “Consulting is ultimately a trust-based profession not a technical one,” he adds.
+
+Skills that carry over into consulting
+
+Many of the skills CISOs honed inside large organizations translate directly to the new consulting job, while others suddenly matter more than they ever did before. In addition to technical skills, it is often the practical ones that prove most valuable.
+
+The ability to prioritize — sharpened over years in a CISO role — becomes especially important in consulting. “It matters more than anything else,” Gibbons argues, because in consulting environments resources are often limited. Consultants are paid not to know everything, but to know what matters most, which risks to tackle first, and which problems can safely wait.
+
+Crisis management is another essential skill. Paired with hands-on knowledge of cybersecurity processes and best practices, it gives former CISOs a real advantage as they move into consulting. Kedys highlights stress management: the ability to stay calm, focused and keep execution moving under pressure, which is just as valuable outside the enterprise as it ever was inside.
+
+But if there’s one translatable skill that everyone talks about, that skill is communication. “All of your security and compliance knowledge is wasted if you cannot communicate to a business audience,” Sage says.
+
+Kokhreidze agrees. Instead of leading with controls, tools or technical details, he focuses on what CTOs and other business leaders actually care about: outcomes. He talks about how security protects revenue, supports resilience, or builds confidence with regulators.
+
+New skills needed in the toolkit
+
+As CISOs move into consulting, they quickly discover they need new skills as well, some of which they may have deliberately avoided in their in-house roles. Chief among them is sales. “Eighty percent of your work is actually selling yourself,” says Kokhreidze. “You are first a business, and CISO second.”
+
+And being a business is time-consuming. Consultants must juggle personal branding, marketing, accounting, and writing. Writing and online presence, in particular, matter because done well, they signal credibility and give current and future clients a sense of how a CISO thinks.
+
+The multiple roles consultants have to play — switching between delivery, sales, marketing and admin while juggling several clients — come with a real mental toll. For many former in-house executives, adjusting to that constant context switching is one of the hardest parts of leaving a structured organization behind. “If you’re running your own consulting firm, context switching can be a struggle,” Sage says.
+
+In time, many consultants learn that discipline matters, and that saying no is part of the job. “You must become comfortable saying no to work that dilutes your positioning or turns you back into an outsourced operator rather than a trusted advisor,” Gibbons says.
+
+Setting the right price
+
+Many CISOs know their value inside an enterprise but translating that value into a consulting price is a different challenge altogether. It requires a shift from thinking like an employee to thinking like a business.
+
+“Skills are not different from a product,” Kedys says. “You just need to find the right product (in this case, the skill) and wrap it in a way a market will be most likely to take it.”
+
+That understanding, he adds, comes from market analysis: observing how executives buy, what they value, and what comparable services cost.
+
+Sage agrees with the idea of analyzing the market but says that CISOs coming from large enterprises and targeting small and mid-sized organizations often need to recalibrate their expectations. What feels like a modest rate to a global organization can be misaligned with the realities of smaller clients, particularly those buying advisory services for the first time.
+
+When thinking about pricing, Kokhreidze took a two-way approach. He looked at the market and assessed his value. Then he set a realistic income goal and worked backwards, factoring in how many clients he could serve well. The result was a pricing model that favored quality over volume, a trade-off he knew the clients he wanted to work with would resonate with.
+
+“B2B companies closing enterprise deals understand that professional security leadership costs far less than losing a single €10M+ contract to failed security reviews,” Kokhreidze says.
+
+When setting prices, one of the most common mistakes is charging for time rather than for the value the consultant brings to the table. Early in his career, Gibbons priced his work by the day instead of by the consequences it helped clients avoid. Over time, he moved toward outcome-based engagements, such as board assurance, regulatory readiness and post-incident recovery, so clients can understand more easily what they’re paying for.
+
+“Clients are buying judgment, not hours,” Gibbons says.
+
+This approach, however, is not universal. Some more traditional organizations remain firmly attached to day rates. In those environments, shifting negotiations can be difficult regardless of the expertise being offered.
+
+Potential mistakes to avoid
+
+Ask experienced consultants what mistakes newcomers tend to make, and the answers tend to be consistent. The biggest mistakes are rarely about security skills. They tend to cluster around mindset, money, and figuring out how to show up in the market.
+
+“The hardest lesson was realizing that being a great CISO doesn’t guarantee clients at all,” Kokhreidze says. “I quickly learned that professional expertise means nothing without strong sales and qualification skills, because you’ll waste months chasing companies that either don’t have the problem you’re trying to solve or aren’t ready to invest in fixing it.”
+
+Gibbons sees a related issue: consultants trying to recreate an in-house role from the outside. They take on operational responsibility, running programs or becoming embedded indefinitely. “That erodes margins and credibility,” he says.
+
+Another common misstep he points to is leading with tools, frameworks or certifications rather than judgment and experience. “Clients do not hire former CISOs for policy templates,” he argues. “They hire them to help make hard decisions with incomplete information.”
+
+Even CISOs who plan carefully before making the leap often discover that the freedom of consulting comes with hidden costs. As Sage puts it, “Most CISOs consulting for the first time underestimate how much time and effort go into just managing your own business.”
+
+From our editors straight to your inbox
+
+Follow Andrada Fiscutean on X
+
+Follow Andrada Fiscutean on LinkedIn
+
+Andrada is an international science and technology journalist with features in Ars Technica, Vice Motherboard, ZDNet, Nature, CIO.com, CSO Online, and more. She has over 20 years of experience working as a radio journalist, 10 as a science and technology reporter, and four as a TV news voice-over.
+Andrada's story Why whistleblowers in cybersecurity are important and need support won a 2024 AZBEE award in the Impact/Investigative category.
+
+Andrada is an international science and technology journalist with features in Ars Technica, Vice Motherboard, ZDNet, Nature, CIO.com, CSO Online, and more. She has over 20 years of experience working as a radio journalist, 10 as a science and technology reporter, and four as a TV news voice-over.
+
+Andrada's story Why whistleblowers in cybersecurity are important and need support won a 2024 AZBEE award in the Impact/Investigative category.
+
+More from this author
+
+featureSkills CISOs need to master in 2026 Jan 28, 2026 12 mins
+
+Skills CISOs need to master in 2026
+
+featureHow CISOs can prepare for the new era of short-lived TLS certificates Dec 3, 2025 9 mins
+
+How CISOs can prepare for the new era of short-lived TLS certificates
+
+feature13 cybersecurity myths organizations need to stop believing Oct 15, 2025 12 mins
+
+13 cybersecurity myths organizations need to stop believing
+
+featureHow to restructure your security program to modernize defense Sep 30, 2025 9 mins
+
+How to restructure your security program to modernize defense
+
+featureHow CISOs can scale down without compromising security Jul 30, 2025 8 mins
+
+How CISOs can scale down without compromising security
+
+featureCISO vs CFO: why are the conversations difficult? May 5, 2025 7 mins
+
+CISO vs CFO: why are the conversations difficult?
+
+featureThe risks of entry-level developers over relying on AI Apr 7, 2025 9 mins
+
+The risks of entry-level developers over relying on AI
+
+featureCISOs: Stop trying to do the lawyer’s job Feb 10, 2025 11 mins
+
+CISOs: Stop trying to do the lawyer’s job
+
+PayPal launches latest struggle to get rid of SMS for MFA
+
+New phishing campaign tricks employees into bypassing Microsoft 365 MFA
+
+US dominance of agentic AI at the heart of new NIST initiative
+
+How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
+
+Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
+
+CSO Executive Session ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
+
+How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
+
+Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
+
+CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
+
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4132950/from-in-house-ciso-to-consultant-what-you-need-to-know-before-making-the-leap.html, csoonline.com, 19.02.2026)
+
+================================================================================
+
+[60] CSO Online - Notepad++ author says fixes make update mechanism ‘effectively unexploitable’
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Wed, 18 Feb 2026 22:18:27 +0000
+Link: https://www.csoonline.com/article/4134135/notepad-author-says-fixes-make-update-mechanism-effectively-unexploitable.html
+
+[TAM METİN - 1317 kelime]
+Notepad++ author says fixes make update mechanism ‘effectively unexploitable’
+
+Hardening had to be done after a threat actor compromised updates with a custom backdoor.
+
+The recently compromised update mechanism for the popular open source text editor Notepad ++ has been hardened so it’s now ‘effectively unexploitable’, says the application’s author.
+
+Don Ho made the claim this week after the release of version 8.9.2 of Notepad++, which includes a double-lock verification that any download of the tool from this point on is genuine. The latest version verifies the signed XML returned by the update server in addition to the first step of the hardening in version 8.8.9, released in December, which verifies the authenticity of the signed installer downloaded from GitHub.
+
+The application auto-updater has also been reinforced.
+
+These actions aren’t foolproof, Ho admits in his blog, because it’s possible to exclude the auto-updater during the UI installation, or to deploy the installer with a specific command specifying the updater not be used.
+
+In an email today to CSOonline, Ho said that no system can ever be declared absolutely unbreakable, “but the new design dramatically raises the bar.”
+
+An attacker must now compromise both the hosting infrastructure and the signing keys, he explained, adding that the updater now validates both the manifest and the installer, each with independent cryptographic signatures. And any mismatch, missing signature, or certificate anomaly causes the update to abort automatically.
+
+“This layered verification makes the update chain resilient even in the face of future infrastructure‑level compromises,” he concluded.
+
+Another supply chain attack
+
+One reason the compromise went undetected for so long is that only a small number of downloaders — far less than 0.1%  — were specifically targeted by the attackers, Ho said, and the attackers were very cautious. “Their goal was long‑term espionage,” he noted, “so they acted quietly and deliberately to remain undetected for as long as possible.”
+
+Compromising the update mechanism of an application is a classic way for a threat actor to infiltrate dozens, hundreds, or thousands of organizations that unwitting then use the hacked version of the software. One of the most notorious examples was the 2019/2020 compromise of the update infrastructure of Solarwinds’ Orion network monitoring suite. Another was the 2017 NotPetya attack that spread around the world after a Ukrainian tax application was hacked.
+
+The Notepad++ problem began with the discovery that the IT infrastructure hosting Notepad++ had been compromised in June 2025, and a custom backdoor had been installed in the application. In the highly-targeted attack, traffic from certain users was selectively redirected to attacker-controlled servers by the malicious updates. Researchers at Rapid7 believe a China-based group dubbed Lotus Blossom was behind the attack.
+
+The now former hosting provider believes the shared hosting server was compromised from June to September of 2025. However, even after losing server access, the attackers maintained credentials to internal services until December 2, 2025, allowing the continued redirection of Notepad++ update traffic. With the release of Notepad++ version 8.8.9, and the security hardening, all attacker access was terminated. Version 8.9.1 had even more security enhancements, and this week’s version 8.9.2 instituted the double-lock process.
+
+“Developers must plan for adversaries who are patient, sophisticated, and selective,” Ho said. Infrastructure is part of your attack surface, he pointed out; even if your code is secure, a weak link in hosting, DNS, or a content delivery network (CDN) can undermine everything. “Continuous monitoring and strict credential hygiene are essential,” he said, and application developers must assume that partial compromise is possible and design applications and their delivery and update mechanisms for failure.
+
+And if there is a compromise, he added, rapid disclosure, detailed technical explanations, and prompt fixes help users understand the scope and maintain confidence in the project.
+
+Jeff Pollard, who leads Forrester Research’s work on the role of the CSO, said the fixes “significantly reduce” the risk of this specific failure mode recurring. But, he added, no single change ‘solves’ all supply chain risks. Attackers can shift to other choke points such as build pipelines or signing keys, he pointed out. “The key takeaway is that Notepad++ closed the exploited gap and raised the attacker cost,” he said.
+
+Small utilities like Notepad++ usually sit outside of procurement, inventory, and third party risk management controls, he said, which is why they are ubiquitous among technical users, and valuable targets for adversaries.
+
+“Asset management and software inventory is a perpetual problem for enterprises, but this event demonstrates why it’s so important to understand all the software in your environment, no matter how big or small it is,” he said.
+
+Douglas McKee, Rapid7’s senior director of vulnerability intelligence, said the Notepad++ supply chain incident underscores a broader evolution in how threat actors think about software trust and persistence. While updates to the Notepad++ distribution mechanism and the release of version 8.9.2 with enhanced double-lock update security help close the specific vulnerability exploited in this campaign, they do not on their own solve the systemic problem of modern supply chain risk.
+
+“What this incident makes clear, and what organizations must internalize, is that supply chain security cannot be limited to source code and build systems,” he said. “Attackers targeted hosting infrastructure and update delivery flows outside of the project’s direct control. Only by reinforcing signature and certificate validation, and treating update infrastructure as part of the attack surface, can defenders meaningfully reduce exposure.”
+
+From our editors straight to your inbox
+
+Howard Solomon is a Toronto-based freelance reporter who writes on IT and cybersecurity issues.
+ 
+Howard is a former editor of IT World Canada and Computing Canada. An IT journalist over 30 years, he has also written for ITBusiness.ca and Computer Dealer News. Before that he was a staff reporter at the Calgary Herald and the Brampton (Ontario) Daily Times.
+
+Howard Solomon is a Toronto-based freelance reporter who writes on IT and cybersecurity issues.
+
+Howard is a former editor of IT World Canada and Computing Canada. An IT journalist over 30 years, he has also written for ITBusiness.ca and Computer Dealer News. Before that he was a staff reporter at the Calgary Herald and the Brampton (Ontario) Daily Times.
+
+More from this author
+
+newsNew phishing campaign tricks employees into bypassing Microsoft 365 MFA Feb 19, 2026 6 mins
+
+New phishing campaign tricks employees into bypassing Microsoft 365 MFA
+
+newsExploit available for new Chrome zero-day vulnerability, says Google Feb 16, 2026 4 mins
+
+Exploit available for new Chrome zero-day vulnerability, says Google
+
+newsHackers turn bossware against the bosses Feb 12, 2026 6 mins
+
+Hackers turn bossware against the bosses
+
+newsSSHStalker botnet brute-forces its way onto 7,000 Linux machines Feb 11, 2026 7 mins
+
+SSHStalker botnet brute-forces its way onto 7,000 Linux machines
+
+newsFebruary 2026 Patch Tuesday: Six new and actively exploited Microsoft vulnerabilities addressed Feb 10, 2026 8 mins
+
+February 2026 Patch Tuesday: Six new and actively exploited Microsoft vulnerabilities addressed
+
+newsSix more vulnerabilities found in n8n automation platform Feb 6, 2026 5 mins
+
+Six more vulnerabilities found in n8n automation platform
+
+newsFour new vulnerabilities found in Ingress NGINX Feb 5, 2026 4 mins
+
+Four new vulnerabilities found in Ingress NGINX
+
+newsThreat actors hijack web traffic after exploiting React2Shell vulnerability Feb 4, 2026 4 mins
+
+Threat actors hijack web traffic after exploiting React2Shell vulnerability
+
+PayPal launches latest struggle to get rid of SMS for MFA
+
+US dominance of agentic AI at the heart of new NIST initiative
+
+Six flaws found hiding in OpenClaw’s plumbing
+
+How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
+
+Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
+
+CSO Executive Session ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
+
+How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
+
+Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
+
+CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
+
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4134135/notepad-author-says-fixes-make-update-mechanism-effectively-unexploitable.html, csoonline.com, 19.02.2026)
+
+================================================================================
+
+[61] Infoblox Blog - November 2025–January 2026 Innovations: What’s New in Infoblox DDI™
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 17:10:50 +0000
 Link: https://www.infoblox.com/blog/company/november-2025-january-2026-innovations-whats-new-in-infoblox-ddi/
