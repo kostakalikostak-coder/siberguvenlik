@@ -152,7 +152,7 @@ Other measures involve auditing ATM devices, changing default credentials, confi
 Tarih: Fri, 20 Feb 2026 10:57:00 +0530
 Link: https://thehackernews.com/2026/02/three-former-google-engineers-indicted.html
 
-[TAM METİN - 652 kelime]
+[TAM METİN - 696 kelime]
 Two former Google engineers and one of their husbands have been indicted in the U.S. for allegedly committing trade secret theft from the search giant and other tech firms and transferring the information to unauthorized locations, including Iran.
 
 Samaneh Ghandali, 41, and her husband Mohammadjavad Khosravi (aka Mohammad Khosravi), 40, along with her sister Soroor Ghandali, 32, have been accused of conspiring to commit trade secret theft from Google and other leading technology companies, theft and attempted theft of trade secrets, and obstruction of justice.
@@ -160,6 +160,8 @@ Samaneh Ghandali, 41, and her husband Mohammadjavad Khosravi (aka Mohammad Khosr
 The three defendants, all Iranian nationals and residing in San Jose, were arrested on Thursday and made their initial appearances in federal district court in the California city.
 
 According to the U.S. Department of Justice (DoJ), the Ghandali sisters worked at Google before joining another technology company identified as Company 3. Khosravi is said to have been employed at a different company (named Company 2). All three of them landed jobs in the area of mobile computer processors.
+
+While the names of Company 2 and Company 3 were not disclosed, The Hacker News found that Soroor Ghandali worked as a hardware engineer intern at Google before joining Intel. Khosravi, on the other hand, was employed at Qualcomm as an ASIC design engineer.
 
 "As part of the alleged scheme to commit trade secret theft, the defendants used their employment to obtain access to confidential and sensitive information," the DoJ said in a press release.
 
@@ -673,7 +675,61 @@ Massiv is the latest entrant to an already crowded Android threat landscape, ref
 
 ================================================================================
 
-[11] BleepingComputer - FBI: Over $20 million stolen in surge of ATM malware attacks in 2025
+[11] BleepingComputer - Mississippi medical center closes all clinics after ransomware attack
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 20 Feb 2026 06:50:14 -0500
+Link: https://www.bleepingcomputer.com/news/security/university-of-mississippi-medical-center-closes-clinics-after-ransomware-attack/
+
+[TAM METİN - 544 kelime]
+The University of Mississippi Medical Center (UMMC) closed all its clinic locations statewide on Thursday following a ransomware attack.
+
+UMMC has over 10,000 employees and, as one of the largest employers in Mississippi, operates seven hospitals, 35 clinics, and more than 200 telehealth sites statewide. The medical center includes the state's only children's hospital, only Level I trauma center, only organ and bone marrow transplant program, and the only Telehealth Center of Excellence, one of two across the United States.
+
+As revealed on Thursday afternoon, the cyberattack took down many of its IT systems and blocked access to the Epic electronic medical records. While UMMC cancelled outpatient and ambulatory surgeries/procedures and imaging appointments, officials said hospital services continue via downtime procedures.
+
+UMMC is now investigating the incident with assistance from the U.S. Cybersecurity and Infrastructure Security Agency (CISA) and the FBI.
+
+"We have activated our Emergency Operations Plan and are working with authorities including the FBI and Homeland Security, who are helping us to evaluate this situation and determine next steps," the UMMC said.
+
+When this article was published, the UMCC's website was still down, and officials said that the hospital had shut down all IT systems while they assessed the attack's impact.
+
+"We are still evaluating the extent of systems impacted. As a precaution, we have shut down all our network systems and will conduct risk assessments before bringing anything back online. In-person class schedules remain normal," they said.
+
+Officials confirm ransomware attack
+
+Hospital officials have also revealed during a press conference on Thursday afternoon that they are communicating with the ransomware operation behind the attack and working with authorities on the next steps, according to The Daily Mississippian.
+
+"The attackers have communicated to us and we are working with the authorities and specialists on next steps. We do not know how long this situation may last," said LouAnn Woodward, the dean of the school of medicine at UMMC.
+
+"Patients in our hospital and our emergency department are being cared for. Clinical equipment and operations remain functional. We are using our downtime procedures. For our students, in-person classes will continue as scheduled."
+
+"All of our equipment works. All of our patients are being taken care of safely. There will be no patient impact as a result of this downtime," Dr. Alan Jones, associate vice chancellor for health affairs at UMMC, told reporters.
+
+No ransomware group has claimed responsibility for this attack, as they're likely still negotiating with the UMMC and want to pressure it into paying an extortion demand.
+
+However, with ransomware involved, data may have also been stolen and will be used as additional leverage to convince the hospital to pay.
+
+The future of IT infrastructure is here
+
+Modern IT infrastructure moves faster than manual workflows can handle.
+
+In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
+
+Belgian hospital AZ Monica shuts down servers after cyberattack
+
+Monroe University says 2024 data breach affects 320,000 people
+
+Central Maine Healthcare breach exposed data of over 145,000 people
+
+FBI: Over $20 million stolen in surge of ATM malware attacks in 2025
+
+Ukrainian gets 5 years for helping North Koreans infiltrate US firms
+
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/university-of-mississippi-medical-center-closes-clinics-after-ransomware-attack/, bleepingcomputer.com, 20.02.2026)
+
+================================================================================
+
+[12] BleepingComputer - FBI: Over $20 million stolen in surge of ATM malware attacks in 2025
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 20 Feb 2026 05:08:49 -0500
 Link: https://www.bleepingcomputer.com/news/security/fbi-over-20-million-stolen-in-surge-of-atm-malware-attacks-in-2025/
@@ -719,7 +775,7 @@ CISA gives feds 3 days to patch actively exploited BeyondTrust flaw
 
 ================================================================================
 
-[12] BleepingComputer - Ukrainian gets 5 years for helping North Koreans infiltrate US firms
+[13] BleepingComputer - Ukrainian gets 5 years for helping North Koreans infiltrate US firms
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 20 Feb 2026 04:00:15 -0500
 Link: https://www.bleepingcomputer.com/news/security/ukrainian-gets-5-years-for-helping-north-koreans-infiltrate-us-firms/
@@ -765,7 +821,7 @@ North Korean hackers use new macOS malware in crypto-theft attacks
 
 ================================================================================
 
-[13] BleepingComputer - PromptSpy is the first known Android malware to use generative AI at runtime
+[14] BleepingComputer - PromptSpy is the first known Android malware to use generative AI at runtime
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 17:36:25 -0500
 Link: https://www.bleepingcomputer.com/news/security/promptspy-is-the-first-known-android-malware-to-use-generative-ai-at-runtime/
@@ -857,7 +913,7 @@ Google blocked over 1.75 million Play Store app submissions in 2025
 
 ================================================================================
 
-[14] BleepingComputer - Flaw in Grandstream VoIP phones allows stealthy eavesdropping
+[15] BleepingComputer - Flaw in Grandstream VoIP phones allows stealthy eavesdropping
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 12:16:32 -0500
 Link: https://www.bleepingcomputer.com/news/security/flaw-in-grandstream-voip-phones-allows-stealthy-eavesdropping/
@@ -915,7 +971,7 @@ Critical BeyondTrust RCE flaw now exploited in attacks, patch now
 
 ================================================================================
 
-[15] BleepingComputer - Google blocked over 1.75 million Play Store app submissions in 2025
+[16] BleepingComputer - Google blocked over 1.75 million Play Store app submissions in 2025
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 12:00:00 -0500
 Link: https://www.bleepingcomputer.com/news/security/google-blocked-over-175-million-play-store-app-submissions-in-2025/
@@ -965,7 +1021,7 @@ Cellik Android malware builds malicious versions from Google Play apps
 
 ================================================================================
 
-[16] BleepingComputer - CISA orders feds to patch actively exploited Dell flaw within 3 days
+[17] BleepingComputer - CISA orders feds to patch actively exploited Dell flaw within 3 days
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 10:30:37 -0500
 Link: https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-dell-flaw-within-3-days/
@@ -1017,7 +1073,7 @@ CISA warns of five-year-old GitLab flaw exploited in attacks
 
 ================================================================================
 
-[17] BleepingComputer - How infostealers turn stolen credentials into real identities
+[18] BleepingComputer - How infostealers turn stolen credentials into real identities
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 10:05:15 -0500
 Link: https://www.bleepingcomputer.com/news/security/how-infostealers-turn-stolen-credentials-into-real-identities/
@@ -1105,7 +1161,7 @@ Sponsored and written by Specops Software.
 
 ================================================================================
 
-[18] BleepingComputer - Nigerian man gets eight years in prison for hacking tax firms
+[19] BleepingComputer - Nigerian man gets eight years in prison for hacking tax firms
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 08:51:49 -0500
 Link: https://www.bleepingcomputer.com/news/security/nigerian-man-gets-eight-years-in-prison-for-hacking-tax-firms/
@@ -1151,7 +1207,7 @@ Illinois man charged with hacking Snapchat accounts to steal nude photos
 
 ================================================================================
 
-[19] BleepingComputer - Texas sues TP-Link over Chinese hacking risks, user deception
+[20] BleepingComputer - Texas sues TP-Link over Chinese hacking risks, user deception
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 19 Feb 2026 07:36:51 -0500
 Link: https://www.bleepingcomputer.com/news/security/texas-sues-tp-link-over-chinese-hacking-risks-user-deception/
@@ -1204,92 +1260,6 @@ Police arrests 300 suspects linked to African cybercrime rings
 Chinese cyberspies breach Singapore's four largest telcos
 
 (XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/texas-sues-tp-link-over-chinese-hacking-risks-user-deception/, bleepingcomputer.com, 19.02.2026)
-
-================================================================================
-
-[20] BleepingComputer - Hackers target Microsoft Entra accounts in device code vishing attacks
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 19 Feb 2026 07:30:37 -0500
-Link: https://www.bleepingcomputer.com/news/security/hackers-target-microsoft-entra-accounts-in-device-code-vishing-attacks/
-
-[TAM METİN - 912 kelime]
-Threat actors are targeting technology, manufacturing, and financial organizations in campaigns that combine device code phishing and voice phishing (vishing) to abuse the OAuth 2.0 Device Authorization flow and compromise Microsoft Entra accounts.
-
-Unlike previous attacks that utilized malicious OAuth applications to compromise accounts, these campaigns instead leverage legitimate Microsoft OAuth client IDs and the device authorization flow to trick victims into authenticating.
-
-This provides attackers with valid authentication tokens that can be used to access the victim's account without relying on regular phishing sites that steal passwords or intercept multi-factor authentication codes.
-
-A source told BleepingComputer they believed the ShinyHunters extortion gang was behind the new device code vishing attacks, which the threat actors later confirmed. BleepingComputer has not been able to confirm this independently.
-
-ShinyHunters was recently linked to vishing attacks used to  breack Okta and Microsoft Entra SSO accounts for data theft attacks.
-
-BleepingComputer contacted Microsoft about these attacks but was told it had nothing to share at this time.
-
-Device code social engineering attacks
-
-BleepingComputer has learned from multiple sources that threat actors have begun using vishing social engineering attacks that no longer require attacker-controlled infrastructure, instead leveraging legitimate Microsoft login forms and standard device code authentication workflows to breach corporate accounts.
-
-A device code phishing attack is when the legitimate OAuth 2.0 device authorization grant flow is abused to obtain authentication tokens for the victim's Microsoft Entra account.
-
-This can then be used to gain access to the user's resources and connected SSO applications, like Microsoft 365, Salesforce, Google Workspace, Dropbox, Adobe, SAP, Slack, Zendesk, Atlassian, and many others.
-
-This grant flow was designed to make it easy to connect devices that lack accessible input options, such as IoT devices, printers, streaming devices, and TVs.
-
-"The Microsoft identity platform supports the device authorization grant, which allows users to sign in to input-constrained devices such as a smart TV, IoT device, or a printer," explains Microsoft.
-
-"To enable this flow, the device has the user visit a webpage in a browser on another device to sign in. Once the user signs in, the device is able to get access tokens and refresh tokens as needed."
-
-This authentication flow is similar to what you see when logging into a streaming service, such as Netflix or Apple TV, where the streaming device displays a short code and instructs you to visit a website on your phone or computer to complete sign-in.
-
-After you enter the code and authenticate, the device is automatically linked to your account without ever handling your password directly.
-
-To conduct a device-code phishing attack, threat actors need the client_id of an existing OAuth app, which can be their own or one of Microsoft's existing apps.
-
-Using open-source tools, the attackers generate a "device_code" and "user_code" that will be shared with the target for the specified OAuth app.
-
-The threat actors then contact a targeted employee and attempt to convince them to enter the generated user_code on the Microsoft device authentication page, microsoft.com/devicelogin.
-
-When the targeted person enters the code, they will be prompted to log in with their credentials and complete any MFA verifications, just as they normally would when logging in. After authenticating, Microsoft displays the name of the OAuth application that was authorized.
-
-However, because threat actors can use legitimate apps, even those from Microsoft, this can lend more legitimacy and trust to the authentication process.
-
-Once the OAuth app is connected to an account, threat actors can use the device_code to retrieve the targeted employee's refresh token, which can then be exchanged for access tokens.
-
-Those access tokens allow attackers to access the employee's Microsoft services without having to complete multi-factor authentication again, since MFA was already completed during the initial login.
-
-The threat actors can now authenticate as the user in Microsoft Entra and access SaaS applications configured with SSO (single sign-on) in the victim's tenant, enabling the theft of corporate data for extortion.
-
-KnowBe4 Threat Labs also discovered a recent campaign that uses traditional phishing emails and websites to deliver device code attacks.
-
-The company first spotted the campaign in December 2025 and said it relies heavily on social engineering lures such as fake payment configuration prompts, document-sharing alerts, and bogus voicemail notifications.
-
-KnowBe4 recommends that Microsoft 365 account holders block the malicious domains and sender addresses, audit and revoke suspicious OAuth app consents, and review Azure AD sign-in logs for device code authentication events.
-
-Administrators are also recommended to turn off the device code flow option when not required and to enforce conditional access policies.
-
-Device code phishing is not new, with multiple threat actors having used this method to breach accounts in the past.
-
-In February 2025, the Microsoft Threat Intelligence Center warned that Russian hackers were targeting Microsoft 365 accounts using device code phishing.
-
-In December, ProofPoint reported similar attacks that use a similar phishing kit seen by KnowBe4 to breach Microsoft accounts.
-
-The future of IT infrastructure is here
-
-Modern IT infrastructure moves faster than manual workflows can handle.
-
-In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
-
-New ConsentFix attack hijacks Microsoft accounts via Azure CLI
-
-Germany warns of Signal account hijacking targeting senior figures
-
-Fortinet confirms critical FortiCloud auth bypass not fully patched
-
-Betterment confirms data breach after wave of crypto scam emails
-
-ConsentFix debrief: Insights from the new OAuth phishing attack
-
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/hackers-target-microsoft-entra-accounts-in-device-code-vishing-attacks/, bleepingcomputer.com, 19.02.2026)
 
 ================================================================================
 
