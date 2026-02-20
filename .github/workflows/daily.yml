@@ -2,7 +2,7 @@ name: Günlük Rapor
 
 on:
   schedule:
-    - cron: '0 08 * * *'
+    - cron: '0 07 * * *'
   workflow_dispatch:
 
 jobs:
