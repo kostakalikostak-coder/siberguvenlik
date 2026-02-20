@@ -98,8 +98,8 @@ Aşağıdaki türleri ÇIKAR (raporda gösterme):
 ❌ İnceleme yazıları, röportajlar, genel tavsiye makaleleri
 ✅ SADECE aktif tehdit, açık, saldırı, veri ihlali, kritik güncelleme haberlerini AL
 
-🚨 KRİTİK AŞAMA 2 - EN ÖNEMLİ 5 HABERİ BELIRLE:
-Bu 7 kritere göre en kritik 5 haberi seç:
+🚨 KRİTİK AŞAMA 2 - KESINLIKLE 5 HABER SEÇ (NE FAZLA, NE AZ):
+Bu 7 kritere göre kesinlikle 5 haberi seç (ZORUNLU - DAHA AZ VEYA FAZLA OLMASIN):
 
 1️⃣ **KRİTİK ALTYAPI SALDIRISI** 
    - Enerji, sağlık, finans, hükümet sektörü
@@ -156,6 +156,7 @@ RAPOR YAPISI (SIRAYLA):
    - Her news-item için news-content paragrafı ZORUNLUDUR, atlanamaz
 
 KRİTİK KURALLALAR:
+✅ KESINLIKLE 5 ÖNEMLI HABER SEÇ (daha az veya fazla değil, tamamen 5!)
 ✅ Tablodaki haber sayısı = paragraf sayısı (bire bir eşit olmalı)
 ✅ Önemli gelişmelerdeki haberler tekrar etmesin tabloda
 ✅ ID numaraları: 1'den son habere kadar sürekli
@@ -450,9 +451,14 @@ HAM HABERLER:
 ═══════════════════════════════════════════════════════════
 
 ŞİMDİ SIRAYLA YAP:
-1. Filtreleme → Uygun haberleri seç
-2. En önemli 5'ini belirle (yukarıdaki 7 kritere göre)
-3. Kalanları önem sırasına koy
+1. Filtreleme → Uygun haberleri seç (130'den ~43)
+2. KESINLIKLE 5 HABERİ SEÇ (daha az/fazla değil, tam 5!)
+   - Eğer 5 tane kritik haber bulamazsan, biraz daha düşük seviyedeki haberlerden ekle
+   - Ama TOPLAM 5 OLMASI ZORUNLU
+3. Kalanları (38 haber) önem sırasına koy
 4. HTML şablonunu doldur
 
-ZORUNLU: Yukarıdaki şablonu AYNEN kullan, TÜM uygun haberleri dahil et!"""
+ZORUNLU:
+- Yukarıdaki şablonu AYNEN kullan
+- TÜM uygun haberleri dahil et
+- ÖNEMLİ 5 HABERİ ZORUNLU OLARAK SEÇ (eksik olmasın!)"""
