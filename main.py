@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Siber Güvenlik Haberleri - Otomatik Günlük Rapor"""
-import requests, time, os, json, hashlib, re, fcntl
+import requests, time, os, json, hashlib, re
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 from xml.etree import ElementTree as ET
@@ -8,6 +8,14 @@ from urllib.parse import urlparse, parse_qs, urlencode
 import google.generativeai as genai
 from difflib import SequenceMatcher
 from src.config import *
+
+# File locking (platform-dependent)
+try:
+    import fcntl
+    HAS_FCNTL = True
+except ImportError:
+    # Windows doesn't have fcntl
+    HAS_FCNTL = False
 
 # ===== HASH-BASED DEDUPLICATION & URL NORMALIZATION =====
 def _calculate_content_hash(title, description):
