@@ -61,3 +61,16 @@
 2026-02-20	https://www.csoonline.com/article/4133975/cybersicherheit-braucht-reife-und-keine-checklisten.html	Cybersicherheit braucht Reife und keine Checklisten	35bfde2a5a62e245
 2026-02-20	https://www.csoonline.com/article/4132950/from-in-house-ciso-to-consultant-what-you-need-to-know-before-making-the-leap.html	From in-house CISO to consultant. What you need to know before making the leap	f5be4c84c1cc8aa4
 2026-02-20	https://www.infoblox.com/blog/company/november-2025-january-2026-innovations-whats-new-in-infoblox-ddi/	November 2025–January 2026 Innovations: What’s New in Infoblox DDI™	1d1b469790a21948
+2026-02-21	https://thehackernews.com/2026/02/beyondtrust-flaw-used-for-web-shells.html	BeyondTrust Flaw Used for Web Shells, Backdoors, and Data Exfiltration	9727422035dc5cdd
+2026-02-21	https://www.bleepingcomputer.com/news/security/japanese-tech-giant-advantest-hit-by-ransomware-attack/	Japanese tech giant Advantest hit by ransomware attack	6de342062925901c
+2026-02-21	https://www.bleepingcomputer.com/news/security/cisa-beyondtrust-rce-flaw-now-exploited-in-ransomware-attacks/	CISA: BeyondTrust RCE flaw now exploited in ransomware attacks	0f63c09e30e337af
+2026-02-21	https://www.bleepingcomputer.com/news/security/data-breach-at-french-bank-registry-impacts-12-million-accounts/	Data breach at French bank registry impacts 1.2 million accounts	fdc6fd4a289c57c9
+2026-02-21	https://securityaffairs.com/188309/data-breach/paypal-discloses-extended-data-leak-linked-to-loan-app-glitch.html	PayPal discloses extended data leak linked to Loan App glitch	51f9ebc22f223648
+2026-02-21	https://www.bitdefender.com/en-us/blog/hotforsecurity/spanish-police-say-they-have-arrested-hacker-who-booked-luxury-hotel-rooms-for-just-one-cent	Spanish police say they have arrested hacker who booked luxury hotel rooms for just one cent	34e4573be6fd02f7
+2026-02-21	https://isc.sans.edu/diary/rss/32734	Japanese-Language Phishing Emails, (Sat, Feb 21st)	cfe03773666395c2
+2026-02-21	https://cyberscoop.com/anthropic-claude-code-security-automated-security-review/	Anthropic rolls out embedded security scanning for Claude 	8d56ffb49bf97793
+2026-02-21	https://go.theregister.com/feed/www.theregister.com/2026/02/20/paypal_app_code_error_leak/	PayPal app code error leaked personal info and a 'few' unauthorized transactions	d58e60c49c2c0b75
+2026-02-21	https://go.theregister.com/feed/www.theregister.com/2026/02/20/shinyhunters_wynn_resorts/	ShinyHunters demands $1.5M not to leak Vegas casino and resort chain data	8460626a1de08bb8
+2026-02-21	https://techcrunch.com/2026/02/20/ukrainian-man-jailed-for-identity-theft-that-helped-north-koreans-get-jobs-at-us-companies/	Ukrainian man jailed for identity theft that helped North Koreans get jobs at US companies	e1611918683a989b
+2026-02-21	https://www.csoonline.com/article/4135449/compromised-npm-package-silently-installs-openclaw-on-developer-machines.html	Compromised npm package silently installs OpenClaw on developer machines	7d4d823264329091
+2026-02-21	https://www.csoonline.com/article/4135307/dont-trust-trustconnect-this-fake-remote-support-tool-only-helps-hackers.html	Don’t trust TrustConnect: This fake remote support tool only helps hackers	bfb56f98a3bb8aa1
