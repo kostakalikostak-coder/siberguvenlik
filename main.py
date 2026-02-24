@@ -1,6 +1,6 @@
 """
 Siber Güvenlik Haberleri - Günlük Rapor Sistemi
-v2.1 - HTML Doğrulama + Eksik Paragraf Tamamlama
+v2.2 - Gemini 2.5 Flash + HTML Doğrulama + Eksik Paragraf Tamamlama
 """
 
 import os
@@ -605,12 +605,12 @@ class HaberSistemi:
                 print(f"   Deneme {attempt + 1}/{max_retries}...")
 
                 prompt = get_claude_prompt(txt_content)
-                model = genai.GenerativeModel('gemini-flash-latest')
+                model = genai.GenerativeModel('gemini-2.5-flash')
 
                 response = model.generate_content(
                     prompt,
                     generation_config=genai.GenerationConfig(
-                        max_output_tokens=100000,
+                        max_output_tokens=65536,
                         temperature=0.7,
                     )
                 )
@@ -820,11 +820,11 @@ KURALLAR:
 """
 
         try:
-            model = genai.GenerativeModel('gemini-flash-latest')
+            model = genai.GenerativeModel('gemini-2.5-flash')
             response = model.generate_content(
                 completion_prompt,
                 generation_config=genai.GenerationConfig(
-                    max_output_tokens=100000,
+                    max_output_tokens=65536,
                     temperature=0.7,
                 )
             )
