@@ -3,7 +3,57 @@
 📅 24 FEBRUARY 2026 - SİBER GÜVENLİK HABERLERİ (HAM RSS)
 ================================================================================
 
-[1] The Hacker News - Anthropic Says Chinese AI Firms Used 16 Million Claude Queries to Copy Model
+[1] The Hacker News - UnsolicitedBooker Targets Central Asian Telecoms With LuciDoor and MarsSnake Backdoors
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Tue, 24 Feb 2026 15:24:00 +0530
+Link: https://thehackernews.com/2026/02/unsolicitedbooker-targets-central-asian.html
+
+[TAM METİN - 767 kelime]
+The threat activity cluster known as UnsolicitedBooker has been observed targeting telecommunications companies in Kyrgyzstan and Tajikistan, marking a shift from prior attacks aimed at Saudi Arabian entities.
+
+The attacks involve the deployment of two distinct backdoors codenamed LuciDoor and MarsSnake, according to a report published by Positive Technologies last week.
+
+"The group used several unique and rare instruments of Chinese origin," researchers Alexander Badaev and Maxim Shamanov said.
+
+UnsolicitedBooker was first documented by ESET in May 2025, attributing the China-aligned threat actor to a cyber attack targeting an unnamed international organization in Saudi Arabia with a backdoor dubbed MarsSnake. The group is assessed to be active since at least March 2023 and has a history of targeting organizations in Asia, Africa, and the Middle East.
+
+Further analysis of the threat actor has uncovered tactical overlaps with two other clusters, including Space Pirates and an as-yet-unattributed campaign targeting Saudi Arabia with another backdoor referred to as Zardoor.
+
+The latest set of attacks documented by the Russian cybersecurity vendor was found to target Kyrgyz organizations in late September 2025 with phishing emails containing a Microsoft Office document, which, when opened, instructs recipients to "Enable Content" so as to run a malicious macro.
+
+While the document displays a telecom provider's tariff plan to the victim, the macro stealthily drops a C++ malware loader called LuciLoad that, in turn, delivers LuciDoor. Another attack observed in late November 2025 adopted the same modus operandi, only this time it used a different loader codenamed MarsSnakeLoader to deploy MarsSnake.
+
+As recently as January 2026, UnsolicitedBooker is said to have leveraged phishing emails as a vector to target companies in Tajikistan. While the overall attack chain remains the same, the messages embedded links to the decoy documents as opposed to directly attaching them.
+
+Written in C++, LuciDoor establishes communication with a command-and-control (C2) server, collects basic system information, and exfiltrates the data to the server in encrypted format. It then parses the responses sent by the server to run commands using cmd.exe, write files to the system, and upload files.
+
+MarsSnake, similarly, allows attackers to harvest system metadata, execute arbitrary commands, and read or write any file on disk.
+
+Positive Technologies said it also found signs that MarsSnake was put to use in attacks targeting China. The starting point is a Windows shortcut that masquerades as a Microsoft Word document (*.doc.lnk) that triggers the execution of a batch script to launch a Visual Basic Script, which then launches MarsSnake without the loader component.
+
+The decoy file is believed to be based on an LNK file associated with a publicly available pentesting tool called FTPlnk_phishing, owing to the identical LNK file creation time and Machine ID indicators. It's worth noting that a similar LNK file was put to use by the Mustang Panda group in attacks targeting Thailand in 2022.
+
+"In their attacks, the group used rare tools of Chinese origin," Positive Technologies said. "Interestingly, at the very beginning, the group used a backdoor we dubbed LuciDoor, but later switched to the MarsSnake backdoor. However, in 2026, the group made a U-turn and resumed using LuciDoor."
+
+"Furthermore, in at least one case, we observed the attackers using a hacked router as a C2 server, and their infrastructure mimicked that of Russia in some attacks."
+
+PseudoSticky and Cloud Atlas Target Russia
+
+The disclosure comes as a previously unknown threat actor is deliberately mimicking the tactics of a pro-Ukrainian hacking group called Sticky Werewolf (aka Angry Likho, MimiStick, and PhaseShifters) to attack Russian organizations in the retail, construction, and research sectors with malware like RemcosRAT and DarkTrack RAT for comprehensive data theft and remote control.
+
+The new group, referred to as PseudoSticky, has been active since November 2025. Victims are typically infected by phishing emails containing malicious attachments that lead to the deployment of the trojans. There are indications that the threat actor has relied on large language models (LLMs) to develop attack chains that drop DarkTrack RAT via PureCrypter.
+
+"A closer analysis reveals differences in the infrastructure, malware implementation, and individual tactical elements, leading us to suspect that there is likely no direct connection between the groups, but rather deliberate mimicry," Russian security vendor F6 said.
+
+Russian entities have also been targeted by another hacking group called Cloud Atlas, using phishing emails bearing malicious Word documents to distribute custom malware known as VBShower and VBCloud.
+
+"When opened, the malicious document loads a remote template from C2 specified in one of the document's streams," cybersecurity company Solar said. "This template exploits the CVE-2018-0802 vulnerability. This is followed by downloading a malicious file with alternate streams, i.e., VBShower."
+
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/unsolicitedbooker-targets-central-asian.html, thehackernews.com, 24.02.2026)
+
+================================================================================
+
+[2] The Hacker News - Anthropic Says Chinese AI Firms Used 16 Million Claude Queries to Copy Model
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Tue, 24 Feb 2026 11:34:00 +0530
 Link: https://thehackernews.com/2026/02/anthropic-says-chinese-ai-firms-used-16.html
@@ -47,7 +97,7 @@ The disclosure comes weeks after Google Threat Intelligence Group (GTIG) disclos
 
 ================================================================================
 
-[2] The Hacker News - APT28 Targeted European Entities Using Webhook-Based Macro Malware
+[3] The Hacker News - APT28 Targeted European Entities Using Webhook-Based Macro Malware
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Tue, 24 Feb 2026 01:11:00 +0530
 Link: https://thehackernews.com/2026/02/apt28-targeted-european-entities-using.html
@@ -77,7 +127,7 @@ A second variant of the batch script has been found to eschew headless execution
 
 ================================================================================
 
-[3] The Hacker News - Wormable XMRig Campaign Uses BYOVD Exploit and Time-Based Logic Bomb
+[4] The Hacker News - Wormable XMRig Campaign Uses BYOVD Exploit and Time-Based Logic Bomb
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 23:29:00 +0530
 Link: https://thehackernews.com/2026/02/wormable-xmrig-campaign-uses-byovd.html
@@ -141,7 +191,7 @@ Attackers have also been putting to use a toolkit dubbed ILOVEPOOP to scan for e
 
 ================================================================================
 
-[4] The Hacker News - ⚡ Weekly Recap: Double-Tap Skimmers, PromptSpy AI, 30Tbps DDoS, Docker Malware & More
+[5] The Hacker News - ⚡ Weekly Recap: Double-Tap Skimmers, PromptSpy AI, 30Tbps DDoS, Docker Malware & More
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 18:30:00 +0530
 Link: https://thehackernews.com/2026/02/weekly-recap-double-tap-skimmers.html
@@ -237,7 +287,7 @@ Scan the full list carefully. One of these short updates will likely map closer 
 
 ================================================================================
 
-[5] The Hacker News - How Exposed Endpoints Increase Risk Across LLM Infrastructure
+[6] The Hacker News - How Exposed Endpoints Increase Risk Across LLM Infrastructure
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 17:28:00 +0530
 Link: https://thehackernews.com/2026/02/how-exposed-endpoints-increase-risk.html
@@ -315,7 +365,7 @@ Note: This article was thoughtfully written and contributed for our audience by 
 
 ================================================================================
 
-[6] The Hacker News - Malicious npm Packages Harvest Crypto Keys, CI Secrets, and API Tokens
+[7] The Hacker News - Malicious npm Packages Harvest Crypto Keys, CI Secrets, and API Tokens
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 15:50:00 +0530
 Link: https://thehackernews.com/2026/02/malicious-npm-packages-harvest-crypto.html
@@ -377,7 +427,110 @@ The findings also follow a report from Checkmarx, which flagged a rogue VS Code 
 
 ================================================================================
 
-[7] BleepingComputer - Android mental health apps with 14.7M installs filled with security flaws
+[8] The Hacker News - MuddyWater Targets MENA Organizations with GhostFetch, CHAR, and HTTP_VIP
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 23 Feb 2026 12:55:00 +0530
+Link: https://thehackernews.com/2026/02/muddywater-targets-mena-organizations.html
+
+[TAM METİN - 613 kelime]
+The Iranian hacking group known as MuddyWater (aka Earth Vetala, Mango Sandstorm, and MUDDYCOAST) has targeted several organizations and individuals mainly located across the Middle East and North Africa (MENA) region as part of a new campaign codenamed Operation Olalampo.
+
+The activity, first observed on January 26, 2026, has resulted in the deployment of new malware families that share overlapping samples previously identified as used by the threat actor, according to a report published by Group-IB. These include downloaders like GhostFetch and HTTP_VIP, along with a Rust backdoor called CHAR and an advanced implant codenamed GhostBackDoor that's dropped by GhostFetch.
+
+"These attacks follow similar patterns and align with the killchains previously observed in MuddyWater attacks; starting with a phishing email with a Microsoft Office document attached to it that contains malicious macro code that decodes the embedded payload and drops it on the system and executes it, providing the adversary with remote control of the system," the company said.
+
+One such attack chain employing a malicious Microsoft Excel document prompts users to enable macros in order to activate the infection and ultimately drop CHAR. Another variant of the same attack has been found to lead to the deployment of the GhostFetch downloader, which then downloads GhostBackDoor.
+
+A third version of the attack leverages themes such as flight tickets and reports, in contrast to using lures mimicking an energy and marine services company in the Middle East, to distribute the HTTP_VIP downloader that subsequently deploys the AnyDesk remote desktop software.
+
+A brief description of the four tools is as follows -
+
+GhostFetch, a first-stage downloader that profiles the system, validates mouse movements and checks screen resolution, checks for the presence of debuggers, virtual machine artifacts, and antivirus software, and fetches and executes secondary payloads directly in memory.
+
+GhostBackDoor, a second-stage backdoor delivered by GhostFetch that supports an interactive shell, file read/write, and re-run GhostFetch.
+
+HTTP_VIP, a native downloader that conducts system reconnaissance, connects to an external server ("codefusiontech[.]org") to authenticate and deploy AnyDesk from the C2 server. A new variant of the malware also adds the ability to retrieve victim information and retrieve instructions to start an interactive shell, download/upload files, capture clipboard contents, and update the sleep/beaconing interval.
+
+CHAR, a Rust backdoor that's controlled by a Telegram bot (whose first name is "Olalampo" and username is "stager_51_bot") to change directory and execute a cmd.exe or PowerShell command.
+
+The PowerShell command is designed to execute a SOCKS5 reverse proxy or another backdoor named Kalim, upload data stolen from web browsers, and run unknown executables referred to as "sh.exe" and "gshdoc_release_X64_GUI.exe."
+
+Group-IB's analysis of CHAR's source code has revealed signs of artificial intelligence (AI)-assisted development owing to the presence of emojis in debug strings, a finding that's consistent with Google's revelations last year that the threat actor is experimenting with generative AI tools to facilitate the development of custom malware to support file transfer and remote execution.
+
+Another notable aspect is that CHAR shares a similar structure and development environment as the Rust-based malware BlackBeard (aka Archer RAT and RUSTRIC), which was flagged by CloudSEK and Seqrite Labs as put to use by the threat actor to target various entities in the Middle East.
+
+MuddyWater has also been observed exploiting recently disclosed vulnerabilities on public-facing servers as a way to obtain initial access to target networks.
+
+"The MuddyWater APT group remains an active threat within the META [Middle East, Turkey, and Africa] region, with this operation primarily targeting organizations in the MENA region," Group-IB concluded. "The group's continued adoption of AI technology, combined with continued development of custom malware and tooling and diversified command-and-control (C2) infrastructures, underscores their dedication and intent to expand their operations."
+
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/muddywater-targets-mena-organizations.html, thehackernews.com, 23.02.2026)
+
+================================================================================
+
+[9] BleepingComputer - North Korean Lazarus group linked to Medusa ransomware attacks
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Tue, 24 Feb 2026 06:00:00 -0500
+Link: https://www.bleepingcomputer.com/news/security/north-korean-lazarus-group-linked-to-medusa-ransomware-attacks/
+
+[TAM METİN - 430 kelime]
+North Korean state-backed hackers associated with the Lazarus threat group are targeting U.S. healthcare organizations in extortion attack using the Medusa ransomware.
+
+The Medusa ransomware-as-a-service (RaaS) operation  emerged in January 2021 and by February 2025 it impacted over 300 organizations in various critical infrastructure sectors. Since then, the gang claimed at least another 80 victims.
+
+North Korean threat actors have previously been linked to other ransomware strains such as HolyGhost, PLAY, Maui, Qilin, and other malware families. However, this is the first time security researchers associate the actor with Medusa.
+
+In a report today, enterprise cybersecurity company Symantec says that a Lazarus subgroup - possibly Andariel/Stonefly, is now using Medusa in financially-motivated cyberattacks targeting U.S. healthcare providers.
+
+According to the researchers, the toolset used in these attacks also shows some association with Diamond Sleet, another North Korean group that typically targets media, defense, and IT industries.
+
+However, some of the utilities seen in the Medusa ransomware attacks are commodity tools:
+
+Comebacker – Diamond Sleet-linked backdoor/loader
+
+Blindingcan – Remote access trojan
+
+ChromeStealer – Chrome credential extractor
+
+Infohook – Information stealer
+
+Mimikatz – Credential dumping tool
+
+RP_Proxy – Custom proxy tool
+
+Curl – Data transfer tool
+
+Though not all recent Medusa attacks can be confidently attributed to Lazarus, the average ransom recorded was $260,000, which past litigation has claimed is used to fund espionage operations, including against the defense, technology, and government sectors in the U.S., Taiwan, and South Korea.
+
+The researchers comment that no sectors are “out of reach” for the North Koreans, who have no ethical barriers stopping them from disrupting healthcare operations.
+
+“The switch to Medusa demonstrates that North Korea’s rapacious involvement in cybercrime continues unabated,” comment Symantec researchers.
+
+“While some cybercrime outfits claim to steer clear of targeting healthcare organizations due to the
+reputational damage it may attract, Lazaurs doesn’t seem to be in any way constrained.”
+
+Symantec has listed indicators of compromise (IoCs) at the bottom of its report to help defenders catch these attacks early and prevent the encryption of sensitive data.
+
+The future of IT infrastructure is here
+
+Modern IT infrastructure moves faster than manual workflows can handle.
+
+In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
+
+Fake job recruiters hide malware in developer coding challenges
+
+Covenant Health says May data breach impacted nearly 478,000 patients
+
+Japanese tech giant Advantest hit by ransomware attack
+
+CISA: BeyondTrust RCE flaw now exploited in ransomware attacks
+
+Mississippi medical center closes all clinics after ransomware attack
+
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/north-korean-lazarus-group-linked-to-medusa-ransomware-attacks/, bleepingcomputer.com, 24.02.2026)
+
+================================================================================
+
+[10] BleepingComputer - Android mental health apps with 14.7M installs filled with security flaws
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 17:59:04 -0500
 Link: https://www.bleepingcomputer.com/news/security/android-mental-health-apps-with-147m-installs-filled-with-security-flaws/
@@ -447,7 +600,7 @@ Telegram channels expose rapid weaponization of SmarterMail flaws
 
 ================================================================================
 
-[8] BleepingComputer - Spain arrests suspected hacktivists for DDoSing govt sites
+[11] BleepingComputer - Spain arrests suspected hacktivists for DDoSing govt sites
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 16:59:42 -0500
 Link: https://www.bleepingcomputer.com/news/security/spain-arrests-suspected-anonymous-fenix-hacktivists-for-ddosing-govt-sites/
@@ -493,7 +646,7 @@ Romania's oil pipeline operator Conpet confirms data stolen in attack
 
 ================================================================================
 
-[9] BleepingComputer - Microsoft says bug in classic Outlook hides the mouse pointer
+[12] BleepingComputer - Microsoft says bug in classic Outlook hides the mouse pointer
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 14:40:42 -0500
 Link: https://www.bleepingcomputer.com/news/microsoft/microsoft-says-bug-in-classic-outlook-hides-the-mouse-pointer/
@@ -537,7 +690,7 @@ Microsoft Store Outlook add-in hijacked to steal 4,000 Microsoft accounts
 
 ================================================================================
 
-[10] BleepingComputer - Ad tech firm Optimizely confirms data breach after vishing attack
+[13] BleepingComputer - Ad tech firm Optimizely confirms data breach after vishing attack
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 13:04:01 -0500
 Link: https://www.bleepingcomputer.com/news/security/ad-tech-firm-optimizely-confirms-data-breach-after-vishing-attack/
@@ -589,7 +742,7 @@ ShinyHunters launches Salesforce data leak site to extort 39 victims
 
 ================================================================================
 
-[11] BleepingComputer - When identity isn’t the weak link, access still is
+[14] BleepingComputer - When identity isn’t the weak link, access still is
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 10:00:10 -0500
 Link: https://www.bleepingcomputer.com/news/security/when-identity-isnt-the-weak-link-access-still-is/
@@ -661,7 +814,7 @@ Sponsored and written by Specops Software.
 
 ================================================================================
 
-[12] BleepingComputer - CISA: Recently patched RoundCube flaws now exploited in attacks
+[15] BleepingComputer - CISA: Recently patched RoundCube flaws now exploited in attacks
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 06:44:21 -0500
 Link: https://www.bleepingcomputer.com/news/security/cisa-recently-patched-roundcube-flaws-now-exploited-in-attacks/
@@ -707,12 +860,16 @@ CISA: BeyondTrust RCE flaw now exploited in ransomware attacks
 
 ================================================================================
 
-[13] Security Affairs - Operation MacroMaze: APT28 exploits webhooks for covert data exfiltration
+[16] Security Affairs - Operation MacroMaze: APT28 exploits webhooks for covert data exfiltration
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Tue, 24 Feb 2026 09:10:39 +0000
 Link: https://securityaffairs.com/188421/apt/operation-macromaze-apt28-exploits-webhooks-for-covert-data-exfiltration.html
 
-[TAM METİN - 684 kelime]
+[TAM METİN - 711 kelime]
+Operation MacroMaze: APT28 exploits webhooks for covert data exfiltration
+
+Russia-linked APT28 targeted European entities with a webhook-based macro malware campaign called Operation MacroMaze.
+
 Russia-linked APT28 (aka UAC-0001, aka Fancy Bear, Pawn Storm, Sofacy Group, Sednit, BlueDelta, and STRONTIUM) launched Operation MacroMaze, targeting select entities in Western and Central Europe from September 2025 to January 2026. The campaign used webhook-based macro malware, leveraging simple tools and legitimate services for infrastructure and data exfiltration.
 
 The attack chain campaign begins with spear-phishing emails delivering weaponized documents that contain an “INCLUDEPICTURE” field pointing to a webhook[.]site URL hosting a JPG.
@@ -737,16 +894,22 @@ In January 2026, Zscaler ThreatLabz uncovered the campaign Operation Neusploit t
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
+(SecurityAffairs – hacking, APT28)
+
 (XXXXXXX, AÇIK - https://securityaffairs.com/188421/apt/operation-macromaze-apt28-exploits-webhooks-for-covert-data-exfiltration.html, securityaffairs.com, 24.02.2026)
 
 ================================================================================
 
-[14] Security Affairs - Everest ransomware hits Vikor Scientific ‘s supplier, data of 140,000 patients stolen
+[17] Security Affairs - Everest ransomware hits Vikor Scientific ‘s supplier, data of 140,000 patients stolen
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Tue, 24 Feb 2026 08:37:25 +0000
 Link: https://securityaffairs.com/188397/data-breach/everest-ransomware-hits-vikor-scientific-s-supplier-data-of-140000-patients-stolen.html
 
-[TAM METİN - 330 kelime]
+[TAM METİN - 365 kelime]
+Everest ransomware hits Vikor Scientific ‘s supplier, data of 140,000 patients stolen
+
+Everest ransomware claims an attack on diagnostic firm Vikor Scientific (Vanta Diagnostics), exposing data of nearly 140,000 people.
+
 The Everest ransomware group has claimed responsibility for a cyberattack on Vikor Scientific, now operating as Vanta Diagnostics. The healthcare diagnostic firm disclosed a data breach impacting nearly 139,964 individuals, as reported by the US Department of Health and Human Services (HHS).
 
 The incident stems from the attack on Catalyst RCM, a third-party provider of revenue cycle management services. Around November 13, 2025, Catalyst detected suspicious activity in its secure file system. The company launched an investigation into the incident that revealed that an authorized login was misused to access a server on November 8–9, 2025, and copy data without permission.
@@ -765,16 +928,22 @@ After discovering the breach, Catalyst notified partners and conducted a thoroug
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
+(SecurityAffairs – hacking, Vikor Scientific)
+
 (XXXXXXX, AÇIK - https://securityaffairs.com/188397/data-breach/everest-ransomware-hits-vikor-scientific-s-supplier-data-of-140000-patients-stolen.html, securityaffairs.com, 24.02.2026)
 
 ================================================================================
 
-[15] Security Affairs - Wormable XMRig campaign leverages BYOVD and timed kill switch for stealth
+[18] Security Affairs - Wormable XMRig campaign leverages BYOVD and timed kill switch for stealth
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 18:36:09 +0000
 Link: https://securityaffairs.com/188388/malware/wormable-xmrig-campaign-leverages-byovd-and-timed-kill-switch-for-stealth.html
 
-[TAM METİN - 609 kelime]
+[TAM METİN - 724 kelime]
+Wormable XMRig campaign leverages BYOVD and timed kill switch for stealth
+
+A wormable cryptojacking campaign spreads via pirated software, using BYOVD and a time-based logic bomb to deploy a custom XMRig miner.
+
 Researchers uncovered a wormable cryptojacking campaign that spreads through pirated software bundles to deploy a custom XMRig miner. The attack uses a BYOVD exploit and a time-based logic bomb to evade detection and maximize mining output. Its multi-stage infection chain focuses on boosting cryptocurrency hashrate, often pushing infected systems to instability in the process.
 
 The campaign spreads through pirated “premium” software installers that drop a sophisticated XMRig-based miner. At its core is a controller binary, Explorer.exe, designed as a persistent state machine that switches roles via command-line arguments (installer, watchdog, active infection, cleanup).
@@ -793,6 +962,10 @@ The malware includes a time-based kill switch set to December 23, 2025, triggeri
 
 “A significant discovery within the sub_14000D180 function is a hardcoded temporal check, serving as a “kill switch” or “time bomb.” This mechanism operates by retrieving the local system time and comparing it against a predetermined deadline: December 23, 2025.” continues the report. “The malware’s behavior diverges based on this date:
 
+Active phase (Pre-Dec 23, 2025): The malware proceeds with the standard infection routine, installing the persistence modules and launching the miner.
+
+Expiration phase (Post-Dec 23, 2025): This suggests that the campaign is not intended to be an indefinite operation. It implies a “fire-and-forget” lifecycle, possibly timed to coincide with the expiration of rented Command & Control (C2) infrastructure, a predicted shift in the cryptocurrency market (specifically Monero difficulty adjustments), or a planned transition to a new malware variant.”
+
 This XMRig variant includes a worm module that spreads through USB drives, not just manual downloads. It quietly listens for new removable devices using Windows system notifications instead of constantly scanning for them. When a USB drive is inserted, the malware copies its explorer.exe file onto the device, hides it in a folder, and creates a malicious shortcut disguised as the drive icon. When the USB is opened on another computer, the shortcut can execute the malware, enabling further spread.
 
 The threat actor appears to be testing the infection chain and persistence features, including the “Barusu” kill switch, on a limited number of systems before scaling up. Mining pool data shows one active worker with a modest hashrate, with sporadic activity in November 2025 and a noticeable spike starting December 8, suggesting a fresh rollout or activation of new infected nodes.
@@ -801,16 +974,22 @@ The threat actor appears to be testing the infection chain and persistence featu
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
+(SecurityAffairs – hacking, XMRig Campaign)
+
 (XXXXXXX, AÇIK - https://securityaffairs.com/188388/malware/wormable-xmrig-campaign-leverages-byovd-and-timed-kill-switch-for-stealth.html, securityaffairs.com, 23.02.2026)
 
 ================================================================================
 
-[16] Security Affairs - Romanian hacker pleads guilty to selling access to Oregon state networks
+[19] Security Affairs - Romanian hacker pleads guilty to selling access to Oregon state networks
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 14:43:49 +0000
 Link: https://securityaffairs.com/188380/cyber-crime/romanian-hacker-pleads-guilty-to-selling-access-to-oregon-state-networks.html
 
-[TAM METİN - 217 kelime]
+[TAM METİN - 252 kelime]
+Romanian hacker pleads guilty to selling access to Oregon state networks
+
+A Romanian man pleaded guilty to selling admin access to Oregon’s state network for $3,000 in Bitcoin and repeatedly accessing it to prove control.
+
 Catalin Dragomir (45) from Romania, pleaded guilty in the U.S. for selling unauthorized admin access to an Oregon state emergency management network. He gained access in June 2021, advertised it, and negotiated a $3,000 Bitcoin sale. According to DoJ, the man repeatedly accessed the system to demonstrate he controlled it.
 
 “According to court documents, Catalin Dragomir, 45, formerly of Constanta, Romania, sold access to a computer on the network of an Oregon state government office after obtaining unauthorized access to it in June of 2021.” reads the press release published by DoJ. “During the sale of access to the computer, Dragomir provided the prospective buyer with samples of personal identifying information from the computer.”
@@ -827,12 +1006,16 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[17] Security Affairs - CVE-2026-1731 fuels ongoing attacks on BeyondTrust remote access products
+[20] Security Affairs - CVE-2026-1731 fuels ongoing attacks on BeyondTrust remote access products
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 12:09:32 +0000
 Link: https://securityaffairs.com/188370/hacking/cve-2026-1731-fuels-ongoing-attacks-on-beyondtrust-remote-access-products.html
 
-[TAM METİN - 578 kelime]
+[TAM METİN - 611 kelime]
+CVE-2026-1731 fuels ongoing attacks on BeyondTrust remote access products
+
+Attackers are exploiting CVE-2026-1731 in BeyondTrust RS and PRA to deploy VShell, gain persistence, move laterally, and control compromised systems.
+
 Threat actors are actively exploiting a recently disclosed critical vulnerability, tracked as CVE-2026-1731 (CVSS score: 9.9), in BeyondTrust Remote Support (RS) and Privileged Remote Access (PRA).
 
 The flaw is being used to conduct a wide range of malicious activities, including deploying VShell and other tools to gain persistence, move laterally, and maintain remote control over compromised systems.
@@ -865,16 +1048,22 @@ Recently, the Cybersecurity and Infrastructure Security Agency warned that CVE-2
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
+(SecurityAffairs – hacking, CVE-2026-1731)
+
 (XXXXXXX, AÇIK - https://securityaffairs.com/188370/hacking/cve-2026-1731-fuels-ongoing-attacks-on-beyondtrust-remote-access-products.html, securityaffairs.com, 23.02.2026)
 
 ================================================================================
 
-[18] Security Affairs - AI-powered campaign compromises 600 FortiGate systems worldwide
+[21] Security Affairs - AI-powered campaign compromises 600 FortiGate systems worldwide
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 10:39:40 +0000
 Link: https://securityaffairs.com/188351/hacking/ai-powered-campaign-compromises-600-fortigate-systems-worldwide.html
 
-[TAM METİN - 673 kelime]
+[TAM METİN - 701 kelime]
+AI-powered campaign compromises 600 FortiGate systems worldwide
+
+A Russian-speaking cybercriminal used commercial generative AI tools to hack over 600 FortiGate devices across 55 countries.
+
 Amazon Threat Intelligence reports that a Russian-speaking, financially motivated threat actor used commercial generative AI services to compromise more than 600 FortiGate devices in 55 countries. The activity, observed between January 11 and February 18, 2026, highlights how cybercriminals are increasingly leveraging AI tools to scale and automate attacks against exposed network infrastructure worldwide.
 
 The attacker did not exploit any FortiGate vulnerabilities. Instead, the threat actor abused exposed management ports and weak single-factor credentials.
@@ -905,11 +1094,58 @@ The case shows how AI lowers the barrier to cybercrime. Experts warn AI-driven a
 
 Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
+(SecurityAffairs – hacking, FortiGate)
+
 (XXXXXXX, AÇIK - https://securityaffairs.com/188351/hacking/ai-powered-campaign-compromises-600-fortigate-systems-worldwide.html, securityaffairs.com, 23.02.2026)
 
 ================================================================================
 
-[19] SANS ISC - Another day, another malicious JPEG, (Mon, Feb 23rd)
+[22] Security Affairs - Anthropic unveils Claude Code Security to detect and fix code bugs
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 23 Feb 2026 00:11:55 +0000
+Link: https://securityaffairs.com/188358/ai/anthropic-unveils-claude-code-security-to-detect-and-fix-code-bugs.html
+
+[TAM METİN - 447 kelime]
+Anthropic unveils Claude Code Security to detect and fix code bugs
+
+Anthropic launches Claude Code Security, an AI tool that scans code for vulnerabilities and suggests how to address them.
+
+Anthropic has introduced Claude Code Security, a new AI-powered service designed to scan software codebases for vulnerabilities and recommend fixes. Built into Claude Code, the tool aims to help teams detect and remediate security flaws faster. The capability is currently being rolled out in a limited research preview for Enterprise and Team customers.
+
+“Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.” reads the announcement published by Anthropic.
+
+Claude Code Security is designed to discover complex, high-severity software vulnerabilities. Unlike traditional rule-based scanners, it analyzes code like a human researcher, focusing on data flows, understanding component interactions, and catching issues others miss. Each finding undergoes multi-stage verification, is assigned a severity and confidence rating, and appears in a dashboard for human review.
+
+“Every finding goes through a multi-stage verification process before it reaches an analyst. Claude re-examines each result, attempting to prove or disprove its own findings and filter out false positives.” continues the announcement. “Findings are also assigned severity ratings so teams can focus on the most important fixes first.”
+
+Currently in limited research preview for Enterprise, Team, and open-source maintainers, it empowers defenders while ensuring responsible deployment.
+
+Claude Code Security leverages over a year of research into Claude’s cybersecurity skills. Tested in Capture-the-Flag events and in partnership with Pacific Northwest National Laboratory, Claude has been refined to detect and patch real vulnerabilities. Using Claude Opus 4.6, the team discovered 500+ long-undetected bugs in open-source projects. Now, Claude Code Security brings these defensive capabilities to Enterprise, Team, and open-source maintainers, letting teams review findings and iterate on fixes directly within familiar tools.
+
+“This is a pivotal time for cybersecurity. We expect that a significant share of the world’s code will be scanned by AI in the near future, given how effective models have become at finding long-hidden bugs and security issues.” concludes Anthropic. “Attackers will use AI to find exploitable weaknesses faster than ever. But defenders who move quickly can find those same weaknesses, patch them, and reduce the risk of an attack.”
+
+Anthropic is launching a limited research preview of Claude Code Security for Enterprise and Team customers, with early access and collaboration. Open-source maintainers can apply for free, expedited access.
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(SecurityAffairs – hacking, Claude Code Security)
+
+(XXXXXXX, AÇIK - https://securityaffairs.com/188358/ai/anthropic-unveils-claude-code-security-to-detect-and-fix-code-bugs.html, securityaffairs.com, 23.02.2026)
+
+================================================================================
+
+[23] SANS ISC - ISC Stormcast For Tuesday, February 24th, 2026 https://isc.sans.edu/podcastdetail/9822, (Tue, Feb 24th)
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Tue, 24 Feb 2026 02:00:02 GMT
+Link: https://isc.sans.edu/diary/rss/32740
+
+⚠️  Tam metin çekilemedi
+
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32740, isc.sans.edu, 24.02.2026)
+
+================================================================================
+
+[24] SANS ISC - Another day, another malicious JPEG, (Mon, Feb 23rd)
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 14:26:39 GMT
 Link: https://isc.sans.edu/diary/rss/32738
@@ -990,12 +1226,25 @@ Nettles Consulting
 
 ================================================================================
 
-[20] Cyberscoop - CrowdStrike says attackers are moving through networks in under 30 minutes
+[25] SANS ISC - ISC Stormcast For Monday, February 23rd, 2026 https://isc.sans.edu/podcastdetail/9820, (Mon, Feb 23rd)
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 23 Feb 2026 02:45:11 GMT
+Link: https://isc.sans.edu/diary/rss/32736
+
+⚠️  Tam metin çekilemedi
+
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32736, isc.sans.edu, 23.02.2026)
+
+================================================================================
+
+[26] Cyberscoop - CrowdStrike says attackers are moving through networks in under 30 minutes
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Tue, 24 Feb 2026 08:01:00 +0000
 Link: https://cyberscoop.com/crowdstrike-annual-global-threat-report-attack-breakout-time/
 
-[TAM METİN - 729 kelime]
+[TAM METİN - 712 kelime]
+CrowdStrike says attackers are moving through networks in under 30 minutes
+
 Cyberattacks reached victims faster and came from a wider range of threat groups than ever last year, CrowdStrike said in its annual global threat report released Tuesday, adding that cybercriminals and nation-states increasingly relied on predictable tactics to evade detection by exploiting trusted systems.
 
 The average breakout time — how long it took financially-motivated attackers to move from initial intrusion to other network systems — dropped to 29 minutes in 2025, a 65% increase in speed from the year prior. “The fastest breakout time a year ago was 51 seconds. This year it’s 27 seconds,” Adam Meyers, head of counter adversary operations at CrowdStrike, told CyberScoop.
@@ -1030,48 +1279,78 @@ CrowdStrike’s annual global threat report is full of figures moving in the wro
 
 “The speed at which we’re seeing these breakout times accelerate is one of the markers,” he said, adding that it’s only a matter of time before the fastest attacks drop down to seconds, if not milliseconds.
 
-State Dept. official says post-quantum transition plans will outlive current leadership
+Chinese hackers exploited a Dell zero-day for 18 months before anyone noticed   
 
-HHS burrows into identifying risks to health sector from third-party vendors
 
-ONCD official says Trump administration aims to bolster AI use for defense without increasing risk
 
-The Caracas operation suggests cyber was part of the plan – just not the whole operation
+By 
 
-Google finds state-sponsored hackers use AI at 'all stages' of attack cycle
+      Matt Kapko
 
-DHS privacy probe will focus on biometric tracking by ICE, OBIM
+Chinese hackers exploited a Dell zero-day for 18 months before anyone noticed
 
-WhatsApp releases account feature that looks to combat spyware
+Unit 42: Nearly two-thirds of breaches now start with identity abuse   
 
-CISA publishes a post-quantum shopping list for agencies. Security professionals aren’t sold
 
-Nigerian man sentenced to 8 years in prison for running phony tax refund scheme
 
-Polish authorities arrest alleged Phobos ransomware affiliate
+By 
 
-Apple discloses first actively exploited zero-day of 2026
+      Matt Kapko
 
-0APT ransomware group rises swiftly with bluster, along with genuine threat of attack
+Unit 42: Nearly two-thirds of breaches now start with identity abuse
 
-CISA to host industry feedback sessions on cyber incident reporting regulation
+Ukrainian sentenced to 5 years in prison for facilitating North Korean remote worker scheme   
 
-CISA tells agencies to stop using unsupported edge devices
 
-What’s next for DHS’s forthcoming replacement critical infrastructure protection panel, AI information sharing
 
-Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
+By 
+
+      Matt Kapko
+
+Ukrainian sentenced to 5 years in prison for facilitating North Korean remote worker scheme
+
+FBI: Threats from Salt Typhoon are ‘still very much ongoing’   
+
+
+
+By 
+
+      Derek B. Johnson
+
+FBI: Threats from Salt Typhoon are ‘still very much ongoing’
+
+Anthropic rolls out embedded security scanning for Claude    
+
+
+
+By 
+
+      Derek B. Johnson
+
+Anthropic rolls out embedded security scanning for Claude
+
+Anthropic accuses Chinese labs of trying to illicitly take Claude’s capabilities   
+
+
+
+By 
+
+      Tim Starks
+
+Anthropic accuses Chinese labs of trying to illicitly take Claude’s capabilities
 
 (XXXXXXX, AÇIK - https://cyberscoop.com/crowdstrike-annual-global-threat-report-attack-breakout-time/, cyberscoop.com, 24.02.2026)
 
 ================================================================================
 
-[21] Cyberscoop - Anthropic accuses Chinese labs of trying to illicitly take Claude’s capabilities
+[27] Cyberscoop - Anthropic accuses Chinese labs of trying to illicitly take Claude’s capabilities
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 21:02:13 +0000
 Link: https://cyberscoop.com/anthropic-accuses-chinese-labs-ai-distillation-cyber-risk/
 
-[TAM METİN - 581 kelime]
+[TAM METİN - 517 kelime]
+Anthropic accuses Chinese labs of trying to illicitly take Claude’s capabilities
+
 Anthropic on Monday accused three Chinese artificial intelligence laboratories of stealthily trying to siphon Claude’s capabilities for their own models, potentially in a way that could fuel offensive cyber operations.
 
 The U.S. AI startup said the three labs, DeepSeek, Moonshot and MiniMax, ran “industrial-scale campaigns” with a tactic known as “distillation.” It involves sending bulk requests to its Claude model in a bid to boost their own — in this case, 16 million in all. Distillation can be a legitimate training method practice, the company said in a blog post, but not when used as a shortcut to take capabilities from competitors.
@@ -1092,43 +1371,53 @@ What makes the tactic illegitimate is that it essentially steals Anthropic’s i
 
 AI companies themselves have faced claims that they are stealing data and IP from others to power their models.
 
-State Dept. official says post-quantum transition plans will outlive current leadership
+Artificial Intelligence (AI)
 
-HHS burrows into identifying risks to health sector from third-party vendors
+Anthropic rolls out embedded security scanning for Claude    
 
-The Caracas operation suggests cyber was part of the plan – just not the whole operation
 
-Fulton County lawsuit claims feds used ‘gross mischaracterizations’ to justify raid
 
-Unit 42: Nearly two-thirds of breaches now start with identity abuse
+By 
 
-Google finds state-sponsored hackers use AI at 'all stages' of attack cycle
+      Derek B. Johnson
 
-DHS privacy probe will focus on biometric tracking by ICE, OBIM
+Anthropic rolls out embedded security scanning for Claude
 
-WhatsApp releases account feature that looks to combat spyware
+ONCD official says Trump administration aims to bolster AI use for defense without increasing risk   
 
-CrowdStrike says attackers are moving through networks in under 30 minutes
 
-Ukrainian sentenced to 5 years in prison for facilitating North Korean remote worker scheme
 
-Nigerian man sentenced to 8 years in prison for running phony tax refund scheme
+By 
 
-Chinese hackers exploited a Dell zero-day for 18 months before anyone noticed
+      Tim Starks
 
-CISA to host industry feedback sessions on cyber incident reporting regulation
+ONCD official says Trump administration aims to bolster AI use for defense without increasing risk
 
-CISA tells agencies to stop using unsupported edge devices
+Palo Alto Networks’ Koi acquisition is all about keeping AI agents in check   
 
-What’s next for DHS’s forthcoming replacement critical infrastructure protection panel, AI information sharing
 
-Sean Cairncross' cybersecurity agenda: less regulation, more cooperation
+
+By 
+
+      Greg Otto
+
+Palo Alto Networks’ Koi acquisition is all about keeping AI agents in check
+
+FBI: Threats from Salt Typhoon are ‘still very much ongoing’   
+
+
+
+By 
+
+      Derek B. Johnson
+
+FBI: Threats from Salt Typhoon are ‘still very much ongoing’
 
 (XXXXXXX, AÇIK - https://cyberscoop.com/anthropic-accuses-chinese-labs-ai-distillation-cyber-risk/, cyberscoop.com, 24.02.2026)
 
 ================================================================================
 
-[22] The Register - Suspected Anonymous members detained in Spain over post-flood DDoS blitz
+[28] The Register - Suspected Anonymous members detained in Spain over post-flood DDoS blitz
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: 2026-02-23T12:26:30.00Z
 Link: https://go.theregister.com/feed/www.theregister.com/2026/02/23/anonymous_arrests_spain/
@@ -1178,7 +1467,7 @@ Its presence today is diminished compared to its heyday, although splinter group
 
 ================================================================================
 
-[23] The Register - AWS says more than 600 FortiGate firewalls hit in AI-augmented campaign
+[29] The Register - AWS says more than 600 FortiGate firewalls hit in AI-augmented campaign
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: 2026-02-23T11:41:47.00Z
 Link: https://go.theregister.com/feed/www.theregister.com/2026/02/23/aws_fortigate_firewalls/
@@ -1228,7 +1517,103 @@ Tensor Processing Unit
 
 ================================================================================
 
-[24] TechCrunch Security - Americans are destroying Flock surveillance cameras
+[30] The Register - Attacker gets into France's database listing all bank accounts, makes off with 1.2 million records
+────────────────────────────────────────────────────────────────────────────────
+Tarih: 2026-02-22T23:26:50.00Z
+Link: https://go.theregister.com/feed/www.theregister.com/2026/02/22/french_bank_hack/
+
+[TAM METİN - 943 kelime]
+Attacker gets into France's database listing all bank accounts, makes off with 1.2 million records
+
+PLUS: Unpatched Ivanti boxes under attack; 0APT might not be a scam; AI gets better at helping cyber-scum; And more
+
+Infosec In Brief An unknown attacker accessed the French government’s database listing every bank account in the country and made off with 1.2 million records.
+
+France’s Ministry of Economics, Finance and Industrial and Digital Sovereignty last week revealed the incident took place in January, after unknown attackers used stolen credentials to access the database.
+
+The Ministry said the attacker's access was restricted immediately upon discovery of the attack, but that the miscreant still managed to access personal information about 1.2 million accounts, including account numbers, account holder’s addresses, and tax identification numbers.
+
+France’s government has mobilized the agencies that fight this sort of incident, and warned account holders to be on the lookout for suspicious messages.
+
+0days in Ivanti's EPMM under attack
+
+Palo Alto Networks' Unit 42 reported last week that the pair of zero-days in Ivanti Endpoint Manager for Mobile (EPMM) that the vendor patched last month are proving popular with attackers.
+
+According to Unit 42 researchers, cyber-scum are aware of the two 9.8-rated CVEs – CVE-2026-1281 and CVE-2026-1340 – and are targeting unpatched systems.
+
+State and local governments, healthcare, manufacturing, professional and legal services, and the tech sector in the US, Germany, Australia, and Canada have all been peppered by attackers leveraging those vulnerabilities.
+
+Unit 42 reports that attackers have tried to exploit them by establishing a reverse shell, installing web shells, downloading malware, and conducting reconnaissance in a search for further vulnerabilities.
+
+The researchers noted that patches are available for both vulnerabilities and point out that installation doesn’t require downtime, so deserves a prominent place on owners’ to-do lists.
+
+0APT a hoax? Not so fast, say researchers
+
+You may recall in last week's security roundup that we wrote about GuidePoint Security’s opinion that a group calling itself 0APT appears to be a fake gang using other cybercriminals' ill-gotten data to pass off as their own.
+
+Researchers with security firm Cyderes' Howler Cell threat research team reached out to warn us not to ignore the group, as there are signs it's a real threat.
+
+According to Howler Cell's research, 0APT's initial presence might be mostly fake, but "the operators behind 0APT are running an active Ransomware-as-a-service platform with functional malicious payloads and a working affiliate model."
+
+Howler Cell warns that the bluff may have been an attempt to attract attention, like we said, but not just to scam victims – they may also be trying to attract affiliates by making quick reputation gains.
+
+Howler Cell said that it managed to access the group's ransomware-as-a-service portal, collecting malware samples that were fully viable and just waiting to be deployed.
+
+"The 0APT ransomware demonstrates a clear focus on reliability, operator configurability, and secure cryptographic implementation, aligning with modern trends in Rust‑based ransomware development," Howler Cell said.
+
+Infosec exec sold eight zero-day exploit kits to Russia, says DoJ
+
+Telcos aren't saying how they fought back against China's Salt Typhoon attacks
+
+Open-source AI is a global security nightmare waiting to happen, say researchers
+
+Pwn2Own Automotive 2026 uncovers 76 zero-days, pays out more than $1M
+
+AI helps cybercrims move faster, do more
+
+AI is rapidly becoming a cybercriminal's best friend, serving as a force multiplier that is increasing attacker success rates at each stage of a campaign.
+
+Unit 42 said in its 2026 Global Incident Response Report published last week that AI contributed to a quadrupling of exfiltration speeds in 2025, making it one of the most dangerous emerging threats for the coming year.
+
+"AI is changing the economics of intrusions," Unit 42 said in the report. "It increases attacker speed, scale and effectiveness while opening entirely new attack vectors."
+
+We've known that AI has helped cybercriminals for a while. Unit 42's report, however, suggests whatever trends we've seen to date are only going to accelerate and make the problem worse.
+
+AI is enabling attackers to move faster to exploit vulnerabilities, with Unit 42 saying it has seen signs that attackers are using AI to help them scan for exposed vulnerabilities within 15 minutes of a CVE being announced.
+
+"Exploitation attempts often begin before many security teams have even finished reading the vulnerability advisory," Unit 42 noted. AI assistance has meant that time-to-exfiltration can be as little as 25 minutes, according to Unit 42's simulations.
+
+AI is further lowering the barrier to entry for new attackers too, by making it easy to personalize social engineering exploits and keeping them free of the spelling and grammar errors that betray their nature.
+
+Constant vigilance and a new line of defenses will be needed to keep up with this latest generation of AI threats, tips for which are included in the Unit 42 report.
+
+Tenga leaks customer details
+
+Sex toy manufacturer Tenga said a "limited segment" of its US customer base who interacted with company support reps have had their details spilled.
+
+Cybercriminals obtained correspondence history and customer email addresses (no other PII or financial information, but even that limited bit of data could get embarrassing) by probing a single employee's email account, the company said.
+
+It seems a malicious email campaign may also be involved using the addresses obtained by the digi-crook, as Tenga is also warning customers caught in the leak not to open suspicious attachments.
+
+The company said it's already been in touch with affected customers, and said it intends to use more protection to prevent another such incident in the future. ®
+
+Advanced persistent threat
+
+Retrieval Augmented Generation
+
+Tensor Processing Unit
+
+Advanced persistent threat
+
+Retrieval Augmented Generation
+
+Tensor Processing Unit
+
+(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/22/french_bank_hack/, go.theregister.com, 23.02.2026)
+
+================================================================================
+
+[31] TechCrunch Security - Americans are destroying Flock surveillance cameras
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 18:49:49 +0000
 Link: https://techcrunch.com/2026/02/23/americans-are-destroying-flock-surveillance-cameras/
@@ -1328,7 +1713,7 @@ Meta’s own research found parental supervision doesn’t really help curb teen
 
 ================================================================================
 
-[25] TechCrunch Security - VPN flaws allowed Chinese hackers to compromise dozens of Ivanti customers, says report
+[32] TechCrunch Security - VPN flaws allowed Chinese hackers to compromise dozens of Ivanti customers, says report
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 16:06:54 +0000
 Link: https://techcrunch.com/2026/02/23/vpn-flaws-allowed-chinese-hackers-to-compromise-dozens-of-ivanti-customers-says-report/
@@ -1440,14 +1825,188 @@ Meta’s own research found parental supervision doesn’t really help curb teen
 
 ================================================================================
 
-[26] CSO Online - It’s time to rethink CISO reporting lines
+[33] TechCrunch Security - 5 days left to lock in the lowest TechCrunch Disrupt 2026 ticket rates
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 23 Feb 2026 15:00:00 +0000
+Link: https://techcrunch.com/2026/02/23/5-days-left-to-lock-in-the-lowest-techcrunch-disrupt-2026-ticket-rates/
+
+[TAM METİN - 896 kelime]
+We are officially down to the final 5 days to save up to $680 on your TechCrunch Disrupt 2026 ticket. These lowest rates of the year disappear on February 27 at 11:59 p.m. PT.
+
+If you’ve been mapping out your 2026 tech event calendar, this isn’t the moment to wait. Register now to lock in your savings before prices increase.
+
+What to expect at Disrupt 2026
+
+Each year, Disrupt brings together 10,000+ founders, tech leaders, and VCs at San Francisco’s Moscone West. From October 13–15, you’ll gain valuable takeaways and curated networking opportunities designed to elevate your startup trajectory, accelerate your career, or strengthen your portfolio.
+
+Key insights from today’s tech heavyweights
+
+Last year, Disrupt featured 200+ onstage conversations with 250+ top voices shaping the tech ecosystem. Expect the same level of powerful, candid conversations this year. Highlights from 2025 include the following:
+
+Top investors from Insight Partners, GV, and Moxxie share what to remember while raising a Series A.
+
+Roy Lee, viral rage-bait expert and founder of Cluely, says brand awareness alone won’t sustain growth and urges startups to focus on social media virality.
+
+Kevin Rose, founder of Diggs, has one rule for evaluating AI hardware investments: ”If you feel like you should punch someone in the face wearing it, you probably shouldn’t invest in it.”
+
+Waymo co-CEO Tekedra Mawakana made it clear onstage that the company will not stand for vandalism against its robotaxis.
+
+Keep an eye on the event page as we roll out the 2026 agenda.
+
+Create meaningful connections through curated networking
+
+Last year, more than 20,000 curated meetings took place across three days. This year, we’re rolling out improved networking technology to make those connections even more targeted and efficient.
+
+Meet the one person who can change the trajectory of your startup. It only takes one. You get:
+
+Save up to $300 or 30% to TechCrunch Founder Summit
+
+Save up to $300 or 30% to TechCrunch Founder Summit
+
+Direct access to founders, VCs, and operators actively building.
+
+Conversations that turn into funding, partnerships, and key hires.
+
+Tactical insights you can apply immediately.
+
+Early visibility into where tech is heading next.
+
+Witness the intense startup pitch showdown
+
+Startup Battlefield is where 200 TechCrunch-selected, pre-Series A startups compete for $100,000 in equity-free funding, global visibility, and direct access to the industry’s top investors.
+
+This iconic pitch competition has helped launch breakout companies like Discord, Cloudflare, and Trello.
+
+First-row seat to innovative breakthroughs
+
+Over 300 startup exhibitors will showcase innovations across the venue, especially in the Expo Hall, where foot traffic converges. Discover tomorrow’s breakthroughs and today’s solutions — all in one place.
+
+More ways to connect with the Bay Area tech scene
+
+Throughout Disrupt Week, October 11–17, TechCrunch Disrupt Side Events will take place across the Bay Area beyond the main venue. Attend a post-event cocktail hour, grab breakfast before the day begins, or even host your own off-site panel. The opportunities to make powerful connections around Disrupt are endless.
+
+Last 5 days to secure the lowest rates
+
+Five days remain to lock in the lowest rate of the year. Prices increase after February 27 at 11:59 p.m. PT. Register now and secure your savings of up to $680 before they’re gone. Save up to 30% on group passes.
+
+Save up to $680 on your pass before February 27.Meet investors. Discover your next portfolio company. Hear from 250+ tech leaders, dive into 200+ sessions, and explore 300+ startups building what’s next. Don’t miss these one-time savings.
+
+Bill Gurley says that right now, the worst thing you can do for your career is play it safe
+
+
+
+Connie Loizos
+
+Bill Gurley says that right now, the worst thing you can do for your career is play it safe
+
+Bill Gurley says that right now, the worst thing you can do for your career is play it safe
+
+The 9,000-pound monster I don’t want to give back
+
+
+
+Connie Loizos
+
+The 9,000-pound monster I don’t want to give back
+
+The 9,000-pound monster I don’t want to give back
+
+Sam Altman would like to remind you that humans use a lot of energy, too
+
+
+
+Anthony Ha
+
+Sam Altman would like to remind you that humans use a lot of energy, too
+
+Sam Altman would like to remind you that humans use a lot of energy, too
+
+Google VP warns that two types of AI startups may not survive
+
+
+
+Rebecca Bellan
+
+Google VP warns that two types of AI startups may not survive
+
+Google VP warns that two types of AI startups may not survive
+
+Great news for xAI: Grok is now pretty good at answering questions about Baldur’s Gate
+
+
+
+Russell Brandom
+
+Great news for xAI: Grok is now pretty good at answering questions about Baldur’s Gate
+
+Great news for xAI: Grok is now pretty good at answering questions about Baldur’s Gate
+
+FBI says ATM ‘jackpotting’ attacks are on the rise, and netting hackers millions in stolen cash
+
+
+
+Zack Whittaker
+
+FBI says ATM ‘jackpotting’ attacks are on the rise, and netting hackers millions in stolen cash
+
+FBI says ATM ‘jackpotting’ attacks are on the rise, and netting hackers millions in stolen cash
+
+Meta’s own research found parental supervision doesn’t really help curb teens’ compulsive social media use
+
+
+
+Sarah Perez
+
+Meta’s own research found parental supervision doesn’t really help curb teens’ compulsive social media use
+
+Meta’s own research found parental supervision doesn’t really help curb teens’ compulsive social media use
+
+(XXXXXXX, AÇIK - https://techcrunch.com/2026/02/23/5-days-left-to-lock-in-the-lowest-techcrunch-disrupt-2026-ticket-rates/, techcrunch.com, 23.02.2026)
+
+================================================================================
+
+[34] CSO Online - Bitcoin-Milliarden von Raubkopie-Portal im Visier der Justiz
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Tue, 24 Feb 2026 09:43:39 +0000
+Link: https://www.csoonline.com/article/4136389/bitcoin-milliarden-von-raubkopie-portal-im-visier-der-justiz.html
+
+[TAM METİN - 321 kelime]
+Vom Streaming-Portal zum Milliarden-Schatz: Wie die Betreiber von «movie2k.to» mit Bitcoins ein Vermögen anhäuften und wem es jetzt zufallen könnte.
+
+PXLR Studio – shutterstock.com
+
+In Leipzig hat der Prozess um den illegalen Streamingdienst «movie2k.to» und einen Milliardengewinn mit Bitcoins begonnen. Vor dem Landgericht ist der 42 Jahre alte mutmaßliche Kopf des Portals unter anderem wegen gewerbsmäßiger Geldwäsche in 146 Fällen angeklagt. Mit ihm auf der Anklagebank sitzt ein 39-Jähriger, der sich wegen Geldwäsche in 46 Fällen und Steuerhinterziehung verantworten muss. Die Vorwürfe – in rund 220.000 Fällen urheberrechtlich geschützte Werke unerlaubt verwertet zu haben – sind inzwischen verjährt und somit nicht mehr Gegenstand der Verhandlung.
+
+350 Seiten Anklageschrift
+
+Zum Prozessauftakt beanstandete die Verteidigung des Hauptangeklagten die Verlesung der Anklageschrift. Diese hätte in modifizierter Fassung vorgelegt werden müssen, nachdem das Landgericht einige Teile daraus nicht zugelassen hatte. Die Generalstaatsanwaltschaft Dresden betonte, dass die verjährten Taten wichtig für den Vorwurf der Geldwäsche seien. Die Wirtschaftsstrafkammer wies den Antrag der Verteidigung zurück.
+
+Was passiert mit dem Gewinn in Höhe von 2,64 Milliarden Euro?
+
+Brisant ist der Fall, weil die Wirtschaftsstrafkammer auch über den Besitz der rund 2,64 Milliarden Euro entscheidet, die aus dem Bitcoinvermögen des Hauptangeklagten erzielt worden waren. Bei einer rechtskräftigen Verurteilung könnte auch der Landeskasse viel Geld zufließen.
+
+Laut Anklage hatte das Duo mit einem bereits rechtskräftig verurteilten Mann über das Streamingportal «movie2k.to» jahrelang hunderttausende Raubkopien von Filmen und Serie angeboten. Dabei hatten die Betreiber Millioneneinnahmen aus Werbeverträgen erzielt und damit Bitcoins erworben. 2013 wurde das Portal abgeschaltet, der Hauptangeklagte konnte erst 2023 im Ausland festgenommen werden.
+
+Nach seiner Festnahme im Jahr 2023 hatte er den Ermittlern knapp 50.000 Bitcoins übergeben. Der Verkauf brachte nach einem wahren Kurssprung der Kryptowährung etwa 2,64 Milliarden Euro ein. Dieses Geld wird derzeit bei der Landesjustizkasse verwahrt. (dpa/ad)
+
+OT-Security: Warum der Blick auf Open Source lohnt
+
+Hacker stiehlt Daten von Tausenden RTL-Mitarbeitern
+
+KI und Komplexität als Brandbeschleuniger für Cyberkriminelle
+
+Von unseren Redakteuren direkt in Ihren Posteingang
+
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4136389/bitcoin-milliarden-von-raubkopie-portal-im-visier-der-justiz.html, csoonline.com, 24.02.2026)
+
+================================================================================
+
+[35] CSO Online - It’s time to rethink CISO reporting lines
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Tue, 24 Feb 2026 07:00:00 +0000
 Link: https://www.csoonline.com/article/4136293/its-time-to-rethink-ciso-reporting-lines.html
 
-[TAM METİN - 1624 kelime]
-It’s time to rethink CISO reporting lines
-
+[TAM METİN - 1083 kelime]
 A significant majority of security leaders still report to IT — a situation rife with conflicts of interest given how AI and business risks are spurring CIO and CISO roles to separately evolve, experts say.
 
 Despite inroads in the C-suite and rising prominence across the business at large, security leaders are still more likely to operate at a remove from the organization’s executive leadership when it comes to reporting structures.
@@ -1508,86 +2067,24 @@ Gogia argues in favor of a better reporting structure for cybersecurity.
 
 “We’re seeing the emergence of the chief digital risk officer (CDRO) model, which reframes the role altogether. Rather than being a technologist reporting into infrastructure, the CDRO is a senior executive responsible for digital risk across cyber, data, AI, and third-party exposure,” Gogia says. “This role often sits beside the CRO and CFO, not below them. It reflects the reality that digital risk is not a subset of IT. It is a board-level category in its own right.”
 
+From in-house CISO to consultant. What you need to know before making the leap
+
+With CISOs stretched thin, re-envisioning enterprise risk may be the only fix
+
+CISO Julie Chatman offers insights for you to take control of your security leadership role
+
 From our editors straight to your inbox
-
-Follow Evan Schuman on X
-
-Follow Evan Schuman on LinkedIn
-
-Evan Schuman has covered IT issues for a lot longer than he'll ever admit. The founding editor of retail technology site StorefrontBacktalk, he's been a columnist for CBSNews.com, RetailWeek, Computerworld, and eWeek, and his byline has appeared in titles ranging from BusinessWeek, VentureBeat, and Fortune to The New York Times, USA Today, Reuters, The Philadelphia Inquirer, The Baltimore Sun, The Detroit News, and The Atlanta Journal-Constitution. Evan is a frequent contributor to CIO, CSO, Network World and InfoWorld.
-Evan won a gold 2025 AZBEE award in the Enterprise News category for this story: Design flaw has Microsoft Authenticator overwriting MFA accounts, locking users out
-He can be reached at eschuman@thecontentfirm.com and he can be followed on LinkedIn.
-
-Evan Schuman has covered IT issues for a lot longer than he'll ever admit. The founding editor of retail technology site StorefrontBacktalk, he's been a columnist for CBSNews.com, RetailWeek, Computerworld, and eWeek, and his byline has appeared in titles ranging from BusinessWeek, VentureBeat, and Fortune to The New York Times, USA Today, Reuters, The Philadelphia Inquirer, The Baltimore Sun, The Detroit News, and The Atlanta Journal-Constitution. Evan is a frequent contributor to CIO, CSO, Network World and InfoWorld.
-
-Evan won a gold 2025 AZBEE award in the Enterprise News category for this story: Design flaw has Microsoft Authenticator overwriting MFA accounts, locking users out
-
-He can be reached at eschuman@thecontentfirm.com and he can be followed on LinkedIn.
-
-More from this author
-
-newsAnthropic’s Claude Code Security rollout is an industry wakeup call Feb 24, 2026 9 mins
-
-Anthropic’s Claude Code Security rollout is an industry wakeup call
-
-news analysisPayPal launches latest struggle to get rid of SMS for MFA Feb 20, 2026 7 mins
-
-PayPal launches latest struggle to get rid of SMS for MFA
-
-news analysis69% of CISOs open to career move — including leaving role entirely Feb 10, 2026 6 mins
-
-69% of CISOs open to career move — including leaving role entirely
-
-newsAnthropic’s DXT poses “critical RCE vulnerability” by running with full system privileges Feb 9, 2026 8 mins
-
-Anthropic’s DXT poses “critical RCE vulnerability” by running with full system privileges
-
-featureThink agentic AI is hard to secure today? Just wait a few months Feb 3, 2026 8 mins
-
-Think agentic AI is hard to secure today? Just wait a few months
-
-news analysisAlways-on privileged access is pervasive — and fraught with risks Jan 28, 2026 7 mins
-
-Always-on privileged access is pervasive — and fraught with risks
-
-newsGoogle Vertex AI security permissions could amplify insider threats Jan 16, 2026 5 mins
-
-Google Vertex AI security permissions could amplify insider threats
-
-newsIran’s partial internet shutdown may be a windfall for cybersecurity intel Jan 14, 2026 7 mins
-
-Iran’s partial internet shutdown may be a windfall for cybersecurity intel
-
-It’s time to rethink CISO reporting lines
-
-The rise of the evasive adversary
-
-Russian group uses AI to exploit weakly-protected Fortinet firewalls, says Amazon
-
-How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
-
-Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
-
-CSO Executive Session ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
-
-How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
-
-Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
-
-CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
 
 (XXXXXXX, AÇIK - https://www.csoonline.com/article/4136293/its-time-to-rethink-ciso-reporting-lines.html, csoonline.com, 24.02.2026)
 
 ================================================================================
 
-[27] CSO Online - The rise of the evasive adversary
+[36] CSO Online - The rise of the evasive adversary
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Tue, 24 Feb 2026 06:30:00 +0000
 Link: https://www.csoonline.com/article/4136276/the-rise-of-the-evasive-adversary.html
 
-[TAM METİN - 1823 kelime]
-The rise of the evasive adversary
-
+[TAM METİN - 1366 kelime]
 CrowdStrike’s latest annual Global Threat Report finds AI-driven attacks up 89%, zero-day exploitation surging, and nation-state actors doubling down on cloud and edge device compromise.
 
 Since the earliest days of the internet, there has never been a let-up in adversarial activity. According to CrowdStrike’s just-released 12th annual Global Threat Report, malicious activity in cyberspace continues to not only accelerate but also expand its scale and increasingly abuse the trust of targeted organizations.
@@ -1666,79 +2163,24 @@ China’s intrusions are never smash-and-grab operations. In multiple cases, act
 
 Taken together, the trends of 2025 tell a clear story. Adversaries are faster, quieter, and more willing to exploit the implicit trust embedded in modern infrastructure — from AI tools and SaaS platforms to open-source code and perimeter devices.
 
+Russian group uses AI to exploit weakly-protected Fortinet firewalls, says Amazon
+
+New Arkanix stealer blends rapid Python harvesting with stealthier C++ payloads
+
+Don’t trust TrustConnect: This fake remote support tool only helps hackers
+
 From our editors straight to your inbox
-
-Cynthia Brumfield is a veteran communications and technology analyst who is currently focused on cybersecurity. She runs a cybersecurity news destination site, Metacurity.com, consults with companies through her firm DCT-Associates, and is the author of the book published by Wiley, Cybersecurity Risk Management: Mastering the Fundamentals Using the NIST Cybersecurity Framework. 
-Cynthia holds a Master of Planning Degree from the University of Virginia and a Bachelor’s degree from The George Washington University. She has won multiple AZBEE awards for her work on CSO, including two in 2025.
-
-Cynthia Brumfield is a veteran communications and technology analyst who is currently focused on cybersecurity. She runs a cybersecurity news destination site, Metacurity.com, consults with companies through her firm DCT-Associates, and is the author of the book published by Wiley, Cybersecurity Risk Management: Mastering the Fundamentals Using the NIST Cybersecurity Framework.
-
-Cynthia holds a Master of Planning Degree from the University of Virginia and a Bachelor’s degree from The George Washington University. She has won multiple AZBEE awards for her work on CSO, including two in 2025.
-
-More from this author
-
-featureCISOs must separate signal from noise as CVE volume soars Feb 11, 2026 8 mins
-
-CISOs must separate signal from noise as CVE volume soars
-
-news analysisNIST’s AI guidance pushes cybersecurity boundaries Jan 29, 2026 9 mins
-
-NIST’s AI guidance pushes cybersecurity boundaries
-
-news analysisUS cybersecurity weakened by congressional delays despite Plankey renomination Jan 14, 2026 7 mins
-
-US cybersecurity weakened by congressional delays despite Plankey renomination
-
-featureWhat CISOs should know about the SolarWinds lawsuit dismissal Dec 22, 2025 9 mins
-
-What CISOs should know about the SolarWinds lawsuit dismissal
-
-news analysisKey cybersecurity takeaways from the 2026 NDAA Dec 10, 2025 10 mins
-
-Key cybersecurity takeaways from the 2026 NDAA
-
-featureIgnoring AI in the threat chain could be a costly mistake, experts warn Dec 9, 2025 9 mins
-
-Ignoring AI in the threat chain could be a costly mistake, experts warn
-
-featureRethinking identity for the AI era: CISOs must build trust at machine speed Nov 18, 2025 10 mins
-
-Rethinking identity for the AI era: CISOs must build trust at machine speed
-
-newsAI-enabled ransomware attacks: CISO’s top security concern — with good reason Oct 21, 2025 5 mins
-
-AI-enabled ransomware attacks: CISO’s top security concern — with good reason
-
-It’s time to rethink CISO reporting lines
-
-The rise of the evasive adversary
-
-Anthropic’s Claude Code Security rollout is an industry wakeup call
-
-How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
-
-Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
-
-CSO Executive Session ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
-
-How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
-
-Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
-
-CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
 
 (XXXXXXX, AÇIK - https://www.csoonline.com/article/4136276/the-rise-of-the-evasive-adversary.html, csoonline.com, 24.02.2026)
 
 ================================================================================
 
-[28] CSO Online - Anthropic’s Claude Code Security rollout is an industry wakeup call
+[37] CSO Online - Anthropic’s Claude Code Security rollout is an industry wakeup call
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Tue, 24 Feb 2026 06:07:58 +0000
 Link: https://www.csoonline.com/article/4136294/anthropics-claude-code-security-rollout-is-an-industry-wakeup-call.html
 
-[TAM METİN - 2112 kelime]
-Anthropic’s Claude Code Security rollout is an industry wakeup call
-
+[TAM METİN - 1552 kelime]
 When Anthropic announced the start of testing on Friday, security vendors, and the markets, sat up and took notice. But is the panic warranted?
 
 When Anthropic launched a “limited research preview” of its Claude Code Security offering on Friday, Wall Street investors sent the stocks of the largest cybersecurity vendors plunging.
@@ -1815,86 +2257,24 @@ In fact, another cyber executive, Gadi Evton, CEO of Knostic, argues that becaus
 
 And, said Rock Lambros, director of AI security at Zenity, “as long as genAI remains non-deterministic, secure-at-generation will always have gaps and you’ll always need post-generation validation for something that can’t guarantee the same output twice. The real problem is that nobody is staffed, funded, or even scoped to govern the autonomous systems that are already deployed.”
 
+The rise of the evasive adversary
+
+Russian group uses AI to exploit weakly-protected Fortinet firewalls, says Amazon
+
+New Arkanix stealer blends rapid Python harvesting with stealthier C++ payloads
+
 From our editors straight to your inbox
-
-Follow Evan Schuman on X
-
-Follow Evan Schuman on LinkedIn
-
-Evan Schuman has covered IT issues for a lot longer than he'll ever admit. The founding editor of retail technology site StorefrontBacktalk, he's been a columnist for CBSNews.com, RetailWeek, Computerworld, and eWeek, and his byline has appeared in titles ranging from BusinessWeek, VentureBeat, and Fortune to The New York Times, USA Today, Reuters, The Philadelphia Inquirer, The Baltimore Sun, The Detroit News, and The Atlanta Journal-Constitution. Evan is a frequent contributor to CIO, CSO, Network World and InfoWorld.
-Evan won a gold 2025 AZBEE award in the Enterprise News category for this story: Design flaw has Microsoft Authenticator overwriting MFA accounts, locking users out
-He can be reached at eschuman@thecontentfirm.com and he can be followed on LinkedIn.
-
-Evan Schuman has covered IT issues for a lot longer than he'll ever admit. The founding editor of retail technology site StorefrontBacktalk, he's been a columnist for CBSNews.com, RetailWeek, Computerworld, and eWeek, and his byline has appeared in titles ranging from BusinessWeek, VentureBeat, and Fortune to The New York Times, USA Today, Reuters, The Philadelphia Inquirer, The Baltimore Sun, The Detroit News, and The Atlanta Journal-Constitution. Evan is a frequent contributor to CIO, CSO, Network World and InfoWorld.
-
-Evan won a gold 2025 AZBEE award in the Enterprise News category for this story: Design flaw has Microsoft Authenticator overwriting MFA accounts, locking users out
-
-He can be reached at eschuman@thecontentfirm.com and he can be followed on LinkedIn.
-
-More from this author
-
-featureIt’s time to rethink CISO reporting lines Feb 24, 2026 6 mins
-
-It’s time to rethink CISO reporting lines
-
-news analysisPayPal launches latest struggle to get rid of SMS for MFA Feb 20, 2026 7 mins
-
-PayPal launches latest struggle to get rid of SMS for MFA
-
-featureWith CISOs stretched thin, re-envisioning enterprise risk may be the only fix Feb 17, 2026 8 mins
-
-With CISOs stretched thin, re-envisioning enterprise risk may be the only fix
-
-news analysis69% of CISOs open to career move — including leaving role entirely Feb 10, 2026 6 mins
-
-69% of CISOs open to career move — including leaving role entirely
-
-newsAnthropic’s DXT poses “critical RCE vulnerability” by running with full system privileges Feb 9, 2026 8 mins
-
-Anthropic’s DXT poses “critical RCE vulnerability” by running with full system privileges
-
-featureThink agentic AI is hard to secure today? Just wait a few months Feb 3, 2026 8 mins
-
-Think agentic AI is hard to secure today? Just wait a few months
-
-news analysisAlways-on privileged access is pervasive — and fraught with risks Jan 28, 2026 7 mins
-
-Always-on privileged access is pervasive — and fraught with risks
-
-newsGoogle Vertex AI security permissions could amplify insider threats Jan 16, 2026 5 mins
-
-Google Vertex AI security permissions could amplify insider threats
-
-Anthropic’s Claude Code Security rollout is an industry wakeup call
-
-Attackers exploit Ivanti EPMM zero-days to seize control of MDM servers
-
-13 ways attackers use generative AI to exploit your systems
-
-How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
-
-Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
-
-CSO Executive Session ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
-
-How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
-
-Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
-
-CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
 
 (XXXXXXX, AÇIK - https://www.csoonline.com/article/4136294/anthropics-claude-code-security-rollout-is-an-industry-wakeup-call.html, csoonline.com, 24.02.2026)
 
 ================================================================================
 
-[29] CSO Online - OT-Security: Warum der Blick auf Open Source lohnt
+[38] CSO Online - OT-Security: Warum der Blick auf Open Source lohnt
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Tue, 24 Feb 2026 04:00:00 +0000
 Link: https://www.csoonline.com/article/3961114/ot-security-warum-der-blick-auf-open-source-lohnt.html
 
-[TAM METİN - 1041 kelime]
-OT-Security: Warum der Blick auf Open Source lohnt
-
+[TAM METİN - 774 kelime]
 Kommerzielle OT-Security-Lösungen können hohe Kosten verursachen. Lesen Sie, welche Alternativen es gibt.
 
 MY STOCKERS – Shutterstock.com
@@ -2029,66 +2409,24 @@ Support & Wartung: Statt eines dedizierten Hersteller-Supports stützt man sich 
 
 Dennoch belegt die Praxis, dass mit einem kompetenten OT-Security-Team oder externen Beratern auch Open-Source-Lösungen in großem Stil erfolgreich eingesetzt werden können. (jm)
 
+Bitcoin-Milliarden von Raubkopie-Portal im Visier der Justiz
+
+Hacker stiehlt Daten von Tausenden RTL-Mitarbeitern
+
+KI und Komplexität als Brandbeschleuniger für Cyberkriminelle
+
 Von unseren Redakteuren direkt in Ihren Posteingang
-
-Follow Sabine Frömling on LinkedIn
-
-Sabine Frömling is an independent cybersecurity, OT security and governance consultant based in Berlin. With over 17 years advising global enterprises in energy, manufacturing and finance, she specializes in aligning AI-driven risk management and cyber resilience with business outcomes. Her work focuses on translating complex threats into actionable board-level strategies, helping CISOs move from reactive defense to proactive resilience. A regular contributor to CSO, Computerwoche and CIO.de, Sabine is known for her pragmatic, no-nonsense approach to cyber risk governance and her ability to bridge the gap between technical teams and executive leadership.
-
-Mehr von diesem Autor
-
-analysisThird Party Risk Management: So vermeiden Sie Compliance-Unheil 21. Jan. 2026 5 Minuten
-
-Third Party Risk Management: So vermeiden Sie Compliance-Unheil
-
-opinionIAM 2025: Diese 10 Trends entscheiden über Ihre Sicherheitsstrategie 13. Mai 2025 7 Minuten
-
-IAM 2025: Diese 10 Trends entscheiden über Ihre Sicherheitsstrategie
-
-newsWas ist Cyber Threat Intelligence? 5. Sept. 2024 7 Minuten
-
-Was ist Cyber Threat Intelligence?
-
-analysisIoT-Devices – Security-Herausforderungen und Lösungen 9. Aug. 2024 6 Minuten
-
-IoT-Devices – Security-Herausforderungen und Lösungen
-
-analysisISMS nach ISO 27001 – Anforderungen und Umsetzung 29. Juli 2024 5 Minuten
-
-ISMS nach ISO 27001 – Anforderungen und Umsetzung
-
-analysisLokales Active Directory unter Beschuss: Effiziente Absicherung gegen AD-Angriffe 25. Juni 2024 5 Minuten
-
-Lokales Active Directory unter Beschuss: Effiziente Absicherung gegen AD-Angriffe
-
-analysisCompliance-Gesetze in der Pipeline
-Neue Verordnungen – und ihre Auswirkungen 21. Juni 2024 5 Minuten
-
-Compliance-Gesetze in der Pipeline
-Neue Verordnungen – und ihre Auswirkungen
-
-analysisOT-Security: So schützen Sie Ihre Industrieanlagen 12. Jan. 2024 6 Minuten
-
-OT-Security: So schützen Sie Ihre Industrieanlagen
-
-OT-Security: Warum der Blick auf Open Source lohnt
-
-10 Passwordless-Optionen für Unternehmen
-
-Cybersicherheit braucht Reife und keine Checklisten
 
 (XXXXXXX, AÇIK - https://www.csoonline.com/article/3961114/ot-security-warum-der-blick-auf-open-source-lohnt.html, csoonline.com, 24.02.2026)
 
 ================================================================================
 
-[30] CSO Online - Russian group uses AI to exploit weakly-protected Fortinet firewalls, says Amazon
+[39] CSO Online - Russian group uses AI to exploit weakly-protected Fortinet firewalls, says Amazon
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Tue, 24 Feb 2026 03:49:40 +0000
 Link: https://www.csoonline.com/article/4136198/russian-group-uses-ai-to-exploit-weakly-protected-fortinet-firewalls-says-amazon.html
 
-[TAM METİN - 1784 kelime]
-Russian group uses AI to exploit weakly-protected Fortinet firewalls, says Amazon
-
+[TAM METİN - 1385 kelime]
 The report warns CSOs that while AI is helping unsophisticated threat actors, failure to implement cybersecurity basics is fatal regardless of the attacker's skill.
 
 A Russian-speaking threat actor is using commercial generative AI services to compromise hundreds of Fortinet Fortigate firewalls, warns Amazon Threat Intelligence.
@@ -2143,80 +2481,24 @@ In response to questions from CSO, he added that the Russian group’s success �
 
 Asked why IT leaders are still unable to implement cybersecurity basics, he said, “The challenge isn’t knowledge, it’s operating in resource-constrained environments where technical debt and competing business priorities create systematic gaps in foundational security. Legacy systems, budget constraints, and rapid digital transformation often force difficult trade-offs, but threat actors are now leveraging AI to exploit these exact vulnerabilities at machine speed. The path forward requires making security fundamentals so embedded that they become operationally resilient, even under resource pressure.”
 
+The rise of the evasive adversary
+
+Anthropic’s Claude Code Security rollout is an industry wakeup call
+
+New Arkanix stealer blends rapid Python harvesting with stealthier C++ payloads
+
 From our editors straight to your inbox
-
-Howard Solomon is a Toronto-based freelance reporter who writes on IT and cybersecurity issues.
- 
-Howard is a former editor of IT World Canada and Computing Canada. An IT journalist over 30 years, he has also written for ITBusiness.ca and Computer Dealer News. Before that he was a staff reporter at the Calgary Herald and the Brampton (Ontario) Daily Times.
-
-Howard Solomon is a Toronto-based freelance reporter who writes on IT and cybersecurity issues.
-
-Howard is a former editor of IT World Canada and Computing Canada. An IT journalist over 30 years, he has also written for ITBusiness.ca and Computer Dealer News. Before that he was a staff reporter at the Calgary Herald and the Brampton (Ontario) Daily Times.
-
-More from this author
-
-newsNew phishing campaign tricks employees into bypassing Microsoft 365 MFA Feb 19, 2026 6 mins
-
-New phishing campaign tricks employees into bypassing Microsoft 365 MFA
-
-newsNotepad++ author says fixes make update mechanism ‘effectively unexploitable’ Feb 18, 2026 5 mins
-
-Notepad++ author says fixes make update mechanism ‘effectively unexploitable’
-
-newsExploit available for new Chrome zero-day vulnerability, says Google Feb 16, 2026 4 mins
-
-Exploit available for new Chrome zero-day vulnerability, says Google
-
-newsHackers turn bossware against the bosses Feb 12, 2026 6 mins
-
-Hackers turn bossware against the bosses
-
-newsSSHStalker botnet brute-forces its way onto 7,000 Linux machines Feb 11, 2026 7 mins
-
-SSHStalker botnet brute-forces its way onto 7,000 Linux machines
-
-newsFebruary 2026 Patch Tuesday: Six new and actively exploited Microsoft vulnerabilities addressed Feb 10, 2026 8 mins
-
-February 2026 Patch Tuesday: Six new and actively exploited Microsoft vulnerabilities addressed
-
-newsSix more vulnerabilities found in n8n automation platform Feb 6, 2026 5 mins
-
-Six more vulnerabilities found in n8n automation platform
-
-newsFour new vulnerabilities found in Ingress NGINX Feb 5, 2026 4 mins
-
-Four new vulnerabilities found in Ingress NGINX
-
-It’s time to rethink CISO reporting lines
-
-Russian group uses AI to exploit weakly-protected Fortinet firewalls, says Amazon
-
-Attackers exploit Ivanti EPMM zero-days to seize control of MDM servers
-
-How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
-
-Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
-
-CSO Executive Session ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
-
-How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
-
-Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
-
-CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
 
 (XXXXXXX, AÇIK - https://www.csoonline.com/article/4136198/russian-group-uses-ai-to-exploit-weakly-protected-fortinet-firewalls-says-amazon.html, csoonline.com, 24.02.2026)
 
 ================================================================================
 
-[31] CSO Online - Hacker stiehlt Daten von Tausenden RTL-Mitarbeitern
+[40] CSO Online - Hacker stiehlt Daten von Tausenden RTL-Mitarbeitern
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 11:58:45 +0000
 Link: https://www.csoonline.com/article/4135838/hacker-stiehlt-daten-von-tausenden-rtl-mitarbeitern.html
 
-[TAM METİN - 406 kelime]
-Hacker stiehlt Daten von Tausenden RTL-Mitarbeitern
-
+[TAM METİN - 246 kelime]
 Ein Cyberkrimineller behauptet, an sensible Informationen von mehr als 27.000 Mitarbeitern der RTL Group gekommen zu sein. Die Daten werden im Darknet angeboten.
 
 nitpicker – shutterstock.com
@@ -2233,64 +2515,24 @@ Warnung vor Angriffsfolgen
 
 Security-Experten warnen nun davor, dass das Leck massive Folgen für die dort beschäftigten Journalisten haben könnte. Mit den gestohlenen Kontaktdaten ließen sich zum Beispiel gezielte Phishing- oder Social-Engineering-Attacken durchführen. Noch schlimmer: Investigativjournalisten, die zu kritischen Themen recherchieren, könnten ins Visier von staatlichen oder kriminellen Akteuren geraten. Ein erfolgreicher Angriff auf ihre Geräte könnte Quellen enttarnen, unveröffentlichtes Material gefährden und laufende Recherchen behindern.
 
+KI und Komplexität als Brandbeschleuniger für Cyberkriminelle
+
+Sonderkommission ermittelt zu Cyberangriff auf Kunstsammlungen Dresden
+
+Security-Infotainment: Die besten Hacker-Dokus
+
 Von unseren Redakteuren direkt in Ihren Posteingang
-
-Follow Julia Mutzbauer on LinkedIn
-
-Julia Mutzbauer ist Editorial Manager bei CSO Online Deutschland. Sie ist auf das Thema Cybersicherheit spezialisiert.
-
-Mehr von diesem Autor
-
-newsMCSC 2026: „Politik und Wirtschaft müssen zusammenarbeiten“ 17. Feb. 2026 3 Minuten
-
-MCSC 2026: „Politik und Wirtschaft müssen zusammenarbeiten“
-
-newsBSI läutet Ende der klassischen Verschlüsselung ein 13. Feb. 2026 3 Minuten
-
-BSI läutet Ende der klassischen Verschlüsselung ein
-
-newsNeue Warn-App für Cybervorfälle gestartet 12. Feb. 2026 2 Minuten
-
-Neue Warn-App für Cybervorfälle gestartet
-
-newsCyberangriff auf EU-Kommission 10. Feb. 2026 2 Minuten
-
-Cyberangriff auf EU-Kommission
-
-news analysisGartner-Prognose: Die sechs wichtigsten Cybersicherheits-Trends für 2026 9. Feb. 2026 5 Minuten
-
-Gartner-Prognose: Die sechs wichtigsten Cybersicherheits-Trends für 2026
-
-newsRansomware-Attacke auf Buhlmann Group 5. Feb. 2026 2 Minuten
-
-Ransomware-Attacke auf Buhlmann Group
-
-newsHackerangriff auf Romina Mineralbrunnen 4. Feb. 2026 1 Minuten
-
-Hackerangriff auf Romina Mineralbrunnen
-
-newsDeutschland und Israel trainieren Abwehr von Cyberangriff 2. Feb. 2026 2 Minuten
-
-Deutschland und Israel trainieren Abwehr von Cyberangriff
-
-OT-Security: Warum der Blick auf Open Source lohnt
-
-Hacker stiehlt Daten von Tausenden RTL-Mitarbeitern
-
-10 Passwordless-Optionen für Unternehmen
 
 (XXXXXXX, AÇIK - https://www.csoonline.com/article/4135838/hacker-stiehlt-daten-von-tausenden-rtl-mitarbeitern.html, csoonline.com, 23.02.2026)
 
 ================================================================================
 
-[32] CSO Online - New Arkanix stealer blends rapid Python harvesting with stealthier C++ payloads
+[41] CSO Online - New Arkanix stealer blends rapid Python harvesting with stealthier C++ payloads
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 11:54:52 +0000
 Link: https://www.csoonline.com/article/4135843/new-arkanix-stealer-blends-rapid-python-harvesting-with-stealthier-c-payloads.html
 
-[TAM METİN - 865 kelime]
-New Arkanix stealer blends rapid Python harvesting with stealthier C++ payloads
-
+[TAM METİN - 477 kelime]
 The Arkanix infostealer combines LLM-assisted development with a malware-as-a-service model, using dual language implementations to maximize reach and establish persistence.
 
 A newly uncovered infostealer, suspected to be built with the help of a large language model, is targeting victims with Python and C++ variants, each tailored for a different stage of data theft. Kaspersky researchers discovered a stealer dubbed “Arkanix,” which is capable of harvesting credentials, browser data, cryptocurrency, and banking assets from infected machines.
@@ -2315,78 +2557,24 @@ By contrast, the C++ variant concentrates on assets that enable persistence, lat
 
 While the Python version aligns with the researchers’ theory of a grab-and-run approach, the C++ version does hint at plans for persistence. The disclosure added a list of indicators of compromise (IOCs), including file hashes, IPs, and domains, to support detection efforts.
 
+The rise of the evasive adversary
+
+Anthropic’s Claude Code Security rollout is an industry wakeup call
+
+Russian group uses AI to exploit weakly-protected Fortinet firewalls, says Amazon
+
 From our editors straight to your inbox
-
-Follow Shweta Sharma on X
-
-Follow Shweta Sharma on LinkedIn
-
-Shweta has been writing about enterprise technology since 2017, most recently reporting on cybersecurity for CSO online. She breaks down complex topics from ransomware to zero trust architecture for both experts and everyday readers. She has a postgraduate diploma in journalism from the Asian College of Journalism, and enjoys reading fiction, watching movies, and experimenting with new recipes when she’s not busy decoding cyber threats.
-
-More from this author
-
-newsDon’t trust TrustConnect: This fake remote support tool only helps hackers Feb 20, 2026 4 mins
-
-Don’t trust TrustConnect: This fake remote support tool only helps hackers
-
-newsSix flaws found hiding in OpenClaw’s plumbing Feb 19, 2026 3 mins
-
-Six flaws found hiding in OpenClaw’s plumbing
-
-newsKeenadu: Android malware that comes preinstalled and can’t be removed by users Feb 18, 2026 4 mins
-
-Keenadu: Android malware that comes preinstalled and can’t be removed by users
-
-newsZeroDayRAT spyware targets Android and iOS devices via commercial toolkit Feb 17, 2026 4 mins
-
-ZeroDayRAT spyware targets Android and iOS devices via commercial toolkit
-
-newsLeaky Chrome extensions with 37M installs caught divulging your browsing history Feb 16, 2026 3 mins
-
-Leaky Chrome extensions with 37M installs caught divulging your browsing history
-
-newsFour new reasons why Windows LNK files cannot be trusted Feb 13, 2026 4 mins
-
-Four new reasons why Windows LNK files cannot be trusted
-
-newsPhishing campaign chains old Office flaw with fileless XWorm RAT to evade detection Feb 12, 2026 4 mins
-
-Phishing campaign chains old Office flaw with fileless XWorm RAT to evade detection
-
-newsNorth Korean actors blend ClickFix with new macOS backdoors in Crypto campaign Feb 11, 2026 4 mins
-
-North Korean actors blend ClickFix with new macOS backdoors in Crypto campaign
-
-It’s time to rethink CISO reporting lines
-
-New Arkanix stealer blends rapid Python harvesting with stealthier C++ payloads
-
-Attackers exploit Ivanti EPMM zero-days to seize control of MDM servers
-
-How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
-
-Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
-
-CSO Executive Session ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
-
-How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
-
-Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
-
-CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
 
 (XXXXXXX, AÇIK - https://www.csoonline.com/article/4135843/new-arkanix-stealer-blends-rapid-python-harvesting-with-stealthier-c-payloads.html, csoonline.com, 23.02.2026)
 
 ================================================================================
 
-[33] CSO Online - Attackers exploit Ivanti EPMM zero-days to seize control of MDM servers
+[42] CSO Online - Attackers exploit Ivanti EPMM zero-days to seize control of MDM servers
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Mon, 23 Feb 2026 10:32:31 +0000
 Link: https://www.csoonline.com/article/4135776/attackers-exploit-ivanti-epmm-zero-days-to-seize-control-of-mdm-servers.html
 
-[TAM METİN - 1162 kelime]
-Attackers exploit Ivanti EPMM zero-days to seize control of MDM servers
-
+[TAM METİN - 786 kelime]
 Palo Alto Networks’ Unit 42 says two critical flaws are being actively abused to gain unauthenticated access, deploy persistent backdoors, and compromise entire enterprise mobile fleets even after patches are applied.
 
 Attackers are actively exploiting two critical zero-day vulnerabilities in Ivanti’s Endpoint Manager Mobile (EPMM) to gain unauthenticated control of enterprise mobile device management infrastructure and install backdoors engineered to persist even after organizations apply available patches.
@@ -2427,63 +2615,211 @@ The targeting of EPMM follows a pattern that will be familiar to Ivanti customer
 
 Ivanti’s Connect Secure VPN product has had a similarly troubled record, with Chinese APT groups exploiting zero-days in back-to-back campaigns that eventually led the US government to order federal agencies to disconnect Ivanti VPN products entirely in February 2024.
 
+The rise of the evasive adversary
+
+Anthropic’s Claude Code Security rollout is an industry wakeup call
+
+Russian group uses AI to exploit weakly-protected Fortinet firewalls, says Amazon
+
+New Arkanix stealer blends rapid Python harvesting with stealthier C++ payloads
+
 From our editors straight to your inbox
 
-Gyana Swain is a seasoned technology journalist with over 20 years' experience covering the telecom and IT space. He is a consulting editor with VARINDIA and earlier in his career, he held editorial positions at CyberMedia, PTI, 9dot9 Media, and Dennis Publishing. A published author of two books, he combines industry insight with narrative depth. Outside of work, he’s a keen traveler and cricket enthusiast. He earned a B.S. degree from Utkal University.
-
-More from this author
-
-newsFlaws in four popular VS Code extensions left 128 million installs open to attack Feb 18, 2026 4 mins
-
-Flaws in four popular VS Code extensions left 128 million installs open to attack
-
-newsGoogle fears massive attempt to clone Gemini AI through model extraction Feb 13, 2026 6 mins
-
-Google fears massive attempt to clone Gemini AI through model extraction
-
-newsSingle prompt breaks AI safety in 15 major language models Feb 10, 2026 6 mins
-
-Single prompt breaks AI safety in 15 major language models
-
-newsOpenClaw integrates VirusTotal malware scanning as security firms flag enterprise risks Feb 9, 2026 5 mins
-
-OpenClaw integrates VirusTotal malware scanning as security firms flag enterprise risks
-
-newsCISA gives federal agencies 18 months to purge unsupported edge devices Feb 6, 2026 4 mins
-
-CISA gives federal agencies 18 months to purge unsupported edge devices
-
-newsNotepad++ infrastructure hijacked by Chinese APT in sophisticated supply chain attack Feb 3, 2026 5 mins
-
-Notepad++ infrastructure hijacked by Chinese APT in sophisticated supply chain attack
-
-newsCISA chief uploaded sensitive government files to public ChatGPT Jan 29, 2026 5 mins
-
-CISA chief uploaded sensitive government files to public ChatGPT
-
-newsCritical FortiCloud SSO zero‑day forces emergency service disablement at Fortinet Jan 28, 2026 4 mins
-
-Critical FortiCloud SSO zero‑day forces emergency service disablement at Fortinet
-
-It’s time to rethink CISO reporting lines
-
-Attackers exploit Ivanti EPMM zero-days to seize control of MDM servers
-
-13 ways attackers use generative AI to exploit your systems
-
-How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
-
-Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
-
-CSO Executive Session ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
-
-How Intelligence and AI Are Changing Cyber Defense | Erin Whitmore, Former CIA
-
-Inside the SMB Threat Landscape: AT&T’s Senthil Ramakrishnan on Why Small Businesses Are Cybercrime’s Favorite Target
-
-CSO Executive Sessions ASEAN: The Human Firewall-Retention, AI Readiness, and Women in Cybersecurity
-
 (XXXXXXX, AÇIK - https://www.csoonline.com/article/4135776/attackers-exploit-ivanti-epmm-zero-days-to-seize-control-of-mdm-servers.html, csoonline.com, 23.02.2026)
+
+================================================================================
+
+[43] CSO Online - 13 ways attackers use generative AI to exploit your systems
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 23 Feb 2026 07:00:00 +0000
+Link: https://www.csoonline.com/article/3819176/top-5-ways-attackers-use-generative-ai-to-exploit-your-systems.html
+
+[TAM METİN - 2438 kelime]
+Cybercriminals are increasingly exploiting gen AI technologies to enhance the sophistication and efficiency of their attacks.
+
+Artificial intelligence is revolutionizing the technology industry and this is equally true for the cybercrime ecosystem, as cybercriminals are increasingly leveraging generative AI to improve their tactics, techniques, and procedures and deliver faster, stronger, and sneakier attacks.
+
+As with legitimate use of emerging AI tools, abuse of generative AI for nefarious ends thus far hasn’t been so much about the novel and unseen as it has been about productivity and efficiency, lowering the barrier to entry, and offloading automatable tasks in favor of higher-order thinking on the part of the humans involved.
+
+“AI doesn’t necessarily result in new types of cybercrimes, and instead enables the means to accelerate or scale existing crimes we are familiar with, as well as introduce new threat vectors,” Dr. Peter Garraghan, CEO/CTO of AI security testing vendor Mindgard and a professor at the UK’s Lancaster University, tells CSO. “If a legitimate user can find utility in using AI to automate their tasks, capture complex patterns, lower the barrier of technical entry, reduced costs, and generate new content, why wouldn’t a criminal do the same?”
+
+But the advent of agentic AI is beginning to change things, with AI tools no longer just assisting attackers but helping them automate operations.
+
+“The most significant shift over the past year has been AI’s evolution from a simple ‘helper’ toward becoming a fully autonomous, and quite literally an attacker’s partner-in-crime, capable of executing entire attack chains,” says Crystal Morin, senior cybersecurity strategist at cloud-native security and visibility vendor Sysdig.
+
+Here is a look at various ways cybercriminals are putting gen AI to use in exploiting enterprise systems today.
+
+Taking phishing to the next level
+
+Gen AI enables the creation of highly convincing phishing emails, greatly increasingly the likelihood of prospective marks giving over sensitive information to scam sites or downloading malware.
+
+Instead of sending generic, unconvincing, and error-ridden emails, cybercriminals can leverage AI to quickly generate more sophisticated, personalized, and legitimate-looking emails to target specific recipients.
+
+Gen AI tools help enrich phishing campaigns by pulling together wide-ranging sources of data, including targeted information gleaned from social media.
+
+“AI can be used to quickly learn what types of emails are being rejected or opened, and in turn modify its approach to increase phishing success rate,” Mindgard’s Garraghan explains.
+
+Facilitating malware development
+
+AI can also be used to generate more sophisticated — or less labour-intensive — malware.
+
+For example, cybercriminals are using gen AI to create malicious HTML documents. The XWorm attack, initiated by HTML smuggling, which contains malicious code that downloads and runs the malware, bears the hallmarks of development via AI.
+
+“The loader’s detailed line-by-line description suggesting it was crafted using generative AI,” according to HP Wolf Security’s 2025 Threat Insights Report.
+
+In addition, the “design of the HTML webpage delivering XWorm is almost visually identical as the output from ChatGPT 4o after prompting the LLM to generate an HTML page that offers a file download,” HP Wolf Security added in its report.
+
+Elsewhere, ransomware group FunkSec — an Algeria-linked ransomware-as-a-service (RaaS) operator that takes advantage of double-extortion tactics — has begun harnessing AI technologies, according to Check Point Research.
+
+“FunkSec operators appear to use AI-assisted malware development, which can enable even inexperienced actors to quickly produce and refine advanced tools,” Check Point researchers wrote in a blog post.
+
+Accelerating vulnerability hunting and exploits
+
+Analyzing systems for vulnerabilities and developing exploits can also be simplified through use of gen AI.
+
+“Instead of a black hat hacker spending the time to probe and perform reconnaissance against a system perimeter, an AI agent can be tasked to do this automatically,” Mingard’s Garraghan says.
+
+Gen AI may be behind a 62% reduction in the time between a vulnerability being discovered and its exploitation by attackers from 47 days to just 18 days, according to a study last year by threat intelligence firm ReliaQuest.
+
+“This sharp decrease strongly indicates that a major technological advancement — likely gen AI — is enabling threat actors to exploit vulnerabilities at unprecedented speeds,” ReliaQuest wrote.
+
+Adversaries are leveraging gen AI alongside pen-testing tools to write scripts for tasks such as network scanning, privilege escalation, and payload customization. AI is also likely being used by cybercriminals to analyze scan results and suggest optimal exploits, allowing them to identify flaws in victim systems faster.
+
+“These advances accelerate many phases in the kill chain, particularly initial access,” ReliaQuest concluded.
+
+Cyber resilience firm Cybermindr used a different methodology to find that the average time to exploit a vulnerability had fallen to five days in 2025. “AI-driven reconnaissance, automated attack scripts, and underground exploit marketplaces have accelerated the weaponization of vulnerabilities,” it said.
+
+CSO’s Lucian Constantin offers a deeper look at how generative AI tools are transforming the cyber threat landscape by democratizing vulnerability hunting for pen-testers and attackers alike.
+
+Launching AI-orchestrated espionage
+
+Anthropic dropped a bombshell in September 2025 when it revealed that it had disrupted a sophisticated AI-orchestrated cyber espionage campaign.
+
+The attackers abused Claude Code to automate approximately 80% of their campaign activities, targeting around 30 major tech firms, financial institutions, and government agencies.
+
+In a “small number of cases” attacks were successful, according to the AI company, noting that an unnamed “Chinese state-sponsored group” was likely behind the campaign, which relied on jailbreaking tools to make prohibited functions possible.
+
+Last year Carnegie Mellon’s CyLab Security & Privacy Institute researchers, in collaboration with Anthropic, demonstrated that LLMs like GPT-4o can autonomously plan and execute sophisticated cyberattacks on enterprise-scale networks — without any human intervention.
+
+“The study reveals that an LLM, when structured with high-level planning capabilities and supported by specialized agent frameworks, can simulate network intrusions and closely mirror real-world breaches,” a CyLab spokesperson explained.
+
+Escalating threats with alternative platforms
+
+Cybercriminals have also begun developing their own large language models (LLMs) — such as WormGPT, FraudGPT, DarkBERT, and others — built without the guardrails that constrain criminals’ misuse of mainstream gen AI platforms.
+
+These platforms are commonly harnessed for applications such as phishing and malware generation.
+
+Moreover, mainstream LLMs can also be customized for targeted use. Security researcher Chris Kubecka shared with CSO in late 2024 how her custom version of ChatGPT, called Zero Day GPT, helped her identify more than 20 zero-days in a matter of months.
+
+Stealing resources via LLMjacking
+
+Threat actors are also busy stealing cloud credentials specifically to hijack costly LLM resources, either for their own gain or to sell access, in an attack technique called LLMjacking.
+
+“Beyond theft of service, attackers are now actively probing newer LLM models to identify those that lack the guardrails of more mature platforms, effectively using them as unrestricted sandboxes to generate malicious code or bypass regional sanctions,” Sysdig’s Morin reports.
+
+Creating a Silk Road–style marketplace for AI agents
+
+Beyond AI agents executing individual attacks, security experts are beginning to track examples where coordination itself is being automated or orchestrated.
+
+“We’re seeing early experiments where multiple specialized agents interact, some focused on reconnaissance, others on tooling, execution, or data movement, without any single agent needing the full picture,” says Lucie Cardiet, cyberthreat research manager at Vectra AI.
+
+A concrete example of this is Molt Road, which offers a dark-web-style marketplace for AI agents, albeit one with few listings at present.
+
+“Autonomous agents can create listings, sell access or capabilities, coordinate tasks, and complete transactions with minimal human involvement, effectively automating the economics of cybercrime,” Cardiet tells CSO.
+
+“We can expect attackers to actively leverage this model in the coming months, breaking the attack chain into specialized, cooperating agents to speed up and scale their attacks,” she says.
+
+Breaking in with authentication bypass
+
+Gen AI tools can also be abused to bypass security defences such as CAPTCHAs or biometric authentication.
+
+“AI can defeat CAPTCHA systems and analyse voice biometrics to compromise authentication,” according to cybersecurity vendor Dispersive. “This capability underscores the need for organizations to adopt more advanced, layered security measures.”
+
+Leveraging deepfakes for social engineering
+
+AI-generated deepfakes are being abused to exploit channels many employees more implicitly trust, such as voice and video, instead of relying on less convincing email-based attacks.
+
+The problem is becoming more severe with the wider availability of AI technologies capable of creating more convincing deepfakes, according to Alex Lisle, CTO of deepfake detection platform Reality Defender.
+
+“There was a recent case involving a cybersecurity company that relied on visual verification for credential resets,” Lisle says. “Their process required a manager to join a Zoom call with IT to confirm an employee’s identity before a password reset.”
+
+Lisle explains: “Attackers are now leveraging deepfakes to impersonate those managers on live video calls to authorize these resets.”
+
+In the most high-profile example to date, a finance worker at design and engineering company Arup was tricked into authorizing a fraudulent HK$200 million ($25.6 million) transaction after attending a videoconference call during which fraudsters used deepfake technology to impersonate its UK-based CFO.
+
+Impersonating brands in malicious ad campaigns
+
+Cybercriminals have begun using gen AI tools to deliver brand impersonation campaigns delivered via ads and content platforms, rather than traditional phishing or malware.
+
+“Attackers now use gen AI to mass-produce realistic ad copy, creatives, and fake support pages, then distribute them across search ads, social ads, and AI-generated content, targeting high-intent queries like ‘brand login’ or ‘brand support,’” explains Shlomi Beer, co-founder and CEO at ImpersonAlly, a security startup that specializes in protecting the online advertising ecosystem.
+
+The tactic was used in ongoing a series of Google Ad account fraud, to impersonate the Cursor AI coding assistant firm, and in a fake Shopify ecommerce platform customer support scam, among other attacks.
+
+Attackers have also begun targeting viral personal AI agents such as OpenClaw.
+
+OpenClaw offers an open-source AI agent framework. A combination of supply chain attacks on its skill marketplace and misconfigurations open the door to potential exploits and malware slinging, as CSO covered in much more depth in our earlier report.
+
+“Cybercriminals can exploit these virtual assistants to steal private keys to cryptocurrency wallets and execute code on victims’ devices,” says Edward Wu, CEO and founder at Dropzone AI. “We can expect 2026 to be the year when security teams will try to prevent unsanctioned usage of personal AI agents.”
+
+Poisoning model memories
+
+To offer short-term and longer-term context, AI agents are starting to rely more on persistent memory, opening the door for exploits that involve planting malicious memories.
+
+If an attacker injects malicious or false information into an agent’s memory, that corrupted context then influences every future decision the agent makes.
+
+For example, security researcher Johann Rehberger showed how he could plant false memories in ChatGPT in September 2025.
+
+“He [Rehberger] used a malicious image with hidden instructions embedded in it to inject fabricated data into the model’s long-term memory,” said Siri Varma Vegiraju, security tech lead at Microsoft. “The scary part was that once the memory was poisoned, it persisted across sessions and continuously exfiltrated user data to a server the attacker controlled.”
+
+Hacking AI infrastructure
+
+Over the past year, attackers have shifted from using generative AI to targeting the infrastructure that enables it.
+
+This vector of attack is exemplified in the supply chain poisoning in Model Context Protocol servers, where compromised dependencies or modified code introduced vulnerabilities into enterprise environments.
+
+For example, a counterfeit “Postmark MCP Server” discovered in early 2025 silently BCC’d all processed emails, including internal documents, invoices, and credentials, to an attacker-controlled domain.
+
+Many other malicious MCP servers have already been identified in the wild, many designed to exfiltrate information without detection, according to Casey Bleeker CEO at SurePath AI.
+
+“We’re tracking several categories of MCP-specific risk: tool poisoning attacks, where adversaries inject malicious instructions into AI tool descriptions that execute when the agent invokes them; supply chain compromises, where a trusted MCP server or dependency is updated post-approval to behave maliciously; and cross-tool data exfiltration, where compromised components in an agentic workflow silently siphon sensitive data through what looks like legitimate AI activity,” Bleeker explains.
+
+AI technologies are powerful but they have their limitations, several experts tell CSO.
+
+Rik Ferguson, VP of security intelligence at Forescout, says cybercriminals are largely relying on AI to automate repetitive tasks rather than more complex work, such as vulnerability exploitation.
+
+“The most reliable criminal use [of AI] remains in language-heavy and workflow-heavy tasks such as phishing and pretexting, influence and outreach, triaging and contextualizing vulnerabilities, and generating boilerplate components, rather than reliably discovering and exploiting brand-new vulnerabilities end-to-end,” Ferguson says.
+
+Over the past twelve months, managed detection and response firm Huntress has tracked threat actors applying AI to generate and automate traditional tradecraft, from developing scripts to browser extensions and, in some cases, even phishing lures.
+
+“We have also seen such ‘vibe coded’ scripts fail to execute and meet their objectives on multiple occasions,” Anton Ovrutsky, principal tactical response analyst at Huntress, tells CSO.
+
+And while AI has certainly given threat actors a powerful tool it has, at least to date, failed to spawn any new tactics or exploit classes, according to Ovrutsky.
+
+“A threat actor can indeed rapidly prototype a sophisticated credential theft script, yet the basic ‘laws of physics’ still exist; a threat actor must be in a position to execute such a script in the first place,” Ovrutsky says. “We have yet to observe an exploit path that has been enabled through AI-use exclusively.”
+
+Collectively the misuse of gen AI tools is making it easier for less skilled cybercriminals to earn a dishonest living. Defending against the attack vector challenges security professionals to harness the power of artificial intelligence more effectively than attackers.
+
+“Criminal misuse of AI technologies is driving the necessity to test, detect, and respond to these threats, in which AI is also being leveraged to combat cybercriminal activity,” Mindgard’s Garraghan says.
+
+In a blog post, Lawrence Pingree, VP of technical marketing at Dispersive, outlines preemptive cyber defenses that security professionals can take to win what he describes as an “AI ARMS (Automation, Reconnaissance, and Misinformation) race” between attackers and defenders.
+
+“Relying on traditional detection and response mechanisms is no longer sufficient,” Pingree warns.
+
+Alongside employee education and awareness programs, enterprises should be using AI to detect and neutralize generative AI-based threats in real-time.
+
+Forescout’s Ferguson says CISOs should treat enterprise AI like any other high-value SaaS platform.
+
+“Tighten identity and conditional access, minimize privileges, lock down keys, and monitor for anomalous AI/API usage and spend,” Ferguson advises.
+
+New phishing campaign tricks employees into bypassing Microsoft 365 MFA
+
+5 key trends reshaping the SIEM market
+
+‘Dead’ Outlook add-in hijacked to phish 4,000 Microsoft Office Store users
+
+From our editors straight to your inbox
+
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/3819176/top-5-ways-attackers-use-generative-ai-to-exploit-your-systems.html, csoonline.com, 23.02.2026)
 
 ================================================================================
 

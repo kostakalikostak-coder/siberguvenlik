@@ -1,1 +1,43 @@
-
+2026-02-24	https://thehackernews.com/2026/02/unsolicitedbooker-targets-central-asian.html	UnsolicitedBooker Targets Central Asian Telecoms With LuciDoor and MarsSnake Backdoors	23e65bfbae628385
+2026-02-24	https://thehackernews.com/2026/02/anthropic-says-chinese-ai-firms-used-16.html	Anthropic Says Chinese AI Firms Used 16 Million Claude Queries to Copy Model	5d8479936795ccf6
+2026-02-24	https://thehackernews.com/2026/02/apt28-targeted-european-entities-using.html	APT28 Targeted European Entities Using Webhook-Based Macro Malware	b14ec86f41fe0a3e
+2026-02-24	https://thehackernews.com/2026/02/wormable-xmrig-campaign-uses-byovd.html	Wormable XMRig Campaign Uses BYOVD Exploit and Time-Based Logic Bomb	f76c2a3a4a7e486b
+2026-02-24	https://thehackernews.com/2026/02/weekly-recap-double-tap-skimmers.html	⚡ Weekly Recap: Double-Tap Skimmers, PromptSpy AI, 30Tbps DDoS, Docker Malware & More	47f55f9079d6a030
+2026-02-24	https://thehackernews.com/2026/02/how-exposed-endpoints-increase-risk.html	How Exposed Endpoints Increase Risk Across LLM Infrastructure	66e5fba477cd173e
+2026-02-24	https://thehackernews.com/2026/02/malicious-npm-packages-harvest-crypto.html	Malicious npm Packages Harvest Crypto Keys, CI Secrets, and API Tokens	2f4708b20ebf17e0
+2026-02-24	https://thehackernews.com/2026/02/muddywater-targets-mena-organizations.html	MuddyWater Targets MENA Organizations with GhostFetch, CHAR, and HTTP_VIP	32ee699ad6bce8ef
+2026-02-24	https://www.bleepingcomputer.com/news/security/north-korean-lazarus-group-linked-to-medusa-ransomware-attacks/	North Korean Lazarus group linked to Medusa ransomware attacks	d391b2db03522e5c
+2026-02-24	https://www.bleepingcomputer.com/news/security/android-mental-health-apps-with-147m-installs-filled-with-security-flaws/	Android mental health apps with 14.7M installs filled with security flaws	ec7066b586828811
+2026-02-24	https://www.bleepingcomputer.com/news/security/spain-arrests-suspected-anonymous-fenix-hacktivists-for-ddosing-govt-sites/	Spain arrests suspected hacktivists for DDoSing govt sites	54eac727acd16424
+2026-02-24	https://www.bleepingcomputer.com/news/microsoft/microsoft-says-bug-in-classic-outlook-hides-the-mouse-pointer/	Microsoft says bug in classic Outlook hides the mouse pointer	fd2c83db939666dd
+2026-02-24	https://www.bleepingcomputer.com/news/security/ad-tech-firm-optimizely-confirms-data-breach-after-vishing-attack/	Ad tech firm Optimizely confirms data breach after vishing attack	da53442b2c85bb52
+2026-02-24	https://www.bleepingcomputer.com/news/security/when-identity-isnt-the-weak-link-access-still-is/	When identity isn’t the weak link, access still is	e11ea1ef624acefc
+2026-02-24	https://www.bleepingcomputer.com/news/security/cisa-recently-patched-roundcube-flaws-now-exploited-in-attacks/	CISA: Recently patched RoundCube flaws now exploited in attacks	b371cc0963b74a78
+2026-02-24	https://securityaffairs.com/188421/apt/operation-macromaze-apt28-exploits-webhooks-for-covert-data-exfiltration.html	Operation MacroMaze: APT28 exploits webhooks for covert data exfiltration	14593e658a58b041
+2026-02-24	https://securityaffairs.com/188397/data-breach/everest-ransomware-hits-vikor-scientific-s-supplier-data-of-140000-patients-stolen.html	Everest ransomware hits Vikor Scientific ‘s supplier, data of 140,000 patients stolen	563928eaf056157e
+2026-02-24	https://securityaffairs.com/188388/malware/wormable-xmrig-campaign-leverages-byovd-and-timed-kill-switch-for-stealth.html	Wormable XMRig campaign leverages BYOVD and timed kill switch for stealth	140bb87cd64354a0
+2026-02-24	https://securityaffairs.com/188380/cyber-crime/romanian-hacker-pleads-guilty-to-selling-access-to-oregon-state-networks.html	Romanian hacker pleads guilty to selling access to Oregon state networks	e11bc6a39d2099fa
+2026-02-24	https://securityaffairs.com/188370/hacking/cve-2026-1731-fuels-ongoing-attacks-on-beyondtrust-remote-access-products.html	CVE-2026-1731 fuels ongoing attacks on BeyondTrust remote access products	e6f9170ea12ac85d
+2026-02-24	https://securityaffairs.com/188351/hacking/ai-powered-campaign-compromises-600-fortigate-systems-worldwide.html	AI-powered campaign compromises 600 FortiGate systems worldwide	fc75800dd81fd8f1
+2026-02-24	https://securityaffairs.com/188358/ai/anthropic-unveils-claude-code-security-to-detect-and-fix-code-bugs.html	Anthropic unveils Claude Code Security to detect and fix code bugs	7f00bcc18361ce95
+2026-02-24	https://isc.sans.edu/diary/rss/32740	ISC Stormcast For Tuesday, February 24th, 2026 https://isc.sans.edu/podcastdetail/9822, (Tue, Feb 24th)	497d157c17feb923
+2026-02-24	https://isc.sans.edu/diary/rss/32738	Another day, another malicious JPEG, (Mon, Feb 23rd)	991313a0c884e58a
+2026-02-24	https://isc.sans.edu/diary/rss/32736	ISC Stormcast For Monday, February 23rd, 2026 https://isc.sans.edu/podcastdetail/9820, (Mon, Feb 23rd)	bae237cdbcecdea7
+2026-02-24	https://cyberscoop.com/crowdstrike-annual-global-threat-report-attack-breakout-time/	CrowdStrike says attackers are moving through networks in under 30 minutes	4b7397dde0cb0962
+2026-02-24	https://cyberscoop.com/anthropic-accuses-chinese-labs-ai-distillation-cyber-risk/	Anthropic accuses Chinese labs of trying to illicitly take Claude’s capabilities	3d01699fa2f4c05b
+2026-02-24	https://go.theregister.com/feed/www.theregister.com/2026/02/23/anonymous_arrests_spain/	Suspected Anonymous members detained in Spain over post-flood DDoS blitz	5259c37681806dd9
+2026-02-24	https://go.theregister.com/feed/www.theregister.com/2026/02/23/aws_fortigate_firewalls/	AWS says more than 600 FortiGate firewalls hit in AI-augmented campaign	565eb5268ebb0a0f
+2026-02-24	https://go.theregister.com/feed/www.theregister.com/2026/02/22/french_bank_hack/	Attacker gets into France's database listing all bank accounts, makes off with 1.2 million records	cc479b372b18aea8
+2026-02-24	https://techcrunch.com/2026/02/23/americans-are-destroying-flock-surveillance-cameras/	Americans are destroying Flock surveillance cameras	a9df2fedc6cc1991
+2026-02-24	https://techcrunch.com/2026/02/23/vpn-flaws-allowed-chinese-hackers-to-compromise-dozens-of-ivanti-customers-says-report/	VPN flaws allowed Chinese hackers to compromise dozens of Ivanti customers, says report	62eef594022869e6
+2026-02-24	https://techcrunch.com/2026/02/23/5-days-left-to-lock-in-the-lowest-techcrunch-disrupt-2026-ticket-rates/	5 days left to lock in the lowest TechCrunch Disrupt 2026 ticket rates	9d2e15bab27806a9
+2026-02-24	https://www.csoonline.com/article/4136389/bitcoin-milliarden-von-raubkopie-portal-im-visier-der-justiz.html	Bitcoin-Milliarden von Raubkopie-Portal im Visier der Justiz	4acab1422994fcbf
+2026-02-24	https://www.csoonline.com/article/4136293/its-time-to-rethink-ciso-reporting-lines.html	It’s time to rethink CISO reporting lines	f98ade7480dc2b92
+2026-02-24	https://www.csoonline.com/article/4136276/the-rise-of-the-evasive-adversary.html	The rise of the evasive adversary	a87bbbf64f70df83
+2026-02-24	https://www.csoonline.com/article/4136294/anthropics-claude-code-security-rollout-is-an-industry-wakeup-call.html	Anthropic’s Claude Code Security rollout is an industry wakeup call	cd19db2a6172a941
+2026-02-24	https://www.csoonline.com/article/3961114/ot-security-warum-der-blick-auf-open-source-lohnt.html	OT-Security: Warum der Blick auf Open Source lohnt	d3c011d8fea8d2e2
+2026-02-24	https://www.csoonline.com/article/4136198/russian-group-uses-ai-to-exploit-weakly-protected-fortinet-firewalls-says-amazon.html	Russian group uses AI to exploit weakly-protected Fortinet firewalls, says Amazon	2e45b81f7a37d14f
+2026-02-24	https://www.csoonline.com/article/4135838/hacker-stiehlt-daten-von-tausenden-rtl-mitarbeitern.html	Hacker stiehlt Daten von Tausenden RTL-Mitarbeitern	ee147924871d722d
+2026-02-24	https://www.csoonline.com/article/4135843/new-arkanix-stealer-blends-rapid-python-harvesting-with-stealthier-c-payloads.html	New Arkanix stealer blends rapid Python harvesting with stealthier C++ payloads	7a78c286de6b4ec8
+2026-02-24	https://www.csoonline.com/article/4135776/attackers-exploit-ivanti-epmm-zero-days-to-seize-control-of-mdm-servers.html	Attackers exploit Ivanti EPMM zero-days to seize control of MDM servers	6ce686291de057b1
+2026-02-24	https://www.csoonline.com/article/3819176/top-5-ways-attackers-use-generative-ai-to-exploit-your-systems.html	13 ways attackers use generative AI to exploit your systems	34f8a9390e151317
