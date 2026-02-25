@@ -44,3 +44,46 @@
 2026-02-24	https://www.csoonline.com/article/4135838/hacker-stiehlt-daten-von-tausenden-rtl-mitarbeitern.html	Hacker stiehlt Daten von Tausenden RTL-Mitarbeitern	ee147924871d722d
 2026-02-24	https://www.csoonline.com/article/4135843/new-arkanix-stealer-blends-rapid-python-harvesting-with-stealthier-c-payloads.html	New Arkanix stealer blends rapid Python harvesting with stealthier C++ payloads	7a78c286de6b4ec8
 2026-02-24	https://www.csoonline.com/article/4135776/attackers-exploit-ivanti-epmm-zero-days-to-seize-control-of-mdm-servers.html	Attackers exploit Ivanti EPMM zero-days to seize control of MDM servers	6ce686291de057b1
+2026-02-25	https://thehackernews.com/2026/02/defense-contractor-employee-jailed-for.html	Defense Contractor Employee Jailed for Selling 8 Zero-Days to Russian Broker	44d0c393402c64a7
+2026-02-25	https://thehackernews.com/2026/02/solarwinds-patches-4-critical-serv-u.html	SolarWinds Patches 4 Critical Serv-U 15.5 Flaws Allowing Root Code Execution	a03cb0ab35eb27fb
+2026-02-25	https://thehackernews.com/2026/02/cisa-confirms-active-exploitation-of.html	CISA Confirms Active Exploitation of FileZen CVE-2026-25108 Vulnerability	a99f4f583d241fcd
+2026-02-25	https://thehackernews.com/2026/02/roguepilot-flaw-in-github-codespaces.html	RoguePilot Flaw in GitHub Codespaces Enabled Copilot to Leak GITHUB_TOKEN	c49a32026fa86f5c
+2026-02-25	https://thehackernews.com/2026/02/uac-0050-targets-european-financial.html	UAC-0050 Targets European Financial Institution With Spoofed Domain and RMS Malware	905eb4be04820762
+2026-02-25	https://thehackernews.com/2026/02/identity-prioritization-isnt-backlog.html	Identity Prioritization isn't a Backlog Problem - It's a Risk Math Problem	1c572762c30b45e3
+2026-02-25	https://thehackernews.com/2026/02/lazarus-group-uses-medusa-ransomware-in.html	Lazarus Group Uses Medusa Ransomware in Middle East and U.S. Healthcare Attacks	bbb0c71007ec3cd9
+2026-02-25	https://www.bleepingcomputer.com/news/security/ex-l3harris-exec-jailed-for-selling-zero-days-to-russian-exploit-broker/	Ex-L3Harris exec jailed for selling zero-days to Russian exploit broker	2e9662e4beaf25d0
+2026-02-25	https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5077241-update-improves-bitlocker-adds-sysmon-tool/	Windows 11 KB5077241 update improves BitLocker, adds Sysmon tool	78fb52687329794b
+2026-02-25	https://www.bleepingcomputer.com/news/security/phishing-campaign-targets-freight-and-logistics-orgs-in-the-us-europe/	Phishing campaign targets freight and logistics orgs in the US, Europe	1f7f6769c6ba02a7
+2026-02-25	https://www.bleepingcomputer.com/news/security/wynn-resorts-confirms-employee-data-breach-after-extortion-threat/	Wynn Resorts confirms employee data breach after extortion threat	df3a0aeac5c01e93
+2026-02-25	https://www.bleepingcomputer.com/news/security/1campaign-platform-helps-malicious-google-ads-evade-detection/	1Campaign platform helps malicious Google ads evade detection	212f36e34bc2d19d
+2026-02-25	https://www.bleepingcomputer.com/news/security/cargurus-data-breach-exposes-information-of-124-million-accounts/	CarGurus data breach exposes information of 12.4 million accounts	d5a8b66a56461fb8
+2026-02-25	https://www.bleepingcomputer.com/news/microsoft/microsoft-adds-copilot-data-controls-to-all-storage-locations/	Microsoft adds Copilot data controls to all storage locations	83d4e9759b397f2a
+2026-02-25	https://www.bleepingcomputer.com/news/security/identity-first-ai-security-why-cisos-must-add-intent-to-the-equation/	Identity-First AI Security: Why CISOs Must Add Intent to the Equation	3f85e74aa1d71436
+2026-02-25	https://www.bleepingcomputer.com/news/security/uk-fines-reddit-19-million-for-using-childrens-data-unlawfully/	UK fines Reddit $19 million for using children’s data unlawfully	614e28ccd6d92666
+2026-02-25	https://www.bleepingcomputer.com/news/security/critical-solarwinds-serv-u-flaws-offer-root-access-to-servers/	Critical SolarWinds Serv-U flaws offer root access to servers	10389992a0e31de5
+2026-02-25	https://securityaffairs.com/188473/hacking/u-s-cisa-adds-a-flaw-in-soliton-systems-k-k-filezen-to-its-known-exploited-vulnerabilities-catalog.html	U.S. CISA adds a flaw in Soliton Systems K.K FileZen to its Known Exploited Vulnerabilities catalog	1386588e7f2125d5
+2026-02-25	https://securityaffairs.com/188460/apt/lazarus-apt-group-deployed-medusa-ransomware-against-middle-east-target.html	Lazarus APT group deployed Medusa Ransomware against Middle East target	f172404462e05474
+2026-02-25	https://securityaffairs.com/188454/hacking/solarwinds-patches-four-critical-serv-u-flaws-enabling-root-access.html	SolarWinds patches four critical Serv-U flaws enabling root access	9dc241e26f1c8b54
+2026-02-25	https://securityaffairs.com/188445/security/vmware-aria-operations-flaws-could-enable-remote-attacks.html	VMware Aria Operations flaws could enable remote attacks	ef19c70f7ad2d807
+2026-02-25	https://www.bitdefender.com/en-us/blog/hotforsecurity/10-000-bounty-hack-ring-cameras	$10,000 bounty offered if you can hack Ring cameras to stop them sharing your data with Amazon	85b97624216f9453
+2026-02-25	https://isc.sans.edu/diary/rss/32742	Open Redirects: A Forgotten Vulnerability&#x3f;, (Tue, Feb 24th)	3e0a156d8fbebd15
+2026-02-25	https://www.recordedfuture.com/blog/january-2026-cve-landscape	January 2026 CVE Landscape: 23 Critical Vulnerabilities Mark 5% Increase, APT28 Exploits Microsoft Office Zero-Day	132010ad17737225
+2026-02-25	https://www.recordedfuture.com/research/preparing-for-russias-new-generation-warfare-in-europe	Preparing for Russia’s New Generation Warfare in Europe	24e91657b82405fc
+2026-02-25	https://cyberscoop.com/l3harris-executive-peter-williams-sentenced-zero-day-exploits-russia/	Ex-L3Harris executive sentenced to 87 months in prison for selling zero-day exploits to Russian broker	758e68c4814d481a
+2026-02-25	https://go.theregister.com/feed/www.theregister.com/2026/02/24/north_koreas_lazarus_group_healthcare_medusa_ransomware/	North Korea's Lazarus Group targets healthcare orgs with Medusa ransomware	afcd148dd36b2097
+2026-02-25	https://techcrunch.com/2026/02/24/former-l3harris-trenchant-boss-jailed-for-selling-hacking-tools-to-russian-broker/	Former L3Harris Trenchant boss jailed for selling hacking tools to Russian broker	16fa7dc0bca91e02
+2026-02-25	https://techcrunch.com/2026/02/24/cargurus-data-breach-affects-12-5-million-accounts/	CarGurus data breach affects 12.5 million accounts	24a59236f15a42f9
+2026-02-25	https://techcrunch.com/2026/02/24/treasury-sanctions-russian-zero-day-broker-accused-of-buying-exploits-stolen-from-u-s-defense-contractor/	Treasury sanctions Russian zero-day broker accused of buying exploits stolen from US defense contractor	ee5a18c1d3f56f56
+2026-02-25	https://techcrunch.com/2026/02/24/marquis-sonicwall-lawsuit-ransomware-firewall-breach/	Marquis sues firewall provider SonicWall, alleges security failings with its firewall backup led to ransomware attack	8a31994340726e4e
+2026-02-25	https://techcrunch.com/2026/02/24/conduent-data-breach-grows-affecting-at-least-25m-people/	Conduent data breach grows, affecting at least 25M people	c04ec5af33462d87
+2026-02-25	https://www.csoonline.com/article/4137037/ukrainian-convicted-for-helping-fake-north-korean-it-workers.html	Ukrainian convicted for helping fake North Korean IT workers	86c144d7faf3efe6
+2026-02-25	https://www.csoonline.com/article/4136995/boards-dont-need-cyber-metrics-they-need-risk-signals.html	Boards don’t need cyber metrics — they need risk signals	e092404498bf75c1
+2026-02-25	https://www.csoonline.com/article/4030328/so-verandert-ki-ihre-grc-strategie.html	So verändert KI Ihre GRC-Strategie	97023beea761cbc4
+2026-02-25	https://www.csoonline.com/article/4136590/hacker-knackt-600-firewalls-in-einem-monat-mit-ki.html	Hacker knackt 600 Firewalls in einem Monat – mit KI	405ae3d16f252090
+2026-02-25	https://www.csoonline.com/article/4137009/new-serv-u-bugs-extend-solarwinds-run-of-high-severity-disclosures.html	New Serv-U bugs extend SolarWinds’ run of high-severity disclosures	410f75bb6f811c0c
+2026-02-25	https://www.csoonline.com/article/4136834/fake-zoom-meeting-silently-installs-surveillance-software-says-malwarebytes.html	Fake Zoom meeting silently installs surveillance software, says Malwarebytes	42bdd1cfbd903bb3
+2026-02-25	https://www.csoonline.com/article/4136954/vmware-fixes-command-injection-flaw-in-aria-operations.html	VMware fixes command injection flaw in Aria Operations	83e0b6a14e3791ad
+2026-02-25	https://www.csoonline.com/article/4128950/what-does-business-email-compromise-look-like.html	What does business email compromise look like?	b5bc7cd2c702b73f
+2026-02-25	https://www.csoonline.com/article/4128947/what-are-the-types-of-ransomware-attacks.html	What are the types of ransomware attacks?	8d5c998d650a5731
+2026-02-25	https://www.csoonline.com/article/4128952/take-control-locking-down-common-endpoint-vulnerabilities.html	Take control: Locking down common endpoint vulnerabilities	f2e7abdef59903fc
+2026-02-25	https://www.infoblox.com/blog/company/network-transformation-without-the-trauma/	Network Transformation without the Trauma	192ea00216252094

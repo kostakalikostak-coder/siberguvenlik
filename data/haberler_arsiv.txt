@@ -7523,3 +7523,162 @@ Rusya Federal Güvenlik Servisi (FSB) başkanı, Telegram'ı suç faaliyetlerine
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 25 FEBRUARY 2026 - EN ÖNEMLİ 43 HABER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Rusya'nın Avrupa'daki Yeni Nesil Savaş Stratejilerine Hazırlık Durumu
+─────────────────────────────────────────────────────────
+Recorded Future tarafından yayımlanan kapsamlı bir rapor, Rusya'nın önümüzdeki iki yıl içinde Avrupa'daki NATO üyelerine karşı hibrit savaş kampanyasını "Yeni Nesil Savaş" (NGW) doktrini doğrultusunda tırmandırabileceğini belirtmektedir. Bu strateji, siber saldırılar, sabotaj operasyonları, etki operasyonları ve hava sahası ihlalleri gibi askeri olmayan araçların koordineli kullanımını içermektedir. Rapor, Rusya'nın bu taktikleri kullanarak NATO'nun siyasi birliğini ve savunma kapasitelerini zayıflatmayı, kritik altyapıları hedef almayı ve Avrupa'daki fiziksel ve psikolojik ortamı bir askeri müdahale olasılığına hazırlamayı amaçladığını ifade etmektedir. Özel ve kamu sektörlerinin kritik hizmetlerde kesintiler, itibar riskleri ve kamu güveninde azalma gibi önemli sonuçlarla karşılaşabileceği vurgulanmıştır.
+(Recorded Future, AÇIK -recordedfuture.com, 24.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] ABD Savunma Yüklenicisinden Rus Aracısına Sıfır Gün Açığı Satışının Yasal Sonuçları ve Yaptırımlar
+─────────────────────────────────────────────────────────
+Bir ABD savunma yüklenicisi olan L3Harris'in eski çalışanı Peter Williams'ın, sekiz adet sıfır gün açığını Rus aracı Operation Zero'ya milyonlarca dolar karşılığında sattığı için yedi yıldan fazla hapis cezasına çarptırıldığı bildirilmiştir. Williams'ın bu eylemleriyle ABD ulusal güvenliğini ve işvereninin çıkarlarını tehlikeye attığı belirtilmektedir. ABD Hazine Bakanlığı, bu olayla bağlantılı olarak Operation Zero ile birlikte yöneticisi Sergey Zelenyuk ve dört ilişkili kişi ve kuruluşa yaptırım uygulamıştır. Bu sıfır gün açıklarının, Rusya'ya milyonlarca dijital cihaza erişim sağlama potansiyeli taşıdığı ifade edilmiştir. FBI, bu tür eylemlere karşı sert uyarılar yayımlamıştır.
+(The Hacker News, AÇIK -thehackernews.com, 25.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] APT28 Grubunun Microsoft Office Sıfır Gün Açığını Aktif Şekilde İstismar Etmesi
+─────────────────────────────────────────────────────────
+Recorded Future'ın yayımladığı bir rapora göre, Rusya destekli APT28 (Fancy Bear olarak da bilinir) grubunun Microsoft Office'teki CVE-2026-21509 numaralı sıfır gün açığını aktif olarak istismar ettiği tespit edilmiştir. Bu istismarın, özellikle kötü amaçlı RTF dosyaları aracılığıyla gerçekleştirildiği ve MiniDoor, PixyNetLoader gibi e-posta toplama implantlarının ve arka kapıların dağıtımını sağladığı belirtilmektedir. Söz konusu açık, Office'in güvenlik özelliklerini atlayarak hedefli kullanıcılardan e-posta verilerini toplamayı ve sistemlere kalıcı erişim sağlamayı mümkün kılmaktadır. Microsoft'un bu kritik açığı gidermek için acil bir güncelleme yayımladığı ifade edilmiştir.
+(Recorded Future, AÇIK -recordedfuture.com, 24.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Conduent Veri İhlalinin 25 Milyondan Fazla Kişiyi Etkilemesi
+─────────────────────────────────────────────────────────
+ABD'nin en büyük devlet yüklenicilerinden biri olan Conduent'in, Ocak 2025'te yaşadığı fidye yazılımı saldırısının etkilerinin büyümeye devam ettiği ve en az 25 milyon kişinin kişisel verilerinin çalındığı bildirilmiştir. Bu ihlalde, isimler, doğum tarihleri, adresler, Sosyal Güvenlik numaraları, sağlık sigortası bilgileri ve tıbbi veriler gibi son derece hassas bilgiler ele geçirilmiştir. Conduent, eyalet hükümetleri ve büyük şirketler için belge ve ödeme işleme hizmetleri sağlaması nedeniyle geniş bir kitleyi etkilemektedir. Şirketin ihlal hakkında kamuoyuna yeterli bilgi vermemesi ve "noindex" etiketi kullanarak arama motorlarından gizlemeye çalışması eleştirilere yol açmıştır.
+(TechCrunch Security, AÇIK -techcrunch.com, 24.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Lazarus Grubunun Medusa Fidye Yazılımı ile Sağlık Sektörünü Hedef Alması
+─────────────────────────────────────────────────────────
+Kuzey Kore bağlantılı Lazarus Grubu'nun (Diamond Sleet olarak da bilinir), Orta Doğu'daki isimsiz bir kuruluşu ve ABD'deki bir sağlık kuruluşunu Medusa fidye yazılımı ile hedef aldığı belirtilmiştir. Symantec ve Carbon Black Threat Hunter Team tarafından hazırlanan rapora göre, Lazarus'un bu saldırılarda RP_Proxy, Mimikatz, Comebacker, InfoHook ve BLINDINGCAN gibi çeşitli araçları kullandığı gözlemlenmiştir. Kuzey Koreli siber suç gruplarının, kendi fidye yazılımlarını geliştirmek yerine Medusa gibi hazır araçları kullanmaya yöneldiği ve sağlık sektörü gibi kritik altyapıları hedef almaktan çekinmediği ifade edilmektedir. Bu durum, siber suç faaliyetlerinin artarak devam ettiğini göstermektedir.
+(The Hacker News, AÇIK -thehackernews.com, 24.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] UAC-0050 Grubunun Avrupa Finans Kurumlarını Hedef Alması
+─────────────────────────────────────────────────────────
+Rusya destekli UAC-0050 (Mercenary Akula olarak da bilinen) tehdit aktörünün, Avrupa'da bölgesel kalkınma ve yeniden yapılanma girişimlerinde bulunan isimsiz bir finans kuruluşunu hedef aldığı bildirilmiştir. Bu sosyal mühendislik saldırısının, istihbarat toplama veya finansal hırsızlığı kolaylaştırmayı amaçladığı belirtilmektedir. Saldırıda, Ukrayna yargı alanını taklit eden sahte e-postalar aracılığıyla Remote Manipulator System (RMS) adlı uzaktan erişim yazılımının dağıtıldığı tespit edilmiştir. UAC-0050'nin daha önce de benzer taktiklerle Ukrayna'yı hedef aldığı ve meşru uzaktan erişim yazılımlarını kötüye kullandığı ifade edilmektedir. Bu olay, tehdit aktörünün hedef kitlesini Batı Avrupa'daki Ukrayna'yı destekleyen kurumlara doğru genişlettiğini düşündürmektedir.
+(The Hacker News, AÇIK -thehackernews.com, 24.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Kuzey Koreli BT Çalışanlarına Sahte Kimlik Sağlayan Ukraynalının Mahkum Edilmesi
+─────────────────────────────────────────────────────────
+Bir Ukrayna vatandaşının, Kuzey Koreli BT çalışanlarının ABD şirketlerine sızmasına yardımcı olmak amacıyla yüzlerce kişiden kimlik çaldığı gerekçesiyle beş yıl hapis cezasına çarptırıldığı açıklanmıştır. Kiev'den 39 yaşındaki bu kişinin, ABD vatandaşları dahil olmak üzere yüzlerce kişinin kimliğini çaldığı ve bunları Kuzey Koreli BT çalışanlarına sattığı belirtilmektedir. Bu çalışanların, çalınan kimlik bilgilerini kullanarak ABD'deki yaklaşık 40 şirkette uzaktan iş bulduğu tespit edilmiştir. Mahkumun ayrıca 1.4 milyon dolar değerindeki nakit ve kripto para varlıklarını devretmeyi kabul ettiği ifade edilmiştir. Bu durum, ulusal güvenlik açısından önemli bir ihlal teşkil etmektedir.
+(CSO Online, AÇIK -csoonline.com, 25.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] SolarWinds Serv-U Yazılımındaki Dört Kritik Açığın Kök Kod Yürütmesine İzin Vermesi
+─────────────────────────────────────────────────────────
+SolarWinds, Serv-U dosya transfer yazılımındaki dört kritik güvenlik açığını (CVE-2025-40538, CVE-2025-40539, CVE-2025-40540, CVE-2025-40541) gideren güncellemeler yayımlamıştır. CVSS puanı 9.1 olarak derecelendirilen bu açıkların, başarılı bir şekilde istismar edilmesi halinde uzaktan kod yürütme ve kök (root) erişimi sağlayabileceği belirtilmektedir. Şirket, bu açıkların istismarı için yönetici ayrıcalıklarının gerekli olduğunu ifade etse de, geçmişte Serv-U'daki benzer zafiyetlerin Çin destekli Storm-0322 gibi gruplar tarafından istismar edildiği hatırlatılmaktadır. Kullanıcıların Serv-U 15.5.4 sürümüne veya daha yenisine güncelleme yapmaları önerilmiştir. Bu güncellemelerin acilen uygulanması gerektiği vurgulanmaktadır.
+(The Hacker News, AÇIK -thehackernews.com, 25.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] CISA'nın FileZen'deki CVE-2026-25108 Açığının Aktif İstismarını Doğrulaması
+─────────────────────────────────────────────────────────
+ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Soliton Systems K.K FileZen'deki CVE-2026-25108 numaralı güvenlik açığının aktif olarak istismar edildiğini doğrulayarak bu zafiyeti Bilinen İstismar Edilen Güvenlik Açıkları (KEV) kataloğuna eklemiştir. CVSS v4 puanı 8.7 olan bu açık, kimliği doğrulanmış bir kullanıcının özel olarak hazırlanmış HTTP istekleri aracılığıyla rastgele işletim sistemi komutları yürütmesine olanak tanıyan bir komut enjeksiyonu zafiyetidir. Soliton, bu açığın istismarının yalnızca FileZen Antivirüs Kontrol Seçeneği etkinleştirildiğinde mümkün olduğunu ve bir hasar raporu aldığını bildirmiştir. Federal kurumların 17 Mart 2026'ya kadar gerekli düzeltmeleri uygulamaları tavsiye edilmiştir.
+(The Hacker News, AÇIK -thehackernews.com, 25.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] CarGurus Veri İhlalinin 12.4 Milyon Hesabın Bilgilerini Ortaya Çıkarması
+─────────────────────────────────────────────────────────
+Dijital otomobil platformu CarGurus'un, ShinyHunters fidye yazılımı grubu tarafından gerçekleştirilen bir veri ihlali sonucunda 12.4 milyondan fazla hesabın kişisel bilgilerinin (adlar, e-posta adresleri, telefon numaraları, fiziksel adresler) çalındığı ve yayımlandığı bildirilmiştir. HaveIBeenPwned platformu, bu veri setinin finansal ön yeterlilik başvuru verileri, bayi hesap detayları ve abonelik bilgilerini içerdiğini doğrulamıştır. Bu büyüklükteki bir veri ihlalinin, siber suçlular tarafından oltalama saldırıları ve kimlik avı girişimleri için kullanılabileceği konusunda CarGurus kullanıcıları uyarılmıştır. Şirketin henüz resmi bir açıklama yapmadığı da belirtilmiştir.
+(BleepingComputer, AÇIK -bleepingcomputer.com, 24.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Birleşik Krallık'ın Reddit'e Çocuk Verilerini Yasa Dışı Kullanım Nedeniyle Ceza Kesmesi
+─────────────────────────────────────────────────────────
+Birleşik Krallık Bilgi Komisyonu Ofisi (ICO), Reddit'i 13 yaşından küçük çocukların kişisel bilgilerini yeterli güvenceler olmadan topladığı ve kullandığı için 19.5 milyon dolardan fazla para cezasına çarptırmıştır. ICO, Reddit'in Temmuz 2025'e kadar anlamlı bir yaş doğrulama sistemi uygulamadığını ve kendi hizmet şartlarını ihlal ettiğini belirtmiştir. Bu durumun, çocukları zararlı içeriklere maruz bırakma potansiyeli taşıdığı ifade edilmektedir. Reddit ise karara itiraz edeceğini ve kullanıcı gizliliğine olan bağlılığını vurgulayarak, ICO'nun daha fazla kişisel bilgi toplama ısrarının ters teptiğini savunmuştur. Bu ceza, benzer bir önceki cezayı takip etmektedir.
+(BleepingComputer, AÇIK -bleepingcomputer.com, 24.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] GitHub Codespaces'taki RoguePilot Açığının Copilot Aracılığıyla GITHUB_TOKEN Sızdırması
+─────────────────────────────────────────────────────────
+Orca Security tarafından "RoguePilot" olarak adlandırılan bir güvenlik açığının, GitHub Codespaces'ta kötü niyetli aktörlerin GitHub Copilot'a kötü amaçlı talimatlar enjekte ederek depoları ele geçirmesine olanak tanıdığı tespit edilmiştir. Bu yapay zeka güdümlü zafiyet, dolaylı istem enjeksiyonu vakası olarak tanımlanmaktadır. Saldırganlar, bir GitHub sorununa gizli talimatlar yerleştirerek, kullanıcı sorunlu bir Codespace'i başlattığında Copilot'un bu talimatları otomatik olarak işlemesini sağlamakta ve ayrıcalıklı GITHUB_TOKEN gibi hassas verileri sızdırmaktadır. Microsoft, sorumlu açıklamanın ardından bu açığı gidermiştir. Bu durum, yapay zeka destekli geliştirme ortamlarındaki yeni güvenlik risklerini ortaya koymaktadır.
+(The Hacker News, AÇIK -thehackernews.com, 24.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Marquis'in SonicWall'a Güvenlik İhlali Nedeniyle Dava Açması
+─────────────────────────────────────────────────────────
+Fintech devi Marquis'in, güvenlik duvarı sağlayıcısı SonicWall'a karşı dava açtığı bildirilmiştir. Marquis, SonicWall'da yaşanan bir önceki ihlalin, müşterilerinin güvenlik duvarı yapılandırma dosyaları hakkında hassas bilgilerin çalınmasına yol açtığını ve bunun da Marquis ağına yönelik bir fidye yazılımı saldırısına neden olduğunu iddia etmektedir. Dava dilekçesinde, SonicWall'ın bulut yedekleme hizmetindeki güvenlik açıkları nedeniyle Marquis'in iç ağına erişim sağlandığı belirtilmiştir. Bu durumun Marquis'e önemli itibar, operasyonel ve finansal zarar verdiği ifade edilmiştir. Texas Başsavcılığı'na göre bu ihlalden en az 400.000 kişi etkilenmiştir.
+(TechCrunch Security, AÇIK -techcrunch.com, 24.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] ABD ve Avrupa'daki Yük ve Lojistik Kuruluşlarını Hedef Alan Oltalama Kampanyası Yürütülmektedir
+─────────────────────────────────────────────────────────
+"Diesel Vortex" olarak adlandırılan finansal motivasyonlu bir tehdit grubunun, Eylül 2025'ten bu yana ABD ve Avrupa'daki yük ve lojistik operatörlerinden kimlik bilgilerini çalmak için oltalama kampanyaları yürüttüğü ortaya çıkarılmıştır. Grup, 52 alan adı kullanarak 1.649 benzersiz kimlik bilgisi çalmış ve DAT Truckstop, TIMOCOM gibi platformları hedef almıştır. Araştırmacılar, grubun Ermenice konuşan ve Rusya altyapısıyla bağlantılı aktörlerden oluştuğuna inanmaktadır. Bu saldırılar, tedarik zincirinin kritik bir parçası olan lojistik sektörünü doğrudan etkileyerek önemli finansal ve operasyonel riskler oluşturmaktadır. Tehdit aktörünün Telegram kanallarını ve sesli oltalama yöntemlerini de kullandığı belirtilmiştir.
+(BleepingComputer, AÇIK -bleepingcomputer.com, 25.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] VMware Aria Operations Güvenlik Açıklarının Uzaktan Saldırılara Olanak Tanıması
+─────────────────────────────────────────────────────────
+Broadcom, VMware Aria Operations'ı etkileyen birden fazla güvenlik açığını gidermek üzere güvenlik güncellemeleri yayımlamıştır. Bu açıklar arasında, kimlik doğrulaması yapılmamış bir saldırganın uzaktan rastgele komutları yürütmesine olanak tanıyan yüksek ciddiyetli bir komut enjeksiyonu zafiyeti (CVE-2026-22719) bulunmaktadır. Ayrıca, ayrıcalıklı bir kullanıcının yönetici eylemleri gerçekleştirmek için komut dosyası enjekte edebileceği yüksek ciddiyetli bir depolanmış siteler arası komut dosyası (XSS) açığı (CVE-2026-22720) da giderilmiştir. Şirket, bu açıkların doğada istismar edildiğine dair henüz bir kanıt bulunmadığını belirtmiştir. Kullanıcıların Aria Operations 8.18.6 sürümüne yükseltmeleri şiddetle tavsiye edilmektedir.
+(Security Affairs, AÇIK -securityaffairs.com, 24.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] Yapay Zeka Desteğiyle 600 Fortigate Güvenlik Duvarının Kırılması
+─────────────────────────────────────────────────────────
+Amazon Web Services (AWS) güvenlik araştırmacıları, Rusça konuşan bir bilgisayar korsanının 11 Ocak ile 18 Şubat 2026 tarihleri arasında 600'den fazla Fortigate güvenlik duvarını ele geçirdiğini rapor etmiştir. Saldırganın, FortiGate güvenlik açıklarını istismar etmek yerine, zayıf parolalara sahip güvenlik duvarlarını hedef aldığı ve ardından Google Gemini tabanlı bir yapay zeka aracı kullanarak aynı ağdaki diğer cihazlara erişim sağladığı belirtilmiştir. Bu olay, yapay zeka araçlarının siber saldırılarda nasıl kullanılabileceğini ve temel güvenlik hijyeninin (güçlü parolalar, MFA) önemini bir kez daha ortaya koymaktadır. Etkilenen güvenlik duvarlarının 55'ten fazla ülkede bulunduğu ifade edilmiştir.
+(CSO Online, AÇIK -csoonline.com, 25.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] Microsoft'un Copilot Veri Kontrollerini Tüm Depolama Konumlarına Genişletmesi
+─────────────────────────────────────────────────────────
+Microsoft'un, Microsoft 365 Copilot yapay zeka asistanının gizli Word, Excel ve PowerPoint belgelerini işlemesini engellemek amacıyla veri kaybı önleme (DLP) kontrollerini tüm depolama konumlarına genişlettiği duyurulmuştur. Bu iyileştirme, DLP politikalarının yalnızca SharePoint veya OneDrive'da saklanan dosyalar için değil, yerel cihazlardaki dosyalar için de geçerli olmasını sağlamaktadır. Daha önce, bir yazılım hatası nedeniyle Copilot Chat'in gizli e-postaları özetleyebildiği tespit edilmişti. Bu güncelleme, müşterilerin geri bildirimlerine yanıt olarak tutarlı koruma sağlamayı hedeflemektedir. Bu değişikliklerin otomatik olarak etkinleştirileceği ve ek yönetim eylemi gerektirmeyeceği belirtilmiştir.
+(BleepingComputer, AÇIK -bleepingcomputer.com, 24.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] Wynn Resorts'un Çalışan Veri İhlalini Doğrulaması
+─────────────────────────────────────────────────────────
+Wynn Resorts, ShinyHunters fidye yazılımı çetesinin veri sızıntısı sitesinde listelenmesinin ardından sistemlerinden çalışan verilerinin çalındığını doğrulamıştır. Şirket, ihlali keşfettikten sonra olay müdahale prosedürlerini etkinleştirdiğini ve harici siber güvenlik uzmanlarının yardımıyla bir soruşturma başlattığını belirtmiştir. ShinyHunters grubunun 800.000'den fazla kaydın (kişisel tanımlayıcı bilgiler ve çalışan verileri dahil) ele geçirildiğini iddia ettiği ifade edilmektedir. Wynn Resorts, çalınan verilerin silindiğini belirtse de, fidye ödenip ödenmediği konusunda yorum yapmamıştır. Olayın misafir operasyonlarını veya fiziksel mülklerini etkilemediği ve çalışanlara ücretsiz kredi izleme hizmetleri sunulduğu bildirilmiştir.
+(BleepingComputer, AÇIK -bleepingcomputer.com, 25.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] 1Campaign Platformunun Kötü Amaçlı Google Reklamlarının Tespitini Atlatmasına Yardımcı Olması
+─────────────────────────────────────────────────────────
+Yeni tespit edilen "1Campaign" adlı siber suç hizmetinin, tehdit aktörlerinin kötü amaçlı Google Reklamlarını uzun süre çevrimiçi tutarak güvenlik araştırmacılarının ve otomatik tarayıcıların tespitinden kaçınmasına olanak tanıdığı bildirilmiştir. Bu "gizleme" (cloaking) hizmeti, Google'ın tarama sürecini geçerek kötü amaçlı içeriği yalnızca gerçek potansiyel kurbanlara göstermekte, güvenlik araştırmacılarına ise zararsız beyaz sayfalar sunmaktadır. Varonis araştırmacıları, platformun coğrafya, internet servis sağlayıcısı (ISP) ve cihaz özelliklerine göre trafiği filtreleyebildiğini ve bu sayede hedeflenen kullanıcılara odaklanabildiğini belirtmiştir. Bu platformun en az üç yıldır aktif olduğu ve Google'ın politikalarını atlatmaya yardımcı olduğu ifade edilmektedir.
+(BleepingComputer, AÇIK -bleepingcomputer.com, 25.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[20] Sahte Zoom Toplantılarının Gizlice Gözetim Yazılımı Kurduğu Konusunda Uyarı Yapılmıştır
+─────────────────────────────────────────────────────────
+Malwarebytes araştırmacıları, sahte Zoom toplantısı dolandırıcılıklarının, şüphelenmeyen çalışanların Windows bilgisayarlarına gizlice gözetim yazılımı yüklediği konusunda uyarıda bulunmuştur. Bu dolandırıcılık, çalışanları bozuk bir toplantı bağlantısı için bir açılır pencere düzeltmesi gibi görünen bir şeye tıklamaları için kandırmaktadır. Kurbanlar, sahte bir Zoom görüntülü görüşmesine yönlendirilmekte ve ardından otomatik bir "Güncelleme Mevcut" geri sayımı, izin istemeden kötü amaçlı bir yükleyici indirmektedir. Kurulan yazılım, ticari bir izleme aracı olan Teramind'in gizli bir sürümü olarak tespit edilmiştir. Bu tür saldırılara karşı çalışan farkındalığının artırılması gerektiği vurgulanmıştır.
+(CSO Online, AÇIK -csoonline.com, 25.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[21] Ring Kameralarının Amazon ile Veri Paylaşımını Engellemek İçin Ödül Teklif Edilmiştir
+─────────────────────────────────────────────────────────
+Cihaz sahipliği haklarına odaklanan kâr amacı gütmeyen Fulu Vakfı'nın, Ring kamera sahiplerinin görüntülerini Amazon sunucularına göndermesini engelleyecek yerel bir çalıştırma yöntemi bulan kişiye 10.000 ABD doları ödül teklif ettiği bildirilmiştir. Bu girişim, Ring'in "Search Party" gibi yapay zeka destekli yeni özelliklerinin ve geçmişteki gizlilik ihlallerinin ardından artan veri gizliliği endişelerine yanıt olarak ortaya çıkmıştır. Vakıf, kamera sahiplerine görüntüleri üzerinde daha fazla kontrol sağlama amacı gütmektedir. Daha önce ABD Federal Ticaret Komisyonu, Ring'i müşteri gizliliğini yeterince koruyamadığı için cezalandırmıştır.
+(Graham Cluley, AÇIK -bitdefender.com, 25.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[22] Açık Yönlendirmelerin Unutulmuş Bir Güvenlik Açığı Olarak Yeniden Ortaya Çıkması
+─────────────────────────────────────────────────────────
+SANS ISC'nin honeypotları, Şubat ayında açık yönlendirmelerle ilgili URL'lere yönelik taramalarda önemli bir artış tespit etmiştir. "Unvalidated Redirects and Forwards" olarak bilinen bu güvenlik açıkları, genellikle göz ardı edilmekle birlikte, oltalama saldırıları ve OAuth tabanlı kimlik doğrulama tokenlarının kötüye kullanılması gibi ciddi riskler taşımaktadır. Taramaların çoğunun, "bulletproof" hosting hizmeti sağladığı bilinen bir IP adresinden kaynaklandığı belirtilmiştir. Bu durum, açık yönlendirme zafiyetlerinin siber suçlular tarafından yeniden aktif olarak kullanıldığını göstermektedir. Kuruluşların bu tür zafiyetlere karşı dikkatli olmaları ve gerekli önlemleri almaları önerilmektedir.
+(SANS ISC, AÇIK -isc.sans.edu, 24.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
