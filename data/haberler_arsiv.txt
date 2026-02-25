@@ -1077,100 +1077,6 @@ Google Tehdit İstihbarat Grubu, yayınladığı son raporda devlet destekli sib
 
 
 
-================================================================================
-📅 19 FEBRUARY 2026 - EN ÖNEMLİ 43 HABER (SEÇİLMİŞ)
-================================================================================
-
-[ 1] Dell RecoverPoint Sıfır Gün Açığının Çinli APT Grupları Tarafından İstismarı
-─────────────────────────────────────────────────────────
-Dell RecoverPoint for Virtual Machines sistemlerinde tespit edilen CVE-2026-22769 numaralı kritik güvenlik açığının, Çin merkezli UNC6201 APT grubu tarafından 2024 yılının ortalarından bu yana gizlice istismar edildiği tespit edilmiştir. CVSS puanı 10.0 olan bu açık, Apache Tomcat Manager üzerindeki sabit kodlanmış admin şifrelerinden kaynaklanmaktadır. Saldırganların bu zafiyet aracılığıyla root yetkisi kazandığı ve sistemlere GRIMBOLT ile BRICKSTORM arka kapı yazılımlarını yerleştirdiği belirlenmiştir. Google Mandiant tarafından yapılan incelemelerde, saldırganların "Ghost NIC" adı verilen geçici ağ arayüzleri oluşturarak sanal makine ortamlarında tespit edilmeden yanal hareket sağladıkları ifade edilmektedir. Dell tüm kullanıcılarına acil yama uygulamasını ve sistemlerini yeni IOC verileriyle taramalarını önermektedir.
-(The Hacker News, AÇIK -thehackernews.com, 18.02.2026)
-
-────────────────────────────────────────────────────────────────────────────────
-
-[ 2] Volt Typhoon Grubunun ABD Enerji Altyapılarına Sızması
-─────────────────────────────────────────────────────────
-Çin devlet destekli Volt Typhoon (Voltzite) grubunun ABD'deki kritik enerji, petrol ve gaz altyapılarına yönelik siber operasyonlarını 2025 yılında da sürdürdüğü rapor edilmiştir. Dragos tarafından yayınlanan yıllık tehdit analizine göre, saldırganların hücresel ağ geçitlerini ve yönlendiricileri ele geçirerek elektrik şebekesi kontrol sistemlerine sızdığı belirlenmiştir. Grubun temel amacının veri hırsızlığından ziyade, jeopolitik bir kriz anında sistemleri fiziksel olarak durdurmaya yönelik hazırlık yapmak olduğu ifade edilmektedir. Özellikle Sierra Wireless AirLink cihazlarındaki açıklardan yararlanılarak operasyonel teknoloji (OT) ağlarına erişim sağlandığı ve sensör verilerinin dışarı sızdırıldığı tespit edilmiştir. Bu durumun ulusal güvenlik açısından doğrudan bir sabotaj tehdidi oluşturduğu ve altyapı koruma stratejilerinin yeniden gözden geçirilmesi gerektiği vurgulanmaktadır.
-(The Register, AÇIK -theregister.com, 18.02.2026)
-
-────────────────────────────────────────────────────────────────────────────────
-
-[ 3] Venezuela Elektrik Kesintisinde Siber ve Kinetik Saldırı Şüphesi
-─────────────────────────────────────────────────────────
-Caracas'ta 3 Ocak tarihinde meydana gelen ve Nicolas Maduro'yu yakalama operasyonuyla eş zamanlı gerçekleşen büyük elektrik kesintisinin, sadece siber değil aynı zamanda koordineli fiziksel saldırıların bir sonucu olduğu bildirilmektedir. Kamuoyuna sızan görüntüler ve uzman raporları, üç farklı trafo merkezinde mermi izleri, patlamış kapılar ve tahrip edilmiş ekipmanlar olduğunu ortaya koymuştur. Operasyon Absolute Resolve kapsamında ABD Siber Komutanlığı'nın "katmanlı etkiler" sağladığı ifade edilse de, sahadaki kanıtlar kinetik vuruşların tek başına sistemi çökertmeye yeteceğini göstermektedir. Uzmanlar, siber saldırıların savunma radarlarını kör etmek ve durumsal farkındalığı azaltmak için kullanılmış olabileceğini, fiziksel saldırıların ise sistemin geri yüklenmesini engellediğini belirtmektedir. Bu olay, siber ve fiziksel savaşın modern çatışmalarda nasıl iç içe geçtiğini gösteren kritik bir örnek olarak değerlendirilmektedir.
-(Cyberscoop, AÇIK -cyberscoop.com, 19.02.2026)
-
-────────────────────────────────────────────────────────────────────────────────
-
-[ 4] Fransa Ekonomi Bakanlığı'ndan Milyonlarca Hesap Verisinin Sızdırılması
-─────────────────────────────────────────────────────────
-Fransa Ekonomi Bakanlığı, bir hükümet yetkilisine ait çalınan kimlik bilgilerinin kullanılması sonucunda 1,2 milyon Fransız banka hesabına ait verilerin yetkisiz erişime maruz kaldığını doğrulamıştır. Ocak ayının sonundan bu yana devam ettiği anlaşılan ihlalde, saldırganın ulusal banka hesabı veri tabanına girerek hesap numaraları, isimler, adresler ve vergi numaraları gibi kritik bilgileri incelediği tespit edilmiştir. Kamu Finansman Müdürü tarafından yapılan açıklamada, saldırının hesap bakiyelerine veya para transferlerine erişim sağlamadığı ancak kişisel verilerin güvenliğinin ihlal edildiği ifade edilmiştir. Bakanlık, ihlalin fark edilmesinin ardından erişimi engellediğini ve veri koruma otoritesi CNIL'i bilgilendirdiğini duyurmuştur. Saldırının arkasında bir devlet aktörü mü yoksa siber suç şebekesi mi olduğu konusundaki araştırmalar devam etmektedir.
-(Security Affairs, AÇIK -securityaffairs.com, 19.02.2026)
-
-────────────────────────────────────────────────────────────────────────────────
-
-[ 5] Honeywell CCTV Sistemlerinde Kritik Kimlik Doğrulama Atlatma Açığı
-─────────────────────────────────────────────────────────
-ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Honeywell tarafından üretilen çok sayıda CCTV ürününde CVE-2026-1670 numaralı kritik bir güvenlik açığı tespit edildiğini duyurmuştur. CVSS puanı 9.8 olarak belirlenen bu açık, yetkisiz bir saldırganın şifre kurtarma e-posta adresini herhangi bir kimlik doğrulaması yapmadan değiştirmesine olanak tanımaktadır. Bu durumun, kamera hesaplarının tamamen ele geçirilmesine ve canlı video akışlarına yetkisiz erişim sağlanmasına yol açabileceği belirtilmektedir. Etkilenen modellerin kritik altyapılarda, ticari binalarda ve hükümet tesislerinde yaygın olarak kullanıldığı ifade edilmektedir. CISA, sistem yöneticilerine cihazlarını internetten izole etmelerini, güvenlik duvarı arkasına almalarını ve güncel VPN çözümlerini kullanmalarını şiddetle tavsiye etmektedir. Henüz aktif bir istismar rapor edilmemiş olsa da, açığın ciddiyeti nedeniyle acil önlem alınması gerektiği vurgulanmaktadır.
-(BleepingComputer, AÇIK -bleepingcomputer.com, 18.02.2026)
-
-────────────────────────────────────────────────────────────────────────────────
-
-[ 6] Notepad++ Güncelleme Sisteminin Çinli Gruplarca Ele Geçirilmesi
-─────────────────────────────────────────────────────────
-Popüler metin düzenleyici Notepad++, Çin merkezli Lotus Panda APT grubu tarafından güncelleme mekanizmasının suistimal edildiğini belirterek bir güvenlik yaması yayınlamıştır. Haziran 2025'ten itibaren başlayan saldırıda, hosting sağlayıcısı düzeyinde bir sızıntı yaşandığı ve güncelleme trafiğinin saldırgan kontrollü sunuculara yönlendirilerek "Chrysalis" adlı özel bir arka kapının kullanıcılara dağıtıldığı tespit edilmiştir. Saldırının oldukça seçici olduğu ve sadece belirli hedeflere zararlı yazılım gönderildiği ifade edilmektedir. Notepad++ geliştiricisi, bu riski ortadan kaldırmak için hem yükleyiciyi hem de güncelleme XML dosyasını doğrulayan "çift kilitli" bir güvenlik tasarımı devreye almıştır. Kullanıcıların acilen 8.9.2 sürümüne geçmeleri ve yazılımı sadece resmi kanallardan indirmeleri önerilmektedir.
-(The Hacker News, AÇIK -thehackernews.com, 18.02.2026)
-
-────────────────────────────────────────────────────────────────────────────────
-
-[ 7] Türkiye'yi Hedef Alan Massiv Android Bankacılık Zararlı Yazılımı
-─────────────────────────────────────────────────────────
-Siber güvenlik araştırmacıları, IPTV uygulaması kılığına girerek kullanıcıların banka bilgilerini çalan "Massiv" adlı yeni bir Android truva atı tespit etmiştir. ThreatFabric tarafından yayınlanan rapora göre, bu yazılım son altı ay içinde özellikle Türkiye, İspanya, Portekiz ve Fransa'daki kullanıcıları hedef almıştır. Zararlı yazılımın ekran görüntüleme, tuş kaydetme (keylogging), SMS durdurma ve sahte arayüzler (overlay) oluşturma gibi yeteneklere sahip olduğu belirlenmiştir. Saldırganların bu yöntemle kurbanların adına yeni banka hesapları açtığı, kredi başvuruları yaptığı ve kara para aklama faaliyetlerinde bulunduğu ifade edilmektedir. Yazılımın özellikle resmi kamu uygulamalarını taklit ederek kullanıcıları PIN ve telefon numarası girmeye zorladığı tespit edilmiştir. Kullanıcıların tanınmayan kaynaklardan APK yüklememeleri konusunda uyarı yapılmaktadır.
-(BleepingComputer, AÇIK -bleepingcomputer.com, 19.02.2026)
-
-────────────────────────────────────────────────────────────────────────────────
-
-[ 8] Figure Finans Teknoloji Şirketinde Büyük Veri İhlali
-─────────────────────────────────────────────────────────
-Blockchain tabanlı kredi platformu Figure Technology Solutions, bir sosyal mühendislik saldırısı sonucunda yaklaşık 1 milyon müşterisinin verilerinin çalındığını duyurmuştur. "Have I Been Pwned" servisi tarafından yapılan analizde, sızdırılan verilerin 967.200 benzersiz e-posta adresiyle birlikte isim, doğum tarihi, fiziksel adres ve telefon numaralarını içerdiği doğrulanmıştır. Saldırının arkasında ShinyHunters adlı fidye yazılımı grubunun olduğu ve çalınan 2,5 GB boyutundaki veriyi karanlık web forumlarında yayınladığı ifade edilmektedir. Şirket sözcüsü, bir çalışanın kandırılarak sisteme erişim verildiğini ve sınırlı sayıda dosyanın indirildiğini belirtmiştir. Etkilenen kullanıcılara ücretsiz kredi izleme hizmeti sunulacağı ve güvenlik önlemlerinin artırıldığı bildirilmiştir.
-(TechCrunch, AÇIK -techcrunch.com, 18.02.2026)
-
-────────────────────────────────────────────────────────────────────────────────
-
-[ 9] Android Cihazlarda Önceden Yüklü Gelen Keenadu Arka Kapısı
-─────────────────────────────────────────────────────────
-Kaspersky araştırmacıları, bazı Android tablet ve akıllı telefonların donanım yazılımlarına (firmware) üretim aşamasında yerleştirilmiş "Keenadu" adlı tehlikeli bir arka kapı tespit etmiştir. Bu zararlı yazılımın cihaz daha kutusundan çıkmadan sisteme dahil edildiği ve "Zygote" işlemine sızarak cihazdaki tüm uygulamaların bağlamında çalışabildiği belirlenmiştir. Keenadu'nun reklam sahtekarlığı yapma, kimlik bilgilerini çalma ve saldırganlara tam uzaktan kontrol yetkisi verme gibi özelliklere sahip olduğu ifade edilmektedir. Dünya genelinde 13.000'den fazla cihazda tespit edilen bu tehdidin, özellikle Rusya, Japonya, Almanya ve Hollanda'da yoğunlaştığı görülmektedir. Bu durumun mobil güvenlikte bir supply chain (tedarik zinciri) sorunu olduğu ve kullanıcıların kendi başlarına yazılımı temizlemelerinin neredeyse imkansız olduğu vurgulanmaktadır.
-(CSO Online, AÇIK -csoonline.com, 18.02.2026)
-
-────────────────────────────────────────────────────────────────────────────────
-
-[10] Grandstream VoIP Telefonlarında Kritik Uzaktan Kod Çalıştırma Açığı
-─────────────────────────────────────────────────────────
-Grandstream GXP1600 serisi VoIP telefonlarında, saldırganların cihazın kontrolünü tamamen ele geçirmesine olanak tanıyan kritik bir güvenlik açığı tespit edilmiştir. CVE-2026-2329 olarak izlenen ve 9.3 CVSS puanına sahip olan bu açık, kimlik doğrulaması gerektirmeyen bir yığın tabanlı bellek taşmasından kaynaklanmaktadır. Rapid7 araştırmacıları, bu açığın kötü niyetli bir HTTP isteğiyle tetiklenebileceğini ve cihaz üzerinde root yetkileriyle kod çalıştırılmasına imkan verdiğini belirtmiştir. Saldırganların bu yetkiyi kullanarak telefon görüşmelerini dinleyebileceği, kimlik bilgilerini çalabileceği ve cihazı kötü niyetli bir SIP proxy sunucusuna yönlendirebileceği ifade edilmektedir. GXP1610'dan GXP1630'a kadar olan modelleri etkileyen bu sorun için 1.0.7.81 sürüm numaralı firmware güncellemesinin acilen uygulanması önerilmektedir.
-(The Hacker News, AÇIK -thehackernews.com, 18.02.2026)
-
-────────────────────────────────────────────────────────────────────────────────
-
-[11] Deutsche Bahn Sistemlerine Yönelik Kapsamlı DDoS Saldırısı
-─────────────────────────────────────────────────────────
-Almanya'nın ulusal demiryolu şirketi Deutsche Bahn (DB), biletleme ve tarife sistemlerini hedef alan büyük bir dağıtık hizmet reddi (DDoS) saldırısı nedeniyle ciddi aksamalar yaşandığını duyurmuştur. 17 Şubat öğleden sonra başlayan saldırı sonucunda DB Navigator uygulaması ve resmi web sitesinin yaklaşık 24 saat boyunca hizmet veremediği bildirilmiştir. Şirket, saldırının dalgalar halinde gerçekleştiğini ve savunma mekanizmalarının etkileri minimize etmek için devreye alındığını ifade etmiştir. Saldırı nedeniyle yüz binlerce yolcunun bilet alamadığı ve seyahat bilgilerine erişemediği belirtilmektedir. DB yetkilileri, federal makamlarla yakın temas halinde olduklarını ancak saldırının arkasındaki faillerin kimliği konusunda spekülasyon yapmayacaklarını açıklamıştır. Müşteri verilerinin sızdırıldığına dair bir emareye rastlanmadığı vurgulanmıştır.
-(The Register, AÇIK -theregister.com, 18.02.2026)
-
-────────────────────────────────────────────────────────────────────────────────
-
-[12] GrayCharlie Grubu Tarafından ABD Hukuk Firmalarına Yapılan Saldırılar
-─────────────────────────────────────────────────────────
-Siber güvenlik firması Recorded Future, "GrayCharlie" olarak adlandırılan bir tehdit grubunun ABD'deki hukuk firmalarını hedef alan kapsamlı bir supply chain saldırısı düzenlediğini rapor etmiştir. Saldırganların WordPress tabanlı web sitelerine kötü niyetli JavaScript kodları enjekte ederek ziyaretçileri sahte tarayıcı güncelleme sayfalarına yönlendirdiği tespit edilmiştir. Bu yöntemle kurbanların bilgisayarlarına NetSupport RAT ve Stealc gibi veri hırsızlığı yapan yazılımların yüklendiği belirlenmiştir. Araştırmacılar, en az 15 hukuk firmasının ortak bir IT hizmet sağlayıcısı üzerinden ele geçirilmiş olabileceğini değerlendirmektedir. Saldırganların özellikle Rusça konuştuğu ve ele geçirdikleri sistemlerde aktif olarak keşif faaliyetleri yürüttüğü ifade edilmektedir. Kurumların web sitelerindeki harici scriptleri denetlemeleri ve EDR çözümlerini güncel tutmaları önerilmektedir.
-(Recorded Future, AÇIK -recordedfuture.com, 18.02.2026)
-
-────────────────────────────────────────────────────────────────────────────────
-
-[13] CISA'dan Desteklenmeyen Edge Cihazlarının Temizlenmesi Talimatı
-─────────────────────────────────────────────────────────
-ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), federal kurumlara gönderdiği talimatla artık üretici desteği almayan "edge" (uç) cihazların ağlardan temizlenmesi için 18 ay süre tanımıştır. Özellikle Çin merkezli APT gruplarının Ivanti, Fortinet ve Cisco gibi markaların eski model cihazlarındaki sıfır gün açıklarını kullanarak kritik ağlara sızdığına dair artan kanıtlar üzerine bu kararın alındığı belirtilmektedir. Desteklenmeyen cihazların yamalanamadığı için saldırganlar için kalıcı bir giriş noktası oluşturduğu ifade edilmektedir. CISA, kurumların bu cihazları envanterden çıkarmalarını veya modern güvenlik standartlarını karşılayan yeni nesil donanımlarla değiştirmelerini zorunlu kılmıştır. Bu hamlenin, ulusal güvenlik açısından kritik ağların direncini artırmayı hedeflediği ve özel sektöre de benzer adımlar atması için bir çağrı niteliği taşıdığı değerlendirilmektedir.
-(Cyberscoop, AÇIK -cyberscoop.com, 18.02.2026)
-
-────────────────────────────────────────────────────────────────────────────────
 
 
 ================================================================================
@@ -2507,4 +2413,5 @@ SANS ISC'nin honeypotları, Şubat ayında açık yönlendirmelerle ilgili URL'l
 (SANS ISC, AÇIK -isc.sans.edu, 24.02.2026)
 
 ────────────────────────────────────────────────────────────────────────────────
+
 
