@@ -17,7 +17,8 @@ from google.genai import types as genai_types
 
 from src.config import (
     GEMINI_API_KEY, NEWS_SOURCES, HEADERS, CONTENT_SELECTORS,
-    ARCHIVE_FILE, get_claude_prompt
+    ARCHIVE_FILE, get_claude_prompt,
+    MASTODON_SOURCES, MASTODON_MIN_ENGAGEMENT, MASTODON_HOURS_BACK
 )
 
 
@@ -119,6 +120,129 @@ def _parse_article_date(date_str, fallback):
         except:
             pass
     return fallback.strftime('%d.%m.%Y')
+
+
+def fetch_mastodon_posts(sources, min_engagement, hours_back):
+    """
+    Mastodon API'den yüksek etkileşimli siber güvenlik postlarını çeker.
+    Authentication gerektirmez — tüm public hesaplar erişilebilir.
+
+    Etkileşim skoru: reblogs_count * 2 + favourites_count
+    """
+    from datetime import timezone
+
+    print("\n" + "=" * 70)
+    print("\U0001f418 MASTODON POSTLARI ÇEKILIYOR")
+    print("=" * 70)
+
+    cutoff_dt = datetime.now(timezone.utc) - timedelta(hours=hours_back)
+    results = []
+
+    for src in sources:
+        instance = src['instance']
+        username = src['username']
+        label = src['label']
+
+        print(f"   \U0001f50d {label} (@{username}@{instance})")
+
+        try:
+            # 1. Önce hesabın numeric ID'sini bul
+            lookup_url = f"https://{instance}/api/v1/accounts/lookup?acct={username}"
+            r = requests.get(lookup_url, timeout=10,
+                             headers={'User-Agent': 'Mozilla/5.0'})
+
+            if r.status_code != 200:
+                print(f"      \u274c Hesap bulunamadı (HTTP {r.status_code})")
+                continue
+
+            account_data = r.json()
+            account_id = account_data.get('id')
+            if not account_id:
+                print(f"      \u274c Account ID alınamadı")
+                continue
+
+            # 2. Son 40 postu çek (API limiti 40)
+            statuses_url = f"https://{instance}/api/v1/accounts/{account_id}/statuses"
+            params = {'limit': 40, 'exclude_replies': 'true', 'exclude_reblogs': 'true'}
+            r2 = requests.get(statuses_url, params=params, timeout=10,
+                              headers={'User-Agent': 'Mozilla/5.0'})
+
+            if r2.status_code != 200:
+                print(f"      \u274c Postlar alınamadı (HTTP {r2.status_code})")
+                continue
+
+            statuses = r2.json()
+            if not isinstance(statuses, list):
+                print(f"      \u274c Beklenmeyen yanıt formatı")
+                continue
+
+            # 3. Filtrele: zaman + etkileşim + boş içerik
+            qualified = []
+            for s in statuses:
+                # Zaman filtresi
+                created_raw = s.get('created_at', '')
+                try:
+                    created_dt = datetime.fromisoformat(
+                        created_raw.replace('Z', '+00:00'))
+                    if created_dt < cutoff_dt:
+                        continue
+                except Exception:
+                    continue
+
+                # Etkileşim skoru
+                reblogs = s.get('reblogs_count', 0)
+                favs = s.get('favourites_count', 0)
+                score = reblogs * 2 + favs
+                if score < min_engagement:
+                    continue
+
+                # İçerik temizle (HTML tag'lerini kaldır)
+                raw_content = s.get('content', '')
+                if not raw_content:
+                    continue
+                content_soup = BeautifulSoup(raw_content, 'html.parser')
+                content_text = content_soup.get_text(separator=' ').strip()
+
+                # Çok kısa postları atla (sadece link olan vs.)
+                if len(content_text) < 50:
+                    continue
+
+                post_url = s.get('url', '') or s.get('uri', '')
+                post_date = datetime.fromisoformat(
+                    created_raw.replace('Z', '+00:00'))
+
+                qualified.append({
+                    'title': content_text[:120] + ('...' if len(content_text) > 120 else ''),
+                    'link': post_url,
+                    'description': content_text,
+                    'date': post_date.strftime('%a, %d %b %Y %H:%M:%S +0000'),
+                    'source': f'Mastodon: {label}',
+                    'domain': instance,
+                    'engagement_score': score,
+                    'reblogs': reblogs,
+                    'favourites': favs,
+                    'full_text': content_text,
+                    'word_count': len(content_text.split()),
+                    'success': True,
+                })
+
+            # Skora göre sırala
+            qualified.sort(key=lambda x: x['engagement_score'], reverse=True)
+
+            print(f"      \u2705 {len(qualified)} nitelikli post "
+                  f"(toplam {len(statuses)} tarandı, eşik: {min_engagement})")
+            for q in qualified[:3]:
+                print(f"         \U0001f525 [{q['engagement_score']}] {q['title'][:70]}...")
+
+            results.extend(qualified)
+            time.sleep(1)  # Rate limit'e saygı
+
+        except Exception as e:
+            print(f"      \u274c Hata: {str(e)[:60]}")
+            continue
+
+    print(f"\n   \U0001f4ca Mastodon toplamı: {len(results)} yüksek etkileşimli post")
+    return results
 
 
 # ===== ANA SİSTEM =====
@@ -480,14 +604,22 @@ class HaberSistemi:
         if self.rss_errors:
             self._save_rss_errors()
 
+        # ── Mastodon yüksek etkileşimli postları ──
+        mastodon_posts = fetch_mastodon_posts(
+            MASTODON_SOURCES, MASTODON_MIN_ENGAGEMENT, MASTODON_HOURS_BACK
+        )
+        if mastodon_posts:
+            all_news['_mastodon'] = mastodon_posts
+
         all_news = self._filter_duplicates(all_news)
         all_news = self._filter_old_articles(all_news)
 
         total = sum(len(arts) for arts in all_news.values())
         full_text_success = sum(1 for arts in all_news.values() for art in arts if art.get('success'))
+        mastodon_count = len(all_news.get('_mastodon', []))
 
         print(f"\n{'=' * 70}")
-        print(f"📊 {total} haber (tekrarsız) | {full_text_success} tam metin")
+        print(f"📊 {total} haber (tekrarsız) | {full_text_success} tam metin | 🐘 {mastodon_count} Mastodon post")
         print(f"{'=' * 70}\n")
         return all_news
 
@@ -497,11 +629,15 @@ class HaberSistemi:
         now = datetime.now()
         os.makedirs("data", exist_ok=True)
 
+        # Mastodon postlarını ayrı bölüm olarak ayır
+        rss_data = {k: v for k, v in news_data.items() if k != '_mastodon'}
+        mastodon_data = news_data.get('_mastodon', [])
+
         txt = f"\n{'=' * 80}\n📅 {now.strftime('%d %B %Y').upper()} - SİBER GÜVENLİK HABERLERİ (HAM RSS)\n{'=' * 80}\n\n"
 
         all_articles = []
         num = 0
-        for src, articles in news_data.items():
+        for src, articles in rss_data.items():
             for art in articles:
                 num += 1
                 all_articles.append(art)
@@ -511,6 +647,21 @@ class HaberSistemi:
                     txt += f"\n[TAM METİN - {art['word_count']} kelime]\n{art['full_text']}\n"
                 else:
                     txt += f"\n⚠️  Tam metin çekilemedi\n"
+                art_date = _parse_article_date(art.get('date', ''), now)
+                txt += f"\n(XXXXXXX, AÇIK - {art.get('link', '')}, {art.get('domain', '')}, {art_date})\n\n{'=' * 80}\n\n"
+
+        # Mastodon postlarını ayrı bölüm olarak ekle
+        if mastodon_data:
+            txt += f"\n{'=' * 80}\n🐘 MASTODON - YÜKSEK ETKİLEŞİMLİ POSTLAR\n{'=' * 80}\n\n"
+            for art in mastodon_data:
+                num += 1
+                all_articles.append(art)
+                score = art.get('engagement_score', 0)
+                reblogs = art.get('reblogs', 0)
+                favs = art.get('favourites', 0)
+                txt += f"[{num}] {art['source']} [🔥 Skor:{score} | 🔄{reblogs} ❤️{favs}]\n{'─' * 80}\n"
+                txt += f"Tarih: {art['date']}\nLink: {art['link']}\n"
+                txt += f"\n[MASTODON POST - {art.get('word_count', 0)} kelime]\n{art.get('full_text', '')}\n"
                 art_date = _parse_article_date(art.get('date', ''), now)
                 txt += f"\n(XXXXXXX, AÇIK - {art.get('link', '')}, {art.get('domain', '')}, {art_date})\n\n{'=' * 80}\n\n"
 
@@ -676,6 +827,7 @@ class HaberSistemi:
         # ═══════════════════════════════════════════
         # AŞAMA 4: Mevcut post-processing
         # ═══════════════════════════════════════════
+        html = self._inject_mastodon_badges(html)
         html = self._fix_source_dates(html, txt_content)
 
         html_index = self._add_archive_links(html, is_archive=False)
@@ -880,6 +1032,55 @@ KURALLAR:
         except Exception as e:
             print(f"   ❌ Tamamlama hatası: {e}")
             return html
+
+    def _inject_mastodon_badges(self, html):
+        """
+        HTML'de mastodon-item class'li news-item'lara metin tabanlı kurumsal badge ekler.
+        Gemini'nin yazdigi [MASTODON_SCORE:reblogs:favs] etiketini parse eder.
+        Gemini etiketi atlamissa news-title onune fallback badge ekler.
+        Badge formati: "▸ Sosyal Medya Sinyali — Paylasim: 12 · Begeni: 34"
+        """
+        import re
+
+        def make_badge(reblogs, favs):
+            return (
+                f'<span class="mastodon-badge">'
+                f'&#9656; Sosyal Medya Sinyali &#8212; '
+                f'Paylasim: {reblogs} &middot; Begeni: {favs}'
+                f'</span>'
+            )
+
+        # [MASTODON_SCORE:12:34] etiketini badge'e donustur
+        def replace_score(m):
+            reblogs = int(m.group(1))
+            favs    = int(m.group(2))
+            return make_badge(reblogs, favs)
+
+        html = re.sub(r'\[MASTODON_SCORE:(\d+):(\d+)\]', replace_score, html)
+
+        # mastodon-item olan ama badge olmayan div'lere fallback badge ekle
+        def insert_badge_fallback(m):
+            full_div = m.group(0)
+            if 'mastodon-badge' in full_div:
+                return full_div
+            fallback = make_badge(0, 0).replace(
+                'Paylasim: 0 &middot; Begeni: 0', 'Sosyal Medya Kaynagi'
+            )
+            return full_div.replace(
+                '<div class="news-title">',
+                fallback + '\n            <div class="news-title">'
+            )
+
+        html = re.sub(
+            r'<div class="news-item mastodon-item"[^>]*>.*?</div>\s*</div>\s*</div>',
+            insert_badge_fallback,
+            html,
+            flags=re.DOTALL
+        )
+
+        count = html.count('mastodon-badge')
+        print(f"   ✅ {count} Mastodon badge enjekte edildi")
+        return html
 
     def _fix_source_dates(self, html, txt_content):
         """Gemini'nin yazdığı hatalı tarihleri ham TXT'deki gerçek tarihlerle düzelt"""
