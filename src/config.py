@@ -181,10 +181,17 @@ KRİTİK KURALLALAR:
 ✅ Sayfa içi linkler doğru çalışsın
 ✅ ASLA eksik paragraf bırakma — her news-item'ın news-content'i dolu olacak
 
-KRİTİK DİL KURALI - RESMİ TÜRKÇE:
-- yapılmıştır, edilmiştir, belirtilmektedir, ifade edilmektedir, tespit edilmiştir
-- ASLA: yaptı, etti, söyledi, bulundu (günlük dil yasak)
-- CVE, FBI, NSA, APT gibi kısaltmaların tamamı büyük harf
+🚨 KRİTİK DİL KURALI - RESMİ TÜRKÇE (İHLAL ETMEYİN):
+⛔ KESINLIKLE YASAK fiiller (başlıkta VE paragrafta):
+   yaptı, etti, söyledi, bulundu, sattı, engelledi, uyardı, duyurdu, açıkladı, saldırdı, çaldı, keşfetti, bildirdi
+✅ ZORUNLU resmi çekimler:
+   yapılmıştır, edilmiştir, belirtilmektedir, ifade edilmektedir, tespit edilmiştir,
+   açıklanmıştır, duyurulmuştur, saldırı düzenlenmiştir, ele geçirilmiştir, keşfedilmiştir
+✅ BAŞLIK formatı — isim-fiil yapısı zorunlu:
+   DOĞRU: "Cisco SD-WAN Sistemlerinde Kritik Açığın Tespit Edilmesi"
+   DOĞRU: "Google'ın UNC2814 Kampanyasını Engellemesi"
+   YANLIŞ: "Google Engelledi" / "Cisco Uyardı" / "Saldırganlar Çaldı"
+- CVE, FBI, NSA, APT, CISA gibi kısaltmaların tamamı büyük harf
 
 ANTİ-HALÜSİNASYON:
 - SADECE verilen metni kullan
@@ -559,10 +566,21 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
 </html>
 ```
 
-BAŞLIK KURALLARI:
-✓ İsim-fiil yapısı: "CVE-2024-1234'ün Microsoft Exchange Sunucularını Etkilemesi"
+BAŞLIK KURALLARI — KRİTİK DİL:
+⛔ YASAK FİİL YAPISI: "sattı", "engelledi", "duyurdu", "uyardı", "açtı", "bulundu",
+   "yaptı", "etti", "söyledi", "keşfetti", "tespit etti" — bunlar ASLA başlıkta olmaz!
+✓ ZORUNLU: İsim-fiil yapısı → eylem isim olarak biter (-ma/-me, -ış/-iş, -ması/-mesi)
+✓ DOĞRU ÖRNEKLER:
+   → "CVE-2024-1234'ün Microsoft Exchange Sunucularını Etkilemesi"
+   → "Cisco SD-WAN'da Kritik Sıfır Gün Açığının Tespit Edilmesi"
+   → "ShinyHunters Grubunun 12 Milyon CarGurus Kullanıcısını Etkilemesi"
+   → "Google'ın UNC2814 GRIDTIDE Kampanyasını Engellemesi"
+⛔ YANLIŞ ÖRNEKLER:
+   → "Google, UNC2814 Kampanyasını Engelledi" (geçmiş zaman fiil — YASAK)
+   → "Savunma Yöneticisi Sıfır Gün İstismarı Sattı" (geçmiş zaman fiil — YASAK)
+   → "Zyxel Kritik RCE Açığı Hakkında Uyarı Yaptı" (geçmiş zaman fiil — YASAK)
 ✓ SOMUT detaylar: Şirket/CVE/ülke adları dahil
-✓ 7-9 kelime, her kelimenin ilk harfi büyük
+✓ 7-10 kelime, her kelimenin ilk harfi büyük
 
 ÖZET PARAGRAF KURALLARI:
 ✓ 100-130 kelime (MIN 100, MAX 130)
