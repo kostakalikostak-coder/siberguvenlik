@@ -160,12 +160,16 @@ RAPOR YAPISI (SIRAYLA):
 3️⃣ **"ÖNEMLİ GELİŞMELER" KUTUSU**: 
    - En kritik 5 haberin TAM CÜMLELİK özeti
    - Her biri sayfa içi link: <a href="#haber-N">N. CVE-2024-1234 açığı Microsoft sunucularında kritik güvenlik riski oluşturmaktadır.</a>
-   - ZORUNLU: Tam cümle (özne + yüklem + nesne) + nokta ile bitiş
+   - ZORUNLU: Edilmiştir/tespit edilmiştir/duyurulmuştur ile biten tam cümle + nokta
+   - DOĞRU: "Cisco SD-WAN sistemlerinde CVE-2026-20127 açığı tespit edilmiştir."
+   - YANLIŞ: "Cisco SD-WAN sistemlerinde açığın tespit edilmesi" (isim-fiil YASAK)
 
 4️⃣ **GERİ KALAN 38 HABERİN 2 SÜTUNLU TABLOSU**:
    - 6. haber → id="haber-6", 7. haber → id="haber-7" vs.
    - Her biri TAM CÜMLELİK özet + sayfa içi link
-   - ZORUNLU: Tam cümle yapısı (özne + yüklem + nesne) + nokta ile bitiş
+   - ZORUNLU: Edilmiştir/tespit edilmiştir/duyurulmuştur ile biten tam cümle + nokta
+   - DOĞRU: "Google, UNC2814 kampanyasını başarıyla engellemiştir."
+   - YANLIŞ: "Google'ın UNC2814 kampanyasını engellemesi" (isim-fiil YASAK)
 
 5️⃣ **HABER PARAGRAFLARI (SIRALAMA ÖNEMLİ!)**:
    - ÖNCE: En önemli 5 haberin 100-130 kelime paragraf özetleri (id="haber-1" dan haber-5'e)
@@ -181,17 +185,13 @@ KRİTİK KURALLALAR:
 ✅ Sayfa içi linkler doğru çalışsın
 ✅ ASLA eksik paragraf bırakma — her news-item'ın news-content'i dolu olacak
 
-🚨 KRİTİK DİL KURALI - RESMİ TÜRKÇE (İHLAL ETMEYİN):
-⛔ KESINLIKLE YASAK fiiller (başlıkta VE paragrafta):
-   yaptı, etti, söyledi, bulundu, sattı, engelledi, uyardı, duyurdu, açıkladı, saldırdı, çaldı, keşfetti, bildirdi
-✅ ZORUNLU resmi çekimler:
+🚨 KRİTİK DİL KURALI - RESMİ TÜRKÇE (İHLAL ETME):
+⛔ YASAK — başlıkta VE tek cümlelik özetlerde VE paragraflarda:
+   yaptı, etti, söyledi, bulundu, sattı, engelledi, uyardı, duyurdu, açıkladı, saldırdı, çaldı, keşfetti
+✅ ZORUNLU — tüm cümle sonları:
    yapılmıştır, edilmiştir, belirtilmektedir, ifade edilmektedir, tespit edilmiştir,
-   açıklanmıştır, duyurulmuştur, saldırı düzenlenmiştir, ele geçirilmiştir, keşfedilmiştir
-✅ BAŞLIK formatı — isim-fiil yapısı zorunlu:
-   DOĞRU: "Cisco SD-WAN Sistemlerinde Kritik Açığın Tespit Edilmesi"
-   DOĞRU: "Google'ın UNC2814 Kampanyasını Engellemesi"
-   YANLIŞ: "Google Engelledi" / "Cisco Uyardı" / "Saldırganlar Çaldı"
-- CVE, FBI, NSA, APT, CISA gibi kısaltmaların tamamı büyük harf
+   açıklanmıştır, duyurulmuştur, düzenlenmiştir, ele geçirilmiştir, keşfedilmiştir
+- CVE, FBI, NSA, APT, CISA kısaltmaları büyük harf
 
 ANTİ-HALÜSİNASYON:
 - SADECE verilen metni kullan
@@ -205,14 +205,6 @@ Her haberin altında şu format var: (XXXXXXX, AÇIK - https://link, domain.com,
   → görünen metin: domain.com
   → tarih: o satırdaki GG.AA.YYYY değerini AYNEN kopyala
 ⛔ ASLA bugünün tarihini yazma — her haberin tarihi farklıdır, ham veriden oku
-
-⚠️ MASTODON KAYNAK KURALI - KRİTİK:
-Ham veride "Mastodon:" ile başlayan kaynaklar sosyal medya postlarıdır.
-Bu haberler için news-item div'ine ZORUNLU OLARAK "mastodon-item" class'ı ekle:
-  → <div class="news-item mastodon-item" id="haber-N">
-  → Kaynak satırına [MASTODON_SCORE:reblogs:favs] ekle, örnek:
-     <p class="source"><b>(...) [MASTODON_SCORE:12:34]</b></p>
-  → reblogs ve favs değerlerini ham veriden oku: "RT:N · FAV:N" satırından
 
 ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
 ```html
@@ -412,9 +404,7 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
             font-family: inherit;
         }}
 
-        /* =============================================
-           MOBİL UYUMLU (RESPONSIVE) CSS
-           ============================================= */
+        /* MOBİL UYUMLU CSS */
         @media (max-width: 768px) {{
             body {{
                 padding: 0;
@@ -497,6 +487,12 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
                 height: 42px;
                 font-size: 20px;
             }}
+            .archive-section {{
+                padding: 20px 16px;
+            }}
+            .archive-links {{
+                gap: 6px;
+            }}
         }}
         @media (max-width: 480px) {{
             .report-header h1 {{
@@ -526,7 +522,7 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
                 <div class="important-summary">
                     [EN ÖNEMLİ 5 HABER BURADA - HER BİRİ TAM CÜMLE:]
                     <div class="important-item">
-                        <a href="#haber-1">1. Microsoft Exchange sunucularında CVE-2024-1234 açığı kritik güvenlik riski oluşturmaktadır.</a>
+                        <a href="#haber-1">1. Microsoft Exchange sunucularında CVE-2024-1234 kritik açığı aktif olarak istismar edilmektedir.</a>
                     </div>
                     <div class="important-item">
                         <a href="#haber-2">2. LockBit 4.0 fidye yazılımı dünya genelinde sağlık kurumlarını hedef almaktadır.</a>
@@ -566,21 +562,16 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
 </html>
 ```
 
-BAŞLIK KURALLARI — KRİTİK DİL:
-⛔ YASAK FİİL YAPISI: "sattı", "engelledi", "duyurdu", "uyardı", "açtı", "bulundu",
-   "yaptı", "etti", "söyledi", "keşfetti", "tespit etti" — bunlar ASLA başlıkta olmaz!
-✓ ZORUNLU: İsim-fiil yapısı → eylem isim olarak biter (-ma/-me, -ış/-iş, -ması/-mesi)
-✓ DOĞRU ÖRNEKLER:
-   → "CVE-2024-1234'ün Microsoft Exchange Sunucularını Etkilemesi"
-   → "Cisco SD-WAN'da Kritik Sıfır Gün Açığının Tespit Edilmesi"
-   → "ShinyHunters Grubunun 12 Milyon CarGurus Kullanıcısını Etkilemesi"
-   → "Google'ın UNC2814 GRIDTIDE Kampanyasını Engellemesi"
-⛔ YANLIŞ ÖRNEKLER:
-   → "Google, UNC2814 Kampanyasını Engelledi" (geçmiş zaman fiil — YASAK)
-   → "Savunma Yöneticisi Sıfır Gün İstismarı Sattı" (geçmiş zaman fiil — YASAK)
-   → "Zyxel Kritik RCE Açığı Hakkında Uyarı Yaptı" (geçmiş zaman fiil — YASAK)
+BAŞLIK KURALLARI (news-title — haber kartı başlığı):
+✓ İsim-fiil yapısı: "CVE-2024-1234'ün Microsoft Exchange Sunucularını Etkilemesi"
 ✓ SOMUT detaylar: Şirket/CVE/ülke adları dahil
-✓ 7-10 kelime, her kelimenin ilk harfi büyük
+✓ 7-9 kelime, her kelimenin ilk harfi büyük
+
+⚠️ ÖNEMLİ GELİŞMELER ve TABLO özetleri (important-item / executive-table):
+✓ Tam cümle + noktalı virgül DEĞİL nokta ile biter
+✓ Fiil kipleri: edilmiştir, tespit edilmiştir, açıklanmıştır, duyurulmuştur
+✓ YANLIŞ: "Cisco'nun Açığı Kapatması." → DOĞRU: "Cisco'da kritik açık tespit edilmiştir."
+✓ YANLIŞ: "Google'ın Kampanyayı Engellemesi." → DOĞRU: "Google, UNC2814 kampanyasını engellemiştir." 
 
 ÖZET PARAGRAF KURALLARI:
 ✓ 100-130 kelime (MIN 100, MAX 130)
