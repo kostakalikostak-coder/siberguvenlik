@@ -546,6 +546,12 @@ class HaberSistemi:
         removed_count = 0
 
         for src, articles in all_news.items():
+            # Mastodon postları zaten fetch_mastodon_posts() içinde zaman filtreli
+            # çekildiğinden tarih filtresinden muaf tutulur
+            if src == '_mastodon':
+                filtered[src] = articles
+                continue
+
             filtered_articles = []
             for art in articles:
                 art_date_str = _parse_article_date(art.get('date', ''), datetime.now())
@@ -659,7 +665,7 @@ class HaberSistemi:
                 score = art.get('engagement_score', 0)
                 reblogs = art.get('reblogs', 0)
                 favs = art.get('favourites', 0)
-                txt += f"[{num}] {art['source']} [🔥 Skor:{score} | 🔄{reblogs} ❤️{favs}]\n{'─' * 80}\n"
+                txt += f"[{num}] {art['source']} [RT:{reblogs} · FAV:{favs} · Skor:{score}]\n{'─' * 80}\n"
                 txt += f"Tarih: {art['date']}\nLink: {art['link']}\n"
                 txt += f"\n[MASTODON POST - {art.get('word_count', 0)} kelime]\n{art.get('full_text', '')}\n"
                 art_date = _parse_article_date(art.get('date', ''), now)
@@ -827,7 +833,6 @@ class HaberSistemi:
         # ═══════════════════════════════════════════
         # AŞAMA 4: Mevcut post-processing
         # ═══════════════════════════════════════════
-        html = self._inject_mastodon_badges(html)
         html = self._fix_source_dates(html, txt_content)
 
         html_index = self._add_archive_links(html, is_archive=False)
@@ -970,6 +975,12 @@ KURALLAR:
 - Resmi Türkçe (-mıştır, -edilmiştir)
 - Sıra: haber-{missing_ids[0]}'den haber-{missing_ids[-1]}'e
 - Kod bloğu (```) KULLANMA, direkt HTML yaz
+
+⚠️ MASTODON KAYNAK KURALI:
+Ham veride "Mastodon:" ile başlayan kaynaklar sosyal medya postlarıdır.
+Bu haberler için div'e ZORUNLU OLARAK "mastodon-item" class'ı ekle:
+  → <div class="news-item mastodon-item" id="haber-N">
+  → Kaynak satırına [MASTODON_SCORE:reblogs:favs] ekle (RT:N · FAV:N satırından oku)
 """
 
         try:
@@ -1032,55 +1043,6 @@ KURALLAR:
         except Exception as e:
             print(f"   ❌ Tamamlama hatası: {e}")
             return html
-
-    def _inject_mastodon_badges(self, html):
-        """
-        HTML'de mastodon-item class'li news-item'lara metin tabanlı kurumsal badge ekler.
-        Gemini'nin yazdigi [MASTODON_SCORE:reblogs:favs] etiketini parse eder.
-        Gemini etiketi atlamissa news-title onune fallback badge ekler.
-        Badge formati: "▸ Sosyal Medya Sinyali — Paylasim: 12 · Begeni: 34"
-        """
-        import re
-
-        def make_badge(reblogs, favs):
-            return (
-                f'<span class="mastodon-badge">'
-                f'&#9656; Sosyal Medya Sinyali &#8212; '
-                f'Paylasim: {reblogs} &middot; Begeni: {favs}'
-                f'</span>'
-            )
-
-        # [MASTODON_SCORE:12:34] etiketini badge'e donustur
-        def replace_score(m):
-            reblogs = int(m.group(1))
-            favs    = int(m.group(2))
-            return make_badge(reblogs, favs)
-
-        html = re.sub(r'\[MASTODON_SCORE:(\d+):(\d+)\]', replace_score, html)
-
-        # mastodon-item olan ama badge olmayan div'lere fallback badge ekle
-        def insert_badge_fallback(m):
-            full_div = m.group(0)
-            if 'mastodon-badge' in full_div:
-                return full_div
-            fallback = make_badge(0, 0).replace(
-                'Paylasim: 0 &middot; Begeni: 0', 'Sosyal Medya Kaynagi'
-            )
-            return full_div.replace(
-                '<div class="news-title">',
-                fallback + '\n            <div class="news-title">'
-            )
-
-        html = re.sub(
-            r'<div class="news-item mastodon-item"[^>]*>.*?</div>\s*</div>\s*</div>',
-            insert_badge_fallback,
-            html,
-            flags=re.DOTALL
-        )
-
-        count = html.count('mastodon-badge')
-        print(f"   ✅ {count} Mastodon badge enjekte edildi")
-        return html
 
     def _fix_source_dates(self, html, txt_content):
         """Gemini'nin yazdığı hatalı tarihleri ham TXT'deki gerçek tarihlerle düzelt"""
