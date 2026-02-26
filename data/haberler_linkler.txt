@@ -1,1 +1,75 @@
-
+2026-02-26	https://thehackernews.com/2026/02/expert-recommends-prepare-for-pqc-right.html	Expert Recommends: Prepare for PQC Right Now	9f49907b87137f4a
+2026-02-26	https://thehackernews.com/2026/02/fake-nextjs-repos-target-developers.html	Microsoft Warns Developers of Fake Next.js Job Repos Delivering In-Memory Malware	915ad56e8220f56f
+2026-02-26	https://thehackernews.com/2026/02/malicious-stripeapi-nuget-package.html	Malicious StripeApi NuGet Package Mimicked Official Library and Stole API Tokens	c2a2954cffef8171
+2026-02-26	https://thehackernews.com/2026/02/cisco-sd-wan-zero-day-cve-2026-20127.html	Cisco SD-WAN Zero-Day CVE-2026-20127 Exploited Since 2023 for Admin Access	f184c42e9420aa74
+2026-02-26	https://thehackernews.com/2026/02/google-disrupts-unc2814-gridtide.html	Google Disrupts UNC2814 GRIDTIDE Campaign After 53 Breaches Across 42 Countries	136461243b5416b2
+2026-02-26	https://thehackernews.com/2026/02/claude-code-flaws-allow-remote-code.html	Claude Code Flaws Allow Remote Code Execution and API Key Exfiltration	89135d2030e1aebd
+2026-02-26	https://thehackernews.com/2026/02/slh-offers-5001000-per-call-to-recruit.html	SLH Offers $500–$1,000 Per Call to Recruit Women for IT Help Desk Vishing Attacks	4be2f56ade9f276e
+2026-02-26	https://thehackernews.com/2026/02/top-5-ways-broken-triage-increases.html	Top 5 Ways Broken Triage Increases Business Risk Instead of Reducing It	4fd4fe8ad2e6a48e
+2026-02-26	https://thehackernews.com/2026/02/malicious-nuget-packages-stole-aspnet.html	Malicious NuGet Packages Stole ASP.NET Data; npm Package Dropped Malware	f7663cf358806a87
+2026-02-26	https://thehackernews.com/2026/02/manual-processes-are-putting-national.html	Manual Processes Are Putting National Security at Risk	e490ad3d88dc4f5a
+2026-02-26	https://www.bleepingcomputer.com/news/security/ransomware-payment-rate-drops-to-record-low-as-attacks-surge/	Ransomware payment rate drops to record low as attacks surge	2e2311dfeb5d235f
+2026-02-26	https://www.bleepingcomputer.com/news/security/microsoft-expands-windows-restore-to-more-enterprise-devices/	Microsoft expands Windows restore to more enterprise devices	15c38a71b1c3e41b
+2026-02-26	https://www.bleepingcomputer.com/news/gaming/new-york-sues-valve-for-promoting-illegal-gambling-via-game-loot-boxes/	New York sues Valve for promoting illegal gambling via game loot boxes	f319d7b744701d0e
+2026-02-26	https://www.bleepingcomputer.com/news/security/medical-device-maker-ufp-technologies-warns-of-data-stolen-in-cyberattack/	Medical device maker UFP Technologies warns of data stolen in cyberattack	09ee2ba62474b415
+2026-02-26	https://www.bleepingcomputer.com/news/security/fake-nextjs-job-interview-tests-backdoor-developers-devices/	Fake Next.js job interview tests backdoor developer's devices	9632072be4cf5e5e
+2026-02-26	https://www.bleepingcomputer.com/news/security/critical-cisco-sd-wan-bug-exploited-in-zero-day-attacks-since-2023/	Critical Cisco SD-WAN bug exploited in zero-day attacks since 2023	556f39ecf91d1985
+2026-02-26	https://www.bleepingcomputer.com/news/security/chinese-cyberspies-breached-dozens-of-telecom-firms-govt-agencies/	Chinese cyberspies breached dozens of telecom firms, govt agencies	605f7668aaa0e496
+2026-02-26	https://www.bleepingcomputer.com/news/security/marquis-sues-sonicwall-over-backup-breach-that-led-to-ransomware-attack/	Marquis sues SonicWall over backup breach that led to ransomware attack	964a2270ca6658f9
+2026-02-26	https://www.bleepingcomputer.com/news/security/the-openclaw-hype-analysis-of-chatter-from-open-source-deep-and-dark-web/	The OpenClaw Hype: Analysis of Chatter from Open-Source Deep and Dark Web	c649095713f51603
+2026-02-26	https://www.bleepingcomputer.com/news/security/zyxel-warns-of-critical-rce-flaw-affecting-over-a-dozen-routers/	Zyxel warns of critical RCE flaw affecting over a dozen routers	e7789b8400a9e8d8
+2026-02-26	https://securityaffairs.com/188540/security/hackers-abused-cisco-sd-wan-zero-day-since-2023-to-gain-full-admin-control.html	Hackers abused Cisco SD-WAN zero-day since 2023 to gain full admin control	c3b3ae3847c1deed
+2026-02-26	https://securityaffairs.com/188521/apt/google-gtig-disrupted-china-linked-apt-unc2814-halting-attacks-on-53-orgs-in-42-countries.html	Google GTIG disrupted China-linked APT UNC2814 halting attacks on 53 orgs in 42 countries	a58e2215b4f7cf75
+2026-02-26	https://securityaffairs.com/188508/security/untrusted-repositories-turn-claude-code-into-an-attack-vector.html	Untrusted repositories turn Claude code into an attack vector	22f0dcf6f191812f
+2026-02-26	https://securityaffairs.com/188501/security/critical-zyxel-router-flaw-exposed-devices-to-remote-attacks.html	Critical Zyxel router flaw exposed devices to remote attacks	bbc1494c3be48b20
+2026-02-26	https://securityaffairs.com/188491/cyber-crime/shinyhunters-cyberattack-on-cargurus-impacts-12-4-million-users.html	ShinyHunters cyberattack on CarGurus impacts 12.4 Million users	966984a8de89e97b
+2026-02-26	https://securityaffairs.com/188482/intelligence/former-u-s-defense-contractor-executive-sentenced-for-selling-zero-day-exploits-to-russian-broker-operation-zero.html	Former U.S. Defense contractor executive sentenced for selling zero-day exploits to Russian broker Operation Zero	9ac16f32deb30fb5
+2026-02-26	https://securityaffairs.com/188473/hacking/u-s-cisa-adds-a-flaw-in-soliton-systems-k-k-filezen-to-its-known-exploited-vulnerabilities-catalog.html	U.S. CISA adds a flaw in Soliton Systems K.K FileZen to its Known Exploited Vulnerabilities catalog	1386588e7f2125d5
+2026-02-26	https://securityaffairs.com/188460/apt/lazarus-apt-group-deployed-medusa-ransomware-against-middle-east-target.html	Lazarus APT group deployed Medusa Ransomware against Middle East target	f172404462e05474
+2026-02-26	https://www.bitdefender.com/en-us/blog/hotforsecurity/ransomware-gang-blackmailed-fake-fsb-officer	Notorious ransomware gang allegedly blackmailed by fake FSB officer	20caa597683f4207
+2026-02-26	https://grahamcluley.com/smashing-security-podcast-456/	Smashing Security podcast #456: How to lose friends and DDoS people	a65fcac326511429
+2026-02-26	https://www.bitdefender.com/en-us/blog/hotforsecurity/10-000-bounty-hack-ring-cameras	$10,000 bounty offered if you can hack Ring cameras to stop them sharing your data with Amazon	85b97624216f9453
+2026-02-26	https://isc.sans.edu/diary/rss/32744	Finding Signal in the Noise: Lessons Learned Running a Honeypot with AI Assistance &#x5b;Guest Diary&#x5d;, (Tue, Feb 24th)	8e621e2742ea645b
+2026-02-26	https://isc.sans.edu/diary/rss/32748	The CLAIR Model: A Synthesized Conceptual Framework for Mapping Critical Infrastructure Interdependencies &#x5b;Guest Diary&#x5d;, (Wed, Feb 25th)	e178ea7625f390a9
+2026-02-26	https://isc.sans.edu/diary/rss/32750	ISC Stormcast For Thursday, February 26th, 2026 https://isc.sans.edu/podcastdetail/9826, (Thu, Feb 26th)	065fa056ca429e15
+2026-02-26	https://isc.sans.edu/diary/rss/32746	ISC Stormcast For Wednesday, February 25th, 2026 https://isc.sans.edu/podcastdetail/9824, (Wed, Feb 25th)	83c639bee6925216
+2026-02-26	https://www.recordedfuture.com/blog/recorded-future-money-mule-intelligence-cybera	Recorded Future Expands Coverage of Scams and Financial Fraud with Money Mule Intelligence from CYBERA	d09240fe534d18c1
+2026-02-26	https://cyberscoop.com/cisco-zero-days-cisa-emergency-directive-five-eyes/	Governments issue warning over Cisco zero-day attacks dating back to 2023	91ed3079d5f09a39
+2026-02-26	https://cyberscoop.com/vulncheck-exploited-vulnerabilities-report-2025/	Vulnerabilities grew like weeds in 2025, but only 1% were weaponized in attacks	f91a4d23585733c2
+2026-02-26	https://cyberscoop.com/cisa-personnel-cuts-trump-second-term-analysis/	Across party lines and industry, the verdict is the same: CISA is in trouble	5055ebda182f153d
+2026-02-26	https://cyberscoop.com/chinese-chatgpt-online-harassment-campaign-against-critics-dissidents/	Chinese group’s ChatGPT use reveals worldwide harassment campaign against critics	41e47b5383a38891
+2026-02-26	https://cyberscoop.com/l3harris-executive-peter-williams-sentenced-zero-day-exploits-russia/	Ex-L3Harris executive sentenced to 87 months in prison for selling zero-day exploits to Russian broker	758e68c4814d481a
+2026-02-26	https://go.theregister.com/feed/www.theregister.com/2026/02/26/scattered_lapsus_hunters_female_recruits/	Scattered Lapsus$ Hunters auditioning female voices to sharpen social engineering	78a027779d446261
+2026-02-26	https://go.theregister.com/feed/www.theregister.com/2026/02/25/google_and_friends_disrupt_unc2814/	Google catches Beijing spies using Sheets to spread espionage across 4 continents	e6ae33f25122be93
+2026-02-26	https://go.theregister.com/feed/www.theregister.com/2026/02/25/former_l3harris_exec_jailed/	Ex-L3Harris exec jailed 7 years for selling exploits to Russia	d56bdcba2ca9ab7e
+2026-02-26	https://go.theregister.com/feed/www.theregister.com/2026/02/25/wynn_resorts_shinyhunters/	Wynn Resorts takes attacker's word for it that stolen staff data was deleted	7ec4d33d0dacb2e8
+2026-02-26	https://go.theregister.com/feed/www.theregister.com/2026/02/25/chinese_law_enforcement_chatgpt_abuse/	OpenAI says Chinese cops used ChatGPT to plan and track smear ops against opponents	353c38ea7610c06b
+2026-02-26	https://techcrunch.com/2026/02/25/us-cybersecurity-agency-cisa-reportedly-in-dire-shape-amid-trump-cuts-and-layoffs/	US cybersecurity agency CISA reportedly in dire shape amid Trump cuts and layoffs	45032834b5d9c74d
+2026-02-26	https://techcrunch.com/2026/02/25/inside-the-story-of-the-us-defense-contractor-who-leaked-hacking-tools-to-russia/	Inside the story of the US defense contractor who leaked hacking tools to Russia	7ab0d2c3e3df9353
+2026-02-26	https://techcrunch.com/2026/02/24/former-l3harris-trenchant-boss-jailed-for-selling-hacking-tools-to-russian-broker/	Former L3Harris Trenchant boss jailed for selling hacking tools to Russian broker	16fa7dc0bca91e02
+2026-02-26	https://techcrunch.com/2026/02/24/cargurus-data-breach-affects-12-5-million-accounts/	CarGurus data breach affects 12.5 million accounts	24a59236f15a42f9
+2026-02-26	https://www.csoonline.com/article/4137880/hacker-kompromittieren-immer-schneller.html	Hacker kompromittieren immer schneller	8973d9bd94dcbeec
+2026-02-26	https://www.csoonline.com/article/4137834/china-linked-hackers-used-google-sheets-to-spy-on-telecoms-and-governments-across-42-countries.html	China-linked hackers used Google Sheets to spy on telecoms and governments across 42 countries	379f6aaf9bbbea69
+2026-02-26	https://www.csoonline.com/article/4137281/the-farmers-and-the-mercenaries-rethinking-the-human-layer-in-security.html	The farmers and the mercenaries: Rethinking the ‘human layer’ in security	9145db407a6e044e
+2026-02-26	https://www.csoonline.com/article/4136999/5-trends-that-should-top-cisos-rsa-2026-agendas.html	5 trends that should top CISO’s RSA 2026 agendas	fe376404ecf94c84
+2026-02-26	https://www.csoonline.com/article/3494816/9-unverzichtbare-open-source-security-tools.html	9 unverzichtbare Open-Source-Security-Tools	a2533bcb4c59d37c
+2026-02-26	https://www.csoonline.com/article/4051211/so-rechtfertigen-sie-ihre-security-investitionen.html	So rechtfertigen Sie Ihre Security-Investitionen	f63518d415463de6
+2026-02-26	https://www.csoonline.com/article/4137527/steaelite-rat-combines-data-theft-and-ransomware-management-capability-in-one-tool.html	Steaelite RAT combines data theft and ransomware management capability in one tool	5fcc3962c83c98ac
+2026-02-26	https://www.csoonline.com/article/4137562/five-eyes-issue-emergency-directive-on-exploited-cisco-sd-wan-zero-day.html	Five Eyes issue emergency directive on exploited Cisco SD-WAN zero-day	f0307cd31b10e3af
+2026-02-26	https://www.csoonline.com/article/4137194/microsoft-warns-of-job%e2%80%91themed-repo-lures-targeting-developers-with-multi%e2%80%91stage-backdoors.html	Microsoft warns of job‑themed repo lures targeting developers with multi‑stage backdoors	2b3e63603a8b61c0
+2026-02-26	https://www.csoonline.com/article/4137037/ukrainian-convicted-for-helping-fake-north-korean-it-workers.html	Ukrainian convicted for helping fake North Korean IT workers	86c144d7faf3efe6
+2026-02-26	https://mastodon.social/@campuscodi/116133727171008807	RE:  https:// techhub.social/@Techmeme/11613 1788084855183 The future is bright... I will never be unemployed as a cyber...	12f150fc7fa422c2
+2026-02-26	https://mastodon.social/@campuscodi/116134628755308198	Scattered Lapsus$ Hunters (SLH) is recruiting women to conduct vishing attacks, likely to increase the success rate of h...	cb88b930666102cf
+2026-02-26	https://mastodon.social/@campuscodi/116136939655487395	Apple has published details on how it plans to deal with all the age verification requirements around the globe and the ...	50a0bb00ceaf2163
+2026-02-26	https://mastodon.social/@campuscodi/116133475367587376	RE:  https:// infosec.exchange/@shadowserver /116127228590059956 These were infected with the EncystPHP webshell:  https...	9d13bca313f11a74
+2026-02-26	https://mastodon.social/@campuscodi/116130605022013333	-Russia starts criminal probe of Pavel Durov -Teenagers are behind the Ttareungyi hack -Anthropic accuses three Chinese ...	6e6857ca6817a4c7
+2026-02-26	https://mastodon.social/@campuscodi/116133330298037759	New Cisco zero-day, this one one discovered by the ASD https:// sec.cloudapps.cisco.com/securi ty/center/content/CiscoSe...	0ab4c7f7da66452f
+2026-02-26	https://mastodon.social/@campuscodi/116134253867576632	Russian media are treating Conti like national heroes	a8510ac9217bb28b
+2026-02-26	https://mastodon.social/@campuscodi/116133781102465544	OpenAI disrupted new malicious use of ChatGPT... mostly for romance scams and info-ops https:// openai.com/index/disrupt...	29d872a63cc51da4
+2026-02-26	https://mastodon.social/@campuscodi/116137171717310119	Hmmm.... I'll just put him in Andorra, since that's right smack in the middle	7402c6c38037aac0
+2026-02-26	https://mastodon.social/@campuscodi/116130626730753346	-Step Finance shuts down after last month's hack -YieldBlox hacked for $10m -IoTeX hacked for $4.4m -61 DPAs warn about ...	7e9fbc89aa24cd2c
+2026-02-26	https://mastodon.social/@campuscodi/116137055681941373	Russian security firm F6 has discovered a new RaaS named C77L that appears to be operated out of Iran https://www. f6.ru...	c30a0dc951e907b4
+2026-02-26	https://mastodon.social/@campuscodi/116136945154663072	Data theft-only attacks accounted for 57% of all extortion insurance claims last year, according to numbers released by ...	de954c476bd2e9fc
+2026-02-26	https://mastodon.social/@campuscodi/116137078031479664	The Belarus Cyber Partisans claim to have hacked Khimvolokno,  a Belarusian company and Russia's largest supplier of nyl...	b4b1d93b666ac7fc
+2026-02-26	https://mastodon.social/@campuscodi/116134117230230508	The part you wanna read is Operation Silver Lining Playbook, which appears to be a Chinese intelligence operation recrui...	c21b192dead94eb7
+2026-02-26	https://infosec.exchange/@malwaretech/116129775470988127	We plan to decrease operational costs for our AI model by building custom servers that are immune to cosmic radiation, t...	62aca5cf8fbf936c

@@ -746,7 +746,7 @@ Source: The CYBER360: Defending the Digital Battlespace.
 [11] BleepingComputer - Ransomware payment rate drops to record low as attacks surge
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 09:00:59 -0500
-Link: https://www.bleepingcomputer.com/news/security/ransomware-payment-rate-drops-to-record-low-despite-attack-surge/
+Link: https://www.bleepingcomputer.com/news/security/ransomware-payment-rate-drops-to-record-low-as-attacks-surge/
 
 [TAM METİN - 603 kelime]
 The number of ransomware victims paying threat actors has dropped to 28% last year, an all-time low, despite a significant increase in the number of claimed attacks.
@@ -799,7 +799,7 @@ Hackers drain $3.9M from Unleash Protocol after multisig hijack
 
 Marquis sues SonicWall over backup breach that led to ransomware attack
 
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/ransomware-payment-rate-drops-to-record-low-despite-attack-surge/, bleepingcomputer.com, 26.02.2026)
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/ransomware-payment-rate-drops-to-record-low-as-attacks-surge/, bleepingcomputer.com, 26.02.2026)
 
 ================================================================================
 
@@ -2341,7 +2341,7 @@ Andersen declined to say when CISA was first aware of this activity and did not 
 
 In the jointly issued threat hunt guide, the Five Eyes said all members were aware that the most recent zero-day — CVE-2026-20127 — was identified and confirmed actively exploited in late 2025. Officials and Cisco did not explain why it took at least two months to disclose and patch the vulnerability, and share emergency mitigation guidance.
 
-Attackers are gaining full control of a system in a chain by exploiting CVE-2026-20127 to bypass authentication, then downgrading software to a version vulnerable to CVE-2022-20775 to escalate privileges, said Douglass McKee, director of vulnerability intelligence at Rapid7.
+Attackers are gaining full control of a system in a chain by exploiting CVE-2026-20127 to bypass authentication, then downgrading software to a version vulnerable to CVE-2022-20775 to escalate privileges, said Douglas McKee, director of vulnerability intelligence at Rapid7.
 
 “That second step allows them to move from administrative control to root on the underlying operating system. That downgrade step shows deliberate knowledge of product versioning and patch history,” he told CyberScoop. “This is not opportunistic scanning. This is structured tradecraft.”
 
@@ -3619,7 +3619,7 @@ Lorenzo Franceschi-Bicchierai
 Tarih: Tue, 24 Feb 2026 21:27:42 +0000
 Link: https://techcrunch.com/2026/02/24/cargurus-data-breach-affects-12-5-million-accounts/
 
-[TAM METİN - 574 kelime]
+[TAM METİN - 616 kelime]
 Automotive marketplace CarGurus was the target of a data breach in which the names, email addresses, phone numbers, and physical addresses of millions of customers were stolen.
 
 Have I Been Pwned, a data-breach notification site provided by security researcher Troy Hunt, reported that 12.5 million CarGurus accounts were compromised in the data breach.
@@ -3646,77 +3646,75 @@ Transportation Editor
 
 Save up to $680 on your pass before February 27.Meet investors. Discover your next portfolio company. Hear from 250+ tech leaders, dive into 200+ sessions, and explore 300+ startups building what’s next. Don’t miss these one-time savings.
 
-Using AI to hire for compatibility, not just skill
+It’s time to pull the plug on plug-in hybrids
 
 
 
-Maggie Nye
-Isabelle Johannessen
+Tim De Chant
 
-Using AI to hire for compatibility, not just skill
+It’s time to pull the plug on plug-in hybrids
 
-Using AI to hire for compatibility, not just skill
+It’s time to pull the plug on plug-in hybrids
 
-Jest, a marketplace for messaging games, is challenging the app store status quo
-
-
-
-Lauren Forristal
-
-Jest, a marketplace for messaging games, is challenging the app store status quo
-
-Jest, a marketplace for messaging games, is challenging the app store status quo
-
-Exhibit in Boston’s startup ecosystem at TechCrunch Founder Summit 2026
+Americans are destroying Flock surveillance cameras
 
 
 
-TechCrunch Events
+Zack Whittaker
 
-Exhibit in Boston’s startup ecosystem at TechCrunch Founder Summit 2026
+Americans are destroying Flock surveillance cameras
 
-Exhibit in Boston’s startup ecosystem at TechCrunch Founder Summit 2026
+Americans are destroying Flock surveillance cameras
 
-Figma partners with OpenAI to bake in support for Codex
+Bill Gurley says that right now, the worst thing you can do for your career is play it safe
 
 
 
-Ivan Mehta
+Connie Loizos
 
-Figma partners with OpenAI to bake in support for Codex
+Bill Gurley says that right now, the worst thing you can do for your career is play it safe
 
-Figma partners with OpenAI to bake in support for Codex
+Bill Gurley says that right now, the worst thing you can do for your career is play it safe
 
-Trace raises $3M to solve the AI agent adoption problem in enterprise
+The 9,000-pound monster I don’t want to give back
+
+
+
+Connie Loizos
+
+The 9,000-pound monster I don’t want to give back
+
+The 9,000-pound monster I don’t want to give back
+
+Sam Altman would like to remind you that humans use a lot of energy, too
+
+
+
+Anthony Ha
+
+Sam Altman would like to remind you that humans use a lot of energy, too
+
+Sam Altman would like to remind you that humans use a lot of energy, too
+
+Google VP warns that two types of AI startups may not survive
+
+
+
+Rebecca Bellan
+
+Google VP warns that two types of AI startups may not survive
+
+Google VP warns that two types of AI startups may not survive
+
+Great news for xAI: Grok is now pretty good at answering questions about Baldur’s Gate
 
 
 
 Russell Brandom
 
-Trace raises $3M to solve the AI agent adoption problem in enterprise
+Great news for xAI: Grok is now pretty good at answering questions about Baldur’s Gate
 
-Trace raises $3M to solve the AI agent adoption problem in enterprise
-
-How to avoid bad hires in early-stage startups
-
-
-
-Maggie Nye
-Isabelle Johannessen
-
-How to avoid bad hires in early-stage startups
-
-How to avoid bad hires in early-stage startups
-
-Everything Samsung revealed at its Galaxy Unpacked event
-
-
-
-Ivan Mehta
-
-Everything Samsung revealed at its Galaxy Unpacked event
-
-Everything Samsung revealed at its Galaxy Unpacked event
+Great news for xAI: Grok is now pretty good at answering questions about Baldur’s Gate
 
 (XXXXXXX, AÇIK - https://techcrunch.com/2026/02/24/cargurus-data-breach-affects-12-5-million-accounts/, techcrunch.com, 25.02.2026)
 
@@ -4127,7 +4125,7 @@ Von unseren Redakteuren direkt in Ihren Posteingang
 Tarih: Thu, 26 Feb 2026 04:00:00 +0000
 Link: https://www.csoonline.com/article/4051211/so-rechtfertigen-sie-ihre-security-investitionen.html
 
-[TAM METİN - 1024 kelime]
+[TAM METİN - 1028 kelime]
 Budget-Diskussionen sind lästig, denn Cyberrisiken und Ausgaben steigen gleichermaßen. CISOs sollten daher ihre Argumentation auf Unternehmensziele ausrichten.
 
 Miha Creative – shutterstock.com
@@ -4192,11 +4190,11 @@ Letztendlich geht es bei der Rechtfertigung von Security-Investitionen nicht um 
 
 Dementsprechend müssen CISOs eine Strategie präsentieren, die Risiken reduziert, die Agilität verbessert und das Unternehmen für langfristigen Erfolg positioniert. Wenn die IT-Führungsriege die Sprache des Mehrwerts von Lösungsansätzen spricht, klingen ihre Vorschläge nicht mehr wie technische Anforderungen, sondern wie geschäftliche Notwendigkeiten. (jm)
 
-Hacker kompromittieren immer schneller
-
 Hacker knackt 600 Firewalls in einem Monat – mit KI
 
 Bitcoin-Milliarden von Raubkopie-Portal im Visier der Justiz
+
+OT-Security: Warum der Blick auf Open Source lohnt
 
 Von unseren Redakteuren direkt in Ihren Posteingang
 
@@ -4435,7 +4433,7 @@ RE:  https:// techhub.social/@Techmeme/11613 1788084855183 The future is bright.
 
 ================================================================================
 
-[62] Mastodon: Catalin Cimpanu [RT:7 · FAV:6 · Skor:20]
+[62] Mastodon: Catalin Cimpanu [RT:8 · FAV:6 · Skor:22]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 02:43:23 +0000
 Link: https://mastodon.social/@campuscodi/116134628755308198
@@ -4447,7 +4445,19 @@ Scattered Lapsus$ Hunters (SLH) is recruiting women to conduct vishing attacks, 
 
 ================================================================================
 
-[63] Mastodon: Catalin Cimpanu [RT:5 · FAV:6 · Skor:16]
+[63] Mastodon: Catalin Cimpanu [RT:8 · FAV:1 · Skor:17]
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 26 Feb 2026 12:31:04 +0000
+Link: https://mastodon.social/@campuscodi/116136939655487395
+
+[MASTODON POST - 36 kelime]
+Apple has published details on how it plans to deal with all the age verification requirements around the globe and the US. It will be a mixture of age categories and parental controls https:// developer.apple.com/news/?id=f 5zj08ey
+
+(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116136939655487395, mastodon.social, 26.02.2026)
+
+================================================================================
+
+[64] Mastodon: Catalin Cimpanu [RT:5 · FAV:6 · Skor:16]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 25 Feb 2026 21:50:03 +0000
 Link: https://mastodon.social/@campuscodi/116133475367587376
@@ -4459,7 +4469,7 @@ RE:  https:// infosec.exchange/@shadowserver /116127228590059956 These were infe
 
 ================================================================================
 
-[64] Mastodon: Catalin Cimpanu [RT:7 · FAV:2 · Skor:16]
+[65] Mastodon: Catalin Cimpanu [RT:7 · FAV:2 · Skor:16]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 25 Feb 2026 09:40:05 +0000
 Link: https://mastodon.social/@campuscodi/116130605022013333
@@ -4468,18 +4478,6 @@ Link: https://mastodon.social/@campuscodi/116130605022013333
 -Russia starts criminal probe of Pavel Durov -Teenagers are behind the Ttareungyi hack -Anthropic accuses three Chinese AI companies of theft -Treasury sanctions Russian exploit broker -L3H exec gets 87m for selling exploits -Marquis sues Sonicwall over breach -UAE says it blocked mega attack -Odido hack linked to ShinyHunters -Odido breach compensation is an antivirus voucheur -MediMap hacked and defaced Podcast:  https:// risky.biz/RBNEWS530/ Newsletter:  https:// news.risky.biz/risky-bulletin- russia-starts-criminal-probe-of-telegram-founder-pavel-durov/
 
 (XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116130605022013333, mastodon.social, 25.02.2026)
-
-================================================================================
-
-[65] Mastodon: Catalin Cimpanu [RT:7 · FAV:1 · Skor:15]
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 12:31:04 +0000
-Link: https://mastodon.social/@campuscodi/116136939655487395
-
-[MASTODON POST - 36 kelime]
-Apple has published details on how it plans to deal with all the age verification requirements around the globe and the US. It will be a mixture of age categories and parental controls https:// developer.apple.com/news/?id=f 5zj08ey
-
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116136939655487395, mastodon.social, 26.02.2026)
 
 ================================================================================
 
