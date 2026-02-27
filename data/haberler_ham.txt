@@ -3,7 +3,59 @@
 📅 27 FEBRUARY 2026 - SİBER GÜVENLİK HABERLERİ (HAM RSS)
 ================================================================================
 
-[1] The Hacker News - Trojanized Gaming Tools Spread Java-Based RAT via Browser and Chat Platforms
+[1] The Hacker News - ScarCruft Uses Zoho WorkDrive and USB Malware to Breach Air-Gapped Networks
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 27 Feb 2026 18:13:00 +0530
+Link: https://thehackernews.com/2026/02/scarcruft-uses-zoho-workdrive-and-usb.html
+
+[TAM METİN - 658 kelime]
+The North Korean threat actor known as ScarCruft has been attributed to a fresh set of tools, including a backdoor that uses Zoho WorkDrive for command-and-control (C2) communications to fetch more payloads and an implant that uses removable media to relay commands and breach air-gapped networks.
+
+The campaign, codenamed Ruby Jumper by Zscaler ThreatLabz, involves the deployment of malware families, such as RESTLEAF, SNAKEDROPPER, THUMBSBD, VIRUSTASK, FOOTWINE, and BLUELIGHT to facilitate surveillance on a victim's system. It was discovered by the cybersecurity company in December 2025.
+
+"In the Ruby Jumper campaign, when a victim opens a malicious LNK file, it launches a PowerShell command and scans the current directory to locate itself based on file size," security researcher Seongsu Park said. "Then, the PowerShell script launched by the LNK file carves multiple embedded payloads from fixed offsets within that LNK, including a decoy document, an executable payload, an additional PowerShell script, and a batch file."
+
+One of the lure documents used in the campaign displays an article about the Palestine-Israel conflict that's translated from a North Korean newspaper into Arabic.
+
+All three remaining payloads are used to progressively move the attack to the next stage, with the batch script launching PowerShell, which, in turn, is responsible for loading shellcode containing the payload after decrypting it. The Windows executable payload, named RESTLEAF, is spawned in memory, and uses Zoho WorkDrive for C2, marking the first time the threat actor has abused the cloud storage service in its attack campaigns.
+
+Once it's successfully authenticated with the Zoho WorkDrive infrastructure by means of a valid access token, RESTLEAF downloads shellcode, which is then executed via process injection, eventually leading to the deployment of SNAKEDROPPER, which installs the Ruby runtime, sets up persistence using a scheduled task, and drops THUMBSBD and VIRUSTASK.
+
+THUMBSBD, which is disguised as a Ruby file and uses removable media to relay commands and transfer data between internet-connected and air-gapped systems. It's capable of harvesting system information, downloading a secondary payload from a remote server, exfiltrating files, and executing arbitrary commands. If the presence of any removable media is detected, the malware creates a hidden folder and uses it to stage operator-issued commands or store execution output.
+
+One of the payloads delivered by THUMBSBD is FOOTWINE, an encrypted payload with an integrated shellcode launcher that comes fitted with keylogging and audio and video capturing capabilities to conduct surveillance. It communicates with a C2 server using a custom binary protocol over TCP. The complete set of commands supported by the malware is as follows -
+
+sm, for interactive command shell
+
+fm, for file and directory manipulation
+
+gm, for managing plugins and configuration
+
+rm, for modifying the Windows Registry
+
+pm, for enumerating running processes
+
+dm, for taking screenshots and captures keystrokes
+
+cm, for performing audio and video surveillance
+
+s_d, for receiving batch script contents from C2 server, saving it to the file %TEMP%\SSMMHH_DDMMYYYY.bat, and executing it
+
+pxm, for setting up a proxy connection and relaying traffic bidirectionally.
+
+[filepath], for loading a given DLL
+
+THUMBSBD is also designed to distribute BLUELIGHT, a backdoor previously attributed to ScarCruft since at least 2021. The malware weaponizes legitimate cloud providers, including Google Drive, Microsoft OneDrive, pCloud, and BackBlaze, for C2 to run arbitrary commands, enumerate the file system, download additional payloads, upload files, and remove itself.
+
+Also delivered as a Ruby file, VIRUSTASK functions similar to THUMBSBD in that it acts as a removable media propagation component to spread the malware to non-infected air-gapped systems. "Unlike THUMBSBD which handles command execution and exfiltration, VIRUSTASK focuses exclusively on weaponizing removable media to achieve initial access on air-gapped systems," Park explained.
+
+"The Ruby Jumper campaign involves a mult-stage infection chain that begins with a malicious LNK file and utilizes legitimate cloud services (like Zoho WorkDrive, Google Drive, Microsoft OneDrive, etc.) to deploy a novel, self-contained Ruby execution environment," Park said. "Most critically, THUMBSBD and VIRUSTASK weaponize removable media to bypass network isolation and infect air-gapped systems."
+
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/scarcruft-uses-zoho-workdrive-and-usb.html, thehackernews.com, 27.02.2026)
+
+================================================================================
+
+[2] The Hacker News - Trojanized Gaming Tools Spread Java-Based RAT via Browser and Chat Platforms
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 15:36:00 +0530
 Link: https://thehackernews.com/2026/02/trojanized-gaming-tools-spread-java.html
@@ -39,7 +91,7 @@ In recent weeks, threat hunters have also discovered two new RAT families tracke
 
 ================================================================================
 
-[2] The Hacker News - Meta Files Lawsuits Against Brazil, China, Vietnam Advertisers Over Celeb-Bait Scams
+[3] The Hacker News - Meta Files Lawsuits Against Brazil, China, Vietnam Advertisers Over Celeb-Bait Scams
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 13:26:00 +0530
 Link: https://thehackernews.com/2026/02/meta-files-lawsuits-against-brazil.html
@@ -97,7 +149,7 @@ The ongoing efforts have cut scam activity in half since the start of this year,
 
 ================================================================================
 
-[3] The Hacker News - Aeternum C2 Botnet Stores Encrypted Commands on Polygon Blockchain to Evade Takedown
+[4] The Hacker News - Aeternum C2 Botnet Stores Encrypted Commands on Polygon Blockchain to Evade Takedown
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 23:30:00 +0530
 Link: https://thehackernews.com/2026/02/aeternum-c2-botnet-stores-encrypted.html
@@ -143,7 +195,7 @@ The operator has been identified as Andrei Holas (aka Andre Holas and Andrei Gol
 
 ================================================================================
 
-[4] The Hacker News - UAT-10027 Targets U.S. Education and Healthcare with Dohdoor Backdoor
+[5] The Hacker News - UAT-10027 Targets U.S. Education and Healthcare with Dohdoor Backdoor
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 20:47:00 +0530
 Link: https://thehackernews.com/2026/02/uat-10027-targets-us-education-and.html
@@ -181,7 +233,7 @@ There is currently no clarity on who is behind UAT-10027, but Cisco Talos said i
 
 ================================================================================
 
-[5] The Hacker News - ThreatsDay Bulletin: Kali Linux + Claude, Chrome Crash Traps, WinRAR Flaws, LockBit & 15+ Stories
+[6] The Hacker News - ThreatsDay Bulletin: Kali Linux + Claude, Chrome Crash Traps, WinRAR Flaws, LockBit & 15+ Stories
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 19:58:00 +0530
 Link: https://thehackernews.com/2026/02/threatsday-bulletin-kali-linux-claude.html
@@ -383,7 +435,7 @@ Staying aware of these shifts is no longer optional. The details change each wee
 
 ================================================================================
 
-[6] The Hacker News - Expert Recommends: Prepare for PQC Right Now
+[7] The Hacker News - Expert Recommends: Prepare for PQC Right Now
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 17:36:00 +0530
 Link: https://thehackernews.com/2026/02/expert-recommends-prepare-for-pqc-right.html
@@ -585,7 +637,7 @@ Note: This article was expertly written and contributed by Mohammed Meziani, Sen
 
 ================================================================================
 
-[7] The Hacker News - Microsoft Warns Developers of Fake Next.js Job Repos Delivering In-Memory Malware
+[8] The Hacker News - Microsoft Warns Developers of Fake Next.js Job Repos Delivering In-Memory Malware
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 16:05:00 +0530
 Link: https://thehackernews.com/2026/02/fake-nextjs-repos-target-developers.html
@@ -646,32 +698,6 @@ In a report published earlier this month, Okta said the "vast majority" of inter
 "Some actors however seem to be more competent at crafting personas and passing screening interviews," it added. "A kind of IT Worker natural selection is at play. The most successful actors are very prolific, and scheduled hundreds of interviews each."
 
 (XXXXXXX, AÇIK - https://thehackernews.com/2026/02/fake-nextjs-repos-target-developers.html, thehackernews.com, 26.02.2026)
-
-================================================================================
-
-[8] The Hacker News - Malicious StripeApi NuGet Package Mimicked Official Library and Stole API Tokens
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 15:39:00 +0530
-Link: https://thehackernews.com/2026/02/malicious-stripeapi-nuget-package.html
-
-[TAM METİN - 336 kelime]
-Cybersecurity researchers have disclosed details of a new malicious package discovered on the NuGet Gallery, impersonating a library from financial services firm Stripe in an attempt to target the financial sector.
-
-The package, codenamed StripeApi.Net, attempts to masquerade as Stripe.net, a legitimate library from Stripe that has over 75 million downloads. It was uploaded by a user named StripePayments on February 16, 2026. The package is no longer available.
-
-"The NuGet page for the malicious package is set up to resemble the official Stripe.net package as closely as possible," ReversingLabs Petar Kirhmajer said. "It uses the same icon as the legitimate package and contains a nearly identical readme, only swapping the 'Stripe.net' references to read 'Stripe-net.'"
-
-In a further effort to lend credibility to the typosquatted package, the threat actor behind the campaign is said to have artificially inflated the download count to more than 180,000. But in an interesting twist, the downloads were split across 506 versions, with each version recording about 300 downloads on average.
-
-The package replicates some of the legitimate Stripe package's functionality, but also modifies certain critical methods to collect and transfer sensitive data, including the user's Stripe API token, back to the threat actor. With the rest of the codebases remaining fully functional, it's unlikely to attract any suspicion from unsuspecting developers who may have inadvertently downloaded it.
-
-ReversingLabs said it discovered and reported the package "relatively soon" after it was initially released, causing it to be taken before it could inflict any serious damage.
-
-The software supply chain security company also noted that the activity marks a shift from prior campaigns that have leveraged bogus NuGet packages to target the cryptocurrency ecosystem and facilitate wallet key theft.
-
-"Developers who mistakenly download and integrate a typosquatted library like StripeAPI.net will still have their applications compile successfully and function as intended," Kirhmajer said. "Payments would process normally and, from the developer’s perspective, nothing would appear broken. In the background, however, sensitive data is being secretly copied and exfiltrated by malicious actors."
-
-(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/malicious-stripeapi-nuget-package.html, thehackernews.com, 26.02.2026)
 
 ================================================================================
 
@@ -2610,7 +2636,7 @@ Cisco says hackers have been exploiting a critical bug to break into big custome
 Zack Whittaker
 
 
- 20 hours ago
+ 21 hours ago
 
 Cisco says hackers have been exploiting a critical bug to break into big customer networks since 2023
 
@@ -2654,7 +2680,7 @@ Cisco says hackers have been exploiting a critical bug to break into big custome
 Zack Whittaker
 
 
- 20 hours ago
+ 21 hours ago
 
 Cisco says hackers have been exploiting a critical bug to break into big customer networks since 2023
 
@@ -3240,12 +3266,80 @@ Von unseren Redakteuren direkt in Ihren Posteingang
 
 ================================================================================
 
+[49] Infoblox Blog - Abusing .arpa: The TLD That Isn’t Supposed to Host Anything
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 26 Feb 2026 15:55:47 +0000
+Link: https://www.infoblox.com/blog/threat-intelligence/abusing-arpa-the-tld-that-isnt-supposed-to-host-anything/
+
+[TAM METİN - 1900 kelime]
+Phishing email campaigns are so common that it takes something fundamentally different to stand out. We recently found campaigns using a novel, previously unreported method to get around security controls. Actors are abusing the .arpa top-level domain (TLD), in conjunction with IPv6 tunnels, to host phishing content on domains that should not resolve to an IP address. Unlike familiar TLDs like .com and .net, that are used for domains that host web content, the .arpa TLD has a special role in the domain name system (DNS): it’s primarily used to map IP addresses to domains, providing reverse records. Threat actors have discovered a feature in the DNS record management control of certain providers, which allows them to add IP address records for .arpa domains. From there, they can do whatever they like at the hosting provider. It’s a pretty clever trick.
+
+The spam emails in the phishing campaigns we analyzed impersonate major brands and promise a free prize. The messages only display an image, which hides an embedded hyperlink that will take the victim to a malicious website, often through a series of redirects via a traffic distribution system (TDS). The novel feature of this attack is that these image links use a reverse DNS string (used to reverse-map an IP address to a domain name via a PTR record) rather than a standard domain name. For example:
+
+d.d.e.0.6.3.0.0.0.7.4.0.1.0.0.2.ip6.arpa
+
+If the user realized they were being sent to a long domain like this, they would probably be alarmed but in these campaigns the domain is hidden. When the user clicks on the image, the device will resolve the .arpa domain. Because .arpa is a critical TLD for the operation of the internet, these domain names are unlikely to be blocked. From the initial link, the user is typically fingerprinted and redirected to fraudulent content. Figure 1 shows an example of the spam HTML.
+
+Figure 1. An example of the HTML of a phishing email using a reverse DNS string, rather than a standard domain name
+
+To make this attack work, the threat actor acquires some IPv6 address space, for which they are delegated control of the corresponding .arpa subdomain. Then, instead of adding the expected PTR records, they create A records for the reverse DNS names. We have seen threat actors abuse Hurricane Electric and Cloudflare to create these records—both of which have good reputations that actors leverage—and we confirmed that some other DNS providers also allow these configurations. Our tests were not exhaustive, but we notified the providers where we discovered a gap. Figure 2 depicts the process the threat actor used to create the domain used in the phishing emails.
+
+Figure 2. An overview of the process used to abuse the .arpa TLD in phishing emails
+
+The same toolkit used in the .arpa abuse phishing campaign appears to be used by multiple actors since at least 2017. In addition to the .arpa tactic, we have also observed these phishing campaigns using several other methods to bypass security controls, including hijacking dangling CNAMEs and subdomain shadowing. Dangling CNAME hijacks are typically DNS records for expired domains or abandoned cloud services and take advantage of highly reputable organizations. While this blog is focused on introducing the IPv6 / arpa trick, dangling CNAMEs remain a major threat to organizations of all shapes and sizes. For this reason, we’ve included a short section on this topic.
+
+How .arpa Can Be Abused
+
+The most well-known type of DNS query is the one used to identify the IP address or addresses for a given domain name: the type A query. Conversely, a reverse DNS lookup is performed to identify the domain name or names associated with a given IP address. A reverse DNS domain is built from the IP address. This process involves reversing the bytes of the IPv4 address or nibbles of an IPv6 address and appending a special domain within the .arpa TLD (in-addr.arpa for IPv4 addresses and ip6.arpa for IPv6 addresses).
+
+Figure 3 shows the process the actors used to turn their IPv6 IP address range into a domain they could use in phishing emails. For a normal reverse DNS lookup, the entire IP address is needed to calculate the reverse DNS string. However, since the threat actor operates a /64 range, the last 64 bits of the address can be ignored. To make their reverse DNS domains harder to detect and block, they prepend the domain with a randomly generated subdomain to make each FQDN unique.
+
+Figure 3. The process to create a reverse DNS lookup string of an IPv6 address range and then create a unique FQDN using the string. Green additions are part of the normal process of building an IPv6 reverse DNS domain from an address range and the red addition is made by the actor.
+
+Reverse DNS domains are only intended for internet infrastructure purposes, but DNS can be challenging to implement correctly and there are sometimes unintended behaviors. Figure 4 shows what happened when we performed a type A query on one of the reverse DNS domains in the phishing emails. DNS servers were queried until the authoritative server for the domain was found. In this case, the authoritative name servers were operated by Cloudflare. Using these name servers, the reverse DNS FQDN resolved to two IP addresses. Both IP addresses belonged to Cloudflare’s edge network, which hides the actual host of—in this case—the malicious content. Although reverse DNS domains aren’t supposed to work like this, the threat actors found a way to make it happen.
+
+Figure 4. The series of DNS queries used to resolve an IPv6 reverse DNS domain to an A record of a phishing actor
+
+While the idea of reverse FQDNs may seem straightforward, there are several potential gotchas that need to be addressed for this attack to work properly. It relies on the coordinated abuse of two different services: getting a free IPv6 tunnel and getting name servers that resolve the reverse DNS domain to the owner’s content. The IPv6 tunnel encapsulates IPv6 traffic and sends it over IPv4, but the actor doesn’t need or use the tunnel. It’s simply an easy way to get administrative access to a free IPv6 range. The tunnel isn’t surprising, but the ability to claim ownership of a .arpa domain with a DNS provider is. Given the reserved nature of the .arpa TLD, we wouldn’t expect it to be as easy as entering the domain in a web form. When we evaluated a few DNS providers to check if they were vulnerable, this was the point in the process that was ultimately the determining factor. If the provider prevented us from claiming ownership of a .arpa domain, either by explicitly denying the request or by the request failing, we considered the DNS provider not vulnerable.
+
+There’s More to the Story
+
+Another notable tactic we have observed in the phishing email hyperlinks is the abuse of subdomains of high-profile, legitimate domains. We found over 100 instances where the threat actor used hijacked CNAMEs of well-known government agencies, universities, telecommunication companies, media organizations, and retailers. Five of the hijacked CNAMEs we observed were previously reported in August 2024 as being used in phishing attacks. The others appear not to be publicly known. We also saw a few cases of domain shadowing, in which an actor-controlled subdomain is created, typically through credential theft. The lure images are unrelated to the hijacked domains. As with the IPv6 reverse domains, victims are unlikely to ever notice them.
+
+We have observed the same hijacked CNAMEs in phishing emails consistently since September 2025. Some were used in over 100 different emails in a single day. Some (including shadow subdomains) appear to have been abused for years; one shadow subdomain has operated since 2020, seemingly without detection.
+
+Many of the CNAMEs appear to have been hijacked one at a time. There are a few instances, though, where a single domain expiring creates many dangling CNAMEs. Some examples:
+
+At one point, the domain publicnoticessites[.]com provided public notice content for over 120 different local newspaper websites. When it expired, the threat actor purchased the domain and gained access to all the CNAMEs that referenced the domain, eight of which we observed in phishing emails.
+
+A similar situation occurred when hobsonsms[.]com expired. The domain provided account services for at least three different universities through the same subdomain account[.]hobsonsms[.]com. Setting up that one subdomain allowed the threat actor to hijack all three.
+
+It isn’t just smaller organizations that have this problem. The domain hyfnrsx1[.]com had subdomains that served as CNAMEs for global food and beverage companies and just recently expired. Hijacked CNAMEs for both companies were observed in phishing emails starting January 2026.
+
+The phishing emails in these campaigns are simple, usually consisting of a hyperlinked lure image. The lure itself frequently promises a “free gift” for completing a survey. Of course they need the victim’s credit card to pay for shipping, but that shouldn’t be much, right? Other lures include claims that an online subscription or service has been interrupted or that the user has exceeded their cloud storage quota. We’ve provided examples of some of the lures in Figure 5.
+
+Figure 5. The phishing emails use a variety of lures to entice users into clicking on the hyperlinked image. The embedded malicious domain is not related to the impersonated brand in the image.
+
+Once victims click on the lure image, they are redirected to one of several TDSs, the exact one depends on the campaign. It initially takes them to a page that analyzes their traffic. If it meets specific criteria, the victim is redirected through a series of domains until they ultimately land on the malicious phishing page. Each domain in the redirection chain performs its own checks and if the victim doesn’t meet the criteria, they will get an HTTP error such as this, or be redirected to a benign page such as TikTok, as shown here. We don’t have access to the specific criteria in the various stages of the redirection chain, but we were able to determine that a combination of being on a mobile device and using a residential IP address increased our chances of getting redirected to the malicious landing page.
+
+Threat actors are constantly looking for new ways to evade detection, and most techniques are variations on familiar themes. The abuse of the .arpa TLD is novel in that it weaponizes infrastructure that is implicitly trusted and essential for network operations. By using IPv6 reverse DNS domains as malicious links, the threat actor has discovered a delivery mechanism that bypasses security tools. The impact is immediate and cannot be overstated: security that depends on detecting suspicious domains using things like reputation, registration information, and policy blocklists is ineffective for these domains. These domains have an implicitly clean reputation, no registration information, and aren’t usually blocked by policy.
+
+To date we have not observed any queries to these kinds of domains in customer traffic. However, we have observed queries to numerous IPv6 and IPv4 reverse DNS domains, including the ones observed in phishing emails, in our global passive DNS.
+
+The table below provides a selection of the indicators of activity observed in these phishing campaigns. Note, indicators are associated legitimate services and namespaces that have been abused. In all cases, careful consideration should be made before blocking.
+
+For more indicators, visit the Infoblox Threat Intel Github repo: https://github.com/infobloxopen/threat-intelligence.
+
+(XXXXXXX, AÇIK - https://www.infoblox.com/blog/threat-intelligence/abusing-arpa-the-tld-that-isnt-supposed-to-host-anything/, infoblox.com, 26.02.2026)
+
+================================================================================
+
 
 ================================================================================
 🐘 MASTODON - YÜKSEK ETKİLEŞİMLİ POSTLAR
 ================================================================================
 
-[49] Mastodon: Catalin Cimpanu [RT:23 · FAV:10 · Skor:56]
+[50] Mastodon: Catalin Cimpanu [RT:23 · FAV:10 · Skor:56]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 16:34:55 +0000
 Link: https://mastodon.social/@campuscodi/116137898501718472
@@ -3257,7 +3351,7 @@ Link: https://mastodon.social/@campuscodi/116137898501718472
 
 ================================================================================
 
-[50] Mastodon: Catalin Cimpanu [RT:12 · FAV:16 · Skor:40]
+[51] Mastodon: Catalin Cimpanu [RT:12 · FAV:16 · Skor:40]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 15:53:57 +0000
 Link: https://mastodon.social/@campuscodi/116137737412947559
@@ -3269,7 +3363,7 @@ A security firm has gained access to a malvertising test platform and used the i
 
 ================================================================================
 
-[51] Mastodon: Catalin Cimpanu [RT:18 · FAV:3 · Skor:39]
+[52] Mastodon: Catalin Cimpanu [RT:18 · FAV:3 · Skor:39]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 16:03:56 +0000
 Link: https://mastodon.social/@campuscodi/116137776672700768
@@ -3281,7 +3375,7 @@ Meta's new Threads micro-blogging platform and Twitter rival has been flooded wi
 
 ================================================================================
 
-[52] Mastodon: Catalin Cimpanu [RT:8 · FAV:6 · Skor:22]
+[53] Mastodon: Catalin Cimpanu [RT:8 · FAV:6 · Skor:22]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 02:43:23 +0000
 Link: https://mastodon.social/@campuscodi/116134628755308198
@@ -3293,7 +3387,7 @@ Scattered Lapsus$ Hunters (SLH) is recruiting women to conduct vishing attacks, 
 
 ================================================================================
 
-[53] Mastodon: Catalin Cimpanu [RT:9 · FAV:1 · Skor:19]
+[54] Mastodon: Catalin Cimpanu [RT:9 · FAV:1 · Skor:19]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 12:31:04 +0000
 Link: https://mastodon.social/@campuscodi/116136939655487395
@@ -3305,7 +3399,7 @@ Apple has published details on how it plans to deal with all the age verificatio
 
 ================================================================================
 
-[54] Mastodon: Catalin Cimpanu [RT:7 · FAV:4 · Skor:18]
+[55] Mastodon: Catalin Cimpanu [RT:7 · FAV:4 · Skor:18]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 18:57:57 +0000
 Link: https://mastodon.social/@campuscodi/116138460924520544
@@ -3317,7 +3411,7 @@ Phishing groups are abusing .arpa domains for their operations, a TLD that's not
 
 ================================================================================
 
-[55] Mastodon: Catalin Cimpanu [RT:5 · FAV:5 · Skor:15]
+[56] Mastodon: Catalin Cimpanu [RT:5 · FAV:5 · Skor:15]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 13:30:05 +0000
 Link: https://mastodon.social/@campuscodi/116137171717310119
@@ -3329,7 +3423,7 @@ Hmmm.... I'll just put him in Andorra, since that's right smack in the middle
 
 ================================================================================
 
-[56] Mastodon: Catalin Cimpanu [RT:6 · FAV:2 · Skor:14]
+[57] Mastodon: Catalin Cimpanu [RT:6 · FAV:2 · Skor:14]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 16:10:03 +0000
 Link: https://mastodon.social/@campuscodi/116137800753442402
@@ -3338,18 +3432,6 @@ Link: https://mastodon.social/@campuscodi/116137800753442402
 Talks from the DefCamp 2025 security conference, which took place in Bucharest at the end of November, are now available on YouTube https://www. youtube.com/playlist?list=PLnw q8gv9MEKiy8yiQo8nyvIA7xjWU3FZQ
 
 (XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137800753442402, mastodon.social, 26.02.2026)
-
-================================================================================
-
-[57] Mastodon: Catalin Cimpanu [RT:4 · FAV:6 · Skor:14]
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 01:08:02 +0000
-Link: https://mastodon.social/@campuscodi/116134253867576632
-
-[MASTODON POST - 8 kelime]
-Russian media are treating Conti like national heroes
-
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116134253867576632, mastodon.social, 26.02.2026)
 
 ================================================================================
 
