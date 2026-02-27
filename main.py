@@ -146,14 +146,16 @@ def fetch_mastodon_posts(sources, min_engagement, hours_back):
         print(f"   \U0001f50d {label} (@{username}@{instance})")
 
         src_results = []
+        _masto_responses = []  # timeout'ta kapatmak için
 
         def _fetch_mastodon_src(instance=instance, username=username, label=label,
                                 cutoff_dt=cutoff_dt, min_engagement=min_engagement,
                                 src_results=src_results):
             try:
                 lookup_url = f"https://{instance}/api/v1/accounts/lookup?acct={username}"
-                r = requests.get(lookup_url, timeout=(5, 8),
+                r = requests.get(lookup_url, timeout=(4, 6),
                                  headers={'User-Agent': 'Mozilla/5.0'})
+                _masto_responses.append(r)
                 if r.status_code != 200:
                     return
                 account_id = r.json().get('id')
@@ -161,8 +163,9 @@ def fetch_mastodon_posts(sources, min_engagement, hours_back):
                     return
                 statuses_url = f"https://{instance}/api/v1/accounts/{account_id}/statuses"
                 params = {'limit': 40, 'exclude_replies': 'true', 'exclude_reblogs': 'true'}
-                r2 = requests.get(statuses_url, params=params, timeout=(5, 8),
+                r2 = requests.get(statuses_url, params=params, timeout=(4, 6),
                                   headers={'User-Agent': 'Mozilla/5.0'})
+                _masto_responses.append(r2)
                 if r2.status_code != 200:
                     return
                 statuses = r2.json()
@@ -215,6 +218,12 @@ def fetch_mastodon_posts(sources, min_engagement, hours_back):
         t.start()
         t.join(timeout=15)
         if t.is_alive():
+            # Bağlantıları zorla kapat
+            for resp in _masto_responses:
+                try:
+                    resp.close()
+                except Exception:
+                    pass
             print(f"      \u274c Timeout (15s) — geçiliyor")
         elif src_results:
             print(f"      \u2705 {len(src_results)} nitelikli post")
@@ -244,14 +253,18 @@ class HaberSistemi:
         """Tam metin çeker — max 10 saniye, sonra geç"""
         import threading
         result = {'full_text': "", 'word_count': 0, 'success': False, 'domain': ''}
+        _session_holder = [None]  # thread'den response'a erişim için
 
         def _fetch():
             try:
                 r = requests.get(url, headers=self.headers, timeout=(5, 8), stream=True)
+                _session_holder[0] = r
                 chunks = []
+                total_size = 0
                 for chunk in r.iter_content(chunk_size=8192):
                     chunks.append(chunk)
-                    if len(b''.join(chunks)) > 500_000:
+                    total_size += len(chunk)
+                    if total_size > 500_000:
                         break
                 r.close()
                 raw = b''.join(chunks).decode(r.encoding or 'utf-8', errors='replace')
@@ -290,6 +303,12 @@ class HaberSistemi:
         t.start()
         t.join(timeout=10)
         if t.is_alive():
+            # Timeout: bağlantıyı zorla kapat ki thread bloklanmasın
+            try:
+                if _session_holder[0] is not None:
+                    _session_holder[0].close()
+            except Exception:
+                pass
             print(f" ⏱️  (timeout)")
         elif result['success']:
             print(f" ✅ ({result['word_count']})")
@@ -309,46 +328,64 @@ class HaberSistemi:
         return '\n\n'.join(parts)
 
     def fetch_rss(self, url, source_name):
-        """RSS çeker"""
-        try:
-            r = requests.get(url, headers=self.headers, timeout=(5, 12))
-            root = ET.fromstring(r.content)
-            articles = []
+        """RSS çeker — max 15 saniye timeout korumalı"""
+        import threading
+        result_holder = {'articles': [], 'error': None}
 
-            if root.tag.endswith('feed'):  # Atom
-                for entry in root.findall('.//{http://www.w3.org/2005/Atom}entry')[:10]:
-                    t = entry.find('{http://www.w3.org/2005/Atom}title')
-                    l = entry.find('{http://www.w3.org/2005/Atom}link')
-                    s = entry.find('{http://www.w3.org/2005/Atom}summary')
-                    d = entry.find('{http://www.w3.org/2005/Atom}published')
-                    if t is not None:
-                        articles.append({
-                            'title': t.text,
-                            'link': l.get('href') if l is not None else '',
-                            'description': s.text if s is not None else '',
-                            'date': d.text if d is not None else '',
-                            'source': source_name
-                        })
-            else:  # RSS
-                for item in root.findall('.//item')[:10]:
-                    t = item.find('title')
-                    l = item.find('link')
-                    d = item.find('description')
-                    p = item.find('pubDate')
-                    if t is not None:
-                        articles.append({
-                            'title': t.text,
-                            'link': l.text if l is not None else '',
-                            'description': d.text if d is not None else '',
-                            'date': p.text if p is not None else '',
-                            'source': source_name
-                        })
-            return articles
-        except Exception as e:
+        def _fetch_rss():
+            try:
+                r = requests.get(url, headers=self.headers, timeout=(5, 12))
+                root = ET.fromstring(r.content)
+
+                if root.tag.endswith('feed'):  # Atom
+                    for entry in root.findall('.//{http://www.w3.org/2005/Atom}entry')[:10]:
+                        t = entry.find('{http://www.w3.org/2005/Atom}title')
+                        l = entry.find('{http://www.w3.org/2005/Atom}link')
+                        s = entry.find('{http://www.w3.org/2005/Atom}summary')
+                        d = entry.find('{http://www.w3.org/2005/Atom}published')
+                        if t is not None:
+                            result_holder['articles'].append({
+                                'title': t.text,
+                                'link': l.get('href') if l is not None else '',
+                                'description': s.text if s is not None else '',
+                                'date': d.text if d is not None else '',
+                                'source': source_name
+                            })
+                else:  # RSS
+                    for item in root.findall('.//item')[:10]:
+                        t = item.find('title')
+                        l = item.find('link')
+                        d = item.find('description')
+                        p = item.find('pubDate')
+                        if t is not None:
+                            result_holder['articles'].append({
+                                'title': t.text,
+                                'link': l.text if l is not None else '',
+                                'description': d.text if d is not None else '',
+                                'date': p.text if p is not None else '',
+                                'source': source_name
+                            })
+            except Exception as e:
+                result_holder['error'] = e
+
+        t = threading.Thread(target=_fetch_rss, daemon=True)
+        t.start()
+        t.join(timeout=15)
+
+        if t.is_alive():
+            error_msg = f"RSS hatası - {source_name}: Timeout (15s)"
+            self.rss_errors.append(error_msg)
+            print(f"      ⏱️  RSS TIMEOUT (15s) — geçiliyor")
+            return []
+
+        if result_holder['error']:
+            e = result_holder['error']
             error_msg = f"RSS hatası - {source_name}: {str(e)[:100]}"
             self.rss_errors.append(error_msg)
             print(f"      ❌ RSS HATA: {str(e)[:50]}")
             return []
+
+        return result_holder['articles']
 
     def _load_used_links(self):
         """
