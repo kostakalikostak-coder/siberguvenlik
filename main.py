@@ -260,7 +260,7 @@ class HaberSistemi:
         """Tam metin çeker"""
         try:
             print(f"      📄 Tam metin...", end='', flush=True)
-            r = requests.get(url, headers=self.headers, timeout=15)
+            r = requests.get(url, headers=self.headers, timeout=(5, 12))
             soup = BeautifulSoup(r.text, 'html.parser')
             domain = urlparse(url).netloc.replace('www.', '')
 
@@ -311,12 +311,12 @@ class HaberSistemi:
     def fetch_rss(self, url, source_name):
         """RSS çeker"""
         try:
-            r = requests.get(url, headers=self.headers, timeout=15)
+            r = requests.get(url, headers=self.headers, timeout=(5, 12))
             root = ET.fromstring(r.content)
             articles = []
 
             if root.tag.endswith('feed'):  # Atom
-                for entry in root.findall('.//{http://www.w3.org/2005/Atom}entry')[:8]:
+                for entry in root.findall('.//{http://www.w3.org/2005/Atom}entry')[:10]:
                     t = entry.find('{http://www.w3.org/2005/Atom}title')
                     l = entry.find('{http://www.w3.org/2005/Atom}link')
                     s = entry.find('{http://www.w3.org/2005/Atom}summary')
@@ -330,7 +330,7 @@ class HaberSistemi:
                             'source': source_name
                         })
             else:  # RSS
-                for item in root.findall('.//item')[:8]:
+                for item in root.findall('.//item')[:10]:
                     t = item.find('title')
                     l = item.find('link')
                     d = item.find('description')
@@ -487,11 +487,6 @@ class HaberSistemi:
         detail_removed = {'link': 0, 'hash': 0, 'similarity': 0}
 
         for src, articles in all_news.items():
-            # Mastodon postları zaten zaman filtreli çekildiğinden muaf tut
-            if src == '_mastodon':
-                filtered[src] = articles
-                continue
-
             filtered_articles = []
 
             for art in articles:
@@ -551,11 +546,6 @@ class HaberSistemi:
         removed_count = 0
 
         for src, articles in all_news.items():
-            # Mastodon postları fetch_mastodon_posts() içinde zaten zaman filtreli
-            if src == '_mastodon':
-                filtered[src] = articles
-                continue
-
             filtered_articles = []
             for art in articles:
                 art_date_str = _parse_article_date(art.get('date', ''), datetime.now())
@@ -669,7 +659,7 @@ class HaberSistemi:
                 score = art.get('engagement_score', 0)
                 reblogs = art.get('reblogs', 0)
                 favs = art.get('favourites', 0)
-                txt += f"[{num}] {art['source']} [RT:{reblogs} · FAV:{favs} · Skor:{score}]\n{'─' * 80}\n"
+                txt += f"[{num}] {art['source']} [🔥 Skor:{score} | 🔄{reblogs} ❤️{favs}]\n{'─' * 80}\n"
                 txt += f"Tarih: {art['date']}\nLink: {art['link']}\n"
                 txt += f"\n[MASTODON POST - {art.get('word_count', 0)} kelime]\n{art.get('full_text', '')}\n"
                 art_date = _parse_article_date(art.get('date', ''), now)
@@ -799,12 +789,11 @@ class HaberSistemi:
         if not html:
             return self._create_fallback_html(txt_content)
 
-        # HTML temizle — açıklama metni, ```html vs. at
-        doctype_idx = html.find('<!DOCTYPE')
-        if doctype_idx == -1:
-            doctype_idx = html.find('<html')
-        if doctype_idx > 0:
-            html = html[doctype_idx:]  # Önündeki her şeyi at
+        # HTML temizle
+        if html.startswith('```html'):
+            html = html[7:]
+        if html.startswith('```'):
+            html = html[3:]
         if html.endswith('```'):
             html = html[:-3]
         html = html.strip()
@@ -838,7 +827,6 @@ class HaberSistemi:
         # ═══════════════════════════════════════════
         # AŞAMA 4: Mevcut post-processing
         # ═══════════════════════════════════════════
-        html = self._inject_mastodon_badges(html)
         html = self._fix_source_dates(html, txt_content)
 
         html_index = self._add_archive_links(html, is_archive=False)
@@ -1043,61 +1031,6 @@ KURALLAR:
         except Exception as e:
             print(f"   ❌ Tamamlama hatası: {e}")
             return html
-
-
-    def _inject_mastodon_badges(self, html):
-        """
-        Sadece [MASTODON_SCORE:N:N] etiketi olan haberlere badge ekler.
-        BeautifulSoup ile her div ayrı ayrı işlenir, diğer haberlere dokunulmaz.
-        """
-        import re
-        from bs4 import BeautifulSoup
-
-        if '[MASTODON_SCORE:' not in html:
-            print("   \u2139\ufe0f  Mastodon haberi yok, badge eklenmedi")
-            return html
-
-        soup = BeautifulSoup(html, 'html.parser')
-        count = 0
-
-        for item in soup.find_all('div', class_='news-item'):
-            source = item.find('p', class_='source')
-            if not source:
-                continue
-
-            src_text = str(source)
-            score_match = re.search(r'\[MASTODON_SCORE:(\d+):(\d+)\]', src_text)
-            if not score_match:
-                continue  # Mastodon haberi degil, kesinlikle dokunma
-
-            reblogs = int(score_match.group(1))
-            favs    = int(score_match.group(2))
-
-            # 1. mastodon-item class ekle
-            classes = item.get('class', [])
-            if 'mastodon-item' not in classes:
-                item['class'] = classes + ['mastodon-item']
-
-            # 2. Source etiketini temizle
-            new_src = re.sub(r'\s*\[MASTODON_SCORE:\d+:\d+\]', '', src_text)
-            source.replace_with(BeautifulSoup(new_src, 'html.parser'))
-
-            # 3. Badge ekle (news-title'dan once)
-            title_div = item.find('div', class_='news-title')
-            if title_div:
-                badge_html = (
-                    f'<span class="mastodon-badge">'
-                    f'&#9656; Sosyal Medya Sinyali &#8212; '
-                    f'Paylasim: {reblogs} &middot; Begeni: {favs}'
-                    f'</span>'
-                )
-                badge_tag = BeautifulSoup(badge_html, 'html.parser')
-                title_div.insert_before(badge_tag)
-
-            count += 1
-
-        print(f"   \u2705 {count} Mastodon badge enjekte edildi")
-        return str(soup)
 
     def _fix_source_dates(self, html, txt_content):
         """Gemini'nin yazdığı hatalı tarihleri ham TXT'deki gerçek tarihlerle düzelt"""
