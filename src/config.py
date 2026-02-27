@@ -165,7 +165,7 @@ RAPOR YAPISI (SIRAYLA):
 3️⃣ᵇ **"SOSYAL MEDYA SİNYALLERİ" KUTUSU** (Önemli Gelişmeler kutusunun hemen altına):
    - Ham veride [MASTODON_SCORE:N:N] etiketi olan haberler bunlardır
    - Bu haberleri signal-item olarak listele, her birinde signal-badge ile etkileşim göster
-   - badge formatı: Paylaşım: {reblogs} · Beğeni: {favs}  (N yerine gerçek sayıyı yaz)
+   - badge formatı: Paylaşım: N · Beğeni: N  (N yerine ham verideki gerçek sayıyı yaz)
    - Sayfa içi link: <a href="#haber-N">haber başlığı veya kısa özet</a>
    - Mastodon haberi yoksa bu kutuyu tamamen çıkar (oluşturma)
    - Hiçbir ikon veya emoji kullanma
