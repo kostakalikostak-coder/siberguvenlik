@@ -22,6 +22,7 @@ NEWS_SOURCES = {
     'The Register': 'https://www.theregister.com/security/cyber_crime/headlines.atom',
     'TechCrunch Security': 'https://techcrunch.com/category/security/feed/',
     'CSO Online': 'https://www.csoonline.com/feed/',
+    'Infoblox Blog': 'https://blogs.infoblox.com/feed/',
 }
 
 # ===== MASTODON KAYNAKLARI =====
@@ -103,9 +104,7 @@ DETECTION_PATTERNS = {
 # Gemini prompt (RESMİ TÜRKÇE) - YENİ GELİŞTİRİLMİŞ VERSİYON
 def get_claude_prompt(news_content, recent_events=''):
     now = datetime.now()
-    return f"""⚠️ ÇIKTI KURALI: Yanıtının İLK karakteri < olacak. Açıklama yazma. Direkt <!DOCTYPE html> ile başla.
-
-Sen profesyonel siber güvenlik analistisin.
+    return f"""Sen profesyonel siber güvenlik analistisin.
 
 GÖREV: 130 haberi analiz et → En önemli 5'ini seç → Kalanları önem sırasına koy → HTML raporu oluştur.
 
@@ -161,16 +160,20 @@ RAPOR YAPISI (SIRAYLA):
 3️⃣ **"ÖNEMLİ GELİŞMELER" KUTUSU**: 
    - En kritik 5 haberin TAM CÜMLELİK özeti
    - Her biri sayfa içi link: <a href="#haber-N">N. CVE-2024-1234 açığı Microsoft sunucularında kritik güvenlik riski oluşturmaktadır.</a>
-   - ZORUNLU: Edilmiştir/tespit edilmiştir/duyurulmuştur ile biten tam cümle + nokta
-   - DOĞRU: "Cisco SD-WAN açığı tespit edilmiştir."
-   - YANLIŞ: "açığın tespit edilmesi" (isim-fiil YASAK)
+   - ZORUNLU: Tam cümle (özne + yüklem + nesne) + nokta ile bitiş
+
+3️⃣ᵇ **"SOSYAL MEDYA SİNYALLERİ" KUTUSU** (Önemli Gelişmeler kutusunun hemen altına):
+   - Ham veride [MASTODON_SCORE:N:N] etiketi olan haberler bunlardır
+   - Bu haberleri signal-item olarak listele, her birinde signal-badge ile etkileşim göster
+   - badge formatı: Paylaşım: {reblogs} · Beğeni: {favs}  (N yerine gerçek sayıyı yaz)
+   - Sayfa içi link: <a href="#haber-N">haber başlığı veya kısa özet</a>
+   - Mastodon haberi yoksa bu kutuyu tamamen çıkar (oluşturma)
+   - Hiçbir ikon veya emoji kullanma
 
 4️⃣ **GERİ KALAN 38 HABERİN 2 SÜTUNLU TABLOSU**:
    - 6. haber → id="haber-6", 7. haber → id="haber-7" vs.
    - Her biri TAM CÜMLELİK özet + sayfa içi link
-   - ZORUNLU: Edilmiştir/tespit edilmiştir/duyurulmuştur ile biten tam cümle + nokta
-   - DOĞRU: "Google, kampanyayı engellemiştir."
-   - YANLIŞ: "kampanyayı engellemesi" (isim-fiil YASAK)
+   - ZORUNLU: Tam cümle yapısı (özne + yüklem + nesne) + nokta ile bitiş
 
 5️⃣ **HABER PARAGRAFLARI (SIRALAMA ÖNEMLİ!)**:
    - ÖNCE: En önemli 5 haberin 100-130 kelime paragraf özetleri (id="haber-1" dan haber-5'e)
@@ -358,6 +361,59 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
         }}
         
         /* BAŞA DÖN BUTONU */
+        /* SOSYAL MEDYA SİNYALLERİ KUTUSU */
+        .mastodon-signals {{
+            background: linear-gradient(135deg, #f3f0ff 0%, #faf8ff 100%);
+            color: #2c3e50;
+            padding: 25px 30px;
+            margin: 0;
+            border: 1px solid #ddd6fe;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }}
+        .mastodon-signals h2 {{
+            color: #4c3d9e;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }}
+        .mastodon-signals .signal-summary {{
+            display: grid;
+            gap: 12px;
+        }}
+        .mastodon-signals .signal-item {{
+            background: rgba(255,255,255,0.7);
+            padding: 12px 16px;
+            border-radius: 6px;
+            border-left: 4px solid #7c3aed;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }}
+        .mastodon-signals .signal-item a {{
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            flex: 1;
+        }}
+        .mastodon-signals .signal-item a:hover {{
+            text-decoration: underline;
+            color: #4c3d9e;
+        }}
+        .mastodon-signals .signal-badge {{
+            display: inline-block;
+            background: #ede9fe;
+            border: 1px solid #c4b5fd;
+            border-radius: 3px;
+            padding: 2px 8px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #4c3d9e;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }}
+
         .back-to-top {{
             position: fixed;
             top: 50%;
@@ -383,39 +439,6 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
         .back-to-top:hover {{
             opacity: 1;
         }}
-
-        .mastodon-item {{ border-left: 4px solid #6364ff; }}
-        .mastodon-badge {{
-            display: inline-block;
-            background: #f0efff;
-            border: 1px solid #c4b5fd;
-            border-radius: 3px;
-            padding: 3px 10px;
-            font-size: 12px;
-            font-weight: 600;
-            color: #4c3d9e;
-            margin-bottom: 10px;
-        }}
-
-        @media (max-width: 768px) {{
-            body {{ padding: 0; background: white; }}
-            .container {{ border-radius: 0; box-shadow: none; max-width: 100%; }}
-            .report-header {{ padding: 28px 16px; }}
-            .report-header h1 {{ font-size: 19px; line-height: 1.35; }}
-            .important-news {{ padding: 16px; border-radius: 0; margin-bottom: 12px; }}
-            .important-item a, .executive-table a {{ font-size: 13px; }}
-            .executive-table tr {{ display: block; }}
-            .executive-table td {{ display: block; width: 100% !important; margin-bottom: 6px; padding: 10px 12px; }}
-            .news-item {{ padding: 14px; margin-bottom: 14px; border-radius: 6px; }}
-            .news-title {{ font-size: 15px; }}
-            .news-content {{ font-size: 14px; line-height: 1.55; }}
-            .source {{ font-size: 12px; }}
-            .back-to-top {{ right: 14px; bottom: 20px; width: 42px; height: 42px; font-size: 20px; }}
-        }}
-        @media (max-width: 480px) {{
-            .report-header h1 {{ font-size: 16px; }}
-            .news-content {{ font-size: 13px; }}
-        }}
     </style>
 </head>
 <body>
@@ -438,6 +461,18 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
                     </div>
                     <div class="important-item">
                         <a href="#haber-2">2. LockBit 4.0 fidye yazılımı dünya genelinde sağlık kurumlarını hedef almaktadır.</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SOSYAL MEDYA SİNYALLERİ KUTUSU -->
+            <div class="mastodon-signals">
+                <h2>Sosyal Medya Sinyalleri</h2>
+                <div class="signal-summary">
+                    [MASTODON HABERLERİ BURADA - ham veride [MASTODON_SCORE:N:N] etiketi olan haberler:]
+                    <div class="signal-item">
+                        <a href="#haber-N">Mastodon haber başlığı veya kısa özet.</a>
+                        <span class="signal-badge">Paylaşım: 12 · Beğeni: 8</span>
                     </div>
                 </div>
             </div>
