@@ -719,7 +719,269 @@ In a report published earlier this month, Okta said the "vast majority" of inter
 
 ================================================================================
 
-[9] BleepingComputer - Ukrainian man pleads guilty to running AI-powered fake ID site
+[9] The Hacker News - Malicious StripeApi NuGet Package Mimicked Official Library and Stole API Tokens
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 26 Feb 2026 15:39:00 +0530
+Link: https://thehackernews.com/2026/02/malicious-stripeapi-nuget-package.html
+
+[TAM METİN - 336 kelime]
+Cybersecurity researchers have disclosed details of a new malicious package discovered on the NuGet Gallery, impersonating a library from financial services firm Stripe in an attempt to target the financial sector.
+
+The package, codenamed StripeApi.Net, attempts to masquerade as Stripe.net, a legitimate library from Stripe that has over 75 million downloads. It was uploaded by a user named StripePayments on February 16, 2026. The package is no longer available.
+
+"The NuGet page for the malicious package is set up to resemble the official Stripe.net package as closely as possible," ReversingLabs Petar Kirhmajer said. "It uses the same icon as the legitimate package and contains a nearly identical readme, only swapping the 'Stripe.net' references to read 'Stripe-net.'"
+
+In a further effort to lend credibility to the typosquatted package, the threat actor behind the campaign is said to have artificially inflated the download count to more than 180,000. But in an interesting twist, the downloads were split across 506 versions, with each version recording about 300 downloads on average.
+
+The package replicates some of the legitimate Stripe package's functionality, but also modifies certain critical methods to collect and transfer sensitive data, including the user's Stripe API token, back to the threat actor. With the rest of the codebases remaining fully functional, it's unlikely to attract any suspicion from unsuspecting developers who may have inadvertently downloaded it.
+
+ReversingLabs said it discovered and reported the package "relatively soon" after it was initially released, causing it to be taken before it could inflict any serious damage.
+
+The software supply chain security company also noted that the activity marks a shift from prior campaigns that have leveraged bogus NuGet packages to target the cryptocurrency ecosystem and facilitate wallet key theft.
+
+"Developers who mistakenly download and integrate a typosquatted library like StripeAPI.net will still have their applications compile successfully and function as intended," Kirhmajer said. "Payments would process normally and, from the developer’s perspective, nothing would appear broken. In the background, however, sensitive data is being secretly copied and exfiltrated by malicious actors."
+
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/malicious-stripeapi-nuget-package.html, thehackernews.com, 26.02.2026)
+
+================================================================================
+
+[10] The Hacker News - Cisco SD-WAN Zero-Day CVE-2026-20127 Exploited Since 2023 for Admin Access
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 26 Feb 2026 11:43:00 +0530
+Link: https://thehackernews.com/2026/02/cisco-sd-wan-zero-day-cve-2026-20127.html
+
+[TAM METİN - 772 kelime]
+A newly disclosed maximum-severity security flaw in Cisco Catalyst SD-WAN Controller (formerly vSmart) and Catalyst SD-WAN Manager (formerly vManage) has come under active exploitation in the wild as part of malicious activity that dates back to 2023.
+
+The vulnerability, tracked as CVE-2026-20127 (CVSS score: 10.0), allows an unauthenticated remote attacker to bypass authentication and obtain administrative privileges on an affected system by sending a crafted request.
+
+Successful exploitation of the flaw could allow the adversary to obtain elevated privileges and log in to the system as an internal, high-privileged, non-root user account.
+
+"This vulnerability exists because the peering authentication mechanism in an affected system is not working properly," Cisco said in an advisory, adding the threat actor could leverage the non-root user account to access NETCONF and manipulate network configuration for the SD-WAN fabric.
+
+The shortcoming affects the following deployment types, irrespective of the device configuration -
+
+Cisco Hosted SD-WAN Cloud
+
+Cisco Hosted SD-WAN Cloud - Cisco Managed
+
+Cisco Hosted SD-WAN Cloud - FedRAMP Environment
+
+Cisco credited the Australian Signals Directorate's Australian Cyber Security Centre (ASD-ACSC) for reporting the vulnerability. The networking equipment major is tracking the exploitation and subsequent post-compromise activity under the moniker UAT-8616, describing the cluster as a "highly sophisticated cyber threat actor."
+
+The vulnerability has been addressed in the following versions of Cisco Catalyst SD-WAN -
+
+Prior to version 20.91 - Migrate to a fixed release.
+
+Version 20.9 - 20.9.8.2
+
+Version 20.111 - 20.12.6.1
+
+Version 20.12.5 - 20.12.5.3
+
+Version 20.12.6 - 20.12.6.1
+
+Version 20.131 - 20.15.4.2
+
+Version 20.141 - 20.15.4.2
+
+Version 20.15 - 20.15.4.2
+
+Version 20.161 - 20.18.2.1
+
+Version 20.18 - 20.18.2.1
+
+"Cisco Catalyst SD-WAN Controller systems that are exposed to the internet and that have ports exposed to the internet are at risk of exposure to compromise," Cisco warned.
+
+The company has also recommended customers to audit the "/var/log/auth.log" file for entries related to "Accepted publickey for vmanage-admin" from unknown or unauthorized IP addresses. It's also advised to check the IP addresses in the auth.log log file against the configured System IPs that are listed in the Cisco Catalyst SD-WAN Manager web UI (WebUI > Devices > System IP).
+
+According to information released by the ASD-ACSC, UAT-8616 is said to have compromised Cisco SD-WANs since 2023 via the zero-day exploit, allowing it to gain elevated access.
+
+"The vulnerability allowed a malicious cyber actor to create a rogue peer joined to the network management plane, or control plane, of an organization's SD-WAN," ASD-ACSC said. "The rogue device appears as a new but temporary, actor-controlled SD-WAN component that can conduct trusted actions within the management and control plane."
+
+After successfully compromising a public-facing application, the attackers have been found to leverage the built-in update mechanism to stage a software version downgrade and escalate to the root user by exploiting CVE-2022-20775 (CVSS score: 7.8), a high-severity privilege escalation bug in the CLI of Cisco SD-WAN Software, and then restoring the software back to the version it was originally running.
+
+Some of the subsequent steps initiated by the threat actor are as follows -
+
+Created local user accounts that mimicked other local user accounts.
+
+Added a Secure Shell Protocol (SSH) authorized key for root access and modified SD-WAN-related start-up scripts to customize the environment.
+
+Used Network Configuration Protocol on port 830 (NETCONF) and SSH to connect to/between Cisco SD-WAN appliances within the management plane.
+
+Took steps to clear evidence of the intrusion by purging logs under "/var/log," command history, and network connection history.
+
+"UAT-8616's attempted exploitation indicates a continuing trend of the targeting of network edge devices by cyber threat actors looking to establish persistent footholds into high-value organizations, including Critical Infrastructure (CI) sectors," Talos said.
+
+The development has prompted the Cybersecurity and Infrastructure Security Agency (CISA) to add both CVE-2022-20775 and CVE-2026-20127 to its Known Exploited Vulnerabilities (KEV) catalog, mandating Federal Civilian Executive Branch (FCEB) agencies to apply the fixes within the next 24 hours.
+
+To check for version downgrade and unexpected reboot events, CISA recommends analyzing the following logs -
+
+/var/volatile/log/vdebug
+
+/var/log/tmplog/vdebug
+
+/var/volatile/log/sw_script_synccdb.log
+
+CISA has also issued a new emergency directive, 26-03: Mitigate Vulnerabilities in Cisco SD-WAN Systems, as part of which federal agencies are required to inventory SD-WAN devices, apply updates, and assess potential compromise.
+
+To that end, agencies have been ordered to provide a catalog of all in-scope SD-WAN systems on their networks by February 26, 2026, 11:59 p.m. ET. Additionally, they are required to submit a detailed inventory of all in-scope products and actions taken by March 5, 2026, 11:59 p.m. ET. Lastly, the agencies will have to submit the list of all steps taken to harden their environments by March 26, 2026, 11:59 p.m. ET.
+
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/cisco-sd-wan-zero-day-cve-2026-20127.html, thehackernews.com, 26.02.2026)
+
+================================================================================
+
+[11] BleepingComputer - Third-Party Patching and the Business Footprint We All Share
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 27 Feb 2026 10:00:10 -0500
+Link: https://www.bleepingcomputer.com/news/security/third-party-patching-and-the-business-footprint-we-all-share/
+
+[TAM METİN - 1702 kelime]
+When security teams talk about attack surface, the conversation usually starts in familiar places. Servers, identity systems, VPN access, cloud workloads, maybe browsers. Those are visible. They show up in diagrams and asset inventories.
+
+What gets less attention are the everyday tools people use to actually get work done.
+
+PDF readers. Compression utilities. Remote access clients. Word processors. Spreadsheet tools. Email clients. Browsers. Screen sharing software. Update managers. The background software that quietly powers normal business activity.
+
+Most organizations do not spend much time debating whether to deploy these. They are simply part of operating in a digital economy. Contracts arrive as PDFs. Finance works in spreadsheets. HR reviews resumes. IT supports users remotely. Executives live in email and browsers. These tools become part of the environment almost by default.
+
+At Action1, where visibility into third-party software exposure across endpoints is a daily focus, these background tools consistently emerge as a defining part of the real-world attack surface.
+
+That commonness is what makes them attractive targets from a threat actor’s perspective.
+
+The value of being ordinary
+
+From the outside, modern enterprises look different. Networks vary. Architectures change. Security stacks evolve. But, inside most environments, the same classes of applications appear again and again, and more often than not, the same software titles dominate the majority of installations.
+
+It is difficult to function in modern business without an email client, document processing software, a browser, and tools for packaging, previewing, and sharing files. Using similar products is less about preference and more about compatibility.
+
+Business depends on exchanging information in formats everyone else can use. Without those standards, we go back to the days of file-format wars, “I cannot open that, we use something else,” and lost time just trying to make data usable. That friction is why the industry standardized, and why the same major names still dominate.
+
+Attackers pay attention to that.
+
+Rather than predicting every custom application an organization might run, they look for overlap. If a vulnerability appears in a widely used PDF engine, spreadsheet parser, email preview component, or remote access utility, the chances it connects with something real are high. The exploit is aimed less at unique architecture and more at familiarity.
+
+Most successful exploitation does not rely on exotic techniques. It relies on muscle memory. Users open PDFs, Word files, spreadsheets, and links all day long. Attackers are betting those actions feel routine enough that nobody hesitates.
+
+That familiarity shapes how campaigns are built, and it should influence how defense strategies are planned.
+
+“I love patching,” said no one ever.
+
+Good thing Action1 does it for you, now on Linux too—alongside Windows, macOS, and third-party apps.
+
+One platform. Zero infrastructure. Real-time visibility. Finally, patching that just works.
+
+How probability shapes attacks
+
+Many attacks historically looked like guesswork. An attacker might send a crafted email for Outlook, hoping the recipient uses Outlook. Or attach a weaponized spreadsheet, hoping Excel is present. Or send a malicious PDF, hoping the reader is vulnerable.
+
+There is uncertainty in that approach. The exploit launches before the attacker truly knows what exists on the other end. This increases chances the attack will be detected before being effective, and it risks valuable exploit code to failure, where it may be detected, profiled, then henceforth scanned and detected.
+
+What changes with common utilities is the probability curve.
+
+Email clients, browsers, word processors, spreadsheets, PDF readers, and archive tools appear in most business environments because the work itself requires them. An attacker does not need perfect information to expect something compatible nearby.
+
+Instead of treating exploitation as a one-off guess, attackers think in likelihood. They invest effort where overlap is largest. The more widespread the tool, the more attractive it becomes as an entry point.
+
+That is why vulnerabilities in these utilities move quickly through exploit ecosystems. Once something works in a familiar toolchain, it scales. If one user relies on Outlook, Word, and Adobe, there is a good chance coworkers and business relations do as well for interoperability reasons.
+
+The standard business footprint in practice
+
+These tools also travel together.
+
+If an email clearly originated from Outlook, it already hints at part of the environment. Email workflows connect to document workflows. If Outlook is present, Word and Excel are often nearby.
+
+Each utility reinforces the presence of others.
+
+For attackers, that enables paths rather than isolated exploits. An issue in an email client connects to attachment handling, preview engines, document renderers, shared libraries, and integrations that tend to coexist on the same system.
+
+Instead of targeting a single application, the attack surface starts to resemble the business footprint itself, the collection of tools people rely on every day.
+
+When vulnerabilities appear in that footprint, they attract more attention because they fit naturally into how people already work.
+
+Quiet signals and small leaks
+
+Another part of the story is information people do not realize they share.
+
+Documents often contain metadata. PDFs reference the engine that produced them. Spreadsheets carry formatting behavior tied to specific suites. Email headers expose client details. Browser traffic advertises user agents. File structures reveal habits and versions.
+
+A single attachment, email, or shared document can quietly describe parts of the software stack behind it.
+
+In isolation it does not look sensitive. Often it is not even visible. Over time it builds a picture of what tools are common, what standards they follow, and how files are processed.
+
+What created it, what version, how recently, so when old software details show in current workflows, the software processing it is old. And old software often means years of exploit potential bottled up in one package. That is often what turns speculation into precision.
+
+Those breadcrumbs help attackers shape payloads that align with what exists on the other side, increasing effectiveness while reducing noisy experimentation.
+
+Why third-party software drifts
+
+Most enterprises put real effort into operating system patching. Update pipelines are understood. Browsers update often. Mobile devices follow management policies. Systems start with baselines and are monitored.
+
+Third-party utilities live differently.
+
+Vendors ship different installers. Some auto-update. Some rely on users. Some get disabled by packaging systems. Some stay frozen because workflows depend on a version.
+
+Over time, multiple builds of the same tool spread across endpoints. Some become stale. Some live for years with known vulnerabilities simply because they fell off the radar.
+
+In Action1’s analysis of enterprise environments, it is common to find multiple versions of the same third-party application coexisting, some lagging years behind current security fixes. This fragmentation quietly accumulates exploit potential without triggering obvious alerts.
+
+From a security view, that drift matters because attackers do not need new exploits. They benefit from whatever version still exists somewhere in the footprint. A five-year-old PDF reader quietly carries five years of cumulative exploit potential.
+
+What feels like small technical debt widens the opportunity window for major exploitation.
+
+Trust and everyday behavior
+
+There is also a human side to these tools.
+
+Email, documents, browsers, and archives feel like infrastructure. People trust them like desks and keyboards. Opening a PDF does not feel like running code. Previewing an email does not feel like execution. Extracting a file feels routine.
+
+By the time behavior looks unusual, the initial interaction already happened in a place people rarely question. These actions occur thousands of times a day, which makes tracing a compromise back to a document, email, or user extremely difficult.
+
+Looking at the footprint, not just the platform
+
+For leadership teams, the value here is perspective, not fear.
+
+Security strategies often start with the platform layer, operating systems, networks, identity, cloud infrastructure. Those matter, but they do not tell the full story of how work actually happens.
+
+Work happens in email clients, spreadsheets, PDFs, browsers, archive tools, and remote sessions. That is where files open, previews render, links get clicked, and data moves between people.
+
+That makes them predictable.
+
+That is why third-party patching often carries more risk weight than expected. The operating system may be tightly managed, while the tools on top quietly define real exposure.
+
+Looking at the footprint is less about assuming weakness and more about understanding where everyday work intersects with real security concerns.
+
+A quieter way to think about patching
+
+Third-party patching often feels operational rather than strategic. Yet these utilities sit at the intersection of people, files, and execution.
+
+They are ordinary, and that is exactly why they matter.
+
+Not because every organization looks the same, but because they look similar enough that attackers design around that similarity.
+
+When teams examine environments, the focus is usually infrastructure. There is also value in asking what the standard business suite looks like across endpoints, how it evolves, and how consistently it stays current.
+
+Which tools are actually needed? Which are simply part of a default deploy? Which stay installed even when unused? Which stop getting updated because nobody notices them?
+
+This is why, in practice, teams working with platforms like Action1 consistently see third-party patching deliver a greater reduction in real-world risk than many more visible security controls. Exploitation rarely hinges on a single overlooked vulnerability. It is enabled by years of accumulated drift across third-party applications that quietly fall out of date while remaining embedded in everyday workflows.
+
+Those conditions exist long before an exploit is written or deployed. They shape the practical attack surface by defining which software actually executes, which files get opened, and which actions feel routine enough to avoid scrutiny.
+
+Third-party software is not adjacent to the platform — it is part of how the platform operates, and it is often where exposure concentrates when everything else appears well-managed.
+
+Action1is a founder-led company, brought to you by the original minds behind Netwrix. At the time of this writing, it is one of the fastest-growing private software companies in the US because organizations are recognizing that OS and third-party patching can no longer be treated as a secondary task.
+
+Addressing modern risk requires continuous visibility into third-party software and the ability to remediate vulnerable applications across endpoints quickly and consistently. When teams evaluate modern patch management solutions, Action1 increasingly represents the option designed around that reality.
+
+Try Action1 for free and see how effective patch management can transform your team’s security posture.
+
+Sponsored and written by Action1.
+
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/third-party-patching-and-the-business-footprint-we-all-share/, bleepingcomputer.com, 27.02.2026)
+
+================================================================================
+
+[12] BleepingComputer - Ukrainian man pleads guilty to running AI-powered fake ID site
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 07:30:07 -0500
 Link: https://www.bleepingcomputer.com/news/security/ukrainian-man-pleads-guilty-to-running-ai-powered-fake-id-site/
@@ -765,7 +1027,7 @@ Google says hackers are abusing Gemini AI for all attacks stages
 
 ================================================================================
 
-[10] BleepingComputer - Previously harmless Google API keys now expose Gemini AI data
+[13] BleepingComputer - Previously harmless Google API keys now expose Gemini AI data
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 15:55:29 -0500
 Link: https://www.bleepingcomputer.com/news/security/previously-harmless-google-api-keys-now-expose-gemini-ai-data/
@@ -829,7 +1091,7 @@ Google plans to make Chrome for Android an agentic browser with Gemini
 
 ================================================================================
 
-[11] BleepingComputer - Trend Micro warns of critical Apex One code execution flaws
+[14] BleepingComputer - Trend Micro warns of critical Apex One code execution flaws
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 12:58:28 -0500
 Link: https://www.bleepingcomputer.com/news/security/trend-micro-warns-of-critical-apex-one-rce-vulnerabilities/
@@ -875,7 +1137,7 @@ One threat actor responsible for 83% of recent Ivanti RCE attacks
 
 ================================================================================
 
-[12] BleepingComputer - European DYI chain ManoMano data breach impacts 38 million customers
+[15] BleepingComputer - European DYI chain ManoMano data breach impacts 38 million customers
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 12:35:21 -0500
 Link: https://www.bleepingcomputer.com/news/security/european-dyi-chain-manomano-data-breach-impacts-38-million-customers/
@@ -931,7 +1193,7 @@ Odido data breach exposes personal info of 6.2 million customers
 
 ================================================================================
 
-[13] BleepingComputer - Critical Juniper Networks PTX flaw allows full router takeover
+[16] BleepingComputer - Critical Juniper Networks PTX flaw allows full router takeover
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 11:42:12 -0500
 Link: https://www.bleepingcomputer.com/news/security/critical-juniper-networks-ptx-flaw-allows-full-router-takeover/
@@ -985,7 +1247,7 @@ CISA gives feds 3 days to patch actively exploited BeyondTrust flaw
 
 ================================================================================
 
-[14] BleepingComputer - Olympique Marseille confirms 'attempted' cyberattack after data leak
+[17] BleepingComputer - Olympique Marseille confirms 'attempted' cyberattack after data leak
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 11:11:30 -0500
 Link: https://www.bleepingcomputer.com/news/security/olympique-marseille-football-club-confirms-cyberattack-after-data-leak/
@@ -1035,7 +1297,7 @@ Match Group breach exposes data from Hinge, Tinder, OkCupid, and Match
 
 ================================================================================
 
-[15] BleepingComputer - Ransomware payment rate drops to record low as attacks surge
+[18] BleepingComputer - Ransomware payment rate drops to record low as attacks surge
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 09:00:59 -0500
 Link: https://www.bleepingcomputer.com/news/security/ransomware-payment-rate-drops-to-record-low-as-attacks-surge/
@@ -1095,7 +1357,7 @@ Marquis sues SonicWall over backup breach that led to ransomware attack
 
 ================================================================================
 
-[16] BleepingComputer - Microsoft expands Windows restore to more enterprise devices
+[19] BleepingComputer - Microsoft expands Windows restore to more enterprise devices
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 08:04:02 -0500
 Link: https://www.bleepingcomputer.com/news/security/microsoft-expands-windows-restore-to-more-enterprise-devices/
@@ -1143,7 +1405,83 @@ Microsoft rolls out native Sysmon monitoring in Windows 11
 
 ================================================================================
 
-[17] Security Affairs - Juniper issues emergency patch for critical PTX router RCE
+[20] BleepingComputer - New York sues Valve for promoting illegal gambling via game loot boxes
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 26 Feb 2026 06:44:50 -0500
+Link: https://www.bleepingcomputer.com/news/gaming/new-york-sues-valve-for-promoting-illegal-gambling-via-game-loot-boxes/
+
+[TAM METİN - 521 kelime]
+New York Attorney General Letitia James sued video game developer and publisher Valve Corporation for using game loot boxes to facilitate illegal gambling activities among children and teenagers.
+
+Valve operates Steam, one of the largest digital game distribution services in the world, offering access to thousands of games for millions of users worldwide. At the time this article was published, Steam was reporting over 29 million players online, with nearly 7.5 million playing a game.
+
+Attorney General James said the gaming giant is violating the state's gambling laws by offering players the opportunity to win random virtual prizes that can be exchanged for real money, in a process described as being similar to a slot machine.
+
+"Illegal gambling can be harmful and lead to serious addiction problems, especially for our young people," said James. "Valve has made billions of dollars by letting children and adults alike illegally gamble for the chance to win valuable virtual prizes. These features are addictive, harmful, and illegal, and my office is suing to stop Valve's illegal conduct and protect New Yorkers."
+
+The lawsuit targets loot boxes in Counter-Strike 2, Team Fortress 2, and Dota 2 that award players with random items, such as weapon skins or character accessories. However, the odds of winning rare items are allegedly deliberately skewed by Valve to make them far more valuable, leading the total value of market items to balloon to an estimated $4.3 billion as of March 2025, according to Attorney General James.
+
+Some individual items (such as AK-47 skins) have even fetched prices of over $1 million, making Steam accounts a frequent target for hackers and scammers.
+
+The lawsuit also highlights the potential harm to children, as they may be drawn into loot box purchases to win rare items and boost social status within gaming communities. "Children who are introduced to gambling are four times more likely to develop a gambling problem later in life than those who are not," according to research cited in the Wednesday press release.
+
+Attorney General James has asked the court to permanently bar Valve from operating loot box features in the state, to require the company to return all profits generated by the practice, and to impose fines for the alleged violations.
+
+In January 2025, Genshin Impact developer Cognosphere (aka Hoyoverse) agreed to pay $20 million to settle a U.S. Federal Trade Commission (FTC) lawsuit over unfair marketing of loot boxes to minors, obscuring the actual costs. andmisleading the players about the odds of winning prizes.
+
+BleepingComputer reached out to a Valve spokesperson for comment, but a response was not immediately available.
+
+The future of IT infrastructure is here
+
+Modern IT infrastructure moves faster than manual workflows can handle.
+
+In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
+
+Marquis sues SonicWall over backup breach that led to ransomware attack
+
+Texas sues TP-Link over Chinese hacking risks, user deception
+
+Men charged in FanDuel scheme fueled by thousands of stolen identities
+
+'Bad actor' hijacks Apex Legends characters in live matches
+
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/gaming/new-york-sues-valve-for-promoting-illegal-gambling-via-game-loot-boxes/, bleepingcomputer.com, 26.02.2026)
+
+================================================================================
+
+[21] Security Affairs - iPhone and iPad are the first consumer devices cleared for NATO ‘RESTRICTED’ classification
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 27 Feb 2026 12:30:55 +0000
+Link: https://securityaffairs.com/188618/security/iphone-and-ipad-are-the-first-consumer-devices-cleared-for-natos-restricted-classification.html
+
+[TAM METİN - 302 kelime]
+iPhone and iPad are the first consumer devices cleared for NATO ‘RESTRICTED’ classification
+
+Apple’s iPhone and iPad are now NATO-approved for classified use, listed in the alliance’s Information Assurance Product Catalogue.
+
+Apple announced that its iPhone and iPad have received NATO approval to handle classified information. The devices are now officially listed in the NATO Information Assurance Product Catalogue (NIAPC), allowing military personnel to use them securely for sensitive communications and operations.
+
+Devices listed in the NATO Information Assurance Product Catalogue (NIAPC) are commercial security products built in NATO member states, designed to protect NATO or national classified information. They meet strict information security standards, undergo NATO or national vetting, hold recognized certifications like Common Criteria or INFOSEC approvals, and receive explicit approval for handling classified data, often up to levels such as NATO Restricted or NATO Secret.
+
+iPhone and iPad are the first consumer devices cleared for NATO’s ‘RESTRICTED’ classification.
+
+“iPhone and iPad with indigo configuration provide secure access to Mail, Calendar, and Contacts data using apps built for iPhone and iPad.” reads the announcement. “iOS 26 and iPadOS 26 with indigo configuration is approved for iPhone and iPad up to NATO RESTRICTED. Indigo doesn’t require any special additional software or settings beyond managing and supervising devices using a device management service.”
+
+Apple iNDIGO (iOS Native Devices in Government Operation) is a hardened, government-specific configuration for iOS and iPadOS devices, approved by Germany’s BSI for classified info like VS-NfD (German Secret).
+
+Apple confirmed that the NIAPC “indigo configuration” is just a naming by the German BSI and that standard iPhone and iPad setups received NATO approval.
+
+Apple devices use Touch ID and Face ID for fast, secure access, offer Memory Integrity Enforcement on A19/M5 chips, and support VPNs..
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(SecurityAffairs – hacking, iPhone)
+
+(XXXXXXX, AÇIK - https://securityaffairs.com/188618/security/iphone-and-ipad-are-the-first-consumer-devices-cleared-for-natos-restricted-classification.html, securityaffairs.com, 27.02.2026)
+
+================================================================================
+
+[22] Security Affairs - Juniper issues emergency patch for critical PTX router RCE
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 11:40:46 +0000
 Link: https://securityaffairs.com/188609/security/juniper-issues-emergency-patch-for-critical-ptx-router-rce.html
@@ -1177,7 +1515,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[18] Security Affairs - How AI Aids Incident Response: Why Humans Alone Cannot Do IR Efficiently
+[23] Security Affairs - How AI Aids Incident Response: Why Humans Alone Cannot Do IR Efficiently
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 08:50:53 +0000
 Link: https://securityaffairs.com/188599/ai/how-ai-aids-incident-response-why-humans-alone-cannot-do-ir-efficiently.html
@@ -1339,7 +1677,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[19] Security Affairs - 12 Million exposed .env files reveal widespread security failures
+[24] Security Affairs - 12 Million exposed .env files reveal widespread security failures
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 08:02:51 +0000
 Link: https://securityaffairs.com/188590/hacking/12-million-exposed-env-files-reveal-widespread-security-failures.html
@@ -1381,7 +1719,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[20] Security Affairs - ManoMano data breach impacted 38 Million customer accounts
+[25] Security Affairs - ManoMano data breach impacted 38 Million customer accounts
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 07:41:50 +0000
 Link: https://securityaffairs.com/188582/data-breach/manomano-data-breach-impacted-38-million-customer-accounts.html
@@ -1425,7 +1763,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[21] Security Affairs - Trend Micro fixes two critical flaws in Apex One
+[26] Security Affairs - Trend Micro fixes two critical flaws in Apex One
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 21:35:51 +0000
 Link: https://securityaffairs.com/188572/security/trend-micro-fixes-two-critical-flaws-in-apex-one.html
@@ -1463,7 +1801,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[22] Security Affairs - UAT-10027 campaign hits U.S. education and healthcare with stealthy Dohdoor backdoor
+[27] Security Affairs - UAT-10027 campaign hits U.S. education and healthcare with stealthy Dohdoor backdoor
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 19:10:34 +0000
 Link: https://securityaffairs.com/188558/apt/uat-10027-campaign-hits-u-s-education-and-healthcare-with-stealthy-dohdoor-backdoor.html
@@ -1505,7 +1843,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[23] Security Affairs - U.S. CISA adds Cisco SD-WAN flaws to its Known Exploited Vulnerabilities catalog
+[28] Security Affairs - U.S. CISA adds Cisco SD-WAN flaws to its Known Exploited Vulnerabilities catalog
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 15:04:20 +0000
 Link: https://securityaffairs.com/188548/hacking/u-s-cisa-adds-cisco-sd-wan-flaws-to-its-known-exploited-vulnerabilities-catalog.html
@@ -1563,7 +1901,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[24] Security Affairs - Hackers abused Cisco SD-WAN zero-day since 2023 to gain full admin control
+[29] Security Affairs - Hackers abused Cisco SD-WAN zero-day since 2023 to gain full admin control
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 11:40:33 +0000
 Link: https://securityaffairs.com/188540/security/hackers-abused-cisco-sd-wan-zero-day-since-2023-to-gain-full-admin-control.html
@@ -1607,7 +1945,55 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[25] Graham Cluley - Your staff are your biggest security risk: AI is making it worse
+[30] Security Affairs - Google GTIG disrupted China-linked APT UNC2814 halting attacks on 53 orgs in 42 countries
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 26 Feb 2026 08:29:03 +0000
+Link: https://securityaffairs.com/188521/apt/google-gtig-disrupted-china-linked-apt-unc2814-halting-attacks-on-53-orgs-in-42-countries.html
+
+[TAM METİN - 766 kelime]
+Google GTIG disrupted China-linked APT UNC2814 halting attacks on 53 orgs in 42 countries
+
+Google and partners disrupted UNC2814, a suspected China-linked group that hacked 53 organizations across 42 countries.
+
+Google, with industry partners, disrupted the infrastructure of UNC2814, a suspected China-linked cyber espionage group that breached at least 53 organizations in 42 countries. The group has been active since at least 2017, and was spotted targeting governments and global telecoms across Africa, Asia, and the Americas, making it a highly prolific and elusive threat. UNC2814 is likely linked to additional infections in more than 20 other nations.
+
+“Last week, Google Threat Intelligence Group (GTIG), Mandiant, and partners took action to disrupt a global espionage campaign targeting telecommunications and government organizations in dozens of nations across four continents.” reads the GTIG’s report. “The threat actor, UNC2814, is a suspected People’s Republic of China (PRC)-nexus cyber espionage group that GTIG has tracked since 2017. “
+
+UNC2814 used API calls to SaaS apps as command-and-control (C2) infrastructure, disguising malicious traffic as legitimate activity. Rather than exploiting product flaws, the group leveraged legitimate Google Sheets API functions through a novel backdoor called GRIDTIDE.
+
+The group’s operations target different victims than other campaigns, such as “Salt Typhoon,” using unique techniques and TTPs.
+
+Mandiant, using Google SecOps, detected suspicious activity on a CentOS server where the binary /var/tmp/xapt launched a root shell and ran id to confirm root access, showing the attacker had escalated privileges. The researchers reported that the payload mimicked a legacy Debian tool to avoid detection.
+
+Post-compromise, the actor moved laterally via SSH, used living-off-the-land binaries for reconnaissance, and installed the GRIDTIDE backdoor for persistence via a systemd service. Attackers executed GRIDTIDE with nohup ./xapt to keep it running after session closure, and deployed SoftEther VPN Bridge to create an encrypted outbound connection.
+
+UNC2814 targeted endpoints containing personally identifiable information (names, phone numbers, dates of birth, and national IDs) consistent with telecom-focused cyber espionage. While no direct exfiltration was observed, UNC2814 could leverage such access to monitor communications, including call records and SMS messages, for surveillance and intelligence-gathering purposes.
+
+GRIDTIDE is a sophisticated C-based backdoor used by UNC2814 that can execute shell commands, upload and download files. The malware uses Google Sheets as a command-and-control (C2) channel, hiding malicious traffic within legitimate API requests. While it currently uses Google Sheets, other cloud-based spreadsheet platforms could be exploited in a similar way.
+
+The backdoor requires a 16-byte cryptographic key on the host to decrypt its Google Drive configuration, which contains service account credentials, spreadsheet IDs, and private keys.
+
+“When executed, GRIDTIDE sanitizes its Google Sheet. It does this by deleting the first 1000 rows, across columns A to Z in the spreadsheet, by using the Google Sheets API batchClear method. This prevents previous commands or file data stored in the Sheet from interfering with the threat actor’s current session.” continues the report. “Once the Sheet is prepared, the backdoor conducts host-based reconnaissance. It fingerprints the endpoint by collecting the victim’s username, endpoint name, OS details, local IP address, and environmental data such as the current working directory, language settings, and local time zone.”
+
+Commands from the attacker follow a structured syntax, allowing execution of Bash commands, file uploads, and downloads, with status responses returned to cell A1. Data transfer occurs via cells A2 to An, and the malware uses URL-safe Base64 encoding to evade detection.
+
+UNC2814 has leveraged GRIDTIDE since at least 2017 to target telecommunications and government organizations worldwide.
+
+Google Threat Intelligence Group (GTIG) and its partners terminated all attacker-controlled Google Cloud Projects and accounts, disabled the UNC2814 infrastructure, and revoked access to Google Sheets API calls.
+
+GTIG took coordinated action to disrupt UNC2814 and protect affected organizations. They terminated all attacker-controlled Cloud Projects, disabling GRIDTIDE backdoor access, and took down known UNC2814 infrastructure, including current and historical domains. Attacker accounts and Google Sheets access were revoked, and victim organizations were formally notified and supported. GTIG also refined detection signatures to block GRIDTIDE activity and released indicators of compromise (IOCs) used by UNC2814 since 2023, helping organizations worldwide identify and defend against this threat.
+
+“The global scope of UNC2814’s activity, evidenced by confirmed or suspected operations in over 70 countries, underscores the serious threat facing telecommunications and government sectors, and the capacity for these intrusions to evade detection by defenders.” concludes the report. “Prolific intrusions of this scale are generally the result of years of focused effort and will not be easily re-established. We expect that UNC2814 will work hard to re-establish their global footprint.”
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(SecurityAffairs – hacking, China)
+
+(XXXXXXX, AÇIK - https://securityaffairs.com/188521/apt/google-gtig-disrupted-china-linked-apt-unc2814-halting-attacks-on-53-orgs-in-42-countries.html, securityaffairs.com, 26.02.2026)
+
+================================================================================
+
+[31] Graham Cluley - Your staff are your biggest security risk: AI is making it worse
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 21:21:23 +0000
 Link: https://www.fortra.com/blog/your-staff-are-your-biggest-security-risk-ai-making-it-worse
@@ -1618,7 +2004,7 @@ Link: https://www.fortra.com/blog/your-staff-are-your-biggest-security-risk-ai-m
 
 ================================================================================
 
-[26] Graham Cluley - Notorious ransomware gang allegedly blackmailed by fake FSB officer
+[32] Graham Cluley - Notorious ransomware gang allegedly blackmailed by fake FSB officer
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 13:40:32 +0000
 Link: https://www.bitdefender.com/en-us/blog/hotforsecurity/ransomware-gang-blackmailed-fake-fsb-officer
@@ -1654,7 +2040,7 @@ Conti's victims paid a heavy price for the gang's activities. It is, at least, m
 
 ================================================================================
 
-[27] Graham Cluley - Smashing Security podcast #456: How to lose friends and DDoS people
+[33] Graham Cluley - Smashing Security podcast #456: How to lose friends and DDoS people
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 00:16:49 +0000
 Link: https://grahamcluley.com/smashing-security-podcast-456/
@@ -1764,7 +2150,7 @@ Follow him on LinkedIn, Bluesky and Mastodon, or drop him an email.
 
 ================================================================================
 
-[28] SANS ISC - Fake Fedex Email Delivers Donuts&#x21;, (Fri, Feb 27th)
+[34] SANS ISC - Fake Fedex Email Delivers Donuts&#x21;, (Fri, Feb 27th)
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 12:22:12 GMT
 Link: https://isc.sans.edu/diary/rss/32754
@@ -1812,7 +2198,7 @@ PGP Key
 
 ================================================================================
 
-[29] SANS ISC - ISC Stormcast For Friday, February 27th, 2026 https://isc.sans.edu/podcastdetail/9828, (Fri, Feb 27th)
+[35] SANS ISC - ISC Stormcast For Friday, February 27th, 2026 https://isc.sans.edu/podcastdetail/9828, (Fri, Feb 27th)
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 02:00:02 GMT
 Link: https://isc.sans.edu/diary/rss/32752
@@ -1823,7 +2209,7 @@ Link: https://isc.sans.edu/diary/rss/32752
 
 ================================================================================
 
-[30] SANS ISC - Finding Signal in the Noise: Lessons Learned Running a Honeypot with AI Assistance &#x5b;Guest Diary&#x5d;, (Tue, Feb 24th)
+[36] SANS ISC - Finding Signal in the Noise: Lessons Learned Running a Honeypot with AI Assistance &#x5b;Guest Diary&#x5d;, (Tue, Feb 24th)
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 12:21:37 GMT
 Link: https://isc.sans.edu/diary/rss/32744
@@ -1879,7 +2265,7 @@ gbruneau at isc dot sans dot edu
 
 ================================================================================
 
-[31] SANS ISC - The CLAIR Model: A Synthesized Conceptual Framework for Mapping Critical Infrastructure Interdependencies &#x5b;Guest Diary&#x5d;, (Wed, Feb 25th)
+[37] SANS ISC - The CLAIR Model: A Synthesized Conceptual Framework for Mapping Critical Infrastructure Interdependencies &#x5b;Guest Diary&#x5d;, (Wed, Feb 25th)
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 12:21:26 GMT
 Link: https://isc.sans.edu/diary/rss/32748
@@ -2037,7 +2423,7 @@ Souppaya, M., & Scarfone, K. (2022). Guide to enterprise patch management planni
 
 ================================================================================
 
-[32] SANS ISC - ISC Stormcast For Thursday, February 26th, 2026 https://isc.sans.edu/podcastdetail/9826, (Thu, Feb 26th)
+[38] SANS ISC - ISC Stormcast For Thursday, February 26th, 2026 https://isc.sans.edu/podcastdetail/9826, (Thu, Feb 26th)
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 02:00:03 GMT
 Link: https://isc.sans.edu/diary/rss/32750
@@ -2048,7 +2434,7 @@ Link: https://isc.sans.edu/diary/rss/32750
 
 ================================================================================
 
-[33] Recorded Future - Recorded Future Expands Coverage of Scams and Financial Fraud with Money Mule Intelligence from CYBERA
+[39] Recorded Future - Recorded Future Expands Coverage of Scams and Financial Fraud with Money Mule Intelligence from CYBERA
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 00:00:00 GMT
 Link: https://www.recordedfuture.com/blog/recorded-future-money-mule-intelligence-cybera
@@ -2102,7 +2488,7 @@ PFI users that purchase this capability, can now act on both sides of the transa
 
 ================================================================================
 
-[34] Cyberscoop - Gottumukkala out, Andersen in as acting CISA director
+[40] Cyberscoop - Gottumukkala out, Andersen in as acting CISA director
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 02:21:08 +0000
 Link: https://cyberscoop.com/cisa-leadership-change-madhu-gottumukkala-nick-andersen/
@@ -2164,7 +2550,7 @@ Governments issue warning over Cisco zero-day attacks dating back to 2023
 
 ================================================================================
 
-[35] Cyberscoop - Project Compass is Europol’s new playbook for taking on The Com
+[41] Cyberscoop - Project Compass is Europol’s new playbook for taking on The Com
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 21:21:14 +0000
 Link: https://cyberscoop.com/project-compass-the-com-europol/
@@ -2270,7 +2656,7 @@ Gottumukkala out, Andersen in as acting CISA director
 
 ================================================================================
 
-[36] Cyberscoop - Senate moves one step closer to passing health care cyber reforms 
+[42] Cyberscoop - Senate moves one step closer to passing health care cyber reforms 
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 20:36:36 +0000
 Link: https://cyberscoop.com/senate-passes-health-care-cyber-reforms-cassidy/
@@ -2356,7 +2742,7 @@ Gottumukkala out, Andersen in as acting CISA director
 
 ================================================================================
 
-[37] Cyberscoop - Governments issue warning over Cisco zero-day attacks dating back to 2023
+[43] Cyberscoop - Governments issue warning over Cisco zero-day attacks dating back to 2023
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 25 Feb 2026 23:51:42 +0000
 Link: https://cyberscoop.com/cisco-zero-days-cisa-emergency-directive-five-eyes/
@@ -2458,7 +2844,75 @@ Senate moves one step closer to passing health care cyber reforms
 
 ================================================================================
 
-[38] The Register - Scattered Lapsus$ Hunters auditioning female voices to sharpen social engineering
+[44] The Register - Cops back Dutch telco Odido after second wave of ShinyHunters leaks
+────────────────────────────────────────────────────────────────────────────────
+Tarih: 2026-02-27T13:54:12.00Z
+Link: https://go.theregister.com/feed/www.theregister.com/2026/02/27/odido_shinyhunters_leaks/
+
+[TAM METİN - 604 kelime]
+Cops back Dutch telco Odido after second wave of ShinyHunters leaks
+
+Company refuses to pay ransom as attackers threaten larger daily dumps
+
+The Netherlands' national police is backing Odido's refusal to pay a ransom after ShinyHunters leaked a second round of records belonging to the telco.
+
+In the early hours of Friday morning, the cybercriminals behind ShinyHunters leaked 1 million Odido records for the second day in a row.
+
+According to Have I Been Pwned, which is ingesting the data from each day's leaks, the first million contained 317,000 unique email addresses, while the second round consisted of 371,000.
+
+Details associated with those accounts include bank account numbers, other basic personal information, passport numbers, driving licenses, and customer service comments.
+
+ShinyHunters' website indicates that it is once again gearing up for a third round of leaks on February 28. If this round is of a similar scale, it would push the total number of affected accounts past 1 million.
+
+After the third round, the cybercrime group promised to begin leaking 2 million records a day. It claims to have stolen around 21 million in total.
+
+Odido first confirmed the scale of the data leak weeks ago, saying 6.2 million customers were affected by the attack. The company's website is currently not reachable at the time of writing, although the website for subsidiary Ben, whose customers were also caught up in the data theft, is still working.
+
+The telco has also confirmed that it will not be paying a ransom, an unknown sum that ShinyHunters is demanding to stop the flow of leaked information into the public domain.
+
+The Netherlands' national police (Politie) has reissued an alert advising organizations in similar positions to avoid paying ransoms, just like Odido.
+
+"Our advice to ransomware victims is: don't pay if criminals demand a ransom," said Stan Duijf, head of operations responsible for combating cybercrime at the Politie. "After all, if they are paid, their business model remains viable.
+
+Wynn Resorts takes attacker's word for it that stolen staff data was deleted
+
+ShinyHunters demands $1.5M not to leak Vegas casino and resort chain data
+
+Adidas investigates third-party data breach after criminals claim they pwned the sportswear giant
+
+ShinyHunters claims it drove off with 1.7M CarGurus records
+
+"The ultimate decision is up to the victim, but you can't assume your data is safe if you pay. We know from research that criminals don't always delete the data, and may resell it or demand more money. If companies are hacked, it's crucial that they contact the police as soon as possible, so that together we can limit the damage and secure the evidence."
+
+The Politie said Odido was fully complying with its investigation into the attack, and agreed with the company's advice to remain vigilant to potential targeted phishing attacks, given the volume of data stolen.
+
+The Register requested more information from Odido.
+
+The last public statement made by the telco, penned by Søren Abildgaard, CEO at Odido Netherlands, and updated on February 26, said: "Our focus has always been on our customers, and that will remain so.
+
+"On the advice of leading cybersecurity advisors and relevant government agencies, such as the police, Odido has decided not to negotiate with these criminals or allow themselves to be blackmailed by them.
+
+"We remain committed to supporting and protecting our customers and employees in the best possible way."
+
+Customers are being offered a 24-month subscription to F-Secure's digital security package, which provides protection for devices against malware, phishing, and other threats. ®
+
+Emergency Services Network
+
+National Broadband Network
+
+Telecommunications Act of 1996
+
+Emergency Services Network
+
+National Broadband Network
+
+Telecommunications Act of 1996
+
+(XXXXXXX, AÇIK - https://go.theregister.com/feed/www.theregister.com/2026/02/27/odido_shinyhunters_leaks/, go.theregister.com, 27.02.2026)
+
+================================================================================
+
+[45] The Register - Scattered Lapsus$ Hunters auditioning female voices to sharpen social engineering
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: 2026-02-26T12:35:21.00Z
 Link: https://go.theregister.com/feed/www.theregister.com/2026/02/26/scattered_lapsus_hunters_female_recruits/
@@ -2504,7 +2958,7 @@ When The Register asked SLSH about how many people had taken up its offer after 
 
 ================================================================================
 
-[39] TechCrunch Security - Cisco says hackers have been exploiting a critical bug to break into big customer networks since 2023
+[46] TechCrunch Security - Cisco says hackers have been exploiting a critical bug to break into big customer networks since 2023
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 16:03:36 +0000
 Link: https://techcrunch.com/2026/02/26/cisco-says-hackers-have-been-exploiting-a-critical-bug-to-break-into-big-customer-networks-since-2023/
@@ -2604,7 +3058,7 @@ Google VP warns that two types of AI startups may not survive
 
 ================================================================================
 
-[40] TechCrunch Security - Spyware makers sentenced to prison in Greece for wiretapping politicians and journalists
+[47] TechCrunch Security - Spyware makers sentenced to prison in Greece for wiretapping politicians and journalists
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 15:45:15 +0000
 Link: https://techcrunch.com/2026/02/26/spyware-maker-sentenced-to-prison-in-greece-for-wiretapping-politicians-and-journalists/
@@ -2654,7 +3108,7 @@ Cisco says hackers have been exploiting a critical bug to break into big custome
 Zack Whittaker
 
 
- 21 hours ago
+ 23 hours ago
 
 Cisco says hackers have been exploiting a critical bug to break into big customer networks since 2023
 
@@ -2698,7 +3152,7 @@ Cisco says hackers have been exploiting a critical bug to break into big custome
 Zack Whittaker
 
 
- 21 hours ago
+ 23 hours ago
 
 Cisco says hackers have been exploiting a critical bug to break into big customer networks since 2023
 
@@ -2714,7 +3168,7 @@ Spyware makers sentenced to prison in Greece for wiretapping politicians and jou
 Lorenzo Franceschi-Bicchierai
 
 
- 21 hours ago
+ 23 hours ago
 
 Spyware makers sentenced to prison in Greece for wiretapping politicians and journalists
 
@@ -2738,12 +3192,46 @@ US cybersecurity agency CISA reportedly in dire shape amid Trump cuts and layoff
 
 ================================================================================
 
-[41] CSO Online - Your personal OpenClaw agent may also be taking orders from malicious websites
+[48] CSO Online - One of the ‘most influential cybersecurity’ roles will pay under $175,000
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 27 Feb 2026 13:32:02 +0000
+Link: https://www.csoonline.com/article/4138526/one-of-the-most-influential-cybersecurity-roles-will-pay-under-175000.html
+
+[TAM METİN - 351 kelime]
+Would you be willing to take responsibility for protecting national IT security for that little?
+
+A recent job ad  is causing plenty of head-shaking, suggesting that some government high-ups  appear to be out of touch with the current state of the cybersecurity job market.
+
+There is plenty of evidence that the world needs cybersecurity talent. According to a recent ISC2 survey, 33% of organizations cannot staff their security teams adequately
+
+The result of this shortage is that these professionals are handsomely rewarded — but no-one appears to have told the UK government.
+
+Government Communications Headquarters (GCHQ, the UK equivalent of the US’s National Security Agency, or NSA), has just advertised for a chief information security officer. The role, which the ad describes as “one of the most influential cyber security leadership roles in the UK,” offers a maximum salary of £130,000 (about $175,000) — and none of the stock options or other inducements common in industry.
+
+Successful candidates will have “expertise in securing cloud environments and emerging technologies within digital transformation programmes, alongside a strong understanding of regulatory compliance frameworks such as NIST, ISO 27001, GDPR and GovS 007. Professional certifications such as CISSP, CISM or CCISO are highly desirable,” the ad said.
+
+The job ad stresses the importance of the role. “As CISO, you will work with colleagues to set and implement the organisation’s cyber and information security strategy, striking the right balance between capability, acceptable risk and technological progress. You will integrate security governance into a complex set of cross-agency organisational decision-making forums ensuring that information risks are managed effectively.”
+
+It’s a daunting set of responsibility for a senior professional working for an organization responsible for keeping an entire nation safe from cybercriminals and hostile powers, while pulling in a salary roughly equivalent to the salary of a security architect at a mid-level US company.
+
+Microsoft handed over BitLocker keys to law enforcement, raising enterprise data control concerns
+
+EU reviews cybersecurity to limit danger from high-risk suppliers
+
+Cybersecurity at the state and local level: Washington has the framework, it’s time to act
+
+From our editors straight to your inbox
+
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4138526/one-of-the-most-influential-cybersecurity-roles-will-pay-under-175000.html, csoonline.com, 27.02.2026)
+
+================================================================================
+
+[49] CSO Online - Your personal OpenClaw agent may also be taking orders from malicious websites
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 11:57:20 +0000
 Link: https://www.csoonline.com/article/4138431/your-personal-openclaw-agent-may-also-be-taking-orders-from-malicious-websites.html
 
-[TAM METİN - 686 kelime]
+[TAM METİN - 684 kelime]
 A critical OpenClaw flaw allowed malicious websites to connect to locally running agents, brute-force passwords without limits, and take full control by exploiting implicit trust in localhost connections.
 
 If you thought running an AI agent locally kept it safely inside your machine’s walls, you’re in for a surprise. Researchers at Oasis Security have disclosed a flaw chain that allowed a malicious website to quietly connect to a locally running OpenClaw agent and take full control.
@@ -2776,11 +3264,11 @@ Barr emphasized that autonomous systems “aggregate identity, credentials, and 
 
 Soroko described the browser itself as the unexpected attack vector, effectively bypassing the developer’s physical perimeter and “turning a simple background tab into an effective lock-pick.” Oasis noted that the OpenClaw team responded quickly, coordinating disclosure and issuing a fix (OpenClaw v2026.2.25 or later) within 24 hours. However, experts caution that rapid patching alone may not address the broader architectural risks. Organizations deploying AI agents should implement stronger authentication, explicit user approval for session pairing, rate limiting, credential scoping, and behavioral monitoring, they noted.
 
+One of the ‘most influential cybersecurity’ roles will pay under $175,000
+
 US authorities punish sellers of malware and spyware
 
 Why application security must start at the load balancer
-
-How to make LLMs a defensive advantage without creating a new attack surface
 
 From our editors straight to your inbox
 
@@ -2788,7 +3276,7 @@ From our editors straight to your inbox
 
 ================================================================================
 
-[42] CSO Online - US authorities punish sellers of malware and spyware
+[50] CSO Online - US authorities punish sellers of malware and spyware
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 11:35:29 +0000
 Link: https://www.csoonline.com/article/4138422/us-authorities-punish-sellers-of-malware-and-spyware.html
@@ -2822,12 +3310,12 @@ From our editors straight to your inbox
 
 ================================================================================
 
-[43] CSO Online - Why application security must start at the load balancer
+[51] CSO Online - Why application security must start at the load balancer
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 11:00:00 +0000
 Link: https://www.csoonline.com/article/4138000/why-application-security-must-start-at-the-load-balancer.html
 
-[TAM METİN - 1273 kelime]
+[TAM METİN - 1271 kelime]
 Most breaches don’t outsmart your stack; they walk through a permissive load balancer you tuned for speed instead of trust.
 
 For a long time, I thought of the load balancer as a performance device. Its job was to distribute traffic, improve uptime, and make applications feel fast. Security was something that happened elsewhere, on firewalls, inside WAFs or deep in the application code.
@@ -2940,11 +3428,11 @@ When the front door is strong, everything behind it becomes easier to secure, ea
 
 This article is published as part of the Foundry Expert Contributor Network.Want to join?
 
+One of the ‘most influential cybersecurity’ roles will pay under $175,000
+
 Your personal OpenClaw agent may also be taking orders from malicious websites
 
 US authorities punish sellers of malware and spyware
-
-How to make LLMs a defensive advantage without creating a new attack surface
 
 From our editors straight to your inbox
 
@@ -2952,7 +3440,7 @@ From our editors straight to your inbox
 
 ================================================================================
 
-[44] CSO Online - Enterprise Spotlight: Data Center Modernization
+[52] CSO Online - Enterprise Spotlight: Data Center Modernization
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 10:00:00 +0000
 Link: https://us.resources.csoonline.com/resources/form?placement_id=ee7073cd-e75d-46f6-96fa-38e469cf0e66&brand_id=32&locale_id=1
@@ -2974,7 +3462,7 @@ Artificial Intelligence, Data Center, Infrastructure Management
 
 ================================================================================
 
-[45] CSO Online - How to make LLMs a defensive advantage without creating a new attack surface
+[53] CSO Online - How to make LLMs a defensive advantage without creating a new attack surface
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 10:00:00 +0000
 Link: https://www.csoonline.com/article/4137983/how-to-make-llms-a-defensive-advantage-without-creating-a-new-attack-surface.html
@@ -3090,12 +3578,12 @@ From our editors straight to your inbox
 
 ================================================================================
 
-[46] CSO Online - The CSO guide to top security conferences
+[54] CSO Online - The CSO guide to top security conferences
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 07:30:00 +0000
 Link: https://www.csoonline.com/article/559539/the-cso-guide-to-top-security-conferences.html
 
-[TAM METİN - 433 kelime]
+[TAM METİN - 430 kelime]
 CSO Online’s calendar of upcoming security conferences makes it easy to find the events that matter the most to you.
 
 There is nothing like attending a face-to-face event for career networking and knowledge gathering, and we don’t have to tell you how helpful it can be to get a hands-on demo of a new tool or to have your questions answered by experts. Fortunately, plenty of great conferences are coming up in the months ahead. If keeping abreast of security trends and evolving threats is critical to your job — and we know it is — then attending some top-notch security conferences is on your must-do list for 2025.
@@ -3154,11 +3642,11 @@ SecureWorld Houston, Texas, US: 30 April
 
 CyberSecFest SP, São Paulo, Brazil: May TBC
 
+One of the ‘most influential cybersecurity’ roles will pay under $175,000
+
 5 trends that should top CISO’s RSA 2026 agendas
 
 It’s time to rethink CISO reporting lines
-
-From in-house CISO to consultant. What you need to know before making the leap
 
 From our editors straight to your inbox
 
@@ -3166,7 +3654,7 @@ From our editors straight to your inbox
 
 ================================================================================
 
-[47] CSO Online - Ransomware groups switch to stealthy attacks and long-term access
+[55] CSO Online - Ransomware groups switch to stealthy attacks and long-term access
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 07:00:00 +0000
 Link: https://www.csoonline.com/article/4137010/ransomware-groups-switch-to-stealthy-attacks-and-long-term-access.html
@@ -3242,7 +3730,7 @@ From our editors straight to your inbox
 
 ================================================================================
 
-[48] CSO Online - Hacker kompromittieren immer schneller
+[56] CSO Online - Hacker kompromittieren immer schneller
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 06:45:00 +0000
 Link: https://www.csoonline.com/article/4137880/hacker-kompromittieren-immer-schneller.html
@@ -3284,7 +3772,73 @@ Von unseren Redakteuren direkt in Ihren Posteingang
 
 ================================================================================
 
-[49] Infoblox Blog - Abusing .arpa: The TLD That Isn’t Supposed to Host Anything
+[57] CSO Online - China-linked hackers used Google Sheets to spy on telecoms and governments across 42 countries
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 26 Feb 2026 11:18:34 +0000
+Link: https://www.csoonline.com/article/4137834/china-linked-hackers-used-google-sheets-to-spy-on-telecoms-and-governments-across-42-countries.html
+
+[TAM METİN - 841 kelime]
+The GRIDTIDE backdoor concealed its traffic within routine spreadsheet activity for years before Google shut down the operation last week.
+
+Google has disrupted a China-linked espionage group that used Google’s spreadsheet application as a covert spy tool to compromise telecom providers and government agencies across 42 countries, sending commands and receiving stolen data through it, Google’s Threat Intelligence Group (GTIG) said on Thursday.
+
+Working with Mandiant, GTIG confirmed intrusions at 53 organizations across 42 countries, with suspected infections in at least 20 more. The group, identified by Google as UNC2814, is a suspected PRC-nexus actor that GTIG has tracked since 2017.
+
+“This prolific, elusive actor has a long history of targeting international governments and global telecommunications organizations across Africa, Asia, and the Americas,” GTIG said in a blog post.
+
+Unlike Salt Typhoon, UNC2814, the China-linked group whose intrusions into US telecom carriers drew scrutiny from Congress and federal regulators last year, operates with distinct tactics and targets a different set of victims globally, the post added.
+
+How UNC2814 gains its initial foothold has not been determined, though GTIG said the group has a history of exploiting and compromising web servers and edge systems. Once inside, it deployed a novel backdoor and maintained persistent access across target networks.
+
+A spreadsheet repurposed as a spy tool
+
+That backdoor, which GTIG named GRIDTIDE, did not communicate the way most malware does. “The backdoor leverages Google Sheets as a high-availability C2 platform, treating the spreadsheet not as a document, but as a communication channel to facilitate the transfer of raw data and shell commands,” GTIG said.
+
+The attackers wrote commands into spreadsheet cells and retrieved stolen data from them the same way. The malware polled the sheet every second for new instructions, wrote status updates back on task completion, and wiped the first 1,000 rows at the start of each session to erase traces of prior activity, the blog post explained.
+
+“This activity is not the result of a security vulnerability in Google’s products; rather, it abuses legitimate Google Sheets API functionality to disguise C2 traffic,” GTIG added.
+
+“The most unsettling detail about the GRIDTIDE backdoor is how it abuses legitimate Google Sheets API calls to function as its C2 channel, while still utilizing techniques like ‘living off the land’ to blend in with regular enterprise activities,” Andrew Costis, manager of the Adversary Research Team at AttackIQ, said. “This camouflage buys attackers time by slipping past the triggers defenders rely on, like obvious malware signatures or noisy beaconing, and hiding inside the same cloud app patterns teams are used to seeing.”
+
+How Mandiant found it
+
+The campaign came to light during a Mandiant Threat Defense investigation, when analysts flagged unusual activity on a CentOS server. A binary named xapt, designed to masquerade as the apt package manager on Debian-based Linux systems, had already escalated to root and was running shell commands to confirm its access level, GTIG said.
+
+The attacker had the highest available privileges on the system before the alert was raised.
+
+From that foothold, the threat actor used a service account to move laterally via SSH, deployed living-off-the-land binaries for reconnaissance, and installed GRIDTIDE as a persistent systemd service to survive reboots. The threat actor also deployed SoftEther VPN Bridge to maintain an encrypted outbound channel.
+
+“VPN configuration metadata suggests UNC2814 has been leveraging this specific infrastructure since July 2018,” GTIG said.
+
+The extent of that access became clear when investigators examined what the attackers were targeting.
+
+The real target was individuals
+
+The attackers planted GRIDTIDE on endpoints that held personally identifiable information, including full names, phone numbers, dates of birth, voter IDs, and national ID numbers.
+
+“We assess the targeting of PII in this engagement is consistent with cyber espionage activity in telecommunications, which is primarily leveraged to identify, track, and monitor persons of interest,” GTIG said in the post.
+
+GTIG did not directly observe exfiltration during this campaign, but noted that “historical PRC-nexus espionage intrusions against telecoms have resulted in the theft of call data records, unencrypted SMS messages, and the compromise and abuse of lawful intercept systems.”
+
+Chinese cyberespionage groups have consistently prioritized telecommunications as a target precisely because of the access their networks provide to sensitive communications and lawful intercept infrastructure.
+
+“When telecom firms and government agencies are in the blast radius, the stakes go beyond one company’s incident report,” Costis said. “Access to telecom environments can enable broad intelligence collection, help map relationships, and create opportunities for long-term monitoring that is hard to unravel once compromised.”
+
+To dismantle the operation, GTIG terminated all Google Cloud projects controlled by the attackers, disabled their accounts, revoked Google Sheets API access, and sinkholed current and historical C2 domains. It said it has also notified affected organizations and published indicators of compromise through Google Threat Intelligence, including IP addresses, domains, and file hashes tied to UNC2814.
+
+US authorities punish sellers of malware and spyware
+
+Ransomware groups switch to stealthy attacks and long-term access
+
+Steaelite RAT combines data theft and ransomware management capability in one tool
+
+From our editors straight to your inbox
+
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4137834/china-linked-hackers-used-google-sheets-to-spy-on-telecoms-and-governments-across-42-countries.html, csoonline.com, 26.02.2026)
+
+================================================================================
+
+[58] Infoblox Blog - Abusing .arpa: The TLD That Isn’t Supposed to Host Anything
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 15:55:47 +0000
 Link: https://www.infoblox.com/blog/threat-intelligence/abusing-arpa-the-tld-that-isnt-supposed-to-host-anything/
@@ -3357,7 +3911,7 @@ For more indicators, visit the Infoblox Threat Intel Github repo: https://github
 🐘 MASTODON - YÜKSEK ETKİLEŞİMLİ POSTLAR
 ================================================================================
 
-[50] Mastodon: Catalin Cimpanu [RT:23 · FAV:10 · Skor:56]
+[59] Mastodon: Catalin Cimpanu [🔥 Skor:57 | 🔄23 ❤️11]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 16:34:55 +0000
 Link: https://mastodon.social/@campuscodi/116137898501718472
@@ -3365,23 +3919,11 @@ Link: https://mastodon.social/@campuscodi/116137898501718472
 [MASTODON POST - 34 kelime]
 "A Greek court on Thursday sentenced four people, including two Israelis, to prison over a major wiretapping scandal involving the illegal use of spyware to target politicians, business leaders and journalists." https://www. politico.eu/article/predatorga te-greece-court-sentences-predator-spyware-gang/
 
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137898501718472, mastodon.social, 26.02.2026)
+(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137898501718472, mastodon.social, 26.02.2026) [MASTODON_SCORE:23:11]
 
 ================================================================================
 
-[51] Mastodon: Catalin Cimpanu [RT:12 · FAV:16 · Skor:40]
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 15:53:57 +0000
-Link: https://mastodon.social/@campuscodi/116137737412947559
-
-[MASTODON POST - 31 kelime]
-A security firm has gained access to a malvertising test platform and used the information to help ad companies block more than 59 million malicious ads last year https:// blog.confiant.com/p/disrupting -59m-malicious-impressions
-
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137737412947559, mastodon.social, 26.02.2026)
-
-================================================================================
-
-[52] Mastodon: Catalin Cimpanu [RT:18 · FAV:3 · Skor:39]
+[60] Mastodon: Catalin Cimpanu [🔥 Skor:41 | 🔄18 ❤️5]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 16:03:56 +0000
 Link: https://mastodon.social/@campuscodi/116137776672700768
@@ -3389,35 +3931,23 @@ Link: https://mastodon.social/@campuscodi/116137776672700768
 [MASTODON POST - 23 kelime]
 Meta's new Threads micro-blogging platform and Twitter rival has been flooded with pro-PRC propaganda bots, according to a new report https://www. newsguardrealitycheck.com/p/au tomated-pro-china-bots-swarm-metas
 
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137776672700768, mastodon.social, 26.02.2026)
+(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137776672700768, mastodon.social, 26.02.2026) [MASTODON_SCORE:18:5]
 
 ================================================================================
 
-[53] Mastodon: Catalin Cimpanu [RT:8 · FAV:6 · Skor:22]
+[61] Mastodon: Catalin Cimpanu [🔥 Skor:40 | 🔄12 ❤️16]
 ────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 02:43:23 +0000
-Link: https://mastodon.social/@campuscodi/116134628755308198
+Tarih: Thu, 26 Feb 2026 15:53:57 +0000
+Link: https://mastodon.social/@campuscodi/116137737412947559
 
-[MASTODON POST - 24 kelime]
-Scattered Lapsus$ Hunters (SLH) is recruiting women to conduct vishing attacks, likely to increase the success rate of help desk impersonation https://www. dataminr.com/resources/intel-b rief/slh-recruiting-women-for-vishing/
+[MASTODON POST - 31 kelime]
+A security firm has gained access to a malvertising test platform and used the information to help ad companies block more than 59 million malicious ads last year https:// blog.confiant.com/p/disrupting -59m-malicious-impressions
 
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116134628755308198, mastodon.social, 26.02.2026)
-
-================================================================================
-
-[54] Mastodon: Catalin Cimpanu [RT:9 · FAV:1 · Skor:19]
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 12:31:04 +0000
-Link: https://mastodon.social/@campuscodi/116136939655487395
-
-[MASTODON POST - 36 kelime]
-Apple has published details on how it plans to deal with all the age verification requirements around the globe and the US. It will be a mixture of age categories and parental controls https:// developer.apple.com/news/?id=f 5zj08ey
-
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116136939655487395, mastodon.social, 26.02.2026)
+(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137737412947559, mastodon.social, 26.02.2026) [MASTODON_SCORE:12:16]
 
 ================================================================================
 
-[55] Mastodon: Catalin Cimpanu [RT:7 · FAV:4 · Skor:18]
+[62] Mastodon: Catalin Cimpanu [🔥 Skor:19 | 🔄7 ❤️5]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 18:57:57 +0000
 Link: https://mastodon.social/@campuscodi/116138460924520544
@@ -3425,11 +3955,23 @@ Link: https://mastodon.social/@campuscodi/116138460924520544
 [MASTODON POST - 23 kelime]
 Phishing groups are abusing .arpa domains for their operations, a TLD that's not supposed to host anything except IP-address-to-domain maps https://www. infoblox.com/blog/threat-intel ligence/abusing-arpa-the-tld-that-isnt-supposed-to-host-anything/
 
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116138460924520544, mastodon.social, 26.02.2026)
+(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116138460924520544, mastodon.social, 26.02.2026) [MASTODON_SCORE:7:5]
 
 ================================================================================
 
-[56] Mastodon: Catalin Cimpanu [RT:5 · FAV:5 · Skor:15]
+[63] Mastodon: Catalin Cimpanu [🔥 Skor:19 | 🔄9 ❤️1]
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Thu, 26 Feb 2026 12:31:04 +0000
+Link: https://mastodon.social/@campuscodi/116136939655487395
+
+[MASTODON POST - 36 kelime]
+Apple has published details on how it plans to deal with all the age verification requirements around the globe and the US. It will be a mixture of age categories and parental controls https:// developer.apple.com/news/?id=f 5zj08ey
+
+(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116136939655487395, mastodon.social, 26.02.2026) [MASTODON_SCORE:9:1]
+
+================================================================================
+
+[64] Mastodon: Catalin Cimpanu [🔥 Skor:15 | 🔄5 ❤️5]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 13:30:05 +0000
 Link: https://mastodon.social/@campuscodi/116137171717310119
@@ -3437,11 +3979,11 @@ Link: https://mastodon.social/@campuscodi/116137171717310119
 [MASTODON POST - 14 kelime]
 Hmmm.... I'll just put him in Andorra, since that's right smack in the middle
 
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137171717310119, mastodon.social, 26.02.2026)
+(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137171717310119, mastodon.social, 26.02.2026) [MASTODON_SCORE:5:5]
 
 ================================================================================
 
-[57] Mastodon: Catalin Cimpanu [RT:6 · FAV:2 · Skor:14]
+[65] Mastodon: Catalin Cimpanu [🔥 Skor:14 | 🔄6 ❤️2]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 16:10:03 +0000
 Link: https://mastodon.social/@campuscodi/116137800753442402
@@ -3449,11 +3991,11 @@ Link: https://mastodon.social/@campuscodi/116137800753442402
 [MASTODON POST - 25 kelime]
 Talks from the DefCamp 2025 security conference, which took place in Bucharest at the end of November, are now available on YouTube https://www. youtube.com/playlist?list=PLnw q8gv9MEKiy8yiQo8nyvIA7xjWU3FZQ
 
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137800753442402, mastodon.social, 26.02.2026)
+(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137800753442402, mastodon.social, 26.02.2026) [MASTODON_SCORE:6:2]
 
 ================================================================================
 
-[58] Mastodon: Catalin Cimpanu [RT:6 · FAV:1 · Skor:13]
+[66] Mastodon: Catalin Cimpanu [🔥 Skor:13 | 🔄6 ❤️1]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 12:32:28 +0000
 Link: https://mastodon.social/@campuscodi/116136945154663072
@@ -3461,11 +4003,11 @@ Link: https://mastodon.social/@campuscodi/116136945154663072
 [MASTODON POST - 25 kelime]
 Data theft-only attacks accounted for 57% of all extortion insurance claims last year, according to numbers released by cyber insurance provider Resilience https://www. prnewswire.com/news-releases/r esilience-cyber-claims-data-reveals-the-new-economics-of-professionalized-cybercrime-302696505.html
 
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116136945154663072, mastodon.social, 26.02.2026)
+(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116136945154663072, mastodon.social, 26.02.2026) [MASTODON_SCORE:6:1]
 
 ================================================================================
 
-[59] Mastodon: Catalin Cimpanu [RT:4 · FAV:3 · Skor:11]
+[67] Mastodon: Catalin Cimpanu [🔥 Skor:11 | 🔄4 ❤️3]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 13:06:16 +0000
 Link: https://mastodon.social/@campuscodi/116137078031479664
@@ -3473,11 +4015,11 @@ Link: https://mastodon.social/@campuscodi/116137078031479664
 [MASTODON POST - 34 kelime]
 The Belarus Cyber Partisans claim to have hacked Khimvolokno,  a Belarusian company and Russia's largest supplier of nylon threads used to make helmet linings and body armor for the Russian army https:// x.com/cpartisans/status/202700 2004606681526
 
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137078031479664, mastodon.social, 26.02.2026)
+(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137078031479664, mastodon.social, 26.02.2026) [MASTODON_SCORE:4:3]
 
 ================================================================================
 
-[60] Mastodon: Catalin Cimpanu [RT:5 · FAV:1 · Skor:11]
+[68] Mastodon: Catalin Cimpanu [🔥 Skor:11 | 🔄5 ❤️1]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 13:00:34 +0000
 Link: https://mastodon.social/@campuscodi/116137055681941373
@@ -3485,7 +4027,7 @@ Link: https://mastodon.social/@campuscodi/116137055681941373
 [MASTODON POST - 21 kelime]
 Russian security firm F6 has discovered a new RaaS named C77L that appears to be operated out of Iran https://www. f6.ru/blog/c77l-ransomware/
 
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137055681941373, mastodon.social, 26.02.2026)
+(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137055681941373, mastodon.social, 26.02.2026) [MASTODON_SCORE:5:1]
 
 ================================================================================
 
