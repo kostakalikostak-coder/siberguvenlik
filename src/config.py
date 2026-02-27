@@ -30,11 +30,11 @@ NEWS_SOURCES = {
 # instance: Mastodon sunucusu, username: @ ile başlamayan kullanıcı adı
 # Her post için: reblogs_count * 2 + favourites_count >= MIN_ENGAGEMENT_SCORE olmalı
 MASTODON_SOURCES = [
-    {'instance': 'infosec.exchange',  'username': 'ESETresearch',   'label': 'ESET Research'},
-    {'instance': 'mastodon.social',   'username': 'campuscodi',      'label': 'Catalin Cimpanu'},
-    {'instance': 'infosec.exchange',  'username': 'malwaretech',     'label': 'MalwareTech'},
-    {'instance': 'infosec.exchange',  'username': 'thegrugq',        'label': 'thegrugq'},
-    {'instance': 'infosec.exchange',  'username': 'alperovitch',     'label': 'Dmitri Alperovitch'},
+    {'instance': 'mastodon.social', 'username': 'ESETresearch',   'label': 'ESET Research'},
+    {'instance': 'mastodon.social', 'username': 'campuscodi',      'label': 'Catalin Cimpanu'},
+    {'instance': 'mastodon.social', 'username': 'malwaretech',     'label': 'MalwareTech'},
+    {'instance': 'mastodon.social', 'username': 'thegrugq',        'label': 'thegrugq'},
+    {'instance': 'mastodon.social', 'username': 'alperovitch',     'label': 'Dmitri Alperovitch'},
 ]
 
 # Minimum etkileşim skoru: reblogs*2 + favourites >= bu değer
@@ -167,7 +167,7 @@ RAPOR YAPISI (SIRAYLA):
    - Bu haberleri signal-item olarak listele, her birinde signal-badge ile etkileşim göster
    - badge formatı: Paylaşım: N · Beğeni: N  (N yerine ham verideki gerçek sayıyı yaz)
    - Sayfa içi link: <a href="#haber-N">haber başlığı veya kısa özet</a>
-   - Mastodon haberi yoksa bu kutuyu tamamen çıkar (oluşturma)
+   - Mastodon haberi yoksa bu kutuyu tamamen çıkar
    - Hiçbir ikon veya emoji kullanma
 
 4️⃣ **GERİ KALAN 38 HABERİN 2 SÜTUNLU TABLOSU**:
@@ -412,6 +412,19 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
             color: #4c3d9e;
             white-space: nowrap;
             flex-shrink: 0;
+        }}
+        /* Mastodon haberlerinin badge'i (haber detay sayfasında) */
+        .signal-badge {{
+            display: inline-block;
+            background: #ede9fe;
+            border: 1px solid #c4b5fd;
+            border-radius: 3px;
+            padding: 2px 8px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #4c3d9e;
+            white-space: nowrap;
+            margin-bottom: 8px;
         }}
 
         .back-to-top {{
