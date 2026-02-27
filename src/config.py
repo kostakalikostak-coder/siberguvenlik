@@ -104,7 +104,9 @@ DETECTION_PATTERNS = {
 # Gemini prompt (RESMİ TÜRKÇE) - YENİ GELİŞTİRİLMİŞ VERSİYON
 def get_claude_prompt(news_content, recent_events=''):
     now = datetime.now()
-    return f"""Sen profesyonel siber güvenlik analistisin.
+    return f"""⚠️ ÇIKTI KURALI: İlk karakterin `<` olacak. Açıklama, giriş, özet metni YAZMA. Direkt <!DOCTYPE html> ile başla, başka hiçbir şey yazma.
+
+Sen profesyonel siber güvenlik analistisin.
 
 GÖREV: 130 haberi analiz et → En önemli 5'ini seç → Kalanları önem sırasına koy → HTML raporu oluştur.
 
@@ -160,16 +162,12 @@ RAPOR YAPISI (SIRAYLA):
 3️⃣ **"ÖNEMLİ GELİŞMELER" KUTUSU**: 
    - En kritik 5 haberin TAM CÜMLELİK özeti
    - Her biri sayfa içi link: <a href="#haber-N">N. CVE-2024-1234 açığı Microsoft sunucularında kritik güvenlik riski oluşturmaktadır.</a>
-   - ZORUNLU: Edilmiştir/tespit edilmiştir/duyurulmuştur ile biten tam cümle + nokta
-   - DOĞRU: "Cisco SD-WAN sistemlerinde CVE-2026-20127 açığı tespit edilmiştir."
-   - YANLIŞ: "Cisco SD-WAN sistemlerinde açığın tespit edilmesi" (isim-fiil YASAK)
+   - ZORUNLU: Tam cümle (özne + yüklem + nesne) + nokta ile bitiş
 
 4️⃣ **GERİ KALAN 38 HABERİN 2 SÜTUNLU TABLOSU**:
    - 6. haber → id="haber-6", 7. haber → id="haber-7" vs.
    - Her biri TAM CÜMLELİK özet + sayfa içi link
-   - ZORUNLU: Edilmiştir/tespit edilmiştir/duyurulmuştur ile biten tam cümle + nokta
-   - DOĞRU: "Google, UNC2814 kampanyasını başarıyla engellemiştir."
-   - YANLIŞ: "Google'ın UNC2814 kampanyasını engellemesi" (isim-fiil YASAK)
+   - ZORUNLU: Tam cümle yapısı (özne + yüklem + nesne) + nokta ile bitiş
 
 5️⃣ **HABER PARAGRAFLARI (SIRALAMA ÖNEMLİ!)**:
    - ÖNCE: En önemli 5 haberin 100-130 kelime paragraf özetleri (id="haber-1" dan haber-5'e)
@@ -185,13 +183,10 @@ KRİTİK KURALLALAR:
 ✅ Sayfa içi linkler doğru çalışsın
 ✅ ASLA eksik paragraf bırakma — her news-item'ın news-content'i dolu olacak
 
-🚨 KRİTİK DİL KURALI - RESMİ TÜRKÇE (İHLAL ETME):
-⛔ YASAK — başlıkta VE tek cümlelik özetlerde VE paragraflarda:
-   yaptı, etti, söyledi, bulundu, sattı, engelledi, uyardı, duyurdu, açıkladı, saldırdı, çaldı, keşfetti
-✅ ZORUNLU — tüm cümle sonları:
-   yapılmıştır, edilmiştir, belirtilmektedir, ifade edilmektedir, tespit edilmiştir,
-   açıklanmıştır, duyurulmuştur, düzenlenmiştir, ele geçirilmiştir, keşfedilmiştir
-- CVE, FBI, NSA, APT, CISA kısaltmaları büyük harf
+KRİTİK DİL KURALI - RESMİ TÜRKÇE:
+- yapılmıştır, edilmiştir, belirtilmektedir, ifade edilmektedir, tespit edilmiştir
+- ASLA: yaptı, etti, söyledi, bulundu (günlük dil yasak)
+- CVE, FBI, NSA, APT gibi kısaltmaların tamamı büyük harf
 
 ANTİ-HALÜSİNASYON:
 - SADECE verilen metni kullan
@@ -385,125 +380,6 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
         .back-to-top:hover {{
             opacity: 1;
         }}
-
-        /* MASTODON SOSYAL MEDYA SİNYALİ */
-        .mastodon-item {{
-            border-left: 4px solid #6364ff;
-        }}
-        .mastodon-badge {{
-            display: inline-block;
-            background: #f0efff;
-            border: 1px solid #c4b5fd;
-            border-radius: 3px;
-            padding: 3px 10px;
-            font-size: 12px;
-            font-weight: 600;
-            color: #4c3d9e;
-            margin-bottom: 10px;
-            letter-spacing: 0.3px;
-            font-family: inherit;
-        }}
-
-        /* MOBİL UYUMLU CSS */
-        @media (max-width: 768px) {{
-            body {{
-                padding: 0;
-                background: white;
-            }}
-            .container {{
-                border-radius: 0;
-                box-shadow: none;
-                max-width: 100%;
-            }}
-            .report-header {{
-                padding: 28px 16px;
-            }}
-            .report-header h1 {{
-                font-size: 19px;
-                line-height: 1.35;
-            }}
-            .important-news {{
-                padding: 16px;
-                border-radius: 0;
-                margin-bottom: 12px;
-            }}
-            .important-news h2 {{
-                font-size: 16px;
-                margin-bottom: 12px;
-            }}
-            .important-item {{
-                padding: 10px 12px;
-            }}
-            .important-item a {{
-                font-size: 13px;
-            }}
-            .executive-summary {{
-                padding: 16px;
-            }}
-            .executive-summary h2 {{
-                font-size: 15px;
-            }}
-            .executive-table {{
-                border-spacing: 4px;
-            }}
-            .executive-table tr {{
-                display: block;
-            }}
-            .executive-table td {{
-                display: block;
-                width: 100% !important;
-                margin-bottom: 6px;
-                padding: 10px 12px;
-            }}
-            .executive-table a {{
-                font-size: 13px;
-            }}
-            .news-section {{
-                padding: 12px 12px 20px;
-            }}
-            .news-item {{
-                padding: 14px;
-                margin-bottom: 14px;
-                border-radius: 6px;
-            }}
-            .news-title {{
-                font-size: 15px;
-                margin-bottom: 8px;
-            }}
-            .news-content {{
-                font-size: 14px;
-                line-height: 1.55;
-            }}
-            .source {{
-                font-size: 12px;
-            }}
-            .back-to-top {{
-                left: auto !important;
-                right: 14px;
-                bottom: 20px;
-                top: auto !important;
-                transform: none !important;
-                width: 42px;
-                height: 42px;
-                font-size: 20px;
-            }}
-            .archive-section {{
-                padding: 20px 16px;
-            }}
-            .archive-links {{
-                gap: 6px;
-            }}
-        }}
-        @media (max-width: 480px) {{
-            .report-header h1 {{
-                font-size: 16px;
-            }}
-            .important-item a,
-            .executive-table a,
-            .news-content {{
-                font-size: 13px;
-            }}
-        }}
     </style>
 </head>
 <body>
@@ -522,7 +398,7 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
                 <div class="important-summary">
                     [EN ÖNEMLİ 5 HABER BURADA - HER BİRİ TAM CÜMLE:]
                     <div class="important-item">
-                        <a href="#haber-1">1. Microsoft Exchange sunucularında CVE-2024-1234 kritik açığı aktif olarak istismar edilmektedir.</a>
+                        <a href="#haber-1">1. Microsoft Exchange sunucularında CVE-2024-1234 açığı kritik güvenlik riski oluşturmaktadır.</a>
                     </div>
                     <div class="important-item">
                         <a href="#haber-2">2. LockBit 4.0 fidye yazılımı dünya genelinde sağlık kurumlarını hedef almaktadır.</a>
@@ -562,16 +438,10 @@ ZORUNLU HTML ŞABLONU - AYNEN KULLAN:
 </html>
 ```
 
-BAŞLIK KURALLARI (news-title — haber kartı başlığı):
+BAŞLIK KURALLARI:
 ✓ İsim-fiil yapısı: "CVE-2024-1234'ün Microsoft Exchange Sunucularını Etkilemesi"
 ✓ SOMUT detaylar: Şirket/CVE/ülke adları dahil
 ✓ 7-9 kelime, her kelimenin ilk harfi büyük
-
-⚠️ ÖNEMLİ GELİŞMELER ve TABLO özetleri (important-item / executive-table):
-✓ Tam cümle + noktalı virgül DEĞİL nokta ile biter
-✓ Fiil kipleri: edilmiştir, tespit edilmiştir, açıklanmıştır, duyurulmuştur
-✓ YANLIŞ: "Cisco'nun Açığı Kapatması." → DOĞRU: "Cisco'da kritik açık tespit edilmiştir."
-✓ YANLIŞ: "Google'ın Kampanyayı Engellemesi." → DOĞRU: "Google, UNC2814 kampanyasını engellemiştir." 
 
 ÖZET PARAGRAF KURALLARI:
 ✓ 100-130 kelime (MIN 100, MAX 130)
