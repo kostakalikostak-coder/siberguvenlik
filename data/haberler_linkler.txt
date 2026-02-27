@@ -1,1 +1,60 @@
-
+2026-02-27	https://thehackernews.com/2026/02/trojanized-gaming-tools-spread-java.html	Trojanized Gaming Tools Spread Java-Based RAT via Browser and Chat Platforms	dc9786219a6aee9e
+2026-02-27	https://thehackernews.com/2026/02/meta-files-lawsuits-against-brazil.html	Meta Files Lawsuits Against Brazil, China, Vietnam Advertisers Over Celeb-Bait Scams	93a392c88f2481da
+2026-02-27	https://thehackernews.com/2026/02/aeternum-c2-botnet-stores-encrypted.html	Aeternum C2 Botnet Stores Encrypted Commands on Polygon Blockchain to Evade Takedown	7e014dae78805cbb
+2026-02-27	https://thehackernews.com/2026/02/uat-10027-targets-us-education-and.html	UAT-10027 Targets U.S. Education and Healthcare with Dohdoor Backdoor	d9429bca92123765
+2026-02-27	https://thehackernews.com/2026/02/threatsday-bulletin-kali-linux-claude.html	ThreatsDay Bulletin: Kali Linux + Claude, Chrome Crash Traps, WinRAR Flaws, LockBit & 15+ Stories	50ebe57340d21850
+2026-02-27	https://thehackernews.com/2026/02/expert-recommends-prepare-for-pqc-right.html	Expert Recommends: Prepare for PQC Right Now	9f49907b87137f4a
+2026-02-27	https://thehackernews.com/2026/02/fake-nextjs-repos-target-developers.html	Microsoft Warns Developers of Fake Next.js Job Repos Delivering In-Memory Malware	915ad56e8220f56f
+2026-02-27	https://thehackernews.com/2026/02/malicious-stripeapi-nuget-package.html	Malicious StripeApi NuGet Package Mimicked Official Library and Stole API Tokens	c2a2954cffef8171
+2026-02-27	https://www.bleepingcomputer.com/news/security/ukrainian-man-pleads-guilty-to-running-ai-powered-fake-id-site/	Ukrainian man pleads guilty to running AI-powered fake ID site	fb3e5e0a6cfad910
+2026-02-27	https://www.bleepingcomputer.com/news/security/previously-harmless-google-api-keys-now-expose-gemini-ai-data/	Previously harmless Google API keys now expose Gemini AI data	ce0249ea71e22898
+2026-02-27	https://www.bleepingcomputer.com/news/security/trend-micro-warns-of-critical-apex-one-rce-vulnerabilities/	Trend Micro warns of critical Apex One code execution flaws	882dec7fc1635124
+2026-02-27	https://www.bleepingcomputer.com/news/security/european-dyi-chain-manomano-data-breach-impacts-38-million-customers/	European DYI chain ManoMano data breach impacts 38 million customers	615e5e79928065c8
+2026-02-27	https://www.bleepingcomputer.com/news/security/critical-juniper-networks-ptx-flaw-allows-full-router-takeover/	Critical Juniper Networks PTX flaw allows full router takeover	fc64faa4a99ad2d8
+2026-02-27	https://www.bleepingcomputer.com/news/security/olympique-marseille-football-club-confirms-cyberattack-after-data-leak/	Olympique Marseille confirms 'attempted' cyberattack after data leak	5df22e44c0611bab
+2026-02-27	https://www.bleepingcomputer.com/news/security/ransomware-payment-rate-drops-to-record-low-as-attacks-surge/	Ransomware payment rate drops to record low as attacks surge	2e2311dfeb5d235f
+2026-02-27	https://www.bleepingcomputer.com/news/security/microsoft-expands-windows-restore-to-more-enterprise-devices/	Microsoft expands Windows restore to more enterprise devices	15c38a71b1c3e41b
+2026-02-27	https://securityaffairs.com/188609/security/juniper-issues-emergency-patch-for-critical-ptx-router-rce.html	Juniper issues emergency patch for critical PTX router RCE	d838b3aae5efa04d
+2026-02-27	https://securityaffairs.com/188599/ai/how-ai-aids-incident-response-why-humans-alone-cannot-do-ir-efficiently.html	How AI Aids Incident Response: Why Humans Alone Cannot Do IR Efficiently	d360bb2cf5d4ae76
+2026-02-27	https://securityaffairs.com/188590/hacking/12-million-exposed-env-files-reveal-widespread-security-failures.html	12 Million exposed .env files reveal widespread security failures	1775e822ebb42a13
+2026-02-27	https://securityaffairs.com/188582/data-breach/manomano-data-breach-impacted-38-million-customer-accounts.html	ManoMano data breach impacted 38 Million customer accounts	839fc4c5a2b90b5a
+2026-02-27	https://securityaffairs.com/188572/security/trend-micro-fixes-two-critical-flaws-in-apex-one.html	Trend Micro fixes two critical flaws in Apex One	1e15693c2afe9cd8
+2026-02-27	https://securityaffairs.com/188558/apt/uat-10027-campaign-hits-u-s-education-and-healthcare-with-stealthy-dohdoor-backdoor.html	UAT-10027 campaign hits U.S. education and healthcare with stealthy Dohdoor backdoor	9267955be5051eb5
+2026-02-27	https://securityaffairs.com/188548/hacking/u-s-cisa-adds-cisco-sd-wan-flaws-to-its-known-exploited-vulnerabilities-catalog.html	U.S. CISA adds Cisco SD-WAN flaws to its Known Exploited Vulnerabilities catalog	09fb01aa1ac270b8
+2026-02-27	https://securityaffairs.com/188540/security/hackers-abused-cisco-sd-wan-zero-day-since-2023-to-gain-full-admin-control.html	Hackers abused Cisco SD-WAN zero-day since 2023 to gain full admin control	c3b3ae3847c1deed
+2026-02-27	https://www.fortra.com/blog/your-staff-are-your-biggest-security-risk-ai-making-it-worse	Your staff are your biggest security risk: AI is making it worse	6ac23e2db35b1ce9
+2026-02-27	https://www.bitdefender.com/en-us/blog/hotforsecurity/ransomware-gang-blackmailed-fake-fsb-officer	Notorious ransomware gang allegedly blackmailed by fake FSB officer	20caa597683f4207
+2026-02-27	https://grahamcluley.com/smashing-security-podcast-456/	Smashing Security podcast #456: How to lose friends and DDoS people	a65fcac326511429
+2026-02-27	https://isc.sans.edu/diary/rss/32754	Fake Fedex Email Delivers Donuts&#x21;, (Fri, Feb 27th)	4e246aa8b5f15efe
+2026-02-27	https://isc.sans.edu/diary/rss/32752	ISC Stormcast For Friday, February 27th, 2026 https://isc.sans.edu/podcastdetail/9828, (Fri, Feb 27th)	6a91ea8d267cfacc
+2026-02-27	https://isc.sans.edu/diary/rss/32744	Finding Signal in the Noise: Lessons Learned Running a Honeypot with AI Assistance &#x5b;Guest Diary&#x5d;, (Tue, Feb 24th)	8e621e2742ea645b
+2026-02-27	https://isc.sans.edu/diary/rss/32748	The CLAIR Model: A Synthesized Conceptual Framework for Mapping Critical Infrastructure Interdependencies &#x5b;Guest Diary&#x5d;, (Wed, Feb 25th)	e178ea7625f390a9
+2026-02-27	https://isc.sans.edu/diary/rss/32750	ISC Stormcast For Thursday, February 26th, 2026 https://isc.sans.edu/podcastdetail/9826, (Thu, Feb 26th)	065fa056ca429e15
+2026-02-27	https://www.recordedfuture.com/blog/recorded-future-money-mule-intelligence-cybera	Recorded Future Expands Coverage of Scams and Financial Fraud with Money Mule Intelligence from CYBERA	d09240fe534d18c1
+2026-02-27	https://cyberscoop.com/cisa-leadership-change-madhu-gottumukkala-nick-andersen/	Gottumukkala out, Andersen in as acting CISA director	08fe6f20225e2f0d
+2026-02-27	https://cyberscoop.com/project-compass-the-com-europol/	Project Compass is Europol’s new playbook for taking on The Com	1a28d7a64a83acb4
+2026-02-27	https://cyberscoop.com/senate-passes-health-care-cyber-reforms-cassidy/	Senate moves one step closer to passing health care cyber reforms 	67fb1cab3fe3ed75
+2026-02-27	https://cyberscoop.com/cisco-zero-days-cisa-emergency-directive-five-eyes/	Governments issue warning over Cisco zero-day attacks dating back to 2023	91ed3079d5f09a39
+2026-02-27	https://go.theregister.com/feed/www.theregister.com/2026/02/26/scattered_lapsus_hunters_female_recruits/	Scattered Lapsus$ Hunters auditioning female voices to sharpen social engineering	78a027779d446261
+2026-02-27	https://techcrunch.com/2026/02/26/cisco-says-hackers-have-been-exploiting-a-critical-bug-to-break-into-big-customer-networks-since-2023/	Cisco says hackers have been exploiting a critical bug to break into big customer networks since 2023	5e7341b50a2e8561
+2026-02-27	https://techcrunch.com/2026/02/26/spyware-maker-sentenced-to-prison-in-greece-for-wiretapping-politicians-and-journalists/	Spyware makers sentenced to prison in Greece for wiretapping politicians and journalists	2d51908d2d85fed0
+2026-02-27	https://www.csoonline.com/article/4138431/your-personal-openclaw-agent-may-also-be-taking-orders-from-malicious-websites.html	Your personal OpenClaw agent may also be taking orders from malicious websites	6f767f5477b05096
+2026-02-27	https://www.csoonline.com/article/4138422/us-authorities-punish-sellers-of-malware-and-spyware.html	US authorities punish sellers of malware and spyware	8f70618400985c94
+2026-02-27	https://www.csoonline.com/article/4138000/why-application-security-must-start-at-the-load-balancer.html	Why application security must start at the load balancer	2beff68f096e5411
+2026-02-27	https://us.resources.csoonline.com/resources/form?placement_id=ee7073cd-e75d-46f6-96fa-38e469cf0e66&brand_id=32&locale_id=1	Enterprise Spotlight: Data Center Modernization	eb7a6da5ddb26bb8
+2026-02-27	https://www.csoonline.com/article/4137983/how-to-make-llms-a-defensive-advantage-without-creating-a-new-attack-surface.html	How to make LLMs a defensive advantage without creating a new attack surface	3e9fa8758ae2c2be
+2026-02-27	https://www.csoonline.com/article/559539/the-cso-guide-to-top-security-conferences.html	The CSO guide to top security conferences	5800bbfae9909bc2
+2026-02-27	https://www.csoonline.com/article/4137010/ransomware-groups-switch-to-stealthy-attacks-and-long-term-access.html	Ransomware groups switch to stealthy attacks and long-term access	d497e587a2e7b438
+2026-02-27	https://www.csoonline.com/article/4137880/hacker-kompromittieren-immer-schneller.html	Hacker kompromittieren immer schneller	8973d9bd94dcbeec
+2026-02-27	https://mastodon.social/@campuscodi/116137898501718472	"A Greek court on Thursday sentenced four people, including two Israelis, to prison over a major wiretapping scandal inv...	8745b838a2ba2c8f
+2026-02-27	https://mastodon.social/@campuscodi/116137737412947559	A security firm has gained access to a malvertising test platform and used the information to help ad companies block mo...	16b20bdebfd13340
+2026-02-27	https://mastodon.social/@campuscodi/116137776672700768	Meta's new Threads micro-blogging platform and Twitter rival has been flooded with pro-PRC propaganda bots, according to...	68b0f2353d765b0f
+2026-02-27	https://mastodon.social/@campuscodi/116134628755308198	Scattered Lapsus$ Hunters (SLH) is recruiting women to conduct vishing attacks, likely to increase the success rate of h...	cb88b930666102cf
+2026-02-27	https://mastodon.social/@campuscodi/116136939655487395	Apple has published details on how it plans to deal with all the age verification requirements around the globe and the ...	50a0bb00ceaf2163
+2026-02-27	https://mastodon.social/@campuscodi/116138460924520544	Phishing groups are abusing .arpa domains for their operations, a TLD that's not supposed to host anything except IP-add...	3542c57de8a50d07
+2026-02-27	https://mastodon.social/@campuscodi/116137171717310119	Hmmm.... I'll just put him in Andorra, since that's right smack in the middle	7402c6c38037aac0
+2026-02-27	https://mastodon.social/@campuscodi/116137800753442402	Talks from the DefCamp 2025 security conference, which took place in Bucharest at the end of November, are now available...	5825a51c99356183
+2026-02-27	https://mastodon.social/@campuscodi/116134253867576632	Russian media are treating Conti like national heroes	a8510ac9217bb28b
+2026-02-27	https://mastodon.social/@campuscodi/116136945154663072	Data theft-only attacks accounted for 57% of all extortion insurance claims last year, according to numbers released by ...	de954c476bd2e9fc
+2026-02-27	https://mastodon.social/@campuscodi/116137078031479664	The Belarus Cyber Partisans claim to have hacked Khimvolokno,  a Belarusian company and Russia's largest supplier of nyl...	b4b1d93b666ac7fc
+2026-02-27	https://mastodon.social/@campuscodi/116137055681941373	Russian security firm F6 has discovered a new RaaS named C77L that appears to be operated out of Iran https://www. f6.ru...	c30a0dc951e907b4

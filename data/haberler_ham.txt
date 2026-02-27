@@ -675,89 +675,49 @@ The software supply chain security company also noted that the activity marks a 
 
 ================================================================================
 
-[9] The Hacker News - Cisco SD-WAN Zero-Day CVE-2026-20127 Exploited Since 2023 for Admin Access
+[9] BleepingComputer - Ukrainian man pleads guilty to running AI-powered fake ID site
 ────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 11:43:00 +0530
-Link: https://thehackernews.com/2026/02/cisco-sd-wan-zero-day-cve-2026-20127.html
+Tarih: Fri, 27 Feb 2026 07:30:07 -0500
+Link: https://www.bleepingcomputer.com/news/security/ukrainian-man-pleads-guilty-to-running-ai-powered-fake-id-site/
 
-[TAM METİN - 772 kelime]
-A newly disclosed maximum-severity security flaw in Cisco Catalyst SD-WAN Controller (formerly vSmart) and Catalyst SD-WAN Manager (formerly vManage) has come under active exploitation in the wild as part of malicious activity that dates back to 2023.
+[TAM METİN - 470 kelime]
+A Ukrainian man has pleaded guilty to operating OnlyFake, an AI-powered website that generated and sold more than 10,000 photos of fake identification documents to customers worldwide.
 
-The vulnerability, tracked as CVE-2026-20127 (CVSS score: 10.0), allows an unauthenticated remote attacker to bypass authentication and obtain administrative privileges on an affected system by sending a crafted request.
+27-year-old Yurii Nazarenko (also known as "John Wick," "Tor Ford," and "Uriel Septimberus") admitted that his OnlyFake subscription-based platform used artificial intelligence to generate realistic-looking counterfeit passports, driver's licenses, and Social Security cards.
 
-Successful exploitation of the flaw could allow the adversary to obtain elevated privileges and log in to the system as an internal, high-privileged, non-root user account.
+"We rely on government issued IDs to combat terrorism, hijackings, fraud, money laundering, and a host of other crimes," said U.S. Attorney Jay Clayton on Thursday. "OnlyFake’s manufacture of fraudulent IDs and other documents puts us all at risk and must be stopped."
 
-"This vulnerability exists because the peering authentication mechanism in an affected system is not working properly," Cisco said in an advisory, adding the threat actor could leverage the non-root user account to access NETCONF and manipulate network configuration for the SD-WAN fabric.
+According to the indictment, Nazarenko's OnlyFake platform allowed customers to generate fake digital versions of U.S. driver's licenses for all 50 states and U.S. passports and passport cards, as well as digital versions of identification documents for roughly 56 other countries.
 
-The shortcoming affects the following deployment types, irrespective of the device configuration -
+Customers could also customize the fake digital documents with personal details, opt for randomized information, and choose whether the finished product appeared as a scan or a tabletop photograph.
 
-Cisco Hosted SD-WAN Cloud
+New York federal prosecutors said that the primary use of these fake digital documents was to circumvent Know Your Customer (KYC) verification requirements at banks and cryptocurrency exchanges, which are safeguards designed to prevent money laundering mandated under the Patriot Act.
 
-Cisco Hosted SD-WAN Cloud - Cisco Managed
+Undercover FBI agents made multiple purchases from the OnlyFake website between May and June 2024, obtaining fake New York state IDs, U.S. passports, and a Social Security card.
 
-Cisco Hosted SD-WAN Cloud - FedRAMP Environment
+OnlyFake only accepted cryptocurrency payments, and also offered bulk packages of up to 1,000 fake documents at a discount. Nazarenko further attempted to cover his tracks by routing cryptocurrency payments through multiple wallets and deleting emails after 404 Media reported on the site in February 2024.
 
-Cisco credited the Australian Signals Directorate's Australian Cyber Security Centre (ASD-ACSC) for reporting the vulnerability. The networking equipment major is tracking the exploitation and subsequent post-compromise activity under the moniker UAT-8616, describing the cluster as a "highly sophisticated cyber threat actor."
+"Yurii Nazarenko developed a website to produce more than 10,000 fake identification documents, earning hundreds of thousands of dollars from these illicit sales," added FBI Assistant Director in Charge James C. Barnacle, Jr. "This platform offered its clients a myriad of criminal opportunities, including bypassing traditional regulations to launder money."
 
-The vulnerability has been addressed in the following versions of Cisco Catalyst SD-WAN -
+Nazarenko was extradited from Romania in September 2025 and has agreed to forfeit $1.2 million. He is now facing a maximum sentence of 15 years in prison and is scheduled for sentencing on June 26, 2026.
 
-Prior to version 20.91 - Migrate to a fixed release.
+The future of IT infrastructure is here
 
-Version 20.9 - 20.9.8.2
+Modern IT infrastructure moves faster than manual workflows can handle.
 
-Version 20.111 - 20.12.6.1
+In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
 
-Version 20.12.5 - 20.12.5.3
+Microsoft says bug causes Copilot to summarize confidential emails
 
-Version 20.12.6 - 20.12.6.1
+AI platforms can be abused for stealthy malware communication
 
-Version 20.131 - 20.15.4.2
+Ireland now also investigating X over Grok-made sexual images
 
-Version 20.141 - 20.15.4.2
+Infostealer malware found stealing OpenClaw secrets for first time
 
-Version 20.15 - 20.15.4.2
+Google says hackers are abusing Gemini AI for all attacks stages
 
-Version 20.161 - 20.18.2.1
-
-Version 20.18 - 20.18.2.1
-
-"Cisco Catalyst SD-WAN Controller systems that are exposed to the internet and that have ports exposed to the internet are at risk of exposure to compromise," Cisco warned.
-
-The company has also recommended customers to audit the "/var/log/auth.log" file for entries related to "Accepted publickey for vmanage-admin" from unknown or unauthorized IP addresses. It's also advised to check the IP addresses in the auth.log log file against the configured System IPs that are listed in the Cisco Catalyst SD-WAN Manager web UI (WebUI > Devices > System IP).
-
-According to information released by the ASD-ACSC, UAT-8616 is said to have compromised Cisco SD-WANs since 2023 via the zero-day exploit, allowing it to gain elevated access.
-
-"The vulnerability allowed a malicious cyber actor to create a rogue peer joined to the network management plane, or control plane, of an organization's SD-WAN," ASD-ACSC said. "The rogue device appears as a new but temporary, actor-controlled SD-WAN component that can conduct trusted actions within the management and control plane."
-
-After successfully compromising a public-facing application, the attackers have been found to leverage the built-in update mechanism to stage a software version downgrade and escalate to the root user by exploiting CVE-2022-20775 (CVSS score: 7.8), a high-severity privilege escalation bug in the CLI of Cisco SD-WAN Software, and then restoring the software back to the version it was originally running.
-
-Some of the subsequent steps initiated by the threat actor are as follows -
-
-Created local user accounts that mimicked other local user accounts.
-
-Added a Secure Shell Protocol (SSH) authorized key for root access and modified SD-WAN-related start-up scripts to customize the environment.
-
-Used Network Configuration Protocol on port 830 (NETCONF) and SSH to connect to/between Cisco SD-WAN appliances within the management plane.
-
-Took steps to clear evidence of the intrusion by purging logs under "/var/log," command history, and network connection history.
-
-"UAT-8616's attempted exploitation indicates a continuing trend of the targeting of network edge devices by cyber threat actors looking to establish persistent footholds into high-value organizations, including Critical Infrastructure (CI) sectors," Talos said.
-
-The development has prompted the Cybersecurity and Infrastructure Security Agency (CISA) to add both CVE-2022-20775 and CVE-2026-20127 to its Known Exploited Vulnerabilities (KEV) catalog, mandating Federal Civilian Executive Branch (FCEB) agencies to apply the fixes within the next 24 hours.
-
-To check for version downgrade and unexpected reboot events, CISA recommends analyzing the following logs -
-
-/var/volatile/log/vdebug
-
-/var/log/tmplog/vdebug
-
-/var/volatile/log/sw_script_synccdb.log
-
-CISA has also issued a new emergency directive, 26-03: Mitigate Vulnerabilities in Cisco SD-WAN Systems, as part of which federal agencies are required to inventory SD-WAN devices, apply updates, and assess potential compromise.
-
-To that end, agencies have been ordered to provide a catalog of all in-scope SD-WAN systems on their networks by February 26, 2026, 11:59 p.m. ET. Additionally, they are required to submit a detailed inventory of all in-scope products and actions taken by March 5, 2026, 11:59 p.m. ET. Lastly, the agencies will have to submit the list of all steps taken to harden their environments by March 26, 2026, 11:59 p.m. ET.
-
-(XXXXXXX, AÇIK - https://thehackernews.com/2026/02/cisco-sd-wan-zero-day-cve-2026-20127.html, thehackernews.com, 26.02.2026)
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/ukrainian-man-pleads-guilty-to-running-ai-powered-fake-id-site/, bleepingcomputer.com, 27.02.2026)
 
 ================================================================================
 
@@ -1139,165 +1099,41 @@ Microsoft rolls out native Sysmon monitoring in Windows 11
 
 ================================================================================
 
-[17] BleepingComputer - New York sues Valve for promoting illegal gambling via game loot boxes
+[17] Security Affairs - Juniper issues emergency patch for critical PTX router RCE
 ────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 06:44:50 -0500
-Link: https://www.bleepingcomputer.com/news/gaming/new-york-sues-valve-for-promoting-illegal-gambling-via-game-loot-boxes/
+Tarih: Fri, 27 Feb 2026 11:40:46 +0000
+Link: https://securityaffairs.com/188609/security/juniper-issues-emergency-patch-for-critical-ptx-router-rce.html
 
-[TAM METİN - 521 kelime]
-New York Attorney General Letitia James sued video game developer and publisher Valve Corporation for using game loot boxes to facilitate illegal gambling activities among children and teenagers.
+[TAM METİN - 324 kelime]
+Juniper issues emergency patch for critical PTX router RCE
 
-Valve operates Steam, one of the largest digital game distribution services in the world, offering access to thousands of games for millions of users worldwide. At the time this article was published, Steam was reporting over 29 million players online, with nearly 7.5 million playing a game.
+Juniper released an emergency patch for Junos OS Evolved to fix CVE-2026-21902, a critical RCE flaw affecting PTX routers.
 
-Attorney General James said the gaming giant is violating the state's gambling laws by offering players the opportunity to win random virtual prizes that can be exchanged for real money, in a process described as being similar to a slot machine.
+Juniper Networks issued an out-of-band security update for Junos OS Evolved to address a critical remote code execution vulnerability, tracked as CVE-2026-21902 (CVSS score of 9.3), impacting PTX routers.
 
-"Illegal gambling can be harmful and lead to serious addiction problems, especially for our young people," said James. "Valve has made billions of dollars by letting children and adults alike illegally gamble for the chance to win valuable virtual prizes. These features are addictive, harmful, and illegal, and my office is suing to stop Valve's illegal conduct and protect New Yorkers."
+The company urges customers to apply the patch promptly to protect network infrastructure from potential exploitation.
 
-The lawsuit targets loot boxes in Counter-Strike 2, Team Fortress 2, and Dota 2 that award players with random items, such as weapon skins or character accessories. However, the odds of winning rare items are allegedly deliberately skewed by Valve to make them far more valuable, leading the total value of market items to balloon to an estimated $4.3 billion as of March 2025, according to Attorney General James.
+The flaw resides in the On-Box Anomaly Detection framework of Junos OS Evolved on PTX Series routers and lets unauthenticated remote attackers execute code as root. The service, enabled by default, should be restricted to internal processes but can be accessed externally due to incorrect permissions, allowing full device takeover.
 
-Some individual items (such as AK-47 skins) have even fetched prices of over $1 million, making Steam accounts a frequent target for hackers and scammers.
+“An Incorrect Permission Assignment for Critical Resource vulnerability in the On-Box Anomaly detection framework of Juniper Networks Junos OS Evolved on PTX Series allows an unauthenticated, network-based attacker to execute code as root.
 
-The lawsuit also highlights the potential harm to children, as they may be drawn into loot box purchases to win rare items and boost social status within gaming communities. "Children who are introduced to gambling are four times more likely to develop a gambling problem later in life than those who are not," according to research cited in the Wednesday press release.
+The On-Box Anomaly detection framework should only be reachable by other internal processes over the internal routing instance, but not over an externally exposed port.” reads the advisory published by the vendor. “With the ability to access and manipulate the service to execute code as root a remote attacker can take complete control of the device. Please note that this service is enabled by default as no specific configuration is required.”
 
-Attorney General James has asked the court to permanently bar Valve from operating loot box features in the state, to require the company to return all profits generated by the practice, and to impose fines for the alleged violations.
+The vulnerability affects versions before 25.4R1-S1-EVO and 25.4R2-EVO, but not earlier releases or standard Junos OS. Juniper found the flaw internally and reports no active exploitation.
 
-In January 2025, Genshin Impact developer Cognosphere (aka Hoyoverse) agreed to pay $20 million to settle a U.S. Federal Trade Commission (FTC) lawsuit over unfair marketing of loot boxes to minors, obscuring the actual costs. andmisleading the players about the odds of winning prizes.
+The vendor recommends limiting access to the vulnerable service using ACLs or firewall filters to allow only trusted hosts, or disabling the service entirely with request pfe anomalies disable as a workaround.
 
-BleepingComputer reached out to a Valve spokesperson for comment, but a response was not immediately available.
+The company discovered the vulnerability during internal product security testing or research. Juniper SIRT is not aware of any attacks in the wild exploiting this flaw.
 
-The future of IT infrastructure is here
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
-Modern IT infrastructure moves faster than manual workflows can handle.
+(SecurityAffairs – hacking, RCE)
 
-In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
-
-Marquis sues SonicWall over backup breach that led to ransomware attack
-
-Texas sues TP-Link over Chinese hacking risks, user deception
-
-Men charged in FanDuel scheme fueled by thousands of stolen identities
-
-'Bad actor' hijacks Apex Legends characters in live matches
-
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/gaming/new-york-sues-valve-for-promoting-illegal-gambling-via-game-loot-boxes/, bleepingcomputer.com, 26.02.2026)
+(XXXXXXX, AÇIK - https://securityaffairs.com/188609/security/juniper-issues-emergency-patch-for-critical-ptx-router-rce.html, securityaffairs.com, 27.02.2026)
 
 ================================================================================
 
-[18] BleepingComputer - Medical device maker UFP Technologies warns of data stolen in cyberattack
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Wed, 25 Feb 2026 18:02:16 -0500
-Link: https://www.bleepingcomputer.com/news/security/medical-device-maker-ufp-technologies-warns-of-data-stolen-in-cyberattack/
-
-[TAM METİN - 458 kelime]
-American manufacturer of medical devices, UFP Technologies, has disclosed that a cybersecurity incident has compromised its IT systems and data.
-
-UFP Technologies is a publicly traded medical engineering and manufacturing company that produces a broad range of devices and components used in surgery, wound care, implants, orthopedic applications, and healthcare wearables.
-
-The company employs 4,300 people, has an annual revenue of $600 million, and a market cap of $1.86 billion, according to recent data.
-
-In a filing submitted yesterday with the U.S. Securities and Exchange Commission (SEC), UFP Technologies disclosed that it detected suspicious activity on its IT systems on February 14.
-
-The firm immediately deployed isolation and remediation measures and engaged external cybersecurity advisors to help with the investigation.
-
-Preliminary results of the investigation indicate that the threat has been removed, but the hacker was able to steal data from compromised systems.
-
-“Through the Company’s efforts, the Company believes that the third party responsible for this cybersecurity incident has been removed from the Company’s IT systems, and the Company’s ability to access information impacted by this incident has been restored in all material respects,” reads the SEC filing.
-
-“The incident appears to have impacted many but not all of the Company’s IT systems and affected functions such as billing and label making for customer deliveries. Certain Company or Company-related data appear to have been stolen or destroyed.”
-
-The data destruction note suggests a ransomware or wiper attack, although the nature of the malware remains unclear.
-
-BleepingComputer has contacted UFP Technologies to ask about the attack and whether it involved data encryption/ransom payment demands, but a comment wasn’t immediately available.
-
-At the time of publishing, no ransomware group has publicly claimed the attack on UFP Technologies.
-
-UFP Technologies mentioned that, at this time, it has not determined whether personal information has been exfiltrated. If confirmed at a later time, notifications will be sent to impacted individuals as required by law.
-
-The company stated that, despite the cybersecurity incident, its primary IT systems remain operational. Based on current evidence and assessments, UFP Technologies states it is unlikely that the incident will have a material impact on its operations or financials.
-
-The future of IT infrastructure is here
-
-Modern IT infrastructure moves faster than manual workflows can handle.
-
-In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
-
-Ad tech firm Optimizely confirms data breach after vishing attack
-
-Data breach at French bank registry impacts 1.2 million accounts
-
-Have I Been Pwned: SoundCloud data breach impacts 29.8 million accounts
-
-Monroe University says 2024 data breach affects 320,000 people
-
-Covenant Health says May data breach impacted nearly 478,000 patients
-
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/medical-device-maker-ufp-technologies-warns-of-data-stolen-in-cyberattack/, bleepingcomputer.com, 26.02.2026)
-
-================================================================================
-
-[19] BleepingComputer - Fake Next.js job interview tests backdoor developer's devices
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Wed, 25 Feb 2026 16:47:12 -0500
-Link: https://www.bleepingcomputer.com/news/security/fake-nextjs-job-interview-tests-backdoor-developers-devices/
-
-[TAM METİN - 578 kelime]
-A coordinated campaign targeting software developers with job-themed lures is using malicious repositories posing as legitimate Next.js projects and technical assessment materials, including recruiting coding tests.
-
-The attacker's goal is to achieve remote code execution (RCE) on developer machines, exfiltrate sensitive data, and introduce additional payloads on compromised systems.
-
-Next.js is a popular JavaScript framework used for building web applications. It runs on top of React and uses Node.js for the backend.
-
-The Microsoft Defender team says that the attacker created fake web app projects built with Next.js and disguised them as coding projects to share with developers during job interviews or technical assessments.
-
-The researchers initially identified a repository hosted on the Bitbucket cloud-based Git-based code hosting and collaboration service. However, they discovered multiple repositories that shared code structure, loader logic, and naming patterns.
-
-When the target clones the repository and opens it locally, following a standard workflow, they trigger malicious JavaScript that executes automatically when launching the app.
-
-The script downloads additional malicious code (a JavaScript backdoor) from the attacker's server and executes it directly in memory with the running Node.js process, allowing remote code execution on the machine.
-
-To increase the infection rate, the attackers embedded multiple execution triggers within the malicious repositories, Microsoft explained. These are summarized as follows:
-
-VS Code trigger – A .vscode/tasks.json file set with runOn: "folderOpen" executes a Node script as soon as the project folder is opened (and trusted).
-
-Dev server trigger – When the developer runs npm run dev, a trojanized asset (e.g., a modified JS library) decodes a hidden URL, fetches a loader from a remote server, and executes it in memory.
-
-Backend startup trigger – On server start, a backend module decodes a base64 endpoint from .env, sends process.env to the attacker, receives JavaScript in response, and executes it using new Function().
-
-The infection process drops a JavaScript payload (Stage 1) that profiles the host and registers with a command-and-control (C2) endpoint, polling the server at fixed intervals.
-
-The infection then upgrades to a tasking controller (Stage 2) that connects to a separate C2 server, checks for tasks, executes supplied JavaScript in memory, and tracks spawned processes. The payload also supports file enumeration, directory browsing, and staged file exfiltration.
-
-Microsoft found that the campaign involved multiple repositories that shared naming conventions, loader structure, and staging infrastructure, indicating a coordinated effort rather than a one-off attack.
-
-Aside from the technical analysis, the researchers did not provide any details about the attacker or the extent of the operation.
-
-The tech giant advises that developers should treat standard workflows as the high-risk attack surfaces they really are and take appropriate precautions.
-
-The recommended mitigations include enforcing VS Code Workspace Trust/Restricted Mode, using Attack Surface Reduction (ASR) rules, and monitoring risky sign-ins with Entra ID Protection.
-
-Secrets stored on developer endpoints should be minimized, and short-lived tokens with the least required privileges should be used where possible.
-
-The future of IT infrastructure is here
-
-Modern IT infrastructure moves faster than manual workflows can handle.
-
-In this new Tines guide, learn how your team can reduce hidden manual delays, improve reliability through automated response, and build and scale intelligent workflows on top of tools you already use.
-
-Malicious AI extensions on VSCode Marketplace steal developer data
-
-Olympique Marseille confirms 'attempted' cyberattack after data leak
-
-Microsoft expands Windows restore to more enterprise devices
-
-Windows 11 KB5077241 update improves BitLocker, adds Sysmon tool
-
-Windows 11 KB5074105 update fixes boot, sign-in, and activation issues
-
-(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/security/fake-nextjs-job-interview-tests-backdoor-developers-devices/, bleepingcomputer.com, 26.02.2026)
-
-================================================================================
-
-[20] Security Affairs - How AI Aids Incident Response: Why Humans Alone Cannot Do IR Efficiently
+[18] Security Affairs - How AI Aids Incident Response: Why Humans Alone Cannot Do IR Efficiently
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 08:50:53 +0000
 Link: https://securityaffairs.com/188599/ai/how-ai-aids-incident-response-why-humans-alone-cannot-do-ir-efficiently.html
@@ -1459,7 +1295,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[21] Security Affairs - 12 Million exposed .env files reveal widespread security failures
+[19] Security Affairs - 12 Million exposed .env files reveal widespread security failures
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 08:02:51 +0000
 Link: https://securityaffairs.com/188590/hacking/12-million-exposed-env-files-reveal-widespread-security-failures.html
@@ -1501,7 +1337,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[22] Security Affairs - ManoMano data breach impacted 38 Million customer accounts
+[20] Security Affairs - ManoMano data breach impacted 38 Million customer accounts
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 07:41:50 +0000
 Link: https://securityaffairs.com/188582/data-breach/manomano-data-breach-impacted-38-million-customer-accounts.html
@@ -1545,7 +1381,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[23] Security Affairs - Trend Micro fixes two critical flaws in Apex One
+[21] Security Affairs - Trend Micro fixes two critical flaws in Apex One
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 21:35:51 +0000
 Link: https://securityaffairs.com/188572/security/trend-micro-fixes-two-critical-flaws-in-apex-one.html
@@ -1583,7 +1419,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[24] Security Affairs - UAT-10027 campaign hits U.S. education and healthcare with stealthy Dohdoor backdoor
+[22] Security Affairs - UAT-10027 campaign hits U.S. education and healthcare with stealthy Dohdoor backdoor
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 19:10:34 +0000
 Link: https://securityaffairs.com/188558/apt/uat-10027-campaign-hits-u-s-education-and-healthcare-with-stealthy-dohdoor-backdoor.html
@@ -1625,7 +1461,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[25] Security Affairs - U.S. CISA adds Cisco SD-WAN flaws to its Known Exploited Vulnerabilities catalog
+[23] Security Affairs - U.S. CISA adds Cisco SD-WAN flaws to its Known Exploited Vulnerabilities catalog
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 15:04:20 +0000
 Link: https://securityaffairs.com/188548/hacking/u-s-cisa-adds-cisco-sd-wan-flaws-to-its-known-exploited-vulnerabilities-catalog.html
@@ -1683,7 +1519,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[26] Security Affairs - Hackers abused Cisco SD-WAN zero-day since 2023 to gain full admin control
+[24] Security Affairs - Hackers abused Cisco SD-WAN zero-day since 2023 to gain full admin control
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 11:40:33 +0000
 Link: https://securityaffairs.com/188540/security/hackers-abused-cisco-sd-wan-zero-day-since-2023-to-gain-full-admin-control.html
@@ -1727,91 +1563,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[27] Security Affairs - Google GTIG disrupted China-linked APT UNC2814 halting attacks on 53 orgs in 42 countries
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 08:29:03 +0000
-Link: https://securityaffairs.com/188521/apt/google-gtig-disrupted-china-linked-apt-unc2814-halting-attacks-on-53-orgs-in-42-countries.html
-
-[TAM METİN - 766 kelime]
-Google GTIG disrupted China-linked APT UNC2814 halting attacks on 53 orgs in 42 countries
-
-Google and partners disrupted UNC2814, a suspected China-linked group that hacked 53 organizations across 42 countries.
-
-Google, with industry partners, disrupted the infrastructure of UNC2814, a suspected China-linked cyber espionage group that breached at least 53 organizations in 42 countries. The group has been active since at least 2017, and was spotted targeting governments and global telecoms across Africa, Asia, and the Americas, making it a highly prolific and elusive threat. UNC2814 is likely linked to additional infections in more than 20 other nations.
-
-“Last week, Google Threat Intelligence Group (GTIG), Mandiant, and partners took action to disrupt a global espionage campaign targeting telecommunications and government organizations in dozens of nations across four continents.” reads the GTIG’s report. “The threat actor, UNC2814, is a suspected People’s Republic of China (PRC)-nexus cyber espionage group that GTIG has tracked since 2017. “
-
-UNC2814 used API calls to SaaS apps as command-and-control (C2) infrastructure, disguising malicious traffic as legitimate activity. Rather than exploiting product flaws, the group leveraged legitimate Google Sheets API functions through a novel backdoor called GRIDTIDE.
-
-The group’s operations target different victims than other campaigns, such as “Salt Typhoon,” using unique techniques and TTPs.
-
-Mandiant, using Google SecOps, detected suspicious activity on a CentOS server where the binary /var/tmp/xapt launched a root shell and ran id to confirm root access, showing the attacker had escalated privileges. The researchers reported that the payload mimicked a legacy Debian tool to avoid detection.
-
-Post-compromise, the actor moved laterally via SSH, used living-off-the-land binaries for reconnaissance, and installed the GRIDTIDE backdoor for persistence via a systemd service. Attackers executed GRIDTIDE with nohup ./xapt to keep it running after session closure, and deployed SoftEther VPN Bridge to create an encrypted outbound connection.
-
-UNC2814 targeted endpoints containing personally identifiable information (names, phone numbers, dates of birth, and national IDs) consistent with telecom-focused cyber espionage. While no direct exfiltration was observed, UNC2814 could leverage such access to monitor communications, including call records and SMS messages, for surveillance and intelligence-gathering purposes.
-
-GRIDTIDE is a sophisticated C-based backdoor used by UNC2814 that can execute shell commands, upload and download files. The malware uses Google Sheets as a command-and-control (C2) channel, hiding malicious traffic within legitimate API requests. While it currently uses Google Sheets, other cloud-based spreadsheet platforms could be exploited in a similar way.
-
-The backdoor requires a 16-byte cryptographic key on the host to decrypt its Google Drive configuration, which contains service account credentials, spreadsheet IDs, and private keys.
-
-“When executed, GRIDTIDE sanitizes its Google Sheet. It does this by deleting the first 1000 rows, across columns A to Z in the spreadsheet, by using the Google Sheets API batchClear method. This prevents previous commands or file data stored in the Sheet from interfering with the threat actor’s current session.” continues the report. “Once the Sheet is prepared, the backdoor conducts host-based reconnaissance. It fingerprints the endpoint by collecting the victim’s username, endpoint name, OS details, local IP address, and environmental data such as the current working directory, language settings, and local time zone.”
-
-Commands from the attacker follow a structured syntax, allowing execution of Bash commands, file uploads, and downloads, with status responses returned to cell A1. Data transfer occurs via cells A2 to An, and the malware uses URL-safe Base64 encoding to evade detection.
-
-UNC2814 has leveraged GRIDTIDE since at least 2017 to target telecommunications and government organizations worldwide.
-
-Google Threat Intelligence Group (GTIG) and its partners terminated all attacker-controlled Google Cloud Projects and accounts, disabled the UNC2814 infrastructure, and revoked access to Google Sheets API calls.
-
-GTIG took coordinated action to disrupt UNC2814 and protect affected organizations. They terminated all attacker-controlled Cloud Projects, disabling GRIDTIDE backdoor access, and took down known UNC2814 infrastructure, including current and historical domains. Attacker accounts and Google Sheets access were revoked, and victim organizations were formally notified and supported. GTIG also refined detection signatures to block GRIDTIDE activity and released indicators of compromise (IOCs) used by UNC2814 since 2023, helping organizations worldwide identify and defend against this threat.
-
-“The global scope of UNC2814’s activity, evidenced by confirmed or suspected operations in over 70 countries, underscores the serious threat facing telecommunications and government sectors, and the capacity for these intrusions to evade detection by defenders.” concludes the report. “Prolific intrusions of this scale are generally the result of years of focused effort and will not be easily re-established. We expect that UNC2814 will work hard to re-establish their global footprint.”
-
-Follow me on Twitter: @securityaffairs and Facebook and Mastodon
-
-(SecurityAffairs – hacking, China)
-
-(XXXXXXX, AÇIK - https://securityaffairs.com/188521/apt/google-gtig-disrupted-china-linked-apt-unc2814-halting-attacks-on-53-orgs-in-42-countries.html, securityaffairs.com, 26.02.2026)
-
-================================================================================
-
-[28] Security Affairs - Untrusted repositories turn Claude code into an attack vector
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Wed, 25 Feb 2026 21:39:43 +0000
-Link: https://securityaffairs.com/188508/security/untrusted-repositories-turn-claude-code-into-an-attack-vector.html
-
-[TAM METİN - 411 kelime]
-Untrusted repositories turn Claude code into an attack vector
-
-Flaws in Anthropic’s Claude Code could allow remote code execution and theft of API keys when users open untrusted repositories.
-
-Check Point Research team found multiple vulnerabilities in Anthropic’s Claude Code AI coding assistant that could lead to remote code execution and API key theft. The vulnerabilities abuse features such as Hooks, MCP servers, and environment variables to run arbitrary shell commands and exfiltrate Anthropic API credentials when users clone and open untrusted repositories.
-
-“Critical vulnerabilities, CVE-2025-59536 and CVE-2026-21852, in Anthropic’s Claude Code enabled remote code execution and API key theft through malicious repository-level configuration files, triggered simply by cloning and opening an untrusted project.” reads the report published by Check Point Research.
-
-“Built-in mechanisms—including Hooks, MCP integrations, and environment variables—could be abused to bypass trust controls, execute hidden shell commands, and redirect authenticated API traffic before user consent”
-
-Researchers found that Claude Code’s project-level configuration files can act as an execution layer, allowing the attackers to abuse a single malicious repository as an attack vector. Simply cloning and opening a crafted repo could trigger hidden commands, bypass consent safeguards, steal Anthropic API keys, and pivot from a developer’s workstation into shared enterprise cloud environments, without visible warning.
-
-The risks include silent command execution via abused Hooks, consent bypass in the Model Context Protocol (CVE-2025-59536), and API key exfiltration before trust confirmation (CVE-2026-21852), potentially exposing broader AI-driven workflows.
-
-Anthropic’s API Workspaces feature lets multiple API keys share access to cloud-stored project files. Since files belong to the entire workspace and not just one API key, stealing a single key could let attackers access, change, or delete shared data, upload harmful content, and create unexpected charges. This behavior puts the whole team at risk, not just one developer.
-
-The flaws highlight a new AI supply chain threat: repository configuration files now act as execution logic, so simply opening an untrusted project can trigger abuse. Anthropic addressed the issues by tightening trust prompts, blocking external tool execution, and restricting API calls until user approval.
-
-“AI-powered coding tools are rapidly becoming part of enterprise development workflows. Their productivity benefits are significant, but so is the need to reassess traditional security assumptions.
-
-Configuration files are no longer passive settings. They can influence execution, networking, and permissions.” concludes the report. “As AI integration deepens, security controls must evolve to match the new trust boundaries.”
-
-Follow me on Twitter: @securityaffairs and Facebook and Mastodon
-
-(SecurityAffairs – hacking, Claude)
-
-(XXXXXXX, AÇIK - https://securityaffairs.com/188508/security/untrusted-repositories-turn-claude-code-into-an-attack-vector.html, securityaffairs.com, 26.02.2026)
-
-================================================================================
-
-[29] Graham Cluley - Your staff are your biggest security risk: AI is making it worse
+[25] Graham Cluley - Your staff are your biggest security risk: AI is making it worse
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 21:21:23 +0000
 Link: https://www.fortra.com/blog/your-staff-are-your-biggest-security-risk-ai-making-it-worse
@@ -1822,7 +1574,7 @@ Link: https://www.fortra.com/blog/your-staff-are-your-biggest-security-risk-ai-m
 
 ================================================================================
 
-[30] Graham Cluley - Notorious ransomware gang allegedly blackmailed by fake FSB officer
+[26] Graham Cluley - Notorious ransomware gang allegedly blackmailed by fake FSB officer
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 13:40:32 +0000
 Link: https://www.bitdefender.com/en-us/blog/hotforsecurity/ransomware-gang-blackmailed-fake-fsb-officer
@@ -1858,7 +1610,7 @@ Conti's victims paid a heavy price for the gang's activities. It is, at least, m
 
 ================================================================================
 
-[31] Graham Cluley - Smashing Security podcast #456: How to lose friends and DDoS people
+[27] Graham Cluley - Smashing Security podcast #456: How to lose friends and DDoS people
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 00:16:49 +0000
 Link: https://grahamcluley.com/smashing-security-podcast-456/
@@ -1968,7 +1720,55 @@ Follow him on LinkedIn, Bluesky and Mastodon, or drop him an email.
 
 ================================================================================
 
-[32] SANS ISC - ISC Stormcast For Friday, February 27th, 2026 https://isc.sans.edu/podcastdetail/9828, (Fri, Feb 27th)
+[28] SANS ISC - Fake Fedex Email Delivers Donuts&#x21;, (Fri, Feb 27th)
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 27 Feb 2026 12:22:12 GMT
+Link: https://isc.sans.edu/diary/rss/32754
+
+[TAM METİN - 399 kelime]
+Fake Fedex Email Delivers Donuts!
+
+It’s Friday, let’s have a look at another simple piece of malware to close a busy week! I received a Fedex notification about a delivery. Usually, such emails are simple phishing attacks that redirect you to a fake login page to collect your credentials. Here, it was a bit different:
+
+Nothing really fancy but it is effective and uses interesting techniques. The attached archive called "fedex_shipping_document.7z" (SHA256: a02d54db4ecd6a02f886b522ee78221406aa9a50b92d30b06efb86b9a15781f5 ) contains a Windows script (.bat file) with the same filename. This script, not really obfuscated and easy to understand, receiveds a low VT score, only 12/61!
+
+First, il will generate some environment variables and implement persistence through a Run key:
+
+The variable name "!contract" contains the path of a script copy in %APPDATA%\Rail\EXPRESSIO.cmd. The threat actor does not use the classic environment variable format “%VAR%” but “!var!”. This is expanded at execution time, meaning it reflects the current value inside loops and blocks[1]. It’s enabled via this command
+
+Simple but nice trick to defeat simple search of "%..%"!
+
+Then a PowerShell one-liner is invoked. The Powershell payload is located in the script (at the end) and Bas64-encoded. A nice trick is that the very first characters of the Base64 payload makes it undetectable by tools like base64dump! PowerShell extracts it through a regular expression:
+
+Once the payload decoded, it is piped to another PowerShell:
+
+The PowerShell implements different behaviors. First, it will create a Mutex on the victim’s computer:
+
+Strange, it seems that some anti-debugging and anti-sandoxing are not completely implemented. By example, the scripts gets the number of CPU cores (a classic) but it’s never tested!
+
+The script waits for the presence of an « explorer » process (which means that a user is logged in) otherwise it exists:
+
+There is a long Base64-encoded variable that contains a payload that has been AES encrypted. The IV and salt are extracted and the payload decrypted. No time to loose, run the script into the Powershell debugger and dump the decrypted data in a file:
+
+The decrypted data is the next stage: a shellcode. This one will be injected into the explorer process and a new thread started:
+
+This behavior is typical to DonutLoader[2].
+
+The shell code connects to the C2 server: 204[.]10[.]160[.]190:7003. It's a good old XWorm!
+
+[1] https://ss64.com/nt/delayedexpansion.html
+[2] https://medium.com/@anyrun/donutloader-malware-overview-00d9e3d79a48
+
+Xavier Mertens (@xme)
+Xameco
+Senior ISC Handler - Freelance Cyber Security Consultant
+PGP Key
+
+(XXXXXXX, AÇIK - https://isc.sans.edu/diary/rss/32754, isc.sans.edu, 27.02.2026)
+
+================================================================================
+
+[29] SANS ISC - ISC Stormcast For Friday, February 27th, 2026 https://isc.sans.edu/podcastdetail/9828, (Fri, Feb 27th)
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 02:00:02 GMT
 Link: https://isc.sans.edu/diary/rss/32752
@@ -1979,7 +1779,7 @@ Link: https://isc.sans.edu/diary/rss/32752
 
 ================================================================================
 
-[33] SANS ISC - Finding Signal in the Noise: Lessons Learned Running a Honeypot with AI Assistance &#x5b;Guest Diary&#x5d;, (Tue, Feb 24th)
+[30] SANS ISC - Finding Signal in the Noise: Lessons Learned Running a Honeypot with AI Assistance &#x5b;Guest Diary&#x5d;, (Tue, Feb 24th)
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 12:21:37 GMT
 Link: https://isc.sans.edu/diary/rss/32744
@@ -2035,7 +1835,7 @@ gbruneau at isc dot sans dot edu
 
 ================================================================================
 
-[34] SANS ISC - The CLAIR Model: A Synthesized Conceptual Framework for Mapping Critical Infrastructure Interdependencies &#x5b;Guest Diary&#x5d;, (Wed, Feb 25th)
+[31] SANS ISC - The CLAIR Model: A Synthesized Conceptual Framework for Mapping Critical Infrastructure Interdependencies &#x5b;Guest Diary&#x5d;, (Wed, Feb 25th)
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 12:21:26 GMT
 Link: https://isc.sans.edu/diary/rss/32748
@@ -2193,7 +1993,7 @@ Souppaya, M., & Scarfone, K. (2022). Guide to enterprise patch management planni
 
 ================================================================================
 
-[35] SANS ISC - ISC Stormcast For Thursday, February 26th, 2026 https://isc.sans.edu/podcastdetail/9826, (Thu, Feb 26th)
+[32] SANS ISC - ISC Stormcast For Thursday, February 26th, 2026 https://isc.sans.edu/podcastdetail/9826, (Thu, Feb 26th)
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 02:00:03 GMT
 Link: https://isc.sans.edu/diary/rss/32750
@@ -2204,7 +2004,7 @@ Link: https://isc.sans.edu/diary/rss/32750
 
 ================================================================================
 
-[36] Recorded Future - Recorded Future Expands Coverage of Scams and Financial Fraud with Money Mule Intelligence from CYBERA
+[33] Recorded Future - Recorded Future Expands Coverage of Scams and Financial Fraud with Money Mule Intelligence from CYBERA
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 00:00:00 GMT
 Link: https://www.recordedfuture.com/blog/recorded-future-money-mule-intelligence-cybera
@@ -2258,7 +2058,7 @@ PFI users that purchase this capability, can now act on both sides of the transa
 
 ================================================================================
 
-[37] Cyberscoop - Gottumukkala out, Andersen in as acting CISA director
+[34] Cyberscoop - Gottumukkala out, Andersen in as acting CISA director
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 02:21:08 +0000
 Link: https://cyberscoop.com/cisa-leadership-change-madhu-gottumukkala-nick-andersen/
@@ -2320,7 +2120,7 @@ Governments issue warning over Cisco zero-day attacks dating back to 2023
 
 ================================================================================
 
-[38] Cyberscoop - Project Compass is Europol’s new playbook for taking on The Com
+[35] Cyberscoop - Project Compass is Europol’s new playbook for taking on The Com
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 21:21:14 +0000
 Link: https://cyberscoop.com/project-compass-the-com-europol/
@@ -2426,7 +2226,7 @@ Gottumukkala out, Andersen in as acting CISA director
 
 ================================================================================
 
-[39] Cyberscoop - Senate moves one step closer to passing health care cyber reforms 
+[36] Cyberscoop - Senate moves one step closer to passing health care cyber reforms 
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 20:36:36 +0000
 Link: https://cyberscoop.com/senate-passes-health-care-cyber-reforms-cassidy/
@@ -2512,7 +2312,7 @@ Gottumukkala out, Andersen in as acting CISA director
 
 ================================================================================
 
-[40] Cyberscoop - Governments issue warning over Cisco zero-day attacks dating back to 2023
+[37] Cyberscoop - Governments issue warning over Cisco zero-day attacks dating back to 2023
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Wed, 25 Feb 2026 23:51:42 +0000
 Link: https://cyberscoop.com/cisco-zero-days-cisa-emergency-directive-five-eyes/
@@ -2614,7 +2414,7 @@ Senate moves one step closer to passing health care cyber reforms
 
 ================================================================================
 
-[41] The Register - Scattered Lapsus$ Hunters auditioning female voices to sharpen social engineering
+[38] The Register - Scattered Lapsus$ Hunters auditioning female voices to sharpen social engineering
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: 2026-02-26T12:35:21.00Z
 Link: https://go.theregister.com/feed/www.theregister.com/2026/02/26/scattered_lapsus_hunters_female_recruits/
@@ -2660,12 +2460,12 @@ When The Register asked SLSH about how many people had taken up its offer after 
 
 ================================================================================
 
-[42] TechCrunch Security - Cisco says hackers have been exploiting a critical bug to break into big customer networks since 2023
+[39] TechCrunch Security - Cisco says hackers have been exploiting a critical bug to break into big customer networks since 2023
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 16:03:36 +0000
 Link: https://techcrunch.com/2026/02/26/cisco-says-hackers-have-been-exploiting-a-critical-bug-to-break-into-big-customer-networks-since-2023/
 
-[TAM METİN - 633 kelime]
+[TAM METİN - 645 kelime]
 Cisco says hackers have been exploiting a bug in one of its popular networking products used by large enterprises for at least three years, prompting the U.S. government and its allies to urge organizations to take action.
 
 The bug, which has a maximum-rated vulnerability severity score of 10.0, allows hackers to remotely break into networks running its Catalyst SD-WAN products, which allow large companies and government agencies with multiple offices to connect their private networks over long distances.
@@ -2686,6 +2486,16 @@ He can be reached via encrypted message at zackwhittaker.1337 on Signal. You can
 
 Last Hours: Save up to $680 on your pass before 11:59 p.m. tonight.Meet investors. Discover your next portfolio company. Hear from 250+ tech leaders, dive into 200+ sessions, and explore 300+ startups building what’s next. Don’t miss these one-time savings.
 
+Jack Dorsey just halved the size of Block’s employee base — and he says your company is next
+
+
+
+Connie Loizos
+
+Jack Dorsey just halved the size of Block’s employee base — and he says your company is next
+
+Jack Dorsey just halved the size of Block’s employee base — and he says your company is next
+
 It’s time to pull the plug on plug-in hybrids
 
 
@@ -2695,16 +2505,6 @@ Tim De Chant
 It’s time to pull the plug on plug-in hybrids
 
 It’s time to pull the plug on plug-in hybrids
-
-A Meta AI security researcher said an OpenClaw agent ran amok on her inbox 
-
-
-
-Julie Bort
-
-A Meta AI security researcher said an OpenClaw agent ran amok on her inbox
-
-A Meta AI security researcher said an OpenClaw agent ran amok on her inbox
 
 Americans are destroying Flock surveillance cameras
 
@@ -2760,7 +2560,7 @@ Google VP warns that two types of AI startups may not survive
 
 ================================================================================
 
-[43] TechCrunch Security - Spyware makers sentenced to prison in Greece for wiretapping politicians and journalists
+[40] TechCrunch Security - Spyware makers sentenced to prison in Greece for wiretapping politicians and journalists
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 15:45:15 +0000
 Link: https://techcrunch.com/2026/02/26/spyware-maker-sentenced-to-prison-in-greece-for-wiretapping-politicians-and-journalists/
@@ -2810,7 +2610,7 @@ Cisco says hackers have been exploiting a critical bug to break into big custome
 Zack Whittaker
 
 
- 19 hours ago
+ 20 hours ago
 
 Cisco says hackers have been exploiting a critical bug to break into big customer networks since 2023
 
@@ -2854,7 +2654,7 @@ Cisco says hackers have been exploiting a critical bug to break into big custome
 Zack Whittaker
 
 
- 19 hours ago
+ 20 hours ago
 
 Cisco says hackers have been exploiting a critical bug to break into big customer networks since 2023
 
@@ -2870,7 +2670,7 @@ Spyware makers sentenced to prison in Greece for wiretapping politicians and jou
 Lorenzo Franceschi-Bicchierai
 
 
- 19 hours ago
+ 21 hours ago
 
 Spyware makers sentenced to prison in Greece for wiretapping politicians and journalists
 
@@ -2894,12 +2694,96 @@ US cybersecurity agency CISA reportedly in dire shape amid Trump cuts and layoff
 
 ================================================================================
 
-[44] CSO Online - Why application security must start at the load balancer
+[41] CSO Online - Your personal OpenClaw agent may also be taking orders from malicious websites
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 27 Feb 2026 11:57:20 +0000
+Link: https://www.csoonline.com/article/4138431/your-personal-openclaw-agent-may-also-be-taking-orders-from-malicious-websites.html
+
+[TAM METİN - 686 kelime]
+A critical OpenClaw flaw allowed malicious websites to connect to locally running agents, brute-force passwords without limits, and take full control by exploiting implicit trust in localhost connections.
+
+If you thought running an AI agent locally kept it safely inside your machine’s walls, you’re in for a surprise. Researchers at Oasis Security have disclosed a flaw chain that allowed a malicious website to quietly connect to a locally running OpenClaw agent and take full control.
+
+The issue stems from a fundamental assumption baked into developer tools that anything coming from “localhost” can be trusted. In reality, however, modern browsers allow external websites to open WebSocket connections to local services.
+
+According to Oasis findings, malicious browser pages can silently connect to the OpenClaw gateway, which auto-trusts localhosts and disables rate limits, enabling rapid password brute-forcing and unauthorized device pairing.
+
+“The modern web browser acts as a porous membrane, permitting untrusted, external JavaScript to bridge the gap to local services via WebSockets,” said Jason Soroko, senior fellow at Sectigo. “By relying on a local IP address to grant immunity from rate-limiting and to silently auto-approve device pairings, the system abandons the core tenets of a zero-trust architecture.”
+
+Once hijacked, the attacker can obtain the OpenClaw agent’s high privileges, including autonomous workflows, access to codebases, integrations, and credentials. Oasis researchers called the flaw ClawJacked, tracked under CVE-2026-25253, and reported full proof-of-concept (PoC) code to OpenClaw, which then promptly fixed it.
+
+‘localhost’ became a weaklink
+
+Oasis Security’s research showed how a combination of design choices enabled the flaw. OpenClaw relied on local binding, automatic device pairing, and minimal authentication friction to streamline onboarding.
+
+Because WebSocket connections to localhost are not constrained by traditional cross-origin protections, a hostile website could initiate communication with the agent’s local gateway. From there, weak authentication controls and implicit trust in local origins allow the attacker to pair a device session and begin issuing commands.
+
+“What stands out is that it’s clear that product usefulness improved faster than security,” said Randolph Barr, CISO at Cequence Security. “The design focused on making the developer experience as smooth as possible by using local binding, automatic device pairing, and less friction for connectivity. This made adoption faster but also made defensive controls less effective.”
+
+Gal Moyal of Noma Security echoed this concern that agentic AI tools prioritize seamless developer experience over security. He noted that WebSocket access to localhost is a known browser behavior, “but its intersection with an unthrottled authentication endpoint and automatic device trust from localhost creates a particularly dangerous combination.”
+
+The full attack chain involves a victim visiting a malicious website whose hidden script connects to the locally running OpenClaw gateway via WebSockets, brute-forces its password without rate limits, and silently registers as a trusted device due to implicit localhost trust. Once authenticated, the attacker gains full control of the AI agent and its accessible data and functions.
+
+A larger blast radius
+
+Unlike regular software vulnerabilities, compromised AI agents have a bigger blast radius as they hold sensitive API keys, session tokens, file system access, and the authority to execute tasks across enterprise tools.
+
+Barr emphasized that autonomous systems “aggregate identity, credentials, and workflow authority,” meaning a failure doesn’t occur quietly. Instead, the agent executes actions “with the full authority of the user, at machine speed and machine scale.” In developer environments, that could include modifying code repositories, accessing internal systems, or triggering automated processes.
+
+Soroko described the browser itself as the unexpected attack vector, effectively bypassing the developer’s physical perimeter and “turning a simple background tab into an effective lock-pick.” Oasis noted that the OpenClaw team responded quickly, coordinating disclosure and issuing a fix (OpenClaw v2026.2.25 or later) within 24 hours. However, experts caution that rapid patching alone may not address the broader architectural risks. Organizations deploying AI agents should implement stronger authentication, explicit user approval for session pairing, rate limiting, credential scoping, and behavioral monitoring, they noted.
+
+US authorities punish sellers of malware and spyware
+
+Why application security must start at the load balancer
+
+How to make LLMs a defensive advantage without creating a new attack surface
+
+From our editors straight to your inbox
+
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4138431/your-personal-openclaw-agent-may-also-be-taking-orders-from-malicious-websites.html, csoonline.com, 27.02.2026)
+
+================================================================================
+
+[42] CSO Online - US authorities punish sellers of malware and spyware
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Fri, 27 Feb 2026 11:35:29 +0000
+Link: https://www.csoonline.com/article/4138422/us-authorities-punish-sellers-of-malware-and-spyware.html
+
+[TAM METİN - 343 kelime]
+Prison for trading malware for crypto, sanctions for selling US cyberweapons to its enemies.
+
+The US authorities have made it clear that they will have no truck with any individuals trying to by-pass regulations on trading cyberweapons with hostile powers.
+
+Selling sensitive cyber-exploit components to a Russian company landed Australian citizen Peter Williams with an 87-month prison sentence from the US District Court for the District of Columbia on February 24.
+
+“Williams took trade secrets comprised of national security software and sold them for up to $4 million in crypto currency. These incredibly powerful tools would have allowed Russia to access millions of digital devices,” said US Attorney Jeanine Pirro for the District of Columbia. “By betraying a position of trust and selling sensitive American technology, Williams’ crime is not only one of theft, it is a crime of national security.
+
+On the same day, the Department of the Treasury’s Office of Foreign Assets Control (OFAC) sanctioned Sergey Sergeyevich Zelenyuk and his company, Matrix LLC (trading as Operation Zero) for their acquisition and distribution of cyber tools harmful to US national security.
+
+Operation Zero trades in exploits of software vulnerabilities, and offered rewards to anyone who would provide them with exploits for US products. Among the exploits that Operation Zero acquired were proprietary cyber tools that had been created for the US government. These were then sold to at least one unauthorized user.
+
+“If you steal US trade secrets, we will hold you accountable,” said US Secretary of the Treasury Scott Bessent. “Treasury will continue to work alongside the rest of the Trump Administration to protect sensitive American intellectual property and safeguard our national security.”
+
+As a result of the sanction, all property or possessions held by Zelenyek and Matrix in the US will be blocked, with the possibility of criminal charges for transaction of any assets.
+
+Your personal OpenClaw agent may also be taking orders from malicious websites
+
+New Serv-U bugs extend SolarWinds’ run of high-severity disclosures
+
+VMware fixes command injection flaw in Aria Operations
+
+From our editors straight to your inbox
+
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4138422/us-authorities-punish-sellers-of-malware-and-spyware.html, csoonline.com, 27.02.2026)
+
+================================================================================
+
+[43] CSO Online - Why application security must start at the load balancer
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 11:00:00 +0000
 Link: https://www.csoonline.com/article/4138000/why-application-security-must-start-at-the-load-balancer.html
 
-[TAM METİN - 1269 kelime]
+[TAM METİN - 1273 kelime]
 Most breaches don’t outsmart your stack; they walk through a permissive load balancer you tuned for speed instead of trust.
 
 For a long time, I thought of the load balancer as a performance device. Its job was to distribute traffic, improve uptime, and make applications feel fast. Security was something that happened elsewhere, on firewalls, inside WAFs or deep in the application code.
@@ -3012,11 +2896,11 @@ When the front door is strong, everything behind it becomes easier to secure, ea
 
 This article is published as part of the Foundry Expert Contributor Network.Want to join?
 
+Your personal OpenClaw agent may also be taking orders from malicious websites
+
+US authorities punish sellers of malware and spyware
+
 How to make LLMs a defensive advantage without creating a new attack surface
-
-The CSO guide to top security conferences
-
-Ransomware groups switch to stealthy attacks and long-term access
 
 From our editors straight to your inbox
 
@@ -3024,7 +2908,7 @@ From our editors straight to your inbox
 
 ================================================================================
 
-[45] CSO Online - Enterprise Spotlight: Data Center Modernization
+[44] CSO Online - Enterprise Spotlight: Data Center Modernization
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 10:00:00 +0000
 Link: https://us.resources.csoonline.com/resources/form?placement_id=ee7073cd-e75d-46f6-96fa-38e469cf0e66&brand_id=32&locale_id=1
@@ -3046,7 +2930,7 @@ Artificial Intelligence, Data Center, Infrastructure Management
 
 ================================================================================
 
-[46] CSO Online - How to make LLMs a defensive advantage without creating a new attack surface
+[45] CSO Online - How to make LLMs a defensive advantage without creating a new attack surface
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 10:00:00 +0000
 Link: https://www.csoonline.com/article/4137983/how-to-make-llms-a-defensive-advantage-without-creating-a-new-attack-surface.html
@@ -3162,7 +3046,7 @@ From our editors straight to your inbox
 
 ================================================================================
 
-[47] CSO Online - The CSO guide to top security conferences
+[46] CSO Online - The CSO guide to top security conferences
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 07:30:00 +0000
 Link: https://www.csoonline.com/article/559539/the-cso-guide-to-top-security-conferences.html
@@ -3238,12 +3122,12 @@ From our editors straight to your inbox
 
 ================================================================================
 
-[48] CSO Online - Ransomware groups switch to stealthy attacks and long-term access
+[47] CSO Online - Ransomware groups switch to stealthy attacks and long-term access
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 07:00:00 +0000
 Link: https://www.csoonline.com/article/4137010/ransomware-groups-switch-to-stealthy-attacks-and-long-term-access.html
 
-[TAM METİN - 897 kelime]
+[TAM METİN - 894 kelime]
 Attackers are shifting from smash-and-grab operations to “parasitic” residency. CISOs must emphasize identity controls, monitor trusted applications and integrations, and focused detection strategies on persistence.
 
 Ransomware attackers are switching tactics in favor of more stealthy infiltration, as the threat of public exposure of sensitive corporate data is becoming the main mechanism of extortion.
@@ -3302,11 +3186,11 @@ The evolving tradecraft of ransomware groups should prompt a rethink of defensiv
 
 “For CISOs, the priority should be strengthening identity controls, closely monitoring trusted applications and third-party integrations, and ensuring detection strategies focus on persistence and data exfiltration activity,” Mourtzinos advises.
 
+US authorities punish sellers of malware and spyware
+
 China-linked hackers used Google Sheets to spy on telecoms and governments across 42 countries
 
 Steaelite RAT combines data theft and ransomware management capability in one tool
-
-Microsoft warns of job‑themed repo lures targeting developers with multi‑stage backdoors
 
 From our editors straight to your inbox
 
@@ -3314,7 +3198,7 @@ From our editors straight to your inbox
 
 ================================================================================
 
-[49] CSO Online - Hacker kompromittieren immer schneller
+[48] CSO Online - Hacker kompromittieren immer schneller
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Fri, 27 Feb 2026 06:45:00 +0000
 Link: https://www.csoonline.com/article/4137880/hacker-kompromittieren-immer-schneller.html
@@ -3356,370 +3240,12 @@ Von unseren Redakteuren direkt in Ihren Posteingang
 
 ================================================================================
 
-[50] CSO Online - China-linked hackers used Google Sheets to spy on telecoms and governments across 42 countries
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 11:18:34 +0000
-Link: https://www.csoonline.com/article/4137834/china-linked-hackers-used-google-sheets-to-spy-on-telecoms-and-governments-across-42-countries.html
-
-[TAM METİN - 844 kelime]
-The GRIDTIDE backdoor concealed its traffic within routine spreadsheet activity for years before Google shut down the operation last week.
-
-Google has disrupted a China-linked espionage group that used Google’s spreadsheet application as a covert spy tool to compromise telecom providers and government agencies across 42 countries, sending commands and receiving stolen data through it, Google’s Threat Intelligence Group (GTIG) said on Thursday.
-
-Working with Mandiant, GTIG confirmed intrusions at 53 organizations across 42 countries, with suspected infections in at least 20 more. The group, identified by Google as UNC2814, is a suspected PRC-nexus actor that GTIG has tracked since 2017.
-
-“This prolific, elusive actor has a long history of targeting international governments and global telecommunications organizations across Africa, Asia, and the Americas,” GTIG said in a blog post.
-
-Unlike Salt Typhoon, UNC2814, the China-linked group whose intrusions into US telecom carriers drew scrutiny from Congress and federal regulators last year, operates with distinct tactics and targets a different set of victims globally, the post added.
-
-How UNC2814 gains its initial foothold has not been determined, though GTIG said the group has a history of exploiting and compromising web servers and edge systems. Once inside, it deployed a novel backdoor and maintained persistent access across target networks.
-
-A spreadsheet repurposed as a spy tool
-
-That backdoor, which GTIG named GRIDTIDE, did not communicate the way most malware does. “The backdoor leverages Google Sheets as a high-availability C2 platform, treating the spreadsheet not as a document, but as a communication channel to facilitate the transfer of raw data and shell commands,” GTIG said.
-
-The attackers wrote commands into spreadsheet cells and retrieved stolen data from them the same way. The malware polled the sheet every second for new instructions, wrote status updates back on task completion, and wiped the first 1,000 rows at the start of each session to erase traces of prior activity, the blog post explained.
-
-“This activity is not the result of a security vulnerability in Google’s products; rather, it abuses legitimate Google Sheets API functionality to disguise C2 traffic,” GTIG added.
-
-“The most unsettling detail about the GRIDTIDE backdoor is how it abuses legitimate Google Sheets API calls to function as its C2 channel, while still utilizing techniques like ‘living off the land’ to blend in with regular enterprise activities,” Andrew Costis, manager of the Adversary Research Team at AttackIQ, said. “This camouflage buys attackers time by slipping past the triggers defenders rely on, like obvious malware signatures or noisy beaconing, and hiding inside the same cloud app patterns teams are used to seeing.”
-
-How Mandiant found it
-
-The campaign came to light during a Mandiant Threat Defense investigation, when analysts flagged unusual activity on a CentOS server. A binary named xapt, designed to masquerade as the apt package manager on Debian-based Linux systems, had already escalated to root and was running shell commands to confirm its access level, GTIG said.
-
-The attacker had the highest available privileges on the system before the alert was raised.
-
-From that foothold, the threat actor used a service account to move laterally via SSH, deployed living-off-the-land binaries for reconnaissance, and installed GRIDTIDE as a persistent systemd service to survive reboots. The threat actor also deployed SoftEther VPN Bridge to maintain an encrypted outbound channel.
-
-“VPN configuration metadata suggests UNC2814 has been leveraging this specific infrastructure since July 2018,” GTIG said.
-
-The extent of that access became clear when investigators examined what the attackers were targeting.
-
-The real target was individuals
-
-The attackers planted GRIDTIDE on endpoints that held personally identifiable information, including full names, phone numbers, dates of birth, voter IDs, and national ID numbers.
-
-“We assess the targeting of PII in this engagement is consistent with cyber espionage activity in telecommunications, which is primarily leveraged to identify, track, and monitor persons of interest,” GTIG said in the post.
-
-GTIG did not directly observe exfiltration during this campaign, but noted that “historical PRC-nexus espionage intrusions against telecoms have resulted in the theft of call data records, unencrypted SMS messages, and the compromise and abuse of lawful intercept systems.”
-
-Chinese cyberespionage groups have consistently prioritized telecommunications as a target precisely because of the access their networks provide to sensitive communications and lawful intercept infrastructure.
-
-“When telecom firms and government agencies are in the blast radius, the stakes go beyond one company’s incident report,” Costis said. “Access to telecom environments can enable broad intelligence collection, help map relationships, and create opportunities for long-term monitoring that is hard to unravel once compromised.”
-
-To dismantle the operation, GTIG terminated all Google Cloud projects controlled by the attackers, disabled their accounts, revoked Google Sheets API access, and sinkholed current and historical C2 domains. It said it has also notified affected organizations and published indicators of compromise through Google Threat Intelligence, including IP addresses, domains, and file hashes tied to UNC2814.
-
-Ransomware groups switch to stealthy attacks and long-term access
-
-Steaelite RAT combines data theft and ransomware management capability in one tool
-
-Microsoft warns of job‑themed repo lures targeting developers with multi‑stage backdoors
-
-From our editors straight to your inbox
-
-(XXXXXXX, AÇIK - https://www.csoonline.com/article/4137834/china-linked-hackers-used-google-sheets-to-spy-on-telecoms-and-governments-across-42-countries.html, csoonline.com, 26.02.2026)
-
-================================================================================
-
-[51] CSO Online - The farmers and the mercenaries: Rethinking the ‘human layer’ in security
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 10:00:00 +0000
-Link: https://www.csoonline.com/article/4137281/the-farmers-and-the-mercenaries-rethinking-the-human-layer-in-security.html
-
-[TAM METİN - 984 kelime]
-Why we're asking the wrong people to save us.
-
-There’s a phrase that’s become gospel in cybersecurity: “Employees are the last line of defense.”
-
-We’ve built an entire industry around it. Billions of dollars in security awareness programs, mandatory simulations and user-reporting workflows across endpoints, applications and collaboration tools. All predicated on a premise that sounds reasonable until you examine what we’re actually asking.
-
-Here’s what we’re asking: for the marketing coordinator, the accounts payable clerk and the sales rep to catch what sophisticated security tools and trained professionals missed.
-
-That’s not a security strategy. That’s asking farmers to repel mercenaries.
-
-The hierarchy we don’t talk about
-
-Think of the actual defensive capabilities in a typical organization.
-
-Your security team has years of specialized training, access to SIEM platforms, threat intelligence feeds and forensics tools. Their full-time job is defense.
-
-Your CISO has decades of experience, strategic visibility across the organization and the authority to make architectural decisions. Defense is their entire professional identity.
-
-Your employees have a short annual training module, a reporting workflow and whatever attention they can spare from the job they were actually hired to do.
-
-We’ve built a multi-billion dollar industry around the idea that the third group will succeed where the first two are failing.
-
-The evidence is already in
-
-This isn’t a theoretical complaint — it shows up in research on how real SOCs work. A study by the University of Oxford based on surveys and interviews with SOC practitioners found they “confirmed the high” false-positive rates of tools in use, and that many “false positives” are actually benign triggers that still require human validation.
-
-That’s not employee failure. That’s employees doing exactly what we trained them to do — and the training is producing volume rather than clarity.
-
-User reporting systems have become noise amplifiers. Employees are encouraged to flag anything that feels out of pattern: unusual access prompts, unexpected system messages, automated workflows, new integrations, time-sensitive requests. These signals once indicated risk. Today, they often reflect how modern, automated businesses actually operate. The cues we taught employees to distrust increasingly describe normal work.
-
-Meanwhile, SOC teams are drowning. It’s not just the queues — it’s the human cost. ISACA’s 2024 research found 66% of cybersecurity professionals say the job is more stressful now than it was five years ago, citing a more complex threat landscape alongside resourcing constraints.
-
-And our answer is: the accountants will save us.
-
-Here’s the contrarian take the industry needs to hear: the ‘human layer’ that matters isn’t your employees. It’s your security team.
-
-When we talk about the human element in security, we should be talking about the CISOs running on four hours of sleep during an incident. The analysts pattern-matching across thousands of signals. The threat hunters who notice something slightly off in authentication logs. The architects who see the structural weakness before it becomes a breach.
-
-These are elite defenders. Trained professionals. The actual human intelligence in your security posture.
-
-If they can’t keep up — if their capacity is consumed by false positive triage, user-submitted reports, operational escalations and the constant pressure to clear queues — then no amount of awareness training for end users is going to close that gap.
-
-You don’t compensate for overwhelmed special forces by handing rifles to farmers.
-
-The uncomfortable math
-
-Let me walk through what’s actually happening in most organizations:
-
-The security team receives hundreds of alerts daily. Many originate from automated controls, user reporting workflows and precautionary detections designed to err on the side of caution. A significant percentage require investigation — you can’t know something is harmless until you look. Each investigation takes 15–20 minutes. The math quickly consumes 100% of available analyst capacity.
-
-When false positive volume hits capacity, strategic threat hunting drops to zero. There’s no time for pattern recognition across multiple signals, correlation with threat intelligence or the slow careful analysis that catches sophisticated attacks.
-
-The sophisticated attacks don’t announce themselves. They wait in queue, looking like everything else. Detection becomes random — a function of luck, not design.
-
-This is the crisis facing the actual human layer of defense. And we’re addressing it by asking frontline employees to identify subtle anomalies in systems and workflows that already passed through layers of automated controls.
-
-I’m not arguing that baseline security hygiene is worthless. Employees should follow sensible practices and avoid obviously risky behavior. Basic discipline matters.
-
-But we’ve elevated awareness training from ‘basic hygiene’ to ‘strategic defense,’ and that elevation is dangerous. It creates a false sense of coverage. It allows organizations to underinvest in actual defensive capability because they’ve ‘addressed the human element.’
-
-The human element that needs addressing is your security team’s capacity. Their tools, their processes, their ability to do strategic work instead of drowning in noise.
-
-Even regulators and standards bodies implicitly acknowledge the same bottleneck: monitoring has to be implemented in a way that minimizes false positives and false negatives — because human review capacity is finite.
-
-The question worth asking
-
-Every CISO should be asking: What percentage of my security team’s capacity is consumed by work that doesn’t actually reduce risk?
-
-If the answer is ‘most of it’ — if your analysts spend their days clearing precautionary alerts, reviewing benign activity and responding to internal escalations driven by uncertainty rather than threat — then you have a human layer problem.
-
-But the solution isn’t more training for end users. It’s restoring capacity to the people actually trained to defend you.
-
-The farmers have fields to tend. Let them farm.
-
-The question is whether your mercenaries have room to fight.
-
-This article is published as part of the Foundry Expert Contributor Network.Want to join?
-
-How to make LLMs a defensive advantage without creating a new attack surface
-
-Boards don’t need cyber metrics — they need risk signals
-
-It’s time to rethink CISO reporting lines
-
-From our editors straight to your inbox
-
-(XXXXXXX, AÇIK - https://www.csoonline.com/article/4137281/the-farmers-and-the-mercenaries-rethinking-the-human-layer-in-security.html, csoonline.com, 26.02.2026)
-
-================================================================================
-
-[52] CSO Online - 5 trends that should top CISO’s RSA 2026 agendas
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 07:00:00 +0000
-Link: https://www.csoonline.com/article/4136999/5-trends-that-should-top-cisos-rsa-2026-agendas.html
-
-[TAM METİN - 1485 kelime]
-AI will dominate RSA’s presentations and discussions. To separate hopeful hype from practical solutions, security leaders should approach the conference with curiosity, optimism, suspicion, and a strategic plan.
-
-RSA 2026 is still weeks away and the hype machine is humming. This year’s theme, “The Power of Community,” is somewhat ironic as the overwhelming chatter at the Moscone Center in San Francisco from March 23 to March 26 will be about AI agents, not humans.
-
-Welcome to the cybersecurity community, agents, automatons, and robots!
-
-While cybersecurity is an extremely diverse area covering everything from humans to critical infrastructure, here are five cybersecurity areas certain to have a starring role at RSA 2026 — and worthy of being on any CISO’s attendance agenda.
-
-The rise of the AI-SOC
-
-In 2026, we are moving beyond AI copilots toward autonomous agents performing traditional security operations center (SOC) activities such as triaging alerts, investigating malicious activity, isolating hosts, and patching software on our behalf. The trend is expected to reshape operations in the SOC even if the early realities haven’t yet fully aligned with agentic expectations.
-
-Still, there’s a lot of innovation happening from established vendors (e.g., Cisco/Splunk, CrowdStrike, Google, Microsoft, etc.) and startups (e.g., Andesite, Crogl, Prophet Security, etc.) alike. While AI-SOCs have potential, security pros remain leery about AI hallucinations and “black box” tools, and agents will succeed or fail based on a foundation of accurate and timely data access — threat intelligence, log files, tools integration, and so on.
-
-For RSA attendees, I recommend cautious optimism. One way or another the AI-SOC is coming — and sooner than you think. But CISOs should come prepared with requirements, lots of questions, and a willingness to cast a wide net rather than simply defaulting to existing tools vendors.
-
-CTEM in the spotlight
-
-In another evolutionary trend, most organizations are moving beyond scanning for software snafus to continuous threat exposure management (CTEM). By doing so, security teams hope to get a full picture of all assets, as well as their configurations, locations, software vulnerabilities, ownership, and business criticality.
-
-Armed with this data, CTEM platforms look at threat intelligence to assess adversary tactics, techniques, and procedures (TTPs), helping organizations prioritize which vulnerable assets represent the highest risks to the business. Some tools can even predict which assets may be most vulnerable to future exploits.
-
-CTEM tools from vendors such as Nucleus Security, ServiceNow (Armis), and Tenable (Vulcan Security) will be front and center at RSA but there’s a confusing cast of thousands in this space. While promising, CTEM done wrong will just add another tool to the security stack.
-
-Before succumbing to the shining objects at RSA, security teams should audit — and clean up — their data, define “crown jewel” assets, create their own risk scoring system, and build a mobilization plan for emergency and day-to-day patching processes between security and IT teams.
-
-Cyber resilience takes center stage
-
-According to Special Publication 800-160, Volume 2, from the National Institute of Standards and Technology (NIST), cyber resilience is defined as: “The ability to anticipate, withstand, recover from, and adapt to adverse conditions, stresses, attacks, or compromises on systems that use or are enabled by cyber resources.”
-
-Note the expansive definition. Anticipating threats requires threat intelligence analysis, solid and continuous exposure management, and effective security controls. Withstanding and recovering from threats demands rapid detection, incident response, solid data backup and restoration, and a formal — and tested — business continuity and disaster recovery plan. Adapting involves security technology tuning, detection rules engineering, targeted investments, and CISO leadership.
-
-Obviously, there’s no one product that covers the entire spectrum but that won’t stop some vendors from claiming they are in the cyber-resilience business. Caveat emptor, my cybersecurity friends.
-
-Identity as the ‘new’ security perimeter
-
-Anyone remember the Jericho Forum circa 2004? The group argued that since data was moving outside the corporate network, security should be attached to data and user identity, rather than the physical or logical network location. Twenty-two years later, some vendors have had a similar epiphany about identity management.
-
-Okay, beyond my snark, I’m encouraged by the focus on identity management in areas like improved identity governance (SailPoint, Saviynt), passwordless authentication (Microsoft, Okta, Ping), and identity threat detection and response (Grip Security, Permiso Security).
-
-There is also copious use of AI in the identity space to assess user entitlements, user “liveness,” and identity configuration settings. Great stuff, but I’ve always found that identity and access management (IAM) is an area where everyone has an ownership stake but no one actually owns it. CISOs will have to work with business owners, CIOs, and application developers to address identity risks, making strategic projects lengthy and complex — a difficult environment for security startups.
-
-Everything AI: Future-proofing security operations
-
-All the areas above have an AI component, of course, but it’s worth carving out a discussion on AI across those and other AI cybersecurity categories here.
-
-First, CISOs face a significant challenge in their need to secure the development and usage of AI. This includes buckets of technologies, such as model context protocol (MCP) security, AI firewalling, content sanitation, digital content authenticity, AI security posture management, AI-driven DevSecOps, and so on. These technologies should support an overall business and technology strategy and governance framework around AI.
-
-Next, RSA will be a hotbed of AI threat chatter, with alarming discussions about vulnerability chaining, polymorphic payloads, and security control bypassing — all legitimate topics, but like defenders, adversaries are mostly using AI for research and process automation.
-
-Attendees should focus on relevant threat intelligence while discarding profuse hype. There are too many AI sub-topics to cover, but in my humble opinion, RSA participants should pay special attention to AI-centric skills and training sessions. Given an AI-enabled future, organizations will need security data engineers and AI security specialists, rare skill sets today. And as we supplant Tier-1 analyst functions with AI, we’ll also need to upskill junior cybersecurity specialists to become AI orchestrators who excel at human-agent teaming. AI skills development and training should be a top CISO priority.
-
-Beyond my personal top 5, here are a few honorable mentions for CISO RSA 2026 agendas:
-
-Zero trust. This area rides shotgun with identity management and cyber-resilience strategies. As such, zero trust is still a top priority. CISOs should have an eye out for AI-enabled innovation that could accelerate their ZT implementation.
-
-Cloud security. Between multicloud, SaaS, and AI development, cloud security remains a bear. Organizations need an organic security strategy that grows with their cloud usage. CISOs should use the conference to help hone their growing multi-cloud/SaaS security needs.
-
-Cybersecurity platforms. There is lots of vendor money in this area as well. Security platforms are likely appropriate for most smaller firms but perhaps not for larger enterprises where the business and IT run far faster than cybersecurity. CISOs must weigh the benefits of platform efficiency against tools efficacy and rip-and-replace pain.
-
-*DR. CDR, EDR, and XDR (etc.), oh my! There’s lots of detection and response innovation around the edges of the cloud and network that will likely lead to highly distributed security operations. CISOs should explore how these blending and evolving spaces will impact a future centralized or distributed security operations architecture.
-
-IT and OT security. Yeah, we’ve been talking about this for years, but AI will be a force multiplier for smart devices and edge computing. For example, in the next five years, healthcare will transform based on wearable connected devices for data collection and patient care, so device availability and integrity could equate to life and death situations. Security teams can’t be left behind. Be on the lookout for evolutions in how to further secure IT/OT convergence and purpose-built AI agents for IoT/OT security.
-
-Post quantum cryptography (PQC).  To me, this topic is hit or miss.  CISOs working for intelligence agencies, defense contractors, or financial services firms should pay attention.  Others can probably eschew this area – at least this year.
-
-The power of community. There’s that theme again, but this isn’t hyperbole. Cybersecurity professionals already learn from each other at RSA and Black Hat, and through professional groups like the Information Systems Security Association (ISSA). I’m hoping that agents can join the community in an era of collective defense — where many organizations band together in real-time to protect one another.
-
-With the proliferation of AI, this year’s RSA will feature more eye candy than in the past. Vendors pay millions of dollars for the chance to over stimulate users in this way. As always, security professionals should approach RSA with a list of requirements that support business strategy and technical needs. Eschew AI gaga and remember the sage words of Bruce Schneier, “Security is a process, not a product.”
-
-5 key trends reshaping the SIEM market
-
-ServiceNow BodySnatcher flaw highlights risks of rushed AI integrations
-
-Top 10 vendors for AI-enabled security — according to CISOs
-
-From our editors straight to your inbox
-
-(XXXXXXX, AÇIK - https://www.csoonline.com/article/4136999/5-trends-that-should-top-cisos-rsa-2026-agendas.html, csoonline.com, 26.02.2026)
-
-================================================================================
-
-[53] CSO Online - 9 unverzichtbare Open-Source-Security-Tools
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 04:02:00 +0000
-Link: https://www.csoonline.com/article/3494816/9-unverzichtbare-open-source-security-tools.html
-
-[TAM METİN - 1184 kelime]
-Diese quelloffenen Werkzeuge sind für IT-Sicherheitsentscheider und ihre Teams essenziell.
-
-Diese Open-Source-Tools adressieren spezifische Security-Probleme – mit minimalem Footprint.
-
-Foto: N Universe | shutterstock.com
-
-Cybersicherheitsexperten verlassen sich in diversen Bereichen auf Open-Source-Lösungen – nicht zuletzt weil diese im Regelfall von einer lebendigen und nutzwertigen Community gestützt werden. Aber auch weil es inzwischen Hunderte qualitativ hochwertiger, quelloffener Optionen gibt, um Breaches und Datenlecks auf allen Ebenen des Unternehmens-Stacks zu verhindern.
-
-Falls Sie nun gedanklich bereits die xz-utils-Backdoor-Keule bereitlegen: Ja, es kann sein, dass es in der Zukunft zu weiteren Vorfällen dieser Art kommt. Allerdings darf bezweifelt werden, dass eine ähnliche Schwachstelle in einem proprietären Stack ebenso schnell entdeckt worden wäre. Schließlich ermöglicht Open Source erst, dass unabhängige Sicherheitsexperten Probleme wie diesen zeitnah auf die Spur kommen können. Um es kurz zu machen: Die Vorteile von Open Source Tools überwiegen – auch im Bereich der Cybersicherheit – die möglichen Gefahren.
-
-Auf die folgenden quelloffenen Security-Tools sollten CSOs, CISOs und ihre Teams nicht verzichten. Beispielsweise, um:
-
-Schwachstellen zu identifizieren,
-
-Schwachstellen zu identifizieren,
-
-Protokolle zu analysieren,
-
-Protokolle zu analysieren,
-
-forensische Untersuchungen anzustoßen sowie
-
-forensische Untersuchungen anzustoßen sowie
-
-Support für Threat Intelligence und Verschlüsselung sicherzustellen.
-
-Support für Threat Intelligence und Verschlüsselung sicherzustellen.
-
-1. ZAP für Vulnerability Scans
-
-Bei Zed Attack Proxy – kurz ZAP – handelt es sich um ein kostenloses Open-Source-Werkzeug für Penetrationstests. Das Scanner-Tool ist darauf konzipiert, potenzielle Schwachstellen und Sicherheitslücken in Webanwendungen aufzuspüren und stützt sich dazu auf umfangreiches Community-Wissen.
-
-Dabei sitzt ZAP zwischen Browser und der zu testenden Web-App und ist in der Lage, sämtliche Packets zu modifizieren, während es mögliche Angriffsvektoren durchläuft. Im Grunde handelt es sich um einen Proxy mit erweiterten Fähigkeiten, um nach Schwachstellen zu suchen. Dazu stellt ZAP eine Sammlung vordefinierter Angriffsmethoden zur Verfügung. Um auf spezifische Risiken zu testen, kann das quelloffene Tool auch mit benutzerdefinierten Payloads und Regeln ausgestattet werden.
-
-ZAP wird aktiv weiterentwickelt und kann mit Blick auf kommende Features eine ambitionierte Roadmap vorweisen. Optimiertes Scripting ist dort ebenso vertreten wie ein breiterer Support für Protokolle wie gRPC. Das Tool steht in Form diverser Installer für alle gängigen Betriebssysteme zum Download zur Verfügung.
-
-2. Wireshark für Paketanalysen
-
-Ein Auge auf die Kommunikationslinien im Netzwerk zu werfen, ist eine der zielführendsten Methoden, um Datenlecks aufzuspüren. Für diese Zwecke ist Wireshark ein ebenso bewährtes wie hochwertiges Tool: Es analysiert die Bits, die sich durch – kabelgebundene oder auch kabellose – Netzwerke bewegen und gleicht diese mit einem Regelwerk ab, das wiederum auf den Informationen Hunderter verschiedener Networking-Quellen fußt.
-
-Wenn Sie sich für eine bestimmte Art von Daten-Traffic interessieren, die von einem spezifischen Softwarepaket ausgeht, ist es zudem möglich, dafür entsprechende Filter zu definieren. Auch dieses Open-Source-Tool läuft auf den meisten gängigen Betriebssystemen – inklusive aller Unix-Variationen.
-
-Die Wireshark-Community ist in den letzten Jahren weiter gewachsen und engagiert sich insbesondere in Sachen Dokumentation und Schulungsmaterialien, wie ein Blick auf die offizielle Webseite unterstreicht.
-
-3. Bloodhound Community Edition für Incident Response
-
-Tritt ein Security Breach auf, nutzen Security-Profis Forensik-Tools, um die Angriffswege der Angreifer nachzuvollziehen. Das geht beispielsweise mit Bloodhound Community Edition, der Open-Source-Version des bekannten Enterprise-Tools (die vom selben Team gepflegt wird).
-
-Das Open-Source-Werkzeug sorgt für Transparenz im Beziehungsgeflecht zwischen Active-Directory- und Azure-Umgebungen und ist so in der Lage, auch hochkomplexe “Attack Paths” zu identifizieren und die in diesem Rahmen gefundenen Sicherheitslücken zu schließen. Das Tool ist sowohl für Red- als auch für Blue Teams geeignet.
-
-4. Autopsy für Cyberforensik
-
-Bei Autopsy handelt es sich um eine quelloffene IT-Forensik-Plattform, um Festplatten(-Images) gründlich zu untersuchen. Dabei lässt sich die Software über zahlreiche Module auch erweitern, um spezifische Datentypen, die mit bestimmten Kompromittierungsarten in Verbindung stehen, zu identifizieren.
-
-Beispielsweise untersucht das “Extension Mismatch Module” die interne Struktur von Dateien und gleicht diese mit ihrer Benennung ab. Entstehen hierbei Diskrepanzen, ist das ein erster Hinweis darauf, dass Angreifer den Traffic nutzen, um etwas zu verbergen. Darüber hinaus bietet Autopsy unter anderem auch Erweiterungsmodule für Schulungen und Support.
-
-5. MISP für Threat Intelligence
-
-Geht es um breit angelegte, kollektive Bemühungen, können Open-Source-Tools und -Plattformen glänzen. Die Malware Information Sharing Platform – kurz MISP – ist dafür das beste Beispiel. Die Plattform kommt ins Spiel, wenn es darum geht, die Daten von IT-Forensik-Tools zu analysieren: Sie sammelt Informationen über potenzielle Angriffsvektoren in einer umfassenden Datenbank und bietet die Möglichkeit, diese Informationen über eine Suchmaschine mit eigenen Daten zu korrelieren. Dabei unterstützt die Lösung ein flexibles, objektbasiertes Datenmodell, das verschiedene Kompromittierungsindikatoren (Indicators of Compromise, IoC) visualisiert und sowohl über technische als auch nicht-technische Details Auskunft gibt. Ein Indexierungsalgorithmus der Support für “Fuzzy Matching” bietet, deckt mögliche Übereinstimmungen automatisch auf.
-
-MISP wurde gezielt für Sicherheitsteams entwickelt, um über geteilte Timelines und Event-Graphen zusammenzuarbeiten. Dieses quelloffene Projekt wird von der Europäischen Union unterstützt und erfreut sich diverser, umfassender Communities. Die webbasierten, größtenteils in PHP geschriebenen Tools von MISP stehen auch in Quellcode-Form zum Download zur Verfügung.
-
-6. Let’s Encrypt für Verschlüsselung
-
-Verschlüsselungsalgorithmen schaffen die Basis für Security, Datenschutz und Authentifizierung und sind in einer ganzen Reihe von quelloffenen Bibliotheken verfügbar. Zudem stützen sich auch viele Open-Source-Tools auf diese Algorithmen.
-
-Zum Beispiel die Skript-Sammlung Let’s Encrypt. Sie ist darauf ausgelegt, Systemadministratoren das Leben leichter zu machen, indem sie Webserver mit Encryption-Fähigkeiten ausstattet. Dazu müssen die Admins nur einige Fragen beantworten – die entsprechenden Zertifikate für die Benutzer werden automatisiert generiert und gewährleisten, dass alle Daten die in diesem Rahmen übertragen werden, geschützt sind.
-
-7. GNU Privacy Guard für Verschlüsselung
-
-Eine vollständige Implementierung des PGP-Standards zum Zwecke des Kommunikationsschutzes bietet GNU Privacy Guard.
-
-Die Zielsetzung besteht dabei darin, die Endbenutzer zu befähigen, ihre E-Mail-Nachrichten zu verschlüsseln und zu signieren. Dabei werden sowohl Secure-Shell- als auch S/MIME-Interaktionen unterstützt.
-
-8. Yara für Pattern Matching
-
-Wenn Malware-Samples identifiziert und klassifiziert werden sollen, verlassen sich viele Schadsoftwarespezialisten auf das Open-Source-Projekt Yara.
-
-Das quelloffene Tool kann jedoch noch mehr und ist auch in Sachen Incident Response und IT-Forensik hilfreich: Es sucht auf Grundlage vorkonfigurierter und benutzerdefinierter Regeln nach identischen Mustern in Dateien oder auch laufenden Prozessen. Zusätzlich können auch Signaturinformationen von Viren über das quelloffene Tool ClamAV sowie Regelsätze aus dem von der Community gepflegten YaraRules-Repository einfließen. Wichtig ist an dieser Stelle, sich der Grenzen der signaturbasierten Erkennung bewusst zu sein – und sich nicht ausschließlich auf dieses Open-Source-Werkzeug zu verlassen.
-
-Yara kann entweder über die Kommandozeile ausgeführt werden oder über eine Python-Bibliothek in entsprechende Skripte integriert werden.
-
-9. OSquery für Endpunktabfragen
-
-Einfach per SQL-Abfrage nach bösartigen Prozessen, Plugins oder auch Sicherheitslücken auf Windows-, Mac- und Linux-Endpunkten zu suchen – das ist die Idee hinter OSquery, einem quelloffenen Tool, das von Softwareingenieuren bei Facebook entwickelt wurde.
-
-Die Software sammelt Betriebssysteminformationen wie laufende Prozesse, geladene Kernelmodule, offene Netzwerkverbindungen, Browser-Plugins oder Datei-Hashes in einer relationalen Datenbank. Diese können Sie mit einfachen SQL Queries abfragen – ganz ohne komplexen Python-Code. Damit löst OSquery ein bedeutendes Problem auf unkomplizierte und elegante Weise.
-
-Zu den Komponenten des Tools gehören die interaktive OSqueryi-Shell, die mit PowerShell genutzt werden kann sowie der Daemon OSqueryd, der für (Low-Level) Host Monitoring zum Einsatz kommt, und es ermöglicht, Datenbankabfragen zu planen. (fm)
-
-Security-Tools für KI-Infrastrukturen – ein Kaufratgeber
-
-Attack Surface Management – ein Kaufratgeber
-
-Wie CISOs vom ERP-Leid profitieren
-
-Von unseren Redakteuren direkt in Ihren Posteingang
-
-(XXXXXXX, AÇIK - https://www.csoonline.com/article/3494816/9-unverzichtbare-open-source-security-tools.html, csoonline.com, 26.02.2026)
-
-================================================================================
-
 
 ================================================================================
 🐘 MASTODON - YÜKSEK ETKİLEŞİMLİ POSTLAR
 ================================================================================
 
-[54] Mastodon: Catalin Cimpanu [RT:23 · FAV:10 · Skor:56]
+[49] Mastodon: Catalin Cimpanu [RT:23 · FAV:10 · Skor:56]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 16:34:55 +0000
 Link: https://mastodon.social/@campuscodi/116137898501718472
@@ -3731,7 +3257,7 @@ Link: https://mastodon.social/@campuscodi/116137898501718472
 
 ================================================================================
 
-[55] Mastodon: Catalin Cimpanu [RT:12 · FAV:16 · Skor:40]
+[50] Mastodon: Catalin Cimpanu [RT:12 · FAV:16 · Skor:40]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 15:53:57 +0000
 Link: https://mastodon.social/@campuscodi/116137737412947559
@@ -3743,7 +3269,7 @@ A security firm has gained access to a malvertising test platform and used the i
 
 ================================================================================
 
-[56] Mastodon: Catalin Cimpanu [RT:18 · FAV:3 · Skor:39]
+[51] Mastodon: Catalin Cimpanu [RT:18 · FAV:3 · Skor:39]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 16:03:56 +0000
 Link: https://mastodon.social/@campuscodi/116137776672700768
@@ -3755,7 +3281,7 @@ Meta's new Threads micro-blogging platform and Twitter rival has been flooded wi
 
 ================================================================================
 
-[57] Mastodon: Catalin Cimpanu [RT:8 · FAV:6 · Skor:22]
+[52] Mastodon: Catalin Cimpanu [RT:8 · FAV:6 · Skor:22]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 02:43:23 +0000
 Link: https://mastodon.social/@campuscodi/116134628755308198
@@ -3767,7 +3293,7 @@ Scattered Lapsus$ Hunters (SLH) is recruiting women to conduct vishing attacks, 
 
 ================================================================================
 
-[58] Mastodon: Catalin Cimpanu [RT:9 · FAV:1 · Skor:19]
+[53] Mastodon: Catalin Cimpanu [RT:9 · FAV:1 · Skor:19]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 12:31:04 +0000
 Link: https://mastodon.social/@campuscodi/116136939655487395
@@ -3779,7 +3305,7 @@ Apple has published details on how it plans to deal with all the age verificatio
 
 ================================================================================
 
-[59] Mastodon: Catalin Cimpanu [RT:7 · FAV:3 · Skor:17]
+[54] Mastodon: Catalin Cimpanu [RT:7 · FAV:4 · Skor:18]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 18:57:57 +0000
 Link: https://mastodon.social/@campuscodi/116138460924520544
@@ -3791,7 +3317,7 @@ Phishing groups are abusing .arpa domains for their operations, a TLD that's not
 
 ================================================================================
 
-[60] Mastodon: Catalin Cimpanu [RT:5 · FAV:5 · Skor:15]
+[55] Mastodon: Catalin Cimpanu [RT:5 · FAV:5 · Skor:15]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 13:30:05 +0000
 Link: https://mastodon.social/@campuscodi/116137171717310119
@@ -3803,7 +3329,7 @@ Hmmm.... I'll just put him in Andorra, since that's right smack in the middle
 
 ================================================================================
 
-[61] Mastodon: Catalin Cimpanu [RT:6 · FAV:2 · Skor:14]
+[56] Mastodon: Catalin Cimpanu [RT:6 · FAV:2 · Skor:14]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 16:10:03 +0000
 Link: https://mastodon.social/@campuscodi/116137800753442402
@@ -3815,7 +3341,7 @@ Talks from the DefCamp 2025 security conference, which took place in Bucharest a
 
 ================================================================================
 
-[62] Mastodon: Catalin Cimpanu [RT:4 · FAV:6 · Skor:14]
+[57] Mastodon: Catalin Cimpanu [RT:4 · FAV:6 · Skor:14]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 01:08:02 +0000
 Link: https://mastodon.social/@campuscodi/116134253867576632
@@ -3827,7 +3353,7 @@ Russian media are treating Conti like national heroes
 
 ================================================================================
 
-[63] Mastodon: Catalin Cimpanu [RT:6 · FAV:1 · Skor:13]
+[58] Mastodon: Catalin Cimpanu [RT:6 · FAV:1 · Skor:13]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 12:32:28 +0000
 Link: https://mastodon.social/@campuscodi/116136945154663072
@@ -3839,7 +3365,7 @@ Data theft-only attacks accounted for 57% of all extortion insurance claims last
 
 ================================================================================
 
-[64] Mastodon: Catalin Cimpanu [RT:4 · FAV:3 · Skor:11]
+[59] Mastodon: Catalin Cimpanu [RT:4 · FAV:3 · Skor:11]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 13:06:16 +0000
 Link: https://mastodon.social/@campuscodi/116137078031479664
@@ -3851,7 +3377,7 @@ The Belarus Cyber Partisans claim to have hacked Khimvolokno,  a Belarusian comp
 
 ================================================================================
 
-[65] Mastodon: Catalin Cimpanu [RT:5 · FAV:1 · Skor:11]
+[60] Mastodon: Catalin Cimpanu [RT:5 · FAV:1 · Skor:11]
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 26 Feb 2026 13:00:34 +0000
 Link: https://mastodon.social/@campuscodi/116137055681941373
@@ -3860,18 +3386,6 @@ Link: https://mastodon.social/@campuscodi/116137055681941373
 Russian security firm F6 has discovered a new RaaS named C77L that appears to be operated out of Iran https://www. f6.ru/blog/c77l-ransomware/
 
 (XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116137055681941373, mastodon.social, 26.02.2026)
-
-================================================================================
-
-[66] Mastodon: Catalin Cimpanu [RT:1 · FAV:3 · Skor:5]
-────────────────────────────────────────────────────────────────────────────────
-Tarih: Thu, 26 Feb 2026 00:33:17 +0000
-Link: https://mastodon.social/@campuscodi/116134117230230508
-
-[MASTODON POST - 37 kelime]
-The part you wanna read is Operation Silver Lining Playbook, which appears to be a Chinese intelligence operation recruiting or engaging with Americans.  They used a fake corporate identity but their queries were focused on geopolitical topics.
-
-(XXXXXXX, AÇIK - https://mastodon.social/@campuscodi/116134117230230508, mastodon.social, 26.02.2026)
 
 ================================================================================
 
