@@ -67,3 +67,20 @@
 2026-02-27	https://mastodon.social/@campuscodi/116137078031479664	The Belarus Cyber Partisans claim to have hacked Khimvolokno,  a Belarusian company and Russia's largest supplier of nyl...	b4b1d93b666ac7fc
 2026-02-27	https://mastodon.social/@campuscodi/116137055681941373	Russian security firm F6 has discovered a new RaaS named C77L that appears to be operated out of Iran https://www. f6.ru...	c30a0dc951e907b4
 2026-02-27	https://mastodon.social/@campuscodi/116134117230230508	The part you wanna read is Operation Silver Lining Playbook, which appears to be a Chinese intelligence operation recrui...	c21b192dead94eb7
+2026-02-27	https://thehackernews.com/2026/02/trojanized-gaming-tools-spread-java.html	Trojanized Gaming Tools Spread Java-Based RAT via Browser and Chat Platforms	dc9786219a6aee9e
+2026-02-27	https://us.resources.csoonline.com/resources/form?placement_id=ee7073cd-e75d-46f6-96fa-38e469cf0e66&brand_id=32&locale_id=1	Enterprise Spotlight: Data Center Modernization	eb7a6da5ddb26bb8
+2026-02-27	https://www.csoonline.com/article/4137983/how-to-make-llms-a-defensive-advantage-without-creating-a-new-attack-surface.html	How to make LLMs a defensive advantage without creating a new attack surface	3e9fa8758ae2c2be
+2026-02-27	https://mastodon.social/@campuscodi/116137898501718472	"A Greek court on Thursday sentenced four people, including two Israelis, to prison over a major wiretapping scandal inv...	8745b838a2ba2c8f
+2026-02-27	https://mastodon.social/@campuscodi/116137737412947559	A security firm has gained access to a malvertising test platform and used the information to help ad companies block mo...	16b20bdebfd13340
+2026-02-27	https://mastodon.social/@campuscodi/116137776672700768	Meta's new Threads micro-blogging platform and Twitter rival has been flooded with pro-PRC propaganda bots, according to...	68b0f2353d765b0f
+2026-02-27	https://mastodon.social/@campuscodi/116134628755308198	Scattered Lapsus$ Hunters (SLH) is recruiting women to conduct vishing attacks, likely to increase the success rate of h...	cb88b930666102cf
+2026-02-27	https://mastodon.social/@campuscodi/116136939655487395	Apple has published details on how it plans to deal with all the age verification requirements around the globe and the ...	50a0bb00ceaf2163
+2026-02-27	https://mastodon.social/@campuscodi/116138460924520544	Phishing groups are abusing .arpa domains for their operations, a TLD that's not supposed to host anything except IP-add...	3542c57de8a50d07
+2026-02-27	https://mastodon.social/@campuscodi/116137171717310119	Hmmm.... I'll just put him in Andorra, since that's right smack in the middle	7402c6c38037aac0
+2026-02-27	https://mastodon.social/@campuscodi/116137800753442402	Talks from the DefCamp 2025 security conference, which took place in Bucharest at the end of November, are now available...	5825a51c99356183
+2026-02-27	https://mastodon.social/@campuscodi/116134253867576632	Russian media are treating Conti like national heroes	a8510ac9217bb28b
+2026-02-27	https://mastodon.social/@campuscodi/116133781102465544	OpenAI disrupted new malicious use of ChatGPT... mostly for romance scams and info-ops https:// openai.com/index/disrupt...	29d872a63cc51da4
+2026-02-27	https://mastodon.social/@campuscodi/116136945154663072	Data theft-only attacks accounted for 57% of all extortion insurance claims last year, according to numbers released by ...	de954c476bd2e9fc
+2026-02-27	https://mastodon.social/@campuscodi/116137078031479664	The Belarus Cyber Partisans claim to have hacked Khimvolokno,  a Belarusian company and Russia's largest supplier of nyl...	b4b1d93b666ac7fc
+2026-02-27	https://mastodon.social/@campuscodi/116137055681941373	Russian security firm F6 has discovered a new RaaS named C77L that appears to be operated out of Iran https://www. f6.ru...	c30a0dc951e907b4
+2026-02-27	https://mastodon.social/@campuscodi/116134117230230508	The part you wanna read is Operation Silver Lining Playbook, which appears to be a Chinese intelligence operation recrui...	c21b192dead94eb7
