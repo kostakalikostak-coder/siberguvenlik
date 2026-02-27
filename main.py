@@ -257,21 +257,13 @@ class HaberSistemi:
         self.rss_errors_file = "data/rss_errors.txt"
 
     def fetch_full_article(self, url, source_name):
-        """Tam metin çeker — stream ile max 500KB, erken çıkışlı"""
+        """Tam metin çeker"""
         try:
             print(f"      📄 Tam metin...", end='', flush=True)
+            r = requests.get(url, headers=self.headers, timeout=15)
+            soup = BeautifulSoup(r.text, 'html.parser')
             domain = urlparse(url).netloc.replace('www.', '')
 
-            # stream=True: max 500KB oku, büyük sayfalarda erken kes
-            r = requests.get(url, headers=self.headers, timeout=(5, 10), stream=True)
-            raw = b""
-            for chunk in r.iter_content(chunk_size=8192):
-                raw += chunk
-                if len(raw) > 500_000:
-                    break
-            r.close()
-
-            soup = BeautifulSoup(raw, 'html.parser')
             text = ""
             if source_name in self.selectors:
                 for sel in self.selectors[source_name]:
@@ -289,8 +281,7 @@ class HaberSistemi:
                             break
 
             if not text:
-                el = soup.find('div', class_=lambda c: c and any(
-                    x in str(c).lower() for x in ['content', 'article', 'body', 'post']))
+                el = soup.find('div', class_=lambda c: c and any(x in str(c).lower() for x in ['content', 'article', 'body', 'post']))
                 if el:
                     text = self._extract(el)
 
@@ -325,7 +316,7 @@ class HaberSistemi:
             articles = []
 
             if root.tag.endswith('feed'):  # Atom
-                for entry in root.findall('.//{http://www.w3.org/2005/Atom}entry')[:10]:
+                for entry in root.findall('.//{http://www.w3.org/2005/Atom}entry')[:8]:
                     t = entry.find('{http://www.w3.org/2005/Atom}title')
                     l = entry.find('{http://www.w3.org/2005/Atom}link')
                     s = entry.find('{http://www.w3.org/2005/Atom}summary')
@@ -339,7 +330,7 @@ class HaberSistemi:
                             'source': source_name
                         })
             else:  # RSS
-                for item in root.findall('.//item')[:10]:
+                for item in root.findall('.//item')[:8]:
                     t = item.find('title')
                     l = item.find('link')
                     d = item.find('description')
@@ -770,8 +761,7 @@ class HaberSistemi:
         # AŞAMA 1: Gemini'den HTML al (retry ile)
         # ═══════════════════════════════════════════
         html = None
-        max_retries = 5
-        wait_times = [30, 60, 120, 180]  # Üstel bekleme (saniye)
+        max_retries = 3
         for attempt in range(max_retries):
             try:
                 print(f"   Deneme {attempt + 1}/{max_retries}...")
@@ -787,6 +777,7 @@ class HaberSistemi:
                     )
                 )
 
+                # ✅ YENİ: finish_reason logla
                 if response.candidates:
                     finish_reason = response.candidates[0].finish_reason
                     print(f"   📝 Finish reason: {finish_reason}")
@@ -798,7 +789,7 @@ class HaberSistemi:
             except Exception as e:
                 print(f"   ⚠️  Hata: {e}")
                 if attempt < max_retries - 1:
-                    wait_time = wait_times[min(attempt, len(wait_times) - 1)]
+                    wait_time = (attempt + 1) * 10
                     print(f"   ⏳ {wait_time} saniye bekleyip tekrar deneniyor...")
                     time.sleep(wait_time)
                 else:
