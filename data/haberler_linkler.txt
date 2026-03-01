@@ -40,3 +40,12 @@
 2026-02-28	https://www.csoonline.com/article/4137983/how-to-make-llms-a-defensive-advantage-without-creating-a-new-attack-surface.html	How to make LLMs a defensive advantage without creating a new attack surface	3e9fa8758ae2c2be
 2026-02-28	https://www.csoonline.com/article/559539/the-cso-guide-to-top-security-conferences.html	The CSO guide to top security conferences	5800bbfae9909bc2
 2026-02-28	https://www.csoonline.com/article/4137010/ransomware-groups-switch-to-stealthy-attacks-and-long-term-access.html	Ransomware groups switch to stealthy attacks and long-term access	d497e587a2e7b438
+2026-03-01	https://thehackernews.com/2026/02/clawjacked-flaw-lets-malicious-sites.html	ClawJacked Flaw Lets Malicious Sites Hijack Local OpenClaw AI Agents via WebSocket	9ec028aee89c39b0
+2026-03-01	https://thehackernews.com/2026/02/thousands-of-public-google-cloud-api.html	Thousands of Public Google Cloud API Keys Exposed with Gemini Access After API Enablement	8e2d9b8457fc2ca1
+2026-03-01	https://www.bleepingcomputer.com/news/security/quicklens-chrome-extension-steals-crypto-shows-clickfix-attack/	QuickLens Chrome extension steals crypto, shows ClickFix attack	1c37f2303959e7f1
+2026-03-01	https://www.bleepingcomputer.com/news/security/48m-in-crypto-stolen-after-korean-tax-agency-exposes-wallet-seed/	$4.8M in crypto stolen after Korean tax agency exposes wallet seed	fbeb773c8a913819
+2026-03-01	https://krebsonsecurity.com/2026/02/who-is-the-kimwolf-botmaster-dort/	Who is the Kimwolf Botmaster “Dort”?	fb3f23bbc51221a5
+2026-03-01	https://securityaffairs.com/188669/security/security-affairs-newsletter-round-565-by-pierluigi-paganini-international-edition.html	Security Affairs newsletter Round 565 by Pierluigi Paganini – INTERNATIONAL EDITION	6704f9c4733d68b1
+2026-03-01	https://securityaffairs.com/188659/data-breach/canadian-tire-2025-data-breach-impacts-38-million-users.html	Canadian Tire 2025 data breach impacts 38 million users	8a739fde7ebbd44d
+2026-03-01	https://securityaffairs.com/188648/cyber-warfare-2/iran-s-internet-near-totally-blacked-out-amid-us-israeli-strikes.html	Iran ’s Internet near-totally blacked out amid US, Israeli strikes	1c6ebda0f4fc871a
+2026-03-01	https://securityaffairs.com/188639/malware/microsoft-warns-of-rat-delivered-through-trojanized-gaming-utilities.html	Microsoft warns of RAT delivered through trojanized gaming utilities	4d04b69aa6994538

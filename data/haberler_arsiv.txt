@@ -3542,3 +3542,253 @@ Hindistan hükümeti, popüler geliştirici veritabanı platformu Supabase'in we
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 01 MARCH 2026 - EN ÖNEMLİ 43 HABER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Ukrayna Enerji Şebekesine Yönelik Siber Saldırılar Füze Rehberliğinde Kullanılmaktadır
+─────────────────────────────────────────────────────────
+Ukrayna, siber saldırıların enerji şebekesine yönelik füze saldırılarını yönlendirmek için kullanıldığını açıklamıştır. Bu durum, siber savaşın kinetik savaş operasyonlarıyla doğrudan entegrasyonunu göstermekte olup, jeopolitik çatışmalarda siber yeteneklerin kritik rolünü vurgulamaktadır. Siber saldırılar, düşman hedeflerinin belirlenmesi ve füze isabet oranlarının artırılması amacıyla istihbarat toplama ve hedefleme süreçlerinde önemli bir araç haline gelmiştir. Bu tür entegre saldırılar, kritik altyapılara yönelik tehditlerin boyutunu artırmakta ve uluslararası güvenlik açısından ciddi endişeler yaratmaktadır. Enerji şebekelerinin hedef alınması, hem sivil halkın yaşamını doğrudan etkilemekte hem de ulusal savunma kapasitesini zayıflatmaktadır. Bu gelişmeler, siber savunma stratejilerinin aciliyetini ve karmaşıklığını bir kez daha ortaya koymaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] İran'ın İnterneti ABD ve İsrail Saldırıları Ortasında Neredeyse Tamamen Kesildi
+─────────────────────────────────────────────────────────
+NetBlocks'a göre, İsrail ve ABD'nin ülkeye yönelik saldırıları sırasında İran'ın internet erişimi neredeyse tamamen kesilmiştir. Ulusal bağlantı seviyesi normalin %4'üne kadar düşmüştür. Bu kesintinin, geçen yıl İsrail ile yaşanan çatışma sırasındaki önlemlere benzediği belirtilmektedir, bu da yetkililerin tırmanan gerilimler ortasında bağlantıyı kasıtlı olarak kısıtlamış olabileceğini düşündürmektedir. İnternet kesintileri, genellikle rejim kontrol aracı olarak kullanılmakta, bilgi akışını engellemek, dış baskıyı azaltmak veya kritik altyapılara yönelik siber tehditleri önlemek amacıyla uygulanmaktadır. Bu durum, jeopolitik çatışmalarda siber uzayın ve bilgi kontrolünün merkezi bir rol oynadığını göstermektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 28.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] APT28'in Yeni Operasyon MacroMaze Kampanyası Tespit Edilmiştir
+─────────────────────────────────────────────────────────
+Yeni bir rapor, APT28'in "Operation MacroMaze" adını verdiği yeni bir kampanyayı ortaya koymuştur. Bu kampanya, temel araçları ve meşru altyapıyı kullanarak hedeflerine sızmaktadır. APT28, devlet destekli bir tehdit grubu olarak bilinmekte ve genellikle siyasi veya askeri hedeflere yönelik siber casusluk faaliyetleri yürütmektedir. Bu tür kampanyalar, genellikle sıfır gün açıklıklarını veya bilinen güvenlik zafiyetlerini istismar ederek sistemlere erişim sağlamayı amaçlamaktadır. Meşru altyapının kullanılması, tespit edilmeyi zorlaştırmakta ve saldırıların attribution sürecini karmaşıklaştırmaktadır. Bu durum, APT gruplarının sürekli olarak taktiklerini geliştirdiğini ve savunma mekanizmalarını aşmak için yenilikçi yöntemler kullandığını göstermektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Canadian Tire'ın 38 Milyon Kullanıcısını Etkileyen Veri İhlali Gerçekleşmiştir
+─────────────────────────────────────────────────────────
+Kanadalı perakende devi Canadian Tire'da Ekim 2025'te yaşanan bir veri ihlalinin 38 milyondan fazla hesabı etkilediği açıklanmıştır. İhlal sonucunda müşteri adları, adresleri, e-postaları, doğum yılları, şifreli parolalar ve bazı durumlarda kısaltılmış kredi kartı numaraları gibi kişisel veriler ifşa edilmiştir. Şirket, finansal verilerin hesaplara erişim veya işlem yapmak için kullanılamayacağını belirtmiştir. Bu olay, Kanada'daki en büyük perakende veri ihlallerinden biri olarak kaydedilmiş olup, müşteri gizliliği ve hassas kişisel bilgilerin güvenliği konusunda ciddi endişeler yaratmaktadır. Şirket, sorunu tespit edip düzeltmiş ve düzenleyici kurumlara bildirimde bulunmuştur.
+(XXXXXXX, AÇIK -securityaffairs.com, 28.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Kuzey Kore Lazarus Grubu Medusa Fidye Yazılımı ile İş Birliği Yapmaktadır
+─────────────────────────────────────────────────────────
+Kuzey Kore bağlantılı siber tehdit grubu Lazarus Group'un, Medusa fidye yazılımıyla iş birliği yapmaya başladığı tespit edilmiştir. Bu iş birliği, Lazarus Group'un siber suç faaliyetlerini genişletme ve daha fazla finansal kazanç elde etme stratejisinin bir parçası olarak değerlendirilmektedir. Lazarus Group, daha önce banka soygunları, kripto para hırsızlıkları ve casusluk operasyonlarıyla tanınmaktaydı. Fidye yazılımı operasyonlarına dahil olması, grubun saldırı yüzeyini ve yıkıcı potansiyelini artırmaktadır. Bu gelişme, uluslararası siber güvenlik topluluğu için ciddi bir tehdit oluşturmakta ve devlet destekli aktörlerin siber suç ekosistemiyle olan bağlantılarının derinleştiğini göstermektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] BeyondTrust Kritik Zafiyetinin VShell ve SparkRAT ile İstismarı Gözlemlenmiştir
+─────────────────────────────────────────────────────────
+BeyondTrust'ın kritik bir güvenlik açığı olan CVE-2026-1731'in VShell ve SparkRAT kötü amaçlı yazılımları kullanılarak aktif olarak istismar edildiği gözlemlenmiştir. Bu zafiyetin istismarı, saldırganların hedeflenen sistemlere uzaktan erişim sağlamasına ve kontrol ele geçirmesine olanak tanımaktadır. BeyondTrust ürünleri, genellikle ayrıcalıklı erişim yönetimi (PAM) çözümleri sunduğundan, bu tür bir zafiyetin istismarı, kurumsal ağlarda geniş çaplı bir etkiye yol açabilmektedir. Güvenlik analistleri, kurumları bu kritik zafiyet için yayınlanan güncellemeleri derhal uygulamaya ve sistemlerini olası istismar belirtilerine karşı izlemeye çağırmaktadır. Aktif istismar, tehdidin aciliyetini vurgulamaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Cisco Catalyst SD-WAN'ın UAT-8616 Tarafından Aktif İstismarı Devam Etmektedir
+─────────────────────────────────────────────────────────
+UAT-8616 olarak bilinen bir tehdit aktörü tarafından Cisco Catalyst SD-WAN cihazlarının aktif olarak istismar edildiği bildirilmiştir. Cisco SD-WAN çözümleri, modern kurumsal ağların temelini oluşturmakta olup, bu cihazlardaki zafiyetlerin istismarı, ağ altyapısının kontrolünün ele geçirilmesine veya veri sızıntılarına yol açabilmektedir. Aktif istismar, bu tehdidin ciddiyetini ve hızlı müdahale gerekliliğini ortaya koymaktadır. Kurumların, Cisco'nun yayınladığı güvenlik bültenlerini takip etmeleri, ilgili yamaları en kısa sürede uygulamaları ve ağlarında olağan dışı faaliyetlere karşı sürekli izleme yapmaları önerilmektedir. Bu tür saldırılar, kritik ağ altyapılarının güvenliğinin ne kadar önemli olduğunu bir kez daha göstermektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] GRIDTIDE Global Siber Casusluk Kampanyası Ortaya Çıkarılmıştır
+─────────────────────────────────────────────────────────
+GRIDTIDE olarak adlandırılan küresel bir siber casusluk kampanyasının operasyonları ve hedefleri detaylı bir şekilde ortaya çıkarılmıştır. Bu kampanya, devlet destekli aktörler veya gelişmiş kalıcı tehdit (APT) grupları tarafından yürütülmektedir. GRIDTIDE'ın amacı, hassas bilgileri çalmak ve jeopolitik avantaj sağlamak için çeşitli sektörlerdeki hedeflere sızmaktır. Kampanyanın karmaşık teknikler, özel kötü amaçlı yazılımlar ve uzun süreli gizlilik yöntemleri kullandığı belirtilmektedir. Siber güvenlik araştırmacıları, bu tür casusluk operasyonlarına karşı savunma mekanizmalarının güçlendirilmesi ve uluslararası iş birliğinin artırılması gerektiğini vurgulamaktadır. Kampanya, ulusal güvenlik açısından ciddi bir tehdit oluşturmaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] APT37'nin Hava Boşluklu Ağlar İçin Yeni Yetenekler Eklediği Belirtilmiştir
+─────────────────────────────────────────────────────────
+APT37 olarak bilinen tehdit grubunun, hava boşluklu (air-gapped) ağları hedef almak için yeni yetenekler eklediği bildirilmiştir. Hava boşluklu ağlar, yüksek güvenlik gerektiren kritik sistemlerde, fiziksel olarak dış ağlardan izole edilmiş olup, bu tür ağlara sızma yeteneği, APT37'nin sofistike ve kararlı bir aktör olduğunu göstermektedir. Yeni yetenekler, genellikle USB sürücüler veya diğer çıkarılabilir medya aracılığıyla kötü amaçlı yazılımın ağa taşınmasını içermektedir. Bu gelişme, ulusal güvenlik açısından büyük önem taşımakta ve kritik altyapıları korumak için daha gelişmiş fiziksel ve dijital güvenlik önlemlerinin alınması gerektiğini ortaya koymaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] MuddyWater'ın Son Operasyon Olalampo Kampanyası Detaylandırılmıştır
+─────────────────────────────────────────────────────────
+MuddyWater olarak bilinen ve İran ile bağlantılı olduğu düşünülen APT grubunun "Operation Olalampo" adlı en son kampanyasının detayları açıklanmıştır. Bu kampanya, bölgedeki hükümet kurumları, telekomünikasyon şirketleri ve diğer kritik sektörleri hedef almaktadır. MuddyWater, genellikle kimlik avı (phishing) saldırıları ve sosyal mühendislik teknikleri kullanarak hedeflerine sızmayı amaçlamaktadır. "Operation Olalampo", grubun değişen taktiklerini ve kalıcı tehdit yeteneklerini göstermekte olup, siber güvenlik uzmanlarını bu tür gelişmiş tehditlere karşı uyanık olmaya çağırmaktadır. Kampanya, bölgesel siber güvenlik dengeleri açısından önem arz etmektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Paralı Asker Akula Ukrayna Destekçisi Finans Kurumunu Hedef Almıştır
+─────────────────────────────────────────────────────────
+"Akula" adlı paralı asker grubunun, Ukrayna'yı destekleyen bir finans kurumuna siber saldırı düzenlediği bildirilmiştir. Bu saldırı, Rusya-Ukrayna çatışmasının siber cephesindeki gerilimi ve finansal kurumların jeopolitik hedefler doğrultusunda nasıl hedef alındığını göstermektedir. Paralı asker gruplarının devlet destekli aktörlerle iş birliği yapması veya kendi başlarına siber operasyonlar yürütmesi, tehdit ortamını daha da karmaşık hale getirmektedir. Finans sektörünün hedef alınması, hem ekonomik istikrarsızlık yaratmayı hem de Ukrayna'ya verilen desteği engellemeyi amaçlamaktadır. Bu durum, siber savaşın ekonomik ve finansal boyutlarını vurgulamaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] Dohdoor Kötü Amaçlı Yazılım Kampanyası Eğitim ve Sağlık Sektörünü Hedeflemektedir
+─────────────────────────────────────────────────────────
+Yeni bir kötü amaçlı yazılım kampanyası olan Dohdoor'un, özellikle eğitim ve sağlık sektörlerini hedef aldığı tespit edilmiştir. Bu sektörler, hassas veriler barındırması ve genellikle kısıtlı güvenlik bütçelerine sahip olması nedeniyle siber saldırganlar için cazip hedefler oluşturmaktadır. Dohdoor kampanyası, fidye yazılımları, veri sızıntıları veya hizmet kesintileri gibi çeşitli zararlı faaliyetleri içerebilmektedir. Eğitim ve sağlık kurumlarının hedef alınması, hem kritik hizmetlerin aksamasına yol açmakta hem de bireysel gizliliği tehdit etmektedir. Bu durum, bu sektörlerdeki siber güvenlik savunmalarının güçlendirilmesinin aciliyetini vurgulamaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Kore Vergi Dairesi Cüzdan Tohumunu Açıklayarak 4.8 Milyon Dolar Kripto Çalınmıştır
+─────────────────────────────────────────────────────────
+Güney Kore Ulusal Vergi Dairesi'nin, el konulan bir kripto para cüzdanının mnemonic kurtarma ifadesini (seed phrase) kamuoyuna açıklamasının ardından 4.8 milyon dolar değerinde kripto varlığın çalındığı bildirilmiştir. Daire, operasyonun başarısını duyururken, bir Ledger cihazının ve cüzdanın kurtarma ifadesinin el yazısıyla yazılmış notunun fotoğraflarını sansürlemeden yayınlamıştır. Bu hata, yetkililerin sanal varlıklar konusundaki temel bilgi eksikliğinden kaynaklandığı belirtilmektedir ve ulusal hazineden milyarlarca won'luk bir kayba yol açmıştır. Olay, donanım cüzdanı sahipleri için tohum ifadelerinin güvenliğinin kritik önemini bir kez daha hatırlatmaktadır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 28.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] ClawJacked Açığı Kötü Niyetli Sitelerin Yerel OpenClaw AI Ajanlarını Ele Geçirmesine İzin Vermektedir
+─────────────────────────────────────────────────────────
+OpenClaw'da tespit edilen "ClawJacked" adlı yüksek önem dereceli bir güvenlik açığı, kötü niyetli web sitelerinin yerel olarak çalışan yapay zeka (AI) ajanlarına bağlanarak kontrolü ele geçirmesine olanak tanımaktadır. Bu zafiyet, web soketi sunucusu üzerinden kimlik doğrulama mekanizmasındaki eksiklikler ve yerel bağlantılar için güvenlik kontrollerinin gevşetilmesi nedeniyle ortaya çıkmıştır. Saldırganlar, parolanın kaba kuvvetle kırılması ve cihazın otomatik olarak güvenilir olarak kaydedilmesiyle AI ajanı üzerinde tam kontrol sağlamaktadır. OpenClaw, 2026.2.25 sürümüyle bu açığı düzeltmiş olup, kullanıcıların en kısa sürede güncellemeleri uygulamaları tavsiye edilmektedir.
+(XXXXXXX, AÇIK -thehackernews.com, 28.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Binlerce Google Cloud API Anahtarı Gemini Erişimiyle Ortaya Çıkmıştır
+─────────────────────────────────────────────────────────
+Truffle Security'nin araştırmasına göre, binlerce Google Cloud API anahtarı, Gemini API'sinin etkinleştirilmesiyle hassas Gemini uç noktalarına kimlik doğrulaması yapmak ve özel verilere erişmek için kötüye kullanılabilmektedir. Yaklaşık 3.000 Google API anahtarı, istemci tarafı kodunda gömülü olarak bulunmuştur. Bu anahtarlar, Gemini API etkinleştirildiğinde otomatik olarak bu yeteneği kazanmakta ve saldırganların hassas dosyalara erişmesine, LLM kullanım ücretlerini mağdurun hesabına yansıtmasına neden olabilmektedir. Google, bu sorunu çözmek için proaktif önlemler aldığını ve sızdırılmış anahtarları engellediğini belirtmiştir. Kullanıcıların API anahtarlarını denetlemesi ve döndürmesi tavsiye edilmektedir.
+(XXXXXXX, AÇIK -thehackernews.com, 28.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] QuickLens Chrome Uzantısı Kripto Çalmakta ve ClickFix Saldırısı Göstermektedir
+─────────────────────────────────────────────────────────
+"QuickLens - Search Screen with Google Lens" adlı bir Chrome uzantısı, kötü amaçlı yazılım dağıtmak ve binlerce kullanıcının kripto varlıklarını çalmak amacıyla ele geçirilmesinin ardından Chrome Web Mağazası'ndan kaldırılmıştır. Uzantı, sürüm 5.8 ile birlikte ClickFix saldırılarını ve bilgi çalma işlevselliğini içeren kötü amaçlı komut dosyaları içermeye başlamıştır. Bu komut dosyaları, tarayıcı güvenlik başlıklarını kaldırarak ve bir komuta-kontrol (C2) sunucusuyla iletişim kurarak çalışmaktadır. Saldırganlar, sahte Google Güncelleme uyarıları göstererek kullanıcıları zararlı yürütülebilir dosyaları çalıştırmaya ikna etmeye çalışmıştır. Uzantıyı kullananların hemen kaldırması ve sistemlerini taraması önerilmektedir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 28.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] Kimwolf Botnet'inin Yöneticisi "Dort" Hakkında Detaylar Paylaşılmıştır
+─────────────────────────────────────────────────────────
+KrebsOnSecurity, "Dort" takma adını kullanan Kimwolf botnet'inin yöneticisi hakkında kamuya açık bilgilere dayanarak detaylar paylaşmıştır. "Dort", Kimwolf botnet'i aracılığıyla DDoS saldırıları, doxing ve swatting saldırıları düzenlemektedir. Araştırmalar, "Dort"un (Jacob Butler) Minecraft oyunlarını hacklemekten daha ciddi siber suçlara yöneldiğini göstermektedir. Botnet yöneticisi, konut proxy hizmetlerindeki bir zafiyeti istismar ederek zayıf korunan cihazları enfekte etmektedir. "Dort"un kimliği ve faaliyetleri, siber suçluların kullandığı karmaşık ağları ve gerçek dünya üzerindeki etkilerini ortaya koymaktadır. Bu bilgiler, kolluk kuvvetlerinin siber suçluları hedef almasına yardımcı olabilmektedir.
+(XXXXXXX, AÇIK -krebsonsecurity.com, 28.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] Microsoft Trojanlaştırılmış Oyun Araçları ile RAT Dağıtımı Konusunda Uyarmaktadır
+─────────────────────────────────────────────────────────
+Microsoft, trojanlaştırılmış oyun yardımcı programları aracılığıyla dağıtılan bir uzaktan erişim truva atı (RAT) konusunda uyarılarda bulunmuştur. Tehdit aktörleri, tarayıcılar ve sohbet platformları üzerinden paylaşılan Xeno.exe veya RobloxPlayerBeta.exe gibi oyun araçlarını kullanarak kullanıcıları kötü amaçlı yazılımları çalıştırmaya ikna etmektedir. Kötü amaçlı indirici, gizlilik için PowerShell ve LOLBins (Living Off the Land Binaries) gibi araçları kullanmaktadır. Bu çok amaçlı kötü amaçlı yazılım, yükleyici, indirici, çalıştırıcı ve RAT olarak işlev görmekte, veri hırsızlığına ve ek yüklerin dağıtımına olanak tanımaktadır. Kullanıcıların şüpheli oyun araçlarından kaçınmaları tavsiye edilmektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 28.02.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] Romanyalı Ulusal Vatandaş ABD Hükümet Ağına Erişim Satmaktan Suçlu Bulunmuştur
+─────────────────────────────────────────────────────────
+Romanyalı bir vatandaş, Oregon Eyaleti Hükümet Ofisi ve diğer ABD'li mağdurların ağlarına erişim satmaktan suçlu bulunmuştur. Bu olay, siber suçluların devlet kurumlarını hedef alma ve ele geçirilmiş ağlara erişimi yasa dışı yollarla satma eğilimini göstermektedir. Hükümet ağlarına erişimin satılması, ulusal güvenlik ve hassas verilerin korunması açısından ciddi sonuçlar doğurmaktadır. Bu tür suçluların yakalanması ve cezalandırılması, siber suçlara karşı uluslararası iş birliğinin önemini vurgulamaktadır. Suçlu, adalete teslim edilerek, benzer girişimlerde bulunacak diğer aktörlere karşı caydırıcı bir mesaj verilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[20] ABD Savunma Yüklenicisi Eski Yöneticisi Ticari Sırları Satmaktan Hüküm Giymiştir
+─────────────────────────────────────────────────────────
+ABD Savunma Yüklenicisi'nin eski genel müdürü, çalınan ticari sırları Rus bir aracıya satmaktan 87 ay hapis cezasına çarptırılmıştır. Bu durum, hassas savunma bilgilerinin uluslararası aktörlere sızdırılmasının ulusal güvenlik üzerindeki ciddi etkilerini ortaya koymaktadır. Rusya ile bağlantılı bir aracıya yapılan satış, devlet destekli casusluk faaliyetlerinin şirket içindeki bireyler aracılığıyla nasıl yürütülebileceğini göstermektedir. Bu vaka, savunma sanayii tedarik zincirindeki iç tehditlerin ve bilgi güvenliği politikalarının sıkılaştırılmasının ne kadar kritik olduğunu vurgulamaktadır. Yasal süreç, bu tür suçların cezasız kalmayacağına dair bir mesaj vermektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[21] Hollanda İstihbaratı Rusya'nın Hibrit Saldırılarını Artırdığını Bildirmektedir
+─────────────────────────────────────────────────────────
+Hollanda istihbaratı, Rusya'nın Batı ile uzun süreli bir çatışmaya hazırlanarak hibrit saldırılarını artırdığı konusunda uyarıda bulunmuştur. Hibrit saldırılar, siber saldırılar, dezenformasyon kampanyaları ve siyasi manipülasyon gibi çeşitli yöntemleri içermektedir. Bu uyarı, Avrupa'nın siber güvenlik duruşunu güçlendirmesi ve Rusya'dan gelebilecek çok yönlü tehditlere karşı hazırlıklı olması gerektiğini göstermektedir. İstihbarat raporu, jeopolitik gerilimlerin siber uzayda nasıl somut tehditlere dönüştüğünü ve ulusal güvenlik stratejilerinin bu yeni dinamiklere göre ayarlanmasının önemini vurgulamaktadır. Avrupa ülkeleri, ortak savunma mekanizmalarını geliştirmeye çağrılmaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[22] Hazine Bakanlığı ABD Hükümeti Siber Araçlarının Çalınmasıyla İlgili Ağı Yaptırım Kapsamına Almıştır
+─────────────────────────────────────────────────────────
+ABD Hazine Bakanlığı, ABD hükümetine ait siber araçların çalınması ve satılmasıyla ilgili bir istismar aracıcısı ağını yaptırım kapsamına almıştır. Bu yaptırım, siber suç ekosistemindeki aracıların faaliyetlerini hedef alarak, çalınan siber yeteneklerin yayılmasını engellemeyi amaçlamaktadır. Hükümetin siber araçlarının çalınması, ulusal güvenlik açısından ciddi bir tehdit oluşturmakta ve bu araçların düşman aktörlerin eline geçme riskini taşımaktadır. Yaptırımlar, bu tür yasa dışı faaliyetlere karışan kişi ve kuruluşlara karşı kararlı bir duruş sergilenmekte olduğunu göstermektedir. Bu durum, siber güvenlik tedbirlerinin ve istihbarat paylaşımının önemini bir kez daha vurgulamaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[23] ManoMano Veri İhlali 38 Milyon Avrupalı Müşteriyi Etkilemektedir
+─────────────────────────────────────────────────────────
+Avrupa'da faaliyet gösteren DIY (Kendin Yap) zinciri ManoMano'nun, 38 milyondan fazla müşterisini etkileyen bir veri ihlali yaşadığı bildirilmiştir. Bu ihlal, kişisel bilgilerin ve potansiyel olarak hassas müşteri verilerinin açığa çıkmasına neden olmuştur. Perakende sektöründeki büyük ölçekli veri ihlalleri, müşteri güvenini sarsmakta ve şirketler için ciddi yasal ve finansal sonuçlar doğurmaktadır. ManoMano, ihlalin ardından ilgili düzenleyici kurumlara bildirimde bulunmuş ve etkilenen müşterileri bilgilendirme sürecini başlatmıştır. Şirketlerin, müşteri verilerinin korunması için daha sağlam güvenlik önlemleri alması gerektiği bu olayla bir kez daha vurgulanmıştır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[24] Yapay Zeka Destekli Tehdit Aktörü FortiGate Cihazlarına Büyük Ölçekte Erişmektedir
+─────────────────────────────────────────────────────────
+Yapay zeka (AI) destekli bir tehdit aktörünün, FortiGate cihazlarına büyük ölçekte erişim sağladığı tespit edilmiştir. FortiGate güvenlik duvarları ve UTM (Birleşik Tehdit Yönetimi) çözümleri, birçok kuruluşun ağ güvenliği altyapısının kritik bir bileşenini oluşturmaktadır. Bu tür cihazlara erişim sağlanması, saldırganların kurumsal ağlara sızmasına, veri çalmasına veya hizmet kesintilerine neden olmasına olanak tanımaktadır. Yapay zeka kullanımının, saldırıları daha sofistike ve tespit edilmesi daha zor hale getirdiği düşünülmektedir. Kurumların, FortiGate cihazlarını güncel tutmaları, güçlü kimlik doğrulama mekanizmaları kullanmaları ve anormal erişimlere karşı sürekli izleme yapmaları gerekmektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[25] Olympique Marseille Siber Saldırı Girişimini ve Veri Sızıntısını Doğrulamıştır
+─────────────────────────────────────────────────────────
+Fransız futbol kulübü Olympique Marseille, bir siber saldırı girişimini ve ardından gelen veri sızıntısını doğrulamıştır. Saldırı girişimi sonucunda bazı hassas kulüp verilerinin sızdırıldığı belirtilmektedir. Spor kuruluşları, taraftar verileri, finansal bilgiler ve ticari sırlar gibi çeşitli değerli verilere sahip oldukları için siber saldırganlar için giderek daha cazip hedefler haline gelmektedir. Bu olay, spor sektöründeki kuruluşların da siber güvenlik risklerine karşı yeterli önlemleri alması gerektiğini göstermektedir. Kulüp, sızıntının kapsamını araştırmak ve güvenlik önlemlerini güçlendirmek için çalışmalar başlattığını açıklamıştır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[26] Yeni Kötü Amaçlı npm Paketi "ambar-src" Geliştiricileri Hedef Almaktadır
+─────────────────────────────────────────────────────────
+"ambar-src" adında yeni bir kötü amaçlı npm paketinin, açık kaynaklı kötü amaçlı yazılımlarla geliştiricileri hedef aldığı tespit edilmiştir. npm (Node Package Manager) ekosistemi, geliştiriciler tarafından yaygın olarak kullanılan bir paket yöneticisi olduğundan, bu tür kötü amaçlı paketler yazılım tedarik zinciri saldırıları için önemli bir vektör oluşturmaktadır. Saldırganlar, meşru gibi görünen paketler aracılığıyla geliştiricilerin sistemlerine sızmayı ve hassas bilgileri çalmayı amaçlamaktadır. Geliştiricilerin, kullandıkları npm paketlerini dikkatle incelemeleri, doğrulanmamış kaynaklardan paket indirmekten kaçınmaları ve güvenlik taramaları yapmaları büyük önem taşımaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[27] Blockchain Üzerinde Yaşayan Yeni Aeternum C2 Botnet'i Keşfedilmiştir
+─────────────────────────────────────────────────────────
+"Aeternum C2" olarak adlandırılan yeni bir botnet'in, blockchain teknolojisi üzerinde faaliyet gösterdiği keşfedilmiştir. Bu yenilikçi yaklaşım, botnet'in komuta ve kontrol (C2) altyapısını geleneksel yöntemlere göre daha dirençli ve tespit edilmesi zor hale getirmektedir. Blockchain'in dağıtık ve değişmez yapısı, C2 sunucularının kapatılmasını veya izlenmesini zorlaştırmaktadır. Aeternum C2, fidye yazılımı dağıtımı, DDoS saldırıları veya kripto para madenciliği gibi çeşitli kötü amaçlı faaliyetler için kullanılabilmektedir. Bu gelişme, siber güvenlik savunucularının blockchain tabanlı tehditlere karşı yeni stratejiler geliştirmesi gerektiğini göstermektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[28] Claude Kodunda Uzaktan Kod Yürütme ve API Token Sızması Tespit Edilmiştir
+─────────────────────────────────────────────────────────
+Claude kodunda uzaktan kod yürütme (RCE) ve API token sızması gibi kritik zafiyetlerin tespit edildiği bildirilmiştir. Claude, yapay zeka ve büyük dil modelleri (LLM) geliştiren bir platform olduğundan, bu tür zafiyetler yapay zeka tabanlı sistemler için ciddi riskler oluşturmaktadır. RCE, saldırganların hedef sistem üzerinde keyfi kod çalıştırmasına olanak tanırken, API token sızması, hassas verilere veya sistem kaynaklarına yetkisiz erişim sağlayabilmektedir. Bu zafiyetler, yapay zeka güvenliğinin karmaşıklığını ve bu yeni teknolojilerin geliştirme sürecinde güvenlik testlerinin ne kadar hayati olduğunu vurgulamaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[29] Check Point Araştırmacıları Kritik Claude Kod Zafiyetlerini Ortaya Çıkarmıştır
+─────────────────────────────────────────────────────────
+Check Point araştırmacıları, Claude'un kodunda bulunan kritik güvenlik zafiyetlerini ortaya çıkarmıştır. Bu zafiyetler, yapay zeka modelleri ve ilgili altyapılar için önemli riskler taşımaktadır. Araştırmacılar, bu açıkların uzaktan kod yürütme veya veri manipülasyonu gibi ciddi saldırılara yol açabileceğini belirtmiştir. Claude gibi gelişmiş yapay zeka sistemlerinin yaygınlaşmasıyla birlikte, bu tür zafiyetlerin keşfedilmesi, yapay zeka güvenliği alanındaki boşlukları ve geliştirme sürecinde güvenlik odaklı yaklaşımların önemini vurgulamaktadır. Check Point'in bulguları, yapay zeka tabanlı hizmetleri kullanan kuruluşlar için acil güvenlik önlemleri alma gerekliliğini ortaya koymaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[30] Milyonlarca Halka Açık .env Dosyası İnternet Hizmetlerini Riske Atmaktadır
+─────────────────────────────────────────────────────────
+Mysterium VPN tarafından yapılan bir araştırma, milyonlarca halka açık .env dosyasının internet hizmetlerini riske attığını ortaya koymuştur. .env dosyaları, genellikle uygulamaların yapılandırma bilgilerini, API anahtarlarını, veritabanı kimlik bilgilerini ve diğer hassas sırları içermektedir. Bu dosyaların yanlışlıkla halka açık sunuculara veya kod depolarına yüklenmesi, saldırganların bu bilgilere kolayca erişmesine olanak tanımaktadır. Bu durum, web uygulamaları ve sunucu yapılandırmalarındaki temel güvenlik hatalarının yaygınlığını göstermekte ve geliştiricilerin hassas bilgileri güvenli bir şekilde yönetme konusunda daha dikkatli olmaları gerektiğini vurgulamaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[31] Starkiller Kimlik Avı Hizmeti Gerçek Giriş Sayfalarını Proxy Olarak Kullanmaktadır
+─────────────────────────────────────────────────────────
+"Starkiller" adlı yeni bir kimlik avı hizmetinin, iki faktörlü kimlik doğrulama (MFA) sistemlerini atlatmak amacıyla gerçek giriş sayfalarını proxy olarak kullandığı tespit edilmiştir. Bu sofistike kimlik avı yöntemi, kullanıcıların kimlik bilgilerini ve MFA kodlarını doğrudan ele geçirmeyi hedeflemektedir. Starkiller, kurbanları meşru gibi görünen sahte web sitelerine yönlendirmekte ve bu siteler aracılığıyla gerçek hizmete bağlanarak oturum bilgilerini çalmaktadır. Bu tür gelişmiş kimlik avı saldırıları, geleneksel güvenlik eğitimlerinin ötesine geçmekte ve kullanıcıların her zaman URL'leri ve bağlantıların güvenilirliğini dikkatle kontrol etmeleri gerektiğini göstermektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[32] Ulusal Polis Ödeme Ağ Geçidine Siber Saldırı Yapan Genci Tutuklamıştır
+─────────────────────────────────────────────────────────
+Ulusal Polis, bir ödeme ağ geçidine siber saldırı düzenleyerek lüks otellerde bir kuruşa rezervasyon yapan genç bir kişiyi tutuklamıştır. Bu olay, siber suçların finansal sistemler üzerindeki potansiyel etkisini ve kolluk kuvvetlerinin bu tür suçlara karşı yürüttüğü başarılı operasyonları göstermektedir. Genç saldırganın, ödeme sistemlerindeki bir zafiyeti istismar ederek haksız kazanç elde etmeye çalıştığı belirtilmektedir. Bu tutuklama, siber suçluların adaletten kaçamayacağına dair önemli bir mesaj vermekte ve siber güvenlik alanındaki yasal yaptırımların caydırıcılığını artırmaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[33] datapizza-ai, Yeni Bir Zafiyet İçeren Yapay Zeka Çerçevesidir
+─────────────────────────────────────────────────────────
+"datapizza-ai" olarak adlandırılan yeni bir yapay zeka çerçevesinde güvenlik zafiyetleri tespit edilmiştir. Bu zafiyetler, yapay zeka uygulamalarının geliştirilmesi ve dağıtılması süreçlerinde ortaya çıkan güvenlik açıklarının bir örneğini oluşturmaktadır. Yapay zeka çerçeveleri, geliştiricilerin AI modelleri oluşturmak için kullandığı temel araçlar olduğundan, bu tür çerçevelerdeki zafiyetler, onlara dayalı tüm uygulamaları riske atabilmektedir. Bu durum, yapay zeka teknolojilerinin hızla gelişmesiyle birlikte güvenlik testleri ve kod denetimlerinin ne kadar kritik olduğunu vurgulamaktadır. Geliştiricilerin, güvenli kodlama prensiplerine uymaları ve çerçeve güncellemelerini takip etmeleri gerekmektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[34] Büyük Akıl Yürütme Modelleri Otonom Jailbreak Ajanları Olarak İşlev Görmektedir
+─────────────────────────────────────────────────────────
+Büyük akıl yürütme modellerinin (Large Reasoning Models - LRM), otonom jailbreak ajanları olarak işlev görebildiği belirtilmektedir. Jailbreak, yapay zeka modellerinin güvenlik kısıtlamalarını aşarak istenmeyen veya zararlı çıktılar üretmeye zorlanması anlamına gelmektedir. Otonom jailbreak ajanları, bu süreçleri insan müdahalesi olmadan gerçekleştirebilmekte ve yapay zeka sistemlerinin kötüye kullanım potansiyelini artırmaktadır. Bu durum, yapay zeka modellerinin etik ve güvenlik sınırlarının belirlenmesi, ayrıca bu modellerin istismara karşı korunması için daha gelişmiş savunma mekanizmalarının geliştirilmesi gerektiğini göstermektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[35] MalTool Kötü Amaçlı Araçları LLM Ajanlarına Saldırmaktadır
+─────────────────────────────────────────────────────────
+"MalTool" olarak adlandırılan kötü amaçlı araçların, büyük dil modelleri (LLM) ajanlarına yönelik saldırılar gerçekleştirdiği tespit edilmiştir. Bu saldırılar, LLM'lerin karar verme süreçlerini manipüle etmeyi, hassas bilgilere erişmeyi veya istenmeyen eylemleri tetiklemeyi amaçlamaktadır. MalTool'un, LLM'lerin doğal dil işleme yeteneklerini kötüye kullanarak güvenlik zafiyetleri yaratabildiği belirtilmektedir. Yapay zeka ajanlarının kurumsal ortamlarda yaygınlaşmasıyla birlikte, bu tür kötü amaçlı araçlar yeni ve karmaşık tehdit vektörleri oluşturmaktadır. LLM tabanlı sistemlerin güvenliğinin sağlanması için özel güvenlik önlemlerinin geliştirilmesi gerekmektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.03.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
