@@ -28319,3 +28319,78 @@ NodeBB forum yazılımında, yapay zeka tabanlı sızma testi araçları tarafı
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 25 JULY 2026 - EN ÖNEMLİ 43 HABER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Vatikan'ın Resmi Dua Uygulamasında 700 Binden Fazla Kullanıcı Verisinin Sızdırılması
+─────────────────────────────────────────────────────────
+Vatikan'ın resmi dua uygulaması olan Click to Pray bünyesinde, 700.000'den fazla kullanıcının kişisel bilgilerinin sızmasına neden olan bir güvenlik açığı tespit edilmiştir. "BobDaHacker" takma adlı bir araştırmacı tarafından keşfedilen zafiyetin, uygulamanın uygulama programlama arayüzü (API) üzerindeki bir yetkilendirme hatasından kaynaklandığı belirtilmiştir. Sızıntı kapsamında kullanıcıların isimleri, e-posta adresleri, ülkeleri ve hesap durumlarının herhangi bir kimlik doğrulaması gerekmeksizin erişilebilir hale geldiği ifade edilmiştir. Uygulamayı geliştiren La Machi şirketinin ve uygulamanın sahibi olan Papa'nın Dünya Dua Ağı'nın konuyla ilgili henüz bir çözüm sunmadığı kaydedilmiştir. Uzmanlar, bu tür verilerin kimlik avı saldırılarında ve sosyal mühendislik faaliyetlerinde kullanılabileceğine dikkat çekerek kullanıcıların anonim bilgilerle kayıt olmalarını tavsiye etmektedir.
+(XXXXXXX, AÇIK -darkreading.com, 24.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Microsoft'un Windows Kurumsal Etkinleştirme Güvenliğini Donanım Tabanlı Doğrulamayla Sıkılaştırması
+─────────────────────────────────────────────────────────
+Microsoft, Windows toplu etkinleştirme işlemleri için kullanılan şirket içi Anahtar Yönetim Hizmeti (KMS) için Güvenilir Platform Modülü (TPM) destekli kanıtlamayı zorunlu hale getireceğini açıklamıştır. Bu değişiklikle birlikte, yazılım tabanlı güven modelinin yerini donanım destekli doğrulamanın alacağı ve kurumsal etkinleştirme güvenliğinin artırılacağı belirtilmiştir. Yeni modelde KMS sunucusunun, etkinleştirme tamamlanmadan önce kimliğini ve bütünlüğünü kanıtlayan bir rapor oluşturmak için TPM kullanacağı ifade edilmiştir. Bu sürecin, KMS sunucusunun kopyalanması veya taklit edilmesi riskini azaltacağı kaydedilmiştir. Uygulamanın bir sonraki Windows Server Uzun Süreli Hizmet Kanalı (LTSC) sürümüyle zorunlu olacağı, Ağustos 2026'dan itibaren ise Windows Server 2025'in yöneticilere hazırlık mesajları sunmaya başlayacağı bildirilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 24.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] OnTrac Lojistik Şirketinin Ağ İhlali Sonrası Müşteri Verilerinin Sızdırılması
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri merkezli paket teslimat şirketi OnTrac, kurumsal ağının siber saldırganlar tarafından ihlal edildiğini ve müşteri kişisel bilgilerine erişilmiş olabileceğini açıklamıştır. Güvenlik olayının 23 Mart 2026 tarihinde tespit edildiği, yapılan incelemeler sonucunda saldırganların 20-22 Mart 2026 tarihleri arasında belirli dosyalara erişim sağladığının belirlendiği ifade edilmiştir. Şirket, yetkililerle paylaştığı bildirimde isimler dışındaki veri türlerini gizli tuttuğu için sızdırılan bilgilerin tam kapsamının belirsizliğini koruduğu belirtilmiştir. OnTrac, verilerin yeniden güvenli hale getirilmesi ve dağıtılmaması için gerekli adımların atıldığını bildirmiştir. Şirketin, etkilenen müşterilere olası riskleri azaltmak amacıyla 12 aylık ücretsiz kredi izleme ve kimlik koruma hizmeti sunduğu kaydedilmiştir. Olayla ilgili herhangi bir fidye yazılımı grubunun henüz sorumluluk üstlenmediği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 24.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Siber Tehdit Aktörlerinin Otel Wi-Fi Ağlarını Microsoft 365 Hesaplarını Çalmak İçin Kullanması
+─────────────────────────────────────────────────────────
+Siber tehdit aktörlerinin, otel ve konferans merkezlerindeki Wi-Fi cihazlarının DNS ayarlarını değiştirerek kullanıcıları sahte Microsoft 365 giriş sayfalarına yönlendirdiği tespit edilmiştir. Siber güvenlik şirketi ReliaQuest tarafından yapılan incelemede, en az Haziran 2026'dan beri süregelen bu kampanyanın finans, sağlık, enerji ve perakende gibi çeşitli sektörlerdeki kuruluşları hedef aldığı belirtilmiştir. Araştırmacılar, söz konusu faaliyetlerin Rusya bağlantılı APT grubu APT28 ile ilişkilendirilen FrostArmada operasyonlarına benzerlik gösterdiğini ifade etmiştir. Saldırganların, ağ geçitlerinin DNS ayarlarını değiştirerek trafiği kontrol ettikleri altyapılara yönlendirdikleri ve bu yöntemle çok faktörlü kimlik doğrulama (MFA) korumalarını baypas ettikleri kaydedilmiştir. Tehdit aktörlerinin m365-owa[.]com ve owa-ms365[.]com gibi en az dört adet sahte alan adı kaydettiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 24.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Teknoloji Şirketlerinin Açık Kaynak Yapay Zekanın Yaygınlaşmasına Destek Vermesi
+─────────────────────────────────────────────────────────
+Microsoft ve Meta dahil olmak üzere yirmiden fazla teknoloji şirketi, politika yapıcılara açık kaynak yapay zeka sistemlerini desteklemeleri yönünde çağrıda bulunmuştur. Yayınlanan açık mektupta, açık kaynaklı modellerin kısıtlı veya kapalı modellere kıyasla daha güvenli bir yaklaşım sunduğu ve savunma tarafındaki aktörlerin tehditleri tespit etme kabiliyetini artıracağı ifade edilmiştir. NVIDIA, IBM ve Dell Technologies gibi kurumların da imzaladığı metinde, açık modellerin şeffaflığı artırarak zafiyetlerin daha hızlı giderilmesine olanak tanıdığı belirtilmektedir. Öte yandan siber güvenlik uzmanlarının, teknik yetkinliği düşük suçluların bu araçları kötüye kullanabileceği yönünde uyarılarda bulunduğu kaydedilmiştir. Beyaz Saray'ın ise açık kaynak yaklaşımının faydalarını kabul ederken, Çin menşeli modellerin oluşturabileceği riskleri dengelemek adına çeşitli düzenlemeler üzerinde çalıştığı bildirilmiştir.
+(XXXXXXX, AÇIK -cyberscoop.com, 24.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Microsoft Azure Automation Hizmetindeki Kritik Bir Açığın Kimlik Hırsızlığına Yol Açması
+─────────────────────────────────────────────────────────
+Microsoft, Azure Automation hizmetinde saldırganların diğer kiracıların kimliklerini ele geçirmesine ve verilerine erişmesine neden olabilecek kritik bir güvenlik açığını gidermiştir. CVE-2025-29827 kodlu ve 9.9 önem puanına sahip bu açığın, varsayılan bir yapılandırma hatası ile kod düzeyindeki kusurların birleşmesinden kaynaklandığı belirtilmiştir. Microsoft Azure Ağ Güvenliği Araştırma ekibinden Shay Shavit tarafından tespit edilen zafiyetin, saldırganların otomasyon betikleri oluşturmasına veya değiştirmesine, hassas kimlik bilgilerine erişmesine ve bulut iş yüklerini yönetmesine imkan tanıdığı ifade edilmiştir. Söz konusu varsayılan ayarın artık kamuya açık olmadığı ve Microsoft tarafından değiştirildiği kaydedilmiştir. Araştırmacı Shavit, zafiyetin henüz aktif olarak istismar edildiğine dair bir kanıt bulunmadığını ancak bulut ortamlarındaki kimlik güvenliğinin kritik önemini vurguladığını bildirmiştir.
+(XXXXXXX, AÇIK -darkreading.com, 24.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Microsoft Bing Sunucularında Komut Çalıştırılmasına İzin Veren Güvenlik Açıklarının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Otonom ofansif güvenlik girişimi XBOW, Microsoft Bing'in görsel işleme sunucularında sistem düzeyinde yetki erişimine imkan tanıyan iki kritik güvenlik açığı tespit etmiştir. CVE-2026-32194 ve CVE-2026-32191 kodlarıyla tanımlanan ve 9.8 CVSS puanı alan bu açıkların, özel olarak hazırlanmış SVG dosyaları aracılığıyla Microsoft'un üretim ortamındaki işçilerinde komut çalıştırılmasına yol açtığı belirtilmiştir. Yapılan testlerde, Windows sunucularında sistem yetkisi, Linux makinelerinde ise kök kullanıcı erişimi elde edildiği ifade edilmiştir. Microsoft'un söz konusu açıkları Mart 2026 tarihinde sunucu tarafında giderdiği ve kullanıcıların herhangi bir işlem yapmasına gerek kalmadığı bildirilmiştir. Güvenlik açıklarının ImageMagick benzeri görsel işleme bileşenlerindeki hatalı yapılandırmalardan kaynaklandığı ve XBOW'un bulgularını 23 Temmuz 2026 tarihinde kamuoyuyla paylaştığı kaydedilmiştir. Şirket, analiz süresince yalnızca zararsız komutların çalıştırıldığını ve müşteri verilerine erişilmediğini açıklamıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 24.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] Rockwell Automation'ın Arena Simülasyon Yazılımındaki Kod Çalıştırma Açıklarını Kapatması
+─────────────────────────────────────────────────────────
+Rockwell Automation, endüstriyel iş akışlarını modellemek için kullanılan Arena Simulation yazılımındaki dört adet yüksek kritiklikteki güvenlik açığını gidermiştir. CVE-2026-8085, CVE-2026-8312, CVE-2026-8313 ve CVE-2026-8314 olarak tanımlanan bu bellek bozulması hatalarının, kullanıcı verilerinin yetersiz doğrulanmasından kaynaklandığı belirtilmiştir. Siber güvenlik araştırmacısı Michael Heinzl tarafından tespit edilen bu açıkların, saldırganların hedef sistemde rastgele kod çalıştırmasına olanak tanıyabileceği ifade edilmiştir. İstismarın gerçekleşmesi için bir kullanıcının kötü amaçlı bir dosyayı açması gerektiği, bu durumun sosyal mühendislik saldırılarına zemin hazırladığı kaydedilmiştir. CISA ve Rockwell Automation, söz konusu açıkların halihazırda kötüye kullanıldığına dair bir kanıt bulunmadığını açıklamıştır. Şirket, 17.00.00 ve önceki sürümleri etkileyen bu sorunlar için 17.00.01 sürümünü yayınlamıştır.
+(XXXXXXX, AÇIK -securityweek.com, 25.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Active Directory Kullanıcılarının Etki Alanı Denetleyicisi Kimliğine Bürünmesine Yol Açan Zafiyetin Belirlenmesi
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacıları H0j3n ve Aniq Fakhrul, düşük yetkili Active Directory kullanıcılarının bir Etki Alanı Denetleyicisi gibi kimlik doğrulaması yapmasına olanak tanıyan Certighost kod adlı bir istismar yöntemi yayınlamıştır. Microsoft tarafından CVE-2026-54121 koduyla tanımlanan ve 14 Temmuz 2026 tarihinde yamalanan bu zafiyetin, Active Directory Sertifika Servisleri (AD CS) içindeki bir yetkilendirme hatasından kaynaklandığı belirtilmiştir. Araştırmacılar, saldırganların bu yöntemle krbtgt gizli anahtarı gibi kritik verileri ele geçirebileceğini ifade etmiştir. Microsoft'un sunduğu güncellemenin, sertifika kayıt sürecindeki doğrulama mekanizmalarını sıkılaştırdığı ve sahte sunucu taleplerini engellediği bildirilmiştir. Henüz aktif bir saldırı rapor edilmemiş olsa da, tam kapsamlı bir kavram kanıtlama (PoC) çalışmasının kamuya açıklandığı ve kuruluşların acilen ilgili yamaları uygulamaları gerektiği vurgulanmıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 24.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] GitLab Sunucularında Kimlik Doğrulamalı Kullanıcıların Uzaktan Kod Çalıştırmasının Sağlanması
+─────────────────────────────────────────────────────────
+Güvenlik araştırmacısı Yuhang Wu, yamalanmamış GitLab 18.11.3 sunucularında "git" kullanıcısı yetkileriyle komut çalıştırılmasına olanak tanıyan bir kavram kanıtlama (PoC) çalışması yayımlamıştır. Söz konusu zafiyetin, GitLab Community Edition ve Enterprise Edition sürümlerinin 15.2.0 ile 19.0.1 arasındaki geniş bir aralığını etkilediği belirtilmiştir. Kimlik doğrulaması yapmış herhangi bir kullanıcının, özel olarak hazırlanmış iki Jupyter not defterini sisteme yükleyerek ve aralarındaki farkı talep ederek saldırıyı tetikleyebildiği ifade edilmiştir. GitLab.com platformunun 10 Haziran 2026 tarihinde yamalandığı, ancak kendi yönetilen sunucularını kullanan operatörlerin 18.10.8, 18.11.5 veya 19.0.2 sürümlerine yükseltme yapmaları gerektiği kaydedilmiştir. Araştırmacı, Ruby için yüksek performanslı bir JSON ayrıştırıcısı olan Oj kütüphanesindeki hataların bu zincirleme saldırıya imkan verdiğini bildirmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 25.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

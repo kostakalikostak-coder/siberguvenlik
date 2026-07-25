@@ -1,142 +1,5 @@
 [
  {
-  "date": "2026-07-17",
-  "views": [
-   {
-    "tr_title": "Çin Bağlantılı APT Grubunun ViPNet Güncelleme Sistemini İstismar Etmesi",
-    "paragraph": "Kaspersky araştırmacıları, en az Mayıs 2026 tarihinden bu yana aktif olan ve HelloNet olarak adlandırılan yeni bir gelişmiş kalıcı tehdit (APT) kampanyası tespit etmiştir. Düşük güven seviyesiyle Çin menşeli bir siber tehdit aktörüne atfedilen bu saldırı, Rusya'daki enerji, ulaşım, lojistik ve kamu sektöründeki kritik kuruluşları hedef almıştır. Saldırganlar, güvenli ağlar oluşturmak için kullanılan ViPNet yazılımının güncelleme mekanizmasına sızarak DLL yan yükleme tekniğiyle sisteme yerleşmişt",
-    "title": "HelloNet campaign — new malicious modules launched through the ViPNet update system",
-    "full_text": "UPD 16.07.2026: Added rules to protect companies using our SIEM system Kaspersky SIEM, and listed events for developing custom detection rules or conducting Threat hunting.\n\nUPD 16.07.2026: Added detection of the malicious activity using Kaspersky Managed Detection and Response.\n\nUPD 16.07.2026: Added detection rules and examples using KEDR Expert.\n\nUPD 16.07.2026: Added detection of the malicious"
-   },
-   {
-    "tr_title": "Scattered Spider Üyelerinin Londra Ulaşım Kurumu Saldırısından Hüküm Giymesi",
-    "paragraph": "Birleşik Krallık'ta görülen davada, Scattered Spider fidye yazılımı çetesi üyesi olduğu belirtilen Owen Flowers ve Thalha Jubair, Londra Ulaşım Kurumu'na (TfL) yönelik 2024 yılındaki siber saldırı nedeniyle beşer buçuk yıl hapis cezasına çarptırılmıştır. 16 Temmuz 2026 tarihinde sonuçlanan davada, sanıkların TfL sistemlerini işlemez hale getirerek kurumu 29 milyon sterlin zarara uğrattığı ve 27.000 çalışanın şifrelerini fiziksel olarak sıfırlamak zorunda kaldığı belirtilmiştir. Siber tehdit aktö",
-    "title": "Two Scattered Spider Hackers Get 5.5 Years Each for £29 Million TfL Hack",
-    "full_text": "Owen Flowers, 18, and Thalha Jubair, 20, were each sentenced to five and a half years at Woolwich Crown Court on Thursday, 16 July 2026, for the 2024 hack of Transport for London.\n\nThe attack left 148 TfL systems inoperable and forced all 27,000 of the transport authority's employees into an office to get their passwords reset in person. Both the NCA and the CPS put TfL's losses and recovery costs"
-   },
-   {
-    "tr_title": "Rusya Bağlantılı APT Grubu Sandworm'un Ukrayna'yı Sahte Güvenlik Doğrulamalarıyla Hedeflemesi",
-    "paragraph": "Rusya askeri istihbarat teşkilatı GRU ile bağlantılı siber tehdit aktörü Sandworm'un, Ukraynalı kullanıcıları kendi bilgisayarlarına zararlı yazılım yüklemeye ikna etmek amacıyla ele geçirilmiş internet sitelerinde sahte CAPTCHA istemleri kullandığı tespit edilmiştir. Ukrayna Bilgisayar Acil Müdahale Ekibi (CERT-UA) tarafından yayımlanan rapora göre, Kremlin destekli bu grup 2026 yılının bahar ve yaz aylarında ClickFix olarak bilinen sosyal mühendislik tekniğini benimsemiştir. Bu yöntemde kurban",
-    "title": "Sandworm hackers have a CAPTCHA trick for Ukrainians",
-    "full_text": "Sandworm hackers have a CAPTCHA trick for Ukrainians\n\nRussian military intelligence hackers have begun using fake CAPTCHA prompts on compromised websites to trick Ukrainian targets into infecting their own computers, researchers have found.\n\nIn a report published Wednesday, Ukraine's computer emergency response team (CERT-UA) said it observed a shift this spring and summer in how the Kremlin-backe"
-   },
-   {
-    "tr_title": "Çin Bağlantılı Aktörlerin Siber Casusluk Operasyonlarında Yapay Zeka Modellerini Kullanması",
-    "paragraph": "Haziran 2026'da tespit edilen ve Çin merkezli olduğu değerlendirilen bir siber casusluk kampanyasında, saldırı süreçlerini otomatikleştirmek için Claude Code ve DeepSeek-v4-pro yapay zeka modellerinin kullanıldığı belirlenmiştir. Hunt.io araştırmacıları, Hong Kong merkezli 13 sunucuda yaptıkları incelemelerde, saldırganların Tayvan, Tayland, Afganistan ve Amerika Birleşik Devletleri'ndeki hükümet sistemlerini ve finans kuruluşlarını hedef aldığını ortaya çıkarmıştır. Yapay zeka modellerinden Cla",
-    "title": "Claude Code and DeepSeek Powered Chinese Cyber Espionage Campaign",
-    "full_text": "Claude Code and DeepSeek Powered Chinese Cyber Espionage Campaign\n\nChinese actors used Claude Code and DeepSeek to automate attacks that breached government systems and targeted financial firms.\n\nHunt.io researchers stumbled onto an active intrusion campaign in June 2026 while pivoting on known TencShell command-and-control infrastructure. A single HTTP header fingerprint on port 1111 led them to "
-   },
-   {
-    "tr_title": "Siber Tehdit Aktörünün Güneydoğu Asya'daki Diplomatik Kurumlardan Veri Sızdırması",
-    "paragraph": "Güneydoğu Asya'daki hükümet ve diplomasi kuruluşlarını hedef alan kapsamlı bir siber casusluk faaliyeti tespit edilmiştir. 2025 yılının sonlarında başlayan ve 2026 yılı boyunca evrilerek devam eden bu operasyonlarda, Go tabanlı GoSerpent adlı arka kapı yazılımının kullanıldığı belirlenmiştir. Siber tehdit aktörünün temel amacının, hedef kurumlardaki hassas belgeleri toplamak ve sistem kimlik bilgilerini ele geçirmek olduğu anlaşılmaktadır. Operasyonun ilk aşamasında GoSerpent aracılığıyla sistem",
-    "title": "GoSerpent: a persistent threat evolves with sophisticated data collection and exfiltration",
-    "full_text": "In February 2026 we discovered a set of malicious activities that have been ongoing since late 2025. These activities involved a RAT module written in Go with proxy capabilities, serving as the main stage of the attack. The attack targeted government and diplomatic entities in Southeast Asia and showed a level of sophistication which caught our attention.\n\nDuring the attack, the main malware, dubb"
-   },
-   {
-    "tr_title": "Çin Bağlantılı Siber Tehdit Aktörünün Tayvan'da Daxin ve Stupig Zararlı Yazılımlarını Kullanması",
-    "paragraph": "Çin bağlantılı bir siber tehdit aktörüyle ilişkilendirilen gelişmiş bir zararlı yazılımın, dört yılı aşkın bir sürenin ardından Tayvan merkezli bir üretim firmasında yeniden ortaya çıktığı tespit edilmiştir. Symantec ve Carbon Black Tehdit Avcısı Ekibi tarafından yapılan incelemelerde, Daxin isimli çekirdek modu rootkit yazılımının yanı sıra daha önce raporlanmamış Stupig adlı bir arka kapının aynı sistemde çalıştığı belirlenmiştir. Söz konusu siber casusluk faaliyetinin hedefindeki makinenin, ç",
-    "title": "Daxin Resurfaces in Taiwan Alongside Stupig Pre-Login SYSTEM Backdoor",
-    "full_text": "An advanced malware previously attributed to a China-linked threat actor has resurfaced after more than four years within a Taiwan manufacturing firm, along with a previously unreported backdoor dubbed Stupig.\n\nDaxin (\"srt64.sys\"), as the kernel-mode rootkit is referred to, was first documented by Broadcom-owned Symantec in March 2022, with evidence indicating its use in targeted attacks aimed at "
-   },
-   {
-    "tr_title": "Rusya Merkezli İki Barındırma Sağlayıcısının Siber Suçlara Yataklık Etmekle Suçlanması",
-    "paragraph": "Amerika Birleşik Devletleri federal mahkemesi, 16 Temmuz 2026 tarihinde, siber suçlulara altyapı desteği sağlayan Media Land ve ML.Cloud adlı barındırma şirketlerinin sahibi olan üç Rus vatandaşının iddianamesini açıklamıştır. Alexander Alexandrovich Volosovik, Yulia Vladimirovna Pankova ve Kirill Andreevich Zatolokin, 21 eyaletteki kritik altyapılara yönelik saldırıları kolaylaştırmak ve 62 milyon doları aşan zarara yol açmakla suçlanmaktadır. İddianameye göre, St. Petersburg merkezli bu şirket",
-    "title": "Russian trio indicted for allegedly running bulletproof hosting providers that spurred cybercrime",
-    "full_text": "Russian trio indicted for allegedly running bulletproof hosting providers that spurred cybercrime\n\nThree Russian nationals and a pair of bulletproof hosting providers directly supported a series of attacks on critical infrastructure in 21 states and several countries, according to a 2024 indictment unsealed in federal court Tuesday.\n\nOfficials, who have been investigating the trio and their compan"
-   },
-   {
-    "tr_title": "Brezilya Hükümetine Ait Yirmiden Fazla Web Sitesinin PhantomEnigma Kampanyasında Kullanılması",
-    "paragraph": "ANY.RUN araştırmacıları, Brezilya hükümetine ait 20'den fazla resmi web sitesinin ele geçirilerek PhantomEnigma adlı bir kötü amaçlı yazılım dağıtım kampanyasında kullanıldığını ortaya çıkarmıştır. Saldırganların, polis temalı sahte belgeler ve QR kodları içeren kimlik avı e-postaları göndererek kurbanları resmi .gov.br uzantılı bağlantılara yönlendirdiği tespit edilmiştir. Bu yöntemin, SPF ve DKIM gibi güvenlik kontrollerini aşarak saldırıya yüksek düzeyde meşruiyet kazandırdığı belirtilmektedi",
-    "title": "20+ Hijacked Government Websites Became an Attack Channel",
-    "full_text": "More than 20 Brazilian government websites were hijacked and turned into malware delivery channels in an active PhantomEnigma campaign uncovered by ANY.RUN, a leading provider of interactive malware analysis and threat intelligence solutions.\n\nThe investigation revealed previously undocumented backdoor behavior, hidden infrastructure relationships, and multiple attack arms behind a campaign puttin"
-   },
-   {
-    "tr_title": "CISA'nın Fortinet FortiSandbox Yazılımındaki Güvenlik Açıklarının Kapatılmasını Emretmesi",
-    "paragraph": "Amerika Birleşik Devletleri Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), federal kurumlara Fortinet FortiSandbox tehdit algılama platformunda tespit edilen ve aktif olarak istismar edilen iki kritik güvenlik açığını ivedilikle yamalamaları talimatını vermiştir. CVE-2026-39808 ve CVE-2026-25089 kodlu bu açıklar, kimliği doğrulanmamış saldırganların düşük karmaşıklıktaki komut enjeksiyonu yöntemleriyle uzaktan yetkisiz kod yürütmesine olanak tanımaktadır. Fortinet firması söz konusu açıkları",
-    "title": "CISA urges immediate action on actively exploited Fortinet flaws",
-    "full_text": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday ordered government agencies to prioritize patching two actively exploited vulnerabilities in the Fortinet FortiSandbox threat detection platform.\n\nThese two critical-severity security flaws (tracked as CVE-2026-39808 and CVE-2026-25089) were addressed by Fortinet on April 14 and June 9, respectively.\n\nAs the company detai"
-   },
-   {
-    "tr_title": "CISA'nın Oracle E-Business Suite Uygulamasındaki Kritik Açığın Kapatılmasını İstemesi",
-    "paragraph": "Amerika Birleşik Devletleri Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Oracle E-Business Suite (EBS) finansal uygulamasında bulunan ve aktif saldırı altında olan kritik bir güvenlik açığına karşı federal kurumları uyarmıştır. CVE-2026-46817 olarak tanımlanan bu zafiyet, Oracle Payments ürününde yer almakta ve kimliği doğrulanmamış saldırganların HTTP ağ erişimi üzerinden sistemleri tamamen ele geçirmesine imkan tanımaktadır. Oracle firması Mayıs 2026 döneminde bu sorunu gidermek için güv",
-    "title": "CISA orders feds to patch actively exploited Oracle flaw by Saturday",
-    "full_text": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has ordered federal agencies to secure their systems by Saturday against ongoing attacks exploiting a critical vulnerability in the Oracle E-Business Suite (EBS) financial application.\n\nDiscovered in the File Transmission component of EBS's Oracle Payments product and tracked as CVE-2026-46817, this security flaw allows unauthenticat"
-   },
-   {
-    "tr_title": "Coca-Cola'nın Fairlife Süt Üretim Tesislerini Fidye Yazılımı Nedeniyle Durdurması",
-    "paragraph": "The Coca-Cola Company, Amerika Birleşik Devletleri merkezli iştiraki Fairlife'ın bir fidye yazılımı saldırısına maruz kaldığını ve bu durumun ülkedeki süt ürünleri üretimini geçici olarak durdurduğunu açıklamıştır. Şirket tarafından ABD Menkul Kıymetler ve Borsa Komisyonu'na (SEC) sunulan resmî belgelerde, üretim sistemleri de dâhil olmak üzere bazı ağlara yetkisiz erişim sağlandığı belirtilmektedir. Söz konusu siber saldırı neticesinde Fairlife'ın ultra filtreli süt ve protein içeceği gibi ürün",
-    "title": "Coca-Cola says Fairlife ransomware attack halts US dairy production",
-    "full_text": "The Coca-Cola Company disclosed today that a ransomware attack impacting its Fairlife dairy subsidiary has disrupted operations, temporarily suspending production of Fairlife products across the United States.\n\nIn a Form 8-K filing with the U.S. Securities and Exchange Commission (SEC), Coca-Cola said Fairlife detected unauthorized access to some of its systems, including its production-related sy"
-   },
-   {
-    "tr_title": "ABD Adalet Bakanlığı'nın 43 Milyon Dolarlık Yatırım Dolandırıcılığı Şebekesini Çökertmesi",
-    "paragraph": "Amerika Birleşik Devletleri savcıları, siber yatırım dolandırıcılığı yoluyla çalınan paraları aklayan geniş kapsamlı bir suç şebekesindeki rolleri nedeniyle iki kişiyi resmen suçlamıştır. New York'ta ikamet eden 27 yaşındaki Zhuoying Chen ve 38 yaşındaki Haojie Zhang'ın, 2020 ile 2022 yılları arasında Queens ve Brooklyn merkezli ondan fazla kişiden oluşan bir ağı yönettiği iddia edilmektedir. Hazırlanan iddianameye göre söz konusu şahıslar, yaklaşık 45 paravan şirket bünyesindeki 140 banka hesab",
-    "title": "US charges two over laundering $43 million from investment fraud",
-    "full_text": "U.S. prosecutors on Thursday charged a New York man and woman for their roles in a large-scale crime ring that laundered money stolen in cyber investment fraud scams.\n\n27-year-old Zhuoying Chen and 38-year-old Haojie Zhang allegedly managed a network of over a dozen people based in Queens and Brooklyn between 2020 and 2022.\n\nChen and Zhang allegedly transferred at least $43 million in proceeds fro"
-   },
-   {
-    "tr_title": "CISA'nın Yazılım Tedarikçilerinin Zafiyet Bildirim Programlarını Resmileştirmesini Talep Etmesi",
-    "paragraph": "Amerika Birleşik Devletleri Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), dört uluslararası siber güvenlik kuruluşuyla birlikte yazılım üreticileri ve çevrimiçi hizmet sağlayıcılarına yönelik yeni bir kılavuz yayımlamıştır. 16 Temmuz 2026 tarihli bu kılavuzda, kuruluşların güvenlik araştırmacılarıyla yapılandırılmış bir etkileşim kurmalarını sağlayacak koordineli zafiyet bildirimi (CVD) programları oluşturmaları istenmektedir. ABD Ulusal Güvenlik Ajansı (NSA), Japonya Bilgisayar Acil Müdaha",
-    "title": "CISA urges software vendors to formalize vulnerability disclosure programs",
-    "full_text": "Joint guidance outlines how software vendors should work with security researchers as AI accelerates vulnerability discovery and increases pressure on vulnerability management.\n\nThe Cybersecurity and Infrastructure Security Agency (CISA) and four international cybersecurity agencies have published guidance urging software manufacturers and online service providers to establish coordinated vulnerab"
-   },
-   {
-    "tr_title": "F5'in NGINX ve BIG-IP Ürünlerindeki Kritik Açıkları Yamalaması",
-    "paragraph": "F5, NGINX ve BIG-IP ürünlerinde tespit edilen sekiz adet güvenlik zafiyetini gidermek amacıyla olağanüstü bir güvenlik güncellemesi yayımlamıştır. Bu açıklar arasında en kritik olanı, CVE-2026-42533 koduyla tanımlanan ve 9.2 ciddiyet puanına sahip olan yığın arabellek taşması hatasıdır. Söz konusu zafiyet, kimlik doğrulaması yapmamış uzak bir saldırganın özel olarak yapılandırılmış HTTP istekleri aracılığıyla NGINX işleme süreçlerini yeniden başlatmasına veya belirli sistem koşullarında rastgele",
-    "title": "F5 Patches Multiple NGINX, BIG-IP Vulnerabilities",
-    "full_text": "F5 Patches Multiple NGINX, BIG-IP Vulnerabilities\n\nAttackers could exploit the bugs to modify configurations, terminate or restart processes, cross security boundaries, leak memory, and execute code.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nF5 on Wednesday announced an out-of-band security rollout that patches eight vulnerabilities in NGINX and BIG-IP.\nThe most severe flaw is"
-   },
-   {
-    "tr_title": "SharkNinja'nın Akıllı Süpürgelerinde Milyonlarca Cihazı Etkileyen Güvenlik Açığının Tespit Edilmesi",
-    "paragraph": "SharkNinja şirketine ait Shark markalı robot süpürgelerde, saldırganların aynı Amazon Web Services (AWS) bölgesindeki diğer tüm cihazların kontrolünü ele geçirmesine olanak tanıyan kritik bir güvenlik açığı tespit edilmiştir. \"tokay0\" takma adını kullanan bir araştırmacı tarafından ortaya çıkarılan bu zafiyet, cihazlardaki dijital sertifikaların yetki sınırlarının yanlış yapılandırılmasından kaynaklanmaktadır. Araştırmacı, fiziksel erişim sağladığı bir cihazdan elde ettiği sertifikayı kullanarak",
-    "title": "Unpatched Shark Vacuum Flaw Could Let Attackers Control Other Vacuums Region-Wide",
-    "full_text": "Pull the certificate off the flash of a Shark RV2320EDUS robot vacuum, and you can run root commands on other people's Shark vacuums across the same AWS region: watch the camera, drive the robot, read the map of the house, and take the Wi-Fi password in plaintext.\n\nA researcher publishing under the handle tokay0 put the method online on Monday, having tested it only against vacuums he bought himse"
-   },
-   {
-    "tr_title": "Birleşik Krallık'ın TikTok Hakkında Yaş Doğrulama Soruşturması Başlatması",
-    "paragraph": "Birleşik Krallık iletişim düzenleyici kurumu Ofcom, sosyal medya platformu TikTok'un kullanıcı yaşlarını doğrulamada yetersiz kaldığı ve çocukları çevrimiçi zararlara karşı koruyamadığı gerekçesiyle resmi bir soruşturma başlatmıştır. Ofcom, platformun kullandığı yaş tahmin modellerinin çocukların önemli bir kısmını doğru tespit edemediğini ve bu durumun çocukları uygunsuz içeriklere maruz bıraktığını iddia etmektedir. Birleşik Krallık Çevrimiçi Güvenlik Yasası kapsamında yürütülen soruşturmada, ",
-    "title": "UK investigates TikTok for alleged age-verification lapses, exposing kids to online harms",
-    "full_text": "UK investigates TikTok for alleged age-verification lapses, exposing kids to online harms\n\nTikTok is under investigation for allegedly failing to effectively verify users’ ages and thus inadequately protecting children online, the U.K.’s communications regulator announced Wednesday.\n\nOfcom alleges that the social media platform may be violating Britain’s Online Safety Act.\n\nAge inference models, i"
-   },
-   {
-    "tr_title": "Stardust Uygulamasının Kullanıcı Sağlık Verilerini Paylaştığının Belirlenmesi",
-    "paragraph": "Mozilla tarafından yürütülen bir araştırma, regl döngüsü takip uygulaması Stardust'ın kullanıcıların hassas sağlık verilerini üçüncü taraf bir analiz şirketi olan RudderStack ile paylaştığını ortaya koymuştur. Paylaşılan veriler arasında kullanıcıların doğum tarihleri, doğum kontrol yöntemleri, üreme hedefleri ve yaşadıkları spesifik semptomların yer aldığı tespit edilmiştir. Stardust'ın web sitesinde verilerin gizli tutulduğuna dair beyanlarda bulunmasına rağmen, bu bilgilerin benzersiz kimlik ",
-    "title": "Period tracker Stardust shares users’ health data with analytics firm, says Mozilla research",
-    "full_text": "“Your data is private. Period,” says period tracker Stardust on its website. As new research by Mozilla discovered, some users might find that claim to be a stretch.\n\nAccording to Mozilla’s latest findings examining the privacy practices of period-tracking apps, Stardust was found to be sharing users’ sensitive health information with third-party analytics company RudderStack. This data included t"
-   },
-   {
-    "tr_title": "Siber Tehdit Aktörlerinin Güvenlik Filtrelerini Aşmak İçin Gizli Metin Kullanması",
-    "paragraph": "Barracuda Networks araştırmacıları, 2026 yılının Nisan ayından bu yana perakende temalı bir milyondan fazla kimlik avı e-postasının, yapay zeka destekli güvenlik filtrelerini atlatmak amacıyla gizli metin ekleme yöntemini kullandığını tespit etmiştir. Siber tehdit aktörleri, büyük dil modellerinden faydalanarak e-posta içeriklerine kullanıcılar tarafından görülmeyen ancak otomatik sistemleri yanıltan zararsız kelimeler veya metin parçaları yerleştirmektedir. Bu yöntemle, güvenli e-posta ağ geçit",
-    "title": "1M+ Emails Use Hidden Text to Dupe AI Security Filters",
-    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nVulnerabilities & Threats\n\n1M+ Emails Use Hidden Text to Dupe AI Security Filters\n\nArtificial intelligence and LLMs can be surprisingly ineffective against text salting, allowing phishing emails to slide right into your inbox.\n\nHackers "
-   },
-   {
-    "tr_title": "n8n'in Kimlik Doğrulama Açığı Nedeniyle Kullanıcı Hesaplarının Ele Geçirilmesi",
-    "paragraph": "İş akışı otomasyon platformu n8n bünyesinde, kurumsal sürümlerde birden fazla harici kimlik sağlayıcıya güvenecek şekilde yapılandırılmış sistemlerde ciddi bir kimlik doğrulama zafiyeti tespit edilmiştir. CVE-2026-59208 koduyla takip edilen bu açık, platformun gelen belirteçleri doğrularlarken sağlayıcı bilgisini ihmal ederek yalnızca kullanıcı kimlik numarasına odaklanmasından kaynaklanmaktadır. Bu durum, bir saldırganın farklı bir sağlayıcıdan aldığı geçerli bir belirteçle, hedef aldığı kullan",
-    "title": "n8n Token Exchange Flaw Could Let Attackers Log In as Users From Another Issuer",
-    "full_text": "n8n, the workflow automation platform, handed out the wrong accounts at login. On Enterprise instances configured to trust more than one external token issuer, it matched an incoming JWT to a local user on the sub claim alone and ignored iss.\n\nA valid token from issuer A carrying a sub that belongs to someone under issuer B logged you in as them. Their password never came into it. n8n shipped the "
-   },
-   {
-    "tr_title": "Microsoft'un Belirli Windows Sürümlerine Yönelik Destek Süresini Sonlandırması",
-    "paragraph": "Microsoft, 17 Temmuz 2026 tarihi itibarıyla yaptığı duyuruda, Windows 11 24H2 Home ve Pro sürümleri ile Windows 10 Enterprise LTSB 2016 sürümünün üç ay içerisinde destek süresinin dolacağını açıklamıştır. Şirket tarafından yapılan resmi bilgilendirmede, 13 Ekim 2026 tarihinden itibaren bu sürümleri kullanan cihazların aylık güvenlik güncellemelerini ve yeni tehditlere karşı koruma sağlayan önizleme güncellemelerini almayacağı belirtilmektedir. Kurumsal ve eğitim odaklı sürümler olan Enterprise v",
-    "title": "Windows 11 24H2 Home and Pro reach end of support in 90 days",
-    "full_text": "Microsoft announced on Wednesday that systems running Windows 10 Enterprise LTSB 2016 and Home and Pro editions of Windows 11 24H2 will stop receiving updates in three months.\n\nHowever, as the company explains on its support website, Enterprise and Education editions will remain under mainstream support until October 12, 2027.\n\n\"On October 13, 2026, Windows 11, version 24H2 Home and Pro editions, "
-   },
-   {
-    "tr_title": "Zararlı Yazılım ClickLock'un macOS Kullanıcılarını Parola Vermeye Zorlaması",
-    "paragraph": "Siber güvenlik kuruluşu Group-IB tarafından tespit edilen ClickLock isimli yeni bir macOS bilgi hırsızı zararlı yazılımı, kurbanların cihazlarını kontrol altına alarak hassas verileri ele geçirmektedir. Mayıs 2024 döneminden bu yana 33 ülkede en az 100 hedefi etkilediği belirtilen bu yazılımın, özellikle Avrupa merkezli kullanıcıları hedef aldığı bildirilmektedir. Saldırı süreci, kurbanın Terminal ekranına sahte bir Cloudflare doğrulama sayfası görünümü altında bir komut yapıştırmasıyla başlamak",
-    "title": "New ClickLock macOS Stealer Kills Apps Every 210ms Until Victims Type Their Password",
-    "full_text": "ClickLock Stealer, a new macOS infostealer, answers a victim's refusal by killing their apps on a loop until they hand over the login password. It arrives as a command pasted into Terminal, asks for the password behind a fake system dialog, and when the victim cancels, installs two LaunchAgents and quietly exits.\n\nAt the next login, Finder, the Dock, Spotlight, Terminal, Activity Monitor, and the "
-   },
-   {
-    "tr_title": "Siber Tehdit Aktörlerinin Sahte Yazı Tipi Dosyalarıyla Zararlı Yazılım Yayması",
-    "paragraph": "Fortinet bünyesindeki FortiGuard Labs araştırmacıları, dünya genelinde yürütülen bir kimlik avı kampanyasının detaylarını paylaşmıştır. Söz konusu kampanya kapsamında siber tehdit aktörlerinin, TrueType Font (TTF) dosyası görünümüne büründürülmüş Lua tabanlı bir yükleyici kullanarak Windows sistemlerini hedef aldığı tespit edilmiştir. En az 2026 yılının Mart ayı sonundan bu yana aktif olduğu belirtilen bu operasyonlarda, saldırganların tanınmış şirketlerin kimliğine bürünerek iş birliği veya öde",
-    "title": "Fake TTF files deliver stealthy malware in global phishing campaign",
-    "full_text": "Attackers were found using a Lua-based malware loader posing as a TrueType font tile, with layered obfuscation and fileless execution to deploy stealers and persistent trojans.\n\nThreat actors are now abusing an ordinary font file to deliver low-detection malware capable of stealing credentials and establishing persistence on compromised Windows systems.\n\nAccording to a new research from Fortinet’s"
-   }
-  ]
- },
- {
   "date": "2026-07-18",
   "views": [
    {
@@ -690,6 +553,89 @@
     "paragraph": "Siber tehdit aktörlerinin, Anthropic'in Claude Artifacts özelliğini kötüye kullanarak kullanıcıları SectopRAT adlı zararlı yazılıma yönlendirdiği tespit edilmiştir. Temmuz ayı içinde gerçekleşen saldırılarda, en az 29 kuruluştaki çalışanın Bing arama motorundaki sahte reklamlar aracılığıyla hedef alındığı belirtilmiştir. Reklamların kullanıcıları meşru claude.ai alan adında barındırılan ve resmi bir indirme sayfası gibi görünen bir içeriğe yönlendirdiği ifade edilmiştir. Bu sayfadaki indirme but",
     "title": "How attackers hosted a fake Claude download page on the claude.ai domain",
     "full_text": "How attackers hosted a fake Claude download page on the claude.ai domain\n\nA threat actor abused Anthropic’s Claude Artifacts feature to funnel users toward malware, Huntress researchers have disclosed.\n\nEmployees at at least 29 organizations were compromised over two days in July, after searching for the Claude desktop app and clicking a sponsored Bing ad.\n\nThe ad pointed to the genuine claude.ai "
+   }
+  ]
+ },
+ {
+  "date": "2026-07-25",
+  "views": [
+   {
+    "tr_title": "Tycoon2FA Platformunun Çökertilmesinin Kimlik Avı Yöntemlerini Dönüştürmesi",
+    "paragraph": "Microsoft tarafından yayımlanan rapora göre, Tycoon2FA adlı hizmet olarak kimlik avı platformunun faaliyetlerinin durdurulması, küresel siber saldırı yöntemlerinde belirgin bir değişime yol açmıştır. Platformla bağlantılı kimlik avı hacminin Mayıs 2026'da %74 oranında azaldığı ve QR kodlu saldırıların Haziran ayında 8,3 milyona gerilediği belirtilmiştir. Bu düşüşe rağmen, saldırganların Microsoft Teams gibi sosyal mühendislik kanallarına ve otomatik iş e-postası dolandırıcılığı yöntemlerine yöne",
+    "title": "Tycoon2FA takedown reshapes the phishing landscape",
+    "full_text": "Some of the most common phishing techniques are declining, but not because attackers are giving up.\n\nTraditional phishing techniques are in decline as a result of the disruption of the Tycoon2FA phishing-as-a-service (PHaaS) platform, Microsoft said in a new report, “Email threat landscape: Q2 2026 trends and insights”.\n\n“Phishing volume linked to the platform fell 92% from pre-disruption averages"
+   },
+   {
+    "tr_title": "Tayland Maliye Bakanlığının Hermes Yapay Zeka Aracısı ve Hades Zararlı Yazılımıyla Hedef Alınması",
+    "paragraph": "Hunt.io araştırmacıları, Tayland Maliye Bakanlığını hedef alan ve Hermes adlı otonom bir yapay zeka aracısı ile Hades olarak adlandırılan yeni bir zararlı yazılımın kullanıldığı bir siber casusluk operasyonunu tespit etmiştir. 9-13 Temmuz 2026 tarihleri arasında Hong Kong merkezli bir sunucuda açık bırakılan dizinlerin incelenmesi sonucunda, saldırganların bakanlık sistemlerinde ayrıcalık yükseltme, dosya listeleme ve servis keşfi gibi faaliyetler yürüttüğü belirlenmiştir. Hermes yapay zeka arac",
+    "title": "Thailand’s Ministry of Finance Targeted With Hermes AI Agent Running Unattended, Hades Implant Staged",
+    "full_text": "Thailand’s Ministry of Finance Targeted With Hermes AI Agent Running Unattended, Hades Implant Staged\n\nHunt.io uncovered a cyber-espionage attack on Thailand’s Finance Ministry using Hermes AI agent and Hades malware for reconnaissance and persistence.\n\nResearchers at Hunt.io have uncovered an intrusion targeting Thailand’s Ministry of Finance that offers a rare look inside a live cyber-espionage "
+   },
+   {
+    "tr_title": "Europol'ün The Com Bağlantılı Binlerce İnternet Adresini Erişime Kapatması",
+    "paragraph": "Europol, \"The Com\" olarak adlandırılan ve şiddet yanlısı aşırılıkçı gruplardan oluşan merkeziyetsiz bir ağla bağlantılı 4.340 internet adresini (URL) kaldırmak üzere kapsamlı bir operasyon gerçekleştirmiştir. Haziran ve Temmuz 2026 tarihleri arasında dokuz ülkenin katılımıyla yürütülen operasyonda, çocukların cinsel istismarı, kendine zarar verme, hayvanlara eziyet ve şiddetli saldırı görüntüleri içeren içeriklerin hedef alındığı bildirilmiştir. Europol tarafından yapılan açıklamada, söz konusu ",
+    "title": "Europol flags 4,340 URLs for removal in 'The Com' crackdown",
+    "full_text": "Europol has flagged 4,340 URLs for removal during a multi-week operation targeting online content linked to \"The Com,\" a loosely organized network of nihilistic violent extremist groups.\n\nInvestigators from nine countries (i.e., Belgium, Finland, Hungary, Ireland, Luxembourg, the Netherlands, Portugal, Spain, and Sweden) took part in what Europol called \"Referral Action Days\" between June and July"
+   },
+   {
+    "tr_title": "Microsoft Azure Automation Hizmetindeki Kritik Bir Açığın Kimlik Hırsızlığına Yol Açması",
+    "paragraph": "Microsoft, Azure Automation hizmetinde saldırganların diğer kiracıların kimliklerini ele geçirmesine ve verilerine erişmesine neden olabilecek kritik bir güvenlik açığını gidermiştir. CVE-2025-29827 kodlu ve 9.9 önem puanına sahip bu açığın, varsayılan bir yapılandırma hatası ile kod düzeyindeki kusurların birleşmesinden kaynaklandığı belirtilmiştir. Microsoft Azure Ağ Güvenliği Araştırma ekibinden Shay Shavit tarafından tespit edilen zafiyetin, saldırganların otomasyon betikleri oluşturmasına v",
+    "title": "Default Azure Automation Setting Enables Cross-Tenant Identity Takeover",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nIdentity & Access Management Security\n\nVulnerabilities & Threats\n\nNews, news analysis, and commentary on the latest trends in cybersecurity technology.\n\nDefault Azure Automation Setting Enables Cross-Tenant Identity Takeover\n\nMicrosoft "
+   },
+   {
+    "tr_title": "Vatikan'ın Resmi Dua Uygulamasında 700 Binden Fazla Kullanıcı Verisinin Sızdırılması",
+    "paragraph": "Vatikan'ın resmi dua uygulaması olan Click to Pray bünyesinde, 700.000'den fazla kullanıcının kişisel bilgilerinin sızmasına neden olan bir güvenlik açığı tespit edilmiştir. \"BobDaHacker\" takma adlı bir araştırmacı tarafından keşfedilen zafiyetin, uygulamanın uygulama programlama arayüzü (API) üzerindeki bir yetkilendirme hatasından kaynaklandığı belirtilmiştir. Sızıntı kapsamında kullanıcıların isimleri, e-posta adresleri, ülkeleri ve hesap durumlarının herhangi bir kimlik doğrulaması gerekmeks",
+    "title": "Vatican's Official Prayer App Leaks 700K+ Global Users' PII",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nVulnerabilities & Threats\n\nVatican's Official Prayer App Leaks 700K+ Global Users' PII\n\nA porous API endpoint exposes, names, email addresses, country, and site status, all of which can be easily gleaned by anyone with a browser.\n\nA pop"
+   },
+   {
+    "tr_title": "Microsoft Bing Sunucularında Komut Çalıştırılmasına İzin Veren Güvenlik Açıklarının Tespit Edilmesi",
+    "paragraph": "Otonom ofansif güvenlik girişimi XBOW, Microsoft Bing'in görsel işleme sunucularında sistem düzeyinde yetki erişimine imkan tanıyan iki kritik güvenlik açığı tespit etmiştir. CVE-2026-32194 ve CVE-2026-32191 kodlarıyla tanımlanan ve 9.8 CVSS puanı alan bu açıkların, özel olarak hazırlanmış SVG dosyaları aracılığıyla Microsoft'un üretim ortamındaki işçilerinde komut çalıştırılmasına yol açtığı belirtilmiştir. Yapılan testlerde, Windows sunucularında sistem yetkisi, Linux makinelerinde ise kök kul",
+    "title": "Bing Images Flaws Let Crafted SVGs Run Commands as SYSTEM on Microsoft's Servers",
+    "full_text": "A crafted SVG submitted to Bing's image search ran commands as NT AUTHORITY\\SYSTEM on Microsoft's production image-processing workers, and as root on the Linux machines in the same fleet.\n\nXBOW's testing got the same result on workers across different hosts and network ranges, so the problem sat in Bing's image tier, not on one bad machine. Microsoft issued two critical CVEs, CVE-2026-32194 and CV"
+   },
+   {
+    "tr_title": "Rockwell Automation'ın Arena Simülasyon Yazılımındaki Kod Çalıştırma Açıklarını Kapatması",
+    "paragraph": "Rockwell Automation, endüstriyel iş akışlarını modellemek için kullanılan Arena Simulation yazılımındaki dört adet yüksek kritiklikteki güvenlik açığını gidermiştir. CVE-2026-8085, CVE-2026-8312, CVE-2026-8313 ve CVE-2026-8314 olarak tanımlanan bu bellek bozulması hatalarının, kullanıcı verilerinin yetersiz doğrulanmasından kaynaklandığı belirtilmiştir. Siber güvenlik araştırmacısı Michael Heinzl tarafından tespit edilen bu açıkların, saldırganların hedef sistemde rastgele kod çalıştırmasına ola",
+    "title": "Rockwell Patches Code Execution Flaws in Arena Simulation Software",
+    "full_text": "Rockwell Patches Code Execution Flaws in Arena Simulation Software\n\nA researcher has explained how an attacker could exploit these vulnerabilities to target industrial organizations.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nRockwell Automation has patched four vulnerabilities in its Arena Simulation software that could let an attacker execute arbitrary code on an affected sys"
+   },
+   {
+    "tr_title": "Active Directory Kullanıcılarının Etki Alanı Denetleyicisi Kimliğine Bürünmesine Yol Açan Zafiyetin Belirlenmesi",
+    "paragraph": "Siber güvenlik araştırmacıları H0j3n ve Aniq Fakhrul, düşük yetkili Active Directory kullanıcılarının bir Etki Alanı Denetleyicisi gibi kimlik doğrulaması yapmasına olanak tanıyan Certighost kod adlı bir istismar yöntemi yayınlamıştır. Microsoft tarafından CVE-2026-54121 koduyla tanımlanan ve 14 Temmuz 2026 tarihinde yamalanan bu zafiyetin, Active Directory Sertifika Servisleri (AD CS) içindeki bir yetkilendirme hatasından kaynaklandığı belirtilmiştir. Araştırmacılar, saldırganların bu yöntemle ",
+    "title": "Certighost Exploit Lets Low-Privileged Active Directory Users Impersonate a Domain Controller",
+    "full_text": "Researchers H0j3n and Aniq Fakhrul published a working exploit on July 24 that lets a low-privileged Active Directory user obtain a certificate for a Domain Controller and authenticate as that machine.\n\nThey codenamed the flaw Certighost. Because Domain Controller accounts carry directory replication rights, the resulting Kerberos credential can retrieve the krbtgt secret through DCSync.\n\nMicrosof"
+   },
+   {
+    "tr_title": "Microsoft'un Windows Kurumsal Etkinleştirme Güvenliğini Donanım Tabanlı Doğrulamayla Sıkılaştırması",
+    "paragraph": "Microsoft, Windows toplu etkinleştirme işlemleri için kullanılan şirket içi Anahtar Yönetim Hizmeti (KMS) için Güvenilir Platform Modülü (TPM) destekli kanıtlamayı zorunlu hale getireceğini açıklamıştır. Bu değişiklikle birlikte, yazılım tabanlı güven modelinin yerini donanım destekli doğrulamanın alacağı ve kurumsal etkinleştirme güvenliğinin artırılacağı belirtilmiştir. Yeni modelde KMS sunucusunun, etkinleştirme tamamlanmadan önce kimliğini ve bütünlüğünü kanıtlayan bir rapor oluşturmak için ",
+    "title": "Microsoft tightens Windows enterprise activation security",
+    "full_text": "Microsoft tightens Windows enterprise activation security\n\nMicrosoft is making Trusted Platform Module (TPM)-backed attestation a requirement for Windows Key Management Service (KMS), the on-premises service used for Windows volume activation, replacing the software-only trust model with hardware-backed verification to strengthen enterprise activation security.\n\nAttestation will become mandatory w"
+   },
+   {
+    "tr_title": "OnTrac Lojistik Şirketinin Ağ İhlali Sonrası Müşteri Verilerinin Sızdırılması",
+    "paragraph": "Amerika Birleşik Devletleri merkezli paket teslimat şirketi OnTrac, kurumsal ağının siber saldırganlar tarafından ihlal edildiğini ve müşteri kişisel bilgilerine erişilmiş olabileceğini açıklamıştır. Güvenlik olayının 23 Mart 2026 tarihinde tespit edildiği, yapılan incelemeler sonucunda saldırganların 20-22 Mart 2026 tarihleri arasında belirli dosyalara erişim sağladığının belirlendiği ifade edilmiştir. Şirket, yetkililerle paylaştığı bildirimde isimler dışındaki veri türlerini gizli tuttuğu içi",
+    "title": "OnTrac notifies customers of data breach after network hack",
+    "full_text": "OnTrac parcel delivery company is informing that hackers breached its corporate network and may have accessed personal details belonging to its customers.\n\nThe incident was detected on March 23, and an internal investigation revealed that the attacker accessed certain files between March 20 and 22.\n\nApart from names, it is unclear what type of information was exposed, as the company redacted the d"
+   },
+   {
+    "tr_title": "Siber Tehdit Aktörlerinin Otel Wi-Fi Ağlarını Microsoft 365 Hesaplarını Çalmak İçin Kullanması",
+    "paragraph": "Siber tehdit aktörlerinin, otel ve konferans merkezlerindeki Wi-Fi cihazlarının DNS ayarlarını değiştirerek kullanıcıları sahte Microsoft 365 giriş sayfalarına yönlendirdiği tespit edilmiştir. Siber güvenlik şirketi ReliaQuest tarafından yapılan incelemede, en az Haziran 2026'dan beri süregelen bu kampanyanın finans, sağlık, enerji ve perakende gibi çeşitli sektörlerdeki kuruluşları hedef aldığı belirtilmiştir. Araştırmacılar, söz konusu faaliyetlerin Rusya bağlantılı APT grubu APT28 ile ilişkil",
+    "title": "Hackers hijack hotel Wi-Fi DNS to steal Microsoft 365 accounts",
+    "full_text": "Hackers are changing the DNS settings on Wi-Fi devices at hotels and conference centers to redirect users to fake Microsoft 365 login pages.\n\nThe campaign has been ongoing since at least June and impacts organizations in various sectors, including financial services, professional services, legal, health care, energy, and retail.\n\nCybersecurity company ReliaQuest identified compromised Wi-Fi gatewa"
+   },
+   {
+    "tr_title": "Teknoloji Şirketlerinin Açık Kaynak Yapay Zekanın Yaygınlaşmasına Destek Vermesi",
+    "paragraph": "Microsoft ve Meta dahil olmak üzere yirmiden fazla teknoloji şirketi, politika yapıcılara açık kaynak yapay zeka sistemlerini desteklemeleri yönünde çağrıda bulunmuştur. Yayınlanan açık mektupta, açık kaynaklı modellerin kısıtlı veya kapalı modellere kıyasla daha güvenli bir yaklaşım sunduğu ve savunma tarafındaki aktörlerin tehditleri tespit etme kabiliyetini artıracağı ifade edilmiştir. NVIDIA, IBM ve Dell Technologies gibi kurumların da imzaladığı metinde, açık modellerin şeffaflığı artırarak",
+    "title": "Microsoft, tech companies throw weight behind spread of open-source AI",
+    "full_text": "Microsoft, tech companies throw weight behind spread of open-source AI\n\nMicrosoft, along with more than two dozen tech companies, are pressing policymakers to support open-source AI systems and code across society, arguing that it will be a safer approach than attempting to restrict access or relying on a handful of closed, proprietary models.\n\nThe open letter, posted Friday, draws parallels to th"
+   },
+   {
+    "tr_title": "GitLab Sunucularında Kimlik Doğrulamalı Kullanıcıların Uzaktan Kod Çalıştırmasının Sağlanması",
+    "paragraph": "Güvenlik araştırmacısı Yuhang Wu, yamalanmamış GitLab 18.11.3 sunucularında \"git\" kullanıcısı yetkileriyle komut çalıştırılmasına olanak tanıyan bir kavram kanıtlama (PoC) çalışması yayımlamıştır. Söz konusu zafiyetin, GitLab Community Edition ve Enterprise Edition sürümlerinin 15.2.0 ile 19.0.1 arasındaki geniş bir aralığını etkilediği belirtilmiştir. Kimlik doğrulaması yapmış herhangi bir kullanıcının, özel olarak hazırlanmış iki Jupyter not defterini sisteme yükleyerek ve aralarındaki farkı t",
+    "title": "Researcher Publishes GitLab RCE PoC Letting Authenticated Users Run Commands as Git",
+    "full_text": "Security researcher Yuhang Wu at depthfirst has published a working proof-of-concept (PoC) exploit that executes commands as git on an unpatched self-managed GitLab 18.11.3 server.\n\nAn ordinary authenticated user triggers it by committing two crafted Jupyter notebooks and requesting their diff. The chain needs no administrator rights, continuous integration (CI) runner access, victim interaction, "
    }
   ]
  }

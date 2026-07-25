@@ -1,28 +1,5 @@
 [
  {
-  "date": "2026-07-17",
-  "views": [
-   {
-    "tr_title": "Çin Bağlantılı APT Grubunun ViPNet Güncelleme Sistemini İstismar Etmesi",
-    "paragraph": "Kaspersky araştırmacıları, en az Mayıs 2026 tarihinden bu yana aktif olan ve HelloNet olarak adlandırılan yeni bir gelişmiş kalıcı tehdit (APT) kampanyası tespit etmiştir. Düşük güven seviyesiyle Çin menşeli bir siber tehdit aktörüne atfedilen bu saldırı, Rusya'daki enerji, ulaşım, lojistik ve kamu sektöründeki kritik kuruluşları hedef almıştır. Saldırganlar, güvenli ağlar oluşturmak için kullanılan ViPNet yazılımının güncelleme mekanizmasına sızarak DLL yan yükleme tekniğiyle sisteme yerleşmiştir. HelloInjector adlı yükleyici aracılığıyla svchost.exe sürecine zararlı kod enjekte eden grup, ağ",
-    "title": "HelloNet campaign — new malicious modules launched through the ViPNet update system",
-    "full_text": "UPD 16.07.2026: Added rules to protect companies using our SIEM system Kaspersky SIEM, and listed events for developing custom detection rules or conducting Threat hunting.\n\nUPD 16.07.2026: Added detection of the malicious activity using Kaspersky Managed Detection and Response.\n\nUPD 16.07.2026: Added detection rules and examples using KEDR Expert.\n\nUPD 16.07.2026: Added detection of the malicious campaign in network traffic using Kaspersky Anti Targeted Attack (KATA) with the NDR module.\n\nUPD 16.07.2026: Updated the list of Indicators of Compromise (IoCs) and TTPs.\n\nWe discovered a new APT at"
-   },
-   {
-    "tr_title": "Scattered Spider Üyelerinin Londra Ulaşım Kurumu Saldırısından Hüküm Giymesi",
-    "paragraph": "Birleşik Krallık'ta görülen davada, Scattered Spider fidye yazılımı çetesi üyesi olduğu belirtilen Owen Flowers ve Thalha Jubair, Londra Ulaşım Kurumu'na (TfL) yönelik 2024 yılındaki siber saldırı nedeniyle beşer buçuk yıl hapis cezasına çarptırılmıştır. 16 Temmuz 2026 tarihinde sonuçlanan davada, sanıkların TfL sistemlerini işlemez hale getirerek kurumu 29 milyon sterlin zarara uğrattığı ve 27.000 çalışanın şifrelerini fiziksel olarak sıfırlamak zorunda kaldığı belirtilmiştir. Siber tehdit aktörlerinin ayrıca ABD merkezli sağlık kuruluşlarını da hedef aldığı ve Flowers'ın yakalanmaması durumu",
-    "title": "Two Scattered Spider Hackers Get 5.5 Years Each for £29 Million TfL Hack",
-    "full_text": "Owen Flowers, 18, and Thalha Jubair, 20, were each sentenced to five and a half years at Woolwich Crown Court on Thursday, 16 July 2026, for the 2024 hack of Transport for London.\n\nThe attack left 148 TfL systems inoperable and forced all 27,000 of the transport authority's employees into an office to get their passwords reset in person. Both the NCA and the CPS put TfL's losses and recovery costs at £29 million.\n\nBoth pleaded guilty on 22 June 2026, the day their trial was due to start. The charge was Section 3ZA of the Computer Misuse Act 1990, the Act's most serious, and they admitted it on"
-   },
-   {
-    "tr_title": "Rusya Bağlantılı APT Grubu Sandworm'un Ukrayna'yı Sahte Güvenlik Doğrulamalarıyla Hedeflemesi",
-    "paragraph": "Rusya askeri istihbarat teşkilatı GRU ile bağlantılı siber tehdit aktörü Sandworm'un, Ukraynalı kullanıcıları kendi bilgisayarlarına zararlı yazılım yüklemeye ikna etmek amacıyla ele geçirilmiş internet sitelerinde sahte CAPTCHA istemleri kullandığı tespit edilmiştir. Ukrayna Bilgisayar Acil Müdahale Ekibi (CERT-UA) tarafından yayımlanan rapora göre, Kremlin destekli bu grup 2026 yılının bahar ve yaz aylarında ClickFix olarak bilinen sosyal mühendislik tekniğini benimsemiştir. Bu yöntemde kurbanlar, insan olduklarını doğrulamak yerine Windows bilgisayarlarındaki komut satırına belirli bir Powe",
-    "title": "Sandworm hackers have a CAPTCHA trick for Ukrainians",
-    "full_text": "Sandworm hackers have a CAPTCHA trick for Ukrainians\n\nRussian military intelligence hackers have begun using fake CAPTCHA prompts on compromised websites to trick Ukrainian targets into infecting their own computers, researchers have found.\n\nIn a report published Wednesday, Ukraine's computer emergency response team (CERT-UA) said it observed a shift this spring and summer in how the Kremlin-backed hacking group Sandworm gains initial access to the systems of Ukrainian targets.\n\nThe agency said the group has increasingly adopted a version of the social engineering technique known as ClickFix. "
-   }
-  ]
- },
- {
   "date": "2026-07-18",
   "views": [
    {
@@ -180,6 +157,29 @@
     "paragraph": "Ukrayna Bilgisayar Acil Durum Müdahale Ekibi (CERT-UA), Rusya ile uyumlu siber tehdit aktörü UAC-0099'un Windows sistemlerini tehlikeye atmak için sahte bir Notepad++ eklentisi kullandığı yeni bir kampanya hakkında uyarıda bulunmuştur. 2022 yılının ortalarından bu yana aktif olduğu bilinen grubun, MATCHBOIL.V2 olarak adlandırılan yeni bir zararlı yazılım sürümünü dağıtmak için kimlik avı epostalarını kullandığı belirtilmiştir. Saldırı sürecinde, kurbanlara PDF görünümlü bir betik dosyası içeren arşivlerin gönderildiği ve bu dosyanın arka planda meşru Notepad++ yazılımıyla birlikte LUNCHPOKE ko",
     "title": "Fake Notepad++ Plugin Delivers MATCHBOIL.V2 in UAC-0099 Attacks",
     "full_text": "The Computer Emergency Response Team of Ukraine (CERT-UA) has warned of a new campaign that involves the use of a malicious program that's dressed up as a Notepad++ plugin to compromise Windows systems.\n\nThe activity has been attributed by the agency to a threat cluster it tracks as UAC-0099, a Russia-aligned group that has previously observed weaponizing security flaws in WinRAR software to deliver a malware strain called LONEPAGE. Other cyber attacks mounted by the adversary have employed phishing emails as an initial access method to deploy MATCHBOIL, MATCHWOK, and DRAGSTARE. It's known to "
+   }
+  ]
+ },
+ {
+  "date": "2026-07-25",
+  "views": [
+   {
+    "tr_title": "Tycoon2FA Platformunun Çökertilmesinin Kimlik Avı Yöntemlerini Dönüştürmesi",
+    "paragraph": "Microsoft tarafından yayımlanan rapora göre, Tycoon2FA adlı hizmet olarak kimlik avı platformunun faaliyetlerinin durdurulması, küresel siber saldırı yöntemlerinde belirgin bir değişime yol açmıştır. Platformla bağlantılı kimlik avı hacminin Mayıs 2026'da %74 oranında azaldığı ve QR kodlu saldırıların Haziran ayında 8,3 milyona gerilediği belirtilmiştir. Bu düşüşe rağmen, saldırganların Microsoft Teams gibi sosyal mühendislik kanallarına ve otomatik iş e-postası dolandırıcılığı yöntemlerine yöneldiği ifade edilmiştir. Microsoft, Teams tabanlı saldırı hacminin ikinci çeyrek boyunca istikrarlı b",
+    "title": "Tycoon2FA takedown reshapes the phishing landscape",
+    "full_text": "Some of the most common phishing techniques are declining, but not because attackers are giving up.\n\nTraditional phishing techniques are in decline as a result of the disruption of the Tycoon2FA phishing-as-a-service (PHaaS) platform, Microsoft said in a new report, “Email threat landscape: Q2 2026 trends and insights”.\n\n“Phishing volume linked to the platform fell 92% from pre-disruption averages, including QR code phishing and CAPTCHA-gated phishing both declining from their March highs,” the company wrote in the report.\n\nThe takedown reduced activity across multiple phishing categories, for"
+   },
+   {
+    "tr_title": "Tayland Maliye Bakanlığının Hermes Yapay Zeka Aracısı ve Hades Zararlı Yazılımıyla Hedef Alınması",
+    "paragraph": "Hunt.io araştırmacıları, Tayland Maliye Bakanlığını hedef alan ve Hermes adlı otonom bir yapay zeka aracısı ile Hades olarak adlandırılan yeni bir zararlı yazılımın kullanıldığı bir siber casusluk operasyonunu tespit etmiştir. 9-13 Temmuz 2026 tarihleri arasında Hong Kong merkezli bir sunucuda açık bırakılan dizinlerin incelenmesi sonucunda, saldırganların bakanlık sistemlerinde ayrıcalık yükseltme, dosya listeleme ve servis keşfi gibi faaliyetler yürüttüğü belirlenmiştir. Hermes yapay zeka aracısının, operatör onayı beklemeksizin komut yürütebilen otonom bir modda kullanıldığı ve rutin keşif ",
+    "title": "Thailand’s Ministry of Finance Targeted With Hermes AI Agent Running Unattended, Hades Implant Staged",
+    "full_text": "Thailand’s Ministry of Finance Targeted With Hermes AI Agent Running Unattended, Hades Implant Staged\n\nHunt.io uncovered a cyber-espionage attack on Thailand’s Finance Ministry using Hermes AI agent and Hades malware for reconnaissance and persistence.\n\nResearchers at Hunt.io have uncovered an intrusion targeting Thailand’s Ministry of Finance that offers a rare look inside a live cyber-espionage operation. Instead of recovering malware after the fact, the team found exposed staging servers containing attack tools, stolen credentials, active session material, AI agent logs, and a previously un"
+   },
+   {
+    "tr_title": "Europol'ün The Com Bağlantılı Binlerce İnternet Adresini Erişime Kapatması",
+    "paragraph": "Europol, \"The Com\" olarak adlandırılan ve şiddet yanlısı aşırılıkçı gruplardan oluşan merkeziyetsiz bir ağla bağlantılı 4.340 internet adresini (URL) kaldırmak üzere kapsamlı bir operasyon gerçekleştirmiştir. Haziran ve Temmuz 2026 tarihleri arasında dokuz ülkenin katılımıyla yürütülen operasyonda, çocukların cinsel istismarı, kendine zarar verme, hayvanlara eziyet ve şiddetli saldırı görüntüleri içeren içeriklerin hedef alındığı bildirilmiştir. Europol tarafından yapılan açıklamada, söz konusu ağın sosyal medya ve oyun platformları üzerinden gençleri hedef alarak radikalleştirdiği ve şantaj y",
+    "title": "Europol flags 4,340 URLs for removal in 'The Com' crackdown",
+    "full_text": "Europol has flagged 4,340 URLs for removal during a multi-week operation targeting online content linked to \"The Com,\" a loosely organized network of nihilistic violent extremist groups.\n\nInvestigators from nine countries (i.e., Belgium, Finland, Hungary, Ireland, Luxembourg, the Netherlands, Portugal, Spain, and Sweden) took part in what Europol called \"Referral Action Days\" between June and July 2026.\n\nThe joint action, which ties into the European Commission's ProtectEU counterterrorism agenda and was organized by Europol's EU Internet Referral Unit (EU IRU) and Spain's Intelligence Centre "
    }
   ]
  }
