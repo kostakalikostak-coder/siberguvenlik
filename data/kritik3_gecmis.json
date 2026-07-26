@@ -1,28 +1,5 @@
 [
  {
-  "date": "2026-07-18",
-  "views": [
-   {
-    "tr_title": "Çin Bağlantılı GoldenEyeDog Alt Grubunun DigiCert Veri İhlaliyle İlişkilendirilmesi",
-    "paragraph": "Siber güvenlik araştırmacıları, Nisan 2026 tarihinde DigiCert bünyesinde gerçekleşen güvenlik ihlalini Çin menşeli siber suç grubu GoldenEyeDog'un bir alt kolu olan CylindricalCanine ile ilişkilendirmiştir. Tehdit aktörünün, DigiCert destek personelinin cihazlarına sızarak müşterilere ait kod imzalama sertifikalarını çaldığı tespit edilmiştir. Saldırganların, müşteri sohbet kanalları üzerinden zararlı yazılım içeren dosyalar göndererek iki analist bilgisayarının kontrolünü ele geçirdiği belirtilmektedir. Bu erişim sayesinde, onaylanmış ancak henüz teslim edilmemiş 60 adet sertifikanın ele geçi",
-    "title": "GoldenEyeDog Subgroup Linked to DigiCert Breach and Code-Signing Certificate Theft",
-    "full_text": "Cybersecurity researchers have attributed the April 2026 DigiCert security incident to a threat activity cluster dubbed CylindricalCanine.\n\nExpel, which shared technical details of the event, described the threat actor as a sub-group of GoldenEyeDog (aka APT-Q-27, Dragon Breath, and Miuuti Group), a Chinese cybercrime group known for its targeting of the gambling and gaming sectors using counterfeit websites to push malware-laced software. It's known to be active since at least 2015.\n\n\"In April 2026, GoldenEyeDog used their malware to access a support member's device at DigiCert, a code-signin"
-   },
-   {
-    "tr_title": "Ermenistan'da Bir Rus Turistin REvil Bağlantılı Olduğu Gerekçesiyle ABD Yakalama Kararıyla Gözaltına Alınması",
-    "paragraph": "Ermenistan makamlarının, 28 Haziran 2026 tarihinden bu yana Aleksandr Ermakov isimli bir Rus turisti, fidye yazılımı grubu REvil ile bağlantılı olduğu iddiasıyla ABD'nin iade talebi üzerine gözaltında tuttuğu bildirilmiştir. Gözaltına alınan şahsın avukatları, Washington yönetiminin yanlış kişiyi hedef aldığını ve müvekkillerinin Omsk kökenli eski bir cezaevi avukatı olduğunu ifade etmiştir. ABD tarafından aranan asıl şahsın, Medibank Private verilerinin çalınması nedeniyle yaptırım uygulanan ve Rusya'da cezası devam eden Aleksandr Gennadievich Ermakov olduğu belirtilmektedir. Interpol kararıy",
-    "title": "Armenia Detains Russian Tourist on U.S. Warrant for REvil Hacker, Lawyers Say Wrong Man",
-    "full_text": "Armenia has held a Russian tourist named Aleksandr Ermakov in a detention center since June 28, on a U.S. extradition request for a REvil ransomware suspect named Aleksandr Ermakov.\n\nHis wife, Maria Yurova, told REN TV that border officers pulled him out of the departure hall at Yerevan's Zvartnots airport, held up a phone with a photo of him off his VKontakte page, and walked him into a side room. His lawyers say Washington has the wrong man.\n\nThe Ermakov the U.S. wants is Aleksandr Gennadievich Ermakov, sanctioned by Australia, the US, and the UK in January 2024 for stealing 9.7 million reco"
-   },
-   {
-    "tr_title": "Güneydoğu Asya'daki Kamu Kurumlarının GoSerpent Zararlı Yazılımıyla Hedef Alınması",
-    "paragraph": "Siber güvenlik araştırmacıları, 2025 yılının sonlarından bu yana Güneydoğu Asya'daki hükümet ve diplomasi temsilciliklerini hedef alan GoSerpent adlı yeni bir zararlı yazılım tespit etmiştir. Kaspersky tarafından Şubat 2026'da ortaya çıkarılan bu casusluk faaliyetinin, hassas veri toplama ve kimlik bilgisi hırsızlığı amacıyla yürütüldüğü belirtilmiştir. Go tabanlı bu arka kapının, SOCKS5 proxy sunucuları kurabildiği ve ThumbcacheService gibi ek araçlar kullanarak ağ paylaşımları üzerinden veri sızdırdığı ifade edilmiştir. Tehdit aktörlerinin Mayıs 2026'da daha gelişmiş araçlarla geri dönerek T",
-    "title": "New GoSerpent Malware Targets Southeast Asian Governments and Diplomats for Espionage",
-    "full_text": "Cybersecurity researchers have discovered a previously undocumented malware called GoSerpent that has been put to use in cyber attacks targeting entities in Southeast Asia since late 2025 with a focus on long-term access and intelligence gathering.\n\nRussian cybersecurity company Kaspersky, which uncovered the activity in February 2026, said it was aimed at government and diplomatic entities in the region. GoSerpent is designed to contact an external server and deploy secondary payloads on sensitive data collection and credential dumping on the system.\n\n\"Monitoring the activities of this threat"
-   }
-  ]
- },
- {
   "date": "2026-07-19",
   "views": [
    {
@@ -180,6 +157,29 @@
     "paragraph": "Europol, \"The Com\" olarak adlandırılan ve şiddet yanlısı aşırılıkçı gruplardan oluşan merkeziyetsiz bir ağla bağlantılı 4.340 internet adresini (URL) kaldırmak üzere kapsamlı bir operasyon gerçekleştirmiştir. Haziran ve Temmuz 2026 tarihleri arasında dokuz ülkenin katılımıyla yürütülen operasyonda, çocukların cinsel istismarı, kendine zarar verme, hayvanlara eziyet ve şiddetli saldırı görüntüleri içeren içeriklerin hedef alındığı bildirilmiştir. Europol tarafından yapılan açıklamada, söz konusu ağın sosyal medya ve oyun platformları üzerinden gençleri hedef alarak radikalleştirdiği ve şantaj y",
     "title": "Europol flags 4,340 URLs for removal in 'The Com' crackdown",
     "full_text": "Europol has flagged 4,340 URLs for removal during a multi-week operation targeting online content linked to \"The Com,\" a loosely organized network of nihilistic violent extremist groups.\n\nInvestigators from nine countries (i.e., Belgium, Finland, Hungary, Ireland, Luxembourg, the Netherlands, Portugal, Spain, and Sweden) took part in what Europol called \"Referral Action Days\" between June and July 2026.\n\nThe joint action, which ties into the European Commission's ProtectEU counterterrorism agenda and was organized by Europol's EU Internet Referral Unit (EU IRU) and Spain's Intelligence Centre "
+   }
+  ]
+ },
+ {
+  "date": "2026-07-26",
+  "views": [
+   {
+    "tr_title": "İran Bağlantılı Siber Tehdit Aktörlerinin ABD Su ve Enerji Kontrol Sistemlerini Hedeflemesi",
+    "paragraph": "CISA, FBI, NSA ve Enerji Bakanlığı tarafından yayımlanan güncel siber güvenlik kılavuzunda, İran bağlantılı siber tehdit aktörlerinin ABD'deki su ve enerji kontrol sistemlerine sızdığı bildirilmiştir. Mart 2026 tarihinden bu yana süregelen faaliyetlerde, saldırganların internete açık programlanabilir mantık denetleyicilerine (PLC) erişim sağlayarak operasyonel süreçleri manipüle ettiği belirtilmiştir. Rockwell Automation, Schneider Electric ve Siemens gibi üreticilerin ekipmanlarını hedef alan aktörlerin, güvenlik alarmlarını ve kapatma işlevlerini devre dışı bırakan kötü amaçlı proje dosyalar",
+    "title": "Iran-Linked Actors Breach Are Targeting US Water and Energy Control Systems",
+    "full_text": "Iran-Linked Actors Breach Are Targeting US Water and Energy Control Systems\n\nUS agencies warn Iran-linked actors are targeting internet-exposed water and energy control systems, risking disruption.\n\nFederal agencies updated their cybersecurity advisory this week: Iran-linked actors are inside American water and energy control systems, and they’re not just looking around. They’re changing things.\n\nThe updated advisory from CISA, the FBI, NSA, and the Department of Energy says these actors are getting into programmable logic controllers, the small industrial computers that run pumps, valves, and"
+   },
+   {
+    "tr_title": "Fidye Yazılımı Grubu Cl0p Bağlantılı Aktörlerin PTC Yazılımlarını Hedeflemesi",
+    "paragraph": "Cl0p fidye yazılımı kampanyasıyla bağlantılı siber tehdit aktörlerinin, veri sızdırma operasyonları kapsamında internete açık PTC Windchill ve FlexPLM kurulumlarındaki güvenlik açıklarını istismar ettiği bildirilmiştir. Ransom-ISAC, eCrime.ch ve DEFUSED tarafından yayımlanan ortak rapora göre saldırganlar, kimlik doğrulaması gerektirmeyen uzaktan kod yürütme yetkisi kazanmak için iki farklı hatayı birleştirmekte ve sistemlere zararlı web kabukları yerleştirmektedir. Üretim, otomotiv, havacılık ve perakende sektörlerinin hedef alındığı bu kampanyada, mühendislik ve tasarım verilerinin çalınarak",
+    "title": "Cl0p Affiliates Target Internet-Exposed PTC Windchill and FlexPLM with Unauthenticated RCE",
+    "full_text": "Threat actors linked to the Cl0p (aka Chubby Scorpius, FIN11, Graceful Spider, and Lace Tempest) ransomware campaign are exploiting flaws in internet-exposed PTC Windmill and FlexPLM deployments as part of a new data extortion campaign.\n\n\"Attackers chain a pre-authentication information disclosure in the FlexPLM WSDL endpoint with a server-side flaw in the Windchill login servlet, enabling unauthenticated remote code execution and deployment of hex-named JSP web shells under /Windchill/login/,\" according to a new coordinated advisory released by Ransom-ISAC along with eCrime.ch and DEFUSED.\n\nU"
+   },
+   {
+    "tr_title": "Chaos Fidye Yazılımı Grubunun Tarayıcı Üzerinden Komuta Kontrol Kanalı Oluşturan msaRAT Yazılımını Kullanması",
+    "paragraph": "Chaos fidye yazılımı grubunun, komuta kontrol (C2) iletişimini doğrudan ağ üzerinden değil, tarayıcı hata ayıklama arayüzü aracılığıyla yürüten Rust tabanlı msaRAT adlı yeni bir uzaktan erişim truva atı kullandığı tespit edilmiştir. Söz konusu zararlı yazılımın, Chrome DevTools Protokolü (CDP) üzerinden tarayıcıyı manipüle ederek WebRTC veri kanalları oluşturduğu ve Cloudflare Workers altyapısını sinyalleşme amacıyla kullandığı belirtilmiştir. msaRAT'ın, Windows güncellemesi gibi görünerek sisteme sızdığı ve tarayıcıyı gizli modda başlatarak JavaScript kodları enjekte ettiği kaydedilmiştir. Bu",
+    "title": "Chaos ransomware's msaRAT: Living off the browser to build a covert C2 channel",
+    "full_text": "Chaos ransomware's msaRAT: Living off the browser to build a covert C2 channel\n\nCisco Talos has discovered a new Rust-based remote access trojan (RAT) we call “msaRAT” attributed to the Chaos ransomware group. The name is derived from the binding names found in the binary: “msaOpen,” “msaClose,” “msaError,” and “msaMessage”.\n\nmsaRAT is implemented using the Tokio asynchronous runtime, with primary capabilities of browser-leveraged remote code execution and covert tunneling to establish command-and-control (C2) communications.\n\nThis RAT never touches the network directly — it controls its C2 co"
    }
   ]
  }

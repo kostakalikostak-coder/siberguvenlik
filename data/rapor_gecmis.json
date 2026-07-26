@@ -1,112 +1,5 @@
 [
  {
-  "date": "2026-07-18",
-  "views": [
-   {
-    "tr_title": "Çin Bağlantılı GoldenEyeDog Alt Grubunun DigiCert Veri İhlaliyle İlişkilendirilmesi",
-    "paragraph": "Siber güvenlik araştırmacıları, Nisan 2026 tarihinde DigiCert bünyesinde gerçekleşen güvenlik ihlalini Çin menşeli siber suç grubu GoldenEyeDog'un bir alt kolu olan CylindricalCanine ile ilişkilendirmiştir. Tehdit aktörünün, DigiCert destek personelinin cihazlarına sızarak müşterilere ait kod imzalama sertifikalarını çaldığı tespit edilmiştir. Saldırganların, müşteri sohbet kanalları üzerinden zararlı yazılım içeren dosyalar göndererek iki analist bilgisayarının kontrolünü ele geçirdiği belirtil",
-    "title": "GoldenEyeDog Subgroup Linked to DigiCert Breach and Code-Signing Certificate Theft",
-    "full_text": "Cybersecurity researchers have attributed the April 2026 DigiCert security incident to a threat activity cluster dubbed CylindricalCanine.\n\nExpel, which shared technical details of the event, described the threat actor as a sub-group of GoldenEyeDog (aka APT-Q-27, Dragon Breath, and Miuuti Group), a Chinese cybercrime group known for its targeting of the gambling and gaming sectors using counterfe"
-   },
-   {
-    "tr_title": "Ermenistan'da Bir Rus Turistin REvil Bağlantılı Olduğu Gerekçesiyle ABD Yakalama Kararıyla Gözaltına Alınması",
-    "paragraph": "Ermenistan makamlarının, 28 Haziran 2026 tarihinden bu yana Aleksandr Ermakov isimli bir Rus turisti, fidye yazılımı grubu REvil ile bağlantılı olduğu iddiasıyla ABD'nin iade talebi üzerine gözaltında tuttuğu bildirilmiştir. Gözaltına alınan şahsın avukatları, Washington yönetiminin yanlış kişiyi hedef aldığını ve müvekkillerinin Omsk kökenli eski bir cezaevi avukatı olduğunu ifade etmiştir. ABD tarafından aranan asıl şahsın, Medibank Private verilerinin çalınması nedeniyle yaptırım uygulanan ve",
-    "title": "Armenia Detains Russian Tourist on U.S. Warrant for REvil Hacker, Lawyers Say Wrong Man",
-    "full_text": "Armenia has held a Russian tourist named Aleksandr Ermakov in a detention center since June 28, on a U.S. extradition request for a REvil ransomware suspect named Aleksandr Ermakov.\n\nHis wife, Maria Yurova, told REN TV that border officers pulled him out of the departure hall at Yerevan's Zvartnots airport, held up a phone with a photo of him off his VKontakte page, and walked him into a side room"
-   },
-   {
-    "tr_title": "Güneydoğu Asya'daki Kamu Kurumlarının GoSerpent Zararlı Yazılımıyla Hedef Alınması",
-    "paragraph": "Siber güvenlik araştırmacıları, 2025 yılının sonlarından bu yana Güneydoğu Asya'daki hükümet ve diplomasi temsilciliklerini hedef alan GoSerpent adlı yeni bir zararlı yazılım tespit etmiştir. Kaspersky tarafından Şubat 2026'da ortaya çıkarılan bu casusluk faaliyetinin, hassas veri toplama ve kimlik bilgisi hırsızlığı amacıyla yürütüldüğü belirtilmiştir. Go tabanlı bu arka kapının, SOCKS5 proxy sunucuları kurabildiği ve ThumbcacheService gibi ek araçlar kullanarak ağ paylaşımları üzerinden veri s",
-    "title": "New GoSerpent Malware Targets Southeast Asian Governments and Diplomats for Espionage",
-    "full_text": "Cybersecurity researchers have discovered a previously undocumented malware called GoSerpent that has been put to use in cyber attacks targeting entities in Southeast Asia since late 2025 with a focus on long-term access and intelligence gathering.\n\nRussian cybersecurity company Kaspersky, which uncovered the activity in February 2026, said it was aimed at government and diplomatic entities in the"
-   },
-   {
-    "tr_title": "Siemens ROX II Anahtarlarında Üçlü Sıfır Gün Açığı Zincirinin Tespit Edilmesi",
-    "paragraph": "Palo Alto Networks Unit 42 araştırmacıları, Siemens ile iş birliği içinde Ruggedcom ROX II işletim sistemine sahip endüstriyel teknoloji anahtarlarında üç adet sıfır gün açığı tespit etmiştir. CVE-2025-40948, CVE-2025-40947 ve CVE-2025-40949 kodlu bu açıkların bir zincir halinde istismar edilmesinin, saldırganların tam yetki yükseltme ve kalıcı kök düzeyinde erişim elde etmesine olanak tanıdığı bildirilmiştir. Kritik altyapıların sinir sistemi olarak nitelendirilen bu cihazlardaki açıkların, dos",
-    "title": "Three Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy",
-    "full_text": "Threat Research Center\n\nThree Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy\n\nBy:Emmanuel ZhouAdam RobbieRick WybleMiguel Pereira\n\nPublished:July 17, 2026\n\nCategories:Threat ResearchVulnerabilities\n\nTags:Command injectionCVE-2025-40947CVE-2025-40948CVE-2025-40949Exploit ChainPrivilege escalationRox II OT switches\n\nWe conducted this research in close partnership with Siemens, reflecting o"
-   },
-   {
-    "tr_title": "Japon Gıda Devi Nichirei'nin Siber Saldırı Sonucu Lojistik Aksaklıklar Yaşaması",
-    "paragraph": "Japonya'nın en büyük gıda şirketlerinden biri olan Nichirei, sunucularını hedef alan bir siber saldırı nedeniyle lojistik ve sevkiyat süreçlerinde aksamalar yaşandığını açıklamıştır. 13 Temmuz 2026 tarihinde tespit edilen sistem kesintisinin ardından şirket, durumu incelemek ve kurtarma çalışmalarını koordine etmek amacıyla bir acil müdahale ekibi kurmuştur. Saldırı sonucunda restoran zincirleri, büyük perakendeciler ve teslimat hizmetlerinin operasyonlarının olumsuz etkilendiği belirtilmiştir. ",
-    "title": "A cyberattack hit Nichirei, one of Japan’s largest food companies",
-    "full_text": "A cyberattack hit Nichirei, one of Japan’s largest food companies\n\nA cyberattack hit one of Japan’s largest food companies, Nichirei, disrupting logistics and shipments. The company is gradually restoring operations.\n\nNichirei is one of Japan’s largest food companies, best known for its frozen food business. Founded in 1942 and headquartered in Tokyo, it operates globally through dozens of subsidi"
-   },
-   {
-    "tr_title": "WordPress Çekirdeğindeki Güvenlik Açıklarının Uzaktan Kod Yürütülmesine İzin Vermesi",
-    "paragraph": "WordPress çekirdek yazılımında, kimlik doğrulaması yapmamış saldırganların sitelerde kod yürütmesine olanak tanıyan iki kritik güvenlik açığı tespit edilmiştir. CVE-2026-63030 ve CVE-2026-60137 kodlu bu açıkların birleştirilmesiyle, varsayılan kurulumdaki sitelerin tam kontrolünün ele geçirilebildiği belirtilmiştir. Güvenlik açıklarının WordPress 6.9 ve 7.0 sürümlerini etkilediği, sorunun giderilmesi için 6.9.5 ve 7.0.2 sürümlerinin yayımlandığı bildirilmiştir. Assetnote araştırmacıları tarafınd",
-    "title": "New wp2shell WordPress Core Flaw Lets Unauthenticated Attackers Run Code",
-    "full_text": "Updated July 18, 2026: the two flaws now carry CVE IDs, the full mechanism has been published, a persistent-object-cache condition has surfaced, and a working proof-of-concept is public. The story below reflects all of it.\n\nAn anonymous HTTP request can run code on a WordPress site. The bug is in core, so a bare install with zero plugins is exploitable. Every 6.9 and 7.0 site was in range until Fr"
-   },
-   {
-    "tr_title": "Kuzey Kore Bağlantılı Tehdit Aktörlerinin SVG Dosyalarıyla Zararlı Yazılım Yayması",
-    "paragraph": "Kuzey Kore bağlantılı ve Contagious Interview kampanyasıyla ilişkili siber tehdit aktörü REF9403'ün, sahte iş ilanları ve kodlama testleri aracılığıyla yazılım geliştiricileri hedef aldığı tespit edilmiştir. Elastic tarafından yapılan açıklamada, saldırganların Slack üzerinden ulaştıkları adaylara e-ticaret platformu geliştirme bahanesiyle zararlı depolar gönderdiği belirtilmiştir. Söz konusu depolardaki SVG formatındaki ülke bayrağı görsellerinin içine steganografi yöntemiyle gizlenmiş Base64 p",
-    "title": "Fake Coding Tests Deliver OtterCookie-Aligned Malware Hidden in SVG Flag Images",
-    "full_text": "North Korean threat actors linked to the Contagious Interview campaign have been observed employing steganography in SVG image files to conceal malicious payloads as part of a campaign using fake job postings and coding challenges.\n\nThe findings once again highlight the continued targeting of software developers by state-sponsored hackers aligned with the Democratic People's Republic of Korea (DPR"
-   },
-   {
-    "tr_title": "ABD'de Steam Üzerinden Zararlı Yazılım Dağıtan Şahsın Tutuklanması",
-    "paragraph": "ABD Federal Soruşturma Bürosu (FBI), Steam platformuna zararlı yazılım içeren sahte video oyunları yükleyerek kullanıcıların kripto para cüzdanlarını boşaltan 21 yaşındaki Zyaire Wilkins'i tutuklamıştır. Wilkins ve suç ortaklarının, son iki yıl içinde BlockBlasters ve PirateFi gibi isimlerle yayımladıkları oyunlar aracılığıyla yaklaşık 8.000 mağduru etkilediği belirtilmiştir. Saldırganların bu yöntemle en az 80 kripto para cüzdanından toplam 220.000 dolar değerinde dijital varlık çaldığı ifade e",
-    "title": "FBI arrests man accused of using Steam games to drain victims’ crypto wallets",
-    "full_text": "U.S. prosecutors have accused a Florida man of uploading fake video games that contained malware to Steam, the popular PC games platform. Once victims downloaded and installed the games, the malware was designed to infect their computers, steal their passwords and other data, and drain their crypto wallets, according to a criminal complaint.\n\nOn Tuesday, the FBI arrested Zyaire Wilkins, a 21-year-"
-   },
-   {
-    "tr_title": "Denetim Devi Ernst & Young'ın Destek Sistemi Üzerinden Veri İhlali Yaşaması",
-    "paragraph": "Dünyanın en büyük dört denetim şirketinden biri olan Ernst & Young (EY), bilişim personeli tarafından kullanılan üçüncü taraf bir destek bileti sisteminin ele geçirilmesi sonucu veri ihlali yaşandığını açıklamıştır. Şirket, 23 Nisan 2026 tarihinde ağlarında olağan dışı bir hareketlilik tespit etmiş ve yapılan incelemeler sonucunda yetkisiz bir tarafın 28 Mart ile 12 Nisan tarihleri arasında platforma eriştiğini belirlemiştir. Söz konusu platform üzerinden iletilen destek taleplerinin, müşteriler",
-    "title": "Ernst & Young discloses data breach after support system hack",
-    "full_text": "Ernst & Young is notifying customers of a data breach caused by the compromise of a third-party support ticket system used by its IT personnel.\n\nAccording to the company, support tickets submitted through the platform may have included documents containing client tax information.\n\nErnst & Young (EY) is among the world’s four largest auditing and professional services providers, offering auditing, "
-   },
-   {
-    "tr_title": "Windows Sistemlerinde Yönetici Yetkisi Sağlayan LegacyHive Sıfır Gün Açığının Yayınlanması",
-    "paragraph": "Nightmare Eclipse takma adını kullanan bir güvenlik araştırmacısı, güncel Windows sistemlerinde saldırganların yetki yükseltmesine olanak tanıyan LegacyHive adlı bir sıfır gün istismar kodunu yayınlamıştır. Microsoft'un Temmuz 2026 yamalarından hemen sonra paylaşılan bu istismarın, Windows Kullanıcı Profili Hizmeti'ndeki henüz CVE kodu atanmamış bir güvenlik açığını kötüye kullandığı belirtilmiştir. Güvenlik uzmanı Kevin Beaumont, istismarın çalıştığını doğrulamış ve Microsoft Defender for Endpo",
-    "title": "New Windows LegacyHive zero-day gives hackers admin privileges",
-    "full_text": "A security researcher using the \"Nightmare Eclipse\" handle has released a Windows zero-day exploit dubbed LegacyHive that allows attackers to escalate privileges on up-to-date Windows systems.\n\nNightmare Eclipse published a proof-of-concept (PoC) exploit hours after Microsoft released its July 2026 Patch Tuesday updates, saying that it abuses a security vulnerability in the Windows User Profile Se"
-   },
-   {
-    "tr_title": "Yeni NadMesh Botnetinin Savunmasız Yapay Zeka Servislerini ve Bulut Kimlik Bilgilerini Hedeflemesi",
-    "paragraph": "Go diliyle yazılmış NadMesh adlı yeni bir botnetin, Temmuz 2026 başından itibaren korumasız yapay zeka servislerini hedef aldığı ve bulut anahtarları ile Kubernetes belirteçlerini ele geçirdiği tespit edilmiştir. QiAnXin bünyesindeki XLab tarafından yayımlanan rapora göre, söz konusu zararlı yazılım ComfyUI, Ollama ve Gradio gibi popüler yapay zeka araçlarını tarayarak AWS anahtarlarını ve Docker yapılandırma dosyalarını sızdırmaktadır. Operatör panelinde 3.811 benzersiz AWS anahtarının ele geçi",
-    "title": "New NadMesh Botnet Hunts Exposed AI Services for Cloud Keys and Kubernetes Tokens",
-    "full_text": "A Go botnet called NadMesh turned up in early July hunting exposed AI services, and the operator's own dashboard claims 3,811 unique AWS keys.\n\nA Shodan harvester keeps the scan queue stocked with ComfyUI, Ollama, n8n, Open WebUI, Langflow, and Gradio: the image generators, local model runners, and workflow builders that teams stand up fast and firewall late.\n\nThe intel feed behind that counter sh"
-   },
-   {
-    "tr_title": "Zararlı Yazılım Dağıtımı İçin Yedi Kötü Amaçlı Npm Paketinin Kullanılması",
-    "paragraph": "Siber güvenlik araştırmacıları, Vite ön uç araç ekosistemini hedef alan ve ViteVenom olarak adlandırılan bir yazılım tedarik zinciri saldırısı tespit etmiştir. Checkmarx tarafından yapılan analizde, SuccessKey adlı siber tehdit aktörüne atfedilen bu kampanya kapsamında yedi kötü amaçlı npm paketinin yayınlandığı bildirilmiştir. Söz konusu paketlerin, Tron, Aptos ve Binance Smart Chain gibi blokzinciri ağlarını kullanan dört katmanlı bir komuta kontrol altyapısı üzerinden uzaktan erişim truva atı",
-    "title": "Seven Malicious Vite npm Packages Use Blockchain C2 to Deliver a RAT",
-    "full_text": "Cybersecurity researchers have discovered a cluster of seven malicious npm packages targeting the Vite frontend tooling ecosystem as part of a software supply chain attack.\n\nThe malicious package campaign, codenamed ViteVenom by Checkmarx, marks an expansion of ChainVeil, which was observed using an \"unprecedented\" four-tier blockchain-based command-and-control (C2) infrastructure spanning Tron, A"
-   },
-   {
-    "tr_title": "Rusya Bağlantılı Siber Tehdit Aktörü UAT-11795'in Sahte Yazılım Yükleyicileriyle Starland RAT Yayması",
-    "paragraph": "Cisco Talos araştırmacıları, Rusça konuşan ve maddi kazanç odaklı siber tehdit aktörü UAT-11795'in Haziran 2025'ten bu yana ABD ve Avrupa'daki kullanıcıları hedef alan bir kampanya yürüttüğünü açıklamıştır. Söz konusu aktörün Zoom, Webex ve MobaXterm gibi popüler yazılımların sahte sürümlerini kullanarak Starland RAT ve WLDR adlı yeni zararlı yazılım ailelerini yaydığı belirtilmiştir. Starland RAT'ın kimlik bilgisi hırsızlığı ve kripto para cüzdanı tespiti yaptığı, WLDR'nin ise tamamen bellek üz",
-    "title": "New Russian Campaign Uses Fake Webex and Zoom Installers to Deploy Starland RAT",
-    "full_text": "New Russian Campaign Uses Fake Webex and Zoom Installers to Deploy Starland RAT\n\nRussian-speaking UAT-11795 spreads trojanized Zoom, Webex, and MobaXterm installers to deliver Starland RAT and the WLDR memory-only implant.\n\nCisco Talos researchers published a detailed technical report on July 16 disclosing UAT-11795, a financially motivated, Russian-speaking threat actor that has been running a ma"
-   },
-   {
-    "tr_title": "Avrupa Birliği'nin Google'a Android Özelliklerini Rakip Yapay Zekalara Açma Talimatı Vermesi",
-    "paragraph": "Avrupa Komisyonu, Google'ın Android işletim sistemindeki mikrofon, kamera ve ekran içeriği gibi kritik erişim haklarını Gemini ile aynı düzeyde rakip yapay zeka asistanlarına açmasına karar vermiştir. Dijital Pazarlar Yasası kapsamında alınan bu bağlayıcı karar uyarınca Google'ın, arka planda uygulama yönetimi ve ekran kapalıyken uyandırma komutu gibi özellikleri en geç 1 Ağustos 2027 tarihine kadar Android 18 sürümüyle sunması gerektiği belirtilmiştir. İkinci bir kararla Google'ın, anonimleştir",
-    "title": "E.U. Orders Google to Open Android Mic, Camera and Screen to Rival AI Assistants",
-    "full_text": "The European Commission on Thursday ordered Google to give rival AI assistants the same reach into Android that Gemini already has: the camera, the microphone, whatever is on screen, a wake word that fires with the display off, and the ability to drive other apps in the background by imitating taps and typing.\n\nGoogle has to ship it in the next major release, Android 18, and by 1 August 2027 at th"
-   },
-   {
-    "tr_title": "OpenSSL Sunucularında Bellek Donduran HollowByte Açığının Tespit Edilmesi",
-    "paragraph": "Okta Red Team araştırmacıları, OpenSSL sunucularında hizmet dışı bırakma saldırılarına yol açan ve HollowByte olarak adlandırılan bir güvenlik açığı tespit etmiştir. 17 Temmuz 2026 tarihinde paylaşılan bilgilere göre, söz konusu açık 11 baytlık TLS istekleri aracılığıyla sunucu belleğinin 131 KB'a kadar bloke edilmesine neden olmaktadır. OpenSSL'in Haziran ayında yayınladığı 4.0.1, 3.6.3, 3.5.7, 3.4.6 ve 3.0.21 sürümleriyle bu hatayı giderdiği ancak herhangi bir CVE kodu veya resmi duyuru yayınl",
-    "title": "OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests",
-    "full_text": "Eleven bytes will make an unpatched OpenSSL server set aside up to 131 KB of memory for a message that never arrives. On the glibc systems Okta tested, that memory is gone until the process restarts.\n\nOpenSSL shipped the HollowByte fix in June with no CVE, no advisory, and no changelog entry pointing at it. Okta's Red Team, which reported the denial-of-service bug and named it, published the detai"
-   },
-   {
-    "tr_title": "Android Cihazlarda Gemini Üzerinden Kilit Ekranı Güvenlik Doğrulamasının Aşılması",
-    "paragraph": "Google'ın yapay zeka asistanı Gemini'da, fiziksel erişime sahip kişilerin kilitli Android 16 cihazları üzerinden kimlik doğrulaması gerekmeden mesaj göndermesine olanak tanıyan bir güvenlik açığı tespit edilmiştir. Söz konusu açığın, kilit ekranında Gemini erişimi etkinleştirilmiş cihazlarda PIN kodu girilmeden SMS ve WhatsApp mesajları gönderilmesine imkan tanıdığı belirtilmektedir. Güvenlik araştırmacıları, Mayıs 2026 tarihinden itibaren raporlanan bu sorunun, Gemini'ın derin araştırma özelliğ",
-    "title": "Google’s Gemini lets strangers send messages from your locked Android phone",
-    "full_text": "Gemini, Google's AI assistant, is supposed to make life easier for Android smartphone owners. But right now it may also be making life easier for anyone anyone who happens to pick up your phone.\n\nAs The Register reports, Google is working on a fix for a vulnerability that allows an attacker with physical access to a locked Android 16 device to use Gemini to send SMS messages and WhatsApp texts, wi"
-   },
-   {
-    "tr_title": "Yapay Zeka Destekli Geliştirilen TuxBot v3 Evolution IoT Botnet Yazılımının Tespit Edilmesi",
-    "paragraph": "Unit 42 araştırmacıları, kod geliştirme sürecinde büyük dil modellerinden (LLM) yararlanılan TuxBot v3 Evolution isimli yeni bir nesnelerin interneti (IoT) botnet iskeletini tespit etmiştir. Yapay zekanın kod üretimi sırasında eklediği güvenlik uyarılarının ve hatalı işlevlerin temizlenmeden yazılıma dahil edildiği, bu durumun geliştirme sürecindeki özensizliği yansıttığı belirtilmiştir. İran merkezli bir iş istasyonunda geliştirildiği saptanan yazılımın; C tabanlı bir bot ajanı, Go diliyle yazı",
-    "title": "TuxBot v3: Inside an IoT Botnet Framework With LLM-Assisted Development",
-    "full_text": "Threat Research Center\n\nTuxBot v3: Inside an IoT Botnet Framework With LLM-Assisted Development\n\nBy:Chris NavarreteAsher DavilaDoel Santos\n\nPublished:July 15, 2026\n\nCategories:MalwareThreat Research\n\nTags:C2DGADocker composeMalwareTuxBot v3 EvolutionVirusTotalXOR\n\nWe identified a previously undocumented modular internet-of-things (IoT) botnet framework named TuxBot v3 Evolution.\n\nThe malware autho"
-   }
-  ]
- },
- {
   "date": "2026-07-19",
   "views": [
    {
@@ -636,6 +529,59 @@
     "paragraph": "Güvenlik araştırmacısı Yuhang Wu, yamalanmamış GitLab 18.11.3 sunucularında \"git\" kullanıcısı yetkileriyle komut çalıştırılmasına olanak tanıyan bir kavram kanıtlama (PoC) çalışması yayımlamıştır. Söz konusu zafiyetin, GitLab Community Edition ve Enterprise Edition sürümlerinin 15.2.0 ile 19.0.1 arasındaki geniş bir aralığını etkilediği belirtilmiştir. Kimlik doğrulaması yapmış herhangi bir kullanıcının, özel olarak hazırlanmış iki Jupyter not defterini sisteme yükleyerek ve aralarındaki farkı t",
     "title": "Researcher Publishes GitLab RCE PoC Letting Authenticated Users Run Commands as Git",
     "full_text": "Security researcher Yuhang Wu at depthfirst has published a working proof-of-concept (PoC) exploit that executes commands as git on an unpatched self-managed GitLab 18.11.3 server.\n\nAn ordinary authenticated user triggers it by committing two crafted Jupyter notebooks and requesting their diff. The chain needs no administrator rights, continuous integration (CI) runner access, victim interaction, "
+   }
+  ]
+ },
+ {
+  "date": "2026-07-26",
+  "views": [
+   {
+    "tr_title": "İran Bağlantılı Siber Tehdit Aktörlerinin ABD Su ve Enerji Kontrol Sistemlerini Hedeflemesi",
+    "paragraph": "CISA, FBI, NSA ve Enerji Bakanlığı tarafından yayımlanan güncel siber güvenlik kılavuzunda, İran bağlantılı siber tehdit aktörlerinin ABD'deki su ve enerji kontrol sistemlerine sızdığı bildirilmiştir. Mart 2026 tarihinden bu yana süregelen faaliyetlerde, saldırganların internete açık programlanabilir mantık denetleyicilerine (PLC) erişim sağlayarak operasyonel süreçleri manipüle ettiği belirtilmiştir. Rockwell Automation, Schneider Electric ve Siemens gibi üreticilerin ekipmanlarını hedef alan a",
+    "title": "Iran-Linked Actors Breach Are Targeting US Water and Energy Control Systems",
+    "full_text": "Iran-Linked Actors Breach Are Targeting US Water and Energy Control Systems\n\nUS agencies warn Iran-linked actors are targeting internet-exposed water and energy control systems, risking disruption.\n\nFederal agencies updated their cybersecurity advisory this week: Iran-linked actors are inside American water and energy control systems, and they’re not just looking around. They’re changing things.\n\n"
+   },
+   {
+    "tr_title": "Fidye Yazılımı Grubu Cl0p Bağlantılı Aktörlerin PTC Yazılımlarını Hedeflemesi",
+    "paragraph": "Cl0p fidye yazılımı kampanyasıyla bağlantılı siber tehdit aktörlerinin, veri sızdırma operasyonları kapsamında internete açık PTC Windchill ve FlexPLM kurulumlarındaki güvenlik açıklarını istismar ettiği bildirilmiştir. Ransom-ISAC, eCrime.ch ve DEFUSED tarafından yayımlanan ortak rapora göre saldırganlar, kimlik doğrulaması gerektirmeyen uzaktan kod yürütme yetkisi kazanmak için iki farklı hatayı birleştirmekte ve sistemlere zararlı web kabukları yerleştirmektedir. Üretim, otomotiv, havacılık v",
+    "title": "Cl0p Affiliates Target Internet-Exposed PTC Windchill and FlexPLM with Unauthenticated RCE",
+    "full_text": "Threat actors linked to the Cl0p (aka Chubby Scorpius, FIN11, Graceful Spider, and Lace Tempest) ransomware campaign are exploiting flaws in internet-exposed PTC Windmill and FlexPLM deployments as part of a new data extortion campaign.\n\n\"Attackers chain a pre-authentication information disclosure in the FlexPLM WSDL endpoint with a server-side flaw in the Windchill login servlet, enabling unauthe"
+   },
+   {
+    "tr_title": "Chaos Fidye Yazılımı Grubunun Tarayıcı Üzerinden Komuta Kontrol Kanalı Oluşturan msaRAT Yazılımını Kullanması",
+    "paragraph": "Chaos fidye yazılımı grubunun, komuta kontrol (C2) iletişimini doğrudan ağ üzerinden değil, tarayıcı hata ayıklama arayüzü aracılığıyla yürüten Rust tabanlı msaRAT adlı yeni bir uzaktan erişim truva atı kullandığı tespit edilmiştir. Söz konusu zararlı yazılımın, Chrome DevTools Protokolü (CDP) üzerinden tarayıcıyı manipüle ederek WebRTC veri kanalları oluşturduğu ve Cloudflare Workers altyapısını sinyalleşme amacıyla kullandığı belirtilmiştir. msaRAT'ın, Windows güncellemesi gibi görünerek siste",
+    "title": "Chaos ransomware's msaRAT: Living off the browser to build a covert C2 channel",
+    "full_text": "Chaos ransomware's msaRAT: Living off the browser to build a covert C2 channel\n\nCisco Talos has discovered a new Rust-based remote access trojan (RAT) we call “msaRAT” attributed to the Chaos ransomware group. The name is derived from the binding names found in the binary: “msaOpen,” “msaClose,” “msaError,” and “msaMessage”.\n\nmsaRAT is implemented using the Tokio asynchronous runtime, with primary"
+   },
+   {
+    "tr_title": "Fastjson 1.x Kütüphanesindeki Kritik Açığın Aktif Olarak İstismar Edilmesi",
+    "paragraph": "Güvenlik firmaları ThreatBook ve Imperva, Alibaba tarafından geliştirilen Fastjson 1.x Java kütüphanesindeki kritik bir zafiyetin siber saldırılarda hedef alındığını bildirmiştir. CVE-2026-16723 kodlu ve 9.0 ciddiyet puanına sahip olan bu açığın, Spring Boot uygulamalarında kimlik doğrulaması gerektirmeden uzaktan kod yürütülmesine imkan tanıdığı belirtilmiştir. Alibaba, 21 Temmuz 2026 tarihinde bir güvenlik uyarısı yayınlamış ancak 25 Temmuz 2026 itibarıyla Fastjson 1.x için henüz resmi bir yam",
+    "title": "Fastjson 1.x RCE Vulnerability Targeted in Attacks With No Patched Available",
+    "full_text": "Security firms ThreatBook and Imperva say attackers are targeting a critical flaw in Fastjson, Alibaba's JSON library for Java. In affected Spring Boot applications, a malicious JSON request can execute code without authentication, with the privileges of the Java process.\n\nTracked as CVE-2026-16723, the vulnerability carries an Alibaba-assigned CVSS score of 9.0. The confirmed chain requires Fastj"
+   },
+   {
+    "tr_title": "Europol'ün The Com Bağlantılı 4.340 İnternet Adresini İşaretlemesi",
+    "paragraph": "Europol ve ortak soruşturma birimleri, 2026 yılının Haziran ve Temmuz aylarını kapsayan birkaç haftalık süreçte, The Com isimli çevrim içi ağla bağlantılı 4.340 internet adresini kaldırılması amacıyla işaretlemiştir. Project Compass operasyonu kapsamında yürütülen bu faaliyetin, genç üyelerden oluşan ağın propaganda yayılımını ve üye toplama ekosistemini bozmayı hedeflediği belirtilmiştir. Soruşturmacılar; Belçika, Finlandiya, Macaristan, İrlanda, Lüksemburg, Hollanda, Portekiz, İspanya ve İsveç",
+    "title": "Europol flags 4,340 'horrific' URLs linked to The Com",
+    "full_text": "Europol flags 4,340 'horrific' URLs linked to The Com\n\nStop the spread (of online recruiting and propaganda)\n\nEuropol and its partners' investigators flagged 4,340 “horrific” URLs for removal over several weeks in June and July as part of an ongoing crackdown on The Com (short for community), a loosely knit network of online groups whose young members participate in a range of illicit activities. "
+   },
+   {
+    "tr_title": "SourTrade Operasyonu Kapsamında Tarayıcı Üzerinden Zararlı Yazılım Oluşturulması",
+    "paragraph": "SourTrade olarak adlandırılan bir reklam tabanlı saldırı operasyonunun, kurbanların tarayıcılarını kullanarak Windows yürütülebilir dosyaları oluşturduğu tespit edilmiştir. Confiant tarafından 23 Temmuz 2026 tarihinde detaylandırılan kampanyanın, 2024 sonundan bu yana TradingView, Solana ve Luno gibi platformları taklit ederek 12 ülkedeki kripto para yatırımcılarını hedef aldığı belirtilmiştir. Saldırganların, sabit bir URL üzerinden tam bir zararlı dosya sunmak yerine, meşru Bun çalışma zamanın",
+    "title": "Malvertising Sends Malware in Pieces, Then Makes the Browser Build the Executable",
+    "full_text": "A malvertising operation dubbed SourTrade is making victims' browsers build the final Windows executable themselves, using a legitimate Bun runtime as its base instead of serving one complete malicious file from a fixed URL.\n\nConfiant, which detailed the campaign on July 23, 2026, said it has operated since late 2024 and impersonated TradingView, Solana, and Luno to target retail traders and crypt"
+   },
+   {
+    "tr_title": "Steam Forumlarında ClickFix Yöntemiyle Kripto Madenci Yazılımı Bulaştırılması",
+    "paragraph": "Steam tartışma forumlarının, oyun ve bilgisayar sorunlarına çözüm sunma vaadiyle kullanıcıları XMRig kripto madenci yazılımıyla enfekte eden ClickFix saldırılarına maruz kaldığı bildirilmiştir. Siber tehdit aktörlerinin, teknik sorun yaşayan kullanıcılara yönetici haklarıyla PowerShell komutları çalıştırmalarını önerdiği ve bu komutların arka planda zararlı yazılım indirdiği tespit edilmiştir. Yürütülen PowerShell betiğinin, kendisini bir Windows optimizasyon aracı olarak gizlediği ve Microsoft ",
+    "title": "Steam forum ClickFix attacks infect gamers with XMRig cryptominers",
+    "full_text": "Steam discussion forums are being abused in ClickFix attacks that pretend to be fixes for game and computer problems but actually infect devices with cryptominers.\n\nBleepingComputer learned of the campaign from a reader, who told us threat actors are creating random Steam accounts to post what appears to be helpful fixes for people's posts about games crashing, lost inventory items, and other tech"
+   },
+   {
+    "tr_title": "ShinyHunters Sızıntılarının Bitcoin Talepli Şantaj E-postalarında Kullanılması",
+    "paragraph": "Siber tehdit aktörlerinin, ShinyHunters grubu tarafından sızdırılan e-posta adreslerini kullanarak 2.000 dolar değerinde Bitcoin talep eden cinsel içerikli şantaj kampanyaları yürüttüğü tespit edilmiştir. BleepingComputer tarafından yapılan incelemede; Amtrak, Hallmark ve Panera Bread gibi kurumlara ait sızıntı verilerinin, tehditlerin meşruiyetini artırmak amacıyla kullanıldığı belirtilmiştir. E-postalarda, kurbanların cihazlarının ele geçirildiği ve kamera kayıtlarının alındığı iddia edilse de",
+    "title": "ShinyHunters data leaks fuel $2,000 sextortion email scam",
+    "full_text": "Threat actors are using email addresses exposed in data breaches leaked by the ShinyHunters extortion group to send sextortion emails demanding $2,000 in Bitcoin.\n\nThe emails claim to come from ShinyHunters and tell recipients that hackers compromised their devices after obtaining their email addresses from breached company databases.\n\nHowever, the messages appear to be sent by someone who downloa"
    }
   ]
  }

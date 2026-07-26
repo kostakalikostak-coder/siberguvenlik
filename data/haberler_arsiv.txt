@@ -28394,3 +28394,43 @@ Güvenlik araştırmacısı Yuhang Wu, yamalanmamış GitLab 18.11.3 sunucuları
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 26 JULY 2026 - EN ÖNEMLİ 43 HABER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Fastjson 1.x Kütüphanesindeki Kritik Açığın Aktif Olarak İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Güvenlik firmaları ThreatBook ve Imperva, Alibaba tarafından geliştirilen Fastjson 1.x Java kütüphanesindeki kritik bir zafiyetin siber saldırılarda hedef alındığını bildirmiştir. CVE-2026-16723 kodlu ve 9.0 ciddiyet puanına sahip olan bu açığın, Spring Boot uygulamalarında kimlik doğrulaması gerektirmeden uzaktan kod yürütülmesine imkan tanıdığı belirtilmiştir. Alibaba, 21 Temmuz 2026 tarihinde bir güvenlik uyarısı yayınlamış ancak 25 Temmuz 2026 itibarıyla Fastjson 1.x için henüz resmi bir yama sunmamıştır. Imperva, Amerika Birleşik Devletleri, Singapur ve Kanada'daki finans, sağlık ve perakende sektörlerine yönelik saldırı girişimleri tespit etmiştir. ThreatBook ise platformunun gerçek dünya senaryolarında istismar faaliyetlerini yakaladığını açıklamıştır. Uzmanlar, kalıcı çözüm olarak Fastjson2 sürümüne geçilmesini veya geçici önlem olarak güvenli modun etkinleştirilmesini tavsiye etmektedir.
+(XXXXXXX, AÇIK -thehackernews.com, 25.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Europol'ün The Com Bağlantılı 4.340 İnternet Adresini İşaretlemesi
+─────────────────────────────────────────────────────────
+Europol ve ortak soruşturma birimleri, 2026 yılının Haziran ve Temmuz aylarını kapsayan birkaç haftalık süreçte, The Com isimli çevrim içi ağla bağlantılı 4.340 internet adresini kaldırılması amacıyla işaretlemiştir. Project Compass operasyonu kapsamında yürütülen bu faaliyetin, genç üyelerden oluşan ağın propaganda yayılımını ve üye toplama ekosistemini bozmayı hedeflediği belirtilmiştir. Soruşturmacılar; Belçika, Finlandiya, Macaristan, İrlanda, Lüksemburg, Hollanda, Portekiz, İspanya ve İsveç'ten katılım sağlamıştır. İşaretlenen içerikler arasında kendine zarar verme, çocuk cinsel istismarı materyalleri, hayvan zulmü ve fiziksel saldırı videolarının bulunduğu kaydedilmiştir. Europol, söz konusu ağın reşit olmayan bireyleri hem mağdur hem de fail olarak kapsayan küresel bir tehdit olduğunu ve son iki yılda yüzlerce yardım talebi aldığını açıklamıştır.
+(XXXXXXX, AÇIK -theregister.com, 24.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] SourTrade Operasyonu Kapsamında Tarayıcı Üzerinden Zararlı Yazılım Oluşturulması
+─────────────────────────────────────────────────────────
+SourTrade olarak adlandırılan bir reklam tabanlı saldırı operasyonunun, kurbanların tarayıcılarını kullanarak Windows yürütülebilir dosyaları oluşturduğu tespit edilmiştir. Confiant tarafından 23 Temmuz 2026 tarihinde detaylandırılan kampanyanın, 2024 sonundan bu yana TradingView, Solana ve Luno gibi platformları taklit ederek 12 ülkedeki kripto para yatırımcılarını hedef aldığı belirtilmiştir. Saldırganların, sabit bir URL üzerinden tam bir zararlı dosya sunmak yerine, meşru Bun çalışma zamanını temel alarak tarayıcı içinde parçalı verilerden dosya oluşturduğu ifade edilmiştir. Bu yöntemin, ağ üzerinde tam bir zararlı yazılımın bulunmamasını sağlayarak basit imza tabanlı tespit mekanizmalarını atlattığı kaydedilmiştir. Bitdefender'ın Eylül 2025 tarihinde benzer bir kümeyi JSCEAL veya WeevilProxy olarak bilinen bilgi hırsızlarıyla ilişkilendirdiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 25.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Steam Forumlarında ClickFix Yöntemiyle Kripto Madenci Yazılımı Bulaştırılması
+─────────────────────────────────────────────────────────
+Steam tartışma forumlarının, oyun ve bilgisayar sorunlarına çözüm sunma vaadiyle kullanıcıları XMRig kripto madenci yazılımıyla enfekte eden ClickFix saldırılarına maruz kaldığı bildirilmiştir. Siber tehdit aktörlerinin, teknik sorun yaşayan kullanıcılara yönetici haklarıyla PowerShell komutları çalıştırmalarını önerdiği ve bu komutların arka planda zararlı yazılım indirdiği tespit edilmiştir. Yürütülen PowerShell betiğinin, kendisini bir Windows optimizasyon aracı olarak gizlediği ve Microsoft Defender taramalarından kaçınmak için belirli dizinleri dışlama listesine eklediği belirtilmiştir. Saldırganların, 'C:\Windows\Background' dizini altında 'system.exe' adıyla yapılandırdıkları zararlı yazılımın her başlangıçta çalışması için zamanlanmış görevler oluşturduğu kaydedilmiştir. Uzmanlar, forumlardaki bilinmeyen kaynaklardan gelen komutların çalıştırılmaması ve enfeksiyon şüphesi durumunda ilgili dizinlerin kontrol edilmesi gerektiğini ifade etmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 26.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] ShinyHunters Sızıntılarının Bitcoin Talepli Şantaj E-postalarında Kullanılması
+─────────────────────────────────────────────────────────
+Siber tehdit aktörlerinin, ShinyHunters grubu tarafından sızdırılan e-posta adreslerini kullanarak 2.000 dolar değerinde Bitcoin talep eden cinsel içerikli şantaj kampanyaları yürüttüğü tespit edilmiştir. BleepingComputer tarafından yapılan incelemede; Amtrak, Hallmark ve Panera Bread gibi kurumlara ait sızıntı verilerinin, tehditlerin meşruiyetini artırmak amacıyla kullanıldığı belirtilmiştir. E-postalarda, kurbanların cihazlarının ele geçirildiği ve kamera kayıtlarının alındığı iddia edilse de, bu iddiaların asılsız olduğu ve saldırganların yalnızca halka açık sızıntı verilerini kullandığı ifade edilmiştir. ShinyHunters grubunun söz konusu kampanyayla bir bağlantısı olmadığını açıkladığı kaydedilmiştir. Betterment gibi etkilenen kurumların, bu mesajların korkutma amaçlı dolandırıcılık faaliyetleri olduğunu vurgulayarak kullanıcıları ödeme yapmamaları, bağlantılara tıklamamaları ve e-postaları silmeleri konusunda uyardığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 25.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
