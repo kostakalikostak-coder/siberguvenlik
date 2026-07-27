@@ -560,28 +560,64 @@
   "date": "2026-07-27",
   "views": [
    {
-    "tr_title": "MCBS Veri İhlalinden Bir Milyondan Fazla Kişinin Etkilenmesi",
-    "paragraph": "Atlanta merkezli tıbbi işletme yönetimi şirketi MCBS, Eylül 2025 tarihinde gerçekleşen bir siber saldırı sonucunda 1,2 milyondan fazla kişinin verilerinin sızdırıldığını açıklamıştır. Yapılan incelemeler, saldırganların 22-26 Eylül tarihleri arasında sistemlere erişim sağladığını ve kişisel bilgileri içeren dosyaları ele geçirdiğini göstermiştir. Çalınan veriler arasında isim, adres, sosyal güvenlik numarası, doğum tarihi ve sağlık sigortası bilgilerinin bulunduğu belirtilmiştir. Fidye yazılımı ",
+    "tr_title": "Tayland Maliye Bakanlığına Yönelik Otonom Yapay Zeka Ajanıyla Siber Casusluk Yapılması",
+    "paragraph": "Siber güvenlik firması Hunt.io tarafından yayımlanan raporda, kimliği belirsiz saldırganların Tayland Maliye Bakanlığına karşı otonom bir yapay zeka ajanı kullanarak siber casusluk faaliyeti yürüttüğü belirtilmiştir. Saldırıda, Nous Research tarafından geliştirilen açık kaynaklı Hermes adlı yapay zeka yazılımının insan onayı beklemeksizin komut çalıştıran özel bir modda kullanıldığı tespit edilmiştir. Yapay zeka ajanının bakanlık ağında bağımsız olarak keşif yaptığı, dosya taradığı ve yetki yüks",
+    "title": "Hackers used autonomous AI agent to spy on Thailand's finance ministry",
+    "full_text": "Hackers used autonomous AI agent to spy on Thailand's finance ministry\n\nHackers used an autonomous artificial intelligence agent to carry out a cyber-espionage campaign against Thailand's Ministry of Finance, according to researchers who uncovered a hacker-controlled server that exposed the inner workings of the attack.\n\nCybersecurity firm Hunt.io said in a report released last week that it discov"
+   },
+   {
+    "tr_title": "Doğu Asya Bağlantılı Aktörün Orta Doğu Hükümetlerini Telegram Üzerinden Hedeflemesi",
+    "paragraph": "Zscaler ThreatLabz araştırmacıları, Doğu Asya kökenli olduğu değerlendirilen bir siber tehdit aktörünün Orta Doğu'daki hükümet kurumlarını hedef alan yeni bir kampanya yürüttüğünü tespit etmiştir. Saldırılarda TELESHIM, MIXEDKEY ve BINDCLOAK olarak adlandırılan daha önce raporlanmamış kötü amaçlı yazılım ailelerinin kullanıldığı belirtilmiştir. TELESHIM yazılımının, komuta kontrol iletişimi için Telegram uygulama programlama arayüzünü istismar ederek trafiği meşru internet etkinlikleri arasında ",
+    "title": "TELESHIM Abuses Telegram for C2 in Attacks Against Middle East Governments",
+    "full_text": "Cybersecurity researchers have flagged fresh malicious cyber activity by a threat actor with ties to East Asia targeting government entities in the Middle East.\n\nThe intrusions have resulted in the deployment of previously unreported malware families dubbed TELESHIM, MIXEDKEY, and BINDCLOAK, according to Zscaler ThreatLabz. The cybersecurity firm said it detected the campaign earlier this month.\n\n"
+   },
+   {
+    "tr_title": "DentaQuest Veri İhlalinden 23 Milyondan Fazla Kişinin Etkilenmesi",
+    "paragraph": "Amerika Birleşik Devletleri merkezli diş ve göz sağlığı sigorta yöneticisi DentaQuest, sistemlerine yönelik gerçekleşen bir siber saldırı sonucunda milyonlarca kişinin hassas verilerinin çalındığını duyurmuştur. 2026 yılının Mayıs ayında gerçekleşen ihlalde, saldırganların ağa erişim sağlayarak isim, adres, Sosyal Güvenlik numarası ve tıbbi tedavi detayları gibi bilgileri ele geçirdiği belirtilmiştir. HIPAA Journal verilerine göre olaydan 23,4 milyondan fazla kişinin etkilenmiş olabileceği, şirk",
+    "title": "DentaQuest Data Breach Potentially Impacts Over 23 Million People",
+    "full_text": "DentaQuest Data Breach Potentially Impacts Over 23 Million People\n\nIn May 2026, hackers stole personal and dental health information from DentaQuest’s computer network.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nDental and vision benefits administrator DentaQuest is notifying millions of people that their personal and dental health information might have been stolen in a data b"
+   },
+   {
+    "tr_title": "Çin Bağlantılı Siber Suç Grubunun Cruciferra Şifreleme Servisini Kullanması",
+    "paragraph": "Proofpoint tarafından yayımlanan analizde, Çin bağlantılı TA4922 siber suç grubunun Cruciferra adlı gelişmiş bir şifreleme servisini kullandığı tespit edilmiştir. Bu servisin, çeşitli kötü amaçlı yazılımları güvenlik yazılımlarından gizlemek amacıyla siber suç ekosisteminde kiralandığı belirtilmiştir. Cruciferra yazılımının, tespit edilmekten kaçınmak için dolaylı sistem çağrıları ve savunmasız sürücüleri kötüye kullanma gibi teknikler barındırdığı ifade edilmiştir. Özellikle Hindistan'daki verg",
+    "title": "Cruciferra Crypter Uses BYOVD and Process Ghosting to Hide Windows Malware",
+    "full_text": "The China-linked cybercrime group behind the use of income tax-related phishing lures targeting Indian taxpayers, tax professionals, and corporate finance teams has been observed using a sophisticated crypter service called Cruciferra.\n\nAccording to a new analysis by Proofpoint, Cruciferra has been utilized by various unrelated cybercriminal threat clusters to deliver a wide array of remote access"
+   },
+   {
+    "tr_title": "ABD'de Kritik Altyapı Güvenliği İçin ISA/IEC 62443 Standardının Benimsenmesi Çağrısı",
+    "paragraph": "Operasyonel Teknoloji Siber Güvenlik Koalisyonu (OTCC), Amerika Birleşik Devletleri'ndeki politika yapıcılara ISA/IEC 62443 standardını ülkenin temel operasyonel teknoloji siber güvenlik standardı olarak resmen tanıma çağrısında bulunmuştur. Koalisyon tarafından yayımlanan görüş belgesinde, küresel olarak birlikte çalışabilir tek bir çerçevenin kritik altyapı operatörlerinin uyum yükünü hafifleteceği belirtilmiştir. Mevcut düzenleyici parçalanmanın operatörleri mükerrer talimatlarla uğraşmaya zo",
+    "title": "OTCC paper urges federal adoption of ISA/IEC 62443 to unify OT cybersecurity, reduce regulatory fragmentation",
+    "full_text": "The Operational Technology Cybersecurity Coalition (OTCC) is urging U.S. policymakers to formally recognize ISA/IEC 62443 as the country’s foundational OT (operational technology) cybersecurity standard, arguing in its latest position paper that a single, globally interoperable framework would ease compliance burdens on critical infrastructure operators. In a position paper, the coalition proposed"
+   },
+   {
+    "tr_title": "Coca-Cola'nın Fairlife Fidye Yazılımı Saldırısı Sonrası Veri İhlalini Doğrulaması",
+    "paragraph": "Coca-Cola, süt ürünleri iştiraki Fairlife'a yönelik gerçekleştirilen fidye yazılımı saldırısının bir veri ihlaliyle sonuçlandığını 27 Temmuz 2026 tarihinde doğrulamıştır. Siber suç grubu Anubis, 20 Temmuz 2026 tarihinde Coca-Cola ve Fairlife'ı sızıntı sitesine ekleyerek sistemlerdeki dosyaları şifrelediğini ve 1 TB boyutunda gizli veri çaldığını iddia etmiştir. Şirket tarafından yapılan açıklamada, Amerika Birleşik Devletleri'ndeki dört Fairlife tesisinde üretimin büyük ölçüde yeniden başladığı ",
+    "title": "Coca-Cola Confirms Data Breach After Fairlife Ransomware Attack",
+    "full_text": "Coca-Cola Confirms Data Breach After Fairlife Ransomware Attack\n\nThe Anubis cybercrime group has taken credit for the attack and is threatening to leak data.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nCoca-Cola on Monday confirmed that the recent ransomware attack on its dairy products subsidiary Fairlife resulted in a data breach.\nThe soft drinks giant disclosed the cybersecur"
+   },
+   {
+    "tr_title": "Microsoft Active Directory Sertifika Hizmetlerinde Certighost Güvenlik Açığının Tespit Edilmesi",
+    "paragraph": "Microsoft Active Directory Sertifika Hizmetleri bünyesinde, düşük yetkili kullanıcıların etki alanı denetleyicisi taklidi yapmasına olanak tanıyan Certighost adlı bir güvenlik açığı tespit edilmiştir. Güvenlik araştırmacıları, bu açığın sertifika yetkilisinin kimlik çözünürlüğü sırasında kullandığı bir geri dönüş mekanizmasından kaynaklandığını açıklamıştır. Saldırganların, sertifika yetkilisini meşru bir denetleyici yerine kendi kontrollerindeki bir ana bilgisayardan veri almaya zorlayabildiği ",
+    "title": "Certighost haunts Microsoft Active Directory Certificate Services",
+    "full_text": "The Certighost vulnerability exploits a little-known AD CS fallback mechanism to trick certificate authorities into issuing trusted credentials.\n\nA vulnerability in Microsoft’s Active Directory Certificate Services (AD CS) could allow a low-privilege domain user to impersonate a Domain Controller, security researchers have warned.\n\nDubbed Certighost, the flaw stems from an enrollment fallback mech"
+   },
+   {
+    "tr_title": "Fidye Yazılımı Grubu PEAR'ın MCBS Verilerini Ele Geçirmesi",
+    "paragraph": "Atlanta merkezli tıbbi işletme yönetim şirketi MCBS, Eylül 2025 tarihinde gerçekleşen bir siber saldırı sonucunda 1,2 milyondan fazla bireyin verilerinin sızdırıldığını açıklamıştır. Yapılan incelemeler sonucunda, fidye yazılımı çetesi PEAR'ın 22-26 Eylül 2025 tarihleri arasında sistemlere erişim sağladığı ve 3 TB boyutunda veriyi ele geçirdiği tespit edilmiştir. Çalınan veriler arasında isim, adres, sosyal güvenlik numarası, doğum tarihi ve sağlık sigortası bilgilerinin bulunduğu bildirilmiştir",
     "title": "MCBS Data Breach Affects 1.2 Million Individuals",
     "full_text": "MCBS Data Breach Affects 1.2 Million Individuals\n\nThe PEAR ransomware group claimed to have stolen 3 TB of information from the medical business management company.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nA data breach suffered last year by Atlanta-based medical business management company MCBS (Medical Computer Business Services) affects more than 1.2 million individuals.\nA"
    },
    {
-    "tr_title": "SonicWall VPN Cihazlarındaki Sıfır Gün Açıklarının Aktif Olarak İstismar Edilmesi",
-    "paragraph": "Siber güvenlik firması Volexity, SonicWall SMA 1000 serisi VPN cihazlarını hedef alan ve UTA0533 olarak adlandırılan siber tehdit aktörünün faaliyetlerini raporlamıştır. Tehdit aktörünün, CVE-2026-15409 ve CVE-2026-15410 kodlu iki sıfır gün açığını birleştirerek cihazlar üzerinde en üst düzey yetki olan kök erişimi sağladığı belirtilmiştir. Saldırganların, ele geçirilen cihazlara ROOTRUN adlı bir ikili dosya ve kimlik bilgilerini çalmak için tasarlanmış KNUCKLEBALL adlı bir Python betiği yerleşt",
-    "title": "Volexity Uncovers Zero-Day Campaign Targeting SonicWall VPN Appliances",
-    "full_text": "Volexity Uncovers Zero-Day Campaign Targeting SonicWall VPN Appliances\n\nUnknown hackers exploited two SonicWall SMA 1000 zero-days to gain root access on VPN appliances before patches became available.\n\nVolexity published its findings after conducting an incident response investigation involving a compromised organization whose SonicWall SMA 1000 series VPN appliances were hit with zero-day exploi"
-   },
-   {
-    "tr_title": "Otonom Yapay Zeka Ajanının Hugging Face Altyapısına Saldırı Düzenlemesi",
-    "paragraph": "Açık kaynaklı yapay zeka platformu Hugging Face, otonom bir yapay zeka ajanı tarafından üretim altyapısının bir bölümüne siber saldırı düzenlendiğini açıklamıştır. Şirket tarafından yapılan incelemede, saldırganın sınırlı sayıda dahili veri setine ve hizmet kimlik bilgilerine yetkisiz erişim sağladığı tespit edilmiştir. Saldırının, kötü amaçlı bir veri setinin kod yürütme açıklarını istismar ederek veri işleme hattındaki bir işçiyi ele geçirmesiyle başladığı belirtilmiştir. Otonom ajanın binlerc",
-    "title": "AI Agents Turned Into Attackers: Hugging Face Reveals Autonomous Intrusion Campaign",
-    "full_text": "AI Agents Turned Into Attackers: Hugging Face Reveals Autonomous Intrusion Campaign\n\nHugging Face says an autonomous AI agent breached part of its production infrastructure and accessed internal data and service credentials.\n\nHugging Face is one of the world’s leading open-source AI companies. It provides a platform where developers and organizations can build, share, and deploy machine learning a"
-   },
-   {
-    "tr_title": "WordPress Sitelerinde Uzaktan Kod Yürütülmesine İzin Veren Açıkların Tespit Edilmesi",
-    "paragraph": "WordPress çekirdek sisteminde, saldırganların kimlik doğrulaması yapmadan uzaktan kod yürütmesine olanak tanıyan iki kritik güvenlik açığı tespit edilmiştir. CVE-2026-63030 ve CVE-2026-60137 olarak tanımlanan bu açıkların, wp2shell olarak adlandırılan bir saldırı zinciriyle birleştirilebildiği belirtilmiştir. Searchlight Cyber araştırmacıları tarafından keşfedilen hataların, WordPress 6.9 ve 7.0 sürümlerini etkilediği ve herhangi bir eklenti gerektirmeksizin varsayılan kurulumlarda istismar edil",
+    "tr_title": "WordPress Sitelerinin Ele Geçirilmesine Yol Açan Kritik Açıkların Tespit Edilmesi",
+    "paragraph": "WordPress Core sisteminde, saldırganların kimlik doğrulaması yapmadan uzaktan kod yürütmesine (RCE) olanak tanıyan iki kritik güvenlik açığı tespit edilmiştir. CVE-2026-63030 ve CVE-2026-60137 kodlu bu açıkların, WordPress 6.9.x ve 7.0.x sürümlerini kullanan varsayılan kurulumlarda zincirleme şekilde istismar edilebildiği bildirilmiştir. Searchlight Cyber araştırmacıları tarafından keşfedilen bu hataların, dünya genelinde 500 milyondan fazla web sitesini etkileme potansiyeline sahip olduğu belir",
     "title": "Attackers Can Take Over WordPress Sites Using Newly Released wp2shell Exploits",
     "full_text": "Attackers Can Take Over WordPress Sites Using Newly Released wp2shell Exploits\n\nPublic exploits are now available for two critical WordPress flaws that attackers can chain to gain remote code execution without authentication.\n\nPublic proof-of-concept exploits are now available for the critical wp2shell vulnerabilities affecting WordPress Core. The flaws, tracked as CVE-2026-63030 and CVE-2026-6013"
+   },
+   {
+    "tr_title": "Tribeca Film Festivali Veri Sızıntısında Hollywood Yıldızlarının Bilgilerinin İfşa Olması",
+    "paragraph": "Tribeca Film Festivali ile bağlantılı dört veri tabanında, aralarında Angelina Jolie ve Robert De Niro gibi isimlerin de bulunduğu Hollywood yıldızlarına ait yaklaşık 666.000 kaydın ifşa olduğu bildirilmiştir. Siber güvenlik araştırmacısı Jeremiah Fowler tarafından tespit edilen sızıntının, 2019 ile 2026 yılları arasındaki isim, telefon numarası ve e-posta adresi gibi iletişim bilgilerini kapsadığı ifade edilmiştir. Sızan verilerin büyük çoğunluğunun ünlülerden ziyade onların menajer ve temsilci",
+    "title": "Angelina Jolie, Robert De Niro Among Hollywood Stars Hit by Tribeca Data Leak",
+    "full_text": "A Tribeca Film Festival data breach has reportedly exposed the contact information of Hollywood stars including Angelina Jolie, Robert De Niro and Martin Scorsese, alongside details linked to other prominent actors and filmmakers. Cybersecurity researcher Jeremiah Fowler reportedly \nidentified nearly 666,000 records\n across four databases connected to the annual New York film festival, raising con"
    }
   ]
  }

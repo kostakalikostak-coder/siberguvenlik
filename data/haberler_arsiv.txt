@@ -28439,9 +28439,51 @@ Siber tehdit aktörlerinin, ShinyHunters grubu tarafından sızdırılan e-posta
 📅 27 JULY 2026 - EN ÖNEMLİ 43 HABER (SEÇİLMİŞ)
 ================================================================================
 
-[ 1] WordPress Sitelerinde Uzaktan Kod Yürütülmesine İzin Veren Açıkların Tespit Edilmesi
+[ 1] Çin Bağlantılı Siber Suç Grubunun Cruciferra Şifreleme Servisini Kullanması
 ─────────────────────────────────────────────────────────
-WordPress çekirdek sisteminde, saldırganların kimlik doğrulaması yapmadan uzaktan kod yürütmesine olanak tanıyan iki kritik güvenlik açığı tespit edilmiştir. CVE-2026-63030 ve CVE-2026-60137 olarak tanımlanan bu açıkların, wp2shell olarak adlandırılan bir saldırı zinciriyle birleştirilebildiği belirtilmiştir. Searchlight Cyber araştırmacıları tarafından keşfedilen hataların, WordPress 6.9 ve 7.0 sürümlerini etkilediği ve herhangi bir eklenti gerektirmeksizin varsayılan kurulumlarda istismar edilebildiği bildirilmiştir. WordPress ekibi, durumun ciddiyeti nedeniyle etkilenen sürümler için otomatik güvenlik güncellemelerini zorunlu olarak etkinleştirmiştir. Site yöneticilerine, sistemlerini derhal 7.0.2 veya 6.9.5 sürümlerine güncellemeleri tavsiye edilmiştir. Güncelleme yapılamayan durumlarda, REST API toplu işlem uç noktasına anonim erişimin engellenmesi gibi geçici önlemlerin alınabileceği ifade edilmiştir. Dünya genelinde 500 milyondan fazla web sitesinin bu risk altında olduğu kaydedilmiştir.
+Proofpoint tarafından yayımlanan analizde, Çin bağlantılı TA4922 siber suç grubunun Cruciferra adlı gelişmiş bir şifreleme servisini kullandığı tespit edilmiştir. Bu servisin, çeşitli kötü amaçlı yazılımları güvenlik yazılımlarından gizlemek amacıyla siber suç ekosisteminde kiralandığı belirtilmiştir. Cruciferra yazılımının, tespit edilmekten kaçınmak için dolaylı sistem çağrıları ve savunmasız sürücüleri kötüye kullanma gibi teknikler barındırdığı ifade edilmiştir. Özellikle Hindistan'daki vergi mükelleflerini ve finans ekiplerini hedef alan kimlik avı kampanyalarında bu aracın aktif olarak kullanıldığı kaydedilmiştir. Yazılımın, zararlı kodları bellek üzerinde çalıştıran bir yöntem kullanarak diskte iz bırakmadığı ve bu sayede adli incelemeleri zorlaştırdığı bilgisi verilmiştir. Servisin yeraltı forumlarında aylık 450 ile 2.000 dolar arasında değişen fiyatlarla pazarlandığı ve Agent Tesla gibi yaygın casus yazılımların dağıtımında rol oynadığı bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 27.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] ABD'de Kritik Altyapı Güvenliği İçin ISA/IEC 62443 Standardının Benimsenmesi Çağrısı
+─────────────────────────────────────────────────────────
+Operasyonel Teknoloji Siber Güvenlik Koalisyonu (OTCC), Amerika Birleşik Devletleri'ndeki politika yapıcılara ISA/IEC 62443 standardını ülkenin temel operasyonel teknoloji siber güvenlik standardı olarak resmen tanıma çağrısında bulunmuştur. Koalisyon tarafından yayımlanan görüş belgesinde, küresel olarak birlikte çalışabilir tek bir çerçevenin kritik altyapı operatörlerinin uyum yükünü hafifleteceği belirtilmiştir. Mevcut düzenleyici parçalanmanın operatörleri mükerrer talimatlarla uğraşmaya zorladığı ifade edilerek, hükümet politikasının uyum kontrol listesi modelinden birlikte çalışabilirliğe kaydırılması önerilmiştir. Belgede ayrıca, ISA/IEC 62443 standardının Avustralya, Suudi Arabistan ve Singapur gibi ülkelerde halihazırda resmen tanındığına dikkat çekilmiştir. Koalisyon, bu standardın NIST SP 800-82 ve NIST CSF 2.0 ile tamamlayıcı bir rol oynayarak endüstriyel kontrol sistemlerinin güvenliğini artıracağını kaydetmiştir. Söz konusu raporun, iş gücü eğitimi ve güvenli tasarım bileşenlerinin teşvik edilmesini içeren beş temel tavsiyeyi kapsadığı bildirilmiştir.
+(XXXXXXX, AÇIK -industrialcyber.co, 27.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Coca-Cola'nın Fairlife Fidye Yazılımı Saldırısı Sonrası Veri İhlalini Doğrulaması
+─────────────────────────────────────────────────────────
+Coca-Cola, süt ürünleri iştiraki Fairlife'a yönelik gerçekleştirilen fidye yazılımı saldırısının bir veri ihlaliyle sonuçlandığını 27 Temmuz 2026 tarihinde doğrulamıştır. Siber suç grubu Anubis, 20 Temmuz 2026 tarihinde Coca-Cola ve Fairlife'ı sızıntı sitesine ekleyerek sistemlerdeki dosyaları şifrelediğini ve 1 TB boyutunda gizli veri çaldığını iddia etmiştir. Şirket tarafından yapılan açıklamada, Amerika Birleşik Devletleri'ndeki dört Fairlife tesisinde üretimin büyük ölçüde yeniden başladığı ve ürün güvenliğinin etkilenmediği bildirilmiştir. Siber tehdit aktörü Anubis'in, çalınan verileri yayınlamak için bir geri sayım başlattığı ve ödeme yapılmaması durumunda bilgileri kamuoyuyla paylaşmakla tehdit ettiği kaydedilmiştir. Anubis grubunun, verileri kalıcı olarak silen bir silici moduna sahip olduğu ve çift şantaj yöntemi kullandığı belirtilmektedir.
+(XXXXXXX, AÇIK -securityweek.com, 27.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Fidye Yazılımı Grubu PEAR'ın MCBS Verilerini Ele Geçirmesi
+─────────────────────────────────────────────────────────
+Atlanta merkezli tıbbi işletme yönetim şirketi MCBS, Eylül 2025 tarihinde gerçekleşen bir siber saldırı sonucunda 1,2 milyondan fazla bireyin verilerinin sızdırıldığını açıklamıştır. Yapılan incelemeler sonucunda, fidye yazılımı çetesi PEAR'ın 22-26 Eylül 2025 tarihleri arasında sistemlere erişim sağladığı ve 3 TB boyutunda veriyi ele geçirdiği tespit edilmiştir. Çalınan veriler arasında isim, adres, sosyal güvenlik numarası, doğum tarihi ve sağlık sigortası bilgilerinin bulunduğu bildirilmiştir. ABD Sağlık ve İnsani Hizmetler Bakanlığı, söz konusu ihlalden tam olarak 1.261.464 kişinin etkilendiğini kaydetmiştir. Fidye yazılımı çetesi PEAR, ele geçirdiği finansal belgeleri, insan kaynakları dosyalarını ve hasta kayıtlarını internet üzerinden indirmeye sunmuştur. Grubun ayrıca Motility Software Solutions ve Tri-Century Eye Care gibi diğer sağlık kuruluşlarını da hedef aldığı belirtilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 27.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Tribeca Film Festivali Veri Sızıntısında Hollywood Yıldızlarının Bilgilerinin İfşa Olması
+─────────────────────────────────────────────────────────
+Tribeca Film Festivali ile bağlantılı dört veri tabanında, aralarında Angelina Jolie ve Robert De Niro gibi isimlerin de bulunduğu Hollywood yıldızlarına ait yaklaşık 666.000 kaydın ifşa olduğu bildirilmiştir. Siber güvenlik araştırmacısı Jeremiah Fowler tarafından tespit edilen sızıntının, 2019 ile 2026 yılları arasındaki isim, telefon numarası ve e-posta adresi gibi iletişim bilgilerini kapsadığı ifade edilmiştir. Sızan verilerin büyük çoğunluğunun ünlülerden ziyade onların menajer ve temsilcilerine ait olduğu, ancak cihaz ve yazılım sürümü bilgilerinin de kayıtlarda yer aldığı belirtilmiştir. Fowler, sızıntının muhtemelen bir insan hatası sonucu açıkta kalan yedekleme dosyasından kaynaklandığını açıklamıştır. Festival yönetimi, söz konusu veri tabanlarını erişime kapattıklarını ve olayla ilgili inceleme başlattıklarını duyurmuştur. Araştırmacı, verilerin kötü niyetli kişilerce ele geçirildiğine dair henüz somut bir kanıt bulunmadığını kaydetmiştir.
+(XXXXXXX, AÇIK -thecyberexpress.com, 27.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Microsoft Active Directory Sertifika Hizmetlerinde Certighost Güvenlik Açığının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Microsoft Active Directory Sertifika Hizmetleri bünyesinde, düşük yetkili kullanıcıların etki alanı denetleyicisi taklidi yapmasına olanak tanıyan Certighost adlı bir güvenlik açığı tespit edilmiştir. Güvenlik araştırmacıları, bu açığın sertifika yetkilisinin kimlik çözünürlüğü sırasında kullandığı bir geri dönüş mekanizmasından kaynaklandığını açıklamıştır. Saldırganların, sertifika yetkilisini meşru bir denetleyici yerine kendi kontrollerindeki bir ana bilgisayardan veri almaya zorlayabildiği ifade edilmiştir. Microsoft, söz konusu zafiyeti Temmuz 2026 güvenlik güncellemeleri kapsamında yayımladığı bir doğrulama adımıyla giderdiğini duyurmuştur. Araştırmacılar, güncellemeyi hemen uygulayamayan kuruluşlar için ilgili mekanizmanın bir politika bayrağı ile tamamen kapatılabileceği bilgisini vermiştir. Kuruluşlara, sertifika kayıt davranışlarını düzenli olarak denetlemeleri ve güncellemeleri ivedilikle uygulamaları tavsiye edilmiştir.
+(XXXXXXX, AÇIK -csoonline.com, 27.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] WordPress Sitelerinin Ele Geçirilmesine Yol Açan Kritik Açıkların Tespit Edilmesi
+─────────────────────────────────────────────────────────
+WordPress Core sisteminde, saldırganların kimlik doğrulaması yapmadan uzaktan kod yürütmesine (RCE) olanak tanıyan iki kritik güvenlik açığı tespit edilmiştir. CVE-2026-63030 ve CVE-2026-60137 kodlu bu açıkların, WordPress 6.9.x ve 7.0.x sürümlerini kullanan varsayılan kurulumlarda zincirleme şekilde istismar edilebildiği bildirilmiştir. Searchlight Cyber araştırmacıları tarafından keşfedilen bu hataların, dünya genelinde 500 milyondan fazla web sitesini etkileme potansiyeline sahip olduğu belirtilmiştir. WordPress ekibi, durumun ciddiyeti nedeniyle etkilenen sürümler için otomatik güvenlik güncellemelerini zorunlu olarak etkinleştirmiştir. Site yöneticilerine, wp2shell saldırı zincirinden korunmak amacıyla sistemlerini derhal 7.0.2 veya 6.9.5 sürümlerine yükseltmeleri tavsiye edilmiştir. Güncelleme yapılamayan durumlarda, REST API uç noktalarına anonim erişimin geçici olarak engellenmesi önerilmiştir.
 (XXXXXXX, AÇIK -securityaffairs.com, 26.07.2026)
 
 ────────────────────────────────────────────────────────────────────────────────
