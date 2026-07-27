@@ -1,0 +1,19 @@
+name: Selector Keşfi (teşhis)
+
+# Elle tetiklenen teşhis: feed-özet fallback'in kurtaramadığı kaynaklar için doğru
+# CONTENT_SELECTORS'ı gerçek runner IP'sinde (üretim) makale sayfasını kazıyarak bulur.
+# Rapor üretmez, commit'lemez. Çalıştır: Actions → "Selector Keşfi (teşhis)" → Run.
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4
+      - run: python -u scripts/selector_probe.py
