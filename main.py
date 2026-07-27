@@ -663,6 +663,12 @@ class HaberSistemi:
         self.used_links_file = "data/haberler_linkler.txt"
         self.rss_errors_file = "data/rss_errors.txt"
         self.social_data = []  # fetch_social_signals() sonuçları; topla() tarafından doldurulur
+        # Kaynak-başına sağlık izleme: her koşuda hangi kaynaktan kaç ham madde
+        # geldi, kaçı pencereye/deduba takılmadan kaldı ve fetch sonucu ne oldu.
+        # Amaç: "200 OK ama 0 madde" (sessiz boş — engelleme/format değişikliği)
+        # durumunu, gerçek hatadan ve normal hafta-sonu durgunluğundan ayırmak.
+        self.source_stats = {}          # src -> {'raw': int, 'kept': int, 'status': str}
+        self.source_health_file = "data/kaynak_saglik.txt"
 
     # ─────────────────────────────────────────────────────────────────────────
     # 3-PASS MİMARİSİ — YARDIMCI METODLAR
@@ -1895,6 +1901,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         if t.is_alive():
             error_msg = f"RSS hatası - {source_name}: Timeout (15s)"
             self.rss_errors.append(error_msg)
+            self.source_stats[source_name] = {'raw': 0, 'kept': 0, 'status': 'TIMEOUT'}
             print(f"      ⏱️  RSS TIMEOUT (15s) — geçiliyor")
             return []
 
@@ -1902,10 +1909,23 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             e = result_holder['error']
             error_msg = f"RSS hatası - {source_name}: {str(e)[:100]}"
             self.rss_errors.append(error_msg)
+            self.source_stats[source_name] = {'raw': 0, 'kept': 0,
+                                              'status': f'HATA: {str(e)[:60]}'}
             print(f"      ❌ RSS HATA: {str(e)[:50]}")
             return []
 
-        return result_holder['articles']
+        articles = result_holder['articles']
+        raw = len(articles)
+        if raw == 0:
+            # HTTP 200 + geçerli XML ama 0 madde. Bu, sessiz arızanın en sinsi
+            # biçimi: feed anti-bot sayfası/boş kabuk döndürmüş ya da öğe/başlık
+            # şeması değişmiş olabilir. Timeout/HTTP hatası gibi loglanmadığı için
+            # bugüne kadar "normal sakin gün"den ayırt edilemiyordu — artık iz bırak.
+            self.rss_errors.append(f"SESSİZ BOŞ - {source_name}: 200 OK ama 0 madde")
+            self.source_stats[source_name] = {'raw': 0, 'kept': 0, 'status': 'BOŞ (200/0 madde)'}
+        else:
+            self.source_stats[source_name] = {'raw': raw, 'kept': 0, 'status': 'OK'}
+        return articles
 
     def _load_used_links(self):
         """
@@ -2058,6 +2078,55 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             f.write('\n'.join(existing) + '\n')
 
         print(f"⚠️  {len(self.rss_errors)} RSS hatası kaydedildi: {self.rss_errors_file}")
+
+    def _save_source_health(self):
+        """Kaynak-başına sağlık raporu — her koşuda üzerine yazılır.
+
+        `data/kaynak_saglik.txt`: bugünkü koşuda her AKTİF kaynağın fetch
+        sonucu (OK/BOŞ/TIMEOUT/HATA), ham madde sayısı ve pencere+dedup sonrası
+        kalan sayısı. Sağlıklı ("üretiyor") kaynakları, sessiz arızalılardan
+        ("200 ama 0 madde") ve gerçek hatalardan tek bakışta ayırmak için.
+
+        Neden ayrı dosya: rss_errors.txt yalnızca sorunları biriktirir; burada
+        TÜM kaynakların tam tablosu tutulur ki bir kaynağın "hiç mi üretmiyor,
+        yoksa bugün mü sakin" olduğu kesinleşsin. Üretimi ENGELLEMEZ."""
+        if not self.source_stats:
+            return
+        now = _now_tr()
+        stamp = now.strftime('%Y-%m-%d %H:%M')
+
+        # Konfigüre olup bu koşuda hiç denenmemiş kaynakları da göster (kod yolu
+        # onları atlıyorsa fark edelim).
+        rows = []
+        for src in self.sources:
+            st = self.source_stats.get(src)
+            if st is None:
+                rows.append((src, -1, -1, 'DENENMEDİ'))
+            else:
+                rows.append((src, st.get('raw', 0), st.get('kept', 0), st.get('status', '?')))
+
+        # kept azalan; eşitlikte isim
+        rows.sort(key=lambda r: (-r[2], -r[1], r[0]))
+
+        uretiyor = sum(1 for r in rows if r[2] > 0)
+        bos      = sum(1 for r in rows if r[3].startswith('BOŞ'))
+        hatali   = sum(1 for r in rows if r[3].startswith(('HATA', 'TIMEOUT')))
+
+        lines = []
+        lines.append(f"# KAYNAK SAĞLIK RAPORU — {stamp}")
+        lines.append(f"# aktif={len(rows)}  üretiyor={uretiyor}  boş(200/0)={bos}  hata/timeout={hatali}")
+        lines.append(f"# {'KAYNAK':26} {'HAM':>4} {'KALAN':>6}  DURUM")
+        for src, raw, kept, status in rows:
+            raw_s  = '-' if raw  < 0 else str(raw)
+            kept_s = '-' if kept < 0 else str(kept)
+            lines.append(f"{src:26} {raw_s:>4} {kept_s:>6}  {status}")
+
+        os.makedirs("data", exist_ok=True)
+        with open(self.source_health_file, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(lines) + '\n')
+
+        print(f"🩺 Kaynak sağlığı: {uretiyor} üretiyor / {bos} sessiz-boş / "
+              f"{hatali} hata → {self.source_health_file}")
 
     def _filter_duplicates(self, all_news):
         """
@@ -2309,6 +2378,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     elif art.get('success'):
                         full_text_success += 1
                 all_news[src] = articles
+                if src in self.source_stats:
+                    self.source_stats[src]['kept'] = len(articles)
             else:
                 print(f"   └─ ❌ Bulunamadı")
 
@@ -2316,6 +2387,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         if self.rss_errors:
             self._save_rss_errors()
+        self._save_source_health()
 
         # ── Sosyal medya sinyalleri (Reddit, HN, GitHub) ──
         # Haber akışından ayrı tutulur, sadece HTML enjeksiyonu için saklanır
