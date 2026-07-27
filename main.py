@@ -39,6 +39,7 @@ from src.config import (
     ENABLE_LLM_CROSS_DAY_DEDUP, CROSS_DAY_DEDUP_WINDOW_DAYS,
     SCORING_LOG_FILE, SCORING_LOG_MAX_LINES,
     SOCIAL_SIGNAL_CONFIG, SKIP_URL_PATTERNS, FEED_SUMMARY_MIN_WORDS, ARTICLE_PROXY,
+    ARTICLE_PROXY_MAX_CALLS, ARTICLE_PROXY_BUDGET_SEC, REPORT_FLOOR,
     get_ranking_prompt, get_deep_analysis_prompt, get_summary_batch_prompt,
     get_top3_selection_prompt, get_top3_verification_prompt,
     get_legacy_json_prompt, get_quality_review_prompt, get_dedup_review_prompt,
@@ -669,6 +670,10 @@ class HaberSistemi:
         # durumunu, gerçek hatadan ve normal hafta-sonu durgunluğundan ayırmak.
         self.source_stats = {}          # src -> {'raw': int, 'kept': int, 'status': str}
         self.source_health_file = "data/kaynak_saglik.txt"
+        # Proxy fallback sayaçları (bkz. _article_proxy_fallback) — workflow
+        # zaman bütçesini korumak için çağrı sayısı ve toplam süre sınırlanır.
+        self._proxy_calls = 0
+        self._proxy_seconds = 0.0
 
     # ─────────────────────────────────────────────────────────────────────────
     # 3-PASS MİMARİSİ — YARDIMCI METODLAR
@@ -1759,9 +1764,20 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         buraya hiç düşmez. Halüsinasyon koruması korunur (>= FEED_SUMMARY_MIN_WORDS)."""
         if not ARTICLE_PROXY or not art.get('link'):
             return
+        # Bütçe koruması: proxy yavaştır. Sınırsız bırakılırsa kötü bir günde
+        # onlarca makale buraya düşer ve workflow'un 25 dk sınırı dolar (iş
+        # yarıda ölür → yarım yazılmış dosya riski). Sınır dolunca sessizce atla.
+        if self._proxy_calls >= ARTICLE_PROXY_MAX_CALLS:
+            return
+        if self._proxy_seconds >= ARTICLE_PROXY_BUDGET_SEC:
+            return
         url = ARTICLE_PROXY.replace('{url}', art['link'])
+        _t0 = time.time()
         try:
-            r = _requests_get_with_retry(url, headers=self.headers, timeout=(5, 20))
+            # max_retries=1 + kısa okuma timeout'u: en kötü durumda ~26s/makale
+            # (varsayılan 3 retry × 20s ≈ 87s idi).
+            r = _requests_get_with_retry(url, headers=self.headers, timeout=(5, 12),
+                                         max_retries=1)
             if r.status_code != 200:
                 return
             text = r.text or ''
@@ -1778,6 +1794,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     art['domain'] = urlparse(art.get('link', '')).netloc.replace('www.', '')
         except Exception:
             pass
+        finally:
+            # Başarı/başarısızlık fark etmez: harcanan süre ve deneme sayılır.
+            self._proxy_calls += 1
+            self._proxy_seconds += time.time() - _t0
 
     def _crawl_newsletter_links(self, newsletter_urls, source_name):
         """
@@ -2507,17 +2527,23 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         txt = f"SESSION_DATE: {now.strftime('%Y-%m-%d')}\n"
         txt += f"\n{'=' * 80}\n📅 {now.strftime('%d %B %Y').upper()} - SİBER GÜVENLİK HABERLERİ (HAM RSS)\n{'=' * 80}\n\n"
 
-        all_articles = []
+        # DİKKAT: bu listeye YALNIZCA rapora giren (tam metni çıkan) haberler
+        # eklenir; sonunda _save_used_links'e verilir. Tam metni çıkmayan haberi
+        # "görüldü" diye işaretlemek onu 7 gün boyunca yakar (_filter_duplicates
+        # Seviye-1 link eşleşmesiyle eler) — geçici bir timeout/503 yüzünden düşen
+        # haber kalıcı kaybolur, ertesi gün selector düzeltilse bile geri gelmez.
+        # (Ölçüm: 07-21..07-24 arası günde 9-14 haber böyle yakılmıştı.)
+        kaydedilen_articles = []
         num = 0
         skipped_no_content = 0
         for src, articles in news_data.items():
             for art in articles:
-                all_articles.append(art)
                 # Tam metni olmayan haberleri Gemini'ye gönderme — sadece başlık varsa
                 # Gemini içerik üretemez ve halüsinasyon yapar, bu yüzden kesinlikle dışla
                 if not art.get('success') or art.get('word_count', 0) == 0:
                     skipped_no_content += 1
                     continue
+                kaydedilen_articles.append(art)
                 num += 1
                 kaynak_etiketi = (" | KAYNAK: feed özeti" if art.get('from_feed_summary')
                                   else " | KAYNAK: proxy okuyucu" if art.get('from_article_proxy')
@@ -2553,7 +2579,12 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         print(f"✅ data/haberler_ham.txt (günlük - üzerine yazıldı)")
 
-        self._save_used_links(all_articles)
+        # Yalnızca rapora GİREN haberler "görüldü" olarak işaretlenir. Elenenler
+        # işaretlenmez ki ertesi gün yeniden denensin (bkz. yukarıdaki not).
+        if skipped_no_content > 0:
+            print(f"   ↩️  {skipped_no_content} haber 'görüldü' işaretlenmedi — "
+                  f"ertesi gün yeniden denenecek")
+        self._save_used_links(kaydedilen_articles)
 
         return txt
 
@@ -4289,7 +4320,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # logunda ve rss_errors.txt'de iz bırakır). Üretimi ENGELLEMEZ — sadece
         # "2 haber rezaleti" gibi sessiz daralmaları erken görünür kılar ki
         # havuz açlığı (feed/dedup/pencere) fark edilmeden geçmesin.
-        REPORT_FLOOR = 10
+        # REPORT_FLOOR artık src/config.py'den gelir — idempotency kontrolü
+        # (_rapor_basarili) ile AYNI eşiği kullanmak zorunda; iki yerde ayrı
+        # sabit tutmak sessizce ayrışma riski taşırdı.
         if _rapor_haber_sayisi < REPORT_FLOOR:
             uyari = (f"⚠️  TABAN UYARISI: rapor yalnızca {_rapor_haber_sayisi} haber "
                      f"içeriyor (beklenen ≥{REPORT_FLOOR}). Havuz açlığı olası — "
@@ -5192,10 +5225,29 @@ def main():
         işaretidir (RAPOR_DURUM: FALLBACK). Eski işaretler ([FALLBACK] başlığı,
         uyarı bandı cümlesi) yalnızca bu işaret eklenmeden önce üretilmiş eski
         raporlar için ikincil olarak korunur. ('error-box' kontrolü kaldırıldı:
-        o class hiçbir yerde üretilmiyordu — ölü kontroldü.)"""
-        return ('RAPOR_DURUM: FALLBACK' not in content
-                and '[FALLBACK]' not in content
-                and 'Gemini API yanıt vermedi — içerik çevrilmedi' not in content)
+        o class hiçbir yerde üretilmiyordu — ölü kontroldü.)
+
+        İKİNCİ ÖLÇÜT — TABAN: fallback olmayan ama İÇİ BOŞ bir rapor da başarılı
+        sayılmamalı. Eşik olmadan 2 haberlik bir rapor "başarılı" kabul edilip o
+        günün sonraki cron slotlarını atlatıyor ve gün ince raporla kilitleniyordu
+        (07-27 12:08). Artık REPORT_FLOOR altındaki rapor başarısız sayılır →
+        sıradaki slot yeniden dener (o sırada feed'ler tazelenmiş olur)."""
+        if ('RAPOR_DURUM: FALLBACK' in content
+                or '[FALLBACK]' in content
+                or 'Gemini API yanıt vermedi — içerik çevrilmedi' in content):
+            return False
+        # Haber sayısı = gövde haberleri + kritik-3 kartları. Üretimdeki sayaç
+        # (_rapor_haber_sayisi = top10 + remaining) ile AYNI toplamı vermeli;
+        # yalnızca news-item sayılırsa kritik-3 kartları dışarıda kalır ve
+        # 10 haberlik SAĞLIKLI rapor 7 görünüp "başarısız" damgalanır — o zaman
+        # her cron slotu tüm LLM hattını boş yere yeniden çalıştırır.
+        # ('class="news-item' öneki 'news-item vuln-item' varyantını da yakalar.)
+        haber_sayisi = content.count('class="news-item') + content.count('class="top3-card"')
+        if haber_sayisi < REPORT_FLOOR:
+            print(f"   ⚠️  Mevcut rapor yalnızca {haber_sayisi} haber içeriyor "
+                  f"(<{REPORT_FLOOR}) — başarılı sayılmıyor, yeniden denenecek.")
+            return False
+        return True
 
     # ── Kontrol 1: Bugünün BAŞARILI raporu zaten var mı? (KURŞUNGEÇİRMEZ) ────
     # Idempotency sinyali RAPORUN KENDİSİdir: docs/raporlar/<bugün>.html dosyası

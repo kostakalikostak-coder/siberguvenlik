@@ -1277,6 +1277,21 @@ FEED_SUMMARY_MIN_WORDS = 100
 # doğrudan 50 kelime → Jina 7038 kelime). Boş string → devre dışı.
 # NOT: yalnızca doğrudan+feed-özet başarısız olan AZ sayıda makalede tetiklenir.
 ARTICLE_PROXY = 'https://r.jina.ai/{url}'
+
+# Proxy fallback KORUMALARI — workflow'un 25 dakikalık bütçesini koru.
+# Proxy çağrısı yavaştır; sınırsız bırakılırsa kötü bir günde onlarca makale bu
+# yola düşer ve iş yarıda öldürülür (yarım yazılmış dosya riski). Bu yüzden hem
+# çağrı sayısı hem toplam süre sınırlanır; sınır dolunca fallback sessizce atlanır
+# (haber, eskisi gibi tam metin yoksa elenir — kalite kuralı değişmez).
+ARTICLE_PROXY_MAX_CALLS = 12     # koşu başına en fazla proxy denemesi
+ARTICLE_PROXY_BUDGET_SEC = 180   # proxy'ye harcanacak toplam saniye tavanı
+
+# Rapor taban eşiği: bu sayının altında haber içeren rapor "başarılı" SAYILMAZ.
+# İki yerde kullanılır: (1) üretim sonrası taban uyarısı, (2) idempotency —
+# _rapor_basarili(). (2) kritik: eşik olmadan 2 haberlik bir rapor bile "başarılı"
+# sayılıp o günün sonraki cron slotlarını atlatıyor ve gün ince raporla
+# kilitleniyordu (07-27 12:08'de yaşandı). Eşiğin altındaki rapor yeniden denenir.
+REPORT_FLOOR = 10
 CONTENT_SELECTORS = {
     'The Hacker News': [{'class': 'articlebody'}],
     'BleepingComputer': [{'class': 'articleBody'}],
