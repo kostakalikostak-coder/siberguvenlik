@@ -70,35 +70,64 @@ def _age_days(raw_date):
     return (datetime.now(timezone.utc) - dt).total_seconds() / 86400.0
 
 
+import re as _re
+
+DESC_FLOOR = 100  # description-fallback için önerilen kelime tabanı
+
+
+def _wc(html_or_text):
+    """HTML etiketlerini soyup kelime sayısı döner."""
+    if not html_or_text:
+        return 0
+    txt = _re.sub(r'<[^>]+>', ' ', html_or_text)
+    txt = _re.sub(r'&[a-z]+;', ' ', txt)
+    return len(txt.split())
+
+
 def parse_items(content):
-    """(madde_sayisi, en_yeni_baslik, en_yeni_tarih_ham, pencere_ici_sayi) döner."""
+    """(madde_sayisi, en_yeni_baslik, en_yeni_tarih, pencere_ici, en_yeni_desc_wc,
+    fallback_kurtarilan) döner. fallback_kurtarilan = pencere içindeki maddelerden
+    description'ı >= DESC_FLOOR kelime olanların sayısı."""
     try:
         root = ET.fromstring(content)
     except ET.ParseError as e:
-        return -1, f'XML parse hatası: {str(e)[:60]}', '', 0
-    items = []  # (title, raw_date)
+        return -1, f'XML parse hatası: {str(e)[:60]}', '', 0, 0, 0
+    ATOM = '{http://www.w3.org/2005/Atom}'
+    CONTENT_NS = '{http://purl.org/rss/1.0/modules/content/}'
+    items = []  # (title, raw_date, desc_wc)
     if root.tag.endswith('feed'):  # Atom
-        ns = '{http://www.w3.org/2005/Atom}'
-        for entry in root.findall(f'.//{ns}entry'):
-            t = entry.find(f'{ns}title')
-            d = entry.find(f'{ns}published') or entry.find(f'{ns}updated')
+        for entry in root.findall(f'.//{ATOM}entry'):
+            t = entry.find(f'{ATOM}title')
+            d = entry.find(f'{ATOM}published')
+            if d is None:
+                d = entry.find(f'{ATOM}updated')
+            body = entry.find(f'{ATOM}content')
+            if body is None:
+                body = entry.find(f'{ATOM}summary')
             if t is not None and (t.text or '').strip():
-                items.append((t.text.strip(), d.text if d is not None else ''))
+                items.append((t.text.strip(), d.text if d is not None else '',
+                              _wc(body.text if body is not None else '')))
     else:  # RSS
         for item in root.findall('.//item'):
             t = item.find('title')
             p = item.find('pubDate')
+            enc = item.find(f'{CONTENT_NS}encoded')
+            desc = item.find('description')
+            body = enc if enc is not None else desc
             if t is not None and (t.text or '').strip():
-                items.append((t.text.strip(), p.text if p is not None else ''))
+                items.append((t.text.strip(), p.text if p is not None else '',
+                              _wc(body.text if body is not None else '')))
     if not items:
-        return 0, '(başlık yok)', '', 0
-    # pencere içi (168s) madde sayısı: tarihsiz olanlar güvenli tarafta sayılır
-    within = 0
-    for _, rd in items:
+        return 0, '(başlık yok)', '', 0, 0, 0
+    within = rescue = 0
+    for _, rd, dwc in items:
         age = _age_days(rd)
         if age is None or age <= WINDOW_HOURS / 24.0:
             within += 1
-    return len(items), items[0][0][:60], items[0][1], within
+            if dwc >= DESC_FLOOR:
+                rescue += 1
+    return (len(items), items[0][0][:50], items[0][1], within,
+            items[0][2], rescue)
 
 
 def main():
@@ -114,14 +143,15 @@ def main():
                 blocked += 1
                 print(f'❌ [{code}] {label:30} {url}')
                 continue
-            n, newest, newest_date, within = parse_items(r.content)
+            n, newest, newest_date, within, desc_wc, rescue = parse_items(r.content)
             if n > 0:
                 ok += 1
                 age = _age_days(newest_date)
                 age_s = f'{age:.0f}g' if age is not None else 'tarih?'
-                flag = '' if within > 0 else '  ⛔ HEPSİ >7 GÜN (pencere eler → 0)'
-                print(f'✅ [200] {label:28} madde={n:<3} pencere-içi={within:<2} '
-                      f'en-yeni={age_s:>6} → {newest}{flag}')
+                flag = '' if within > 0 else '  ⛔ HEPSİ >7 GÜN'
+                print(f'✅ [200] {label:26} pencere-içi={within:<2} '
+                      f'desc-kelime(en-yeni)={desc_wc:<4} fallback-kurtarır={rescue:<2}'
+                      f'{flag}  → {newest}')
             elif n == 0:
                 empty += 1
                 print(f'⚠️  [200] {label:28} BOŞ (0 madde) — {url}')
