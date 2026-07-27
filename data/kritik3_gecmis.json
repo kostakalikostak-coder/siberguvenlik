@@ -1,28 +1,5 @@
 [
  {
-  "date": "2026-07-19",
-  "views": [
-   {
-    "tr_title": "Tayvanlı Bir Üreticinin Ağında Çin Bağlantılı Daxin Zararlı Yazılımının Tespit Edilmesi",
-    "paragraph": "Symantec araştırmacıları, Tayvan merkezli bir teknoloji üreticisinin ağında Çin bağlantılı siber tehdit aktörü Daxin'e ait bir kök dizin kitinin (rootkit) 13 yıldır aktif olduğunu tespit etmiştir. 2026 yılında yapılan incelemelerde, 2013 yılından bu yana fark edilmeyen Daxin zararlı yazılımının yanı sıra Stupig adlı yeni bir arka kapı yazılımına da rastlandığı belirtilmiştir. Daxin'in, internet bağlantısı olmayan güvenli ağlarda bile komuta kontrol trafiğini meşru TCP bağlantıları üzerinden gizleyerek sürdürdüğü ifade edilmiştir. Stupig yazılımının ise klavye düzeni sağlayıcısı kılığında Windo",
-    "title": "Daxin: 13-Year-Old China-Linked Malware Found Still Active on Manufacturer’s Network",
-    "full_text": "Daxin: 13-Year-Old China-Linked Malware Found Still Active on Manufacturer’s Network\n\nResearchers found China’s Daxin rootkit and a new Stupig backdoor on a Taiwan firm’s network, suggesting a stealthy intrusion dating back to 2013.\n\nSymantec’s Threat Hunter Team found Daxin running on a compromised host at a Taiwan-based subsidiary of a multinational high-tech manufacturer in 2026. Daxin is a Windows kernel-mode rootkit that Symantec first documented in March 2022, with evidence of use in targeted attacks against governments and critical infrastructure dating back to 2013.\n\n“Backdoor.Daxin, t"
-   },
-   {
-    "tr_title": "CISA'nın Fortinet ve Microsoft SharePoint Açıklarını İstismar Edilen Zafiyetler Kataloğuna Eklemesi",
-    "paragraph": "Amerika Birleşik Devletleri Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Fortinet FortiSandbox ve Microsoft SharePoint ürünlerinde tespit edilen kritik güvenlik açıklarını Bilinen İstismar Edilen Zafiyetler (KEV) kataloğuna eklemiştir. Microsoft SharePoint üzerinde bulunan CVE-2026-58644 kodlu zafiyetin, kimlik doğrulaması gerektirmeden uzaktan kod yürütülmesine olanak tanıdığı ve aktif olarak istismar edildiği bildirilmiştir. Fortinet FortiSandbox tarafında ise CVE-2026-25089 ve CVE-2026-39808 kodlu komut enjeksiyonu açıklarının, saldırganların yetkisiz kod çalıştırmasına imkan verdiği ",
-    "title": "U.S. CISA adds Fortinet FortiSandbox and Microsoft SharePoint flaws to its Known Exploited Vulnerabilities catalog",
-    "full_text": "U.S. CISA adds Fortinet FortiSandbox and Microsoft SharePoint flaws to its Known Exploited Vulnerabilities catalog\n\nU.S. Cybersecurity and Infrastructure Security Agency (CISA) adds Fortinet FortiSandbox and Microsoft SharePoint flaws to its Known Exploited Vulnerabilities catalog.\n\nThe U.S. Cybersecurity and Infrastructure Security Agency (CISA) added Fortinet FortiSandbox and Microsoft SharePoint flaws to its Known Exploited Vulnerabilities (KEV) catalog.\n\nCVE-2026-25089 (CVSS score of 9.8) Fortinet FortiSandbox OS Command Injection Vulnerability\n\nCVE-2026-39808 (CVSS score of 9.8) Fortinet "
-   },
-   {
-    "tr_title": "Microsoft'un Kurumsal Müşterileri Hedefleyen ACR Stealer Saldırılarına Karşı Uyarıda Bulunması",
-    "paragraph": "Microsoft, kurumsal müşterileri hedef alan ve tarayıcılarda kayıtlı parolalar ile kimlik doğrulama belirteçlerini çalan ACR Stealer zararlı yazılımındaki artışa dikkat çekmiştir. Nisan sonu ile Haziran ortası arasında gerçekleşen saldırılarda, siber tehdit aktörünün ClickFix sosyal mühendislik yöntemini ve WebDAV sunucularını kullandığı tespit edilmiştir. ACR Stealer zararlı yazılımının, Amatera Stealer yazılımının yeniden markalanmış bir sürümü olduğu ve hizmet olarak zararlı yazılım modeliyle işletildiği belirtilmektedir. Microsoft tarafından yapılan açıklamada, saldırganların meşru kaynakla",
-    "title": "Microsoft warns of surge in ACR Stealer attacks on customers",
-    "full_text": "Microsoft has observed a surge in attacks using the ACR Stealer malware to steal browser-stored passwords, authentication tokens, and sensitive documents from its enterprise customers.\n\nBetween late April and mid-June, the threat actor used the ClickFix social-engineering method, WebDAV servers, and the MSHTA (Microsoft HTML Application Host) utility to deliver the info-stealing payload.\n\nACR Stealer is a malware-as-a-service (MaaS) operation believed to be a rebranding of the Amatera Stealer malware.\n\nWhile there are multiple delivery methods for the malware, Microsoft highlights two intrusio"
-   }
-  ]
- },
- {
   "date": "2026-07-20",
   "views": [
    {
@@ -180,6 +157,29 @@
     "paragraph": "Chaos fidye yazılımı grubunun, komuta kontrol (C2) iletişimini doğrudan ağ üzerinden değil, tarayıcı hata ayıklama arayüzü aracılığıyla yürüten Rust tabanlı msaRAT adlı yeni bir uzaktan erişim truva atı kullandığı tespit edilmiştir. Söz konusu zararlı yazılımın, Chrome DevTools Protokolü (CDP) üzerinden tarayıcıyı manipüle ederek WebRTC veri kanalları oluşturduğu ve Cloudflare Workers altyapısını sinyalleşme amacıyla kullandığı belirtilmiştir. msaRAT'ın, Windows güncellemesi gibi görünerek sisteme sızdığı ve tarayıcıyı gizli modda başlatarak JavaScript kodları enjekte ettiği kaydedilmiştir. Bu",
     "title": "Chaos ransomware's msaRAT: Living off the browser to build a covert C2 channel",
     "full_text": "Chaos ransomware's msaRAT: Living off the browser to build a covert C2 channel\n\nCisco Talos has discovered a new Rust-based remote access trojan (RAT) we call “msaRAT” attributed to the Chaos ransomware group. The name is derived from the binding names found in the binary: “msaOpen,” “msaClose,” “msaError,” and “msaMessage”.\n\nmsaRAT is implemented using the Tokio asynchronous runtime, with primary capabilities of browser-leveraged remote code execution and covert tunneling to establish command-and-control (C2) communications.\n\nThis RAT never touches the network directly — it controls its C2 co"
+   }
+  ]
+ },
+ {
+  "date": "2026-07-27",
+  "views": [
+   {
+    "tr_title": "MCBS Veri İhlalinden Bir Milyondan Fazla Kişinin Etkilenmesi",
+    "paragraph": "Atlanta merkezli tıbbi işletme yönetimi şirketi MCBS, Eylül 2025 tarihinde gerçekleşen bir siber saldırı sonucunda 1,2 milyondan fazla kişinin verilerinin sızdırıldığını açıklamıştır. Yapılan incelemeler, saldırganların 22-26 Eylül tarihleri arasında sistemlere erişim sağladığını ve kişisel bilgileri içeren dosyaları ele geçirdiğini göstermiştir. Çalınan veriler arasında isim, adres, sosyal güvenlik numarası, doğum tarihi ve sağlık sigortası bilgilerinin bulunduğu belirtilmiştir. Fidye yazılımı çetesi PEAR, saldırının sorumluluğunu üstlenerek şirketten 3 terabayt boyutunda veri çaldığını iddia",
+    "title": "MCBS Data Breach Affects 1.2 Million Individuals",
+    "full_text": "MCBS Data Breach Affects 1.2 Million Individuals\n\nThe PEAR ransomware group claimed to have stolen 3 TB of information from the medical business management company.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nA data breach suffered last year by Atlanta-based medical business management company MCBS (Medical Computer Business Services) affects more than 1.2 million individuals.\nAccording to a data breach notification posted on its website, MCBS was targeted by hackers in September 2025. \n\n\n\nAn investigation showed that attackers had access to its systems between September 22 "
+   },
+   {
+    "tr_title": "SonicWall VPN Cihazlarındaki Sıfır Gün Açıklarının Aktif Olarak İstismar Edilmesi",
+    "paragraph": "Siber güvenlik firması Volexity, SonicWall SMA 1000 serisi VPN cihazlarını hedef alan ve UTA0533 olarak adlandırılan siber tehdit aktörünün faaliyetlerini raporlamıştır. Tehdit aktörünün, CVE-2026-15409 ve CVE-2026-15410 kodlu iki sıfır gün açığını birleştirerek cihazlar üzerinde en üst düzey yetki olan kök erişimi sağladığı belirtilmiştir. Saldırganların, ele geçirilen cihazlara ROOTRUN adlı bir ikili dosya ve kimlik bilgilerini çalmak için tasarlanmış KNUCKLEBALL adlı bir Python betiği yerleştirdiği tespit edilmiştir. SonicWall, söz konusu açıkların aktif olarak istismar edildiğini doğrulamı",
+    "title": "Volexity Uncovers Zero-Day Campaign Targeting SonicWall VPN Appliances",
+    "full_text": "Volexity Uncovers Zero-Day Campaign Targeting SonicWall VPN Appliances\n\nUnknown hackers exploited two SonicWall SMA 1000 zero-days to gain root access on VPN appliances before patches became available.\n\nVolexity published its findings after conducting an incident response investigation involving a compromised organization whose SonicWall SMA 1000 series VPN appliances were hit with zero-day exploits starting June 22, 2026. The threat actor, which Volexity tracks as UTA0533, chained two vulnerabilities, respectively tracked as CVE-2026-15409 (CVSS score of 10.0) and CVE-2026-15410 (CVSS score o"
+   },
+   {
+    "tr_title": "Otonom Yapay Zeka Ajanının Hugging Face Altyapısına Saldırı Düzenlemesi",
+    "paragraph": "Açık kaynaklı yapay zeka platformu Hugging Face, otonom bir yapay zeka ajanı tarafından üretim altyapısının bir bölümüne siber saldırı düzenlendiğini açıklamıştır. Şirket tarafından yapılan incelemede, saldırganın sınırlı sayıda dahili veri setine ve hizmet kimlik bilgilerine yetkisiz erişim sağladığı tespit edilmiştir. Saldırının, kötü amaçlı bir veri setinin kod yürütme açıklarını istismar ederek veri işleme hattındaki bir işçiyi ele geçirmesiyle başladığı belirtilmiştir. Otonom ajanın binlerce eylem gerçekleştirerek sistemler arasında yatayda hareket ettiği ve komuta kontrol merkezi için ka",
+    "title": "AI Agents Turned Into Attackers: Hugging Face Reveals Autonomous Intrusion Campaign",
+    "full_text": "AI Agents Turned Into Attackers: Hugging Face Reveals Autonomous Intrusion Campaign\n\nHugging Face says an autonomous AI agent breached part of its production infrastructure and accessed internal data and service credentials.\n\nHugging Face is one of the world’s leading open-source AI companies. It provides a platform where developers and organizations can build, share, and deploy machine learning and generative AI models.\n\nHugging Face disclosed that an autonomous AI agent breached part of its production infrastructure last week. The company detected the intrusion, contained it, and found unaut"
    }
   ]
  }

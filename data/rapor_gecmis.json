@@ -1,34 +1,5 @@
 [
  {
-  "date": "2026-07-19",
-  "views": [
-   {
-    "tr_title": "Tayvanlı Bir Üreticinin Ağında Çin Bağlantılı Daxin Zararlı Yazılımının Tespit Edilmesi",
-    "paragraph": "Symantec araştırmacıları, Tayvan merkezli bir teknoloji üreticisinin ağında Çin bağlantılı siber tehdit aktörü Daxin'e ait bir kök dizin kitinin (rootkit) 13 yıldır aktif olduğunu tespit etmiştir. 2026 yılında yapılan incelemelerde, 2013 yılından bu yana fark edilmeyen Daxin zararlı yazılımının yanı sıra Stupig adlı yeni bir arka kapı yazılımına da rastlandığı belirtilmiştir. Daxin'in, internet bağlantısı olmayan güvenli ağlarda bile komuta kontrol trafiğini meşru TCP bağlantıları üzerinden gizl",
-    "title": "Daxin: 13-Year-Old China-Linked Malware Found Still Active on Manufacturer’s Network",
-    "full_text": "Daxin: 13-Year-Old China-Linked Malware Found Still Active on Manufacturer’s Network\n\nResearchers found China’s Daxin rootkit and a new Stupig backdoor on a Taiwan firm’s network, suggesting a stealthy intrusion dating back to 2013.\n\nSymantec’s Threat Hunter Team found Daxin running on a compromised host at a Taiwan-based subsidiary of a multinational high-tech manufacturer in 2026. Daxin is a Win"
-   },
-   {
-    "tr_title": "CISA'nın Fortinet ve Microsoft SharePoint Açıklarını İstismar Edilen Zafiyetler Kataloğuna Eklemesi",
-    "paragraph": "Amerika Birleşik Devletleri Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Fortinet FortiSandbox ve Microsoft SharePoint ürünlerinde tespit edilen kritik güvenlik açıklarını Bilinen İstismar Edilen Zafiyetler (KEV) kataloğuna eklemiştir. Microsoft SharePoint üzerinde bulunan CVE-2026-58644 kodlu zafiyetin, kimlik doğrulaması gerektirmeden uzaktan kod yürütülmesine olanak tanıdığı ve aktif olarak istismar edildiği bildirilmiştir. Fortinet FortiSandbox tarafında ise CVE-2026-25089 ve CVE-2026-",
-    "title": "U.S. CISA adds Fortinet FortiSandbox and Microsoft SharePoint flaws to its Known Exploited Vulnerabilities catalog",
-    "full_text": "U.S. CISA adds Fortinet FortiSandbox and Microsoft SharePoint flaws to its Known Exploited Vulnerabilities catalog\n\nU.S. Cybersecurity and Infrastructure Security Agency (CISA) adds Fortinet FortiSandbox and Microsoft SharePoint flaws to its Known Exploited Vulnerabilities catalog.\n\nThe U.S. Cybersecurity and Infrastructure Security Agency (CISA) added Fortinet FortiSandbox and Microsoft SharePoin"
-   },
-   {
-    "tr_title": "Microsoft'un Kurumsal Müşterileri Hedefleyen ACR Stealer Saldırılarına Karşı Uyarıda Bulunması",
-    "paragraph": "Microsoft, kurumsal müşterileri hedef alan ve tarayıcılarda kayıtlı parolalar ile kimlik doğrulama belirteçlerini çalan ACR Stealer zararlı yazılımındaki artışa dikkat çekmiştir. Nisan sonu ile Haziran ortası arasında gerçekleşen saldırılarda, siber tehdit aktörünün ClickFix sosyal mühendislik yöntemini ve WebDAV sunucularını kullandığı tespit edilmiştir. ACR Stealer zararlı yazılımının, Amatera Stealer yazılımının yeniden markalanmış bir sürümü olduğu ve hizmet olarak zararlı yazılım modeliyle ",
-    "title": "Microsoft warns of surge in ACR Stealer attacks on customers",
-    "full_text": "Microsoft has observed a surge in attacks using the ACR Stealer malware to steal browser-stored passwords, authentication tokens, and sensitive documents from its enterprise customers.\n\nBetween late April and mid-June, the threat actor used the ClickFix social-engineering method, WebDAV servers, and the MSHTA (Microsoft HTML Application Host) utility to deliver the info-stealing payload.\n\nACR Stea"
-   },
-   {
-    "tr_title": "7-Zip Yazılımındaki Uzaktan Kod Çalıştırma Açığının Giderilmesi",
-    "paragraph": "Popüler arşivleme yazılımı 7-Zip'in geliştiricileri, saldırganların kötü amaçlı sıkıştırılmış dosyalar aracılığıyla sistemlerde kod çalıştırmasına olanak tanıyan bir güvenlik açığını gidermek amacıyla 26.02 sürümünü yayınlamıştır. Lunbun araştırmacısı Landon Peng tarafından tespit edilen bu zafiyetin, yazılımın XZ formatındaki verileri işleme sürecinden kaynaklandığı belirtilmiştir. Zero Day Initiative tarafından yapılan açıklamada, özel olarak hazırlanmış XZ verilerinin yığın tabanlı arabellek ",
-    "title": "Update now: 7-Zip fixes RCE flaw exploitable with malicious archives",
-    "full_text": "7-Zip version 26.02 was released to fix a remote code execution vulnerability that could allow attackers to execute malicious code by convincing users to open specially crafted compressed files.\n\nThe vulnerability, disclosed by Lunbun researcher Landon Peng, exists in 7-Zip's processing of XZ-compressed data.\n\nAccording to an advisory from the Zero Day Initiative, specially crafted XZ data can tri"
-   }
-  ]
- },
- {
   "date": "2026-07-20",
   "views": [
    {
@@ -582,6 +553,35 @@
     "paragraph": "Siber tehdit aktörlerinin, ShinyHunters grubu tarafından sızdırılan e-posta adreslerini kullanarak 2.000 dolar değerinde Bitcoin talep eden cinsel içerikli şantaj kampanyaları yürüttüğü tespit edilmiştir. BleepingComputer tarafından yapılan incelemede; Amtrak, Hallmark ve Panera Bread gibi kurumlara ait sızıntı verilerinin, tehditlerin meşruiyetini artırmak amacıyla kullanıldığı belirtilmiştir. E-postalarda, kurbanların cihazlarının ele geçirildiği ve kamera kayıtlarının alındığı iddia edilse de",
     "title": "ShinyHunters data leaks fuel $2,000 sextortion email scam",
     "full_text": "Threat actors are using email addresses exposed in data breaches leaked by the ShinyHunters extortion group to send sextortion emails demanding $2,000 in Bitcoin.\n\nThe emails claim to come from ShinyHunters and tell recipients that hackers compromised their devices after obtaining their email addresses from breached company databases.\n\nHowever, the messages appear to be sent by someone who downloa"
+   }
+  ]
+ },
+ {
+  "date": "2026-07-27",
+  "views": [
+   {
+    "tr_title": "MCBS Veri İhlalinden Bir Milyondan Fazla Kişinin Etkilenmesi",
+    "paragraph": "Atlanta merkezli tıbbi işletme yönetimi şirketi MCBS, Eylül 2025 tarihinde gerçekleşen bir siber saldırı sonucunda 1,2 milyondan fazla kişinin verilerinin sızdırıldığını açıklamıştır. Yapılan incelemeler, saldırganların 22-26 Eylül tarihleri arasında sistemlere erişim sağladığını ve kişisel bilgileri içeren dosyaları ele geçirdiğini göstermiştir. Çalınan veriler arasında isim, adres, sosyal güvenlik numarası, doğum tarihi ve sağlık sigortası bilgilerinin bulunduğu belirtilmiştir. Fidye yazılımı ",
+    "title": "MCBS Data Breach Affects 1.2 Million Individuals",
+    "full_text": "MCBS Data Breach Affects 1.2 Million Individuals\n\nThe PEAR ransomware group claimed to have stolen 3 TB of information from the medical business management company.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nA data breach suffered last year by Atlanta-based medical business management company MCBS (Medical Computer Business Services) affects more than 1.2 million individuals.\nA"
+   },
+   {
+    "tr_title": "SonicWall VPN Cihazlarındaki Sıfır Gün Açıklarının Aktif Olarak İstismar Edilmesi",
+    "paragraph": "Siber güvenlik firması Volexity, SonicWall SMA 1000 serisi VPN cihazlarını hedef alan ve UTA0533 olarak adlandırılan siber tehdit aktörünün faaliyetlerini raporlamıştır. Tehdit aktörünün, CVE-2026-15409 ve CVE-2026-15410 kodlu iki sıfır gün açığını birleştirerek cihazlar üzerinde en üst düzey yetki olan kök erişimi sağladığı belirtilmiştir. Saldırganların, ele geçirilen cihazlara ROOTRUN adlı bir ikili dosya ve kimlik bilgilerini çalmak için tasarlanmış KNUCKLEBALL adlı bir Python betiği yerleşt",
+    "title": "Volexity Uncovers Zero-Day Campaign Targeting SonicWall VPN Appliances",
+    "full_text": "Volexity Uncovers Zero-Day Campaign Targeting SonicWall VPN Appliances\n\nUnknown hackers exploited two SonicWall SMA 1000 zero-days to gain root access on VPN appliances before patches became available.\n\nVolexity published its findings after conducting an incident response investigation involving a compromised organization whose SonicWall SMA 1000 series VPN appliances were hit with zero-day exploi"
+   },
+   {
+    "tr_title": "Otonom Yapay Zeka Ajanının Hugging Face Altyapısına Saldırı Düzenlemesi",
+    "paragraph": "Açık kaynaklı yapay zeka platformu Hugging Face, otonom bir yapay zeka ajanı tarafından üretim altyapısının bir bölümüne siber saldırı düzenlendiğini açıklamıştır. Şirket tarafından yapılan incelemede, saldırganın sınırlı sayıda dahili veri setine ve hizmet kimlik bilgilerine yetkisiz erişim sağladığı tespit edilmiştir. Saldırının, kötü amaçlı bir veri setinin kod yürütme açıklarını istismar ederek veri işleme hattındaki bir işçiyi ele geçirmesiyle başladığı belirtilmiştir. Otonom ajanın binlerc",
+    "title": "AI Agents Turned Into Attackers: Hugging Face Reveals Autonomous Intrusion Campaign",
+    "full_text": "AI Agents Turned Into Attackers: Hugging Face Reveals Autonomous Intrusion Campaign\n\nHugging Face says an autonomous AI agent breached part of its production infrastructure and accessed internal data and service credentials.\n\nHugging Face is one of the world’s leading open-source AI companies. It provides a platform where developers and organizations can build, share, and deploy machine learning a"
+   },
+   {
+    "tr_title": "WordPress Sitelerinde Uzaktan Kod Yürütülmesine İzin Veren Açıkların Tespit Edilmesi",
+    "paragraph": "WordPress çekirdek sisteminde, saldırganların kimlik doğrulaması yapmadan uzaktan kod yürütmesine olanak tanıyan iki kritik güvenlik açığı tespit edilmiştir. CVE-2026-63030 ve CVE-2026-60137 olarak tanımlanan bu açıkların, wp2shell olarak adlandırılan bir saldırı zinciriyle birleştirilebildiği belirtilmiştir. Searchlight Cyber araştırmacıları tarafından keşfedilen hataların, WordPress 6.9 ve 7.0 sürümlerini etkilediği ve herhangi bir eklenti gerektirmeksizin varsayılan kurulumlarda istismar edil",
+    "title": "Attackers Can Take Over WordPress Sites Using Newly Released wp2shell Exploits",
+    "full_text": "Attackers Can Take Over WordPress Sites Using Newly Released wp2shell Exploits\n\nPublic exploits are now available for two critical WordPress flaws that attackers can chain to gain remote code execution without authentication.\n\nPublic proof-of-concept exploits are now available for the critical wp2shell vulnerabilities affecting WordPress Core. The flaws, tracked as CVE-2026-63030 and CVE-2026-6013"
    }
   ]
  }

@@ -28434,3 +28434,15 @@ Siber tehdit aktörlerinin, ShinyHunters grubu tarafından sızdırılan e-posta
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 27 JULY 2026 - EN ÖNEMLİ 43 HABER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] WordPress Sitelerinde Uzaktan Kod Yürütülmesine İzin Veren Açıkların Tespit Edilmesi
+─────────────────────────────────────────────────────────
+WordPress çekirdek sisteminde, saldırganların kimlik doğrulaması yapmadan uzaktan kod yürütmesine olanak tanıyan iki kritik güvenlik açığı tespit edilmiştir. CVE-2026-63030 ve CVE-2026-60137 olarak tanımlanan bu açıkların, wp2shell olarak adlandırılan bir saldırı zinciriyle birleştirilebildiği belirtilmiştir. Searchlight Cyber araştırmacıları tarafından keşfedilen hataların, WordPress 6.9 ve 7.0 sürümlerini etkilediği ve herhangi bir eklenti gerektirmeksizin varsayılan kurulumlarda istismar edilebildiği bildirilmiştir. WordPress ekibi, durumun ciddiyeti nedeniyle etkilenen sürümler için otomatik güvenlik güncellemelerini zorunlu olarak etkinleştirmiştir. Site yöneticilerine, sistemlerini derhal 7.0.2 veya 6.9.5 sürümlerine güncellemeleri tavsiye edilmiştir. Güncelleme yapılamayan durumlarda, REST API toplu işlem uç noktasına anonim erişimin engellenmesi gibi geçici önlemlerin alınabileceği ifade edilmiştir. Dünya genelinde 500 milyondan fazla web sitesinin bu risk altında olduğu kaydedilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 26.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
