@@ -38,7 +38,7 @@ from src.config import (
     REPORT_HISTORY_FILE, REPORT_HISTORY_DAYS,
     ENABLE_LLM_CROSS_DAY_DEDUP, CROSS_DAY_DEDUP_WINDOW_DAYS,
     SCORING_LOG_FILE, SCORING_LOG_MAX_LINES,
-    SOCIAL_SIGNAL_CONFIG, SKIP_URL_PATTERNS,
+    SOCIAL_SIGNAL_CONFIG, SKIP_URL_PATTERNS, FEED_SUMMARY_MIN_WORDS,
     get_ranking_prompt, get_deep_analysis_prompt, get_summary_batch_prompt,
     get_top3_selection_prompt, get_top3_verification_prompt,
     get_legacy_json_prompt, get_quality_review_prompt, get_dedup_review_prompt,
@@ -1716,6 +1716,39 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 parts.append(t)
         return '\n\n'.join(parts)
 
+    def _feed_summary_fallback(self, art):
+        """Makale sayfasından tam metin çıkmadıysa, RSS/Atom feed'inin kendi gövdesine
+        (content:encoded / content / description) düş.
+
+        Neden: bazı kaynaklar (Microsoft Security, Bellingcat, The Cyber Express,
+        Citizen Lab ...) tam makale gövdesini feed'de gönderir ama makale sayfası
+        JS-render/seçici-uyumsuzluğu nedeniyle kazınamaz → save_txt bunları
+        `success=False` diye eler ve kaynak "sessiz" görünür.
+
+        Halüsinasyon koruması KORUNUR: yalnızca feed gövdesi FEED_SUMMARY_MIN_WORDS
+        (=100) kelime ve üzeriyse kabul edilir; ince özetler eskisi gibi elenir —
+        metinler 100 kelime altına DÜŞMEZ."""
+        html = (art.get('feed_html') or art.get('description') or '').strip()
+        if not html:
+            return
+        try:
+            soup = BeautifulSoup(html, 'html.parser')
+        except Exception:
+            return
+        text = self._extract(soup)
+        wc = len(text.split())
+        if wc < FEED_SUMMARY_MIN_WORDS:
+            # <p> yoksa (düz metin/<br> ile gelen feed) _extract boş/az döner — ham metne düş
+            plain = soup.get_text(separator='\n').strip()
+            if len(plain.split()) > wc:
+                text, wc = plain, len(plain.split())
+        if wc >= FEED_SUMMARY_MIN_WORDS:
+            text = text.replace('\t', ' ').replace('\r', '')
+            art.update({'full_text': text, 'word_count': wc,
+                        'success': True, 'from_feed_summary': True})
+            if not art.get('domain'):
+                art['domain'] = urlparse(art.get('link', '')).netloc.replace('www.', '')
+
     def _crawl_newsletter_links(self, newsletter_urls, source_name):
         """
         Newsletter/digest sayfasındaki iç makale linklerini çıkarır ve
@@ -1861,11 +1894,17 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                         raise parse_err
 
                 if root.tag.endswith('feed'):  # Atom
-                    for entry in root.findall('.//{http://www.w3.org/2005/Atom}entry')[:40]:
-                        t = entry.find('{http://www.w3.org/2005/Atom}title')
-                        l = entry.find('{http://www.w3.org/2005/Atom}link')
-                        s = entry.find('{http://www.w3.org/2005/Atom}summary')
-                        d = entry.find('{http://www.w3.org/2005/Atom}published')
+                    ATOM = '{http://www.w3.org/2005/Atom}'
+                    for entry in root.findall(f'.//{ATOM}entry')[:40]:
+                        t = entry.find(f'{ATOM}title')
+                        l = entry.find(f'{ATOM}link')
+                        s = entry.find(f'{ATOM}summary')
+                        d = entry.find(f'{ATOM}published')
+                        # Tam gövde çoğu Atom feed'inde <content>'te; <summary> sadece
+                        # özet. feed_html en zengin olanı taşır (feed-özet fallback için).
+                        c = entry.find(f'{ATOM}content')
+                        feed_html = (c.text if c is not None and c.text else
+                                     (s.text if s is not None else '')) or ''
                         # Boş <title></title> → t.text=None; sonraki title.lower()
                         # çağrıları AttributeError ile tüm koşuyu düşürür — atla.
                         if t is not None and (t.text or '').strip():
@@ -1873,21 +1912,29 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                                 'title': t.text.strip(),
                                 'link': (l.get('href') or '') if l is not None else '',
                                 'description': (s.text or '') if s is not None else '',
+                                'feed_html': feed_html,
                                 'date': d.text if d is not None else '',
                                 'source': source_name
                             })
                 else:  # RSS
+                    CONTENT_NS = '{http://purl.org/rss/1.0/modules/content/}'
                     for item in root.findall('.//item')[:40]:
                         t = item.find('title')
                         l = item.find('link')
                         d = item.find('description')
                         p = item.find('pubDate')
+                        # Tam gövde çoğu WordPress feed'inde <content:encoded>'da;
+                        # <description> sadece özet olabilir. feed_html en zengini taşır.
+                        enc = item.find(f'{CONTENT_NS}encoded')
+                        feed_html = (enc.text if enc is not None and enc.text else
+                                     (d.text if d is not None else '')) or ''
                         # Aynı boş-başlık koruması (RSS dalı).
                         if t is not None and (t.text or '').strip():
                             result_holder['articles'].append({
                                 'title': t.text.strip(),
                                 'link': (l.text or '') if l is not None else '',
                                 'description': (d.text or '') if d is not None else '',
+                                'feed_html': feed_html,
                                 'date': p.text if p is not None else '',
                                 'source': source_name
                             })
@@ -2372,8 +2419,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                         print(f"      [{i}/{len(articles)}]", end=' ', flush=True)
                         res = self.fetch_full_article(art['link'], src)
                         art.update(res)
-                        if res['success']:
+                        # Makale sayfası kazınamadıysa feed'in kendi gövdesine düş
+                        # (≥100 kelimeyse). Aksi halde bu haber save_txt'te elenirdi.
+                        if not art.get('success'):
+                            self._feed_summary_fallback(art)
+                        if art.get('success'):
                             full_text_success += 1
+                            if art.get('from_feed_summary'):
+                                print(f"→ feed özeti ({art.get('word_count')})", flush=True)
                         time.sleep(0.5)
                     elif art.get('success'):
                         full_text_success += 1
@@ -2431,9 +2484,11 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     skipped_no_content += 1
                     continue
                 num += 1
+                kaynak_etiketi = (" | KAYNAK: feed özeti"
+                                  if art.get('from_feed_summary') else "")
                 txt += f"[{num}] {src} - {art['title']}\n{'─' * 80}\n"
                 txt += f"Tarih: {art['date']}\nLink: {art['link']}\n"
-                txt += f"\n[TAM METİN - {art['word_count']} kelime]\n{art['full_text']}\n"
+                txt += f"\n[TAM METİN - {art['word_count']} kelime{kaynak_etiketi}]\n{art['full_text']}\n"
                 art_date = _parse_article_date(art.get('date', ''), now)
                 txt += f"\n(XXXXXXX, AÇIK - {art.get('link', '')}, {art.get('domain', '')}, {art_date})\n\n{'=' * 80}\n\n"
 

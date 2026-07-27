@@ -1264,6 +1264,11 @@ SKIP_URL_PATTERNS = [
 
 # Scraping ayarları
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+
+# Feed-özet fallback tabanı: makale sayfası kazınamayınca RSS/Atom gövdesine düşerken
+# kabul edilecek minimum kelime. Tam-metin başarı eşiğiyle (fetch_full_article wc>100)
+# tutarlı — ince özetler yine elenir, rapor metinleri 100 kelime altına düşmez.
+FEED_SUMMARY_MIN_WORDS = 100
 CONTENT_SELECTORS = {
     'The Hacker News': [{'class': 'articlebody'}],
     'BleepingComputer': [{'class': 'articleBody'}],
