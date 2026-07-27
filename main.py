@@ -38,7 +38,7 @@ from src.config import (
     REPORT_HISTORY_FILE, REPORT_HISTORY_DAYS,
     ENABLE_LLM_CROSS_DAY_DEDUP, CROSS_DAY_DEDUP_WINDOW_DAYS,
     SCORING_LOG_FILE, SCORING_LOG_MAX_LINES,
-    SOCIAL_SIGNAL_CONFIG, SKIP_URL_PATTERNS, FEED_SUMMARY_MIN_WORDS,
+    SOCIAL_SIGNAL_CONFIG, SKIP_URL_PATTERNS, FEED_SUMMARY_MIN_WORDS, ARTICLE_PROXY,
     get_ranking_prompt, get_deep_analysis_prompt, get_summary_batch_prompt,
     get_top3_selection_prompt, get_top3_verification_prompt,
     get_legacy_json_prompt, get_quality_review_prompt, get_dedup_review_prompt,
@@ -1749,6 +1749,36 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             if not art.get('domain'):
                 art['domain'] = urlparse(art.get('link', '')).netloc.replace('www.', '')
 
+    def _article_proxy_fallback(self, art, source_name):
+        """Son çare: makale gövdesi doğrudan kazınamadı VE feed-özeti de yetersizse,
+        makaleyi temiz-IP okuyucu servisinden (ARTICLE_PROXY, ör. Jina Reader) çek.
+
+        IP-engelli/JS-render/anti-bot makale sayfalarında işe yarar (proxy_probe
+        2026-07-27: DFIR makalesi doğrudan 50 kelime → Jina 7038). Yalnızca doğrudan
+        + feed-özet başarısız olan AZ sayıda makalede tetiklenir; sağlıklı kaynaklar
+        buraya hiç düşmez. Halüsinasyon koruması korunur (>= FEED_SUMMARY_MIN_WORDS)."""
+        if not ARTICLE_PROXY or not art.get('link'):
+            return
+        url = ARTICLE_PROXY.replace('{url}', art['link'])
+        try:
+            r = _requests_get_with_retry(url, headers=self.headers, timeout=(5, 20))
+            if r.status_code != 200:
+                return
+            text = r.text or ''
+            # Jina markdown çıktısı başında meta ("Title:/URL Source:/Markdown Content:")
+            # bulundurur — gövdeyi "Markdown Content:" sonrasından al.
+            if 'Markdown Content:' in text:
+                text = text.split('Markdown Content:', 1)[1]
+            text = text.replace('\t', ' ').replace('\r', '').strip()
+            wc = len(text.split())
+            if wc >= FEED_SUMMARY_MIN_WORDS:
+                art.update({'full_text': text[:20000], 'word_count': min(wc, 3000),
+                            'success': True, 'from_article_proxy': True})
+                if not art.get('domain'):
+                    art['domain'] = urlparse(art.get('link', '')).netloc.replace('www.', '')
+        except Exception:
+            pass
+
     def _crawl_newsletter_links(self, newsletter_urls, source_name):
         """
         Newsletter/digest sayfasındaki iç makale linklerini çıkarır ve
@@ -2423,10 +2453,15 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                         # (≥100 kelimeyse). Aksi halde bu haber save_txt'te elenirdi.
                         if not art.get('success'):
                             self._feed_summary_fallback(art)
+                        # O da yetmezse: temiz-IP okuyucu proxy'si (Jina) son çare.
+                        if not art.get('success'):
+                            self._article_proxy_fallback(art, src)
                         if art.get('success'):
                             full_text_success += 1
                             if art.get('from_feed_summary'):
                                 print(f"→ feed özeti ({art.get('word_count')})", flush=True)
+                            elif art.get('from_article_proxy'):
+                                print(f"→ proxy/jina ({art.get('word_count')})", flush=True)
                         time.sleep(0.5)
                     elif art.get('success'):
                         full_text_success += 1
@@ -2484,8 +2519,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     skipped_no_content += 1
                     continue
                 num += 1
-                kaynak_etiketi = (" | KAYNAK: feed özeti"
-                                  if art.get('from_feed_summary') else "")
+                kaynak_etiketi = (" | KAYNAK: feed özeti" if art.get('from_feed_summary')
+                                  else " | KAYNAK: proxy okuyucu" if art.get('from_article_proxy')
+                                  else "")
                 txt += f"[{num}] {src} - {art['title']}\n{'─' * 80}\n"
                 txt += f"Tarih: {art['date']}\nLink: {art['link']}\n"
                 txt += f"\n[TAM METİN - {art['word_count']} kelime{kaynak_etiketi}]\n{art['full_text']}\n"

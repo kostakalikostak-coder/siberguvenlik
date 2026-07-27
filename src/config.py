@@ -1169,7 +1169,8 @@ NEWS_SOURCES = {
     # 'Threatpost': 'https://threatpost.com/feed/',  # Yıllardır ölü — 2022'den beri yayın yok, site erişilemez durumda
     'Security Affairs': 'https://securityaffairs.com/feed',
     'Graham Cluley': 'https://grahamcluley.com/feed/',
-    # 'SANS ISC': 'https://isc.sans.edu/rssfeed.xml',  # isc.sans.edu tüm domain GitHub Actions IP'lerini engelliyor (2026-06'dan beri HTTP 200 + HTML/boş içerik → XML parse hatası)
+    'SANS ISC': 'https://isc.sans.edu/rssfeed.xml',  # 2026-06 engellemesi kalkmış: proxy_probe (2026-07-27, üretim IP'si) doğrudan 200 + 10 madde döndürdü → yeniden aktif
+
     'Recorded Future': 'https://www.recordedfuture.com/feed',
     'Cyberscoop': 'https://cyberscoop.com/feed/',
     'The Register': 'https://www.theregister.com/security/cyber_crime/headlines.atom',
@@ -1183,9 +1184,9 @@ NEWS_SOURCES = {
     'The Record': 'https://therecord.media/feed/',
     'Talos Intelligence': 'https://blog.talosintelligence.com/rss/',  # Ghost CMS — eski feeds/all.atom.xml 2026-06 itibarıyla 404
     'Unit 42': 'https://unit42.paloaltonetworks.com/feed/',
-    # 'Sophos News': 'https://news.sophos.com/en-us/feed/',  # Sophos CDN GitHub Actions IP'lerini engelliyor (2026-06'dan beri Timeout)
+    # 'Sophos News': 'https://news.sophos.com/en-us/feed/',  # Sophos CDN GH Actions IP'lerine timeout; proxy_probe (2026-07-27): direct timeout + allorigins/codetabs/corsproxy/thingproxy hepsi başarısız → hiçbir yolla çekilemiyor, kapalı
     # Devlet siber güvenlik kurumları — joint advisory ve APT atıfları için yüksek stratejik değer
-    # 'CISA': 'https://www.cisa.gov/cybersecurity-advisories/all.xml',  # cisa.gov tüm domain GitHub Actions IP'lerini engelliyor (2026-06-18'den beri kalıcı HTTP 403)
+    # 'CISA': 'https://www.cisa.gov/cybersecurity-advisories/all.xml',  # cisa.gov GH Actions IP'lerine kalıcı 403; proxy_probe (2026-07-27): direct 403 + allorigins/codetabs/corsproxy/thingproxy hepsi başarısız → hiçbir yolla çekilemiyor, kapalı
     'NCSC UK': 'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml',
     'CERT-EU': 'https://cert.europa.eu/publications/security-advisories-rss',
     # Stratejik / jeopolitik / istihbari odaklı kaynaklar (kullanıcı tarafından doğrulandı 2026-06)
@@ -1269,6 +1270,13 @@ HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 # kabul edilecek minimum kelime. Tam-metin başarı eşiğiyle (fetch_full_article wc>100)
 # tutarlı — ince özetler yine elenir, rapor metinleri 100 kelime altına düşmez.
 FEED_SUMMARY_MIN_WORDS = 100
+
+# Makale-gövdesi proxy fallback: doğrudan kazıma VE feed-özeti başarısız olunca,
+# makaleyi temiz-IP okuyucu servisinden çeker. {url} = makale linki (olduğu gibi).
+# Jina Reader sayfayı temiz metne çevirir (proxy_probe 2026-07-27: DFIR makalesi
+# doğrudan 50 kelime → Jina 7038 kelime). Boş string → devre dışı.
+# NOT: yalnızca doğrudan+feed-özet başarısız olan AZ sayıda makalede tetiklenir.
+ARTICLE_PROXY = 'https://r.jina.ai/{url}'
 CONTENT_SELECTORS = {
     'The Hacker News': [{'class': 'articlebody'}],
     'BleepingComputer': [{'class': 'articleBody'}],
