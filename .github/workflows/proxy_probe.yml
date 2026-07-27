@@ -1,0 +1,19 @@
+name: Proxy Keşfi (teşhis)
+
+# Elle tetiklenen teşhis: IP-engelli kaynakları (CISA, SANS ISC, Sophos) temiz-IP
+# proxy'siyle çekmeyi ve DFIR makale gövdesini gerçek runner IP'sinde ölçer.
+# Rapor üretmez, commit'lemez. Çalıştır: Actions → "Proxy Keşfi (teşhis)" → Run.
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4
+      - run: python -u scripts/proxy_probe.py
