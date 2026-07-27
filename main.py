@@ -26,6 +26,36 @@ _TR_TZ = ZoneInfo("Europe/Istanbul")
 
 def _now_tr():
     return datetime.now(_TR_TZ).replace(tzinfo=None)
+
+
+def _atomic_write(path, text, encoding='utf-8'):
+    """Dosyayı ATOMİK yaz: geçici dosyaya yaz → fsync → os.replace ile taşı.
+
+    Neden: workflow'un 25 dakikalık sınırı doğrudan open(...,'w') yazımının
+    ORTASINDA işi öldürebilir; yarım kalan dosya bir sonraki adımda commit'lenir
+    ve kalıcı bozulur. En riskli dosya data/haberler_arsiv.txt (7.7 MB, 7 aylık
+    geçmiş) — ama rapor HTML'i ve linkler dosyası da aynı riski taşır.
+    os.replace() POSIX'te atomiktir: ya eski ya yeni içerik görünür, yarısı asla.
+
+    Geçici dosya AYNI dizine yazılır (os.replace dosya sistemleri arasında
+    çalışmaz). Hata durumunda geçici dosya temizlenir ve istisna yükseltilir —
+    çağıranların mevcut try/except'leri devrede kalsın."""
+    d = os.path.dirname(path) or '.'
+    os.makedirs(d, exist_ok=True)
+    tmp = os.path.join(d, f".{os.path.basename(path)}.tmp")
+    try:
+        with open(tmp, 'w', encoding=encoding) as f:
+            f.write(text)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, path)
+    except Exception:
+        try:
+            if os.path.exists(tmp):
+                os.remove(tmp)
+        except OSError:
+            pass
+        raise
 from difflib import SequenceMatcher
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
@@ -2138,8 +2168,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         os.makedirs("data", exist_ok=True)
         try:
-            with open(self.used_links_file, 'w', encoding='utf-8') as f:
-                f.write('\n'.join(existing) + '\n')
+            _atomic_write(self.used_links_file, '\n'.join(existing) + '\n')
         except IOError as e:
             print(f"   ❌ Hata: Linkler dosyasına yazılamadı - {e}")
 
@@ -2574,8 +2603,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     txt += f"{art['full_text'][:200]}\n"
                 txt += f"\n"
 
-        with open("data/haberler_ham.txt", 'w', encoding='utf-8') as f:
-            f.write(txt)
+        _atomic_write("data/haberler_ham.txt", txt)
 
         print(f"✅ data/haberler_ham.txt (günlük - üzerine yazıldı)")
 
@@ -4345,10 +4373,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         html_archive = self._add_archive_links(html, is_archive=True)
 
         os.makedirs("docs/raporlar", exist_ok=True)
-        with open("docs/index.html", 'w', encoding='utf-8') as f:
-            f.write(html_index)
-        with open(f"docs/raporlar/{now.strftime('%Y-%m-%d')}.html", 'w', encoding='utf-8') as f:
-            f.write(html_archive)
+        _atomic_write("docs/index.html", html_index)
+        _atomic_write(f"docs/raporlar/{now.strftime('%Y-%m-%d')}.html", html_archive)
 
         print("✅ docs/index.html")
         print(f"✅ docs/raporlar/{now.strftime('%Y-%m-%d')}.html")
@@ -4704,10 +4730,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         html_archive = self._add_archive_links(html, is_archive=True)
 
         os.makedirs("docs/raporlar", exist_ok=True)
-        with open("docs/index.html", 'w', encoding='utf-8') as f:
-            f.write(html_index)
-        with open(f"docs/raporlar/{now.strftime('%Y-%m-%d')}.html", 'w', encoding='utf-8') as f:
-            f.write(html_archive)
+        _atomic_write("docs/index.html", html_index)
+        _atomic_write(f"docs/raporlar/{now.strftime('%Y-%m-%d')}.html", html_archive)
 
         print("✅ docs/index.html (legacy)")
         print(f"✅ docs/raporlar/{now.strftime('%Y-%m-%d')}.html (legacy)")
@@ -5084,10 +5108,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         html = html.replace('</body>', '<!-- RAPOR_DURUM: FALLBACK -->\n</body>', 1)
 
         os.makedirs("docs/raporlar", exist_ok=True)
-        with open("docs/index.html", 'w', encoding='utf-8') as f:
-            f.write(html)
-        with open(f"docs/raporlar/{now.strftime('%Y-%m-%d')}.html", 'w', encoding='utf-8') as f:
-            f.write(html)
+        _atomic_write("docs/index.html", html)
+        _atomic_write(f"docs/raporlar/{now.strftime('%Y-%m-%d')}.html", html)
 
         print("✅ Fallback HTML oluşturuldu (yeni format, ham içerik)")
         return html
@@ -5156,8 +5178,7 @@ def _reset_today_state():
             with open(links_path, encoding='utf-8') as f:
                 lines = f.readlines()
             kept = [ln for ln in lines if not ln.startswith(f"{today_str}\t")]
-            with open(links_path, 'w', encoding='utf-8') as f:
-                f.writelines(kept)
+            _atomic_write(links_path, ''.join(kept))
             print(f"   ✂️  linkler: {len(lines) - len(kept)} bugün satırı çıkarıldı "
                   f"(eski günler korundu)")
         except IOError as e:
@@ -5176,8 +5197,7 @@ def _reset_today_state():
                 nxt = content.find(f"\n{sep}\n📅 ", start + len(marker))
                 end = nxt if nxt != -1 else len(content)
                 content = content[:start] + content[end:]
-                with open(ARCHIVE_FILE, 'w', encoding='utf-8') as f:
-                    f.write(content)
+                _atomic_write(ARCHIVE_FILE, content)
                 print(f"   ✂️  arşiv: bugünün bloğu çıkarıldı ({today_header})")
             else:
                 print("   ℹ️  arşivde bugünün bloğu yok — atlandı")

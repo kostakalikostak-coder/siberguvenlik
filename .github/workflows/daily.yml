@@ -74,10 +74,31 @@ jobs:
           RESET_TODAY: ${{ github.event.inputs.reset_today }}
         run: python -u main.py
 
-      - run: |
+      # Push'u yeniden denemeli yap: konteyner ephemeral olduğundan tek bir geçici
+      # ağ hatası/rakip push, o koşunun TÜM çıktısını (rapor + LLM maliyeti)
+      # çöpe atardı; sonraki slot her şeyi baştan üretirdi. Her denemede base
+      # tazelenir (rebase), sonra push denenir. Hepsi başarısızsa adım HATA verir
+      # (sessiz yutma yok) ki Actions'ta görünür olsun.
+      - name: Commit ve push (retry'li)
+        run: |
+          set -e
           git config user.name "Bot"
           git config user.email "bot@github.com"
           git add data/ docs/
-          git diff-index --quiet HEAD || git commit -m "📰 $(TZ='Europe/Istanbul' date +'%Y-%m-%d')"
-          git pull --rebase origin main || git pull origin main
-          git push
+          if git diff-index --quiet HEAD; then
+            echo "Değişiklik yok — commit/push atlanıyor."
+            exit 0
+          fi
+          git commit -m "📰 $(TZ='Europe/Istanbul' date +'%Y-%m-%d')"
+          for i in 1 2 3; do
+            git pull --rebase origin main || git pull --no-rebase origin main || true
+            if git push origin HEAD:main; then
+              echo "✅ Push başarılı (deneme $i)."
+              exit 0
+            fi
+            wait=$((2 ** i))
+            echo "⚠️  Push başarısız (deneme $i/3) — ${wait}s sonra tekrar."
+            sleep "$wait"
+          done
+          echo "❌ Push 3 denemede de başarısız."
+          exit 1
