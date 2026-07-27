@@ -1,0 +1,20 @@
+name: Feed Testi (teşhis)
+
+# Elle tetiklenen teşhis: kronik-sessiz kaynakların mevcut + aday feed URL'lerini
+# GERÇEK runner IP'sinden (üretimle aynı) test eder. Rapor üretmez, hiçbir şey
+# commit'lemez — sadece log'a "çekiyor mu çekmiyor mu" tablosu basar.
+# Çalıştır: Actions sekmesi → "Feed Testi (teşhis)" → Run workflow.
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - run: python -u scripts/feed_test.py
