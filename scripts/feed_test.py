@@ -23,21 +23,15 @@ HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 # 13 günde HİÇ üretmeyen aktif kaynakların MEVCUT config URL'leri +
 # WebSearch ile bulunan ADAY alternatifler. label başına test edilir.
 TARGETS = {
-    # --- Kronik sessiz kaynaklar: mevcut config URL'leri ---
-    'CrowdStrike (mevcut)':        'https://www.crowdstrike.com/blog/feed/',
-    'CrowdStrike (aday /en-us/)':  'https://www.crowdstrike.com/en-us/blog/feed/',
-    'Microsoft Security (mevcut)': 'https://www.microsoft.com/en-us/security/blog/feed/',
-    'NIST (mevcut)':               'https://www.nist.gov/news-events/news/rss.xml',
-    'ANSSI CERT-FR (mevcut)':      'https://www.cert.ssi.gouv.fr/feed/',
-    'CERT-EU (mevcut)':            'https://cert.europa.eu/publications/security-advisories-rss',
-    'The Cyber Express (mevcut)':  'https://www.thecyberexpress.com/feed/',
-    'Bellingcat (mevcut)':         'https://www.bellingcat.com/feed/',
-    'Citizen Lab (mevcut)':        'https://citizenlab.ca/feed/',
-    'The DFIR Report (mevcut)':    'https://thedfirreport.com/feed/',
-    'IranWire (mevcut)':           'https://iranwire.com/en/feed/',
+    # --- Help Net Security: mevcut URL "Exceeded 30 redirects" veriyor; çalışan
+    #     varyantı bulmak için aday URL'ler (label başına test edilir) ---
+    'HelpNet (mevcut /feed)':     'https://www.helpnetsecurity.com/feed',
+    'HelpNet (/feed/ slash)':     'https://www.helpnetsecurity.com/feed/',
+    'HelpNet (category/news)':    'https://www.helpnetsecurity.com/category/news/feed/',
+    'HelpNet (feedburner)':       'https://feeds.feedburner.com/HelpNetSecurity',
+    'HelpNet (comments hariç)':   'https://www.helpnetsecurity.com/feed/?withoutcomments=1',
     # --- Kıyas için istikrarlı çalışan bir kaynak (kontrol grubu) ---
     'BleepingComputer (kontrol)':  'https://www.bleepingcomputer.com/feed/',
-    'The Hacker News (kontrol)':   'https://feeds.feedburner.com/TheHackersNews',
 }
 
 
@@ -139,9 +133,10 @@ def main():
         try:
             r = requests.get(url, headers=HEADERS, timeout=(5, 10))
             code = r.status_code
+            redir = f' [{len(r.history)} redirect → {r.url}]' if r.history else ''
             if code != 200:
                 blocked += 1
-                print(f'❌ [{code}] {label:30} {url}')
+                print(f'❌ [{code}] {label:30} {url}{redir}')
                 continue
             n, newest, newest_date, within, desc_wc, rescue = parse_items(r.content)
             if n > 0:
@@ -149,9 +144,8 @@ def main():
                 age = _age_days(newest_date)
                 age_s = f'{age:.0f}g' if age is not None else 'tarih?'
                 flag = '' if within > 0 else '  ⛔ HEPSİ >7 GÜN'
-                print(f'✅ [200] {label:26} pencere-içi={within:<2} '
-                      f'desc-kelime(en-yeni)={desc_wc:<4} fallback-kurtarır={rescue:<2}'
-                      f'{flag}  → {newest}')
+                print(f'✅ [200] {label:26} madde={n:<3} pencere-içi={within:<2} '
+                      f'en-yeni={age_s:>5}{redir}  → {newest}')
             elif n == 0:
                 empty += 1
                 print(f'⚠️  [200] {label:28} BOŞ (0 madde) — {url}')
