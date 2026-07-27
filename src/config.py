@@ -1287,8 +1287,14 @@ CONTENT_SELECTORS = {
     'Citizen Lab': [{'class': 'entry-content'}, {'class': 'post-content'}],
     'Securelist (Kaspersky)': [{'class': 'entry-content'}, {'class': 'js-reading-content'}],
     'The DFIR Report': [{'class': 'entry-content'}, {'class': 'post-content'}],
-    'CrowdStrike': [{'class': 'entry-content'}, {'class': 'article-body'}, {'class': 'post-content'}],
+    # CrowdStrike AEM tabanlı — gövde `cmp-text` bileşeninde (selector_probe ile
+    # doğrulandı: cmp-text=919 kelime; eski entry-content/article-body/post-content
+    # hepsi 0 veriyordu → makaleler save_txt'te eleniyordu).
+    'CrowdStrike': [{'class': 'cmp-text'}, {'class': 'entry-content'}, {'class': 'article-body'}],
     'ANSSI (CERT-FR)': [{'class': 'article-content'}, {'class': 'content'}],
+    # NIST Drupal — gövde `nist-page__content`'te (selector_probe: 498 kelime;
+    # seçici yokken generic fallback yalnızca 48 kelime çıkarıp haberi eliyordu).
+    'NIST': [{'class': 'nist-page__content'}],
 }
 
 
