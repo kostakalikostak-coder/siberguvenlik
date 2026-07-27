@@ -1179,7 +1179,7 @@ NEWS_SOURCES = {
     # Yeni eklenen kaynaklar
     'Dark Reading': 'https://www.darkreading.com/rss.xml',
     'SecurityWeek': 'https://feeds.feedburner.com/securityweek',
-    'Help Net Security': 'https://www.helpnetsecurity.com/feed',
+    'Help Net Security': 'https://www.helpnetsecurity.com/feed/',  # slash'sız URL redirect döngüsüne girip "Exceeded 30 redirects" veriyordu; kanonik /feed/ 0 redirect (feed_test ile doğrulandı)
     'The Record': 'https://therecord.media/feed/',
     'Talos Intelligence': 'https://blog.talosintelligence.com/rss/',  # Ghost CMS — eski feeds/all.atom.xml 2026-06 itibarıyla 404
     'Unit 42': 'https://unit42.paloaltonetworks.com/feed/',

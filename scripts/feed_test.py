@@ -22,16 +22,17 @@ HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 
 # 13 günde HİÇ üretmeyen aktif kaynakların MEVCUT config URL'leri +
 # WebSearch ile bulunan ADAY alternatifler. label başına test edilir.
+# Genel teşhis hedefleri: bir kaynak sorunlu görününce buraya MEVCUT config URL'i +
+# ADAY alternatifleri yaz, workflow'u çalıştır, çıktıdan çalışan varyantı seç.
+# (Örnek geçmiş: Help Net "Exceeded 30 redirects" → /feed/ ile çözüldü.)
 TARGETS = {
-    # --- Help Net Security: mevcut URL "Exceeded 30 redirects" veriyor; çalışan
-    #     varyantı bulmak için aday URL'ler (label başına test edilir) ---
-    'HelpNet (mevcut /feed)':     'https://www.helpnetsecurity.com/feed',
-    'HelpNet (/feed/ slash)':     'https://www.helpnetsecurity.com/feed/',
-    'HelpNet (category/news)':    'https://www.helpnetsecurity.com/category/news/feed/',
-    'HelpNet (feedburner)':       'https://feeds.feedburner.com/HelpNetSecurity',
-    'HelpNet (comments hariç)':   'https://www.helpnetsecurity.com/feed/?withoutcomments=1',
-    # --- Kıyas için istikrarlı çalışan bir kaynak (kontrol grubu) ---
-    'BleepingComputer (kontrol)':  'https://www.bleepingcomputer.com/feed/',
+    'The Hacker News':    'https://feeds.feedburner.com/TheHackersNews',
+    'BleepingComputer':   'https://www.bleepingcomputer.com/feed/',
+    'Help Net Security':  'https://www.helpnetsecurity.com/feed/',
+    'CrowdStrike':        'https://www.crowdstrike.com/en-us/blog/feed/',
+    'Microsoft Security': 'https://www.microsoft.com/en-us/security/blog/feed/',
+    'NIST':               'https://www.nist.gov/news-events/news/rss.xml',
+    'The Cyber Express':  'https://www.thecyberexpress.com/feed/',
 }
 
 
