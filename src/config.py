@@ -1173,7 +1173,12 @@ NEWS_SOURCES = {
 
     'Recorded Future': 'https://www.recordedfuture.com/feed',
     'Cyberscoop': 'https://cyberscoop.com/feed/',
-    'The Register': 'https://www.theregister.com/security/cyber_crime/headlines.atom',
+    # cyber_crime etiketi AŞIRI DAR: feed_test (2026-07-28, üretim IP'si) eski URL'de
+    # 7 günlük pencerede yalnızca 1 haber gösterdi (en yeni 4 gün önce) — bu yüzden
+    # kaynak 15 günde toplam 4 haber verebilmişti. /security/ aynı anda 28 pencere-içi
+    # haber döndürüyor (en yeni 0 gün). Kök headlines.atom ise güvenlik dışı içerik de
+    # getirdiğinden seçilmedi.
+    'The Register': 'https://www.theregister.com/security/headlines.atom',
     'TechCrunch Security': 'https://techcrunch.com/category/security/feed/',
     'CSO Online': 'https://www.csoonline.com/feed/',
     'Infoblox Blog': 'https://blogs.infoblox.com/feed/',

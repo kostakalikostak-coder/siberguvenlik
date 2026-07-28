@@ -1962,7 +1962,16 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         def _fetch_rss():
             try:
-                r = _requests_get_with_retry(url, headers=self.headers, timeout=(3, 5))
+                # 403'ü de yeniden dene: WAF/anti-bot katmanları ara sıra tek bir
+                # isteğe 403 döndürüyor (The Register 2026-07-28: üretimde 403,
+                # dakikalar sonra aynı IP'den 200 + 50 madde). Feed kaybı o kaynağın
+                # TÜM günlük haberlerini düşürdüğü için yeniden deneme değerli;
+                # maliyet sınırlı (kaynak başına en fazla ~7s, 36 kaynak).
+                # NOT: yalnızca RSS çekiminde — makale gövdesi çekiminde (yüzlerce
+                # istek) varsayılan davranış korunur ki koşu süresi şişmesin.
+                r = _requests_get_with_retry(
+                    url, headers=self.headers, timeout=(3, 5),
+                    retry_statuses=(503, 502, 504, 429, 403))
                 if r.status_code != 200:
                     result_holder['error'] = Exception(f"HTTP {r.status_code}")
                     return
