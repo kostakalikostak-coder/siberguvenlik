@@ -26,13 +26,16 @@ HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 # ADAY alternatifleri yaz, workflow'u çalıştır, çıktıdan çalışan varyantı seç.
 # (Örnek geçmiş: Help Net "Exceeded 30 redirects" → /feed/ ile çözüldü.)
 TARGETS = {
-    'The Hacker News':    'https://feeds.feedburner.com/TheHackersNews',
-    'BleepingComputer':   'https://www.bleepingcomputer.com/feed/',
-    'Help Net Security':  'https://www.helpnetsecurity.com/feed/',
-    'CrowdStrike':        'https://www.crowdstrike.com/en-us/blog/feed/',
-    'Microsoft Security': 'https://www.microsoft.com/en-us/security/blog/feed/',
-    'NIST':               'https://www.nist.gov/news-events/news/rss.xml',
-    'The Cyber Express':  'https://www.thecyberexpress.com/feed/',
+    # --- The Register: 2026-07-28 üretiminde HTTP 403 verdi (önceden çalışıyordu).
+    #     Geçici mi kalıcı mı + çalışan varyant var mı, üretim IP'sinde ölçülüyor.
+    'TheReg (mevcut cyber_crime)': 'https://www.theregister.com/security/cyber_crime/headlines.atom',
+    'TheReg (security)':           'https://www.theregister.com/security/headlines.atom',
+    'TheReg (kök headlines)':      'https://www.theregister.com/headlines.atom',
+    'TheReg (offsite RSS)':        'https://www.theregister.com/security/cyber_crime/headlines.rss',
+    'TheReg (feed yolu)':          'https://www.theregister.com/security/feed/',
+    # --- Kontrol grubu (çalıştığı bilinen kaynaklar) ---
+    'BleepingComputer (kontrol)':  'https://www.bleepingcomputer.com/feed/',
+    'Help Net Security (kontrol)': 'https://www.helpnetsecurity.com/feed/',
 }
 
 
