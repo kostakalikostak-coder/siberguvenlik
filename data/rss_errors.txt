@@ -1,3 +1,4 @@
 2026-07-26 12:07 | TABAN UYARISI - rapor 7 haber (<10)
 2026-07-27 12:08 | TABAN UYARISI - rapor 2 haber (<10)
 2026-07-27 15:58 | RSS hatası - Help Net Security: Exceeded 30 redirects.
+2026-07-28 12:06 | RSS hatası - The Register: HTTP 403

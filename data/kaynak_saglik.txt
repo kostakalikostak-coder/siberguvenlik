@@ -1,31 +1,32 @@
-# KAYNAK SAĞLIK RAPORU — 2026-07-27 15:58
-# aktif=35  üretiyor=32  boş(200/0)=0  hata/timeout=1
+# KAYNAK SAĞLIK RAPORU — 2026-07-28 12:06
+# aktif=36  üretiyor=33  boş(200/0)=0  hata/timeout=1
 # KAYNAK                      HAM  KALAN  DURUM
+Security Affairs             10     41  OK
 The Hacker News              40     40  OK
-Security Affairs             10     37  OK
-ANSSI (CERT-FR)              40     35  OK
-Dark Reading                 40     24  OK
+ANSSI (CERT-FR)              40     34  OK
+Dark Reading                 40     22  OK
 CSO Online                   20     20  OK
 BleepingComputer             15     15  OK
-TechCrunch Security          20     13  OK
+TechCrunch Security          20     12  OK
 Cyberscoop                   10     10  OK
+Help Net Security            10     10  OK
+SANS ISC                     10     10  OK
 SecurityWeek                 10     10  OK
 The Cyber Express            10      9  OK
 Industrial Cyber              9      9  OK
 Schneier on Security         10      6  OK
 The Record                    5      5  OK
+Microsoft Security           10      4  OK
 Proofpoint Threat Insight    10      4  OK
 Recorded Future              40      3  OK
-The Register                 40      3  OK
 Graham Cluley                20      3  OK
+NCSC UK                      20      3  OK
 Talos Intelligence           15      3  OK
 CrowdStrike                  10      3  OK
-NCSC UK                      20      2  OK
+BSI                          40      2  OK
 Infoblox Blog                12      2  OK
-Microsoft Security           10      2  OK
 Securelist (Kaspersky)       10      2  OK
 SentinelOne Labs             10      2  OK
-BSI                          40      1  OK
 NIST                         40      1  OK
 Mandiant (Google Cloud)      20      1  OK
 Unit 42                      15      1  OK
@@ -35,4 +36,4 @@ Citizen Lab                  10      1  OK
 Krebs on Security            10      1  OK
 IranWire                     40      0  OK
 The DFIR Report              10      0  OK
-Help Net Security             0      0  HATA: Exceeded 30 redirects.
+The Register                  0      0  HATA: HTTP 403

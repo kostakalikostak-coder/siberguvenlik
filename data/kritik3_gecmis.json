@@ -1,28 +1,5 @@
 [
  {
-  "date": "2026-07-20",
-  "views": [
-   {
-    "tr_title": "Siber Tehdit Aktörü UTA0533'ün SonicWall Cihazlarındaki Sıfır Gün Açıklarını İstismar Etmesi",
-    "paragraph": "Siber güvenlik şirketi Volexity, UTA0533 olarak adlandırılan ve henüz belgelenmemiş bir siber tehdit aktörünün, SonicWall SMA 1000 serisi VPN cihazlarındaki sıfır gün açıklarını istismar ettiğini bildirmiştir. 22 Haziran 2026 tarihinden itibaren gerçekleşen saldırılarda, CVE-2026-15409 ve CVE-2026-15410 kodlu güvenlik açıklarının cihazlarda tam kontrol sağlamak amacıyla kullanıldığı tespit edilmiştir. Tehdit aktörünün, hedef alınan cihazlara ROOTRUN ve ORANGETAIL gibi zararlı yazılımlar yerleştirerek kök erişim yetkisi kazandığı ve ağ trafiğini izlediği belirtilmiştir. SonicWall'un söz konusu ",
-    "title": "SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access",
-    "full_text": "A previously undocumented threat actor has been attributed to the exploitation of recently disclosed SonicWall Secure Mobile Access (SMA) 1000 series VPN appliances as zero-days prior their public disclosure since June 22, 2026.\n\nCybersecurity company Volexity is tracking the activity under the moniker UTA0533. The discovery was made following an incident response investigation earlier this month. The impacted organization has not been identified.\n\n\"This threat actor was observed using multiple zero-day exploits, malware designed specifically for SonicWall SMA VPN appliances, as well as other "
-   },
-   {
-    "tr_title": "Ryuk Fidye Yazılımı Grubu Üyesinin ABD Kuruluşlarına Yönelik Saldırılardan Suçlu Bulunması",
-    "paragraph": "Ermenistan vatandaşı Karen Serobovich Vardanyan, 2019 ve 2020 yılları arasında ABD merkezli şirketlere yönelik düzenlenen Ryuk fidye yazılımı saldırılarındaki rolü nedeniyle suçunu kabul etmiştir. Ukrayna'da yakalandıktan sonra 2025 yılında ABD'ye iade edilen 34 yaşındaki sanığın, kurumsal ağlara ilk erişimi sağlayarak fidye yazılımının yüzlerce sunucuya yayılmasına aracılık ettiği belirtilmiştir. ABD Adalet Bakanlığı, söz konusu saldırı grubunun Michigan, Oregon ve Teksas'taki kurumlar dahil olmak üzere mağdurlardan toplamda 1.610 Bitcoin elde ettiğini açıklamıştır. Ryuk fidye yazılımı çetesi",
-    "title": "Ryuk Ransomware Member Pleads Guilty Over Attacks on U.S. Organizations",
-    "full_text": "Ryuk Ransomware Member Pleads Guilty Over Attacks on U.S. Organizations\n\nAn alleged Ryuk ransomware member pleaded guilty in the U.S. for helping deploy attacks on American companies and faces up to 15 years in prison.\n\nArmenian national Karen Serobovich Vardanyan (34) pleaded guilty in the U.S. for his role in Ryuk ransomware attacks targeting American organizations between 2019 and 2020. Extradited from Ukraine after his 2025 arrest, he admitted providing initial access to corporate networks that enabled ransomware deployment.\n\n“An Armenian national extradited from Ukraine to the United Stat"
-   },
-   {
-    "tr_title": "Hugging Face Platformunun Otonom Yapay Zeka Aracısı Tarafından Hacklenmesi",
-    "paragraph": "Açık kaynaklı yapay zeka platformu Hugging Face, üretim altyapısının otonom bir yapay zeka aracısı tarafından hedef alındığını ve bazı dahili veri setleri ile hizmet kimlik bilgilerine yetkisiz erişim sağlandığını açıklamıştır. Saldırının, veri işleme hattındaki kod yürütme açıklarını kullanan kötü amaçlı bir veri setiyle başladığı ve binlerce bireysel eylemi gerçekleştiren otonom bir çerçeve tarafından yürütüldüğü belirtilmiştir. Şirket, kamuya açık modellerin veya kullanıcı verilerinin tahrif edildiğine dair bir kanıt bulunmadığını, etkilenen düğümlerin yeniden oluşturulduğunu ve kimlik bilg",
-    "title": "World's Largest AI Model Repository Hugging Face Breached by Autonomous AI Agent",
-    "full_text": "In an ironic twist, open-source artificial intelligence (AI) platform Hugging Face revealed that it was the victim of a hack perpetrated by an autonomous AI agent system.\n\nThe company said it detected and responded to the incident targeting its production infrastructure earlier last week.\n\n\"We identified unauthorized access to a limited set of internal datasets and to several credentials used by our services,\" the company said in a statement.\n\nWhile an investigation into the intrusion remains ongoing, Hugging Face said it has found no evidence that the AI agent tampered with public, user-facin"
-   }
-  ]
- },
- {
   "date": "2026-07-21",
   "views": [
    {
@@ -180,6 +157,29 @@
     "paragraph": "Amerika Birleşik Devletleri merkezli diş ve göz sağlığı sigorta yöneticisi DentaQuest, sistemlerine yönelik gerçekleşen bir siber saldırı sonucunda milyonlarca kişinin hassas verilerinin çalındığını duyurmuştur. 2026 yılının Mayıs ayında gerçekleşen ihlalde, saldırganların ağa erişim sağlayarak isim, adres, Sosyal Güvenlik numarası ve tıbbi tedavi detayları gibi bilgileri ele geçirdiği belirtilmiştir. HIPAA Journal verilerine göre olaydan 23,4 milyondan fazla kişinin etkilenmiş olabileceği, şirketin ise en az 15 milyon kişinin etkilendiğini teyit ettiği bildirilmiştir. Saldırının sorumluluğunu",
     "title": "DentaQuest Data Breach Potentially Impacts Over 23 Million People",
     "full_text": "DentaQuest Data Breach Potentially Impacts Over 23 Million People\n\nIn May 2026, hackers stole personal and dental health information from DentaQuest’s computer network.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nDental and vision benefits administrator DentaQuest is notifying millions of people that their personal and dental health information might have been stolen in a data breach.\nThe incident was discovered on May 20, and DentaQuest’s investigation determined that the hackers had access to the organization’s network between May 17 and May 20.\n\n\n\nDuring the timeframe, th"
+   }
+  ]
+ },
+ {
+  "date": "2026-07-28",
+  "views": [
+   {
+    "tr_title": "Rusya'nın Askerî Casusluk İçin Güvenliği İhlal Edilmiş IP Kameraları Kullanması",
+    "paragraph": "Hollanda istihbarat servisleri AIVD ve MIVD tarafından yayımlanan ortak raporda, Rusya bağlantılı bir siber tehdit aktörünün NATO askerî lojistiğini ve Ukrayna'ya yönelik silah sevkiyatlarını izlemek amacıyla IP kameraları sistematik olarak hedef aldığı bildirilmiştir. 2026-07-28 tarihi itibarıyla devam ettiği belirtilen operasyon kapsamında, Hollanda, Avrupa Birliği ve NATO üyesi ülkeler ile Ukrayna'daki internete bağlı kameraların güvenliğinin ihlal edildiği kaydedilmiştir. Rusya menşeli aktörün, görüntü tanıma yazılımları kullanarak askerî araçları ve kargoları tespit ettiği, elde edilen bi",
+    "title": "Dutch Intelligence Warns Russia Uses Hacked IP Cameras for Military Espionage",
+    "full_text": "Dutch Intelligence Warns Russia Uses Hacked IP Cameras for Military Espionage\n\nDutch intelligence says Russia hacks IP cameras to monitor NATO military logistics and weapons shipments to Ukraine.\n\nThe Netherlands’ AIVD and MIVD, the civilian and military intelligence services, published a joint advisory on July 10 confirming that at least one Russian intelligence service is systematically compromising internet-connected IP cameras across the Netherlands, other EU and NATO member states, and Ukraine to collect military intelligence.\n\nThe operation is ongoing. The advisory is based on intelligen"
+   },
+   {
+    "tr_title": "Mirage Kitten Grubunun Orta Doğu ve Afrika'yı Yeni Zararlı Yazılımlarla Hedeflemesi",
+    "paragraph": "Siber tehdit aktörü Mirage Kitten'ın, Orta Doğu ve Afrika bölgelerindeki havacılık, savunma ve telekomünikasyon sektörlerine yönelik yeni bir zararlı yazılım seti geliştirdiği tespit edilmiştir. Kaspersky tarafından yayımlanan rapora göre, söz konusu set içerisinde NightLedger adlı bir arka kapı ile ArcBridge ve BridgeHead isimli WebSocket tabanlı tünelleme araçları yer almaktadır. Tehdit aktörünün, Mısır ve Pakistan'daki kuruluşları hedef alan kimlik avı kampanyalarında sahte işe alım portalları ve video konferans sayfalarını kullandığı belirtilmiştir. NightLedger yazılımının ekran görüntüsü ",
+    "title": "Mirage Kitten targets Middle East and Africa region with new malware",
+    "full_text": "Mirage Kitten – also known as UNC1549, Smoke Sandstorm, and Nimbus Manticore – is an advanced persistent threat (APT) group focused on cyber-espionage operations against aerospace, aviation, defense, and telecommunications sectors across the Middle East and Europe, using highly targeted spear-phishing campaigns, fake recruitment portals, and custom multi-stage malware to gain persistent access and exfiltrate sensitive data.\n\nDuring recent threat research, we identified a previously undocumented malware set developed and used by Mirage Kitten. The toolset includes NightLedger, a new Windows bac"
+   },
+   {
+    "tr_title": "Arista VeloCloud Orchestrator Yazılımındaki Komut Enjeksiyonu Açığının İstismar Edilmesi",
+    "paragraph": "Arista VeloCloud Orchestrator (VCO) yazılımının yerel sürümlerinde bulunan ve CVE-2026-16812 koduyla takip edilen kritik bir güvenlik açığının aktif olarak istismar edildiği bildirilmiştir. Arista tarafından yapılan açıklamada, 10.0 tam puanlık ciddiyet seviyesine sahip olan bu işletim sistemi komut enjeksiyonu açığının, saldırganların uzak ağlardan yetkili iç işlevlere erişmesine ve rastgele kod yürütmesine olanak tanıdığı belirtilmiştir. ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), söz konusu açığı Bilinen İstismar Edilen Zafiyetler kataloğuna ekleyerek federal kurumlara 30 Temmuz ",
+    "title": "Attackers Exploit Arista VeloCloud Orchestrator Command Injection Flaw",
+    "full_text": "A maximum-severity security flaw impacting on-premises versions of Arista VeloCloud Orchestrator (VCO) has come under active exploitation in the wild.\n\nThe vulnerability, tracked as CVE-2026-16812 (CVSS score: 10.0), is a case of operating system command injection that could pave the way for arbitrary code execution.\n\n\"VeloCloud Orchestrator (VCO) on-prem has a security issue where this issue may allow a remote attacker to access privileged internal functionality and impact the VCO host,\" Arista said in a Monday advisory.\n\n\"Successful exploitation may compromise the confidentiality, integrity,"
    }
   ]
  }
