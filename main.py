@@ -2651,6 +2651,73 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             return False
         return any(sig in blob for sig in self._CYBER_SIGNALS)
 
+    # ── DEVLET/APT ATIF SİNYALLERİ ────────────────────────────────────────
+    # `zafiyet_aktif_apt` kategorisi HEM aktif istismar HEM devlet/APT atfı
+    # gerektirir (bkz. config.py skorlama/critique promptları). LLM pratikte
+    # "actively exploited" ifadesini tek başına yeterli sayıp atıf şartını
+    # atlıyor; bu sabitler o şartı KOD tarafında deterministik doğrular.
+    #
+    # DIŞARIDA BIRAKILANLAR (bilinçli): 'threat actor', 'espionage', 'hacker'
+    # gibi genel terimler — sıradan suç aktörleri için de kullanıldığından atıf
+    # kanıtı sayılamaz (2026-07-28 verisiyle doğrulandı).
+    _STATE_ATTRIBUTION_TERMS = re.compile(
+        r'apt[\s-]?\d+'
+        r'|nation[\s-]state|state[\s-]sponsored|state[\s-]backed'
+        r'|government[\s-]backed|attributed\s+to'
+        r'|lazarus|sandworm|kimsuky|turla|fancy\s+bear|cozy\s+bear'
+        r'|mustang\s+panda|volt\s+typhoon|salt\s+typhoon|bluenoroff'
+        r'|charming\s+kitten|mirage\s+kitten|equation\s+group',
+        re.I)
+
+    # Ülke sıfatı + aktör ismi YAKINLIĞI (≤60 karakter, iki yönde). Yalın ülke
+    # sıfatı tek başına yetmez: "Chinese enterprise software" (kütüphanenin nerede
+    # yaygın olduğu) atıf DEĞİLDİR — yakınlık kuralı bunu eler.
+    _ATTR_NEAR = re.compile(
+        r'(chinese|russian|iranian|north[\s-]?korean|dprk|israeli|pakistani)'
+        r'.{0,60}?'
+        r'(hacker|actor|group|apt|state|government|intelligence|military|nexus|spy)'
+        r'|(hacker|actor|group|apt|state|government|intelligence|military|nexus|spy)'
+        r'.{0,60}?'
+        r'(chinese|russian|iranian|north[\s-]?korean|dprk|israeli|pakistani)',
+        re.I | re.S)
+
+    def _has_state_attribution(self, *texts):
+        """Metinde devlet/APT atfı var mı? (zafiyet_aktif_apt'ın ikinci şartı)"""
+        blob = ' '.join(t for t in texts if t)
+        if not blob:
+            return False
+        return bool(self._STATE_ATTRIBUTION_TERMS.search(blob)
+                    or self._ATTR_NEAR.search(blob))
+
+    def _enforce_apt_attribution(self, records, articles_by_id):
+        """`zafiyet_aktif_apt` etiketini deterministik olarak DOĞRULAR.
+
+        Metinde devlet/APT atfı yoksa kategoriyi `zafiyet_rutin`e indirir; böylece
+        haber kritik3'e giremez (KRITIK3_HARIC_KATEGORILER). Critique ajanı bu
+        denetimi zaten yapmalı ama kaçırabiliyor (2026-07-28: Arista CVE haberi
+        "no details on ... who is behind them" dediği hâlde kritik3'e girdi).
+
+        Puanı DEĞİŞTİRMEZ (toplam = s+e+a+k; kategori yalnızca urun_icerik/
+        siber_disi'de sıfırlar) — tek etkisi kritik3 uygunluğudur. Yani yanlış bir
+        indirme haber kaybı değil, sadece "manşete çıkmadı" demektir.
+
+        Dönüş: indirilen id'lerin kümesi (log/denetim için)."""
+        downgraded = set()
+        for aid, rec in records.items():
+            if rec.get('kat') != 'zafiyet_aktif_apt':
+                continue
+            a = articles_by_id.get(aid, {})
+            if self._has_state_attribution(a.get('full_text', ''), a.get('title', '')):
+                continue
+            rec['kat'] = 'zafiyet_rutin'
+            rec['toplam'] = self._record_total(rec)
+            downgraded.add(aid)
+            print(f"   🛡️  ID {aid}: devlet/APT atfı bulunamadı → "
+                  f"zafiyet_aktif_apt → zafiyet_rutin (kritik3 dışı)")
+        if downgraded:
+            print(f"   🛡️  Atıf kontrolü: {len(downgraded)} haber zafiyet_rutin'e indirildi.")
+        return downgraded
+
     def _cyber_text_for(self, art_id, content_by_id, articles_by_id):
         """Bir haber için siber-sinyal taraması yapılacak birleşik metni döndürür."""
         c = content_by_id.get(art_id, {})
@@ -3820,7 +3887,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         return top3_ids[:3]
 
     def _write_scoring_log(self, articles, records, top10_ids, remaining_ids,
-                           top3_ids, critique_changed):
+                           top3_ids, critique_changed, attr_downgraded=()):
         """Kalibrasyon/denetim log'u — her haber için bir JSONL satırı yazar.
         Rubrik ağırlıklarını gerçek raporlarla ayarlamak için: kategori/puan/
         yerleşim + Critique düzeltti mi. İşlevsel değil; hata olursa sessiz geçer.
@@ -3854,6 +3921,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     'a': rec.get('a'), 'k': rec.get('k'),
                     'toplam':   rec.get('toplam'),
                     'critique': 1 if aid in critique_changed else 0,
+                    # 1 = deterministik atıf kontrolü zafiyet_aktif_apt'ı indirdi
+                    'attr_guard': 1 if aid in attr_downgraded else 0,
                     'critique_neden': (critique_changed.get(aid, '')
                                        if isinstance(critique_changed, dict) else ''),
                     'yerlesim': yerlesim,
@@ -3934,6 +4003,12 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         print("\n🧐 Pass 1b — Critique (bağımsız uzman denetimi)...")
         critique_changed = self._critique_scores(
             score_records, articles_by_id, recent_events)
+
+        # Critique'ten SONRA son söz: `zafiyet_aktif_apt` etiketinin ikinci şartı
+        # (devlet/APT atfı) metinde gerçekten var mı — deterministik doğrulama.
+        # Critique bu denetimi yapmalı ama kaçırabiliyor; guard hak edilmemiş
+        # etiketle rutin bir CVE'nin kritik3'e (manşete) çıkmasını engeller.
+        attr_downgraded = self._enforce_apt_attribution(score_records, articles_by_id)
 
         print("\n📐 Pass 1c — Deterministik sıralama...")
         top10_ids, remaining_ids, filtered_list, category_by_id = \
@@ -4023,7 +4098,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         # Kalibrasyon/denetim log'u — kategori/puan/yerleşim + Critique izi.
         self._write_scoring_log(articles, score_records, top10_ids,
-                                remaining_ids, top3_ids, critique_changed)
+                                remaining_ids, top3_ids, critique_changed,
+                                attr_downgraded=attr_downgraded)
 
         # ════════════════════════════════════════════════════════════════
         # PASS 5 — KALİTE KONTROL (boş/İngilizce/kriter dışı/kopya)
