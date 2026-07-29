@@ -21,6 +21,7 @@ Gerekli ortam değişkenleri (Vercel — manual_add ile AYNI değişkenler yeter
 import os
 import json
 import hmac
+import time
 from http.server import BaseHTTPRequestHandler
 
 import requests
@@ -38,6 +39,40 @@ CORS_HEADERS = {
 }
 
 
+# ── Kaba-kuvvet yavaşlatma ────────────────────────────────────────────────
+# Uç nokta şifreyle korunuyor ama deneme sınırı YOKTU: CORS "*" olduğu için
+# şifre sınırsız ve paralel denenebiliyordu. Başarılı olan saldırgan yayımlanan
+# rapora içerik yazabilir veya sınırsız workflow tetikleyip LLM maliyeti
+# üretebilirdi.
+#
+# DÜRÜST SINIR: Vercel serverless durumsuzdur; bu sayaç yalnızca SICAK örneğin
+# belleğinde yaşar ve örnekler arasında paylaşılmaz. Yani kesin bir kilit değil,
+# maliyeti yükselten bir yavaşlatmadır. Asıl koruma, yanlış şifrede uygulanan
+# sabit gecikmedir: dağıtık denemede bile her deneme en az _FAIL_DELAY_SEC
+# sürer, bu da saniyede binlerce deneme yapılmasını engeller.
+_ATTEMPTS = {}
+_WINDOW_SEC = 300        # 5 dakikalık pencere
+_MAX_ATTEMPTS = 8        # pencere başına en fazla başarısız deneme
+_FAIL_DELAY_SEC = 1.0    # yanlış şifrede sabit gecikme
+
+
+def client_ip(headers):
+    """Vercel proxy arkasındaki gerçek istemci IP'si."""
+    fwd = (headers.get("x-forwarded-for") or "").split(",")[0].strip()
+    return fwd or (headers.get("x-real-ip") or "bilinmeyen").strip()
+
+
+def too_many_attempts(ip):
+    now = time.time()
+    hist = [t for t in _ATTEMPTS.get(ip, []) if now - t < _WINDOW_SEC]
+    _ATTEMPTS[ip] = hist
+    return len(hist) >= _MAX_ATTEMPTS
+
+
+def record_failure(ip):
+    _ATTEMPTS.setdefault(ip, []).append(time.time())
+
+
 def password_ok(given, expected):
     """Sabit-zamanlı şifre karşılaştırması (ASCII-dışı ve tip-güvenli).
 
@@ -52,8 +87,12 @@ def password_ok(given, expected):
     return hmac.compare_digest(given.encode("utf-8"), expected.encode("utf-8"))
 
 
-def process(payload):
+def process(payload, ip="bilinmeyen"):
     """POST gövdesini işler → (http_code, result_dict) döndürür."""
+    if too_many_attempts(ip):
+        return 429, {"ok": False, "error": "Çok fazla hatalı deneme. "
+                     "Lütfen birkaç dakika sonra tekrar deneyin."}
+
     raw_pw = payload.get("password")
     password = raw_pw.strip() if isinstance(raw_pw, str) else ""
     if not password:
@@ -63,6 +102,8 @@ def process(payload):
     if not expected:
         return 500, {"ok": False, "error": "Sunucuda MANUAL_ADD_PASSWORD tanımlı değil."}
     if not password_ok(password, expected):
+        record_failure(ip)
+        time.sleep(_FAIL_DELAY_SEC)   # kaba kuvvet hızını düşür
         return 403, {"ok": False, "error": "Şifre yanlış."}
 
     token = os.getenv("GH_TOKEN", "")
@@ -136,7 +177,7 @@ class handler(BaseHTTPRequestHandler):
             self._send(400, {"ok": False, "error": "Geçersiz istek gövdesi."})
             return
         try:
-            code, result = process(payload)
+            code, result = process(payload, client_ip(self.headers))
         except Exception as e:
             code, result = 500, {"ok": False, "error": f"Beklenmeyen hata: {str(e)[:200]}"}
         self._send(code, result)

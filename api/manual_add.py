@@ -28,6 +28,7 @@ import sys
 import json
 import base64
 import hmac
+import time
 import socket
 import ipaddress
 from datetime import datetime
@@ -802,7 +803,34 @@ def gh_commit_files(files, token, message):
 # ─────────────────────────────────────────────────────────────────────────────
 # Çekirdek iş akışı
 # ─────────────────────────────────────────────────────────────────────────────
-def process(payload):
+# ── Kaba-kuvvet yavaşlatma (gerekçe: api/reset_regenerate.py'deki aynı blok) ──
+# Vercel durumsuz olduğu için sayaç yalnızca sıcak örnekte yaşar; kesin kilit
+# değil, maliyeti yükselten yavaşlatmadır. Asıl koruma yanlış şifredeki sabit
+# gecikmedir. Bu uç nokta yayımlanan rapora İÇERİK YAZDIĞI için korumasız
+# bırakılamaz.
+_ATTEMPTS = {}
+_WINDOW_SEC = 300
+_MAX_ATTEMPTS = 8
+_FAIL_DELAY_SEC = 1.0
+
+
+def client_ip(headers):
+    fwd = (headers.get("x-forwarded-for") or "").split(",")[0].strip()
+    return fwd or (headers.get("x-real-ip") or "bilinmeyen").strip()
+
+
+def too_many_attempts(ip):
+    now = time.time()
+    hist = [t for t in _ATTEMPTS.get(ip, []) if now - t < _WINDOW_SEC]
+    _ATTEMPTS[ip] = hist
+    return len(hist) >= _MAX_ATTEMPTS
+
+
+def record_failure(ip):
+    _ATTEMPTS.setdefault(ip, []).append(time.time())
+
+
+def process(payload, ip="bilinmeyen"):
     """Ortak doğrulama + İŞLEME göre dallanma.
 
     action = "replace" → bir kritik kartı çıkar + yerine ekle (URL/rapor kaynağı).
@@ -810,6 +838,10 @@ def process(payload):
     action = "delete"  → bir haberi SİL (kritik kart VEYA alt liste haberi).
     Geriye dönük uyum: action yoksa "replace" kabul edilir.
     """
+    if too_many_attempts(ip):
+        return 429, {"error": "Çok fazla hatalı deneme. Lütfen birkaç dakika "
+                              "sonra tekrar deneyin."}
+
     # hmac.compare_digest str girdilerde YALNIZCA ASCII kabul eder → şifrede
     # Türkçe karakter varsa TypeError atar ve uç nokta doğru şifreyle bile 500
     # döner. JSON'dan gelen değer str de olmayabilir. İkisini de UTF-8 bayta
@@ -820,6 +852,8 @@ def process(payload):
         return 500, {"error": "Sunucuda MANUAL_ADD_PASSWORD tanımlı değil."}
     if not isinstance(password, str) or not hmac.compare_digest(
             password.encode("utf-8"), expected.encode("utf-8")):
+        record_failure(ip)
+        time.sleep(_FAIL_DELAY_SEC)   # kaba kuvvet hızını düşür
         return 401, {"error": "Şifre hatalı."}
 
     token = os.getenv("GH_TOKEN", "")
@@ -1211,7 +1245,7 @@ class handler(BaseHTTPRequestHandler):
             self._send(400, {"error": "Geçersiz istek gövdesi."})
             return
         try:
-            code, result = process(payload)
+            code, result = process(payload, client_ip(self.headers))
         except Exception as e:
             code, result = 500, {"error": f"Beklenmeyen hata: {str(e)[:200]}"}
         self._send(code, result)

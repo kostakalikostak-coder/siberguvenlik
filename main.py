@@ -2023,8 +2023,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 # maliyet sınırlı (kaynak başına en fazla ~7s, 36 kaynak).
                 # NOT: yalnızca RSS çekiminde — makale gövdesi çekiminde (yüzlerce
                 # istek) varsayılan davranış korunur ki koşu süresi şişmesin.
+                # max_retries=1 (2 deneme): retry bütçesi dıştaki thread
+                # sınırına SIĞMALIDIR. Varsayılan 3 ile en kötü durum
+                # 4×8s + (1+2+4)s = 39s ederdi ama join 15s'de kesiyordu —
+                # yani yavaş yanıt veren bir WAF'ta 403-retry hiç tamamlanamaz,
+                # kaynak "TIMEOUT" damgası yiyip TÜM günlük haberlerini
+                # kaybederdi. 2 deneme + 1s backoff = en kötü 17s < 20s sınır.
                 r = _requests_get_with_retry(
-                    url, headers=self.headers, timeout=(3, 5),
+                    url, headers=self.headers, timeout=(3, 5), max_retries=1,
                     retry_statuses=(503, 502, 504, 429, 403))
                 if r.status_code != 200:
                     result_holder['error'] = Exception(f"HTTP {r.status_code}")
@@ -2086,13 +2092,16 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         t = threading.Thread(target=_fetch_rss, daemon=True)
         t.start()
-        t.join(timeout=15)
+        # 20s: yukarıdaki retry bütçesinin (en kötü ~17s) ÜSTÜNDE olmalı, yoksa
+        # yeniden deneme tamamlanamadan kesilir ve retry mekanizması işlevsiz
+        # kalır. 36 kaynak × 20s = en kötü 12 dk, workflow'un 25 dk sınırında.
+        t.join(timeout=20)
 
         if t.is_alive():
-            error_msg = f"RSS hatası - {source_name}: Timeout (15s)"
+            error_msg = f"RSS hatası - {source_name}: Timeout (20s)"
             self.rss_errors.append(error_msg)
             self.source_stats[source_name] = {'raw': 0, 'kept': 0, 'status': 'TIMEOUT'}
-            print(f"      ⏱️  RSS TIMEOUT (15s) — geçiliyor")
+            print(f"      ⏱️  RSS TIMEOUT (20s) — geçiliyor")
             return []
 
         if result_holder['error']:
@@ -3884,7 +3893,11 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         soup = BeautifulSoup(html_content, 'html.parser')
 
-        today_header = f"📅 {now.strftime('%d %B %Y').upper()} - EN ÖNEMLİ 43 HABER (SEÇİLMİŞ)"
+        # NOT: başlıkta SAYI YOK. Eskiden sabit "43 HABER" yazıyordu ama gerçek
+        # sayı hiçbir gün 43 olmadı (ölçüm: son 6 günde 5-22 arası). Sayıyı
+        # dinamik yapmak da mümkün değil: bu dize idempotency kontrolünde ve
+        # reset'te İŞARETÇİ olarak kullanılıyor, iki yerde birebir aynı üretilir.
+        today_header = f"📅 {now.strftime('%d %B %Y').upper()} - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)"
 
         # Aynı gün ikinci koşuda (manuel tetikleme / retry) blok mükerrer
         # eklenmesin: bugünün başlığı arşivde zaten varsa atla.
@@ -5610,7 +5623,11 @@ def _reset_today_state():
     """
     now = _now_tr()
     today_str = now.strftime('%Y-%m-%d')
-    today_header = f"📅 {now.strftime('%d %B %Y').upper()} - EN ÖNEMLİ 43 HABER (SEÇİLMİŞ)"
+    # NOT: başlıkta SAYI YOK. Eskiden sabit "43 HABER" yazıyordu ama gerçek
+    # sayı hiçbir gün 43 olmadı (ölçüm: son 6 günde 5-22 arası). Sayıyı dinamik
+    # yapmak da mümkün değil: bu dize idempotency kontrolünde ve reset'te
+    # İŞARETÇİ olarak kullanılıyor, iki yerde birebir aynı üretilmeli.
+    today_header = f"📅 {now.strftime('%d %B %Y').upper()} - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)"
     print("🧹 RESET_TODAY: bugünün durumu sıfırlanıyor (taze üretim zorlanıyor)...")
 
     # 1) SİL — taze üretimi engelleyen durum dosyaları
@@ -5644,8 +5661,19 @@ def _reset_today_state():
             with open(ARCHIVE_FILE, encoding='utf-8') as f:
                 content = f.read()
             sep = '=' * 80
-            marker = f"\n{sep}\n{today_header}\n"
-            start = content.find(marker)
+            # Başlık biçimi değişti (sabit "43 HABER" kaldırıldı). Bu koşudan
+            # ÖNCE yazılmış bloklar eski biçimde; reset onları da bulabilmeli,
+            # yoksa geçiş günü bugünün bloğu arşivde takılı kalır ve yeniden
+            # üretim mükerrer blok yazar.
+            legacy_header = (f"📅 {now.strftime('%d %B %Y').upper()} "
+                             f"- EN ÖNEMLİ 43 HABER (SEÇİLMİŞ)")
+            start, marker = -1, ''
+            for hdr in (today_header, legacy_header):
+                m = f"\n{sep}\n{hdr}\n"
+                idx = content.find(m)
+                if idx != -1:
+                    start, marker, today_header = idx, m, hdr
+                    break
             if start != -1:
                 nxt = content.find(f"\n{sep}\n📅 ", start + len(marker))
                 end = nxt if nxt != -1 else len(content)
