@@ -38,16 +38,31 @@ CORS_HEADERS = {
 }
 
 
+def password_ok(given, expected):
+    """Sabit-zamanlı şifre karşılaştırması (ASCII-dışı ve tip-güvenli).
+
+    hmac.compare_digest str girdilerde YALNIZCA ASCII kabul eder: şifrede
+    Türkçe karakter varsa TypeError atar, dıştaki except onu yakalar ve uç nokta
+    "Beklenmeyen hata" ile 500 döner — yani doğru şifreyle bile giriş yapılamaz
+    ve sebebi görünmez. Ayrıca JSON'dan gelen değer str olmayabilir (sayı/liste).
+    Her iki tarafı UTF-8 bayta çevirerek bu iki sorunu da kapat.
+    """
+    if not isinstance(given, str) or not isinstance(expected, str):
+        return False
+    return hmac.compare_digest(given.encode("utf-8"), expected.encode("utf-8"))
+
+
 def process(payload):
     """POST gövdesini işler → (http_code, result_dict) döndürür."""
-    password = (payload.get("password") or "").strip()
+    raw_pw = payload.get("password")
+    password = raw_pw.strip() if isinstance(raw_pw, str) else ""
     if not password:
         return 400, {"ok": False, "error": "Şifre giriniz."}
 
     expected = os.getenv("MANUAL_ADD_PASSWORD", "")
     if not expected:
         return 500, {"ok": False, "error": "Sunucuda MANUAL_ADD_PASSWORD tanımlı değil."}
-    if not hmac.compare_digest(password, expected):
+    if not password_ok(password, expected):
         return 403, {"ok": False, "error": "Şifre yanlış."}
 
     token = os.getenv("GH_TOKEN", "")

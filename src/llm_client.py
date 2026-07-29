@@ -15,7 +15,11 @@ Gemini 3 Flash notları (OpenRouter):
     model     : google/gemini-3-flash-preview
     bağlam    : 1M token, çoklu-mod (metin/görsel/PDF/ses/video) giriş, metin çıkış
     reasoning : "thinking" modeli — reasoning.effort = minimal|low|medium|high|xhigh
-                effort ve max_tokens AYNI ANDA gönderilemez (API hata verir).
+                NOT: bu dosya bir zamanlar "effort ve max_tokens AYNI ANDA
+                gönderilemez" diyordu; kod ikisini birlikte gönderiyor ve
+                üretimde her gün sorunsuz çalışıyor (raporlar üretiliyor).
+                Not bayattı, kaldırıldı — yanlış kısıt sonraki değişikliklerde
+                yanıltıcı olurdu.
     json      : response_format={"type":"json_object"} ile JSON modu desteklenir.
 
 OpenAI SDK'sında OpenRouter'a özel alanlar (reasoning, vb.) standart şemada
@@ -125,10 +129,16 @@ def generate_text(prompt, max_output_tokens=4096, temperature=None,
                   json_mode=False, label=''):
     """OpenRouter (Gemini 3 Flash) ile metin üretir, ham metni döndürür.
 
-    Başarısızlıkta None döner. Model sırası: birincil → yedekler; her model bir
-    kez denenir, ağ/サ hatalarında 15s bekleyip sonraki modele geçer. Bu, mevcut
-    _gemini_call_json'daki davranışla aynı felsefededir.
+    Başarısızlıkta None döner. Model sırası: birincil → yedekler.
+
+    GEÇİCİ hatalarda (429 rate-limit, 5xx, ağ/timeout) AYNI model bir kez daha
+    denenir; kalıcı hatalarda (400/401/403/404 — kötü istek, yetkisiz anahtar,
+    bilinmeyen model) beklemeden sonraki modele geçilir. Eskiden her hata tipi
+    aynı sayılıyordu: tek bir anlık 429, birincil modeli "yanmış" sayıp isteği
+    daha zayıf bir yedeğe düşürüyordu; kalıcı bir 404 ise boşuna 15s bekletiyordu.
     """
+    # Geçici sayılan HTTP kodları — aynı model üzerinde yeniden denemeye değer.
+    _TRANSIENT = (408, 409, 425, 429, 500, 502, 503, 504, 529)
     if not OPENROUTER_API_KEY:
         print(f"   ⚠️  [{label}] OPENROUTER_API_KEY yok, atlanıyor.")
         return None
@@ -147,43 +157,66 @@ def generate_text(prompt, max_output_tokens=4096, temperature=None,
         # OpenRouter, OpenAI uyumlu JSON modunu destekler
         kwargs['response_format'] = {'type': 'json_object'}
 
+    def _status_of(exc):
+        """İstisnadan HTTP durum kodunu çıkarır (OpenAI SDK'sı .status_code taşır)."""
+        for attr in ('status_code', 'http_status', 'code'):
+            v = getattr(exc, attr, None)
+            if isinstance(v, int):
+                return v
+        resp = getattr(exc, 'response', None)
+        v = getattr(resp, 'status_code', None)
+        return v if isinstance(v, int) else None
+
     for attempt, model in enumerate(models):
-        try:
-            print(f"   [{label}] OpenRouter deneme {attempt + 1}/{len(models)} [{model}]...")
-            # Kesilme olursa AYNI model üzerinde bütçeyi katlayarak yeniden dene.
-            budget = max_output_tokens
-            text = ''
-            while True:
-                resp = client.chat.completions.create(
-                    model=model,
-                    messages=[{'role': 'user', 'content': prompt}],
-                    max_tokens=budget,
-                    temperature=temp,
-                    extra_body=extra_body or None,
-                    **kwargs,
-                )
-                choice = resp.choices[0]
-                text = choice.message.content or ''
-                finish = getattr(choice, 'finish_reason', None)
-                # finish_reason='length' → çıktı bütçeye takılıp kesildi (çıktı
-                # boş da olabilir: tüm bütçe reasoning'e gitmiş). Bütçeyi büyüt.
-                if finish == 'length' and budget < _TRUNC_BUDGET_CAP:
-                    new_budget = min(budget * 2, _TRUNC_BUDGET_CAP)
-                    print(f"   [{label}] ✂️  Çıktı kesildi (length, bütçe={budget}); "
-                          f"bütçe {new_budget}'e çıkarılıp yeniden deneniyor.")
-                    budget = new_budget
+        # Aynı model üzerinde geçici hata için tek ek deneme (toplam 2).
+        for same_model_try in range(2):
+            try:
+                print(f"   [{label}] OpenRouter deneme {attempt + 1}/{len(models)} "
+                      f"[{model}]{' (tekrar)' if same_model_try else ''}...")
+                # Kesilme olursa AYNI model üzerinde bütçeyi katlayarak yeniden dene.
+                budget = max_output_tokens
+                text = ''
+                while True:
+                    resp = client.chat.completions.create(
+                        model=model,
+                        messages=[{'role': 'user', 'content': prompt}],
+                        max_tokens=budget,
+                        temperature=temp,
+                        extra_body=extra_body or None,
+                        **kwargs,
+                    )
+                    choice = resp.choices[0]
+                    text = choice.message.content or ''
+                    finish = getattr(choice, 'finish_reason', None)
+                    # finish_reason='length' → çıktı bütçeye takılıp kesildi (çıktı
+                    # boş da olabilir: tüm bütçe reasoning'e gitmiş). Bütçeyi büyüt.
+                    if finish == 'length' and budget < _TRUNC_BUDGET_CAP:
+                        new_budget = min(budget * 2, _TRUNC_BUDGET_CAP)
+                        print(f"   [{label}] ✂️  Çıktı kesildi (length, bütçe={budget}); "
+                              f"bütçe {new_budget}'e çıkarılıp yeniden deneniyor.")
+                        budget = new_budget
+                        continue
+                    break
+                if not text.strip():
+                    print(f"   [{label}] ⚠️  Boş yanıt — sonraki model deneniyor.")
+                    break          # aynı modeli tekrarlamak boş yanıtı düzeltmez
+                print(f"   [{label}] ✅ OpenRouter başarılı [{model}].")
+                return text
+            except Exception as e:
+                status = _status_of(e)
+                gecici = (status in _TRANSIENT) if status is not None else True
+                print(f"   [{label}] ⚠️  OpenRouter hata "
+                      f"[{type(e).__name__}{f'/{status}' if status else ''}]: {e}")
+                if gecici and same_model_try == 0:
+                    print(f"   [{label}] ⏳ Geçici hata — 15s sonra AYNI model tekrar.")
+                    time.sleep(15)
                     continue
+                if not gecici:
+                    print(f"   [{label}] ⏭️  Kalıcı hata — beklemeden sonraki model.")
+                elif attempt < len(models) - 1:
+                    print(f"   [{label}] ⏳ 15s bekleniyor...")
+                    time.sleep(15)
                 break
-            if not text.strip():
-                print(f"   [{label}] ⚠️  Boş yanıt — sonraki model deneniyor.")
-                continue
-            print(f"   [{label}] ✅ OpenRouter başarılı [{model}].")
-            return text
-        except Exception as e:
-            print(f"   [{label}] ⚠️  OpenRouter hata [{type(e).__name__}]: {e}")
-            if attempt < len(models) - 1:
-                print(f"   [{label}] ⏳ 15s bekleniyor...")
-                time.sleep(15)
 
     print(f"   [{label}] ❌ OpenRouter {len(models)} deneme başarısız.")
     return None

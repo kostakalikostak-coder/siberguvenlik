@@ -810,11 +810,16 @@ def process(payload):
     action = "delete"  → bir haberi SİL (kritik kart VEYA alt liste haberi).
     Geriye dönük uyum: action yoksa "replace" kabul edilir.
     """
-    password = (payload.get("password") or "")
+    # hmac.compare_digest str girdilerde YALNIZCA ASCII kabul eder → şifrede
+    # Türkçe karakter varsa TypeError atar ve uç nokta doğru şifreyle bile 500
+    # döner. JSON'dan gelen değer str de olmayabilir. İkisini de UTF-8 bayta
+    # çevirerek karşılaştır (sabit-zamanlı kalır).
+    password = payload.get("password")
     expected = os.getenv("MANUAL_ADD_PASSWORD", "")
     if not expected:
         return 500, {"error": "Sunucuda MANUAL_ADD_PASSWORD tanımlı değil."}
-    if not hmac.compare_digest(password, expected):
+    if not isinstance(password, str) or not hmac.compare_digest(
+            password.encode("utf-8"), expected.encode("utf-8")):
         return 401, {"error": "Şifre hatalı."}
 
     token = os.getenv("GH_TOKEN", "")

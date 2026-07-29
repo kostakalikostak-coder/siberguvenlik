@@ -40,6 +40,14 @@ def requests_get_with_retry(url, headers, timeout, max_retries=3,
 
         if r.status_code not in retry_statuses or attempt == max_retries:
             return r
+        # Yeniden denemeden ÖNCE bu yanıtı kapat: çağıranların bir kısmı
+        # stream=True kullanıyor (makale gövdesi çekimi), gövdesi okunmadan
+        # bırakılan yanıt bağlantıyı havuzda tutar. Koşu başına yüzlerce istek
+        # yapıldığı için sızıntı birikir.
+        try:
+            r.close()
+        except Exception:
+            pass
         wait = 2 ** attempt
         print(f"      ⚠️  HTTP {r.status_code} — {wait}s sonra tekrar deneniyor "
               f"({attempt + 1}/{max_retries})...")
