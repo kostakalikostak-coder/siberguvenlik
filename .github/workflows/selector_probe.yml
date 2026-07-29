@@ -22,3 +22,11 @@ jobs:
       # Seçici doğru olduğu hâlde üretimde kaybolan kaynaklar için ÇEKİM teşhisi:
       # üretimin timeout/retry/10s-sınır koşullarını birebir taklit eder.
       - run: python -u scripts/fetch_probe.py
+      # DEDUP teşhisi: haberler çekilebiliyorsa hangi filtre seviyesi eliyor?
+      # main.py'yi import ettiği için tam bağımlılık listesi gerekir.
+      - run: pip install -r requirements.txt
+      - run: python -u scripts/dedup_probe.py
+        env:
+          # LLM çağrısı YAPILMAZ (yalnızca fetch + dedup yolu çalışır); anahtarsız
+          # kurulumda da import/başlatma sorunsuz olmalı.
+          LLM_PROVIDER: openrouter
