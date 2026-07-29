@@ -123,6 +123,41 @@ _ACTOR_ID_RE = re.compile(
 # BÜYÜK/küçük-harfe DUYARLI ayrı desen: yalnızca "Water Xxxx" gibi Özel-ad kalıbı.
 _TREND_ACTOR_RE = re.compile(r'\b(?:Water|Earth|Void) [A-Z][a-z]{3,}\b')
 
+# Sektör-standardı aktör adlandırma taksonomisi: <Özel-ad> <ülke/motivasyon eki>.
+# CrowdStrike (Bear=Rusya, Panda=Çin, Kitten=İran, Chollima=K.Kore, Spider=suç),
+# Microsoft (Blizzard=Rusya, Typhoon=Çin, Sandstorm=İran, Sleet=K.Kore,
+# Tempest=suç) ve benzerleri sürekli YENİ ad üretir; elle tutulan _NAMED_ACTORS
+# listesi kaçınılmaz olarak geride kalır. Gerçek maliyeti 2026-07-29'da görüldü:
+# "Laundry Bear" listede olmadığı için AYNI olay 24 ve 29 Temmuz'da iki kez
+# KRİTİK 3 manşeti oldu (çapraz-gün dedup ortak aktör bulamadı). Desen listeyi
+# TAMAMLAR, yerini almaz.
+#
+# Son ek Baş-harfi büyük VEYA tümü büyük olmalı; böylece jenerik akış metni
+# ("the bear", "a storm") eşleşmez. Önekte [A-Z][A-Za-z]{2,} hem "Laundry" hem
+# "LAUNDRY" biçimini yakalar — 24 Temmuz kaydı ALL-CAPS, 29 Temmuz kaydı
+# Başlık-Düzeni yazılmıştı ve eski kod bu yüzden ikisini eşleştirememişti.
+# Not: bare "Storm" Microsoft'un numaralı geçici adlarında (Storm-1234) zaten
+# _ACTOR_ID_RE ile yakalanır; buradaki karşılığı "Pawn Storm"/"Dark Storm" gibi
+# adlandırılmış gruplar içindir. 'Hawk' bilinçli olarak YOK: gerçek arşiv
+# taramasında yalnızca "The HAWK"/"Direct HAWK" gibi çöp üretti.
+_ACTOR_TAXONOMY_SUFFIXES = (
+    'Bear|Panda|Kitten|Chollima|Spider|Jackal|Buffalo|Tiger|Leopard|Crane|Lynx'
+    '|Blizzard|Typhoon|Sandstorm|Sleet|Tempest|Cyclone|Hail|Dust|Flood|Rain'
+    '|Storm|Wolf|Dragon|Serpent|Scorpion'
+)
+_TAXONOMY_ACTOR_RE = re.compile(
+    r'\b([A-Z][A-Za-z]{2,})\s+(?:' + _ACTOR_TAXONOMY_SUFFIXES + '|'
+    + _ACTOR_TAXONOMY_SUFFIXES.upper() + r')\b'
+)
+
+# Taksonomi desenine UYAN ama tehdit aktörü OLMAYAN adlar (güvenlik satıcısı,
+# ürün, jenerik tamlama). Arşivin tamamı taranarak belirlendi; "Arctic Wolf"
+# özellikle önemli: bir satıcı adı olarak 15 kez geçiyor ve elenmezse alakasız
+# iki haberi "ortak aktör" sayıp yanlış birleştirebilirdi.
+_TAXONOMY_DENYLIST = frozenset({
+    'arcticwolf', 'comododragon', 'chinesedragon', 'operationdragon',
+})
+
 # Adlandırılmış aktör/operasyon takma adları (regex'e uymayanlar). Substring
 # olarak aranır; düşük kelimeli ortak adlar bilinçli olarak listelenmemiştir.
 _NAMED_ACTORS = (
@@ -157,6 +192,11 @@ def extract_actors(text):
     # Trend Micro deseni yalnızca orijinal (büyük/küçük-harf korunmuş) metinde
     for m in _TREND_ACTOR_RE.findall(raw):
         out.add(re.sub(r'[\s-]', '', m.lower()))
+    # Taksonomi deseni de büyük/küçük-harfe duyarlıdır → ham metinde aranır.
+    for m in _TAXONOMY_ACTOR_RE.finditer(raw):
+        norm = re.sub(r'[\s-]', '', m.group(0).lower())
+        if norm not in _TAXONOMY_DENYLIST:
+            out.add(norm)
     return out
 
 

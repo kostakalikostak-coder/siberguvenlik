@@ -2360,22 +2360,93 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         return filtered
 
-    # Haber zaman penceresi (saat). 168 saat = 7 gün: URL deduplikasyon penceresi
-    # (haberler_linkler.txt, 7 gün) ile HİZALI tutulur. Tekrar önleme görevini
-    # zaten dedup üstlendiği için daha dar bir pencere hiçbir dedup faydası
-    # sağlamaz; yalnızca GÜNLÜK YAYINLAMAYAN yüksek-değerli threat-intel
-    # feed'lerini (ANSSI, NCSC, CERT-EU, NIST, Microsoft, Mandiant, CrowdStrike,
-    # Unit 42, Talos, DFIR, SentinelOne, Proofpoint, Recorded Future) tamamen
-    # eler ve rapor havuzunu açlığa sürüklerdi. 72s pencere 2026-07-01'de (3cf94c4)
-    # eklendikten sonra günlük benzersiz havuz ~90'dan ~30'a düştü ve raporlar
-    # 2-5 habere indi; 7 güne genişletmek bu regresyonu telafi eder. Her haber
-    # yine dedup sayesinde yalnızca BİR KEZ raporlanır.
-    NEWS_WINDOW_HOURS = 168
+    # ── Haber zaman penceresi (saat) ──────────────────────────────────────
+    # 96 saat = 4 gün. Boru hattı GÜNLÜK koştuğu ve her haber dedup sayesinde
+    # yalnızca BİR KEZ raporlandığı için, kararlı durumda günün havuzu "son
+    # koşudan bu yana yayımlananlar"dır; pencereyi büyütmek havuzu büyütmez.
+    # Pencerenin gerçek işlevi TELAFİ: kaçırılan koşu veya düşen feed sonrası
+    # birikmiş haberleri kurtarmak. 4 gün, hafta sonunu + bir başarısız koşuyu
+    # (Cuma akşamı yayını Pazartesi/Salı koşusunda hâlâ pencerede) karşılar.
+    #
+    # Geçmiş uyarı — 2026-07-01'de eklenen 72s pencere havuzu ~90'dan ~30'a
+    # düşürmüştü; ancak bu ilk kurulumun BİRİKMİŞ arşivini kesmesinden doğan
+    # geçiş etkisiydi. Yine de 72s yerine 96s seçildi: gerçek veriyle (2026-07-29)
+    # 3 gün ile 4 gün AYNI haberleri eliyor (3-4 gün aralığı boş çıktı), yani
+    # 4 gün ek tazelik maliyeti olmadan hafta sonu payı bırakıyor.
+    NEWS_WINDOW_HOURS = 96
 
-    def _news_cutoff_dt(self):
-        """Haber zaman penceresinin alt sınırı (timezone-aware, UTC)."""
+    # Son RECOVERY_LOOKBACK_DAYS gün içinde ARIZA kaydı olan kaynak için pencere
+    # bu değere genişler. 2026-07-29'da The Register 403'ten sonra bir haftalık
+    # arşivini birden bastı; 96s'lik düz kesim, daha önce HİÇ raporlanmamış üç
+    # haberi (NCSC post-quantum, Linux 432 CVE, Bluetooth araç zafiyeti) sessizce
+    # düşürürdü. Arıza yaşamış kaynağa geniş pencere vermek tazeliği bozmadan
+    # bu kaybı önler — sağlıklı kaynaklar 96s'te kalır.
+    NEWS_WINDOW_HOURS_RECOVERY = 168
+    RECOVERY_LOOKBACK_DAYS = 7
+
+    # GÜNLÜK YAYINLAMAYAN yüksek-değerli threat-intel / resmî kurum kaynakları:
+    # her zaman telafi penceresini (168s) kullanırlar. Bunlar haftada bir-iki
+    # yayın yapar; 96s'lik pencere bir koşu aksadığında ya da feed birkaç gün
+    # geriden geldiğinde bu kaynakları TAMAMEN eler ve rapor havuzunu fakirleştirir
+    # — 2026-07-01'deki 72s regresyonunun asıl mekanizması buydu. Somut kanıt:
+    # 2026-07-29'da NCSC UK'in post-quantum kriptografi raporu 156 saatlikti,
+    # daha önce HİÇ raporlanmamıştı ve rapora #10 olarak girdi; düz 96s kesim
+    # onu sessizce düşürürdü. Hızlı akan haber siteleri bu listede DEĞİL —
+    # onlarda tazelik önceliklidir.
+    LOW_CADENCE_SOURCES = frozenset({
+        'ANSSI (CERT-FR)', 'BSI', 'CERT-EU', 'NCSC UK', 'NIST',
+        'CrowdStrike', 'Mandiant (Google Cloud)', 'Microsoft Security',
+        'Proofpoint Threat Insight', 'Recorded Future', 'SentinelOne Labs',
+        'Talos Intelligence', 'The DFIR Report', 'Unit 42',
+        'Securelist (Kaspersky)', 'Citizen Lab', 'Bellingcat',
+    })
+
+    def _recently_failed_sources(self):
+        """Son RECOVERY_LOOKBACK_DAYS günde arıza kaydı olan kaynak adları.
+
+        data/rss_errors.txt zaten bu kayıtları tutuyor:
+          "2026-07-28 12:06 | RSS hatası - The Register: HTTP 403"
+          "2026-07-28 12:06 | SESSİZ BOŞ - X: 200 OK ama 0 madde"
+        Kaynak adı içermeyen satırlar (TABAN UYARISI) atlanır. Koşu başına bir
+        kez hesaplanır. Dosya yoksa/bozuksa boş küme (güvenli taraf: herkes
+        normal pencerede kalır).
+        """
+        if getattr(self, '_failed_sources_cache', None) is not None:
+            return self._failed_sources_cache
+
+        failed = set()
+        cutoff = (_now_tr() - timedelta(days=self.RECOVERY_LOOKBACK_DAYS)
+                  ).strftime('%Y-%m-%d')
+        try:
+            with open(self.rss_errors_file, 'r', encoding='utf-8') as f:
+                for line in f:
+                    m = re.match(
+                        r'^(\d{4}-\d{2}-\d{2}) .*?\|\s*'
+                        r'(?:RSS hatası|SESSİZ BOŞ)\s*-\s*(.+?):', line)
+                    if m and m.group(1) >= cutoff:
+                        failed.add(m.group(2).strip())
+        except (OSError, UnicodeDecodeError):
+            pass
+
+        self._failed_sources_cache = failed
+        if failed:
+            print(f"   🩹 Telafi penceresi ({self.NEWS_WINDOW_HOURS_RECOVERY}s) "
+                  f"uygulanacak kaynak(lar): {sorted(failed)}")
+        return failed
+
+    def _news_cutoff_dt(self, source=None):
+        """Haber zaman penceresinin alt sınırı (timezone-aware, UTC).
+
+        source verilir ve o kaynak (a) düşük frekanslı yüksek-değerli bir
+        threat-intel kaynağıysa veya (b) son günlerde arıza yaşadıysa TELAFİ
+        penceresi (168s) uygulanır; aksi halde normal pencere (96s).
+        """
         from datetime import timezone, timedelta as td
-        return datetime.now(timezone.utc) - td(hours=self.NEWS_WINDOW_HOURS)
+        hours = self.NEWS_WINDOW_HOURS
+        if source and (source in self.LOW_CADENCE_SOURCES
+                       or source in self._recently_failed_sources()):
+            hours = self.NEWS_WINDOW_HOURS_RECOVERY
+        return datetime.now(timezone.utc) - td(hours=hours)
 
     def _article_within_window(self, art, cutoff_dt):
         """Haberin yayın tarihi pencere içinde mi? Parse edilemezse güvenli
@@ -2431,13 +2502,16 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         return art_dt >= cutoff_dt
 
     def _filter_old_articles(self, all_news):
-        """Pencere dışında (>NEWS_WINDOW_HOURS saat) kalan haberleri filtrele."""
-        cutoff_dt = self._news_cutoff_dt()
+        """Pencere dışında (>NEWS_WINDOW_HOURS saat) kalan haberleri filtrele.
 
+        Pencere kaynak bazlıdır: son günlerde arıza yaşamış kaynaklar telafi
+        penceresini (NEWS_WINDOW_HOURS_RECOVERY) kullanır.
+        """
         filtered = {}
         removed_count = 0
 
         for src, articles in all_news.items():
+            cutoff_dt = self._news_cutoff_dt(src)
             filtered_articles = [a for a in articles
                                  if self._article_within_window(a, cutoff_dt)]
             removed_count += len(articles) - len(filtered_articles)
@@ -2469,12 +2543,16 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             # (Tarihsiz haberler güvenli tarafta kalıp geçer; son filtrede
             # newsletter'dan türeyen haberler de tarihe göre tekrar elenir.)
             if articles:
-                cutoff_dt = self._news_cutoff_dt()
+                cutoff_dt = self._news_cutoff_dt(src)
                 before = len(articles)
                 articles = [a for a in articles
                             if self._article_within_window(a, cutoff_dt)]
                 if before - len(articles) > 0:
-                    print(f"   └─ 📅 {before - len(articles)} pencere dışı haber atlandı (>{self.NEWS_WINDOW_HOURS}s)")
+                    win = (self.NEWS_WINDOW_HOURS_RECOVERY
+                           if (src in self.LOW_CADENCE_SOURCES
+                               or src in self._recently_failed_sources())
+                           else self.NEWS_WINDOW_HOURS)
+                    print(f"   └─ 📅 {before - len(articles)} pencere dışı haber atlandı (>{win}s)")
 
             if articles:
                 # Newsletter URL'lerini ayır: atlamak yerine içlerindeki
