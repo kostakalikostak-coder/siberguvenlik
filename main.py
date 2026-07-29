@@ -130,6 +130,46 @@ def _extract_json_from_text(text):
 
 
 
+TR_TITLE_MAX_WORDS = 8
+
+# Başlıkta anlam taşımayan, atıldığında cümle bozulmayan dolgu sözcükleri.
+# Sıralama önemli: iki kelimelik kalıplar önce denenir.
+_TITLE_FILLERS = (
+    'söz konusu ', 'olduğu bildirilen ', 'olduğu belirtilen ', 'yeni bir ',
+    'bir dizi ', 'çok sayıda ', 'bazı ', 'çeşitli ', 'ilgili ', 'yeni ',
+    ' kapsamında', ' tarafından', ' amacıyla', ' neticesinde', ' dolayısıyla',
+)
+
+
+def _enforce_title_length(tr_title, max_words=TR_TITLE_MAX_WORDS):
+    """Türkçe başlığı en fazla `max_words` kelimeye indirir.
+
+    Prompt zaten 8 kelime sınırı koyar ama model bunu ihlal edebilir; bu
+    deterministik ağ, sınırın gerçekten uygulanmasını sağlar (repodaki
+    _enforce_apt_attribution ile aynı felsefe: LLM kuralını kod doğrular).
+
+    Yöntem SADECE dolgu sözcük atmaktır. Başlık isim-fiil ekiyle BİTTİĞİ için
+    (-ması/-mesi) sondan kesmek dilbilgisini bozar; baştan kesmek özneyi
+    kaybettirir. Dolgu atıldıktan sonra hâlâ uzunsa başlık DEĞİŞTİRİLMEZ,
+    yalnızca uyarı basılır — bozuk başlık, uzun başlıktan kötüdür.
+    """
+    t = (tr_title or '').strip()
+    if not t or len(t.split()) <= max_words:
+        return t
+    for f in _TITLE_FILLERS:
+        if len(t.split()) <= max_words:
+            break
+        # Büyük/küçük harf duyarsız tek geçiş; başlık düzeni korunur.
+        idx = t.lower().find(f)
+        if idx != -1:
+            t = (t[:idx] + t[idx + len(f):]).strip()
+            t = ' '.join(t.split())
+    if len(t.split()) > max_words:
+        print(f"   ⚠️  Başlık {len(t.split())} kelime (>{max_words}), dolgu "
+              f"atılarak kısaltılamadı: {t[:70]}")
+    return t
+
+
 def _normalize_id_content(data):
     """Pass 2/3 çıktısını {id: {...}} sözlüğüne indirger.
 
@@ -144,7 +184,7 @@ def _normalize_id_content(data):
             only_val = next(iter(data.values()))
             if isinstance(only_val, list):
                 return _normalize_id_content(only_val)
-        return data
+        return _apply_title_limit(data)
     if isinstance(data, list):
         out = {}
         for item in data:
@@ -153,8 +193,22 @@ def _normalize_id_content(data):
             key = item.get('id', item.get('ID', item.get('Id')))
             if key is not None:
                 out[key] = item
-        return out
+        return _apply_title_limit(out)
     return {}
+
+
+def _apply_title_limit(mapping):
+    """{id: {...}} sözlüğündeki tüm tr_title'lara 8 kelime sınırını uygular.
+
+    Pass 2 ve Pass 3 çıktılarının TEK ortak geçiş noktası burasıdır; kural
+    burada uygulanınca her iki yol da kapsanır.
+    """
+    if not isinstance(mapping, dict):
+        return mapping
+    for v in mapping.values():
+        if isinstance(v, dict) and v.get('tr_title'):
+            v['tr_title'] = _enforce_title_length(v['tr_title'])
+    return mapping
 
 
 def _calculate_content_hash(title, description):
@@ -2106,6 +2160,78 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         return used_links, used_titles, used_hashes
 
+    # Kalıplaşmış başlık öneki için asgari uzunluk. Bu kadar karakter ortaksa
+    # başlıkların benzerliği İÇERİKTEN değil şablondan geliyor olabilir.
+    _BOILERPLATE_PREFIX_MIN = 15
+    # Önek atıldıktan sonra kalan kısmın benzerlik tavanı: altındaysa asıl konu
+    # farklıdır (farklı ürün/kurum), mükerrer sayılmaz.
+    _REMAINDER_MAX = 0.50
+
+    def _is_boilerplate_match(self, title_a, title_b):
+        """Başlık benzerliği yalnızca ORTAK ŞABLON ÖNEKTEN mi geliyor?
+
+        Bazı kaynaklar bültenlerini sabit kalıpla yazar (CERT-FR: "Multiples
+        vulnérabilités dans ..."). Bu başlıklar FARKLI ürünlere ait olsa bile
+        SequenceMatcher'da 0.89-0.94 oranı verir ve Seviye 3 onları mükerrer
+        sanıp eler. 2026-07-29 ölçümü: ANSSI'nin 34 haberinden 31'i tam olarak
+        böyle elenmişti (Actions run 30469665468).
+
+        Bu, src/dedup.py'de ZATEN öğrenilmiş bir ders: orada çapraz-günde ham
+        TR-başlık SequenceMatcher'ı "jenerik başlık kalıpları farklı olayları
+        aynı sayıyor" gerekçesiyle devre dışı bırakılmıştı. Aynı arıza
+        _filter_duplicates'te duruyordu.
+
+        Yöntem: ortak öneki at, KALAN kısmı karşılaştır. Kalan da benziyorsa
+        gerçekten aynı haberdir; kalan ayrışıyorsa (VMware vs Cisco) farklı
+        olaydır. Ortak önek kısaysa kural HİÇ uygulanmaz — böylece farklı
+        sözcüklerle yazılmış aynı-olay başlıkları (FishMonger vs Earth Lusca)
+        eskisi gibi elenmeye devam eder.
+
+        True → "benzerlik sahte, mükerrer sayma".
+        """
+        a = (title_a or '').strip()
+        la, lb = a.lower(), (title_b or '').strip().lower()
+        n = 0
+        for x, y in zip(la, lb):
+            if x != y:
+                break
+            n += 1
+        if n < self._BOILERPLATE_PREFIX_MIN:
+            return False                      # şablon önek yok → kural dışı
+
+        # Ortak önek AYIRT EDİCİ bir öge taşıyorsa (özel ad, ürün, sürüm/CVE
+        # numarası) o önek şablon DEĞİL, haberin KONUSUDUR; bu durumda kalan
+        # kısmın ayrışması yalnızca ifade farkıdır ("... Discovered" vs
+        # "... Found") ve haber gerçekten mükerrerdir. Kural uygulanmaz.
+        # İlk kelime atlanır: her başlığın ilk harfi zaten büyüktür.
+        for tok in a[:n].split()[1:]:
+            w = tok.strip('.,:;()[]"\'«»')
+            if w and (w[0].isupper() or any(c.isdigit() for c in w)):
+                return False
+
+        ra, rb = la[n:].strip(), lb[n:].strip()
+        if not ra or not rb:
+            return False                      # biri diğerinin öneki → gerçek tekrar
+
+        # Ortak SONEKİ de at: şablon başlıklarda fark çoğu kez ortada kalır
+        # ("Multiple vulnerabilities in VMware products" vs "... in Cisco
+        # products"). Yalnızca önek atılsaydı kalanlar "vmware products" /
+        # "cisco products" olur, paylaşılan " products" yüzünden benzerlik
+        # yapay biçimde yükselir ve kural tetiklenmezdi.
+        m = 0
+        for x, y in zip(reversed(ra), reversed(rb)):
+            if x != y:
+                break
+            m += 1
+        if m:
+            ca, cb = ra[:len(ra) - m].strip(), rb[:len(rb) - m].strip()
+            # Çekirdeklerden biri boşaldıysa fark yalnızca sonektedir → gerçek
+            # tekrar sayılır, kural uygulanmaz.
+            if ca and cb:
+                ra, rb = ca, cb
+
+        return SequenceMatcher(None, ra, rb).ratio() < self._REMAINDER_MAX
+
     def _keyword_jaccard_similarity(self, title_a, title_b):
         """
         Anahtar kelime Jaccard benzerliği — farklı kaynaktan aynı olay tespiti.
@@ -2354,6 +2480,11 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 for used_title in used_titles.values():
                     similarity = SequenceMatcher(None, title.lower(), used_title.lower()).ratio()
                     if similarity >= 0.72:
+                        # Şablon-önek koruması: benzerlik sabit kalıptan
+                        # geliyorsa (CERT-FR "Multiples vulnérabilités dans ...")
+                        # farklı ürünlere ait haberler mükerrer sayılmaz.
+                        if self._is_boilerplate_match(title, used_title):
+                            continue
                         is_similar = True
                         removed_count += 1
                         detail_removed['similarity'] += 1
@@ -2367,6 +2498,11 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 # Seviye 3'ün kaçırdığı durumları yakalar (örn. "Grupların" vs "Saldırganların").
                 for used_title in used_titles.values():
                     if self._keyword_jaccard_similarity(title, used_title) >= 0.45:
+                        # Aynı şablon-önek koruması: CERT-FR kalıbında anahtar
+                        # kelime örtüşmesi de 0.60-0.75'e çıkıyor (ölçüldü), yani
+                        # bu seviye tek başına da aynı haberleri elerdi.
+                        if self._is_boilerplate_match(title, used_title):
+                            continue
                         is_similar = True
                         removed_count += 1
                         detail_removed['keyword'] += 1

@@ -804,7 +804,12 @@ def get_title_rescue_prompt(title, body):
 
 İKİ ŞEY ÜRET:
 1. TR_BASLIK: Türkçe isim-fiil (mastar) başlığı
-   - 5-11 kelime, her kelimenin ilk harfi büyük
+   - EN FAZLA 8 KELİME (kesin sınır; 5-8 arası hedefle), her kelimenin ilk harfi büyük
+   - Başlık haberin KONUSUNU özetler; dolgu sözcük kullanma. Şunları ATLA:
+     "söz konusu", "ilgili", "yeni bir", "çeşitli", "bazı", "tarafından",
+     "kapsamında", "nedeniyle", "amacıyla", "olduğu bildirilen" gibi ekler;
+     kurum/ürün adının uzun açılımı yerine bilinen kısa adını kullan
+     ("Amerika Birleşik Devletleri Siber Güvenlik ve Altyapı Güvenliği Ajansı" → "CISA")
    - Bitiş ZORUNLU isim-fiil: -ması, -mesi, -ılması, -ilmesi, -ınması, -ünmesi
    - Olaya EN DOĞAL kalıbı seç (üçü de geçerli): (a) aktör-merkezli etken
      "FBI'ın Kimlik Avı Ağını Çökertmesi"; (b) yer-öncelikli "ABD'de İki Şahsın
@@ -843,7 +848,12 @@ def get_deep_analysis_prompt(articles_full, today=''):
 
 Her haber için iki şey üret:
 1. TR_BASLIK: Türkçe isim-fiil (mastar) başlığı
-   - 5-11 kelime, her kelimenin ilk harfi büyük
+   - EN FAZLA 8 KELİME (kesin sınır; 5-8 arası hedefle), her kelimenin ilk harfi büyük
+   - Başlık haberin KONUSUNU özetler; dolgu sözcük kullanma. Şunları ATLA:
+     "söz konusu", "ilgili", "yeni bir", "çeşitli", "bazı", "tarafından",
+     "kapsamında", "nedeniyle", "amacıyla", "olduğu bildirilen" gibi ekler;
+     kurum/ürün adının uzun açılımı yerine bilinen kısa adını kullan
+     ("Amerika Birleşik Devletleri Siber Güvenlik ve Altyapı Güvenliği Ajansı" → "CISA")
    - Bitiş ZORUNLU isim-fiil (mastar): -ması, -mesi, -ılması, -ilmesi, -ınması, -ünmesi
    - KALIP: Olaya EN DOĞAL olanı seç — üç kalıp da eşdeğer geçerlidir:
      (a) Aktör-merkezli etken (fail netse):
@@ -1027,7 +1037,12 @@ def get_summary_batch_prompt(articles_full, today=''):
 
 Her haber için:
 1. TR_BASLIK: Türkçe isim-fiil (mastar) başlığı
-   - 5-11 kelime, her kelimenin ilk harfi büyük
+   - EN FAZLA 8 KELİME (kesin sınır; 5-8 arası hedefle), her kelimenin ilk harfi büyük
+   - Başlık haberin KONUSUNU özetler; dolgu sözcük kullanma. Şunları ATLA:
+     "söz konusu", "ilgili", "yeni bir", "çeşitli", "bazı", "tarafından",
+     "kapsamında", "nedeniyle", "amacıyla", "olduğu bildirilen" gibi ekler;
+     kurum/ürün adının uzun açılımı yerine bilinen kısa adını kullan
+     ("Amerika Birleşik Devletleri Siber Güvenlik ve Altyapı Güvenliği Ajansı" → "CISA")
    - Bitiş ZORUNLU isim-fiil (mastar): -ması, -mesi, -ılması, -ilmesi, -ınması, -ünmesi
    - KALIP: Olaya EN DOĞAL olanı seç — üç kalıp da eşdeğer geçerlidir:
      (a) Aktör-merkezli etken (fail netse):
@@ -1302,6 +1317,15 @@ ARTICLE_PROXY_BUDGET_SEC = 180   # proxy'ye harcanacak toplam saniye tavanı
 # kilitleniyordu (07-27 12:08'de yaşandı). Eşiğin altındaki rapor yeniden denenir.
 REPORT_FLOOR = 10
 CONTENT_SELECTORS = {
+    # ── Ölçülerek eklendi (Actions "Selector Keşfi", run 30460228760) ─────
+    # Microsoft Security: genel fallback zinciri (article→main→content-div) bu
+    # sitede yalnızca 8-17 kelime çıkarıyordu; fetch_probe üretim koşullarında
+    # 8 makalenin 7'sinde "HTTP 200 ama 8-17 kelime" ölçtü, yani kaynak sessizce
+    # tamamen kayboluyordu. Ölçülen seçici tam metni veriyor.
+    # Diğer ölçülen kaynaklar (CERT-EU, NCSC UK, The Record, SANS ISC, Dark
+    # Reading, Talos, Schneier, IranWire) genel zincirle ZATEN yeterli metin
+    # çıkarıyor — ölçüm bunu doğruladı, gereksiz giriş eklenmedi.
+    'Microsoft Security': [{'class': 'entry-content'}],
     'The Hacker News': [{'class': 'articlebody'}],
     'BleepingComputer': [{'class': 'articleBody'}],
     'Krebs on Security': [{'class': 'entry-content'}],
@@ -1564,7 +1588,12 @@ Kalan haberleri önem sırasına göre sırala. En önemli max 10 tanesi "top10"
 
 ADIM 3 — TÜRKÇE ÖZET YAZ (filtered hariç HER haber için):
 Her haber için:
-- "tr_title": Türkçe isim-fiil (mastar) başlığı, 5-11 kelime, isim-fiil ekiyle biter (-ması/-mesi/-ılması/-ilmesi). Olaya EN DOĞAL kalıbı seç: (a) aktör-merkezli "FBI'ın Kimlik Avı Ağını Çökertmesi"; (b) yer-öncelikli "ABD'de İki Şahsın Suçlu Bulunması"; (c) fail belirsizse edilgen "Küresel Platform W3LL'nin Çökertilmesi". YASAK: "...gerçekleştirilmiştir", "...açığa çıkmıştır", "...edilmiştir" gibi eylem cümlesi yapıları.
+- "tr_title": Türkçe isim-fiil (mastar) başlığı, EN FAZLA 8 KELİME (kesin sınır; 5-8 arası hedefle), isim-fiil ekiyle biter (-ması/-mesi/-ılması/-ilmesi).
+  ⚠️ 8 kelimeyi AŞAN başlık kabul edilmez. Sığdırmak için dolgu sözcükleri at
+  ("söz konusu", "ilgili", "yeni bir", "çeşitli", "bazı", "tarafından",
+  "kapsamında", "nedeniyle", "amacıyla") ve uzun kurum adları yerine bilinen
+  kısaltmayı kullan (CISA, FBI, NATO, AB). Başlık haberin ÖZÜNÜ vermeli;
+  ayrıntı paragrafta anlatılır. Olaya EN DOĞAL kalıbı seç: (a) aktör-merkezli "FBI'ın Kimlik Avı Ağını Çökertmesi"; (b) yer-öncelikli "ABD'de İki Şahsın Suçlu Bulunması"; (c) fail belirsizse edilgen "Küresel Platform W3LL'nin Çökertilmesi". YASAK: "...gerçekleştirilmiştir", "...açığa çıkmıştır", "...edilmiştir" gibi eylem cümlesi yapıları.
 - "paragraph": 110-130 kelime Türkçe özet (yoğun, dolgusuz).
   - SADECE kaynak metindeki bilgiler — tahmin, yorum, çıkarım YASAK
   - Ne oldu, kim etkilendi, teknik boyutları aktar
