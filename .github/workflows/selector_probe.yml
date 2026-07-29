@@ -9,7 +9,9 @@ on:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    # 23 hedef × (feed + makale sayfası) isteği; yavaş/timeout'a düşen kaynaklar
+    # hedef başına ~30s'ye kadar çıkabiliyor. 6 dk ölçümü ortasında keserdi.
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
