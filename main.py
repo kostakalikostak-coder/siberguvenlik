@@ -2160,8 +2160,18 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                                 existing.append(line)
                         except Exception:
                             pass
-            except IOError:
-                pass
+            except (OSError, UnicodeDecodeError) as e:
+                # KRİTİK: okuma başarısızsa `existing` BOŞ kalır ve aşağıdaki
+                # yazma dosyayı yalnızca BUGÜNÜN linkleriyle ezerdi — 7 günlük
+                # dedup geçmişi tek bir geçici IO hatasıyla yok olurdu.
+                # Geçmişi korumak için yazmayı tamamen iptal et. Bedeli: bugünün
+                # linkleri işaretlenmez (bazı haberler yarın tekrar aday olabilir);
+                # kazancı: mükerrer manşet koruması ayakta kalır. Bu takas
+                # bilinçlidir — geçmişi silmek geri alınamaz, tekrar aday olmak
+                # bir sonraki koşuda kendini düzeltir.
+                print(f"   ❌ Linkler dosyası okunamadı ({type(e).__name__}: {e}) — "
+                      f"yazma İPTAL edildi, 7 günlük dedup geçmişi korunuyor.")
+                return
 
         today = now.strftime('%Y-%m-%d')
         for art in articles:
@@ -2957,9 +2967,23 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 with open(KRITIK3_HISTORY_FILE, 'r', encoding='utf-8') as f:
                     records = json.load(f)
                 if not isinstance(records, list):
+                    print(f"   ⚠️  {KRITIK3_HISTORY_FILE} liste biçiminde değil — "
+                          f"geçmiş bugünden yeniden kuruluyor.")
                     records = []
-            except Exception:
+            except (json.JSONDecodeError, UnicodeDecodeError) as e:
+                # Dosya OKUNDU ama içerik bozuk → geçmiş zaten kurtarılamaz.
+                # Bugünden yeniden kurmak TEK çıkış yolu; yazmayı iptal edersek
+                # dosya kalıcı bozuk kalır ve bir daha hiç geçmiş yazılmaz.
+                print(f"   ⚠️  {KRITIK3_HISTORY_FILE} bozuk ({e}) — geçmiş bugünden "
+                      f"yeniden kuruluyor.")
                 records = []
+            except OSError as e:
+                # Dosya OKUNAMADI (geçici IO hatası) → içerik büyük olasılıkla
+                # SAĞLAM. Boş kabul edip üzerine yazmak, çapraz-gün mükerrer
+                # manşet korumasının tüm hafızasını silerdi (2026-07-29 denetimi).
+                print(f"   ❌ {KRITIK3_HISTORY_FILE} okunamadı ({e}) — yazma İPTAL "
+                      f"edildi, mevcut geçmiş korunuyor.")
+                return
 
         # Aynı gün tekrar çalışırsa bugünün kaydını değiştir (mükerrer blok olmasın)
         records = [r for r in records if isinstance(r, dict) and r.get('date') != today]
@@ -2970,8 +2994,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         os.makedirs("data", exist_ok=True)
         try:
-            with open(KRITIK3_HISTORY_FILE, 'w', encoding='utf-8') as f:
-                json.dump(records, f, ensure_ascii=False, indent=1)
+            # Atomik: yarım yazılmış JSON, sonraki koşuda "bozuk" dalına düşüp
+            # geçmişin bugünden yeniden kurulmasına (yani silinmesine) yol açardı.
+            _atomic_write(KRITIK3_HISTORY_FILE,
+                          json.dumps(records, ensure_ascii=False, indent=1))
             print(f"📌 KRİTİK 3 parmak-izi kaydedildi ({len(views)} haber, "
                   f"{KRITIK3_HISTORY_FILE})")
         except IOError as e:
@@ -3040,9 +3066,22 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 with open(REPORT_HISTORY_FILE, 'r', encoding='utf-8') as f:
                     records = json.load(f)
                 if not isinstance(records, list):
+                    print(f"   ⚠️  {REPORT_HISTORY_FILE} liste biçiminde değil — "
+                          f"geçmiş bugünden yeniden kuruluyor.")
                     records = []
-            except Exception:
+            except (json.JSONDecodeError, UnicodeDecodeError) as e:
+                # Bozuk içerik → kurtarılamaz; bugünden yeniden kur (bkz.
+                # _save_kritik3_history'deki aynı gerekçe).
+                print(f"   ⚠️  {REPORT_HISTORY_FILE} bozuk ({e}) — geçmiş bugünden "
+                      f"yeniden kuruluyor.")
                 records = []
+            except OSError as e:
+                # Okuma hatası → içerik sağlam olabilir; üzerine yazma.
+                # Bu dosya ayrıca _pipeline_gap_days'in referansıdır: silinmesi
+                # boru hattı duruşu telafisini de kör ederdi.
+                print(f"   ❌ {REPORT_HISTORY_FILE} okunamadı ({e}) — yazma İPTAL "
+                      f"edildi, mevcut geçmiş korunuyor.")
+                return
 
         # Aynı gün tekrar çalışırsa bugünün kaydını değiştir (mükerrer blok olmasın)
         records = [r for r in records if isinstance(r, dict) and r.get('date') != today]
@@ -3053,8 +3092,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         os.makedirs("data", exist_ok=True)
         try:
-            with open(REPORT_HISTORY_FILE, 'w', encoding='utf-8') as f:
-                json.dump(records, f, ensure_ascii=False, indent=1)
+            # Atomik — gerekçe _save_kritik3_history ile aynı.
+            _atomic_write(REPORT_HISTORY_FILE,
+                          json.dumps(records, ensure_ascii=False, indent=1))
             print(f"📌 Rapor parmak-izi kaydedildi ({len(views)} haber, "
                   f"{REPORT_HISTORY_FILE})")
         except IOError as e:
