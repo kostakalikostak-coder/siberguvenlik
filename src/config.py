@@ -762,16 +762,20 @@ def get_executive_summary_prompt(articles_brief, source_count=None, news_count=N
 
 GÖREV:
 - Paragrafa güncel siber tehdit ortamına bağlamsal bir GİRİŞ CÜMLESİYLE başla.
-  ⚠️ ZORUNLU: Giriş cümlesinde mutlaka "son 48 saat", "son iki gün", "geçen 48 saat" veya
-  benzeri bir ZAMAN REFERANSI yer almalıdır. Zaman referansı olmayan giriş kabul edilmez.
+  ⚠️ ZORUNLU: Giriş cümlesinde mutlaka "son günlerde", "güncel gündemde" veya benzeri bir
+  ZAMAN REFERANSI yer almalıdır. Zaman referansı olmayan giriş kabul edilmez.
+  ⛔ SAYILI SÜRE VERME: "son 48 saat", "son iki gün", "son 24 saat" gibi KESİN süre iddiaları
+  KULLANILMAZ. Haber penceresi kaynağa göre değişir (hızlı haber siteleri 4 gün; NCSC/CERT-EU
+  gibi düşük frekanslı threat-intel kaynakları ve arıza sonrası telafi edilen kaynaklar 7 gün),
+  dolayısıyla sabit bir saat/gün sayısı vermek gerçeğe aykırı olur. Süreyi belirsiz bırak.
   Örnek çerçeveler (kelimesi kelimesine kopyalama; aynı tonu koruyarak doğal biçimde yeniden ifade et):
-  • "Son 48 saatin siber güvenlik gündeminde belirleyici olan gelişmeler değerlendirildiğinde..."
-  • "Geçen 48 saat içinde siber tehdit ortamında yaşanan gelişmeler ele alındığında..."
-  • "Son iki günde küresel siber güvenlik gündemini şekillendiren başlıca olaylar incelendiğinde..."
+  • "Son günlerde siber güvenlik gündeminde belirleyici olan gelişmeler değerlendirildiğinde..."
+  • "Güncel siber tehdit ortamında yaşanan gelişmeler ele alındığında..."
+  • "Son dönemde küresel siber güvenlik gündemini şekillendiren başlıca olaylar incelendiğinde..."
   ⛔ YASAK GİRİŞLER: "Bugünün…", "Bugün siber…", "Bu günün…", "Küresel siber tehdit ortamında öne çıkan…" (zaman referansı olmadan) ile başlayan ifadeler KULLANILMAZ.
   Giriş cümlesi bağlama uygun ve özgün olsun; her gün aynı kalıpla başlama.
 - Giriş cümlesinin ardından, verilen haberleri TEK BİR paragraf içinde özetlemeye devam et (madde işareti, başlık, alt başlık YOK).
-- Bir yönetici tek okuyuşta, son 48 saatte siber güvenlik dünyasında yaşanan en önemli gelişmeler hakkında doğrudan fikir sahibi olabilmeli.
+- Bir yönetici tek okuyuşta, son günlerde siber güvenlik dünyasında yaşanan en önemli gelişmeler hakkında doğrudan fikir sahibi olabilmeli.
 - Girişten sonra en önemli/stratejik gelişmelerle devam et, ardından diğer önemli haberlere geç.
 - CÜMLE YAPISI: Bir cümlede en fazla iki gelişme bağlanabilir ("ve", "ayrıca", "öte yandan" ile). Üç veya daha fazla olayı tek cümlede ZİNCİRLEME. Yan cümle sayısı bir cümlede en fazla bir tane.
 - Resmî ve dikkatli bir Türkçe kullan; özensiz ifadelerden kaçın.

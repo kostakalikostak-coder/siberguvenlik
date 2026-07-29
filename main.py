@@ -2434,17 +2434,57 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                   f"uygulanacak kaynak(lar): {sorted(failed)}")
         return failed
 
+    def _pipeline_gap_days(self):
+        """Son BAŞARILI rapordan bu yana geçen gün sayısı.
+
+        rss_errors.txt yalnızca KAYNAK arızasını bilir; boru hattının kendisi
+        günlerce hiç koşmadıysa (cron/runner duruşu) hiçbir kaynak "arızalı"
+        işaretlenmez, ama TÜM kaynaklarda birikmiş haber olur. Bu boşluk
+        ölçülmezse 96s'lik pencere o birikimin kuyruğunu sessizce keser.
+        Referans rapor_gecmis.json (günlük yazılır); okunamazsa 0 (güvenli
+        taraf: normal pencere).
+        """
+        if getattr(self, '_gap_days_cache', None) is not None:
+            return self._gap_days_cache
+
+        gap = 0
+        try:
+            with open(REPORT_HISTORY_FILE, 'r', encoding='utf-8') as f:
+                dates = [e.get('date') for e in json.load(f) if e.get('date')]
+            prev = [d for d in dates if d < _now_tr().strftime('%Y-%m-%d')]
+            if prev:
+                last = datetime.strptime(max(prev), '%Y-%m-%d')
+                gap = max(0, (_now_tr().replace(tzinfo=None) - last).days)
+        except (OSError, ValueError, TypeError, json.JSONDecodeError):
+            pass
+
+        self._gap_days_cache = gap
+        if gap > 1:
+            print(f"   🕳️  Son rapordan bu yana {gap} gün geçmiş "
+                  f"(boru hattı duruşu) — pencere kararı buna göre verilecek")
+        return gap
+
     def _news_cutoff_dt(self, source=None):
         """Haber zaman penceresinin alt sınırı (timezone-aware, UTC).
 
-        source verilir ve o kaynak (a) düşük frekanslı yüksek-değerli bir
-        threat-intel kaynağıysa veya (b) son günlerde arıza yaşadıysa TELAFİ
-        penceresi (168s) uygulanır; aksi halde normal pencere (96s).
+        TELAFİ penceresi (168s) şu durumlarda uygulanır:
+          (a) kaynak düşük frekanslı yüksek-değerli bir threat-intel kaynağı,
+          (b) kaynak son günlerde arıza yaşadı (rss_errors.txt),
+          (c) boru hattı normal pencereyi dolduracak kadar uzun süre koşmadı —
+              bu durumda kaynak ayrımı yapılmaz, herkes telafi penceresine
+              alınır; aksi halde duruş boyunca biriken haberlerin kuyruğu
+              kaybolurdu.
+        Aksi halde normal pencere (96s).
         """
         from datetime import timezone, timedelta as td
         hours = self.NEWS_WINDOW_HOURS
-        if source and (source in self.LOW_CADENCE_SOURCES
-                       or source in self._recently_failed_sources()):
+        # (c) duruş normal pencerenin gün karşılığına yaklaştıysa genişlet.
+        # Eşik penceredan 1 gün küçük: 4 günlük pencerede 3 günlük duruş zaten
+        # sınırı yalıyor, kesme riski o noktada başlar.
+        if self._pipeline_gap_days() >= (self.NEWS_WINDOW_HOURS // 24) - 1:
+            hours = self.NEWS_WINDOW_HOURS_RECOVERY
+        elif source and (source in self.LOW_CADENCE_SOURCES
+                         or source in self._recently_failed_sources()):
             hours = self.NEWS_WINDOW_HOURS_RECOVERY
         return datetime.now(timezone.utc) - td(hours=hours)
 
@@ -4459,7 +4499,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     if t and not self._is_mostly_english(t):
                         titles.append(t)
                 if titles:
-                    lead = ('Son 48 saatin siber güvenlik gündeminde öne çıkan '
+                    lead = ('Son günlerde siber güvenlik gündeminde öne çıkan '
                             'başlıca gelişmeler şunlardır: ')
                     exec_summary = lead + '; '.join(titles[:8]) + '.'
                     print("   ↩️  Yönetici Özeti deterministik yedekle dolduruldu.")
