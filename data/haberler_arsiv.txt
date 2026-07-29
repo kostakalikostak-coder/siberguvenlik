@@ -28647,3 +28647,155 @@ SANS ISC araştırmacıları, GeoServer yazılımındaki CVE-2024-36401 kodlu g�
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 29 JULY 2026 - EN ÖNEMLİ 43 HABER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] ABD'nin Tedarik Zinciri Riskleri Nedeniyle İthal Robotları Yasaklaması
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri hükümeti, tedarik zinciri ve güvenlik risklerini gerekçe göstererek yabancı ülkelerde üretilen gelişmiş robotların satışını yasaklamıştır. Federal İletişim Komisyonu (FCC) tarafından yayımlanan ulusal güvenlik kararı kapsamında, modern robotların ağlara sürekli bağlı olmasının veri sızıntısı ve uzaktan müdahale gibi geniş saldırı yüzeyleri oluşturduğu belirtilmiştir. Çin menşeli Unitree firmasının insansı robotlarında tespit edilen UniPwn açıklarının bu risklere örnek teşkil ettiği ifade edilmiştir. Karar uyarınca, yabancı üretim cihazlar ulusal güvenlik için kabul edilemez risk taşıyan ürünler listesine dahil edilmiştir. Güney Koreli Hyundai bünyesindeki Boston Dynamics gibi üretimini ABD içerisinde gerçekleştiren yabancı ortaklı şirketlerin bu yasaktan muaf tutulduğu bildirilmiştir. Mevcut onaylı cihazların kullanımına izin verilirken, gelecekteki tüm ithalat süreçlerinin kısıtlandığı kaydedilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] CAF Bank'ın Güvenlik Endişeleri Nedeniyle Çevrim İçi Hizmetleri Durdurması
+─────────────────────────────────────────────────────────
+Charities Aid Foundation bünyesinde faaliyet gösteren ve 14.000 hayır kurumuna hizmet veren CAF Bank, çevrim içi bankacılık portalındaki bir güvenlik açığı nedeniyle dijital hizmetlerini askıya almıştır. Banka tarafından yapılan açıklamada, bazı müşteri hesaplarında şüpheli etkinliklerin tespit edildiği ve üçüncü taraf bir yazılımın portala bağlanma biçiminde daha önce fark edilmeyen bir zafiyetin belirlendiği ifade edilmiştir. 24 Temmuz 2026 tarihinden bu yana kapalı olan sistemlerin, teknoloji ortaklarıyla yürütülen onarım çalışmaları tamamlanana kadar hizmet vermeyeceği bildirilmiştir. Kurumun icra kurulu başkanı Alison Taylor, ana bankacılık sistemlerinin ve müşteri fonlarının güvende olduğunu, ancak maaş ödemeleri gibi acil işlemlerin telefon bankacılığı üzerinden yürütüldüğünü açıklamıştır. Hizmet kesintisinin, özellikle zaman hassasiyeti olan ödemeleri gerçekleştiremeyen kuruluşları olumsuz etkilediği kaydedilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 28.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Kuzey Kore Bağlantılı Tehdit Aktörünün npm Paketlerine Zararlı Yazılım Yerleştirmesi
+─────────────────────────────────────────────────────────
+Kuzey Kore menşeli siber tehdit aktörlerinin, @joyfill kapsamındaki iki npm paketini DEV#POPPER zararlı yazılım ailesiyle bağlantılı bir uzaktan erişim truva atı (RAT) yaymak amacıyla ele geçirdiği tespit edilmiştir. Söz konusu paketlerin, Node.js CommonJS giriş noktasını yüklediğinde çalışan ve Tron, Aptos ile BNB Smart Chain işlemlerini kullanan çok katmanlı bir blok zinciri tabanlı komuta kontrol altyapısı barındırdığı belirtilmiştir. Yapılan analizlerde, bu yöntemin PolinRider ve ViteVenom operasyonlarıyla benzerlik taşıdığı ve operasyonel dayanıklılık sağladığı ifade edilmiştir. Zararlı yazılımın; pano verilerini okuma, dosya sızdırma ve kimlik bilgisi toplama yeteneklerine sahip olduğu kaydedilmiştir. Etkilenen sürümleri kullanan geliştiricilerin, kimlik bilgilerini sıfırlamaları ve paketleri güvenli sürümlerle değiştirmeleri tavsiye edilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] FBI'ın Anthropic Mythos Yapay Zeka Modelini Güvenlik Tehdidi Olarak Değerlendirmesi
+─────────────────────────────────────────────────────────
+FBI yetkilileri, Anthropic tarafından geliştirilen Mythos adlı yapay zeka modelinin gelişmiş yeteneklerinin kolluk kuvvetleri için yeni zorluklar oluşturduğunu açıklamıştır. FBI Direktör Yardımcısı Todd Hemmen, modelin işletim sistemleri, web altyapısı ve şifreleme gibi temel alanlarda kullanılan yaygın açık kaynak kodlardaki zafiyetleri tespit edebildiğine dikkat çekmiştir. ABD hükümetinin, ulusal güvenlik gerekçesiyle Mythos 5 modeline Haziran 2026'da ihracat kısıtlamaları getirdiği ancak üreticiyle yapılan güvenlik incelemelerinin ardından bu yasakların kaldırıldığı belirtilmiştir. Kurumun, yapay zekayı dahili olarak yüz tanıma ve suç ihbarlarını tasnif etme gibi yüksek etkili alanlarda kullandığı ifade edilmiştir. FBI'ın, bu teknolojinin gelecekte düşman aktörler tarafından büyük ölçekli saldırılarda kullanılabileceği yönündeki endişeleri sürerken, risk yönetimi gereksinimlerini henüz tamamlamadığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -fedscoop.com, 28.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Bank of Baroda'nın Veri Hırsızlığı İddiaları Sonrası Siber Olayı Doğrulaması
+─────────────────────────────────────────────────────────
+Hindistan'ın en büyük devlet bankalarından biri olan Bank of Baroda, bir çalışanının e-posta hesabının ele geçirilmesi sonucunda belirli verilere yetkisiz erişim sağlandığını doğrulamıştır. Siber suçluların karanlık web forumlarında bankaya ait müşteri bilgileri, kurumsal kayıtlar ve iç yazışmaları sızdırdıklarını iddia etmelerinin ardından banka yönetimi olayı kabul etmiştir. Yapılan açıklamada, siber olayın hemen kontrol altına alındığı ve temel bankacılık sistemlerinin bu durumdan etkilenmediği belirtilmiştir. Araştırmacılar, "leak-king-F" takma adını kullanan bir aktörün çalınan verileri satışa çıkardığını ve potansiyel alıcıları Telegram kanallarına yönlendirdiğini ifade etmiştir. Banka, sızdırılan verilerin orijinalliği veya kapsamı hakkında detaylı bilgi vermezken, olayın hangi saldırgan grup tarafından gerçekleştirildiğine dair bir atıfta bulunulmadığı kaydedilmiştir.
+(XXXXXXX, AÇIK -therecord.media, 28.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] SplitVPN'in Kayıt Tutmama Vaadine Rağmen Milyonlarca Bağlantı Verisinin Sızdırılması
+─────────────────────────────────────────────────────────
+Rusya merkezli SplitVPN (eski adıyla NotVPN) hizmetinde meydana gelen veri ihlali sonucunda, kurumun "kayıt tutmama" vaadinin aksine 58 milyon bağlantı günlüğünün açığa çıktığı tespit edilmiştir. Bir siber suç forumunda paylaşılan 17 GB boyutundaki veri tabanında, 23,4 milyon kullanıcı kaydı, 13,6 milyon cihaz bilgisi ve 2,6 milyon ödeme kaydının yer aldığı belirtilmiştir. Mysterium araştırma ekibi, sızdırılan verilerin Haziran 2025 ile 21 Temmuz 2026 tarihleri arasındaki güncel kayıtları içerdiğini doğrulamıştır. İhlal edilen veriler arasında e-posta adresleri, IP adresleri, cihaz tanımlayıcıları ve yaklaşık konum bilgilerinin bulunduğu ifade edilmiştir. Özellikle Rusya, İran, Hindistan ve Myanmar gibi internet sansürünün yoğun olduğu ülkelerdeki kullanıcıların, bu sızıntı nedeniyle devlet takibine maruz kalma riskiyle karşı karşıya kaldığına dikkat çekilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] ABD ve Avustralya'nın Kritik Altyapı Sistemlerinin İzole Edilmesine Yönelik Kılavuz Yayınlaması
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri ve Avustralya hükümetleri, siber saldırı veya büyük aksamalar durumunda kritik operasyonel teknoloji (OT) sistemlerinin izole edilmesine yönelik yeni bir kılavuz paylaşmıştır. CISA, FBI ve uluslararası ortaklar tarafından hazırlanan belgede, devlet destekli tehdit aktörlerinin casusluk ve sabotaj amacıyla enerji, su ve ulaşım gibi hayati sektörleri hedef aldığı belirtilmiştir. Kılavuzda, kuruluşların kritik hizmetleri sürdürmek için gereken minimum sistemleri belirlemeleri ve bu sistemlerin kurumsal ağlarla olan fiziksel veya mantıksal bağlantılarını kesmeye hazır olmaları tavsiye edilmiştir. Özellikle Volt Typhoon ve Salt Typhoon gibi grupların kritik altyapılara sızdığı hatırlatılarak, fiziksel izolasyonun en etkili koruma yöntemi olduğu vurgulanmıştır. Kuruluşların, izolasyon planlarını düzenli olarak test etmeleri ve çevrimdışı kopyalar bulundurmaları gerektiği bildirilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 28.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] ABD'nin Siber Suçlara Karışan Yabancı Uyruklulara Vize Kısıtlaması Getirmesi
+─────────────────────────────────────────────────────────
+ABD Dışişleri Bakanı Marco Rubio, siber suç faaliyetlerine karışan yabancı uyruklu şahıslara ve potansiyel olarak bu kişilerin birinci derece aile üyelerine vize kısıtlaması uygulanacağını açıklamıştır. Yeni politikanın özellikle Çin merkezli ulusötesi suç örgütleri tarafından yönetilen yatırım dolandırıcılıklarını ve Batı Afrika ile Güneydoğu Asya kaynaklı şantaj şemalarını hedef aldığı belirtilmiştir. Rubio, 2024 yılında dolandırıcıların ABD vatandaşlarını 10 milyar dolardan fazla zarara uğrattığını ve çocukları hedef alan cinsel içerikli şantaj suçlarının arttığını ifade etmiştir. Vize kısıtlamalarının, Göçmenlik ve Milliyet Yasası'nın dış politika sonuçlarına dayanan ilgili maddesi uyarınca uygulanacağı kaydedilmiştir. Bu adımın, suç şebekelerini çökertmek ve ABD vatandaşlarını hedef alan aktörlere bedel ödetmek amacıyla atılan kapsamlı bir stratejinin parçası olduğu bildirilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 24.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] CISA'nın Risk Odaklı Zafiyet Yönetimi İçin Yeni Direktif Yayımlaması
+─────────────────────────────────────────────────────────
+ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), federal kurumların zafiyet yönetimi süreçlerini kökten değiştiren BOD 26-04 numaralı yeni bir operasyonel direktif yayımlamıştır. Yeni düzenlemenin, tüm kritik zafiyetlerin aynı sürede yamalanması yerine, risk düzeyine göre 3 günden başlayan kademeli süreler belirlediği ifade edilmiştir. Yapay zekanın saldırı döngülerini hızlandırdığı ve e-suç gruplarının ilk erişimden yanal harekete geçme süresinin ortalama 29 dakikaya düştüğü belirtilmiştir. Direktifin, kurumların sadece CVSS skorlarına değil, zafiyetin internetten erişilebilirliği ve aktif istismar durumuna odaklanmasını hedeflediği kaydedilmiştir. Güvenlik ekiplerinin, kimlik hırsızlığı ve bulut yapılandırma hatalarıyla birleşen karmaşık saldırı yollarına karşı Sürekli Tehdit Maruziyeti Yönetimi (CTEM) programlarını benimsemeleri gerektiği vurgulanmıştır.
+(XXXXXXX, AÇIK -csoonline.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Birleşik Krallık'ta Kuantum Sonrası Kriptografiye Geçiş İçin Stratejik Çalıştay Düzenlenmesi
+─────────────────────────────────────────────────────────
+Birleşik Krallık Ulusal Siber Güvenlik Merkezi (NCSC) ve Vodafone, kuantum sonrası kriptografiye (PQC) geçiş sürecini ele almak amacıyla hükümet ve endüstri liderlerinin katıldığı ilk ortak çalıştayı gerçekleştirmiştir. Etkinlikte, gelecekteki güçlü kuantum bilgisayarların mevcut açık anahtarlı şifreleme sistemlerini kırabileceği ve bu durumun küresel bir stratejik dayanıklılık sorunu olduğu belirtilmiştir. NCSC, kurumların 2028 ve 2031 yılları için belirlenen geçiş hedeflerine uyum sağlamak amacıyla şimdiden planlama yapmaları gerektiğini ifade etmiştir. Çalıştayda, PQC geçişinin sadece teknik bir zorluk değil, aynı zamanda yönetim kurulu düzeyinde bir iş riski olarak ele alınması gerektiği vurgulanmıştır. Tedarik zinciri hazırlığının kritik öneme sahip olduğu ve kuruluşların tedarikçileriyle PQC yol haritaları konusunda erkenden iletişime geçmeleri gerektiği kaydedilmiştir.
+(XXXXXXX, AÇIK -ncsc.gov.uk, 22.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Siber Tehdit Aktörü Tanaka'nın Veri Sızıntısı Pazarında Lider Konuma Gelmesi
+─────────────────────────────────────────────────────────
+Cyble tarafından yayımlanan 2026 yılının ilk yarısına ait siber tehdit raporunda, Tanaka takma adlı veri sızıntısı aracısının en aktif aktör olarak öne çıktığı belirtilmiştir. Tanaka'nın, Ocak ve Haziran 2026 döneminde dünya genelinde kaydedilen 367 veri ihlali olayının 25'inden sorumlu olduğu ve en yakın rakiplerinin iki katından fazla faaliyet gösterdiği ifade edilmiştir. Tehdit aktörünün belirli bir sektörü hedeflemek yerine, finans, teknoloji ve kamu kurumları gibi stratejik değeri yüksek veriye sahip kuruluşlara odaklandığı kaydedilmiştir. Kuzey Amerika ve Avrupa pazarlarında yoğunlaşan Tanaka'nın, çalınan veri tabanlarını yasa dışı forumlarda dolandırıcılık ve şantaj amaçlı satışa sunduğu bildirilmiştir. Veri sızıntılarının artık fidye yazılımı saldırılarının bir yan ürünü olmaktan çıkıp, bağımsız bir iş modeli haline geldiğine dikkat çekilmiştir.
+(XXXXXXX, AÇIK -thecyberexpress.com, 28.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] Microsoft SharePoint Sunucularındaki Kritik Güvenlik Açıklarının Aktif Olarak İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Microsoft SharePoint Server üzerinde tespit edilen ve uzaktan kod yürütülmesine olanak tanıyan kritik güvenlik açıklarının aktif olarak istismar edildiği bildirilmiştir. CERT-EU tarafından yayımlanan rapora göre, özellikle CVE-2026-50522 kodlu seri durumdan çıkarma hatasının, saldırganların etkilenen sistemlerde yetkisiz kod çalıştırmasına imkan tanıdığı belirtilmiştir. WatchTowr adlı güvenlik kuruluşunun 20 Temmuz 2026 tarihinde bir kavram kanıtlama kodu tanımladığı ve ardından aktif istismar faaliyetlerini gözlemlediği ifade edilmiştir. Söz konusu açıkların SharePoint Server 2016, 2019 ve Subscription Edition sürümlerini etkilediği kaydedilmiştir. Microsoft'un ayrıca son aylarda CVE-2026-32201, CVE-2026-45659, CVE-2026-56164 ve CVE-2026-58644 kodlu diğer kritik hatalar için de güvenlik güncellemeleri yayımladığı bilgisi verilmiştir. CERT-EU, etkilenen sunucuların derhal güncellenmesini ve internete açık varlıklar için kimlik bilgilerinin değiştirilmesini tavsiye etmiştir.
+(XXXXXXX, AÇIK -, )
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Apple'ın İşletim Sistemlerindeki 187 Güvenlik Zafiyeti İçin Güncelleme Yayımlaması
+─────────────────────────────────────────────────────────
+Apple, Temmuz 2026 güvenlik güncellemeleri kapsamında tüm işletim sistemleri ve Safari tarayıcısı için toplam 187 güvenlik zafiyetini gideren yamalar yayımlamıştır. Güncellemelerin macOS, iOS, watchOS, tvOS ve visionOS platformlarını kapsadığı ve özellikle hizmet dışı bırakma (DoS), ayrıcalık yükseltme ve WebKit açıklarına odaklandığı belirtilmiştir. SANS Enstitüsü'nden Johannes Ullrich, CVE-2026-28849 ve CVE-2026-28900 kodlu açıkların macOS uygulamalarının yürütülebilir dosyalarının üzerine yazılmasına izin veren bir zafiyetle ilişkili olabileceğine dikkat çekmiştir. Apple'ın bu sürümde herhangi bir açığın aktif olarak istismar edildiğine dair bir bilgi paylaşmadığı ifade edilmiştir. Ayrıca bu güncellemelerin, sonbaharda çıkacak olan yeni ana işletim sistemi sürümlerine hazırlık niteliğinde bazı altyapı düzenlemelerini de içerdiği kaydedilmiştir.
+(XXXXXXX, AÇIK -isc.sans.edu, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] JetBrains'in TeamCity Sunucularındaki Kritik Komut Çalıştırma Açığını Kapatması
+─────────────────────────────────────────────────────────
+JetBrains, TeamCity yazılımının kurum içi sürümlerinde tespit edilen ve saldırganların kimlik doğrulaması yapmadan işletim sistemi komutları çalıştırmasına izin veren kritik bir güvenlik açığı için acil güncelleme çağrısında bulunmuştur. CVE-2026-63077 koduyla tanımlanan ve 9.8 ciddiyet puanı alan zafiyetin, tüm TeamCity On-Premises sürümlerini etkilediği belirtilmiştir. Flaw'ın, ajan yoklama protokolü üzerinden kimlik doğrulama kontrollerini atlayarak sunucu ayrıcalıklarıyla kod yürütülmesine olanak tanıdığı ifade edilmiştir. JetBrains, bulut tabanlı örneklerin otomatik olarak güncellendiğini, kurum içi kullanıcıların ise 2025.11.7 veya 2026.1.3 sürümlerine geçmesi gerektiğini açıklamıştır. Şu ana kadar açığın aktif olarak istismar edildiğine dair bir kanıt bulunmadığı ancak internete açık sunucuların VPN arkasına alınması gibi ek güvenlik önlemlerinin uygulanması tavsiye edilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 28.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Milyonlarca Araçta Bluetooth Üzerinden Kapı Kilidi Açma Zafiyeti Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Kaliforniya Üniversitesi San Diego (UCSD) araştırmacıları, bayiler tarafından takılan KARR ve SWDS güvenlik sistemlerine sahip en az 2,2 milyon aracın Bluetooth saldırılarına karşı savunmasız olduğunu ortaya çıkarmıştır. Acrisure tarafından üretilen bu cihazların tamamının aynı güvenlik anahtarını kullandığı ve bu durumun saldırganların araç kapılarını açmasına veya motorun çalışmasını engellemesine yol açtığı belirtilmiştir. Araştırmacılar, etkilenen araçların çoğunun son dokuz yıl içinde Güney Kaliforniya'daki Honda, Toyota, Mazda, Ford ve Jeep bayilerinden satın alındığını ifade etmiştir. KARR Security firmasının zafiyeti gidermek için bir yazılım güncellemesi yayımladığı ancak riskin gerçek dünya koşullarında düşük olduğunu iddia ettiği kaydedilmiştir. Cihazların araç bilgisayarı ve ateşleme sistemiyle iç içe olması nedeniyle fiziksel olarak sökülmesinin zor olduğu bilgisi verilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 23.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] Microsoft Defender Güncellemesinin Linux Sunucularını Korumasız Bırakması
+─────────────────────────────────────────────────────────
+Microsoft, Linux için Defender for Endpoint yazılımında yapılan bir güncellemenin ardından bazı sistemlerin savunmasız kaldığını açıklamıştır. 101.26042.0000 ile 101.26042.0009 arasındaki sürümleri etkileyen bir hata nedeniyle, sunucuların yeniden başlatılmasının ardından güvenlik servisinin devre dışı kalabildiği belirtilmiştir. Ayrıca, FIPS modu etkinleştirilmiş Red Hat Enterprise Linux (RHEL) 8 ve 9 sistemlerinde güncellemenin tamamen başarısız olduğu ifade edilmiştir. Microsoft, servisin devre dışı kalma sorununun 101.26042.0011 sürümüyle, FIPS kurulum hatasının ise 101.26052.0011 sürümüyle giderildiğini duyurmuştur. Otomatik güncelleme özelliği açık olan cihazların bu hatalı sürümleri almış olabileceği ve aktif korumanın durmuş olabileceği uyarısı yapılmıştır. Yöneticilerin, uç nokta korumasının durumunu Microsoft Defender portalı üzerinden kontrol etmeleri ve gerekli yamaları uygulamaları istenmiştir.
+(XXXXXXX, AÇIK -theregister.com, 27.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] Yapay Zeka Destekli Dolphin X Zararlı Yazılımının Windows Kullanıcılarını Hedeflemesi
+─────────────────────────────────────────────────────────
+Varonis Tehdit Laboratuvarı araştırmacıları, 300'den fazla uygulamayı hedef alan ve yapay zeka tabanlı bir profil oluşturma aracına sahip olan Dolphin X adlı yeni bir bilgi çalıcı ve uzak erişim truva atı tespit etmiştir. Siber suç forumlarında satışa sunulan bu zararlı yazılımın, tarayıcı şifrelerini, kurumsal kimlik bilgilerini, kripto para cüzdanlarını ve bulut jetonlarını çalma kapasitesine sahip olduğu belirtilmiştir. Yazılımın bünyesinde barındırdığı yapay zeka profilleyicinin, kurbanları uygulama kullanımı ve tarama geçmişine göre analiz ederek saldırganlara en yüksek kazanç sağlayacak hedefleri raporladığı ifade edilmiştir. Kontraktnik takma adını kullanan bir satıcı tarafından pazarlanan yazılımın, tespit edilmeyi zorlaştırmak için kod yapısını ve imzasını sürekli değiştiren abonelik tabanlı bir modelle sunulduğu bildirilmiştir. Uzmanlar, bu tür gelişmiş araçların siber suçlara giriş bariyerini düşürdüğüne dikkat çekmiştir.
+(XXXXXXX, AÇIK -theregister.com, 22.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] Veri Merkezi Yönetim Sistemlerinde 13 Yıllık Güvenlik Açığının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Lava güvenlik araştırmacıları, dünya genelinde 36.000'den fazla internete açık Anakart Yönetim Denetleyicisinin (BMC) 13 yıllık bir IPMI protokolü açığına karşı savunmasız olduğunu ortaya çıkarmıştır. CVE-2013-4786 koduyla izlenen bu zafiyetin, saldırganların işletim sistemi katmanının altına sızarak sunucular üzerinde tam kontrol sağlamasına olanak tanıdığı belirtilmiştir. İncelenen cihazların %66'sının kimlik doğrulama hash bilgilerini dışarı sızdırdığı ve zayıf parolaların dakikalar içinde kırılabildiği ifade edilmiştir. Özellikle Supermicro ve HPE sunucularının bu durumdan etkilendiği, bir kez ele geçirilen bir BMC'nin veri merkezi içindeki diğer sistemlere sızmak için bir basamak olarak kullanılabileceği kaydedilmiştir. Uzmanlar, IPMI ve Redfish gibi yönetim arayüzlerinin asla kamuya açık internete maruz bırakılmaması ve erişimin özel yönetim ağları veya VPN üzerinden sınırlandırılması gerektiğini vurgulamıştır.
+(XXXXXXX, AÇIK -csoonline.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] Linux Çekirdek Ekibinin İki Gün İçinde 432 Güvenlik Açığı Yayınlaması
+─────────────────────────────────────────────────────────
+Linux çekirdek ekibi, geçtiğimiz Pazar ve Pazartesi günleri arasında toplam 432 adet CVE (Ortak Güvenlik Açıkları ve Pozlamalar) kaydı yayınlayarak sistem yöneticileri için yoğun bir iş yükü oluşturmuştur. Akamai Technologies ve nixCraft gibi kurumlardan uzmanlar, bu denli yüksek hacimli bir paylaşımın bireysel değişiklikleri önceliklendirmeyi imkansız kıldığını ifade etmiştir. Söz konusu artışın arkasında, yapay zeka destekli hata bulma araçlarının kullanımının yattığı tahmin edilmektedir. Linux maintainer'ı Greg Kroah-Hartman, çekirdek seviyesinde çalışan sistemlerde hemen her hatanın bir güvenlik açığı olarak sınıflandırılabileceğini ve stabil sürümlere eklenen her düzeltme için bir CVE atandığını açıklamıştır. Uzmanlar, büyük kuruluşların bu yoğun güncellemelerle başa çıkabilmesi için otomatize edilmiş ve düzenli güncelleme süreçlerini benimsemesi gerektiğini, aksi takdirde güvenlik açıklarının takibinin zorlaşacağını belirtmiştir.
+(XXXXXXX, AÇIK -theregister.com, 22.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[20] Linux Cihazları Hedef Alan Tengu Botnetinin Kendini Koruma Mekanizmalarının Belirlenmesi
+─────────────────────────────────────────────────────────
+Nozomi Networks Labs, Mirai tabanlı yeni bir botnet olan Tengu'nun, Linux cihazlarda savunmacıların müdahalelerine karşı donanımsal izleme mekanizmalarını kötüye kullandığını tespit etmiştir. Zararlı yazılımın, ana süreci durdurulduğunda cihazı otomatik olarak yeniden başlatarak kalıcılık mekanizmalarını tekrar devreye soktuğu belirtilmiştir. Telnet üzerinden kaba kuvvet saldırılarıyla yayılan botnetin, 25 farklı dağıtık hizmet reddi saldırısı yöntemini desteklediği ve sistem verilerini toplama yeteneğine sahip olduğu ifade edilmiştir. Tengu'nun ayrıca sistemdeki yeniden başlatma ve kapatma araçlarını bozarak yöneticilerin cihaza müdahale etmesini engellemeye çalıştığı kaydedilmiştir. Yapılan analizlerde, botnetin komuta kontrol sunucusuyla iletişim kurmak için özel bir şifreleme yöntemi kullandığı ve Android tabanlı cihazları da hedefleyebilecek şekilde geliştirildiği bilgisi verilmiştir. Güvenlik uzmanları, internete açık gereksiz servislerin kapatılması ve varsayılan parolaların değiştirilmesi gerektiğini vurgulamıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 28.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[21] Linux Trafik Kontrol Sistemindeki Bir Açığın Root Yetkisine Dönüştürülmesi
+─────────────────────────────────────────────────────────
+STAR Labs araştırmacısı Lee Jia Jie, Linux çekirdeğinin ağ trafik kontrol alt sisteminde bulunan CVE-2026-53264 kodlu bir güvenlik açığını istismar ederek yerel bir kullanıcıyı root yetkisine yükselten bir yöntem yayınlamıştır. Araştırmacı, zafiyetin keşfi ve istismar kodunun geliştirilmesi süreçlerinde yapay zekadan faydalandığını açıklamıştır. Söz konusu açığın, CentOS Stream 9 üzerinde test edildiği ve on denemenin tamamında başarıyla sonuçlandığı bildirilmiştir. Güvenlik açığının giderilmesine yönelik yamanın Haziran 2026'da yayınlandığı ve çeşitli stabil çekirdek dallarına aktarıldığı belirtilmiştir. İstismarın çalışması için kullanıcı ad alanları ve belirli çekirdek seçeneklerinin etkin olması gerektiği, bu durumun doğrudan maruz kalma riskini daralttığı kaydedilmiştir. Uzmanlar, istismar kodunun artık kamuya açık olması nedeniyle kullanıcıların dağıtımları tarafından sunulan güncel çekirdek sürümlerini vakit kaybetmeden yüklemeleri gerektiğini ifade etmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 28.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

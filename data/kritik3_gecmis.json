@@ -1,28 +1,5 @@
 [
  {
-  "date": "2026-07-21",
-  "views": [
-   {
-    "tr_title": "Rusya İstihbaratının NATO Ülkeleri ve Ukrayna'daki IP Kameralarını Ele Geçirmesi",
-    "paragraph": "Hollanda sivil ve askeri istihbarat servisleri AIVD ile MIVD tarafından yayımlanan raporda, en az bir Rus istihbarat servisinin Avrupa ve Ukrayna genelinde internete bağlı güvenlik kameralarını sistematik olarak ele geçirdiği belirtilmiştir. Söz konusu faaliyet kapsamında askeri nakliye rotalarının, Kiev'e giden silah sevkiyatlarının ve Ukrayna birliklerinin konumlarının izlendiği bildirilmiştir. Ukrayna'da bu erişimin askeri personeli etkisiz hale getirmek ve ekipmanları imha etmek amacıyla hedefleme yardımı olarak kullanıldığı ifade edilmiştir. İnternet tarama firması Censys, AB, NATO üyeler",
-    "title": "Russian Intelligence Hacks IP Cameras to Spy on Military Logistics Across NATO States and Ukraine",
-    "full_text": "At least one Russian intelligence service is systematically hijacking internet-connected security cameras across Europe and Ukraine, using the feeds to watch military transport routes, weapons shipments bound for Kyiv, and the locations of Ukrainian troops.\n\nThat is the finding of a cybersecurity advisory published July 10 by the AIVD and MIVD, the Netherlands' civilian and military intelligence services, which describe the operation as ongoing.\n\nIn Ukraine, the surveillance has not stayed passive. Camera access there has been \"used in attempts to neutralise Ukrainian military personnel\" and d"
-   },
-   {
-    "tr_title": "Hugging Face Ağının Otonom Yapay Zeka Ajanı Tarafından Hacklenmesi",
-    "paragraph": "Yapay zeka platformu Hugging Face, saldırganların otonom bir yapay zeka ajanı sistemi kullanarak üretim altyapısına sızdığını ve dahili veri kümeleri ile kimlik bilgilerine erişim sağladığını açıklamıştır. Saldırının, platformun veri işleme hattındaki iki kod yürütme açığından yararlanan kötü amaçlı bir veri kümesiyle başladığı belirtilmiştir. Bu sızma sayesinde saldırganların bulut ve küme kimlik bilgilerini ele geçirerek dahili kümeler arasında yatayda hareket ettiği bildirilmiştir. Hugging Face, güvenlik açıklarını kapattığını, saldırganı sistemden uzaklaştırdığını ve etkilenen tüm kimlik b",
-    "title": "Hugging Face warns an autonomous AI agent hacked its network",
-    "full_text": "The Hugging Face artificial intelligence repository disclosed that attackers gained access to internal datasets and credentials after breaching its production infrastructure using an autonomous AI agent system.\n\nHugging Face is an open-source AI and machine learning platform that provides access to over 45,000 models from leading AI providers and is used by more than 50,000 organizations.\n\nThe company is still investigating whether partner or customer data was affected and said it would contact any affected parties directly. Hugging Face said it has found no evidence of tampering with public-f"
-   },
-   {
-    "tr_title": "Romanya'da Siber Saldırı Sonrası Tapu Sicil Sisteminin Yeniden Kurulması",
-    "paragraph": "Romanya Ulusal Kadastro ve Tapu Sicil Ajansı (ANCPI), merkezi bilgi teknolojileri altyapısını ve e-Terra platformunu hedef alan bir siber saldırının ardından dijital sicil sistemlerini yeniden kurmak için çalışmalarını sürdürmektedir. Saldırının teknik ve hukuki veri tabanlarına zarar vermediği, ancak gayrimenkul işlemlerinin durmasına yol açtığı belirtilmiştir. Romanya Ulusal Siber Güvenlik Direktörlüğü (DNSC) Direktörü Dan Cimpean, saldırının finansal amaçlı olduğunu ve bilinen yazılım açıklarının sızdırılmış kimlik bilgileriyle birlikte kullanılmasıyla gerçekleştirildiğini açıklamıştır. Sal",
-    "title": "Romania races to restore land registry after cyberattack disrupts property market",
-    "full_text": "Romania races to restore land registry after cyberattack disrupts property market\n\nRomania's land registry agency said Monday that a cyberattack that took out the country's digital registry systems last week had not compromised its technical and legal databases — the core records containing cadastral information such as property boundaries, maps, as well as legal information including ownership and mortgages.\n\nThe National Agency for Cadastre and Land Registration (ANCPI) said it is continuing efforts to restore services that have been offline for nearly a week, bringing real estate transactio"
-   }
-  ]
- },
- {
   "date": "2026-07-22",
   "views": [
    {
@@ -180,6 +157,29 @@
     "paragraph": "Arista VeloCloud Orchestrator (VCO) yazılımının yerel sürümlerinde bulunan ve CVE-2026-16812 koduyla takip edilen kritik bir güvenlik açığının aktif olarak istismar edildiği bildirilmiştir. Arista tarafından yapılan açıklamada, 10.0 tam puanlık ciddiyet seviyesine sahip olan bu işletim sistemi komut enjeksiyonu açığının, saldırganların uzak ağlardan yetkili iç işlevlere erişmesine ve rastgele kod yürütmesine olanak tanıdığı belirtilmiştir. ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), söz konusu açığı Bilinen İstismar Edilen Zafiyetler kataloğuna ekleyerek federal kurumlara 30 Temmuz ",
     "title": "Attackers Exploit Arista VeloCloud Orchestrator Command Injection Flaw",
     "full_text": "A maximum-severity security flaw impacting on-premises versions of Arista VeloCloud Orchestrator (VCO) has come under active exploitation in the wild.\n\nThe vulnerability, tracked as CVE-2026-16812 (CVSS score: 10.0), is a case of operating system command injection that could pave the way for arbitrary code execution.\n\n\"VeloCloud Orchestrator (VCO) on-prem has a security issue where this issue may allow a remote attacker to access privileged internal functionality and impact the VCO host,\" Arista said in a Monday advisory.\n\n\"Successful exploitation may compromise the confidentiality, integrity,"
+   }
+  ]
+ },
+ {
+  "date": "2026-07-29",
+  "views": [
+   {
+    "tr_title": "Rusya Bağlantılı Siber Tehdit Aktörü Laundry Bear'ın Zimbra Açığını İstismar Etmesi",
+    "paragraph": "Rusya bağlantılı siber tehdit aktörü Laundry Bear'ın, Zimbra e-posta sunucularındaki CVE-2025-66376 kodlu güvenlik açığını kullanarak Batılı kuruluşlara yönelik geniş kapsamlı bir casusluk faaliyeti yürüttüğü bildirilmiştir. Amerika Birleşik Devletleri ve Birleşik Krallık dahil 27 uluslararası kurum tarafından yayımlanan ortak raporda, saldırıların Temmuz 2025 tarihinden bu yana sürdüğü belirtilmiştir. Tehdit aktörünün, kullanıcıların herhangi bir bağlantıya tıklamasına gerek kalmadan yalnızca e-postayı görüntülemesiyle sistemlere sızdığı kaydedilmiştir. Operasyon kapsamında savunma sanayii, e",
+    "title": "Year-long Russian attacks infect users as soon as they look at an email",
+    "full_text": "Year-long Russian attacks infect users as soon as they look at an email\n\nKremlin cyber goons have been breaking into government and commercial networks for at least a year by exploiting a Zimbra bug with a novel twist on Russia’s usual phishing expeditions: this attack occurs as soon as the victim looks at an email, with no need to even click on a link or open a file.\n\nThese attacks have been ongoing since July 2025, according to a whopping 27 US, UK, and other international government agencies, which attribute the intrusions to a group they track as Laundry Bear, aka Void Blizzard.\n\n“Laundry "
+   },
+   {
+    "tr_title": "Minnesota'daki Su Tesislerine Yönelik Eş Zamanlı Operasyonel Teknoloji Saldırılarının Gerçekleşmesi",
+    "paragraph": "Amerika Birleşik Devletleri'nin Minnesota eyaletindeki 30'dan fazla su ve atık su tesisinin, operasyonel teknoloji sistemlerini hedef alan eş zamanlı siber saldırılara maruz kaldığı bildirilmiştir. Minnesota Bilgi Teknolojileri Servisi tarafından yapılan açıklamada, 26 ve 27 Temmuz 2026 tarihlerinde gerçekleşen müdahalelerin bazı belediyelerde otomatik kontrol işlevlerini bozduğu ifade edilmiştir. Braham şehrindeki su arıtma tesisinin, saldırganların işletim kontrollerini kapatması nedeniyle kısa süreliğine devre dışı kaldığı kaydedilmiştir. Yetkililer, saldırıların özellikle hücresel iletişim",
+    "title": "Dozens of Minnesota Water Utilities Targeted in Coordinated OT Attacks",
+    "full_text": "Dozens of Minnesota Water Utilities Targeted in Coordinated OT Attacks\n\nState and federal agencies respond after intrusions disrupt automated controls at municipal water and wastewater utilities.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nState and federal agencies are conducting an investigation after a coordinated cyberattack hit operational technology (OT) systems at dozens of water utilities in Minnesota.\nAccording to Minnesota IT Services (MNIT), more than 30 community water systems were targeted on July 26 and 27.\n\n\n\nStatements issued by some of the cities whose syste"
+   },
+   {
+    "tr_title": "Avustralyalı İnsansız Hava Aracı Yazılım Geliştiricisi CubePilot'un DNS Ele Geçirme Saldırısına Uğraması",
+    "paragraph": "İnsansız hava araçları için uçuş kontrolörleri tasarlayan Avustralya merkezli CubePilot firması, 24 Temmuz 2026 tarihinde ciddi bir DNS ele geçirme saldırısına uğradığını duyurmuştur. Şirket tarafından yapılan açıklamada, saldırganların cubepilot[.]org alan adının DNS ayarlarını ele geçirerek trafiği kendi altyapılarına yönlendirdiği ve tüm alt alan adlarını kapsayan TLS sertifikaları temin ettiği belirtilmiştir. Bu durumun, kullanıcıların kimlik bilgilerinin ele geçirilmesine ve sahte HTTPS bağlantıları üzerinden veri hırsızlığına yol açtığı ifade edilmiştir. CubePilot, alan adlarının kontrol",
+    "title": "CubePilot drone software dev hit by DNS hijacking to intercept traffic",
+    "full_text": "CubePilot, an Australian firm that designs flight controllers for drones (UAVs), announced a severe operational disruption caused by a DNS hijacking attack.\n\nHijacking domain name system (DNS) records allows threat actors to redirect users to their infrastructure, diverting traffic intended for a legitimate service. This exposes users to dangerous scenarios such as sensitive data interception, malware delivery, and phishing.\n\nAccording to a status update published on CubePilot’s website, an attacker gained control of the cubepilot[.]org domain DNS settings on July 24, allowing them to intercep"
    }
   ]
  }
