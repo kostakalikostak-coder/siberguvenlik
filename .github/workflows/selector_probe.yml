@@ -19,3 +19,6 @@ jobs:
           python-version: '3.11'
       - run: pip install requests beautifulsoup4
       - run: python -u scripts/selector_probe.py
+      # Seçici doğru olduğu hâlde üretimde kaybolan kaynaklar için ÇEKİM teşhisi:
+      # üretimin timeout/retry/10s-sınır koşullarını birebir taklit eder.
+      - run: python -u scripts/fetch_probe.py
