@@ -2246,53 +2246,69 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         for src in self.sources:
             st = self.source_stats.get(src)
             if st is None:
-                rows.append((src, -1, -1, -1, 'DENENMEDİ'))
+                rows.append((src, -1, -1, -1, -1, 'DENENMEDİ'))
             else:
                 rows.append((src, st.get('raw', 0), st.get('kept', 0),
-                             st.get('pool', -1), st.get('status', '?')))
+                             st.get('text_ok', -1), st.get('pool', -1),
+                             st.get('status', '?')))
 
-        # HAVUZ azalan (asıl çıktı bu); sonra kalan, ham, isim
-        rows.sort(key=lambda r: (-r[3], -r[2], -r[1], r[0]))
+        # HAVUZ azalan (asıl çıktı bu); sonra metin, kalan, ham, isim
+        rows.sort(key=lambda r: (-r[4], -r[3], -r[2], -r[1], r[0]))
 
         # "üretiyor" ölçütü artık KALAN değil HAVUZ: bir kaynak RSS'ten 30 haber
-        # getirip hiçbirinin tam metnini çıkaramıyorsa ÜRETMİYOR demektir. Eski
-        # ölçüt bu durumu "üretiyor" sayıp kaybı gizliyordu.
-        uretiyor = sum(1 for r in rows if r[3] > 0)
-        bos      = sum(1 for r in rows if r[4].startswith('BOŞ'))
-        hatali   = sum(1 for r in rows if r[4].startswith(('HATA', 'TIMEOUT')))
+        # getirip hiçbiri rapora giremiyorsa ÜRETMİYOR demektir. Eski ölçüt bu
+        # durumu "üretiyor" sayıp kaybı gizliyordu.
+        uretiyor = sum(1 for r in rows if r[4] > 0)
+        bos      = sum(1 for r in rows if r[5].startswith('BOŞ'))
+        hatali   = sum(1 for r in rows if r[5].startswith(('HATA', 'TIMEOUT')))
+        # İki farklı kayıp sınıfı — farklı düzeltme gerektirirler, ayrı sayılır.
         cikarim_sifir = [r[0] for r in rows if r[2] > 0 and r[3] == 0]
+        dedup_sifir   = [r[0] for r in rows if r[3] > 0 and r[4] == 0]
 
         toplam_kalan = sum(r[2] for r in rows if r[2] > 0)
-        toplam_havuz = sum(r[3] for r in rows if r[3] > 0)
-        oran = (100 * toplam_havuz / toplam_kalan) if toplam_kalan else 0
+        toplam_metin = sum(r[3] for r in rows if r[3] > 0)
+        toplam_havuz = sum(r[4] for r in rows if r[4] > 0)
+        o1 = (100 * toplam_metin / toplam_kalan) if toplam_kalan else 0
+        o2 = (100 * toplam_havuz / toplam_metin) if toplam_metin else 0
 
         lines = []
         lines.append(f"# KAYNAK SAĞLIK RAPORU — {stamp}")
         lines.append(f"# aktif={len(rows)}  üretiyor={uretiyor}  boş(200/0)={bos}  hata/timeout={hatali}")
-        lines.append(f"# çıkarım: {toplam_havuz}/{toplam_kalan} haber havuza ulaştı (%{oran:.0f})")
+        lines.append(f"# çıkarım : {toplam_metin}/{toplam_kalan} haberin tam metni çıktı (%{o1:.0f})")
+        lines.append(f"# dedup   : {toplam_havuz}/{toplam_metin} haber filtreleri geçti (%{o2:.0f})")
         if cikarim_sifir:
-            lines.append(f"# 🚨 ÇIKARIM SIFIR ({len(cikarim_sifir)}): {', '.join(cikarim_sifir)}")
-        lines.append(f"# {'KAYNAK':26} {'HAM':>4} {'KALAN':>6} {'HAVUZ':>6}  DURUM")
-        for src, raw, kept, pool, status in rows:
-            raw_s  = '-' if raw  < 0 else str(raw)
-            kept_s = '-' if kept < 0 else str(kept)
-            pool_s = '-' if pool < 0 else str(pool)
-            # RSS sağlıklı ama tek haber üretemiyorsa DURUM bunu söylemeli;
-            # eskiden bu satır "OK" yazıyordu ve kayıp fark edilmiyordu.
-            if kept > 0 and pool == 0:
+            lines.append(f"# 🚨 ÇIKARIM SIFIR ({len(cikarim_sifir)}) [tam metin çıkmıyor]: "
+                         f"{', '.join(cikarim_sifir)}")
+        if dedup_sifir:
+            lines.append(f"# 🚨 DEDUP SIFIR ({len(dedup_sifir)}) [metin var, filtreler eliyor]: "
+                         f"{', '.join(dedup_sifir)}")
+        lines.append(f"# {'KAYNAK':26} {'HAM':>4} {'KALAN':>6} {'METİN':>6} {'HAVUZ':>6}  DURUM")
+        for src, raw, kept, text_ok, pool, status in rows:
+            raw_s  = '-' if raw     < 0 else str(raw)
+            kept_s = '-' if kept    < 0 else str(kept)
+            txt_s  = '-' if text_ok < 0 else str(text_ok)
+            pool_s = '-' if pool    < 0 else str(pool)
+            # Kaynak hiç çıktı üretmiyorsa DURUM bunu SÖYLEMELİ; eskiden bu satır
+            # "OK" yazıyordu ve kayıp fark edilmiyordu.
+            if kept > 0 and text_ok == 0:
                 status = f'🚨 ÇIKARIM SIFIR ({status})'
-            lines.append(f"{src:26} {raw_s:>4} {kept_s:>6} {pool_s:>6}  {status}")
+            elif text_ok > 0 and pool == 0:
+                status = f'🚨 DEDUP SIFIR ({status})'
+            lines.append(f"{src:26} {raw_s:>4} {kept_s:>6} {txt_s:>6} {pool_s:>6}  {status}")
 
         os.makedirs("data", exist_ok=True)
         _atomic_write(self.source_health_file, '\n'.join(lines) + '\n')
 
-        print(f"🩺 Kaynak sağlığı: {uretiyor} üretiyor / {bos} sessiz-boş / "
-              f"{hatali} hata / {len(cikarim_sifir)} çıkarım-sıfır "
+        print(f"🩺 Kaynak sağlığı: {uretiyor} üretiyor / {bos} sessiz-boş / {hatali} hata / "
+              f"{len(cikarim_sifir)} çıkarım-sıfır / {len(dedup_sifir)} dedup-sıfır "
               f"→ {self.source_health_file}")
-        print(f"   📉 Çıkarım oranı: {toplam_havuz}/{toplam_kalan} (%{oran:.0f}) havuza ulaştı")
+        print(f"   📉 Çıkarım %{o1:.0f} ({toplam_metin}/{toplam_kalan})  |  "
+              f"Dedup %{o2:.0f} ({toplam_havuz}/{toplam_metin})")
         if cikarim_sifir:
-            print(f"   🚨 RSS'i çalışan ama HİÇ haber üretemeyen kaynak(lar): "
-                  f"{', '.join(cikarim_sifir)}")
+            print(f"   🚨 Tam metni HİÇ çıkmayan kaynak(lar): {', '.join(cikarim_sifir)}")
+        if dedup_sifir:
+            print(f"   🚨 Metni çıkıp filtrelerde TAMAMEN elenen kaynak(lar): "
+                  f"{', '.join(dedup_sifir)}")
 
     def _filter_duplicates(self, all_news):
         """
@@ -2675,34 +2691,18 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 all_news[src] = articles
                 if src in self.source_stats:
                     self.source_stats[src]['kept'] = len(articles)
-                    # ÇIKARIM sonucu: tam metni çıkan (havuza girecek) haber sayısı.
-                    # 'kept' yalnızca RSS/pencere/dedup sonrası KALANI sayar; bunların
-                    # tam metni çıkmazsa save_txt onları eler, ama kaynak sağlık
-                    # raporunda kaynak "OK" görünmeye devam ederdi. 2026-07-29
-                    # denetimi bu kör noktayı ölçtü: ANSSI 30 KALAN → 0 havuz, durum
-                    # "OK"; sistem genelinde 286 kalandan yalnızca 106'sı havuza
-                    # ulaşıyordu (%63 sessiz kayıp) ve hiçbir alarm yoktu.
-                    usable = sum(1 for a in articles
-                                 if a.get('success') and a.get('word_count', 0) > 0)
-                    self.source_stats[src]['pool'] = usable
-                    if usable == 0 and articles:
-                        # rss_errors'a YAZ: bu liste aşağıda _save_rss_errors ile
-                        # diske iner (sağlık raporundan ÖNCE çalışır), dolayısıyla
-                        # uyarı burada üretilmeli — sağlık raporunda üretilse
-                        # kaydedilmeden kalırdı.
-                        self.rss_errors.append(
-                            f"ÇIKARIM SIFIR - {src}: {len(articles)} haber kaldı "
-                            f"ama hiçbirinin tam metni çıkmadı")
-                        print(f"   └─ 🚨 ÇIKARIM SIFIR — {len(articles)} haberin "
-                              f"hiçbiri havuza giremedi")
+                    # METİN: tam metni ÇIKAN haber sayısı (çekim/çıkarım sonucu).
+                    # Aşağıdaki 'pool' ile birlikte iki farklı kayıp sınıfını
+                    # AYIRIR — bu ayrımın yokluğu 2026-07-29 denetiminde yanlış
+                    # teşhise yol açtı: ANSSI'nin haberleri sanılanın aksine
+                    # çekilebiliyordu, dedup aşamasında eleniyorlardı.
+                    self.source_stats[src]['text_ok'] = sum(
+                        1 for a in articles
+                        if a.get('success') and a.get('word_count', 0) > 0)
             else:
                 print(f"   └─ ❌ Bulunamadı")
 
             time.sleep(1)
-
-        if self.rss_errors:
-            self._save_rss_errors()
-        self._save_source_health()
 
         # ── Sosyal medya sinyalleri (Reddit, HN, GitHub) ──
         # Haber akışından ayrı tutulur, sadece HTML enjeksiyonu için saklanır
@@ -2714,6 +2714,39 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         all_news = self._filter_duplicates(all_news)
         all_news = self._filter_old_articles(all_news)
+
+        # ── Kaynak sağlığı ARTIK BURADA yazılıyor (filtrelerden SONRA) ────────
+        # Eskiden filtrelerden ÖNCE yazılıyordu, dolayısıyla rapor bir kaynağın
+        # GERÇEK çıktısını hiç görmüyordu: haberler çekiliyor, sonra dedup/pencere
+        # onları eliyor, ama rapor "KALAN=30 / OK" yazmaya devam ediyordu.
+        # 2026-07-29 denetiminde ANSSI tam olarak buydu — 30 haberin tam metni
+        # başarıyla çıkıyor, hepsi dedup'ta eleniyor, rapor sağlıklı görünüyordu.
+        for src, arts in all_news.items():
+            if src in self.source_stats:
+                self.source_stats[src]['pool'] = sum(
+                    1 for a in arts
+                    if a.get('success') and a.get('word_count', 0) > 0)
+        for src in self.source_stats:
+            self.source_stats[src].setdefault('pool', 0)
+
+        # İki ayrı sessiz-kayıp sınıfı; ikisi de FARKLI düzeltme gerektirir:
+        #   METİN=0            → çekim/çıkarım sorunu (seçici, engel, eşik)
+        #   METİN>0 & HAVUZ=0  → dedup/pencere her şeyi eledi
+        for src, st in self.source_stats.items():
+            kept, text_ok, pool = (st.get('kept', 0), st.get('text_ok', 0),
+                                   st.get('pool', 0))
+            if kept > 0 and text_ok == 0:
+                self.rss_errors.append(
+                    f"ÇIKARIM SIFIR - {src}: {kept} haber çekildi ama hiçbirinin "
+                    f"tam metni çıkmadı")
+            elif text_ok > 0 and pool == 0:
+                self.rss_errors.append(
+                    f"DEDUP SIFIR - {src}: {text_ok} haberin tam metni çıktı ama "
+                    f"hiçbiri dedup/pencere filtrelerinden geçemedi")
+
+        if self.rss_errors:
+            self._save_rss_errors()
+        self._save_source_health()
 
         total        = sum(len(arts) for arts in all_news.values())
         full_text_ok = sum(1 for arts in all_news.values() for art in arts if art.get('success'))
