@@ -296,3 +296,101 @@ class TestPendingLinks:
         s._commit_pending_links()
         with open(s.used_links_file, encoding='utf-8') as f:
             assert f.read().strip().split('\t')[3] == beklenen
+
+
+# ── Devlet/APT kanıtı: atıf İFADESİ veya AKTÖR KİMLİĞİ ─────────────────────
+# 2026-07-30: OpenAI'nin kendi modelinin test sırasında korumalı alandan kaçması
+# haberi nation_state_apt etiketlendi ve YALNIZCA kategori önceliği sayesinde
+# kritik3'e girdi (88 puanda beraberliği bozdu).
+
+class TestAptEvidence:
+    def _s(self):
+        return HaberSistemi()
+
+    def test_turkish_attribution_phrases(self):
+        """Raporlar Türkçe üretiliyor; en sık kalıp tanınmalı."""
+        s = self._s()
+        for t in ("Rusya bağlantılı tehdit aktörü Zimbra açığını istismar etti",
+                  "İran destekli saldırganlar su tesislerini hedefledi",
+                  "Çin bağlantılı casusluk grubu",
+                  "Kuzey Kore bağlantılı grup npm paketlerine sızdı",
+                  "Çinli tehdit aktörleri"):
+            assert s._has_state_attribution(t), t
+
+    def test_country_noun_link_phrases(self):
+        """Ülke SIFATI değil İSMİ ile yazılan atıflar da tanınmalı."""
+        s = self._s()
+        for t in ("Russia-linked actors targeted the ministry",
+                  "Belarus-Linked Codebase, Analysis Finds",
+                  "China-nexus espionage group"):
+            assert s._has_state_attribution(t), t
+
+    def test_icin_is_not_china(self):
+        """KELİME SINIRI: Türkçe 'için', 'çin' ile eşleşmemeli.
+
+        Sınırsız desen neredeyse HER Türkçe metni 'devlet atıflı' sayar ve
+        denetimi tamamen işlevsiz bırakırdı.
+        """
+        s = self._s()
+        for t in ("Bu haber için önemli bir gelişmedir",
+                  "Kullanıcılar için güvenlik güncellemesi yayımlandı"):
+            assert not s._has_state_attribution(t), t
+
+    def test_bare_country_is_not_attribution(self):
+        """Yalın ülke adı atıf değildir (ürünün nerede üretildiği vb.)."""
+        s = self._s()
+        for t in ("Chinese enterprise software library is widely deployed",
+                  "Çin menşeli Unitree firmasının insansı robotları",
+                  "Rusya'da faaliyet gösteren bir e-ticaret sitesi kapandı"):
+            assert not s._has_state_attribution(t), t
+
+    def test_actor_identity_alone_is_evidence(self):
+        """Atıf CÜMLESİ olmadan da aktör adı geçen haber APT olabilir.
+
+        Bu yol olmadan gerçek APT haberleri haksız yere cezalandırılırdı;
+        geçmiş ölçümünde kayıtların dörtte biri SADECE bu yoldan geçiyordu.
+        """
+        s = self._s()
+        for t in ("TAG-195 Upgrades MaaS Ecosystem with Modular Tools",
+                  "APT29 deployed a new backdoor",
+                  "Laundry Bear targeted Western organizations"):
+            assert s._has_apt_evidence(t), t
+
+    def test_product_codename_without_threat_context_is_not_evidence(self):
+        """Ürün/kıyaslama adı kod adı sanılmamalı.
+
+        'ExploitGym' bir kıyaslama testi adıdır; CamelCase olduğu için kod adı
+        sayılıyordu ve OpenAI haberini APT kanıtlı gösteriyordu.
+        """
+        s = self._s()
+        t = ("OpenAI, güvenlik testleri sırasında kontrolden çıkan modellerin "
+             "ExploitGym kıyaslama testi sırasında korumalı alanı aştığını açıkladı.")
+        assert not s._has_apt_evidence(t)
+
+    def test_unverified_nation_state_loses_priority_edge(self):
+        """Doğrulanmamış nation_state_apt öncelik avantajını kaybetmeli."""
+        s = self._s()
+        recs = {1: {'kat': 'nation_state_apt', 'toplam': 88,
+                    's': 35, 'e': 20, 'a': 18, 'k': 15},
+                2: {'kat': 'politika_hukuk', 'toplam': 88,
+                    's': 35, 'e': 20, 'a': 18, 'k': 15}}
+        arts = {1: {'full_text': 'OpenAI modeli test sırasında korumalı alandan çıktı.',
+                    'title': 'Rogue AI agent breached second company'},
+                2: {'full_text': 'FSB, Telegram kurucusunu teröre yardımla suçladı.',
+                    'title': 'Russia charges Telegram founder'}}
+        s._enforce_apt_attribution(recs, arts)
+        assert recs[1].get('apt_dogrulanmadi') is True
+        assert s._kat_oncelik(recs[1]) < s._kat_oncelik(recs[2])
+        # Kategori DEĞİŞMEZ — günlük dürüst kalmalı
+        assert recs[1]['kat'] == 'nation_state_apt'
+
+    def test_verified_nation_state_keeps_priority(self):
+        """Gerçek APT haberi önceliğini korumalı (haksız eleme olmamalı)."""
+        s = self._s()
+        recs = {1: {'kat': 'nation_state_apt', 'toplam': 88,
+                    's': 35, 'e': 20, 'a': 18, 'k': 15}}
+        arts = {1: {'full_text': 'Rusya bağlantılı tehdit aktörü bakanlığı hedef aldı.',
+                    'title': 'Russia-linked actors hit ministry'}}
+        s._enforce_apt_attribution(recs, arts)
+        assert not recs[1].get('apt_dogrulanmadi')
+        assert s._kat_oncelik(recs[1]) == 8

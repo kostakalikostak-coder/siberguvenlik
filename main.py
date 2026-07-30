@@ -3090,16 +3090,47 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         r'|charming\s+kitten|mirage\s+kitten|equation\s+group',
         re.I)
 
-    # Ülke sıfatı + aktör ismi YAKINLIĞI (≤60 karakter, iki yönde). Yalın ülke
-    # sıfatı tek başına yetmez: "Chinese enterprise software" (kütüphanenin nerede
+    # Ülke adı/sıfatı — İngilizce VE Türkçe, sıfat VE isim biçimleri.
+    # Eskiden yalnızca İngilizce SIFATLAR vardı (chinese/russian/...). Bu, iki
+    # yaygın kalıbı tamamen kaçırıyordu: ülke İSMİYLE yazılan atıflar
+    # ("Russia-linked", "Belarus-linked") ve TÜRKÇE atıflar ("Rusya bağlantılı
+    # tehdit aktörü") — ki raporlar Türkçe üretildiği için ikincisi en sık
+    # kullanılan biçimdi. 2026-07-30 ölçümü: "Rusya bağlantılı tehdit aktörü"
+    # ifadesi atıf SAYILMIYORDU.
+    # ⚠️ KELİME SINIRI ZORUNLU. Sınırsız yazıldığında Türkçe "için" sözcüğü
+    # "çin" ile eşleşiyor ve neredeyse HER metin "devlet atıflı" sayılıyordu —
+    # bu, ağı tamamen işlevsiz bırakırdı. Türkçe sondan eklemeli olduğu için
+    # sona \w* konur ("Rusya'nın", "grupları"), başa \b konur.
+    # 'İ' (U+0130) Python'da re.I ile 'i'ye eşleşmez (casefold "i̇" üretir), bu
+    # yüzden İran/İsrail gibi adlarda [iİ] açıkça yazılır.
+    _COUNTRY = (
+        r'\b(?:chinese|china|çin(?:li|\'?[a-zçğıöşü]*)?|russian|russia|rusya\w*|'
+        r'[iİ]ranian|[iİ]ran\w*|north[\s-]?korean|north[\s-]?korea|'
+        r'kuzey[\s-]?kore\w*|dprk|belarusian|belarus\w*|'
+        r'israeli|israel|[iİ]srail\w*|pakistani|pakistan\w*|'
+        r'vietnamese|vietnam\w*|syrian|syria|suriye\w*)'
+    )
+    # Aktör/kurum sözcükleri — İngilizce + Türkçe (Türkçe ekler için \w*).
+    _ACTOR_WORD = (
+        r'\b(?:hacker\w*|actors?|groups?|apt|state|government|intelligence|'
+        r'military|nexus|spy|espionage|aktör\w*|grub\w*|grup\w*|korsan\w*|'
+        r'istihbarat\w*|devlet\w*|ordu\w*|casus\w*|saldırgan\w*|tehdit\w*)'
+    )
+
+    # "X-linked / X bağlantılı" gibi DOĞRUDAN atıf kalıpları: ülke + bağ sözcüğü.
+    # Aktör sözcüğü aramaya gerek yok, bağ sözcüğünün kendisi atıf beyanıdır.
+    _ATTR_LINK = re.compile(
+        _COUNTRY + r'[\s\-’\']*'
+        r'(?:linked|nexus|aligned|backed|sponsored|affiliated|'
+        r'bağlantılı|destekli|güdümlü|yanlısı)',
+        re.I)
+
+    # Ülke + aktör ismi YAKINLIĞI (≤60 karakter, iki yönde). Yalın ülke sıfatı
+    # tek başına yetmez: "Chinese enterprise software" (kütüphanenin nerede
     # yaygın olduğu) atıf DEĞİLDİR — yakınlık kuralı bunu eler.
     _ATTR_NEAR = re.compile(
-        r'(chinese|russian|iranian|north[\s-]?korean|dprk|israeli|pakistani)'
-        r'.{0,60}?'
-        r'(hacker|actor|group|apt|state|government|intelligence|military|nexus|spy)'
-        r'|(hacker|actor|group|apt|state|government|intelligence|military|nexus|spy)'
-        r'.{0,60}?'
-        r'(chinese|russian|iranian|north[\s-]?korean|dprk|israeli|pakistani)',
+        _COUNTRY + r'.{0,60}?' + _ACTOR_WORD
+        + r'|' + _ACTOR_WORD + r'.{0,60}?' + _COUNTRY,
         re.I | re.S)
 
     def _has_state_attribution(self, *texts):
@@ -3108,6 +3139,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         if not blob:
             return False
         return bool(self._STATE_ATTRIBUTION_TERMS.search(blob)
+                    or self._ATTR_LINK.search(blob)
                     or self._ATTR_NEAR.search(blob))
 
     def _enforce_apt_attribution(self, records, articles_by_id):
@@ -3128,16 +3160,96 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             if rec.get('kat') != 'zafiyet_aktif_apt':
                 continue
             a = articles_by_id.get(aid, {})
-            if self._has_state_attribution(a.get('full_text', ''), a.get('title', '')):
+            if self._has_apt_evidence(a.get('full_text', ''), a.get('title', '')):
                 continue
             rec['kat'] = 'zafiyet_rutin'
             rec['toplam'] = self._record_total(rec)
             downgraded.add(aid)
-            print(f"   🛡️  ID {aid}: devlet/APT atfı bulunamadı → "
+            print(f"   🛡️  ID {aid}: devlet/APT kanıtı bulunamadı → "
                   f"zafiyet_aktif_apt → zafiyet_rutin (kritik3 dışı)")
+
+        # ── nation_state_apt DOĞRULAMASI ──────────────────────────────────
+        # nation_state_apt, KATEGORI_ONCELIK'te 8 ile casus_yazilim'dan sonraki
+        # EN YÜKSEK öncelik. Yani aynı puanda bu etiket beraberliği tek başına
+        # bozuyor. Buna rağmen kardeş kategori zafiyet_aktif_apt denetlenirken
+        # bu denetlenmiyordu — en çok zarar verebilecek etiket, en az korunan
+        # etiketti. 2026-07-30'da olan tam buydu: OpenAI'nin KENDİ modelinin
+        # test sırasında korumalı alandan kaçması haberi nation_state_apt
+        # etiketlendi, 88 puanla Durov haberiyle (politika_hukuk, 88) berabere
+        # kaldı ve YALNIZCA kategori önceliği sayesinde kritik3'e girdi.
+        #
+        # Kategori DEĞİŞTİRİLMEZ: hangi etiketin doğru olduğu içeriğe bağlıdır
+        # ve yanlış bir etiket uydurmak günlüğü de bozar. Yalnızca doğrulanmamış
+        # iddianın getirdiği ÖNCELİK AVANTAJI geri alınır (bkz. _kat_oncelik).
+        for aid, rec in records.items():
+            if rec.get('kat') != 'nation_state_apt':
+                continue
+            a = articles_by_id.get(aid, {})
+            if self._has_apt_evidence(a.get('full_text', ''), a.get('title', '')):
+                continue
+            rec['apt_dogrulanmadi'] = True
+            print(f"   🛡️  ID {aid}: nation_state_apt iddiası metinde "
+                  f"doğrulanmadı → öncelik avantajı geri alındı")
+
         if downgraded:
             print(f"   🛡️  Atıf kontrolü: {len(downgraded)} haber zafiyet_rutin'e indirildi.")
         return downgraded
+
+    # Doğrulanmamış nation_state_apt için etkin öncelik. politika_hukuk /
+    # stratejik_kurum_saldirisi (7) ALTINDA kalır ki doğru etiketlenmiş bir
+    # haber beraberliği kazansın; veri_ihlali (3) ÜSTÜNDE kalır çünkü haber
+    # yine de ciddi bir siber olay olabilir — amaç elemek değil, kanıtsız
+    # iddianın kazandırdığı avantajı geri almaktır.
+    DOGRULANMAMIS_APT_ONCELIK = 4
+
+    def _kat_oncelik(self, rec):
+        """Sıralama için etkin kategori önceliği."""
+        oncelik = KATEGORI_ONCELIK.get(rec.get('kat'), 0)
+        if rec.get('apt_dogrulanmadi'):
+            return min(oncelik, self.DOGRULANMAMIS_APT_ONCELIK)
+        return oncelik
+
+    def _has_apt_evidence(self, *texts):
+        """Devlet/APT iddiasını destekleyen KANITI iki yoldan arar.
+
+        (a) Açık atıf ifadesi — "Rusya bağlantılı", "state-sponsored",
+            "Russia-linked", "attributed to" vb. (_has_state_attribution)
+        (b) YAPISAL TEHDİT AKTÖRÜ KİMLİĞİ — metinde APT29, UNC5792, Storm-2077,
+            "Laundry Bear", Sandworm gibi bir aktör adı geçiyorsa haber tek
+            kelime "devlet destekli" yazmasa da meşru şekilde nation_state_apt
+            olabilir. Bu yol OLMADAN ağ, gerçek APT haberlerini haksız yere
+            cezalandırırdı: 2026-07-30 ölçümünde metni bulunabilen 16
+            nation_state_apt kaydının 7'si SADECE bu yoldan geçiyordu.
+
+        CVE/GHSA gibi ZAFİYET kimlikleri aktör sayılmaz — aksi hâlde CVE numarası
+        içeren her haber bu kontrolü geçerdi.
+        """
+        blob = ' '.join(t for t in texts if t)
+        if not blob:
+            return False
+        if self._has_state_attribution(blob):
+            return True
+        # Yapısal aktör kimliği (APT29, UNC5792, Storm-2077, "Laundry Bear",
+        # Sandworm...) tek başına yeterlidir — bunlar tanımı gereği aktör adıdır.
+        aktorler = {x for x in _dedup.extract_actors(blob)
+                    if not x.startswith(('cve', 'ghsa'))}
+        if aktorler:
+            return True
+        # Serbest kod adı TEK BAŞINA yetmez: extract_codenames herhangi bir
+        # CamelCase/ALL-CAPS sözcüğü kod adı sayar ve ürün/kıyaslama adlarını da
+        # yakalar. 2026-07-30'da OpenAI haberindeki "ExploitGym" (bir kıyaslama
+        # testi) böyle kod adı sanılmıştı. Bu yüzden kod adının TEHDİT BAĞLAMIYLA
+        # birlikte geçmesi şartı aranır.
+        return bool(_dedup.extract_codenames(blob)
+                    and self._THREAT_CONTEXT.search(blob))
+
+    # Kod adı yolunun ikinci şartı: metinde gerçekten tehdit/aktör bağlamı olmalı.
+    _THREAT_CONTEXT = re.compile(
+        r'\b(?:malware|ransomware|backdoor|trojan|spyware|implant|botnet|rat\b|'
+        r'c2|command[\s-]and[\s-]control|campaign|threat\s+actor|apt|espionage|'
+        r'zararlı\s+yazılım|fidye\s+yazılım\w*|arka\s+kapı|casus\s+yazılım\w*|'
+        r'truva|botnet|kampanya\w*|tehdit\s+aktör\w*|casusluk|sızma|saldırgan\w*)',
+        re.I)
 
     def _cyber_text_for(self, art_id, content_by_id, articles_by_id):
         """Bir haber için siber-sinyal taraması yapılacak birleşik metni döndürür."""
@@ -4265,7 +4377,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     rescue.append(aid)
             rescue.sort(key=lambda aid: (
                 -records[aid]['toplam'],
-                -KATEGORI_ONCELIK.get(records[aid]['kat'], 0),
+                -self._kat_oncelik(records[aid]),
                 source_pos.get(aid, 1 << 30),
             ))
             promoted = []
@@ -4283,7 +4395,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         ranked.sort(key=lambda aid: (
             -records[aid]['toplam'],
-            -KATEGORI_ONCELIK.get(records[aid]['kat'], 0),
+            -self._kat_oncelik(records[aid]),
             -records[aid]['k'],
             -records[aid]['a'],
             source_pos.get(aid, 1 << 30),
