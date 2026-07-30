@@ -5678,6 +5678,78 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         link_prefix = "./" if is_archive else "./raporlar/"
 
+        # Arşiv linklerinin KENDİ stili — sayfanın ana CSS bloğunda karşılığı
+        # yoktu, dolayısıyla tarayıcı varsayılanları uygulanıyordu: ziyaret
+        # edilmemiş link MAVİ, edilmiş link BORDO. Sayfa varsayılan olarak koyu
+        # temayla (#0d1117) açıldığı için ikisi de neredeyse okunmuyordu.
+        # Çözüm: :link/:visited/:hover/:active/:focus durumlarının HEPSİ açıkça
+        # aynı açık renge sabitlenir — tıklanmış olmak görünümü değiştirmez.
+        archive_css = """
+    <style>
+        .archive-section {
+            max-width: 1200px;
+            margin: 24px auto 40px;
+            padding: 0 16px;
+            text-align: center;
+        }
+        .archive-section h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0 0 12px;
+        }
+        .archive-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .archive-link {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 13px;
+            line-height: 1.2;
+            border-radius: 6px;
+            background: #ffffff;
+            border: 1px solid #d7dde5;
+        }
+        /* Ziyaret durumundan BAĞIMSIZ tek renk (bkz. yukarıdaki not). */
+        .archive-link:link,
+        .archive-link:visited,
+        .archive-link:hover,
+        .archive-link:active,
+        .archive-link:focus {
+            color: #1a237e;
+            text-decoration: none;
+        }
+        .archive-link:hover { background: #eef2f7; border-color: #1a237e; }
+        .archive-link:focus-visible { outline: 2px solid #1a237e; outline-offset: 2px; }
+
+        [data-theme="dark"] .archive-section h3 { color: #e6edf3; }
+        [data-theme="dark"] .archive-link {
+            background: #21262d;
+            border-color: #30363d;
+        }
+        [data-theme="dark"] .archive-link:link,
+        [data-theme="dark"] .archive-link:visited,
+        [data-theme="dark"] .archive-link:active,
+        [data-theme="dark"] .archive-link:focus {
+            color: #c9d1d9;
+        }
+        [data-theme="dark"] .archive-link:hover {
+            background: #30363d;
+            border-color: #58a6ff;
+            color: #e6edf3;
+        }
+        [data-theme="dark"] .archive-link:focus-visible { outline-color: #58a6ff; }
+
+        @media (max-width: 600px) {
+            .archive-section { margin: 16px auto 28px; }
+            .archive-link { padding: 5px 10px; font-size: 12px; }
+        }
+    </style>
+"""
+
         archive_html = """
     <div class="archive-section">
         <h3>📚 Arşiv - Son 30 Gün</h3>
@@ -5689,6 +5761,13 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         archive_html += """        </div>
     </div>
 """
+
+        # Stil tercihen <head>'e girer; head yoksa gövdeye yazılır (tarayıcılar
+        # gövdedeki <style>'ı da uygular, yalnızca biçimsel olarak daha az temiz).
+        if '</head>' in html:
+            html = html.replace('</head>', archive_css + '</head>', 1)
+        else:
+            archive_html = archive_css + archive_html
 
         if '</body>' in html:
             html = html.replace('</body>', archive_html + '\n</body>')
