@@ -359,3 +359,78 @@ def test_parse_cross_day_dupes_safe_on_bad_input():
     assert dedup.parse_cross_day_dupes(None, [7]) == set()
     assert dedup.parse_cross_day_dupes({}, [7]) == set()
     assert dedup.parse_cross_day_dupes({'duplicates': None}, [7]) == set()
+
+
+# ── Kural 5: çapraz-gün başlık+konu birleşik sinyali ──────────────────────
+# 2026-07-30 üretim ölçümü: "İran Bağlantılı Siber Tehdit Aktörlerinin ABD ...
+# Su ve Enerji ..." haberi 24 ve 26 Temmuz'da iki kez KRİTİK 3 manşeti oldu.
+# Aktör/kod adı çıkmıyor, konu örtüşmesi _TOPIC_ALONE'un altında, başlık
+# benzerliği 0.79 — sinyal vardı ama Kural 4 çapraz-günde kapalıydı.
+
+_IRAN_A = {
+    'tr_title': "İran Bağlantılı Siber Tehdit Aktörlerinin ABD'deki Su ve Enerji "
+                "Sağlayıcılarını Hedef Alması",
+    'paragraph': "Amerika Birleşik Devletleri hükümeti, İran devlet desteğiyle hareket "
+                 "eden siber tehdit aktörlerinin ülkedeki su ve enerji sağlayıcılarına "
+                 "ait endüstriyel kontrol sistemlerini hedef aldığını açıklamıştır. "
+                 "FBI, NSA ve CISA tarafından yayımlanan ortak uyarıda, saldırganların "
+                 "internete açık programlanabilir mantık denetleyicilerini kullandığı "
+                 "belirtilmiştir.",
+}
+_IRAN_B = {
+    'tr_title': "İran Bağlantılı Siber Tehdit Aktörlerinin ABD Su ve Enerji Kontrol "
+                "Sistemlerini Hedeflemesi",
+    'paragraph': "CISA, FBI, NSA ve Enerji Bakanlığı tarafından yayımlanan güncel siber "
+                 "güvenlik kılavuzunda, İran bağlantılı siber tehdit aktörlerinin "
+                 "ABD'deki su ve enerji kontrol sistemlerine sızdığı bildirilmiştir. "
+                 "Mart 2026 tarihinden bu yana süregelen faaliyetlerde, saldırganların "
+                 "internete açık programlanabilir denetleyicileri kullandığı "
+                 "kaydedilmiştir.",
+}
+
+
+def test_xday_title_topic_catches_repeat_headline():
+    """Aynı olay iki gün KRİTİK 3 manşeti olmamalı (üretimde yaşandı)."""
+    ok, why = dedup.same_event(_IRAN_A, _IRAN_B, explain=True, cross_day=True)
+    assert ok, f"mükerrer manşet yakalanmadı (gerekçe: {why!r})"
+    assert 'trtitle-xday' in why
+
+
+def test_xday_title_topic_does_not_merge_generic_vuln_pattern():
+    """Jenerik zafiyet başlığı kalıbı FARKLI ürünleri birleştirmemeli.
+
+    Kural 4'ün çapraz-günde kapatılma sebebi tam olarak buydu; Kural 5 bu
+    yanlış-pozitifi geri getirmemeli. Veriler ÜRETİMDEN alındı (28-29 Temmuz
+    2026 raporları): başlık 0.73, konu 0.26 → başlık eşiğinin (0.74) ALTINDA
+    kaldığı için eşleşmemeli. Bu test eşiği aşağı çekmeye karşı korumadır.
+    """
+    a = {'tr_title': "ServiceNow Yapay Zeka Platformundaki Kritik Güvenlik Açığının Aktif Olarak İstismar Edilmesi",
+         'paragraph': "ServiceNow Yapay Zeka Platformu'nda tespit edilen ve CVE-2026-6875 olarak izlenen kritik bir uzaktan kod yürütme açığının, siber tehdit aktörleri tarafından aktif olarak istismar edildiği bildirilmiştir. Searchlight Cyber araştırmacıları tarafından 14 Temmuz 2026 tarihinde raporlanan bu açığın, kimlik doğrulaması gerektirmeden ServiceNow örneklerinin ve bağlı proxy sunucularının tam kontrolüne olanak tanıdığı belirtilmiştir. Tehdit istihbaratı firması Defused, 25 Temmuz 2026 itibarıyla saldırgan"}
+    b = {'tr_title': "Microsoft SharePoint Sunucularındaki Kritik Güvenlik Açıklarının Aktif Olarak İstismar Edilmesi",
+         'paragraph': "Microsoft SharePoint Server üzerinde tespit edilen ve uzaktan kod yürütülmesine olanak tanıyan kritik güvenlik açıklarının aktif olarak istismar edildiği bildirilmiştir. CERT-EU tarafından yayımlanan rapora göre, özellikle CVE-2026-50522 kodlu seri durumdan çıkarma hatasının, saldırganların etkilenen sistemlerde yetkisiz kod çalıştırmasına imkan tanıdığı belirtilmiştir. WatchTowr adlı güvenlik kuruluşunun 20 Temmuz 2026 tarihinde bir kavram kanıtlama kodu tanımladığı ve ardından aktif istismar f"}
+    assert not dedup.same_event(a, b, cross_day=True)
+
+
+def test_xday_title_topic_keeps_followup_development():
+    """Atıf/gelişme haberi mükerrer SAYILMAMALI.
+
+    26 Tem "İran → ABD su/enerji" ile 30 Tem "İran bağlantılı grubun Minnesota
+    su tesislerini hedeflemesi" (Tenable atfı) ayrı haberlerdir: ikincisi yeni
+    bilgi (fail atfı) taşır. Ölçülen: başlık 0.65, konu 0.18 → eşik altı.
+    """
+    b30 = {'tr_title': "İran Bağlantılı Grubun Minnesota Su Tesislerini Hedeflemesi",
+           'paragraph': "Tenable araştırmacıları, Minnesota'da 30'dan fazla su tesisini "
+                        "kesintiye uğratan koordineli siber saldırıların arkasında İran "
+                        "bağlantılı tehdit aktörü CyberAv3ngers'ın bulunduğunu "
+                        "belirtmiştir."}
+    assert not dedup.same_event(_IRAN_B, b30, cross_day=True)
+
+
+def test_xday_title_topic_needs_both_signals():
+    """Tek sinyal yetmez: başlık benzer ama konu alakasızsa mükerrer değildir."""
+    a = {'tr_title': "İran Bağlantılı Siber Tehdit Aktörlerinin ABD'deki Su ve Enerji "
+                     "Sağlayıcılarını Hedef Alması",
+         'paragraph': "Tamamen alakasız bir konu: bir mobil oyun şirketinin reklam "
+                      "gelirlerini artırmak için yeni bir abonelik modeli duyurduğu "
+                      "bildirilmiştir."}
+    assert not dedup.same_event(a, _IRAN_B, cross_day=True)

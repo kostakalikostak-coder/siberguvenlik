@@ -267,6 +267,14 @@ _TOPIC_LEAD_TOKENS = 40
 # yüksek konu örtüşmesi) kullanılır. Gerçek arşiv verisiyle doğrulandı.
 _TOPIC_WITH_ACTOR_XDAY = 0.18
 
+# ── Çapraz-GÜN birleşik başlık+konu sinyali (Kural 5) ─────────────────────
+# Kural 4 (saf TR başlık benzerliği) çapraz-günde KAPALIDIR çünkü tek başına
+# jenerik kalıplarda yanlış eşleşir. Ama iki sinyal BİRLİKTE kullanıldığında
+# (Kural 2'nin "aktör + konu" felsefesi) ayrım yapılabilir hâle gelir.
+# Eşikler gerçek kritik3/rapor geçmişi taranarak seçildi (2026-07-30 ölçümü).
+_TRTITLE_XDAY            = 0.74   # başlık benzerliği alt sınırı
+_TOPIC_WITH_TRTITLE_XDAY = 0.20   # eşlik etmesi gereken asgari konu örtüşmesi
+
 
 def _bundle(view):
     """Bir haber 'görünümü'nü (tr_title/paragraph/title/full_text) metin
@@ -342,6 +350,31 @@ def same_event(view_a, view_b, explain=False, cross_day=False):
     # 3) Yüksek içerik örtüşmesi tek başına
     if topic >= _TOPIC_ALONE:
         return _ret(True, f'topic={topic:.2f}')
+
+    # 5) ÇAPRAZ-GÜN: yüksek TR-başlık benzerliği + ANLAMLI konu örtüşmesi.
+    #    Bu boşluk üretimde ölçüldü (2026-07-30): "İran Bağlantılı Siber Tehdit
+    #    Aktörlerinin ABD ... Su ve Enerji ..." haberi 24 ve 26 Temmuz'da iki kez
+    #    KRİTİK 3 manşeti oldu. Aktör/kod adı çıkmıyor (İran yapısal bir aktör
+    #    kimliği değil), konu örtüşmesi 0.29 ile _TOPIC_ALONE'un altında, başlık
+    #    benzerliği ise 0.79 — yani güçlü sinyal VARDI ama Kural 4 çapraz-günde
+    #    kapalı olduğu için kullanılmıyordu.
+    #
+    #    Eşikler gerçek geçmiş taranarak seçildi. Yakalananlar: İran su/enerji
+    #    24-26 (0.79/0.33), Europol The Com 25-26 (0.76/0.22). Elenen
+    #    yanlış-pozitifler — hepsi "... Kritik Güvenlik Açığının Aktif Olarak
+    #    İstismar Edilmesi" jenerik kalıbından: ServiceNow↔SharePoint (0.73/0.26),
+    #    Fastjson↔SharePoint (0.66/0.19), Bing↔SharePoint (0.65/0.16) ve
+    #    İran→Minnesota (0.65/0.18 — bu bir GELİŞME/atıf haberi, mükerrer değil).
+    #
+    #    Stadler 23-24 (0.67/0.38) bilinçli olarak YAKALANMIYOR: eşiği oraya
+    #    çekmek ServiceNow↔SharePoint'i de birleştirirdi. Kaçan bir mükerrer,
+    #    birleştirilen iki FARKLI haberden daha az zararlıdır.
+    #    NOT: Kural 2b yukarıda zaten devrede — iki haberde de yapısal kimlik
+    #    (CVE/aktör) varsa ve ORTAK değilse buraya hiç gelinmez.
+    if cross_day and ha and hb:
+        ratio = SequenceMatcher(None, ha.lower(), hb.lower()).ratio()
+        if ratio >= _TRTITLE_XDAY and topic >= _TOPIC_WITH_TRTITLE_XDAY:
+            return _ret(True, f'trtitle-xday={ratio:.2f}+topic={topic:.2f}')
 
     # 4) Türkçe başlık benzerliği — yalnızca AYNI RUN içinde. Çapraz-günde
     #    jenerik TR başlık kalıpları yanlış-pozitif ürettiği için atlanır.
