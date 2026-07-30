@@ -2271,6 +2271,73 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             return 0.0
         return len(sa & sb) / len(sa | sb)
 
+    # Rapor başarılı olana kadar "görüldü" işaretlenmeyi bekleyen linkler.
+    # DİSKE yazılır, bellekte tutulmaz: aynı gün ilk koşu haberi çekip rapor
+    # üretmekte başarısız olursa, sonraki cron slotu ham dosyayı yeniden
+    # kullanır ve save_txt'i HİÇ çağırmaz. Bellekte tutulsaydı o slotta liste
+    # boş olur, rapor başarılı olsa bile linkler işaretlenmez ve haberler
+    # ERTESİ GÜN MÜKERRER çıkardı — yani düzeltmek istediğimiz sorundan daha
+    # kötü bir durum.
+    PENDING_LINKS_FILE = "data/bekleyen_linkler.json"
+
+    def _write_pending_links(self, articles):
+        """Linkleri 'işaretlenmeyi bekliyor' olarak diske yazar.
+
+        Yalnızca _save_used_links'in ihtiyaç duyduğu alanlar saklanır
+        (link/title/description). description ÖNEMLİ: içerik hash'i ondan
+        üretiliyor; ham TXT'den yeniden ayrıştırmak description'ı kaybettirir
+        ve Seviye-2 hash dedup'ı sessizce bozardı.
+        """
+        payload = {
+            'date': _now_tr().strftime('%Y-%m-%d'),
+            'articles': [
+                {'link': a.get('link', ''), 'title': a.get('title', ''),
+                 'description': a.get('description', '')}
+                for a in (articles or []) if a.get('link')
+            ],
+        }
+        try:
+            _atomic_write(self.PENDING_LINKS_FILE,
+                          json.dumps(payload, ensure_ascii=False))
+            print(f"   ⏳ {len(payload['articles'])} link beklemede — rapor "
+                  f"başarılı olursa 'görüldü' işaretlenecek")
+        except OSError as e:
+            # Yazılamazsa eski davranışa dön: hemen işaretle. Aksi halde
+            # linkler HİÇ işaretlenmez ve her gün mükerrer haber çıkar.
+            print(f"   ⚠️  Bekleyen link dosyası yazılamadı ({e}) — linkler "
+                  f"doğrudan işaretleniyor.")
+            self._save_used_links(articles)
+
+    def _commit_pending_links(self):
+        """Rapor doğrulandıktan sonra bekleyen linkleri 'görüldü' işaretler.
+
+        Yalnızca BUGÜNE ait bekleyen kayıt işlenir. Eski tarihli dosya
+        (gün boyu başarısız kalmış bir koşudan artakalan) bilinçli olarak
+        ATLANIR ve silinir: o haberlerin yeniden aday olması bu düzeltmenin
+        amacıdır.
+        """
+        path = self.PENDING_LINKS_FILE
+        if not os.path.exists(path):
+            return
+        today = _now_tr().strftime('%Y-%m-%d')
+        try:
+            with open(path, encoding='utf-8') as f:
+                payload = json.load(f)
+        except (OSError, ValueError) as e:
+            print(f"   ⚠️  Bekleyen link dosyası okunamadı ({e}) — atlanıyor.")
+            return
+        arts = payload.get('articles') or []
+        if payload.get('date') != today:
+            print(f"   ↩️  Bekleyen linkler {payload.get('date')} tarihli "
+                  f"(bugün {today}) — işaretlenmedi, haberler yeniden aday.")
+        elif arts:
+            self._save_used_links(arts)
+            print(f"   ✅ {len(arts)} link 'görüldü' işaretlendi (rapor başarılı).")
+        try:
+            os.remove(path)
+        except OSError:
+            pass
+
     def _save_used_links(self, articles):
         """Kullanılan linkleri kaydet (7 günden eski olanları sil)"""
         if not articles:
@@ -2968,7 +3035,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         if skipped_no_content > 0:
             print(f"   ↩️  {skipped_no_content} haber 'görüldü' işaretlenmedi — "
                   f"ertesi gün yeniden denenecek")
-        self._save_used_links(kaydedilen_articles)
+        # ⚠️ Linkler BURADA "görüldü" işaretlenmez — yalnızca BEKLEMEYE alınır.
+        # Eskiden burada doğrudan kaydediliyordu, yani LLM/rapor adımı henüz
+        # çalışmadan haberler 7 gün için yakılıyordu: gün boyu süren bir LLM
+        # arızasında o günün TÜM haberleri kalıcı kayboluyordu (ertesi gün
+        # yeniden çekilseler bile "görüldü" damgası yüzünden eleniyorlardı).
+        # Artık işaretleme, raporun BAŞARIYLA üretildiği doğrulandıktan sonra
+        # main() içinde _commit_pending_links ile yapılır.
+        self._write_pending_links(kaydedilen_articles)
 
         return txt
 
@@ -5631,8 +5705,10 @@ def _reset_today_state():
     print("🧹 RESET_TODAY: bugünün durumu sıfırlanıyor (taze üretim zorlanıyor)...")
 
     # 1) SİL — taze üretimi engelleyen durum dosyaları
+    # bekleyen_linkler.json da silinir: taze üretim yeni bir bekleyen liste
+    # yazacak, eskisi kalırsa önceki denemenin linkleri yanlışlıkla işaretlenir.
     for path in (f"docs/raporlar/{today_str}.html", "data/haberler_ham.txt",
-                 "data/cron_basarili.txt"):
+                 "data/cron_basarili.txt", "data/bekleyen_linkler.json"):
         try:
             if os.path.exists(path):
                 os.remove(path)
@@ -5823,6 +5899,26 @@ def main():
 
     # 3. HTML (Gemini)
     sistem.create_html(txt)
+
+    # ── Linkleri "görüldü" işaretle — YALNIZCA rapor başarılıysa ───────────
+    # Eskiden bu işaretleme save_txt içinde, LLM adımından ÖNCE yapılıyordu:
+    # gün boyu süren bir LLM arızasında o günün tüm haberleri 7 gün için
+    # yakılıyor ve ertesi gün yeniden çekilseler bile eleniyorlardı. Ölçüt,
+    # idempotency ile AYNI (_rapor_basarili): fallback veya taban altı rapor
+    # "başarılı" sayılmaz, dolayısıyla linkler işaretlenmez ve haberler
+    # sonraki slotta/günde yeniden aday olur.
+    rapor_basarili_mi = False
+    try:
+        if os.path.exists(today_report):
+            with open(today_report, encoding='utf-8') as f:
+                rapor_basarili_mi = _rapor_basarili(f.read())
+    except OSError as e:
+        print(f"⚠️  Rapor doğrulanamadı ({e}) — linkler işaretlenmedi.")
+    if rapor_basarili_mi:
+        sistem._commit_pending_links()
+    else:
+        print("↩️  Rapor başarılı değil — linkler 'görüldü' İŞARETLENMEDİ, "
+              "haberler yeniden aday.")
 
     # ── CRON başarı işareti ────────────────────────────────────────────────
     # Günü "tamamlandı" sayan TEK koşul: bu çalıştırma CRON (schedule) ile

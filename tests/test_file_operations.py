@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from main import HaberSistemi
+from main import HaberSistemi, _calculate_content_hash
 
 
 class TestFileOperations:
@@ -216,3 +216,83 @@ class TestErrorRecovery:
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
+
+
+# ── Bekleyen linkler: "görüldü" işaretleme rapor başarısına bağlı ──────────
+# Eskiden linkler save_txt içinde, LLM adımından ÖNCE işaretleniyordu; gün boyu
+# süren bir LLM arızasında o günün TÜM haberleri 7 gün için yakılıyordu.
+
+class TestPendingLinks:
+    def _sistem(self, tmp_path, monkeypatch):
+        monkeypatch.chdir(tmp_path)
+        (tmp_path / "data").mkdir()
+        s = HaberSistemi()
+        s.used_links_file = "data/linkler.txt"
+        return s
+
+    _ARTS = [{'link': 'https://y/1', 'title': 'Haber 1', 'description': 'd1'},
+             {'link': 'https://y/2', 'title': 'Haber 2', 'description': 'd2'}]
+
+    def _links(self, s):
+        import os
+        if not os.path.exists(s.used_links_file):
+            return []
+        with open(s.used_links_file, encoding='utf-8') as f:
+            return [l.split('\t')[1] for l in f if l.strip()]
+
+    def test_write_pending_does_not_mark_used(self, tmp_path, monkeypatch):
+        """Haber çekildiğinde link HENÜZ 'görüldü' olmamalı."""
+        s = self._sistem(tmp_path, monkeypatch)
+        s._write_pending_links(self._ARTS)
+        assert self._links(s) == []
+        assert (tmp_path / s.PENDING_LINKS_FILE).exists()
+
+    def test_commit_marks_used_and_clears(self, tmp_path, monkeypatch):
+        """Rapor başarılıysa linkler işaretlenir ve bekleyen dosya silinir."""
+        s = self._sistem(tmp_path, monkeypatch)
+        s._write_pending_links(self._ARTS)
+        s._commit_pending_links()
+        assert self._links(s) == ['https://y/1', 'https://y/2']
+        assert not (tmp_path / s.PENDING_LINKS_FILE).exists()
+
+    def test_commit_works_when_save_txt_was_skipped(self, tmp_path, monkeypatch):
+        """KRİTİK: ham yeniden kullanıldığında save_txt çağrılmaz.
+
+        Bekleyen liste bellekte tutulsaydı o slotta boş olur, rapor başarılı
+        olsa bile linkler işaretlenmez ve haberler ERTESİ GÜN MÜKERRER çıkardı.
+        Bu yüzden liste DİSKE yazılır; farklı bir sistem nesnesi de okuyabilmeli.
+        """
+        s1 = self._sistem(tmp_path, monkeypatch)
+        s1._write_pending_links(self._ARTS)          # 1. koşu: çekti, rapor düştü
+        s2 = HaberSistemi()                          # 2. koşu: taze nesne
+        s2.used_links_file = s1.used_links_file
+        s2._commit_pending_links()
+        assert self._links(s2) == ['https://y/1', 'https://y/2']
+
+    def test_stale_pending_is_not_marked(self, tmp_path, monkeypatch):
+        """Eski tarihli bekleyen kayıt işaretlenmemeli — haber yeniden aday olmalı.
+
+        Bu, düzeltmenin ASIL amacı: gün boyu başarısız kalan bir koşunun
+        haberleri ertesi gün yeniden değerlendirilebilsin.
+        """
+        import json
+        s = self._sistem(tmp_path, monkeypatch)
+        (tmp_path / s.PENDING_LINKS_FILE).write_text(
+            json.dumps({'date': '2020-01-01', 'articles': self._ARTS}),
+            encoding='utf-8')
+        s._commit_pending_links()
+        assert self._links(s) == []
+        assert not (tmp_path / s.PENDING_LINKS_FILE).exists()
+
+    def test_content_hash_survives_the_detour(self, tmp_path, monkeypatch):
+        """Bekleyen dosyadan geçen link, eski yolla AYNI içerik hash'ini üretmeli.
+
+        description saklanmazsa Seviye-2 (hash) dedup sessizce bozulurdu.
+        """
+        s = self._sistem(tmp_path, monkeypatch)
+        art = {'link': 'https://x/1', 'title': 'Başlık ÖĞÜ', 'description': 'açıklama'}
+        beklenen = _calculate_content_hash(art['title'], art['description'])
+        s._write_pending_links([art])
+        s._commit_pending_links()
+        with open(s.used_links_file, encoding='utf-8') as f:
+            assert f.read().strip().split('\t')[3] == beklenen

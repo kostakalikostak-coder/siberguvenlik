@@ -20,6 +20,10 @@ SİL (taze üretimi engelleyen durum dosyaları):
 - `docs/raporlar/<BUGÜN>.html` — Kontrol 1: başarılı rapor varsa schedule/dispatch ATLAR.
 - `data/haberler_ham.txt` — Kontrol 2: `SESSION_DATE: <BUGÜN>` ise haber çekmeyi ATLAR (her tetikte). Silmek RE-FETCH'i zorlar.
 - `data/cron_basarili.txt` — bugünkü başarı işareti; sonraki cron slotlarını atlatır.
+- `data/bekleyen_linkler.json` — "görüldü" işaretlenmeyi bekleyen linkler. Linkler
+  artık save_txt'te DEĞİL, rapor başarılı olduktan sonra işaretlenir; bu dosya o
+  bekleyen listeyi taşır. Silinmezse önceki denemenin linkleri yanlışlıkla
+  işaretlenir. (Not: farklı GÜNE ait dosya zaten otomatik atlanır.)
 
 CERRAHİ DÜZENLE (silme, sadece bugünü çıkar — yoksa re-fetch mükerrer sayılıp boşalır / yeni arşiv yazılmaz):
 - `data/haberler_linkler.txt` — SADECE `<BUGÜN>\t` ile başlayan satırları çıkar; eski günleri KORU (7 günlük çapraz-gün dedup geçmişi bozulmasın).
