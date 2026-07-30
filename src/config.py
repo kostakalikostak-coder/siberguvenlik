@@ -1021,6 +1021,38 @@ HABERLER:
 {articles_full}"""
 
 
+def get_kritik3_length_fix_prompt(tr_title, paragraph, full_text, current_wc):
+    """KRİTİK 3 paragrafı 110 kelime hedefinin altında kalınca hedefli yeniden yazım.
+
+    Pass 2/3 prompt'u zaten "110'un altına düşme" diyor ama LLM kelime saymakta
+    güvenilir değil (2026-07-30 ölçümü: 3 kritik3 paragrafından 2'si 106/108
+    kelimeydi). Genel yeniden deneme yerine mevcut kısa taslağı VE tam metni
+    birlikte vererek modelin nereden genişleteceğini somutlaştırır.
+    """
+    return f"""Sen siber güvenlik analistisin. Aşağıdaki Türkçe özet {current_wc} kelime —
+KRİTİK 3 hedefi olan 110-130 kelime aralığının ALTINDA kaldı.
+
+BAŞLIK: {tr_title}
+
+MEVCUT ÖZET ({current_wc} kelime):
+{paragraph}
+
+TAM METİN (genişletmek için ek somut ayrıntı buradan alınır):
+{full_text}
+
+GÖREV: Aynı olayı anlatan, 110-130 KELİME arası TEK paragraf yeniden yaz.
+- Mevcut özetteki bilgileri KORU; TAM METİNDEN ek somut ayrıntı (tarih, sayı,
+  kurum/ürün adı, teknik detay, etkilenen kapsam) ekleyerek genişlet.
+- ⛔ UYDURMA YOK: yalnızca TAM METİNDE geçen bilgileri kullan. Tam metinde
+  110 kelimeyi dolduracak kadar somut ayrıntı yoksa mevcut özeti KISALTMADAN,
+  varolan cümleleri daha açıklayıcı biçimde yeniden ifade ederek uzat.
+- Dolgu cümle/tekrar ekleme; her cümle yeni bilgi taşısın.
+- Resmî ve akıcı Türkçe üslup, tek paragraf (madde işareti/alt başlık yok).
+
+YALNIZCA şu JSON'u döndür (başka metin ekleme):
+{{"paragraph": "..."}}"""
+
+
 def get_summary_batch_prompt(articles_full, today=''):
     """
     Pass 3: Bir batch haberin TAM METNİ → Türkçe başlık + 110-130 kelime paragraf (JSON).

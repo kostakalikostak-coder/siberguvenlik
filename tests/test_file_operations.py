@@ -7,6 +7,7 @@ import sys
 import os
 from pathlib import Path
 from datetime import datetime, timedelta
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
@@ -394,3 +395,63 @@ class TestAptEvidence:
         s._enforce_apt_attribution(recs, arts)
         assert not recs[1].get('apt_dogrulanmadi')
         assert s._kat_oncelik(recs[1]) == 8
+
+
+# ── KRİTİK3 paragraf uzunluğu: 110 kelime hedefinin deterministik denetimi ──
+# 2026-07-30 ölçümü: 3 kritik3 paragrafından 2'si (106, 108 kelime) hedefin
+# altında kaldı. Prompt "110'un altına düşme" diyor ama LLM kelime saymakta
+# güvenilir değil.
+
+class TestKritik3ParagraphLength:
+    def _sistem(self):
+        return HaberSistemi()
+
+    def _run(self, s, wc_paragraf, new_para, full_text_words=200):
+        content = {1: {'tr_title': 'Test', 'paragraph': ' '.join(['kelime'] * wc_paragraf)}}
+        articles = {1: {'full_text': ' '.join(['x'] * full_text_words)}}
+        calls = []
+
+        def fake_call(prompt, max_output_tokens=None, label=None):
+            calls.append(label)
+            return {'paragraph': new_para} if new_para is not None else None
+
+        with mock.patch.object(s, '_gemini_call_json', side_effect=fake_call):
+            s._enforce_kritik3_paragraph_length([1], content, articles)
+        return content[1]['paragraph'], len(calls)
+
+    def test_sufficient_paragraph_untouched(self):
+        s = self._sistem()
+        para, calls = self._run(s, 115, None)
+        assert calls == 0
+        assert len(para.split()) == 115
+
+    def test_short_paragraph_gets_regenerated(self):
+        s = self._sistem()
+        new_para = ' '.join(['yeni'] * 118)
+        para, calls = self._run(s, 60, new_para)
+        assert calls == 1
+        assert para == new_para
+
+    def test_short_source_text_skips_retry(self):
+        """Kaynak (full_text) da kısaysa uzatma DENENMEZ — halüsinasyon riski."""
+        s = self._sistem()
+        new_para = ' '.join(['yeni'] * 118)
+        para, calls = self._run(s, 60, new_para, full_text_words=40)
+        assert calls == 0
+        assert len(para.split()) == 60
+
+    def test_shorter_retry_result_rejected(self):
+        """Yeniden deneme ESKİSİNDEN kısaysa reddedilir (regresyon olurdu)."""
+        s = self._sistem()
+        shorter = ' '.join(['yeni'] * 50)
+        para, calls = self._run(s, 60, shorter)
+        assert calls == 1
+        assert len(para.split()) == 60  # orijinal korunmuş
+
+    def test_partial_improvement_accepted_without_fabrication(self):
+        """Hedefi tutturamasa da UZAYAN sonuç kabul edilir; uydurma zorlanmaz."""
+        s = self._sistem()
+        longer_but_short = ' '.join(['yeni'] * 90)
+        para, calls = self._run(s, 60, longer_but_short)
+        assert calls == 1
+        assert len(para.split()) == 90

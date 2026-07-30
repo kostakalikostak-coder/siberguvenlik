@@ -75,6 +75,7 @@ from src.config import (
     get_legacy_json_prompt, get_quality_review_prompt, get_dedup_review_prompt,
     get_cross_day_dedup_prompt, get_register_audit_prompt,
     get_executive_summary_prompt, get_title_rescue_prompt,
+    get_kritik3_length_fix_prompt,
     get_scoring_prompt, get_critique_prompt,
     SCORING_WEIGHTS, SCORING_CATEGORIES, ZAFIYET_KATEGORILERI,
     KRITIK3_HARIC_KATEGORILER, KATEGORI_ONCELIK,
@@ -4453,6 +4454,68 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         return top3_ids[:3]
 
+    # KRİTİK3 paragraflarının hedef alt sınırı — prompt'un istediği 110-130
+    # aralığının alt ucu. Pass 2/3 prompt'u zaten "110'un altına düşme" diyor
+    # ama LLM kelime saymakta güvenilir değil; bu deterministik denetim
+    # tek seferlik hedefli bir yeniden deneme tetikler (bkz. altındaki metod).
+    KRITIK3_PARA_MIN_WORDS = 110
+
+    def _enforce_kritik3_paragraph_length(self, top3_ids, content_by_id, articles_by_id):
+        """KRİTİK3 paragraflarını 110 kelime hedefine göre deterministik denetler.
+
+        Ölçüm (2026-07-30 raporu): 3 kritik3 paragrafından 2'si (106, 108 kelime)
+        hedefin altında kaldı. Yalnızca top3 için (günde en fazla 3 çağrı, ucuz)
+        tek seferlik hedefli yeniden deneme yapılır — genel Pass 3 batch retry'i
+        DEĞİL, mevcut kısa taslağı + tam metni birlikte veren özel bir prompt
+        (get_kritik3_length_fix_prompt) kullanılır ki model nereden genişleteceğini
+        somut görsün.
+
+        Güvenlik kuralları:
+          - Kaynağın (full_text) kendisi kısaysa (<60 kelime) hiç denenmez —
+            uzatacak malzeme yoksa deneme sadece halüsinasyon riski katardı.
+          - Yeni taslak eskisinden KISAYSA reddedilir (regresyon olurdu);
+            yalnızca gerçekten uzayan sonuç kabul edilir.
+          - İkinci deneme de hedefi tutturamazsa İÇERİK UYDURULMAZ; en iyi
+            (en uzun) deneme sonucu bırakılır ve durum loglanır. Kısa ama
+            doğru bir paragraf, uzun ama halüsinasyonlu bir paragraftan iyidir.
+        """
+        for aid in top3_ids:
+            c = content_by_id.get(aid) or {}
+            paragraph = (c.get('paragraph') or '').strip()
+            wc = len(paragraph.split())
+            if wc == 0 or wc >= self.KRITIK3_PARA_MIN_WORDS:
+                continue
+            a = articles_by_id.get(aid, {})
+            full_text = a.get('full_text', '') or ''
+            if len(full_text.split()) < 60:
+                print(f"   📏 ID {aid}: kritik3 paragrafı {wc} kelime "
+                      f"(<{self.KRITIK3_PARA_MIN_WORDS}) ama kaynak metin kısa — "
+                      f"uzatma denenmedi.")
+                continue
+            print(f"   📏 ID {aid}: kritik3 paragrafı {wc} kelime "
+                  f"(<{self.KRITIK3_PARA_MIN_WORDS}) — hedefli yeniden deneme...")
+            fixed = self._gemini_call_json(
+                get_kritik3_length_fix_prompt(
+                    tr_title=c.get('tr_title', ''), paragraph=paragraph,
+                    full_text=_cap_fulltext(full_text), current_wc=wc,
+                ),
+                max_output_tokens=2048,
+                label=f'Kritik3-Uzunluk-{aid}',
+            )
+            if not isinstance(fixed, dict):
+                continue
+            new_para = (fixed.get('paragraph') or '').strip()
+            new_wc = len(new_para.split())
+            if new_wc <= wc:
+                print(f"      ⚠️  yeniden deneme kısaldı/eşitti ({new_wc} kelime) "
+                      f"— orijinal korunuyor.")
+                continue
+            c['paragraph'] = new_para
+            content_by_id[aid] = c
+            ok = new_wc >= self.KRITIK3_PARA_MIN_WORDS
+            print(f"      → {new_wc} kelime" +
+                  (" ✅" if ok else " (hâlâ hedefin altında, en iyi deneme kullanıldı)"))
+
     def _write_scoring_log(self, articles, records, top10_ids, remaining_ids,
                            top3_ids, critique_changed, attr_downgraded=()):
         """Kalibrasyon/denetim log'u — her haber için bir JSONL satırı yazar.
@@ -4660,6 +4723,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         top3_ids = self._derive_top3_by_score(
             ranked_all, score_records, content_by_id, articles_by_id,
         )
+
+        self._enforce_kritik3_paragraph_length(top3_ids, content_by_id, articles_by_id)
 
         print(f"   Seçilen Top 3 ID: {top3_ids}")
 
