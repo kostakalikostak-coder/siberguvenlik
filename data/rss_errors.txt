@@ -2,3 +2,13 @@
 2026-07-27 12:08 | TABAN UYARISI - rapor 2 haber (<10)
 2026-07-27 15:58 | RSS hatası - Help Net Security: Exceeded 30 redirects.
 2026-07-28 12:06 | RSS hatası - The Register: HTTP 403
+2026-07-30 12:06 | DEDUP SIFIR - Infoblox Blog: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-07-30 12:06 | DEDUP SIFIR - Talos Intelligence: 4 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-07-30 12:06 | DEDUP SIFIR - Unit 42: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-07-30 12:06 | DEDUP SIFIR - NCSC UK: 3 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-07-30 12:06 | DEDUP SIFIR - CERT-EU: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-07-30 12:06 | DEDUP SIFIR - Bellingcat: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-07-30 12:06 | DEDUP SIFIR - Citizen Lab: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-07-30 12:06 | DEDUP SIFIR - Mandiant (Google Cloud): 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-07-30 12:06 | DEDUP SIFIR - BSI: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-07-30 12:06 | DEDUP SIFIR - Proofpoint Threat Insight: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi

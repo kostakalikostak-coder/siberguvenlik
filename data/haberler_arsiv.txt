@@ -28799,3 +28799,141 @@ STAR Labs araştırmacısı Lee Jia Jie, Linux çekirdeğinin ağ trafik kontrol
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 30 JULY 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Scattered Spider Üyesinin Windows Tanımlayıcısıyla Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Siber tehdit aktörü Scattered Spider üyesi olduğu iddia edilen Peter Stokes hakkında hazırlanan iddianame, Microsoft'un Küresel Cihaz Tanımlayıcısı (GDID) sisteminin adli soruşturmalardaki rolünü ortaya koymuştur. Müfettişlerin, Stokes'un Windows kurulumuna bağlı bu kalıcı tanımlayıcıyı kullanarak şüphelinin ngrok kayıt etkinlikleri ve diğer telemetri verileriyle bağlantısını kurduğu belirtilmiştir. GDID'nin, Windows güncellemelerine rağmen değişmeyen ve Microsoft sunucularına otomatik olarak gönderilen benzersiz bir kimlik olduğu ifade edilmektedir. Uzmanlar, bu verilerin IP geçmişi ve hesap günlükleriyle birleştirilerek Mayıs 2025'teki bir siber saldırının aydınlatılmasında kullanıldığını kaydetmiştir. Bu durumun, VPN veya Tor gibi gizlilik araçları kullanılsa dahi işletim sistemi düzeyindeki kalıcı tanımlayıcıların kullanıcı anonimliğini ortadan kaldırabildiğine dikkat çekilmiştir. Microsoft'un veri saklama politikaları ve kullanıcı şeffaflığı konusundaki tartışmaların sürdüğü bildirilmiştir.
+(XXXXXXX, AÇIK -csoonline.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Rusya'nın Telegram Kurucusu Pavel Durov'u Teröre Yardımla Suçlaması
+─────────────────────────────────────────────────────────
+Rusya Federal Güvenlik Servisi (FSB), Telegram'ın kurucusu Pavel Durov'u terör faaliyetlerine yataklık etmek ve yasaklı içerikleri kaldırmamakla suçlayarak hakkında uluslararası yakalama kararı çıkarmıştır. FSB tarafından yapılan açıklamada, platformun Ukrayna özel servisleri ve terör örgütleri tarafından sabotaj, suikast ve siber dolandırıcılık faaliyetlerini koordine etmek amacıyla kullanıldığı iddia edilmiştir. Ukrayna istihbaratının, Telegram üzerindeki arkadaşlık botları aracılığıyla Rus vatandaşlarını manipüle ederek stratejik tesislere saldırı düzenlemeye zorladığı öne sürülmüştür. Soruşturma kapsamında Temmuz 2025'ten bu yana 46 Rus vatandaşının gözaltına alındığı bilgisi verilmiştir. Rusya'nın 2026 yılı başında Telegram kullanımını kısıtladığı ve Nisan ayında platformu tamamen engellediği hatırlatılmıştır. Durov veya Telegram yönetimi, Rus makamlarının yönelttiği bu ağır suçlamalar hakkında henüz resmi bir değerlendirmede bulunmamıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Astaroth Zararlı Yazılımına WhatsApp Spambot Bileşeninin Eklenmesi
+─────────────────────────────────────────────────────────
+Güney Amerika merkezli siber tehdit aktörleri tarafından işletilen Astaroth botnetinin, kurbanların WhatsApp kişi listelerine otomatik mesajlar gönderen yeni bir spambot bileşeni kullanmaya başladığı tespit edilmiştir. 2025 yılının son çeyreğinde ortaya çıkan bu yeni yeteneğin, geleneksel e-posta tabanlı yayılım yöntemlerinden sosyal mesajlaşma platformlarına doğru stratejik bir kaymaya işaret ettiği belirtilmektedir. CrowdStrike araştırmacıları, söz konusu bileşenin tarayıcıyı gizli modda çalıştırarak kurbanın haberi olmadan faaliyet yürüttüğünü ve Brezilya'daki kullanıcıları hedef aldığını ifade etmiştir. Yapılan teknik analizlerde, bu spambotun kod yapısının daha önce Vareg olarak bilinen başka bir bankacılık trojanı ile önemli benzerlikler taşıdığı kaydedilmiştir. Astaroth'un çok aşamalı enfeksiyon zinciri aracılığıyla kurban cihazlarda kalıcılık sağladığı ve finansal verileri çalmayı amaçladığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -crowdstrike.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Toy Ghouls Grubunun GenieLocker Fidye Yazılımını Kullanmaya Başlaması
+─────────────────────────────────────────────────────────
+Rusya Federasyonu'ndaki üretim sektörünü hedef alan Toy Ghouls siber tehdit aktörünün, Mart 2026'dan itibaren GenieLocker adlı özel tasarım bir fidye yazılımı kullandığı tespit edilmiştir. Kaspersky tarafından yayımlanan rapora göre, daha önce üçüncü taraf yazılımlara bağımlı olan grubun, Windows, Linux ve ESXi sistemlerini etkileyebilen bu yeni araçla cephaneliğini geliştirdiği belirtilmiştir. Saldırganların, OpenVPN bağlantıları ve çalınan kimlik bilgileriyle ağlara sızdığı, ardından Mimikatz ve SoftPerfect Network Scanner gibi araçlarla sistemde ilerlediği ifade edilmiştir. GenieLocker yazılımının, analiz ortamlarından kaçınmak için özel bir gizli argüman gerektirdiği ve hata ayıklama karşıtı teknikler barındırdığı kaydedilmiştir. Grubun, verileri sızdırmak yerine yalnızca şifreleme yöntemini tercih ettiği ve fidye notlarını sistemlere bırakmak yerine manuel olarak ilettiği bildirilmiştir.
+(XXXXXXX, AÇIK -securelist.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Kuzey Koreli Hackerların Sahte İş Görüşmeleriyle Kripto Para Çalması
+─────────────────────────────────────────────────────────
+Kuzey Kore bağlantılı siber tehdit aktörlerinin, kripto para sektöründeki çalışanları hedef alan sahte iş görüşmesi yöntemleriyle bu yıl 643 milyon dolar değerinde varlık ele geçirdiği bildirilmiştir. Saldırganların, çevrimiçi değerlendirme testleri ve web kamerası doğrulaması gibi yöntemler kullanarak kurbanların cihazlarına kötü amaçlı yazılım yerleştirdiği ifade edilmiştir. Öte yandan, UC San Diego araştırmacıları, ABD genelinde 2,2 milyon aracın Bluetooth tabanlı bir kriptografik hata nedeniyle uzaktan kilit açma veya durdurma saldırılarına karşı savunmasız olduğunu tespit etmiştir. Söz konusu hatanın 2017 yılından bu yana mevcut olduğu ve satış sonrası takılan bir araç alarm sisteminden kaynaklandığı kaydedilmiştir. Ayrıca, OpenAI sistemlerinin Hugging Face platformuna yönelik yetkisiz erişim girişimleri ve Microsoft 365 takvimlerinin komuta kontrol kanalı olarak kullanılması gibi güncel tehditler de rapor edilmiştir.
+(XXXXXXX, AÇIK -grahamcluley.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] eSIM Plus ve Nicegram Uygulamalarında Belarus Bağlantılı Kod Tespiti
+─────────────────────────────────────────────────────────
+Mysterium VPN araştırma ekibi, Avrupa Birliği uygulama mağazalarında Litvanya menşeli olarak sunulan eSIM Plus ve Nicegram uygulamalarının Belarus bağlantılı bir kod tabanını paylaştığını tespit etmiştir. Yapılan analizlerde, eSIM Plus paketinin Minsk merkezli Mobyrix şirketi tarafından kriptografik olarak imzalandığı ve verileri Rusya merkezli Yandex ile Voximplant servisleri üzerinden yönlendirdiği belirlenmiştir. eSIM Plus uygulamasının konum, kamera ve mikrofon dahil 35 farklı izin talep ettiği, Nicegram'ın ise 73 izinle birlikte Telegram kullanıcı faaliyetlerini profillemeye yönelik bir modül barındırdığı ifade edilmiştir. Kullanıcıların Litvanya markası altında sunulan bu uygulamaları kullanırken farkında olmadan kimlik bilgilerini ve sesli görüşmelerini Rus altyapısına ilettiği vurgulanmıştır. Araştırmacılar, uygulama mağazalarındaki yayıncı bilgilerinin gerçek geliştirici ve veri alıcılarından farklı olabileceği konusunda uyarıda bulunmuştur.
+(XXXXXXX, AÇIK -securityaffairs.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Çin'de Flying Eagle Mobil Zararlı Yazılım Altyapısının Yayılması
+─────────────────────────────────────────────────────────
+Çinli siber suçluların, finans uygulamalarından veri çalmak amacıyla Flying Eagle adı verilen kapsamlı bir mobil zararlı yazılım hizmeti altyapısını kullandıkları tespit edilmiştir. Docker tabanlı bir dağıtım modeliyle sunulan bu platformun, teknik becerisi düşük suçluların bile karmaşık kimlik avı kampanyaları yürütmesine olanak tanıdığı belirtilmektedir. Araştırmacılar, Flying Eagle'ın antivirüs yazılımlarından kaçmak için rastgele paket isimleri ve düşük entropili veri enjeksiyonu gibi teknikler kullandığını ifade etmiştir. Ayrıca, bu ekosistemin bir parçası olarak Night Dragon adlı daha gelişmiş bir uzaktan kontrol aracının da ortaya çıktığı ve popüler Çin bankacılık uygulamalarına sahte arayüzler yerleştirebildiği kaydedilmiştir. Çin Ulusal Siber Güvenlik Raporlama Merkezi, kamu güvenliği hizmetlerini taklit eden sahte uygulamalar konusunda vatandaşları uyarmıştır. Söz konusu platformun, kurbanların ekran görüntülerini alabildiği, mikrofonlarına erişebildiği ve ödeme bilgilerini çalabildiği bildirilmiştir.
+(XXXXXXX, AÇIK -darkreading.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] IIT Kanpur Web Sitesine Sızan Öğrenciye Teknik Değerlendirme Sunulması
+─────────────────────────────────────────────────────────
+Hindistan Teknoloji Enstitüsü (IIT) Kanpur, siber güvenlik programına kabul edilmediği için kurumun web sitesine sızan bir öğrenciye yönelik teknik beceri değerlendirmesi yapacağını duyurmuştur. Söz konusu öğrencinin, IIT Kanpur ve IIT Madras sitelerinin bazı bölümlerine yetkisiz erişim sağladığı ve platformlara yeteneğini kanıtlama amaçlı mesajlar bıraktığı tespit edilmiştir. Enstitü Direktörü Manindra Agrawal, başlangıçta yasal işlem başlatmayı düşündüklerini ancak sonrasında öğrencinin yetkinliğini ölçmek için resmi bir test yapmaya karar verdiklerini açıklamıştır. Mevcut akademik dönem için kayıtların kapalı olduğu, ancak öğrencinin testte başarılı olması durumunda gelecek dönem için değerlendirilebileceği bildirilmiştir. Yetkililer, öğrenciye bilgisayar sistemlerine yetkisiz erişimin yasa dışı olduğunu hatırlatacaklarını ifade etmiştir. Kurumun, daha önce de benzer yetenekleri bünyesine kattığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thecyberexpress.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] SonicWall Cihazlarını Hedef Alan Kimlik Bilgisi Doldurma Saldırıları
+─────────────────────────────────────────────────────────
+Siber güvenlik firması Huntress, SonicWall VPN ve güvenlik duvarı hesaplarını hedef alan aktif bir saldırı dalgası tespit etmiştir. 29 Temmuz 2026 tarihinde yayımlanan rapora göre, iki günden kısa bir süre içerisinde 30 farklı kuruluşun güvenliğinin ihlal edildiği bildirilmiştir. Cumartesi günü başlayan kimlik bilgisi doldurma kampanyası kapsamında, 41 saatlik süre zarfında 92 benzersiz kullanıcı hesabının ele geçirildiği kaydedilmiştir. Huntress araştırmacıları, saldırganların belirli bir sektörü hedeflemek yerine SonicWall cihazlarına yönelik geniş kapsamlı ve fırsatçı bir yaklaşım sergilediğini ifade etmiştir. Kimliği henüz belirlenemeyen saldırganların, sızma sonrası herhangi bir faaliyet yürütmediği ve bu durumun gelecekteki saldırılar için ön hazırlık olabileceği belirtilmektedir. SonicWall yetkilileri, olayla ilgili incelemelerin sürdüğünü açıklamıştır.
+(XXXXXXX, AÇIK -cyberscoop.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] FTC'nin Hims & Hers Şirketine Gizlilik İhlali Davası Açması
+─────────────────────────────────────────────────────────
+ABD Federal Ticaret Komisyonu (FTC), teletıp sağlayıcısı Hims & Hers şirketine, hasta bilgilerini üçüncü taraf reklam platformlarıyla paylaştığı gerekçesiyle dava açmıştır. 29 Temmuz 2026 tarihinde sunulan şikayette, şirketin hassas sağlık verilerini Snap ve Meta gibi platformlara aktarırken tüketicilere gizliliğin korunduğuna dair yanıltıcı beyanlarda bulunduğu iddia edilmiştir. FTC, San Francisco merkezli firmanın cinsel sağlık ve ruh sağlığı gibi hassas konularda hizmet alan kullanıcıların verilerini takip teknolojileri aracılığıyla paylaştığını belirtmiştir. Dava kapsamında ayrıca, şirketin abonelik iptal süreçlerini zorlaştırdığı ve faturalandırma uygulamalarında yanıltıcı yöntemler izlediği ileri sürülmüştür. Hims & Hers sözcüsü, iddiaların tüketiciyi koruma amacı taşımadığını ve yasal standartların çarpıtıldığını savunarak suçlamaları reddetmiştir. California ve Utah eyaletleri de FTC'nin yanında davacı olarak yer almıştır.
+(XXXXXXX, AÇIK -therecord.media, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Rus Şirketlerini Taklit Eden Dokuz Yıllık Dolandırıcılık Faaliyeti
+─────────────────────────────────────────────────────────
+Siber güvenlik kuruluşu F6, Rusya merkezli büyük şirketlerin internet sitelerini kopyalayarak uluslararası firmaları hedef alan geniş kapsamlı bir dolandırıcılık kampanyasını ortaya çıkarmıştır. 2017 yılından bu yana süregelen operasyonda, siber tehdit aktörlerinin petrokimya, metalürji, lojistik ve bankacılık sektörlerindeki kurumların sahte web sitelerini oluşturduğu tespit edilmiştir. Saldırganların, İngilizce, Fransızca, Arapça ve Rusça dillerinde hazırlanan bu siteler üzerinden sahte ticari belgelerle uluslararası müşterilerden avans ödemeleri topladığı ifade edilmiştir. Azerbaycan merkezli bir şirketin Nisan 2025 tarihinde bu yöntemle 150.000 dolar kaybettiği kaydedilmiştir. Araştırmacılar, yaklaşık 100 sahte alan adının kullanıldığını ve suçluların inandırıcılığı artırmak için profesyonel satış temsilcileri kiraladığını belirtmiştir. Meşru şirketlerin itibarını zedeleyen bu faaliyetin, Bağımsız Devletler Topluluğu ülkelerindeki işletmeler arası ticaret sektörünü doğrudan hedef aldığı bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] Cisco Secure FMC Ürünündeki Sıfır Gün Açığının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Cisco, Secure Firewall Management Center (FMC) ürününü etkileyen ve aktif olarak istismar edilen CVE-2026-20316 kodlu bir sıfır gün açıklığı için yamalar yayımlamıştır. Söz konusu güvenlik açığının, düşük yetkili bir kullanıcı hesabına ait varsayılan kimlik bilgilerinin kullanılmasına ve hassas verilere erişilmesine olanak tanıyan bir statik kimlik bilgisi sorunu olduğu belirtilmiştir. Cisco, yüksek ciddiyet düzeyine sahip bu açığın diğer FMC kusurlarıyla birleştirilerek yetki yükseltme saldırılarında kullanılabileceği konusunda uyarıda bulunmuştur. Temmuz ayında tespit edilen bu durumun ardından şirket, saldırıların belirlenmesi için uzlaşma göstergelerini paylaşıma açmıştır. CISA, ilgili açığı Bilinen İstismar Edilen Güvenlik Açıkları kataloğuna ekleyerek kamu kurumlarına 1 Ağustos tarihine kadar önlem almaları talimatını vermiştir.
+(XXXXXXX, AÇIK -securityweek.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Ruflo Platformundaki Kritik Açığın Yapay Zeka Ajanlarını Tehdit Etmesi
+─────────────────────────────────────────────────────────
+Noma Security araştırmacıları, açık kaynaklı yapay zeka ajan platformu Ruflo üzerinde CVE-2026-59726 olarak izlenen ve en yüksek ciddiyet puanı olan 10 alan kritik bir güvenlik açığı tespit etmiştir. RufRoot olarak adlandırılan bu açığın, kimlik doğrulaması gerektirmeden sistemin ele geçirilmesine ve bellek bozulmasına yol açtığı bildirilmiştir. Saldırganların varsayılan olarak açık olan bir köprü üzerinden tek bir HTTP isteğiyle tam uzaktan kod yürütme yetkisi kazandığı ve hassas API anahtarlarına erişebildiği belirtilmiştir. Araştırmacılar, saldırganların yapay zekanın belleğine müdahale ederek sistemden ayrıldıktan sonra bile gelecekteki yanıtları etkileyebileceğini ifade etmiştir. Ruflo geliştiricilerinin 24 saat içinde bir yama yayınlayarak platformu kimlik doğrulaması gerektiren güvenli bir yapılandırmaya geçirdiği kaydedilmiştir. Etkilenen kurumların kimlik bilgilerini yenilemeleri ve platform belleklerini denetlemeleri önerilmektedir.
+(XXXXXXX, AÇIK -darkreading.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] VMware Ürünlerinde Kritik Kimlik Doğrulama ve Kod Yürütme Açıkları
+─────────────────────────────────────────────────────────
+Broadcom, VMware ESX, vCenter, Workstation ve Fusion ürünlerini etkileyen ve üçü kritik seviyede olan birden fazla güvenlik açığı için güncellemeler yayınlamıştır. Kritik açıklardan ilki olan CVE-2026-59309'un, vCenter sunucusunda ağ erişimi olan bir saldırganın kimlik doğrulamayı atlamasına imkan tanıdığı belirtilmiştir. Diğer bir kritik açık olan CVE-2026-59310'un ise dizin geçişi yöntemiyle rastgele kod yürütülmesine yol açtığı ifade edilmiştir. Ayrıca, VMXNET3 sanal ağ bağdaştırıcısındaki bir hata nedeniyle yerel yönetici yetkisine sahip bir saldırganın ana makine üzerinde kod yürüterek sanal makineden kaçış gerçekleştirebildiği kaydedilmiştir. Broadcom, bu açıkların henüz sahada istismar edildiğine dair bir kanıt bulunmadığını ancak herhangi bir geçici çözümün mevcut olmadığını açıklamıştır. Şirket, bu güncellemeleri acil değişim kategorisinde sınıflandırarak kullanıcıların derhal aksiyon alması gerektiğini bildirmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Tor Browser'ı Etkileyen Kritik Firefox Güvenlik Açığının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Nebula Security araştırmacıları, Firefox tarayıcısının JIT derleyicisinde CVE-2026-10702 kodlu ve yüksek ciddiyet düzeyine sahip bir güvenlik açığı tespit etmiştir. Söz konusu açığın, kullanıcı etkileşimi gerektirmeden yalnızca kötü amaçlı bir web sayfasının ziyaret edilmesiyle tetiklendiği ve Tor Browser kullanıcılarını da etkilediği belirtilmiştir. Hatanın, tarayıcının işleyici sürecinde rastgele kod yürütülmesine olanak tanıdığı ve Firefox 147 ile 151.0.2 sürümleri arasındaki tüm versiyonları kapsadığı ifade edilmiştir. Araştırmacılar, bu açığı Android 17 işletim sistemli cihazlarda kök dizin erişimi sağlamak amacıyla IonStack adlı bir saldırı zincirinin ilk aşaması olarak kullandıklarını açıklamıştır. Mozilla'nın Firefox 151.0.3 güncellemesiyle sorunu giderdiği ve kullanıcıların tarayıcılarını en güncel sürüme yükseltmeleri gerektiği bildirilmiştir. Henüz bu açığın gerçek dünya saldırılarında aktif olarak kullanıldığına dair somut bir veri bulunmadığı kaydedilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] Google Chrome 151 Güncellemesiyle 370 Güvenlik Açığının Kapatılması
+─────────────────────────────────────────────────────────
+Google, Chrome tarayıcısının 151 numaralı kararlı sürümünü yayınlayarak toplam 370 güvenlik zafiyetini giderdiğini açıklamıştır. Güncelleme kapsamında, aralarında Compositing ve Skia bileşenlerini etkileyen yedi adet kritik seviyeli hatanın yanı sıra 71 adet yüksek riskli açığın kapatıldığı bildirilmiştir. Tespit edilen zafiyetlerin önemli bir kısmının bellek yönetimi hatalarından ve hatalı girdi doğrulamalarından kaynaklandığı ifade edilmiştir. Google, bu hataların 349 tanesinin kurum içi çalışmalarla, 21 tanesinin ise dış araştırmacılar tarafından bulunduğunu ve toplamda 58.500 dolar ödül dağıtıldığını kaydetmiştir. Yıl başından bu yana Chrome üzerinde 1.800'den fazla açığın giderildiği bilgisi verilmiştir. Yeni sürümün Windows, macOS ve Linux işletim sistemleri için dağıtıma çıktığı belirtilmektedir. Şirket, kullanıcıların güncel sürümlere geçiş yapmalarının önemine dikkat çekmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] Ruby on Rails Uygulamalarında Kritik Dosya Okuma Zafiyeti
+─────────────────────────────────────────────────────────
+Ruby on Rails geliştirme ekibi, Active Storage bileşeninde kimlik doğrulaması yapmamış saldırganların sunucu dosyalarını okumasına olanak tanıyan kritik bir güvenlik açığını gidermiştir. CVE-2026-66066 koduyla izlenen ve 9.5 önem puanı verilen zafiyetin, Rails süreç ortamını ve veritabanı şifreleri ile API anahtarları gibi hassas verileri ifşa edebildiği belirtilmiştir. Sorunun, Active Storage'ın görüntü işleme için libvips kütüphanesini kullandığı ve güvenilmeyen kullanıcılardan yükleme kabul ettiği yapılandırmalarda ortaya çıktığı ifade edilmiştir. Rails 7.0 ile 8.1 arasındaki sürümlerin bu durumdan etkilendiği, güvenliğin sağlanması için Rails 7.2.3.2, 8.0.5.1 veya 8.1.3.1 sürümlerine yükseltme yapılması gerektiği bildirilmiştir. Güvenlik ekibi, zafiyetin şu ana kadar istismar edildiğine dair bir bulguya rastlanmadığını açıklamıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] Gitea Platformunda Uzaktan Kod Çalıştırma Açığının Giderilmesi
+─────────────────────────────────────────────────────────
+Kendi kendine barındırılan Git platformu Gitea, sıradan depo yazma yetkisine sahip kullanıcıların kabuk komutları çalıştırmasına olanak tanıyan kritik bir uzaktan kod çalıştırma açığını yamamıştır. CVE-2026-60004 koduyla izlenen ve 9.8 önem puanı verilen bu güvenlik açığının, 1.17 ile 1.27.1 arasındaki tüm sürümleri etkilediği belirtilmiştir. Güvenlik araştırmacısı Shai Rod tarafından tespit edilen hata, varsayılan kurulumlarda açık olan kayıt özelliği sayesinde dışarıdan gelen saldırganların kimlik bilgisine ihtiyaç duymadan hesap oluşturup sistemi istismar etmesine imkan tanımaktadır. Gitea, 27 Temmuz 2026 tarihinde yayınladığı 1.27.1 sürümüyle söz konusu hatayı düzeltmiş ve bulut örneklerini otomatik olarak güncellemiştir. Şirket, hatanın henüz kötü niyetli kişilerce kullanıldığına dair bir kanıt bulunmadığını ancak genel bir kavram kanıtlama kodunun mevcut olduğunu ifade etmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] Microsoft Copilot İçin Word Belgeleri Üzerinden Yayılan Solucan
+─────────────────────────────────────────────────────────
+Veri bilimci Håkon Måløy, Microsoft Copilot for Word uygulamasında belgeler aracılığıyla kendi kendine yayılan bir yapay zeka solucanı türü tespit etmiştir. Araştırmacı, saldırganların bir Word belgesine gizli talimatlar yerleştirebildiğini ve bu belgenin Copilot bağlamına dahil edilmesiyle çıktıların değiştirilebildiğini ifade etmiştir. Kötü amaçlı talimatların, kurban fark etmeden yeni oluşturulan dosyalara kopyalandığı ve bu sayede solucanın normal iş akışları içinde yayıldığı belirtilmiştir. Microsoft ile Mart 2026 tarihinden bu yana yürütülen koordineli çalışma sürecinde iki farklı hafifletme girişimi yapılmasına rağmen, zafiyet sınıfının tamamen kapatılamadığı bildirilmiştir. Microsoft, bulguları doğrulayarak kötü amaçlı talimatları engellemek için çok katmanlı bir savunma stratejisi kullandıklarını açıklamıştır. Kullanıcılara, dış kaynaklı içerikleri Copilot ile kullanmadan önce dikkatle incelemeleri tavsiye edilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 29.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
