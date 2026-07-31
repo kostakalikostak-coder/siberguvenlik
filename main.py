@@ -3525,6 +3525,60 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                   f"son {REPORT_HISTORY_DAYS} günde raporlanan olay(lar) elendi {dropped}")
         return kept
 
+    def _restore_orphaned_groups(self, candidates_before, kept_ids, top3_ids,
+                                 view_fn, score_records):
+        """AYNI-OLAY GRUBU BOŞALMA KORUMASI — bir olayın TÜM kopyaları elenmişse
+        en yüksek puanlısını gövdeye geri alır.
+
+        NEDEN: rapor üretiminde ÜÇ bağımsız eleme katmanı var (Pass 5 kalite,
+        Auditor LLM mükerrer denetimi, deterministik aynı-olay dedup) ve her biri
+        aynı-olay grubunda KENDİ çapasını seçiyor. Hiçbiri "bu olaydan geriye bir
+        haber kaldı mı?" diye sormuyor.
+
+        Ölçülen zarar (31.07.2026): Analog Devices veri ihlalinin üç kopyası vardı
+        (ID 64/14/20). Pass 5 kalite denetimi 14 ve 20'yi mükerrer diye attı, çapa
+        olarak 64 kaldı; ardından deterministik aynı-olay pası FARKLI bir çapa
+        mantığıyla 64'ü de attı. Haber rapordan TAMAMEN kayboldu — üstelik
+        kendisinden düşük puanlı haberler (59 puanlı Krebs) raporda kaldı.
+
+        KAPSAM: yalnızca AYNI RUN içindeki elemeler. Çapraz-gün elemesi bilinçli
+        olarak DIŞARIDA — orada grubun tümüyle düşmesi DOĞRU davranıştır (olay
+        zaten son günlerde raporlanmış). Bu yüzden çağrı çapraz-gün pasından
+        ÖNCE yapılır.
+
+        KRİTİK 3 ile aynı olayı anlatan gruplar da geri ALINMAZ; onlar zaten
+        manşette temsil ediliyor.
+
+        Döndürür: (yeni_kept_listesi, geri_alınan_id_listesi)."""
+        kept_set = set(kept_ids)
+        dropped = [aid for aid in candidates_before if aid not in kept_set]
+        if not dropped:
+            return list(kept_ids), []
+
+        def _puan(aid):
+            return (score_records.get(aid, {}) or {}).get('toplam', 0)
+
+        restored = []
+        for aid in sorted(dropped, key=lambda x: -_puan(x)):
+            view = view_fn(aid)
+            # Grubun bir üyesi hâlâ rapordaysa (gövde ya da KRİTİK 3) olay temsil
+            # ediliyor demektir — geri alma.
+            represented = any(
+                _dedup.same_event(view, view_fn(other))
+                for other in list(kept_set) + list(top3_ids) + restored
+            )
+            if not represented:
+                restored.append(aid)
+
+        if restored:
+            print(f"   ♻️  Grup boşalması önlendi: tüm kopyaları elenen olay(lar) "
+                  f"en yüksek puanlı haberle geri alındı {restored}")
+        # Sıra korunur: geri alınanlar orijinal aday sırasındaki yerine döner
+        restored_set = set(restored)
+        new_kept = [aid for aid in candidates_before
+                    if aid in kept_set or aid in restored_set]
+        return new_kept, restored
+
     def _dedup_body_cross_day_llm(self, body_ids, content_by_id, articles_by_id,
                                   recent_views, label=''):
         """Çapraz-gün SEMANTİK mükerrer denetimi (Auditor'ın çapraz-gün eşi).
@@ -4751,6 +4805,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 f"Kaynak Var: {has_source}\n"
             )
 
+        # AYNI-OLAY GRUBU BOŞALMA KORUMASI için ELEME ÖNCESİ gövde anlık görüntüsü.
+        # Bundan sonra ÜÇ bağımsız katman haber düşürüyor (Pass 5 kalite, Auditor
+        # mükerrer, deterministik aynı-olay) ve her biri KENDİ çapasını seçiyor;
+        # hiçbiri "bu olaydan geriye bir haber kaldı mı?" diye sormuyor.
+        # (bkz. _restore_orphaned_groups)
+        body_before_removal = [aid for aid in (list(top10_ids) + list(remaining_ids))
+                               if aid not in set(top3_ids)]
+
         qr_data = None
         if qr_lines:
             qr_data = self._gemini_call_json(
@@ -4916,6 +4978,23 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                       f"{dropped_body}")
                 top10_ids     = [i for i in top10_ids     if i in kept_set]
                 remaining_ids = [i for i in remaining_ids if i in kept_set]
+
+        # ── AYNI-OLAY GRUBU BOŞALMA KORUMASI ─────────────────────────────
+        # Buraya kadarki ÜÇ eleme katmanı (Pass 5 kalite, Auditor mükerrer,
+        # gövde aynı-olay) her biri KENDİ çapasını seçtiği için bir olayın TÜM
+        # kopyalarını düşürebiliyor. 31.07.2026'da Analog Devices ihlali tam
+        # böyle kayboldu. Çapraz-gün pasından ÖNCE çalışır: orada grubun tümüyle
+        # düşmesi doğrudur, burada değil.
+        if body_before_removal:
+            view_fn_grp = self._dedup_view_fn(content_by_id, articles_by_id)
+            kept_now = [aid for aid in (list(top10_ids) + list(remaining_ids))]
+            _, restored_ids = self._restore_orphaned_groups(
+                body_before_removal, kept_now, list(top3_ids),
+                view_fn_grp, score_records)
+            if restored_ids:
+                # Geri alınanlar gövdeye (remaining) döner; top10 sırası bozulmaz.
+                remaining_ids = remaining_ids + [aid for aid in restored_ids
+                                                 if aid not in remaining_ids]
 
         # ── ÇAPRAZ-GÜN RAPOR-GENELİ DEDUP (gövde ↔ son 7 gün raporu) ──────
         # Yukarıdaki blok yalnızca AYNI RUN içinde (gövde ↔ bugünkü KRİTİK 3 +

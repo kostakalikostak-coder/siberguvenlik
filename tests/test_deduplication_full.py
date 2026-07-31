@@ -454,3 +454,82 @@ class TestAptEvidenceGuard:
         sistem = HaberSistemi()
         assert not sistem._has_apt_evidence('')
         assert not sistem._has_apt_evidence('', None)
+
+
+class TestOrphanedGroupRestore:
+    """_restore_orphaned_groups — aynı-olay grubunun tümüyle elenmesini önler
+    (2026-07-31 Analog Devices regresyonu)."""
+
+    # Aynı olayın üç kopyası + alakasız bir haber
+    _VIEWS = {
+        64: {'tr_title': 'Analog Devices Şirketinin Veri İhlali Bildirmesi',
+             'paragraph': 'Yarı iletken üreticisi Analog Devices, sistemlerine '
+                          'yetkisiz erişim sağlandığını ve bir miktar verinin ele '
+                          'geçirildiğini bildirmiştir.',
+             'title': 'Analog Devices reports data breach', 'full_text': ''},
+        14: {'tr_title': 'Analog Devices Veri İhlalini Açıkladı',
+             'paragraph': 'Analog Devices, yetkisiz sistem erişimi sonrası bir veri '
+                          'ihlali yaşandığını, operasyonlarının etkilenmediğini '
+                          'açıklamıştır.',
+             'title': 'Analog Devices discloses data breach', 'full_text': ''},
+        20: {'tr_title': 'Analog Devices İhlali Doğruladı',
+             'paragraph': 'Analog Devices, yetkisiz erişim sonrasında veri ihlali '
+                          'yaşandığını doğrulamıştır.',
+             'title': 'Analog Devices Discloses Data Breach', 'full_text': ''},
+        16: {'tr_title': 'Televizyon Kutularında Reklam Dolandırıcılığı',
+             'paragraph': 'Bir güvenlik araştırmacısı, ucuz akış cihazlarının '
+                          'reklam dolandırıcılığı ağının parçası olduğunu tespit '
+                          'etmiştir.',
+             'title': 'Read This Before You Buy That TV Streaming Stick',
+             'full_text': ''},
+    }
+    _SCORES = {64: {'toplam': 81}, 14: {'toplam': 80},
+               20: {'toplam': 80}, 16: {'toplam': 59}}
+
+    def _view_fn(self):
+        return lambda aid: self._VIEWS[aid]
+
+    def test_group_wiped_out_is_restored_with_highest_score(self):
+        """Üç kopyanın ÜÇÜ de elenmişse en yüksek puanlı geri gelir.
+
+        Gerçek vaka: Pass 5 kalite denetimi 14 ve 20'yi attı (çapa 64), sonra
+        deterministik aynı-olay pası FARKLI çapa mantığıyla 64'ü de attı ve
+        haber rapordan tamamen kayboldu."""
+        sistem = HaberSistemi()
+        _, restored = sistem._restore_orphaned_groups(
+            candidates_before=[64, 14, 20, 16], kept_ids=[16], top3_ids=[],
+            view_fn=self._view_fn(), score_records=self._SCORES)
+        assert restored == [64], 'En yüksek puanlı kopya geri alınmalıydı'
+
+    def test_only_one_member_restored_not_all(self):
+        """Geri alma mükerrer YARATMAMALI — gruptan yalnızca BİR haber döner."""
+        sistem = HaberSistemi()
+        new_kept, restored = sistem._restore_orphaned_groups(
+            candidates_before=[64, 14, 20, 16], kept_ids=[16], top3_ids=[],
+            view_fn=self._view_fn(), score_records=self._SCORES)
+        assert len(restored) == 1
+        assert sorted(new_kept) == [16, 64]
+
+    def test_surviving_member_means_no_restore(self):
+        """Gruptan bir haber hâlâ rapordaysa geri alma YAPILMAZ."""
+        sistem = HaberSistemi()
+        _, restored = sistem._restore_orphaned_groups(
+            candidates_before=[64, 14, 20, 16], kept_ids=[14, 16], top3_ids=[],
+            view_fn=self._view_fn(), score_records=self._SCORES)
+        assert restored == []
+
+    def test_event_represented_in_top3_is_not_restored(self):
+        """Olay KRİTİK 3'te temsil ediliyorsa gövdeye geri alınmaz."""
+        sistem = HaberSistemi()
+        _, restored = sistem._restore_orphaned_groups(
+            candidates_before=[64, 14, 20, 16], kept_ids=[16], top3_ids=[20],
+            view_fn=self._view_fn(), score_records=self._SCORES)
+        assert restored == []
+
+    def test_no_drops_means_no_change(self):
+        sistem = HaberSistemi()
+        new_kept, restored = sistem._restore_orphaned_groups(
+            candidates_before=[64, 16], kept_ids=[64, 16], top3_ids=[],
+            view_fn=self._view_fn(), score_records=self._SCORES)
+        assert restored == []
+        assert new_kept == [64, 16]
