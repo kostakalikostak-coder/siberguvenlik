@@ -533,3 +533,84 @@ class TestOrphanedGroupRestore:
             view_fn=self._view_fn(), score_records=self._SCORES)
         assert restored == []
         assert new_kept == [64, 16]
+
+
+class TestNoveltyTiebreak:
+    """_apply_novelty_tiebreak — eşit puanlı manşet adayları arasında YENİ olanı
+    öne alır (2026-07-31 ölçümü).
+
+    Eşitlik-bozucu zinciri toplam→kategori→k→a→BESLEME SIRASI şeklindeydi; `k`
+    ölü bir eksen olduğu için (değerlerin %87'si 14-15) zincir pratikte doğrudan
+    besleme sırasına düşüyordu. 30 günün 2'sinde günün manşetini fiilen RSS
+    besleme sırası belirledi."""
+
+    # "Tanıdık" aday: ortak parmak izi (NightLedger) yalnızca GÖVDEDE geçer ve
+    # konu örtüşmesi eşiğin altındadır → same_event AYNI OLAY DEMEZ (yani
+    # exclude_views onu elemez) ama nearmiss_signal bağı görür. Yenilik
+    # eşitlik-bozucusunun devreye girdiği tam durum budur.
+    _TANIDIK = {'tr_title': 'Bir Casusluk Grubunun Kurban Sistemlerini Ele Geçirmesi',
+                'paragraph': 'Saldırganların hedef kuruluşlarda kalıcılık sağlamak '
+                             'amacıyla NightLedger bileşenini kullandığı '
+                             'bildirilmiştir.',
+                'title': 'Espionage group turns victim systems into relays',
+                'full_text': ''}
+    _YENI = {'tr_title': 'İran Bağlantılı Grupların Endüstriyel Sistemleri Taraması',
+             'paragraph': 'Saldırganların farklı endüstriyel denetleyici ailelerini '
+                          'taradığı kaydedilmiştir.',
+             'title': 'Iran-linked crews probe US industrial systems', 'full_text': ''}
+    _GECMIS = [{'tr_title': 'Fidye Yazılımı Çetesinin Perakende Zincirini Hedeflemesi',
+                'paragraph': 'Perakende zincirinin kasa terminalleri şifrelenmiş, '
+                             'mağazalar üç gün kapalı kalmış; incelemede NightLedger '
+                             'izine rastlanmıştır.',
+                'title': 'Ransomware crew hits retail chain', 'full_text': ''}]
+
+    def test_fixture_is_a_nearmiss_not_a_duplicate(self):
+        """Ön koşul: _TANIDIK ile geçmiş kayıt AYNI OLAY sayılmamalı, yalnızca
+        yakın-kaçış bağı taşımalı. Aksi hâlde bu sınıf yanlış şeyi test eder."""
+        from src import dedup
+        assert not dedup.same_event(self._TANIDIK, self._GECMIS[0], cross_day=True)
+        assert dedup.nearmiss_signal(self._TANIDIK, self._GECMIS[0], cross_day=True)
+        assert not dedup.nearmiss_signal(self._YENI, self._GECMIS[0], cross_day=True)
+
+    _RECORDS = {1: {'toplam': 93, 'kat': 'nation_state_apt', 'k': 15, 'a': 19},
+                2: {'toplam': 93, 'kat': 'nation_state_apt', 'k': 15, 'a': 19}}
+
+    def _views(self):
+        return {1: self._TANIDIK, 2: self._YENI}.get
+
+    def test_new_story_wins_the_tie(self):
+        """Her şey berabereyken son günlerle bağı OLMAYAN haber öne geçer."""
+        sistem = HaberSistemi()
+        out = sistem._apply_novelty_tiebreak([1, 2], self._RECORDS,
+                                             self._views(), self._GECMIS)
+        assert out == [2, 1], 'Yeni haber (2) tanıdık haberin (1) önüne geçmeliydi'
+
+    def test_higher_score_still_wins(self):
+        """Yenilik yalnızca BERABERLİĞİ bozar — puanı ASLA geçersizleştirmez."""
+        sistem = HaberSistemi()
+        records = {1: {'toplam': 97, 'kat': 'nation_state_apt', 'k': 15, 'a': 19},
+                   2: {'toplam': 93, 'kat': 'nation_state_apt', 'k': 15, 'a': 19}}
+        out = sistem._apply_novelty_tiebreak([1, 2], records,
+                                             self._views(), self._GECMIS)
+        assert out == [1, 2], 'Yüksek puanlı haber tanıdık olsa da önde kalmalı'
+
+    def test_category_priority_still_wins(self):
+        """Kategori önceliği de yenilikten ÖNCE gelir (zincirdeki yeri korunur)."""
+        sistem = HaberSistemi()
+        records = {1: {'toplam': 93, 'kat': 'nation_state_apt', 'k': 15, 'a': 19},
+                   2: {'toplam': 93, 'kat': 'veri_ihlali', 'k': 15, 'a': 19}}
+        out = sistem._apply_novelty_tiebreak([1, 2], records,
+                                             self._views(), self._GECMIS)
+        assert out == [1, 2]
+
+    def test_no_history_means_no_change(self):
+        sistem = HaberSistemi()
+        assert sistem._apply_novelty_tiebreak([1, 2], self._RECORDS,
+                                              self._views(), []) == [1, 2]
+
+    def test_both_new_keeps_original_order(self):
+        """İki aday da yeniyse sıra DEĞİŞMEZ (07-07 vakası)."""
+        sistem = HaberSistemi()
+        out = sistem._apply_novelty_tiebreak([1, 2], self._RECORDS,
+                                             self._views(), [])
+        assert out == [1, 2]

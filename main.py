@@ -3525,6 +3525,61 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                   f"son {REPORT_HISTORY_DAYS} günde raporlanan olay(lar) elendi {dropped}")
         return kept
 
+    def _apply_novelty_tiebreak(self, eligible, records, view_fn, recent_views):
+        """EŞİT PUANLI manşet adayları arasında YENİ olanı öne alır.
+
+        NEDEN: manşet sıralamasının eşitlik-bozucu zinciri
+            toplam → kategori önceliği → k → a → BESLEME SIRASI
+        şeklinde. `k` (kaynak güveni) ölü bir eksen (31 günlük ölçümde
+        değerlerin %87'si 14 veya 15), `a` da sık sık eşit çıkıyor; sonuç olarak
+        zincir pratikte doğrudan BESLEME SIRASINA düşüyor. Ölçüm: 30 günün
+        6'sında manşet sınırında beraberlik var, 2'sinde (07-07 ve 07-29) günün
+        manşetini fiilen RSS besleme sırası belirledi.
+
+        Bu adım zincire son basamaktan ÖNCE anlamlı bir ölçüt sokar: eşit
+        puandaki iki aday arasında, son günlerin manşetleriyle YAKIN-KAÇIŞ bağı
+        (ortak aktör/kod adı/özel ad, konu örtüşmesi eşik altı) OLMAYAN haber
+        önce gelir. Yani "okur için yeni olan" kazanır.
+
+        DAVRANIŞ GARANTİSİ: anahtarın ilk dört bileşeni mevcut sıralamayı BİREBİR
+        tekrarlar, son bileşen de özgün sırayı korur. Dolayısıyla sıralama
+        YALNIZCA dördünde de berabere kalan adaylar arasında değişir — yani tam
+        olarak eskiden besleme sırasının karar verdiği yerde.
+
+        recent_views boşsa liste değişmeden döner."""
+        if not recent_views or len(eligible) < 2:
+            return list(eligible)
+
+        orijinal = {aid: i for i, aid in enumerate(eligible)}
+
+        def _tekrar(aid):
+            # nearmiss_signal, same_event zaten AYNI OLAY diyorsa None döner;
+            # o adaylar pick_distinct'te exclude_views ile elenir. Buradaki
+            # sinyal "aynı olay değil ama tanıdık" durumudur.
+            try:
+                va = view_fn(aid)
+                return 1 if any(_dedup.nearmiss_signal(va, ev, cross_day=True)
+                                for ev in recent_views) else 0
+            except Exception:
+                return 0
+
+        def _anahtar(aid):
+            rec = records.get(aid, {}) or {}
+            return (-rec.get('toplam', 0),
+                    -self._kat_oncelik(rec),
+                    -rec.get('k', 0),
+                    -rec.get('a', 0),
+                    _tekrar(aid),          # 0 = yeni, 1 = tanıdık → yeni önce
+                    orijinal[aid])
+
+        yeni_sira = sorted(eligible, key=_anahtar)
+        if yeni_sira != list(eligible):
+            degisen = [aid for aid in yeni_sira[:3] if aid not in list(eligible)[:3]]
+            if degisen:
+                print(f"   🆕 Yenilik eşitlik-bozucu: eşit puanlı adaylar arasında "
+                      f"son günlerle bağı olmayan haber(ler) öne alındı {degisen}")
+        return yeni_sira
+
     def _restore_orphaned_groups(self, candidates_before, kept_ids, top3_ids,
                                  view_fn, score_records):
         """AYNI-OLAY GRUBU BOŞALMA KORUMASI — bir olayın TÜM kopyaları elenmişse
@@ -4475,6 +4530,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
     def _derive_top3_by_score(self, ranked_ids, records, content_by_id,
                               articles_by_id):
         """KRİTİK 3 — deterministik, GARANTİLİ 3 haber.
+        Eşit puanlı adaylar arasında YENİLİK tercih edilir (bkz.
+        _apply_novelty_tiebreak).
 
         Öncelik sırası (kademeli, her kademe bir öncekini tamamlar):
           1) KRITIK3_HARIC_KATEGORILER dışı (gerçek manşet adayları), çapraz-gün
@@ -4486,12 +4543,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         Rapor ≥3 haber içerdiği sürece KRİTİK 3 ASLA 3'ten az kalmaz. Aynı-olay
         ayrıklığı her kademede korunur (3'e ulaşmak zorunluysa en son gevşer).
         """
+
         view_fn = self._dedup_view_fn(content_by_id, articles_by_id)
         recent_k3 = self._load_recent_kritik3_views()
 
         # ranked_ids zaten puan sırasında; en güçlü adaylar başta.
         eligible = [aid for aid in ranked_ids
                     if records.get(aid, {}).get('kat') not in KRITIK3_HARIC_KATEGORILER]
+        eligible = self._apply_novelty_tiebreak(eligible, records, view_fn, recent_k3)
 
         # Kademe 1 — tercih edilen adaylar, çapraz-gün + aynı-olay ayrık
         top3_ids = _dedup.pick_distinct(eligible, view_fn, n=3,

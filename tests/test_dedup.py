@@ -606,3 +606,30 @@ def test_nearmiss_signal_none_when_same_event():
     """Zaten aynı olay sayılan çift yakın-kaçış DEĞİLDİR."""
     assert dedup.nearmiss_signal(_MINNESOTA_29, _MINNESOTA_31,
                                  cross_day=True) is None
+
+
+def test_shared_actor_catches_campaign_continuation_xday():
+    """Ortak AKTÖR + ılımlı konu örtüşmesi çapraz-günde mükerrer sayılmalı.
+
+    Gerçek vaka: Laundry Bear (TA488) kampanyası 24, 29 ve 31 Temmuz 2026'da ÜÇ
+    KEZ manşet oldu. 31.07 manşetinin İngilizce başlığı "…half-click email attack
+    FROM ZIMBRA TO OUTLOOK" — yani 29.07'de manşet olan Zimbra haberinin doğrudan
+    devamı. Ortak aktör VARDI ama konu örtüşmesi 0.14 ile eski eşiğin (0.18)
+    altında kaldığı için yakalanamadı. Bu test eşiği geri yükseltmeye karşı
+    korumadır."""
+    zimbra = {'tr_title': "Rusya Bağlantılı Laundry Bear'ın Zimbra Açığını İstismar Etmesi",
+              'title': 'Year-long Russian attacks infect users as soon as they look at an email',
+              'paragraph': 'Laundry Bear olarak izlenen Rus casusluk grubunun Zimbra '
+                           'Collaboration Suite üzerindeki bir sıfır gün açığını '
+                           'kullanarak kurbanların posta kutularına eriştiği '
+                           'bildirilmiştir.',
+              'full_text': ''}
+    outlook = {'tr_title': 'Rus Casusluk Grubunun Outlook Web Access Kullanıcılarını Hedeflemesi',
+               'title': 'Russian spies take their half-click email attack from Zimbra to Outlook',
+               'paragraph': 'Proofpoint, Laundry Bear olarak izlenen Rus casusluk '
+                            'grubunun Outlook Web Access bileşenindeki bir XSS '
+                            'zafiyetini istismar ettiğini açıklamıştır.',
+               'full_text': ''}
+    same, why = dedup.same_event(outlook, zimbra, explain=True, cross_day=True)
+    assert same, f'Aynı kampanyanın devamı yakalanamadı: {why}'
+    assert 'laundrybear' in why

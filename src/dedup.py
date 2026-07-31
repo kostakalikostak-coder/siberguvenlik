@@ -373,7 +373,20 @@ _TOPIC_LEAD_TOKENS = 40
 # Bu yüzden çapraz-günde Kural 4 DEVRE DIŞIDIR ve aktör+konu eşiği yükseltilir;
 # yalnızca YÜKSEK ÖZGÜLLÜKTE sinyaller (ortak kod adı / ortak aktör+konu /
 # yüksek konu örtüşmesi) kullanılır. Gerçek arşiv verisiyle doğrulandı.
-_TOPIC_WITH_ACTOR_XDAY = 0.18
+#
+# 0.18 → 0.14 (2026-07-31): ortak AKTÖR zaten yüksek-özgüllükte bir sinyaldir —
+# "Laundry Bear", "APT29", "UNC5792" gibi adlar alakasız iki haberde rastgele
+# birlikte geçmez — bu yüzden 0.18'lik konu eşiği gereksiz temkinliydi ve gerçek
+# bir mükerreri kaçırdı: Laundry Bear (TA488) kampanyası 24, 29 ve 31 Temmuz'da
+# ÜÇ KEZ manşet oldu. 31.07 manşeti "…half-click email attack FROM ZIMBRA TO
+# OUTLOOK" idi, yani 29.07'de manşet olan Zimbra haberinin doğrudan devamı;
+# ortak aktör VARDI (laundrybear) ama konu örtüşmesi 0.14 ile eşiğin 0.04
+# altında kaldı.
+#
+# Ölçüm (scripts/dedup_backtest.py, tüm kritik3+rapor geçmişi):
+#   0.16 → 1 yeni eşleşme   |  0.14 → 2 yeni eşleşme  |  0.12 → 4 yeni eşleşme
+# 0.14'teki eşleşmelerin TAMAMI aynı Laundry Bear zinciri; yanlış-pozitif YOK.
+_TOPIC_WITH_ACTOR_XDAY = 0.14
 
 # ── Çapraz-GÜN birleşik başlık+konu sinyali (Kural 5) ─────────────────────
 # Kural 4 (saf TR başlık benzerliği) çapraz-günde KAPALIDIR çünkü tek başına
