@@ -3224,6 +3224,19 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         CVE/GHSA gibi ZAFİYET kimlikleri aktör sayılmaz — aksi hâlde CVE numarası
         içeren her haber bu kontrolü geçerdi.
+
+        ÜÇÜNCÜ BİR YOL YOKTUR (bilinçli). Eskiden "serbest kod adı + tehdit
+        bağlamı" da kanıt sayılıyordu; extract_codenames herhangi bir CamelCase/
+        ALL-CAPS sözcüğü kod adı saydığı için bu yol ürün/spec/kıyaslama adlarını
+        aktör sanıyordu. Ölçülen zarar:
+          • 2026-07-30: OpenAI haberindeki "ExploitGym" (bir kıyaslama testi),
+          • 2026-07-31: Anthropic haberindeki "AsyncAPI" (bir npm paketi) —
+            haber SIRF bu yüzden zafiyet_aktif_apt etiketini korudu, 91 puanla
+            kritik3'e uygun kaldı ve "Güvenlik Açıkları" bölümüne düştü; oysa
+            AYNI olayın diğer üç kopyası doğru şekilde zafiyet_rutin'e
+            indirilmişti (tek kayıt tutarsız kalmıştı).
+        31.07 verisinde bu yola bağlı TEK kayıt hatanın kendisiydi; kaldırılması
+        gerçek APT haberlerini etkilemez — onlar (a) veya (b)'den geçer.
         """
         blob = ' '.join(t for t in texts if t)
         if not blob:
@@ -3234,23 +3247,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # Sandworm...) tek başına yeterlidir — bunlar tanımı gereği aktör adıdır.
         aktorler = {x for x in _dedup.extract_actors(blob)
                     if not x.startswith(('cve', 'ghsa'))}
-        if aktorler:
-            return True
-        # Serbest kod adı TEK BAŞINA yetmez: extract_codenames herhangi bir
-        # CamelCase/ALL-CAPS sözcüğü kod adı sayar ve ürün/kıyaslama adlarını da
-        # yakalar. 2026-07-30'da OpenAI haberindeki "ExploitGym" (bir kıyaslama
-        # testi) böyle kod adı sanılmıştı. Bu yüzden kod adının TEHDİT BAĞLAMIYLA
-        # birlikte geçmesi şartı aranır.
-        return bool(_dedup.extract_codenames(blob)
-                    and self._THREAT_CONTEXT.search(blob))
-
-    # Kod adı yolunun ikinci şartı: metinde gerçekten tehdit/aktör bağlamı olmalı.
-    _THREAT_CONTEXT = re.compile(
-        r'\b(?:malware|ransomware|backdoor|trojan|spyware|implant|botnet|rat\b|'
-        r'c2|command[\s-]and[\s-]control|campaign|threat\s+actor|apt|espionage|'
-        r'zararlı\s+yazılım|fidye\s+yazılım\w*|arka\s+kapı|casus\s+yazılım\w*|'
-        r'truva|botnet|kampanya\w*|tehdit\s+aktör\w*|casusluk|sızma|saldırgan\w*)',
-        re.I)
+        return bool(aktorler)
 
     def _cyber_text_for(self, art_id, content_by_id, articles_by_id):
         """Bir haber için siber-sinyal taraması yapılacak birleşik metni döndürür."""

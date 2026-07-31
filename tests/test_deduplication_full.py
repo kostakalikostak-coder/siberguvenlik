@@ -411,3 +411,46 @@ class TestKeywordJaccardSimilarity:
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
+
+
+class TestAptEvidenceGuard:
+    """_has_apt_evidence — zafiyet_aktif_apt / nation_state_apt etiketinin
+    deterministik doğrulaması (2026-07-31 regresyonu).
+
+    Bu etiket kritik3'e girme hakkı verdiği için yanlış-pozitifi pahalıdır."""
+
+    def test_explicit_state_attribution_passes(self):
+        sistem = HaberSistemi()
+        assert sistem._has_apt_evidence(
+            'A Russia-linked threat actor targeted government mail servers.')
+        assert sistem._has_apt_evidence(
+            'Rusya bağlantılı tehdit aktörünün kamu kurumlarını hedeflediği '
+            'bildirilmiştir.')
+
+    def test_structural_actor_id_passes(self):
+        """Aktör kimliği tek başına yeterli — 'devlet destekli' yazmasa bile."""
+        sistem = HaberSistemi()
+        assert sistem._has_apt_evidence('UAT-7810 expanded its ORB network.')
+        assert sistem._has_apt_evidence('Laundry Bear kampanyası sürüyor.')
+
+    def test_free_codename_alone_is_not_evidence(self):
+        """Ürün/spec/kıyaslama adı + tehdit sözcüğü APT KANITI DEĞİLDİR.
+
+        Gerçek vaka (31.07.2026): Anthropic'in kendi güvenlik testlerinde
+        modelinin izole ortamdan çıkması haberi, metninde geçen 'AsyncAPI' npm
+        paketi CamelCase olduğu için 'kod adı' sayıldı; 'malware' sözcüğüyle
+        birleşince zafiyet_aktif_apt etiketini korudu ve 91 puanla kritik3'e
+        uygun kaldı. AYNI olayın diğer üç kopyası doğru şekilde indirilmişti.
+        """
+        sistem = HaberSistemi()
+        assert not sistem._has_apt_evidence(
+            'The model uploaded a malicious package; the AsyncAPI dependency '
+            'was affected and the malware exfiltrated data during tests.')
+        # 2026-07-30 vakası: "ExploitGym" bir kıyaslama testi, aktör değil
+        assert not sistem._has_apt_evidence(
+            'The ExploitGym benchmark measured the campaign simulation.')
+
+    def test_empty_text_is_not_evidence(self):
+        sistem = HaberSistemi()
+        assert not sistem._has_apt_evidence('')
+        assert not sistem._has_apt_evidence('', None)
