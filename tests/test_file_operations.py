@@ -455,3 +455,65 @@ class TestKritik3ParagraphLength:
         para, calls = self._run(s, 60, longer_but_short)
         assert calls == 1
         assert len(para.split()) == 90
+
+
+class TestArchiveIncludesKritik3:
+    """save_summary_to_archive — KRİTİK 3 manşetleri de arşivlenmeli
+    (2026-07-31 regresyonu)."""
+
+    HTML = """
+    <html><body>
+      <div class="top3-section">
+        <div class="top3-card">
+          <div class="top3-card-title"><a href="#">Manşet Bir</a></div>
+          <p class="top3-card-paragraph">Manşet birinci paragraf metni.</p>
+          <p class="source"><b>(XXXXXXX, AÇIK - a.com, 31.07.2026)</b></p>
+        </div>
+        <div class="top3-card">
+          <div class="top3-card-title"><a href="#">Manşet İki</a></div>
+          <p class="top3-card-paragraph">Manşet ikinci paragraf metni.</p>
+          <p class="source"><b>(XXXXXXX, AÇIK - b.com, 31.07.2026)</b></p>
+        </div>
+      </div>
+      <div class="news-item" id="haber-1">
+        <div class="news-title"><b>Gövde Haberi</b></div>
+        <p class="news-content">Gövde paragraf metni.</p>
+        <p class="source"><b>(XXXXXXX, AÇIK - c.com, 31.07.2026)</b></p>
+      </div>
+    </body></html>
+    """
+
+    def _archive_to_temp(self, monkeypatch, tmp_path):
+        import main as M
+        monkeypatch.setattr(M, 'ARCHIVE_FILE', str(tmp_path / 'arsiv.txt'))
+        sistem = M.HaberSistemi()
+        sistem.save_summary_to_archive(self.HTML)
+        return (tmp_path / 'arsiv.txt').read_text(encoding='utf-8')
+
+    def test_kritik3_cards_are_archived(self, monkeypatch, tmp_path):
+        """Gerçek vaka: arşiv yalnızca 'news-item' arıyordu; manşetler
+        'top3-card' olarak render edildiği için GÜNÜN EN ÖNEMLİ ÜÇ HABERİ
+        arşive hiç girmiyordu."""
+        out = self._archive_to_temp(monkeypatch, tmp_path)
+        assert 'Manşet Bir' in out
+        assert 'Manşet İki' in out
+        assert 'Gövde Haberi' in out
+        assert 'Manşet birinci paragraf metni.' in out
+
+    def test_kritik3_comes_first_and_numbering_is_continuous(self, monkeypatch,
+                                                             tmp_path):
+        out = self._archive_to_temp(monkeypatch, tmp_path)
+        assert out.index('Manşet Bir') < out.index('Gövde Haberi')
+        assert '[ 1] Manşet Bir' in out
+        assert '[ 2] Manşet İki' in out
+        assert '[ 3] Gövde Haberi' in out
+
+    def test_same_day_second_run_does_not_duplicate_block(self, monkeypatch,
+                                                          tmp_path):
+        """İdempotency: aynı gün ikinci koşuda blok tekrar eklenmemeli."""
+        import main as M
+        out1 = self._archive_to_temp(monkeypatch, tmp_path)
+        sistem = M.HaberSistemi()
+        sistem.save_summary_to_archive(self.HTML)
+        out2 = (tmp_path / 'arsiv.txt').read_text(encoding='utf-8')
+        assert out1 == out2

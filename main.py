@@ -4151,11 +4151,25 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         archive_entry = f"\n{'=' * 80}\n{today_header}\n{'=' * 80}\n\n"
 
+        # KRİTİK 3 ÖNCE. Manşetler gövdeden FARKLI CSS sınıfıyla render edilir
+        # (top3-card); yalnızca 'news-item' aranması yüzünden GÜNÜN EN ÖNEMLİ ÜÇ
+        # HABERİ arşive hiç girmiyordu. 31.07.2026 bloğunda 12 haber vardı ama
+        # üç manşet (AnySign4PC / Minnesota / OWA) yoktu. Bu, arşivi eksik
+        # bırakmakla kalmıyor, mükerrer denetimini de zorlaştırıyordu: arşivde
+        # "Minnesota" aramak üç gün üst üste manşet olmuş bir olayı bulamıyordu.
+        top3_cards = soup.find_all('div', class_='top3-card')
         news_items = soup.find_all('div', class_='news-item')[:43]
 
-        for idx, item in enumerate(news_items, 1):
-            title_elem = item.find('div', class_='news-title')
-            content_elem = item.find('p', class_='news-content')
+        # (öğe, başlık_sınıfı, paragraf_sınıfı) — iki farklı kart yapısı
+        collected = (
+            [(c, 'top3-card-title', 'top3-card-paragraph') for c in top3_cards]
+            + [(n, 'news-title', 'news-content') for n in news_items]
+        )
+
+        yazilan = 0
+        for idx, (item, title_cls, content_cls) in enumerate(collected, 1):
+            title_elem = item.find(class_=title_cls)
+            content_elem = item.find(class_=content_cls)
             source_elem = item.find('p', class_='source')
 
             if title_elem and content_elem:
@@ -4169,12 +4183,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 if source:
                     archive_entry += f"{source}\n"
                 archive_entry += "\n" + "─" * 80 + "\n\n"
+                yazilan += 1
 
         os.makedirs("data", exist_ok=True)
         with open(ARCHIVE_FILE, 'a', encoding='utf-8') as f:
             f.write(archive_entry)
 
-        print(f"✅ {ARCHIVE_FILE} (en önemli {len(news_items)} haber arşivlendi)")
+        print(f"✅ {ARCHIVE_FILE} (en önemli {yazilan} haber arşivlendi; "
+              f"{len(top3_cards)} KRİTİK 3 + {len(news_items)} gövde)")
 
         self._check_archive_size()
 
