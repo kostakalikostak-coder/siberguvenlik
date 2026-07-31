@@ -12,3 +12,7 @@
 2026-07-30 12:06 | DEDUP SIFIR - Mandiant (Google Cloud): 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
 2026-07-30 12:06 | DEDUP SIFIR - BSI: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
 2026-07-30 12:06 | DEDUP SIFIR - Proofpoint Threat Insight: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-07-31 12:06 | DEDUP SIFIR - SANS ISC: 8 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-07-31 12:06 | DEDUP SIFIR - NCSC UK: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-07-31 12:06 | DEDUP SIFIR - Citizen Lab: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-07-31 12:06 | DEDUP SIFIR - BSI: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi

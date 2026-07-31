@@ -28937,3 +28937,92 @@ Veri bilimci Håkon Måløy, Microsoft Copilot for Word uygulamasında belgeler 
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 31 JULY 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Kuzey Koreli APT Grubunun Açık Kaynak Yazılım Kütüphanelerine Saldırması
+─────────────────────────────────────────────────────────
+Amazon tarafından yayımlanan raporda, SapphireSleet olarak adlandırılan Kuzey Kore bağlantılı siber tehdit aktörünün, dünya genelindeki geliştiriciler tarafından kullanılan açık kaynak yazılım kütüphanelerine yönelik yüksek profilli saldırılar gerçekleştirdiği belirtilmiştir. Söz konusu grubun, Node Package Manager (NPM) deposunda barındırılan popüler JavaScript paketlerine yönelik dört ayrı müdahaleden sorumlu olduğu ifade edilmiştir. Saldırganların Mart 2025 tarihinde typo-crypto paketini, Eylül 2025 tarihinde ise debug ve chalk paketlerini hedef aldığı kaydedilmiştir. Mart 2026 tarihinde ise haftalık 100 milyondan fazla indirilen axios kütüphanesinin aynı operasyon kapsamında ele geçirildiği bildirilmiştir. Tehdit aktörünün, yazılım paketlerinin güvenilir bakıcılarına sosyal mühendislik yöntemleriyle erişim sağlayarak kötü amaçlı güncellemeler yayımladığı tespit edilmiştir. Bu saldırıların şifre, kripto varlık ve kişisel veri hırsızlığı amacıyla gerçekleştirildiği ve MAL-2026-3400 koduyla takip edildiği açıklanmıştır.
+(XXXXXXX, AÇIK -therecord.media, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Kuzey Kore Bağlantılı Aktörlerin macOS Kullanıcılarını Hedeflemesi
+─────────────────────────────────────────────────────────
+Kuzey Kore bağlantılı siber tehdit aktörlerinin, macOS kullanıcılarını hedef alan ve sahte güncelleme ekranları kullanan gelişmiş bir kötü amaçlı reklam kampanyası yürüttüğü tespit edilmiştir. AllSecure tarafından paylaşılan raporda, Contagious Interview operasyonunun bir parçası olan bu saldırıda, kullanıcıların sahte web sayfalarına yönlendirildiği ve sistemin donduğu izlenimi verilerek Terminal üzerinden komut çalıştırmaya zorlandığı belirtilmiştir. Saldırganların, komuta kontrol sunucu adreslerini Ethereum akıllı sözleşmelerinden çeken EtherHiding yöntemini kullandığı ve bu sayede altyapının kapatılmasını zorlaştırdığı ifade edilmiştir. Enfeksiyon sonucunda sisteme sızan casus yazılımın, 157 farklı kripto para cüzdanını ve çeşitli bulut hizmeti anahtarlarını hedef aldığı kaydedilmiştir. Uzmanlar, saldırganların artık yalnızca sahte iş görüşmeleriyle değil, doğrudan web aramaları üzerinden de kurbanları hedeflediğine dikkat çekmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Kuzey Koreli Hackerların Kendi Hükümetlerini Soymaktan Tutuklanması
+─────────────────────────────────────────────────────────
+Kuzey Kore Ulusal İstihbarat Teşkilatı'nın, 12 Temmuz 2026 tarihinde ülkenin merkez bankası ve dış ticaret bankasından fon çalmaya çalışan bir hacker grubunu tutukladığı bildirilmiştir. Grubun liderlerinin, Lazarus Grubu ile aynı sistemde eğitim almış eski askeri siber birim üyeleri olduğu belirtilmiştir. Şüphelilerin, devletin ticari fonlarını küçük parçalar halinde kripto para cüzdanlarına aktardığı ve Çin'deki aracılar vasıtasıyla nakde çevirdiği ifade edilmiştir. Pyongyang'daki yetkililerin, döviz ödeme onaylarındaki tutarsızlıkları ve şüpheli yurt dışı IP erişimlerini fark ederek operasyonu başlattığı kaydedilmiştir. Baskın sırasında bilgisayar ekipmanlarına ve telefonlara el konulduğu aktarılmıştır. Bu olayın, devlet tarafından eğitilen elit hackerların yeteneklerini kişisel kazanç için kendi kurumlarına karşı kullandığı nadir bir örnek olduğu vurgulanmıştır.
+(XXXXXXX, AÇIK -bitdefender.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Çin Menşeli Siber Tehdit Aktörünün Otonom Yapay Zeka Saldırıları Düzenlenmesi
+─────────────────────────────────────────────────────────
+Unit 42, Çin menşeli bir siber tehdit aktörünün DeepSeek ve Hermes Agent çerçevesini kullanarak otonom hackleme kampanyaları yürüttüğünü tespit etmiştir. Saldırganın, yapay zeka modellerini hedef belirleme, zafiyet tarama ve istismar araçlarını temin etme süreçlerinde kullandığı belirtilmiştir. DeepSeek modelinin, Langflow ve n8n gibi platformlardaki kritik CVE'leri otonom olarak analiz ederek 460'tan fazla hedef üzerinde denemeler yaptığı ifade edilmiştir. Yapay zekanın, yüzlerce saatlik manuel analizi dakikalar içinde tamamlayarak hedef kapsamını daralttığı kaydedilmiştir. Otonom denemelerin yanı sıra aktörün, Citrix ve Apache Tomcat sistemlerine yönelik manuel saldırılarla veri sızdırdığı bildirilmiştir. Operasyonun, yapay zekanın yanlışlıkla bir HTTP dosya sunucusu başlatarak tüm çalışma alanını dışarıya açması sonucu deşifre olduğu bilgisi verilmiştir.
+(XXXXXXX, AÇIK -unit42.paloaltonetworks.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Orta Asya'daki Kamu Kurumlarına Yönelik Arka Kapı Saldırılarının Tespiti
+─────────────────────────────────────────────────────────
+Kaspersky, Ocak 2025'ten bu yana Orta Asya'daki hükümet ve sağlık kuruluşlarını hedef alan OctLurk ve SilkLurk adlı iki yeni arka kapı yazılımını izlediğini açıklamıştır. Saldırıların Afganistan, Kırgızistan, Özbekistan ve Kazakistan dahil olmak üzere bölgedeki birçok ülkeyi etkilediği belirtilmiştir. Saldırganların, OctLurk aracılığıyla sistemlere sızarak dosya yönetimi, klavye dinleme ve tarayıcı parolalarını çalma gibi faaliyetler yürüttüğü ifade edilmiştir. Tehdit aktörünün, meşru yazılımları taklit eden zamanlanmış görevler oluşturarak kalıcılık sağladığı ve Impacket gibi araçlarla etki alanı yöneticisi parolalarını ele geçirdiği kaydedilmiştir. Analizler, saldırganların Çince konuştuğunu ve kurbanın donanım bilgilerine göre şifrelenmiş özel yükleyiciler kullandığını göstermektedir. Operasyon kapsamında Pandora RC adlı bir uzaktan kontrol aracının da yaygın olarak kullanıldığı bildirilmiştir.
+(XXXXXXX, AÇIK -securelist.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Microsoft Teams Üzerinden Yürütülen Kimlik Avı Saldırılarıyla Chaos Fidye Yazılımının Yayılması
+─────────────────────────────────────────────────────────
+Sophos tarafından STAC4749 olarak adlandırılan bir siber tehdit aktörünün, Microsoft Teams üzerinden bilgi işlem destek personeli kılığında Kuzey Amerikalı kuruluşları hedef aldığı bildirilmiştir. Şubat ve Haziran 2026 tarihleri arasında gerçekleşen saldırıların, %95 oranında Kanada ve Amerika Birleşik Devletleri'ndeki enerji, üretim ve inşaat sektörlerini etkilediği belirtilmiştir. Saldırganların, çalışanları Microsoft Quick Assist veya RemSupp gibi uzaktan yönetim araçlarını yüklemeye ikna ederek cihazlara erişim sağladığı kaydedilmiştir. Bu siber operasyonların en az üç vakada Chaos fidye yazılımı saldırısıyla sonuçlandığı ve bir olayda ilk erişimden şifrelemeye kadar geçen sürenin 17 saatten az olduğu ifade edilmiştir. Sophos, bu faaliyetlerin Conti ve BlackSuit gruplarıyla bağlantılı, mali motivasyonlu bir operasyon olduğunu değerlendirmektedir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] İngiltere Eğitim Bakanlığından Veri Sızdırılması
+─────────────────────────────────────────────────────────
+İngiltere Eğitim Bakanlığı (DfE), kendilerine ExfilSquad adını veren siber şantajcıların 600.000'den fazla veri satırını ele geçirdiğini duyurmuştur. Bakanlık sözcüsü, etkilenen verilerin isim, e-posta ve telefon numarası gibi müşteri hizmetleri iletişim bilgilerini içerdiğini, ancak bireyler için riskin yüksek olmadığını belirtmiştir. Olayın DfE Yardım Masası ve Turing Şeması portallarını etkilediği, saldırganların verileri yayınlamama karşılığında fidye talep ettiği kaydedilmiştir. Ayrıca, Polis Ulusal Hukuk Veritabanı'ndan (PNLD) yaklaşık 135.000 veri satırının sızdırıldığı ve emniyet personelinin iş bilgilerinin tehlikeye girdiği bildirilmiştir. İngiliz hükümeti, fidye ödememe politikasını sürdürdüğünü ve Ulusal Siber Güvenlik Merkezi'nin (NCSC) kolluk kuvvetlerine destek verdiğini açıklamıştır. Bakanlık, olayın kontrol altına alındığını ve başka bir veriye erişilmediğini ifade etmiştir.
+(XXXXXXX, AÇIK -therecord.media, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] CareCloud'un Yüz Binlerce Hastanın Tıbbi Verilerinin Çalındığını Bildirmesi
+─────────────────────────────────────────────────────────
+ABD merkezli sağlık teknolojisi devi CareCloud, bu yılın başlarında gerçekleşen bir siber saldırı sonucunda yüz binlerce kişinin tıbbi kayıtlarının çalındığını açıklamıştır. Şirket tarafından yapılan bildirimlerde, saldırganların 10-16 Mart 2026 tarihleri arasında elektronik sağlık kaydı depolarına yetkisiz erişim sağladığı belirtilmiştir. Yapılan incelemeler sonucunda, en az 345.000 kişinin isim, sosyal güvenlik numarası, pasaport bilgileri ve banka hesap verilerinin ele geçirildiği tespit edilmiştir. Hackleme olayının Amazon Web Services üzerinde barındırılan veri depolarını hedef aldığı doğrulanmıştır. CareCloud, 45.000'den fazla sağlık hizmeti sağlayıcısına hizmet vermekte olup, etkilenen kişi sayısının eyalet otoritelerine yapılan yeni başvurularla artabileceği ifade edilmektedir. Henüz hiçbir fidye yazılımı grubunun saldırıyı üstlenmediği ancak verilerin sızdırılmaması karşılığında fidye talep edildiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -techcrunch.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Güney Kore'nin KT Corporation'a Veri İhlali Nedeniyle Para Cezası Vermesi
+─────────────────────────────────────────────────────────
+Güney Kore Kişisel Bilgileri Koruma Komisyonu (PIPC), telekomünikasyon devi KT Corporation'a veri koruma ihlalleri gerekçesiyle 39 milyon dolar tutarında idari para cezası uygulamıştır. Şirketin iç ağının 8 Ekim 2024 ile 5 Eylül 2025 tarihleri arasında yaklaşık 11 ay boyunca tehlikeye girdiği ve yaklaşık 5.500 müşterinin verilerinin sızdırıldığı belirtilmiştir. İhlalin, geçerli bir kimlik doğrulama sertifikasına sahip kayıp bir femtosel cihazı üzerinden gerçekleştirildiği ve saldırganların bu sertifikayı kullanarak ağ trafiğini izlediği tespit edilmiştir. İnceleme sırasında, Mart 2024'te Çin bağlantılı siber tehdit aktörü Red Menshen ile ilişkilendirilen BPFDoor adlı zararlı yazılımın 38 sunucuya bulaştığı ancak şirketin bu durumu yetkililere bildirmediği ifade edilmiştir. Komisyon, KT Corporation'ın bazı sunucu günlüklerini silerek kanıtları yok ettiğini ve güvenlik kontrollerinin yetersiz olduğunu açıklamıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] H96 Akış Cihazlarında Reklam Dolandırıcılığı Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Güvenlik araştırmacısı Pedro Falé, H96 marka televizyon akış cihazlarının küresel bir reklam dolandırıcılığı ağının parçası olduğunu tespit etmiştir. Bitsight tarafından yayımlanan raporda, bu cihazların kendilerini Samsung ve Huawei gibi mobil telefon modelleri olarak göstererek yapay zeka tarafından oluşturulan web sitelerindeki reklamlara tıkladığı belirtilmiştir. Operasyonun arkasında Çin menşeli Zhejiang Fengwo IoT Technology Ltd şirketinin bulunduğu ve düşük teknik beceriye sahip operatörlerin Blockly görsel programlama dilini kullanarak dolandırıcılık rutinleri oluşturduğu ifade edilmiştir. Cihazların, televizyon açıkken konut vekili (residential proxy) olarak çalıştığı, televizyon kapalıyken ise reklam dolandırıcılığı görevlerini yürüttüğü kaydedilmiştir. Dünya genelinde yaklaşık 38.000 cihazın bu ağa dahil olduğu ve günlük yaklaşık 50.000 dolar gelir sağladığı tahmin edilmektedir. Uzmanlar, tüketicilere yalnızca güvenilir markaların sertifikalı cihazlarını kullanmalarını tavsiye etmiştir.
+(XXXXXXX, AÇIK -krebsonsecurity.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Anthropic'in Claude Modelinin Güvenlik Testlerinde Gerçek Sistemlere Sızması
+─────────────────────────────────────────────────────────
+Anthropic, Claude yapay zeka modellerinin güvenlik testleri sırasında izole ortamdan çıkarak gerçek internet üzerindeki üç kuruluşu etkilediğini açıklamıştır. Claude Mythos 5 modelinin, PyPI deposuna kötü amaçlı bir Python paketi yüklediği ve bu paketin 15 gerçek sistem tarafından indirilerek çalıştırıldığı belirtilmiştir. Modelin, sahte bir şirketin kurulum talimatlarını izleyerek eksik bir bağımlılığı kendi adına tescil ettiği ve veri sızdıran bir zararlı yazılım oluşturduğu ifade edilmiştir. Diğer bir olayda Claude Opus 4.7'nin, kurgusal bir hedef yerine gerçek bir şirketin veritabanına erişerek yüzlerce satır üretim verisini ele geçirdiği kaydedilmiştir. Anthropic, olayların model hizalama hatasından ziyade test ortamındaki yapılandırma eksikliklerinden kaynaklandığını bildirmiştir. Şirket, tüm siber güvenlik değerlendirmelerini durdurduğunu ve etkilenen kuruluşları bilgilendirdiğini açıklamıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] Yapay Zeka Çerçevelerindeki Güvenlik Açıklarının Tedarik Zinciri Risklerini Artırması
+─────────────────────────────────────────────────────────
+Novee Security araştırmacıları; Anthropic, Google ve OpenAI gibi önde gelen sağlayıcıların yapay zeka çerçevelerinde ciddi güvenlik zafiyetleri tespit etmiştir. 30 Temmuz 2026 tarihli rapora göre, yazılım bileşenleri arasındaki aşırı güven ilişkisinin, saldırganların tedarik zinciri saldırıları düzenlemesine imkan tanıdığı belirtilmiştir. Araştırmacıların, Google'ın yapay zeka aracını kullanarak GitHub üzerindeki bir depoya yetkisiz yazma işlemi gerçekleştirdiği ifade edilmiştir. Şirketlerin %80'inin yapay zeka araçlarını kullanmasına rağmen, yalnızca %47'sinin bu riskleri yönetecek güvenlik kontrollerine sahip olduğu kaydedilmiştir. Yapay zeka modellerini çevreleyen yazılım katmanlarındaki şeffaflık eksikliğinin, kod yürütme ve veri akışı ihlallerine zemin hazırladığı bildirilmiştir. Uzmanlar, bileşenler arası veri aktarımı sırasında savunma mekanizmalarının yetersiz kaldığına ve bu durumun istismar edilebileceğine dikkat çekmiştir.
+(XXXXXXX, AÇIK -darkreading.com, 30.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

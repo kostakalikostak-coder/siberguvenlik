@@ -1,28 +1,5 @@
 [
  {
-  "date": "2026-07-23",
-  "views": [
-   {
-    "tr_title": "Bahreyn'de Sahte Acil Durum Uygulamasıyla Android Cihazların Hedef Alınması",
-    "paragraph": "Siber güvenlik kuruluşu Dream, Bahreyn sivil savunma uygulaması gibi görünen BH Alert isimli sahte bir yazılımın Android kullanıcılarını hedef aldığını tespit etmiştir. İran'ın füze saldırıları döneminde artan güvenlik endişelerinden yararlanan saldırganların, kullanıcıları sahte Google Play sayfalarına yönlendirerek casus yazılım yaydığı bildirilmiştir. Uygulamanın, OctagonPanel adlı bir uzaktan erişim truva atını (RAT) dört aşamalı bir süreçle cihazlara yüklediği ifade edilmiştir. Söz konusu zararlı yazılımın; SMS mesajlarını engelleme, ekran görüntüsü alma, rehber bilgilerini çalma ve banka",
-    "title": "Fake Bahrain Alert App Deploys Android Surveillance Malware",
-    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nBreaking cybersecurity news, news analysis, commentary, and other content from around the world, with an initial focus on the Middle East & Africa, the Asia Pacific, Europe, and Latin America.\n\nFake Bahrain Alert App Deploys Android Surveillance Malware\n\nA malicious application delivers four-stage Android spyware via phony Google Play sites, exploiting civilian fear during Iranian missile strikes.\n\nAn emerging threat campaign is tak"
-   },
-   {
-    "tr_title": "Check Point'in Tam Yönetici Erişimi Sağlayan Güvenlik Açıklarını Yamalaması",
-    "paragraph": "Check Point, Güvenlik Yönetimi ve Çoklu Alan Yönetimi ürünlerini etkileyen ve aktif olarak istismar edildiği tespit edilen kritik bir güvenlik açığı için güncellemeler yayınlamıştır. CVE-2026-16232 kodlu kimlik doğrulama atlatma hatasının, SmartConsole oturum açma sürecini etkilediği ve saldırganların tam yönetici ayrıcalıklarıyla sisteme erişmesine olanak tanıdığı belirtilmiştir. Şirket yetkilisi Lotem Finkelstein, sınırlı sayıda müşterinin bu açık üzerinden hedef alındığını ve ilgili tarafların bilgilendirildiğini açıklamıştır. Ayrıca, yönetim sunucusuna komut yürütme yetkisi veren CVE-2026-",
-    "title": "Check Point Patches Exploited SmartConsole Flaw Allowing Full Admin Access",
-    "full_text": "Check Point has released security updates to address multiple vulnerabilities impacting Security Management and Multi-Domain Management (MDSM) products, including a critical flaw that has come under active exploitation in the wild.\n\nThe security flaw, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentication bypass affecting the Check Point SmartConsole login process that allows an unauthenticated remote attacker to obtain an application login token and use it to authenticate with full administrative privileges.\n\n\"Successful exploitation allows the attacker to modify security policies "
-   },
-   {
-    "tr_title": "İsviçreli Demiryolu Devi Stadler'in 12,3 Milyon Dolarlık Fidye Talebini Reddetmesi",
-    "paragraph": "İsviçre merkezli demiryolu araçları üreticisi Stadler Rail, bir tedarikçisiyle paylaştığı veri değişim platformuna yönelik siber saldırının ardından Everest fidye yazılımı çetesinin 10 milyon İsviçre frangı tutarındaki fidye talebini reddettiğini açıklamıştır. Şirket, 22 Temmuz 2026 tarihinde yaptığı açıklamada, fidye ödemeyi kesinlikle kabul etmeyeceğini ve Thurgau kanton polisine suç duyurusunda bulunduğunu belirtmiştir. Temmuz ayı ortasında gerçekleşen olayda, bilgisayar korsanlarının yalnızca güvenlik açısından kritik olmayan teknik bilgileri çaldığı, kişisel verilerin veya operasyonel sis",
-    "title": "Swiss rail giant Stadler rejects $12.3M ransom demand after cyberattack",
-    "full_text": "Swiss rail vehicle manufacturer Stadler Rail says the Everest ransomware gang demanded about $12.3 million after breaching a data exchange platform shared with one of its suppliers.\n\nThe threat actor has not publicly claimed the attack, but the Swiss company says that it received an extortion letter from Everest ransomware asking for a ransom of 10 million Swiss francs.\n\nThe company responded by saying that it will not pay the threat actor and filed a criminal complaint with the Thurgau cantonal police.\n\n\"Stadler will not pay any ransom under any circumstances and is therefore not susceptible "
-   }
-  ]
- },
- {
   "date": "2026-07-24",
   "views": [
    {
@@ -180,6 +157,29 @@
     "paragraph": "Angola'nın en büyük telekomünikasyon operatörü Unitel, 29 Temmuz 2026 tarihinde gerçekleşen bir siber saldırı nedeniyle ülke genelinde ses, mobil veri ve internet hizmetlerinde kesinti yaşandığını açıklamıştır. Saldırının, şirketin Angola borsasındaki tarihi halka arzından 24 saatten kısa bir süre önce gerçekleştiği belirtilmiştir. Teknik ekiplerin müdahalesine rağmen hizmetlerin kesintiye uğradığı ve ağın stabilize edilmesi için çalışmaların sürdüğü ifade edilmiştir. Ağ verileri, sorunun dış kaynaklı bir DDoS saldırısından ziyade çekirdek iç sistemleri devre dışı bırakan bir olaydan kaynaklan",
     "title": "Cyberattack hits Angola’s largest telco hours before landmark stock debut",
     "full_text": "Cyberattack hits Angola’s largest telco hours before landmark stock debut\n\nAngola’s largest telecommunications operator, Unitel, said Tuesday it was hit by a cyberattack in the early hours of the morning that has left millions of people nationwide without voice services, mobile data, and internet access.\n\nThe attack struck less than 24 hours before the formerly state-owned company was due to make its landmark debut on the country’s stock exchange.\n\nUnitel said it detected the incident shortly after 2 a.m. local time. “Response and containment mechanisms were immediately activated, and technica"
+   }
+  ]
+ },
+ {
+  "date": "2026-07-31",
+  "views": [
+   {
+    "tr_title": "Güney Kore'de AnySign4PC Yazılımı Üzerinden Arka Kapı Yerleştirilmesi",
+    "paragraph": "Güney Koreli yetkililer ve dört güvenlik firması, ülkedeki güvenilir web sitelerinin ele geçirilerek AnySign4PC adlı finansal güvenlik yazılımındaki bir güvenlik açığının istismar edildiği devlet destekli bir siber saldırı kampanyasını raporlamıştır. Saldırganların, kullanıcı etkileşimi gerektirmeksizin sistemlere SIGNBT veya COPPERHEDGE arka kapılarını yerleştirdiği tespit edilmiştir. Korea Internet & Security Agency (KISA), söz konusu yazılımın 1.1.4.4 ile 1.1.4.6 arasındaki sürümlerinin etkilendiğini ve 1.1.5.0 sürümüyle bu açığın kapatıldığını açıklamıştır. AhnLab tarafından yapılan incele",
+    "title": "Hackers Exploit AnySign4PC via Hacked Korean Sites to Install Backdoors Without Prompts",
+    "full_text": "South Korean authorities and four security firms have disclosed a state-sponsored campaign that compromised trusted domestic websites. The attackers used those sites to exploit locally installed financial-security software and infect targeted visitors with SIGNBT or COPPERHEDGE backdoors.\n\nA compromised page could infect a system running a vulnerable AnySign4PC version without a prompt or user-initiated download. The Korea Internet & Security Agency (KISA) says AnySign4PC versions 1.1.4.4 through 1.1.4.6 are affected and lists version 1.1.5.0 as the fixed release. It recommends deleting vulner"
+   },
+   {
+    "tr_title": "Minnesota'da Su Sistemlerine Yönelik Koordineli Siber Saldırı Düzenlenmesi",
+    "paragraph": "Amerika Birleşik Devletleri'nin Minnesota eyaletinde 30'dan fazla topluluk su sistemine yönelik koordineli bir siber saldırı gerçekleştiği bildirilmiştir. 26-27 Temmuz 2026 tarihlerinde düzenlenen saldırıların, küçük ölçekli kamu hizmeti kuruluşlarını ortak bir operasyonel teknoloji zafiyeti üzerinden hedef aldığı belirtilmektedir. Minnesota IT Services, saldırı nedeniyle bazı bölgelerde su sistemlerinin geçici olarak kapatıldığını ve yerel acil durum ilan edildiğini açıklamıştır. CISA ve FBI, İran bağlantılı siber aktörlerin kritik altyapılarda kullanılan programlanabilir mantık denetleyicile",
+    "title": "A coordinated attack hit 30+ Minnesota water systems. Who did it, and what does a Rockwell notice add to the picture?",
+    "full_text": "Investigators are chasing two open questions in the coordinated attack on Minnesota water systems: who was behind it, and whether a shared vulnerability in widely used industrial controllers made dozens of small utilities exploitable at once.\n\nA coordinated cyberattack that targeted more than 30 Minnesota community water systems has alarmed industrial cybersecurity experts, not because it caused widespread disruption, but because it appears to represent the first distributed campaign against dozens of small utilities linked by a common operational technology weakness.\n\nWhile the affected commu"
+   },
+   {
+    "tr_title": "Rus Casusluk Grubunun Outlook Web Access Kullanıcılarını Hedeflemesi",
+    "paragraph": "Proofpoint, TA488 (Laundry Bear) olarak izlenen Rus casusluk grubunun, Microsoft Exchange Server'ın şirket içi Outlook Web Access (OWA) bileşenindeki CVE-2026-42897 kodlu XSS zafiyetini istismar ettiğini açıklamıştır. Mart ayından itibaren sıfır gün olarak kullanıldığı düşünülen bu açık, kurbanların herhangi bir bağlantıya tıklamasına gerek kalmadan sadece bozuk bir e-postayı açmalarıyla saldırgan kontrolündeki JavaScript kodunun çalışmasına neden olmaktadır. Saldırganlar, posta oturumlarına yerleşen ve parola değişikliklerinden etkilenmeyen OWAReaper adlı gelişmiş bir tarayıcı eklentisi kulla",
+    "title": "Russian spies take their half-click email attack from Zimbra to Outlook",
+    "full_text": "The Russian espionage crew that turned simply reading an email into a security risk has expanded beyond Zimbra, with Proofpoint saying it's now pulling the same half-click trick against Microsoft Outlook Web Access. Proofpoint says the cyber group it tracks as TA488, or \"Laundry Bear,\" began exploiting CVE-2026-42897, a cross-site scripting flaw in the Outlook Web Access (OWA) component of on-premises Exchange Server, a day before researchers and government agencies exposed the group's abuse of a zero-day in Zimbra Collaboration Suite. Unlike conventional phishing attacks, this one doesn't dep"
    }
   ]
  }
