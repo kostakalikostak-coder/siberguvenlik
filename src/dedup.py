@@ -66,10 +66,43 @@ _ACRONYM_DENYLIST = {
     'linux', 'chrome', 'google', 'apple', 'adobe', 'cisco', 'oracle', 'azure',
     'intel', 'nvidia', 'amazon', 'nginx', 'apache', 'ubuntu', 'debian',
     'europol', 'interpol', 'russia', 'china', 'iran', 'korea', 'ukraine',
+    # CERT/danışma-belgesi önekleri. _ADVISORY_ID_RE tam kimliği (CERTFR-2026-
+    # AVI-0948) zaten metinden siler; bunlar önekin TEK BAŞINA (numarasız)
+    # geçtiği durumlar için ikinci ağdır.
+    'certfr', 'certeu', 'certua', 'certbund', 'icsa', 'icsma', 'msrc',
+    # Spec / paket / protokol adları — CamelCase oldukları için kod adı
+    # sanılıyorlardı. 2026-07-31: 'AsyncAPI' geçen bir haber SIRF bu yüzden
+    # zafiyet_aktif_apt etiketini korudu (bkz. main._has_apt_evidence).
+    'asyncapi', 'openapi', 'graphql', 'restapi', 'webassembly', 'websocket',
+    'jsonschema', 'openssl', 'openssh', 'openstack', 'openshift',
     # TR jenerik büyük-harf sözcükler
     'siber', 'guvenlik', 'saldiri', 'zararli', 'yazilim', 'devlet', 'hukumet',
     'kurum', 'rapor', 'uyari', 'turkiye',
 }
+
+
+# Danışma-belgesi (advisory) kimlikleri: CERT/ICS-CERT/satıcı bülten numaraları.
+# Bunlar bir OLAYIN parmak izi DEĞİL, YAYIN NUMARASIDIR — her ANSSI bülteninde
+# 'CERTFR' geçer. extract_codenames önce bu aralıkları metinden siler; aksi hâlde
+# önek ALL-CAPS kod adı sanılır ve TÜM bültenler "aynı olay" olur.
+# Ölçülen zarar (2026-07-31): Citrix XenServer ve Node.js bültenleri MS Edge
+# bültenine 'codename-body:certfr' gerekçesiyle mükerrer sayılıp elendi; ardından
+# çapa da çapraz-güne takılınca o günün DÖRT ANSSI bülteni birden rapordan düştü.
+_ADVISORY_ID_RE = re.compile(
+    r'\b(?:'
+    r'CERT[\s-]?(?:FR|EU|UA|BUND|IN|EE)[\s-]?\d{4}[\s-]?[A-Z]{2,4}[\s-]?\d+'
+    r'|ICSA?[\s-]?\d{2}[\s-]?\d{3}[\s-]?\d{2}[A-Z]?'   # ICSA-26-123-01
+    r'|ICSMA[\s-]?\d{2}[\s-]?\d{3}[\s-]?\d{2}'
+    r'|VU#\s?\d{4,}'                                    # CERT/CC
+    r'|MSRC[\s-]?\d{4,}'
+    r'|KB\d{6,}'                                        # Microsoft KB
+    r'|VMSA[\s-]?\d{4}[\s-]?\d{4}'                      # VMware
+    r'|RHSA[\s-]?\d{4}:\d+'                             # Red Hat
+    r'|DSA[\s-]?\d{4}[\s-]?\d'                          # Debian
+    r'|USN[\s-]?\d{4}[\s-]?\d'                          # Ubuntu
+    r')\b',
+    re.IGNORECASE,
+)
 
 
 def extract_codenames(text):
@@ -81,9 +114,15 @@ def extract_codenames(text):
         DCRAT). Tehdit istihbaratında zararlı/operasyon adları çoğu kez tümüyle
         büyük harf yazılır; yalnızca CamelCase aramak bunları kaçırıyordu.
     Bunlar nadir ve olaya özgüdür; aynı olayı farklı sözcüklerle anlatan
-    haberleri bağlamak için güçlü sinyaldir."""
+    haberleri bağlamak için güçlü sinyaldir.
+
+    Danışma-belgesi kimlikleri (CERTFR-2026-AVI-0948, ICSA-26-123-01, VU#123456)
+    ARAMADAN ÖNCE metinden silinir: bunlar olayın değil YAYININ numarasıdır ve
+    öneki ('CERTFR') her bültende geçtiği için tüm bültenleri birbirine
+    bağlıyordu (bkz. _ADVISORY_ID_RE)."""
     out = set()
-    for w in re.findall(r'[A-Za-z][A-Za-z0-9]+', text or ''):
+    clean = _ADVISORY_ID_RE.sub(' ', text or '')
+    for w in re.findall(r'[A-Za-z][A-Za-z0-9]+', clean):
         lw = w.lower()
         if len(w) < 5 or lw in CODENAME_DENYLIST or lw in _ACRONYM_DENYLIST:
             continue
@@ -242,6 +281,75 @@ def event_keywords(text, limit=None):
     return out
 
 
+# ── ÖZEL AD (entity) çıkarımı ─────────────────────────────────────────────
+# Olayın öznesi olan özel adlar (Minnesota, CareCloud, AnySign4PC) aktör/kod adı/
+# CVE sinyallerinin HİÇBİRİNE girmez ama aynı olayın en güçlü göstergesidir.
+#
+# ⚠️ YALNIZCA TÜRKÇE PARAGRAFTAN çıkarılır — bilinçli bir tasarım kararıdır:
+#   • İngilizce `title` çoğu kaynakta Title-Case'tir → her sözcük özel ad görünür.
+#   • `full_text` site menü metni taşır ("Data Breaches", "Careers", "Analytics").
+# 2026-07-31 ölçümünde bu iki alanı da kullanan ilk sürüm gövdede 31 yanlış
+# eşleşme üretti; yalnızca paragrafa inince 4'e (sonra denylist ile 3'e) düştü.
+#
+# Türkçe paragraf normal cümle düzenindedir; cümle ORTASINDA büyük harfle
+# başlayan token gerçek bir özel addır. Cümle başı token'lar atlanır.
+_ENTITY_SENT_START_RE = re.compile(r'(?:^|[.!?:;•\n]\s+|["“(])\s*$')
+_ENTITY_TOKEN_RE = re.compile(r'\b([A-ZÇĞİÖŞÜ][A-Za-zÇĞİÖŞÜçğıöşü0-9]{3,})')
+
+# Cümle ortasında büyük harfle geçse de özel ad SAYILMAYAN sözcükler: ülke/ay
+# adları, her haberde geçen kurum/satıcı adları ve Title-Case yazılan jenerik
+# güvenlik terimleri. ('cyber' ölçümde tek yanlış-pozitifin sebebiydi:
+# WordPress ↔ ServiceNow haberlerini "Cyber Express" üzerinden birleştiriyordu.)
+_ENTITY_DENYLIST = frozenset({
+    # ülke / bölge (TR + EN)
+    'amerika', 'birleşik', 'devletleri', 'avrupa', 'birliği', 'kuzey', 'güney',
+    'kore', 'çin', 'rusya', 'iran', 'i̇ran', 'israil', 'i̇srail', 'ukrayna',
+    'i̇ngiltere', 'almanya', 'fransa', 'hollanda', 'kanada', 'avustralya',
+    'japonya', 'hindistan', 'i̇spanya', 'i̇talya', 'brezilya', 'meksika',
+    'china', 'russia', 'korea', 'ukraine', 'europe', 'america', 'israel',
+    # ay adları (TR + EN)
+    'ocak', 'şubat', 'mart', 'nisan', 'mayıs', 'haziran', 'temmuz', 'ağustos',
+    'eylül', 'ekim', 'kasım', 'aralık',
+    'january', 'february', 'march', 'april', 'june', 'july', 'august',
+    'september', 'october', 'november', 'december',
+    # her haberde geçen kurum / satıcı / kaynak
+    'cisa', 'europol', 'interpol', 'ncsc', 'enisa', 'kisa', 'nist',
+    'microsoft', 'google', 'apple', 'amazon', 'oracle', 'cisco', 'adobe',
+    'kaspersky', 'sophos', 'fortinet', 'mandiant', 'proofpoint', 'bitdefender',
+    'techcrunch', 'bleepingcomputer', 'reuters', 'securelist', 'krebs',
+    # Title-Case yazılan jenerik güvenlik/teknoloji terimleri
+    'cyber', 'security', 'services', 'service', 'systems', 'system', 'group',
+    'internet', 'agency', 'department', 'ministry', 'technology', 'software',
+    'network', 'platform', 'cloud', 'server', 'browser', 'update', 'report',
+    'linux', 'windows', 'android', 'chrome', 'edge', 'firefox', 'safari',
+    'azure', 'siber', 'güvenlik', 'yapay', 'zeka', 'zekâ',
+})
+
+
+def extract_entities(view_or_text):
+    """Haberin ÖZEL ADLARINI (özne/kurum/yer) normalize edilmiş kümeye çıkarır.
+
+    Girdi bir görünüm (dict) ise YALNIZCA 'paragraph' alanı kullanılır; düz metin
+    verilirse doğrudan o metin taranır (test kolaylığı için).
+
+    Token'lar Türkçe çekim eklerini tolere etmek için ilk 8 karaktere köklenir:
+    "Minnesota'da" / "Minnesota'daki" / "Minnesota" → 'minnesot'."""
+    if isinstance(view_or_text, dict):
+        text = view_or_text.get('paragraph') or ''
+    else:
+        text = view_or_text or ''
+    out = set()
+    for m in _ENTITY_TOKEN_RE.finditer(text):
+        # Cümle başındaki büyük harf özel ad kanıtı değildir
+        if _ENTITY_SENT_START_RE.search(text[max(0, m.start() - 40):m.start()]):
+            continue
+        lw = m.group(1).lower()
+        if lw in _ENTITY_DENYLIST or lw in CODENAME_DENYLIST:
+            continue
+        out.add(lw[:8])
+    return out
+
+
 def _jaccard(a, b):
     if not a or not b:
         return 0.0
@@ -274,6 +382,21 @@ _TOPIC_WITH_ACTOR_XDAY = 0.18
 # Eşikler gerçek kritik3/rapor geçmişi taranarak seçildi (2026-07-30 ölçümü).
 _TRTITLE_XDAY            = 0.74   # başlık benzerliği alt sınırı
 _TOPIC_WITH_TRTITLE_XDAY = 0.20   # eşlik etmesi gereken asgari konu örtüşmesi
+
+# ── ORTAK ÖZEL AD sinyali (Kural 2d) ──────────────────────────────────────
+# Bir olayın EN ayırt edici sinyali çoğu kez öznesinin ÖZEL ADIDIR (Minnesota,
+# CareCloud, AnySign4PC). Aktör taksonomisi (Laundry Bear), kod adı (SIGNBT) ve
+# CVE bunları KAPSAMAZ; sonuç olarak "Minnesota su sistemleri saldırısı" 29-30-31
+# Temmuz 2026'da ÜÇ GÜN ÜST ÜSTE KRİTİK 3 manşeti oldu — hiçbir kural tetiklenmedi
+# (29'a karşı başlık benzerliği 0.65 < 0.74; 30'a karşı ortak aktör/kod adı yok).
+#
+# Eşik TAHMİNLE değil ÖLÇÜMLE seçildi (scripts/dedup_backtest.py, 2026-07-31):
+#   kritik3_gecmis (252 çift): 4 yeni eşleşme, 4'ü de DOĞRU, 0 yanlış
+#   rapor_gecmis  (7595 çift): 4 yeni eşleşme, 3 doğru, 1 yanlış ('cyber' ortak
+#                              sözcüğü — _ENTITY_DENYLIST'e eklenerek kapatıldı)
+# 0.18'e indirmek gövdede yanlış-pozitifi 10'a çıkarıyordu (linux/chrome/azure/
+# http gibi ortak sözcükler); 0.22 ölçülen en iyi ayrım noktasıdır.
+_TOPIC_WITH_ENTITY = 0.22
 
 
 def _bundle(view):
@@ -339,6 +462,15 @@ def same_event(view_a, view_b, explain=False, cross_day=False):
     shared_cn_body = extract_codenames(blob_a) & extract_codenames(blob_b)
     if shared_cn_body and topic >= actor_topic_min:
         return _ret(True, f'codename-body:{",".join(sorted(shared_cn_body))}+topic={topic:.2f}')
+
+    # 2d) ORTAK ÖZEL AD + konu örtüşmesi. Olayın öznesi (Minnesota, CareCloud)
+    #     aktör/kod adı/CVE sinyallerinin hiçbirine girmez; bu kural o boşluğu
+    #     kapatır. Kural 2b'den ÖNCE gelmek ZORUNDA — 2b, ortak yapısal kimlik
+    #     yoksa erken False döndüğü için sonrasına konursa bu kural hiç çalışmaz.
+    #     (bkz. _TOPIC_WITH_ENTITY yorumundaki ölçüm)
+    shared_ent = extract_entities(view_a) & extract_entities(view_b)
+    if shared_ent and topic >= _TOPIC_WITH_ENTITY:
+        return _ret(True, f'entity:{",".join(sorted(shared_ent))}+topic={topic:.2f}')
 
     # 2b) Her iki haberde de yapısal kimlik (CVE/aktör) var ama ORTAK YOK →
     #     farklı olay. (Farklı CVE = farklı zafiyet; main._keyword_jaccard ile

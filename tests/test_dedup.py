@@ -434,3 +434,150 @@ def test_xday_title_topic_needs_both_signals():
                       "gelirlerini artırmak için yeni bir abonelik modeli duyurduğu "
                       "bildirilmiştir."}
     assert not dedup.same_event(a, _IRAN_B, cross_day=True)
+
+
+# ── Danışma-belgesi kimlikleri kod adı DEĞİLDİR (2026-07-31 regresyonu) ────
+def test_advisory_id_prefix_is_not_a_codename():
+    """CERTFR-2026-AVI-#### gibi bülten numaraları OLAY parmak izi değildir.
+
+    Gerçek vaka (31.07.2026): 'CERTFR' ALL-CAPS kod adı sanıldığı için ANSSI'nin
+    MS Edge / Citrix XenServer / Node.js bültenleri 'codename-body:certfr'
+    gerekçesiyle AYNI OLAY sayıldı; çapa da çapraz-güne takılınca o günün DÖRT
+    ANSSI bülteni birden rapordan düştü.
+    """
+    edge = {'tr_title': 'Microsoft Edge Tarayıcısı İçin Güvenlik Güncellemesi Yayımlanması',
+            'title': 'Multiples vulnérabilités dans Microsoft Edge',
+            'paragraph': 'Tarayıcı motorundaki bellek bozulması hatalarının uzaktan '
+                         'kod çalıştırılmasına imkan tanıdığı, kullanıcıların '
+                         'sürümlerini güncellemesi gerektiği bildirilmiştir.',
+            'full_text': 'Référence CERTFR-2026-AVI-0947 concernant le navigateur.'}
+    nodejs = {'tr_title': "Node.js Bakım Sürümüyle Hizmet Reddi Kusurlarının Kapatılması",
+              'title': 'Multiples vulnérabilités dans Node.js',
+              'paragraph': 'Sunucu tarafı çalışma zamanında HTTP ayrıştırıcısını '
+                           'ilgilendiren hizmet reddi kusurlarının bakım sürümüyle '
+                           'kapatıldığı duyurulmuştur.',
+              'full_text': 'Référence CERTFR-2026-AVI-0950 concernant la plateforme.'}
+    # Asıl regresyon: ortak 'CERTFR' öneki kod adı olarak ÇIKARILMAMALI
+    assert 'certfr' not in dedup.extract_codenames(edge['full_text'])
+    assert not (dedup.extract_codenames(edge['full_text'])
+                & dedup.extract_codenames(nodejs['full_text']))
+    assert not dedup.same_event(edge, nodejs)
+    assert not dedup.same_event(edge, nodejs, cross_day=True)
+
+
+def test_spec_name_is_not_a_codename():
+    """AsyncAPI/OpenAPI gibi spec adları CamelCase diye kod adı sayılmamalı.
+
+    31.07.2026: metninde 'AsyncAPI' geçen bir haber SIRF bu yüzden
+    main._has_apt_evidence'ı geçip zafiyet_aktif_apt etiketini korudu."""
+    assert not dedup.extract_codenames('The AsyncAPI package was affected.')
+    assert not dedup.extract_codenames('An OpenAPI schema and a GraphQL query.')
+
+
+# ── ORTAK ÖZEL AD sinyali (Kural 2d) ──────────────────────────────────────
+# Gerçek üretim verisi: data/kritik3_gecmis.json, 29 ve 31 Temmuz 2026 manşetleri.
+_MINNESOTA_29 = {
+    'tr_title': "Minnesota'daki Su Tesislerine Yönelik Eş Zamanlı Operasyonel "
+                "Teknoloji Saldırılarının Gerçekleşmesi",
+    'paragraph': "Amerika Birleşik Devletleri'nin Minnesota eyaletindeki 30'dan fazla "
+                 "su ve atık su tesisinin, operasyonel teknoloji sistemlerini hedef "
+                 "alan eş zamanlı siber saldırılara maruz kaldığı bildirilmiştir. "
+                 "Minnesota Bilgi Teknolojileri Servisi tarafından yapılan açıklamada, "
+                 "26 ve 27 Temmuz 2026 tarihlerinde gerçekleşen müdahalelerin bazı "
+                 "bölgelerde su sistemlerinin kapatılmasına yol açtığı belirtilmiştir.",
+}
+_MINNESOTA_31 = {
+    'tr_title': "Minnesota'da Su Sistemlerine Yönelik Koordineli Siber Saldırı "
+                "Düzenlenmesi",
+    'paragraph': "Amerika Birleşik Devletleri'nin Minnesota eyaletinde 30'dan fazla "
+                 "topluluk su sistemine yönelik koordineli bir siber saldırı "
+                 "gerçekleştiği bildirilmiştir. 26-27 Temmuz 2026 tarihlerinde "
+                 "düzenlenen saldırıların, küçük ölçekli kamu hizmeti kuruluşlarını "
+                 "ortak bir operasyonel teknoloji zafiyeti üzerinden hedef aldığı "
+                 "belirtilmektedir. Minnesota Bilgi Teknolojileri Servisi, yerel acil "
+                 "durum ilan edildiğini açıklamıştır.",
+}
+
+
+def test_entity_catches_repeat_headline_across_days():
+    """Aynı olay ÜST ÜSTE GÜNLERDE manşet olamaz — özel ad sinyali (Kural 2d).
+
+    Gerçek vaka: Minnesota su sistemleri saldırısı 29-30-31 Temmuz 2026'da ÜÇ GÜN
+    KRİTİK 3 manşeti oldu. Ne ortak aktör ne ortak kod adı vardı; başlık
+    benzerliği 0.65 ile çapraz-gün eşiğinin (0.74) altındaydı. Olayı bağlayan
+    tek sinyal öznesinin özel adıydı: 'Minnesota'."""
+    same, why = dedup.same_event(_MINNESOTA_29, _MINNESOTA_31,
+                                 explain=True, cross_day=True)
+    assert same, f'Üst üste manşet olan aynı olay yakalanamadı: {why}'
+    assert 'minnesot' in why
+
+
+def test_entity_blocks_repeat_headline_in_pick_distinct():
+    """pick_distinct, dün manşet olmuş olayı bugün KRİTİK 3'e ALMAMALI."""
+    views = {1: _MINNESOTA_31, 2: SHARKLOADER, 3: MOZILLA}
+    picked = dedup.pick_distinct([1, 2, 3], views.get, n=3,
+                                 exclude_views=[_MINNESOTA_29])
+    assert 1 not in picked, 'Dünkü manşetin tekrarı KRİTİK 3\'e alınmamalı'
+    assert picked == [2, 3]
+
+
+def test_entity_does_not_merge_unrelated_breaches():
+    """İki ALAKASIZ veri ihlali, ortak özel adı olmadığı için birleşmemeli.
+
+    Yanlış-birleştirme, kaçırılan mükerrerden daha zararlıdır: 31.07.2026'da
+    Analog Devices ihlali tam da böyle bir birleştirme zinciriyle rapordan
+    tamamen kayboldu."""
+    analog = {'tr_title': 'Analog Devices Şirketinin Veri İhlali Bildirmesi',
+              'paragraph': 'Yarı iletken üreticisi Analog Devices, sistemlerine '
+                           'yetkisiz erişim sağlandığını ve bir miktar verinin ele '
+                           'geçirildiğini bildirmiştir. Şirket operasyonlarının '
+                           'etkilenmediğini açıklamıştır.'}
+    kt = {'tr_title': "Güney Kore'nin KT Corporation'a Veri İhlali Cezası Vermesi",
+          'paragraph': 'Kişisel Bilgileri Koruma Komisyonu, telekomünikasyon devi KT '
+                       'Corporation\'a veri koruma ihlalleri gerekçesiyle idari para '
+                       'cezası uygulamıştır. Şirketin iç ağının aylarca tehlikeye '
+                       'girdiği belirtilmiştir.'}
+    assert not dedup.same_event(analog, kt)
+    assert not dedup.same_event(analog, kt, cross_day=True)
+
+
+def test_entity_requires_topic_overlap():
+    """Ortak özel ad TEK BAŞINA yetmez — konu da örtüşmeli.
+
+    Aynı yerin/kurumun FARKLI olayları (ör. bir eyaletteki siber saldırı ile
+    aynı eyaletteki bir yasa değişikliği) birleştirilmemeli."""
+    a = {'tr_title': 'Minnesota Su Tesislerine Siber Saldırı',
+         'paragraph': "Amerika Birleşik Devletleri'nin Minnesota eyaletindeki su "
+                      'tesislerinin operasyonel teknoloji sistemlerini hedef alan '
+                      'saldırılara maruz kaldığı bildirilmiştir.'}
+    b = {'tr_title': 'Minnesota Eyaletinde Kripto ATM Düzenlemesi',
+         'paragraph': 'Minnesota eyaletinde kripto para kiosklarını sınırlandıran '
+                      'yasa tasarısının senatodan geçtiği, dolandırıcılık '
+                      'şikayetlerinin gerekçe gösterildiği aktarılmıştır.'}
+    assert not dedup.same_event(a, b, cross_day=True)
+
+
+def test_extract_entities_only_reads_turkish_paragraph():
+    """Özel ad çıkarımı SADECE Türkçe paragraftan yapılır.
+
+    İngilizce başlıklar Title-Case'tir (her sözcük özel ad görünür), full_text
+    ise site menü metni taşır ('Data Breaches', 'Careers'). İlk sürüm bu iki
+    alanı da okuyunca gövde ölçümünde 31 yanlış eşleşme üretmişti."""
+    view = {'tr_title': 'Bir Başlık',
+            'paragraph': 'Saldırının Minnesota eyaletinde gerçekleştiği bildirilmiştir.',
+            'title': 'Hackers Target Water Systems In Several States',
+            'full_text': 'Data Breaches Careers Analytics Newsletter'}
+    ents = dedup.extract_entities(view)
+    assert 'minnesot' in ents
+    assert not {'hacker', 'target', 'water', 'careers', 'analytic'} & ents
+
+
+def test_extract_entities_skips_sentence_start_and_denylist():
+    """Cümle başı büyük harf ve jenerik kurum/ülke adları özel ad sayılmaz."""
+    ents = dedup.extract_entities(
+        'Microsoft bir yama yayımlamıştır. CISA ise Amerika Birleşik Devletleri '
+        'genelinde Rockwell cihazları için uyarı yapmıştır.')
+    assert 'rockwell' in ents          # gerçek özel ad
+    assert 'microso' not in ents       # cümle başı + denylist
+    assert 'cisa' not in ents          # denylist
+    assert 'amerika' not in ents       # denylist
