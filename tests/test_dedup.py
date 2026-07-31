@@ -551,8 +551,8 @@ def test_entity_requires_topic_overlap():
                       'tesislerinin operasyonel teknoloji sistemlerini hedef alan '
                       'saldırılara maruz kaldığı bildirilmiştir.'}
     b = {'tr_title': 'Minnesota Eyaletinde Kripto ATM Düzenlemesi',
-         'paragraph': 'Minnesota eyaletinde kripto para kiosklarını sınırlandıran '
-                      'yasa tasarısının senatodan geçtiği, dolandırıcılık '
+         'paragraph': 'Kripto para kiosklarını sınırlandıran yasa tasarısının '
+                      'Minnesota eyalet senatosundan geçtiği, dolandırıcılık '
                       'şikayetlerinin gerekçe gösterildiği aktarılmıştır.'}
     assert not dedup.same_event(a, b, cross_day=True)
 
@@ -581,3 +581,28 @@ def test_extract_entities_skips_sentence_start_and_denylist():
     assert 'microso' not in ents       # cümle başı + denylist
     assert 'cisa' not in ents          # denylist
     assert 'amerika' not in ents       # denylist
+
+
+def test_nearmiss_signal_sees_shared_entity():
+    """Yakın-kaçış ağı ORTAK ÖZEL ADI da görmeli.
+
+    31.07.2026 denetimi: data/dedup_log.jsonl 30 gündür HİÇ oluşmamıştı, çünkü
+    nearmiss_signal yalnızca aktör/kod adı arıyordu. Minnesota olayı üç gün üst
+    üste manşet olurken ağ tek bir uyarı bile üretmedi — olayı bağlayan sinyal
+    (özel ad) ağın da görmediği sinyaldi."""
+    a = {'tr_title': 'Minnesota Su Tesislerine Siber Saldırı',
+         'paragraph': "Amerika Birleşik Devletleri'nin Minnesota eyaletindeki su "
+                      'tesislerinin siber saldırıya uğradığı bildirilmiştir.'}
+    b = {'tr_title': 'Minnesota Eyaletinde Kripto ATM Düzenlemesi',
+         'paragraph': 'Kripto para kiosklarını sınırlandıran yasa tasarısının '
+                      'Minnesota eyalet senatosundan geçtiği aktarılmıştır.'}
+    # same_event AYNI OLAY demiyor (konu örtüşmesi eşik altı) ama ortak özel ad var
+    assert not dedup.same_event(a, b, cross_day=True)
+    sig = dedup.nearmiss_signal(a, b, cross_day=True)
+    assert sig and 'minnesot' in sig
+
+
+def test_nearmiss_signal_none_when_same_event():
+    """Zaten aynı olay sayılan çift yakın-kaçış DEĞİLDİR."""
+    assert dedup.nearmiss_signal(_MINNESOTA_29, _MINNESOTA_31,
+                                 cross_day=True) is None

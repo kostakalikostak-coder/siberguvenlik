@@ -4584,11 +4584,21 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                   (" ✅" if ok else " (hâlâ hedefin altında, en iyi deneme kullanıldı)"))
 
     def _write_scoring_log(self, articles, records, top10_ids, remaining_ids,
-                           top3_ids, critique_changed, attr_downgraded=()):
+                           top3_ids, critique_changed, attr_downgraded=(),
+                           eleme_nedeni=None):
         """Kalibrasyon/denetim log'u — her haber için bir JSONL satırı yazar.
         Rubrik ağırlıklarını gerçek raporlarla ayarlamak için: kategori/puan/
         yerleşim + Critique düzeltti mi. İşlevsel değil; hata olursa sessiz geçer.
-        """
+
+        ⚠️ ÇAĞRI YERİ ÖNEMLİ: bu log ELEME KATMANLARINDAN SONRA yazılır. Eskiden
+        Pass 4'te yazılıyordu ve `yerlesim` alanı raporun GERÇEK sonucunu değil,
+        eleme öncesi NİYETİ gösteriyordu. 31.07.2026 denetiminde log'da 'govde'
+        yazan 7 haber rapora hiç girmemişti — hangi katmanın attığını anlamak
+        için Actions çıktısını satır satır okumak gerekti.
+
+        eleme_nedeni: {id: 'p5_kalite'|'auditor_mukerrer'|'kesik_paragraf'|
+        'govde_ayni_olay'|'capraz_gun'|'grup_geri_alindi'} — hangi katmanın
+        düşürdüğü (ya da geri aldığı)."""
         try:
             date_str = _now_tr().strftime('%Y-%m-%d')
             top10_set, top3_set = set(top10_ids), set(top3_ids)
@@ -4623,6 +4633,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     'critique_neden': (critique_changed.get(aid, '')
                                        if isinstance(critique_changed, dict) else ''),
                     'yerlesim': yerlesim,
+                    # Hangi eleme katmanı düşürdü/geri aldı (boş = katman
+                    # dokunmadı; skor/mükerrer kapısında elendi ya da rapora girdi)
+                    'eleme_nedeni': (eleme_nedeni or {}).get(aid, ''),
                 }, ensure_ascii=False))
 
             os.makedirs(os.path.dirname(SCORING_LOG_FILE) or '.', exist_ok=True)
@@ -4795,10 +4808,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         print(f"   Seçilen Top 3 ID: {top3_ids}")
 
-        # Kalibrasyon/denetim log'u — kategori/puan/yerleşim + Critique izi.
-        self._write_scoring_log(articles, score_records, top10_ids,
-                                remaining_ids, top3_ids, critique_changed,
-                                attr_downgraded=attr_downgraded)
+        # Hangi eleme katmanının hangi haberi düşürdüğü — skorlama log'una
+        # yazılır. Log'un kendisi ELEME KATMANLARINDAN SONRA yazılır (aşağıda),
+        # yoksa `yerlesim` alanı raporun sonucunu değil niyetini gösterir.
+        eleme_nedeni = {}
 
         # ════════════════════════════════════════════════════════════════
         # PASS 5 — KALİTE KONTROL (boş/İngilizce/kriter dışı/kopya)
@@ -4864,6 +4877,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         if p5_remove:
             print(f"   🗑️  Kaldırılan: {sorted(p5_remove)}")
+            for _rid in p5_remove:
+                eleme_nedeni[_rid] = 'p5_kalite'
             top10_ids     = [i for i in top10_ids     if i not in p5_remove]
             remaining_ids = [i for i in remaining_ids if i not in p5_remove]
             top3_ids      = [i for i in top3_ids      if i not in p5_remove]
@@ -4953,6 +4968,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             content_by_id, articles_by_id, protected_ids=top3_ids)
         if dup_remove:
             print(f"   🗑️  LLM mükerrer olarak kaldırdı: {sorted(dup_remove)}")
+            for _rid in dup_remove:
+                eleme_nedeni[_rid] = 'auditor_mukerrer'
             top10_ids     = [i for i in top10_ids     if i not in dup_remove]
             remaining_ids = [i for i in remaining_ids if i not in dup_remove]
         else:
@@ -4965,6 +4982,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             list(top3_ids) + list(top10_ids) + list(remaining_ids),
             top3_ids, content_by_id, articles_by_id)
         if trunc_drop:
+            for _rid in trunc_drop:
+                eleme_nedeni[_rid] = 'kesik_paragraf'
             top10_ids     = [i for i in top10_ids     if i not in trunc_drop]
             remaining_ids = [i for i in remaining_ids if i not in trunc_drop]
 
@@ -4992,6 +5011,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             if dropped_body:
                 print(f"   🔁 Gövde aynı-olay dedup: KRİTİK 3/gövde mükerreri elendi "
                       f"{dropped_body}")
+                for _rid in dropped_body:
+                    eleme_nedeni[_rid] = 'govde_ayni_olay'
                 top10_ids     = [i for i in top10_ids     if i in kept_set]
                 remaining_ids = [i for i in remaining_ids if i in kept_set]
 
@@ -5011,6 +5032,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 # Geri alınanlar gövdeye (remaining) döner; top10 sırası bozulmaz.
                 remaining_ids = remaining_ids + [aid for aid in restored_ids
                                                  if aid not in remaining_ids]
+                for _rid in restored_ids:
+                    eleme_nedeni[_rid] = 'grup_geri_alindi'
 
         # ── ÇAPRAZ-GÜN RAPOR-GENELİ DEDUP (gövde ↔ son 7 gün raporu) ──────
         # Yukarıdaki blok yalnızca AYNI RUN içinde (gövde ↔ bugünkü KRİTİK 3 +
@@ -5021,8 +5044,11 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         recent_report = self._load_recent_report_views()
         if recent_report:
             view_fn_x = self._dedup_view_fn(content_by_id, articles_by_id)
+            _xday_before = set(top10_ids) | set(remaining_ids)
             top10_ids     = self._dedup_body_cross_day(top10_ids,     view_fn_x, recent_report)
             remaining_ids = self._dedup_body_cross_day(remaining_ids, view_fn_x, recent_report)
+            for _rid in _xday_before - (set(top10_ids) | set(remaining_ids)):
+                eleme_nedeni[_rid] = 'capraz_gun'
             # ── LLM SEMANTİK ÇAPRAZ-GÜN DEDUP (opsiyonel, güçlendirilmiş) ──────
             # İlk sürüm (0ad9a9c, 07-09; 7 gün + gevşek prompt) YÜZEYSEL benzeyen
             # GERÇEKTEN YENİ haberleri eledi (07-11→07-13 daralması). 07-13'te
@@ -5034,8 +5060,20 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             if ENABLE_LLM_CROSS_DAY_DEDUP:
                 recent_narrow = self._load_recent_report_views(
                     days=CROSS_DAY_DEDUP_WINDOW_DAYS) or recent_report
+                _llm_before = set(top10_ids) | set(remaining_ids)
                 top10_ids     = self._dedup_body_cross_day_llm(top10_ids,     content_by_id, articles_by_id, recent_narrow)
                 remaining_ids = self._dedup_body_cross_day_llm(remaining_ids, content_by_id, articles_by_id, recent_narrow)
+                for _rid in _llm_before - (set(top10_ids) | set(remaining_ids)):
+                    eleme_nedeni[_rid] = 'capraz_gun_llm'
+
+        # Kalibrasyon/denetim log'u — kategori/puan/GERÇEK yerleşim + Critique izi
+        # + hangi katmanın elediği. TÜM eleme katmanlarından SONRA yazılır; Pass
+        # 4'te yazıldığı sürümde `yerlesim` alanı rapora hiç girmemiş haberleri
+        # 'govde' gösteriyordu (31.07.2026'da 7 haber).
+        self._write_scoring_log(articles, score_records, top10_ids,
+                                remaining_ids, top3_ids, critique_changed,
+                                attr_downgraded=attr_downgraded,
+                                eleme_nedeni=eleme_nedeni)
 
         # NOT: Eski "az-haber guard" KALDIRILDI. Önceden az haber günlerinde
         # top3 dışında gövde haberi kalmayınca KRİTİK 3 kutusu boşaltılıyordu;

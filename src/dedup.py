@@ -519,12 +519,19 @@ def same_event(view_a, view_b, explain=False, cross_day=False):
 
 
 def nearmiss_signal(view_a, view_b, cross_day=True):
-    """Gözlem amaçlı: iki haber ORTAK bir parmak izi (aktör-ID veya kod adı)
-    paylaşıyor AMA same_event yine de AYNI OLAY demiyorsa (konu örtüşmesi eşiğin
-    altında kaldığı için), bunu açıklayan bir dize döndürür; aksi halde None.
+    """Gözlem amaçlı: iki haber ORTAK bir parmak izi (aktör-ID, kod adı VEYA
+    özel ad) paylaşıyor AMA same_event yine de AYNI OLAY demiyorsa (konu
+    örtüşmesi eşiğin altında kaldığı için), bunu açıklayan bir dize döndürür;
+    aksi halde None.
 
     Amaç, sessiz kaçışları (aynı olayın farklı gün tekrar seçilmesi gibi)
-    veriyle görünür kılmaktır — davranışı DEĞİŞTİRMEZ, yalnızca raporlanır."""
+    veriyle görünür kılmaktır — davranışı DEĞİŞTİRMEZ, yalnızca raporlanır.
+
+    ÖZEL AD parmak izi 2026-07-31'de eklendi: o güne kadar yalnızca aktör/kod
+    adı aranıyordu ve tam da bu yüzden data/dedup_log.jsonl 30 gün boyunca HİÇ
+    OLUŞMADI. Minnesota olayı üç gün üst üste manşet olurken ağ hiçbir uyarı
+    üretmedi — çünkü olayı bağlayan tek sinyal (özel ad) bu fonksiyonun da
+    görmediği sinyaldi."""
     if same_event(view_a, view_b, cross_day=cross_day):
         return None
     ha, pa, ea, fa = _bundle(view_a)
@@ -532,7 +539,8 @@ def nearmiss_signal(view_a, view_b, cross_day=True):
     blob_a = ' '.join((ha, pa, ea, fa))
     blob_b = ' '.join((hb, pb, eb, fb))
     shared = (extract_actors(blob_a) & extract_actors(blob_b)) | \
-             (extract_codenames(blob_a) & extract_codenames(blob_b))
+             (extract_codenames(blob_a) & extract_codenames(blob_b)) | \
+             (extract_entities(view_a) & extract_entities(view_b))
     if not shared:
         return None
     topic = max(
