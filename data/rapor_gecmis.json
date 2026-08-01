@@ -1,106 +1,5 @@
 [
  {
-  "date": "2026-07-24",
-  "views": [
-   {
-    "tr_title": "Rusya Bağlantılı APT Grubu LAUNDRY BEAR'ın Batılı Kurumlara Yönelik Sıfır Tıklamalı Kimlik Avı Kampanyası Yürütmesi",
-    "paragraph": "Birleşik Krallık Ulusal Siber Güvenlik Merkezi (NCSC) ve 15 ülkeden uluslararası ortakları, Rusya devlet desteğiyle hareket eden APT grubu LAUNDRY BEAR tarafından yürütülen yeni bir siber casusluk kampanyasını ifşa etmiştir. Temmuz 2025 tarihinden bu yana süren faaliyetlerde, Zimbra Collaboration Suite (ZCS) yazılımını kullanan Batılı kuruluşların hedef alındığı ve hassas e-posta verilerinin çalındığı belirtilmiştir. \"Beehive\" olarak adlandırılan ve kullanıcı etkileşimi gerektirmeyen sıfır tıkla",
-    "title": "UK and partners expose Russian state-supported actors for new ‘zero-click’ phishing campaign targeting Western organisations",
-    "full_text": "UK and partners expose Russian state-supported actors for new ‘zero-click’ phishing campaign targeting Western organisations\n\nGCHQ’s National Cyber Security Centre and international partners issue warning as ‘LAUNDRY BEAR’ cyber threat group exposed for targeted phishing campaign\n\nRussian state-supported actors develop new technique to target Western email platforms and gain persistent access to c"
-   },
-   {
-    "tr_title": "İran Bağlantılı Siber Tehdit Aktörlerinin ABD'deki Su ve Enerji Sağlayıcılarını Hedef Alması",
-    "paragraph": "Amerika Birleşik Devletleri hükümeti, İran devlet desteğiyle hareket eden siber tehdit aktörlerinin ülkedeki su ve enerji sağlayıcılarına ait endüstriyel kontrol sistemlerini hedef aldığını açıklamıştır. FBI, NSA ve CISA tarafından yayımlanan ortak uyarıda, saldırganların internete açık programlanabilir mantık denetleyicilerine sızarak veri manipülasyonu yaptığı ve hizmet kesintilerine yol açtığı belirtilmiştir. Başlangıçta Rockwell marka denetleyicilerin hedef alındığı, ancak saldırıların Schne",
-    "title": "US government says Iran-linked hackers are disrupting American water and energy providers",
-    "full_text": "The U.S. government is warning that Iranian state-backed hackers are actively breaking in and disrupting industrial control systems at American water and energy providers. This new alert comes months after federal agencies warned of an escalation in hacking from Iranian actors amid the ongoing war.\n\nIn an advisory updated Wednesday, the FBI, the NSA, the Department of Energy, and CISA said Iranian"
-   },
-   {
-    "tr_title": "Rusya Bağlantılı UAC-0099 Grubunun Sahte Notepad++ Eklentisiyle Zararlı Yazılım Yayması",
-    "paragraph": "Ukrayna Bilgisayar Acil Durum Müdahale Ekibi (CERT-UA), Rusya ile uyumlu siber tehdit aktörü UAC-0099'un Windows sistemlerini tehlikeye atmak için sahte bir Notepad++ eklentisi kullandığı yeni bir kampanya hakkında uyarıda bulunmuştur. 2022 yılının ortalarından bu yana aktif olduğu bilinen grubun, MATCHBOIL.V2 olarak adlandırılan yeni bir zararlı yazılım sürümünü dağıtmak için kimlik avı epostalarını kullandığı belirtilmiştir. Saldırı sürecinde, kurbanlara PDF görünümlü bir betik dosyası içeren ",
-    "title": "Fake Notepad++ Plugin Delivers MATCHBOIL.V2 in UAC-0099 Attacks",
-    "full_text": "The Computer Emergency Response Team of Ukraine (CERT-UA) has warned of a new campaign that involves the use of a malicious program that's dressed up as a Notepad++ plugin to compromise Windows systems.\n\nThe activity has been attributed by the agency to a threat cluster it tracks as UAC-0099, a Russia-aligned group that has previously observed weaponizing security flaws in WinRAR software to deliv"
-   },
-   {
-    "tr_title": "ABD Hükümetinin Yapay Zeka Destekli Gold Eagle Güvenlik Mekanizmasını Başlatması",
-    "paragraph": "ABD hükümeti, kritik altyapı ve kamu yazılımlarındaki zafiyetleri saldırganlardan önce tespit edip gidermek amacıyla 14 Temmuz 2026 tarihinde Gold Eagle adlı federal bir merkezi birimi faaliyete geçirmiştir. Anthropic tarafından geliştirilen Mythos adlı ileri seviye yapay zeka modelini kullanan bu sistemin, Hazine, Savunma ve İç Güvenlik bakanlıkları ile koordineli çalıştığı belirtilmiştir. Anthropic'in Project Glasswing ortaklarının, temel yazılımlarda 10.000'den fazla yüksek veya kritik seviye",
-    "title": "Is Patching Dead? Vulnerability Management in the Post-Mythos Era",
-    "full_text": "Artificial Intelligence\n\nIs Patching Dead? Vulnerability Management in the Post-Mythos Era\n\nYou cannot out-patch a machine that writes a working exploit from a vulnerability description in twenty hours. Stop trying to optimize a game you cannot win.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nOn July 14, 2026, the White House launched Gold Eagle: a federal clearinghouse that use"
-   },
-   {
-    "tr_title": "Finansal Odaklı Siber Tehdit Aktörü TAG-195'in Modüler Zararlı Yazılım Ekosistemini Geliştirmesi",
-    "paragraph": "Finansal motivasyonla hareket eden ve Golden Chickens olarak da bilinen siber tehdit aktörü TAG-195'in, zararlı yazılım hizmeti (MaaS) ekosistemini dört yeni yazılım ailesiyle güncellediği tespit edilmiştir. TinyEgg, ChonkyChicken, ChromEggscalator ve ChonkyChicken'ın modüler bir varyantından oluşan bu yeni nesil araçların, önceki sürümlerdeki teknik eksiklikleri gidermek amacıyla geliştirildiği belirtilmiştir. TinyEgg'in ilk erişim ve kalıcılık sağlayan hafif bir arka kapı olduğu, ChonkyChicken",
-    "title": "TAG-195 Upgrades MaaS Ecosystem with Modular Tools",
-    "full_text": "TAG-195 Upgrades MaaS Ecosystem with Modular Tools\n\nInsikt Group identified four new TAG-195 (\"Golden Chickens\", “Venom Spider”) malware families through ongoing tracking of the TAG-195 MaaS ecosystem. We named two of the families \"TinyEgg\" and “ChonkyChicken\"; the third is a modularized variant of ChonkyChicken. The fourth family, which includes a modified browser credential theft helper, we name"
-   },
-   {
-    "tr_title": "Avustralyalı Enerji Sağlayıcısı Origin Energy'nin Veri İhlali Bildirmesi",
-    "paragraph": "Avustralya'nın en büyük enerji perakendecisi Origin Energy, kimliği belirsiz bir siber tehdit aktörü tarafından gerçekleştirilen ve müşteri verilerinin sızdırılmasına yol açan bir veri ihlalini doğrulamıştır. Şirket tarafından yapılan açıklamada, 4,8 milyon müşteriden kaçının etkilendiğinin tespiti için inceleme başlatıldığı ve kredi kartlarının son dört hanesi ile banka hesaplarının son üç hanesi gibi bilgilerin açığa çıkmış olabileceği belirtilmiştir. Yerel medya kaynakları, \"John Doe\" takma a",
-    "title": "Australian energy provider Origin says data breach exposes client data",
-    "full_text": "Australian energy provider Origin Energy has confirmed a data breach by an unknown threat actor that exposed customers' personally identifiable information (PII).\n\nThe company has 4.8 million customers and is currently investigating how many of them have been impacted to inform them of the risk via individual notifications.\n\nOrigin Energy is Australia’s largest energy retailer, providing electrici"
-   },
-   {
-    "tr_title": "GitHub Actions İş akışlarının cPanel Sunucularını Hedeflemek İçin Kötüye Kullanılması",
-    "paragraph": "Siber güvenlik araştırmacıları, ele geçirilen GitHub depolarının cPanel ve WebHost Manager sunucularını hedef alan bir saldırı altyapısına dönüştürüldüğü geniş kapsamlı bir kampanyayı ortaya çıkarmıştır. 12-13 Temmuz 2026 tarihlerinde gerçekleşen olayda, bir geliştiriciye ait on adet Packagist paketinin kaynak kodlarına 583 adet kötü amaçlı GitHub Actions iş akışı dosyası yerleştirildiği tespit edilmiştir. Bu iş akışlarının, GitHub sunucuları üzerinde çalışan tarayıcılar aracılığıyla CVE-2026-41",
-    "title": "Attackers Weaponize GitHub Actions Runners to Target cPanel and WHM Servers",
-    "full_text": "Cybersecurity researchers have shed light on a large-scale campaign that has turned compromised GitHub repositories into distributed attack infrastructure designed to target cPanel and WebHost Manager (WHM) instances.\n\nThe activity involves malicious Packagist development versions spanning 10 packages associated with a legitimate PHP and DevOps developer, dinushchathurya, between July 12 and 13, 2"
-   },
-   {
-    "tr_title": "Chaos Fidye Yazılımı Grubunun msaRAT Aracılığıyla Tarayıcı Üzerinden Komuta Kontrol Trafiği Yürütmesi",
-    "paragraph": "Cisco Talos, 23 Temmuz 2026 tarihinde Chaos fidye yazılımı grubuyla bağlantılı msaRAT adlı yeni bir Rust tabanlı zararlı yazılımı tespit etmiştir. Söz konusu zararlı yazılımın, kurbanın Windows işletim sistemindeki Chrome veya Edge tarayıcılarını \"headless\" modda çalıştırarak komuta kontrol (C2) trafiğini bu tarayıcılar üzerinden yönlendirdiği belirtilmiştir. msaRAT'ın doğrudan dış bağlantı kurmak yerine tarayıcı hata ayıklama arayüzünü kullandığı ve trafiği Twilio'nun TURN servisi ile WebRTC ve",
-    "title": "Chaos Ransomware Uses msaRAT to Route C2 Traffic Through Headless Chrome and Edge",
-    "full_text": "The Chaos ransomware group ran its command-and-control through the victim's own browser. Cisco Talos on Thursday detailed msaRAT, the Rust implant behind it, found on a compromised Windows machine ahead of the encryptor.\n\nThe implant never opens an outbound connection of its own. Its process talks to 127.0.0.1 and nothing else. It starts Chrome or Edge in headless mode and drives the browser over "
-   },
-   {
-    "tr_title": "Linux Çekirdeğindeki RefluXFS Açığının Yerel Kullanıcılara Tam Yetki Vermesi",
-    "paragraph": "Linux çekirdeğinde tespit edilen ve CVE-2026-64600 olarak izlenen dokuz yıllık bir güvenlik açığının, yerel kullanıcıların XFS dosya sistemi üzerinde kök yetkilerine erişmesine imkan tanıdığı bildirilmiştir. RefluXFS olarak adlandırılan bu açığın, Red Hat Enterprise Linux, Fedora Server ve Amazon Linux'un varsayılan kurulumlarını etkilediği belirtilmiştir. Siber güvenlik kuruluşu Qualys tarafından paylaşılan bilgilere göre, bir yapay zeka modeli aracılığıyla keşfedilen bu hata, yazma işlemi sıra",
-    "title": "Nine-Year-Old RefluXFS Linux Flaw Gives Local Users Root on Default RHEL Installs",
-    "full_text": "RefluXFS, a Linux kernel flaw disclosed on July 22 and tracked as CVE-2026-64600, lets an unprivileged local user overwrite root-owned files on an XFS filesystem and gain persistent root access.\n\nQualys said default installations of Red Hat Enterprise Linux and its derivatives, Fedora Server, and Amazon Linux can meet the conditions for exploitation.\n\nThe company demonstrated the race against /etc"
-   },
-   {
-    "tr_title": "OpenAI'ın ChatGPT Üzerindeki Kritik AgentForger Güvenlik Açığını Gidermesi",
-    "paragraph": "OpenAI, ChatGPT Workspace araçlarında tespit edilen ve saldırganların kurum içinde görünmez yapay zekâ aracıları oluşturmasına imkan tanıyan AgentForger adlı kritik bir güvenlik açığını gidermiştir. Zenity Labs araştırmacıları tarafından ortaya çıkarılan bu zafiyetin, bir kimlik avı saldırısı aracılığıyla kurbanın hesabında yetkisiz ve uzaktan kontrol edilebilen otonom bir yapı oluşturulmasına yol açtığı belirtilmiştir. Saldırganların, belirli URL parametrelerini kullanarak kurbanın Gmail veya O",
-    "title": "OpenAI Fixes ChatGPT Agent Flaw That Could Let Attackers Forge an AI Insider",
-    "full_text": "Artificial Intelligence\n\nOpenAI Fixes ChatGPT Agent Flaw That Could Let Attackers Forge an AI Insider\n\nAgentForger allows an attacker to create, insert and remotely control an invisible autonomous AI agent inside a victim organization.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nZenity Labs has found and disclosed a critical vulnerability in OpenAI’s ChatGPT Workspace Agents, wh"
-   },
-   {
-    "tr_title": "İsviçreli Tren Üreticisi Stadler'in Everest Grubunun Fidye Talebini Reddetmesi",
-    "paragraph": "İsviçre merkezli tren üreticisi Stadler Rail, bir tedarikçinin dosya paylaşım platformundan teknik verilerin çalınması üzerine siber suçluların talep ettiği 12,3 milyon dolarlık fidyeyi ödemeyi reddetmiştir. Şirket tarafından 22 Temmuz 2026 tarihinde yapılan açıklamada, Temmuz ayı ortasında gerçekleşen siber saldırının Stadler'in kendi sistemlerini etkilemediği ve tüm üretim tesislerinin tam kapasiteyle çalışmaya devam ettiği belirtilmiştir. Rusça konuşan fidye yazılımı çetesi Everest'in, 10 mil",
-    "title": "Swiss train maker Stadler refuses Everest $12 million ransomware demand",
-    "full_text": "Swiss train maker Stadler refuses Everest $12 million ransomware demand\n\nSwiss train manufacturer Stadler Rail said it will not pay a $12.3 million ransom after cybercriminals stole technical data from a supplier's file-sharing platform.\n\nAccording to the company’s statement on Tuesday, the breach, which occurred in mid-July, did not affect its own systems, and all production sites remain fully op"
-   },
-   {
-    "tr_title": "Claude Cowork Yazılımındaki Bir Açığın Mac Dosyalarına Erişime İzin Vermesi",
-    "paragraph": "Güvenlik araştırmacıları, Anthropic'in Claude Cowork uygulamasında, yapay zeka aracının çalıştığı Linux sanal makinesinden çıkarak ana bilgisayardaki dosyalara erişmesine olanak tanıyan kritik bir güvenlik açığı tespit etmiştir. SharedRoot olarak adlandırılan bu açığın, yama uygulanmadan önce yaklaşık 500.000 macOS kullanıcısını etkilediği belirtilmiştir. Araştırmacılar, tüm ana dosya sisteminin sanal makineye yazma ve okuma yetkisiyle bağlanması nedeniyle, saldırganların SSH anahtarları ve bulu",
-    "title": "Claude Cowork Flaw Could Let AI Agent Escape Its VM and Access Mac Files",
-    "full_text": "Cybersecurity researchers have uncovered a sandbox escape vulnerability in Anthropic's Claude Cowork that makes it possible to break out of the confines of a Linux virtual machine (VM) within which the agent runs to read or write files anywhere on the Mac.\n\nAccomplish AI, which shared details of the vulnerability with The Hacker News ahead of publication, said about 500,000 macOS users running loc"
-   },
-   {
-    "tr_title": "Microsoft Geçiş Anahtarı Uygulamalarındaki Açıkların Kimlik Taklidine Yol Açması",
-    "paragraph": "SpecterOps araştırmacıları, Microsoft'un geçiş anahtarı (passkey) sistemlerinde, saldırganların yetkili kullanıcıların kimliğine bürünmesine olanak tanıyan üç adet sıfır gün açığı tespit etmiştir. Windows 11 ve Microsoft Entra ID servislerini etkileyen bu açıkların, kimlik avına dayanıklı çok faktörlü kimlik doğrulama mekanizmalarının atlatılmasına neden olabildiği belirtilmiştir. Araştırmada, Windows 11'in dijital anahtarların bir kopyasını olay günlüklerine yazdığı ve Entra ID'nin bu verilerin",
-    "title": "Flaws in Passkey Implementation Show Old Attacks Still Work",
-    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nIdentity & Access Management Security\n\nVulnerabilities & Threats\n\nNews, news analysis, and commentary on the latest trends in cybersecurity technology.\n\nFlaws in Passkey Implementation Show Old Attacks Still Work\n\nAhead of Black Hat USA"
-   },
-   {
-    "tr_title": "Yapay Zeka Aracılarının Redis Yazılımında Kritik Güvenlik Açıkları Bulması",
-    "paragraph": "Redis, yapay zeka araştırma araçları tarafından tespit edilen ve uzaktan kod yürütülmesine olanak tanıyan yedi adet güvenlik açığını gidermek üzere 23 Temmuz 2026 tarihinde güncellemeler yayınlamıştır. Kimi K3 adlı yapay zeka aracılarının, Redis'in çeşitli sürümlerinde 19 adet sıfır gün açığını çok kısa sürede tespit ettiği ve çalışan istismar kodları geliştirdiği iddia edilmiştir. Tespit edilen açıkların özellikle bellek yönetimi hatalarından kaynaklandığı ve RESTORE komutu üzerinden istismar e",
-    "title": "Kimi K3 Agents Found Redis Zero-Days and Built RCE Exploit, Researchers Say",
-    "full_text": "Redis shipped seven security releases on July 23 after researchers published authenticated RCE PoCs for stock Redis 6.2.22, 7.4.9, 8.6.4, and 8.8.0.\n\nAll four chains require RESTORE. The Streams chains also need EVAL and XGROUP; the 8.8.0 chain needs EVAL and the bundled RedisBloom module. Redis says the underlying memory flaws may lead to remote code execution.\n\nRedis 6.2.23, 7.2.15, and 7.4.10 f"
-   },
-   {
-    "tr_title": "NodeBB Forum Yazılımındaki Yapay Zeka Tarafından Bulunan Açıkların Kapatılması",
-    "paragraph": "NodeBB forum yazılımında, yapay zeka tabanlı sızma testi araçları tarafından tespit edilen sekiz adet yüksek öncelikli güvenlik açığı 24 Temmuz 2026 tarihinde kamuoyuna açıklanmıştır. Aikido Security tarafından yürütülen altı saatlik bir kaynak kod incelemesi sonucunda bulunan bu açıkların, yönetici paneline yetkisiz erişim ve özel mesajların okunması gibi riskler barındırdığı belirtilmiştir. En kritik açıklardan birinin, kullanıcıların ana sayfa ayarlarını yönetici paneli adresine yönlendirerek",
-    "title": "NodeBB Patches Eight AI-Found Flaws Exposing Admin Access and Private Chats",
-    "full_text": "Eight security flaws in NodeBB went public on Wednesday, along with the code to exploit them. Aikido Security rates all eight as high severity and says its AI pentest agents found them in a six-hour review of the forum software's source code.\n\nEvery version before 4.14.0 is affected. NodeBB has fixed them all, and administrators should be on 4.14.2.\n\nThe simplest one takes a settings change. A reg"
-   },
-   {
-    "tr_title": "Saldırganların Claude.ai Alan Adını Kullanarak Kötü Amaçlı Yazılım Yayması",
-    "paragraph": "Siber tehdit aktörlerinin, Anthropic'in Claude Artifacts özelliğini kötüye kullanarak kullanıcıları SectopRAT adlı zararlı yazılıma yönlendirdiği tespit edilmiştir. Temmuz ayı içinde gerçekleşen saldırılarda, en az 29 kuruluştaki çalışanın Bing arama motorundaki sahte reklamlar aracılığıyla hedef alındığı belirtilmiştir. Reklamların kullanıcıları meşru claude.ai alan adında barındırılan ve resmi bir indirme sayfası gibi görünen bir içeriğe yönlendirdiği ifade edilmiştir. Bu sayfadaki indirme but",
-    "title": "How attackers hosted a fake Claude download page on the claude.ai domain",
-    "full_text": "How attackers hosted a fake Claude download page on the claude.ai domain\n\nA threat actor abused Anthropic’s Claude Artifacts feature to funnel users toward malware, Huntress researchers have disclosed.\n\nEmployees at at least 29 organizations were compromised over two days in July, after searching for the Claude desktop app and clicking a sponsored Bing ad.\n\nThe ad pointed to the genuine claude.ai "
-   }
-  ]
- },
- {
   "date": "2026-07-25",
   "views": [
    {
@@ -834,6 +733,131 @@
     "paragraph": "Novee Security araştırmacıları; Anthropic, Google ve OpenAI gibi önde gelen sağlayıcıların yapay zeka çerçevelerinde ciddi güvenlik zafiyetleri tespit etmiştir. 30 Temmuz 2026 tarihli rapora göre, yazılım bileşenleri arasındaki aşırı güven ilişkisinin, saldırganların tedarik zinciri saldırıları düzenlemesine imkan tanıdığı belirtilmiştir. Araştırmacıların, Google'ın yapay zeka aracını kullanarak GitHub üzerindeki bir depoya yetkisiz yazma işlemi gerçekleştirdiği ifade edilmiştir. Şirketlerin %80",
     "title": "AI Harnesses Burst With Potential Exploit Opps",
     "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nVulnerabilities & Threats\n\nCybersecurity Operations\n\nAI Harnesses Burst With Potential Exploit Opps\n\nA myriad of software makes up the typical AI harness, and trust issues between the components can create concerning attack vectors.\n\nMa"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-01",
+  "views": [
+   {
+    "tr_title": "Rusya Bağlantılı Midnight Blizzard Grubunun Küresel Siber Saldırıları",
+    "paragraph": "Microsoft Tehdit İstihbaratı, Rusya menşeli siber tehdit aktörü Midnight Blizzard'ın bir alt kümesi olan Storm-2945'in, dünya genelinde konaklama sektörü ağlarını hedef alan CaptiveCrunch adlı bir kampanya yürüttüğünü bildirmiştir. Şubat 2026'dan bu yana süren operasyonlarda, otel ve konferans merkezlerindeki Wi-Fi ağlarının trafik manipülasyonu yoluyla ele geçirildiği ve kurumsal gezginlerin kimlik bilgilerinin hedeflendiği belirtilmiştir. Saldırganların, kullanıcıları sahte Microsoft hizmetler",
+    "title": "CaptiveCrunch: Midnight Blizzard targets travelers worldwide for malware delivery and credential theft",
+    "full_text": "The CaptiveCrunch campaign\n\nStorm-2945 and Midnight Blizzard\n\nCaptiveCrunch tradecraft and tooling\n\nHow to protect against CaptiveCrunch activity\n\nMicrosoft Defender detections and hunting guidance\n\nIndicators of compromise\n\nSince early May 2026, Microsoft Threat Intelligence has observed Storm-2945, a sub-cluster of Midnight Blizzard, conducting widespread but targeted traffic manipulation attack"
+   },
+   {
+    "tr_title": "CISA'nın Su Sistemlerine Yönelik Siber Saldırı Artışı Uyarısı",
+    "paragraph": "Amerika Birleşik Devletleri Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), su tesislerini hedef alan kötü niyetli faaliyetlerde önemli bir artış yaşandığını bildirmiştir. Minnesota eyaletindeki 30'dan fazla topluluk su sisteminin 26 Temmuz 2026 tarihinde başlayan koordineli bir siber saldırıdan etkilendiği belirtilmiştir. Federal yetkililer, söz konusu saldırıların İran bağlantılı siber tehdit aktörleri tarafından gerçekleştirilip gerçekleştirilmediğini araştırmaktadır. Saldırganların, progr",
+    "title": "CISA warns of spike in attacks on water systems as Minnesota incidents probed",
+    "full_text": "CISA warns of spike in attacks on water systems as Minnesota incidents probed\n\nThe federal cybersecurity agency is reporting a “significant increase” in malicious activity aimed at water utilities, as investigators are reportedly trying to determine whether recent incidents in Minnesota might be the work of Iran-linked hackers.\n\nThe Cybersecurity and Infrastructure Security Agency said in a public"
+   },
+   {
+    "tr_title": "Interpol'ün Küresel Dolandırıcılık Ödemelerini Durdurma Mekanizmasını Kullanması",
+    "paragraph": "Interpol, siber suçluların nakit çıkışı yapmasını engellemek amacıyla kolluk kuvvetleri ve finans kuruluşlarından oluşan küresel bir ağ olan I-GRIP mekanizmasını devreye almıştır. Temmuz 2026 başında Singapur ve Umman makamlarının, Operation First Light 2026 kapsamında bu ağı kullanarak 6,6 milyon dolarlık bir iş e-postası dolandırıcılığını (BEC) engellediği bildirilmiştir. Operasyon süresince dolandırıcılıkla bağlantılı 31.000'den fazla banka hesabının bloke edildiği kaydedilmiştir. I-GRIP sist",
+    "title": "Interpol Leverages Global System to Curtail Fraud Payments",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nCybersecurity Operations\n\nCyberattacks & Data Breaches\n\nInterpol Leverages Global System to Curtail Fraud Payments\n\nWhen a fraudulent transaction occurs, law enforcement agencies must work quickly to halt payments before cybercriminals "
+   },
+   {
+    "tr_title": "Güney Kore'de Devlet Destekli Oltalama Saldırıları Uyarısı",
+    "paragraph": "Güney Kore ulusal istihbarat ve güvenlik kurumları, devlet destekli bir siber tehdit aktörünün vatandaşları ve işletmeleri hedef aldığına dair ortak bir uyarı yayımlamıştır. Söz konusu aktörün, kimlik avı e-postaları ve güvenilir web sitelerini ele geçirerek gerçekleştirdiği \"watering hole\" saldırılarını kullandığı belirtilmiştir. Saldırganların, özellikle bankacılık ve kamu sitelerinde zorunlu tutulan güvenlik yazılımlarındaki yamalanmamış açıkları istismar ederek sistemlere sızdığı ifade edilm",
+    "title": "South Korea Warns of State-Backed Watering Hole Attacks",
+    "full_text": "South Korea Warns of State-Backed Watering Hole Attacks\n\nSouth Korea warned that nation-state actors are using phishing and compromised websites to silently infect citizens and businesses.\n\nSouth Korea agencies (The National Intelligence Service, the National Police Agency, the Korea Internet & Security Agency, and the Financial Security Institute) jointly published an advisory warning that a stat"
+   },
+   {
+    "tr_title": "Arch Linux'un Zararlı Yazılımlar Nedeniyle Paket Alımını Durdurması",
+    "paragraph": "Arch Linux projesi, Arch Kullanıcı Deposu (AUR) paketlerine yönelik artan kötü niyetli ele geçirme girişimleri nedeniyle paket sahiplenme özelliğini geçici olarak devre dışı bırakmıştır. 29 Temmuz 2026 tarihinde başladığı tespit edilen saldırı dalgasında, saldırganların sahipsiz paketleri devraldığı veya mevcut bakıcı hesaplarını ele geçirdiği belirtilmiştir. Yapılan teknik analizlerde, Tor ağı üzerinden çalışan ve sistem bilgilerini çalan Rust tabanlı bir zararlı yazılımın yayıldığı ifade edilm",
+    "title": "Arch Linux disables AUR package adoption to stop malware flood",
+    "full_text": "The Arch Linux project has temporarily disabled adoption of Arch User Repository (AUR) packages after a surge in malicious takeovers of existing packages.\n\nThe decision was announced on the distribution's mailing list by contributor Robin Candau, who said that the situation is temporary until a solution is found.\n\n“Due to the current influx of malicious package adoptions and follow-up commits made"
+   },
+   {
+    "tr_title": "Adform Takip Betiği Üzerinden Kripto Para Hırsızlığı Yapılması",
+    "paragraph": "Avrupa'nın en büyük reklam teknolojisi firmalarından biri olan Adform'un, reklam platformu üzerinden kripto para çalan kötü amaçlı yazılımlar yaydığı bir tedarik zinciri saldırısına uğradığı bildirilmiştir. Güvenlik araştırmacısı Kevin Beaumont tarafından tespit edilen bu saldırıda, şirketin takip betiğine yerleştirilen zararlı kodların, ziyaretçilerin panolarındaki Bitcoin ve Ethereum gibi cüzdan adreslerini saldırganın adresleriyle değiştirdiği ifade edilmiştir. Adform, 27 Temmuz 2026 tarihind",
+    "title": "Online ad firm Adform’s script compromised to steal cryptocurrency",
+    "full_text": "Online advertising firm Adform suffered a supply-chain attack that delivered cryptocurrency-stealing scripts to websites using its ad platform, replacing wallet addresses copied to visitors’ clipboards with ones controlled by an attacker.\n\nAdform is one of Europe’s largest adtech firms, providing a full-stack platform that includes Demand-Side Platform (DSP), Supply-Side Platform (SSP), ad servers"
+   },
+   {
+    "tr_title": "Hukuk Firmasına Yönelik HollowFrame ve Matryoshka Saldırısı",
+    "paragraph": "Blackpoint Cyber araştırmacıları, bir hukuk firmasını hedef alan ve HollowFrame adlı yeni bir yükleyici ile Matryoshka adlı arka kapıyı içeren siber saldırıyı raporlamıştır. Saldırının, içinde zararlı Windows kısayol dosyası barındıran şifreli bir arşiv bağlantısı içeren oltalama e-postasıyla başladığı belirtilmiştir. HollowFrame yükleyicisinin, analiz engelleme kontrolleri yaparak sistemde kalıcılık sağladığı ve Matryoshka adlı Rust tabanlı arka kapıyı yaydığı tespit edilmiştir. Matryoshka'nın ",
+    "title": "HollowFrame Loader Deploys Matryoshka Backdoor in Spear-Phishing Attack on Law Firm",
+    "full_text": "Cybersecurity researchers have shed light on a previously undocumented Go-based loader framework called HollowFrame and a Rust-based malware family tracked as Matryoshka.\n\nAccording to Blackpoint Cyber, the intrusion sequence begins with a spear-phishing message containing a link to an encrypted archive, which holds a Windows Shortcut (LNK). Executing the file triggers a multi-stage chain that inv"
+   },
+   {
+    "tr_title": "Avrupa Birliği'nin Yapay Zeka Denetim Ekibi Kurması",
+    "paragraph": "Avrupa Birliği, dünya genelindeki yapay zeka şirketlerini denetlemek ve yeni düzenlemelere uyumu sağlamak amacıyla Brüksel merkezli yeni bir birim oluşturmuştur. 31 Temmuz 2026 tarihinde duyurulan bu gelişme kapsamında, yapay zeka modellerinin cinsel içerikli materyal üretimi, sahte görüntülerin yayılması ve kamu altyapısına yönelik siber tehditler gibi ihlallerinin takip edileceği belirtilmiştir. Pazar günü yürürlüğe girecek olan Yapay Zeka Yasası uyarınca, şirketlerin sohbet botları veya görse",
+    "title": "EU to Crack Down on AI Deepfakes, Illicit Imagery and Hacking With New Team in Brussels",
+    "full_text": "Artificial Intelligence\n\nEU to Crack Down on AI Deepfakes, Illicit Imagery and Hacking With New Team in Brussels\n\nWhen the AI Act comes into force, AI companies will be required to make clear to consumers with labels or digital watermarks that chatbots or imagery are generated with AI.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nThe European Union rolled out a new team on Friday"
+   },
+   {
+    "tr_title": "Amgen'in Bulut Sistemlerinden Hasta Verilerinin Sızdırılması",
+    "paragraph": "Biyoteknoloji şirketi Amgen, üçüncü taraf hizmet sağlayıcıları tarafından işletilen bulut sistemlerinden kurumsal verilerin ve hasta bilgilerinin çalındığını duyurmuştur. Şirket, Temmuz 2026 döneminde yetkisiz erişimi tespit ettiğini ve bağımsız adli tıp uzmanlarıyla bir inceleme başlattığını açıklamıştır. Yapılan incelemeler sonucunda, mülkiyet haklarına tabi verilerin ve hastaların korunan sağlık bilgilerinin dışarı sızdırıldığı tespit edilmiştir. Amgen, 29 Temmuz 2026 tarihinde olayın etkilen",
+    "title": "Amgen says cloud data breach exposed patient health, proprietary info",
+    "full_text": "Pharmaceutical company Amgen says it suffered a data breach after threat actors stole corporate data and patient information stored in multiple cloud systems operated by third-party service providers.\n\nAmgen is a California-based biotechnology company that develops and manufactures medicines for serious illnesses, including cancer, cardiovascular disease, inflammation, and rare diseases.\n\nThe comp"
+   },
+   {
+    "tr_title": "4G ve 5G Çekirdek Ağlarında Güvenlik Açıklarının Keşfedilmesi",
+    "paragraph": "Singapur Nanyang Teknoloji Üniversitesi araştırmacıları, 4G ve 5G çekirdek ağlarını etkileyen 84 yeni güvenlik açığı tespit etmiştir. Araştırmada, bu zafiyetlerin temel nedeninin ağ işlevleri arasındaki 'örtük güven' hataları olduğu ve hizmet dışı bırakma (DoS) ile oturum ele geçirme saldırılarına yol açabileceği belirtilmiştir. iFinder adlı yapay zeka destekli bir sistem kullanılarak yapılan incelemelerde, açık kaynaklı yedi farklı ağ uygulamasının test edildiği ifade edilmiştir. Tespit edilen ",
+    "title": "Researchers Report 84 Flaws in 4G and 5G Cores, Including a Session Hijacking Flaw",
+    "full_text": "An academic study has disclosed a \"widespread class\" of security vulnerabilities impacting 4G and 5G core networks that, if successfully exploited, could trigger denial-of-service (DoS) attacks and even session hijacking, allowing an attacker to seize control of a user's network session.\n\nThe findings have been released by a group of researchers from Singapore's Nanyang Technological University in"
+   },
+   {
+    "tr_title": "Adobe Campaign Classic Yazılımında Kritik Güvenlik Güncellemesi",
+    "paragraph": "Adobe, kurumsal pazarlama otomasyon platformu Campaign Classic bünyesinde tespit edilen ve kullanıcı etkileşimi gerektirmeden kod yürütülmesine olanak tanıyan kritik bir güvenlik açığını gidermek için güncellemeler yayımlamıştır. CVE-2026-48449 koduyla takip edilen ve CVSS puanı 10.0 olarak belirlenen bu açığın, hatalı yetkilendirme mekanizmasından kaynaklandığı belirtilmiştir. Şirket ayrıca, SQL enjeksiyonu yoluyla dosya okunmasına imkan veren CVE-2026-48448 numaralı yüksek riskli bir açığı da ",
+    "title": "Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction",
+    "full_text": "Adobe has released security updates to address a maximum-severity security flaw in Campaign Classic (ACC), its enterprise-focused marketing automation platform, that could result in arbitrary code execution.\n\nThe vulnerability, tracked as CVE-2026-48449, carries a severity score of 10.0 on the CVSS scoring system.\n\nIt has been described as a case of incorrect authorization that could result in arb"
+   },
+   {
+    "tr_title": "Cihaz Kodu Oltalama Saldırılarının Küresel Ölçekte Artması",
+    "paragraph": "OAuth 2.0 yetkilendirme akışını kötüye kullanan cihaz kodu oltalama saldırılarının, 2026 yılında en hızlı büyüyen tehdit haline geldiği bildirilmiştir. Push Security tarafından paylaşılan verilere göre, bu teknik çok faktörlü kimlik doğrulamayı (MFA) ve geçiş anahtarlarını tamamen devre dışı bırakmaktadır. Saldırganların, kurbanları meşru Microsoft cihaz oturum açma sayfalarına yönlendirerek yetki kodlarını girmelerini sağladığı belirtilmiştir. EvilTokens ve Kali365 gibi hazır saldırı kitlerinin",
+    "title": "6 Reasons Why Device Code Phishing is the Fastest-Growing Threat of 2026",
+    "full_text": "Device code phishing - the abuse of the OAuth 2.0 device authorization grant to steal access tokens - has evolved from a niche red-team technique to an industrial-scale threat in under six months.\n\nDesigned for input-constrained devices like smart TVs, printers, and so on, the device authorization login flow has been adopted by a wide range of apps and use-cases that it wasn't originally intended "
+   },
+   {
+    "tr_title": "Android TV Cihazları Üzerinden Milyon Dolarlık Reklam Dolandırıcılığı Yapılması",
+    "paragraph": "Güvenlik araştırmacıları, Android TV kutularına önceden yüklenmiş uygulamalar aracılığıyla yürütülen ve Fuyao olarak adlandırılan kapsamlı bir reklam dolandırıcılığı ağını tespit etmiştir. Bitsight tarafından yapılan incelemede, siber suçluların cihaz kimliği sahteciliği, yapay zeka tarafından oluşturulan web siteleri ve konut tipi vekil sunucu hizmetlerini kullanarak yıllık 40 milyon dolara kadar gelir elde ettiği belirtilmiştir. Operasyonun, 120.000'den fazla cihazdan oluşan bir ağı yönettiği ",
+    "title": "Criminals used AI and children’s coding software to build a multimillion-dollar ad fraud empire",
+    "full_text": "Criminals used AI and children’s coding software to build a multimillion-dollar ad fraud empire\n\nA security investigation into inexpensive Android TV boxes led researchers to an ad fraud operation that had remained unnoticed for several years.\n\nFuyao apps ecosystem (Source: Bitsight)\n\nAccording to Bitsight, the operation, named Fuyao, uses preinstalled Android apps, device identity spoofing, AI-ge"
+   },
+   {
+    "tr_title": "Yapay Zeka Hizmet Sağlayıcılarını Hedefleyen Kimlik Avı Kampanyalarının Yürütülmesi",
+    "paragraph": "Siber tehdit aktörlerinin, ChatGPT gibi popüler yapay zeka hizmetlerini taklit ederek kullanıcıların ödeme bilgilerini ele geçirmeyi amaçlayan kimlik avı saldırıları düzenlediği tespit edilmiştir. SANS ISC tarafından paylaşılan bilgilere göre, söz konusu saldırıların özellikle faturalandırma süreçlerinin yenilendiği ay sonu dönemlerine denk getirilerek inandırıcılığının artırıldığı belirtilmiştir. Hazırlanan sahte e-postaların, kullanıcıları hizmete erişimlerini kaybetme korkusuyla manipüle eder",
+    "title": "Phishing Campaigns Targeting AI Solutions Providers, (Sat, Aug 1st)",
+    "full_text": "Phishing Campaigns Targeting AI Solutions Providers\n\nMost phishing campaigns rely on the fact that the victim is afraid to loose \"something\": money, access to information, ... Many brands have been impersonated by campaigns but I spotted some phishing emails that focus on AI services like ChatGPT.\n\nYesterday, I found this email that was properly designed but also sent with a very good timing: the "
+   },
+   {
+    "tr_title": "CISA'nın Açık Kaynak Yazılım Güvenliği Rehberini Yayınlaması",
+    "paragraph": "CISA, federal kurumların açık kaynak yazılımları güvenli bir şekilde kullanması ve değerlendirmesi için yeni bir rehber yayınlamıştır. 'Açık Kaynak Yazılım: Güvenlik İlkeleri ve Uygulamaları' başlıklı belgenin, yazılım tedarik zinciri risklerini yönetmeyi ve Log4Shell gibi zafiyetlerin etkilerini azaltmayı hedeflediği belirtilmiştir. Rehberde, kurumların açık kaynak projelerine katkıda bulunması, yamaların topluluklarla iş birliği içinde geliştirilmesi ve güvenilirlik değerlendirme çerçevelerini",
+    "title": "New CISA guidance targets software supply chain risks on secure use of open source software across federal agencies",
+    "full_text": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) published a new resource for federal agencies with considerations and best practices to use and assess Open Source Software (OSS) solutions, contribute to projects, produce OSS, and evaluate open source artificial intelligence (AI) models. Titled ‘Open Source Software: Security Principles and Practices,’ the guidance aligns with Exec"
+   },
+   {
+    "tr_title": "Siber Komutanlığın Silikon Vadisi'nde İnovasyon Ofisi Açması",
+    "paragraph": "ABD Siber Komutanlığı, teknoloji sektörüyle ilişkileri güçlendirmek ve modernizasyon çalışmalarını hızlandırmak amacıyla Silikon Vadisi'nde 'Cyber Command-West' adlı bir uydu ofis açmayı planlamaktadır. Ofisin başlangıçta Savunma İnovasyon Birimi bünyesinde faaliyet göstereceği ve Siber İnovasyon Harp Merkezi'ni destekleyeceği belirtilmiştir. Bu girişimin temel amacının, siber silahların ve taktiklerin geliştirilmesini hızlandırmak ve yeni teknolojilerin operasyonel kullanıma geçiş süresini kısa",
+    "title": "Cyber Command plans Silicon Valley office to drive innovation",
+    "full_text": "Cyber Command plans Silicon Valley office to drive innovation\n\nU.S. Cyber Command is looking to open an outpost in Silicon Valley as a way to build new relationships with the tech sector and bolster a major pillar of its internal modernization overhaul.\n\nOfficials hope to establish the satellite office, dubbed Cyber Command-West (CC-W), as soon as possible, according to three people familiar with "
+   },
+   {
+    "tr_title": "Kanada'nın BM Siber Suç Sözleşmesini İmzalamasının Riskleri",
+    "paragraph": "Kanada hükümetinin Birleşmiş Milletler Siber Suç Sözleşmesi'ni imzalaması, insan hakları ve internet özgürlüğü savunucuları tarafından eleştirilmiştir. Citizen Lab araştırmacısı Kate Robertson, sözleşmenin sınır ötesi gözetim ve elektronik delil paylaşımı için geniş yetkiler tanıdığını belirtmiştir. Siber suç yasalarının gazetecilere ve muhbirlerie karşı kötüye kullanılma riskinin arttığına dikkat çekilmiştir. Sözleşmenin, casus yazılımlar aracılığıyla elde edilen verilerin yasal kanallar üzerin",
+    "title": "Kate Robertson on the Risks That Lie Behind Canada’s Unexpected Signing of the UN Cybercrime Convention",
+    "full_text": "Kate Robertson on the Risks That Lie Behind Canada’s Unexpected Signing of the UN Cybercrime Convention\n\nEarlier this month, the Canadian government announced that it had signed the United Nations Convention against Cybercrime.\n\nSpeaking with Michael Geist of Law Bytes, senior research associate Kate Robertson argues that the convention is a cross-border surveillance and electronic evidence sharin"
+   },
+   {
+    "tr_title": "Kaliforniya'da Veri Silme Platformu DROP'un Faaliyete Geçmesi",
+    "paragraph": "Kaliforniya'da tüketicilerin kişisel verilerini tek bir tıkla sildirmelerine olanak tanıyan 'Delete Request and Opt-out Platform' (DROP), 1 Ağustos 2026 tarihinde resmi olarak faaliyete geçmiştir. 2023 yılında kabul edilen Delete Act kapsamında kurulan platformun, eyalet sakinlerinin 600'den fazla veri komisyoncusuna aynı anda silme talebi göndermesini sağladığı belirtilmiştir. Veri komisyoncularının, DROP üzerinden gelen talepleri her 45 günde bir kontrol etmek ve işlemek zorunda olduğu ifade e",
+    "title": "DROP Platform Lets Californians Reduce Digital Footprint",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nCybersecurity In-Depth: Feature articles on security strategy, latest trends, and people to know.\n\nDROP Platform Lets Californians Reduce Digital Footprint\n\nHundreds of thousands of California residents have already registered for the D"
+   },
+   {
+    "tr_title": "CISA'nın Yazılım Malzeme Listesi İçin Yeni Kılavuz Yayınlaması",
+    "paragraph": "CISA ve 16 uluslararası ortak kurum, yazılım malzeme listesi (SBOM) için asgari unsurları içeren güncellenmiş bir kılavuz yayınlamıştır. Yeni kılavuzun, 2021 yılındaki standartların yerini aldığı ve 10 yeni veri alanı ile çeşitli güncellemeler getirdiği belirtilmiştir. En önemli değişikliklerden birinin, yazılım bağımlılıklarının derinliğini kapsayan 'kapsam' öğesinin genişletilmesi olduğu ifade edilmiştir. Ancak bazı uzmanlar, bu prosedürel değişikliklerin gerçek risk yönetimini iyileştirmekte ",
+    "title": "CISA Issues Fresh SBOM Guidance. Did They Get It Right?",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nCybersecurity Operations\n\nCISA Issues Fresh SBOM Guidance. Did They Get It Right?\n\nA couple-dozen changes to SBOM fields will make them more comprehensive, but some argue that the framework lacks real risk-management improvements.\n\nA ga"
+   },
+   {
+    "tr_title": "DefCon Güvenlik Konferansında Akıllı Gözlüklerin Yasaklanması",
+    "paragraph": "Dünyanın önde gelen siber güvenlik konferanslarından DefCon, kayıt yeteneği olan akıllı gözlüklerin etkinlik alanında kullanımını yasakladığını duyurmuştur. Organizatörler, bu cihazların kayıt yapıp yapmadığını anlamanın tutarlı bir yolu olmadığını ve bu durumun mahremiyeti ihlal ederek güven ortamına zarar verdiğini belirtmiştir. Yasak kapsamında, numaralı camlara sahip akıllı gözlüklerin de kabul edilmeyeceği ve ziyaretçilerin standart gözlük getirmeleri gerektiği ifade edilmiştir. DefCon'un h",
+    "title": "DefCon security conference bans smart glasses with recording capabilities",
+    "full_text": "Smart eyewear users will be strictly monitored.\n\nIt’s a sign of the times: Security conference DefCon has added smart glasses to its list of banned audio- or video-recording devices.\n\nThe organizers have said that, with no consistent way to understand whether smart glasses are recording or not, they have taken the step to ban them in their entirety on the grounds that they erode trust and invade p"
    }
   ]
  }

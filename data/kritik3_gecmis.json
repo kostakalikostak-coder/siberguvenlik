@@ -1,28 +1,5 @@
 [
  {
-  "date": "2026-07-24",
-  "views": [
-   {
-    "tr_title": "Rusya Bağlantılı APT Grubu LAUNDRY BEAR'ın Batılı Kurumlara Yönelik Sıfır Tıklamalı Kimlik Avı Kampanyası Yürütmesi",
-    "paragraph": "Birleşik Krallık Ulusal Siber Güvenlik Merkezi (NCSC) ve 15 ülkeden uluslararası ortakları, Rusya devlet desteğiyle hareket eden APT grubu LAUNDRY BEAR tarafından yürütülen yeni bir siber casusluk kampanyasını ifşa etmiştir. Temmuz 2025 tarihinden bu yana süren faaliyetlerde, Zimbra Collaboration Suite (ZCS) yazılımını kullanan Batılı kuruluşların hedef alındığı ve hassas e-posta verilerinin çalındığı belirtilmiştir. \"Beehive\" olarak adlandırılan ve kullanıcı etkileşimi gerektirmeyen sıfır tıklamalı bir yöntemin kullanıldığı operasyonda; savunma, enerji, eğitim ve teknoloji gibi kritik sektörl",
-    "title": "UK and partners expose Russian state-supported actors for new ‘zero-click’ phishing campaign targeting Western organisations",
-    "full_text": "UK and partners expose Russian state-supported actors for new ‘zero-click’ phishing campaign targeting Western organisations\n\nGCHQ’s National Cyber Security Centre and international partners issue warning as ‘LAUNDRY BEAR’ cyber threat group exposed for targeted phishing campaign\n\nRussian state-supported actors develop new technique to target Western email platforms and gain persistent access to compromised networks\n\nOrganisations provided with trusted advice and support to protect sensitive data in the face of evolving cyber threats\n\nRussian state-supported cyber actors have targeted Western "
-   },
-   {
-    "tr_title": "İran Bağlantılı Siber Tehdit Aktörlerinin ABD'deki Su ve Enerji Sağlayıcılarını Hedef Alması",
-    "paragraph": "Amerika Birleşik Devletleri hükümeti, İran devlet desteğiyle hareket eden siber tehdit aktörlerinin ülkedeki su ve enerji sağlayıcılarına ait endüstriyel kontrol sistemlerini hedef aldığını açıklamıştır. FBI, NSA ve CISA tarafından yayımlanan ortak uyarıda, saldırganların internete açık programlanabilir mantık denetleyicilerine sızarak veri manipülasyonu yaptığı ve hizmet kesintilerine yol açtığı belirtilmiştir. Başlangıçta Rockwell marka denetleyicilerin hedef alındığı, ancak saldırıların Schneider Electric ve Siemens ürünlerini de kapsayacak şekilde genişlediği bildirilmiştir. Tehdit aktörle",
-    "title": "US government says Iran-linked hackers are disrupting American water and energy providers",
-    "full_text": "The U.S. government is warning that Iranian state-backed hackers are actively breaking in and disrupting industrial control systems at American water and energy providers. This new alert comes months after federal agencies warned of an escalation in hacking from Iranian actors amid the ongoing war.\n\nIn an advisory updated Wednesday, the FBI, the NSA, the Department of Energy, and CISA said Iranian hackers were targeting programmable logic controllers on internet-connected operational networks, allowing them to manipulate data on their displays, causing outages and disruption.\n\nThe Iranian hack"
-   },
-   {
-    "tr_title": "Rusya Bağlantılı UAC-0099 Grubunun Sahte Notepad++ Eklentisiyle Zararlı Yazılım Yayması",
-    "paragraph": "Ukrayna Bilgisayar Acil Durum Müdahale Ekibi (CERT-UA), Rusya ile uyumlu siber tehdit aktörü UAC-0099'un Windows sistemlerini tehlikeye atmak için sahte bir Notepad++ eklentisi kullandığı yeni bir kampanya hakkında uyarıda bulunmuştur. 2022 yılının ortalarından bu yana aktif olduğu bilinen grubun, MATCHBOIL.V2 olarak adlandırılan yeni bir zararlı yazılım sürümünü dağıtmak için kimlik avı epostalarını kullandığı belirtilmiştir. Saldırı sürecinde, kurbanlara PDF görünümlü bir betik dosyası içeren arşivlerin gönderildiği ve bu dosyanın arka planda meşru Notepad++ yazılımıyla birlikte LUNCHPOKE ko",
-    "title": "Fake Notepad++ Plugin Delivers MATCHBOIL.V2 in UAC-0099 Attacks",
-    "full_text": "The Computer Emergency Response Team of Ukraine (CERT-UA) has warned of a new campaign that involves the use of a malicious program that's dressed up as a Notepad++ plugin to compromise Windows systems.\n\nThe activity has been attributed by the agency to a threat cluster it tracks as UAC-0099, a Russia-aligned group that has previously observed weaponizing security flaws in WinRAR software to deliver a malware strain called LONEPAGE. Other cyber attacks mounted by the adversary have employed phishing emails as an initial access method to deploy MATCHBOIL, MATCHWOK, and DRAGSTARE. It's known to "
-   }
-  ]
- },
- {
   "date": "2026-07-25",
   "views": [
    {
@@ -180,6 +157,29 @@
     "paragraph": "Proofpoint, TA488 (Laundry Bear) olarak izlenen Rus casusluk grubunun, Microsoft Exchange Server'ın şirket içi Outlook Web Access (OWA) bileşenindeki CVE-2026-42897 kodlu XSS zafiyetini istismar ettiğini açıklamıştır. Mart ayından itibaren sıfır gün olarak kullanıldığı düşünülen bu açık, kurbanların herhangi bir bağlantıya tıklamasına gerek kalmadan sadece bozuk bir e-postayı açmalarıyla saldırgan kontrolündeki JavaScript kodunun çalışmasına neden olmaktadır. Saldırganlar, posta oturumlarına yerleşen ve parola değişikliklerinden etkilenmeyen OWAReaper adlı gelişmiş bir tarayıcı eklentisi kulla",
     "title": "Russian spies take their half-click email attack from Zimbra to Outlook",
     "full_text": "The Russian espionage crew that turned simply reading an email into a security risk has expanded beyond Zimbra, with Proofpoint saying it's now pulling the same half-click trick against Microsoft Outlook Web Access. Proofpoint says the cyber group it tracks as TA488, or \"Laundry Bear,\" began exploiting CVE-2026-42897, a cross-site scripting flaw in the Outlook Web Access (OWA) component of on-premises Exchange Server, a day before researchers and government agencies exposed the group's abuse of a zero-day in Zimbra Collaboration Suite. Unlike conventional phishing attacks, this one doesn't dep"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-01",
+  "views": [
+   {
+    "tr_title": "Rusya Bağlantılı Midnight Blizzard Grubunun Küresel Siber Saldırıları",
+    "paragraph": "Microsoft Tehdit İstihbaratı, Rusya menşeli siber tehdit aktörü Midnight Blizzard'ın bir alt kümesi olan Storm-2945'in, dünya genelinde konaklama sektörü ağlarını hedef alan CaptiveCrunch adlı bir kampanya yürüttüğünü bildirmiştir. Şubat 2026'dan bu yana süren operasyonlarda, otel ve konferans merkezlerindeki Wi-Fi ağlarının trafik manipülasyonu yoluyla ele geçirildiği ve kurumsal gezginlerin kimlik bilgilerinin hedeflendiği belirtilmiştir. Saldırganların, kullanıcıları sahte Microsoft hizmetlerine yönlendirerek kimlik avı yaptığı ve sistemlere CornFlake adlı gelişmiş bir uzaktan erişim truva ",
+    "title": "CaptiveCrunch: Midnight Blizzard targets travelers worldwide for malware delivery and credential theft",
+    "full_text": "The CaptiveCrunch campaign\n\nStorm-2945 and Midnight Blizzard\n\nCaptiveCrunch tradecraft and tooling\n\nHow to protect against CaptiveCrunch activity\n\nMicrosoft Defender detections and hunting guidance\n\nIndicators of compromise\n\nSince early May 2026, Microsoft Threat Intelligence has observed Storm-2945, a sub-cluster of Midnight Blizzard, conducting widespread but targeted traffic manipulation attacks involving hospitality sector networks served by captive portals worldwide. Despite some tactic, technique, and procedure (TTP) similarities to the Forest Blizzard DNS hijacking operation that we pub"
+   },
+   {
+    "tr_title": "CISA'nın Su Sistemlerine Yönelik Siber Saldırı Artışı Uyarısı",
+    "paragraph": "Amerika Birleşik Devletleri Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), su tesislerini hedef alan kötü niyetli faaliyetlerde önemli bir artış yaşandığını bildirmiştir. Minnesota eyaletindeki 30'dan fazla topluluk su sisteminin 26 Temmuz 2026 tarihinde başlayan koordineli bir siber saldırıdan etkilendiği belirtilmiştir. Federal yetkililer, söz konusu saldırıların İran bağlantılı siber tehdit aktörleri tarafından gerçekleştirilip gerçekleştirilmediğini araştırmaktadır. Saldırganların, programlanabilir mantık denetleyicilerinin (PLC) IP adreslerini değiştirerek ve operatör şifrelerini günc",
+    "title": "CISA warns of spike in attacks on water systems as Minnesota incidents probed",
+    "full_text": "CISA warns of spike in attacks on water systems as Minnesota incidents probed\n\nThe federal cybersecurity agency is reporting a “significant increase” in malicious activity aimed at water utilities, as investigators are reportedly trying to determine whether recent incidents in Minnesota might be the work of Iran-linked hackers.\n\nThe Cybersecurity and Infrastructure Security Agency said in a public alert on Thursday that facilities should “remove publicly exposed PLCs and other operational technology (OT) from the internet as soon as possible.” PLCs — programmable logic controllers — are at the"
+   },
+   {
+    "tr_title": "Interpol'ün Küresel Dolandırıcılık Ödemelerini Durdurma Mekanizmasını Kullanması",
+    "paragraph": "Interpol, siber suçluların nakit çıkışı yapmasını engellemek amacıyla kolluk kuvvetleri ve finans kuruluşlarından oluşan küresel bir ağ olan I-GRIP mekanizmasını devreye almıştır. Temmuz 2026 başında Singapur ve Umman makamlarının, Operation First Light 2026 kapsamında bu ağı kullanarak 6,6 milyon dolarlık bir iş e-postası dolandırıcılığını (BEC) engellediği bildirilmiştir. Operasyon süresince dolandırıcılıkla bağlantılı 31.000'den fazla banka hesabının bloke edildiği kaydedilmiştir. I-GRIP sisteminin, 196 ülkedeki ulusal kolluk birimlerini uluslararası finans firmalarıyla birbirine bağlayarak",
+    "title": "Interpol Leverages Global System to Curtail Fraud Payments",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nCybersecurity Operations\n\nCyberattacks & Data Breaches\n\nInterpol Leverages Global System to Curtail Fraud Payments\n\nWhen a fraudulent transaction occurs, law enforcement agencies must work quickly to halt payments before cybercriminals cash out.\n\nEarlier this month, Interpol revealed that authorities in Singapore and Oman used a worldwide network of law enforcement agencies and financial organizations to halt a $6.6 million payoff f"
    }
   ]
  }

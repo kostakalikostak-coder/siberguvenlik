@@ -29026,3 +29026,148 @@ Novee Security araştırmacıları; Anthropic, Google ve OpenAI gibi önde gelen
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 01 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Rusya Bağlantılı Midnight Blizzard Grubunun Küresel Siber Saldırıları
+─────────────────────────────────────────────────────────
+Microsoft Tehdit İstihbaratı, Rusya menşeli siber tehdit aktörü Midnight Blizzard'ın bir alt kümesi olan Storm-2945'in, dünya genelinde konaklama sektörü ağlarını hedef alan CaptiveCrunch adlı bir kampanya yürüttüğünü bildirmiştir. Şubat 2026'dan bu yana süren operasyonlarda, otel ve konferans merkezlerindeki Wi-Fi ağlarının trafik manipülasyonu yoluyla ele geçirildiği ve kurumsal gezginlerin kimlik bilgilerinin hedeflendiği belirtilmiştir. Saldırganların, kullanıcıları sahte Microsoft hizmetlerine yönlendirerek kimlik avı yaptığı ve sistemlere CornFlake adlı gelişmiş bir uzaktan erişim truva atı yerleştirdiği tespit edilmiştir. Microsoft, operasyonların önemli bir kısmında yapay zeka desteğinden yararlanıldığını ve Windows'un yanı sıra Android cihazların da hedef alındığını açıklamıştır. Rusya Dış İstihbarat Servisi (SVR) ile ilişkilendirilen grubun, casusluk faaliyetleri kapsamında veri toplama ve kalıcılık sağlama amacıyla karmaşık teknikler kullandığı kaydedilmiştir.
+(XXXXXXX, AÇIK -microsoft.com, 01.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] CISA'nın Su Sistemlerine Yönelik Siber Saldırı Artışı Uyarısı
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), su tesislerini hedef alan kötü niyetli faaliyetlerde önemli bir artış yaşandığını bildirmiştir. Minnesota eyaletindeki 30'dan fazla topluluk su sisteminin 26 Temmuz 2026 tarihinde başlayan koordineli bir siber saldırıdan etkilendiği belirtilmiştir. Federal yetkililer, söz konusu saldırıların İran bağlantılı siber tehdit aktörleri tarafından gerçekleştirilip gerçekleştirilmediğini araştırmaktadır. Saldırganların, programlanabilir mantık denetleyicilerinin (PLC) IP adreslerini değiştirerek ve operatör şifrelerini güncelleyerek sistemlere erişimi engellediği ifade edilmiştir. CISA, FBI ve Çevre Koruma Ajansı (EPA) ile birlikte yürütülen çalışmalarda, en az yedi eyaletteki tesislerin benzer olaylar rapor ettiği kaydedilmiştir. Tesislerin, internete açık durumdaki operasyonel teknoloji varlıklarını acilen ağdan ayırmaları gerektiği vurgulanmıştır.
+(XXXXXXX, AÇIK -therecord.media, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Interpol'ün Küresel Dolandırıcılık Ödemelerini Durdurma Mekanizmasını Kullanması
+─────────────────────────────────────────────────────────
+Interpol, siber suçluların nakit çıkışı yapmasını engellemek amacıyla kolluk kuvvetleri ve finans kuruluşlarından oluşan küresel bir ağ olan I-GRIP mekanizmasını devreye almıştır. Temmuz 2026 başında Singapur ve Umman makamlarının, Operation First Light 2026 kapsamında bu ağı kullanarak 6,6 milyon dolarlık bir iş e-postası dolandırıcılığını (BEC) engellediği bildirilmiştir. Operasyon süresince dolandırıcılıkla bağlantılı 31.000'den fazla banka hesabının bloke edildiği kaydedilmiştir. I-GRIP sisteminin, 196 ülkedeki ulusal kolluk birimlerini uluslararası finans firmalarıyla birbirine bağlayarak yasa dışı varlık transferlerine karşı müdahale süresini kısalttığı belirtilmektedir. Ağustos 2024 tarihinde de Singapur ve Doğu Timor arasındaki koordineli çalışma ile 40 milyon dolarlık bir transferin bu mekanizma sayesinde durdurulduğu ifade edilmiştir. Interpol, kripto para borsalarına yönelik uyarıların hızlandırılması için sanal varlık hizmet sağlayıcılarıyla iş birliğini artırmayı hedeflemektedir.
+(XXXXXXX, AÇIK -darkreading.com, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Güney Kore'de Devlet Destekli Oltalama Saldırıları Uyarısı
+─────────────────────────────────────────────────────────
+Güney Kore ulusal istihbarat ve güvenlik kurumları, devlet destekli bir siber tehdit aktörünün vatandaşları ve işletmeleri hedef aldığına dair ortak bir uyarı yayımlamıştır. Söz konusu aktörün, kimlik avı e-postaları ve güvenilir web sitelerini ele geçirerek gerçekleştirdiği "watering hole" saldırılarını kullandığı belirtilmiştir. Saldırganların, özellikle bankacılık ve kamu sitelerinde zorunlu tutulan güvenlik yazılımlarındaki yamalanmamış açıkları istismar ederek sistemlere sızdığı ifade edilmiştir. AhnLab tarafından hazırlanan Operation Double Barrel raporuna göre, 2025 yılından 2026 yılının ortalarına kadar 15 farklı yerel web sitesinin bu yöntemle istismar edildiği kaydedilmiştir. Enfekte olan cihazlardan tarayıcı şifrelerinin, belgelerin ve kaynak kodların çalındığı, ayrıca bu cihazların ağdaki diğer sistemlere sızmak için kullanıldığı bildirilmiştir. Yetkililer, kullanıcılara tüm güvenlik yazılımlarını güncellemeleri ve iki faktörlü kimlik doğrulamayı etkinleştirmeleri çağrısında bulunmuştur.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Arch Linux'un Zararlı Yazılımlar Nedeniyle Paket Alımını Durdurması
+─────────────────────────────────────────────────────────
+Arch Linux projesi, Arch Kullanıcı Deposu (AUR) paketlerine yönelik artan kötü niyetli ele geçirme girişimleri nedeniyle paket sahiplenme özelliğini geçici olarak devre dışı bırakmıştır. 29 Temmuz 2026 tarihinde başladığı tespit edilen saldırı dalgasında, saldırganların sahipsiz paketleri devraldığı veya mevcut bakıcı hesaplarını ele geçirdiği belirtilmiştir. Yapılan teknik analizlerde, Tor ağı üzerinden çalışan ve sistem bilgilerini çalan Rust tabanlı bir zararlı yazılımın yayıldığı ifade edilmiştir. Söz konusu zararlı yazılımın, tarayıcı kimlik bilgilerini, kripto para cüzdanlarını ve SSH anahtarlarını hedef aldığı kaydedilmiştir. Bir araştırmacı, popüler yazılımların da dahil olduğu 200'den fazla AUR paketinin bu kampanyadan etkilenmiş olabileceğini iddia etmiştir. Arch Linux yetkilileri, durum kontrol altına alınana kadar şüpheli paket işlemlerinin bildirilmesi ve kullanıcıların dikkatli olması gerektiğini açıklamıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 01.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Adform Takip Betiği Üzerinden Kripto Para Hırsızlığı Yapılması
+─────────────────────────────────────────────────────────
+Avrupa'nın en büyük reklam teknolojisi firmalarından biri olan Adform'un, reklam platformu üzerinden kripto para çalan kötü amaçlı yazılımlar yaydığı bir tedarik zinciri saldırısına uğradığı bildirilmiştir. Güvenlik araştırmacısı Kevin Beaumont tarafından tespit edilen bu saldırıda, şirketin takip betiğine yerleştirilen zararlı kodların, ziyaretçilerin panolarındaki Bitcoin ve Ethereum gibi cüzdan adreslerini saldırganın adresleriyle değiştirdiği ifade edilmiştir. Adform, 27 Temmuz 2026 tarihinde şüpheli etkinliği doğrulayarak kötü amaçlı kodları temizlediğini ve platformu korumak için ek önlemler aldığını açıklamıştır. Şirket, söz konusu kodun cihazlara kalıcı yazılım yüklemek için tasarlanmadığını, yalnızca etkilenen web sayfası açıkken çalıştığını belirtmiştir. Olayın bir haftadır sürdüğü ve antivirüs motorları tarafından tespit edilemediği kaydedilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 01.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Hukuk Firmasına Yönelik HollowFrame ve Matryoshka Saldırısı
+─────────────────────────────────────────────────────────
+Blackpoint Cyber araştırmacıları, bir hukuk firmasını hedef alan ve HollowFrame adlı yeni bir yükleyici ile Matryoshka adlı arka kapıyı içeren siber saldırıyı raporlamıştır. Saldırının, içinde zararlı Windows kısayol dosyası barındıran şifreli bir arşiv bağlantısı içeren oltalama e-postasıyla başladığı belirtilmiştir. HollowFrame yükleyicisinin, analiz engelleme kontrolleri yaparak sistemde kalıcılık sağladığı ve Matryoshka adlı Rust tabanlı arka kapıyı yaydığı tespit edilmiştir. Matryoshka'nın bir varyantının, komuta kontrol faaliyetleri için özel bir GitHub deposunu kullandığı ve kurbanlara özel dizinler üzerinden veri transferi gerçekleştirdiği ifade edilmiştir. Araştırmacılar, saldırganların her aşamada görünürlüğü azaltarak tespiti zorlaştırdığını kaydetmiştir. GitHub hesabının 2023 yılında oluşturulduğu ve 2026 yılına kadar güncellendiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] Avrupa Birliği'nin Yapay Zeka Denetim Ekibi Kurması
+─────────────────────────────────────────────────────────
+Avrupa Birliği, dünya genelindeki yapay zeka şirketlerini denetlemek ve yeni düzenlemelere uyumu sağlamak amacıyla Brüksel merkezli yeni bir birim oluşturmuştur. 31 Temmuz 2026 tarihinde duyurulan bu gelişme kapsamında, yapay zeka modellerinin cinsel içerikli materyal üretimi, sahte görüntülerin yayılması ve kamu altyapısına yönelik siber tehditler gibi ihlallerinin takip edileceği belirtilmiştir. Pazar günü yürürlüğe girecek olan Yapay Zeka Yasası uyarınca, şirketlerin sohbet botları veya görsellerin yapay zeka tarafından oluşturulduğunu etiketler veya dijital filigranlarla belirtmek zorunda kalacağı ifade edilmiştir. Avrupa Komisyonu, 38 kişilik yeni ekibin OpenAI ve DeepSeek gibi teknoloji devlerini izleyeceğini ve kurallara uymayan firmalara para cezası veya pazar erişiminin engellenmesi gibi yaptırımlar uygulanabileceğini açıklamıştır.
+(XXXXXXX, AÇIK -securityweek.com, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Amgen'in Bulut Sistemlerinden Hasta Verilerinin Sızdırılması
+─────────────────────────────────────────────────────────
+Biyoteknoloji şirketi Amgen, üçüncü taraf hizmet sağlayıcıları tarafından işletilen bulut sistemlerinden kurumsal verilerin ve hasta bilgilerinin çalındığını duyurmuştur. Şirket, Temmuz 2026 döneminde yetkisiz erişimi tespit ettiğini ve bağımsız adli tıp uzmanlarıyla bir inceleme başlattığını açıklamıştır. Yapılan incelemeler sonucunda, mülkiyet haklarına tabi verilerin ve hastaların korunan sağlık bilgilerinin dışarı sızdırıldığı tespit edilmiştir. Amgen, 29 Temmuz 2026 tarihinde olayın etkilenen dosya hacmi nedeniyle maddi bir önem taşıdığına karar vermiş, ancak finansal durumun veya operasyonel sonuçların bu durumdan ciddi şekilde etkilenmeyeceğini öngördüğünü belirtmiştir. Şirketin, etkilenen hastaları yasal gereklilikler çerçevesinde bilgilendireceği ve siber güvenlik uzmanlarıyla birlikte soruşturmayı sürdürdüğü ifade edilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 01.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Cihaz Kodu Oltalama Saldırılarının Küresel Ölçekte Artması
+─────────────────────────────────────────────────────────
+OAuth 2.0 yetkilendirme akışını kötüye kullanan cihaz kodu oltalama saldırılarının, 2026 yılında en hızlı büyüyen tehdit haline geldiği bildirilmiştir. Push Security tarafından paylaşılan verilere göre, bu teknik çok faktörlü kimlik doğrulamayı (MFA) ve geçiş anahtarlarını tamamen devre dışı bırakmaktadır. Saldırganların, kurbanları meşru Microsoft cihaz oturum açma sayfalarına yönlendirerek yetki kodlarını girmelerini sağladığı belirtilmiştir. EvilTokens ve Kali365 gibi hazır saldırı kitlerinin yaygınlaşmasıyla birlikte, Microsoft'un her gün 15 yeni kampanya raporladığı ifade edilmiştir. Tehdidin yalnızca Microsoft hesaplarıyla sınırlı kalmadığı, GitHub ve AWS gibi platformların da hedef alınabileceği uyarısı yapılmıştır. Uzmanlar, bu saldırıların kimlik doğrulama yerine yetkilendirme katmanını hedeflediğini ve geleneksel ağ güvenlik araçları tarafından engellenemediğini kaydetmiştir. Tespit çalışmalarının tarayıcı düzeyinde yapılması gerektiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Yapay Zeka Hizmet Sağlayıcılarını Hedefleyen Kimlik Avı Kampanyalarının Yürütülmesi
+─────────────────────────────────────────────────────────
+Siber tehdit aktörlerinin, ChatGPT gibi popüler yapay zeka hizmetlerini taklit ederek kullanıcıların ödeme bilgilerini ele geçirmeyi amaçlayan kimlik avı saldırıları düzenlediği tespit edilmiştir. SANS ISC tarafından paylaşılan bilgilere göre, söz konusu saldırıların özellikle faturalandırma süreçlerinin yenilendiği ay sonu dönemlerine denk getirilerek inandırıcılığının artırıldığı belirtilmiştir. Hazırlanan sahte e-postaların, kullanıcıları hizmete erişimlerini kaybetme korkusuyla manipüle ederek kredi kartı ve kimlik verilerini paylaşmaya zorladığı ifade edilmiştir. Hem kurumsal hem de bireysel kullanıcıların yapay zeka araçlarına olan artan bağımlılığının, saldırganlar için bu yöntemi stratejik bir hedef haline getirdiği kaydedilmiştir. Güvenlik uzmanları, ödeme bilgilerini talep eden ve aciliyet hissi uyandıran bu tür e-postalara karşı dikkatli olunması gerektiğini bildirmiştir. Saldırıların mevcut yapay zeka ekosistemindeki geniş kullanıcı kitlesini doğrudan hedef aldığı aktarılmıştır.
+(XXXXXXX, AÇIK -isc.sans.edu, 01.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] CISA'nın Açık Kaynak Yazılım Güvenliği Rehberini Yayınlaması
+─────────────────────────────────────────────────────────
+CISA, federal kurumların açık kaynak yazılımları güvenli bir şekilde kullanması ve değerlendirmesi için yeni bir rehber yayınlamıştır. 'Açık Kaynak Yazılım: Güvenlik İlkeleri ve Uygulamaları' başlıklı belgenin, yazılım tedarik zinciri risklerini yönetmeyi ve Log4Shell gibi zafiyetlerin etkilerini azaltmayı hedeflediği belirtilmiştir. Rehberde, kurumların açık kaynak projelerine katkıda bulunması, yamaların topluluklarla iş birliği içinde geliştirilmesi ve güvenilirlik değerlendirme çerçevelerinin oluşturulması tavsiye edilmektedir. CISA, federal kurumların kendi geliştirdikleri yazılımlarda 'varsayılan olarak açık kaynak' yaklaşımını benimsemelerini önermektedir. Ayrıca, yapay zeka modellerinin eğitim verilerinde şeffaflık sağlanması gerektiğine dikkat çekilmiştir. Belgede, açık kaynak program ofislerinin kurulmasının risk yönetimini iyileştireceği ifade edilmiştir. Kurumların, destek süresi dolmuş yazılımları kullanmaktan kaçınmaları ve güvenlik açıklarını bildirme süreçlerini uyarlamaları gerektiği kaydedilmiştir.
+(XXXXXXX, AÇIK -industrialcyber.co, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Siber Komutanlığın Silikon Vadisi'nde İnovasyon Ofisi Açması
+─────────────────────────────────────────────────────────
+ABD Siber Komutanlığı, teknoloji sektörüyle ilişkileri güçlendirmek ve modernizasyon çalışmalarını hızlandırmak amacıyla Silikon Vadisi'nde 'Cyber Command-West' adlı bir uydu ofis açmayı planlamaktadır. Ofisin başlangıçta Savunma İnovasyon Birimi bünyesinde faaliyet göstereceği ve Siber İnovasyon Harp Merkezi'ni destekleyeceği belirtilmiştir. Bu girişimin temel amacının, siber silahların ve taktiklerin geliştirilmesini hızlandırmak ve yeni teknolojilerin operasyonel kullanıma geçiş süresini kısaltmak olduğu ifade edilmiştir. Savunma Bakanlığı yetkilileri, bu merkezin operatörler ile endüstri geliştiricilerinin gerçek dünya geri bildirimlerine dayanarak birlikte çalışacağı bir ortam sağlayacağını açıklamıştır. Ofisin ayrıca bölgedeki siber yetenekleri ordu bünyesine çekmek için bir merkez işlevi göreceği kaydedilmiştir. Emekli askeri yetkililer, bu adımın özel sektörle ortaklık kurarak Siber Komutanlık kapasitesini artırmak için kritik bir aşama olduğunu belirtmiştir.
+(XXXXXXX, AÇIK -therecord.media, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] Kanada'nın BM Siber Suç Sözleşmesini İmzalamasının Riskleri
+─────────────────────────────────────────────────────────
+Kanada hükümetinin Birleşmiş Milletler Siber Suç Sözleşmesi'ni imzalaması, insan hakları ve internet özgürlüğü savunucuları tarafından eleştirilmiştir. Citizen Lab araştırmacısı Kate Robertson, sözleşmenin sınır ötesi gözetim ve elektronik delil paylaşımı için geniş yetkiler tanıdığını belirtmiştir. Siber suç yasalarının gazetecilere ve muhbirlerie karşı kötüye kullanılma riskinin arttığına dikkat çekilmiştir. Sözleşmenin, casus yazılımlar aracılığıyla elde edilen verilerin yasal kanallar üzerinden paylaşılmasına zemin hazırlayabileceği ifade edilmiştir. Robertson, bu durumun casus yazılım ekosistemini güçlendirebileceğini ve güvenlik araştırmacıları için risk oluşturabileceğini savunmuştur. Suç politikasının diplomatik bir pazarlık aracı olarak kullanılmaması gerektiği ve bu çerçevelerin demokratik özgürlükler için yüksek risk taşıdığı kaydedilmiştir. Kanada'nın daha önce karşı çıktığı bu anlaşmayı imzalamasının, internet üzerindeki platform hesap verebilirliği araştırmalarını olumsuz etkileyebileceği bildirilmiştir.
+(XXXXXXX, AÇIK -citizenlab.ca, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Kaliforniya'da Veri Silme Platformu DROP'un Faaliyete Geçmesi
+─────────────────────────────────────────────────────────
+Kaliforniya'da tüketicilerin kişisel verilerini tek bir tıkla sildirmelerine olanak tanıyan 'Delete Request and Opt-out Platform' (DROP), 1 Ağustos 2026 tarihinde resmi olarak faaliyete geçmiştir. 2023 yılında kabul edilen Delete Act kapsamında kurulan platformun, eyalet sakinlerinin 600'den fazla veri komisyoncusuna aynı anda silme talebi göndermesini sağladığı belirtilmiştir. Veri komisyoncularının, DROP üzerinden gelen talepleri her 45 günde bir kontrol etmek ve işlemek zorunda olduğu ifade edilmiştir. Haziran ayı itibarıyla 300.000'den fazla kişinin platforma kayıt yaptırdığı kaydedilmiştir. Uzmanlar, şirketlerin bu yeni düzenlemeye uyum sağlamakta zorlanabileceğini ve otomasyonun kritik önem taşıdığını vurgulamıştır. Bu uygulamanın, ABD genelinde veri gizliliği yasaları için bir model teşkil edebileceği belirtilmiştir. Platformun, veri ihlallerinden kaynaklanan riskleri azaltmayı ve bireylerin dijital ayak izlerini kontrol etmelerini sağlamayı hedeflediği bildirilmiştir.
+(XXXXXXX, AÇIK -darkreading.com, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] CISA'nın Yazılım Malzeme Listesi İçin Yeni Kılavuz Yayınlaması
+─────────────────────────────────────────────────────────
+CISA ve 16 uluslararası ortak kurum, yazılım malzeme listesi (SBOM) için asgari unsurları içeren güncellenmiş bir kılavuz yayınlamıştır. Yeni kılavuzun, 2021 yılındaki standartların yerini aldığı ve 10 yeni veri alanı ile çeşitli güncellemeler getirdiği belirtilmiştir. En önemli değişikliklerden birinin, yazılım bağımlılıklarının derinliğini kapsayan 'kapsam' öğesinin genişletilmesi olduğu ifade edilmiştir. Ancak bazı uzmanlar, bu prosedürel değişikliklerin gerçek risk yönetimini iyileştirmekte yetersiz kalabileceğini savunmuştur. Kılavuzun, zafiyetlerin istismar edilebilirliğini açıklayan VEX kavramını içermediği ve doğruluk güvencesini kapsam dışı bıraktığı eleştirilmiştir. CISA ayrıca, federal kurumların açık kaynak yazılım kullanımına yönelik ayrı bir rehber daha yayınlamıştır. Bu rehberde, yapay zeka modellerinin eğitim verilerinde şeffaflık sağlanması gerektiği vurgulanmıştır. SBOM verilerinin tedarik süreçlerinde ve olay müdahalesinde aktif olarak kullanılması gerektiği kaydedilmiştir.
+(XXXXXXX, AÇIK -darkreading.com, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] DefCon Güvenlik Konferansında Akıllı Gözlüklerin Yasaklanması
+─────────────────────────────────────────────────────────
+Dünyanın önde gelen siber güvenlik konferanslarından DefCon, kayıt yeteneği olan akıllı gözlüklerin etkinlik alanında kullanımını yasakladığını duyurmuştur. Organizatörler, bu cihazların kayıt yapıp yapmadığını anlamanın tutarlı bir yolu olmadığını ve bu durumun mahremiyeti ihlal ederek güven ortamına zarar verdiğini belirtmiştir. Yasak kapsamında, numaralı camlara sahip akıllı gözlüklerin de kabul edilmeyeceği ve ziyaretçilerin standart gözlük getirmeleri gerektiği ifade edilmiştir. DefCon'un halihazırda grup fotoğrafı çekilmemesi ve arka plandaki kişilerin bulanıklaştırılması gibi katı kuralları olduğu hatırlatılmıştır. Akıllı gözlük pazarındaki büyüme ve yapay zeka entegrasyonlarının, siber güvenlik yöneticileri (CISO) arasında veri güvenliği endişelerini artırdığı kaydedilmiştir. Apple, Google ve Samsung gibi devlerin yeni nesil ürünlerini piyasaya sürmeye hazırlandığı bir dönemde alınan bu kararın, fiziksel güvenlik ve gizlilik dengesini korumayı amaçladığı bildirilmiştir.
+(XXXXXXX, AÇIK -csoonline.com, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] 4G ve 5G Çekirdek Ağlarında Güvenlik Açıklarının Keşfedilmesi
+─────────────────────────────────────────────────────────
+Singapur Nanyang Teknoloji Üniversitesi araştırmacıları, 4G ve 5G çekirdek ağlarını etkileyen 84 yeni güvenlik açığı tespit etmiştir. Araştırmada, bu zafiyetlerin temel nedeninin ağ işlevleri arasındaki 'örtük güven' hataları olduğu ve hizmet dışı bırakma (DoS) ile oturum ele geçirme saldırılarına yol açabileceği belirtilmiştir. iFinder adlı yapay zeka destekli bir sistem kullanılarak yapılan incelemelerde, açık kaynaklı yedi farklı ağ uygulamasının test edildiği ifade edilmiştir. Tespit edilen açıkların 81 tanesine CVE tanımlayıcısı atandığı ve birçoğunun 4G sistemlerinden 5G'ye miras kaldığı kaydedilmiştir. Oturum ele geçirme saldırılarının, kurbanın veri trafiğini saldırgana yönlendirebileceği ve bu durumun ticari ağlarda da doğrulandığı bildirilmiştir. Araştırmacılar, bulut tabanlı dağıtımların saldırı yüzeyini genişlettiğini ve operatörlerin bu yapısal güvenlik sorunlarına karşı acil önlem alması gerektiğini vurgulamıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] Adobe Campaign Classic Yazılımında Kritik Güvenlik Güncellemesi
+─────────────────────────────────────────────────────────
+Adobe, kurumsal pazarlama otomasyon platformu Campaign Classic bünyesinde tespit edilen ve kullanıcı etkileşimi gerektirmeden kod yürütülmesine olanak tanıyan kritik bir güvenlik açığını gidermek için güncellemeler yayımlamıştır. CVE-2026-48449 koduyla takip edilen ve CVSS puanı 10.0 olarak belirlenen bu açığın, hatalı yetkilendirme mekanizmasından kaynaklandığı belirtilmiştir. Şirket ayrıca, SQL enjeksiyonu yoluyla dosya okunmasına imkan veren CVE-2026-48448 numaralı yüksek riskli bir açığı da kapattığını duyurmuştur. Adobe, söz konusu açıkların henüz saldırganlar tarafından istismar edildiğine dair bir bilgi bulunmadığını açıklamıştır. Kullanıcılara, Windows ve Linux sistemleri için sunulan v7: 7.4.3 build 9398 sürümüne geçmeleri tavsiye edilmiştir. Ek olarak, Adobe Bridge yazılımındaki sekiz kritik hatanın da bu güncelleme döngüsünde giderildiği bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 01.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[20] Android TV Cihazları Üzerinden Milyon Dolarlık Reklam Dolandırıcılığı Yapılması
+─────────────────────────────────────────────────────────
+Güvenlik araştırmacıları, Android TV kutularına önceden yüklenmiş uygulamalar aracılığıyla yürütülen ve Fuyao olarak adlandırılan kapsamlı bir reklam dolandırıcılığı ağını tespit etmiştir. Bitsight tarafından yapılan incelemede, siber suçluların cihaz kimliği sahteciliği, yapay zeka tarafından oluşturulan web siteleri ve konut tipi vekil sunucu hizmetlerini kullanarak yıllık 40 milyon dolara kadar gelir elde ettiği belirtilmiştir. Operasyonun, 120.000'den fazla cihazdan oluşan bir ağı yönettiği ve reklam platformlarını atlatmak için bilgisayarlı görü modelleri ile çocuklara yönelik kodlama araçlarını kullandığı ifade edilmiştir. Araştırmacılar, dolandırıcılık faaliyetlerinden elde edilen ödemelerin Hong Kong ve Singapur merkezli paravan şirketlere bağlı Google AdSense ve Taboola hesaplarına aktarıldığını kaydetmiştir. Enfekte cihazların, HDMI bağlantısı kesildiğinde reklam dolandırıcılığı yaptığı, bağlıyken ise internet trafiğini yönlendiren bir vekil sunucu gibi çalıştığı bildirilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 31.07.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
