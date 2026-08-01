@@ -534,6 +534,29 @@ class TestOrphanedGroupRestore:
         assert restored == []
         assert new_kept == [64, 16]
 
+    def test_singleton_quality_removal_is_not_restored(self):
+        """Kopyası OLMAYAN haber Pass 5 kalite gerekçesiyle atıldıysa geri
+        GELMEMELİ — bu bir grup boşalması değildir.
+
+        Gerçek regresyon (01.08.2026): ön şart yokken koruma, Pass 5'in kalite
+        filtresini fiilen iptal etti; kopyasız 6 düşük puanlı politika/analiz
+        haberi geri geldi ve gövde 12'den 17'ye şişti."""
+        sistem = HaberSistemi()
+        # 16 (alakasız, tekil) elendi; 64/14/20 grubundan 14 hayatta
+        _, restored = sistem._restore_orphaned_groups(
+            candidates_before=[64, 14, 20, 16], kept_ids=[14], top3_ids=[],
+            view_fn=self._view_fn(), score_records=self._SCORES)
+        assert 16 not in restored, 'Tekil kalite elemesi geri alınmamalı'
+        assert restored == []
+
+    def test_only_multi_member_groups_are_restored(self):
+        """Tekil haber elenmişken grup da boşalmışsa: SADECE grup geri gelir."""
+        sistem = HaberSistemi()
+        _, restored = sistem._restore_orphaned_groups(
+            candidates_before=[64, 14, 20, 16], kept_ids=[], top3_ids=[],
+            view_fn=self._view_fn(), score_records=self._SCORES)
+        assert restored == [64], f'Yalnızca grup çapası dönmeliydi, dönen: {restored}'
+
 
 class TestNoveltyTiebreak:
     """_apply_novelty_tiebreak — eşit puanlı manşet adayları arasında YENİ olanı

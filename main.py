@@ -3613,9 +3613,24 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         def _puan(aid):
             return (score_records.get(aid, {}) or {}).get('toplam', 0)
 
+        dropped_set = set(dropped)
         restored = []
         for aid in sorted(dropped, key=lambda x: -_puan(x)):
             view = view_fn(aid)
+            # ── ÖN ŞART: haber gerçekten ÇOK ÜYELİ bir aynı-olay grubuna mı aitti?
+            # Bu koruma "mükerrer temizliği olayı tamamen sildi" durumu içindir.
+            # TEK BAŞINA (kopyasız) bir haber Pass 5 tarafından KALİTE/KRİTER
+            # gerekçesiyle atıldıysa bu bir grup boşalması DEĞİLDİR ve geri
+            # alınmamalıdır. Bu şart olmadan koruma, Pass 5'in kalite filtresini
+            # fiilen iptal ediyordu: 01.08.2026 raporunda kopyası olmayan 6 adet
+            # düşük puanlı (52-73) politika/analiz haberi böyle geri geldi ve
+            # gövde 12'den 17'ye şişti.
+            grup_uyesi = any(
+                other != aid and _dedup.same_event(view, view_fn(other))
+                for other in dropped_set
+            )
+            if not grup_uyesi:
+                continue
             # Grubun bir üyesi hâlâ rapordaysa (gövde ya da KRİTİK 3) olay temsil
             # ediliyor demektir — geri alma.
             represented = any(

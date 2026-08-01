@@ -292,7 +292,24 @@ def event_keywords(text, limit=None):
 # eşleşme üretti; yalnızca paragrafa inince 4'e (sonra denylist ile 3'e) düştü.
 #
 # Türkçe paragraf normal cümle düzenindedir; cümle ORTASINDA büyük harfle
-# başlayan token gerçek bir özel addır. Cümle başı token'lar atlanır.
+# başlayan token gerçek bir özel addır.
+#
+# CÜMLE BAŞI sorunu ve ÇAPRAZ ONAY çözümü (2026-08-01):
+# İlk sürüm cümle başı token'ları TÜMÜYLE atıyordu. Bu, gerçek özel adları
+# konumlarına göre görünmez kılıyordu: 01.08 raporunda Minnesota su saldırısı
+# DÖRDÜNCÜ kez manşet oldu, çünkü o günkü paragrafta "Minnesota" cümle başında
+# geçiyordu ("...bildirilmiştir. Minnesota eyaletindeki 30'dan fazla...").
+#
+# Korpus taraması (161 paragraf) ayrımı net gösterdi: jenerik cümle-başı
+# token'lar Türkçe çekimli sıradan kelimelerdir ve cümle ORTASINDA HİÇ geçmezler
+# (saldırganların 22/0, yapılan 8/0, araştırmacılar 5/0, şirket 7/0); gerçek özel
+# adlar ise her iki konumda da görülür (minnesota 8/6, microsoft 14/20).
+#
+# Bu yüzden elle liste tutmak yerine ÇAPRAZ ONAY kuralı: cümle başındaki token
+# ADAY'dır; yalnızca KARŞILAŞTIRILAN DİĞER haber onu cümle ORTASINDA kullanmışsa
+# özel ad sayılır. İki tarafta da yalnızca cümle başında geçen token (ör. her iki
+# paragrafın da "Bitsight tarafından..." diye cümleye başlaması) ONAYLANMAZ —
+# liste bakımı gerektirmeyen, dile uygun ve kendi kendini güncelleyen bir kural.
 _ENTITY_SENT_START_RE = re.compile(r'(?:^|[.!?:;•\n]\s+|["“(])\s*$')
 _ENTITY_TOKEN_RE = re.compile(r'\b([A-ZÇĞİÖŞÜ][A-Za-zÇĞİÖŞÜçğıöşü0-9]{3,})')
 
@@ -326,11 +343,11 @@ _ENTITY_DENYLIST = frozenset({
 })
 
 
-def extract_entities(view_or_text):
-    """Haberin ÖZEL ADLARINI (özne/kurum/yer) normalize edilmiş kümeye çıkarır.
+def _entity_sets(view_or_text):
+    """(kesin, aday) — özel ad kümeleri.
 
-    Girdi bir görünüm (dict) ise YALNIZCA 'paragraph' alanı kullanılır; düz metin
-    verilirse doğrudan o metin taranır (test kolaylığı için).
+    kesin: cümle ORTASINDA büyük harfle geçen token'lar → kesin özel ad.
+    aday : yalnızca cümle BAŞINDA geçenler → ancak karşı belge onaylarsa geçerli.
 
     Token'lar Türkçe çekim eklerini tolere etmek için ilk 8 karaktere köklenir:
     "Minnesota'da" / "Minnesota'daki" / "Minnesota" → 'minnesot'."""
@@ -338,16 +355,42 @@ def extract_entities(view_or_text):
         text = view_or_text.get('paragraph') or ''
     else:
         text = view_or_text or ''
-    out = set()
+    kesin, aday = set(), set()
     for m in _ENTITY_TOKEN_RE.finditer(text):
-        # Cümle başındaki büyük harf özel ad kanıtı değildir
-        if _ENTITY_SENT_START_RE.search(text[max(0, m.start() - 40):m.start()]):
-            continue
         lw = m.group(1).lower()
         if lw in _ENTITY_DENYLIST or lw in CODENAME_DENYLIST:
             continue
-        out.add(lw[:8])
-    return out
+        kok = lw[:8]
+        if _ENTITY_SENT_START_RE.search(text[max(0, m.start() - 40):m.start()]):
+            aday.add(kok)
+        else:
+            kesin.add(kok)
+    return kesin, aday - kesin
+
+
+def extract_entities(view_or_text):
+    """Haberin KESİN özel adlarını döndürür (cümle ortasında geçenler).
+
+    Girdi bir görünüm (dict) ise YALNIZCA 'paragraph' alanı kullanılır; düz metin
+    verilirse doğrudan o metin taranır (test kolaylığı için).
+
+    Cümle başındaki adaylar BURAYA girmez — onlar yalnızca iki haber
+    karşılaştırılırken, karşı taraf cümle ortasında kullanmışsa sayılır
+    (bkz. shared_entities)."""
+    return _entity_sets(view_or_text)[0]
+
+
+def shared_entities(view_a, view_b):
+    """İki haberin PAYLAŞTIĞI özel adlar — çapraz onaylı.
+
+    Bir token şu üç durumda ortak sayılır:
+      • iki tarafta da cümle ortasında (kesin ∩ kesin),
+      • birinde cümle ortasında, diğerinde cümle başında (kesin ∩ aday).
+    İKİ TARAFTA DA yalnızca cümle başında geçen token sayılmaz: onun özel ad mı
+    yoksa sıradan bir Türkçe cümle açıcısı mı olduğuna dair kanıt yoktur."""
+    kesin_a, aday_a = _entity_sets(view_a)
+    kesin_b, aday_b = _entity_sets(view_b)
+    return (kesin_a & kesin_b) | (kesin_a & aday_b) | (aday_a & kesin_b)
 
 
 def _jaccard(a, b):
@@ -481,7 +524,7 @@ def same_event(view_a, view_b, explain=False, cross_day=False):
     #     kapatır. Kural 2b'den ÖNCE gelmek ZORUNDA — 2b, ortak yapısal kimlik
     #     yoksa erken False döndüğü için sonrasına konursa bu kural hiç çalışmaz.
     #     (bkz. _TOPIC_WITH_ENTITY yorumundaki ölçüm)
-    shared_ent = extract_entities(view_a) & extract_entities(view_b)
+    shared_ent = shared_entities(view_a, view_b)
     if shared_ent and topic >= _TOPIC_WITH_ENTITY:
         return _ret(True, f'entity:{",".join(sorted(shared_ent))}+topic={topic:.2f}')
 
@@ -553,7 +596,7 @@ def nearmiss_signal(view_a, view_b, cross_day=True):
     blob_b = ' '.join((hb, pb, eb, fb))
     shared = (extract_actors(blob_a) & extract_actors(blob_b)) | \
              (extract_codenames(blob_a) & extract_codenames(blob_b)) | \
-             (extract_entities(view_a) & extract_entities(view_b))
+             shared_entities(view_a, view_b)
     if not shared:
         return None
     topic = max(
