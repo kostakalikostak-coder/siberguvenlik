@@ -72,3 +72,4 @@
 2026-08-02 12:08 | DEDUP SIFIR - Schneier on Security: 7 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
 2026-08-02 12:08 | DEDUP SIFIR - Industrial Cyber: 9 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
 2026-08-02 12:08 | TABAN UYARISI - rapor 2 haber (<10)
+2026-08-02 13:02 | TABAN UYARISI - rapor 2 haber (<10)
