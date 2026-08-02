@@ -1,28 +1,5 @@
 [
  {
-  "date": "2026-07-25",
-  "views": [
-   {
-    "tr_title": "Tycoon2FA Platformunun Çökertilmesinin Kimlik Avı Yöntemlerini Dönüştürmesi",
-    "paragraph": "Microsoft tarafından yayımlanan rapora göre, Tycoon2FA adlı hizmet olarak kimlik avı platformunun faaliyetlerinin durdurulması, küresel siber saldırı yöntemlerinde belirgin bir değişime yol açmıştır. Platformla bağlantılı kimlik avı hacminin Mayıs 2026'da %74 oranında azaldığı ve QR kodlu saldırıların Haziran ayında 8,3 milyona gerilediği belirtilmiştir. Bu düşüşe rağmen, saldırganların Microsoft Teams gibi sosyal mühendislik kanallarına ve otomatik iş e-postası dolandırıcılığı yöntemlerine yöneldiği ifade edilmiştir. Microsoft, Teams tabanlı saldırı hacminin ikinci çeyrek boyunca istikrarlı b",
-    "title": "Tycoon2FA takedown reshapes the phishing landscape",
-    "full_text": "Some of the most common phishing techniques are declining, but not because attackers are giving up.\n\nTraditional phishing techniques are in decline as a result of the disruption of the Tycoon2FA phishing-as-a-service (PHaaS) platform, Microsoft said in a new report, “Email threat landscape: Q2 2026 trends and insights”.\n\n“Phishing volume linked to the platform fell 92% from pre-disruption averages, including QR code phishing and CAPTCHA-gated phishing both declining from their March highs,” the company wrote in the report.\n\nThe takedown reduced activity across multiple phishing categories, for"
-   },
-   {
-    "tr_title": "Tayland Maliye Bakanlığının Hermes Yapay Zeka Aracısı ve Hades Zararlı Yazılımıyla Hedef Alınması",
-    "paragraph": "Hunt.io araştırmacıları, Tayland Maliye Bakanlığını hedef alan ve Hermes adlı otonom bir yapay zeka aracısı ile Hades olarak adlandırılan yeni bir zararlı yazılımın kullanıldığı bir siber casusluk operasyonunu tespit etmiştir. 9-13 Temmuz 2026 tarihleri arasında Hong Kong merkezli bir sunucuda açık bırakılan dizinlerin incelenmesi sonucunda, saldırganların bakanlık sistemlerinde ayrıcalık yükseltme, dosya listeleme ve servis keşfi gibi faaliyetler yürüttüğü belirlenmiştir. Hermes yapay zeka aracısının, operatör onayı beklemeksizin komut yürütebilen otonom bir modda kullanıldığı ve rutin keşif ",
-    "title": "Thailand’s Ministry of Finance Targeted With Hermes AI Agent Running Unattended, Hades Implant Staged",
-    "full_text": "Thailand’s Ministry of Finance Targeted With Hermes AI Agent Running Unattended, Hades Implant Staged\n\nHunt.io uncovered a cyber-espionage attack on Thailand’s Finance Ministry using Hermes AI agent and Hades malware for reconnaissance and persistence.\n\nResearchers at Hunt.io have uncovered an intrusion targeting Thailand’s Ministry of Finance that offers a rare look inside a live cyber-espionage operation. Instead of recovering malware after the fact, the team found exposed staging servers containing attack tools, stolen credentials, active session material, AI agent logs, and a previously un"
-   },
-   {
-    "tr_title": "Europol'ün The Com Bağlantılı Binlerce İnternet Adresini Erişime Kapatması",
-    "paragraph": "Europol, \"The Com\" olarak adlandırılan ve şiddet yanlısı aşırılıkçı gruplardan oluşan merkeziyetsiz bir ağla bağlantılı 4.340 internet adresini (URL) kaldırmak üzere kapsamlı bir operasyon gerçekleştirmiştir. Haziran ve Temmuz 2026 tarihleri arasında dokuz ülkenin katılımıyla yürütülen operasyonda, çocukların cinsel istismarı, kendine zarar verme, hayvanlara eziyet ve şiddetli saldırı görüntüleri içeren içeriklerin hedef alındığı bildirilmiştir. Europol tarafından yapılan açıklamada, söz konusu ağın sosyal medya ve oyun platformları üzerinden gençleri hedef alarak radikalleştirdiği ve şantaj y",
-    "title": "Europol flags 4,340 URLs for removal in 'The Com' crackdown",
-    "full_text": "Europol has flagged 4,340 URLs for removal during a multi-week operation targeting online content linked to \"The Com,\" a loosely organized network of nihilistic violent extremist groups.\n\nInvestigators from nine countries (i.e., Belgium, Finland, Hungary, Ireland, Luxembourg, the Netherlands, Portugal, Spain, and Sweden) took part in what Europol called \"Referral Action Days\" between June and July 2026.\n\nThe joint action, which ties into the European Commission's ProtectEU counterterrorism agenda and was organized by Europol's EU Internet Referral Unit (EU IRU) and Spain's Intelligence Centre "
-   }
-  ]
- },
- {
   "date": "2026-07-26",
   "views": [
    {
@@ -180,6 +157,29 @@
     "paragraph": "Interpol, siber suçluların nakit çıkışı yapmasını engellemek amacıyla kolluk kuvvetleri ve finans kuruluşlarından oluşan küresel bir ağ olan I-GRIP mekanizmasını devreye almıştır. Temmuz 2026 başında Singapur ve Umman makamlarının, Operation First Light 2026 kapsamında bu ağı kullanarak 6,6 milyon dolarlık bir iş e-postası dolandırıcılığını (BEC) engellediği bildirilmiştir. Operasyon süresince dolandırıcılıkla bağlantılı 31.000'den fazla banka hesabının bloke edildiği kaydedilmiştir. I-GRIP sisteminin, 196 ülkedeki ulusal kolluk birimlerini uluslararası finans firmalarıyla birbirine bağlayarak",
     "title": "Interpol Leverages Global System to Curtail Fraud Payments",
     "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nCybersecurity Operations\n\nCyberattacks & Data Breaches\n\nInterpol Leverages Global System to Curtail Fraud Payments\n\nWhen a fraudulent transaction occurs, law enforcement agencies must work quickly to halt payments before cybercriminals cash out.\n\nEarlier this month, Interpol revealed that authorities in Singapore and Oman used a worldwide network of law enforcement agencies and financial organizations to halt a $6.6 million payoff f"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-02",
+  "views": [
+   {
+    "tr_title": "Adform Betiğine Yapılan Müdahaleyle Kripto Adreslerinin Değiştirilmesi",
+    "paragraph": "Reklam teknolojisi şirketi Adform, 27 Temmuz 2026 tarihinde s2.adform[.]net üzerinden sunulan trackpoint-async.js dosyasının manipüle edildiği bir tedarik zinciri saldırısı tespit etmiştir. Siber saldırganlar, meşru kütüphaneye XOR anahtarıyla gizlenmiş iki kötü amaçlı blok ekleyerek tarayıcı tarafında Bitcoin, Ethereum ve Tron cüzdan adreslerini otomatik değiştiren bir araç yerleştirmiştir. Bu kod, pano verilerini dört saniyede bir kontrol etmenin yanı sıra form alanlarındaki metin düğümlerini de değiştirerek ödemeleri saldırganlara yönlendirmiştir. Araştırmacı Kevin Beaumont, faaliyetin bir ",
+    "title": "Hackers Poison Adform Script to Swap Crypto Wallet Addresses Across Customer Sites",
+    "full_text": "Attackers modified a JavaScript file served by advertising technology company Adform, turning it into a browser-side tool that rewrites cryptocurrency wallet addresses.\n\nAdform detected the incident on July 27, 2026, removed the malicious code, notified affected clients, and reported it to authorities.\n\nAnyone who visited a site carrying the affected script on July 27 and copied a Bitcoin, Ethereum, or Tron address may have pasted a different address inserted by the malicious code instead.\n\nAdform is telling people to clear their browser cache because the altered file may remain cached after t"
+   },
+   {
+    "tr_title": "macOS Sistemlerini Hedef Alan AMOS Zararlı Yazılımı Tespit Edilmesi",
+    "paragraph": "31 Temmuz 2026 tarihinde yapılan laboratuvar analizlerinde, macOS kullanıcılarını hedef alan Atomic MacOS (AMOS) adlı bir casus yazılım enfeksiyonu tespit edilmiştir. Zararlı yazılımın, 'macOS araç takımı' adı altında sahte bir web sayfası üzerinden dağıtıldığı ve kullanıcıları Terminal penceresine belirli bir komut dizisini yapıştırmaya ikna ettiği belirlenmiştir. Bu komutun çalıştırılmasıyla birlikte AMOS zararlısının sisteme indirildiği ve kalıcılık sağladığı kaydedilmiştir. Yapılan incelemelerde, yazılımın kurbanın sisteminden tarayıcı verileri, kripto cüzdan bilgileri, mesajlaşma geçmişi ",
+    "title": "Atomic MacOS (AMOS) stealer infection, (Sun, Aug 2nd)",
+    "full_text": "Atomic MacOS (AMOS) stealer infection\n\nThis diary provides indicators from an Atomic MacOS (AMOS) stealer infection that I generated in my lab on July 31st, 2026.  This was distributed through a web page from getmacouscloud[.]com with instructions to paste text into a macOS Terminal window, supposedly for \"macOS toolkit,\" but instead the text is a command to retrieve and install AMOS stealer malware.\n\nOf note, I ran the text in the Terminal window twice, because I wanted to make sure I retrieved copies of files in the host's /tmp directory before entering the user account password.  This is wh"
+   },
+   {
+    "tr_title": "CISA'nın Su Sistemlerine Yönelik Siber Saldırı Uyarısı Yapması",
+    "paragraph": "ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), 26-27 Temmuz 2026 tarihlerinde Minnesota'daki 30'dan fazla topluluk su sistemini hedef alan koordinatörlü siber saldırılar üzerine kritik bir uyarı yayımlamıştır. Braham, Maple Plain, Plymouth ve South St. Paul gibi şehirleri etkileyen saldırılarda, özellikle Braham'da su arıtma tesisleri tamamen çevrimdışı kalarak manuel operasyonlara geçilmiştir. MNIT eyalet genelinde müdahale yeteneklerini etkinleştirirken, saldırganların internete açık Rockwell Automation, Schneider Electric ve Siemens marka programlanabilir mantık denetleyicilerinin (",
+    "title": "CISA Urges Utilities to Remove Internet-Exposed PLCs After Minnesota Attacks",
+    "full_text": "CISA Urges Utilities to Remove Internet-Exposed PLCs After Minnesota Attacks\n\nAfter attacks hit 30+ Minnesota water systems, CISA urged utilities to remove internet-exposed PLCs and strengthen OT security.\n\nBetween Sunday and Monday, July 26 and 27, a coordinated cyberattack hit operational technology (OT) systems at more than 30 community water utilities across the state, according to Minnesota IT Services (MNIT).\n\n“A coordinated cyberattack targeted operational technology at more than 30 Minnesota community water systems on July 26 and 27. Minnesota IT Services (MNIT) immediately activated t"
    }
   ]
  }

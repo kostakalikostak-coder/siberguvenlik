@@ -29171,3 +29171,36 @@ Güvenlik araştırmacıları, Android TV kutularına önceden yüklenmiş uygul
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 02 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Adform Betiğine Yapılan Müdahaleyle Kripto Adreslerinin Değiştirilmesi
+─────────────────────────────────────────────────────────
+Reklam teknolojisi şirketi Adform, 27 Temmuz 2026 tarihinde s2.adform[.]net üzerinden sunulan trackpoint-async.js dosyasının manipüle edildiği bir tedarik zinciri saldırısı tespit etmiştir. Siber saldırganlar, meşru kütüphaneye XOR anahtarıyla gizlenmiş iki kötü amaçlı blok ekleyerek tarayıcı tarafında Bitcoin, Ethereum ve Tron cüzdan adreslerini otomatik değiştiren bir araç yerleştirmiştir. Bu kod, pano verilerini dört saniyede bir kontrol etmenin yanı sıra form alanlarındaki metin düğümlerini de değiştirerek ödemeleri saldırganlara yönlendirmiştir. Araştırmacı Kevin Beaumont, faaliyetin bir haftadır sürdüğünü ve adreslerin sürekli değiştirildiğini belirtirken, zararlı yazılımın 84.32.102[.]230 IP adresine sayfa bilgilerini sızdırma potansiyeli taşıdığı saptanmıştır. Adform, 1.800 müşterisi bulunan platformundaki etkilenen dosyayı temizlemiş ve kullanıcılara tarayıcı önbelleklerini boşaltmaları yönünde kritik bir uyarı yayınlamıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 01.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] macOS Sistemlerini Hedef Alan AMOS Zararlı Yazılımı Tespit Edilmesi
+─────────────────────────────────────────────────────────
+31 Temmuz 2026 tarihinde yapılan laboratuvar analizlerinde, macOS kullanıcılarını hedef alan Atomic MacOS (AMOS) adlı bir casus yazılım enfeksiyonu tespit edilmiştir. Zararlı yazılımın, 'macOS araç takımı' adı altında sahte bir web sayfası üzerinden dağıtıldığı ve kullanıcıları Terminal penceresine belirli bir komut dizisini yapıştırmaya ikna ettiği belirlenmiştir. Bu komutun çalıştırılmasıyla birlikte AMOS zararlısının sisteme indirildiği ve kalıcılık sağladığı kaydedilmiştir. Yapılan incelemelerde, yazılımın kurbanın sisteminden tarayıcı verileri, kripto cüzdan bilgileri, mesajlaşma geçmişi ve kimlik bilgilerini çalarak 188.166.78[.]138 IP adresli komuta kontrol sunucusuna gönderdiği tespit edilmiştir. Analiz raporu, zararlının hem x86_64 hem de arm64 mimarileriyle uyumlu Mach-O ikili dosyaları kullandığını ortaya koymuştur. Kullanıcıların, kaynağı belirsiz komutları Terminal üzerinde çalıştırmamaları konusunda uyarıldığı bildirilmiştir.
+(XXXXXXX, AÇIK -isc.sans.edu, 02.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] CISA'nın Su Sistemlerine Yönelik Siber Saldırı Uyarısı Yapması
+─────────────────────────────────────────────────────────
+ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), 26-27 Temmuz 2026 tarihlerinde Minnesota'daki 30'dan fazla topluluk su sistemini hedef alan koordinatörlü siber saldırılar üzerine kritik bir uyarı yayımlamıştır. Braham, Maple Plain, Plymouth ve South St. Paul gibi şehirleri etkileyen saldırılarda, özellikle Braham'da su arıtma tesisleri tamamen çevrimdışı kalarak manuel operasyonlara geçilmiştir. MNIT eyalet genelinde müdahale yeteneklerini etkinleştirirken, saldırganların internete açık Rockwell Automation, Schneider Electric ve Siemens marka programlanabilir mantık denetleyicilerinin (PLC) şifrelerini ve IP adreslerini değiştirerek operatörleri sistem dışı bıraktığı saptanmıştır. Operasyonel kalıplar İran bağlantılı CyberAv3ngers grubuyla uyumlu bulunurken, CISA özellikle CVE-2021-22681 zafiyetine karşı internete açık tüm OT sistemlerinin ve hücresel modemlerin acilen izole edilmesini önermektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 02.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Coldcard Donanım Cüzdanlarındaki Hata Nedeniyle Büyük Hırsızlık Yaşanması
+─────────────────────────────────────────────────────────
+Galaxy Research tarafından yapılan analizde, 30 Temmuz 2026 tarihinde 41 dakika içerisinde 1.196 Bitcoin adresinden yaklaşık 70,2 milyon dolar değerinde 1.082,65 BTC'nin çalındığı bildirilmiştir. Söz konusu varlık kaybının, Coinkite firması tarafından üretilen Coldcard donanım cüzdanlarındaki bir yazılım hatasından kaynaklandığı tespit edilmiştir. Mart 2021 tarihli bir donanım yazılımı entegrasyon hatasının, tohum anahtar oluşturma sürecini donanımsal rastgele sayı üreteci yerine zayıf bir yazılımsal algoritmaya yönlendirdiği açıklanmıştır. Coinkite, 31 Temmuz 2026 tarihinde tüm etkilenen modeller için acil durum yazılımı yayımlamış ancak mevcut tohum anahtarların güvenli olmadığını belirtmiştir. Şirket, kullanıcıların yeni yazılımla yeni bir anahtar oluşturarak varlıklarını taşımaları gerektiğini vurgulamıştır. Saldırıyı gerçekleştiren aktörün kimliği henüz belirlenememiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 01.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

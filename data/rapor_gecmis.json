@@ -1,88 +1,5 @@
 [
  {
-  "date": "2026-07-25",
-  "views": [
-   {
-    "tr_title": "Tycoon2FA Platformunun Çökertilmesinin Kimlik Avı Yöntemlerini Dönüştürmesi",
-    "paragraph": "Microsoft tarafından yayımlanan rapora göre, Tycoon2FA adlı hizmet olarak kimlik avı platformunun faaliyetlerinin durdurulması, küresel siber saldırı yöntemlerinde belirgin bir değişime yol açmıştır. Platformla bağlantılı kimlik avı hacminin Mayıs 2026'da %74 oranında azaldığı ve QR kodlu saldırıların Haziran ayında 8,3 milyona gerilediği belirtilmiştir. Bu düşüşe rağmen, saldırganların Microsoft Teams gibi sosyal mühendislik kanallarına ve otomatik iş e-postası dolandırıcılığı yöntemlerine yöne",
-    "title": "Tycoon2FA takedown reshapes the phishing landscape",
-    "full_text": "Some of the most common phishing techniques are declining, but not because attackers are giving up.\n\nTraditional phishing techniques are in decline as a result of the disruption of the Tycoon2FA phishing-as-a-service (PHaaS) platform, Microsoft said in a new report, “Email threat landscape: Q2 2026 trends and insights”.\n\n“Phishing volume linked to the platform fell 92% from pre-disruption averages"
-   },
-   {
-    "tr_title": "Tayland Maliye Bakanlığının Hermes Yapay Zeka Aracısı ve Hades Zararlı Yazılımıyla Hedef Alınması",
-    "paragraph": "Hunt.io araştırmacıları, Tayland Maliye Bakanlığını hedef alan ve Hermes adlı otonom bir yapay zeka aracısı ile Hades olarak adlandırılan yeni bir zararlı yazılımın kullanıldığı bir siber casusluk operasyonunu tespit etmiştir. 9-13 Temmuz 2026 tarihleri arasında Hong Kong merkezli bir sunucuda açık bırakılan dizinlerin incelenmesi sonucunda, saldırganların bakanlık sistemlerinde ayrıcalık yükseltme, dosya listeleme ve servis keşfi gibi faaliyetler yürüttüğü belirlenmiştir. Hermes yapay zeka arac",
-    "title": "Thailand’s Ministry of Finance Targeted With Hermes AI Agent Running Unattended, Hades Implant Staged",
-    "full_text": "Thailand’s Ministry of Finance Targeted With Hermes AI Agent Running Unattended, Hades Implant Staged\n\nHunt.io uncovered a cyber-espionage attack on Thailand’s Finance Ministry using Hermes AI agent and Hades malware for reconnaissance and persistence.\n\nResearchers at Hunt.io have uncovered an intrusion targeting Thailand’s Ministry of Finance that offers a rare look inside a live cyber-espionage "
-   },
-   {
-    "tr_title": "Europol'ün The Com Bağlantılı Binlerce İnternet Adresini Erişime Kapatması",
-    "paragraph": "Europol, \"The Com\" olarak adlandırılan ve şiddet yanlısı aşırılıkçı gruplardan oluşan merkeziyetsiz bir ağla bağlantılı 4.340 internet adresini (URL) kaldırmak üzere kapsamlı bir operasyon gerçekleştirmiştir. Haziran ve Temmuz 2026 tarihleri arasında dokuz ülkenin katılımıyla yürütülen operasyonda, çocukların cinsel istismarı, kendine zarar verme, hayvanlara eziyet ve şiddetli saldırı görüntüleri içeren içeriklerin hedef alındığı bildirilmiştir. Europol tarafından yapılan açıklamada, söz konusu ",
-    "title": "Europol flags 4,340 URLs for removal in 'The Com' crackdown",
-    "full_text": "Europol has flagged 4,340 URLs for removal during a multi-week operation targeting online content linked to \"The Com,\" a loosely organized network of nihilistic violent extremist groups.\n\nInvestigators from nine countries (i.e., Belgium, Finland, Hungary, Ireland, Luxembourg, the Netherlands, Portugal, Spain, and Sweden) took part in what Europol called \"Referral Action Days\" between June and July"
-   },
-   {
-    "tr_title": "Microsoft Azure Automation Hizmetindeki Kritik Bir Açığın Kimlik Hırsızlığına Yol Açması",
-    "paragraph": "Microsoft, Azure Automation hizmetinde saldırganların diğer kiracıların kimliklerini ele geçirmesine ve verilerine erişmesine neden olabilecek kritik bir güvenlik açığını gidermiştir. CVE-2025-29827 kodlu ve 9.9 önem puanına sahip bu açığın, varsayılan bir yapılandırma hatası ile kod düzeyindeki kusurların birleşmesinden kaynaklandığı belirtilmiştir. Microsoft Azure Ağ Güvenliği Araştırma ekibinden Shay Shavit tarafından tespit edilen zafiyetin, saldırganların otomasyon betikleri oluşturmasına v",
-    "title": "Default Azure Automation Setting Enables Cross-Tenant Identity Takeover",
-    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nIdentity & Access Management Security\n\nVulnerabilities & Threats\n\nNews, news analysis, and commentary on the latest trends in cybersecurity technology.\n\nDefault Azure Automation Setting Enables Cross-Tenant Identity Takeover\n\nMicrosoft "
-   },
-   {
-    "tr_title": "Vatikan'ın Resmi Dua Uygulamasında 700 Binden Fazla Kullanıcı Verisinin Sızdırılması",
-    "paragraph": "Vatikan'ın resmi dua uygulaması olan Click to Pray bünyesinde, 700.000'den fazla kullanıcının kişisel bilgilerinin sızmasına neden olan bir güvenlik açığı tespit edilmiştir. \"BobDaHacker\" takma adlı bir araştırmacı tarafından keşfedilen zafiyetin, uygulamanın uygulama programlama arayüzü (API) üzerindeki bir yetkilendirme hatasından kaynaklandığı belirtilmiştir. Sızıntı kapsamında kullanıcıların isimleri, e-posta adresleri, ülkeleri ve hesap durumlarının herhangi bir kimlik doğrulaması gerekmeks",
-    "title": "Vatican's Official Prayer App Leaks 700K+ Global Users' PII",
-    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nVulnerabilities & Threats\n\nVatican's Official Prayer App Leaks 700K+ Global Users' PII\n\nA porous API endpoint exposes, names, email addresses, country, and site status, all of which can be easily gleaned by anyone with a browser.\n\nA pop"
-   },
-   {
-    "tr_title": "Microsoft Bing Sunucularında Komut Çalıştırılmasına İzin Veren Güvenlik Açıklarının Tespit Edilmesi",
-    "paragraph": "Otonom ofansif güvenlik girişimi XBOW, Microsoft Bing'in görsel işleme sunucularında sistem düzeyinde yetki erişimine imkan tanıyan iki kritik güvenlik açığı tespit etmiştir. CVE-2026-32194 ve CVE-2026-32191 kodlarıyla tanımlanan ve 9.8 CVSS puanı alan bu açıkların, özel olarak hazırlanmış SVG dosyaları aracılığıyla Microsoft'un üretim ortamındaki işçilerinde komut çalıştırılmasına yol açtığı belirtilmiştir. Yapılan testlerde, Windows sunucularında sistem yetkisi, Linux makinelerinde ise kök kul",
-    "title": "Bing Images Flaws Let Crafted SVGs Run Commands as SYSTEM on Microsoft's Servers",
-    "full_text": "A crafted SVG submitted to Bing's image search ran commands as NT AUTHORITY\\SYSTEM on Microsoft's production image-processing workers, and as root on the Linux machines in the same fleet.\n\nXBOW's testing got the same result on workers across different hosts and network ranges, so the problem sat in Bing's image tier, not on one bad machine. Microsoft issued two critical CVEs, CVE-2026-32194 and CV"
-   },
-   {
-    "tr_title": "Rockwell Automation'ın Arena Simülasyon Yazılımındaki Kod Çalıştırma Açıklarını Kapatması",
-    "paragraph": "Rockwell Automation, endüstriyel iş akışlarını modellemek için kullanılan Arena Simulation yazılımındaki dört adet yüksek kritiklikteki güvenlik açığını gidermiştir. CVE-2026-8085, CVE-2026-8312, CVE-2026-8313 ve CVE-2026-8314 olarak tanımlanan bu bellek bozulması hatalarının, kullanıcı verilerinin yetersiz doğrulanmasından kaynaklandığı belirtilmiştir. Siber güvenlik araştırmacısı Michael Heinzl tarafından tespit edilen bu açıkların, saldırganların hedef sistemde rastgele kod çalıştırmasına ola",
-    "title": "Rockwell Patches Code Execution Flaws in Arena Simulation Software",
-    "full_text": "Rockwell Patches Code Execution Flaws in Arena Simulation Software\n\nA researcher has explained how an attacker could exploit these vulnerabilities to target industrial organizations.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nRockwell Automation has patched four vulnerabilities in its Arena Simulation software that could let an attacker execute arbitrary code on an affected sys"
-   },
-   {
-    "tr_title": "Active Directory Kullanıcılarının Etki Alanı Denetleyicisi Kimliğine Bürünmesine Yol Açan Zafiyetin Belirlenmesi",
-    "paragraph": "Siber güvenlik araştırmacıları H0j3n ve Aniq Fakhrul, düşük yetkili Active Directory kullanıcılarının bir Etki Alanı Denetleyicisi gibi kimlik doğrulaması yapmasına olanak tanıyan Certighost kod adlı bir istismar yöntemi yayınlamıştır. Microsoft tarafından CVE-2026-54121 koduyla tanımlanan ve 14 Temmuz 2026 tarihinde yamalanan bu zafiyetin, Active Directory Sertifika Servisleri (AD CS) içindeki bir yetkilendirme hatasından kaynaklandığı belirtilmiştir. Araştırmacılar, saldırganların bu yöntemle ",
-    "title": "Certighost Exploit Lets Low-Privileged Active Directory Users Impersonate a Domain Controller",
-    "full_text": "Researchers H0j3n and Aniq Fakhrul published a working exploit on July 24 that lets a low-privileged Active Directory user obtain a certificate for a Domain Controller and authenticate as that machine.\n\nThey codenamed the flaw Certighost. Because Domain Controller accounts carry directory replication rights, the resulting Kerberos credential can retrieve the krbtgt secret through DCSync.\n\nMicrosof"
-   },
-   {
-    "tr_title": "Microsoft'un Windows Kurumsal Etkinleştirme Güvenliğini Donanım Tabanlı Doğrulamayla Sıkılaştırması",
-    "paragraph": "Microsoft, Windows toplu etkinleştirme işlemleri için kullanılan şirket içi Anahtar Yönetim Hizmeti (KMS) için Güvenilir Platform Modülü (TPM) destekli kanıtlamayı zorunlu hale getireceğini açıklamıştır. Bu değişiklikle birlikte, yazılım tabanlı güven modelinin yerini donanım destekli doğrulamanın alacağı ve kurumsal etkinleştirme güvenliğinin artırılacağı belirtilmiştir. Yeni modelde KMS sunucusunun, etkinleştirme tamamlanmadan önce kimliğini ve bütünlüğünü kanıtlayan bir rapor oluşturmak için ",
-    "title": "Microsoft tightens Windows enterprise activation security",
-    "full_text": "Microsoft tightens Windows enterprise activation security\n\nMicrosoft is making Trusted Platform Module (TPM)-backed attestation a requirement for Windows Key Management Service (KMS), the on-premises service used for Windows volume activation, replacing the software-only trust model with hardware-backed verification to strengthen enterprise activation security.\n\nAttestation will become mandatory w"
-   },
-   {
-    "tr_title": "OnTrac Lojistik Şirketinin Ağ İhlali Sonrası Müşteri Verilerinin Sızdırılması",
-    "paragraph": "Amerika Birleşik Devletleri merkezli paket teslimat şirketi OnTrac, kurumsal ağının siber saldırganlar tarafından ihlal edildiğini ve müşteri kişisel bilgilerine erişilmiş olabileceğini açıklamıştır. Güvenlik olayının 23 Mart 2026 tarihinde tespit edildiği, yapılan incelemeler sonucunda saldırganların 20-22 Mart 2026 tarihleri arasında belirli dosyalara erişim sağladığının belirlendiği ifade edilmiştir. Şirket, yetkililerle paylaştığı bildirimde isimler dışındaki veri türlerini gizli tuttuğu içi",
-    "title": "OnTrac notifies customers of data breach after network hack",
-    "full_text": "OnTrac parcel delivery company is informing that hackers breached its corporate network and may have accessed personal details belonging to its customers.\n\nThe incident was detected on March 23, and an internal investigation revealed that the attacker accessed certain files between March 20 and 22.\n\nApart from names, it is unclear what type of information was exposed, as the company redacted the d"
-   },
-   {
-    "tr_title": "Siber Tehdit Aktörlerinin Otel Wi-Fi Ağlarını Microsoft 365 Hesaplarını Çalmak İçin Kullanması",
-    "paragraph": "Siber tehdit aktörlerinin, otel ve konferans merkezlerindeki Wi-Fi cihazlarının DNS ayarlarını değiştirerek kullanıcıları sahte Microsoft 365 giriş sayfalarına yönlendirdiği tespit edilmiştir. Siber güvenlik şirketi ReliaQuest tarafından yapılan incelemede, en az Haziran 2026'dan beri süregelen bu kampanyanın finans, sağlık, enerji ve perakende gibi çeşitli sektörlerdeki kuruluşları hedef aldığı belirtilmiştir. Araştırmacılar, söz konusu faaliyetlerin Rusya bağlantılı APT grubu APT28 ile ilişkil",
-    "title": "Hackers hijack hotel Wi-Fi DNS to steal Microsoft 365 accounts",
-    "full_text": "Hackers are changing the DNS settings on Wi-Fi devices at hotels and conference centers to redirect users to fake Microsoft 365 login pages.\n\nThe campaign has been ongoing since at least June and impacts organizations in various sectors, including financial services, professional services, legal, health care, energy, and retail.\n\nCybersecurity company ReliaQuest identified compromised Wi-Fi gatewa"
-   },
-   {
-    "tr_title": "Teknoloji Şirketlerinin Açık Kaynak Yapay Zekanın Yaygınlaşmasına Destek Vermesi",
-    "paragraph": "Microsoft ve Meta dahil olmak üzere yirmiden fazla teknoloji şirketi, politika yapıcılara açık kaynak yapay zeka sistemlerini desteklemeleri yönünde çağrıda bulunmuştur. Yayınlanan açık mektupta, açık kaynaklı modellerin kısıtlı veya kapalı modellere kıyasla daha güvenli bir yaklaşım sunduğu ve savunma tarafındaki aktörlerin tehditleri tespit etme kabiliyetini artıracağı ifade edilmiştir. NVIDIA, IBM ve Dell Technologies gibi kurumların da imzaladığı metinde, açık modellerin şeffaflığı artırarak",
-    "title": "Microsoft, tech companies throw weight behind spread of open-source AI",
-    "full_text": "Microsoft, tech companies throw weight behind spread of open-source AI\n\nMicrosoft, along with more than two dozen tech companies, are pressing policymakers to support open-source AI systems and code across society, arguing that it will be a safer approach than attempting to restrict access or relying on a handful of closed, proprietary models.\n\nThe open letter, posted Friday, draws parallels to th"
-   },
-   {
-    "tr_title": "GitLab Sunucularında Kimlik Doğrulamalı Kullanıcıların Uzaktan Kod Çalıştırmasının Sağlanması",
-    "paragraph": "Güvenlik araştırmacısı Yuhang Wu, yamalanmamış GitLab 18.11.3 sunucularında \"git\" kullanıcısı yetkileriyle komut çalıştırılmasına olanak tanıyan bir kavram kanıtlama (PoC) çalışması yayımlamıştır. Söz konusu zafiyetin, GitLab Community Edition ve Enterprise Edition sürümlerinin 15.2.0 ile 19.0.1 arasındaki geniş bir aralığını etkilediği belirtilmiştir. Kimlik doğrulaması yapmış herhangi bir kullanıcının, özel olarak hazırlanmış iki Jupyter not defterini sisteme yükleyerek ve aralarındaki farkı t",
-    "title": "Researcher Publishes GitLab RCE PoC Letting Authenticated Users Run Commands as Git",
-    "full_text": "Security researcher Yuhang Wu at depthfirst has published a working proof-of-concept (PoC) exploit that executes commands as git on an unpatched self-managed GitLab 18.11.3 server.\n\nAn ordinary authenticated user triggers it by committing two crafted Jupyter notebooks and requesting their diff. The chain needs no administrator rights, continuous integration (CI) runner access, victim interaction, "
-   }
-  ]
- },
- {
   "date": "2026-07-26",
   "views": [
    {
@@ -858,6 +775,35 @@
     "paragraph": "Dünyanın önde gelen siber güvenlik konferanslarından DefCon, kayıt yeteneği olan akıllı gözlüklerin etkinlik alanında kullanımını yasakladığını duyurmuştur. Organizatörler, bu cihazların kayıt yapıp yapmadığını anlamanın tutarlı bir yolu olmadığını ve bu durumun mahremiyeti ihlal ederek güven ortamına zarar verdiğini belirtmiştir. Yasak kapsamında, numaralı camlara sahip akıllı gözlüklerin de kabul edilmeyeceği ve ziyaretçilerin standart gözlük getirmeleri gerektiği ifade edilmiştir. DefCon'un h",
     "title": "DefCon security conference bans smart glasses with recording capabilities",
     "full_text": "Smart eyewear users will be strictly monitored.\n\nIt’s a sign of the times: Security conference DefCon has added smart glasses to its list of banned audio- or video-recording devices.\n\nThe organizers have said that, with no consistent way to understand whether smart glasses are recording or not, they have taken the step to ban them in their entirety on the grounds that they erode trust and invade p"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-02",
+  "views": [
+   {
+    "tr_title": "Adform Betiğine Yapılan Müdahaleyle Kripto Adreslerinin Değiştirilmesi",
+    "paragraph": "Reklam teknolojisi şirketi Adform, 27 Temmuz 2026 tarihinde s2.adform[.]net üzerinden sunulan trackpoint-async.js dosyasının manipüle edildiği bir tedarik zinciri saldırısı tespit etmiştir. Siber saldırganlar, meşru kütüphaneye XOR anahtarıyla gizlenmiş iki kötü amaçlı blok ekleyerek tarayıcı tarafında Bitcoin, Ethereum ve Tron cüzdan adreslerini otomatik değiştiren bir araç yerleştirmiştir. Bu kod, pano verilerini dört saniyede bir kontrol etmenin yanı sıra form alanlarındaki metin düğümlerini ",
+    "title": "Hackers Poison Adform Script to Swap Crypto Wallet Addresses Across Customer Sites",
+    "full_text": "Attackers modified a JavaScript file served by advertising technology company Adform, turning it into a browser-side tool that rewrites cryptocurrency wallet addresses.\n\nAdform detected the incident on July 27, 2026, removed the malicious code, notified affected clients, and reported it to authorities.\n\nAnyone who visited a site carrying the affected script on July 27 and copied a Bitcoin, Ethereu"
+   },
+   {
+    "tr_title": "macOS Sistemlerini Hedef Alan AMOS Zararlı Yazılımı Tespit Edilmesi",
+    "paragraph": "31 Temmuz 2026 tarihinde yapılan laboratuvar analizlerinde, macOS kullanıcılarını hedef alan Atomic MacOS (AMOS) adlı bir casus yazılım enfeksiyonu tespit edilmiştir. Zararlı yazılımın, 'macOS araç takımı' adı altında sahte bir web sayfası üzerinden dağıtıldığı ve kullanıcıları Terminal penceresine belirli bir komut dizisini yapıştırmaya ikna ettiği belirlenmiştir. Bu komutun çalıştırılmasıyla birlikte AMOS zararlısının sisteme indirildiği ve kalıcılık sağladığı kaydedilmiştir. Yapılan incelemel",
+    "title": "Atomic MacOS (AMOS) stealer infection, (Sun, Aug 2nd)",
+    "full_text": "Atomic MacOS (AMOS) stealer infection\n\nThis diary provides indicators from an Atomic MacOS (AMOS) stealer infection that I generated in my lab on July 31st, 2026.  This was distributed through a web page from getmacouscloud[.]com with instructions to paste text into a macOS Terminal window, supposedly for \"macOS toolkit,\" but instead the text is a command to retrieve and install AMOS stealer malwa"
+   },
+   {
+    "tr_title": "CISA'nın Su Sistemlerine Yönelik Siber Saldırı Uyarısı Yapması",
+    "paragraph": "ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), 26-27 Temmuz 2026 tarihlerinde Minnesota'daki 30'dan fazla topluluk su sistemini hedef alan koordinatörlü siber saldırılar üzerine kritik bir uyarı yayımlamıştır. Braham, Maple Plain, Plymouth ve South St. Paul gibi şehirleri etkileyen saldırılarda, özellikle Braham'da su arıtma tesisleri tamamen çevrimdışı kalarak manuel operasyonlara geçilmiştir. MNIT eyalet genelinde müdahale yeteneklerini etkinleştirirken, saldırganların internete açık R",
+    "title": "CISA Urges Utilities to Remove Internet-Exposed PLCs After Minnesota Attacks",
+    "full_text": "CISA Urges Utilities to Remove Internet-Exposed PLCs After Minnesota Attacks\n\nAfter attacks hit 30+ Minnesota water systems, CISA urged utilities to remove internet-exposed PLCs and strengthen OT security.\n\nBetween Sunday and Monday, July 26 and 27, a coordinated cyberattack hit operational technology (OT) systems at more than 30 community water utilities across the state, according to Minnesota I"
+   },
+   {
+    "tr_title": "Coldcard Donanım Cüzdanlarındaki Hata Nedeniyle Büyük Hırsızlık Yaşanması",
+    "paragraph": "Galaxy Research tarafından yapılan analizde, 30 Temmuz 2026 tarihinde 41 dakika içerisinde 1.196 Bitcoin adresinden yaklaşık 70,2 milyon dolar değerinde 1.082,65 BTC'nin çalındığı bildirilmiştir. Söz konusu varlık kaybının, Coinkite firması tarafından üretilen Coldcard donanım cüzdanlarındaki bir yazılım hatasından kaynaklandığı tespit edilmiştir. Mart 2021 tarihli bir donanım yazılımı entegrasyon hatasının, tohum anahtar oluşturma sürecini donanımsal rastgele sayı üreteci yerine zayıf bir yazıl",
+    "title": "Coldcard Hardware Wallet Flaw Linked to $70 Million Bitcoin Theft in 41 Minutes",
+    "full_text": "An attacker drained 1,196 Bitcoin addresses in 41 minutes on July 30, taking 1,082.65 BTC worth about $70.2 million at the time. Galaxy Research mapped the sweep and tied it to a firmware flaw in Coldcard, the Bitcoin-only hardware wallet made by Canadian firm Coinkite.\n\nA March 2021 firmware integration error routed seed generation to a deterministic software pseudorandom number generator (PRNG) "
    }
   ]
  }
