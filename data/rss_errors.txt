@@ -116,3 +116,4 @@
 2026-08-03 12:11 | DEDUP SIFIR - Schneier on Security: 5 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
 2026-08-03 12:11 | TABAN UYARISI - rapor 6 haber (<10)
 2026-08-03 13:03 | TABAN UYARISI - rapor 7 haber (<10)
+2026-08-03 14:05 | TABAN UYARISI - rapor 9 haber (<10)
