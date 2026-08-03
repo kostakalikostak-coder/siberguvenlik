@@ -172,6 +172,18 @@ def _enforce_title_length(tr_title, max_words=TR_TITLE_MAX_WORDS):
     return t
 
 
+def _icerik_haritasi_mi(d):
+    """{id: {tr_title/paragraph}} biçiminde bir içerik haritası mı?
+
+    Sarmal açma kararında kullanılır: gerçek bir içerik haritası ASLA açılmamalı
+    (tek haberlik {"42": {...}} yanıtı da geçerlidir), sarmal ise açılmalıdır."""
+    if not isinstance(d, dict) or not d:
+        return False
+    icerikli = sum(1 for v in d.values()
+                   if isinstance(v, dict) and ('tr_title' in v or 'paragraph' in v))
+    return icerikli >= max(1, len(d) // 2)
+
+
 def _normalize_id_content(data):
     """Pass 2/3 çıktısını {id: {...}} sözlüğüne indirger.
 
@@ -179,12 +191,21 @@ def _normalize_id_content(data):
     modeller (ör. gemini-3-flash-preview) bunun yerine liste döndürebilir:
     [{"id": 3, "tr_title": ..., "paragraph": ...}, ...] veya tek anahtarlı
     bir sarmal {"articles": [...]}. Bu fonksiyon her şekli tek biçime çevirir;
-    beklenmeyen tipte boş sözlük döner."""
+    beklenmeyen tipte boş sözlük döner.
+
+    SARMAL SÖZLÜK DE AÇILIR (2026-08-03): eskiden yalnızca değeri LİSTE olan
+    tek-anahtarlı sarmal açılıyordu. {"summaries": {"3": {...}}} gibi değeri
+    SÖZLÜK olan sarmal açılmıyor, dışarıya {"summaries": ...} olarak dönüyor ve
+    çağıran taraf int("summaries") denemesinde sessizce vazgeçiyordu — yanıt
+    "başarılı" görünüp içerik SIFIR kalıyordu. Bedeli ölçüldü: Pass 2'nin ilk
+    çağrısı (günün en pahalı isteği, 10 haberin tam metni) her koşuda boşa
+    gidiyor ve iş 5-7 parçalı split-retry ile YENİDEN yapılıyordu."""
     if isinstance(data, dict):
-        # {"items": [...]} / {"results": [...]} gibi tek-listeli sarmalı aç
-        if len(data) == 1:
+        # {"items": [...]} / {"summaries": {...}} gibi tek-anahtarlı sarmalı aç.
+        # Kendisi zaten içerik haritasıysa DOKUNMA (tek haberlik yanıt da olabilir).
+        if len(data) == 1 and not _icerik_haritasi_mi(data):
             only_val = next(iter(data.values()))
-            if isinstance(only_val, list):
+            if isinstance(only_val, (list, dict)):
                 return _normalize_id_content(only_val)
         return _apply_title_limit(data)
     if isinstance(data, list):
@@ -197,6 +218,26 @@ def _normalize_id_content(data):
                 out[key] = item
         return _apply_title_limit(out)
     return {}
+
+
+def _log_sekil_uyusmazligi(label, data, uygulanan):
+    """Yanıt geldi ama TEK BİR içerik bile çıkarılamadıysa şekli görünür kıl.
+
+    Bu arıza tasarımı gereği sessizdi: yanıt "✅ başarılı" loglanıyor, ardından
+    split-retry devreye giriyor ve rapor yine de üretiliyordu — yani yalnızca
+    FATURADA görünüyordu. Üst düzey anahtarları basmak, bir sonraki koşuda
+    modelin hangi şekli döndürdüğünü tek bakışta gösterir."""
+    if uygulanan or not data:
+        return
+    if isinstance(data, dict):
+        sekil = f"dict, üst düzey anahtarlar={list(data)[:8]}"
+    elif isinstance(data, list):
+        ilk = data[0] if data else None
+        sekil = (f"list[{len(data)}], ilk öğe anahtarları="
+                 f"{list(ilk)[:8] if isinstance(ilk, dict) else type(ilk).__name__}")
+    else:
+        sekil = type(data).__name__
+    print(f"   🔬 [{label}] Yanıt geldi ama HİÇBİR içerik eşleşmedi → {sekil}")
 
 
 def _apply_title_limit(mapping):
@@ -4912,11 +4953,20 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 label='Pass2-DerinAnaliz',
             )
             if deep_data:
+                # Sayaç "kaç kayıt yazıldı"yı DEĞİL "kaç TOP-10 haberi karşılandı"yı
+                # ölçer: model uydurma ID döndürürse yazma başarılı olur ama
+                # top-10 yine içeriksiz kalır — teşhis o durumda da konuşmalı.
+                _istenen = set(top10_ids)
+                _karsilanan = 0
                 for k, v in _normalize_id_content(deep_data).items():
                     try:
-                        content_by_id[int(k)] = v
+                        aid = int(k)
                     except (ValueError, TypeError):
-                        pass
+                        continue
+                    content_by_id[aid] = v
+                    if aid in _istenen:
+                        _karsilanan += 1
+                _log_sekil_uyusmazligi('Pass2-DerinAnaliz', deep_data, _karsilanan)
 
         # Pass 2 tek çağrıyla yapılır; kısmi/başarısız yanıtta (ör. çıktı token
         # kesilmesi) üst sıradaki top-10 haberler içeriksiz kalır ve raporda HAM
@@ -5554,6 +5604,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             if aid in batch_set and aid not in content_by_id:
                 content_by_id[aid] = v
                 applied += 1
+        _log_sekil_uyusmazligi(f'{label_prefix}(n={len(batch)})', data, applied)
 
         # Bu batch içinde hâlâ içeriği gelmeyen ID'ler.
         # KRİTİK: model batch'in yalnızca bir kısmını döndürürse (ör. çıktı token

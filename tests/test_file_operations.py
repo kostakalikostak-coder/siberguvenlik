@@ -650,3 +650,58 @@ class TestArchiveIncludesKritik3:
         sistem.save_summary_to_archive(self.HTML)
         out2 = (tmp_path / 'arsiv.txt').read_text(encoding='utf-8')
         assert out1 == out2
+
+
+# ── LLM YANIT ŞEKLİ (Pass 2/3 içerik haritası) ─────────────────────────────
+# 2026-08-03 maliyet incelemesi: Pass 2'nin ilk çağrısı — günün EN PAHALI
+# isteği, 10 haberin tam metni — baktığımız her koşuda "✅ başarılı" loglanıp
+# SIFIR içerik üretiyor, iş 5-7 parçalı split-retry ile YENİDEN yapılıyordu.
+# Sebep: normalize edici tek-anahtarlı sarmalı yalnızca değeri LİSTE ise
+# açıyordu; değeri SÖZLÜK olan sarmal ({"summaries": {"3": {...}}}) dışarıya
+# olduğu gibi dönüyor, çağıran taraf int("summaries") denemesinde sessizce
+# vazgeçiyordu. Arıza yalnızca faturada görünüyordu.
+
+class TestIcerikHaritasiNormalize:
+    _C = {'tr_title': 'Başlık', 'paragraph': 'Paragraf'}
+
+    def _n(self, data):
+        from main import _normalize_id_content
+        return set(_normalize_id_content(data))
+
+    def test_duz_id_anahtarli_sozluk(self):
+        """Prompt'un istediği biçim — bozulmadan geçmeli."""
+        assert self._n({'3': dict(self._C), '7': dict(self._C)}) == {'3', '7'}
+
+    def test_tek_haberlik_yanit_sarmal_sanilmaz(self):
+        """REGRESYON: tek anahtarlı ama GERÇEK içerik haritası açılmamalı."""
+        assert self._n({'42': dict(self._C)}) == {'42'}
+
+    def test_liste_bicimi(self):
+        assert self._n([{'id': 3, **self._C}, {'id': 7, **self._C}]) == {3, 7}
+
+    def test_sarmal_liste(self):
+        assert self._n({'articles': [{'id': 3, **self._C}]}) == {3}
+
+    def test_sarmal_sozluk(self):
+        """ASIL DÜZELTME: değeri sözlük olan sarmal da açılmalı."""
+        assert self._n({'summaries': {'3': dict(self._C), '7': dict(self._C)}}) == {'3', '7'}
+
+    def test_ic_ice_sarmal(self):
+        assert self._n({'data': {'items': [{'id': 9, **self._C}]}}) == {9}
+
+    def test_bozuk_girdi_cokmez(self):
+        assert self._n(None) == set()
+        assert self._n('metin') == set()
+        assert self._n([]) == set()
+
+    def test_sekil_uyusmazligi_loglanir(self, capsys):
+        """Sıfır içerik çıkarsa şekil loglanmalı — arıza sessiz kalmasın."""
+        from main import _log_sekil_uyusmazligi
+        _log_sekil_uyusmazligi('Pass2', {'beklenmeyen': {'x': 1}}, 0)
+        cikti = capsys.readouterr().out
+        assert 'HİÇBİR içerik eşleşmedi' in cikti and 'beklenmeyen' in cikti
+
+    def test_basarili_durumda_log_basilmaz(self, capsys):
+        from main import _log_sekil_uyusmazligi
+        _log_sekil_uyusmazligi('Pass2', {'3': dict(self._C)}, 1)
+        assert capsys.readouterr().out == ''
