@@ -70,6 +70,7 @@ from src.config import (
     SCORING_LOG_FILE, SCORING_LOG_MAX_LINES,
     SOCIAL_SIGNAL_CONFIG, SKIP_URL_PATTERNS, FEED_SUMMARY_MIN_WORDS, ARTICLE_PROXY,
     ARTICLE_PROXY_MAX_CALLS, ARTICLE_PROXY_BUDGET_SEC, REPORT_FLOOR,
+    REPORT_FLOOR_RATIO, REPORT_FLOOR_MIN,
     get_ranking_prompt, get_deep_analysis_prompt, get_summary_batch_prompt,
     get_top3_selection_prompt, get_top3_verification_prompt,
     get_legacy_json_prompt, get_quality_review_prompt, get_dedup_review_prompt,
@@ -4466,6 +4467,13 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         cyber_pool = [a['id'] for a in articles
                       if records.get(a['id']) and _cyber_ok(records[a['id']])]
         muk = sum(1 for aid in cyber_pool if records[aid].get('mukerrer'))
+        # Günün GERÇEK ARZI: siber kapısını geçenlerden 'mükerrer' işaretliler
+        # düşülür — onlar zaten son 7 günde raporlanmış olaylar, rapora
+        # giremezler, dolayısıyla arzın parçası değildirler. Rapor tabanı buna
+        # göre ölçeklenir (bkz. REPORT_FLOOR_RATIO) ve rapora yapısal işaretle
+        # gömülür; idempotency kontrolü raporu tek başına okur, arzı başka
+        # türlü öğrenemez.
+        self._taze_havuz = max(0, len(cyber_pool) - muk)
         apply_mukerrer = True
         if cyber_pool and muk and (muk / len(cyber_pool) > 0.5 or len(cyber_pool) - muk < 12):
             apply_mukerrer = False
@@ -5269,36 +5277,71 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # logunda ve rss_errors.txt'de iz bırakır). Üretimi ENGELLEMEZ — sadece
         # "2 haber rezaleti" gibi sessiz daralmaları erken görünür kılar ki
         # havuz açlığı (feed/dedup/pencere) fark edilmeden geçmesin.
-        # REPORT_FLOOR artık src/config.py'den gelir — idempotency kontrolü
-        # (_rapor_basarili) ile AYNI eşiği kullanmak zorunda; iki yerde ayrı
-        # sabit tutmak sessizce ayrışma riski taşırdı.
-        if _rapor_haber_sayisi < REPORT_FLOOR:
-            uyari = (f"⚠️  TABAN UYARISI: rapor yalnızca {_rapor_haber_sayisi} haber "
-                     f"içeriyor (beklenen ≥{REPORT_FLOOR}). Havuz açlığı olası — "
-                     f"feed/dedup/tarih-penceresi kontrol edilmeli.")
+        # Taban artık günün TAZE arzına GÖRELİ (bkz. REPORT_FLOOR_RATIO) ve
+        # idempotency kontrolü (_rapor_basarili) ile AYNI fonksiyondan gelir;
+        # iki yerde ayrı hesap tutmak sessizce ayrışma riski taşırdı.
+        _taze_havuz = getattr(self, '_taze_havuz', 0)
+        _taban = _hesapla_taban(_taze_havuz)
+        # Kritik-3 kartları da rapordaki haberdir: idempotency sayacı
+        # (_rapor_haber_adedi) onları sayar, buradaki sayaç saymalı ki iki
+        # taraf aynı sayıyı görsün.
+        _rapor_haber_toplam = _rapor_haber_sayisi + len(top3_ids)
+        if _rapor_haber_toplam < _taban:
+            uyari = (f"⚠️  TABAN UYARISI: rapor yalnızca {_rapor_haber_toplam} haber "
+                     f"içeriyor (beklenen ≥{_taban}; taze havuz {_taze_havuz}). "
+                     f"Havuz açlığı olası — feed/dedup/tarih-penceresi kontrol edilmeli.")
             print(uyari)
             try:
                 self.rss_errors.append(
-                    f"TABAN UYARISI - rapor {_rapor_haber_sayisi} haber (<{REPORT_FLOOR})")
+                    f"TABAN UYARISI - rapor {_rapor_haber_toplam} haber (<{_taban}, "
+                    f"taze havuz {_taze_havuz})")
                 self._save_rss_errors()
             except Exception:
                 pass
+        else:
+            print(f"   ✅ Taban geçildi: {_rapor_haber_toplam} haber ≥ {_taban} "
+                  f"(taze havuz {_taze_havuz})")
 
         # ── Post-processing ───────────────────────────────────────────
         self._translate_social_signals()
         html = self._inject_social_box(html)
         html = self._remove_commentary_sentences(html)
         html = self._sanitize_html(html)
+        # Günün arzını rapora YAPISAL işaretle göm: idempotency kontrolü raporu
+        # tek başına okur, tabanı ancak buradan öğrenebilir. _sanitize_html'den
+        # SONRA eklenir ki temizleyici yorumu düşürmesin. Havuz bilinmiyorsa
+        # işaret YAZILMAZ — okuyucu tarafı işaretsizi "eski davranış" (sabit
+        # REPORT_FLOOR) sayar, sıfır yazmakla aynı sonuç ama niyet açık kalır.
+        if _taze_havuz > 0:
+            html = html.replace('</body>',
+                                f'<!-- RAPOR_TAZE_HAVUZ: {_taze_havuz} -->\n</body>', 1)
 
         html_index   = self._inject_manual_add(self._add_archive_links(html, is_archive=False), today_str)
         html_archive = self._add_archive_links(html, is_archive=True)
 
+        # ── GERİLEME KORUMASI (bkz. _gerileme_var_mi) ────────────────────────
+        # Daha AZ haberli yeni sürüm diskteki iyi sürümü ezemez. Parmak izi ve
+        # arşiv de yazılmaz: yayınlanmayan bir seçki "raporlandı" sayılamaz.
+        rapor_yolu = f"docs/raporlar/{now.strftime('%Y-%m-%d')}.html"
+        yeni_adet = _rapor_haber_adedi(html_archive)
+        if os.path.exists(rapor_yolu):
+            try:
+                with open(rapor_yolu, encoding='utf-8') as f:
+                    mevcut = f.read()
+                if _gerileme_var_mi(mevcut, yeni_adet):
+                    print(f"   🛡️  Gerileme koruması: mevcut rapor "
+                          f"{_rapor_haber_adedi(mevcut)} haber, yeni sürüm {yeni_adet} "
+                          f"— DİSKE YAZILMADI, iyi sürüm korunuyor.")
+                    return html
+            except OSError as e:
+                print(f"   ⚠️  Mevcut rapor okunamadı ({e}) — yazmaya devam.")
+
         os.makedirs("docs/raporlar", exist_ok=True)
         _atomic_write("docs/index.html", html_index)
-        _atomic_write(f"docs/raporlar/{now.strftime('%Y-%m-%d')}.html", html_archive)
+        _atomic_write(rapor_yolu, html_archive)
 
         print("✅ docs/index.html")
-        print(f"✅ docs/raporlar/{now.strftime('%Y-%m-%d')}.html")
+        print(f"✅ {rapor_yolu}")
 
         # Çapraz-gün dedup referansı: bugünkü KRİTİK 3'ü parmak-izi deposuna yaz.
         self._save_kritik3_history(top3_ids, content_by_id, articles_by_id)
@@ -5650,12 +5693,28 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         html_index   = self._inject_manual_add(self._add_archive_links(html, is_archive=False), today_str)
         html_archive = self._add_archive_links(html, is_archive=True)
 
+        # Gerileme koruması ana yoldakiyle AYNI (bkz. _gerileme_var_mi). Legacy
+        # yol Pass 1 tamamen çöktüğünde devreye girer ve tipik olarak daha ince
+        # bir seçki üretir — o günün diskteki iyi raporunu ezmemeli.
+        rapor_yolu = f"docs/raporlar/{now.strftime('%Y-%m-%d')}.html"
+        if os.path.exists(rapor_yolu):
+            try:
+                with open(rapor_yolu, encoding='utf-8') as f:
+                    mevcut = f.read()
+                if _gerileme_var_mi(mevcut, _rapor_haber_adedi(html_archive)):
+                    print(f"   🛡️  Gerileme koruması (legacy): mevcut rapor "
+                          f"{_rapor_haber_adedi(mevcut)} haber, yeni sürüm "
+                          f"{_rapor_haber_adedi(html_archive)} — DİSKE YAZILMADI.")
+                    return html
+            except OSError as e:
+                print(f"   ⚠️  Mevcut rapor okunamadı ({e}) — yazmaya devam.")
+
         os.makedirs("docs/raporlar", exist_ok=True)
         _atomic_write("docs/index.html", html_index)
-        _atomic_write(f"docs/raporlar/{now.strftime('%Y-%m-%d')}.html", html_archive)
+        _atomic_write(rapor_yolu, html_archive)
 
         print("✅ docs/index.html (legacy)")
-        print(f"✅ docs/raporlar/{now.strftime('%Y-%m-%d')}.html (legacy)")
+        print(f"✅ {rapor_yolu} (legacy)")
         # Çapraz-gün dedup referansı: bugünkü KRİTİK 3'ü parmak-izi deposuna yaz.
         self._save_kritik3_history(top3_ids, content_by_id, id_to_article)
         # Çapraz-gün rapor-geneli dedup referansı: bugün RAPORA giren TÜM haberler.
@@ -6257,23 +6316,61 @@ def _rapor_haber_adedi(content: str) -> int:
     return content.count('class="news-item') + content.count('class="top3-card"')
 
 
+def _hesapla_taban(siber_havuz: int) -> int:
+    """Günün siber havuzuna göreli rapor tabanı (bkz. REPORT_FLOOR_RATIO).
+
+    Havuz bilinmiyorsa (0) eski davranış: sabit REPORT_FLOOR. Üst sınır her
+    zaman REPORT_FLOOR'dur — normal günlerde eşik DEĞİŞMEZ, yalnızca arzın
+    yetmediği günlerde iner."""
+    if siber_havuz <= 0:
+        return REPORT_FLOOR
+    return max(REPORT_FLOOR_MIN, min(REPORT_FLOOR,
+                                     round(REPORT_FLOOR_RATIO * siber_havuz)))
+
+
+def _rapor_havuzu(content: str) -> int:
+    """Rapora gömülü TAZE havuz büyüklüğü; işaret yoksa 0 (eski raporlar)."""
+    m = re.search(r'<!--\s*RAPOR_TAZE_HAVUZ:\s*(\d+)\s*-->', content)
+    return int(m.group(1)) if m else 0
+
+
+def _gerileme_var_mi(mevcut: str, yeni_adet: int) -> bool:
+    """Yeni sürüm, diskteki sürümden GERİ mi gidiyor?
+
+    Aynı gün yeniden üretim raporu İYİLEŞTİRMEK için var; 08-03'te tersi
+    ölçüldü (6/7/9/7/7 haber — en iyi sürüm iki kez ezildi). Yeniden üretim
+    aynı ham havuzu kullandığından fark yalnızca LLM'in seçim gürültüsüdür.
+
+    Eşitlik gerileme SAYILMAZ: içerik düzeltmeleri (kesik paragraf onarımı,
+    başlık kurtarma) aynı haber sayısıyla gelir ve uygulanabilmelidir.
+    Diskteki sürüm fallback ise gerileme yoktur — her gerçek rapor ondan iyidir."""
+    return _rapor_yayinlandi(mevcut) and _rapor_haber_adedi(mevcut) > yeni_adet
+
+
 def _rapor_basarili(content: str) -> bool:
     """Rapor hem GERÇEK hem de YETERİNCE DOLU mu?
 
     İKİNCİ ÖLÇÜT — TABAN: fallback olmayan ama İÇİ BOŞ bir rapor da başarılı
     sayılmamalı. Eşik olmadan 2 haberlik bir rapor "başarılı" kabul edilip o
     günün sonraki cron slotlarını atlatıyor ve gün ince raporla kilitleniyordu
-    (07-27 12:08). REPORT_FLOOR altındaki rapor başarısız sayılır → sıradaki
-    slot yeniden dener (o sırada feed'ler tazelenmiş olur).
+    (07-27 12:08). Taban altındaki rapor başarısız sayılır → sıradaki slot
+    yeniden dener (o sırada feed'ler tazelenmiş olur).
+
+    Taban artık günün ARZINA göreli (RAPOR_TAZE_HAVUZ işareti): sabit 10
+    hafta sonu havuzunda ulaşılamaz oluyor ve günü sonsuz yeniden denemeye
+    kilitliyordu (08-03: beş koşu, 6/7/9/7/7 haber).
 
     DİKKAT: bu ölçüt YALNIZCA "yeniden denensin mi" kararında kullanılır.
     Link defteri buna BAĞLANAMAZ — bkz. yukarıdaki blok."""
     if not _rapor_yayinlandi(content):
         return False
     haber_sayisi = _rapor_haber_adedi(content)
-    if haber_sayisi < REPORT_FLOOR:
+    havuz = _rapor_havuzu(content)
+    taban = _hesapla_taban(havuz)
+    if haber_sayisi < taban:
         print(f"   ⚠️  Mevcut rapor yalnızca {haber_sayisi} haber içeriyor "
-              f"(<{REPORT_FLOOR}) — başarılı sayılmıyor, yeniden denenecek.")
+              f"(<{taban}" + (f", siber havuz {havuz}" if havuz else "") +
+              ") — başarılı sayılmıyor, yeniden denenecek.")
         return False
     return True
 

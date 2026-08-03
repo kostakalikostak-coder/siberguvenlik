@@ -343,6 +343,95 @@ class TestRaporDurumKapilari:
         assert _rapor_haber_adedi('<div class="news-item vuln-item">v</div>') == 1
 
 
+# ── HAVUZA GÖRELİ TABAN ────────────────────────────────────────────────────
+# Sabit 10 eşiği günün ARZINDAN bağımsızdı: hafta sonu havuzu daralınca
+# ulaşılamaz oluyor ve gün sonsuz yeniden denemeye kilitleniyordu. 08-03'te
+# beş tam LLM koşusu yapıldı (6/7/9/7/7 haber) ve en iyi sürüm iki kez ezildi.
+
+class TestGoreliTaban:
+    def _rapor(self, adet, taze=None):
+        h = ('<div class="top3-card">x</div>' * min(adet, 3)
+             + '<div class="news-item">y</div>' * max(0, adet - 3))
+        return h + (f'<!-- RAPOR_TAZE_HAVUZ: {taze} -->' if taze else '')
+
+    def test_normal_gunde_davranis_degismez(self):
+        """Taze arz bolsa taban eskisi gibi 10 — regresyon koruması.
+        Gerçek ölçüm: 07-28..08-01 taze havuz 26-39."""
+        from main import _hesapla_taban, REPORT_FLOOR
+        for taze in (26, 28, 29, 32, 39):
+            assert _hesapla_taban(taze) == REPORT_FLOOR
+
+    def test_ince_gunde_taban_iner(self):
+        """Gerçek ölçüm: 08-03 taze 9 → 4, 07-27 taze 12 → 5."""
+        from main import _hesapla_taban
+        assert _hesapla_taban(9) == 4
+        assert _hesapla_taban(12) == 5
+
+    def test_mutlak_alt_sinir(self):
+        """Arz ne kadar küçük olursa olsun taban FLOOR_MIN'in altına inmez."""
+        from main import _hesapla_taban, REPORT_FLOOR_MIN
+        assert _hesapla_taban(1) == REPORT_FLOOR_MIN
+        assert _hesapla_taban(3) == REPORT_FLOOR_MIN   # 08-02: taze 3
+
+    def test_havuz_bilinmiyorsa_eski_davranis(self):
+        """İşaretsiz (eski) rapor sabit REPORT_FLOOR ile değerlendirilir."""
+        from main import _hesapla_taban, _rapor_havuzu, REPORT_FLOOR
+        assert _rapor_havuzu('<div>hiç işaret yok</div>') == 0
+        assert _hesapla_taban(0) == REPORT_FLOOR
+
+    def test_isaret_okunur_ve_tabani_belirler(self):
+        """08-03 senaryosu: 7 haber + taze arz 9 → başarılı, döngü kırılır."""
+        from main import _rapor_basarili, _rapor_havuzu
+        rapor = self._rapor(7, taze=9)
+        assert _rapor_havuzu(rapor) == 9
+        assert _rapor_basarili(rapor) is True
+
+    def test_isaretli_ama_gercekten_bos_rapor_gecmez(self):
+        """Arz bolken ince rapor GERÇEK arızadır — taban 10'da kalır."""
+        from main import _rapor_basarili
+        assert _rapor_basarili(self._rapor(5, taze=39)) is False
+
+    def test_ham_havuz_kullanilsaydi_dongu_kirilmazdi(self):
+        """Payda seçiminin gerekçesini çivileyen test.
+
+        08-03'te HAM siber havuz 21, TAZE havuz 9'du (12'si son 7 günde zaten
+        raporlanmış olaylar). Ham havuz kullanılsaydı taban 9 çıkar, günün
+        gerçek arzı 9 tazeyken 9 haber istenir ve gün yeniden denemeye
+        kilitlenmeye devam ederdi."""
+        from main import _hesapla_taban
+        assert _hesapla_taban(21) == 9      # ham havuz → ulaşılamaz eşik
+        assert _hesapla_taban(9) == 4       # taze havuz → gerçekçi eşik
+
+
+# ── GERİLEME KORUMASI ──────────────────────────────────────────────────────
+# 08-03 ölçümü: aynı gün beş koşu 6/7/9/7/7 haber üretti; en iyi sürüm (9)
+# iki kez daha kötüsüyle EZİLDİ. Yeniden üretim aynı ham havuzu kullandığı
+# için fark yalnızca LLM'in seçim gürültüsüdür.
+
+class TestGerilemeKorumasi:
+    def _rapor(self, adet, fallback=False):
+        h = '<div class="news-item">y</div>' * adet
+        return h + ('<!-- RAPOR_DURUM: FALLBACK -->' if fallback else '')
+
+    def test_daha_az_haberli_surum_yazilmaz(self):
+        from main import _gerileme_var_mi
+        assert _gerileme_var_mi(self._rapor(9), 7) is True
+
+    def test_daha_cok_haberli_surum_yazilir(self):
+        from main import _gerileme_var_mi
+        assert _gerileme_var_mi(self._rapor(6), 9) is False
+
+    def test_esitlik_gerileme_sayilmaz(self):
+        """İçerik düzeltmeleri aynı haber sayısıyla gelir — uygulanabilmeli."""
+        from main import _gerileme_var_mi
+        assert _gerileme_var_mi(self._rapor(9), 9) is False
+
+    def test_fallback_uzerine_her_zaman_yazilir(self):
+        """Diskteki sürüm fallback ise her gerçek rapor ondan iyidir."""
+        from main import _gerileme_var_mi
+        assert _gerileme_var_mi(self._rapor(20, fallback=True), 3) is False
+
+
 # ── Devlet/APT kanıtı: atıf İFADESİ veya AKTÖR KİMLİĞİ ─────────────────────
 # 2026-07-30: OpenAI'nin kendi modelinin test sırasında korumalı alandan kaçması
 # haberi nation_state_apt etiketlendi ve YALNIZCA kategori önceliği sayesinde

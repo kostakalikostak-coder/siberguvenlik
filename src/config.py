@@ -1348,6 +1348,44 @@ ARTICLE_PROXY_BUDGET_SEC = 180   # proxy'ye harcanacak toplam saniye tavanı
 # sayılıp o günün sonraki cron slotlarını atlatıyor ve gün ince raporla
 # kilitleniyordu (07-27 12:08'de yaşandı). Eşiğin altındaki rapor yeniden denenir.
 REPORT_FLOOR = 10
+
+# ── TABAN ARZA GÖRELİ (2026-08-03 ölçümü) ─────────────────────────────────
+# Sabit 10 eşiği, günün ARZINDAN bağımsızdı: hafta sonu havuzu daralınca
+# matematiksel olarak ulaşılamaz hale geliyor ve gün kalıcı "başarısız"
+# damgası yiyordu. 08-03'te bedeli ölçüldü — BEŞ tam LLM koşusu
+# (09:12/10:03/11:05/12:13/13:02), sonuç sırasıyla 6, 7, 9, 7, 7 haber:
+# yeniden denemeler raporu iyileştirmedi, en iyi sürümü (9) EZDİ.
+#
+#     taban = clamp(round(RATIO × TAZE_havuz), FLOOR_MIN, REPORT_FLOOR)
+#
+# TAZE havuz = siber kapısından geçen haberler EKSİ 'mükerrer' işaretliler.
+# Payda neden ham siber havuz DEĞİL: 08-03'te siber havuz 21'di ama 12'si
+# zaten son 7 günde raporlanmış olaylardı; onlar rapora giremeyeceği için
+# arzın parçası sayılamaz. Ham havuz kullanılsaydı taban 9 çıkar, günün
+# gerçek arzı 9 tazeyken 9 haber istenir ve döngü KIRILMAZDI.
+#
+# Üst sınır eskisi gibi 10'dur — normal günlerde davranış DEĞİŞMEZ; taban
+# yalnızca arzın yetmediği günlerde iner. Taze havuz rapora yapısal işaretle
+# (RAPOR_TAZE_HAVUZ) gömülür: idempotency kontrolü raporu tek başına okur,
+# arzı başka türlü bilemez.
+#
+# Oran gerçek 8 günlük skorlama_log verisiyle seçildi (tahmin DEĞİL):
+#   gün     siber  muk  TAZE  taban  rapor  sonuç
+#   07-27      16    4    12      5     12  geçer
+#   07-28      41   12    29     10     29  geçer
+#   07-29      54   15    39     10     39  geçer
+#   07-30      58   26    32     10     32  geçer
+#   07-31      54   26    28     10     28  geçer
+#   08-01      40   14    26     10     13  geçer
+#   08-02       9    6     3      4      2  KALIR (o gün 3 taze haber vardı)
+#   08-03      21   12     9      4      7  geçer → döngü kırılır
+# 0.45'te normal günlerin hepsi 10'da kalıyor (davranış aynı) ve yalnızca
+# 08-02/08-03 gibi kıtlık günleri iniyor. 08-02'nin KALMASI doğrudur: 2
+# haberlik sayfa rapor değildir, o gün yeniden denemek gerekir.
+REPORT_FLOOR_RATIO = 0.45
+# Mutlak alt sınır: arz ne kadar küçük olursa olsun 4 haberin altındaki bir
+# sayfa rapor sayılmaz (fallback'ten ayırt edilemez hale gelir).
+REPORT_FLOOR_MIN = 4
 CONTENT_SELECTORS = {
     # ── Ölçülerek eklendi (Actions "Selector Keşfi", run 30460228760) ─────
     # Microsoft Security: genel fallback zinciri (article→main→content-div) bu
