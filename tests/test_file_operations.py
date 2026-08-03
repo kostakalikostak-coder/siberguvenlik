@@ -299,6 +299,50 @@ class TestPendingLinks:
             assert f.read().strip().split('\t')[3] == beklenen
 
 
+# ── DEFTER ↔ PARMAK İZİ SİMETRİSİ ──────────────────────────────────────────
+# 2026-08-02/03 vakası: link defteri kapısı _rapor_basarili (TABAN DAHİL) idi,
+# ama parmak izi depoları create_html içinde tabandan BAĞIMSIZ yazılıyordu.
+# Taban altı bir raporda ikisi ayrıştı: olay "son 7 günde raporlandı" sayıldı
+# ama linki "görülmedi" kaldı. Ölçülen sonuç — 08-02'nin 12 haberinin 12'si de
+# 08-03'te BİREBİR yeniden çekildi, havuzun %32'sini doldurdu, 8'i "zaten
+# raporlandı" diye elendi, rapor yine taban altı kaldı: kendini besleyen döngü.
+#
+# Değişmez kural: YAYINLANDIYSA ikisi de yazılır, FALLBACK ise ikisi de yazılmaz.
+
+class TestRaporDurumKapilari:
+    _DOLU = '<div class="top3-card">x</div>' * 3 + '<div class="news-item">y</div>' * 12
+    _INCE = '<div class="top3-card">x</div>' * 3 + '<div class="news-item">y</div>' * 6
+
+    def test_ince_rapor_yayinlanmis_sayilir(self):
+        """Taban altı ama GERÇEK rapor → defter kapısı AÇIK (asıl düzeltme)."""
+        from main import _rapor_yayinlandi
+        assert _rapor_yayinlandi(self._INCE) is True
+
+    def test_ince_rapor_basarili_sayilmaz(self):
+        """Aynı rapor 'yeniden dene' kapısında BAŞARISIZ kalmalı — taban korunur."""
+        from main import _rapor_basarili
+        assert _rapor_basarili(self._INCE) is False
+        assert _rapor_basarili(self._DOLU) is True
+
+    @pytest.mark.parametrize('isaret', [
+        '<!-- RAPOR_DURUM: FALLBACK -->',
+        '[FALLBACK]',
+        'Gemini API yanıt vermedi — içerik çevrilmedi',
+    ])
+    def test_fallback_her_iki_kapida_kapali(self, isaret):
+        """Fallback'te linkler İŞARETLENMEMELİ — haberler yarına sağlam kalsın."""
+        from main import _rapor_yayinlandi, _rapor_basarili
+        icerik = self._DOLU + isaret
+        assert _rapor_yayinlandi(icerik) is False
+        assert _rapor_basarili(icerik) is False
+
+    def test_haber_adedi_kritik3_kartlarini_sayar(self):
+        """Sayaç üretimdeki toplamla (gövde + kritik3) aynı olmalı."""
+        from main import _rapor_haber_adedi
+        assert _rapor_haber_adedi(self._INCE) == 9
+        assert _rapor_haber_adedi('<div class="news-item vuln-item">v</div>') == 1
+
+
 # ── Devlet/APT kanıtı: atıf İFADESİ veya AKTÖR KİMLİĞİ ─────────────────────
 # 2026-07-30: OpenAI'nin kendi modelinin test sırasında korumalı alandan kaçması
 # haberi nation_state_apt etiketlendi ve YALNIZCA kategori önceliği sayesinde

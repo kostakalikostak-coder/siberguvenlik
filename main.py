@@ -6224,6 +6224,60 @@ def _reset_today_state():
     print("   ✅ RESET_TODAY tamam — pipeline sıfırdan çalışacak.\n")
 
 
+# ── Rapor durum kapıları ───────────────────────────────────────────────────
+# İKİ AYRI SORU, İKİ AYRI KAPI. Karıştırılması 08-02/08-03 zincirini üretti:
+#   • _rapor_yayinlandi → "bu gerçek bir rapor mu?" → LİNK DEFTERİ kapısı.
+#   • _rapor_basarili   → "yeterince dolu mu?"      → İDEMPOTENCY/CRON kapısı.
+# Parmak izi depoları (rapor_gecmis/kritik3_gecmis) create_html içinde tabandan
+# BAĞIMSIZ yazıldığı için, defter kapısı tabana bağlanırsa ikisi ayrışır: olay
+# "raporlandı" sayılır ama linki "görülmedi" kalır ve ertesi gün aynı haberler
+# havuzu doldurup "zaten raporlandı" diye elenir. Modül düzeyindeler ki
+# değişmez kural testle çivilenebilsin (tests/test_file_operations.py).
+def _rapor_yayinlandi(content: str) -> bool:
+    """Rapor GERÇEK bir rapor mu (fallback/hata sayfası değil)?
+
+    Birincil sinyal _create_fallback_html'in bastığı YAPISAL yorum işaretidir
+    (RAPOR_DURUM: FALLBACK). Eski işaretler ([FALLBACK] başlığı, uyarı bandı
+    cümlesi) yalnızca bu işaret eklenmeden önce üretilmiş eski raporlar için
+    ikincil olarak korunur. ('error-box' kontrolü kaldırıldı: o class hiçbir
+    yerde üretilmiyordu — ölü kontroldü.)"""
+    return not ('RAPOR_DURUM: FALLBACK' in content
+                or '[FALLBACK]' in content
+                or 'Gemini API yanıt vermedi — içerik çevrilmedi' in content)
+
+
+def _rapor_haber_adedi(content: str) -> int:
+    """Rapordaki haber sayısı = gövde haberleri + kritik-3 kartları.
+
+    Üretimdeki sayaçla (top10 + remaining + 3) AYNI toplamı vermeli; yalnızca
+    news-item sayılırsa kritik-3 kartları dışarıda kalır ve 10 haberlik SAĞLIKLI
+    rapor 7 görünüp "başarısız" damgalanır — o zaman her cron slotu tüm LLM
+    hattını boş yere yeniden çalıştırır. ('class="news-item' öneki
+    'news-item vuln-item' varyantını da yakalar.)"""
+    return content.count('class="news-item') + content.count('class="top3-card"')
+
+
+def _rapor_basarili(content: str) -> bool:
+    """Rapor hem GERÇEK hem de YETERİNCE DOLU mu?
+
+    İKİNCİ ÖLÇÜT — TABAN: fallback olmayan ama İÇİ BOŞ bir rapor da başarılı
+    sayılmamalı. Eşik olmadan 2 haberlik bir rapor "başarılı" kabul edilip o
+    günün sonraki cron slotlarını atlatıyor ve gün ince raporla kilitleniyordu
+    (07-27 12:08). REPORT_FLOOR altındaki rapor başarısız sayılır → sıradaki
+    slot yeniden dener (o sırada feed'ler tazelenmiş olur).
+
+    DİKKAT: bu ölçüt YALNIZCA "yeniden denensin mi" kararında kullanılır.
+    Link defteri buna BAĞLANAMAZ — bkz. yukarıdaki blok."""
+    if not _rapor_yayinlandi(content):
+        return False
+    haber_sayisi = _rapor_haber_adedi(content)
+    if haber_sayisi < REPORT_FLOOR:
+        print(f"   ⚠️  Mevcut rapor yalnızca {haber_sayisi} haber içeriyor "
+              f"(<{REPORT_FLOOR}) — başarılı sayılmıyor, yeniden denenecek.")
+        return False
+    return True
+
+
 def main():
     print("\n" + "=" * 70)
     print("🔒 SİBER GÜVENLİK HABERLERİ")
@@ -6254,37 +6308,6 @@ def main():
     # Manuel (workflow_dispatch) ve yerel çalıştırmalarda is_schedule FALSE kalır → marker
     # yazılmaz, elle çalıştırma her zaman raporu zorla yeniden üretir.
     is_schedule = os.environ.get('GITHUB_EVENT_NAME') in ('schedule', 'repository_dispatch')
-
-    def _rapor_basarili(content: str) -> bool:
-        """Rapor fallback/hata içermiyorsa (gerçekten başarılıysa) True döner.
-
-        Birincil sinyal _create_fallback_html'in bastığı YAPISAL yorum
-        işaretidir (RAPOR_DURUM: FALLBACK). Eski işaretler ([FALLBACK] başlığı,
-        uyarı bandı cümlesi) yalnızca bu işaret eklenmeden önce üretilmiş eski
-        raporlar için ikincil olarak korunur. ('error-box' kontrolü kaldırıldı:
-        o class hiçbir yerde üretilmiyordu — ölü kontroldü.)
-
-        İKİNCİ ÖLÇÜT — TABAN: fallback olmayan ama İÇİ BOŞ bir rapor da başarılı
-        sayılmamalı. Eşik olmadan 2 haberlik bir rapor "başarılı" kabul edilip o
-        günün sonraki cron slotlarını atlatıyor ve gün ince raporla kilitleniyordu
-        (07-27 12:08). Artık REPORT_FLOOR altındaki rapor başarısız sayılır →
-        sıradaki slot yeniden dener (o sırada feed'ler tazelenmiş olur)."""
-        if ('RAPOR_DURUM: FALLBACK' in content
-                or '[FALLBACK]' in content
-                or 'Gemini API yanıt vermedi — içerik çevrilmedi' in content):
-            return False
-        # Haber sayısı = gövde haberleri + kritik-3 kartları. Üretimdeki sayaç
-        # (_rapor_haber_sayisi = top10 + remaining) ile AYNI toplamı vermeli;
-        # yalnızca news-item sayılırsa kritik-3 kartları dışarıda kalır ve
-        # 10 haberlik SAĞLIKLI rapor 7 görünüp "başarısız" damgalanır — o zaman
-        # her cron slotu tüm LLM hattını boş yere yeniden çalıştırır.
-        # ('class="news-item' öneki 'news-item vuln-item' varyantını da yakalar.)
-        haber_sayisi = content.count('class="news-item') + content.count('class="top3-card"')
-        if haber_sayisi < REPORT_FLOOR:
-            print(f"   ⚠️  Mevcut rapor yalnızca {haber_sayisi} haber içeriyor "
-                  f"(<{REPORT_FLOOR}) — başarılı sayılmıyor, yeniden denenecek.")
-            return False
-        return True
 
     # ── Kontrol 1: Bugünün BAŞARILI raporu zaten var mı? (KURŞUNGEÇİRMEZ) ────
     # Idempotency sinyali RAPORUN KENDİSİdir: docs/raporlar/<bugün>.html dosyası
@@ -6360,24 +6383,36 @@ def main():
     # 3. HTML (Gemini)
     sistem.create_html(txt)
 
-    # ── Linkleri "görüldü" işaretle — YALNIZCA rapor başarılıysa ───────────
+    # ── Linkleri "görüldü" işaretle — rapor YAYINLANDIYSA ──────────────────
     # Eskiden bu işaretleme save_txt içinde, LLM adımından ÖNCE yapılıyordu:
     # gün boyu süren bir LLM arızasında o günün tüm haberleri 7 gün için
-    # yakılıyor ve ertesi gün yeniden çekilseler bile eleniyorlardı. Ölçüt,
-    # idempotency ile AYNI (_rapor_basarili): fallback veya taban altı rapor
-    # "başarılı" sayılmaz, dolayısıyla linkler işaretlenmez ve haberler
-    # sonraki slotta/günde yeniden aday olur.
-    rapor_basarili_mi = False
+    # yakılıyor ve ertesi gün yeniden çekilseler bile eleniyorlardı. Bu yüzden
+    # işaretleme buraya, rapor üretildikten SONRAYA alındı.
+    #
+    # ÖLÇÜT NEDEN _rapor_basarili DEĞİL (08-02/08-03 vakası):
+    # Ölçüt taban dahil "başarılı" idi. Ama parmak izleri (rapor_gecmis.json /
+    # kritik3_gecmis.json) create_html içinde, TABANDAN BAĞIMSIZ yazılıyor.
+    # Taban altı bir raporda ikisi ayrışıyordu: olay "son 7 günde raporlandı"
+    # sayılıyor AMA linki "görülmedi" kalıyordu. Sonuç ölçüldü — 08-02'nin 12
+    # haberinin 12'si de 08-03'te BİREBİR yeniden çekildi, havuzun %32'sini
+    # doldurdu ve 8'i "zaten raporlandı" diye elendi; rapor yine taban altı
+    # kaldı ve döngü kendini besledi.
+    #
+    # Değişmez kural: RAPOR YAYINLANDIYSA (fallback değilse) parmak izi de link
+    # de yazılır — ikisi ASLA ayrışmaz. Fallback'te ikisi de yazılmaz (fallback
+    # yolu create_html'den erken döner, parmak izine hiç uğramaz), böylece
+    # LLM arızasında haberler yarına sağlam kalır.
+    rapor_yayinlandi_mi = False
     try:
         if os.path.exists(today_report):
             with open(today_report, encoding='utf-8') as f:
-                rapor_basarili_mi = _rapor_basarili(f.read())
+                rapor_yayinlandi_mi = _rapor_yayinlandi(f.read())
     except OSError as e:
         print(f"⚠️  Rapor doğrulanamadı ({e}) — linkler işaretlenmedi.")
-    if rapor_basarili_mi:
+    if rapor_yayinlandi_mi:
         sistem._commit_pending_links()
     else:
-        print("↩️  Rapor başarılı değil — linkler 'görüldü' İŞARETLENMEDİ, "
+        print("↩️  Rapor fallback — linkler 'görüldü' İŞARETLENMEDİ, "
               "haberler yeniden aday.")
 
     # ── CRON başarı işareti ────────────────────────────────────────────────
