@@ -1,58 +1,5 @@
 [
  {
-  "date": "2026-07-26",
-  "views": [
-   {
-    "tr_title": "İran Bağlantılı Siber Tehdit Aktörlerinin ABD Su ve Enerji Kontrol Sistemlerini Hedeflemesi",
-    "paragraph": "CISA, FBI, NSA ve Enerji Bakanlığı tarafından yayımlanan güncel siber güvenlik kılavuzunda, İran bağlantılı siber tehdit aktörlerinin ABD'deki su ve enerji kontrol sistemlerine sızdığı bildirilmiştir. Mart 2026 tarihinden bu yana süregelen faaliyetlerde, saldırganların internete açık programlanabilir mantık denetleyicilerine (PLC) erişim sağlayarak operasyonel süreçleri manipüle ettiği belirtilmiştir. Rockwell Automation, Schneider Electric ve Siemens gibi üreticilerin ekipmanlarını hedef alan a",
-    "title": "Iran-Linked Actors Breach Are Targeting US Water and Energy Control Systems",
-    "full_text": "Iran-Linked Actors Breach Are Targeting US Water and Energy Control Systems\n\nUS agencies warn Iran-linked actors are targeting internet-exposed water and energy control systems, risking disruption.\n\nFederal agencies updated their cybersecurity advisory this week: Iran-linked actors are inside American water and energy control systems, and they’re not just looking around. They’re changing things.\n\n"
-   },
-   {
-    "tr_title": "Fidye Yazılımı Grubu Cl0p Bağlantılı Aktörlerin PTC Yazılımlarını Hedeflemesi",
-    "paragraph": "Cl0p fidye yazılımı kampanyasıyla bağlantılı siber tehdit aktörlerinin, veri sızdırma operasyonları kapsamında internete açık PTC Windchill ve FlexPLM kurulumlarındaki güvenlik açıklarını istismar ettiği bildirilmiştir. Ransom-ISAC, eCrime.ch ve DEFUSED tarafından yayımlanan ortak rapora göre saldırganlar, kimlik doğrulaması gerektirmeyen uzaktan kod yürütme yetkisi kazanmak için iki farklı hatayı birleştirmekte ve sistemlere zararlı web kabukları yerleştirmektedir. Üretim, otomotiv, havacılık v",
-    "title": "Cl0p Affiliates Target Internet-Exposed PTC Windchill and FlexPLM with Unauthenticated RCE",
-    "full_text": "Threat actors linked to the Cl0p (aka Chubby Scorpius, FIN11, Graceful Spider, and Lace Tempest) ransomware campaign are exploiting flaws in internet-exposed PTC Windmill and FlexPLM deployments as part of a new data extortion campaign.\n\n\"Attackers chain a pre-authentication information disclosure in the FlexPLM WSDL endpoint with a server-side flaw in the Windchill login servlet, enabling unauthe"
-   },
-   {
-    "tr_title": "Chaos Fidye Yazılımı Grubunun Tarayıcı Üzerinden Komuta Kontrol Kanalı Oluşturan msaRAT Yazılımını Kullanması",
-    "paragraph": "Chaos fidye yazılımı grubunun, komuta kontrol (C2) iletişimini doğrudan ağ üzerinden değil, tarayıcı hata ayıklama arayüzü aracılığıyla yürüten Rust tabanlı msaRAT adlı yeni bir uzaktan erişim truva atı kullandığı tespit edilmiştir. Söz konusu zararlı yazılımın, Chrome DevTools Protokolü (CDP) üzerinden tarayıcıyı manipüle ederek WebRTC veri kanalları oluşturduğu ve Cloudflare Workers altyapısını sinyalleşme amacıyla kullandığı belirtilmiştir. msaRAT'ın, Windows güncellemesi gibi görünerek siste",
-    "title": "Chaos ransomware's msaRAT: Living off the browser to build a covert C2 channel",
-    "full_text": "Chaos ransomware's msaRAT: Living off the browser to build a covert C2 channel\n\nCisco Talos has discovered a new Rust-based remote access trojan (RAT) we call “msaRAT” attributed to the Chaos ransomware group. The name is derived from the binding names found in the binary: “msaOpen,” “msaClose,” “msaError,” and “msaMessage”.\n\nmsaRAT is implemented using the Tokio asynchronous runtime, with primary"
-   },
-   {
-    "tr_title": "Fastjson 1.x Kütüphanesindeki Kritik Açığın Aktif Olarak İstismar Edilmesi",
-    "paragraph": "Güvenlik firmaları ThreatBook ve Imperva, Alibaba tarafından geliştirilen Fastjson 1.x Java kütüphanesindeki kritik bir zafiyetin siber saldırılarda hedef alındığını bildirmiştir. CVE-2026-16723 kodlu ve 9.0 ciddiyet puanına sahip olan bu açığın, Spring Boot uygulamalarında kimlik doğrulaması gerektirmeden uzaktan kod yürütülmesine imkan tanıdığı belirtilmiştir. Alibaba, 21 Temmuz 2026 tarihinde bir güvenlik uyarısı yayınlamış ancak 25 Temmuz 2026 itibarıyla Fastjson 1.x için henüz resmi bir yam",
-    "title": "Fastjson 1.x RCE Vulnerability Targeted in Attacks With No Patched Available",
-    "full_text": "Security firms ThreatBook and Imperva say attackers are targeting a critical flaw in Fastjson, Alibaba's JSON library for Java. In affected Spring Boot applications, a malicious JSON request can execute code without authentication, with the privileges of the Java process.\n\nTracked as CVE-2026-16723, the vulnerability carries an Alibaba-assigned CVSS score of 9.0. The confirmed chain requires Fastj"
-   },
-   {
-    "tr_title": "Europol'ün The Com Bağlantılı 4.340 İnternet Adresini İşaretlemesi",
-    "paragraph": "Europol ve ortak soruşturma birimleri, 2026 yılının Haziran ve Temmuz aylarını kapsayan birkaç haftalık süreçte, The Com isimli çevrim içi ağla bağlantılı 4.340 internet adresini kaldırılması amacıyla işaretlemiştir. Project Compass operasyonu kapsamında yürütülen bu faaliyetin, genç üyelerden oluşan ağın propaganda yayılımını ve üye toplama ekosistemini bozmayı hedeflediği belirtilmiştir. Soruşturmacılar; Belçika, Finlandiya, Macaristan, İrlanda, Lüksemburg, Hollanda, Portekiz, İspanya ve İsveç",
-    "title": "Europol flags 4,340 'horrific' URLs linked to The Com",
-    "full_text": "Europol flags 4,340 'horrific' URLs linked to The Com\n\nStop the spread (of online recruiting and propaganda)\n\nEuropol and its partners' investigators flagged 4,340 “horrific” URLs for removal over several weeks in June and July as part of an ongoing crackdown on The Com (short for community), a loosely knit network of online groups whose young members participate in a range of illicit activities. "
-   },
-   {
-    "tr_title": "SourTrade Operasyonu Kapsamında Tarayıcı Üzerinden Zararlı Yazılım Oluşturulması",
-    "paragraph": "SourTrade olarak adlandırılan bir reklam tabanlı saldırı operasyonunun, kurbanların tarayıcılarını kullanarak Windows yürütülebilir dosyaları oluşturduğu tespit edilmiştir. Confiant tarafından 23 Temmuz 2026 tarihinde detaylandırılan kampanyanın, 2024 sonundan bu yana TradingView, Solana ve Luno gibi platformları taklit ederek 12 ülkedeki kripto para yatırımcılarını hedef aldığı belirtilmiştir. Saldırganların, sabit bir URL üzerinden tam bir zararlı dosya sunmak yerine, meşru Bun çalışma zamanın",
-    "title": "Malvertising Sends Malware in Pieces, Then Makes the Browser Build the Executable",
-    "full_text": "A malvertising operation dubbed SourTrade is making victims' browsers build the final Windows executable themselves, using a legitimate Bun runtime as its base instead of serving one complete malicious file from a fixed URL.\n\nConfiant, which detailed the campaign on July 23, 2026, said it has operated since late 2024 and impersonated TradingView, Solana, and Luno to target retail traders and crypt"
-   },
-   {
-    "tr_title": "Steam Forumlarında ClickFix Yöntemiyle Kripto Madenci Yazılımı Bulaştırılması",
-    "paragraph": "Steam tartışma forumlarının, oyun ve bilgisayar sorunlarına çözüm sunma vaadiyle kullanıcıları XMRig kripto madenci yazılımıyla enfekte eden ClickFix saldırılarına maruz kaldığı bildirilmiştir. Siber tehdit aktörlerinin, teknik sorun yaşayan kullanıcılara yönetici haklarıyla PowerShell komutları çalıştırmalarını önerdiği ve bu komutların arka planda zararlı yazılım indirdiği tespit edilmiştir. Yürütülen PowerShell betiğinin, kendisini bir Windows optimizasyon aracı olarak gizlediği ve Microsoft ",
-    "title": "Steam forum ClickFix attacks infect gamers with XMRig cryptominers",
-    "full_text": "Steam discussion forums are being abused in ClickFix attacks that pretend to be fixes for game and computer problems but actually infect devices with cryptominers.\n\nBleepingComputer learned of the campaign from a reader, who told us threat actors are creating random Steam accounts to post what appears to be helpful fixes for people's posts about games crashing, lost inventory items, and other tech"
-   },
-   {
-    "tr_title": "ShinyHunters Sızıntılarının Bitcoin Talepli Şantaj E-postalarında Kullanılması",
-    "paragraph": "Siber tehdit aktörlerinin, ShinyHunters grubu tarafından sızdırılan e-posta adreslerini kullanarak 2.000 dolar değerinde Bitcoin talep eden cinsel içerikli şantaj kampanyaları yürüttüğü tespit edilmiştir. BleepingComputer tarafından yapılan incelemede; Amtrak, Hallmark ve Panera Bread gibi kurumlara ait sızıntı verilerinin, tehditlerin meşruiyetini artırmak amacıyla kullanıldığı belirtilmiştir. E-postalarda, kurbanların cihazlarının ele geçirildiği ve kamera kayıtlarının alındığı iddia edilse de",
-    "title": "ShinyHunters data leaks fuel $2,000 sextortion email scam",
-    "full_text": "Threat actors are using email addresses exposed in data breaches leaked by the ShinyHunters extortion group to send sextortion emails demanding $2,000 in Bitcoin.\n\nThe emails claim to come from ShinyHunters and tell recipients that hackers compromised their devices after obtaining their email addresses from breached company databases.\n\nHowever, the messages appear to be sent by someone who downloa"
-   }
-  ]
- },
- {
   "date": "2026-07-27",
   "views": [
    {
@@ -804,6 +751,47 @@
     "paragraph": "30 Temmuz 2026 tarihinde gerçekleşen bir siber saldırıda, 1.196 Bitcoin adresinden yaklaşık 70,2 milyon dolar değerinde 1.082,65 BTC'nin 41 dakika içinde çalındığı bildirilmiştir. Galaxy Research tarafından yapılan analizde, söz konusu hırsızlığın Coinkite firması tarafından üretilen Coldcard donanım cüzdanlarındaki bir yazılım hatasıyla bağlantılı olduğu tespit edilmiştir. Mart 2021 tarihli bir donanım yazılımı entegrasyon hatasının, tohum anahtar oluşturma sürecini donanımsal rastgele sayı üre",
     "title": "Coldcard Hardware Wallet Flaw Linked to $70 Million Bitcoin Theft in 41 Minutes",
     "full_text": "An attacker drained 1,196 Bitcoin addresses in 41 minutes on July 30, taking 1,082.65 BTC worth about $70.2 million at the time. Galaxy Research mapped the sweep and tied it to a firmware flaw in Coldcard, the Bitcoin-only hardware wallet made by Canadian firm Coinkite.\n\nA March 2021 firmware integration error routed seed generation to a deterministic software pseudorandom number generator (PRNG) "
+   }
+  ]
+ },
+ {
+  "date": "2026-08-03",
+  "views": [
+   {
+    "tr_title": "FBI ve EPA'nın Su Tesislerine Yönelik Uyarıları",
+    "paragraph": "FBI ve EPA tarafından yayımlanan ortak bildiride, siber saldırganların su tesislerindeki internete bağlı endüstriyel denetleyicilere sızarak operasyonel aksamalara neden olduğu açıklanmıştır. 27 Temmuz 2026 tarihinden itibaren en az yedi eyaletteki su ve atık su tesislerinin, Rockwell Automation MicroLogix serisi cihazlarda parola ve IP adresi değişiklikleri yaşandığını bildirdiği ifade edilmiştir. Bazı tesislerde basınç kaybı ve su baskını gibi fiziksel etkilerin görüldüğü, bu durumun arıtılmam",
+    "title": "FBI and EPA warn hackers target internet-connected PLCs at US water utilities, leading to operational disruptions",
+    "full_text": "The Federal Bureau of Investigation (FBI) and Environmental Protection Agency (EPA) warned that hackers have been breaking into internet-connected industrial controllers at water utilities, in some cases disrupting operations at facilities across multiple states. In a joint advisory issued July 30, the agencies said the attackers have targeted Rockwell Automation/Allen-Bradley MicroLogix 1100 and "
+   },
+   {
+    "tr_title": "OpenAI'nin ChatGPT Üzerinden Yürütülen Dolandırıcılık Ağını Engellemesi",
+    "paragraph": "OpenAI, Kamboçya merkezli olduğu değerlendirilen ve ChatGPT hesaplarını sahte çevrimiçi kişilikler oluşturmak için kullanan koordineli bir ağı engellediğini açıklamıştır. Söz konusu ağın; yatırım, romantizm, kumar ve kolluk kuvveti taklidi gibi çeşitli dolandırıcılık yöntemlerini desteklemek amacıyla yapay zekayı kullandığı belirtilmiştir. OpenAI tarafından yapılan incelemede, dolandırıcıların hedef kişilere yönelik mesajlar oluşturmak, içerikleri tercüme etmek ve sosyal medya için tanıtım mater",
+    "title": "OpenAI reveals how criminals used ChatGPT to run scams",
+    "full_text": "OpenAI reveals how criminals used ChatGPT to run scams\n\nOpenAI banned a coordinated network of ChatGPT accounts that likely originated in Cambodia’s Preah Sihanouk province, a region reports have linked to online scam compounds and human trafficking operations.\n\nThe network used the company’s models to create and manage fake online personas, generate and translate messages sent to scam targets, pr"
+   },
+   {
+    "tr_title": "Hugging Face Diffusers Kütüphanesinde Kod Yürütme Zafiyetlerinin Belirlenmesi",
+    "paragraph": "Hugging Face'in Diffusers kütüphanesinde, saldırganların yapay zeka tedarik zinciri üzerinden hedef makinelerde gizlice kod yürütmesine imkan tanıyan üç adet yüksek riskli güvenlik açığı tespit edilmiştir. FaceHugger olarak adlandırılan bu zafiyetlerin, güvenilmeyen kodların çalışmasını engellemek için tasarlanan güvenlik mekanizmalarını devre dışı bıraktığı belirtilmiştir. CVE-2026-44827, CVE-2026-45804 ve CVE-2026-44513 kodlu bu açıkların, model yükleme süreçlerindeki kontrol zamanı ile kullan",
+    "title": "Hugging Face Diffusers Flaws Could Let Model Repositories Execute Arbitrary Code",
+    "full_text": "Three high-severity security flaws have been disclosed in Hugging Face's Diffusers library that could allow crafted model repositories to stealthily execute arbitrary code on machines that load it, opening the artificial intelligence (AI) supply chain to security risk.\n\n\"These vulnerabilities are bypassing trust_remote_code, the safeguard designed to stop unreviewed code from running in the custom"
+   },
+   {
+    "tr_title": "N-able N-central Sunucularında Kimlik Doğrulama Açığının İstismar Edilmesi",
+    "paragraph": "N-able, N-central uzaktan izleme ve yönetim platformundaki bir kimlik doğrulama atlatma açığının saldırganlar tarafından yönetici erişimi sağlamak amacıyla istismar edildiğini açıklamıştır. CVE-2026-18577 olarak tanımlanan ve ilk yamanın yetersiz kalması nedeniyle ortaya çıkan bu açığın, saldırganların müşteri uç noktalarına Cloudflare tünelleri kurarak kalıcılık sağlamasına olanak tanıdığı belirtilmiştir. N-able, 31 Temmuz 2026 tarihinde on-premise müşterilerden gelen lisans hataları üzerine in",
+    "title": "N-able Says Attackers Take Over N-central Servers After Initial Fix Proves Incomplete",
+    "full_text": "N-able said attackers exploited an authentication bypass in N-central to gain remote administrative access and reach the customer systems managed through those servers.\n\nIts first fix was incomplete. CVE-2026-18577 affects N-central builds prior to 2026.3.1.7. N-able shipped build 2026.3.1.7 on August 2 as the first unaffected version.\n\nN-central is the remote monitoring and management platform ma"
+   },
+   {
+    "tr_title": "Thermo Fisher'ın DNA Veri Dosyalarındaki Güvenlik Açığını Yamalaması",
+    "paragraph": "Thermo Fisher Scientific, Applied Biosystems insan tanımlama yazılımlarında, DNA veri dosyalarının analiz öncesinde fark edilmeden değiştirilmesine yol açan kritik bir güvenlik açığını gidermiştir. CVE-2026-17583 olarak tanımlanan zafiyetin, laboratuvar kontrollerinin aşılması durumunda .fsa ve .hid uzantılı çıktıların manipüle edilmesine imkan tanıdığı belirtilmiştir. Yapılan testlerde, yapay zeka araçları kullanılarak iki farklı DNA profilinin tek bir dosyada birleştirilebildiği ve yazılımları",
+    "title": "Thermo Fisher Patches Flaw That Could Make DNA File Tampering Nearly Undetectable",
+    "full_text": "Thermo Fisher Scientific has patched a flaw in select Applied Biosystems human identification software that could allow data files to be altered before analysis software loads them.\n\nThe vendor's July 31 security bulletin says nearly undetectable changes to .fsa and .hid outputs could occur if laboratory controls are circumvented.\n\nThermo Fisher tracks the issue as CVE-2026-17583 and rates it High"
+   },
+   {
+    "tr_title": "GitLab'da Kritik Uzaktan Kod Yürütme Zincirinin Tespit Edilmesi",
+    "paragraph": "GitLab kullanıcıları, Oj adlı Ruby JSON ayrıştırıcısındaki iki hatanın birleştirilmesiyle elde edilen kritik bir uzaktan kod yürütme zafiyetine karşı uyarılmıştır. Araştırmacılar, Jupyter notebook dosyalarının işlenmesi sırasında bellek bozulmasına yol açan bu hataları kullanarak, yetkili bir kullanıcının Puma işçi süreci üzerinde tam komut yürütme yetkisi kazanabildiğini kanıtlamıştır. Zafiyetin GitLab CE ve EE sürümlerinin 15.2.0 ile 19.0.1 arasındaki geniş bir aralığı etkilediği ve saldırı iç",
+    "title": "GitLab Users Urged to Patch After Research Reveals Critical RCE Chain",
+    "full_text": "GitLab Users Urged to Patch After Research Reveals Critical RCE Chain\n\nResearchers chained two Oj parser bugs to achieve GitLab RCE via Jupyter notebook diffs, affecting authenticated users on unpatched versions.\n\nDepthfirst researchers published a working remote code execution exploit for GitLab on July 24, chaining two memory corruption bugs in Oj, a Ruby JSON parser with a native C implementati"
    }
   ]
  }

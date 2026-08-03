@@ -29204,3 +29204,50 @@ Galaxy Research tarafından yapılan analizde, 30 Temmuz 2026 tarihinde 41 dakik
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 03 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] FBI ve EPA'nın Su Tesislerine Yönelik Uyarıları
+─────────────────────────────────────────────────────────
+FBI ve EPA tarafından yayımlanan ortak bildiride, siber saldırganların su tesislerindeki internete bağlı endüstriyel denetleyicilere sızarak operasyonel aksamalara neden olduğu açıklanmıştır. 27 Temmuz 2026 tarihinden itibaren en az yedi eyaletteki su ve atık su tesislerinin, Rockwell Automation MicroLogix serisi cihazlarda parola ve IP adresi değişiklikleri yaşandığını bildirdiği ifade edilmiştir. Bazı tesislerde basınç kaybı ve su baskını gibi fiziksel etkilerin görüldüğü, bu durumun arıtılmamış yeraltı sularının şebekeye sızma riskini doğurduğu belirtilmiştir. Kurumlar, özellikle kullanım ömrü dolmuş donanımların hedef alındığına dikkat çekerek, bu cihazların güvenli ağ geçitleri arkasına alınmasını ve güçlü kimlik doğrulama yöntemlerinin kullanılmasını önermiştir. Ayrıca, tesislerin siber olaylar sırasında hizmet sürekliliğini sağlamak amacıyla manuel kontrol yeteneklerini düzenli olarak test etmeleri ve güncel yedekler bulundurmaları gerektiği kaydedilmiştir.
+(XXXXXXX, AÇIK -industrialcyber.co, 03.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] OpenAI'nin ChatGPT Üzerinden Yürütülen Dolandırıcılık Ağını Engellemesi
+─────────────────────────────────────────────────────────
+OpenAI, Kamboçya merkezli olduğu değerlendirilen ve ChatGPT hesaplarını sahte çevrimiçi kişilikler oluşturmak için kullanan koordineli bir ağı engellediğini açıklamıştır. Söz konusu ağın; yatırım, romantizm, kumar ve kolluk kuvveti taklidi gibi çeşitli dolandırıcılık yöntemlerini desteklemek amacıyla yapay zekayı kullandığı belirtilmiştir. OpenAI tarafından yapılan incelemede, dolandırıcıların hedef kişilere yönelik mesajlar oluşturmak, içerikleri tercüme etmek ve sosyal medya için tanıtım materyalleri üretmek amacıyla platformdan faydalandığı tespit edilmiştir. Operasyonun, Doğu Asya'daki organize suç gruplarıyla bağlantılı insan ticareti ve zorla çalıştırma faaliyetleriyle de ilişkili olduğu kaydedilmiştir. Şirket, dolandırıcılık faaliyetleri sonucunda mağdurların binlerce dolar kaybetmiş olabileceğini, ancak toplam finansal zararın boyutunun henüz tam olarak belirlenemediğini ifade etmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 03.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Hugging Face Diffusers Kütüphanesinde Kod Yürütme Zafiyetlerinin Belirlenmesi
+─────────────────────────────────────────────────────────
+Hugging Face'in Diffusers kütüphanesinde, saldırganların yapay zeka tedarik zinciri üzerinden hedef makinelerde gizlice kod yürütmesine imkan tanıyan üç adet yüksek riskli güvenlik açığı tespit edilmiştir. FaceHugger olarak adlandırılan bu zafiyetlerin, güvenilmeyen kodların çalışmasını engellemek için tasarlanan güvenlik mekanizmalarını devre dışı bıraktığı belirtilmiştir. CVE-2026-44827, CVE-2026-45804 ve CVE-2026-44513 kodlu bu açıkların, model yükleme süreçlerindeki kontrol zamanı ile kullanım zamanı arasındaki uyumsuzluklardan kaynaklandığı ifade edilmiştir. Araştırmacılar, Diffusers kütüphanesinin 8 milyondan fazla indirilmiş olması nedeniyle kurumsal üretim hatlarının ve CI/CD sistemlerinin risk altında olduğunu kaydetmiştir. Söz konusu sorunlar Diffusers 0.38.0 sürümüyle giderilmiş olup, kullanıcıların yalnızca güvenilir kaynaklardan model yüklemeleri gerektiği bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 03.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] N-able N-central Sunucularında Kimlik Doğrulama Açığının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+N-able, N-central uzaktan izleme ve yönetim platformundaki bir kimlik doğrulama atlatma açığının saldırganlar tarafından yönetici erişimi sağlamak amacıyla istismar edildiğini açıklamıştır. CVE-2026-18577 olarak tanımlanan ve ilk yamanın yetersiz kalması nedeniyle ortaya çıkan bu açığın, saldırganların müşteri uç noktalarına Cloudflare tünelleri kurarak kalıcılık sağlamasına olanak tanıdığı belirtilmiştir. N-able, 31 Temmuz 2026 tarihinde on-premise müşterilerden gelen lisans hataları üzerine inceleme başlatmış ve 2026.3.1.7 sürümünden önceki tüm yapıların savunmasız olduğunu teyit etmiştir. Huntress araştırmacıları, saldırganların bazı sistemlerde süreç listeleme faaliyetleri yürüttüğünü ve Mullvad ile NordVPN çıkış düğümlerini kullandığını raporlamıştır. Şirket, tüm kullanıcıların acilen en güncel sürüme yükseltme yapması ve yönetilen cihazlardaki yetkisiz servisleri denetlemesi gerektiğini ifade etmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 03.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Thermo Fisher'ın DNA Veri Dosyalarındaki Güvenlik Açığını Yamalaması
+─────────────────────────────────────────────────────────
+Thermo Fisher Scientific, Applied Biosystems insan tanımlama yazılımlarında, DNA veri dosyalarının analiz öncesinde fark edilmeden değiştirilmesine yol açan kritik bir güvenlik açığını gidermiştir. CVE-2026-17583 olarak tanımlanan zafiyetin, laboratuvar kontrollerinin aşılması durumunda .fsa ve .hid uzantılı çıktıların manipüle edilmesine imkan tanıdığı belirtilmiştir. Yapılan testlerde, yapay zeka araçları kullanılarak iki farklı DNA profilinin tek bir dosyada birleştirilebildiği ve yazılımların bu değişikliğe karşı uyarı vermediği tespit edilmiştir. Şirket, desteklenen beş ürün grubu için dijital imza desteği içeren güncellemeler yayınlamış, ancak kullanım ömrü dolmuş üç ürün grubu için güncelleme yapılmayacağını açıklamıştır. Henüz aktif bir istismar vakasına rastlanmadığı bildirilmekle birlikte, laboratuvarlara dosya erişim yetkilerini kısıtlamaları ve ağ bağlantılarını güvenli kaynaklarla sınırlandırmaları önerilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 03.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] GitLab'da Kritik Uzaktan Kod Yürütme Zincirinin Tespit Edilmesi
+─────────────────────────────────────────────────────────
+GitLab kullanıcıları, Oj adlı Ruby JSON ayrıştırıcısındaki iki hatanın birleştirilmesiyle elde edilen kritik bir uzaktan kod yürütme zafiyetine karşı uyarılmıştır. Araştırmacılar, Jupyter notebook dosyalarının işlenmesi sırasında bellek bozulmasına yol açan bu hataları kullanarak, yetkili bir kullanıcının Puma işçi süreci üzerinde tam komut yürütme yetkisi kazanabildiğini kanıtlamıştır. Zafiyetin GitLab CE ve EE sürümlerinin 15.2.0 ile 19.0.1 arasındaki geniş bir aralığı etkilediği ve saldırı için yönetici haklarına ihtiyaç duyulmadığı belirtilmiştir. Başarılı bir istismarın kaynak kod ifşasına, kimlik bilgisi hırsızlığına ve yanal hareket imkanına yol açabileceği kaydedilmiştir. GitLab'ın söz konusu hataları Haziran 2026'da giderdiği, ancak düzeltmenin başlangıçta kritik bir güvenlik güncellemesi olarak etiketlenmediği ifade edilmiştir. Kullanıcıların sistemlerini 19.0.2 veya ilgili güncel sürümlere yükseltmeleri istenmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 02.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

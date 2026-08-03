@@ -1,15 +1,179 @@
-SESSION_DATE: 2026-08-02
+SESSION_DATE: 2026-08-03
 
 ================================================================================
-📅 02 AUGUST 2026 - SİBER GÜVENLİK HABERLERİ (HAM RSS)
+📅 03 AUGUST 2026 - SİBER GÜVENLİK HABERLERİ (HAM RSS)
 ================================================================================
 
-[1] The Hacker News - Coldcard Hardware Wallet Flaw Linked to $70 Million Bitcoin Theft in 41 Minutes
+[1] The Hacker News - Thermo Fisher Patches Flaw That Could Make DNA File Tampering Nearly Undetectable
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 13:35:30 +0530
+Link: https://thehackernews.com/2026/08/thermo-fisher-patches-flaw-that-could.html
+
+[TAM METİN - 664 kelime]
+Thermo Fisher Scientific has patched a flaw in select Applied Biosystems human identification software that could allow data files to be altered before analysis software loads them.
+
+The vendor's July 31 security bulletin says nearly undetectable changes to .fsa and .hid outputs could occur if laboratory controls are circumvented.
+
+Thermo Fisher tracks the issue as CVE-2026-17583 and rates it High with a CVSS v4.0 score of 8.2. Five supported product lines have received updates that add digital signatures, while three end-of-life data collection products will receive no vendor update.
+
+Thermo Fisher credits Nathan Adams, Kevin Dyer and Laura Gaydosh Combs, together with the U.S. Cybersecurity and Infrastructure Security Agency, with identifying the issue and coordinating disclosure.
+
+Thermo Fisher urged customers to install the applicable updates. For customers unable to implement the updates or use another third-party analysis platform, the company recommends controls covering file custody, storage, access, privilege and network connectivity.
+
+The public bulletin does not address exploitation, but Thermo Fisher separately told The Wall Street Journal that it knew of no instances in which the vulnerability had been exploited.
+
+In its security bulletin, Thermo Fisher says the files can be modified before analysis software loads them. The updates implement digital signatures that, moving forward, help customers verify that data files have not been changed.
+
+The Journal reported that Nathan Adams, a systems engineer at Forensic Bioinformatics, tested the issue using a public data set. Adams said his first successful file modification using Anthropic's Claude took about 45 minutes.
+
+In a demonstration viewed by the Journal, his code combined scans from two individual DNA profiles into a new file that appeared untouched since 2015. The modified file raised no warning in analysis software used by many laboratories.
+
+Thermo Fisher's bulletin does not specify the access required. The researchers told the Journal that an attacker would need local or remote access to a laboratory's servers and enough knowledge of how DNA testing works.
+
+The updates cover five Applied Biosystems human identification product lines:
+
+3500/3500xL Series Data Collection Software 4.0.2 and earlier, fixed in 4.0.3
+
+3730/3730xL Series Data Collection Software 5.0.2 and earlier, fixed in 5.0.3
+
+SeqStudio Genetic Analyzer Data Collection Software 1.2.5 and earlier, fixed in 1.2.6
+
+SeqStudio Flex Series Instrument Software 1.2.0 and earlier, fixed in 1.2.1. Labs using SeqStudio Flex with security, audit, and electronic signature (SAE) enabled must first install the latest SAE profile on the SAE Admin Console
+
+GeneMapper ID-X Software v1.7.3 and earlier, fixed in v1.7.4
+
+Three older lines get nothing: 3130 Series Data Collection Software 4.1 and earlier, ABI PRISM 3100/3100-Avant Data Collection Software 2.0 and earlier, and ABI PRISM 310 Data Collection Software 3.1 and earlier. Thermo Fisher says each has reached end of life and will receive no update.
+
+Thermo Fisher's recommended measures for customers unable to implement the updates or use another third-party analysis platform include maintaining chain of custody, storing files on encrypted and password-protected media, restricting access, applying least privilege on instrument and analysis systems, and limiting internet connectivity to trusted sources.
+
+As of August 3, 2026, exact-identifier checks by The Hacker News found Thermo Fisher's bulletin but no separate CVE.org or National Vulnerability Database detail page for CVE-2026-17583.
+
+The identifier was not listed in CISA's Known Exploited Vulnerabilities catalog. Thermo Fisher's public security-bulletin index also did not list the July 31 notice.
+
+Thermo Fisher says the signatures will help customers verify files "moving forward." The bulletin does not explain whether files generated before the updates can be validated retroactively or how laboratories should validate them. The Hacker News found no public primary source linking altered casework to the flaw as of August 3, 2026.
+
+The researchers told the Journal that the vulnerability likely existed in digital files produced by crime-lab machines since 1995 and that they had not found a way to detect prior tampering if it occurred.
+
+hermo Fisher's bulletin does not confirm that historical scope. The reported weakness affects digital records generated from DNA testing, not the underlying physical DNA samples.
+
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/08/thermo-fisher-patches-flaw-that-could.html, thehackernews.com, 03.08.2026)
+
+================================================================================
+
+[2] The Hacker News - N-able Says Attackers Take Over N-central Servers After Initial Fix Proves Incomplete
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 12:11:46 +0530
+Link: https://thehackernews.com/2026/08/n-able-says-attackers-take-over-n.html
+
+[TAM METİN - 700 kelime]
+N-able said attackers exploited an authentication bypass in N-central to gain remote administrative access and reach the customer systems managed through those servers.
+
+Its first fix was incomplete. CVE-2026-18577 affects N-central builds prior to 2026.3.1.7. N-able shipped build 2026.3.1.7 on August 2 as the first unaffected version.
+
+N-central is the remote monitoring and management platform managed service providers and IT teams use to administer customer endpoints.
+
+After compromising an N-central server, the attackers used Take Control to reach managed endpoints and registered Cloudflare tunnels as services on the devices. The tunnels connect outbound to Cloudflare's edge, so they need no inbound firewall rule or open listening port.
+
+Running them as services lets them survive a reboot. N-able said the tunnels preserved access after the route through the N-central server was revoked. Nothing in the disclosure suggests Cloudflare was compromised; the attackers abused its tunneling service.
+
+Every N-central customer should be on 2026.3.1.7. Upgrading to 2026.3, N-able's initial instruction, is no longer sufficient. N-able's hotfix notice says hosted NCOD instances will be upgraded automatically on a schedule communicated directly to partners; self-hosted servers must be upgraded by the customer.
+
+Customers that find evidence of compromise must also hunt for and remove malicious tunnel services from managed endpoints, because upgrading N-central does not remove persistence installed on another machine.
+
+N-able began investigating on July 31 after an unusual volume of licensing errors from on-premises customers. It found that an attacker had remotely gained administrative access to servers running 2026.1 and earlier. N-able said it identified and contacted a limited number of affected customers but did not provide a figure.
+
+The first flaw, CVE-2026-18556, is titled "unauthenticated administrative account takeover" in N-able's own CVE record and classified as an authentication bypass through an alternate path or channel, or CWE-288.
+
+N-able assigned both CVEs and scored each 8.2 on CVSS 4.0. Neither record identifies the vulnerable endpoint or request sequence, and N-able has published no code-level root-cause detail.
+
+CVE-2026-18556 covers releases through 2026.1. N-able said it fixed that path in 2026.2, but later found an alternative way to exploit the same vulnerability that the earlier fix did not block. That finding became CVE-2026-18577 and expanded the affected range to builds before 2026.3.1.7.
+
+Finland's national cyber security centre said in an August 2 advisory that all versions available before the emergency hotfix were vulnerable.
+
+The Hacker News has reached out to N-able for clarification on the incident's scope and incomplete patch. This story will be updated with any response.
+
+N-able has now published six IP addresses seen in the attacks:
+
+173[.]249[.]252[.]200
+
+Huntress later identified the four addresses from N-able's initial list as Mullvad or NordVPN exit nodes. Huntress advised correlating any matches with N-central UI, network, and endpoint logs.
+
+N-able also told customers to look for svchost.exe in users' Documents folders, a service named Cloudflared, or traffic from the published IP addresses. It advised customers who find any of these indicators to contact support and engage their security teams.
+
+Huntress, in a rapid response published August 3, initially said it had seen exploitation at one organisation in its customer base and published three attacker domains: mousears.synology[.]me, wagoosh.direct.quickconnect[.]to, and who-ripped-one.direct.quickconnect[.]to.
+
+In an email to The Hacker News, Huntress clarified that the activity involved a self-hosted N-central instance within one partner account. The attackers accessed nine organisations under that account, reaching one endpoint in each.
+
+Based on the evidence available so far, Huntress said the post-compromise activity was limited to enumerating running processes on the endpoints before the attackers disconnected. The company is continuing to review the activity for other indicators of compromise and attacker tradecraft.
+
+Huntress said it did not observe the Cloudflare installation activity that N-able described in its original notification to affected customers.
+
+For signs of unauthorized Take Control activity, Huntress recommended checking ui_access_control.log and correlating it with C:\ProgramData\GetSupportService_N-Central\Logs\BASupSrvc_*.log.gz on Windows endpoints. Those logs also appear during legitimate Take Control use, so their presence alone is not proof of compromise.
+
+It also advised investigating sessions tied to apparent N-able support identities, such as mspsupport@n-able.com.
+
+N-able has not disclosed the number or identities of affected customers, how many downstream devices were reached, when exploitation began, who is behind it, or whether any data was taken.
+
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/08/n-able-says-attackers-take-over-n.html, thehackernews.com, 03.08.2026)
+
+================================================================================
+
+[3] The Hacker News - Hugging Face Diffusers Flaws Could Let Model Repositories Execute Arbitrary Code
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 12:10:31 +0530
+Link: https://thehackernews.com/2026/08/hugging-face-diffusers-flaws-could-let.html
+
+[TAM METİN - 653 kelime]
+Three high-severity security flaws have been disclosed in Hugging Face's Diffusers library that could allow crafted model repositories to stealthily execute arbitrary code on machines that load it, opening the artificial intelligence (AI) supply chain to security risk.
+
+"These vulnerabilities are bypassing trust_remote_code, the safeguard designed to stop unreviewed code from running in the custom pipelines loading process," Zafran Labs researchers Gal Zaban and Ido Shani said in an analysis published last week.
+
+The shortcomings have been collectively named FaceHugger.
+
+With Hugging Face becoming the "GitHub of the AI era" and its libraries and repositories prevalent in enterprise environments, vulnerabilities in libraries like Diffusers can grant attackers extensive access owing to how the library is embedded into production pipelines, CI/CD systems, and container images.
+
+Diffusers is a Python package that serves as a library of state-of-the-art (SOTA) pretrained diffusion models for generating videos, images, and audio. According to statistics shared on pepy.tech, the package has been downloaded more than 8.1 million times in July 2026.
+
+One of the key capabilities of the library is to locally load a model from a Hugging Face hub repository via the DiffusionPipeline API, which, in turn, makes use of a configuration file to initialize specific pipeline and component classes, along with custom pipeline code.
+
+The "trust_remote_code" parameter in Diffusers is a security safeguard that controls whether custom Python code hosted inside a model repository is allowed to execute during "from_pretrained()" loading. Setting it to "True" permits custom code execution, while "False" or omitting it blocks unverified code from running.
+
+"The root cause of all different RCE variants [...] is that the trust check lives entirely in the first phase," Zafran explained. "Therefore, any method that makes the loader see custom code that the gate did not, allows bypassing the trust_remote_code mechanism."
+
+Each variant has been traced back to a case of Time-of-Check to Time-of-Use (TOCTOU), with the model download designed as two sequential, non-atomic HTTP requests instead of one a "single atomic operation" and the "trust_remote_code" security gate configured to run only against the first.
+
+The vulnerabilities are listed below -
+
+CVE-2026-44827 (CVSS score: 8.8) - A code injection vulnerability that allows arbitrary code to be loaded through the custom_pipeline flow from a Hub repository by means of a crafted pipeline with the name "None.py" despite passing trust_remote_code=False (or omitting it, which is the default).
+
+CVE-2026-45804 (CVSS score: 7.5) - A race condition vulnerability that allows arbitrary code to be introduced to a repository by modifying the configuration between the hf_hub_download and snapshot_download HTTP calls to the Hub, leading to code execution.
+
+CVE-2026-44513 (CVSS score: 8.8) - A code injection vulnerability that allows arbitrary code to be loaded through the custom_pipeline flow from a Hub repository despite passing trust_remote_code=False (or omitting it).
+
+Following responsible disclosure, the vulnerabilities were addressed in Diffusers version 0.38.0, released in early May 2026. Any user who invokes "DiffusionPipeline.from_pretrained" with custom pipelines is impacted.
+
+"The underlying problem is that artifacts pulled from AI repositories are frequently treated as passive data, when configuration files, loaders, and custom pipeline code can quietly cross into executable code and turn a routine model load into an initial-access vector," the researchers added.
+
+If immediate patching is not an option, the project maintainers have recommended the following workarounds -
+
+Only call from_pretrained with pretrained_model_name_or_path, custom_pipeline, and local snapshot directories from fully trusted sources that have been audited.
+
+Do not pass custom_pipeline= pointing at a Hub repository different from the primary pretrained_model_name_or_path before reading its pipeline.py.
+
+Before calling from_pretrained on a local snapshot, inspect the snapshot for unexpected *.py files, especially under component subdirectories (unet/, scheduler/, etc.) and at the snapshot root.
+
+"These vulnerabilities underscore the critical need to treat AI model repositories as untrusted code, particularly as enterprise reliance on platforms like Hugging Face continues to grow," Zafran said. "A routine model download can easily become a vector for arbitrary code execution if security boundaries like trust_remote_code are bypassed."
+
+(XXXXXXX, AÇIK - https://thehackernews.com/2026/08/hugging-face-diffusers-flaws-could-let.html, thehackernews.com, 03.08.2026)
+
+================================================================================
+
+[4] The Hacker News - Coldcard Hardware Wallet Flaw Linked to $70 Million Bitcoin Theft in 41 Minutes
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Sat, 01 Aug 2026 22:47:22 +0530
 Link: https://thehackernews.com/2026/08/coldcard-hardware-wallet-flaw-linked-to.html
 
-[TAM METİN - 582 kelime]
+[TAM METİN - 701 kelime]
 An attacker drained 1,196 Bitcoin addresses in 41 minutes on July 30, taking 1,082.65 BTC worth about $70.2 million at the time. Galaxy Research mapped the sweep and tied it to a firmware flaw in Coldcard, the Bitcoin-only hardware wallet made by Canadian firm Coinkite.
 
 A March 2021 firmware integration error routed seed generation to a deterministic software pseudorandom number generator (PRNG) instead of the STM32 hardware random number generator (RNG).
@@ -46,11 +210,19 @@ It warned that the pattern identifies the operator, not the theft, because a swe
 
 The disclosure follows Coinspect's Ill Bloom research in early July, a separate weak-PRNG flaw in older software wallets tied to more than $5 million drained from addresses across Bitcoin, Ethereum, Tron, Rootstock and Polygon since May.
 
+Two More Waves Raise Suspected Coldcard-Linked Losses to $88.6 Million
+
+Update: Galaxy Research has since identified two additional suspected waves of Coldcard-related sweeps, raising its observed estimate to 1,367.05 BTC, worth about $88.6 million, across 4,585 addresses.
+
+The firm said Waves 1 and 2 may share an operator based on their transaction patterns, but warned that Wave 3 should not be assumed to involve the same attacker. Galaxy also cautioned that its findings are based on on-chain analysis and that it has not computationally confirmed that every identified address was generated with weak Coldcard entropy.
+
+Galaxy said the activity remains ongoing and that it has reported roughly 600 suspected attacker-controlled addresses to federal investigators, compliance firms, and cybersecurity investigators.
+
 (XXXXXXX, AÇIK - https://thehackernews.com/2026/08/coldcard-hardware-wallet-flaw-linked-to.html, thehackernews.com, 01.08.2026)
 
 ================================================================================
 
-[2] The Hacker News - Hackers Poison Adform Script to Swap Crypto Wallet Addresses Across Customer Sites
+[5] The Hacker News - Hackers Poison Adform Script to Swap Crypto Wallet Addresses Across Customer Sites
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Sat, 01 Aug 2026 14:33:07 +0530
 Link: https://thehackernews.com/2026/08/hackers-poison-adform-script-to-swap.html
@@ -94,7 +266,123 @@ Those figures describe the platform, not this incident. A more useful number is 
 
 ================================================================================
 
-[3] BleepingComputer - Rails patches critical Active Storage flaw with RCE potential
+[6] BleepingComputer - OpenAI teases Astra, its next major AI model, after it solves 10 long-standing math problems
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Sun, 02 Aug 2026 18:31:41 -0400
+Link: https://www.bleepingcomputer.com/news/artificial-intelligence/openai-teases-astra-its-next-major-ai-model-after-it-solves-10-long-standing-math-problems/
+
+[TAM METİN - 379 kelime]
+OpenAI has revealed Astra, an unreleased model designed to tackle complex, long-running tasks, after an internal version produced ten significant advances in mathematics and theoretical computer science.
+
+In a new research post, OpenAI described Astra as "our next major model" and said the problems had seen no progress on their central results for at least a decade, and in most cases, much longer.
+
+According to OpenAI, its internal research focused on a wide range of areas, including high-dimensional geometry, coding theory, arithmetic circuit complexity, group theory, quantum complexity, lattice cryptography, and extremal combinatorics.
+
+OpenAI also says it's advancing rapidly in science.
+
+Some examples include the existence of non-sofic groups, a disproof of Connes’s rigidity conjecture, new bounds for high-dimensional sphere packing, and results resolving several problems posed by mathematician Paul Erdős.
+
+"The total number of tokens needed to find solutions to these problems would cost roughly $2,000 at Sol API rates," OpenAI noted.
+
+Human researchers used the same model to prepare the arguments as manuscripts.
+
+Astra then formalized every argument as a Lean certificate, allowing the proofs to be checked using the mathematical verification system.
+
+Astra could launch as GPT-5.7 or GPT-6
+
+The Information also independently confirmed that OpenAI is indeed working on Astra, a new model family built for long-running workloads.
+
+As per OpenAI, Astra is a powerful model that allows AI agents to collaborate on different parts of a larger problem.
+
+BleepingComputer understands that OpenAI has reportedly not decided whether the model will be released as GPT-5.7, GPT-6, or under another name.
+
+At this point, we know that Astra qualifies as a major breakthrough AI model, and it could be subject to Anthropic-like policies where one version is released to consumers, while a more powerful variant requires special approval.
+
+Test every layer before attackers do
+
+Security teams log 54% of successful attacks and alert on just 14%. The rest move through your environment unseen.
+
+The Picus whitepaper shows how breach and attack simulation tests your SIEM and EDR rules so threats stop slipping by detection.
+
+OpenAI says its new GPT 5.6 models are becoming more cost-efficient
+
+OpenAI confirms ChatGPT is down worldwide
+
+OpenAI temporarily relaxes GPT-5.6 Sol usage limits
+
+Leak confirms OpenAI is testing a ChatGPT for Science subscription
+
+Cybersecurity firms targeted by fraudulent OpenAI organization invites
+
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/artificial-intelligence/openai-teases-astra-its-next-major-ai-model-after-it-solves-10-long-standing-math-problems/, bleepingcomputer.com, 03.08.2026)
+
+================================================================================
+
+[7] BleepingComputer - Google Chrome may soon block New Tab hijacker extensions by default
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Sun, 02 Aug 2026 10:17:16 -0400
+Link: https://www.bleepingcomputer.com/news/google/google-chrome-may-soon-block-new-tab-hijacker-extensions-by-default/
+
+[TAM METİN - 546 kelime]
+Google is preparing a new Chrome security feature that would block policy-installed extensions from hijacking the New Tab page or changing the default search engine.
+
+BleepingComputer spotted the protection in a chain of work-in-progress Chromium Gerrit changes. It has not shipped yet, but Google plans to enable it by default once the changes are approved.
+
+"In low-trust environments (unmanaged consumer devices), enterprise policy force-installs and recommendations are abused to lock in search engine or new tab page hijackers," Anunoy Ghosh, who works at Google, wrote in a post.
+
+"This CL enables the kBlockDseNtpOverrideExtensionsOnUnmanagedDevices feature flag by default, activating the end-to-end blocking defense on unmanaged Windows and macOS devices."
+
+Right now, Chrome allows organizations to use enterprise policies to force-install extensions and control browser settings.
+
+It's not exactly bad on properly managed work devices connected to a domain or mobile device management system, but malware has been abusing the same feature on regular consumer PCs.
+
+A malicious program can add local Chrome policy keys without your permission and force-install an extension that replaces the New Tab page, changes your search engine, or redirects searches to suspicious websites.
+
+Chrome may then believe that the extension was installed by an administrator, which prevents you from removing or disabling it.
+
+In some cases, Chrome also displays the confusing “Managed by your organization” message, even though the PC is not actually owned or managed by an organization.
+
+Google describes these consumer PCs as “low-trust” environments because Chrome is reading policies stored locally without confirmation from a trusted authority, such as a domain or MDM service.
+
+Under the proposed protection, Chrome would block attempts to install policy-controlled extensions that override the New Tab page or default search engine.
+
+The installation would be canceled, and Chrome would save the extension ID in a blocked-extension preference.
+
+Chrome would also stop trying to download the same blocked extension during future policy checks, which should prevent repeated installation attempts and unnecessary network activity.
+
+Google is also addressing another trick used by malware
+
+An extension that you installed manually would no longer be converted into a locked, policy-controlled extension. It would remain under your control, so you could still disable or remove it.
+
+If a previously managed device loses its trusted management status but still has local policy keys, Chrome would automatically uninstall affected New Tab and search-engine override extensions.
+
+Google is adding metrics to measure how often these policy-based hijackers appear and how frequently Chrome blocks them.
+
+Legitimate administrators would also have access to an escape-hatch policy that disables the protection when a required enterprise extension overrides the New Tab page or search engine.
+
+The Gerrit changes are still under review, so the feature is not available in stable Chrome yet.
+
+Test every layer before attackers do
+
+Security teams log 54% of successful attacks and alert on just 14%. The rest move through your environment unseen.
+
+The Picus whitepaper shows how breach and attack simulation tests your SIEM and EDR rules so threats stop slipping by detection.
+
+Google says AI helped Chrome fix 1,072 security bugs in two releases
+
+Fake Perplexity extension on Chrome Web Store tracked searches
+
+Malicious Edge extension abuses Native Messaging as bridge to malware
+
+Google patches new Chrome zero-day flaw exploited in the wild
+
+CISA warns of cyberattacks disrupting U.S. water utilities
+
+(XXXXXXX, AÇIK - https://www.bleepingcomputer.com/news/google/google-chrome-may-soon-block-new-tab-hijacker-extensions-by-default/, bleepingcomputer.com, 02.08.2026)
+
+================================================================================
+
+[8] BleepingComputer - Rails patches critical Active Storage flaw with RCE potential
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Sat, 01 Aug 2026 10:20:30 -0400
 Link: https://www.bleepingcomputer.com/news/security/rails-patches-critical-active-storage-flaw-with-rce-potential/
@@ -162,7 +450,43 @@ Critical Langflow RCE flaw exploited to hack AI app servers
 
 ================================================================================
 
-[4] Security Affairs - CISA Urges Utilities to Remove Internet-Exposed PLCs After Minnesota Attacks
+[9] Security Affairs - CareCloud Breach Exposes Medical and Financial Data of 345,000
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Sun, 02 Aug 2026 20:08:44 +0000
+Link: https://securityaffairs.com/196480/cyber-crime/carecloud-breach-exposes-medical-and-financial-data-of-345000.html
+
+[TAM METİN - 523 kelime]
+CareCloud Breach Exposes Medical and Financial Data of 345,000
+
+CareCloud disclosed a breach affecting 345,000 people after hackers stole medical and financial data from its AWS-hosted systems.
+
+TechCrunch reports that CareCloud, the New Jersey-based health tech company that stores patient records for more than 45,000 providers across the US, is finally notifying people impacted by a breach the firm first disclosed back in March. New disclosures put the number affected so far at nearly 350,000, and that number is still climbing as more states get their filings.
+
+CareCloud is a U.S. healthcare technology company that provides cloud-based electronic health records (EHR), medical practice management, revenue cycle management, billing, and AI-powered software for hospitals and medical practices. It employs approximately 3,650 people, and reported $120.5 million in revenue and $10.8 million in GAAP net income for fiscal year 2025.
+
+CareCloud handles the kind of data that makes a breach genuinely dangerous rather than just annoying. Doctors’ offices, hospitals, and medical practices around the country feed patient records into its systems, which means a hit on CareCloud is really a hit on everyone those providers see. The company stayed mostly quiet for four months after its initial admission, and it took a batch of state filings to fill in the actual details.
+
+According to a data breach notice filed with California’s attorney general’s office this week, threat actors had access to one of CareCloud’s electronic health record data stores for at least six days, from March 10 to March 16.
+
+“The investigation determined that, between March 10 and March 16, 2026, an unauthorized third party accessed one of CareCloud’s AWS environments and claimed to have exfiltrated data from databases within that environment.” reads the data breach notice. “There is no evidence of unauthorized activity within CareCloud’s environment since March 16, 2026.”
+
+The notice states that an attacker “claimed to have exfiltrated data from databases.” CareCloud hasn’t provided technical details about the security breach.
+
+At this time, nobody has publicly claimed responsibility for the attack. What the filings do confirm is the technical detail TechCrunch had already reported back in March: the attackers broke into data storage that CareCloud hosted on Amazon Web Services.
+
+Compromised info may include names, home addresses, and Social Security numbers, along with government ID numbers like passports and driver’s licenses. Bank account details and payment card numbers were exposed too, on top of a substantial amount of medical and health information, the exact combination identity thieves and health insurance fraudsters both want.
+
+In March, Cognizant’s TriZetto Provider Solutions disclosed a breach affecting 3.4 million people, and just last week, billing software provider Craneware confirmed hackers stole a significant volume of data belonging to its hospital and pharmacy clients.
+
+These incidents demonstrate how healthcare data keeps ending up in the wrong hands, and the public usually finds out well after the fact. If there’s a silver lining here, it’s that California’s disclosure rules are the reason we know any of this at all this soon. Without a state forcing the paperwork, “we’ll notify affected patients eventually” would probably still be the entire update.
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(XXXXXXX, AÇIK - https://securityaffairs.com/196480/cyber-crime/carecloud-breach-exposes-medical-and-financial-data-of-345000.html, securityaffairs.com, 02.08.2026)
+
+================================================================================
+
+[10] Security Affairs - CISA Urges Utilities to Remove Internet-Exposed PLCs After Minnesota Attacks
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Sun, 02 Aug 2026 05:06:33 +0000
 Link: https://securityaffairs.com/196453/ics-scada/cisa-urges-utilities-to-remove-internet-exposed-plcs-after-minnesota-attacks.html
@@ -222,7 +546,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[5] Security Affairs - Russian Hackers Hijack Hotel Wi-Fi to Steal Microsoft 365 Tokens
+[11] Security Affairs - Russian Hackers Hijack Hotel Wi-Fi to Steal Microsoft 365 Tokens
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Sat, 01 Aug 2026 14:11:37 +0000
 Link: https://securityaffairs.com/196441/apt/russian-hackers-hijack-hotel-wi-fi-to-steal-microsoft-365-tokens.html
@@ -270,7 +594,7 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[6] Security Affairs - Adobe fixed a maximum-severity vulnerability flaw in Campaign Classic
+[12] Security Affairs - Adobe fixed a maximum-severity vulnerability flaw in Campaign Classic
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Sat, 01 Aug 2026 12:31:34 +0000
 Link: https://securityaffairs.com/196429/security/adobe-fixed-a-maximum-severity-vulnerability-flaw-in-campaign-classic.html
@@ -304,7 +628,171 @@ Follow me on Twitter: @securityaffairs and Facebook and Mastodon
 
 ================================================================================
 
-[7] SANS ISC - Atomic MacOS (AMOS) stealer infection, (Sun, Aug 2nd)
+[13] Security Affairs - DentaQuest disclosed a data breach that impacted +23 million individuals
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Sun, 02 Aug 2026 17:14:10 +0000
+Link: https://securityaffairs.com/196100/data-breach/dentaquest-disclosed-a-data-breach-that-impacted-23-million-individuals.html
+
+[TAM METİN - 444 kelime]
+DentaQuest disclosed a data breach that impacted +23 million individuals
+
+DentaQuest disclosed a data breach that may have exposed the personal and dental health information of more than 23 million people.
+
+DentaQuest is notifying more than 23 million people of a data breach after hackers accessed its network in May 2026. The incident may have exposed customers’ personal information and dental health data.
+
+DentaQuest, part of Sun Life U.S. Dental, is the largest Medicaid and Children’s Health Insurance Program dental benefits administrator in the country, operating in 50 U.S. states.
+
+The company is notifying impacted individuals while investigating the breach and assessing its full impact.
+
+DentaQuest said unauthorized actors accessed its network between May 17 and May 20, 2026, exposing some personal and dental health information. The company secured its systems, notified law enforcement, and launched an investigation into the incident.
+
+“On May 20, 2026, DentaQuest discovered that unauthorized individuals accessed certain data on the DentaQuest computer network. This included some personal identification and dental health information. We took immediate action to secure the network and we reported the incident to law enforcement.” reads the notice of data breach. “We also began an investigation with leading, independent cybersecurity experts to learn what information was accessed. We then determined that the incident began on May 17, 2026, and ended by May 20, 2026.”
+
+According to the notice, the exposed data may include names, addresses, Social Security numbers, member, Medicaid and Medicare IDs, along with dental or vision health information such as provider names, diagnoses, treatments, and billing details. The company hired Kroll to identify affected individuals and determine the full scope of the compromised data.
+
+DentaQuest is offering affected individuals 24 months of free credit monitoring, fraud support, and identity theft recovery services following the data breach.
+
+The HIPAA Journal reported that the data breach impacted over 15 Million individuals, however, the security incident may have impacted more than 23.4 million people.
+
+The ShinyHunters extortion group claimed responsibility for the DentaQuest breach, saying it stole 234 GB of data and published it on its dark web leak site after ransom negotiations failed. Analysis by Have I Been Pwned found 2.6 million unique email addresses alongside names, addresses, phone numbers, birth dates, gender, and healthcare enrollment records that may include Medicaid IDs and insurance details.
+
+Researchers also identified a folder containing what appears to be more than 1.7 million Social Security numbers, many believed to belong to children in Texas. The leaked archive contains hundreds of thousands of files dating back to at least 2009, and its full impact is still being assessed.
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(SecurityAffairs – hacking, DentaQuest)
+
+(XXXXXXX, AÇIK - https://securityaffairs.com/196100/data-breach/dentaquest-disclosed-a-data-breach-that-impacted-23-million-individuals.html, securityaffairs.com, 02.08.2026)
+
+================================================================================
+
+[14] Security Affairs - GitLab Users Urged to Patch After Research Reveals Critical RCE Chain
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Sun, 02 Aug 2026 17:14:10 +0000
+Link: https://securityaffairs.com/196062/hacking/gitlab-users-urged-to-patch-after-research-reveals-critical-rce-chain.html
+
+[TAM METİN - 978 kelime]
+GitLab Users Urged to Patch After Research Reveals Critical RCE Chain
+
+Researchers chained two Oj parser bugs to achieve GitLab RCE via Jupyter notebook diffs, affecting authenticated users on unpatched versions.
+
+Depthfirst researchers published a working remote code execution exploit for GitLab on July 24, chaining two memory corruption bugs in Oj, a Ruby JSON parser with a native C implementation, into full command execution inside a GitLab Puma worker.
+
+Any authenticated user who can push to a project and view commit diffs could run it. The researchers pointed out that no admin rights, no CI access, and no victim interaction are needed. GitLab patched the bugs on June 10 but listed the fix under bug fixes, not the security table, so operators triaging the release had no reason to treat it as urgent.
+
+“The system surfaced 18 prioritized vulnerabilities, including 7 memory-safety bugs. Two of them, an out-of-bounds write and a heap-pointer disclosure, had survived in Oj for nearly five years.” reads the report published by Depthfirst. “Oj is a low-level dependency used by GitLab, and we combined the two bugs to achieve remote code execution on a default GitLab installation.”
+
+The bugs entered Oj’s parser on August 8, 2021. They remained there for 1,753 days. The vulnerable notebook path shipped in GitLab starting with version 15.2.0 in July 2022 and wasn’t fixed until June 10, 2026.
+
+The attack path starts with GitLab’s notebook diff renderer, a small in-tree gem called ipynbdiff that converts Jupyter .ipynb files into human-readable diffs. When a user opens a commit diff for a notebook file, GitLab passes the raw repository bytes to Oj::Parser.usual.parse inside the Puma worker process. That parse call is the entry point.
+
+“The investigation ran in reverse: depthfirst found the vulnerable parser below the application, then traced its callers back to a user-controlled product boundary.” continues the report. “A real request follows that chain in the opposite direction, from a GitLab commit diff into native C code.”
+
+Because Oj::Parser.usual returns a process-wide parser singleton shared across threads in the same Puma worker, corrupting it once affects every subsequent parse in that process.
+
+The first bug is an unchecked nesting stack overflow. Oj keeps track of JSON nesting depth in a fixed 1,024-byte array inside the parser object. When an attacker opens more than 1,024 nested arrays, Oj keeps writing one-byte collection selectors past the end of that buffer, into adjacent parser fields. The attacker can’t control each byte precisely, arrays always write 0x01, but they can control how far the sweep goes. With enough levels, that single byte changes buf.head, the parser’s internal buffer-start pointer, shifting it backward by 127 bytes into memory the parser doesn’t own. From there, a forced realloc caches that forged interior pointer, a Ruby Array allocation reclaims it, and the Array’s element contents, constrained to valid Ruby values but still attacker-influenced, overwrite the parser’s p->start callback pointer with a chosen address.
+
+The second bug provides the address. An oversized object key, 65,565 bytes, gets its length truncated from a size_t to a signed 16-bit integer, which wraps to 29. Oj allocates heap memory for the full key and stores a pointer to it, but the truncated length tells the return path to read 29 bytes from the inline buffer instead. Those 29 bytes happen to contain the heap pointer in bytes 6 through 13. GitLab renders that into the diff as part of the cell ID.
+
+“Returned bytes 0 through 5 came from the external view’s alignment padding. Bytes 6 through 13 were the live key pointer. The final 15 returned bytes came from union storage not written by the external view and could contain stale key-entry contents. This was a fixed 29-byte disclosure, not an arbitrary-address read: it exposed bytes already present in that Key entry and never dereferenced an attacker-selected pointer.” states the report. “These offsets came from the tested x86_64 ABI, so the compiler layout was part of the primitive’s boundary.”
+
+With a heap landmark in hand, the attacker probes candidate libc base addresses by writing a self-looping instruction address into p->start and watching which parse hangs. On a fresh two-worker GitLab install, the ASLR search took five to ten minutes. On a mature long-running instance, the projected time is one to two hours.
+
+Once the library base is recovered, the exploit chains the two primitives in a single diffs_stream request. Two lexically ordered notebook files in the same commit carry the stages: the first notebook arms the callback pointer, raises an exception to avoid immediate execution, and lets GitLab continue streaming diffs. The second notebook’s old side triggers p->start in the same Puma worker, which jumps through two libruby gadgets into system() with the attacker’s command in the right register. Commands run as git, the account behind Puma, which puts source code, Rails secrets, service credentials, and any internal service the application can reach within range.
+
+“Successful exploitation executed commands as git, the account running GitLab’s Puma workers. Its effective reach depends on deployment isolation, but it may include repository data, Rails secrets, service credentials, and internal services available to the application.” concludes the report. “This can lead to source-code disclosure, credential theft, repository modification, persistence, or lateral access.”
+
+GitLab CE and EE versions 15.2.0 through 18.10.7, 18.11.0 through 18.11.4, and 19.0.0 through 19.0.1 are affected across all tiers. Releases before 15.2 used a different JSON parser in this path and aren’t vulnerable. Releases from 15.2 through 18.9 are outside GitLab’s security-maintained patch trains and won’t receive backports — those installs need to move to a supported release. For Helm and Operator deployments, the relevant version is the GitLab version inside the Webservice image running Puma, not the chart version. Upgrade to 18.10.8, 18.11.5, or 19.0.2. No configuration-only workaround has been validated by depthfirst or GitLab.
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(SecurityAffairs – hacking, GitLab)
+
+(XXXXXXX, AÇIK - https://securityaffairs.com/196062/hacking/gitlab-users-urged-to-patch-after-research-reveals-critical-rce-chain.html, securityaffairs.com, 02.08.2026)
+
+================================================================================
+
+[15] Security Affairs - EFF: Most Smart Wearables Still Fall Short on Privacy and Transparency
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Sun, 02 Aug 2026 17:14:10 +0000
+Link: https://securityaffairs.com/196085/security/eff-most-smart-wearables-still-fall-short-on-privacy-and-transparency.html
+
+[TAM METİN - 610 kelime]
+EFF: Most Smart Wearables Still Fall Short on Privacy and Transparency
+
+EFF says most smart wearables lack basic privacy protections, with Apple standing out for end-to-end encryption and transparency.
+
+Most smart wearables still treat privacy like an optional extra, and that’s a problem. The Electronic Frontier Foundation (EFF)’s review of major smart watches, rings, and bands makes the case plainly: these devices collect deeply personal health data, but most vendors still don’t give users the protections or transparency they should expect from the start.
+
+“Oura Rings, Garmin GPS fitness watches, Apple Watches, Whoop bands—every year, more and more tech devices are promising to monitor our health and fitness, guide us toward healthier living, and provide useful health metrics to take to our doctors. But few of these tools provide the sorts of privacy and security promises we demand from all technology, let alone tech that captures personal health data.” reads the report published by EFF. “It’s time they step up and start providing transparency reports and stronger encryption options.”
+
+The EFF looked at ten popular consumer health-device makers, including Apple, Google/Fitbit, Garmin, Oura, Polar, Suunto, and Whoop, then checked public policies and followed up by email. That matters because this isn’t a narrow complaint about one weak product line or one sloppy vendor. It’s a broader look at a market that keeps asking people to hand over sensitive data while offering very uneven safeguards in return.
+
+What the group found is pretty simple: only Apple and Google currently publish transparency reports, and only Apple Watch supports end-to-end encryption for health data stored in its Health app. In practice, that means Apple’s users get a stronger privacy model than the rest of the market, while most competitors still rely on protections that stop outsiders but not the company itself from seeing the data.
+
+“Only two of the companies we surveyed, Apple and Google (which also owns Fitbit), currently publish transparency reports. Apple, Google, and Whoop promise to notify users of law enforcement requests in publicly available documentation.” states EFF.
+
+That gap matters because health data is now a real target in investigations, and wearable data can help reconstruct where someone was, how they moved, and even what they were doing at a given time. If a company won’t say how often it gets legal demands, users are left guessing, and that’s a strange way to build trust around products that track sleep, movement, heart rate, and location all day.
+
+“And that’s it. Apple is the only one. No other popular consumer health wearable offers end-to-end encryption for the data it collects and stores online. Not Google. Not Garmin.” continues the report. “Not Oura. Most of these companies instead offer encryption in transit and at rest, but this means those companies can still see and use your data. This is the industry standard, but it doesn’t have to be.”
+
+The EFF’s point is not that every company must copy Apple feature for feature. It’s that if these firms are going to sell devices that track health, movement, and sleep, they should at least offer transparency reports and a real end-to-end encryption option. Right now, the market mostly offers partial protections, vague assurances, and the usual “we take privacy seriously” line, which is doing a lot of work for a very small sentence.
+
+The real problem is that the industry is still treating privacy as a differentiator instead of a baseline requirement. With many major tech companies already publishing information about government data requests, wearable manufacturers have little reason to remain opaque. Users deserve clear protections, not vague assurances.
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(SecurityAffairs – hacking, Smart Wearables)
+
+(XXXXXXX, AÇIK - https://securityaffairs.com/196085/security/eff-most-smart-wearables-still-fall-short-on-privacy-and-transparency.html, securityaffairs.com, 02.08.2026)
+
+================================================================================
+
+[16] Security Affairs - LockBit5 and Qilin Lead Ransomware Attacks Against Italian Organizations
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Sun, 02 Aug 2026 17:14:10 +0000
+Link: https://securityaffairs.com/196045/security/lockbit5-and-qilin-lead-ransomware-attacks-against-italian-organizations.html
+
+[TAM METİN - 871 kelime]
+LockBit5 and Qilin Lead Ransomware Attacks Against Italian Organizations
+
+A new report links 148 ransomware attacks to Italian organizations in H1 2026, with manufacturing the most targeted sector.
+
+Six months, 148 confirmed ransomware claims against Italian targets, and one sector taking the brunt of it. That’s the headline number from a new semi-annual tracker compiled by ransomNews under its RedACT project, which pulls together OSINT and SOCMINT sources to build a manual, deduplicated picture of who’s getting hit and by whom.
+
+The pace works out to roughly 25 claims a month, just under six a week. Attackers claim to have exfiltrated over 13,400 GB of data across the period, though that figure only covers 64 of the 148 cases; where a volume is actually disclosed, it averages around 61 GB. Read that gap as a reminder that leak-site numbers are marketing copy from criminals, not audited disclosures.
+
+“During the reporting period, 148 confirmed ransomware claims were recorded against Italian organizations, averaging 24.7 per month or 5.7 per week.” reads the report published by ransomNews. “The geographic distribution by NUTS macro-region shows Northwest Italy as the most affected area with 63 victims (42.6%), followed by the Northeast (36), Central Italy (30), Southern Italy (13), and the Islands (5). One claimed victim could not be geographically identified. Attackers claimed to have stolen a total of 13,405.22 GB (approximately 13.4 TB) of data, although data volume was disclosed in only 64 of the 148 cases (43.2%). Where reported, the average amount of exfiltrated data was 61.1 GB.”
+
+Geography tells its own story here. The industrial north carries the weight: the northwest alone accounts for 63 victims, and combined with the northeast that’s two-thirds of every claim in the country. Lombardy alone racks up 45 victims, more than the center, south, and islands combined if you set Lazio aside, and Milan’s province leads every other with 22 claims on its own.
+
+Manufacturing is the sector everyone should be watching, and not because it’s surprising. Factories carry proprietary designs, run operational technology that’s brutal to patch without stopping the line, and have close to zero tolerance for downtime, which makes paying up look cheap by comparison. That combination hands manufacturing 59 victims, nearly 40% of the whole dataset, well ahead of commerce and transport, which trail with 17 each.
+
+Two groups dominate the leaderboard, tied at 21 claims apiece: LockBit5 and Qilin. They couldn’t look more different in how they operate.
+
+“The most active ransomware groups were LockBit5 and Qilin, with 21 claimed victims each. The manufacturing sector was the hardest hit, accounting for 59 victims (39.9% of the total).” continues the report.
+
+LockBit5, the rebrand that surfaced on the RAMP forum after law enforcement’s Operation Cronos took down its predecessor, dumped almost half its Italian activity into a single month, March, which lines up with a broader global surge researchers clocked around the same time. Qilin, by contrast, just kept showing up all six months, steady enough that Italy’s CSIRT put out a dedicated advisory calling out its systematic targeting of small and medium businesses.
+
+June was the loudest month of the half, with 31 claims, a 72% jump from May’s quiet stretch of 18. Don’t read that as organic growth, though. A group called Deadlock dumped 12 Italian victims in a single day, and Safepay separately claimed three targets worth nearly 1,900 GB on its own. Strip those two bursts out and June looks a lot less dramatic, which is the sort of detail that matters if you’re briefing leadership on trend lines rather than headlines.
+
+Data volume, interestingly, doesn’t track victim count at all. February produced the smallest number of claims for its size but the largest data haul of the half, over 4,700 GB, and that’s almost entirely down to two single claims of roughly 2,000 GB each, against Gruppo SEAC and Sofinter Group. Two big fish can outweigh a dozen small ones on paper.
+
+The access methods behind all this aren’t exotic. Reused credentials pulled from old breaches and dark web dumps, unpatched public-facing systems, and RDP left exposed do most of the damage; there’s little sign of exotic tradecraft driving these numbers. CL0P’s four Italian claims in January and February trace directly back to its mass-exploitation campaign against Oracle E-Business Suite, a reminder that a single unpatched enterprise system can ripple into victim lists months later.
+
+Thirty different groups claimed at least one Italian victim this half, but eleven of them show up exactly once, which is less a sign of a crowded market and more a sign of how disposable ransomware brands have become. Affiliates rebrand, spin up a new name, and vanish within weeks. Basing your threat model on which “brand” is currently trending is a bit like planning for weather using yesterday’s forecast.
+
+The national picture from Italy’s cybersecurity agency ACN backs up what this dataset shows locally: cyber events climbed in June compared to May, with pressure concentrated on smaller, lower-resilience organizations, exactly the profile of most companies on this list. If you run a mid-sized manufacturer in Lombardy with RDP facing the internet, you’re not a hypothetical target. You’re the median one.
+
+Follow me on Twitter: @securityaffairs and Facebook and Mastodon
+
+(SecurityAffairs – hacking, cybercrime)
+
+(XXXXXXX, AÇIK - https://securityaffairs.com/196045/security/lockbit5-and-qilin-lead-ransomware-attacks-against-italian-organizations.html, securityaffairs.com, 02.08.2026)
+
+================================================================================
+
+[17] SANS ISC - Atomic MacOS (AMOS) stealer infection, (Sun, Aug 2nd)
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Sun, 02 Aug 2026 04:05:08 GMT
 Link: https://isc.sans.edu/diary/rss/33208
@@ -430,12 +918,1323 @@ brad [at] malware-traffic-analysis.net
 
 ================================================================================
 
-[8] SecurityWeek - Balance Theory Raises $19 Million to Help Enterprises Manage Cybersecurity Investments
+[18] Cyberscoop - CrowdStrike: AI is now both the weapon and the target in cyberattacks
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 07:01:00 +0000
+Link: https://cyberscoop.com/crowdstrike-annual-threat-hunting-report-2026/
+
+[TAM METİN - 643 kelime]
+CrowdStrike: AI is now both the weapon and the target in cyberattacks
+
+While AI is supposed to help defenders, it’s now creating more than twice as much noise as human-triggered incidents CrowdStrike detects as potentially malicious. The company’s threat hunting team and systems triaged an average of 14 million detection leads daily, resulting in about 36,000 customer alerts during the one-year period ending in June.
+
+“AI agent-driven behaviors have surged past human triggers,” said Adam Meyers, senior vice president of counter adversary operations at CrowdStrike. “AI has driven the detections significantly above what humans are causing, and this gives you a sense of how frequently AI is being used, and really just that it’s being used everywhere.”
+
+The threat posed by AI showed up incessantly during the past year, sparking alarming shifts and heightened targeting across software defects, open-source supply chains and AI tools themselves — all of which create greater difficulties for defenders, CrowdStrike said in its annual threat hunting report.
+
+“The AI tools that are being implemented by every enterprise across the globe right now are also creating an extended attack surface,” Meyers said during a press briefing.
+
+“AI is now a tool, a target, and a force multiplier for adversaries,” researchers wrote in the report, adding that AI-enabled malicious activity surged 89% during the past year as attackers used the technology to scale operations, hasten tradecraft and target AI infrastructure.
+
+Attackers are using frontier AI models to uncover vulnerabilities and develop resources, including AI-generated scripts, payloads and commands that increase their effectiveness and efficiency. The technology also allows threat groups to design more creative ways to run automated attacks and boost impact by manipulating, interrupting or sabotaging AI systems and data.
+
+“AI is both the weapon and the target,” Meyers said.
+
+Most organizations don’t view it as such, and thus far haven’t secured or put proper guardrails around the AI tools they use or address the ways attackers can use AI against them, he added.
+
+AI’s mark on vulnerabilities is particularly concerning, as reflected by what Meyers described as “one of the scarier stats” in this year’s report: 88% of vulnerabilities were weaponized through AI within 48 hours.
+
+“This is creating a rich ecosystem of vulnerabilities for attackers to use against various systems,” he said. It also renders the 30-day patch window obsolete, forcing organizations to struggle under a new baseline patch cycle of 24 to 48 hours, according to Meyers.
+
+The AI ecosystem also became the next software supply chain battleground during the past year, as evidenced by TeamPCP’s rampage through open-source software in the first half of this year.
+
+The threat cluster compromised more than 300 software dependencies in one day, Meyers said.
+
+AI tools are already in the crosshairs and the attack surface will continue to grow as agentic systems, AI application integrations and dependency managers for AI agents proliferate, the report concluded.
+
+“The same AI tools driving modern businesses are creating under-defended attack surfaces that adversaries are exploiting,” Meyers said. “We have to secure AI. This is absolutely critical.”
+
+Trump blames Minnesota for cyberattacks on water sector, drawing pushback from cyber world   
+
+
+
+By 
+
+      Tim Starks
+
+Trump blames Minnesota for cyberattacks on water sector, drawing pushback from cyber world
+
+Ghanaian national sentenced to 7 years in prison for stealing $10M from romance scam victims   
+
+
+
+By 
+
+      Matt Kapko
+
+Ghanaian national sentenced to 7 years in prison for stealing $10M from romance scam victims
+
+Okta’s deal for Permiso aims to close gaps in identity threat detection   
+
+
+
+By 
+
+      Greg Otto
+
+Okta’s deal for Permiso aims to close gaps in identity threat detection
+
+CISA issues recommendations to federal agencies on open-source software security   
+
+
+
+By 
+
+      Tim Starks
+
+CISA issues recommendations to federal agencies on open-source software security
+
+Anthropic says its AI accidentally hacked three companies during safety tests   
+
+
+
+By 
+
+      Greg Otto
+
+Anthropic says its AI accidentally hacked three companies during safety tests
+
+(XXXXXXX, AÇIK - https://cyberscoop.com/crowdstrike-annual-threat-hunting-report-2026/, cyberscoop.com, 03.08.2026)
+
+================================================================================
+
+[19] CSO Online - Stop depending on heroics and start operationalizing third-party risk
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 09:00:00 +0000
+Link: https://www.csoonline.com/article/4204027/stop-depending-on-heroics-and-start-operationalizing-third-party-risk.html
+
+[TAM METİN - 1314 kelime]
+When security enters the purchasing timeline too late, everyone loses.
+
+In cybersecurity, third-party risk management normally looks simple on paper: evaluate your vendor, learn the risk, report out on the gaps and weaknesses, transfer to the contract, and continue. Unfortunately, it seldom works that way in practice.
+
+In my roles as a CISO, I find my teams in an intermediary position as the compliance and cybersecurity expert between the end-user purchaser and the vendors they want to work with: A typically high-pressure position when you’re perceived as a roadblock to a business goal.
+
+As a consultant, we are helping clients establish a formal third-party risk management program often for the very first time. Alternatively, you are providing vCISO or trusted adviser services to perhaps evaluate a specific product or service that lies fairly deep down in the purchasing timeline. That distinction is important, because how quickly security gets involved often determines how much friction everyone experiences.
+
+The number one problem I see? Security is always last to know.
+
+When security enters too late
+
+A business team determines what kind of tool it needs. Operations want efficiency. Finance is ready to fund it. Momentum builds. Then someone says, “Wait a minute… What about cybersecurity and compliance? At that point, our role is to ask the questions that should have been asked earlier: What data will this vendor touch? Where will it reside? What controls exist and are needed? Does the vendor’s security posture (and its product) match the client’s obligations and risk tolerance?
+
+Being the one applying the brakes at the 11th hour is not a role anyone relishes. But that often becomes what third-party cyber risk management turns into when there is no formal intake and review process.
+
+This is something that I have witnessed time and again with clients. The team is excited about a new platform and reasonably anticipates a quick go/no-go. Instead, the review process turns into weeks of ping-ponging with the vendor: Responses to questionnaires, security documentation, clarifying calls, proof or non-provision of compliance, legalese and data flow discussions. That delay can feel painful to all involved if the end user organization does not have a mature process already in place. The business sees friction. The vendor sees hurdles. Security sees unresolved risk.
+
+The key to getting in early is working with your legal and finance, or procurement teams to bring you in as early as possible. These will be your partners in making sure the assessment is done before anything is signed. In my experience, once the ink is dry on the contract, you have lost all leverage in being able to get action from the third-party. A mature assessment will build in contract language to address gaps or weaknesses. This is the only thing that works in getting the outcomes you are looking for.
+
+Building a repeatable review process
+
+At root, we’re trying to help end-user organizations build structures around vendor evaluations to ensure a repeatable process; something that is defensible and aligned to their business operations. This is not a simple product review. We are helping them translate security, compliance and operational requirements into a workable framework for making a deployment decision.
+
+A lot of end-user organizations lack the internal time, expertise or leverage to push solution providers on technical controls, audit evidence, shared responsibility or gaps in documentation. As the intermediary between them and the vendor, we do that legwork for them. Because we can ask the questions that need to be asked and how those answers should be interpreted. When one listens to a polished sales narrative, it is not the same thing as sustainable assurance for compliance.
+
+The most important part here is making sure the assessment timelines are clear and consistent, and the purchaser is aware of them. It is also critical that the end user is aware of where the assessment is and if it is sitting with the internal team or the customer. The internal budget holder is always the key to getting action from the vendor, as they typically see the security team as an impediment to the sale.
+
+Done well, third-party cyber risk management is not about blocking business. It’s really about getting clients onto their projects faster and with fewer surprises and less business risk.
+
+Expanding beyond security to add business value
+
+Today, any employee with a budget expects to bring in new technology on a very tight timeline. But I’ve seen this lead to many problems: the biggest of which is failing to solve the business problem. Purchasers fall in love with the interface, one specific feature, the price, the salesperson — you name it, I’ve seen it. Often not even defining what they are trying to solve prior to a purchase.
+
+The business problem and success criteria should be defined before any purchase is made, and security can be one of the criteria for scoring, provided the vendor meets a qualifying security score.
+
+AI makes the challenge more urgent
+
+AI is shaking up the world of third-party risk in two ways at once. One is that vendors have been speed-dialing AI into their respective solutions. Secondly, AI tools are being brought into the workplace without IT authorization [shadow AI], often happening before security or compliance teams are made aware. Essentially, the age-old third-party risk problem of security teams learning last is moving more quickly and on a larger scale.
+
+It’s not only because AI tools are new that causes organizations to worry. It is that people can start using them at once, usually entering sensitive business data into systems that have not been vetted for privacy, retention period and whether models trained on this data will be available for other users to access. Proactive vendor governance is therefore all the more crucial. With no front-end process for intake and assessment, the organization will always be reacting after the fact.
+
+This is where a lot of companies need to reset their expectations. Third-party cyber risk management is an ongoing process that does not work as a side task of procurement, nor can it live entirely in security. It needs to be operationalized across the business. The organizations that do this best set up workflows for bringing in new vendors, identify data exposure early, assign review responsibilities and earmark exceptions before signing a contract.
+
+Companies that fall behind depend on heroics. Somebody sees a risk late, hustles to gather documentation from two parties in different time zones and then fights the vendor for answers while trying to make a sound judgment on limited information. It can work once or twice, but it’s not a program.
+
+What you can do is simple: build up the process before urgency hits. Know who owns intake. Know when security gets involved. Know what evidence is required. Understand how the AI tools will be assessed before they start entering the workspace.
+
+Balancing the needs for compliance, operational realities and the pace of technology adoption enables the business to make decisions about the vendors they depend on with confidence.
+
+The reality is that there are vendors that are good at securing your data, and there are vendors that haven’t even thought about it and all kinds in between. The goal of a good process is to identify which kind of vendor you are dealing with and hold them accountable for any risk.
+
+One of the most important features of a mature third-party risk program that is most often ignored is using the contract to hold vendors accountable. A third-party program without this step rarely produces the expected outcomes because there are no financial teeth to the requirements.
+
+Third-party risk management is not about eliminating friction but shifting it to the right place where it can make an actual difference and organizing it in a way where one can manage it.
+
+This article is published as part of the Foundry Expert Contributor Network.Want to join?
+
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4204027/stop-depending-on-heroics-and-start-operationalizing-third-party-risk.html, csoonline.com, 03.08.2026)
+
+================================================================================
+
+[20] CSO Online - AI is making cybersecurity fundamentals more important than ever
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 08:25:00 +0000
+Link: https://www.csoonline.com/article/4204101/ai-is-making-cybersecurity-fundamentals-more-important-than-ever.html
+
+[TAM METİN - 2231 kelime]
+As AI increasingly accelerates and individualizes cyberattacks, cracks in security leaders’ foundational defensive strategies are only becoming easier to find.
+
+When OpenAI disclosed that one of its models escaped a test environment and broke into Hugging Face’s systems on its own, headlines cast the incident as the start of a new era of AI-driven attacks. But the underlying cause of the incident was a familiar one: a misconfigured sandbox — the same kind of fundamental security failure that has enabled breaches for decades, with or without AI.
+
+AI systems are indeed already finding software vulnerabilities, tailoring social-engineering attacks, analyzing enormous volumes of security data, and beginning to act autonomously across interconnected systems. But the more immediate lesson, experts say, may be less glamorous: The fundamental cybersecurity practices that organizations have struggled to perform for decades are becoming more important, not less.
+
+“The cybersecurity fundamentals are as important as ever, probably more so,” Eric Brandwine, VP and distinguished engineer at Amazon Web Services, tells CSO. “It’s the exact same story that it’s always been — all of the cybersecurity fundamentals — but you’ve got to be more agile, you’ve got to be more responsive.”
+
+AI puts security debt front and center
+
+Cybersecurity programs have always operated under pressure to accept unresolved vulnerabilities, incomplete inventories, aging infrastructure, and poorly controlled access, because fixing them is expensive or operationally disruptive. AI changes the consequences: Weaknesses that once took a skilled human considerable time to discover can now be found through automated, repeated examination of applications, infrastructure, and exposed systems.
+
+“Our legacy security debt is now front and center,” Diana Kelley, CISO at Noma Security, tells CSO. “Even simple mistakes that maybe a human wasn’t going to exploit previously, or it was sort of too hard for them to find, we’ve got AI looking again and again, going at machine speed, at agentic scale, looking for all of these exposures and exploiting them potentially.”
+
+Kelley points to Noma Security research into an indirect prompt-injection vulnerability called ForcedLeak. A malicious instruction submitted through a web form could cause a Salesforce AI agent to exfiltrate sensitive information through an image request. Yet the attack relied on a decidedly conventional oversight: A content security policy still trusted a domain the organization no longer controlled. Researchers registered the abandoned domain for $5. Had it been removed from the content security policy, the exfiltration path would have been blocked.
+
+“This was an advanced agentic attack that used indirect prompt injection, but something as simple as DNS hygiene would have prevented it,” Kelley says.
+
+Gene Spafford, distinguished professor of computer science at Purdue University, sees the vulnerabilities AI is uncovering not merely as technical debt but frequently as the product of conscious business decisions. Organizations and vendors have repeatedly prioritized speed, features, and market share over careful engineering, testing, and risk management.
+
+“This kind of thing can often be described as a technical debt, but it’s a willful debt,” Spafford tells CSO. “It’s a misplaced sense of prioritization of where investment and spending have gone over many years.”
+
+AI systems trained on vast collections of software and security information are particularly effective at recognizing repeated patterns of bad coding, weak configurations, and familiar errors — revealing less about the novelty of the technology than about how much avoidable weakness the industry has allowed to persist.
+
+“AI is simply catching up with [decades of inadequate software engineering] for the lack of appropriate due care over the last few decades in development,” Spafford says.
+
+Attackers are moving faster, not necessarily differently
+
+Generative and agentic AI may introduce distinct risks, including prompt injection, data poisoning, and the manipulation of autonomous agents. But much of AI’s near-term impact comes from making familiar attack techniques faster, cheaper, or more precisely targeted.
+
+Chris Betz, CISO at Google Cloud, describes the defining characteristics of AI-enabled activity as speed, scale, and customization. Traditional automation made it possible to perform the same action repeatedly; AI allows attackers and defenders to perform highly individualized actions repeatedly.
+
+“Where automation used to mean doing the same thing at scale, AI allows us to do very specific things at scale,” Betz tells CSO. “While we have to change the way we think, in a lot of ways it means that we have to do more of what we’ve done in the past, and we have to do it at a massive scale.”
+
+Familiar controls such as multifactor authentication, zero-trust architectures, system patching, and effective detection and response remain critical. But defenders must apply them consistently enough to withstand attackers who can probe environments continuously and adapt to each target.
+
+“You can’t bring just that foundation to an AI fight,” Betz says. “But you need that foundation. That foundation is what gives the defenders their distinct advantage.”
+
+The evidence from incident response continues to point toward familiar weaknesses. John Shier, field CISO at Sophos, says the two leading root causes appearing year after year in the company’s incident investigations are compromised credentials and exploited vulnerabilities. In many of those incidents, multifactor authentication was absent from at least some exposed services, and attackers exploited vulnerabilities for which patches had been available for months.
+
+“There are no new vulnerability classes, and there are no new attack types. AI hasn’t changed that yet,” Shier tells CSO. “The things that we know how to mitigate and how to deal with are still the ones that the attackers are exploiting writ large.”
+
+Shier compares an organization relying on sophisticated detection without basic prevention to a modern vehicle equipped with driver-assistance sensors and airbags — but no brakes. Detection and response was a necessary correction to the notion that every intrusion could be prevented, but it becomes dangerous when organizations treat prevention as outdated or assume AI will contain every malicious action after it begins.
+
+That’s the trap Shier sees organizations falling into — treating AI as a reason to worry less about prevention. “It can solve some problems,” he says, “but it can’t solve all of the problems that are addressed by preventive technologies or by reducing or eliminating risks altogether.”
+
+Identity, cloud, and SaaS remain pressure points
+
+AI-enabled attackers do not need to “hack in” when they can obtain credentials, session tokens, or authenticated access, and the expansion of cloud services, remote work, and SaaS has given adversaries more identities, permissions, and connections to target.
+
+Adam Meyers, SVP of counter adversary operations at CrowdStrike, says organizations must first learn to “do cybersecurity well” before expecting advanced technologies to compensate for foundational weaknesses.
+
+“Organizations have quickly moved into remote work, and they’ve moved toward cloud systems,” Meyers tells CSO. “In a lot of cases, unfortunately, they haven’t kept pace cybersecurity-wise and haven’t done some of the basics correctly with identity in particular, but also cloud.”
+
+Meyers points to identity threat detection and response as an increasingly important baseline capability, because criminal actors are seeking passwords, authentication tokens, and ways to bypass multifactor authentication. Asked whether AI could perform the fundamentals for organizations, he was skeptical of treating the technology as a substitute for implementation and accountability.
+
+“The fundamentals are the fundamentals,” he says. “I don’t know if you need AI to do the fundamentals. I think you need to pull up your pants and do the fundamentals.”
+
+Good practices block entire classes of attacks
+
+The number of vulnerabilities discovered through AI-assisted research is likely to grow. Tony Sager, SVP and chief evangelist at the Center for Internet Security, argues that organizations should not interpret that growth as requiring a unique defense for every newly identified flaw, given that vulnerabilities fall into recurring classes that well-chosen security practices can block or constrain at once.
+
+“You can’t think of it as, ‘I have to find and fix every one of them,’ because they’re not all unique. They fall in classes,” Sager tells CSO. “Those good practices — the basics of identity management, configurations, and all those kinds of things — block lots of those different classes of attacks.”
+
+Frameworks and prioritized security controls translate complex knowledge about attacks, software flaws, and adversary behavior into a set of repeatable organizational practices. Their recommendations may sound elementary, but the simplicity of the behavior does not mean the analysis behind it is simplistic.
+
+“You don’t need to read threat reports,” Sager says. “You just need to engage in the practices that are found in things like the NIST framework and the CIS Critical Security Controls. You get a lot of value out of that, and you should do that because that’s the foundation of good defense.”
+
+As AI produces more examples of familiar flaws and gives adversaries the ability to search for them more rapidly, organizations with weak foundational controls will be exposed to more attempts against a larger number of weaknesses.
+
+“If you haven’t done these basic things, you’re weaker than ever,” Sager says. “The importance of those fundamental things has only gone up.”
+
+Humans must know when the AI is wrong
+
+Cybersecurity fundamentals are not confined to technical controls. Security practitioners must also understand core cybersecurity principles well enough to evaluate AI-generated recommendations and recognize when a model has produced a plausible but incorrect answer.
+
+“If you as a human being don’t understand the basics of cybersecurity and you’re relying entirely on whatever AI you’re interacting with to tell you, then if the AI goes off — whether it drifts, gets misaligned, or there’s been poisoning via prompt injection — you have no ability as the person reading this output to figure out if that’s right or not,” Noma Security’s Kelley says.
+
+Scott Beale, CEO of ISC2, similarly warns that AI’s ability to increase capacity does not eliminate the need for human judgment. An erroneous recommendation about a coffee shop is inconsequential; one affecting an organization’s systems, data, or response to an attack is not.
+
+“You need to be able to differentiate what is accurate and what’s not,” Beale tells CSO. “They also know that when errors are made, it is a human who’s going to be held accountable for whether the right decisions were made.”
+
+That accountability, Beale says, is exactly why AI can’t be allowed to lower the floor on human judgment: “Human judgment and human oversight are absolutely critical, even if you’re partnering with these AI tools.”
+
+New AI-specific attacks do not replace traditional threats
+
+Organizations must also distinguish between attacks conducted with AI and attacks directed against the AI systems they use.
+
+Roger Grimes, a longtime security researcher and CISO adviser, says AI-enhanced attackers continue to rely heavily on the two dominant initial-access techniques of the broader internet era: social engineering and exploitation of unpatched vulnerabilities. AI can create more convincing phishing campaigns, deepfakes, and customized lures, while also helping identify known and previously undiscovered software flaws.
+
+“When AI threats come, as they already are, they’re going to use and abuse those same traditional, classical ways that hackers have always broken in,” Grimes tells CSO.
+
+At the same time, organizations are deploying systems vulnerable to prompt injection, model manipulation, data leakage, and other attacks aimed directly at AI. Grimes compares prompt injection to SQL injection: a form of attack made possible by a particular underlying technology. The difference is that AI will be embedded across desktops, devices, and interconnected services, and an attack against one model may reach an organization through an AI supply chain security teams have not fully mapped.
+
+“There are attacks from AI against you, whether or not you’re using AI,” Grimes says. “And then there are attacks to the AI that you use, because we’re all using AI in some way, and that’s only going to grow over time.”
+
+Traditional security fundamentals will mitigate many of the pathways attackers use to reach AI systems, but organizations will also need new controls for models, agents, prompts, and AI data flows. This, Grimes says, is an expansion of the security program, not an excuse to abandon what came before.
+
+AI can help do the hard, tedious work
+
+None of the experts argues that CISOs should turn away from AI. Used carefully, it can help security teams analyze telemetry, investigate alerts, discover assets, examine code, and identify vulnerabilities — scaling work organizations have historically performed poorly because it is tedious and labor-intensive.
+
+AWS’s Brandwine says security organizations need ways to experiment with AI without subjecting every idea to a lengthy production review. A new AI-powered detection, for example, can run in parallel with an established system so defenders can compare results without immediately depending on it. That agility becomes essential as developers produce software faster and employees adopt new models and agents, requiring security teams to keep pace without turning governance into an obstacle employees evade.
+
+AI may finally make some aspects of security hygiene easier to sustain — assisting with asset classification, correlating disconnected inventories, prioritizing remediation work, and reducing the manual burden of reviewing logs. But its results will be only as dependable as the systems, data, and human decisions surrounding it.
+
+The winning formula is therefore neither “forget AI and return to the basics” nor “let AI solve cybersecurity.” It is to use AI to increase the speed and scale at which organizations perform the fundamentals while preserving the human knowledge, governance, and accountability necessary to determine whether the technology is getting the work right.
+
+As Google Cloud’s Betz puts it, the journey is “a firm foundation and a move-faster piece with AI on top.”
+
+(XXXXXXX, AÇIK - https://www.csoonline.com/article/4204101/ai-is-making-cybersecurity-fundamentals-more-important-than-ever.html, csoonline.com, 03.08.2026)
+
+================================================================================
+
+[21] SecurityWeek - US Water Cyberattacks Extend Beyond Minnesota to at Least 6 Other States
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 08:48:02 +0000
+Link: https://www.securityweek.com/us-water-cyberattacks-extend-beyond-minnesota-to-at-least-6-other-states/
+
+[TAM METİN - 6821 kelime]
+US Water Cyberattacks Extend Beyond Minnesota to at Least 6 Other States
+
+Michigan, South Dakota, and Georgia are reportedly on the list of states whose water systems have been targeted by Iran-linked hackers.
+
+Flipboard
+
+
+
+
+
+Reddit
+
+
+
+
+
+Whatsapp
+
+
+
+
+
+Whatsapp
+
+
+
+
+
+Email
+
+The recent cyber campaign targeting the water and wastewater sector in the United States has hit at least seven states as more information has come to light regarding Iran’s connection to the hacker attacks.
+Minnesota reported last week that operational technology (OT) systems at more than 30 water and wastewater facilities were targeted in a cyberattack on July 26 and 27. 
+
+
+
+Only a handful of cities issued public statements about the attack. One city briefly took down its water plant in response, but most reported no operational impact, reassuring citizens that drinking water remains safe.
+
+
+
+As expected, the campaign was not limited to Minnesota, and several mainstream media outlets reported learning from sources that at least seven states are impacted. 
+
+
+
+Michigan has also officially confirmed that a “small number” of communities have seen malicious cyber activity, noting that all systems continued to operate safely and there were no public health concerns.
+
+
+
+Rapid City in South Dakota also reported experiencing a cybersecurity incident, and its description suggests that it may be part of the same campaign. Advertisement. Scroll to continue reading.
+
+
+“Recently, the City of Rapid City experienced a cyber incident involving one of its lift stations, which is used as part of the city’s wastewater system,” the city said in a Facebook post, adding, “At no time was the city’s water or wastewater infrastructure systems placed in jeopardy and city officials assure Rapid City residents the city’s water supply remains safe and protected.”
+
+
+
+ABC News reported that Georgia is also among the seven states targeted in the water sector cyberattacks. The names of the other affected states remain unknown at the time of writing. 
+
+
+
+Iran blamed for the water sector cyberattacks
+Iran was immediately named as the primary suspect considering that its hackers have been known to target ICS and other OT systems, including in the water sector. 
+
+
+
+While the US government has not publicly blamed Iran for the attacks, several mainstream media outlets reported last week that federal investigators had been looking into Iran’s potential involvement. 
+
+
+
+In addition, WaterISAC, which serves as the communications and information-sharing organization for the water sector, reportedly wrote a report revealing that Minnesota’s Fusion Center had found evidence that the attacks were “aligned” with hacking campaigns previously linked by the US to Iran. 
+
+
+
+Wired obtained a copy of the report, but WaterISAC noted that it was marked TLP:Amber and was not meant for public release or broad sharing. 
+
+
+
+Technical details for OT defenders
+Few technical details have been made available by the cities whose water facilities have been targeted by hackers. 
+
+
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Minnesota reported last week that operational technology (OT) systems at more than 30 water and wastewater facilities were targeted in a cyberattack on July 26 and 27. 
+
+
+
+Only a handful of cities issued public statements about the attack. One city briefly took down its water plant in response, but most reported no operational impact, reassuring citizens that drinking water remains safe.
+
+
+
+As expected, the campaign was not limited to Minnesota, and several mainstream media outlets reported learning from sources that at least seven states are impacted. 
+
+
+
+Michigan has also officially confirmed that a “small number” of communities have seen malicious cyber activity, noting that all systems continued to operate safely and there were no public health concerns.
+
+
+
+Rapid City in South Dakota also reported experiencing a cybersecurity incident, and its description suggests that it may be part of the same campaign. Advertisement. Scroll to continue reading.
+
+
+“Recently, the City of Rapid City experienced a cyber incident involving one of its lift stations, which is used as part of the city’s wastewater system,” the city said in a Facebook post, adding, “At no time was the city’s water or wastewater infrastructure systems placed in jeopardy and city officials assure Rapid City residents the city’s water supply remains safe and protected.”
+
+
+
+ABC News reported that Georgia is also among the seven states targeted in the water sector cyberattacks. The names of the other affected states remain unknown at the time of writing. 
+
+
+
+Iran blamed for the water sector cyberattacks
+Iran was immediately named as the primary suspect considering that its hackers have been known to target ICS and other OT systems, including in the water sector. 
+
+
+
+While the US government has not publicly blamed Iran for the attacks, several mainstream media outlets reported last week that federal investigators had been looking into Iran’s potential involvement. 
+
+
+
+In addition, WaterISAC, which serves as the communications and information-sharing organization for the water sector, reportedly wrote a report revealing that Minnesota’s Fusion Center had found evidence that the attacks were “aligned” with hacking campaigns previously linked by the US to Iran. 
+
+
+
+Wired obtained a copy of the report, but WaterISAC noted that it was marked TLP:Amber and was not meant for public release or broad sharing. 
+
+
+
+Technical details for OT defenders
+Few technical details have been made available by the cities whose water facilities have been targeted by hackers. 
+
+
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Only a handful of cities issued public statements about the attack. One city briefly took down its water plant in response, but most reported no operational impact, reassuring citizens that drinking water remains safe.
+
+
+
+As expected, the campaign was not limited to Minnesota, and several mainstream media outlets reported learning from sources that at least seven states are impacted. 
+
+
+
+Michigan has also officially confirmed that a “small number” of communities have seen malicious cyber activity, noting that all systems continued to operate safely and there were no public health concerns.
+
+
+
+Rapid City in South Dakota also reported experiencing a cybersecurity incident, and its description suggests that it may be part of the same campaign. Advertisement. Scroll to continue reading.
+
+
+“Recently, the City of Rapid City experienced a cyber incident involving one of its lift stations, which is used as part of the city’s wastewater system,” the city said in a Facebook post, adding, “At no time was the city’s water or wastewater infrastructure systems placed in jeopardy and city officials assure Rapid City residents the city’s water supply remains safe and protected.”
+
+
+
+ABC News reported that Georgia is also among the seven states targeted in the water sector cyberattacks. The names of the other affected states remain unknown at the time of writing. 
+
+
+
+Iran blamed for the water sector cyberattacks
+Iran was immediately named as the primary suspect considering that its hackers have been known to target ICS and other OT systems, including in the water sector. 
+
+
+
+While the US government has not publicly blamed Iran for the attacks, several mainstream media outlets reported last week that federal investigators had been looking into Iran’s potential involvement. 
+
+
+
+In addition, WaterISAC, which serves as the communications and information-sharing organization for the water sector, reportedly wrote a report revealing that Minnesota’s Fusion Center had found evidence that the attacks were “aligned” with hacking campaigns previously linked by the US to Iran. 
+
+
+
+Wired obtained a copy of the report, but WaterISAC noted that it was marked TLP:Amber and was not meant for public release or broad sharing. 
+
+
+
+Technical details for OT defenders
+Few technical details have been made available by the cities whose water facilities have been targeted by hackers. 
+
+
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+As expected, the campaign was not limited to Minnesota, and several mainstream media outlets reported learning from sources that at least seven states are impacted. 
+
+
+
+Michigan has also officially confirmed that a “small number” of communities have seen malicious cyber activity, noting that all systems continued to operate safely and there were no public health concerns.
+
+
+
+Rapid City in South Dakota also reported experiencing a cybersecurity incident, and its description suggests that it may be part of the same campaign. Advertisement. Scroll to continue reading.
+
+
+“Recently, the City of Rapid City experienced a cyber incident involving one of its lift stations, which is used as part of the city’s wastewater system,” the city said in a Facebook post, adding, “At no time was the city’s water or wastewater infrastructure systems placed in jeopardy and city officials assure Rapid City residents the city’s water supply remains safe and protected.”
+
+
+
+ABC News reported that Georgia is also among the seven states targeted in the water sector cyberattacks. The names of the other affected states remain unknown at the time of writing. 
+
+
+
+Iran blamed for the water sector cyberattacks
+Iran was immediately named as the primary suspect considering that its hackers have been known to target ICS and other OT systems, including in the water sector. 
+
+
+
+While the US government has not publicly blamed Iran for the attacks, several mainstream media outlets reported last week that federal investigators had been looking into Iran’s potential involvement. 
+
+
+
+In addition, WaterISAC, which serves as the communications and information-sharing organization for the water sector, reportedly wrote a report revealing that Minnesota’s Fusion Center had found evidence that the attacks were “aligned” with hacking campaigns previously linked by the US to Iran. 
+
+
+
+Wired obtained a copy of the report, but WaterISAC noted that it was marked TLP:Amber and was not meant for public release or broad sharing. 
+
+
+
+Technical details for OT defenders
+Few technical details have been made available by the cities whose water facilities have been targeted by hackers. 
+
+
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Michigan has also officially confirmed that a “small number” of communities have seen malicious cyber activity, noting that all systems continued to operate safely and there were no public health concerns.
+
+
+
+Rapid City in South Dakota also reported experiencing a cybersecurity incident, and its description suggests that it may be part of the same campaign. Advertisement. Scroll to continue reading.
+
+
+“Recently, the City of Rapid City experienced a cyber incident involving one of its lift stations, which is used as part of the city’s wastewater system,” the city said in a Facebook post, adding, “At no time was the city’s water or wastewater infrastructure systems placed in jeopardy and city officials assure Rapid City residents the city’s water supply remains safe and protected.”
+
+
+
+ABC News reported that Georgia is also among the seven states targeted in the water sector cyberattacks. The names of the other affected states remain unknown at the time of writing. 
+
+
+
+Iran blamed for the water sector cyberattacks
+Iran was immediately named as the primary suspect considering that its hackers have been known to target ICS and other OT systems, including in the water sector. 
+
+
+
+While the US government has not publicly blamed Iran for the attacks, several mainstream media outlets reported last week that federal investigators had been looking into Iran’s potential involvement. 
+
+
+
+In addition, WaterISAC, which serves as the communications and information-sharing organization for the water sector, reportedly wrote a report revealing that Minnesota’s Fusion Center had found evidence that the attacks were “aligned” with hacking campaigns previously linked by the US to Iran. 
+
+
+
+Wired obtained a copy of the report, but WaterISAC noted that it was marked TLP:Amber and was not meant for public release or broad sharing. 
+
+
+
+Technical details for OT defenders
+Few technical details have been made available by the cities whose water facilities have been targeted by hackers. 
+
+
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Rapid City in South Dakota also reported experiencing a cybersecurity incident, and its description suggests that it may be part of the same campaign. Advertisement. Scroll to continue reading.
+
+
+“Recently, the City of Rapid City experienced a cyber incident involving one of its lift stations, which is used as part of the city’s wastewater system,” the city said in a Facebook post, adding, “At no time was the city’s water or wastewater infrastructure systems placed in jeopardy and city officials assure Rapid City residents the city’s water supply remains safe and protected.”
+
+
+
+ABC News reported that Georgia is also among the seven states targeted in the water sector cyberattacks. The names of the other affected states remain unknown at the time of writing. 
+
+
+
+Iran blamed for the water sector cyberattacks
+Iran was immediately named as the primary suspect considering that its hackers have been known to target ICS and other OT systems, including in the water sector. 
+
+
+
+While the US government has not publicly blamed Iran for the attacks, several mainstream media outlets reported last week that federal investigators had been looking into Iran’s potential involvement. 
+
+
+
+In addition, WaterISAC, which serves as the communications and information-sharing organization for the water sector, reportedly wrote a report revealing that Minnesota’s Fusion Center had found evidence that the attacks were “aligned” with hacking campaigns previously linked by the US to Iran. 
+
+
+
+Wired obtained a copy of the report, but WaterISAC noted that it was marked TLP:Amber and was not meant for public release or broad sharing. 
+
+
+
+Technical details for OT defenders
+Few technical details have been made available by the cities whose water facilities have been targeted by hackers. 
+
+
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+“Recently, the City of Rapid City experienced a cyber incident involving one of its lift stations, which is used as part of the city’s wastewater system,” the city said in a Facebook post, adding, “At no time was the city’s water or wastewater infrastructure systems placed in jeopardy and city officials assure Rapid City residents the city’s water supply remains safe and protected.”
+
+
+
+ABC News reported that Georgia is also among the seven states targeted in the water sector cyberattacks. The names of the other affected states remain unknown at the time of writing. 
+
+
+
+Iran blamed for the water sector cyberattacks
+Iran was immediately named as the primary suspect considering that its hackers have been known to target ICS and other OT systems, including in the water sector. 
+
+
+
+While the US government has not publicly blamed Iran for the attacks, several mainstream media outlets reported last week that federal investigators had been looking into Iran’s potential involvement. 
+
+
+
+In addition, WaterISAC, which serves as the communications and information-sharing organization for the water sector, reportedly wrote a report revealing that Minnesota’s Fusion Center had found evidence that the attacks were “aligned” with hacking campaigns previously linked by the US to Iran. 
+
+
+
+Wired obtained a copy of the report, but WaterISAC noted that it was marked TLP:Amber and was not meant for public release or broad sharing. 
+
+
+
+Technical details for OT defenders
+Few technical details have been made available by the cities whose water facilities have been targeted by hackers. 
+
+
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+ABC News reported that Georgia is also among the seven states targeted in the water sector cyberattacks. The names of the other affected states remain unknown at the time of writing. 
+
+
+
+Iran blamed for the water sector cyberattacks
+Iran was immediately named as the primary suspect considering that its hackers have been known to target ICS and other OT systems, including in the water sector. 
+
+
+
+While the US government has not publicly blamed Iran for the attacks, several mainstream media outlets reported last week that federal investigators had been looking into Iran’s potential involvement. 
+
+
+
+In addition, WaterISAC, which serves as the communications and information-sharing organization for the water sector, reportedly wrote a report revealing that Minnesota’s Fusion Center had found evidence that the attacks were “aligned” with hacking campaigns previously linked by the US to Iran. 
+
+
+
+Wired obtained a copy of the report, but WaterISAC noted that it was marked TLP:Amber and was not meant for public release or broad sharing. 
+
+
+
+Technical details for OT defenders
+Few technical details have been made available by the cities whose water facilities have been targeted by hackers. 
+
+
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Iran blamed for the water sector cyberattacks
+
+Iran was immediately named as the primary suspect considering that its hackers have been known to target ICS and other OT systems, including in the water sector. 
+
+
+
+While the US government has not publicly blamed Iran for the attacks, several mainstream media outlets reported last week that federal investigators had been looking into Iran’s potential involvement. 
+
+
+
+In addition, WaterISAC, which serves as the communications and information-sharing organization for the water sector, reportedly wrote a report revealing that Minnesota’s Fusion Center had found evidence that the attacks were “aligned” with hacking campaigns previously linked by the US to Iran. 
+
+
+
+Wired obtained a copy of the report, but WaterISAC noted that it was marked TLP:Amber and was not meant for public release or broad sharing. 
+
+
+
+Technical details for OT defenders
+Few technical details have been made available by the cities whose water facilities have been targeted by hackers. 
+
+
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+While the US government has not publicly blamed Iran for the attacks, several mainstream media outlets reported last week that federal investigators had been looking into Iran’s potential involvement. 
+
+
+
+In addition, WaterISAC, which serves as the communications and information-sharing organization for the water sector, reportedly wrote a report revealing that Minnesota’s Fusion Center had found evidence that the attacks were “aligned” with hacking campaigns previously linked by the US to Iran. 
+
+
+
+Wired obtained a copy of the report, but WaterISAC noted that it was marked TLP:Amber and was not meant for public release or broad sharing. 
+
+
+
+Technical details for OT defenders
+Few technical details have been made available by the cities whose water facilities have been targeted by hackers. 
+
+
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+In addition, WaterISAC, which serves as the communications and information-sharing organization for the water sector, reportedly wrote a report revealing that Minnesota’s Fusion Center had found evidence that the attacks were “aligned” with hacking campaigns previously linked by the US to Iran. 
+
+
+
+Wired obtained a copy of the report, but WaterISAC noted that it was marked TLP:Amber and was not meant for public release or broad sharing. 
+
+
+
+Technical details for OT defenders
+Few technical details have been made available by the cities whose water facilities have been targeted by hackers. 
+
+
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Wired obtained a copy of the report, but WaterISAC noted that it was marked TLP:Amber and was not meant for public release or broad sharing. 
+
+
+
+Technical details for OT defenders
+Few technical details have been made available by the cities whose water facilities have been targeted by hackers. 
+
+
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Technical details for OT defenders
+
+Few technical details have been made available by the cities whose water facilities have been targeted by hackers. 
+
+
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+However, one city in Minnesota noted that the incident was limited to “equipment connected via cellular communications,” and industry professionals agree that OT endpoints connected to the internet via cellular networks are a potential intrusion vector.
+
+
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Iran-linked hackers previously targeted water facilities in Israel via vulnerable cellular routers. 
+
+
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Infracritical has made available a continuously updated report that summarizes all of the currently known technical information for the OT security community and defenders.
+
+
+
+
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+After the attacks on Minnesota water facilities came to light, CISA urged the sector to protect OT, specifically programmable logic controllers (PLCs).
+
+
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+In addition, days before the Minnesota attacks, federal agencies updated an April advisory on Iranian attacks aimed at OT devices, warning that industrial control systems (ICS) made by Siemens, Schneider Electric, and Rockwell Automation have been targeted. 
+
+
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Internet security firm Censys reported that roughly 10,000 Rockwell, Siemens, and Schneider PLCs are exposed to the internet, though it’s unclear how many are actually vulnerable to attacks.
+
+
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Related: Rockwell Patches Code Execution Flaws in Arena Simulation Software
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Related: US, Australia Release OT Isolation Guidance for Critical Infrastructure
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Related: 1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Eduard Kovacs (@EduardKovacs) is senior managing editor at SecurityWeek. He worked as a high school IT teacher before starting a career in journalism in 2011. Eduard holds a bachelor’s degree in industrial informatics and a master’s degree in computer techniques applied in electrical engineering.
+
+More from Eduard Kovacs
+
+Semiconductor Firm Analog Devices Discloses Data Breach
+
+1 in 5 Data Center Assets Are Within Easy Reach of Attackers
+
+Cisco Secure FMC Zero-Day Exploited in the Wild
+
+ThreatLocker Raises $190 Million in Series F Funding
+
+Critical VM Escape Vulnerability Patched in VMware ESXi
+
+OpenAI’s Rogue AI Ventured Beyond Hugging Face
+
+Dozens of Minnesota Water Utilities Targeted in Coordinated OT Attacks
+
+Cyera Acquiring Oasis Security in $1 Billion Deal
+
+Balance Theory Raises $19 Million to Help Enterprises Manage Cybersecurity Investments
+
+Ruby on Rails Patches Critical Vulnerability
+
+In Other News: OpenAI Open Source Tool, AWS Links Hacks to North Korea, Mythos Crypto Research
+
+Cyberattacks on Minnesota Water Systems Investigated as Officials Warn About Iranian Hackers
+
+Google AI Uncovers 13-Year-Old Chrome Flaw Amid Record Patching Pace
+
+EU to Crack Down on AI Deepfakes, Illicit Imagery and Hacking With New Team in Brussels
+
+Prompted by OpenAI Disclosure, Anthropic Finds Its Own Models Hacked 3 Organizations
+
+Critical Flaw Allowed to Azure Cosmos DB Pwnage
+
+Webinar: Rethinking Cyber Defense for AI-Speed Attacks
+
+Join this live webinar as we explore if detection-first security operations can keep pace with AI, or if it’s time to rethink prevention as the strongest default.
+
+Virtual Event: CodeSecCon 2026
+
+CodeSecCon bridges the gap between dev and security. Discover best practices for secure coding, innovative risk-reduction tools, and safe AI integration to cultivate a true DevSecOps culture. Safely secure your apps!
+
+PNC Financial Services Group has appointed Christian Winward as CISO.
+
+Brian Gumbel has joined Armadin as Chief Revenue Officer.
+
+EigenQ has appointed Mark Pecen as Vice Chairman and Alexander Truskovsky as CISO.
+
+Timeless Compliance: Why Better Questions Beat Bigger Frameworks
+
+The best compliance programs aren't the biggest ones. They're the ones built on a short list of questions that can actually be answered, and that still hold true when the models change.
+(Matt Honea)
+
+Is Patching Dead? Vulnerability Management in the Post-Mythos Era
+
+You cannot out-patch a machine that writes a working exploit from a vulnerability description in twenty hours. Stop trying to optimize a game you cannot win.
+(Danelle Au)
+
+When Identity Verification Fails: Lessons from a Real-World SIM Swap and Near Account Takeover
+
+Identity confidence changes throughout every interaction and should be reassessed continuously as new risk signals emerge.
+(Torsten George)
+
+Legacy Systems, Real-World Impacts: The Reality of OT Security
+
+Legacy systems, safety concerns, and critical infrastructure risks make OT vulnerability disclosure one of cybersecurity's most challenging balancing acts.
+(Tod Beardsley)
+
+The Shift Toward Business-Aligned Risk Management
+
+Moving from isolated, technical data to a continuous risk lifecycle can help organizations align security controls with actual business consequences.
+(Steve Durbin)
+
+Flipboard
+
+
+
+
+
+Reddit
+
+
+
+
+
+Whatsapp
+
+
+
+
+
+Whatsapp
+
+
+
+
+
+Email
+
+(XXXXXXX, AÇIK - https://www.securityweek.com/us-water-cyberattacks-extend-beyond-minnesota-to-at-least-6-other-states/, securityweek.com, 03.08.2026)
+
+================================================================================
+
+[22] SecurityWeek - Balance Theory Raises $19 Million to Help Enterprises Manage Cybersecurity Investments
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Sat, 01 Aug 2026 12:30:00 +0000
 Link: https://www.securityweek.com/balance-theory-raises-19-million-to-help-enterprises-manage-cybersecurity-investments/
 
-[TAM METİN - 1731 kelime]
+[TAM METİN - 1737 kelime]
 Balance Theory Raises $19 Million to Help Enterprises Manage Cybersecurity Investments
 
 The funding round was led by SYN Ventures, with participation from existing investors DataTribe and TEDCO.
@@ -639,6 +2438,8 @@ Iran-Linked Hackers Disrupt US Critical Infrastructure via PLC Attacks
 
 Senate Confirms Joshua Rudd to Lead NSA and US Cyber Command
 
+US Water Cyberattacks Extend Beyond Minnesota to at Least 6 Other States
+
 Ruby on Rails Patches Critical Vulnerability
 
 In Other News: OpenAI Open Source Tool, AWS Links Hacks to North Korea, Mythos Crypto Research
@@ -652,8 +2453,6 @@ EU to Crack Down on AI Deepfakes, Illicit Imagery and Hacking With New Team in B
 Prompted by OpenAI Disclosure, Anthropic Finds Its Own Models Hacked 3 Organizations
 
 Critical Flaw Allowed to Azure Cosmos DB Pwnage
-
-CareCloud Data Breach Impacts Over 350,000
 
 Webinar: Rethinking Cyber Defense for AI-Speed Attacks
 
@@ -724,12 +2523,12 @@ Email
 
 ================================================================================
 
-[9] SecurityWeek - Ruby on Rails Patches Critical Vulnerability
+[23] SecurityWeek - Ruby on Rails Patches Critical Vulnerability
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Sat, 01 Aug 2026 11:15:00 +0000
 Link: https://www.securityweek.com/ruby-on-rails-patches-critical-vulnerability/
 
-[TAM METİN - 3174 kelime]
+[TAM METİN - 3178 kelime]
 Ruby on Rails Patches Critical Vulnerability
 
 The flaw can be exploited by unauthenticated attackers to read arbitrary files and potentially achieve remote code execution (RCE).
@@ -1088,6 +2887,8 @@ Ionut Arghire is an international correspondent for SecurityWeek.
 
 More from Ionut Arghire
 
+CareCloud Data Breach Impacts Over 350,000
+
 Critical Code Execution Vulnerability Patched in TeamCity
 
 DataBahn Raises $40 Million for Agentic Data Pipeline Management
@@ -1102,7 +2903,7 @@ US and Allies Update SBOM Guidance
 
 Chrome 151 Patches 370 Vulnerabilities
 
-Mate Security Raises $35 Million for Agentic SOC
+US Water Cyberattacks Extend Beyond Minnesota to at Least 6 Other States
 
 Balance Theory Raises $19 Million to Help Enterprises Manage Cybersecurity Investments
 
@@ -1117,8 +2918,6 @@ EU to Crack Down on AI Deepfakes, Illicit Imagery and Hacking With New Team in B
 Prompted by OpenAI Disclosure, Anthropic Finds Its Own Models Hacked 3 Organizations
 
 Critical Flaw Allowed to Azure Cosmos DB Pwnage
-
-CareCloud Data Breach Impacts Over 350,000
 
 Webinar: Rethinking Cyber Defense for AI-Speed Attacks
 
@@ -1189,7 +2988,315 @@ Email
 
 ================================================================================
 
-[10] Help Net Security - Week in review: Claude breached three companies during tests, AD CS domain-takeover PoC released
+[24] Help Net Security - OpenAI reveals how criminals used ChatGPT to run scams
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 08:40:26 +0000
+Link: https://www.helpnetsecurity.com/2026/08/03/openai-disrupts-chatgpt-scam-operation/
+
+[TAM METİN - 518 kelime]
+OpenAI reveals how criminals used ChatGPT to run scams
+
+OpenAI banned a coordinated network of ChatGPT accounts that likely originated in Cambodia’s Preah Sihanouk province, a region reports have linked to online scam compounds and human trafficking operations.
+
+The network used the company’s models to create and manage fake online personas, generate and translate messages sent to scam targets, produce promotional content for fraudulent schemes, and support daily operations.
+
+Earlier this year, a lead from WhatsApp prompted OpenAI to investigate and disrupt a Cambodia-based scam operation that used ChatGPT to support investment, romance, gambling, and law enforcement impersonation scams.
+
+“The full scale of financial losses associated with the network is unknown, but based on the scammers’ own communications, the operation may have interacted with hundreds of targets across multiple scam types. User conversations referenced individual victims losing thousands of dollars, although we are unable to independently verify those claims,” OpenAI said.
+
+How the operation worked
+
+The operation ran multiple scams at the same time, often combining elements from different schemes. In interactions with targets, scammers relied on what the company describes as the “ping” (initial outreach), the “zing” (generating emotion), and the “sting” (extracting money).
+
+AI-generated images created by scammers in the network to advertise jobs in Cambodia on social media. Redactions added by OpenAI. (Source: OpenAI)
+
+The scammers used ChatGPT to translate messages and generate conversations with people on platforms including WhatsApp and Telegram. They created social media posts and researched dating profiles and related content to make fake identities appear more credible.
+
+Their messages were designed to build trust and create a sense of urgency. They promised guaranteed returns and “risk-free” investments, used romantic language, encouraged targets to keep conversations private, and pressured them to act before fake offers or bonuses supposedly expired.
+
+Once victims were engaged, the scammers instructed them to send money to unlock fake rewards, pay activation fees, or settle fabricated fines. They then asked victims to provide screenshots of payments or share account information as proof that the transfers had been completed.
+
+Links to human trafficking
+
+Some accounts in the network generated content indicating links to human trafficking and forced criminality associated with organized crime groups in East Asia. Public reporting has documented that these groups recruit people with promises of legitimate employment before trapping them in debt bondage or coercive working conditions.
+
+ChatGPT was also used for administrative tasks, including drafting internal announcements, translating messages between staff, and documenting matters related to recruitment, immigration status, working conditions, and employee discipline.
+
+The network also used OpenAI’s models to create social media advertisements offering flights, accommodation, meals, visas, and work permits. Other activity involved managing workers by documenting employee debts, salary deductions, fines, loan repayments, visa overstays, work permits, immigration status, and recruitment incentives.
+
+Some conversations suggested that people involved may not have been there voluntarily. They referred to detention, attempts to escape, and concerns about being held criminally responsible. While these conversations do not establish what happened to any individual, they are consistent with public reporting on organized crime groups that traffic people and force them to work in online scam operations.
+
+(XXXXXXX, AÇIK - https://www.helpnetsecurity.com/2026/08/03/openai-disrupts-chatgpt-scam-operation/, helpnetsecurity.com, 03.08.2026)
+
+================================================================================
+
+[25] Help Net Security - Elastic Defend now covers 800+ vulnerable drivers, with automated troubleshooting and ARM support
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 08:31:10 +0000
+Link: https://www.helpnetsecurity.com/2026/08/03/elastic-defend-vulnerable-driver-detection/
+
+[TAM METİN - 540 kelime]
+Elastic Defend now covers 800+ vulnerable drivers, with automated troubleshooting and ARM support
+
+Attackers reaching for kernel access on a Windows machine bring a driver Microsoft already trusts. It is signed, it loads, and it carries a known flaw. That flaw gives them enough room to tamper with memory or disable the security software watching the host.
+
+Once an attacker holds that level of access, the tools on the machine stop reliably protecting it. Ransomware crews run the technique as a step before they deploy a payload, a move that began as tradecraft mostly reserved for advanced state actors and red teams.
+
+Where the rules come from
+
+“To close this gap, Elastic Security Labs Threat Command, Elastic’s security research team now continuously monitors public vulnerable driver disclosure sources, including VirusTotal, the LOLDrivers catalog, and Microsoft’s Vulnerable Driver Block List, and automatically generates and instantly deploys detection rules,” Elastic Security Labs explained.
+
+No single source catches everything. The system checks all three, filters out drivers Elastic already covers, and builds rules from the driver’s digital signature and file characteristics.
+
+Automated YARA rule generation workflow (Source: Elastic Security Labs)
+
+Elastic Security Labs has published vulnerable driver coverage for years. This automated process started in 2023 with 65 rules.
+
+The library covers more than 800 known vulnerable drivers, and the number keeps growing.
+
+The delay is the technique
+
+A vulnerable driver becomes public knowledge and attackers know about it the same day. Vendor coverage can take an entire product release to arrive. That window is what BYOVD depends on.
+
+Elastic decoupled this coverage from its release cycle. A driver flagged in one of the three feeds becomes a driver Elastic Defend recognizes, with no update or setting change on the customer side.
+
+One driver, two campaigns
+
+Avast’s signed anti-rootkit driver, aswArPot.sys, gave attackers a way to terminate protected processes from the kernel. It surfaced in Cuba ransomware intrusions and in GHOSTENGINE campaigns.
+
+What a defender has to check
+
+The rules ship through Elastic Security’s malware protection. Elastic recommends enabling it and setting it to Prevent.
+
+Signature coverage is one layer. Elastic Defend validates drivers against a blocklist before they are allowed to load, and it flags a driver the moment it appears in an environment for the first time. A driver built to slip past one of those layers still has to clear the others.
+
+Every generated rule is public. The elastic/protections-artifacts repository carries them alongside the rest of the company’s detection content, so a team can see which driver triggered a rule, which source flagged it, and the detection logic itself.
+
+Elastic Agent Builder carries automatic troubleshooting as a skill. It covers third-party antivirus conflicts, policy application failures, and the errors that send analysts into logs for hours, and it returns a root cause, the commands to run, and the data to collect. The existing automatic troubleshooting feature stays in place.
+
+Elastic Defend also runs on Windows on ARM. Snapdragon laptops, Copilot+ PCs, and ARM workstations enroll under existing policies and report the same telemetry as x64 endpoints, and devices added to a fleet enroll automatically.
+
+Signature rules cover the drivers someone has already reported. The layer that flags a driver on its first appearance covers the ones nobody has reported yet.
+
+(XXXXXXX, AÇIK - https://www.helpnetsecurity.com/2026/08/03/elastic-defend-vulnerable-driver-detection/, helpnetsecurity.com, 03.08.2026)
+
+================================================================================
+
+[26] Help Net Security - Mapping the malware blast radius a single alert won’t show you
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 06:00:24 +0000
+Link: https://www.helpnetsecurity.com/2026/08/03/mike-wiacek-stairwell-backstory-malware-blast-radius/
+
+[TAM METİN - 1229 kelime]
+Mapping the malware blast radius a single alert won’t show you
+
+In this interview with Help Net Security, Mike Wiacek, founder and CTO of Stairwell, explains Backstory, an AI agent that takes a single alert and works outward to map how far a malware campaign spread. He walks through the research behind the claim that each published sample hides an average of 2.4 undocumented variants, describes what counts as a related variant, and explains why Stairwell keeps every executable that runs on customer endpoints.
+
+Today’s threat landscape has shifted significantly in favor of adversaries. Threat actors now leverage malicious LLMs to generate an onslaught of AI-generated malware that overwhelms traditional defenses across the stack. Where malicious campaigns were once crafted with meticulous precision and care, attackers can now create them in a fraction of the time and at far greater scale.
+
+Backstory is an AI agent that runs investigations the way the world’s elite analysts do, only faster, at scale, and with a comprehensive understanding of your environment.
+
+Most investigations begin with a single alert. Too often, that’s also where they end. Pressured by productivity metrics, SOC analysts triage alerts and close tickets. But what’s the blast radius? Is this a one-off or part of a larger campaign? Did we contain it? When did we first get compromised? There simply isn’t time to answer those questions for every alert.
+
+Attackers rarely deploy just one piece of malware. They ship variants – slightly different builds of the same tool – so each one appears new and slips past detection. The file in front of you is rarely the whole story.
+
+Backstory starts with the alert in front of you and works outward. It finds structurally related variants, traces shared infrastructure, and searches your full history to identify every place the threat appeared. Then it continues following the evidence across files, systems, and time until the full campaign comes into view, mapping the complete blast radius.
+
+Today, analysts reconstruct that picture by moving between tools, searching one indicator at a time, and deciding which lead to follow next. Backstory performs those investigative pivots automatically while keeping the underlying evidence visible.
+
+It’s built for SOC and incident response teams answering the question behind every alert: How far did this actually spread, and did we find it all?
+
+We began with 1,085 publicly available threat reports from 32 security vendors and government organizations. Those reports gave us a corpus of 19,418 malware samples that had already been documented as part of known campaigns.
+
+From there, we used Stairwell’s proprietary Variant Discovery technology to identify related files in our corpus. A related variant isn’t simply any file that shares a few pieces of code. We evaluate multiple technical signals, including shared signatures, import-table similarity, code reuse, and other proprietary indicators, to determine whether a file is meaningfully related to the original malware.
+
+Using that methodology, we identified 46,594 malicious files associated with publicly reported malware samples that were never included in the original threat reports.
+
+The broader takeaway is that the malware sample published in a threat report is often just one visible piece of a much larger campaign.
+
+Stairwell collects every executable that runs on a customer’s endpoints, including binaries, scripts, and DLLs, preserving them in a dedicated environment forever.
+
+It’s a completely different paradigm from the way every other security tool works. Most rely on logs, which are descriptions of what was seen happening. The cost of storing and searching logs grows as retention increases. When the logs are gone, your ability to investigate goes with them.
+
+We call that “ground truth” because it preserves what actually existed on a device, not a secondhand account of what it was seen doing. Because everything is preserved, rarity becomes a strategic advantage adversaries can’t quantify or overcome. We can measure how uncommon a file is within your environment and across all environments, giving you a single measurable value. The rarity of a file, combined with the reputation of its variant neighborhood, quantifies risk in a way no other approach can match.
+
+Here’s what lets Backstory see what tools reasoning over alerts and live telemetry can’t:
+
+First, if a threat never generates an alert, it remains hidden in the noise. This is the asymmetry that attackers rely on. Backstory can follow these files with ease. A payload may have landed but never executed. It may have run without matching a rule. It may have looked harmless at the time. Alert-driven systems have little to investigate if nothing ever fires. Backstory doesn’t have that limitation. Everything is always in scope.
+
+Second, and this is the part that’s hard to copy, time stops mattering. Because the files are always there, byte for byte, within Stairwell, Stairwell can re‑examine them every time new intelligence arrives. A file that looked clean six months ago gets re-evaluated. A tool that only has live telemetry can’t go back and re‑investigate something it never kept.
+
+We are not claiming that a measurable percentage of malware in customer environments is AI-authored. You cannot reliably examine a binary and prove that a model wrote it. Anyone offering a precise percentage today is selling certainty that data does not support.
+
+What is already real is the change in attacker economics. AI reduces the time and cost required to modify, test, and personalize malware. Attackers no longer need to reuse the same sample across thousands of victims.
+
+They can produce many distinct versions of the same tool, test them against common defenses, and deploy the one that gets through.
+
+That puts pressure on defenses that depend on seeing the same file or behavior somewhere else first.
+
+Stairwell starts from the opposite assumption: the first sample may be unfamiliar. Backstory can ask and reason about what that file is structurally related to, where related files have existed, what appeared around them, and how far the campaign reached. That changes the dynamic. Knowledge of your own environment becomes a security control in its own right.
+
+So the honest answer is that no one can reliably quantify AI-authored malware in customer environments today. But cheap uniqueness is already here. The problem is not that every new sample will be brilliant. It is that variation no longer has to be expensive.
+
+You’re right! An alert on every new file would only drown teams in a different kind of flood.
+
+A Chrome update appearing on thousands of machines and across the broader Stairwell corpus looks ordinary. A new executable appearing on a single finance workstation and nowhere else looks very different.
+
+Prevalence helps us see that difference, but rarity alone is not a verdict. Internal software can be rare. Malware can become common.
+
+But Backstory does not stop at prevalence analysis. It combines prevalence with structural similarity, file analysis, asset sightings, timing, related artifacts, cyber threat intelligence, and shared infrastructure.
+
+From there, it follows the evidence, asking and answering questions like:
+
+Is this related to known malware?
+
+Where else did it appear?
+
+What arrived before or after it?
+
+What other systems and infrastructure are connected?
+
+The point is not to hand the analyst a longer list of unusual things. It is to take one meaningful difference and follow the evidence autonomously until the full story comes into view. That is the difference between finding an anomaly and understanding an incident.
+
+Stairwell will showcase Backstory at Black Hat USA at booth #5006.
+
+(XXXXXXX, AÇIK - https://www.helpnetsecurity.com/2026/08/03/mike-wiacek-stairwell-backstory-malware-blast-radius/, helpnetsecurity.com, 03.08.2026)
+
+================================================================================
+
+[27] Help Net Security - SkillSpector: NVIDIA’s open-source security scanner for AI agent skills
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 05:30:57 +0000
+Link: https://www.helpnetsecurity.com/2026/08/03/skillspector-open-source-agent-skill-security-scanner/
+
+[TAM METİN - 541 kelime]
+SkillSpector: NVIDIA’s open-source security scanner for AI agent skills
+
+SkillSpector is an open-source scanner from NVIDIA that reads an agent skill and tells you whether to install it. Point it at a directory, a zip file, a single SKILL.md, or a Git URL, and it returns a list of findings, a risk score, and recommendations.
+
+The folder it reads runs with everything you have. A skill is Markdown instructing the agent, sometimes with a Python script beside it that reaches the shell, the environment variables, and the SSH directory. The script is where risk concentrates. The study behind the tool found skills that ship one are 2.12x more likely to be vulnerable. Agents load them on trust.
+
+The first pass is static and takes seconds. An AST walk flags exec, eval, subprocess, and dynamic imports. A taint tracker follows environment variables and file contents to network sinks. YARA rules match known malware, webshells, and cryptominers.
+
+Regex analyzers handle the rest of the 64 detection patterns, covering prompt injection, credential access, memory poisoning, typosquatted dependencies, and cron-job persistence.
+
+Some patterns exist only because a skill is a prompt. One flags a trigger that shadows a built-in command, so the agent reaches for the skill when the user typed something ordinary. Another flags homoglyphs and right-to-left overrides in tool metadata. A third flags zero-width characters and HTML comments carrying directives a human reviewer scrolls right past.
+
+Dependency checking goes out to the network. SkillSpector batches a skill’s package list into one query to OSV.dev, gets back known CVEs, and caches the answer for an hour. An air-gapped run falls back to a small built-in list.
+
+A second pass is optional, slower, and off until you configure it: it needs an OpenAI-compatible endpoint and a key, set through SKILLSPECTOR_PROVIDER, defaulting to NVIDIA’s own build.nvidia.com. Wired up, an LLM reads the flagged code in context, drops false positives, and writes an explanation someone can act on, which the project puts at roughly 87% precision. The prompt carries anti-jailbreak instructions, because the thing under analysis is itself a set of instructions to a model.
+
+How the score comes out
+
+Each finding adds points. A critical finding costs the most, a low one costs least, and anything past 50 on the scale comes back as do not install.
+
+Executable content multiplies the result by 1.3. A pair of high-severity findings in a skill that ships a Python script crosses the do-not-install line on its own.
+
+What you do with the output
+
+Terminal output gives a human the score, the file list, and each finding with a line number and a confidence figure. The same scan writes JSON for scripting, Markdown for a review thread, and SARIF for CI, which puts findings in the same place as the rest of a pipeline’s security results.
+
+The --no-llm flag drops the second pass. Scans finish faster with more false positives to sort through, but they still reach the network, because the OSV.dev lookup lives in the static pass. Offline is a separate condition, and it costs you the live CVE data.
+
+SkillSpector is available for free on GitHub.
+
+20 open-source cybersecurity tools to keep your team ready for anything
+
+GitHub CISO on security strategy and collaborating with the open-source community
+
+(XXXXXXX, AÇIK - https://www.helpnetsecurity.com/2026/08/03/skillspector-open-source-agent-skill-security-scanner/, helpnetsecurity.com, 03.08.2026)
+
+================================================================================
+
+[28] Help Net Security - AI cut phishing from hours to seconds, which is where DMARC and BIMI come in
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 05:00:38 +0000
+Link: https://www.helpnetsecurity.com/2026/08/03/dmarc-and-bimi-video/
+
+[TAM METİN - 106 kelime]
+AI cut phishing from hours to seconds, which is where DMARC and BIMI come in
+
+In this Help Net Security video, Mike Boyle, VP of Business Units at GMO GlobalSign, and Rahul Powar, CEO and founder of Red Sift, unpack the evolution of email security and why it matters for business trust.
+
+With a combined 45+ years worth of experience in tech, they dissect email from the very beginning, before SPF, spam filtering and DMARC, up to today’s modern security standards. The reveal why most organizations are still struggling with the basics, how NOT to deploy DMARC and how AI is accelerating the email attack game.
+
+(XXXXXXX, AÇIK - https://www.helpnetsecurity.com/2026/08/03/dmarc-and-bimi-video/, helpnetsecurity.com, 03.08.2026)
+
+================================================================================
+
+[29] Help Net Security - Product showcase: Guardio Mobile Security turns breach alerts into a recovery plan
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 04:30:11 +0000
+Link: https://www.helpnetsecurity.com/2026/08/03/product-showcase-guardio-mobile-security/
+
+[TAM METİN - 353 kelime]
+Product showcase: Guardio Mobile Security turns breach alerts into a recovery plan
+
+Guardio Mobile Security brings several protection features to iPhone and Android, allowing users to monitor exposed personal information, identify phishing attempts, and receive alerts about emerging threats from a single application. It is available on smartphones and tablets, while browser extensions support Chrome and Microsoft Edge on laptops and desktop computers.
+
+After signing in or creating an account, users are guided through the onboarding process, which introduces the app’s security features and begins an initial assessment. The interface explains each step, making it easy to complete the setup.
+
+The first step is a scan for exposed personal information. Guardio checks monitored email addresses against known data breaches and reports whether any credentials or personal details have been leaked.
+
+If a breach is detected, the app presents a summary of the affected accounts and exposed data, together with recommendations for reducing the risk of account compromise. Each incident can be reviewed individually, with guidance on actions such as changing passwords or enabling multi-factor authentication. Identity monitoring continues after the initial scan and notifies users when new exposures are discovered.
+
+Guided protection setup
+
+Guardio guides the initial setup with step-by-step instructions for enabling the protections available on iPhone. The process covers phishing email filtering, malicious website blocking, scam SMS detection, and security notifications, allowing these features to be configured without leaving the app.
+
+Once enabled, the app identifies phishing emails in supported mail services, blocks access to known phishing and fraudulent websites, detects suspicious text messages associated with scams, and sends notifications when identifies security events that require attention.
+
+The app can also notify users about active scam attempts associated with their monitored information. A phone number can be registered to receive scam alerts, and the setup process includes a test notification to confirm that alerts are working correctly.
+
+Guardio Mobile Security combines identity monitoring, phishing protection, scam detection, and malicious website blocking in a single application. It explains security issues in plain language and provides practical recommendations for responding to them, whether by securing compromised accounts, changing passwords, or enabling additional protections.
+
+(XXXXXXX, AÇIK - https://www.helpnetsecurity.com/2026/08/03/product-showcase-guardio-mobile-security/, helpnetsecurity.com, 03.08.2026)
+
+================================================================================
+
+[30] Help Net Security - Buying TikTok followers can expose users to scams and account theft
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 04:00:04 +0000
+Link: https://www.helpnetsecurity.com/2026/08/03/malwarebytes-tiktok-followers-scam-risks-report/
+
+[TAM METİN - 558 kelime]
+Buying TikTok followers can expose users to scams and account theft
+
+Buying TikTok followers, likes, or views could do more than inflate engagement metrics. According to Malwarebytes, many services selling social media growth operate through deceptive practices that can expose customers to scams, stolen accounts, and financial loss. The market for artificial social media engagement also creates security risks for both buyers and other platform users.
+
+Behind the promises of instant engagement
+
+Websites selling bulk engagement present themselves as legitimate marketing companies, offering likes, comments, followers, or the ability to message large numbers of accounts in a short period. Many advertise identical packages for TikTok, YouTube, Instagram, and other platforms. Engagement is typically generated through bots, click farms, or hijacked TikTok accounts, despite many of these sites claiming otherwise.
+
+“Even if your engagement numbers increase initially, TikTok’s fraud detection systems can remove artificial engagement, and accounts that repeatedly use these services risk being flagged or restricted,” Stefan Dasic, Senior Malware Research Engineer at Malwarebytes, explained.
+
+Some providers ask customers to supply more than a TikTok username. They request account credentials or encourage users to authorize third-party access in exchange for followers or views. Providing that information gives the provider access to the account and creates an opportunity for misuse if the service is fraudulent or its systems are compromised.
+
+Buy Tiktok Ads Accounts (Source: Malwarebytes)
+
+Many of these websites also sell TikTok Ads accounts advertised as established and trusted. Sellers claim buyers can begin running advertising campaigns immediately without creating a new account or completing TikTok’s verification process. Many also promise a replacement account if the original is suspended or stops working.
+
+Buyers have no way of verifying how these accounts were obtained. They may have been created using stolen identities, fake personal information, compromised payment cards, or other fraudulent methods. If TikTok identifies an account as suspicious, it may suspend it along with any active advertising campaigns. A replacement account does not restore lost campaigns, advertising spend, or business continuity.
+
+Offers that collect more than payments
+
+Some websites promote guides or services that claim to help users earn money on TikTok. Their landing pages typically advertise a proven strategy for growing an account or increasing sales, often supported by success stories that cannot be independently verified.
+
+Before revealing what they are selling, these sites usually ask visitors to provide an email address or phone number. The offer may then turn out to be a paid course, an account management service, or a request for access to the user’s TikTok Shop or TikTok Ads account.
+
+Malwarebytes says these offers require users to place significant trust in companies whose legitimacy may be difficult to verify. Depending on the service, customers may end up sharing personal information, making payments, or granting third parties access to their TikTok accounts.
+
+Fake growth comes with risks
+
+Malwarebytes notes that fake engagement does little to build a genuine audience. Purchased followers and automated views do not represent interest in a creator’s content, making engagement metrics a poor reflection of actual reach or community growth. The company also says platforms actively look for inauthentic behavior, creating additional risks for accounts associated with artificial engagement.
+
+Beyond individual customers, Malwarebytes says the industry supports a broader underground market. Revenue from engagement-selling services may help sustain operations involved in account theft, bot activity, and other forms of cybercrime.
+
+(XXXXXXX, AÇIK - https://www.helpnetsecurity.com/2026/08/03/malwarebytes-tiktok-followers-scam-risks-report/, helpnetsecurity.com, 03.08.2026)
+
+================================================================================
+
+[31] Help Net Security - Week in review: Claude breached three companies during tests, AD CS domain-takeover PoC released
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Sun, 02 Aug 2026 08:00:17 +0000
 Link: https://www.helpnetsecurity.com/2026/08/02/week-in-review-claude-breached-three-companies-during-tests-ad-cs-domain-takeover-poc-released/
@@ -1359,7 +3466,7 @@ Here’s a look at the most interesting products from the past week, featuring r
 
 ================================================================================
 
-[11] Bellingcat - Welcome to Dubai: Kinahan Cartel’s Visas Revealed
+[32] Bellingcat - Welcome to Dubai: Kinahan Cartel’s Visas Revealed
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Sat, 01 Aug 2026 11:03:00 +0000
 Link: https://www.bellingcat.com/news/2026/08/01/welcome-to-dubai-kinahan-cartels-visas-revealed/
@@ -1426,7 +3533,69 @@ Dixon, whose residency expired in 2024, owes more than USD
 
 ================================================================================
 
-[12] The Cyber Express - CVE-2026-63077 Exposes TeamCity Servers to Unauthenticated RCE
+[33] CrowdStrike - CrowdStrike 2026 Threat Hunting Report: Exploitation Window Closes as AI Use Accelerates
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Aug 03, 2026 00:00:00-0500
+Link: https://www.crowdstrike.com/en-us/blog/crowdstrike-2026-threat-hunting-report/
+
+[TAM METİN - 873 kelime]
+The CrowdStrike 2026 Threat Hunting Report illustrates the next evolution in trust abuse. Adversaries are targeting trusted users and tools across identity systems, cloud environments, SaaS applications, AI services, software supply chains, and developer workflows to blend into legitimate business activity and reach critical assets before defenders can detect them.
+
+Our frontline intelligence in this year’s report underscores this shift:
+
+One LLMJacking campaign generated nearly 200,000 API requests in two minutes, resulting in large-scale financial and operational impact.
+
+Vishing intrusions in the first half of 2026 increased 2x compared to the second half of 2025.
+
+eCrime threat actors CORDIAL SPIDER and SNARKY SPIDER used vishing to exfiltrate data from SaaS applications and compromise single sign-on accounts; in one case, SNARKY SPIDER moved from account takeover to data theft in under five minutes.
+
+Monthly device code phishing attempts jumped 15x in the past six months.
+
+Organizations that understand these evolving threats are better prepared to stop them. The CrowdStrike 2026 Threat Hunting Report provides the information they need. In its pages, the CrowdStrike Counter Adversary Operations team, composed of CrowdStrike Intelligence and CrowdStrike OverWatch, details key observations and trends that define the modern threat landscape.
+
+AI Evolves as an Adversary Tool and Target
+
+The same AI tools driving modern businesses forward are creating underdefended attack surfaces, and threat actors are taking advantage. AI systems have become targets for adversaries seeking to steal secrets, abuse AI model access, and harvest compute power.
+
+FAMOUS CHOLLIMA, associated with the Democratic People’s Republic of Korea (DPRK), is among those driving this trend. This adversary weaponized trusted AI-centric environments to compromise cryptocurrency and blockchain companies. Its campaign was among the most sophisticated examples of the MITRE ATLAS™ initial access technique AI Supply Chain Compromise (AML.T0010).
+
+Widespread AI adoption is increasing the volume of signals across customer environments that threat hunters must assess. AI agent-triggered detection leads now surface 2.5x more threat leads than manually driven activity, CrowdStrike OverWatch found. This increase makes it more difficult for defenders to distinguish malicious activity from expected AI-driven behavior.
+
+Vulnerability Exploitation Windows Collapse to Hours
+
+Adversaries are accelerating vulnerability exploitation and putting pressure on patching cycles.
+
+From January through June 2026, 88% of CrowdStrike-observed exploitation of vulnerabilities with a public PoC was conducted within 48 hours of the PoC’s release. China-nexus adversaries moved faster: VAULT PANDA and GENESIS PANDA launched deliberate attacks within 24 hours of public disclosure of a critical web application vulnerability. After the React2Shell vulnerability disclosure, CrowdStrike OverWatch responded to 800+ hunting leads across more than 80 victims in just four days.
+
+Belarus-nexus adversary UMBRAL BISON is also quick to act, as evidenced by its exploitation of Linux LPE vulnerability CVE-2026-31431 in April 2026. On April 29, the vulnerability was publicly disclosed, and an industry researcher released a PoC exploit and technical details for it. The following day, CrowdStrike OverWatch detected widespread deployment of the exploit, with approximately 94% of events in the first 24 hours related to testing behavior based on public PoC code. They uncovered Belarus-nexus activity in just over 20 hours after public disclosure.
+
+CrowdStrike anticipates exploitation timelines will continue to shrink. While this pattern predates the emergence of frontier AI models, the implementation of these systems is likely to compress vulnerability exploitation timelines by accelerating vulnerability discovery and exploit development. This could, in turn, increase the pressure on defenders already struggling to keep pace.
+
+Software Supply Chain Attacks Evolve
+
+Adversaries are exploiting trust across the developer ecosystem as open-source dependency adoption accelerates. They are moving into CI/CD pipelines, container registries, package registries, and integrated development environment (IDE) extensions, where one compromised dependency or trusted component can rapidly spread across downstream environments.
+
+Over the past year, DPRK-nexus adversary STARDUST CHOLLIMA and ALTERED SPIDER drove some of the most consequential software supply chain attacks and demonstrated how both nation-state and financially motivated threat actors are targeting this attack surface. ALTERED SPIDER, for example, compromised more than 300 software dependencies in one day, harvested credentials, and pivoted into cloud environments.
+
+In March 2026, STARDUST CHOLLIMA used stolen maintainer credentials to compromise the Axios Node Package Manager (npm) package and deliver platform-specific variants of their ZshBucket malware. In June 2026, the same adversary injected a malicious npm package as a dependency into at least 131 Mastra AI framework packages, indicating that trusted AI building blocks are becoming supply chain targets.
+
+The npm package ecosystem, referenced in the above scenario, is the primary vector for supply chain attacks: 87% of identified software registry threats in the first half of 2026 involved npm packages. This indicates adversaries’ preference for JavaScript’s scale, dependency chains, and automatic install scripts to spread downstream risk.
+
+Always Watching the Adversary
+
+CrowdStrike now tracks 290+ named adversaries. The CrowdStrike 2026 Threat Hunting Report provides critical information on the threat activity we have observed in the past year, and the adversaries behind it, to give readers a detailed picture of the modern threat landscape. To learn more about what we’re seeing, download the full report.
+
+Learn more about CrowdStrike Counter Adversary Operations threat intelligence and threat hunting.
+
+Tune in to the Adversary Universe podcast, where CrowdStrike reveals the threat actors behind the latest cyberattacks.
+
+Interested in learning more? Join us at Fal.Con 2026, where these conversations take center stage.
+
+(XXXXXXX, AÇIK - https://www.crowdstrike.com/en-us/blog/crowdstrike-2026-threat-hunting-report/, crowdstrike.com, 03.08.2026)
+
+================================================================================
+
+[34] The Cyber Express - CVE-2026-63077 Exposes TeamCity Servers to Unauthenticated RCE
 ────────────────────────────────────────────────────────────────────────────────
 Tarih: Thu, 30 Jul 2026 11:58:39 +0000
 Link: https://thecyberexpress.com/cve-2026-63077-teamcity-on-premises/
@@ -1518,6 +3687,110 @@ This version is approximately 500 words, written in the third-person perspecti
 
 ================================================================================
 
+[35] Industrial Cyber - FBI and EPA warn hackers target internet-connected PLCs at US water utilities, leading to operational disruptions
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 08:21:47 +0000
+Link: https://industrialcyber.co/utilities-energy-power-water-waste/fbi-and-epa-warn-hackers-target-internet-connected-plcs-at-us-water-utilities-leading-to-operational-disruptions/
+
+[TAM METİN - 991 kelime | KAYNAK: feed özeti]
+The Federal Bureau of Investigation (FBI) and Environmental Protection Agency (EPA) warned that hackers have been breaking into internet-connected industrial controllers at water utilities, in some cases disrupting operations at facilities across multiple states. In a joint advisory issued July 30, the agencies said the attackers have targeted Rockwell Automation/Allen-Bradley MicroLogix 1100 and 1400 PLCs (programmable logic controllers), remotely changing IP addresses and passwords to lock operators out of monitoring and control systems.
+
+Since July 27, water and wastewater utilities in at least seven states have reported the incidents to the FBI, with some suffering degraded operations, including pressure loss and flooding, the advisory said. Officials urged utilities to take the devices off the public internet, use strong unique passwords, and restrict network access to authorized equipment only, warning that unpatched, end-of-life hardware remains a favored target for attackers.
+
+“While the FBI has only observed this behavior with the referenced Rockwell PLCs, similar considerations should also be made with other branded PLCs,” the FBI wrote in its alert. “After remotely accessing internet-facing devices, the actors changed the IP addresses and passwords, resulting in a loss of monitoring and control functionality. To reduce the risk of compromise, the FBI and EPA recommend removing PLCs from direct internet exposure via secure gateway and firewalls, setting up strong, unique passwords, and utilizing an access control list (ACL) to allow only authorized communication between expected control system devices.”
+
+Hackers are targeting internet-exposed PLCs (Rockwell Automation/Allen-Bradley’s MicroLogix 1100 and 1400 series) to remotely tamper with device configurations by changing IP addresses and turning on and setting passwords, resulting in a loss of view and, in some cases, function of connected equipment in targeted facilities. At least one organization reported modified PLC project files after noticing ladder logic discrepancies across several sites.
+
+Additionally, across several victims, similarities in network setup provided by third parties may provide MCA the opportunity to multiply successes when vulnerable network and hardware setups exist across customers.
+
+“Operational effects reported to the FBI have included loss of pressure and flooding. Pressure loss in water systems could potentially allow untreated ground water to seep into pipes,” according to the FBI alert. “Once compromised, the extent of impact to victims’ operations depended upon the type of function for which the PLC was configured (monitoring versus controlling equipment), the equipment itself (1100 versus 1400), the function the device supported, and capability to switch to manual operations.”
+
+Moreover, the FBI and EPA are engaging with victim organizations and providing various recommendations for critical infrastructure asset owners and operators.
+
+The FBI and EPA recommend that organizations take several precautions to protect themselves. They should disconnect programmable logic controllers from the public-facing internet and follow joint guidance on secure connectivity for operational technology, which calls for removing inbound port exposure so that OT systems are never directly exposed to the internet or external networks and for ensuring all access is mediated, monitored and controlled through a secure gateway, or jump host, that brokers the connection.
+
+Cellular modems used for remote field connectivity should be secured with strong authentication and kept updated, and logs for those modems should be enabled and regularly reviewed for suspicious activity to help detect intrusions and speed incident response. To further guard against unauthorized access through cellular modems, organizations should consider isolated architectures such as a private access point name, 5G public network integrated non-public network, cellular software-defined wide area networking, zero trust network access, or a site-to-site virtual private network.
+
+The agencies also recommend that device passwords be complex, unique combinations of letters, numbers and symbols that are not easily guessed, saying strong password practices remain critical to preventing unauthorized access and strengthening the overall security of OT devices. Organizations should strictly control network access to PLC devices by configuring firewall rules or access control list features to permit only authorized communications between expected control system devices, while blocking access from unauthorized or threat-actor-controlled IP addresses, including those tied to hosting providers.
+
+Physical and software key switches should be kept in the run position to prevent unauthorized changes to logic, configuration and firmware, with devices placed in program or remote mode only when software is being updated or downloaded and switched back to run mode immediately afterward; Rockwell Automation’s System Security Design Guidelines offer manufacturer-specific instructions for this process, and organizations should review and validate project files before switching a device to run mode, since doing so locks in whatever project file is currently downloaded.
+
+The FBI and EPA also urge organizations to maintain the ability to operate OT systems manually, saying the capacity to revert to manual controls is vital for quickly restoring operations after an incident, and that business continuity and disaster recovery plans, fail-safe mechanisms, islanding capabilities, software backups and standby systems should be routinely tested to ensure safe manual operation when needed.
+
+Project files running on PLCs should be reviewed for unauthorized changes using vendor-provided integrity checking tools, with the running program visually compared to known-good logic and reusable logic and input/output configurations checked for validity; any restored backups should be verified free of malicious logic before deployment, and logs and configurations on all connected devices, including modems, human-machine interfaces and workstations, should be reviewed to assess whether attackers moved laterally, with any affected devices reimaged to remove malicious changes or access tools.
+
+Finally, the agencies recommend planning to replace end-of-life hardware, noting that once a device reaches end of life, its manufacturer no longer sells it or provides software updates or security patches, making it a frequent target for malicious actors. Organizations should maintain a rolling 12-month forecast of end-of-life equipment, reviewed quarterly with device owners and procurement staff, track those systems by product, owner, location and retirement date, and either replace or isolate them, applying compensating controls with firm decommissioning dates if replacement is delayed.
+
+The post FBI and EPA warn hackers target internet-connected PLCs at US water utilities, leading to operational disruptions appeared first on Industrial Cyber.
+
+(XXXXXXX, AÇIK - https://industrialcyber.co/utilities-energy-power-water-waste/fbi-and-epa-warn-hackers-target-internet-connected-plcs-at-us-water-utilities-leading-to-operational-disruptions/, industrialcyber.co, 03.08.2026)
+
+================================================================================
+
+[36] Industrial Cyber - GlobalData warns energy companies to strengthen OT cybersecurity amid rising supply chain risks
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 08:18:11 +0000
+Link: https://industrialcyber.co/utilities-energy-power-water-waste/globaldata-warns-energy-companies-to-strengthen-ot-cybersecurity-amid-rising-supply-chain-risks/
+
+[TAM METİN - 450 kelime | KAYNAK: feed özeti]
+Energy companies should increase cybersecurity investments to reduce supply chain risks as digitalization, grid modernization, distributed energy resources, and growing reliance on third-party vendors expand the industry’s attack surface, according to a new GlobalData report. Analysis warns that cyberattacks targeting critical national infrastructure can disrupt energy supplies, undermine national stability, and inflict significant financial losses, while geopolitical tensions continue to fuel cyber espionage against the sector.
+
+In its Strategic Intelligence report, “Cybersecurity in Energy,” GlobalData highlights how cybersecurity impacts key challenges in the energy industry. These include digitalization, distributed energy resources (DERs), grid modernization, supply chains, third-party vendors, and geopolitics. Moreover, energy companies can strengthen resilience by improving vendor governance through continuous monitoring, adopting zero-trust security architectures, segmenting operational technology and information technology networks, and developing incident response plans that account for third-party compromises.
+
+The report also calls for stronger supply chain oversight and proactive cybersecurity programs to help safeguard critical energy operations against increasingly sophisticated threats.
+
+“Energy companies depend on extensive third-party ecosystems, making supplier vulnerabilities a major cyber risk that can spread into IT and OT environments. Attacks exploiting shared vendor software (e.g., file-transfer tools) have hit major players,” Ravindra Puranik, oil and gas analyst at GlobalData, commented. “Mitigation requires stronger vendor governance, such as continuous monitoring, standards, segmentation, least privilege, audits, and joint incident response.”
+
+GlobalData notes that digitization and convergence of IT (information technology and OT (operational technology) are connecting legacy assets and modern grid technologies, expanding entry points where IT compromises can disrupt operations. Generative AI (artificial intelligence) further increases attacker speed and sophistication, shrinking defenders’ response windows.
+
+Companies should invest heavily in cybersecurity across the oil and gas value chain. The recommendation applies consistently to upstream, midstream, downstream, and equipment and services operations.
+
+GlobalData also noted that chip-based security as an area to explore, while recommending investment in identity management, network security, endpoint security, threat detection and response, cloud security, data security, email security, application security, unified threat management, vulnerability management, managed security services, post-breach response services, and risk and compliance services.
+
+The recommended investments span hardware, software, and services, indicating that organizations should prioritize cybersecurity capabilities across all major technology domains.
+
+Puranik concludes: “Oil and gas firms should invest in specialized cybersecurity services that provide continuous monitoring and rapid response, expert validation, and strong operational readiness. Equipment and oilfield service providers should also add product-focused services such as secure development support and security audits/certification to reduce supply chain risk and maintain customer trust.
+
+“Cybersecurity is integral across the oil and gas value chain, for securing data, safeguarding asset integrity, and preventing financial losses.”
+
+The post GlobalData warns energy companies to strengthen OT cybersecurity amid rising supply chain risks appeared first on Industrial Cyber.
+
+(XXXXXXX, AÇIK - https://industrialcyber.co/utilities-energy-power-water-waste/globaldata-warns-energy-companies-to-strengthen-ot-cybersecurity-amid-rising-supply-chain-risks/, industrialcyber.co, 03.08.2026)
+
+================================================================================
+
+[37] Industrial Cyber - Frenos raises $1.52M seed extension to expand AI-native OT security platform and simulated penetration testing
+────────────────────────────────────────────────────────────────────────────────
+Tarih: Mon, 03 Aug 2026 08:14:58 +0000
+Link: https://industrialcyber.co/news/frenos-raises-1-52m-seed-extension-to-expand-ai-native-ot-security-platform-and-simulated-penetration-testing/
+
+[TAM METİN - 773 kelime | KAYNAK: feed özeti]
+AI-native OT security vendor Frenos announced a US$1.52 million seed extension round led by industrial investors Momenta, Exposition Ventures, and joined by Riptide Ventures, bringing the company’s total funding to $6.4 million. Frenos will use the capital to grow its customer success team, supporting a rapidly expanding customer base across critical infrastructure enterprises and defense, and to expand its AI R&D team.
+
+That investment is already producing results. Alongside the round, Frenos is launching SAIRA Co-Work, evolving its reasoning engine into a persistent OT security co-worker that reasons over live digital twin data and guides users through complex investigations with evidence-based insights. Research will continue toward a next-generation foundation model for long-context reasoning and autonomous engineering workflows, a core component of the company’s future AI-powered simulated penetration testing platform.
+
+The OT security market is projected to grow from $27.4 billion in 2026 to $58.9 billion by 2031, according to MarketsandMarkets, as ransomware, industrial espionage, and cyber-physical threats to industrial control systems accelerate alongside IT/OT convergence. The threat is no longer theoretical: in 2026, Google’s Threat Intelligence Group reported the first known zero-day exploit developed with AI and warned that AI tools are lowering the barrier for adversaries to reverse-engineer applications and build sophisticated exploits. As AI increases the speed and sophistication of cyberattacks, organizations that lack visibility into how adversaries could move through their environments risk falling behind.
+
+“Every OT operator has a vulnerability list a mile long. Almost none of it matters. What matters is the handful an adversary can actually exploit given the real conditions in your network: what’s reachable, what’s misconfigured, what chains together. I spent over a decade defending these environments and never had a tool that could tell me that. So we built one,” said Brian Proctor, founder and CEO of Frenos. “This funding puts more muscle behind both sides of that promise: hands-on customer success for the operators who depend on us, and deeper AI research behind SAIRA so it keeps finding the paths a real attacker would take.”
+
+The Frenos Platform closes that gap by continuously validating OT security posture. Built on a digital twin of the customer’s network and powered by SAIRA, Frenos’ AI reasoning agent, the platform runs fully simulated penetration tests that mimic real adversary behavior. It validates attack paths, chains exploits and tactics the way an attacker would, and prioritizes the risks that matter most, all with no hardware, no scanning, and no downtime.
+
+“Most OT security testing today tells you what’s vulnerable, not what’s defensible. The question that matters is what path takes an attacker from an exposed HMI to a process they can actually disrupt, and almost nobody is testing for that. Frenos is one of the only teams I’ve seen build a platform that thinks in those terms without putting production at risk to do it. That’s a rare combination, and it’s why I joined the advisory board,” said Robert M. Lee, advisory board member at Frenos and co-founder and CEO of Dragos.
+
+The round follows a year of significant momentum. Annual recurring revenue is up more than 10x since the start of 2025, growing 215 percent in the first half of 2026. Pipeline is up 2.7x year over year, average deal size is up 5x as Frenos moves upmarket, and 2026 bookings have already quadrupled full-year 2025 with five months remaining. In one customer environment, SAIRA analyzed more than 12,000 OT vulnerability findings and surfaced the eight that were actually exploitable, cutting remediation noise by 99.9 percent.
+
+“OT security requires a different approach than traditional IT security. Frenos is helping industrial operators continuously validate cyber resilience without putting production at risk. That’s exactly the kind of industrial innovation we look for at Momenta,” said Michael Dolbec, Managing Partner, Momenta.
+
+“Industrial leaders know that OT cyber resilience is essential for protecting revenue and uptime, particularly as AI accelerates both automation and attack sophistication,” said Carlos Furlotti, Principal, Exposition Ventures. “Traditional IT security tools fail in industrial settings, but Frenos delivers the precise, safe visibility operators need to manage risk without threatening production. The team is uniquely poised to transform OT security, and we are proud to back them.”
+
+Last month, Claroty announced a partnership with Frenos to deliver an integrated solution for industrial organizations that reduces the risk of downtime in CPS environments. Organizations using the Claroty Platform can now leverage the Frenos Platform to continuously validate their defensive posture against real-world adversarial behaviors, measure actual exploitability of detected vulnerabilities, and prioritize remediation based on demonstrated risk.
+
+The post Frenos raises $1.52M seed extension to expand AI-native OT security platform and simulated penetration testing appeared first on Industrial Cyber.
+
+(XXXXXXX, AÇIK - https://industrialcyber.co/news/frenos-raises-1-52m-seed-extension-to-expand-ai-native-ot-security-platform-and-simulated-penetration-testing/, industrialcyber.co, 03.08.2026)
+
+================================================================================
+
 
 ================================================================================
 SOSYAL MEDYA SİNYALLERİ — HABER DEĞİL, SADECE REFERANS KAYDI
@@ -1530,39 +3803,43 @@ Link: https://github.com/advisories/GHSA-wf43-fpp3-cf65
 <img width="1919" height="1046" alt="curl" src="https://github.com/user-attachments/assets/8aa19ff1-7f4b-44ee-83d5-d0dd1a0269f6" />
 <img width="1919" height="775" alt="xss" src="https://github.com/use
 
-[S2] Mastodon | Skor: 2 | Yorum: 0
-Baslik: 🖲️ # Cybersecurity # Ciberseguridad # Ciberseguranca # Security # Seguridad # Seguranca # News # Noticia # Noticias # Tecnologia # Technology ⚫ Who's Liable When AI Agents Escape? Hugging Face Breach 
-Link: https://mastodon.social/@tierrasapiens/117025073431652700
+[S2] Mastodon | Skor: 4 | Yorum: 0
+Baslik: ASN: AS12083 Location: Madison, US Added: 2026-07-28T13:11 # shodansafari # infosec
+Link: https://infosec.exchange/@shodansafari/117030755421704470
 
-[S3] Mastodon | Skor: 2 | Yorum: 0
-Baslik: ‘Antizuck’ iOS app that claims to detect nearby smart glasses tops App Store chart Vibes around Meta’s AI glasses are off lately. So much so that one of the top three paid iPhone apps today is dedicat
-Link: https://social.gamefan.net/@techwire/117024885876841023
+[S3] Mastodon | Skor: 4 | Yorum: 0
+Baslik: @ queen_fennec more details on wifi hacks # infosec https:// news.risky.biz/risky-bulletin- russia-is-behind-the-recent-hotel-wifi-hacks/
+Link: https://ieji.de/@hanscees/117030546017796124
 
-[S4] Mastodon | Skor: 2 | Yorum: 1
-Baslik: Hey, did you know North Korea has their own Antivirus? Originally, found in 2018, by Check Point, now they used open source resource as their base. https:// nkinternet.com/2026/08/01/a-ne w-silivaccin
-Link: https://infosec.exchange/@AmmarSpaces/117024840028828897
+[S4] Mastodon | Skor: 2 | Yorum: 0
+Baslik: # chrome extension Mango VPN seems malicious. Its # cybersecurity badness score is 100/100! ```json {"id": "dbjeemabemccjbbemlnljmpmaadhohho", "score": 100, "platform": "chrome", "name": "Mango VPN"} 
+Link: https://infosec.exchange/@malicious_browser_bot/117030778327667180
 
-[S5] Mastodon | Skor: 1 | Yorum: 0
-Baslik: Deals: M5 MacBook Air $240 off straight from Apple, AirPods Pro 3, AirTag 2, transparent metal power bank, more The July AirPods Pro 3 deal at $50 off, AirPods Max 2 at $100 off, and the ongoing all-t
-Link: https://social.gamefan.net/@techwire/117024866211325598
+[S5] Mastodon | Skor: 2 | Yorum: 0
+Baslik: MacSync macOS Stealer Uses Fake Claude Guide to Steal Passwords and Crypto Wallets [Cyber Security News] Automatically generated from open-source reporting. Title: MacSync macOS Stealer Uses Fake Clau
+Link: https://social.raytec.co/@techbot/117030539943088147
 
-[S6] Reddit: r/cybersecurity | Skor: 50 | Yorum: 0
-Baslik: Hackers hit 30-plus Minnesota water systems in 48 hours, forcing emergency response
-Link: https://www.reddit.com/r/cybersecurity/comments/1vcq36c/hackers_hit_30plus_minnesota_water_systems_in_48/
+[S6] Mastodon | Skor: 1 | Yorum: 1
+Baslik: Tsk tsk tsk Premier Inn - no special characters allowed for my password? Hmm get ready for the longest possible password I can get away with. # hotel # cybersecurity
+Link: https://mastodon.scot/@Colleen_/117030743858063914
 
-[S7] Reddit: r/netsec | Skor: 49 | Yorum: 0
-Baslik: frontier class vulnerabilities: it gets worse before it (maybe) gets better
-Link: https://www.reddit.com/r/netsec/comments/1vclc83/frontier_class_vulnerabilities_it_gets_worse/
+[S7] Reddit: r/cybersecurity | Skor: 50 | Yorum: 0
+Baslik: US Water Systems Hit by Suspected Iranian Cyber Attacks
+Link: https://www.reddit.com/r/cybersecurity/comments/1vdmhs3/us_water_systems_hit_by_suspected_iranian_cyber/
 
-[S8] Reddit: r/cybersecurity | Skor: 48 | Yorum: 0
-Baslik: Quantum Computers May Put Internet Traffic at Risk. NIST Is Safeguarding Computers With New Standards.
-Link: https://www.reddit.com/r/cybersecurity/comments/1vctnyz/quantum_computers_may_put_internet_traffic_at/
+[S8] Reddit: r/netsec | Skor: 49 | Yorum: 0
+Baslik: The Risk of Fine-Tuned Open-Weight Models · MSec Operations Blog
+Link: https://www.reddit.com/r/netsec/comments/1vdqe9d/the_risk_of_finetuned_openweight_models_msec/
 
-[S9] Reddit: r/netsec | Skor: 47 | Yorum: 0
-Baslik: Investigating three real-world incidents in Anthropic's evaluations
-Link: https://www.reddit.com/r/netsec/comments/1vc3djn/investigating_three_realworld_incidents_in/
+[S9] Reddit: r/cybersecurity | Skor: 48 | Yorum: 0
+Baslik: Black Hat 2026
+Link: https://www.reddit.com/r/cybersecurity/comments/1ve0bp8/black_hat_2026/
 
-[S10] Reddit: r/cybersecurity | Skor: 46 | Yorum: 0
-Baslik: Is this normal, or is my cybersecurity team just badly run?
-Link: https://www.reddit.com/r/cybersecurity/comments/1vcu10j/is_this_normal_or_is_my_cybersecurity_team_just/
+[S10] Reddit: r/cybersecurity | Skor: 47 | Yorum: 0
+Baslik: Repeated Microsoft MFA prompts from foreign locations despite password resets. Is this a known attack pattern?
+Link: https://www.reddit.com/r/cybersecurity/comments/1ve1gfr/repeated_microsoft_mfa_prompts_from_foreign/
+
+[S11] Reddit: r/netsec | Skor: 46 | Yorum: 0
+Baslik: L2 Reduction: LLL Algorithm With Quadratic Complexity in Python
+Link: https://www.reddit.com/r/netsec/comments/1ve1t2r/l2_reduction_lll_algorithm_with_quadratic/
 

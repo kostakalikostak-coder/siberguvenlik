@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siber Güvenlik Raporu - 04.07.2026</title>
+    <title>Siber Güvenlik Raporu - 03.08.2026</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -182,7 +182,7 @@
             padding: 20px; border-left: 4px solid #1a237e;
         }
         .news-title { color: #1a237e; font-size: 18px; font-weight: 600; margin-bottom: 12px; line-height: 1.3; }
-        .news-content { color: #2c3e50; font-size: 15px; line-height: 1.6; margin-bottom: 10px; }
+        .news-content { color: #2c3e50; font-size: 15px; line-height: 1.6; margin-bottom: 10px; text-align: justify; }
         .source { color: #666; font-size: 13px; margin: 0; }
         .source a { color: #1a237e; text-decoration: none; }
         .source a:hover { text-decoration: underline; }
@@ -232,9 +232,11 @@
             text-transform: uppercase; color: #1a237e; margin-bottom: 12px;
         }
         .top3-card {
-            background: #ffffff; border: 1px solid #e2e8f0;
-            border-left: 5px solid #1a237e; border-radius: 8px;
+            background: linear-gradient(135deg, #e8eaf6 0%, #f5f6fb 100%);
+            border: 1px solid #c5cae9;
+            border-left: 8px solid #1a237e; border-radius: 8px;
             padding: 18px 20px; margin-bottom: 14px;
+            box-shadow: 0 4px 16px rgba(26,35,126,0.12);
         }
         .top3-card:last-child { margin-bottom: 0; }
         .top3-card-title {
@@ -242,7 +244,7 @@
             margin-bottom: 10px; line-height: 1.4;
         }
         .top3-card-paragraph {
-            color: #374151; font-size: 14px; line-height: 1.65; margin-bottom: 10px;
+            color: #374151; font-size: 14px; line-height: 1.65; margin-bottom: 10px; text-align: justify;
         }
         .top3-card .source { color: #64748b; font-size: 12px; margin: 0; }
         .top3-card .source a { color: #1a237e; text-decoration: none; }
@@ -259,6 +261,7 @@
             color: #bf360c; font-size: 18px; font-weight: 700; margin: 0;
         }
         .news-item.vuln-item { border-left-color: #e65100; }
+        .news-item.vuln-item .news-title { color: #bf360c; }
         .back-to-top {
             position: fixed; top: 50%; left: calc(50% - 450px - 48px);
             transform: translateY(-50%); width: 36px; height: 36px;
@@ -339,7 +342,11 @@
         [data-theme="dark"] .social-signals .signal-item a:hover { color: #79c0ff; }
         [data-theme="dark"] .social-signals .signal-engagement { background: #30363d; color: #8b949e; }
         [data-theme="dark"] .top3-section-label { color: #79c0ff; }
-        [data-theme="dark"] .top3-card { background: #21262d; border-color: #30363d; border-left-color: #388bfd; }
+        [data-theme="dark"] .top3-card {
+            background: linear-gradient(135deg, #1c2d4a 0%, #182338 100%);
+            border-color: #2d4a7a; border-left-color: #58a6ff;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+        }
         [data-theme="dark"] .top3-card-title { color: #e6edf3; }
         [data-theme="dark"] .top3-card-paragraph { color: #c9d1d9; }
         [data-theme="dark"] .top3-card .source { color: #8b949e; }
@@ -350,6 +357,7 @@
         }
         [data-theme="dark"] .vuln-section-heading h2 { color: #fb923c; }
         [data-theme="dark"] .news-item.vuln-item { border-left-color: #f97316; }
+        [data-theme="dark"] .news-item.vuln-item .news-title { color: #f97316; }
         [data-theme="dark"] .back-to-top { background: #388bfd; }
         [data-theme="dark"] .theme-toggle { background: #161b22; border-color: #30363d; color: #8b949e; }
         [data-theme="dark"] .theme-toggle:hover { background: #21262d; border-color: #58a6ff; color: #e6edf3; }
@@ -395,12 +403,76 @@
         }
             </style>
     <script>(function(){var m=(localStorage.getItem('theme')==='light')?'light':'dark';document.documentElement.setAttribute('data-theme',m);})()</script>
+
+    <style>
+        .archive-section {
+            max-width: 1200px;
+            margin: 24px auto 40px;
+            padding: 0 16px;
+            text-align: center;
+        }
+        .archive-section h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0 0 12px;
+        }
+        .archive-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .archive-link {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 13px;
+            line-height: 1.2;
+            border-radius: 6px;
+            background: #ffffff;
+            border: 1px solid #d7dde5;
+        }
+        /* Ziyaret durumundan BAĞIMSIZ tek renk (bkz. yukarıdaki not). */
+        .archive-link:link,
+        .archive-link:visited,
+        .archive-link:hover,
+        .archive-link:active,
+        .archive-link:focus {
+            color: #1a237e;
+            text-decoration: none;
+        }
+        .archive-link:hover { background: #eef2f7; border-color: #1a237e; }
+        .archive-link:focus-visible { outline: 2px solid #1a237e; outline-offset: 2px; }
+
+        [data-theme="dark"] .archive-section h3 { color: #e6edf3; }
+        [data-theme="dark"] .archive-link {
+            background: #21262d;
+            border-color: #30363d;
+        }
+        [data-theme="dark"] .archive-link:link,
+        [data-theme="dark"] .archive-link:visited,
+        [data-theme="dark"] .archive-link:active,
+        [data-theme="dark"] .archive-link:focus {
+            color: #c9d1d9;
+        }
+        [data-theme="dark"] .archive-link:hover {
+            background: #30363d;
+            border-color: #58a6ff;
+            color: #e6edf3;
+        }
+        [data-theme="dark"] .archive-link:focus-visible { outline-color: #58a6ff; }
+
+        @media (max-width: 600px) {
+            .archive-section { margin: 16px auto 28px; }
+            .archive-link { padding: 5px 10px; font-size: 12px; }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="report-header">
             <div>
-                <h1><span class="header-date">04.07.2026</span> Siber Güvenlik Haber Özetleri</h1>
+                <h1><span class="header-date">03.08.2026</span> Siber Güvenlik Haber Özetleri</h1>
                 <p class="header-subtitle">Rapor, saat 12:15 civarı güncellenmektedir.</p>
             </div>
             <div class="header-actions">
@@ -414,8 +486,7 @@
 
         <div class="exec-brief" id="yonetici-ozeti-block">
             <h2>Yönetici Özeti</h2>
-            <p class="exec-brief-paragraph">Son 48 saat içinde küresel siber tehdit ortamını şekillendiren kritik gelişmeler incelendiğinde, yazılım tedarik zincirlerine ve ağ altyapılarına yönelik sofistike saldırıların öne çıktığı görülmektedir. TeamPCP adlı siber suç grubunun Trivy ve KICS gibi popüler geliştirici araçlarına kötü amaçlı yazılım enjekte ederek bulut erişim anahtarlarını ve Kubernetes sırlarını ele geçirdiği tespit edilmiştir. Benzer şekilde Kuzey Kore bağlantılı aktörlerin, Rollup araçlarını taklit eden sahte npm paketleri üzerinden geliştiricilerin CI/CD hatlarına sızdığı ve kaynak kodlarını hedef aldığı belirlenmiştir. FortiBleed kampanyası kapsamında elde edilen Fortinet FortiGate erişim yetkilerinin Inc Ransom ve Lynx fidye yazılımı gruplarıyla paylaşıldığı ve en az 12 kuruluşta veri şifreleme saldırılarına yol açtığı doğrulanmıştır. Öte yandan NetScaler cihazlarını etkileyen yeni CitrixBleed açığının, teknik detayların paylaşılmasının hemen ardından saldırganlar tarafından aktif olarak istismar edilmeye başlandığı gözlemlenmiştir.</p>
-            <p class="exec-brief-vuln-link"><a href="#guvenlik-aciklari">&#128272; Güvenlik Açıkları &#8595;</a></p>
+            <p class="exec-brief-paragraph">Son günlerde küresel siber güvenlik gündemini şekillendiren kritik gelişmeler incelendiğinde, kritik altyapılara ve yapay zeka ekosistemlerine yönelik tehditlerin yoğunlaştığı görülmektedir. FBI ve EPA tarafından yapılan ortak açıklamada, siber saldırganların su tesislerindeki internete bağlı endüstriyel denetleyicilere sızarak operasyonel aksamalara yol açtığı bildirilmiştir. 27 Temmuz 2026 tarihinden itibaren en az yedi eyaletteki tesislerde Rockwell Automation MicroLogix serisi cihazların hedef alındığı ve bazı bölgelerde fiziksel su baskınlarının yaşandığı kaydedilmiştir. Öte yandan OpenAI, ChatGPT platformunu sahte kişilikler oluşturmak ve dolandırıcılık faaliyetlerini yürütmek amacıyla kullanan Kamboçya merkezli bir ağı engellediğini duyurmuştur. Söz konusu ağın yatırım ve romantizm temalı dolandırıcılık yöntemleriyle mağdurları maddi zarara uğrattığı ve organize suç gruplarıyla bağlantılı olduğu ifade edilmiştir. Yapay zeka güvenliği kapsamında ise Hugging Face Diffusers kütüphanesinde saldırganların gizlice kod yürütmesine imkan tanıyan üç yüksek riskli zafiyet tespit edilmiştir. CVE-2026-44827, CVE-2026-45804 ve CVE-2026-44513 kodlu bu açıkların kurumsal üretim hatlarını risk altında bıraktığı, sorunların Diffusers 0.38.0 sürümüyle giderildiği belirtilmiştir.</p>
         </div>
 
         <div class="executive-summary">
@@ -431,10 +502,10 @@
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                             Kaydet
                         </button>
-                        <span class="drag-file-chip" draggable="true" data-filename="04.07.2026.txt" title="Masaüstüne veya klasöre sürükleyin → .txt olarak kaydeder (Chrome/Edge)">
+                        <span class="drag-file-chip" draggable="true" data-filename="03.08.2026.txt" title="Masaüstüne veya klasöre sürükleyin → .txt olarak kaydeder (Chrome/Edge)">
                             <span class="drag-file-chip-inner">
                                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                04.07.2026.txt
+                                03.08.2026.txt
                             </span>
                             <span class="drag-file-chip-hint">↔ sürükle</span>
                         </span>
@@ -442,19 +513,19 @@
                 </div>
             <div class="top3-section">
                 <div class="top3-card">
-                    <div class="top3-card-title"><a href="https://www.darkreading.com/threat-intelligence/fortibleed-actors-inc-lynx-ransomware-gangs" target="_blank" style="color:inherit;text-decoration:none;">FortiBleed Aktörlerinin Inc ve Lynx Fidye Yazılımı Gruplarıyla İş Birliği Yapması</a></div>
-                    <p class="top3-card-paragraph">FortiBleed olarak adlandırılan küresel kimlik bilgisi hasadı kampanyasının arkasındaki ilk erişim aracılarının (IAB), Inc Ransom ve Lynx fidye yazılımı gruplarıyla doğrudan iş birliği içinde olduğu ortaya çıkarılmıştır. Yapılan araştırmalar, Fortinet FortiGate güvenlik duvarlarından sızdırılan yönetici düzeyindeki erişim yetkilerinin, fidye yazılımı operatörlerine aktarıldığını ve bu durumun en az 12 farklı kuruluşta veri şifreleme saldırısıyla sonuçlandığını doğrulamıştır. Saldırganların yaklaşık 430.000 cihazı hedef aldığı ve 12.000'den fazla sistemde aktif olarak kimlik bilgisi çalan yazılımlar barındırdığı tespit edilmiştir. Ayrıca, bu grubun Nextcloud platformundaki henüz yamalanmamış bir sıfır gün açığını kullanarak erişim alanını genişlettiği ve elde edilen verileri yeraltı forumlarında ticarileştirdiği belirlenmiştir. Bu durum, siber suç ekosisteminde uzmanlaşmış erişim sağlayıcıları ile fidye yazılımı operatörleri arasındaki stratejik ortaklığın, kritik ağ altyapılarını hedef alan saldırıların etkisini ve hızını artırdığını göstermektedir. Kuruluşların sadece çevre güvenlik cihazlarını yamalaması yeterli olmayıp, sızdırılan kimlik bilgilerinin fidye yazılımı saldırıları için bir öncül risk teşkil ettiği ve bu verilerin uzun süre boyunca farklı aktörler tarafından kullanılabileceği vurgulanmaktadır.</p>
-                    <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://www.darkreading.com/threat-intelligence/fortibleed-actors-inc-lynx-ransomware-gangs" target="_blank">darkreading.com</a>, 02.07.2026)</b></p>
+                    <div class="top3-card-title"><a href="https://industrialcyber.co/utilities-energy-power-water-waste/fbi-and-epa-warn-hackers-target-internet-connected-plcs-at-us-water-utilities-leading-to-operational-disruptions/" target="_blank" style="color:inherit;text-decoration:none;">FBI ve EPA'nın Su Tesislerine Yönelik Uyarıları</a></div>
+                    <p class="top3-card-paragraph">FBI ve EPA tarafından yayımlanan ortak bildiride, siber saldırganların su tesislerindeki internete bağlı endüstriyel denetleyicilere sızarak operasyonel aksamalara neden olduğu açıklanmıştır. 27 Temmuz 2026 tarihinden itibaren en az yedi eyaletteki su ve atık su tesislerinin, Rockwell Automation MicroLogix serisi cihazlarda parola ve IP adresi değişiklikleri yaşandığını bildirdiği ifade edilmiştir. Bazı tesislerde basınç kaybı ve su baskını gibi fiziksel etkilerin görüldüğü, bu durumun arıtılmamış yeraltı sularının şebekeye sızma riskini doğurduğu belirtilmiştir. Kurumlar, özellikle kullanım ömrü dolmuş donanımların hedef alındığına dikkat çekerek, bu cihazların güvenli ağ geçitleri arkasına alınmasını ve güçlü kimlik doğrulama yöntemlerinin kullanılmasını önermiştir. Ayrıca, tesislerin siber olaylar sırasında hizmet sürekliliğini sağlamak amacıyla manuel kontrol yeteneklerini düzenli olarak test etmeleri ve güncel yedekler bulundurmaları gerektiği kaydedilmiştir.</p>
+                    <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://industrialcyber.co/utilities-energy-power-water-waste/fbi-and-epa-warn-hackers-target-internet-connected-plcs-at-us-water-utilities-leading-to-operational-disruptions/" target="_blank">industrialcyber.co</a>, 03.08.2026)</b></p>
                 </div>
                 <div class="top3-card">
-                    <div class="top3-card-title"><a href="https://securityaffairs.com/194741/uncategorized/fbi-teampcp-compromised-dev-tools-to-steal-cloud-credentials.html" target="_blank" style="color:inherit;text-decoration:none;">TeamPCP'nin Geliştirici Araçlarını Zehirleyerek Bulut Kimlik Bilgilerini Çalması</a></div>
-                    <p class="top3-card-paragraph">FBI tarafından yayımlanan uyarı raporuna göre, TeamPCP adlı siber suç grubu, yaygın olarak kullanılan yazılım geliştirme ve güvenlik tarama araçlarını hedef alan geniş kapsamlı tedarik zinciri saldırıları gerçekleştirmiştir. Saldırganlar, Trivy, KICS ve LiteLLM gibi popüler araçların kaynak kodlarına kötü amaçlı yazılımlar enjekte ederek, bu araçları kullanan kuruluşların bulut erişim anahtarlarını, Kubernetes sırlarını ve SSH anahtarlarını ele geçirmiştir. Özellikle OpenAI çalışanlarını da etkileyen bu operasyonda, Mini Shai-Hulud ve Miasma gibi kendi kendine yayılan solucan yazılımların kullanıldığı ve bu yazılımların açık kaynaklı paket depoları üzerinden otonom olarak yayıldığı tespit edilmiştir. TeamPCP'nin, süresi dolmuş e-posta alan adlarını kullanarak eski paket yöneticisi hesaplarını ele geçirme yöntemi, yazılım ekosistemindeki güven ilişkilerinin nasıl suistimal edildiğini ortaya koymaktadır. Ele geçirilen verilerin diğer siber suç gruplarıyla paylaşıldığı ve mağdur kuruluşlara yönelik şantaj faaliyetlerinde kullanıldığı belirlenmiştir. Bu saldırı zinciri, kurumsal CI/CD süreçlerinin ve bulut altyapılarının güvenliğini doğrudan tehdit ederek, çalınan kimlik bilgilerinin gelecekteki operasyonlar için kalıcı bir risk oluşturmasına neden olmuştur. FBI, etkilenen kurumların tüm bulut sırlarını rotasyona tabi tutmasını ve yazılım tedarik zinciri güvenliğini en üst düzeye çıkarmasını talep etmektedir.</p>
-                    <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://securityaffairs.com/194741/uncategorized/fbi-teampcp-compromised-dev-tools-to-steal-cloud-credentials.html" target="_blank">securityaffairs.com</a>, 04.07.2026)</b></p>
+                    <div class="top3-card-title"><a href="https://www.helpnetsecurity.com/2026/08/03/openai-disrupts-chatgpt-scam-operation/" target="_blank" style="color:inherit;text-decoration:none;">OpenAI'nin ChatGPT Üzerinden Yürütülen Dolandırıcılık Ağını Engellemesi</a></div>
+                    <p class="top3-card-paragraph">OpenAI, Kamboçya merkezli olduğu değerlendirilen ve ChatGPT hesaplarını sahte çevrimiçi kişilikler oluşturmak için kullanan koordineli bir ağı engellediğini açıklamıştır. Söz konusu ağın; yatırım, romantizm, kumar ve kolluk kuvveti taklidi gibi çeşitli dolandırıcılık yöntemlerini desteklemek amacıyla yapay zekayı kullandığı belirtilmiştir. OpenAI tarafından yapılan incelemede, dolandırıcıların hedef kişilere yönelik mesajlar oluşturmak, içerikleri tercüme etmek ve sosyal medya için tanıtım materyalleri üretmek amacıyla platformdan faydalandığı tespit edilmiştir. Operasyonun, Doğu Asya'daki organize suç gruplarıyla bağlantılı insan ticareti ve zorla çalıştırma faaliyetleriyle de ilişkili olduğu kaydedilmiştir. Şirket, dolandırıcılık faaliyetleri sonucunda mağdurların binlerce dolar kaybetmiş olabileceğini, ancak toplam finansal zararın boyutunun henüz tam olarak belirlenemediğini ifade etmiştir.</p>
+                    <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://www.helpnetsecurity.com/2026/08/03/openai-disrupts-chatgpt-scam-operation/" target="_blank">helpnetsecurity.com</a>, 03.08.2026)</b></p>
                 </div>
                 <div class="top3-card">
-                    <div class="top3-card-title"><a href="https://www.securityweek.com/new-citrixbleed-vulnerability-exploited-immediately-after-public-disclosure/" target="_blank" style="color:inherit;text-decoration:none;">Yeni CitrixBleed Güvenlik Açığının Kamuoyuna Açıklanmasının Ardından İstismar Edilmesi</a></div>
-                    <p class="top3-card-paragraph">NetScaler cihazlarını etkileyen ve CitrixBleed olarak adlandırılan yeni bir kritik güvenlik açığının, teknik detaylarının kamuoyuna duyurulmasının hemen ardından saldırganlar tarafından aktif olarak istismar edilmeye başlandığı tespit edilmiştir. Siber saldırganların, paylaşılan kavram kanıtlama (PoC) kodlarını kullanarak hedef sistemlerin bellek içeriklerine yetkisiz erişim sağladığı ve hassas verileri HTTP yanıtları üzerinden sızdırdığı belirlenmiştir. Bu durum, kritik ağ altyapısı bileşenlerindeki açıkların yayımlanması ile saldırıların başlaması arasındaki sürenin (MTTI) neredeyse sıfıra indiğini göstermektedir. Özellikle kurumsal ağların giriş kapısı konumundaki NetScaler cihazlarının hedef alınması, saldırganlara ağ içerisinde yanal hareket etme ve kimlik bilgilerini ele geçirme imkanı tanımaktadır. Güvenlik araştırmacıları, bu tür hızlı istismarların fidye yazılımı grupları ve devlet destekli aktörler için stratejik bir fırsat penceresi oluşturduğunu vurgulamaktadır. CISA ve diğer siber güvenlik otoriteleri, etkilenen kurumların acil yama yönetimi prosedürlerini devreye alması ve sistem günlüklerini olası sızıntı izlerine karşı denetlemesi gerektiğini bildirmektedir. Olay, kritik altyapı güvenliğinde yama uygulama hızının, saldırganların otomatize edilmiş araçlarla gerçekleştirdiği operasyonlara karşı en önemli savunma hattı olduğunu bir kez daha doğrulamıştır.</p>
-                    <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://www.securityweek.com/new-citrixbleed-vulnerability-exploited-immediately-after-public-disclosure/" target="_blank">securityweek.com</a>, 02.07.2026)</b></p>
+                    <div class="top3-card-title"><a href="https://thehackernews.com/2026/08/hugging-face-diffusers-flaws-could-let.html" target="_blank" style="color:inherit;text-decoration:none;">Hugging Face Diffusers Kütüphanesinde Kod Yürütme Zafiyetlerinin Belirlenmesi</a></div>
+                    <p class="top3-card-paragraph">Hugging Face'in Diffusers kütüphanesinde, saldırganların yapay zeka tedarik zinciri üzerinden hedef makinelerde gizlice kod yürütmesine imkan tanıyan üç adet yüksek riskli güvenlik açığı tespit edilmiştir. FaceHugger olarak adlandırılan bu zafiyetlerin, güvenilmeyen kodların çalışmasını engellemek için tasarlanan güvenlik mekanizmalarını devre dışı bıraktığı belirtilmiştir. CVE-2026-44827, CVE-2026-45804 ve CVE-2026-44513 kodlu bu açıkların, model yükleme süreçlerindeki kontrol zamanı ile kullanım zamanı arasındaki uyumsuzluklardan kaynaklandığı ifade edilmiştir. Araştırmacılar, Diffusers kütüphanesinin 8 milyondan fazla indirilmiş olması nedeniyle kurumsal üretim hatlarının ve CI/CD sistemlerinin risk altında olduğunu kaydetmiştir. Söz konusu sorunlar Diffusers 0.38.0 sürümüyle giderilmiş olup, kullanıcıların yalnızca güvenilir kaynaklardan model yüklemeleri gerektiği bildirilmiştir.</p>
+                    <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://thehackernews.com/2026/08/hugging-face-diffusers-flaws-could-let.html" target="_blank">thehackernews.com</a>, 03.08.2026)</b></p>
                 </div>
             </div>
                 <div class="block-actions-bottom">
@@ -466,16 +537,20 @@
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Kaydet
                     </button>
-                    <span class="drag-file-chip" draggable="true" data-filename="04.07.2026.txt" title="Chrome/Edge: masaüstüne sürükleyin → .txt olarak kaydeder">
+                    <span class="drag-file-chip" draggable="true" data-filename="03.08.2026.txt" title="Chrome/Edge: masaüstüne sürükleyin → .txt olarak kaydeder">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                        04.07.2026.txt
+                        03.08.2026.txt
                     </span>
                 </div>
             </div>
 
             <table class="executive-table">
                 <tr>
-                    <td><a href="#haber-1">1. Kuzey Kore Bağlantılı Aktörlerin Geliştirici Sırlarını Çalmak İçin npm Paketlerini Taklit Etmesi</a></td>
+                    <td><a href="#haber-1">1. N-able N-central Sunucularında Kimlik Doğrulama Açığının İstismar Edilmesi</a></td>
+                    <td><a href="#haber-2">2. Thermo Fisher'ın DNA Veri Dosyalarındaki Güvenlik Açığını Yamalaması</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#haber-3">3. GitLab'da Kritik Uzaktan Kod Yürütme Zincirinin Tespit Edilmesi</a></td>
                     <td></td>
                 </tr>
             </table>
@@ -483,45 +558,32 @@
 
         <div class="news-section">
             <div class="news-item" id="haber-1">
-                <div class="news-title"><b>Kuzey Kore Bağlantılı Aktörlerin Geliştirici Sırlarını Çalmak İçin npm Paketlerini Taklit Etmesi</b></div>
-                <p class="news-content">Kuzey Kore bağlantılı olduğu değerlendirilen Lazarus grubuyla ilişkili tehdit aktörlerinin, popüler Rollup araçlarını taklit eden sahte npm paketleri aracılığıyla yazılım geliştiricileri hedef aldığı tespit edilmiştir. JFrog araştırmacıları tarafından ortaya çıkarılan bu operasyonda, saldırganların meşru paket isimlerine çok benzeyen isimler kullanarak geliştiricilerin iş istasyonlarına ve CI/CD hatlarına sızdığı belirlenmiştir. İki aşamalı bir saldırı mekanizması kullanan kötü amaçlı yazılım, ilk aşamada sistemin analiz ortamı olup olmadığını kontrol etmekte, ardından ikinci aşamada uzak sunucudan şifreli bir yük indirerek tam kontrol sağlamaktadır. Bu saldırının temel amacının, kaynak kodlarına erişim sağlamak, bulut hizmeti anahtarlarını, SSH kimlik bilgilerini ve kripto para cüzdan verilerini çalmak olduğu saptanmıştır. Ayrıca, saldırganların Telegram üzerinden komuta kontrol sağlayan arka kapılar ve otonom veri sızdırma araçları kullanarak geniş bir casusluk ağı kurduğu gözlemlenmiştir. Bu kampanya, Kuzey Kore'nin stratejik döviz geliri elde etme ve yabancı teknoloji altyapılarına sızma hedefleriyle doğrudan örtüşmektedir.</p>
-                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://thehackernews.com/2026/07/north-korea-linked-npm-packages-mimic.html" target="_blank">thehackernews.com</a>, 03.07.2026)</b></p>
+                <div class="news-title"><b>N-able N-central Sunucularında Kimlik Doğrulama Açığının İstismar Edilmesi</b></div>
+                <p class="news-content">N-able, N-central uzaktan izleme ve yönetim platformundaki bir kimlik doğrulama atlatma açığının saldırganlar tarafından yönetici erişimi sağlamak amacıyla istismar edildiğini açıklamıştır. CVE-2026-18577 olarak tanımlanan ve ilk yamanın yetersiz kalması nedeniyle ortaya çıkan bu açığın, saldırganların müşteri uç noktalarına Cloudflare tünelleri kurarak kalıcılık sağlamasına olanak tanıdığı belirtilmiştir. N-able, 31 Temmuz 2026 tarihinde on-premise müşterilerden gelen lisans hataları üzerine inceleme başlatmış ve 2026.3.1.7 sürümünden önceki tüm yapıların savunmasız olduğunu teyit etmiştir. Huntress araştırmacıları, saldırganların bazı sistemlerde süreç listeleme faaliyetleri yürüttüğünü ve Mullvad ile NordVPN çıkış düğümlerini kullandığını raporlamıştır. Şirket, tüm kullanıcıların acilen en güncel sürüme yükseltme yapması ve yönetilen cihazlardaki yetkisiz servisleri denetlemesi gerektiğini ifade etmiştir.</p>
+                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://thehackernews.com/2026/08/n-able-says-attackers-take-over-n.html" target="_blank">thehackernews.com</a>, 03.08.2026)</b></p>
             </div>
-<div class="social-signals"><h2>Sosyal Medya Sinyalleri</h2><div class="signal-list"><div class="signal-item github-item">  <div class="signal-meta">    <span class="signal-platform-label">GitHub Advisory</span>    <span class="signal-engagement">ÖNEM: KRİTİK  |  CVSS: 9.8</span>  </div>  <a href="https://github.com/advisories/GHSA-jphh-m39h-6gwx" target="_blank" rel="noopener noreferrer">9router'ın Hardcoded Default fallback JWT Secret bileşeni Authentication Bypass'a imkan tanımıştır.</a></div>
-<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0  |  ↺6</span>  </div>  <a href="https://poliversity.it/@nuke/116860736547084377" target="_blank" rel="noopener noreferrer">Bir araştırmacı, ChatGPT içerisindeki sistem dosyalarına erişmek için bir Guardrail Bypass ile Path Traversal açığını birleştirmiştir.</a></div>
-<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0  |  ↺6</span>  </div>  <a href="https://poliversity.it/@nuke/116860680465071408" target="_blank" rel="noopener noreferrer">Araştırmacılar, Claude Cowork Sandbox içerisinde Root Access elde etmek için DLL Sideloading ve bir RPC açığını birleştirmiştir.</a></div>
-<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0  |  ↺5</span>  </div>  <a href="https://poliversity.it/@nuke/116860719226125476" target="_blank" rel="noopener noreferrer">Yeni ARToken Phishing Kit, Microsoft 365 hesaplarını ele geçirmek için Microsoft’un OAuth Device Code Flow özelliğini kötüye kullanmıştır.</a></div>
-<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0  |  ↺5</span>  </div>  <a href="https://poliversity.it/@nuke/116860699640721790" target="_blank" rel="noopener noreferrer">Ousaban Banking Trojan, İspanya ve Portekiz'i hedef alan Steganographic PDF Lures ile yeniden ortaya çıkmıştır.</a></div>
-<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★4  |  ↺3</span>  </div>  <a href="https://chaos.social/@secbox/116860379606038945" target="_blank" rel="noopener noreferrer">ChatControl 1.0 hakkındaki güncellemeye göre; EU Council, hızlı takip yoluyla mesajlaşma taramalarını zorunlu kılmıştır.</a></div>
-<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲50</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1umwx5d/i_responsibly_disclosed_5_vulnerabilities_in/" target="_blank" rel="noopener noreferrer">Ollama ve LiteLLM üzerindeki 5 zafiyet Huntr aracılığıyla sorumlu bir şekilde bildirilmiş ve 90 günün ardından kamuoyuyla paylaşılmıştır.</a></div>
-<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲49</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1un2fkw/india_investigating_tata_data_leak_that_exposed/" target="_blank" rel="noopener noreferrer">Hindistan, Apple iPhone 18 Pro sırlarını ifşa eden Tata veri sızıntısını soruşturmaktadır.</a></div>
-<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲48</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1umvkye/job_market_for_mid_tiersenior_tier_folks/" target="_blank" rel="noopener noreferrer">Job Market for Mid Tier/Senior Tier folks?</a></div>
-<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲47</span>  </div>  <a href="https://www.reddit.com/r/netsec/comments/1ulmoyx/fifa_was_saved_this_time/" target="_blank" rel="noopener noreferrer">FIFA bu kez kurtarılmıştır.</a></div>
-<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲46</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1um760q/eu_politicians_investigated_pegasus_spyware_then/" target="_blank" rel="noopener noreferrer">AB politikacıları Pegasus Spyware yazılımını araştırmış, ardından yazılım politikacılardan birinin telefonunda tespit edilmiştir.</a></div>
+            <div class="news-item" id="haber-2">
+                <div class="news-title"><b>Thermo Fisher'ın DNA Veri Dosyalarındaki Güvenlik Açığını Yamalaması</b></div>
+                <p class="news-content">Thermo Fisher Scientific, Applied Biosystems insan tanımlama yazılımlarında, DNA veri dosyalarının analiz öncesinde fark edilmeden değiştirilmesine yol açan kritik bir güvenlik açığını gidermiştir. CVE-2026-17583 olarak tanımlanan zafiyetin, laboratuvar kontrollerinin aşılması durumunda .fsa ve .hid uzantılı çıktıların manipüle edilmesine imkan tanıdığı belirtilmiştir. Yapılan testlerde, yapay zeka araçları kullanılarak iki farklı DNA profilinin tek bir dosyada birleştirilebildiği ve yazılımların bu değişikliğe karşı uyarı vermediği tespit edilmiştir. Şirket, desteklenen beş ürün grubu için dijital imza desteği içeren güncellemeler yayınlamış, ancak kullanım ömrü dolmuş üç ürün grubu için güncelleme yapılmayacağını açıklamıştır. Henüz aktif bir istismar vakasına rastlanmadığı bildirilmekle birlikte, laboratuvarlara dosya erişim yetkilerini kısıtlamaları ve ağ bağlantılarını güvenli kaynaklarla sınırlandırmaları önerilmiştir.</p>
+                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://thehackernews.com/2026/08/thermo-fisher-patches-flaw-that-could.html" target="_blank">thehackernews.com</a>, 03.08.2026)</b></p>
+            </div>
+            <div class="news-item" id="haber-3">
+                <div class="news-title"><b>GitLab'da Kritik Uzaktan Kod Yürütme Zincirinin Tespit Edilmesi</b></div>
+                <p class="news-content">GitLab kullanıcıları, Oj adlı Ruby JSON ayrıştırıcısındaki iki hatanın birleştirilmesiyle elde edilen kritik bir uzaktan kod yürütme zafiyetine karşı uyarılmıştır. Araştırmacılar, Jupyter notebook dosyalarının işlenmesi sırasında bellek bozulmasına yol açan bu hataları kullanarak, yetkili bir kullanıcının Puma işçi süreci üzerinde tam komut yürütme yetkisi kazanabildiğini kanıtlamıştır. Zafiyetin GitLab CE ve EE sürümlerinin 15.2.0 ile 19.0.1 arasındaki geniş bir aralığı etkilediği ve saldırı için yönetici haklarına ihtiyaç duyulmadığı belirtilmiştir. Başarılı bir istismarın kaynak kod ifşasına, kimlik bilgisi hırsızlığına ve yanal hareket imkanına yol açabileceği kaydedilmiştir. GitLab'ın söz konusu hataları Haziran 2026'da giderdiği, ancak düzeltmenin başlangıçta kritik bir güvenlik güncellemesi olarak etiketlenmediği ifade edilmiştir. Kullanıcıların sistemlerini 19.0.2 veya ilgili güncel sürümlere yükseltmeleri istenmiştir.</p>
+                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://securityaffairs.com/196062/hacking/gitlab-users-urged-to-patch-after-research-reveals-critical-rce-chain.html" target="_blank">securityaffairs.com</a>, 02.08.2026)</b></p>
+            </div>
+<div class="social-signals"><h2>Sosyal Medya Sinyalleri</h2><div class="signal-list"><div class="signal-item github-item">  <div class="signal-meta">    <span class="signal-platform-label">GitHub Advisory</span>    <span class="signal-engagement">ÖNEM: YÜKSEK  |  CVSS: 8.7</span>  </div>  <a href="https://github.com/advisories/GHSA-wf43-fpp3-cf65" target="_blank" rel="noopener noreferrer">@apostrophecms/seo, Script Etiketi İçine Enjekte Edilen Temizlenmemiş Google Analytics / GTM Kimliği Aracılığıyla Depolanmış XSS'e Karşı Savunmasızdır.</a></div>
+<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0  |  ↺2</span>  </div>  <a href="https://infosec.exchange/@shodansafari/117030755421704470" target="_blank" rel="noopener noreferrer">ASN: AS12083 Location: Madison, US Added: 2026-07-28T13:11 # shodansafari # infosec</a></div>
+<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0  |  ↺2</span>  </div>  <a href="https://ieji.de/@hanscees/117030546017796124" target="_blank" rel="noopener noreferrer">@ queen_fennec more details on wifi hacks # infosec https:// news.risky.biz/risky-bulletin- russia-is-behind-the-recent-hotel-wifi-hacks/</a></div>
+<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0  |  ↺1</span>  </div>  <a href="https://infosec.exchange/@malicious_browser_bot/117030778327667180" target="_blank" rel="noopener noreferrer">Mango VPN isimli Chrome uzantısının kötü niyetli olduğu değerlendirilmektedir; siber güvenlik risk puanı 100/100 olarak belirlenmiştir.</a></div>
+<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0  |  ↺1</span>  </div>  <a href="https://social.raytec.co/@techbot/117030539943088147" target="_blank" rel="noopener noreferrer">MacSync macOS Stealer, Parolaları ve Kripto Cüzdanları Çalmak İçin Sahte Claude Kılavuzu Kullanmaktadır.</a></div>
+<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0</span>  </div>  <a href="https://mastodon.scot/@Colleen_/117030743858063914" target="_blank" rel="noopener noreferrer">Tsk tsk tsk Premier Inn - no special characters allowed for my password? Hmm get ready for the longest possible password I can get away with. # hotel # cybersecurity</a></div>
+<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲50</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1vdmhs3/us_water_systems_hit_by_suspected_iranian_cyber/" target="_blank" rel="noopener noreferrer">ABD Su Sistemlerinin İran Kaynaklı Olduğundan Şüphelenilen Siber Saldırılara Maruz Kaldığı Bildirilmiştir.</a></div>
+<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲49</span>  </div>  <a href="https://www.reddit.com/r/netsec/comments/1vdqe9d/the_risk_of_finetuned_openweight_models_msec/" target="_blank" rel="noopener noreferrer">İnce Ayar Yapılmış Açık Ağırlıklı Modellerin Riski · MSec Operations Blog</a></div>
+<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲48</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1ve0bp8/black_hat_2026/" target="_blank" rel="noopener noreferrer">Black Hat 2026</a></div>
+<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲47</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1ve1gfr/repeated_microsoft_mfa_prompts_from_foreign/" target="_blank" rel="noopener noreferrer">Parola sıfırlama işlemlerine rağmen yabancı konumlardan tekrarlanan Microsoft MFA istemleri alınmaktadır; bunun bilinen bir saldırı kalıbı olup olmadığı sorgulanmaktadır.</a></div>
+<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲46</span>  </div>  <a href="https://www.reddit.com/r/netsec/comments/1ve1t2r/l2_reduction_lll_algorithm_with_quadratic/" target="_blank" rel="noopener noreferrer">L2 Reduction: Python'da Karesel Karmaşıklığa Sahip LLL Algoritması.</a></div>
 </div></div>
-            <div class="vuln-section-heading" id="guvenlik-aciklari">
-                <h2>&#128272; Güvenlik Açıkları</h2>
-            </div>
-            <div class="news-item vuln-item" id="haber-2">
-                <div class="news-title"><b>Milyonlarca Gömülü Cihazda Kullanılan FatFs Dosya Sisteminde Yamalanmamış Açıkların Bulunması</b></div>
-                <p class="news-content">Güvenlik firması runZero, USB sürücüler ve SD kartlarda yaygın olarak kullanılan FatFs adlı küçük dosya sistemi kütüphanesinde yedi adet kritik güvenlik açığı tespit edildiğini duyurmuştur. Bu açıklar, güvenlik kameraları, dronlar, endüstriyel kontrolörler ve donanım kripto cüzdanları gibi milyonlarca gömülü cihazı doğrudan etkilemektedir. Saldırganların, kötü amaçlı olarak yapılandırılmış bir depolama birimi veya yazılım güncelleme dosyası aracılığıyla cihazın belleğini bozabileceği ve yetkisiz kod yürütebileceği belirlenmiştir. Özellikle CVE-2026-6682 olarak izlenen tam sayı taşması hatası, fiziksel erişim sağlanan cihazların tam kontrolünün ele geçirilmesine (jailbreak) olanak tanımaktadır. Kütüphanenin tek bir geliştirici tarafından yönetilmesi ve raporlanan açıklara yönelik henüz resmi bir yamanın yayımlanmamış olması, tedarik zinciri güvenliği açısından büyük bir risk oluşturmaktadır. runZero, yapay zeka destekli araçlar kullanarak bu açıkları tespit ettiğini belirterek, saldırganların da benzer yöntemlerle bu zafiyetleri istismar edebileceği konusunda uyarıda bulunmuştur. Cihaz üreticilerinin, etkilenen kütüphaneyi kullanan ürünlerini acilen denetlemeleri ve fiziksel portlar üzerinden gelebilecek saldırılara karşı ek güvenlik önlemleri almaları gerekmektedir.</p>
-                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://thehackernews.com/2026/07/unpatched-flaws-disclosed-in-filesystem.html" target="_blank">thehackernews.com</a>, 03.07.2026)</b></p>
-            </div>
-            <div class="news-item vuln-item" id="haber-3">
-                <div class="news-title"><b>Linux Çekirdeğindeki Bad Epoll Açığının Yetkisiz Erişime İzin Vermesi</b></div>
-                <p class="news-content">Linux çekirdeğinde tespit edilen ve Bad Epoll olarak adlandırılan CVE-2026-46242 kodlu yeni bir güvenlik açığı, düşük yetkili kullanıcıların sistem üzerinde tam yönetici hakları elde etmesine olanak tanımaktadır. Araştırmacı Jaeyoung Chung tarafından keşfedilen bu zafiyet, Linux masaüstü sistemlerini, sunucuları ve Android işletim sistemini doğrudan etkilemektedir. Teknik olarak bir bellek hatası olan bu durum, çekirdeğin epoll özelliğindeki bir yarış koşulundan kaynaklanmaktadır ve saldırganların çekirdek belleğini bozarak yetki yükseltmesine imkan vermektedir. Söz konusu açık, Google Chrome tarayıcısının güvenlik mekanizmalarını aşabilmesi ve Android cihazlara ulaşabilmesi nedeniyle stratejik bir risk teşkil etmektedir. Anthropic şirketine ait Mythos adlı yapay zeka modelinin aynı kod bloğundaki başka bir hatayı bulup bu hatayı gözden kaçırması, karmaşık yarış koşullarının tespitindeki zorluğu göstermektedir. Hata, 2023 yılında epoll kodunda yapılan bir değişikliğe dayanmaktadır ve 6.4 sürümü ile daha yeni çekirdek versiyonlarını etkilemektedir. Google'ın kernelCTF programına sıfır gün açığı olarak sunulan bu zafiyet için henüz aktif bir saldırı kaydı bulunmamaktadır. Sistem yöneticilerinin ve kullanıcıların, ilgili çekirdek güncellemelerini veya dağıtımlara özel yamaları ivedilikle uygulamaları önerilmektedir. Pixel 8 gibi 6.1 tabanlı çekirdek kullanan bazı Android cihazlar bu hatadan etkilenmemektedir.</p>
-                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://thehackernews.com/2026/07/new-bad-epoll-linux-kernel-flaw-lets.html" target="_blank">thehackernews.com</a>, 03.07.2026)</b></p>
-            </div>
-            <div class="news-item vuln-item" id="haber-4">
-                <div class="news-title"><b>Microsoft 365 Kullanıcılarının Otomatik Parola Püskürtme Saldırısına Maruz Kalması</b></div>
-                <p class="news-content">Microsoft 365 kullanıcıları, 12 Haziran ile 26 Haziran 2026 tarihleri arasında gerçekleşen ve geniş bir kitleyi hedef alan otomatik bir parola püskürtme saldırısına maruz kalmıştır. Güvenlik firması Huntress tarafından yapılan incelemeler, saldırganların bu süreçte firmanın müşterilerine ait hesaplara 81 milyon oturum açma girişimi gerçekleştirdiğini ve en az 78 vakada başarıya ulaştığını ortaya koymuştur. Saldırıların tamamı, internet servis sağlayıcısı LSHIY LLC tarafından kontrol edilen tek bir IPv6 adres aralığından kaynaklanmıştır. Huntress, 22 Haziran tarihinde 30 müşterisinin etkilenmesiyle saldırı yoğunluğunda ani bir artış yaşandığını tespit etmiştir. Tehdit aktörleri, OAuth ROPC akışını kullanarak doğrulanmış kimlik bilgilerini yeniden oynatmış ve çok faktörlü kimlik doğrulama (MFA) yapılandırmalarındaki eksikliklerden faydalanmıştır. Bazı kuruluşların MFA uygulamasını tüm bulut uygulamaları yerine yalnızca belirli portallar için etkinleştirmesi, saldırganların Azure CLI üzerinden oturum açmasına imkan tanımıştır. Ayrıca MFA'nın yalnızca yönetici gruplarıyla sınırlandırıldığı kurumlarda, kapsam dışı kalan kullanıcı hesapları ele geçirilmiştir. LSHIY LLC, saldırıda kullanılan IP adreslerine sahip müşterisinin erişimini sonlandırmıştır.</p>
-                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://www.csoonline.com/article/4192819/microsoft-365-users-fall-victim-to-one-in-a-million-password-spray-attack.html" target="_blank">csoonline.com</a>, 03.07.2026)</b></p>
-            </div>
-            <div class="news-item vuln-item" id="haber-5">
-                <div class="news-title"><b>Avalon Kötü Amaçlı Yazılım Çerçevesinin CrownX Fidye Yazılımı Yeteneklerini Barındırması</b></div>
-                <p class="news-content">Siber güvenlik araştırmacıları, geleneksel güvenlik kontrollerini atlatabilen ve çok aşamalı kimlik avı zincirleri aracılığıyla dağıtılan Avalon adlı modüler bir kötü amaçlı yazılım çerçevesini tespit etmiştir. Blackpoint Cyber tarafından yapılan incelemeye göre bu yapı; kimlik bilgisi toplama, ağda yanal hareket, uzaktan erişim ve CrownX olarak adlandırılan fidye yazılımı bileşenini tek bir çatı altında birleştirmektedir. Saldırganlar, Proton Drive üzerinde barındırılan ve parola ile korunan arşiv dosyalarına yönlendiren sahte yasal belge e-postaları kullanarak sisteme sızmaktadır. Yazılımın savunma kaçınma alt sistemi; Microsoft Defender, SentinelOne, CrowdStrike ve McAfee gibi yaygın güvenlik araçlarından gizlenmek üzere tasarlanmış yöntemler içermektedir. Avalon; kripto para cüzdanları, mesajlaşma uygulamaları ve VPN yapılandırmalarından veri sızdırmanın yanı sıra sistem kurtarma seçeneklerini devre dışı bırakmak için gölge kopyaları silmektedir. Araştırmacılar, yazılımın geliştirilme sürecinde yapay zeka desteğine dair izler bulmuş ve bu durumun teknik uzmanlığı kısıtlı aktörlerin karmaşık saldırı araçları oluşturmasına imkan tanıdığını belirtmiştir. Sysdig ise JADEPUFFER kod adlı bir aktörün, internete açık bir Langflow örneği üzerinden büyük dil modelleri kullanarak tam otomatize bir fidye yazılımı saldırısı gerçekleştirdiğini raporlamıştır. Palo Alto Networks Unit 42 tarafından paylaşılan bir diğer gelişmede, saldırganların doğal dil komutlarını kabuk komutlarına dönüştüren bir yapay zeka katmanı kullanarak kod yazma bilgisi gerektirmeyen saldırılar düzenlediği tespit edilmiştir.</p>
-                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://thehackernews.com/2026/07/new-avalon-malware-framework-packs.html" target="_blank">thehackernews.com</a>, 03.07.2026)</b></p>
-            </div>
         </div>
     </div>
     <a href="#" class="back-to-top" title="Başa Dön"
@@ -581,7 +643,7 @@ function saveBlock(btn) {
     var blob = new Blob([text], {type: 'text/plain;charset=utf-8'});
     var url  = URL.createObjectURL(blob);
     var a    = document.createElement('a');
-    a.href = url; a.download = '04.07.2026.txt';
+    a.href = url; a.download = '03.08.2026.txt';
     document.body.appendChild(a); a.click();
     document.body.removeChild(a); URL.revokeObjectURL(url);
     _flashBtn(btn, 'Kaydedildi!');
@@ -606,34 +668,35 @@ document.addEventListener('DOMContentLoaded', initDragFile);
     <div class="archive-section">
         <h3>📚 Arşiv - Son 30 Gün</h3>
         <div class="archive-links">
-            <a href="./2026-07-03.html" class="archive-link">03.07.2026</a>
-            <a href="./2026-07-02.html" class="archive-link">02.07.2026</a>
-            <a href="./2026-07-01.html" class="archive-link">01.07.2026</a>
-            <a href="./2026-06-30.html" class="archive-link">30.06.2026</a>
-            <a href="./2026-06-29.html" class="archive-link">29.06.2026</a>
-            <a href="./2026-06-28.html" class="archive-link">28.06.2026</a>
-            <a href="./2026-06-27.html" class="archive-link">27.06.2026</a>
-            <a href="./2026-06-26.html" class="archive-link">26.06.2026</a>
-            <a href="./2026-06-25.html" class="archive-link">25.06.2026</a>
-            <a href="./2026-06-24.html" class="archive-link">24.06.2026</a>
-            <a href="./2026-06-23.html" class="archive-link">23.06.2026</a>
-            <a href="./2026-06-22.html" class="archive-link">22.06.2026</a>
-            <a href="./2026-06-21.html" class="archive-link">21.06.2026</a>
-            <a href="./2026-06-20.html" class="archive-link">20.06.2026</a>
-            <a href="./2026-06-19.html" class="archive-link">19.06.2026</a>
-            <a href="./2026-06-18.html" class="archive-link">18.06.2026</a>
-            <a href="./2026-06-17.html" class="archive-link">17.06.2026</a>
-            <a href="./2026-06-16.html" class="archive-link">16.06.2026</a>
-            <a href="./2026-06-15.html" class="archive-link">15.06.2026</a>
-            <a href="./2026-06-14.html" class="archive-link">14.06.2026</a>
-            <a href="./2026-06-13.html" class="archive-link">13.06.2026</a>
-            <a href="./2026-06-12.html" class="archive-link">12.06.2026</a>
-            <a href="./2026-06-10.html" class="archive-link">10.06.2026</a>
-            <a href="./2026-06-09.html" class="archive-link">09.06.2026</a>
-            <a href="./2026-06-08.html" class="archive-link">08.06.2026</a>
-            <a href="./2026-06-07.html" class="archive-link">07.06.2026</a>
-            <a href="./2026-06-06.html" class="archive-link">06.06.2026</a>
-            <a href="./2026-06-05.html" class="archive-link">05.06.2026</a>
+            <a href="./2026-08-02.html" class="archive-link">02.08.2026</a>
+            <a href="./2026-08-01.html" class="archive-link">01.08.2026</a>
+            <a href="./2026-07-31.html" class="archive-link">31.07.2026</a>
+            <a href="./2026-07-30.html" class="archive-link">30.07.2026</a>
+            <a href="./2026-07-29.html" class="archive-link">29.07.2026</a>
+            <a href="./2026-07-28.html" class="archive-link">28.07.2026</a>
+            <a href="./2026-07-27.html" class="archive-link">27.07.2026</a>
+            <a href="./2026-07-26.html" class="archive-link">26.07.2026</a>
+            <a href="./2026-07-25.html" class="archive-link">25.07.2026</a>
+            <a href="./2026-07-24.html" class="archive-link">24.07.2026</a>
+            <a href="./2026-07-23.html" class="archive-link">23.07.2026</a>
+            <a href="./2026-07-22.html" class="archive-link">22.07.2026</a>
+            <a href="./2026-07-21.html" class="archive-link">21.07.2026</a>
+            <a href="./2026-07-20.html" class="archive-link">20.07.2026</a>
+            <a href="./2026-07-19.html" class="archive-link">19.07.2026</a>
+            <a href="./2026-07-18.html" class="archive-link">18.07.2026</a>
+            <a href="./2026-07-17.html" class="archive-link">17.07.2026</a>
+            <a href="./2026-07-16.html" class="archive-link">16.07.2026</a>
+            <a href="./2026-07-15.html" class="archive-link">15.07.2026</a>
+            <a href="./2026-07-14.html" class="archive-link">14.07.2026</a>
+            <a href="./2026-07-13.html" class="archive-link">13.07.2026</a>
+            <a href="./2026-07-12.html" class="archive-link">12.07.2026</a>
+            <a href="./2026-07-11.html" class="archive-link">11.07.2026</a>
+            <a href="./2026-07-10.html" class="archive-link">10.07.2026</a>
+            <a href="./2026-07-09.html" class="archive-link">09.07.2026</a>
+            <a href="./2026-07-08.html" class="archive-link">08.07.2026</a>
+            <a href="./2026-07-07.html" class="archive-link">07.07.2026</a>
+            <a href="./2026-07-06.html" class="archive-link">06.07.2026</a>
+            <a href="./2026-07-05.html" class="archive-link">05.07.2026</a>
         </div>
     </div>
 

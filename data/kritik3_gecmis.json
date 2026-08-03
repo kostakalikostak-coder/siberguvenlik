@@ -1,28 +1,5 @@
 [
  {
-  "date": "2026-07-26",
-  "views": [
-   {
-    "tr_title": "İran Bağlantılı Siber Tehdit Aktörlerinin ABD Su ve Enerji Kontrol Sistemlerini Hedeflemesi",
-    "paragraph": "CISA, FBI, NSA ve Enerji Bakanlığı tarafından yayımlanan güncel siber güvenlik kılavuzunda, İran bağlantılı siber tehdit aktörlerinin ABD'deki su ve enerji kontrol sistemlerine sızdığı bildirilmiştir. Mart 2026 tarihinden bu yana süregelen faaliyetlerde, saldırganların internete açık programlanabilir mantık denetleyicilerine (PLC) erişim sağlayarak operasyonel süreçleri manipüle ettiği belirtilmiştir. Rockwell Automation, Schneider Electric ve Siemens gibi üreticilerin ekipmanlarını hedef alan aktörlerin, güvenlik alarmlarını ve kapatma işlevlerini devre dışı bırakan kötü amaçlı proje dosyalar",
-    "title": "Iran-Linked Actors Breach Are Targeting US Water and Energy Control Systems",
-    "full_text": "Iran-Linked Actors Breach Are Targeting US Water and Energy Control Systems\n\nUS agencies warn Iran-linked actors are targeting internet-exposed water and energy control systems, risking disruption.\n\nFederal agencies updated their cybersecurity advisory this week: Iran-linked actors are inside American water and energy control systems, and they’re not just looking around. They’re changing things.\n\nThe updated advisory from CISA, the FBI, NSA, and the Department of Energy says these actors are getting into programmable logic controllers, the small industrial computers that run pumps, valves, and"
-   },
-   {
-    "tr_title": "Fidye Yazılımı Grubu Cl0p Bağlantılı Aktörlerin PTC Yazılımlarını Hedeflemesi",
-    "paragraph": "Cl0p fidye yazılımı kampanyasıyla bağlantılı siber tehdit aktörlerinin, veri sızdırma operasyonları kapsamında internete açık PTC Windchill ve FlexPLM kurulumlarındaki güvenlik açıklarını istismar ettiği bildirilmiştir. Ransom-ISAC, eCrime.ch ve DEFUSED tarafından yayımlanan ortak rapora göre saldırganlar, kimlik doğrulaması gerektirmeyen uzaktan kod yürütme yetkisi kazanmak için iki farklı hatayı birleştirmekte ve sistemlere zararlı web kabukları yerleştirmektedir. Üretim, otomotiv, havacılık ve perakende sektörlerinin hedef alındığı bu kampanyada, mühendislik ve tasarım verilerinin çalınarak",
-    "title": "Cl0p Affiliates Target Internet-Exposed PTC Windchill and FlexPLM with Unauthenticated RCE",
-    "full_text": "Threat actors linked to the Cl0p (aka Chubby Scorpius, FIN11, Graceful Spider, and Lace Tempest) ransomware campaign are exploiting flaws in internet-exposed PTC Windmill and FlexPLM deployments as part of a new data extortion campaign.\n\n\"Attackers chain a pre-authentication information disclosure in the FlexPLM WSDL endpoint with a server-side flaw in the Windchill login servlet, enabling unauthenticated remote code execution and deployment of hex-named JSP web shells under /Windchill/login/,\" according to a new coordinated advisory released by Ransom-ISAC along with eCrime.ch and DEFUSED.\n\nU"
-   },
-   {
-    "tr_title": "Chaos Fidye Yazılımı Grubunun Tarayıcı Üzerinden Komuta Kontrol Kanalı Oluşturan msaRAT Yazılımını Kullanması",
-    "paragraph": "Chaos fidye yazılımı grubunun, komuta kontrol (C2) iletişimini doğrudan ağ üzerinden değil, tarayıcı hata ayıklama arayüzü aracılığıyla yürüten Rust tabanlı msaRAT adlı yeni bir uzaktan erişim truva atı kullandığı tespit edilmiştir. Söz konusu zararlı yazılımın, Chrome DevTools Protokolü (CDP) üzerinden tarayıcıyı manipüle ederek WebRTC veri kanalları oluşturduğu ve Cloudflare Workers altyapısını sinyalleşme amacıyla kullandığı belirtilmiştir. msaRAT'ın, Windows güncellemesi gibi görünerek sisteme sızdığı ve tarayıcıyı gizli modda başlatarak JavaScript kodları enjekte ettiği kaydedilmiştir. Bu",
-    "title": "Chaos ransomware's msaRAT: Living off the browser to build a covert C2 channel",
-    "full_text": "Chaos ransomware's msaRAT: Living off the browser to build a covert C2 channel\n\nCisco Talos has discovered a new Rust-based remote access trojan (RAT) we call “msaRAT” attributed to the Chaos ransomware group. The name is derived from the binding names found in the binary: “msaOpen,” “msaClose,” “msaError,” and “msaMessage”.\n\nmsaRAT is implemented using the Tokio asynchronous runtime, with primary capabilities of browser-leveraged remote code execution and covert tunneling to establish command-and-control (C2) communications.\n\nThis RAT never touches the network directly — it controls its C2 co"
-   }
-  ]
- },
- {
   "date": "2026-07-27",
   "views": [
    {
@@ -180,6 +157,29 @@
     "paragraph": "Amerika Birleşik Devletleri Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), 26-27 Temmuz 2026 tarihlerinde Minnesota'daki 30'dan fazla su sistemini hedef alan koordinatörlü siber saldırıların ardından kritik bir uyarı yayınlamıştır. Braham, Maple Plain, Plymouth ve South St. Paul şehirlerini etkileyen saldırılarda, Braham'daki tesisin operasyonel teknoloji sistemleri tamamen devre dışı kalmıştır. Resmi atıf yapılmasa da uzmanlar, saldırı modelinin İran Devrim Muhafızları ile bağlantılı CyberAv3ngers grubuyla uyumlu olduğunu belirtmektedir. Saldırganlar, Rockwell Automation, Schneider Electr",
     "title": "CISA Urges Utilities to Remove Internet-Exposed PLCs After Minnesota Attacks",
     "full_text": "CISA Urges Utilities to Remove Internet-Exposed PLCs After Minnesota Attacks\n\nAfter attacks hit 30+ Minnesota water systems, CISA urged utilities to remove internet-exposed PLCs and strengthen OT security.\n\nBetween Sunday and Monday, July 26 and 27, a coordinated cyberattack hit operational technology (OT) systems at more than 30 community water utilities across the state, according to Minnesota IT Services (MNIT).\n\n“A coordinated cyberattack targeted operational technology at more than 30 Minnesota community water systems on July 26 and 27. Minnesota IT Services (MNIT) immediately activated t"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-03",
+  "views": [
+   {
+    "tr_title": "FBI ve EPA'nın Su Tesislerine Yönelik Uyarıları",
+    "paragraph": "FBI ve EPA tarafından yayımlanan ortak bildiride, siber saldırganların su tesislerindeki internete bağlı endüstriyel denetleyicilere sızarak operasyonel aksamalara neden olduğu açıklanmıştır. 27 Temmuz 2026 tarihinden itibaren en az yedi eyaletteki su ve atık su tesislerinin, Rockwell Automation MicroLogix serisi cihazlarda parola ve IP adresi değişiklikleri yaşandığını bildirdiği ifade edilmiştir. Bazı tesislerde basınç kaybı ve su baskını gibi fiziksel etkilerin görüldüğü, bu durumun arıtılmamış yeraltı sularının şebekeye sızma riskini doğurduğu belirtilmiştir. Kurumlar, özellikle kullanım ö",
+    "title": "FBI and EPA warn hackers target internet-connected PLCs at US water utilities, leading to operational disruptions",
+    "full_text": "The Federal Bureau of Investigation (FBI) and Environmental Protection Agency (EPA) warned that hackers have been breaking into internet-connected industrial controllers at water utilities, in some cases disrupting operations at facilities across multiple states. In a joint advisory issued July 30, the agencies said the attackers have targeted Rockwell Automation/Allen-Bradley MicroLogix 1100 and 1400 PLCs (programmable logic controllers), remotely changing IP addresses and passwords to lock operators out of monitoring and control systems.\n\nSince July 27, water and wastewater utilities in at l"
+   },
+   {
+    "tr_title": "OpenAI'nin ChatGPT Üzerinden Yürütülen Dolandırıcılık Ağını Engellemesi",
+    "paragraph": "OpenAI, Kamboçya merkezli olduğu değerlendirilen ve ChatGPT hesaplarını sahte çevrimiçi kişilikler oluşturmak için kullanan koordineli bir ağı engellediğini açıklamıştır. Söz konusu ağın; yatırım, romantizm, kumar ve kolluk kuvveti taklidi gibi çeşitli dolandırıcılık yöntemlerini desteklemek amacıyla yapay zekayı kullandığı belirtilmiştir. OpenAI tarafından yapılan incelemede, dolandırıcıların hedef kişilere yönelik mesajlar oluşturmak, içerikleri tercüme etmek ve sosyal medya için tanıtım materyalleri üretmek amacıyla platformdan faydalandığı tespit edilmiştir. Operasyonun, Doğu Asya'daki org",
+    "title": "OpenAI reveals how criminals used ChatGPT to run scams",
+    "full_text": "OpenAI reveals how criminals used ChatGPT to run scams\n\nOpenAI banned a coordinated network of ChatGPT accounts that likely originated in Cambodia’s Preah Sihanouk province, a region reports have linked to online scam compounds and human trafficking operations.\n\nThe network used the company’s models to create and manage fake online personas, generate and translate messages sent to scam targets, produce promotional content for fraudulent schemes, and support daily operations.\n\nEarlier this year, a lead from WhatsApp prompted OpenAI to investigate and disrupt a Cambodia-based scam operation that"
+   },
+   {
+    "tr_title": "Hugging Face Diffusers Kütüphanesinde Kod Yürütme Zafiyetlerinin Belirlenmesi",
+    "paragraph": "Hugging Face'in Diffusers kütüphanesinde, saldırganların yapay zeka tedarik zinciri üzerinden hedef makinelerde gizlice kod yürütmesine imkan tanıyan üç adet yüksek riskli güvenlik açığı tespit edilmiştir. FaceHugger olarak adlandırılan bu zafiyetlerin, güvenilmeyen kodların çalışmasını engellemek için tasarlanan güvenlik mekanizmalarını devre dışı bıraktığı belirtilmiştir. CVE-2026-44827, CVE-2026-45804 ve CVE-2026-44513 kodlu bu açıkların, model yükleme süreçlerindeki kontrol zamanı ile kullanım zamanı arasındaki uyumsuzluklardan kaynaklandığı ifade edilmiştir. Araştırmacılar, Diffusers kütü",
+    "title": "Hugging Face Diffusers Flaws Could Let Model Repositories Execute Arbitrary Code",
+    "full_text": "Three high-severity security flaws have been disclosed in Hugging Face's Diffusers library that could allow crafted model repositories to stealthily execute arbitrary code on machines that load it, opening the artificial intelligence (AI) supply chain to security risk.\n\n\"These vulnerabilities are bypassing trust_remote_code, the safeguard designed to stop unreviewed code from running in the custom pipelines loading process,\" Zafran Labs researchers Gal Zaban and Ido Shani said in an analysis published last week.\n\nThe shortcomings have been collectively named FaceHugger.\n\nWith Hugging Face beco"
    }
   ]
  }
