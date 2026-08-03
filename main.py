@@ -3310,6 +3310,40 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         except Exception as e:
             print(f"   ⚠️  Dedup yakın-kaçış logu yazılamadı: {e}")
 
+    def _load_recent_kritik3_by_day(self, days=KRITIK3_HISTORY_DAYS):
+        """Son `days` günün KRİTİK 3 manşetlerini GÜNE GÖRE GRUPLU okur:
+        [(tarih, [görünüm, ...]), ...], eskiden yeniye, BUGÜN HARİÇ.
+
+        Süregelen hikâye zinciri (src.dedup.build_story_chains) gün bilgisine
+        ihtiyaç duyar — bir hikâyenin kaç AYRI günde manşet olduğu kuralın
+        çekirdeğidir. _load_recent_kritik3_views düz liste döndürdüğü için o
+        bilgiyi taşıyamaz."""
+        try:
+            if not os.path.exists(KRITIK3_HISTORY_FILE):
+                return []
+            with open(KRITIK3_HISTORY_FILE, 'r', encoding='utf-8') as f:
+                records = json.load(f)
+        except Exception as e:
+            print(f"⚠️  KRİTİK 3 geçmişi okunamadı: {e}")
+            return []
+        today  = _now_tr().strftime('%Y-%m-%d')
+        cutoff = (_now_tr() - timedelta(days=days)).strftime('%Y-%m-%d')
+        out = []
+        for rec in records:
+            if not isinstance(rec, dict):
+                continue
+            d = rec.get('date', '')
+            # Bugün/gelecek HARİÇ — aynı gün 2. üretimde bugünün manşeti kendi
+            # kaydıyla zincir kurup kendini engellerdi (_load_recent_kritik3_views
+            # ile aynı gerekçe).
+            if d < cutoff or d >= today:
+                continue
+            views = [v for v in rec.get('views', [])
+                     if isinstance(v, dict) and (v.get('tr_title') or v.get('paragraph'))]
+            if views:
+                out.append((d, views))
+        return sorted(out, key=lambda x: x[0])
+
     def _load_recent_kritik3_views(self, days=KRITIK3_HISTORY_DAYS):
         """Son `days` günde KRİTİK 3'e (üst manşet) giren haberlerin zengin
         görünümlerini (tr_title/paragraph/title/full_text) okur.
@@ -3362,7 +3396,13 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 'tr_title':  v.get('tr_title', ''),
                 'paragraph': (v.get('paragraph', '') or '')[:600],
                 'title':     v.get('title', ''),
-                'full_text': (v.get('full_text', '') or '')[:600],
+                # 600 → 1500: hikâye zinciri (src.dedup.story_entities) özel
+                # adları tam metinden çıkarır ve 600 karakter çoğu haberde
+                # yalnız giriş paragrafına yetiyordu. Ölçüm: 07-31 ve 08-01
+                # manşetlerinden yalnızca {minnesot} çıkabildi, o yüzden su
+                # zincirine bağlanamadılar. Sınır dedup.story_entities'in
+                # okuduğu pencereyle (_STORY_FULLTEXT_CHARS) hizalı.
+                'full_text': (v.get('full_text', '') or '')[:1500],
             })
 
         records = []
@@ -4069,8 +4109,42 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # olmaz. (İki depo geçişte birbirini tamamlar: rapor geçmişi henüz
         # birikmemişken kritik3 geçmişi çalışmayı sürdürür.)
         recent_k3 = self._load_recent_kritik3_views() + self._load_recent_report_views()
+
+        # ── SÜREGELEN HİKÂYE ZİNCİRİ (manşet tekrarı) ────────────────────
+        # Yukarıdaki çapraz-gün dedup AYNI OLAYI engeller. Ama bir hikâye
+        # günlerce YENİ gelişmelerle sürebilir; her günün haberi gerçekten
+        # yenidir, mükerrer değildir — yine de aynı hikâye üst üste manşet
+        # olmamalı. 2026-08-03'te Minnesota su tesisi saldırıları ALTINCI gün
+        # manşetti ve hiçbir dedup katmanı tetiklenmedi (tetiklenmesi de
+        # gerekmiyordu: farklı olaylardı). Bkz. src.dedup.build_story_chains.
+        ordered_pool_ham = list(ordered_pool)
+        zincirler = _dedup.build_story_chains(self._load_recent_kritik3_by_day())
+        zincir_dusen = {}
+        if zincirler:
+            elenmis = []
+            for aid in ordered_pool:
+                z = _dedup.matching_story_chain(view_fn(aid), zincirler)
+                if z:
+                    zincir_dusen[aid] = z
+                else:
+                    elenmis.append(aid)
+            # GÜVENLİK TABANI: filtre KRİTİK 3'ü boşaltamaz. 3 aday kalmadıysa
+            # eksik slotlar ham sıradan tamamlanır (zincire takılanlar en sona).
+            if len(elenmis) < 3:
+                elenmis += [aid for aid in ordered_pool_ham if aid not in elenmis]
+                print(f"   🛟 Hikâye zinciri filtresi {len(zincir_dusen)} adayı "
+                      f"düşürdü ama 3 ayrık aday kalmadı — sıralama ham havuzla "
+                      f"tamamlandı (rapor boşalmasın).")
+            ordered_pool = elenmis
+
         top3_ids = _dedup.pick_distinct(ordered_pool, view_fn, n=3,
                                         exclude_views=recent_k3)
+
+        for aid, z in zincir_dusen.items():
+            if aid not in top3_ids:
+                print(f"   📖 Süregelen hikâye: ID {aid} manşetten indirildi "
+                      f"(gövdede kalır) — zincir {z['days']} "
+                      f"({len(z['days'])} gün), ortak={z['shared']}")
 
         dropped = [aid for aid in before if aid not in top3_ids]
         if dropped:

@@ -633,3 +633,124 @@ def test_shared_actor_catches_campaign_continuation_xday():
     same, why = dedup.same_event(outlook, zimbra, explain=True, cross_day=True)
     assert same, f'Aynı kampanyanın devamı yakalanamadı: {why}'
     assert 'laundrybear' in why
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# SÜREGELEN HİKÂYE ZİNCİRİ (manşet tekrarı)
+# ══════════════════════════════════════════════════════════════════════════
+# 2026-08-03 vakası: Minnesota su tesisi saldırıları 29 Temmuz'dan beri ALTI
+# GÜN üst üste KRİTİK 3 manşeti oldu. same_event hiçbir gün tetiklenmedi ve
+# tetiklenmemeliydi de — her günün haberi gerçekten farklı bir olaydı (Tenable
+# analizi → CISA uyarısı → FBI/EPA ortak bildirisi). Sorun mükerrerlik değil,
+# MANŞET TEKRARIYDI.
+
+def _v(tr_title, paragraph, full_text=''):
+    return {'tr_title': tr_title, 'title': '', 'paragraph': paragraph,
+            'full_text': full_text}
+
+
+# Gerçek vakadan türetilmiş manşetler (kritik3_gecmis.json).
+SU_29 = _v('Minnesota\'daki Su Tesislerine Yönelik Eş Zamanlı Saldırılar',
+           'Minnesota eyaletindeki 30\'dan fazla su tesisi hedef alınmıştır. '
+           'Braham şehrindeki tesis devre dışı kalmıştır.',
+           'Dozens of water utilities in Minnesota were targeted. The MNIT '
+           'agency confirmed Braham was hit. Rockwell Automation controllers.')
+SU_30 = _v('İran Bağlantılı Grubun Minnesota Su Tesislerini Hedeflemesi',
+           'Tenable araştırmacıları saldırıların arkasında CyberAv3ngers '
+           'grubunun bulunduğunu belirtmiştir. Braham tesisi etkilenmiştir.',
+           'Iran-linked CyberAv3ngers suspected in Minnesota attacks. Braham '
+           'reservoir drained. Rockwell Automation PLCs exposed.')
+SU_02 = _v('CISA\'nın Su Sistemlerine Yönelik Uyarı Yayınlaması',
+           'Braham, Maple Plain ve Plymouth şehirleri etkilenmiştir. '
+           'Saldırganlar Rockwell Automation cihazlarını hedeflemiştir.',
+           'CISA urges utilities to remove internet-exposed PLCs after the '
+           'Minnesota attacks. Rockwell Automation and Schneider Electric.')
+# 08-03 manşeti: FBI/EPA bildirisi — GERÇEKTEN YENİ bilgi, ama aynı hikâye.
+# Türkçe paragrafı "Minnesota" DEMİYOR; ayırt edici adlar yalnız tam metinde.
+SU_03 = _v('ABD Su Tesislerindeki Kontrol Sistemlerine Siber Saldırı',
+           'FBI ve EPA ortak bildirisinde, saldırganların internete açık '
+           'denetleyicileri hedef aldığı açıklanmıştır. En az yedi eyalet.',
+           'Hackers target internet-connected PLCs at US water utilities. '
+           'Rockwell Automation Allen-Bradley MicroLogix devices affected.')
+
+
+def _zincir(*gun_view_ciftleri):
+    return dedup.build_story_chains(list(gun_view_ciftleri))
+
+
+def test_uc_gun_suren_hikaye_zincir_olur():
+    """3 ayrı günde manşet olan hikâye zincir sayılır."""
+    z = _zincir(('2026-07-29', [SU_29]), ('2026-07-30', [SU_30]),
+                ('2026-08-02', [SU_02]))
+    assert len(z) == 1
+    assert z[0]['days'] == ['2026-07-29', '2026-07-30', '2026-08-02']
+
+
+def test_iki_gun_zincir_sayilmaz():
+    """Eşik 3 gün: iki gün üst üste manşet olmak henüz 'süregelen' değildir."""
+    assert _zincir(('2026-07-29', [SU_29]), ('2026-07-30', [SU_30])) == []
+
+
+def test_zincire_baglanan_aday_mansetten_iner():
+    """ASIL REGRESYON: 08-03 manşeti su zincirine bağlanmalı.
+
+    Paragrafı 'Minnesota' demediği ve konu örtüşmesi 0.132 kaldığı için
+    same_event bunu YAKALAMAZ (yakalamamalı da); zincir katmanı yakalar."""
+    z = _zincir(('2026-07-29', [SU_29]), ('2026-07-30', [SU_30]),
+                ('2026-08-02', [SU_02]))
+    m = dedup.matching_story_chain(SU_03, z)
+    assert m is not None
+    assert 'rockwell' in m['shared']
+    # same_event'in DEĞİŞMEDİĞİNİ de çivile: bu iki haber aynı olay DEĞİL.
+    assert dedup.same_event(SU_03, SU_02, cross_day=True) is False
+
+
+def test_alakasiz_manset_zincire_baglanmaz():
+    """Farklı hikâye zincire takılmamalı — yanlış-pozitif koruması."""
+    hf = _v('Hugging Face Diffusers Kütüphanesinde Kod Yürütme Açıkları',
+            'Zafran Labs araştırmacıları üç kritik açık tespit etmiştir.',
+            'Three high-severity flaws disclosed in the Diffusers library.')
+    z = _zincir(('2026-07-29', [SU_29]), ('2026-07-30', [SU_30]),
+                ('2026-08-02', [SU_02]))
+    assert dedup.matching_story_chain(hf, z) is None
+
+
+def test_zincir_kurmak_iki_ortak_ad_ister():
+    """Tek ortak ad zincir KURMAYA yetmez — Midnight Blizzard vakası.
+
+    Ölçüldü: 08-01'deki ayrı bir kampanya (CaptiveCrunch/Storm-2945), 07-29
+    Laundry Bear haberinin TAM METNİNDE geçen tek bir yan söz üzerinden
+    zincire bağlanıyordu. Kurma eşiği 2'ye çıkarılınca bu birleşme kayboldu."""
+    a = _v('A Kampanyası', 'Ortakad şirketi hedeflendi.', 'Ortakad targeted.')
+    b = _v('B Kampanyası', 'Ortakad adı geçiyor ama olay farklıdır.',
+           'Different campaign, Ortakad mentioned once.')
+    c = _v('C Kampanyası', 'Ortakad yine anıldı.', 'Ortakad again.')
+    assert _zincir(('2026-07-29', [a]), ('2026-07-30', [b]),
+                   ('2026-07-31', [c])) == []
+
+
+def test_story_entities_paragraf_ve_tam_metni_okur():
+    """same_event yalnız paragrafa bakar; zincir katmanı tam metni de okur."""
+    e = dedup.story_entities(SU_03)
+    assert 'rockwell' in e            # yalnız tam metinde geçiyor
+    assert 'minnesot' not in e        # bu haberde gerçekten hiç geçmiyor
+
+
+def test_story_entities_jenerikleri_atar():
+    """Navigasyon menüsü / paylaş widget'ı / söylem sözcükleri ayırt edici değil."""
+    v = _v('X', 'Yapılan araştırmada saldırganların CVSS puanı 9.8 olan açığı '
+                'kullandığı belirtilmiştir.',
+           'Cybersecurity Careers Identity Access Mgmt Threats Reddit '
+           'Flipboard According Monday')
+    e = dedup.story_entities(v)
+    for jenerik in ('cybersec', 'careers', 'reddit', 'flipboar', 'cvss',
+                    'saldırga', 'yapılan', 'accordin', 'monday'):
+        assert jenerik not in e
+
+
+def test_bos_ve_bozuk_girdi_cokmez():
+    assert dedup.build_story_chains([]) == []
+    assert dedup.build_story_chains(None) == []
+    assert dedup.matching_story_chain(_v('', '', ''), []) is None
+    assert dedup.matching_story_chain(None, []) is None
+    assert dedup.story_entities(None) == set()

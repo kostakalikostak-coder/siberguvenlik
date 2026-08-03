@@ -670,3 +670,146 @@ def drop_duplicates_against(candidate_ids, reference_ids, get_view):
             continue
         kept.append(aid)
     return kept
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SÜREGELEN HİKÂYE ZİNCİRİ (manşet tekrarı) — same_event'ten AYRI bir kavram
+# ═══════════════════════════════════════════════════════════════════════════
+# same_event bir OLAY KİMLİĞİ testidir: "bu iki haber aynı olayı mı anlatıyor?"
+# Ama bir hikâye günlerce YENİ gelişmelerle sürebilir ve her günün haberi
+# gerçekten yenidir — mükerrer değildir. 2026-08-03'te ölçülen durum: Minnesota
+# su tesisi saldırıları 29 Temmuz'dan beri ALTI GÜN üst üste KRİTİK 3 manşeti
+# oldu; son gün FBI/EPA ortak uyarısıydı, yani gerçekten yeni bilgi. same_event
+# hiçbir gün tetiklenmedi (ölçüldü: 08-03 ↔ 08-02 için ortak özel ad
+# {rockwell, automati}, konu örtüşmesi 0.132 < 0.22 eşiği) — ÇÜNKÜ TETİKLENMESİ
+# DE GEREKMİYORDU: bunlar farklı olaylar. Sorun mükerrerlik değil, MANŞET
+# TEKRARIDIR ve ayrı bir ölçüte ihtiyaç duyar.
+#
+# Kural: bir hikâye son 7 günün EN AZ 3 AYRI GÜNÜNDE manşet olduysa, aynı
+# hikâyeye bağlanan yeni aday KRİTİK 3'e ALINMAZ — gövdeye düşer. Silinmez:
+# FBI/EPA uyarısı manşet olmayı hak etmiyor ama haber değeri taşıyor.
+#
+# Zincir bağı TEK ortak özel ad ile kurulur; tekrarın kendisi kanıttır. Ölçüm
+# (kritik3_gecmis, 8 gün) üç eşiği karşılaştırdı:
+#   ortak≥2 / zincir≥2 gün → 2 engelleme, ikisi de doğru ama 08-01 kaçıyor
+#   ortak≥1 / zincir≥2 gün → 5 engelleme, 1'i YANLIŞ: "Midnight Blizzard"
+#       manşeti, 07-29'daki Laundry Bear haberinin TAM METNİNDE geçen bir yan
+#       söz ('blizzard') üzerinden alakasız bir zincire bağlanıyordu
+#   ortak≥1 / zincir≥3 gün → 3 engelleme, ÜÇÜ DE DOĞRU (08-01/02/03 su zinciri)
+# Sonuncusu seçildi: yanlış-pozitif YOK ve bir hikâye 3 gün manşet olduktan
+# sonra 4. günde iniyor. Üç gün üst üste manşet, gerçekten büyük bir olay için
+# savunulabilir; altı gün değil.
+STORY_CHAIN_MIN_DAYS = 3      # zincir kaç AYRI günde manşet olmuş olmalı
+# İKİ AYRI EŞİK. Zincir KURMAK güçlü bir iddiadır (iki haberin aynı hikâyenin
+# parçası olduğunu söyler), kurulmuş bir zincire BAĞLANMAK zayıf kanıtla da
+# güvenlidir (hikâyenin 3+ gün sürdüğü zaten kanıtlanmış). Tek eşik
+# kullanıldığında ölçüm ikisinin de yanlış olduğunu gösterdi:
+#   kurma≥1 → Midnight Blizzard manşeti (08-01, ayrı bir kampanya) Laundry
+#     Bear zincirine bağlandı; bağlayan şey 07-29 haberinin TAM METNİNDE geçen
+#     bir yan sözdü ('blizzard'). Zincir 3 güne ancak bu YANLIŞ üyeyle ulaştı.
+#   kurma≥2 + bağlanma≥2 → su zinciri 08-03'te yakalanamazdı (o gün ortak
+#     yalnız {automati, rockwell}; 08-01/08-02 manşetleriyle ortak tek addı).
+STORY_CHAIN_LINK_SHARED = 2   # zincir KURARKEN iki manşeti bağlayan ortak ad
+STORY_CHAIN_MIN_SHARED = 1    # KURULMUŞ zincire adayı bağlayan ortak ad
+_STORY_ENTITY_MIN_LEN = 5     # kısa kökler ('this','more') ayırt edici değil
+_STORY_FULLTEXT_CHARS = 1500
+
+# Hikâye zinciri özel adları PARAGRAF + TAM METİN üzerinden çıkarılır (same_event
+# yalnız paragrafa bakar). Gerekçe ölçüldü: 08-03 manşetinin Türkçe paragrafı
+# "Minnesota" demiyordu, ayırt edici adlar (Rockwell, PLC, Allen-Bradley) yalnız
+# tam metinde geçiyordu. BAŞLIKLAR bilinçli olarak DIŞARIDA: İngilizce başlıklar
+# Title-Case yazıldığı için cümle-içi/cümle-başı ayrımı orada çöküyor ve
+# 'Saldırı', 'Systems', 'Federal' gibi çöp adlar üretiyor (ölçüldü).
+#
+# Tam metin navigasyon menüsü ve paylaş widget'ı taşıyor (Dark Reading'in
+# "Cybersecurity Careers / Identity & Access Mgmt / Threats" yan menüsü, Reddit
+# ve Flipboard butonları). Bunlar 153 belgelik geçmişte %5-16 belge frekansıyla
+# çıkıyor, yani ayırt edici DEĞİL. Kök-tabanlı denylist ölçümle üretildi.
+_STORY_STEM_DENYLIST = frozenset({
+    # kaynak sitelerin navigasyon menüsü / paylaş widget'ı
+    'cybersec', 'cyberatt', 'careers', 'breaches', 'analytic', 'identity',
+    'mgmt', 'threats', 'access', 'operatio', 'intellig', 'research',
+    'vulnerab', 'data', 'reddit', 'flipboar', 'facebook', 'linkedin',
+    'whatsapp',
+    # jenerik güvenlik terimleri
+    'cvss', 'email', 'exploit', 'malware', 'ransomwa', 'phishing', 'attack',
+    'attacks', 'targeted', 'exposed', 'infrastr', 'incident', 'advisory',
+    # söylem sözcükleri / günler (cümle başı adayları)
+    'monday', 'tuesday', 'wednesda', 'thursday', 'friday', 'saturday',
+    'sunday', 'accordin', 'this', 'that', 'these', 'those', 'while', 'after',
+    'before', 'between', 'since', 'more', 'neither', 'several', 'other',
+    'dozens', 'state', 'statemen', 'urges', 'remove', 'both', 'investig',
+    'following', 'during', 'under',
+    # milliyet / yön sıfatları (_ENTITY_DENYLIST ülke ADLARINI tutuyor)
+    'russian', 'chinese', 'iranian', 'korean', 'american', 'south', 'north',
+    'federal',
+    # Türkçe jenerikler
+    'saldırga', 'yapılan', 'tehdit', 'araştırm', 'şirket', 'ajansı', 'altyapı',
+    'güvenliğ', 'operasyo', 'kullanıc', 'sistemle', 'saldırı', 'bilgiler',
+    'veriler', 'yetkilil', 'bilgi', 'servisi', 'teknoloj', 'resm', 'resmi',
+})
+
+
+def story_entities(view):
+    """Hikâye zinciri için AYIRT EDİCİ özel adlar (paragraf + tam metin).
+
+    same_event'in kullandığı extract_entities'ten AYRI tutulur: oradaki eşikler
+    haftalarca gerçek veriyle ayarlandı, bu katman onları DEĞİŞTİRMEZ."""
+    if not isinstance(view, dict):
+        return set()
+    metin = ' . '.join(x for x in (
+        view.get('paragraph') or '',
+        (view.get('full_text') or '')[:_STORY_FULLTEXT_CHARS]) if x)
+    kesin, aday = _entity_sets(metin)
+    return {t for t in (kesin | aday)
+            if t not in _STORY_STEM_DENYLIST and len(t) >= _STORY_ENTITY_MIN_LEN}
+
+
+def build_story_chains(k3_by_day, min_days=STORY_CHAIN_MIN_DAYS):
+    """Son günlerin KRİTİK 3 manşetlerinden SÜREGELEN hikâyeleri çıkarır.
+
+    k3_by_day: [(tarih, [görünüm, ...]), ...] — bugün HARİÇ, eskiden yeniye.
+    Dönüş: [{'days': [tarih...], 'entities': {kök...}, 'title': ilk manşet}]
+    yalnızca en az `min_days` AYRI günde manşet olmuş zincirler."""
+    dugumler = [(gun, v, story_entities(v))
+                for gun, views in (k3_by_day or []) for v in views]
+    zincirler = []                      # [[(gun, view, entities), ...], ...]
+    for dugum in dugumler:
+        _, _, e = dugum
+        eslesen = [z for z in zincirler
+                   if any(len(e & e2) >= STORY_CHAIN_LINK_SHARED for _, _, e2 in z)]
+        if not eslesen:
+            zincirler.append([dugum])
+            continue
+        # Birden fazla zincire bağlanıyorsa onları BİRLEŞTİR: aynı hikâyenin
+        # farklı günlerdeki anlatımları ayrı kümelerde kalırsa zincir hiçbir
+        # zaman min_days'e ulaşmaz.
+        hedef = eslesen[0]
+        hedef.append(dugum)
+        for z in eslesen[1:]:
+            hedef.extend(z)
+            zincirler.remove(z)
+    out = []
+    for z in zincirler:
+        gunler = sorted({g for g, _, _ in z})
+        if len(gunler) >= min_days:
+            birlesik = set()
+            for _, _, e in z:
+                birlesik |= e
+            out.append({'days': gunler, 'entities': birlesik,
+                        'title': z[0][1].get('tr_title', '')})
+    return out
+
+
+def matching_story_chain(view, chains):
+    """Aday süregelen bir hikâyeye mi bağlanıyor? Bağlanıyorsa zinciri döner.
+
+    Dönen sözlüğe 'shared' anahtarı eklenir (loglanabilsin diye)."""
+    e = story_entities(view)
+    if not e:
+        return None
+    for z in (chains or []):
+        ortak = e & z['entities']
+        if len(ortak) >= STORY_CHAIN_MIN_SHARED:
+            return dict(z, shared=sorted(ortak))
+    return None
