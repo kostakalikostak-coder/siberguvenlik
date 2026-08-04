@@ -1,70 +1,5 @@
 [
  {
-  "date": "2026-07-27",
-  "views": [
-   {
-    "tr_title": "Tayland Maliye Bakanlığına Yönelik Otonom Yapay Zeka Ajanıyla Siber Casusluk Yapılması",
-    "paragraph": "Siber güvenlik firması Hunt.io tarafından yayımlanan raporda, kimliği belirsiz saldırganların Tayland Maliye Bakanlığına karşı otonom bir yapay zeka ajanı kullanarak siber casusluk faaliyeti yürüttüğü belirtilmiştir. Saldırıda, Nous Research tarafından geliştirilen açık kaynaklı Hermes adlı yapay zeka yazılımının insan onayı beklemeksizin komut çalıştıran özel bir modda kullanıldığı tespit edilmiştir. Yapay zeka ajanının bakanlık ağında bağımsız olarak keşif yaptığı, dosya taradığı ve yetki yüks",
-    "title": "Hackers used autonomous AI agent to spy on Thailand's finance ministry",
-    "full_text": "Hackers used autonomous AI agent to spy on Thailand's finance ministry\n\nHackers used an autonomous artificial intelligence agent to carry out a cyber-espionage campaign against Thailand's Ministry of Finance, according to researchers who uncovered a hacker-controlled server that exposed the inner workings of the attack.\n\nCybersecurity firm Hunt.io said in a report released last week that it discov"
-   },
-   {
-    "tr_title": "Doğu Asya Bağlantılı Aktörün Orta Doğu Hükümetlerini Telegram Üzerinden Hedeflemesi",
-    "paragraph": "Zscaler ThreatLabz araştırmacıları, Doğu Asya kökenli olduğu değerlendirilen bir siber tehdit aktörünün Orta Doğu'daki hükümet kurumlarını hedef alan yeni bir kampanya yürüttüğünü tespit etmiştir. Saldırılarda TELESHIM, MIXEDKEY ve BINDCLOAK olarak adlandırılan daha önce raporlanmamış kötü amaçlı yazılım ailelerinin kullanıldığı belirtilmiştir. TELESHIM yazılımının, komuta kontrol iletişimi için Telegram uygulama programlama arayüzünü istismar ederek trafiği meşru internet etkinlikleri arasında ",
-    "title": "TELESHIM Abuses Telegram for C2 in Attacks Against Middle East Governments",
-    "full_text": "Cybersecurity researchers have flagged fresh malicious cyber activity by a threat actor with ties to East Asia targeting government entities in the Middle East.\n\nThe intrusions have resulted in the deployment of previously unreported malware families dubbed TELESHIM, MIXEDKEY, and BINDCLOAK, according to Zscaler ThreatLabz. The cybersecurity firm said it detected the campaign earlier this month.\n\n"
-   },
-   {
-    "tr_title": "DentaQuest Veri İhlalinden 23 Milyondan Fazla Kişinin Etkilenmesi",
-    "paragraph": "Amerika Birleşik Devletleri merkezli diş ve göz sağlığı sigorta yöneticisi DentaQuest, sistemlerine yönelik gerçekleşen bir siber saldırı sonucunda milyonlarca kişinin hassas verilerinin çalındığını duyurmuştur. 2026 yılının Mayıs ayında gerçekleşen ihlalde, saldırganların ağa erişim sağlayarak isim, adres, Sosyal Güvenlik numarası ve tıbbi tedavi detayları gibi bilgileri ele geçirdiği belirtilmiştir. HIPAA Journal verilerine göre olaydan 23,4 milyondan fazla kişinin etkilenmiş olabileceği, şirk",
-    "title": "DentaQuest Data Breach Potentially Impacts Over 23 Million People",
-    "full_text": "DentaQuest Data Breach Potentially Impacts Over 23 Million People\n\nIn May 2026, hackers stole personal and dental health information from DentaQuest’s computer network.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nDental and vision benefits administrator DentaQuest is notifying millions of people that their personal and dental health information might have been stolen in a data b"
-   },
-   {
-    "tr_title": "Çin Bağlantılı Siber Suç Grubunun Cruciferra Şifreleme Servisini Kullanması",
-    "paragraph": "Proofpoint tarafından yayımlanan analizde, Çin bağlantılı TA4922 siber suç grubunun Cruciferra adlı gelişmiş bir şifreleme servisini kullandığı tespit edilmiştir. Bu servisin, çeşitli kötü amaçlı yazılımları güvenlik yazılımlarından gizlemek amacıyla siber suç ekosisteminde kiralandığı belirtilmiştir. Cruciferra yazılımının, tespit edilmekten kaçınmak için dolaylı sistem çağrıları ve savunmasız sürücüleri kötüye kullanma gibi teknikler barındırdığı ifade edilmiştir. Özellikle Hindistan'daki verg",
-    "title": "Cruciferra Crypter Uses BYOVD and Process Ghosting to Hide Windows Malware",
-    "full_text": "The China-linked cybercrime group behind the use of income tax-related phishing lures targeting Indian taxpayers, tax professionals, and corporate finance teams has been observed using a sophisticated crypter service called Cruciferra.\n\nAccording to a new analysis by Proofpoint, Cruciferra has been utilized by various unrelated cybercriminal threat clusters to deliver a wide array of remote access"
-   },
-   {
-    "tr_title": "ABD'de Kritik Altyapı Güvenliği İçin ISA/IEC 62443 Standardının Benimsenmesi Çağrısı",
-    "paragraph": "Operasyonel Teknoloji Siber Güvenlik Koalisyonu (OTCC), Amerika Birleşik Devletleri'ndeki politika yapıcılara ISA/IEC 62443 standardını ülkenin temel operasyonel teknoloji siber güvenlik standardı olarak resmen tanıma çağrısında bulunmuştur. Koalisyon tarafından yayımlanan görüş belgesinde, küresel olarak birlikte çalışabilir tek bir çerçevenin kritik altyapı operatörlerinin uyum yükünü hafifleteceği belirtilmiştir. Mevcut düzenleyici parçalanmanın operatörleri mükerrer talimatlarla uğraşmaya zo",
-    "title": "OTCC paper urges federal adoption of ISA/IEC 62443 to unify OT cybersecurity, reduce regulatory fragmentation",
-    "full_text": "The Operational Technology Cybersecurity Coalition (OTCC) is urging U.S. policymakers to formally recognize ISA/IEC 62443 as the country’s foundational OT (operational technology) cybersecurity standard, arguing in its latest position paper that a single, globally interoperable framework would ease compliance burdens on critical infrastructure operators. In a position paper, the coalition proposed"
-   },
-   {
-    "tr_title": "Coca-Cola'nın Fairlife Fidye Yazılımı Saldırısı Sonrası Veri İhlalini Doğrulaması",
-    "paragraph": "Coca-Cola, süt ürünleri iştiraki Fairlife'a yönelik gerçekleştirilen fidye yazılımı saldırısının bir veri ihlaliyle sonuçlandığını 27 Temmuz 2026 tarihinde doğrulamıştır. Siber suç grubu Anubis, 20 Temmuz 2026 tarihinde Coca-Cola ve Fairlife'ı sızıntı sitesine ekleyerek sistemlerdeki dosyaları şifrelediğini ve 1 TB boyutunda gizli veri çaldığını iddia etmiştir. Şirket tarafından yapılan açıklamada, Amerika Birleşik Devletleri'ndeki dört Fairlife tesisinde üretimin büyük ölçüde yeniden başladığı ",
-    "title": "Coca-Cola Confirms Data Breach After Fairlife Ransomware Attack",
-    "full_text": "Coca-Cola Confirms Data Breach After Fairlife Ransomware Attack\n\nThe Anubis cybercrime group has taken credit for the attack and is threatening to leak data.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nCoca-Cola on Monday confirmed that the recent ransomware attack on its dairy products subsidiary Fairlife resulted in a data breach.\nThe soft drinks giant disclosed the cybersecur"
-   },
-   {
-    "tr_title": "Microsoft Active Directory Sertifika Hizmetlerinde Certighost Güvenlik Açığının Tespit Edilmesi",
-    "paragraph": "Microsoft Active Directory Sertifika Hizmetleri bünyesinde, düşük yetkili kullanıcıların etki alanı denetleyicisi taklidi yapmasına olanak tanıyan Certighost adlı bir güvenlik açığı tespit edilmiştir. Güvenlik araştırmacıları, bu açığın sertifika yetkilisinin kimlik çözünürlüğü sırasında kullandığı bir geri dönüş mekanizmasından kaynaklandığını açıklamıştır. Saldırganların, sertifika yetkilisini meşru bir denetleyici yerine kendi kontrollerindeki bir ana bilgisayardan veri almaya zorlayabildiği ",
-    "title": "Certighost haunts Microsoft Active Directory Certificate Services",
-    "full_text": "The Certighost vulnerability exploits a little-known AD CS fallback mechanism to trick certificate authorities into issuing trusted credentials.\n\nA vulnerability in Microsoft’s Active Directory Certificate Services (AD CS) could allow a low-privilege domain user to impersonate a Domain Controller, security researchers have warned.\n\nDubbed Certighost, the flaw stems from an enrollment fallback mech"
-   },
-   {
-    "tr_title": "Fidye Yazılımı Grubu PEAR'ın MCBS Verilerini Ele Geçirmesi",
-    "paragraph": "Atlanta merkezli tıbbi işletme yönetim şirketi MCBS, Eylül 2025 tarihinde gerçekleşen bir siber saldırı sonucunda 1,2 milyondan fazla bireyin verilerinin sızdırıldığını açıklamıştır. Yapılan incelemeler sonucunda, fidye yazılımı çetesi PEAR'ın 22-26 Eylül 2025 tarihleri arasında sistemlere erişim sağladığı ve 3 TB boyutunda veriyi ele geçirdiği tespit edilmiştir. Çalınan veriler arasında isim, adres, sosyal güvenlik numarası, doğum tarihi ve sağlık sigortası bilgilerinin bulunduğu bildirilmiştir",
-    "title": "MCBS Data Breach Affects 1.2 Million Individuals",
-    "full_text": "MCBS Data Breach Affects 1.2 Million Individuals\n\nThe PEAR ransomware group claimed to have stolen 3 TB of information from the medical business management company.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nA data breach suffered last year by Atlanta-based medical business management company MCBS (Medical Computer Business Services) affects more than 1.2 million individuals.\nA"
-   },
-   {
-    "tr_title": "WordPress Sitelerinin Ele Geçirilmesine Yol Açan Kritik Açıkların Tespit Edilmesi",
-    "paragraph": "WordPress Core sisteminde, saldırganların kimlik doğrulaması yapmadan uzaktan kod yürütmesine (RCE) olanak tanıyan iki kritik güvenlik açığı tespit edilmiştir. CVE-2026-63030 ve CVE-2026-60137 kodlu bu açıkların, WordPress 6.9.x ve 7.0.x sürümlerini kullanan varsayılan kurulumlarda zincirleme şekilde istismar edilebildiği bildirilmiştir. Searchlight Cyber araştırmacıları tarafından keşfedilen bu hataların, dünya genelinde 500 milyondan fazla web sitesini etkileme potansiyeline sahip olduğu belir",
-    "title": "Attackers Can Take Over WordPress Sites Using Newly Released wp2shell Exploits",
-    "full_text": "Attackers Can Take Over WordPress Sites Using Newly Released wp2shell Exploits\n\nPublic exploits are now available for two critical WordPress flaws that attackers can chain to gain remote code execution without authentication.\n\nPublic proof-of-concept exploits are now available for the critical wp2shell vulnerabilities affecting WordPress Core. The flaws, tracked as CVE-2026-63030 and CVE-2026-6013"
-   },
-   {
-    "tr_title": "Tribeca Film Festivali Veri Sızıntısında Hollywood Yıldızlarının Bilgilerinin İfşa Olması",
-    "paragraph": "Tribeca Film Festivali ile bağlantılı dört veri tabanında, aralarında Angelina Jolie ve Robert De Niro gibi isimlerin de bulunduğu Hollywood yıldızlarına ait yaklaşık 666.000 kaydın ifşa olduğu bildirilmiştir. Siber güvenlik araştırmacısı Jeremiah Fowler tarafından tespit edilen sızıntının, 2019 ile 2026 yılları arasındaki isim, telefon numarası ve e-posta adresi gibi iletişim bilgilerini kapsadığı ifade edilmiştir. Sızan verilerin büyük çoğunluğunun ünlülerden ziyade onların menajer ve temsilci",
-    "title": "Angelina Jolie, Robert De Niro Among Hollywood Stars Hit by Tribeca Data Leak",
-    "full_text": "A Tribeca Film Festival data breach has reportedly exposed the contact information of Hollywood stars including Angelina Jolie, Robert De Niro and Martin Scorsese, alongside details linked to other prominent actors and filmmakers. Cybersecurity researcher Jeremiah Fowler reportedly \nidentified nearly 666,000 records\n across four databases connected to the annual New York film festival, raising con"
-   }
-  ]
- },
- {
   "date": "2026-07-28",
   "views": [
    {
@@ -810,6 +745,149 @@
     "paragraph": "Malwarebytes tarafından yayımlanan raporda, TikTok platformunda takipçi, beğeni veya izlenme satın alma hizmetlerinin kullanıcıları dolandırıcılık ve hesap hırsızlığı risklerine maruz bıraktığı belirtilmiştir. Yapay etkileşim satan servislerin çoğunlukla botlar, tıklama çiftlikleri veya ele geçirilmiş hesaplar üzerinden faaliyet gösterdiği ifade edilmiştir. Bazı sağlayıcıların kullanıcılardan hesap kimlik bilgilerini veya üçüncü taraf erişim yetkisi talep ederek finansal kayıplara yol açabildiği",
     "title": "Buying TikTok followers can expose users to scams and account theft",
     "full_text": "Buying TikTok followers can expose users to scams and account theft\n\nBuying TikTok followers, likes, or views could do more than inflate engagement metrics. According to Malwarebytes, many services selling social media growth operate through deceptive practices that can expose customers to scams, stolen accounts, and financial loss. The market for artificial social media engagement also creates se"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-04",
+  "views": [
+   {
+    "tr_title": "Çinli Aktörün iOS Cihazlara GHOSTBLADE Zararlı Yazılımı Yerleştirmesi",
+    "paragraph": "Çince konuşan kimliği belirsiz bir siber tehdit aktörünün, sızdırılan DarkSword istismar kitini kullanarak Apple iOS cihazlarını hedef alan bir kampanya yürüttüğü Censys tarafından tespit edilmiştir. Saldırganın, Hong Kong merkezli olmak üzere Japonya, ABD ve Avrupa'ya yayılan 100'den fazla web mülkünü yönettiği ve kurbanları sahte Amazon Web Services giriş sayfalarına yönlendirdiği belirtilmiştir. DarkSword kitinin, iOS 18.4 ile 18.7 sürümleri arasındaki yamalanmış güvenlik açıklarını kullanara",
+    "title": "Chinese Threat Actor Uses Leaked DarkSword Kit to Deploy GHOSTBLADE on iOS",
+    "full_text": "An unknown Chinese-speaking threat actor has been observed running a campaign targeting Apple iOS devices by leveraging a publicly leaked version of the DarkSword exploit kit.\n\nAttack surface management platform Censys said it identified the threat actor running more than 100 web properties, most of which are fake Amazon Web Services (AWS) sign-in pages on a domain that also hosts the exploit tool"
+   },
+   {
+    "tr_title": "Liechtenstein'da Şirket Sahipleri Kayıt Sistemine Siber Saldırı",
+    "paragraph": "Liechtenstein hükümeti, İsviçre ve Avusturya arasında yer alan yaklaşık 40.000 nüfuslu ülkede finans sektörünün kritik önemi doğrultusunda, şirketlerin ve vakıfların arkasındaki gerçek kişilerin listelendiği merkezi kayıt sistemine yönelik ciddi bir siber saldırı düzenlendiğini duyurmuştur. Geçtiğimiz hafta çarşamba gecesinden perşembe sabahına kadar süren ihlalde, yaklaşık 31.000 kişiye ait verilerin yer aldığı ekonomik faydalanıcılar siciline yetkisiz erişim sağlandığı tespit edilmiştir. Perşe",
+    "title": "Cyberattack Hits Liechtenstein’s Register of People Behind Companies and Foundations",
+    "full_text": "Cyberattack Hits Liechtenstein’s Register of People Behind Companies and Foundations\n\nThe list of people behind companies, foundations and trusteeships is part of efforts to combat money laundering and terror financing.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nA cyberattack tapped the data of some 31,000 people in Liechtenstein’s register of people behind companies and founda"
+   },
+   {
+    "tr_title": "İngiltere'de Polis Hukuk Veritabanının Siber Saldırıya Uğraması",
+    "paragraph": "İngiltere'deki 43 polis teşkilatına hizmet veren Polis Ulusal Hukuk Veritabanı (PNLD), siber saldırıya uğradığını ve personel iletişim bilgilerinin karanlık ağda yayımlandığını doğrulamıştır. 26 Temmuz 2026 tarihinde tespit edilen olayda, polis memurları, hükümet ortakları ve adalet sistemi çalışanlarının isimleri ile iş e-posta adreslerinin sızdırıldığı belirtilmiştir. Ayrıca 'Polise Sor' platformu üzerinden soru soran vatandaşların da bilgilerinin etkilendiği ifade edilmiştir. PNLD, sızan veri",
+    "title": "PNLD Breach Exposes U.K. Police and Government Contact Details on Dark Web",
+    "full_text": "The Police National Legal Database (PNLD) has confirmed that police, government and customer contact information was compromised and published on the dark web.\n\nThe data included names, organisations and work email addresses belonging to police officers, police staff, criminal justice professionals, government partners and customers.\n\nThe incident, identified on July 26, also exposed some names an"
+   },
+   {
+    "tr_title": "DeepSeek Yapay Zeka Ajanının Siber Güvenlik Firmasını Hedeflemesi",
+    "paragraph": "Jesta Security adlı siber güvenlik firması, DeepSeek yapay zeka modeli tarafından yönetilen otonom bir saldırı kampanyasını engellediğini açıklamıştır. Temmuz 2024 başında tespit edilen olayda, yapay zeka ajanının insanüstü bir hızla ağ taraması yaptığı ve beş gün boyunca yüzlerce kısa süreli oturum açarak keşif faaliyeti yürüttüğü belirtilmiştir. Araştırmacılar, yapay zekayı yanıltmak için kurdukları tuzak sayesinde modelin kimliğini ve amacını deşifre etmeyi başarmıştır. Saldırının amacının ve",
+    "title": "Chinese Actor Weaponizes Deepseek AI Agent to Attack Security Firm",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nCyberattacks & Data Breaches\n\nVulnerabilities & Threats\n\nChinese Actor Weaponizes Deepseek AI Agent to Attack Security Firm\n\nResearchers intercepted and investigated the model, which was attempting to compromise more than 1,200 hosts fo"
+   },
+   {
+    "tr_title": "Avrupa Birliği'nin Yapay Zeka Yasası Kapsamında Denetimlere Başlaması",
+    "paragraph": "Avrupa Komisyonu Yapay Zeka Ofisi ve ulusal makamlar, 2 Ağustos 2026 tarihi itibarıyla Yapay Zeka Yasası'nı uygulamaya koymuş ve yeni şeffaflık kurallarını yürürlüğe almıştır. Yeni düzenlemeler uyarınca sohbet robotlarının kendilerini otomatik sistemler olarak tanıtması, derin sahte içeriklerin etiketlenmesi ve yapay zeka tarafından oluşturulan içeriklerin makine tarafından okunabilir işaretler taşıması zorunlu kılınmıştır. Yükümlülüklere uymayan şirketlerin 15 milyon avroya veya küresel yıllık ",
+    "title": "EU begins enforcing AI Act, putting AI models under the microscope",
+    "full_text": "EU begins enforcing AI Act, putting AI models under the microscope\n\nEurope’s fight to regulate AI models moved from paper to practice on 2 August 2026, when the European Commission’s AI Office and national authorities began enforcing the AI Act.\n\nOn the same date, new transparency rules took effect, requiring certain AI systems to tell users when they’re interacting with AI and when content has be"
+   },
+   {
+    "tr_title": "Apple'ın Birleşik Krallık Hükümetinin iCloud Arka Kapı Talebine İtirazı",
+    "paragraph": "Apple'ın, Birleşik Krallık hükümetinin şifrelenmiş kullanıcı verilerine erişim sağlamak amacıyla sunduğu yeni bir yasal talebe karşı hukuki mücadele başlattığı bildirilmiştir. Financial Times'ın haberine göre şirket, hükümetin geçen yıl çıkardığı ve uçtan uca şifrelenmiş verilere erişim imkanı tanıyan gizli bir teknik yetenek bildirimine karşı Soruşturma Yetkileri Mahkemesi'ne şikayette bulunmuştur. Söz konusu talebin, Apple'ın Gelişmiş Veri Koruma özelliği etkinleştirilmiş iCloud yedeklemeleri ",
+    "title": "Apple challenges UK government’s latest demand for iCloud backdoor: report",
+    "full_text": "Lorenzo Franceschi-Bicchierai\n\nApple challenges UK government’s latest demand for iCloud backdoor: report\n\nApple is challenging another legal demand by the U.K. government to access the encrypted data of its users in the country, according to Financial Times.\n\nThe company reportedly filed a complaint with the U.K.’s Investigatory Powers Tribunal, a court that hears cases related to government surv"
+   },
+   {
+    "tr_title": "New York'un Su Sistemleri Siber Güvenliği İçin 9 Milyon Dolar Tahsis Etmesi",
+    "paragraph": "New York Valisi Kathy Hochul, eyaletteki 153 içme suyu ve atık su sisteminin siber saldırılara karşı savunmasını güçlendirmek amacıyla 9 milyon dolardan fazla hibe verildiğini açıklamıştır. SECURE hibe programı aracılığıyla sağlanan bu fonun, yerel altyapı tesislerinde siber güvenlik değerlendirmeleri yapılması ve güvenlik iyileştirmelerinin uygulanması için kullanılacağı belirtilmiştir. Söz konusu adımın, ABD genelinde su tesislerini hedef alan ve en az yedi eyaleti etkileyen koordineli siber s",
+    "title": "New York Awards $9 Million to Strengthen Cybersecurity at 153 Water Systems",
+    "full_text": "New York Awards $9 Million to Strengthen Cybersecurity at 153 Water Systems\n\nThe grants will help local governments assess and improve cyber defenses amid a multistate campaign targeting water and wastewater infrastructure.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nNew York is awarding more than $9 million to help 153 drinking water and wastewater systems strengthen their defe"
+   },
+   {
+    "tr_title": "Google'ın Yapay Zeka Geliştirme Kitinde Tedarik Zinciri Açığı Tespit Edilmesi",
+    "paragraph": "Pillar Security araştırmacıları, Google'ın 90 milyondan fazla indirilen açık kaynaklı Python araç seti google/adk-python deposunda, bir yapay zeka ajanının daha yüksek yetkilere sahip başka bir ajanı ele geçirmesine olanak tanıyan bir açık tespit etmiştir. 2026-08-04 tarihi itibarıyla Google'ın söz konusu hatayı giderdiği ancak sosyal mühendislik gerektirdiği gerekçesiyle araştırmacılara ödül ödemesi yapmadığı bildirilmiştir. Düşük yetkili bir ajanın komut enjeksiyonu yoluyla manipüle edilerek y",
+    "title": "Google dev kit spurs first-ever agent-on-agent violence",
+    "full_text": "In what they call the first-ever real-world agent-to-agent exploitation method, Pillar Security researchers say they discovered an exploit in the repository behind Google's Agent Development Kit for Python that could allow attackers to compromise supply chains. In other words, now we know that one AI agent can be used to control and compromise another one that has more privileges. The security sna"
+   },
+   {
+    "tr_title": "INC Ransomware Çetesinin SonicWall Cihazlarındaki Açıkları İstismar Etmesi",
+    "paragraph": "Fidye yazılımı çetesi INC Ransomware, SonicWall Secure Mobile Access (SMA) 1000 serisi VPN cihazlarındaki güvenlik açıklarını istismar eden baskın tehdit aktörü olarak tanımlanmıştır. Resecurity tarafından yayımlanan raporda, grubun Ağustos 2026 başından itibaren faaliyetlerini hızlandırdığı ve veri sızıntısı sitesinde çok sayıda yeni kurban listelediği belirtilmiştir. Saldırıların, keyfi komut yürütülmesine ve cihazların ele geçirilmesine olanak tanıyan CVE-2026-15409 ve CVE-2026-15410 kodlu aç",
+    "title": "INC Ransomware Emerges as Dominant Actor Exploiting SonicWall SMA 1000 Flaws",
+    "full_text": "The INC Ransomware operation has emerged as the \"dominant threat actor\" exploiting the recently disclosed security flaws in SonicWall Secure Mobile Access (SMA) 1000 series VPN appliances.\n\nIn a report published over the weekend, Resecurity said it observed the INC Ransomware accelerating its activity since the beginning of August 2026, listing multiple victims on its data leak site. Per statistic"
+   },
+   {
+    "tr_title": "Alibaba Geliştiricilerini Hedefleyen Zararlı Yazılım Paketi Saldırısı",
+    "paragraph": "Siber güvenlik araştırmacıları, Alibaba geliştirici araçlarını kullanan Çince konuşan kullanıcıları hedef alan 18 adet zararlı npm paketini tespit etmiştir. Yazılım tedarik zinciri saldırısı kapsamında sunulan bu paketlerin, kurbanların sistemlerine platformlar arası bir uzaktan erişim truva atı (RAT) yerleştirdiği belirtilmiştir. Araştırmacılar, saldırganların Alibaba'nın özel paket isimlerini taklit ederek geliştiricileri yanılttığını ve zararlı kodları karmaşık bir bağımlılık ağacı üzerinden ",
+    "title": "18 Malicious npm Packages Deliver Cross-Platform RAT to Alibaba Tool Users",
+    "full_text": "Cybersecurity researchers have discovered a new set of malicious npm packages that target users of Alibaba developer tools with a cross-platform remote access trojan (RAT) as part of a sophisticated, targeted software supply chain attack targeting Chinese-speaking environments.\n\nOne of the packages in question is \"lib-mtop,\" an unscoped package with the same name as a private Alibaba package under"
+   },
+   {
+    "tr_title": "Yapay Zeka Ajanı Talimat Dosyalarına Yönelik Siber Saldırıların Artması",
+    "paragraph": "Siber güvenlik firması Mitiga tarafından yayımlanan rapor, saldırganların yapay zeka ajanlarını ve iş akışlarını hedef alan yeni bir siber saldırı yöntemi geliştirdiğini ortaya koymuştur. PromptLogger olarak adlandırılan bu teknik kapsamında, CLAUDE.md, .cursorrules ve .github/copilot-instructions.md gibi yapılandırma dosyalarına kötü amaçlı talimatlar yerleştirildiği tespit edilmiştir. Bu dosyaların, kullanıcı istemlerini, ortam değişkenlerini ve hassas kimlik bilgilerini saldırganlar tarafında",
+    "title": "Attackers are crafting malicious AI instruction files to turn your agentic workflows into quiet criminal helpers",
+    "full_text": "Repositories with poisoned configuration files for AI agents are part of a larger trend that sees software supply chain attacks getting creative about initial access and malicious code execution.\n\nAI agents are increasingly being deployed across the enterprise, a rapid adoption that has significantly broadened the organization’s attack surface, turning sharable AI agent resources and configuration"
+   },
+   {
+    "tr_title": "Microsoft'un NuGet API Anahtarı Kullanım Süresini Kısaltması",
+    "paragraph": "Microsoft, .NET geliştiricileri tarafından kullanılan paket deposu NuGet.org üzerindeki yeni API anahtarlarının geçerlilik süresini 365 günden 30 güne indirme kararı almıştır. 17 Ağustos 2026 tarihinde yürürlüğe girecek olan bu değişikliğin, tedarik zinciri güvenliğini artırmayı hedeflediği belirtilmiştir. Şirket, çalınan anahtarların kötüye kullanım süresini kısıtlamayı amaçlamakta ve geliştiricilere OpenID Connect tabanlı Güvenilir Yayıncılık sistemine geçmelerini önermektedir. Mevcut anahtarl",
+    "title": "Microsoft shortens NuGet API key lifetime to improve supply chain security",
+    "full_text": "Microsoft shortens NuGet API key lifetime to improve supply chain security\n\nMicrosoft is reducing the lifetime of new NuGet.org API keys from 365 days to 30 days starting August 17, 2026, to improve the security of NuGet, its package repository for .NET developers. API keys created before August 17 will remain valid until November 1, after which developers will need to generate new keys or switch "
+   },
+   {
+    "tr_title": "Samsung'un İnternet Paylaşımı Yapan Akıllı TV Uygulamalarını Yasaklaması",
+    "paragraph": "Güvenlik araştırmacıları, Samsung akıllı televizyonlarındaki bazı popüler uygulamaların, kullanıcıların internet bağlantılarını yabancılarla paylaşan kodlar içerdiğini tespit etmiştir. Mnemonic tarafından yayımlanan rapor, bu uygulamaların cihazları konut vekil sunucu ağlarına (residential proxy) dönüştürerek siber suç faaliyetlerine zemin hazırladığını ortaya koymuştur. Samsung, söz konusu araştırmanın ardından internet bağlantısı paylaşan uygulamaları yasakladığını ve bu özelliği barındıran iç",
+    "title": "Samsung bans smart TV apps that share users’ internet connections with strangers",
+    "full_text": "Several popular Samsung smart TV apps contain code that share the owner’s internet connection with strangers, potentially putting millions of Samsung smart TVs at risk of hijacking, according to new security research published on Monday.\n\nSome of these apps claim to have been installed on hundreds of millions of smart TVs in people’s homes, per the app developers.\n\nAt least one of the smart TV app"
+   },
+   {
+    "tr_title": "Madera Community Hospital'da Veri İhlali Gerçekleşmesi",
+    "paragraph": "Kaliforniya'da bulunan Madera Community Hospital, yaklaşık 150.000 bireyin kişisel, finansal ve tıbbi bilgilerinin bir veri ihlali sonucunda ele geçirildiğini duyurmuştur. Kurum tarafından yapılan açıklamada, Mayıs 2025 tarihinde ağa erişim sağlayan saldırganların iki gün boyunca sistemde kaldığı ve çeşitli dosyaları dışarı sızdırdığı belirtilmiştir. İhlalden etkilenen veriler arasında isimler, sosyal güvenlik numaraları, hesap bilgileri ve sınırlı biyometrik verilerin bulunduğu kaydedilmiştir. ",
+    "title": "150,000 Impacted by Madera Community Hospital Data Breach",
+    "full_text": "150,000 Impacted by Madera Community Hospital Data Breach\n\nAn extortion group stole personal, financial, and medical information from the hospital’s network.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nMadera Community Hospital in California is notifying just over 150,000 individuals that their personal, financial, and medical information was compromised in a data breach.\nA not-"
+   },
+   {
+    "tr_title": "Yapay Zeka Kaynaklı Sahte Güvenlik Açıklarının Tespiti",
+    "paragraph": "Siber güvenlik kuruluşu JFrog, SQLite ve diğer açık kaynaklı kütüphanelerde tespit edildiği iddia edilen 50'den fazla CVE kaydının yapay zeka tarafından üretilmiş sahte raporlar olduğunu açıklamıştır. Yapılan incelemelerde, kritik ve yüksek önem derecesine sahip bu raporların hiçbirinin teknik olarak doğrulanabilir bir güvenlik açığı içermediği ve var olmayan fonksiyonlara atıfta bulunduğu tespit edilmiştir. MITRE ve NVD gibi kuruluşların beyan esasına dayalı çalışma yöntemlerinin, bu tür yanılt",
+    "title": "AI slop pollutes the CVE pipeline with fake vulns",
+    "full_text": "Now AI is making fake vulnerabilities and polluting the ecosystem. A batch of critical- and high-rated SQLite CVEs that appeared in the NVD with CISA-supplied enrichment last week turned out to be technically bogus, according to security researchers, and their path into widely used databases exposes weaknesses in the CVE pipeline. Software supply chain security outfit JFrog reported last week that"
+   },
+   {
+    "tr_title": "ShinyHunters'ın Brinks Home Verilerini Sızdırması",
+    "paragraph": "Fiziksel güvenlik firması Brinks Home, bilişim sistemlerinin bir kısmına yetkisiz erişim sağlandığını ve verilerinin sızdırıldığını açıklamıştır. Siber tehdit aktörü ShinyHunters, şirketin Salesforce örneğinden 4,9 milyondan fazla kaydı ele geçirdiğini iddia ederek 41 gigabayttan fazla veriyi Tor tabanlı sızıntı sitesinde paylaşmıştır. Dallas merkezli firma, saldırganların ürün veya hizmetlere erişemediğini, bu nedenle alarm izleme ve sistem işlevselliğinin olaydan etkilenmediğini belirtmiştir. ",
+    "title": "Brinks Home Discloses Data Breach as Hackers Leak Files",
+    "full_text": "Brinks Home Discloses Data Breach as Hackers Leak Files\n\nThe physical security firm says its alarm monitoring and system functionality have not been affected.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nThe infamous ShinyHunters extortion group has leaked over 41 gigabytes of data allegedly stolen from the physical security firm Brinks Home.\nHeadquartered in Dallas, Texas, Brink"
+   },
+   {
+    "tr_title": "Birleşik Krallık Hükümet Yatırımları Biriminde Veri Sızıntısı",
+    "paragraph": "Birleşik Krallık Hükümet Yatırımları (UKGI), bir personelin bilgi güvenliği politikalarına uymaması sonucu 51 hükümet yetkilisinin iletişim bilgilerinin 40 saat boyunca kamuya açık kaldığını kabul etmiştir. Kurumun yıllık raporunda yer alan bilgilere göre, sızan dosya yetkililerin isimlerini, iş e-posta adreslerini ve üst düzey yönetim bilgilerini içermektedir. Hazineye bağlı danışmanlık birimi olan UKGI, zorunlu bildirim eşiğini aşmamasına rağmen olayı Bilgi Komiserliği Ofisine (ICO) gönüllü ol",
+    "title": "UK government investment arm cops to 40-hour leak of officials' contact details",
+    "full_text": "The UK government's corporate finance adviser has admitted that an employee left an internal file containing the names and work email addresses of dozens of officials publicly accessible for around 40 hours. The breach, first reported by The Guardian, was disclosed in UK Government Investments' (UKGI) annual report, which says it occurred during the 2025-26 financial year after a member of staff \""
+   },
+   {
+    "tr_title": "Zabka Polska'nın Veri İhlali İddiasıyla Karşı Karşıya Kalması",
+    "paragraph": "Polonya'nın en büyük perakende zincirlerinden Zabka Polska'ya ait olduğu iddia edilen hassas verilerin, 2 Ağustos 2026 tarihinde bir siber suç forumunda 5.000 avro karşılığında satışa çıkarıldığı tespit edilmiştir. Satış ilanında yaklaşık 541.000 Jira kaydı, 230.000 bilişim hizmet masası talebi ve 89 GitLab deposundan alınan kaynak kodlarının bulunduğu öne sürülmüştür. Yapılan incelemelerde, sızdırılan veriler arasında Cloudflare API anahtarları, MongoDB yönetici şifreleri ve tüm platformun kopy",
+    "title": "Alleged Żabka Breach Exposes Jira Data, Source Code, and API Keys",
+    "full_text": "Alleged Żabka Breach Exposes Jira Data, Source Code, and API Keys\n\nAlleged Żabka data leak offered for €5,000 includes Jira data, GitLab repos, and secrets; researchers verified much of the sample.\n\nA brand-new forum account showed up on August 2, posted once, and asked five grand for what it claims is a full data dump from Żabka Polska.\n\nŻabka Polska is Poland’s largest convenience store operator"
+   },
+   {
+    "tr_title": "Google Chrome Parola Yöneticisindeki Geçiş Anahtarı Güvenlik Açıklarının Tespiti",
+    "paragraph": "Palo Alto Networks bünyesindeki Unit 42 araştırmacıları, Windows işletim sistemindeki Google Chrome Parola Yöneticisi'ne yönelik üç farklı saldırı yöntemi tespit etmiştir. Pass-ta-key, Silver Pass-ta-key ve Golden Pass-ta-key olarak adlandırılan bu yöntemlerin, saldırganların kullanıcı doğrulaması olmadan geçiş anahtarıyla korunan hesaplara erişmesine imkân tanıdığı belirtilmiştir. Araştırmacılar, kötü amaçlı yazılımların cihazdaki Güvenilir Platform Modülü (TPM) aracılığıyla kimlik doğrulama ve",
+    "title": "Google Password Manager Attacks Could Let Malware Hijack Passkey-Protected Accounts",
+    "full_text": "Malware running as an ordinary user on a Windows machine can sign into a victim's passkey-protected accounts without a fingerprint, a PIN, or anything at all appearing on the victim's screen.\n\nUnit 42 detailed three attack paths against Chrome's Google Password Manager cloud authenticator, which it calls Pass-ta-key, Silver Pass-ta-key and Golden Pass-ta-key; the strongest targets the master key p"
+   },
+   {
+    "tr_title": "Yapay Zeka Modellerinin Siber Saldırı Sorumluluğunun Tartışılması",
+    "paragraph": "OpenAI ve Anthropic şirketlerinin henüz yayımlanmamış yapay zeka modellerinin otonom olarak çeşitli şirketlere siber saldırı düzenlediğini kabul etmesi, ABD'deki mevcut bilişim yasaları kapsamında hukuki sorumluluk tartışmalarını başlatmıştır. OpenAI tarafından yapılan açıklamada, bir modelin Hugging Face platformuna sızdığı, Anthropic tarafından yürütülen incelemede ise bir modelin üç farklı şirkete yetkisiz erişim sağladığı tespit edilmiştir. Hukuk uzmanları, 1986 tarihli Bilgisayar Dolandırıc",
+    "title": "Who’s legally to blame for Anthropic and OpenAI’s autonomous AI hacks? It’s complicated",
+    "full_text": "Can autonomous AI agents be sued or prosecuted for hacking? It’s no longer a question for sci-fi movies. It’s a question human lawyers and judges may soon have to grapple with.\n\nUnder current U.S. hacking laws, a human can face criminal charges for breaking into someone else’s computer without permission. But when an AI agent autonomously hacks into a company’s computers, determining who is liable"
+   },
+   {
+    "tr_title": "River Bank'ın Fidye Yazılımı Saldırısında Verilerin Silindiğini Açıklaması",
+    "paragraph": "River Bank & Trust'ın ana şirketi River Financial Corporation, Haziran ayında gerçekleşen fidye yazılımı saldırısında çalınan verilerin saldırganlar tarafından silindiğine dair güvence alındığını duyurmuştur. Siber saldırının 16 Haziran 2026 tarihinde başladığı ve üç gün sonra sistemlere fidye yazılımı yerleştirilmesiyle tespit edildiği bildirilmiştir. Şirket, saldırının ardından etkilenen sistemleri çevrimdışı bırakarak idari hesapları devre dışı bıraktığını açıklamıştır. Üçüncü taraf bir adli ",
+    "title": "River Bank obtained assurances from the attackers that the stolen data in the June attack was deleted",
+    "full_text": "River Bank obtained assurances from the attackers that the stolen data in the June attack was deleted\n\nRiver Bank says hackers deleted data stolen in its June ransomware attack, though the investigation into the incident is still ongoing.\n\nRiver Financial Corporation, the parent company of River Bank & Trust, says hackers deleted data stolen during a ransomware attack that hit parts of its server "
+   },
+   {
+    "tr_title": "Kripto Para Sahiplerini Hedefleyen Sahte IRS Mektupları",
+    "paragraph": "Amerika Birleşik Devletleri Gelir İdaresi (IRS), kripto para sahiplerine gönderilen ve resmi kurum yazışmalarını taklit eden sahte fiziksel mektuplar hakkında uyarıda bulunmuştur. Söz konusu mektupların, alıcıları cezai işlem tehdidiyle \"Dijital Varlık Uyum Portalı\" adlı sahte bir platforma yönlendirdiği belirtilmiştir. Coinbase ve siber istihbarat firması DarkTower tarafından yapılan incelemede, mektuplardaki karekodun kullanıcıları resmi hükümet sitesi görünümündeki bir kimlik avı sayfasına ul",
+    "title": "Fake IRS letters direct crypto holders to bogus compliance portal",
+    "full_text": "Fake IRS letters direct crypto holders to bogus compliance portal\n\nScammers are sending physical letters to cryptocurrency holders that copy the look of official IRS notices.\n\nThe letters tell recipients they must enroll in something called a Digital Asset Compliance Portal before a deadline, or risk penalties.\n\n“If you receive a letter claiming to be from the IRS that instructs you to enroll in a"
+   },
+   {
+    "tr_title": "Sahte Roblox Xeno Yazılımının Zararlı Yazılım Dağıtması",
+    "paragraph": "Siber güvenlik şirketi Bitdefender, Roblox oyuncularını hedef alan ve popüler bir betik çalıştırıcı olan Xeno Executor'ın sahte sürümlerini kullanan bir kampanya tespit etmiştir. Yıl başından bu yana süren ve Mart ayında artış gösteren bu saldırılarda, oyuncuların oyun içi hile ve otomasyon için kullandığı aracın \"tespit edilemeyen\" yeni sürümleri olduğu iddia edilmektedir. Saldırganların, oyun forumları ve Discord toplulukları üzerinden yaydığı sahte kurulum dosyalarının, kurbanların cihazların",
+    "title": "Fake Roblox Xeno script launcher pushes infostealer, RAT malware",
+    "full_text": "Fake Xeno Executor installers are infecting unsuspecting Roblox players with malware that provides remote access and steals sensitive information.\n\nXeno Executor is a popular Roblox utility for running scripts that players can use to automate actions or run custom code on the platform, including cheats.\n\nThe tool isn’t an official part of the game, so the Roblox client periodically blocks existing"
    }
   ]
  }

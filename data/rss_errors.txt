@@ -1,4 +1,3 @@
-2026-07-28 12:06 | RSS hatası - The Register: HTTP 403
 2026-07-30 12:06 | DEDUP SIFIR - Infoblox Blog: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
 2026-07-30 12:06 | DEDUP SIFIR - Talos Intelligence: 4 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
 2026-07-30 12:06 | DEDUP SIFIR - Unit 42: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
@@ -119,3 +118,11 @@
 2026-08-03 15:13 | TABAN UYARISI - rapor 7 haber (<10)
 2026-08-03 16:02 | TABAN UYARISI - rapor 7 haber (<10)
 2026-08-03 16:40 | TABAN UYARISI - rapor 6 haber (<10)
+2026-08-04 12:06 | DEDUP SIFIR - Recorded Future: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-08-04 12:06 | DEDUP SIFIR - Infoblox Blog: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-08-04 12:06 | DEDUP SIFIR - Microsoft Security: 3 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-08-04 12:06 | DEDUP SIFIR - Bellingcat: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-08-04 12:06 | DEDUP SIFIR - Citizen Lab: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-08-04 12:06 | DEDUP SIFIR - Mandiant (Google Cloud): 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-08-04 12:06 | DEDUP SIFIR - CrowdStrike: 5 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-08-04 12:06 | DEDUP SIFIR - Proofpoint Threat Insight: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
