@@ -705,3 +705,74 @@ class TestIcerikHaritasiNormalize:
         from main import _log_sekil_uyusmazligi
         _log_sekil_uyusmazligi('Pass2', {'3': dict(self._C)}, 1)
         assert capsys.readouterr().out == ''
+
+
+# ── ÜST DÜZEY DİZİ ŞEKİLLERİ (2026-08-04 üretim koşusundan birebir) ────────
+# O koşuda 63 LLM çağrısının 24'ü yanıt döndürdüğü hâlde SIFIR içerik üretti;
+# hepsinin sebebi aynıydı: model üst düzeyde DİZİ döndürüyor, normalize edici
+# ise dizide yalnızca {"id": N, ...} biçimini tanıyordu. Aşağıdaki A/B/C
+# şekilleri log'dan okunan gerçek şekillerdir (9 + 14 + 1 kez görüldü).
+# Her boşa giden çağrı, aynı tam metni bir kez daha ödeyen split-retry doğurdu.
+
+class TestUstDuzeyDiziSekilleri:
+    _C = {'tr_title': 'Başlık', 'paragraph': 'Paragraf'}
+
+    def _n(self, data, expected_ids=None):
+        from main import _normalize_id_content
+        return _normalize_id_content(data, expected_ids=expected_ids)
+
+    def test_A_tam_harita_tek_ogeli_listeye_sarili(self):
+        """[{'72': {...}, '29': {...}}] — 9 kez görüldü (Pass2 dahil)."""
+        assert set(self._n([{'72': dict(self._C), '29': dict(self._C)}])) == {'72', '29'}
+
+    def test_B_her_oge_tek_anahtarli_id_sarmali(self):
+        """[{'8': {...}}, {'13': {...}}] — 14 kez görüldü (en yaygın)."""
+        veri = [{'8': dict(self._C)}, {'13': dict(self._C)}]
+        assert set(self._n(veri)) == {'8', '13'}
+
+    def test_B_icerik_gercekten_acilir_sarmal_kalmaz(self):
+        """Sarmal açılmalı: değer içerik nesnesinin KENDİSİ olmalı."""
+        cikti = self._n([{'8': dict(self._C)}])
+        assert cikti['8']['tr_title'] == 'Başlık'
+
+    def test_C_idsiz_liste_sira_ile_eslesir(self):
+        """[{tr_title, paragraph}, ...] — ID yok; sayı tutuyorsa sıra ile eşleşir."""
+        veri = [dict(self._C), dict(self._C)]
+        assert set(self._n(veri, expected_ids=[72, 29])) == {72, 29}
+
+    def test_C_sayi_tutmazsa_eslestirme_yapilmaz(self):
+        """GÜVENLİK: hizalama kayarsa yanlış habere yanlış özet iliştirilir."""
+        veri = [dict(self._C), dict(self._C)]
+        assert self._n(veri, expected_ids=[72, 29, 75]) == {}
+
+    def test_C_expected_ids_yoksa_eslestirme_yapilmaz(self):
+        assert self._n([dict(self._C)]) == {}
+
+    def test_karisik_dizi_id_alanli_ve_sarmal_birlikte(self):
+        veri = [{'id': 3, **self._C}, {'8': dict(self._C)}]
+        assert set(self._n(veri)) == {3, '8'}
+
+    def test_dizi_icinde_sarmal_sozluk(self):
+        """[{'summaries': {...}}] — özyinelemeli açılmalı."""
+        assert set(self._n([{'summaries': {'3': dict(self._C)}}])) == {'3'}
+
+    def test_id_alanli_liste_bozulmadan_calisir(self):
+        """REGRESYON: baştan desteklenen E şekli kırılmamalı."""
+        assert set(self._n([{'id': 3, **self._C}, {'id': 7, **self._C}])) == {3, 7}
+
+    def test_tek_haberlik_dizi_sarmal_sanilmaz(self):
+        """[{'42': {...}}] tek öğeli — yine de ID korunmalı."""
+        assert set(self._n([{'42': dict(self._C)}])) == {'42'}
+
+    def test_baslik_siniri_dizi_yolunda_da_uygulanir(self):
+        """_apply_title_limit dizi yolunda da geçerli olmalı (dolgu atılır)."""
+        uzun = {'tr_title': ('Söz konusu yeni bir CISA Uyarısının Kurumlara '
+                             'Yayımlanmış Olması Hakkında'),
+                'paragraph': 'P'}
+        cikti = self._n([{'8': uzun}])
+        assert 'söz konusu' not in cikti['8']['tr_title'].lower()
+        assert len(cikti['8']['tr_title'].split()) <= 8
+
+    def test_bozuk_dizi_ogeleri_atlanir(self):
+        veri = ['metin', None, 42, {'8': dict(self._C)}]
+        assert set(self._n(veri)) == {'8'}

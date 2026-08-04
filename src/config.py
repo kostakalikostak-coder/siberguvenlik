@@ -832,6 +832,33 @@ METİN:
 {body}"""
 
 
+# ÇIKTI BİÇİMİ — SON HATIRLATMA. Haber metinlerinden SONRA konur.
+# NEDEN SONDA: şablon prompt'un başındayken modelin en son gördüğü şey ~50 bin
+# token'lık haber metni oluyor, şekil talimatı bağlamda geride kalıyordu.
+# NEDEN GEREKLİ: response_format={'type':'json_object'} yalnızca "geçerli JSON"
+# dayatır, ŞEKLİ dayatmaz — 2026-08-04 koşusunda 63 çağrının 24'ü üst düzeyde
+# DİZİ döndürüp sıfır içerik üretti. Aşağıdaki üç YANLIŞ örnek, o koşuda
+# gerçekten gözlenen üç şekildir (uydurma değil).
+# NOT: Bu bir savunma değil, ikinci hat. Asıl güvence main._normalize_id_content
+# şekilden bağımsız olmasıdır; prompt'un tutmasına GÜVENİLMEZ.
+CIKTI_BICIMI_HATIRLATMA = """
+═══════════════════════════════════════════════════════════════════════
+ÇIKTI BİÇİMİ — SON HATIRLATMA (bu kuralı diğer her şeyin üstünde tut):
+Yanıtın TAMAMI TEK bir JSON NESNESİ olacak; en dış karakter { olacak.
+Üst düzeyde DİZİ ([ ile başlayan) DÖNDÜRME.
+Anahtarlar yukarıdaki HABER ID değerleridir (tırnak içinde), değerler ise
+{"tr_title": "...", "paragraph": "..."} nesneleridir.
+
+DOĞRU:
+{"42": {"tr_title": "...", "paragraph": "..."}, "7": {"tr_title": "...", "paragraph": "..."}}
+
+YANLIŞ — üst düzey dizi:      [{"42": {...}, "7": {...}}]
+YANLIŞ — her öğe ayrı sarmal:  [{"42": {...}}, {"7": {...}}]
+YANLIŞ — ID düşürülmüş:        [{"tr_title": "...", "paragraph": "..."}]
+
+Yukarıdaki her HABER ID için tam olarak bir anahtar yaz; ID uydurma, ID atlama."""
+
+
 def get_deep_analysis_prompt(articles_full, today=''):
     """
     Pass 2: Top-10 haberin TAM metni → Türkçe başlık + 110-130 kelime paragraf (JSON).
@@ -1018,7 +1045,8 @@ SADECE JSON FORMATINDA YANIT VER — başka hiçbir şey yazma:
 }}
 
 HABERLER:
-{articles_full}"""
+{articles_full}
+{CIKTI_BICIMI_HATIRLATMA}"""
 
 
 def get_kritik3_length_fix_prompt(tr_title, paragraph, full_text, current_wc):
@@ -1210,7 +1238,8 @@ SADECE JSON FORMATINDA YANIT VER — başka hiçbir şey yazma:
 }}
 
 HABERLER:
-{articles_full}"""
+{articles_full}
+{CIKTI_BICIMI_HATIRLATMA}"""
 
 # Haber kaynakları
 NEWS_SOURCES = {

@@ -184,40 +184,99 @@ def _icerik_haritasi_mi(d):
     return icerikli >= max(1, len(d) // 2)
 
 
-def _normalize_id_content(data):
-    """Pass 2/3 çıktısını {id: {...}} sözlüğüne indirger.
+def _icerik_nesnesi_mi(v):
+    """TEK bir haberin içeriği mi — {"tr_title": ..., "paragraph": ...}?
 
-    Prompt id-anahtarlı sözlük ister: {"3": {...}, "7": {...}}. Ancak bazı
-    modeller (ör. gemini-3-flash-preview) bunun yerine liste döndürebilir:
-    [{"id": 3, "tr_title": ..., "paragraph": ...}, ...] veya tek anahtarlı
-    bir sarmal {"articles": [...]}. Bu fonksiyon her şekli tek biçime çevirir;
-    beklenmeyen tipte boş sözlük döner.
+    _icerik_haritasi_mi'nin ikizi: o {id: içerik} HARİTASINI tanır, bu ise
+    haritanın DEĞERİNİ. İkisi birlikte "bu sözlük harita mı, içerik mi?"
+    sorusunu ayırır; liste öğelerini sınıflandırmanın temeli budur."""
+    return isinstance(v, dict) and ('tr_title' in v or 'paragraph' in v)
 
-    SARMAL SÖZLÜK DE AÇILIR (2026-08-03): eskiden yalnızca değeri LİSTE olan
-    tek-anahtarlı sarmal açılıyordu. {"summaries": {"3": {...}}} gibi değeri
-    SÖZLÜK olan sarmal açılmıyor, dışarıya {"summaries": ...} olarak dönüyor ve
-    çağıran taraf int("summaries") denemesinde sessizce vazgeçiyordu — yanıt
-    "başarılı" görünüp içerik SIFIR kalıyordu. Bedeli ölçüldü: Pass 2'nin ilk
-    çağrısı (günün en pahalı isteği, 10 haberin tam metni) her koşuda boşa
-    gidiyor ve iş 5-7 parçalı split-retry ile YENİDEN yapılıyordu."""
+
+def _normalize_id_content(data, expected_ids=None):
+    """Pass 2/3 çıktısını {id: {...}} sözlüğüne indirger — ŞEKİLDEN BAĞIMSIZ.
+
+    Prompt id-anahtarlı TEK bir sözlük ister: {"3": {...}, "7": {...}}. Model
+    bunu vermek ZORUNDA DEĞİLDİR ve pratikte vermiyor: `response_format`
+    yalnızca "geçerli JSON" dayatır, ŞEKLİ dayatmaz. Bu yüzden burası şekli
+    dayatmaz, ne gelirse ona uyum sağlar — kalıcı çözüm budur; prompt'a güvenmek
+    değil. Model/sağlayıcı değişse de (OPENROUTER_MODEL env ile değiştirilebilir)
+    bu katman ayakta kalır.
+
+    ÜRETİMDE GÖRÜLEN ŞEKİLLER (2026-08-04 koşusu, 63 çağrının 24'ü):
+      A) [ {"72": {...}, "29": {...}} ]      tam harita, tek öğeli listeye sarılı
+      B) [ {"8": {...}}, {"13": {...}} ]     her öğe tek-anahtarlı ID sarmalı
+      C) [ {"tr_title": ..., "paragraph"...} ] ID YOK, yalnızca sıra
+      D) {"summaries": {"3": {...}}}         tek-anahtarlı sarmal (08-03'te giderildi)
+      E) [ {"id": 3, "tr_title": ...} ]      id alanlı liste (baştan destekliydi)
+    A/B/C'nin hiçbiri tanınmıyordu: yanıt "✅ başarılı" loglanıp SIFIR içerik
+    üretiyor, aynı girdi split-retry ile parça parça YENİDEN ödeniyordu.
+
+    expected_ids: yalnızca C şekli için — istekteki haber ID'leri, prompt'a
+    yazıldıkları SIRAYLA. Model ID'leri tamamen düşürdüyse tek bağlanma noktası
+    sıradır; sayılar birebir tutmuyorsa eşleştirme YAPILMAZ (yanlış habere
+    yanlış özet iliştirmektense o batch yeniden denenir)."""
     if isinstance(data, dict):
         # {"items": [...]} / {"summaries": {...}} gibi tek-anahtarlı sarmalı aç.
         # Kendisi zaten içerik haritasıysa DOKUNMA (tek haberlik yanıt da olabilir).
         if len(data) == 1 and not _icerik_haritasi_mi(data):
             only_val = next(iter(data.values()))
             if isinstance(only_val, (list, dict)):
-                return _normalize_id_content(only_val)
+                return _normalize_id_content(only_val, expected_ids)
         return _apply_title_limit(data)
+
     if isinstance(data, list):
         out = {}
+        ciplak = []          # C şekli adayları: ID'siz, sırasına güvenilecek içerikler
         for item in data:
             if not isinstance(item, dict):
                 continue
             key = item.get('id', item.get('ID', item.get('Id')))
             if key is not None:
-                out[key] = item
+                out[key] = item                       # E
+            elif _icerik_haritasi_mi(item):
+                # A ve B'nin ORTAK durumu: öğenin kendisi {id: içerik} haritası.
+                # B'de harita tek girdilidir; ayrı bir dal gerekmez.
+                out.update(item)
+            elif _icerik_nesnesi_mi(item):
+                ciplak.append(item)                   # C — karar en sonda
+            else:
+                # Liste içinde sarmal ([{"summaries": {...}}]) — özyinelemeyle aç.
+                nested = _normalize_id_content(item)
+                if nested:
+                    out.update(nested)
+
+        # C: hiç ID çıkmadıysa tek bağlanma noktası sıradır. Sayı birebir
+        # tutmuyorsa hizalama kayar → eşleştirme yapma, batch yeniden denensin.
+        if not out and ciplak and expected_ids:
+            if len(ciplak) == len(expected_ids):
+                print(f"   ↩️  ID'siz içerik listesi: {len(ciplak)} kayıt "
+                      f"prompt SIRASINA göre eşleştirildi.")
+                out = dict(zip(expected_ids, ciplak))
+            else:
+                print(f"   ⚠️  ID'siz içerik listesi ({len(ciplak)}) istenen "
+                      f"({len(expected_ids)}) ile eşleşmiyor — sıra eşleştirmesi "
+                      f"GÜVENSİZ, atlanıyor.")
+
         return _apply_title_limit(out)
     return {}
+
+
+# Şekil uyuşmazlığı sayacı. Arızanın günlerce fark edilmemesinin sebebi
+# sessizliğiydi: her tekil çağrı "✅ başarılı" görünüyor, rapor yine üretiliyor,
+# fark yalnızca FATURAYA yansıyordu. Koşu sonunda tek satırlık özet, aynı sınıf
+# bir gerileme (yeni model, değişen şekil) olursa onu log'da görünür kılar.
+_SEKIL_SAYAC = {'bos_cagri': 0}
+
+
+def _sekil_ozeti_yazdir():
+    """Koşu sonunda şekil uyuşmazlığı özeti — sıfırsa hiç konuşma."""
+    bos = _SEKIL_SAYAC['bos_cagri']
+    if not bos:
+        return
+    print(f"\n💸 ŞEKİL UYUŞMAZLIĞI: {bos} LLM çağrısı yanıt döndürdüğü hâlde "
+          f"HİÇBİR içerik üretmedi — bedeli ödenmiş, işi split-retry tekrarladı. "
+          f"Yukarıdaki 🔬 satırları hangi şeklin geldiğini gösterir.")
 
 
 def _log_sekil_uyusmazligi(label, data, uygulanan):
@@ -229,6 +288,7 @@ def _log_sekil_uyusmazligi(label, data, uygulanan):
     modelin hangi şekli döndürdüğünü tek bakışta gösterir."""
     if uygulanan or not data:
         return
+    _SEKIL_SAYAC['bos_cagri'] += 1
     if isinstance(data, dict):
         sekil = f"dict, üst düzey anahtarlar={list(data)[:8]}"
     elif isinstance(data, list):
@@ -4933,10 +4993,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         print("\n🔍 Pass 2 — Top-10 derin analiz başlıyor...")
         articles_by_id = {a['id']: a for a in articles}
         full_lines = []
+        # Prompt'a GERÇEKTEN yazılan ID'ler, yazıldıkları sırayla: model ID'leri
+        # tamamen düşürüp yalnızca sıralı içerik döndürürse tek dayanak budur.
+        prompt_ids = []
         for art_id in top10_ids:
             a = articles_by_id.get(art_id)
             if not a:
                 continue
+            prompt_ids.append(art_id)
             full_lines.append(
                 f"=== HABER ID: {art_id} ===\n"
                 f"Kaynak: {a['source']}\n"
@@ -4958,7 +5022,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 # top-10 yine içeriksiz kalır — teşhis o durumda da konuşmalı.
                 _istenen = set(top10_ids)
                 _karsilanan = 0
-                for k, v in _normalize_id_content(deep_data).items():
+                for k, v in _normalize_id_content(
+                        deep_data, expected_ids=prompt_ids).items():
                     try:
                         aid = int(k)
                     except (ValueError, TypeError):
@@ -5288,6 +5353,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # barajı kontrollü düşürüp YENİ+siber düşük-puanlı haberleri havuza
         # alıyor → hem KRİTİK 3 hem gövde tam gövdeli haberlerle doluyor.
 
+        # İçerik üreten tüm geçişler (Pass 2/3/5) bitti — şekil uyuşmazlığının
+        # bu koşuya maliyeti varsa burada tek satırda görünür olsun.
+        _sekil_ozeti_yazdir()
+
         # ════════════════════════════════════════════════════════════════
         # PASS 6 — YÖNETİCİ ÖZETİ (en önemli 9 haberin tek paragraf özeti)
         # ════════════════════════════════════════════════════════════════
@@ -5593,7 +5662,11 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         # Yalnızca BU batch'e ait dönen ID'leri yerleştir (model yanlış/uydurma
         # ID döndürürse o, batch dışı sayılır ve görmezden gelinir).
-        norm = _normalize_id_content(data) if data else {}
+        # expected_ids: _format_batch_for_prompt'un atladığı (articles_by_id'de
+        # olmayan) ID'ler hariç — sıra eşleştirmesi ancak prompt'a yazılanla
+        # birebir hizalıysa güvenlidir.
+        prompt_ids = [aid for aid in batch if aid in articles_by_id]
+        norm = _normalize_id_content(data, expected_ids=prompt_ids) if data else {}
         batch_set = set(batch)
         applied = 0
         for k, v in norm.items():
