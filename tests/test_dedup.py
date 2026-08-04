@@ -754,3 +754,101 @@ def test_bos_ve_bozuk_girdi_cokmez():
     assert dedup.matching_story_chain(_v('', '', ''), []) is None
     assert dedup.matching_story_chain(None, []) is None
     assert dedup.story_entities(None) == set()
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# HİKÂYE ZİNCİRİ — ÜRETİM YOLUNA BAĞLI MI?  (2026-08-04 dersi)
+# ══════════════════════════════════════════════════════════════════════════
+# 08-03'te katman yazıldı, src.dedup birim testleri geçti — ama filtre YANLIŞ
+# seçiciye bağlanmıştı. İki KRİTİK 3 seçicisi var:
+#   _derive_top3_by_score → deterministik, ÜRETİMDE koşan yol
+#   _select_top3          → LLM tabanlı, yalnız Pass 1 tamamen çökünce koşar
+# Filtre yalnız ikincisine konmuştu; 08-04 koşusunda katman hiç devreye
+# girmedi (log'da "📖 Süregelen hikâye" satırı yok). Aşağıdaki testler
+# bağlantıyı çivileyerek aynı hatanın sessizce tekrarlanmasını engeller.
+
+import json as _json
+from pathlib import Path as _Path
+import sys as _sys
+
+_sys.path.insert(0, str(_Path(__file__).parent.parent))
+
+
+def _k3_gecmis_yaz(tmp_path, gunler):
+    """kritik3_gecmis.json'u tmp dizinde oluşturur ve yolu döndürür."""
+    p = tmp_path / 'kritik3.json'
+    p.write_text(_json.dumps([{'date': d, 'views': vs} for d, vs in gunler],
+                             ensure_ascii=False), encoding='utf-8')
+    return p
+
+
+def _su_zinciri_gunleri():
+    """Gerçek vakadan: 3 ayrı günde manşet olmuş su hikâyesi."""
+    return [('2026-07-29', [SU_29]), ('2026-07-30', [SU_30]),
+            ('2026-08-02', [SU_02])]
+
+
+def _sistem_kur(monkeypatch, gunler):
+    import main
+    s = main.HaberSistemi()
+    monkeypatch.setattr(s, '_load_recent_kritik3_by_day', lambda *a, **k: gunler)
+    monkeypatch.setattr(s, '_load_recent_kritik3_views', lambda *a, **k: [])
+    monkeypatch.setattr(s, '_load_recent_report_views', lambda *a, **k: [])
+    return s
+
+
+def test_uretim_secicisi_zinciri_uygular(monkeypatch):
+    """ASIL REGRESYON: _derive_top3_by_score zincire bağlı adayı manşete almaz."""
+    s = _sistem_kur(monkeypatch, _su_zinciri_gunleri())
+    yeni_a = _v('Alfa Kurumunda Veri Sızıntısı Yaşanması',
+                'Alfa Holding, müşteri kayıtlarının yetkisiz erişime uğradığını '
+                'duyurmuştur. Sızıntının fatura arşivinden kaynaklandığı '
+                'belirtilmiştir.',
+                'Alfa Holding disclosed unauthorized access to its billing archive '
+                'affecting customer records across three subsidiaries.')
+    yeni_b = _v('Beta Bankasına Fidye Yazılımı Saldırısı Düzenlenmesi',
+                'Beta Bankası, şube ağının fidye yazılımı nedeniyle geçici olarak '
+                'kapatıldığını bildirmiştir. Kripto ödeme talebi reddedilmiştir.',
+                'Beta Bank shut branch operations after a ransomware crew encrypted '
+                'its teller network and demanded a crypto payment.')
+    yeni_c = _v('Gama Havayollarının Uçuş Sistemlerinin Durması',
+                'Gama Havayolları, biniş sistemlerindeki arıza nedeniyle yüzlerce '
+                'uçuşun ertelendiğini açıklamıştır. Sabotaj bulgusu yoktur.',
+                'Gamma Airlines delayed hundreds of departures when its boarding '
+                'platform failed; investigators found no sign of sabotage.')
+    content = {1: SU_03, 2: yeni_a, 3: yeni_b, 4: yeni_c}
+    articles = {i: {'title': '', 'full_text': content[i]['full_text']} for i in content}
+    records = {i: {'kat': 'stratejik_kurum_saldirisi', 'toplam': 90} for i in content}
+
+    # SU_03 (zincire bağlı) en yüksek sırada olmasına rağmen manşete girmemeli.
+    top3 = s._derive_top3_by_score([1, 2, 3, 4], records, content, articles)
+    assert 1 not in top3, "zincire bağlı aday manşete alındı — filtre bağlı değil"
+    assert set(top3) == {2, 3, 4}
+
+
+def test_uretim_secicisi_zincir_yoksa_dokunmaz(monkeypatch):
+    """Zincir yoksa sıralama bozulmamalı — regresyon koruması."""
+    s = _sistem_kur(monkeypatch, [])
+    content = {1: SU_03, 2: _v('B', 'Beta olayı.', 'Beta event.')}
+    articles = {i: {'title': '', 'full_text': content[i]['full_text']} for i in content}
+    records = {i: {'kat': 'stratejik_kurum_saldirisi', 'toplam': 90} for i in content}
+    assert 1 in s._derive_top3_by_score([1, 2], records, content, articles)
+
+
+def test_guvenlik_tabani_kritik3u_bosaltmaz(monkeypatch):
+    """Tüm adaylar zincire bağlıysa KRİTİK 3 yine 3 haberle dolar."""
+    s = _sistem_kur(monkeypatch, _su_zinciri_gunleri())
+    content = {1: SU_03, 2: SU_02, 3: SU_29, 4: SU_30}
+    articles = {i: {'title': '', 'full_text': content[i]['full_text']} for i in content}
+    records = {i: {'kat': 'stratejik_kurum_saldirisi', 'toplam': 90} for i in content}
+    top3 = s._derive_top3_by_score([1, 2, 3, 4], records, content, articles)
+    assert len(top3) == 3
+
+
+def test_her_iki_secici_de_ayni_yardimciyi_kullanir():
+    """İki seçici de _hikaye_zinciri_filtrele çağırmalı — tek kaynak kuralı."""
+    import inspect
+    import main
+    for ad in ('_derive_top3_by_score', '_select_top3'):
+        kaynak = inspect.getsource(getattr(main.HaberSistemi, ad))
+        assert '_hikaye_zinciri_filtrele' in kaynak, f"{ad} zincir filtresini çağırmıyor"

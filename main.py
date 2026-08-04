@@ -4211,41 +4211,12 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # birikmemişken kritik3 geçmişi çalışmayı sürdürür.)
         recent_k3 = self._load_recent_kritik3_views() + self._load_recent_report_views()
 
-        # ── SÜREGELEN HİKÂYE ZİNCİRİ (manşet tekrarı) ────────────────────
-        # Yukarıdaki çapraz-gün dedup AYNI OLAYI engeller. Ama bir hikâye
-        # günlerce YENİ gelişmelerle sürebilir; her günün haberi gerçekten
-        # yenidir, mükerrer değildir — yine de aynı hikâye üst üste manşet
-        # olmamalı. 2026-08-03'te Minnesota su tesisi saldırıları ALTINCI gün
-        # manşetti ve hiçbir dedup katmanı tetiklenmedi (tetiklenmesi de
-        # gerekmiyordu: farklı olaylardı). Bkz. src.dedup.build_story_chains.
-        ordered_pool_ham = list(ordered_pool)
-        zincirler = _dedup.build_story_chains(self._load_recent_kritik3_by_day())
-        zincir_dusen = {}
-        if zincirler:
-            elenmis = []
-            for aid in ordered_pool:
-                z = _dedup.matching_story_chain(view_fn(aid), zincirler)
-                if z:
-                    zincir_dusen[aid] = z
-                else:
-                    elenmis.append(aid)
-            # GÜVENLİK TABANI: filtre KRİTİK 3'ü boşaltamaz. 3 aday kalmadıysa
-            # eksik slotlar ham sıradan tamamlanır (zincire takılanlar en sona).
-            if len(elenmis) < 3:
-                elenmis += [aid for aid in ordered_pool_ham if aid not in elenmis]
-                print(f"   🛟 Hikâye zinciri filtresi {len(zincir_dusen)} adayı "
-                      f"düşürdü ama 3 ayrık aday kalmadı — sıralama ham havuzla "
-                      f"tamamlandı (rapor boşalmasın).")
-            ordered_pool = elenmis
+        ordered_pool, zincir_dusen = self._hikaye_zinciri_filtrele(
+            ordered_pool, view_fn)
 
         top3_ids = _dedup.pick_distinct(ordered_pool, view_fn, n=3,
                                         exclude_views=recent_k3)
-
-        for aid, z in zincir_dusen.items():
-            if aid not in top3_ids:
-                print(f"   📖 Süregelen hikâye: ID {aid} manşetten indirildi "
-                      f"(gövdede kalır) — zincir {z['days']} "
-                      f"({len(z['days'])} gün), ortak={z['shared']}")
+        self._log_hikaye_zinciri(zincir_dusen, top3_ids)
 
         dropped = [aid for aid in before if aid not in top3_ids]
         if dropped:
@@ -4725,6 +4696,52 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         remaining_ids = ranked[10:]
         return top10_ids, remaining_ids, filtered_ids, category_by_id
 
+    # ── SÜREGELEN HİKÂYE ZİNCİRİ (manşet tekrarı) — TEK KAYNAK ───────────────
+    # Çapraz-gün dedup AYNI OLAYI engeller. Ama bir hikâye günlerce YENİ
+    # gelişmelerle sürebilir; her günün haberi gerçekten yenidir, mükerrer
+    # değildir — yine de aynı hikâye üst üste manşet olmamalı. 2026-08-03'te
+    # Minnesota su tesisi saldırıları ALTINCI gün manşetti ve hiçbir dedup
+    # katmanı tetiklenmedi (tetiklenmesi de gerekmiyordu: farklı olaylardı).
+    # Bkz. src.dedup.build_story_chains.
+    #
+    # İKİ SEÇİCİ VAR ve filtre İKİSİNDE DE olmalı — 2026-08-04'te bu ders
+    # ölçüldü: filtre yalnızca _select_top3'e (LLM yolu; Pass 1 tamamen
+    # çökmedikçe ÇALIŞMAZ) konmuştu. Üretimde _derive_top3_by_score koşuyor,
+    # dolayısıyla katman o gün hiç devreye girmedi. Ortak yardımcı, aynı
+    # hatanın sessizce tekrarlanmasını engeller.
+    def _hikaye_zinciri_filtrele(self, aday_ids, view_fn):
+        """Süregelen hikâyeye bağlanan adayları KRİTİK 3 havuzundan düşürür.
+
+        Dönüş: (filtrelenmiş_id_listesi, {düşen_id: zincir}). Zincir yoksa
+        liste değişmeden döner."""
+        zincirler = _dedup.build_story_chains(self._load_recent_kritik3_by_day())
+        if not zincirler:
+            return list(aday_ids), {}
+        dusen, kalan = {}, []
+        for aid in aday_ids:
+            z = _dedup.matching_story_chain(view_fn(aid), zincirler)
+            if z:
+                dusen[aid] = z
+            else:
+                kalan.append(aid)
+        # GÜVENLİK TABANI: filtre KRİTİK 3'ü boşaltamaz. 3 ayrık aday kalmadıysa
+        # eksik slotlar ham sıradan tamamlanır (zincire takılanlar en sona).
+        if len(kalan) < 3:
+            kalan += [aid for aid in aday_ids if aid not in kalan]
+            print(f"   🛟 Hikâye zinciri filtresi {len(dusen)} adayı düşürdü ama "
+                  f"3 ayrık aday kalmadı — sıralama ham havuzla tamamlandı "
+                  f"(rapor boşalmasın).")
+        return kalan, dusen
+
+    @staticmethod
+    def _log_hikaye_zinciri(zincir_dusen, top3_ids):
+        """Manşetten inen adayları logla (gövdede kalırlar, SİLİNMEZLER)."""
+        for aid, z in (zincir_dusen or {}).items():
+            if aid not in top3_ids:
+                print(f"   📖 Süregelen hikâye: ID {aid} manşetten indirildi "
+                      f"(gövdede kalır) — zincir {z['days']} "
+                      f"({len(z['days'])} gün), ortak={z['shared']}")
+
     def _derive_top3_by_score(self, ranked_ids, records, content_by_id,
                               articles_by_id):
         """KRİTİK 3 — deterministik, GARANTİLİ 3 haber.
@@ -4749,6 +4766,12 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         eligible = [aid for aid in ranked_ids
                     if records.get(aid, {}).get('kat') not in KRITIK3_HARIC_KATEGORILER]
         eligible = self._apply_novelty_tiebreak(eligible, records, view_fn, recent_k3)
+
+        # Süregelen hikâyeye bağlanan adaylar manşet havuzundan düşer (gövdede
+        # kalırlar). Kademe 1 ve 2'nin ORTAK girdisi olduğu için burada bir kez
+        # uygulanır; alt kademeler (zafiyet/son çare) zaten ham havuza döner ve
+        # güvenlik tabanı orada devreye girer.
+        eligible, zincir_dusen = self._hikaye_zinciri_filtrele(eligible, view_fn)
 
         # Kademe 1 — tercih edilen adaylar, çapraz-gün + aynı-olay ayrık
         top3_ids = _dedup.pick_distinct(eligible, view_fn, n=3,
@@ -4776,6 +4799,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 if len(top3_ids) >= 3:
                     break
 
+        self._log_hikaye_zinciri(zincir_dusen, top3_ids[:3])
         return top3_ids[:3]
 
     # KRİTİK3 paragraflarının hedef alt sınırı — prompt'un istediği 110-130
