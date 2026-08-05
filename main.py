@@ -4567,6 +4567,12 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     records[rid] = self._normalize_record(row)
         return records
 
+    # Kategori yüzünden sıfırlanmış haberlerden kaç tanesi critique denetimine
+    # alınır (bkz. _critique_scores kurtarma kapsamı). Token bütçesi için sınırlı
+    # tutulur; 2026-08-05 verisinde 42 sıfırlanmış adaydan ham rubriği en yüksek
+    # 10'u alınsaydı olay raporunun üç kopyası da (ham 45) kapsama girerdi.
+    CRITIQUE_RESCUE_K = 10
+
     def _critique_scores(self, records, articles_by_id, recent_events, top_k=20):
         """CRITIQUE ajanı (kıdemli siber güvenlik/strateji/politika uzmanı) —
         Skorlayıcıdan BAĞIMSIZ ikinci görüş. En yüksek puanlı ~top_k adayı (artı
@@ -4583,6 +4589,37 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         for aid, rec in records.items():
             if rec['kat'] == 'zafiyet_aktif_apt' and aid not in scope:
                 scope.append(aid)
+
+        # ── SIFIRLANMIŞ HABERLER İÇİN KURTARMA KAPSAMI ─────────────────────
+        # urun_icerik/siber_disi etiketi _record_total'da toplamı KOŞULSUZ
+        # sıfırlar. Kapsam yalnızca 'toplam'a göre seçildiği için bu haberler
+        # sıralamanın en dibinde kalır ve critique onları HİÇBİR ZAMAN göremez
+        # — yani yanlış sıfırlama tek ajanın tek kararıyla kesinleşir, ikinci
+        # görüş devreye giremez. Critique prompt'undaki "olay raporu analiz
+        # değildir" istisnası da bu yüzden ulaşılamaz kalıyordu.
+        #
+        # 2026-08-05 vakası: AISI'nin olay raporu (bir yapay zekâ ajanının
+        # gerçek bir açık kaynak projesine arka kapı sokma denemesi) ÜÇ ayrı
+        # kaynaktan da urun_icerik etiketlendi ve sıfırlandı; o gün kapsam
+        # eşiği toplam=80 idi, sıfırlananların hepsi 0 puanla dışarıdaydı.
+        #
+        # Aday sırası HAM rubrik (s+e+a+k) — kategori sıfırlamasından ÖNCEKİ
+        # değer. Skorlayıcı somut olaya pazarlama içeriğinden belirgin biçimde
+        # yüksek rubrik veriyor (ölçüm: olay 45, ürün duyuruları 22-27), yani
+        # ham rubrik ucuz ve deterministik bir ön elemedir. Kategoriye KARAR
+        # VERMEZ — yalnızca adayı critique'in önüne koyar; düzeltip
+        # düzeltmemeye critique karar verir.
+        zeroed = [aid for aid, rec in records.items()
+                  if aid not in scope and rec.get('siber')
+                  and rec['kat'] in ('urun_icerik', 'siber_disi')]
+        zeroed.sort(key=lambda aid: (records[aid]['s'] + records[aid]['e']
+                                     + records[aid]['a'] + records[aid]['k']),
+                    reverse=True)
+        if zeroed:
+            scope.extend(zeroed[:self.CRITIQUE_RESCUE_K])
+            print(f"   🧐 Critique kurtarma kapsamı: {min(len(zeroed), self.CRITIQUE_RESCUE_K)} "
+                  f"sıfırlanmış haber denetime alındı (toplam {len(zeroed)} aday)")
+
         if not scope:
             return {}
 
