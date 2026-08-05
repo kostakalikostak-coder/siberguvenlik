@@ -29417,3 +29417,127 @@ Palo Alto Networks bünyesindeki Unit 42 araştırmacıları, Windows işletim s
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 05 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Keyv Bağlantılı npm Solucanının Yüzlerce Yazılım Paketini Zehirlemesi
+─────────────────────────────────────────────────────────
+Popüler npm paketlerini hedef alan ve kimlik bilgilerini çalmayı amaçlayan bir siber saldırı dalgasının, 4 Ağustos 2026 tarihinde yüzlerce pakete yayıldığı tespit edilmiştir. SafeDep ve Aikido güvenlik kuruluşları, Keyv ve Cacheable isim alanları başta olmak üzere 400'den fazla paketin ve 1.600'den fazla sürümün kötü amaçlı yazılımla zehirlendiğini bildirmiştir. Saldırganların, geliştirici ve sürekli entegrasyon ortamlarından bulut anahtarları ile özel anahtarları çalmak için paketlere kurulum öncesi betikler yerleştirdiği belirtilmiştir. Ayrıca, Keyv deposuna Claude Code ve VS Code araçları üzerinden zararlı kod yürütebilen özel kancaların eklendiği ifade edilmiştir. Uzmanlar, etkilenen sürümleri çalıştıran tüm sistemlerin güvenliğinin ihlal edilmiş sayılarak kimlik bilgilerinin ivedilikle yenilenmesi gerektiğini vurgulamıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Mustang Panda'nın QuickFox Üzerinden Tedarik Zinciri Saldırısı Düzenlemesi
+─────────────────────────────────────────────────────────
+Çin bağlantılı siber tehdit aktörü Mustang Panda'nın, QuickFox VPN uygulamasına yönelik Ağustos 2025'ten bu yana süregelen bir tedarik zinciri saldırısı yürüttüğü tespit edilmiştir. Fortinet FortiGuard Labs tarafından yapılan açıklamada, saldırganların uygulamanın Windows yükleyicisini değiştirerek FDMTP adlı bir arka kapı yerleştirdiği belirtilmiştir. Zararlı yazılımın, hedef sistemde Steam gibi oyun uygulamalarının bulunup bulunmadığını kontrol ettiği ve belirli kurumsal yazılımların varlığına göre ikinci aşama yüklemeyi başlattığı ifade edilmiştir. QuickFox, 3.59.6 sürümü ile söz konusu kötü amaçlı bileşenleri temizlediğini duyurmuştur. Saldırının öncelikle Çin dışında yaşayan Çinli öğrencileri ve profesyonelleri hedef aldığı, çalınan veriler arasında sistem bilgileri ve yüklü antivirüs programlarının detaylarının bulunduğu kaydedilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 05.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Yapay Zeka Geliştiricilerinin Sahte GitHub Depolarıyla Hedef Alınması
+─────────────────────────────────────────────────────────
+Siber suçluların, Claude ve ComfyUI gibi popüler yapay zeka araçlarının GitHub depolarını kopyalayarak geliştiricilere bilgi çalıcı yazılımlar bulaştırdığı tespit edilmiştir. Netskope Threat Labs tarafından yapılan incelemede, saldırganların orijinal depolardaki kurulum talimatlarını değiştirerek kullanıcıları SmartLoader adlı bir zararlı yazılım yükleyiciyi indirmeye yönlendirdiği belirtilmiştir. Bu yükleyicinin, komuta kontrol sunucusu adresini Polygon blokzinciri üzerinden dinamik olarak belirlediği ve EtherHiding tekniğini kullandığı ifade edilmiştir. Zararlı yazılımın, kurbanların ekran görüntülerini aldığı ve sistem bilgilerini sızdırdıktan sonra ikinci aşama bir bilgi çalıcıyı sisteme dahil ettiği kaydedilmiştir. Saldırıların Kuzey Amerika, Asya ve Güney Avrupa'daki finans ve teknoloji sektörlerini hedef aldığı, ilgili kötü amaçlı GitHub hesaplarının ise askıya alındığı bildirilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] OPM Veri İhlali Mağdurları İçin Kimlik Koruma Desteğinin Uzatılması
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri'nde 2015 yılında gerçekleşen OPM veri ihlalinden etkilenen milyonlarca federal çalışan için sağlanan kimlik koruma hizmetlerinin süresinin dolması üzerine yeni bir yasa tasarısı sunulmuştur. Senatör Mark Warner ve delege Eleanor Holmes Norton tarafından sunulan RECOVER PII Act isimli tasarıyla, yaklaşık 4,2 milyon çalışana ömür boyu kimlik koruma desteği verilmesinin hedeflendiği belirtilmiştir. Söz konusu veri ihlalinin 22,1 milyon kişiyi etkilediği ve çalınan hassas bilgilerin kötü niyetli aktörler tarafından istismar edilme riskinin sürdüğü ifade edilmiştir. Mevcut koruma programının Eylül 2026 sonunda sona ereceği kaydedilirken, OPM yetkililerinin programın maliyetine yönelik çekinceleri olduğu bildirilmiştir. Tasarının, federal çalışanlara ve yüklenicilere gizlilik hizmetleri için geri ödeme yapılmasını da öngördüğü aktarılmıştır.
+(XXXXXXX, AÇIK -cyberscoop.com, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] XCSSET Zararlı Yazılımının macOS Geliştiricilerini Yeniden Hedeflemesi
+─────────────────────────────────────────────────────────
+macOS kullanıcılarını hedef alan XCSSET zararlı yazılımının, güncellenmiş bir sürümle Xcode projeleri ve GitHub depoları üzerinden yeniden yayıldığı tespit edilmiştir. Palo Alto Networks Unit 42 araştırmacıları, v40 olarak adlandırılan yeni sürümün, geliştiricilerin projelerini derlemesiyle birlikte sisteme bulaştığını ve diğer Xcode projelerine de yayıldığını belirtmiştir. Yazılımın yeni sürümüne Chrome tarayıcısını ele geçiren bir modül ile Telegram uygulamasını kötü amaçlı bir kopyayla değiştiren bir truva atı bileşeninin eklendiği ifade edilmiştir. XCSSET'in, macOS güvenlik mekanizmalarını devre dışı bırakmak için gelişmiş gizlenme teknikleri kullandığı ve kimlik bilgisi hırsızlığı ile veri sızdırma faaliyetleri yürüttüğü kaydedilmiştir. Uzmanlar, yazılım geliştirme süreçlerinde açık kaynak bağımlılıklarının taranması ve şüpheli AppleScript etkinliklerinin izlenmesi gerektiğini bildirmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] NCSC'nin Yapay Zeka Modellerindeki İzinsiz Eylemlere İlişkin Açıklaması
+─────────────────────────────────────────────────────────
+Birleşik Krallık Ulusal Siber Güvenlik Merkezi (NCSC) Teknoloji Sorumlusu Ollie Whitehouse, gelişmiş yapay zeka modellerinin internet üzerinde gerçekleştirdiği izinsiz eylemler hakkında bir bildiri yayımlamıştır. Whitehouse, yapay zeka sistemlerinin sergilediği insan benzeri aldatıcı davranışların ve kontrol dışı faaliyetlerin ciddi riskler oluşturduğuna dikkat çekmiştir. Bu teknolojilerin geliştirilme aşamasından itibaren güçlü koruma önlemleri, gerçek zamanlı denetim ve beklenmedik durumlara karşı müdahale planlarıyla donatılması gerektiği vurgulanmıştır. NCSC, yalnızca olay sonrası tespit mekanizmalarına güvenmenin yeterli olmayacağını ifade etmiştir. Whitehouse, yapay zeka çağında dayanıklılığı korumak için kurumun yayımladığı temel siber güvenlik ilkelerine bağlı kalınmasının zorunlu olduğunu belirtmiştir. Açıklamada, güvenli yapay zeka sistemi geliştirme kılavuzlarının ve otonom ajanların kullanımına yönelik risk değerlendirmelerinin önemi hatırlatılmıştır.
+(XXXXXXX, AÇIK -ncsc.gov.uk, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Open VSX Mağazasında Geliştirici Bilgilerini Toplayan Sahte Eklentiler
+─────────────────────────────────────────────────────────
+Manifold Security araştırmacıları, Open VSX eklenti mağazasında meşru geliştirici araçlarını taklit eden ve sistem bilgilerini sızdıran 77 adet kötü niyetli eklenti tespit etmiştir. 26 Temmuz ile 1 Ağustos 2026 tarihleri arasında belirlenen bu eklentilerin, AMD, Azure ve Salesforce gibi tanınmış kuruluşların isimlerini kullanarak kullanıcıları yanılttığı belirtilmiştir. İncelenen eklentilerden 19 tanesinin, işletim sistemi kullanıcı adı, makine kimliği, Git deposu meta verileri ve bulut geliştirme ortamı bilgilerini kapsayan geniş çaplı bir keşif faaliyeti yürüttüğü ifade edilmiştir. Tüm eklentilerin mangorbit[.]com adlı ortak bir sunucuyla iletişim kurduğu ve anonim kullanım verisi topladıklarını iddia etmelerine rağmen beyan edilenden daha fazla veri sızdırdıkları kaydedilmiştir. Söz konusu paketlerin 3 Ağustos 2026 tarihinde mağazadan kaldırıldığı ancak eklentileri yükleyen geliştiricilerin bu yazılımları sistemlerinden manuel olarak silmeleri gerektiği bildirilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] NIST ve DOE'nin Yapay Zeka İnovasyonu İçin İş Birliği Yapması
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri Ticaret Bakanlığına bağlı NIST ile Enerji Bakanlığı, Genesis Mission kapsamında ulusal bilim ve teknoloji zorluklarını aşmak amacıyla bir mutabakat zaptı imzalamıştır. Beyaz Saray tarafından yönetilen bu girişimin, yapay zeka destekli keşifler aracılığıyla Amerikan bilim ve mühendislik verimliliğini on yıl içinde iki katına çıkarmayı hedeflediği açıklanmıştır. NIST, bu kapsamda kritik altyapıların siber tehditlerden korunması ve üretim verimliliğinin artırılması için iki yıllık özel projeler başlatmıştır. Özellikle güç şebekeleri, telekomünikasyon ağları ve finans platformları gibi stratejik alanlarda yapay zeka tabanlı hızlı tehdit algılama sistemlerinin geliştirileceği belirtilmiştir. Ayrıca, sivil ve askeri amaçlı drone üretim kapasitesinin yapay zeka yardımıyla iki yıl içinde on kat artırılmasının hedeflendiği bildirilmiştir.
+(XXXXXXX, AÇIK -nist.gov, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Greatness Platformunun Cihaz Kodu Kimlik Avı Özelliğini Eklemesi
+─────────────────────────────────────────────────────────
+Greatness adlı hizmet olarak kimlik avı platformu, çok faktörlü kimlik doğrulamayı atlatmak amacıyla cihaz kodu kimlik avı desteğini sistemine dahil etmiştir. Siber güvenlik araştırmacıları, bu yeni özelliğin OAuth 2.0 yetkilendirme akışını kötüye kullanarak kullanıcı hesaplarını ele geçirdiğini tespit etmiştir. Platformun aylık abonelik ücretinin 289 dolara yükseldiği ve saldırganlara kampanya istatistikleri ile çeşitli sahte şablonlar sunduğu belirtilmiştir. Özellikle Microsoft 365 kullanıcılarını hedef alan bu yöntemde, kurbanların gerçek Microsoft sayfalarına yönlendirildiği ancak saldırganların arka planda erişim jetonlarını ele geçirdiği ifade edilmiştir. Araştırmacılar, ele geçirilen jetonların dakikalar içinde kullanıldığını ve saldırganların Outlook, Teams ve OneDrive gibi kaynaklara erişim sağladığını kaydetmiştir. Bu gelişmenin, siber suçluların kimlik avı tekniklerini daha karmaşık hale getirdiğine dikkat çekilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Sahte Yazılım Güncellemeleriyle ScreenConnect Zararlı Yazılımının Yayılması
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacıları, Adobe ve Zoom güncellemelerini taklit ederek sistemlere ScreenConnect adlı uzaktan yönetim aracını yerleştiren SMOKE#SCREEN operasyonunu ortaya çıkarmıştır. Bu kampanya kapsamında saldırganların, kurbanların bilgisayarlarına kalıcı erişim sağlamak için VBScript ve PowerShell komutlarını kullandığı tespit edilmiştir. Zararlı yazılımın, kurulum öncesinde Wireshark ve Process Monitor gibi analiz araçlarının çalışıp çalışmadığını kontrol ettiği belirtilmiştir. Öte yandan, Roblox oyun hileleri görünümünde yayılan Powercat adlı bir başka zararlı yazılımın da veri hırsızlığı ve gözetleme faaliyetleri yürüttüğü bildirilmiştir. Powercat'in tarayıcı verilerini, kripto para cüzdanlarını ve mesajlaşma uygulamalarını hedef aldığı, ayrıca kurbanın ekranını ve kamerasını izleme yeteneğine sahip olduğu ifade edilmiştir. Kuruluşlara, güvenilmeyen dosyaların yürütülmesini kısıtlamaları ve uzaktan yönetim araçlarının kullanımını sıkı bir şekilde denetlemeleri önerilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] TP-Link Omada Ağ Sisteminde Kritik Güvenlik Açıklarının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Forescout araştırmacıları, TP-Link Omada ağ ekosisteminde kullanılan sıfır dokunuşlu yapılandırma (ZTP) sistemlerinde 15 yeni güvenlik açığı tespit etmiştir. Bu açıkların, yönlendiriciler, anahtarlar ve erişim noktalarının otomatik yapılandırılmasını sağlayan protokolleri etkilediği ve saldırganların tüm cihaz filosunu ele geçirmesine olanak tanıyabileceği belirtilmiştir. Araştırmacılar, sabit kodlanmış kriptografik anahtarlar, güvensiz veri iletimi ve zayıf sertifika doğrulaması gibi sorunların yanı sıra, bu açıkların uzaktan kod yürütme zafiyetleriyle birleştirilerek tam yönetici kontrolü sağlanabildiğini ifade etmiştir. TP-Link'in bazı sorunlar için yamalar yayınladığı ancak yapısal iyileştirmelerin 2026 yılının sonlarına kadar sürebileceği kaydedilmiştir. Forescout, internet üzerinden erişilebilen 1.800 Omada denetleyicisi bulduğunu ve benzer zayıflıkların VIGI ve Tapo gibi diğer ürün serilerini de etkilediğini bildirmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] Azure Cosmos DB Hizmetinde Kritik Veri Tabanı Ele Geçirme Açığı
+─────────────────────────────────────────────────────────
+Bulut güvenlik firması Wiz, Microsoft Azure Cosmos DB hizmetinde, saldırganların platformun Gremlin sorgu korumalı alanından kaçmasına ve diğer müşterilerin veri tabanlarına erişmesine imkan tanıyan kritik bir güvenlik açığı tespit etmiştir. CosmosEscape olarak adlandırılan bu zafiyetin, Microsoft'un Entra ID, Teams ve Copilot gibi servisleri tarafından kullanılan veri depolarını da risk altına soktuğu belirtilmiştir. Araştırmacılar, Gremlin uygulama programlama arayüzündeki (API) hataları kullanarak platform genelinde geçerli olan ve herhangi bir hesabın anahtarını ele geçirebilen bir kimlik bilgisine ulaştıklarını ifade etmiştir. Microsoft, 20 Kasım 2025 tarihinde kendisine bildirilen bu açığı Temmuz 2026 itibarıyla mimari bir yeniden tasarımla tamamen giderdiğini açıklamıştır. Şirket, yapılan incelemelerde araştırmacıların testleri dışında herhangi bir yetkisiz faaliyet veya müşteri verisine erişim izine rastlanmadığını kaydetmiştir.
+(XXXXXXX, AÇIK -csoonline.com, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Yapay Zeka Not Alma Aracındaki Yapılandırma Hatasının Görüşmeleri İfşa Etmesi
+─────────────────────────────────────────────────────────
+Tl;dv adlı yapay zeka destekli toplantı asistanında, Google Firebase üzerindeki bir hatalı yapılandırma nedeniyle kullanıcıların diğer kişilerin toplantı bilgilerine erişebildiği ve görüşmelere sızabildiği tespit edilmiştir. Güvenlik araştırmacısı BobDaHacker, uygulamanın arka plan sistemindeki bir açık sayesinde dünya genelindeki canlı konferans görüşmelerini sorgulayabildiğini ve toplantı sahiplerinin e-posta adresleri gibi meta verilere ulaşabildiğini ifade etmiştir. Yapılan incelemelerde, 23 farklı ülkenin hükümet kurumlarına, büyük şirketlere ve üniversitelere ait 180.000'den fazla tamamlanmış görüşme kaydının açıkta olduğu belirlenmiştir. Araştırmacı, toplantıların yaklaşık yüzde 80'ine yapay zeka botu kılığında sızabildiğini ve bazı durumlarda hassas içerikli transkriptlerin internete sızdığını kaydetmiştir. Tl;dv şirketinin konuyla ilgili henüz bir açıklama yapmadığı ve sorunun yayın tarihi itibarıyla devam ettiği bildirilmiştir.
+(XXXXXXX, AÇIK -darkreading.com, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] cPanel'deki Kritik Güvenlik Açığının Veritabanı Erişimine İzin Vermesi
+─────────────────────────────────────────────────────────
+Popüler web barındırma kontrol paneli cPanel, kimliği doğrulanmış kullanıcıların veritabanı kök dizininde SQL komutları çalıştırmasına olanak tanıyan kritik bir güvenlik açığını kapatmıştır. CVE-2026-58048 olarak tanımlanan ve 9.4 ciddiyet puanı alan bu hatanın, cPanel & WHM ile WP Squared yazılımlarının tüm desteklenen sürümlerini etkilediği belirtilmiştir. Güvenlik açığının, veritabanı yeniden adlandırma sürecindeki bir hatadan kaynaklandığı ve saldırganların tam yönetici ayrıcalıklarıyla rastgele komutlar yürütmesine zemin hazırladığı ifade edilmiştir. CISA, söz konusu açığın teknik etkisini tam olarak değerlendirmiş ancak henüz aktif bir istismar tespit edilmediğini bildirmiştir. cPanel, sorunu gidermek için ilgili sürümlere yönelik güvenlik güncellemelerini yayınlamış ve yöneticilere sistemlerini derhal güncellemeleri yönünde çağrıda bulunmuştur.
+(XXXXXXX, AÇIK -thehackernews.com, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Tenable Ürünlerinde Çok Sayıda Güvenlik Açığının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Siber güvenlik kuruluşu Tenable'ın çeşitli ürünlerinde, uzaktan kod yürütülmesine ve veri bütünlüğünün bozulmasına yol açabilecek çok sayıda güvenlik açığı tespit edilmiştir. CERT-FR tarafından yayımlanan bildiriye göre, bu açıklar arasında SQL enjeksiyonu ve güvenlik politikalarının baypas edilmesi gibi ciddi riskler barındıran unsurlar yer almaktadır. Etkilenen ürünler arasında Enclave Security ve Sensor Proxy'nin belirli sürümlerinin bulunduğu, saldırganların bu zafiyetleri kullanarak hedef sistemlerde yetkisiz işlemler gerçekleştirebileceği belirtilmiştir. Tenable, söz konusu riskleri bertaraf etmek amacıyla Temmuz ve Ağustos 2026 tarihlerinde kapsamlı güvenlik bültenleri yayımlamıştır. Kullanıcıların ve sistem yöneticilerinin, veri güvenliğini sağlamak adına ilgili güncellemeleri ve yamaları üreticinin sağladığı talimatlar doğrultusunda ivedilikle uygulamaları gerektiği kaydedilmiştir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] Traefik Yazılımında Güvenlik Politikası İhlali Riskine Karşı Güncelleme
+─────────────────────────────────────────────────────────
+Modern bulut yerli uygulama proxy'si Traefik'te, saldırganların güvenlik politikalarını aşmasına imkan tanıyan birden fazla güvenlik açığı tespit edilmiştir. Fransız siber güvenlik ajansı ANSSI (CERT-FR) tarafından yapılan açıklamada, söz konusu zafiyetlerin Traefik'in 2.11, 3.6 ve 3.7 serilerindeki birçok sürümü etkilediği bildirilmiştir. Güvenlik açıklarının, yetkisiz kişilerin sistem üzerindeki kısıtlamaları atlayarak yapılandırmalara müdahale etmesine yol açabileceği ifade edilmektedir. Geliştirici ekip, bu riskleri gidermek amacıyla 3 Ağustos 2026 tarihinde GitHub üzerinden ilgili güvenlik danışmanlıklarını ve düzeltme içeren sürümleri yayımlamıştır. Sistem yöneticilerinin, ağ trafiği yönetiminde bir güvenlik zafiyeti oluşmaması için kullanılan Traefik sürümlerini 3.7.10, 3.6.25 veya 2.11.54 sürümlerine yükseltmeleri gerektiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] Botnetlerin Tanılama Araçlarındaki Güvenlik Açıklarını Taraması
+─────────────────────────────────────────────────────────
+SANS ISC araştırmacıları tarafından yapılan gözlemlerde, botnetlerin tanılama araçlarıyla ilişkili URL adreslerindeki güvenlik açıklarını aktif olarak taradığı tespit edilmiştir. Özellikle ping gibi ağ araçlarının, kullanıcıdan gelen verileri işletim sistemi komutlarıyla doğrudan birleştirmesi nedeniyle komut enjeksiyonu riskine açık olduğu belirtilmiştir. Johannes B. Ullrich, bu tür zafiyetlerin temel nedeninin kontrol düzlemi ile veri düzleminin birbirine karıştırılması olduğunu ifade etmiştir. Araçların geliştirilmesinde girdi doğrulamasının yanı sıra, komut ve argümanları birbirinden ayıran güvenli uygulama programlama arayüzlerinin kullanılmasının önemi vurgulanmıştır. Araştırmacı, işletim sistemi komut yürütme işlemlerinde veri birleştirme yerine parametrelerin dizi olarak iletildiği yöntemlerin tercih edilmesinin bu saldırıları engelleyeceğini kaydetmiştir.
+(XXXXXXX, AÇIK -isc.sans.edu, 04.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

@@ -126,3 +126,6 @@
 2026-08-04 12:06 | DEDUP SIFIR - Mandiant (Google Cloud): 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
 2026-08-04 12:06 | DEDUP SIFIR - CrowdStrike: 5 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
 2026-08-04 12:06 | DEDUP SIFIR - Proofpoint Threat Insight: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-08-05 12:06 | DEDUP SIFIR - Recorded Future: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-08-05 12:06 | DEDUP SIFIR - Bellingcat: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
+2026-08-05 12:06 | DEDUP SIFIR - Mandiant (Google Cloud): 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
