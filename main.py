@@ -856,6 +856,9 @@ class HaberSistemi:
         # Amaç: "200 OK ama 0 madde" (sessiz boş — engelleme/format değişikliği)
         # durumunu, gerçek hatadan ve normal hafta-sonu durgunluğundan ayırmak.
         self.source_stats = {}          # src -> {'raw': int, 'kept': int, 'status': str}
+        # Dedup elemesinin NEDENİ, kaynak bazında (bkz. _note_dedup):
+        # src -> {'seen': daha önce raporlanmış, 'filtered': benzerlik/hash/kod adı}
+        self.dedup_reasons = {}
         self.source_health_file = "data/kaynak_saglik.txt"
         # Proxy fallback sayaçları (bkz. _article_proxy_fallback) — workflow
         # zaman bütçesini korumak için çağrı sayısı ve toplam süre sınırlanır.
@@ -2567,8 +2570,12 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         bos      = sum(1 for r in rows if r[5].startswith('BOŞ'))
         hatali   = sum(1 for r in rows if r[5].startswith(('HATA', 'TIMEOUT')))
         # İki farklı kayıp sınıfı — farklı düzeltme gerektirirler, ayrı sayılır.
+        # DEDUP SIFIR yalnızca TAZE haber filtreye takıldığında kayıptır; tamamı
+        # "daha önce raporlanmış" (Seviye 1/URL) olan kaynak sağlıklıdır ve
+        # listelenmez (bkz. _note_dedup ve topla() içindeki alarm koşulu).
         cikarim_sifir = [r[0] for r in rows if r[2] > 0 and r[3] == 0]
-        dedup_sifir   = [r[0] for r in rows if r[3] > 0 and r[4] == 0]
+        dedup_sifir   = [r[0] for r in rows if r[3] > 0 and r[4] == 0
+                         and self.dedup_reasons.get(r[0], {}).get('filtered', 0) > 0]
 
         toplam_kalan = sum(r[2] for r in rows if r[2] > 0)
         toplam_metin = sum(r[3] for r in rows if r[3] > 0)
@@ -2598,7 +2605,12 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             if kept > 0 and text_ok == 0:
                 status = f'🚨 ÇIKARIM SIFIR ({status})'
             elif text_ok > 0 and pool == 0:
-                status = f'🚨 DEDUP SIFIR ({status})'
+                # Taze haber filtreye takıldıysa alarm; hepsi zaten
+                # raporlanmışsa bu normal seyirdir, satır bunu açıkça söyler.
+                if src in dedup_sifir:
+                    status = f'🚨 DEDUP SIFIR ({status})'
+                else:
+                    status = f'↩️  ZATEN RAPORLANMIŞ ({status})'
             lines.append(f"{src:26} {raw_s:>4} {kept_s:>6} {txt_s:>6} {pool_s:>6}  {status}")
 
         os.makedirs("data", exist_ok=True)
@@ -2615,6 +2627,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             print(f"   🚨 Metni çıkıp filtrelerde TAMAMEN elenen kaynak(lar): "
                   f"{', '.join(dedup_sifir)}")
 
+    def _note_dedup(self, src, kind):
+        """Dedup elemesini kaynak + neden sınıfına göre sayar.
+
+        kind='seen'     → Seviye 1 (URL): haber daha önce raporlanmış (sağlıklı).
+        kind='filtered' → Seviye 2-5: taze haber benzerlik/hash/kod adına takıldı.
+        """
+        self.dedup_reasons.setdefault(src, {'seen': 0, 'filtered': 0})[kind] += 1
+
     def _filter_duplicates(self, all_news):
         """
         Tekrar eden haberleri filtrele (3 seviye: link + hash + benzerlik)
@@ -2624,6 +2644,21 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         filtered = {}
         removed_count = 0
         detail_removed = {'link': 0, 'hash': 0, 'similarity': 0, 'keyword': 0, 'codename': 0}
+
+        # Eleme nedenini KAYNAK BAZINDA da tut. "DEDUP SIFIR" alarmı bu ayrım
+        # olmadan iki tamamen farklı durumu aynı sayıyordu:
+        #   (a) Seviye 1 (URL) — haber DAHA ÖNCE raporlanmış. 168 saatlik telafi
+        #       penceresi kullanan düşük frekanslı kaynakta aynı yazı 7 koşu
+        #       boyunca pencerede kalır; ilk gün raporlanır, kalan 6 gün URL
+        #       dedup'ı onu eler. Bu SAĞLIKLI davranıştır, alarm değildir.
+        #   (b) Seviye 2-5 (hash/benzerlik/anahtar kelime/kod adı) — HİÇ
+        #       raporlanmamış TAZE haber filtreye takıldı. Asıl izlenmesi
+        #       gereken kayıp sınıfı budur (2026-07-29 ANSSI vakası).
+        # Ölçüm (2026-08-05): alarmın kayıtlı olduğu 7 günün tamamında
+        # Mandiant/Recorded Future/BSI/NCSC UK gibi kaynaklar (a) yüzünden
+        # uyarı üretti — NCSC UK 7/7 gün alarm verdiği hâlde 05-08'de rapora
+        # haber soktu. Sürekli yanlış alarm, gerçek (b) vakasını gizler.
+        self.dedup_reasons = {}  # src -> {'seen': n, 'filtered': n}
 
         # Seviye 5 (kod adı) yalnızca AYNI RUN içinde karşılaştırılır — 7 günlük
         # geçmişe karşı DEĞİL. Böylece aynı gün 3 kaynaktan gelen "FortiBleed"
@@ -2643,6 +2678,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 if link_norm in used_links:
                     removed_count += 1
                     detail_removed['link'] += 1
+                    self._note_dedup(src, 'seen')
                     continue
 
                 # Seviye 2: Content hash kontrolü
@@ -2650,6 +2686,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 if content_hash in used_hashes:
                     removed_count += 1
                     detail_removed['hash'] += 1
+                    self._note_dedup(src, 'filtered')
                     continue
 
                 # Seviye 3: Başlık benzerliği
@@ -2667,6 +2704,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                         is_similar = True
                         removed_count += 1
                         detail_removed['similarity'] += 1
+                        self._note_dedup(src, 'filtered')
                         break
 
                 if is_similar:
@@ -2685,6 +2723,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                         is_similar = True
                         removed_count += 1
                         detail_removed['keyword'] += 1
+                        self._note_dedup(src, 'filtered')
                         break
 
                 if is_similar:
@@ -2699,6 +2738,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 if shared_codename:
                     removed_count += 1
                     detail_removed['codename'] += 1
+                    self._note_dedup(src, 'filtered')
                     continue
 
                 # Geçen haberi mevcut run içindeki karşılaştırma havuzuna ekle
@@ -3047,6 +3087,11 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # İki ayrı sessiz-kayıp sınıfı; ikisi de FARKLI düzeltme gerektirir:
         #   METİN=0            → çekim/çıkarım sorunu (seçici, engel, eşik)
         #   METİN>0 & HAVUZ=0  → dedup/pencere her şeyi eledi
+        #
+        # İkinci sınıf, elemenin NEDENİNE göre ikiye ayrılır (bkz. _note_dedup):
+        # tamamı Seviye 1 (URL = daha önce raporlanmış) ise bu BEKLENEN sonuçtur,
+        # alarm üretilmez — aksi hâlde 168s pencereli düşük frekanslı kaynaklar
+        # her gün yanlış alarm verir ve gerçek kayıp gürültüde kaybolur.
         for src, st in self.source_stats.items():
             kept, text_ok, pool = (st.get('kept', 0), st.get('text_ok', 0),
                                    st.get('pool', 0))
@@ -3055,9 +3100,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     f"ÇIKARIM SIFIR - {src}: {kept} haber çekildi ama hiçbirinin "
                     f"tam metni çıkmadı")
             elif text_ok > 0 and pool == 0:
+                reasons = self.dedup_reasons.get(src, {})
+                if reasons.get('filtered', 0) == 0 and reasons.get('seen', 0) > 0:
+                    continue  # hepsi zaten raporlanmıştı — sağlıklı, alarm yok
                 self.rss_errors.append(
                     f"DEDUP SIFIR - {src}: {text_ok} haberin tam metni çıktı ama "
-                    f"hiçbiri dedup/pencere filtrelerinden geçemedi")
+                    f"hiçbiri dedup/pencere filtrelerinden geçemedi "
+                    f"(benzerlik/hash/kod adı: {reasons.get('filtered', 0)}, "
+                    f"daha önce raporlanmış: {reasons.get('seen', 0)})")
 
         if self.rss_errors:
             self._save_rss_errors()

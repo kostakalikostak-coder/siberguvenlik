@@ -596,6 +596,27 @@ Her haber için şunları belirle:
      Konusu siber olsa bile OLAY yoksa `urun_icerik` ver, stratejik kategoriye
      ŞİŞİRME. (Ör. "FIFA 2026 Siber Riski Üzerine Sayılar" bir saldırı DEĞİL,
      analizdir → `urun_icerik`.)
+   - ⚖️ İSTİSNA — OLAY RAPORU ANALİZ DEĞİLDİR: Bir kurumun (devlet ajansı,
+     enstitü, güvenlik firması, CERT) yayımladığı rapor, GERÇEKTEN OLMUŞ bir
+     olayı anlatıyorsa "analiz/değerlendirme" DEĞİLDİR — olayın kendisine göre
+     sınıflandır. Ayırt edici soru: "bir ŞEY OLDU mu, yoksa metin yalnızca
+     durum/risk mi değerlendiriyor?" Somut olay sinyalleri: belirli bir tarih,
+     sayılabilir eylem, adı geçen hedef/mağdur, gerçekleşmiş erişim/deneme,
+     müdahale/kapatma. Bunlar varsa `urun_icerik` VERME.
+     ⚠️ Bir olayın TEST/DEĞERLENDİRME sırasında gerçekleşmiş olması onu
+     "analiz" YAPMAZ: eylem gerçek sistemlere, gerçek internete ya da ilgisiz
+     üçüncü taraflara dokunduysa bu SOMUT OLAYDIR. (Ör. bir kurumun
+     değerlendirmesi sırasında bir yapay zekâ ajanının gerçek bir açık kaynak
+     projesine arka kapı sokmaya çalışması, kanıt silmesi ve ikinci bir hesapla
+     kendini doğrulaması → `tedarik_zinciri`; "yapay zekâ riskleri üzerine
+     rapor" değildir.)
+     ⚠️ YAPAY ZEKÂ AJANI/MODELİ KAYNAKLI OLAY: Bir model veya otonom ajanın
+     KENDİSİNİN yol açtığı güvenlik olayı (izinsiz eylem, korumalı alandan
+     çıkma, üçüncü tarafa saldırı, tedarik zinciri denemesi) gündem dışı bir
+     "ürün haberi" DEĞİLDİR; olayın niteliğine göre sınıflandır. Bunu ürün
+     lansmanı/pazarlama içeriğinden ayır: fark, ORTADA GERÇEKLEŞMİŞ BİR EYLEM
+     olup olmadığıdır — "X şirketi ajan güvenliği aracı duyurdu" `urun_icerik`,
+     "X'in ajanı gerçek bir depoya saldırdı" somut olaydır.
    - ⚖️ İSTİSNA — RESMİ DEVLET STRATEJİSİ/DOKTRİNİ: Bir hükümet/devlet organının
      (bakanlık, ulusal siber ajans, parlamento, ordu/istihbarat) RESMEN duyurduğu
      ulusal çaplı siber savunma stratejisi, doktrin değişikliği, yeni kurum/birim
@@ -706,6 +727,15 @@ Her haber için şu denetimleri yap:
      olay (saldırı/kampanya/keşif) bildirmeyen değerlendirme/tahmin/genel durum
      yazıları (ör. "FIFA riski üzerine sayılar", "AI gözetiminin gerçekleri")
      `nation_state_apt`/`stratejik_kurum_saldirisi` OLAMAZ → `urun_icerik`e indir.
+   • ⚖️ İSTİSNA: GERÇEKLEŞMİŞ bir olayı anlatan haber, "rapor/değerlendirme"
+     sanılıp `urun_icerik`e mi indirilmiş? Metinde somut olay izleri (tarih,
+     adı geçen hedef, gerçekleşmiş erişim/deneme, müdahale) varsa bu analiz
+     DEĞİLDİR → olayın niteliğine göre doğru kategoriye çıkar. Bir olayın
+     test/değerlendirme ortamında olması, gerçek sistemlere veya ilgisiz
+     üçüncü taraflara dokunduysa onu analiz YAPMAZ. Aynı şekilde bir yapay
+     zekâ modeli/ajanının KENDİ yol açtığı güvenlik olayı (izinsiz eylem,
+     üçüncü tarafa saldırı, tedarik zinciri denemesi) `urun_icerik` DEĞİLDİR
+     — ürün duyurusundan farkı, ortada gerçekleşmiş bir EYLEM olmasıdır.
    • ⚖️ İSTİSNA: RESMİ bir devlet organının (bakanlık, ulusal siber ajans,
      ordu/istihbarat, parlamento) duyurduğu ulusal siber strateji/doktrin/yeni
      kurum/büyük yasa `urun_icerik`e YANLIŞLIKLA indirilmiş mi? Bu durumda
