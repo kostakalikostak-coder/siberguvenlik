@@ -75,6 +75,7 @@ from src.config import (
     get_top3_selection_prompt, get_top3_verification_prompt,
     get_legacy_json_prompt, get_quality_review_prompt, get_dedup_review_prompt,
     get_cross_day_dedup_prompt, get_register_audit_prompt,
+    get_kritik3_selection_audit_prompt,
     get_executive_summary_prompt, get_title_rescue_prompt,
     get_kritik3_length_fix_prompt,
     get_scoring_prompt, get_critique_prompt,
@@ -3841,6 +3842,125 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     if aid in kept_set or aid in restored_set]
         return new_kept, restored
 
+    def _kritik3_yedek_bul(self, aday_ids, sonuc, records, view_fn,
+                           recent_views, haric=()):
+        """Manşete uygun ilk yedek adayı bulur (yoksa None).
+
+        Ölçütler: manşete uygun kategori, 'mükerrer' işaretsiz, mevcut
+        manşetlerle aynı-olay DEĞİL, son günlerin olaylarıyla çapraz-gün aynı
+        DEĞİL. Manşet düzeltmelerinin ORTAK yedek seçicisidir — her denetim
+        kendi kopyasını taşırsa ölçütler zamanla ayrışır.
+        """
+        for cand in aday_ids:
+            if cand in sonuc or cand in haric:
+                continue
+            rec = records.get(cand, {})
+            if rec.get('kat') in KRITIK3_HARIC_KATEGORILER or rec.get('mukerrer'):
+                continue
+            cv = view_fn(cand)
+            if any(_dedup.same_event(cv, view_fn(o)) for o in sonuc):
+                continue
+            if recent_views and any(_dedup.same_event(cv, ev, cross_day=True)
+                                    for ev in recent_views):
+                continue
+            return cand
+        return None
+
+    def _dedup_kritik3_ici(self, top3_ids, yedek_ids, records,
+                           content_by_id, articles_by_id, recent_views):
+        """Manşetin KENDİ İÇİNDE mükerrer olmaması (deterministik).
+
+        Auditor'ın rapor-içi mükerrer denetimi `protected_ids=top3_ids` ile
+        çalışır: bir olay hem manşette hem gövdedeyse gövde kopyası kaldırılır —
+        bu DOĞRUDUR. Ama iki MANŞET birbirinin aynısıysa o denetim ikisini de
+        korur ve mükerrer manşette kalır. Bu geçiş o boşluğu kapatır; LLM
+        gerektirmez, same_event yeter.
+
+        Eleme değil DEĞİŞTİRME: ikinci kopya sıradaki uygun adayla yer değiştirir,
+        yedek yoksa yerinde kalır → KRİTİK 3 sayısı korunur.
+        """
+        if len(top3_ids) < 2:
+            return list(top3_ids)
+        view_fn = self._dedup_view_fn(content_by_id, articles_by_id)
+        sonuc = []
+        for aid in top3_ids:
+            av = view_fn(aid)
+            if not any(_dedup.same_event(av, view_fn(o)) for o in sonuc):
+                sonuc.append(aid)
+                continue
+            yedek = self._kritik3_yedek_bul(yedek_ids, sonuc, records, view_fn,
+                                            recent_views, haric=set(top3_ids))
+            if yedek is None:
+                print(f"   ⚠️  Manşet içi mükerrer: ID {aid} başka bir manşetle "
+                      f"aynı olay ama yedek aday yok — YERİNDE BIRAKILDI.")
+                sonuc.append(aid)
+            else:
+                print(f"   🔁 Manşet içi mükerrer: ID {aid} → ID {yedek} ile "
+                      f"DEĞİŞTİRİLDİ.")
+                sonuc.append(yedek)
+        return sonuc
+
+    def _audit_kritik3_selection(self, top3_ids, yedek_ids, records,
+                                 content_by_id, articles_by_id, recent_views,
+                                 govde_ids=()):
+        """AUDITOR — manşet SEÇİM denetimi ("bu haber gerçekten manşetlik mi?").
+
+        Boru hattındaki denetimlerin tamamı manşetin İÇERİĞİNİ sorguluyordu
+        (kesik paragraf, resmi dil, mükerrer); hiçbiri SEÇİMİ sorgulamıyordu.
+        Yanlış bir haber manşete çıktığında onu geri çevirecek katman yoktu.
+
+        Eleme değil DEĞİŞTİRME (diğer manşet denetimleriyle aynı sözleşme):
+        işaretlenen haber sıradaki uygun adayla yer değiştirir, yedek yoksa
+        yerinde kalır → KRİTİK 3 sayısı korunur. Prompt muhafazakârdır; LLM
+        boş/bozuk dönerse liste değişmez.
+        """
+        if not top3_ids:
+            return list(top3_ids)
+
+        def _satir(aid, etiket=''):
+            c = content_by_id.get(aid, {})
+            a = articles_by_id.get(aid, {})
+            tr_title = c.get('tr_title') or a.get('title', '')
+            snippet = ' '.join((c.get('paragraph', '') or '').split()[:70])
+            kat = records.get(aid, {}).get('kat', '')
+            return (f"=== {etiket}ID: {aid} === (kategori: {kat})\n"
+                    f"Başlık: {tr_title}\nÖzet: {snippet}\n")
+
+        manset = '\n'.join(_satir(aid) for aid in top3_ids)
+        govde = '\n'.join(_satir(aid) for aid in list(govde_ids)[:12])
+        data = self._gemini_call_json(
+            get_kritik3_selection_audit_prompt(manset, govde),
+            max_output_tokens=512, label='Auditor-ManşetSeçim')
+        if not isinstance(data, dict):
+            return list(top3_ids)
+
+        hatali = {}
+        for item in (data.get('hatali', []) or []):
+            try:
+                hid = int(item.get('id'))
+            except (TypeError, ValueError, AttributeError):
+                continue
+            if hid in top3_ids:
+                hatali[hid] = str(item.get('neden', '')).strip()[:80]
+        if not hatali:
+            print("   ✅ Manşet seçimi: denetim tamam, hatalı seçim yok.")
+            return list(top3_ids)
+
+        view_fn = self._dedup_view_fn(content_by_id, articles_by_id)
+        sonuc = list(top3_ids)
+        for aid, neden in hatali.items():
+            yedek = self._kritik3_yedek_bul(
+                yedek_ids, [o for o in sonuc if o != aid], records, view_fn,
+                recent_views, haric=set(hatali))
+            if yedek is None:
+                print(f"   ⚠️  Manşet seçimi: ID {aid} hatalı işaretlendi "
+                      f"({neden}) ama yedek aday yok — YERİNDE BIRAKILDI.")
+                continue
+            sonuc[sonuc.index(aid)] = yedek
+            print(f"   🔁 Manşet seçimi: ID {aid} manşetlik değil ({neden}) → "
+                  f"ID {yedek} ile DEĞİŞTİRİLDİ (eski haber gövdede kalır).")
+        return sonuc
+
     def _dedup_kritik3_cross_day_llm(self, top3_ids, yedek_ids, records,
                                      content_by_id, articles_by_id, recent_views):
         """Manşet çapraz-gün SEMANTİK denetimi — ELEME DEĞİL, DEĞİŞTİRME.
@@ -3889,22 +4009,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         view_fn = self._dedup_view_fn(content_by_id, articles_by_id)
         sonuc = list(top3_ids)
         for aid in list(flagged):
-            # Yedek aday: manşete uygun kategori, mükerrer değil, mevcut manşet
-            # ve son 7 günün olaylarıyla aynı-olay DEĞİL.
-            yedek = None
-            for cand in yedek_ids:
-                if cand in sonuc or cand in flagged:
-                    continue
-                rec = records.get(cand, {})
-                if rec.get('kat') in KRITIK3_HARIC_KATEGORILER or rec.get('mukerrer'):
-                    continue
-                cv = view_fn(cand)
-                if any(_dedup.same_event(cv, view_fn(o)) for o in sonuc if o != aid):
-                    continue
-                if any(_dedup.same_event(cv, ev, cross_day=True) for ev in recent_views):
-                    continue
-                yedek = cand
-                break
+            yedek = self._kritik3_yedek_bul(
+                yedek_ids, [o for o in sonuc if o != aid], records, view_fn,
+                recent_views, haric=flagged)
             if yedek is None:
                 print(f"   ⚠️  Manşet çapraz-gün: ID {aid} tekrar olarak işaretlendi "
                       f"ama uygun yedek aday yok — YERİNDE BIRAKILDI (KRİTİK 3 eksilmez).")
@@ -5324,16 +5431,6 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             ranked_all, score_records, content_by_id, articles_by_id,
         )
 
-        # Manşetin çapraz-gün SEMANTİK denetimi. Deterministik katmanlar
-        # (same_event + skorlayıcı 'mükerrer') buraya kadar çalıştı; bu son
-        # kapı "aynı olay, farklı sözcükler" durumunu yakalar. Eleme değil
-        # değiştirme yaptığı için KRİTİK 3 sayısı garanti korunur.
-        _k3_recent = self._load_recent_kritik3_views() + self._load_recent_report_views()
-        top3_ids = self._dedup_kritik3_cross_day_llm(
-            top3_ids, ranked_all, score_records,
-            content_by_id, articles_by_id, _k3_recent,
-        )
-
         self._enforce_kritik3_paragraph_length(top3_ids, content_by_id, articles_by_id)
 
         print(f"   Seçilen Top 3 ID: {top3_ids}")
@@ -5454,7 +5551,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # sızabiliyordu (ör. "jailbreak/spyware" içerikli haberler). Render
         # edilecek TÜM haberleri LLM'den bağımsız tarayıp İngilizce kalanları
         # önce yeniden üret, hâlâ İngilizce ise yansız çeviriyle Türkçeye çevir.
-        rendered_now = list(top10_ids) + list(remaining_ids)
+        # KRİTİK 3 DAHİL: manşet bu süpürmenin dışındaydı, yani içerik filtresine
+        # takılıp fallback'e düşen ham İNGİLİZCE bir manşet paragrafı rapora
+        # olduğu gibi girebiliyordu. Denetim raporun TAMAMINI kapsamalı.
+        rendered_now = list(top3_ids) + list(top10_ids) + list(remaining_ids)
         # İçeriği hiç gelmemiş (boş/None) haberler de _safe_content üzerinden ham
         # İngilizce render edilir → onları da yeniden üretim kapsamına al.
         english_leftovers = [aid for aid in rendered_now
@@ -5482,6 +5582,13 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                         print(f"   🌐 Çeviriyle kurtarıldı: ID={rid}")
                     else:
                         print(f"   ⚠️  ID={rid} Türkçeleştirilemedi (içerik filtresi olası).")
+            # Yeniden üretim manşet paragrafını kısaltmış olabilir (Pass 4'teki
+            # uzunluk zorlaması bu süpürmeden ÖNCE çalışmıştı) — yalnızca
+            # süpürmeye giren manşetler için yeniden uygula.
+            k3_yeniden = [aid for aid in english_leftovers if aid in top3_ids]
+            if k3_yeniden:
+                self._enforce_kritik3_paragraph_length(
+                    k3_yeniden, content_by_id, articles_by_id)
 
         # ── PASS 5.5 — AUDITOR (rapor bittikten sonra son bütünlük denetimi) ──
         # ÜÇ görevi var: (1) MÜKERRER — deterministik same_event bag-of-words'tür;
@@ -5524,6 +5631,46 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         self._audit_register(
             list(top3_ids) + list(top10_ids) + list(remaining_ids),
             content_by_id)
+
+        # (d) MANŞET BÜTÜNLÜK DENETİMİ — raporun son hâli üzerinde.
+        # Buraya kadarki eleme pasları manşeti bilinçli olarak atlıyordu
+        # ("KRİTİK 3 asla 3'ten az olamaz"). Bu blok o gerekçeyi ortadan
+        # kaldırır: hiçbiri SİLMEZ, hepsi sıradaki uygun adayla DEĞİŞTİRİR,
+        # yedek yoksa haber yerinde kalır. Sıra bilinçli — önce manşetin kendi
+        # içindeki mükerrer (deterministik, ucuz), sonra çapraz-gün, en son
+        # seçim denetimi (en pahalı ve en öznel olan).
+        _k3_before = list(top3_ids)
+        _k3_yedek = list(top10_ids) + list(remaining_ids)
+        _k3_recent = (self._load_recent_kritik3_views()
+                      + self._load_recent_report_views())
+        print("   🔎 Auditor: (d) manşet bütünlük denetimi...")
+        top3_ids = self._dedup_kritik3_ici(
+            top3_ids, _k3_yedek, score_records, content_by_id, articles_by_id,
+            _k3_recent)
+        top3_ids = self._dedup_kritik3_cross_day_llm(
+            top3_ids, _k3_yedek, score_records, content_by_id, articles_by_id,
+            _k3_recent)
+        top3_ids = self._audit_kritik3_selection(
+            top3_ids, _k3_yedek, score_records, content_by_id, articles_by_id,
+            _k3_recent, govde_ids=top10_ids)
+        if top3_ids != _k3_before:
+            # Manşetten düşen haber GÖVDEDE kalır (silinmez); manşete çıkan
+            # haber gövdeden alınır ki rapor onu iki kez göstermesin.
+            for _yeni in top3_ids:
+                if _yeni not in _k3_before:
+                    top10_ids     = [i for i in top10_ids     if i != _yeni]
+                    remaining_ids = [i for i in remaining_ids if i != _yeni]
+            for _eski in _k3_before:
+                if _eski not in top3_ids and _eski not in top10_ids \
+                        and _eski not in remaining_ids:
+                    top10_ids.append(_eski)
+            # Değişen manşetlerin paragraf uzunluğu manşet ölçütüne çekilir.
+            self._enforce_kritik3_paragraph_length(
+                [i for i in top3_ids if i not in _k3_before],
+                content_by_id, articles_by_id)
+            print(f"   📌 Manşet güncellendi: {_k3_before} → {top3_ids}")
+        else:
+            print("   ✅ Manşet bütünlük denetimi: değişiklik gerekmedi.")
 
         # ── RAPOR GENELİ AYNI-OLAY DEDUP (gövde ↔ KRİTİK 3 + gövde içi) ──
         # KRİTİK 3'e alınan bir olay, gövdede (Önemli Gelişmeler / paragraflar /

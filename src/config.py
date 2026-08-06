@@ -1743,3 +1743,45 @@ Her haber için:
 HABERLER:
 {articles_brief}"""
 
+
+
+def get_kritik3_selection_audit_prompt(manset_items, govde_items):
+    """MANŞET SEÇİM DENETİMİ — "bu haber gerçekten günün en kritik 3'ünden mi?"
+
+    Boru hattındaki tüm denetimler manşetin İÇERİĞİNİ (kesik paragraf, resmi
+    dil, mükerrer) sorguluyordu; hiçbiri SEÇİMİ sorgulamıyordu. Yani yanlış bir
+    haber manşete çıktığında onu geri çevirecek katman yoktu.
+
+    Denetim MUHAFAZAKÂRDIR: yalnızca AÇIK hatalar işaretlenir. Sıralama tercihi
+    ("bence 2. haber daha önemliydi") hata DEĞİLDİR — deterministik puanlama
+    zaten karar vermiştir ve bu denetim onu ikinci kez tartışmaz.
+    """
+    return f"""Sen kıdemli bir siber güvenlik haber editörüsün. Aşağıda bugünkü raporun
+MANŞET (KRİTİK 3) haberleri ve karşılaştırma için GÖVDE haberleri var.
+
+Görevin TEK: manşete AÇIKÇA YANLIŞ seçilmiş haber var mı?
+
+Bir manşeti YALNIZCA şu durumlarda işaretle:
+1. SİBER GÜVENLİK HABERİ DEĞİL — konu siber bir olay/tehdit/zafiyet/politika değil.
+2. OLAY YOK — ürün duyurusu, pazarlama, webinar, röportaj, genel tavsiye ya da
+   somut bir olay bildirmeyen analiz/tahmin yazısı.
+3. RUTİN/ÖNEMSİZ — tekil bir CVE yaması, küçük ölçekli sıradan bir olay ya da
+   günün gövdesindeki haberlerin belirgin biçimde altında kalan bir gelişme.
+   (Ölçüt: gövdedeki haberlerin ÇOĞU bundan daha önemliyse manşet yanlıştır.)
+4. İÇERİK BOZUK — paragraf konuyla ilgisiz, anlamsız ya da başlıkla çelişiyor.
+
+ASLA işaretleme:
+- Yalnızca "başka bir haber daha önemliydi" diye düşündüğün için.
+- Manşetler arası sıralama farkı için.
+- Haber gerçek ve önemli bir siber olayı anlatıyorsa.
+Şüphedeysen İŞARETLEME. Yanlış işaretlemenin maliyeti, kaçırmanınkinden yüksektir.
+
+MANŞET HABERLERİ:
+{manset_items}
+
+GÖVDE HABERLERİ (yalnızca önem karşılaştırması için):
+{govde_items}
+
+YALNIZCA şu JSON'u döndür (gerekçe kısa ve somut olsun):
+{{"hatali": [{{"id": <manşet id>, "neden": "<en fazla 15 kelime>"}}]}}
+Hata yoksa: {{"hatali": []}}"""
