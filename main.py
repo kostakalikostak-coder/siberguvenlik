@@ -4677,6 +4677,25 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             print("   🧐 Critique: denetim tamam, düzeltme gerekmedi.")
         return changed
 
+    # Mükerrer elemesinden sonra gövdeyi ayakta tutmak için gereken asgari taze
+    # haber. Bunun ALTINA düşülüyorsa eleme gövdede gevşetilir (KRİTİK 3 hariç).
+    REPORT_MIN_AFTER_MUKERRER = 12
+
+    def _ayni_gun_yeniden_uretim(self):
+        """Bugünün raporu diskte zaten var mı? (aynı-gün yeniden üretim sinyali)
+
+        Varsa, bu koşu günün İKİNCİ (veya sonraki) üretimidir ve skorlayıcıya
+        verilen 'son olaylar' referansı bugünün KENDİ haberlerini içerir; her
+        şey haklı olarak 'mükerrer' görünür. Bu, ölçülebilir ve kesin bir
+        sinyaldir — mükerrer ORANINDAN tahmin etmeye çalışmak 2026-08-06'da
+        yanlış tetikledi (bkz. _rank_by_score güvenlik tabanı).
+        """
+        try:
+            return os.path.exists(
+                f"docs/raporlar/{_now_tr().strftime('%Y-%m-%d')}.html")
+        except Exception:
+            return False   # güvenli taraf: artefakt varsayma, korumayı sürdür
+
     def _rank_by_score(self, articles, records):
         """DETERMİNİSTİK sıralama — düzeltilmiş skorlara göre kod tarafında sırala.
         Dönüş: (top10_ids, remaining_ids, filtered_ids, category_by_id).
@@ -4689,11 +4708,27 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         # ── GÜVENLİK TABANI: mükerrer eleme raporu ASLA boşaltamaz ───────────
         # Siber kapısından geçen (mükerrer hariç değerlendirilen) haberleri say.
-        # Bunların büyük kısmı 'mükerrer' diye elenirse bu ANORMALDİR — neredeyse
-        # her zaman aynı-gün yeniden üretim artefaktıdır (bugünün haberleri kendi
-        # arşiv kopyasıyla kıyaslanır). Böyle bir durumda mükerrer bayrağını TÜMDEN
-        # yok say; deterministik sıralama mükerrersiz yapılır. 07-01'de rapor bu
-        # yüzden boşalmıştı; bu taban o zinciri kesin olarak kırar.
+        # 07-01'de rapor mükerrer elemesi yüzünden boşalmıştı; bu taban o zinciri
+        # kırar. Ama tetikleyici ÖLÇÜLDÜĞÜNDEN daha geniş davranıyordu.
+        #
+        # Eski tetikleyici "mükerrer oranı > %50 VEYA kalan < 12" idi ve bunu
+        # "aynı-gün yeniden üretim artefaktı" varsayıyordu. 2026-08-06'da oran
+        # 28/55 = %50.9 çıktı ve taban ateşledi — oysa o koşu günün İLK
+        # koşusuydu, artefakt yoktu: Snowflake haberi tek başına 5 kopya geldi,
+        # su altyapısı haberi sürüyordu, yani oran GERÇEKTİ. Taban meşru bir
+        # yüksek oranı artefakt sanıp mükerrer korumasını TÜM RAPOR için kapattı.
+        #
+        # Artefakt DOLAYLI olarak tahmin edilmez, DOĞRUDAN ölçülür: aynı-gün
+        # yeniden üretimin tek nedeni bugünün raporunun zaten var olmasıdır
+        # (o zaman bugünün haberleri kendi arşiv kopyalarıyla kıyaslanır).
+        # Dosyanın varlığı bunun kesin sinyalidir — main() Kontrol 1 de aynı
+        # sinyali kullanır.
+        #
+        # Oran kuralı tümden atılmaz, GERÇEK işlevine indirgenir: rapor fiilen
+        # boşalacaksa (kalan < REPORT_MIN_AFTER_MUKERRER) taban yine devreye
+        # girer. Fark şu: bu durumda bile KRİTİK 3 mükerrer korumasını KORUR
+        # (bkz. _select_kritik3_*); gevşeme yalnızca gövdeye uygulanır. Mükerrer
+        # bir haber gövdede tolere edilebilir, manşette edilemez.
         def _cyber_ok(rec):
             return (rec.get('siber') and rec.get('toplam', 0) > 0
                     and rec.get('kat') not in ('urun_icerik', 'siber_disi'))
@@ -4708,11 +4743,23 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # türlü öğrenemez.
         self._taze_havuz = max(0, len(cyber_pool) - muk)
         apply_mukerrer = True
-        if cyber_pool and muk and (muk / len(cyber_pool) > 0.5 or len(cyber_pool) - muk < 12):
-            apply_mukerrer = False
-            print(f"   🛟 Güvenlik tabanı: {muk}/{len(cyber_pool)} siber haber 'mükerrer' "
-                  f"işaretli (kalacak {len(cyber_pool) - muk}) — anormal, mükerrer elemesi "
-                  f"YOK SAYILIYOR (aynı-gün yeniden üretim artefaktı; rapor boşalmasın).")
+        # KRİTİK 3 mükerrer koruması taban ateşlese bile korunur; yalnızca
+        # gerçek aynı-gün yeniden üretimde (artefakt) birlikte gevşer.
+        self._mukerrer_kritik3 = True
+        kalan = len(cyber_pool) - muk
+        if cyber_pool and muk:
+            if self._ayni_gun_yeniden_uretim():
+                apply_mukerrer = False
+                self._mukerrer_kritik3 = False
+                print(f"   🛟 Güvenlik tabanı: bugünün raporu zaten var — aynı-gün "
+                      f"yeniden üretim. {muk}/{len(cyber_pool)} 'mükerrer' işareti "
+                      f"kendi arşiv kopyasından geliyor, YOK SAYILIYOR.")
+            elif kalan < self.REPORT_MIN_AFTER_MUKERRER:
+                apply_mukerrer = False
+                print(f"   🛟 Güvenlik tabanı: {muk}/{len(cyber_pool)} siber haber "
+                      f"'mükerrer' (kalacak {kalan} < {self.REPORT_MIN_AFTER_MUKERRER}) "
+                      f"— GÖVDEDE mükerrer elemesi gevşetildi (rapor boşalmasın). "
+                      f"KRİTİK 3 koruması SÜRÜYOR.")
 
         ranked, filtered_ids = [], []
         for a in articles:
@@ -4852,6 +4899,23 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # ranked_ids zaten puan sırasında; en güçlü adaylar başta.
         eligible = [aid for aid in ranked_ids
                     if records.get(aid, {}).get('kat') not in KRITIK3_HARIC_KATEGORILER]
+
+        # Skorlayıcının 'mükerrer' işareti KRİTİK 3'te ayrı bir kapıdır: gövde
+        # tabanı gevşetilse bile manşet gevşemez (bkz. _rank_by_score). 08-06'da
+        # taban ateşleyince bu işaret TÜM raporda yok sayılmış, dünkü manşet
+        # (keyv/cacheable npm solucanı) yeniden manşet olmuştu. Kademe 1'de
+        # uygulanır; aday kalmazsa alt kademeler zaten ham havuza döner, yani
+        # "KRİTİK 3 asla 3'ten az" garantisi bozulmaz.
+        if getattr(self, '_mukerrer_kritik3', True):
+            muk_disi = [aid for aid in eligible
+                        if not records.get(aid, {}).get('mukerrer')]
+            if len(muk_disi) >= 3:
+                atilan = len(eligible) - len(muk_disi)
+                if atilan:
+                    print(f"   🔁 KRİTİK 3: 'mükerrer' işaretli {atilan} aday "
+                          f"manşet havuzundan düşürüldü.")
+                eligible = muk_disi
+
         eligible = self._apply_novelty_tiebreak(eligible, records, view_fn, recent_k3)
 
         # Süregelen hikâyeye bağlanan adaylar manşet havuzundan düşer (gövdede
