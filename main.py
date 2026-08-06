@@ -5663,7 +5663,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             for _eski in _k3_before:
                 if _eski not in top3_ids and _eski not in top10_ids \
                         and _eski not in remaining_ids:
-                    top10_ids.append(_eski)
+                    # BAŞA eklenir: manşetten düşen haber puanca gövdenin en
+                    # güçlüsüdür; sona eklemek onu "Önemli Gelişmeler"in dibine
+                    # atıp sıralamayı puana aykırı hale getirirdi.
+                    top10_ids.insert(0, _eski)
             # Değişen manşetlerin paragraf uzunluğu manşet ölçütüne çekilir.
             self._enforce_kritik3_paragraph_length(
                 [i for i in top3_ids if i not in _k3_before],

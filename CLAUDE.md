@@ -1,5 +1,10 @@
 # Claude Code — Proje Kuralları
 
+## Cevap Biçimi — KESİN KURAL
+- KISA cevap ver. Kısa ve açıklayıcı; uzun cevaplar okunmuyor.
+- Sonucu ve gerekçeyi söyle, süreci anlatma. Gereksiz tablo/başlık/tekrar yok.
+- Ayrıntıyı ancak istenirse ver.
+
 ## URL / Dış Kaynak — KESİN KURAL (İSTİSNASIZ)
 - Herhangi bir URL, RSS feed adresi veya dış kaynak eklemeden önce WebFetch ile DOĞRULA.
 - Doğrulamadan uydurma, tahmin etme, "muhtemelen şudur" deme — ASLA.
