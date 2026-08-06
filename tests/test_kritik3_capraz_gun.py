@@ -107,3 +107,46 @@ def test_llm_basarisiz_olursa_liste_korunur():
     s._gemini_call_json = lambda *a, **k: None
     assert s._dedup_kritik3_cross_day_llm(
         [1, 2, 3], [1, 2, 3, 4, 5], KAYITLAR, ICERIK, {}, GECMIS) == [1, 2, 3]
+
+
+# ── Bağlam daraltma (_ilgili_gecmis) ───────────────────────────────────────
+# 7 günlük depo ~160 kayıt tutar; hepsini LLM'e vermek hem pahalıdır (~20k
+# token) hem de isabeti düşürür. Daraltma bir KARAR değil, bağlam seçimidir.
+
+def test_ilgili_gecmis_konuca_yakini_secer():
+    s = _sistem([])
+    gecmis = [
+        {'tr_title': 'npm keyv paketlerinde solucan saldırısı',
+         'paragraph': 'keyv ve cacheable npm paketleri ele gecirilmistir.',
+         'title': '', 'full_text': ''},
+        {'tr_title': 'Bir limanda fidye yazılımı saldırısı',
+         'paragraph': 'Liman operasyonlari fidye yazilimi nedeniyle durmustur.',
+         'title': '', 'full_text': ''},
+    ]
+    sec = s._ilgili_gecmis([3], ICERIK, {}, gecmis, k=1)
+    assert len(sec) == 1
+    assert 'keyv' in sec[0]['tr_title']
+
+
+def test_ilgili_gecmis_esik_koymaz():
+    """Eşik konsaydı sinyalsiz vakalar (keyv, su altyapısı) elenirdi —
+    daraltma SIRALAMA yapar, eleme değil."""
+    s = _sistem([])
+    gecmis = [{'tr_title': 'Tamamen alakasız bir haber',
+               'paragraph': 'Hicbir ortak kelime yoktur burada.',
+               'title': '', 'full_text': ''}]
+    assert len(s._ilgili_gecmis([3], ICERIK, {}, gecmis, k=6)) == 1
+
+
+def test_ilgili_gecmis_ayni_haberi_iki_kez_tasimaz():
+    """kritik3_gecmis ve rapor_gecmis aynı haberi ikisi birden tutar."""
+    s = _sistem([])
+    kayit = {'tr_title': 'npm keyv paketlerinde solucan saldırısı',
+             'paragraph': 'keyv paketleri ele gecirilmistir.',
+             'title': '', 'full_text': ''}
+    sec = s._ilgili_gecmis([3], ICERIK, {}, [kayit, dict(kayit)], k=6)
+    assert len(sec) == 1
+
+
+def test_ilgili_gecmis_bos_girdide_bos_doner():
+    assert _sistem([])._ilgili_gecmis([3], ICERIK, {}, []) == []

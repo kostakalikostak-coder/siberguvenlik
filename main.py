@@ -3961,6 +3961,65 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                   f"ID {yedek} ile DEĞİŞTİRİLDİ (eski haber gövdede kalır).")
         return sonuc
 
+    # Manşet başına LLM'e taşınacak en ilgili geçmiş kayıt sayısı.
+    ILGILI_GECMIS_K = 6
+
+    def _ilgili_gecmis(self, aday_ids, content_by_id, articles_by_id,
+                       recent_views, k=None):
+        """Geçmiş kayıtlardan adaylarla KONUCA ilgili olanları seçer.
+
+        7 günlük depo ~160 kayıt tutar. Hepsini LLM'e vermek hem pahalıdır
+        (~20k token) hem de isabeti düşürür: model 3 manşeti 160 özet arasında
+        aramak zorunda kalır. Burada yalnızca BAĞLAM DARALTILIR — hangi çiftin
+        aynı olay olduğuna dair KARAR verilmez, o LLM'e bırakılır.
+
+        Eşik YOKTUR, sıralama vardır: her aday için en yüksek konu örtüşmelü k
+        kayıt alınır. Böylece keyv/su-altyapısı gibi deterministik sinyali
+        OLMAYAN vakalarda bile doğru geçmiş kayıt bağlama girer — eşik konsaydı
+        tam da bu vakalar elenirdi.
+        """
+        k = k or self.ILGILI_GECMIS_K
+        if not recent_views:
+            return []
+
+        def _blob_view(v):
+            return ' '.join(str(v.get(x, '') or '')
+                            for x in ('tr_title', 'paragraph', 'title', 'full_text'))
+
+        # kritik3_gecmis ve rapor_gecmis aynı haberi ikisi birden tutar; başlığa
+        # göre tekilleştirilmezse aynı kayıt LLM'e iki kez taşınır.
+        _benzersiz, _gorulen_baslik = [], set()
+        for v in recent_views:
+            anahtar = (v.get('tr_title') or v.get('title') or '').strip().lower()
+            if anahtar and anahtar in _gorulen_baslik:
+                continue
+            _gorulen_baslik.add(anahtar)
+            _benzersiz.append(v)
+        recent_views = _benzersiz
+
+        gecmis_kw = [(v, _dedup.event_keywords(_blob_view(v))) for v in recent_views]
+        secilen, gorulen = [], set()
+        for aid in aday_ids:
+            c = content_by_id.get(aid, {})
+            a = articles_by_id.get(aid, {})
+            blob = ' '.join([c.get('tr_title', '') or a.get('title', ''),
+                             c.get('paragraph', '') or '',
+                             (a.get('full_text', '') or '')[:1500]])
+            akw = _dedup.event_keywords(blob)
+            if not akw:
+                continue
+            puanli = sorted(((_dedup._jaccard(akw, vkw), i)
+                             for i, (_, vkw) in enumerate(gecmis_kw)),
+                            reverse=True)
+            for _, i in puanli[:k]:
+                if i not in gorulen:
+                    gorulen.add(i)
+                    secilen.append(gecmis_kw[i][0])
+        if len(secilen) < len(recent_views):
+            print(f"   🔎 Bağlam daraltıldı: {len(recent_views)} geçmiş kayıttan "
+                  f"konuca en ilgili {len(secilen)} tanesi denetime taşındı.")
+        return secilen
+
     def _dedup_kritik3_cross_day_llm(self, top3_ids, yedek_ids, records,
                                      content_by_id, articles_by_id, recent_views):
         """Manşet çapraz-gün SEMANTİK denetimi — ELEME DEĞİL, DEĞİŞTİRME.
@@ -3984,6 +4043,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         """
         if not recent_views or not top3_ids:
             return list(top3_ids)
+
+        # Geçmişi LLM'e OLDUĞU GİBİ vermek iki yönden zarar verir: 7 günlük depo
+        # ~160 haber tutar (~20k token) ve model 3 manşeti 160 özet arasında
+        # aramak zorunda kalır — hem pahalı hem de dikkat dağıldığı için isabet
+        # düşer. Konuca ilgisiz kayıtları önceden eleriz: bu bir KARAR değil,
+        # yalnızca bağlam daraltmadır; kararı LLM verir.
+        recent_views = self._ilgili_gecmis(top3_ids, content_by_id,
+                                           articles_by_id, recent_views)
 
         today_lines = []
         for aid in top3_ids:
