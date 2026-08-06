@@ -16,14 +16,27 @@ en ayırt edici kimliği hiçbir yüksek-özgüllük sinyaline girmiyordu (Minne
 Bu yüzden asıl değer B BÖLÜMÜNDEDİR: konu örtüşmesi yüksek AMA hiçbir sinyal
 üretmeyen çiftler. Bir sonraki kör nokta oradan çıkar.
 
-NE YAPAR (üç bölüm):
+NE YAPAR (dört bölüm):
   A) YAKALANAN  — geçmişte rapora girmiş ama BUGÜNKÜ kurallarla aynı-olay çıkan
                   çiftler. O gün kaçmış demektir; kural sonradan güçlenmişse
                   beklenen sonuçtur. Sayı ARTIYORSA yeni bir sızıntı var.
   B) ŞÜPHELİ    — same_event False, ama konu örtüşmesi eşiğin üstünde ve
                   codename/actor/entity/package kümelerinin HEPSİ boş.
                   Kör nokta adayı; gözle denetlenmeli.
+  B2) SÜREGELEN HİKÂYE — B ölçütünü karşılıyor AMA iki haber de bilinen bir
+                  hikâye zincirine bağlı. Bunlar kör nokta DEĞİLDİR:
+                  _hikaye_zinciri_filtrele onları manşetten zaten indirir ve
+                  gövdede devam etmeleri doğru editoryal davranıştır. Ayrı
+                  bölümde tutulur, yoksa B'deki gerçek adayları gizlerler.
   C) ÖZET       — gün başına manşet tekrar sayısı.
+
+ÖLÇÜM (2026-08-07, --rapor): 19 şüpheli çiftin tamamı gözle denetlendi ve
+HEPSİ farklı olaylar çıktı — ayrı hastane veri ihlalleri (Madera / Brown Health
+/ CareCloud / Amgen), ayrı zafiyet duyuruları (cPanel / Gitea / TeamCity /
+Paperclip). Ortak olan OLAY değil TEMAydı. Yani bu çiftler için yeni bir
+deterministik kural EKLENMEMELİDİR: 19 yanlış pozitif karşılığında 0 gerçek
+yakalama getirirdi. Tema örtüşmesini olay aynılığından ayırmak semantik bir iş;
+oradaki doğru katman LLM denetimidir (_dedup_kritik3_cross_day_llm).
 
 Ağ, LLM veya API anahtarı GEREKTİRMEZ; yalnızca repo'daki JSON geçmişini okur.
 Hiçbir dosyaya YAZMAZ. Salt teşhis.
@@ -79,6 +92,23 @@ def _sinyaller(a, b):
     }
 
 
+def _zincirde(view, zincirler):
+    """Haber, bilinen bir SÜREGELEN HİKÂYE zincirine bağlanıyor mu?"""
+    return bool(zincirler) and bool(dedup.matching_story_chain(view, zincirler))
+
+
+def _zincirleri_kur():
+    """kritik3 geçmişinden süregelen hikâye zincirlerini çıkarır."""
+    if not os.path.exists(KRITIK3_FILE):
+        return []
+    with open(KRITIK3_FILE, encoding='utf-8') as f:
+        kayitlar = json.load(f)
+    by_day = [(k.get('date', ''), k.get('views') or [])
+              for k in sorted(kayitlar, key=lambda x: x.get('date', ''))
+              if isinstance(k, dict)]
+    return dedup.build_story_chains(by_day)
+
+
 def _yukle(path):
     if not os.path.exists(path):
         print(f"⚠️  {path} yok — atlanıyor.")
@@ -113,6 +143,8 @@ def main():
           f"({gunler[0]} … {gunler[-1]})")
     print(f"🔎 Kapsam: {kapsam}\n")
 
+    zincirler = _zincirleri_kur()
+    zincir_ciftleri = []
     yakalanan, supheli = [], []
     for (d1, a), (d2, b) in itertools.combinations(items, 2):
         if d1 == d2:
@@ -127,6 +159,12 @@ def main():
         sig = _sinyaller(a, b)
         if any(sig.values()):
             continue          # sinyal var ama eşik tutmadı → kör nokta değil
+        if _zincirde(a, zincirler) and _zincirde(b, zincirler):
+            # Süregelen hikâye: _hikaye_zinciri_filtrele bunu ZATEN manşetten
+            # indiriyor, gövdede devam etmesi de doğru editoryal davranıştır.
+            # Kör nokta DEĞİL — B'de listelenirse gerçek adayları gizler.
+            zincir_ciftleri.append((d1, a, d2, b, t))
+            continue
         supheli.append((d1, a, d2, b, t))
 
     print("═" * 78)
@@ -152,6 +190,19 @@ def main():
         print(f"  {d2}  {_baslik(b)}\n")
 
     print("═" * 78)
+    print(f"B2) SÜREGELEN HİKÂYE (kör nokta DEĞİL): {len(zincir_ciftleri)}")
+    print("    (her iki haber de bilinen bir hikâye zincirine bağlı —")
+    print("     _hikaye_zinciri_filtrele bunları manşetten zaten indiriyor,")
+    print("     gövdede devam etmeleri doğru editoryal davranıştır.)")
+    print("═" * 78)
+    if not zincir_ciftleri:
+        print("  Yok.\n")
+    for d1, a, d2, b, t in sorted(zincir_ciftleri, key=lambda x: -x[4]):
+        print(f"  konu={t:.2f}  {d1} / {d2}")
+        print(f"    {_baslik(a)}")
+        print(f"    {_baslik(b)}\n")
+
+    print("═" * 78)
     print("C) ÖZET")
     print("═" * 78)
     gun_sayaci = {}
@@ -163,7 +214,8 @@ def main():
             print(f"  {d}: {gun_sayaci[d]} tekrar bağlantısı")
     else:
         print("  Tekrar yok.")
-    print(f"\n  Yakalanan: {len(yakalanan)}   Şüpheli: {len(supheli)}")
+    print(f"\n  Yakalanan: {len(yakalanan)}   Şüpheli: {len(supheli)}   "
+          f"Süregelen hikâye: {len(zincir_ciftleri)}")
     if supheli:
         print("\n  ⚠️  ŞÜPHELİ çiftleri gözle denetle. Gerçekten aynı olaylarsa")
         print("      src/dedup.py'ye yeni bir yüksek-özgüllük sinyali gerekiyor")
