@@ -3841,6 +3841,80 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     if aid in kept_set or aid in restored_set]
         return new_kept, restored
 
+    def _dedup_kritik3_cross_day_llm(self, top3_ids, yedek_ids, records,
+                                     content_by_id, articles_by_id, recent_views):
+        """Manşet çapraz-gün SEMANTİK denetimi — ELEME DEĞİL, DEĞİŞTİRME.
+
+        Auditor'ın çapraz-gün eşi (_dedup_body_cross_day_llm) yıllardır vardı ama
+        docstring'inde yazdığı gibi "KRİTİK 3 buraya hiç gelmez". Deterministik
+        çapraz-gün pası da yalnızca gövdeye uygulanıyordu. Sonuç: hiçbir katman
+        "bugünün manşeti dünün manşeti mi?" diye SORMUYORDU. 2026-08-06'da
+        keyv/cacheable npm solucanı üst üste iki gün manşet oldu.
+
+        Manşetin her eleme pasından muaf tutulmasının gerekçesi "KRİTİK 3 asla
+        3'ten az olamaz"dı. Bu geçiş o kısıtı hiç zorlamaz: işaretlenen haber
+        SİLİNMEZ, sıradaki uygun adayla DEĞİŞTİRİLİR; yedek yoksa yerinde kalır.
+        Sayı garantisi bu yüzden tanım gereği korunur.
+
+        Aynı nedenle bu geçiş ENABLE_LLM_CROSS_DAY_DEDUP bayrağına BAĞLI DEĞİL.
+        O bayrak (07-13) kapatılmıştı çünkü gövdede yanlış pozitif GERÇEKTEN YENİ
+        haberi SİLİYORDU. Burada maliyet asimetriktir: yanlış pozitif haberi
+        silmez, yalnızca gövdeye indirir — haber rapordan kaybolmaz. Kaçırmanın
+        maliyeti (üst üste iki gün aynı manşet) bundan çok daha yüksektir.
+        """
+        if not recent_views or not top3_ids:
+            return list(top3_ids)
+
+        today_lines = []
+        for aid in top3_ids:
+            c = content_by_id.get(aid, {})
+            a = articles_by_id.get(aid, {})
+            tr_title = c.get('tr_title') or a.get('title', '')
+            snippet = ' '.join((c.get('paragraph', '') or '').split()[:80])
+            today_lines.append(f"=== HABER ID: {aid} ===\n"
+                               f"Başlık: {tr_title}\nÖzet: {snippet}\n")
+        recent_lines = []
+        for i, ev in enumerate(recent_views, 1):
+            tr_title = ev.get('tr_title') or ev.get('title', '')
+            snippet = ' '.join((ev.get('paragraph', '') or '').split()[:80])
+            recent_lines.append(f"--- [R{i}] Başlık: {tr_title}\nÖzet: {snippet}\n")
+
+        data = self._gemini_call_json(
+            get_cross_day_dedup_prompt('\n'.join(today_lines), '\n'.join(recent_lines)),
+            max_output_tokens=512, label='Auditor-ManşetÇaprazGün')
+        flagged = _dedup.parse_cross_day_dupes(data, top3_ids)
+        if not flagged:
+            return list(top3_ids)
+
+        view_fn = self._dedup_view_fn(content_by_id, articles_by_id)
+        sonuc = list(top3_ids)
+        for aid in list(flagged):
+            # Yedek aday: manşete uygun kategori, mükerrer değil, mevcut manşet
+            # ve son 7 günün olaylarıyla aynı-olay DEĞİL.
+            yedek = None
+            for cand in yedek_ids:
+                if cand in sonuc or cand in flagged:
+                    continue
+                rec = records.get(cand, {})
+                if rec.get('kat') in KRITIK3_HARIC_KATEGORILER or rec.get('mukerrer'):
+                    continue
+                cv = view_fn(cand)
+                if any(_dedup.same_event(cv, view_fn(o)) for o in sonuc if o != aid):
+                    continue
+                if any(_dedup.same_event(cv, ev, cross_day=True) for ev in recent_views):
+                    continue
+                yedek = cand
+                break
+            if yedek is None:
+                print(f"   ⚠️  Manşet çapraz-gün: ID {aid} tekrar olarak işaretlendi "
+                      f"ama uygun yedek aday yok — YERİNDE BIRAKILDI (KRİTİK 3 eksilmez).")
+                continue
+            sonuc[sonuc.index(aid)] = yedek
+            print(f"   🔁 Manşet çapraz-gün: ID {aid} son {REPORT_HISTORY_DAYS} günde "
+                  f"raporlanmış olayın tekrarı → ID {yedek} ile DEĞİŞTİRİLDİ "
+                  f"(eski haber gövdede kalır).")
+        return sonuc
+
     def _dedup_body_cross_day_llm(self, body_ids, content_by_id, articles_by_id,
                                   recent_views, label=''):
         """Çapraz-gün SEMANTİK mükerrer denetimi (Auditor'ın çapraz-gün eşi).
@@ -5248,6 +5322,16 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         ranked_all = list(top10_ids) + list(remaining_ids)  # zaten puan sırasında
         top3_ids = self._derive_top3_by_score(
             ranked_all, score_records, content_by_id, articles_by_id,
+        )
+
+        # Manşetin çapraz-gün SEMANTİK denetimi. Deterministik katmanlar
+        # (same_event + skorlayıcı 'mükerrer') buraya kadar çalıştı; bu son
+        # kapı "aynı olay, farklı sözcükler" durumunu yakalar. Eleme değil
+        # değiştirme yaptığı için KRİTİK 3 sayısı garanti korunur.
+        _k3_recent = self._load_recent_kritik3_views() + self._load_recent_report_views()
+        top3_ids = self._dedup_kritik3_cross_day_llm(
+            top3_ids, ranked_all, score_records,
+            content_by_id, articles_by_id, _k3_recent,
         )
 
         self._enforce_kritik3_paragraph_length(top3_ids, content_by_id, articles_by_id)
