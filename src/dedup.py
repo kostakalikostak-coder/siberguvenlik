@@ -105,6 +105,104 @@ _ADVISORY_ID_RE = re.compile(
 )
 
 
+# ── AÇIK KAYNAK PAKET ADLARI ────────────────────────────────────────────────
+# extract_codenames CamelCase veya TÜMÜ-BÜYÜK (≥5 harf) arar. Paket ekosistem-
+# lerinde (npm, PyPI, crates, RubyGems...) ad kuralı ise KÜÇÜK HARF ve çoğu kez
+# kısadır: 'keyv', 'cacheable', 'chalk', 'lodash'. Yani bir tedarik zinciri
+# olayının EN AYIRT EDİCİ tanımlayıcısı, kod adı çıkarımına tümüyle görünmezdi
+# — aktör (APT adı) ve özel ad (büyük harfle başlayan) sinyalleri de bu adları
+# yakalayamaz.
+#
+# 2026-08-06 vakası: keyv/cacheable npm solucanı 05-08'de KRİTİK 3 manşetiydi,
+# 06-08'de yeniden manşet oldu. same_event(cross_day=True) False döndü çünkü
+# codename/actor/entity kümelerinin ÜÇÜ DE boştu. Bu tek bir haberin kaçması
+# değil, bütün bir haber sınıfının (paket tedarik zinciri — tam da günlerce
+# süren ve tekrar tekrar manşet olan sınıf) korumasız kalmasıydı.
+#
+# Yanlış-pozitif riski, iki koşulla sınırlanır:
+#   • Metinde ekosistem işareti bulunmalı (npm/PyPI/paket/registry...).
+#   • Aday, o işaretin YAKININDA (±_PKG_WINDOW karakter) geçmeli.
+# Ayrıca same_event'te tek başına değil KONU ÖRTÜŞMESİNE KAPILI kullanılır
+# (kod adı gövde kuralıyla aynı felsefe).
+_PKG_ECOSYSTEM_RE = re.compile(
+    r'\b(?:npm|pypi|pip|packagist|composer|nuget|rubygems|crates|cargo|'
+    r'maven|gradle|homebrew|vsix|paket|paketi|paketine|paketleri|paketlerine|'
+    r'paketlerinin|kütüphane|kütüphanesi|kütüphaneleri|registry|repository|'
+    r'depo|deposu)\b',
+    re.I)
+_PKG_WINDOW = 90
+
+# Aday token deseni. İKİ ŞART kritik (ilk ölçümde ikisi de eksikti ve kural
+# kullanılamaz derecede gürültülüydü — 9 eşleşmenin 8'i yanlış pozitifti):
+#   • TÜRKÇE HARF SINIRI: [a-z] sınıfı ı/ş/ğ/ü/ö/ç içermediği için "solucanı"
+#     ortasından 'olucan', "saldırı"dan 'sald' gibi SAHTE token'lar çıkıyordu.
+#     Lookbehind/lookahead Türkçe harfleri de kapsar → token ancak gerçek sözcük
+#     sınırında başlar/biter, Türkçe sözcüğün ortasından parça alınmaz.
+#   • BÜYÜK HARF DE SINIRDIR: "Paketlerine" içindeki 'aketlerine' engellenir.
+# Paket adları kural gereği ASCII'dir; Türkçe harf içeren aday zaten paket adı
+# değildir ve desene uymaz.
+_TR_LETTER = 'A-Za-zçğıöşüÇĞİÖŞÜ'
+_PKG_TOKEN_RE = re.compile(
+    r'(?<![' + _TR_LETTER + r'0-9@])'
+    r'@?[a-z][a-z0-9]*(?:[-_./][a-z0-9]+)*'
+    r'(?![' + _TR_LETTER + r'0-9])')
+
+# Paket kuralı için AYRI (ve yüksek) konu eşiği. Aktör/kod adı eşiği (0.14)
+# burada yetmiyor: paket adı, kampanya kod adına göre daha zayıf bir kimliktir
+# (aynı ekosistemden iki ayrı olay 'npm' bağlamını paylaşır). Ölçümde yanlış
+# pozitiflerin tamamı topic≤0.18'de, gerçek eşleşme ise 0.24'te toplandı.
+_TOPIC_WITH_PACKAGE = 0.22
+
+# Ekosistem yakınında sık geçen ama paket ADI olmayan sözcükler.
+_PKG_DENYLIST = {
+    'package', 'packages', 'paket', 'paketi', 'paketler', 'paketleri', 'registry',
+    'malicious', 'version', 'versions', 'install', 'installed', 'download',
+    'downloads', 'library', 'libraries', 'module', 'modules', 'supply', 'chain',
+    'attack', 'attacks', 'worm', 'malware', 'compromised', 'developer',
+    'developers', 'security', 'researchers', 'account', 'accounts', 'maintainer',
+    'maintainers', 'token', 'tokens', 'credential', 'credentials', 'published',
+    'release', 'releases', 'ecosystem', 'yazilim', 'yazılım', 'zararlı', 'zararli',
+    'saldırı', 'saldiri', 'sürüm', 'surum', 'sürümleri', 'yayınlanan', 'kullanılan',
+    'güvenlik', 'guvenlik', 'araştırmacı', 'arastirmaci', 'hesapları', 'hesaplari',
+    'solucan', 'solucanı', 'solucani', 'ekosistem', 'ekosisteminde', 'yönelik',
+    'yonelik', 'yüzlerce', 'yuzlerce', 'binlerce', 'içeren', 'iceren',
+    'paketlerinde', 'paketlerini', 'paketlerde', 'kütüphanede', 'kutuphanede',
+    # Jenerik İngilizce dolgu — konu kapısı bunları zaten zararsız kılıyor ama
+    # iki ayrı olayı boş yere birbirine yaklaştırmasınlar.
+    'that', 'this', 'these', 'those', 'into', 'other', 'others', 'with', 'from',
+    'their', 'which', 'when', 'were', 'have', 'been', 'also', 'more', 'than',
+    'such', 'used', 'using', 'after', 'before', 'could', 'would', 'about',
+    'cloud', 'code', 'data', 'user', 'users', 'file', 'files', 'name', 'names',
+    'dependency', 'dependencies', 'namespace', 'namespaces', 'project',
+    'projects', 'source', 'open', 'build', 'builds', 'script', 'scripts',
+}
+
+
+def extract_package_names(text):
+    """Ekosistem bağlamındaki küçük-harfli paket adlarını çıkarır.
+
+    Yalnızca metinde bir ekosistem işareti (npm, PyPI, paket, registry...)
+    varsa çalışır ve yalnızca o işaretin yakınındaki adayları döndürür.
+    Nokta/tire/alt-çizgi içeren adlar (`@scope/name`, `foo-bar`) korunur.
+    """
+    t = text or ''
+    if not _PKG_ECOSYSTEM_RE.search(t):
+        return set()
+    spans = [m.span() for m in _PKG_ECOSYSTEM_RE.finditer(t)]
+    out = set()
+    for m in _PKG_TOKEN_RE.finditer(t):
+        w = m.group(0)
+        core = w.lstrip('@')
+        if len(core) < 4 or core in _PKG_DENYLIST or core in CODENAME_DENYLIST:
+            continue
+        if _PKG_ECOSYSTEM_RE.fullmatch(core):
+            continue
+        s, e = m.span()
+        if any(s - _PKG_WINDOW <= es and ss <= e + _PKG_WINDOW for ss, es in spans):
+            out.add(core)
+    return out
+
+
 def extract_codenames(text):
     """Metinden ayırt edici kampanya/operasyon/zararlı kod adlarını çıkarır.
 
@@ -518,6 +616,15 @@ def same_event(view_a, view_b, explain=False, cross_day=False):
     shared_cn_body = extract_codenames(blob_a) & extract_codenames(blob_b)
     if shared_cn_body and topic >= actor_topic_min:
         return _ret(True, f'codename-body:{",".join(sorted(shared_cn_body))}+topic={topic:.2f}')
+
+    # 2e) ORTAK PAKET ADI + konu örtüşmesi. Açık kaynak paket adları küçük
+    #     harflidir ve kod adı/aktör/özel ad sinyallerinin HİÇBİRİNE girmez
+    #     (bkz. extract_package_names). Tedarik zinciri olayları günlerce
+    #     sürdüğü için çapraz-gün korumasının en çok ihtiyaç duyduğu sinyal
+    #     budur. Kod adı gövde kuralıyla aynı felsefe: topic-kapılı.
+    shared_pkg = extract_package_names(blob_a) & extract_package_names(blob_b)
+    if shared_pkg and topic >= max(actor_topic_min, _TOPIC_WITH_PACKAGE):
+        return _ret(True, f'package:{",".join(sorted(shared_pkg))}+topic={topic:.2f}')
 
     # 2d) ORTAK ÖZEL AD + konu örtüşmesi. Olayın öznesi (Minnesota, CareCloud)
     #     aktör/kod adı/CVE sinyallerinin hiçbirine girmez; bu kural o boşluğu
