@@ -102,3 +102,56 @@ def test_uc_taze_aday_yoksa_kapi_gevser():
     """KRİTİK 3 ASLA 3'ten az kalmaz — taze aday yetmezse kapı açılır."""
     records = {1: {'mukerrer': 0}, 2: {'mukerrer': 1}, 3: {'mukerrer': 1}}
     assert _kritik3_eligible([1, 2, 3], records, True) == [1, 2, 3]
+
+
+# ── Mükerrer bayrağının deterministik doğrulaması ──────────────────────────
+# 'mukerrer' saf LLM kararıydı ve tek doğrulamasız iddiaydı: kategori iddiaları
+# _enforce_apt_attribution'la, çapraz-gün elemesi same_event'le denetlenirdi,
+# bu denetlenmezdi. Ölçüm (2026-08-07): 26 haber bu bayrakla elendi, 11'i ≥85
+# puanlıydı ve en az ikisi (LightSpy 93, Meta AI 86) geçmişte HİÇ raporlanmamıştı.
+
+GECMIS_RAPOR = [{
+    'tr_title': 'Ransom Cartel Kurucusunun 16 Yıl Hapis Cezasına Çarptırılması',
+    'title': 'Ransom Cartel Leader Sentenced to 16 Years in U.S.',
+    'paragraph': 'Maksim Silnikau 16 yil hapis cezasina carptirilmistir.',
+    'full_text': ('A federal judge in Alexandria, Virginia, sentenced Maksim Silnikau '
+                  'to 16 years in prison on August 5 for creating and running Ransom '
+                  'Cartel, the ransomware-as-a-service operation.'),
+}]
+
+
+def _dogrula(baslik, full_text, gecmis=GECMIS_RAPOR):
+    s = _sistem()
+    arts = {1: {'id': 1, 'title': baslik, 'full_text': full_text}}
+    return s._mukerrer_dogrulandi(1, arts, gecmis)
+
+
+def test_gercekten_raporlanmis_haber_dogrulanir():
+    """Ransom Cartel: 08-06'da raporlanmıştı → eleme haklı."""
+    assert _dogrula(
+        'Ransom Cartel Leader Sentenced to 16 Years in U.S.',
+        'A federal judge sentenced Maksim Silnikau to 16 years in prison for '
+        'creating and running Ransom Cartel, the ransomware-as-a-service operation.')
+
+
+def test_hic_raporlanmamis_haber_dogrulanmaz():
+    """LightSpy: geçmişte yok → bayrak eleyemez, haber gövdeye düşer."""
+    assert not _dogrula(
+        'China-linked LightSpy spyware caught targeting victims in 13 countries',
+        'Researchers found the LightSpy spyware implant targeting mobile users '
+        'across 13 countries in a new surveillance campaign.')
+
+
+def test_gecmis_bossa_dogrulanmaz():
+    """Referans yoksa iddia doğrulanamaz — güvenli taraf haberi korumaktır."""
+    assert not _dogrula('Herhangi bir haber', 'Herhangi bir metin.', gecmis=[])
+
+
+def test_metin_yoksa_llm_karari_korunur():
+    """Kıyaslayacak metin yoksa bayrağa dokunulmaz (eski davranış)."""
+    assert _dogrula('', '')
+
+
+def test_esik_altinda_bayrak_tek_basina_yeter():
+    """Düşük puanda yanlış elemenin maliyeti düşük — doğrulama aranmaz."""
+    assert main.HaberSistemi.MUKERRER_KORUMA_ESIGI == 85

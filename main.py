@@ -4944,6 +4944,33 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         except Exception:
             return False   # güvenli taraf: artefakt varsayma, korumayı sürdür
 
+    # Bu puanın ÜSTÜNDE 'mukerrer' bayrağı tek başına eleyemez; deterministik
+    # doğrulama aranır (bkz. _rank_by_score). Altında LLM sözü yeterlidir —
+    # orada yanlış elemenin maliyeti düşüktür.
+    MUKERRER_KORUMA_ESIGI = 85
+
+    def _mukerrer_dogrulandi(self, aid, articles_by_id, recent_views):
+        """Skorlayıcının 'mukerrer' iddiası geçmişte DOĞRULANIYOR mu?
+
+        Referans, son 7 günde RAPORA GİRMİŞ haberlerdir (rapor_gecmis) — depo
+        İngilizce `title` ve `full_text` de sakladığı için karşılaştırma bu
+        aşamada (içerik üretiminden ÖNCE, elimizde yalnızca kaynak metni
+        varken) çalışabiliyor.
+
+        True  → gerçekten daha önce raporlanmış, eleme haklı.
+        False → doğrulanamadı; haber elenmez, gövdeye düşer.
+        """
+        if not recent_views:
+            return False
+        a = articles_by_id.get(aid) or {}
+        view = {'tr_title': '', 'paragraph': '',
+                'title': a.get('title', ''),
+                'full_text': (a.get('full_text', '') or '')[:2500]}
+        if not (view['title'] or view['full_text']):
+            return True      # kıyaslayacak metin yok → LLM kararına dokunma
+        return any(_dedup.same_event(view, ev, cross_day=True)
+                   for ev in recent_views)
+
     def _rank_by_score(self, articles, records):
         """DETERMİNİSTİK sıralama — düzeltilmiş skorlara göre kod tarafında sırala.
         Dönüş: (top10_ids, remaining_ids, filtered_ids, category_by_id).
@@ -5009,6 +5036,11 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                       f"— GÖVDEDE mükerrer elemesi gevşetildi (rapor boşalmasın). "
                       f"KRİTİK 3 koruması SÜRÜYOR.")
 
+        # Mükerrer bayrağının deterministik doğrulaması için referanslar.
+        articles_by_id = {a['id']: a for a in articles}
+        recent_report_views = self._load_recent_report_views()
+        mukerrer_korunan = []
+
         ranked, filtered_ids = [], []
         for a in articles:
             aid = a['id']
@@ -5020,12 +5052,39 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 records[aid] = rec
             category_by_id[aid] = rec['kat']
             is_muk = bool(rec.get('mukerrer')) and apply_mukerrer
+            # YÜKSEK PUANLI MÜKERRER: bayrak tek başına ELEYEMEZ ─────────────
+            # 'mukerrer' saf LLM kararıdır ve tek doğrulamasız kalan iddiadır:
+            # kategori iddiaları _enforce_apt_attribution'la, çapraz-gün elemesi
+            # same_event'le denetlenir, bu denetlenmezdi. Ölçüm (2026-08-07):
+            # 26 haber bu bayrakla elendi, 11'i ≥85 puanlıydı ve en az ikisi
+            # (LightSpy 93, Meta AI test olayı 86) geçmişte HİÇ raporlanmamıştı
+            # — skorlayıcı tema benzerliğini olay aynılığıyla karıştırıyor.
+            # 8 günde 81 tane ≥85 puanlı haber böyle gitmiş.
+            #
+            # Bayrak KALDIRILMAZ, ETKİSİ değişir: deterministik doğrulama yoksa
+            # haber ELENMEZ ama GÖVDEYE düşer. Manşete çıkamaz çünkü kritik3
+            # kapısı 'mukerrer' işaretine bakar (bkz. _derive_top3_by_score) ve
+            # bayrak duruyor. Bu ayrım kritik: bayrağı temizlemek, süregelen
+            # hikâyeleri (su altyapısı, npm solucanı) manşete geri sokardı —
+            # hikâye zinciri filtresi 7 günlük pencereden düştüğünde boşalıyor,
+            # yani tek koruma bu bayrak.
+            if (is_muk and rec['toplam'] >= self.MUKERRER_KORUMA_ESIGI
+                    and not self._mukerrer_dogrulandi(aid, articles_by_id,
+                                                      recent_report_views)):
+                is_muk = False
+                mukerrer_korunan.append(aid)
             # Elenenler: siber kapısı kapalı / ürün-içerik-dışı / MÜKERRER (çapraz-gün)
             if (rec['toplam'] <= 0 or is_muk
                     or rec['kat'] in ('urun_icerik', 'siber_disi') or not rec['siber']):
                 filtered_ids.append(aid)
             else:
                 ranked.append(aid)
+
+        if mukerrer_korunan:
+            print(f"   🛡️  Mükerrer doğrulaması: {len(mukerrer_korunan)} yüksek "
+                  f"puanlı haber ({self.MUKERRER_KORUMA_ESIGI}+) geçmişte "
+                  f"bulunamadı → elenmedi, GÖVDEYE alındı (manşete çıkamaz): "
+                  f"{sorted(mukerrer_korunan)}")
 
         # ── AZ-HABER KURTARMA: baraj düşür — İNCE/BOŞ GÖVDE YAYIMLANMASIN ──────
         # Hafta sonu gibi az-haber günlerinde katı önemlilik eşiği (toplam<=0)
