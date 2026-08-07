@@ -1,7 +1,3 @@
-2026-07-31 12:06 | DEDUP SIFIR - SANS ISC: 8 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
-2026-07-31 12:06 | DEDUP SIFIR - NCSC UK: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
-2026-07-31 12:06 | DEDUP SIFIR - Citizen Lab: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
-2026-07-31 12:06 | DEDUP SIFIR - BSI: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
 2026-08-01 12:06 | DEDUP SIFIR - Krebs on Security: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
 2026-08-01 12:06 | DEDUP SIFIR - Graham Cluley: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
 2026-08-01 12:06 | DEDUP SIFIR - Recorded Future: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
@@ -121,3 +117,5 @@
 2026-08-05 12:06 | DEDUP SIFIR - Mandiant (Google Cloud): 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi
 2026-08-06 12:06 | SESSİZ BOŞ - The Register: 200 OK ama 0 madde
 2026-08-06 12:06 | RSS hatası - CSO Online: HTTPSConnectionPool(host='www.csoonline.com', port=443): Read timed out. (read timeout=5)
+2026-08-07 12:06 | DEDUP SIFIR - Krebs on Security: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 0)
+2026-08-07 12:06 | DEDUP SIFIR - Microsoft Security: 6 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 5)

@@ -29735,3 +29735,155 @@ IBM'in geniş ürün yelpazesinde, uzaktan kod yürütme, hizmet dışı bırakm
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 07 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Kuzey Carolina Limanlarına Yönelik Siber Saldırının Kontrol Altına Alınması
+─────────────────────────────────────────────────────────
+Kuzey Carolina Limanları, Salı günü gerçekleşen ve operasyonların manuel olarak yürütülmesine neden olan bir siber güvenlik olayının ardından sistemlerini geri yükleme sürecine girmiştir. Liman sözcüsü, bilişim sistemlerinin dış bir aktör veya grup tarafından saldırıya uğradığını ve bu durumun ABD Sahil Güvenlik ile eyalet kurumlarını içeren bir acil durum planının devreye alınmasını gerektirdiğini açıklamıştır. Wilmington, Morehead City ve Charlotte lokasyonlarını etkileyen ihlalin kontrol altına alındığı ve kurtarma çalışmalarının sürdüğü belirtilmiştir. Tesislerin normal çalışma programına döndüğü ancak işlemlerin halen manuel olarak yürütüldüğü ifade edilmiştir. Dış bir adli bilişim ekibinin sistemleri incelediği ve liman kapılarında gecikmelerin beklendiği kaydedilmiştir. Saldırıyı henüz üstlenen bir grup olmadığı ve fidye yazılımı şüphesine dair soruların yanıtsız bırakıldığı bildirilmiştir.
+(XXXXXXX, AÇIK -therecord.media, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Siber Tehdit Aktörü UNC6671'in Finans Sektörünü Sesli Kimlik Avıyla Hedeflemesi
+─────────────────────────────────────────────────────────
+Google Tehdit İstihbarat Grubu, BlackFile markasının emekliye ayrıldığı iddialarına rağmen siber tehdit aktörü UNC6671'in faaliyetlerini sürdürdüğünü tespit etmiştir. Tehdit aktörünün Redact, Pink, Helix ve Falcon gibi farklı isimler altında operasyonlarını çeşitlendirdiği ve finansal hizmetler ile kurumsal bulut ortamlarını hedeflediği belirtilmektedir. Grubun, kurumsal çalışanları kişisel telefonlarından arayarak kendilerini bilişim destek personeli olarak tanıttığı ve kurbanları sahte giriş portallarına yönlendirdiği ifade edilmiştir. Bu yöntemle ele geçirilen kimlik bilgileri ve çok faktörlü kimlik doğrulama belirteçleri aracılığıyla Microsoft 365 ve Okta gibi ortamlardan veri sızdırıldığı bildirilmiştir. Temmuz 2026 itibarıyla hedeflerin özel sermaye şirketleri ve hukuk firmalarına doğru daraldığı kaydedilmiştir.
+(XXXXXXX, AÇIK -cloud.google.com, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] İsviçre Hükümetine Ait SharePoint Sunucularına Siber Saldırı Düzenlenmesi
+─────────────────────────────────────────────────────────
+İsviçre Federal Bilgi Teknolojileri ve Telekomünikasyon Ofisi (BIT), Microsoft SharePoint sunucularındaki güvenlik açıklarından yararlanan saldırganların yaklaşık 200 hesabı ele geçirdiğini açıklamıştır. Olağandışı faaliyetlerin 28 Temmuz tarihinde fark edildiği ve 31 Temmuz'da hesap bilgilerinin sızdırıldığının kesinleştiği belirtilmiştir. Kurum, saldırganların Microsoft'un Temmuz ayı güncellemeleriyle kapattığı CVE-2026-56164 veya CVE-2026-50522 kodlu açıklardan birini istismar etmiş olabileceğini ifade etmiştir. Olayın ardından SharePoint sunucularının dış internet erişimine kapatıldığı, şifrelerin sıfırlandığı ve sunucuların önlem amaçlı yeniden kurulmaya başlandığı kaydedilmiştir. Yapılan ilk incelemelerde, ele geçirilen giriş bilgileri dışında herhangi bir veri hırsızlığına dair kanıt bulunmadığı ve platformda hassas kişisel verilerin saklanmasına izin verilmediği bilgisi paylaşılmıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Unlimited Technology Systems Veri İhlalinden 3,8 Milyon Kişinin Etkilenmesi
+─────────────────────────────────────────────────────────
+Montgomery merkezli sağlık teknolojileri firması Unlimited Technology Systems, 3,8 milyondan fazla bireyin kişisel ve tıbbi bilgilerinin çalındığını duyurmuştur. Şirket, Ekim 2025 tarihinde ticari veri merkezlerinden birinde gerçekleşen siber saldırıyı tespit ettiğini ve incelemelerin verilerin 5-10 Ekim 2025 tarihleri arasında çalındığını gösterdiğini açıklamıştır. Çalınan veriler arasında isim, adres, Sosyal Güvenlik numarası, tıbbi kayıt numaraları, tanılar ve sigorta poliçe bilgileri gibi hassas içeriklerin bulunduğu bildirilmiştir. Unlimited Technology Systems, tam hasta tıbbi kayıtlarının veya banka hesap bilgilerinin bu ihlalden etkilenmediğini ifade etmiştir. ABD Sağlık ve İnsani Hizmetler Bakanlığı, 6 Ağustos 2026 tarihinde söz konusu ihlali resmi portalına eklemiştir. Şirketin, etkilenen bireylere iki yıl boyunca ücretsiz kredi izleme ve kimlik hırsızlığı restorasyon hizmetleri sunduğu belirtilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 07.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Siber Suçluların Yapay Zeka Kaynaklarını Çalmak İçin Token Jacking Yapması
+─────────────────────────────────────────────────────────
+Unit 42 araştırmacıları, geliştiricilerin yapay zeka platformlarına erişmek için kullandığı API anahtarlarının çalınmasıyla sonuçlanan ve token jacking olarak adlandırılan vakalarda artış tespit etmiştir. Siber suçluların, çalınan bu anahtarları kullanarak yüksek maliyetli yapay zeka işlem gücüne ücretsiz erişim sağladığı veya bu erişimi yasa dışı pazarlarda sattığı belirtilmektedir. Bazı vakalarda, sızdırılan kimlik bilgilerinin dakikalar içinde kötü amaçlı sistemlere entegre edildiği ve tespit edilene kadar bir milyon dolara yakın kullanım ücretine yol açtığı ifade edilmiştir. Saldırganların bu anahtarları kimlik avı, güvensiz kod depoları veya zehirli npm paketleri aracılığıyla ele geçirdiği kaydedilmektedir. Kuruluşların bu risklere karşı harcama limitleri belirlemesi ve uzun süreli erişim anahtarları yerine kısa süreli belirteçler kullanması önerilmektedir. Yapay zeka kullanımındaki hızlı artışın bu tür finansal kayıpları tetiklediği vurgulanmaktadır.
+(XXXXXXX, AÇIK -unit42.paloaltonetworks.com, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Çin'in Palo Alto Networks Ürünlerine Güvenlik İncelemesi Başlatması
+─────────────────────────────────────────────────────────
+Çin Siber Uzay İdaresi (CAC), Palo Alto Networks tarafından sunulan ürünlere yönelik kapsamlı bir güvenlik incelemesi başlattığını duyurmuştur. Kurum tarafından yapılan açıklamada, söz konusu incelemenin kritik bilgi altyapılarının güvenli işleyişini sağlamak, siber güvenlik risklerini önlemek ve ulusal güvenliği korumak amacıyla gerçekleştirildiği belirtilmiştir. Palo Alto Networks sözcüsü, şirketin küresel operasyonlarında en yüksek iş ahlakı ve güvenlik standartlarını koruduğunu ve bölgedeki hizmet sunma kapasitelerinin etkilenmediğini ifade etmiştir. Bu gelişmenin, 2023 yılında Micron şirketine uygulanan ve milyarlarca dolarlık gelir kaybına yol açan satış yasağı süreciyle benzerlik taşıdığına dikkat çekilmiştir. Çinli yetkililerin inceleme sonuçlarını ne zaman açıklayacağı ve olası bir kısıtlama kararı alıp almayacağı henüz netlik kazanmamıştır.
+(XXXXXXX, AÇIK -theregister.com, 07.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Brezilya Sağlık Gözetim Sisteminde Veri Sızıntısı Yaşanması
+─────────────────────────────────────────────────────────
+Brezilya Sağlık Gözetim Bilgi Sistemi'ne (SISVISA) ait bir veri tabanının, herhangi bir kimlik doğrulama veya şifreleme mekanizması olmaksızın internete açık kaldığı tespit edilmiştir. Güvenlik araştırmacısı Jeremiah Fowler tarafından ortaya çıkarılan bu durumun, yaklaşık 79 GB boyutunda 102.215 dosyayı etkilediği bildirilmiştir. Sızan veriler arasında vatandaşların tam adları, ev adresleri, telefon numaraları, vergi kimlik numaraları, sürücü belgeleri ve parmak izi taramaları gibi hassas bilgilerin yer aldığı belirtilmiştir. Platformun hastaneler, restoranlar ve eczaneler için lisanslama ve denetim süreçlerini yönettiği ifade edilmiştir. Fowler'ın uyarılarının ardından veri tabanına erişimin kapatıldığı ancak verilerin ne kadar süre açık kaldığının veya kimler tarafından ele geçirildiğinin henüz bilinmediği kaydedilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] Birleşik Krallık'taki Hayır Kurumlarının Siber Saldırıya Uğraması
+─────────────────────────────────────────────────────────
+Hayır kurumlarına yönelik yazılım hizmeti sunan Beacon CRM, sistemlerine düzenlenen bir siber saldırı sonucunda müşteri veri tabanı yedeklerinin çalındığını doğrulamıştır. Şirket, 1.500'den fazla müşterisine yönelik yaptığı uyarıda, platformda saklanan tüm verilerin yetkisiz üçüncü taraflarca indirilmiş olabileceğini belirtmiştir. Saldırıdan etkilenen kurumlar arasında Molly Rose Foundation ve English National Ballet gibi kuruluşların bulunduğu, destekçi ve bağışçıların kimlik bilgilerinin sızdırıldığı ifade edilmiştir. Sızan verilerin isim, adres, e-posta, telefon numarası ve bağış kayıtlarını içerdiği, veriler şifreli olsa dahi saldırganların bu şifreleri çözmüş olabileceği ihtimali üzerinde durulmaktadır. Beacon CRM, olayın ele geçirilen kimlik bilgileriyle gerçekleştirildiğine dair kanıtlar bulduğunu ve tüm kullanıcı şifrelerini sıfırlayarak güvenlik önlemlerini artırdığını açıklamıştır.
+(XXXXXXX, AÇIK -theregister.com, 05.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Papyrus Operasyonu İle Mobil Uygulamalarda Reklam Dolandırıcılığı Yapılması
+─────────────────────────────────────────────────────────
+IAS Threat Lab araştırmacıları, Papyrus olarak adlandırılan ve roman okuma uygulamalarını kullanan yeni bir mobil reklam dolandırıcılığı şemasını tespit etmiştir. BootNova adlı bir yönetim katmanı üzerinden çalışan sistemin, kullanıcılar uygulama içinde vakit geçirirken arka planda gizli tarayıcı pencereleri açtığı ve sahte trafik oluşturduğu belirtilmiştir. Komuta kontrol altyapısı üzerinden yapılandırılan sistemin, 800'den fazla alan adını ve yaklaşık 8.000 benzersiz ana bilgisayar adını hedef aldığı ifade edilmiştir. Araştırmacılar, Papyrus'un en yoğun döneminde ayda yaklaşık 1 milyon dolar gelir elde ettiğini tahmin etmektedir. Söz konusu dolandırıcılık faaliyetinin, reklam verenlerin kampanya optimizasyon stratejilerini bozarak bütçelerin yanlış yönlendirilmesine neden olduğu kaydedilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Avustralyalı Updoc Şirketinde Üçüncü Taraf Kaynaklı Veri İhlali
+─────────────────────────────────────────────────────────
+Avustralya merkezli teletıp sağlayıcısı Updoc, dış kaynaklı bir operasyonel sistem üzerinden müşteri iletişim bilgilerinin yetkisiz erişime maruz kaldığını açıklamıştır. 7 Ağustos 2026 tarihinde duyurulan olayda, 31 Temmuz 2026 tarihinde tespit edilen sızıntının kullanıcıların isim, e-posta ve posta adresi bilgilerini kapsadığı belirtilmiştir. Şirket, tıbbi kayıtların, finansal verilerin veya ödeme bilgilerinin bu ihlalden etkilenmediğini ve dahili sistemlere herhangi bir erişim sağlanmadığını ifade etmiştir. Bir milyondan fazla hastaya hizmet veren platform, yetkisiz erişimin derhal engellendiğini ve ek bir şüpheli faaliyet bulunmadığını kaydetmiştir. Bu olay, Avustralya sağlık sektöründe son dönemde artan siber saldırıların bir parçası olarak değerlendirilmektedir. Updoc, kullanıcıların hesap güvenliğinin korunduğunu ve herhangi bir şifre değişikliği işleminin gerekmediğini bildirmiştir.
+(XXXXXXX, AÇIK -thecyberexpress.com, 07.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] IBM Langflow Platformundaki Kritik Güvenlik Açığının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+IBM bünyesindeki düşük kodlu yapay zeka geliştirme platformu Langflow'da, saldırganların uzaktan kod yürütmesine (RCE) olanak tanıyan kritik bir güvenlik açığı tespit edilmiştir. CISA, CVE-2026-9198 kodlu bu açığın aktif olarak istismar edildiğini doğrulayarak Known Exploited Vulnerabilities kataloğuna eklemiş ve kuruluşlara acil yama çağrısında bulunmuştur. Sorunun, varsayılan kurulumlardaki otomatik giriş uç noktasının yetkisiz kişilere süper kullanıcı hakları tanıması ve Python kodlarını doğrulama yapmadan çalıştırmasından kaynaklandığı belirtilmiştir. IBM, hatanın Langflow OSS 1.0.0 ile 1.10.0 arasındaki sürümleri etkilediğini açıklamış ve kullanıcıların en az 1.10.1 sürümüne yükseltme yapmalarını tavsiye etmiştir. Güvenlik açığının, varsayılan yapılandırmaların oluşturduğu risklerin somut bir örneği olduğu ve platformun watsonx.ai entegrasyonu öncesindeki sürümlerini kapsadığı bildirilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 05.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] Palo Alto Networks Araştırmacısının ChatGPT Sandbox Kontrolünü Ele Geçirmesi
+─────────────────────────────────────────────────────────
+Palo Alto Networks kıdemli güvenlik araştırmacısı Simcha Kosman, Black Hat USA 2026 konferansında ChatGPT'nin izole edilmiş güvenli sandbox ortamını ele geçiren bir kavram kanıtlama saldırısı sunmuştur. Araştırmacı, iPhone ve Mac cihazlarında URL tabanlı komutların otomatik olarak yürütülmesinden yararlanarak kurbanın ChatGPT oturumuna kötü amaçlı kod enjekte etmiştir. Bu yöntemle, ChatGPT'nin düşünme sürecinde kullandığı Python ortamının yamalandığı ve Google Drive ile Gmail gibi araçlardan veri sızdırılabildiği ifade edilmiştir. OpenAI sözcüsü, söz konusu araştırmadan haberdar olduklarını ve sunum öncesinde sistemdeki ilgili açıkları giderdiklerini açıklamıştır. Şirket, bu çalışmanın sandbox ortamından tam bir kaçış veya diğer müşteri hesaplarına sınırsız erişim teşkil etmediğini belirtmiştir. Tüm düzeltmelerin 90 günlük bildirim süresi içinde tamamlandığı kaydedilmiştir.
+(XXXXXXX, AÇIK -darkreading.com, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Ağ Adresi Çevirisi Protokolünde NatJack Zafiyet Sınıfının Keşfedilmesi
+─────────────────────────────────────────────────────────
+Araştırmacı Malcolm Stagg, Black Hat USA 2026 konferansında ağ adresi çevirisi (NAT) altyapılarındaki tasarım kusurlarını istismar eden 'NatJack' adlı yeni bir saldırı sınıfını duyurmuştur. Bu zafiyetin, saldırganların aynı NAT sınırını paylaşan kurbanların aktif bağlantılarını ele geçirmesine, DNS yanıtlarını zehirlemesine ve hizmet dışı bırakma saldırıları düzenlemesine olanak tanıdığı belirtilmiştir. Yapılan testlerde, Windows, Linux ve macOS dahil olmak üzere incelenen 32 ürünün tamamının bu tekniklere karşı savunmasız olduğu tespit edilmiştir. Zafiyetin, NAT protokolünün güvenilir eşler varsayımına dayanan eski tasarım tercihlerinden kaynaklandığı ifade edilmiştir. Bazı üreticiler durumu bir tasarım kısıtlılığı olarak nitelendirirken, Linux çekirdeği ve Microsoft Azure Kubernetes servisi için ilgili düzeltmelerin yayınlandığı kaydedilmiştir. Uzmanlar, riskleri azaltmak için uçtan uca şifreleme ve ağ segmentasyonu kullanılmasını önermektedir.
+(XXXXXXX, AÇIK -csoonline.com, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] CryptoJS Kütüphanesindeki Zafiyetin Milyonlarca Dolarlık Kayba Yol Açması
+─────────────────────────────────────────────────────────
+Güvenlik firması Coinspect, CryptoJS kütüphanesindeki zayıf rastgele sayı üretecinden kaynaklanan bir açık nedeniyle kripto para cüzdanlarından yaklaşık 5,7 milyon dolar çalındığını açıklamıştır. Ill Bloom olarak adlandırılan bu saldırı dalgasının, kurtarma ifadelerinin oluşturulmasında yetersiz entropi sağlayan bir fonksiyondan kaynaklandığı belirtilmiştir. Yapılan incelemelerde RRWallet, Bexo Wallet, NanChat, Bitcoin Libre ve Milo isimli beş uygulamanın bu zafiyetten etkilendiği tespit edilmiştir. Coinspect, Mayıs ayından bu yana gerçekleşen iki ayrı saldırı dalgasında 950'den fazla hesabın boşaltıldığını ve kayıpların alt sınırının 5,69 milyon dolar olduğunu bildirmiştir. Kütüphanenin 4.0.0 sürümünden önceki versiyonlarının risk taşıdığı, etkilenen cüzdan sahiplerinin fonlarını güvenli bir şekilde yeni oluşturulmuş adreslere taşımaları gerektiği ifade edilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Cisco'nun Kritik SD-WAN ve IOS XE Açıklarını Yamalaması
+─────────────────────────────────────────────────────────
+Cisco, Catalyst SD-WAN ve IOS XE yazılımlarını etkileyen, üçü 9.9 CVSS puanına sahip toplam 12 güvenlik zafiyetini gidermek amacıyla güncellemeler yayımlamıştır. Şirket tarafından yapılan açıklamada, söz konusu açıkların dahili güvenlik testleri ve yapay zeka modelleri kullanılarak tespit edildiği, henüz aktif bir istismarın bilinmediği bildirilmiştir. Özellikle Catalyst SD-WAN yazılımındaki CVE-2026-20303, CVE-2026-20304 ve CVE-2026-20310 kodlu açıkların kritik seviyede olduğu kaydedilmiştir. Ayrıca Integrated Management Controller arayüzündeki CIMCown olarak adlandırılan ve root yetkisi elde edilmesine olanak tanıyan CVE-2026-20200 kodlu açık için çalışan bir istismar kodunun mevcut olduğu ifade edilmiştir. Cisco, kullanıcılarına sistem güvenliğini sağlamak adına ilgili sürümlere geçiş yapmalarını tavsiye etmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] İşlemcilerde Spectre v2 Korumalarını Atlayan Yeni Saldırı Yöntemi
+─────────────────────────────────────────────────────────
+MIT CSAIL araştırmacıları, Intel ve AMD işlemcilerdeki Spectre v2 savunmalarını etkisiz hale getiren 'Interrupt Injection' adlı yeni bir saldırı tekniği keşfetmiştir. Bu yöntemin, işlemcinin dallanma tahmincisini temizlemesi ile çekirdeğin bu tahminciyi kullanması arasındaki milisaniyelik boşluğa donanım kesintisi enjekte ederek korumayı bozduğu belirtilmiştir. Araştırmacılar, AMD Zen 2 mimarisine sahip bir sistemde tüm savunmalar açıkken kernel belleğinden saniyede 5.47 bayt hızla veri sızdırmayı başarmıştır. AMD, Zen 1'den Zen 4'e kadar olan işlemcilerin etkilendiğini doğrulamış ve Linux çekirdeği için Safe-RET mekanizmasını güçlendiren bir yama yayınlamıştır. Intel ise mevcut kılavuzların bu durumu kapsadığını belirterek ek bir yama gerekmediğini savunmuştur. Zafiyetin, paylaşımlı sistemlerde yerel kod yürütme yetkisine sahip saldırganlar tarafından parola özetlerini okumak için kullanılabileceği kaydedilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] KARR Araç Güvenlik Sistemlerinde Kritik Zafiyetlerin Tespiti
+─────────────────────────────────────────────────────────
+UC San Diego araştırmacıları, ABD genelinde yaklaşık 2 milyon araçta yüklü olan KARR Güvenlik Sistemi adlı araç alarm modelinde ciddi güvenlik açıkları bulmuştur. Bluetooth menzilindeki herhangi bir saldırganın, araçlara radyo komutları göndererek kapıları sessizce açabildiği, alarmı devre dışı bırakabildiği ve kornayı çalabildiği tespit edilmiştir. Daha kritik bir bulgu olarak, saldırganların aracın ateşleme sistemini engelleyerek sürücüyü yolda bırakabileceği ifade edilmiştir. Araştırmacılar, bu cihazın yüklü olduğu araçların genellikle sürücü tarafındaki camda bulunan 'KARR' etiketiyle tanınabileceğini belirtmiştir. Söz konusu zafiyetin istismar edilmesi için herhangi bir özel yetki gerekmediği, sadece Bluetooth üzerinden erişimin yeterli olduğu kaydedilmiştir. Uzmanlar, etkilenen araç sahiplerinin cihaz yazılımlarını acilen güncellemeleri veya yetkili servislerle iletişime geçmeleri gerektiğini vurgulamıştır. Konunun DEFCON ve Usenix konferanslarında sunulacağı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -schneier.com, 05.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] Yapay Zeka Ajan Çerçevelerinde Kritik Güvenlik Kusurları
+─────────────────────────────────────────────────────────
+Check Point araştırmacıları, işletmelerin yapay zeka uygulamaları geliştirmek için kullandığı popüler ajan çerçevelerinde 11 adet güvenlik zafiyeti tespit etmiştir. LangChain, LangGraph, CrewAI ve Microsoft Agent Framework gibi platformlarda bulunan bu açıkların, saldırganların güvenilmeyen içerikleri sistemin karar mekanizmalarına sızdırmasına izin verdiği belirtilmiştir. Araştırmacılar, Microsoft Agent Framework üzerinde uzaktan kod yürütülmesine olanak tanıyan kritik bir 'insecure deserialization' hatası bulmuş ve Microsoft bu hata için 10.000 dolar ödül vermiştir. Google ADK platformunda da benzer şekilde yetkisiz kod yürütülmesine ve API anahtarlarının çalınmasına yol açan açıklar bulunduğu ifade edilmiştir. Bu hataların, 20 yıl önce çözülen klasik yazılım açıklarının modern yapay zeka katmanlarında yeniden ortaya çıktığını gösterdiği vurgulanmıştır. Uzmanlar, yapay zeka modellerinden ziyade onları çevreleyen yazılım altyapısının zayıf halka haline geldiğine dikkat çekmiştir.
+(XXXXXXX, AÇIK -theregister.com, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] Linux KVM Sistemlerinde Zapscape Zafiyetiyle Ana Makineye Sızılması
+─────────────────────────────────────────────────────────
+Linux çekirdeğinde tespit edilen ve 'Zapscape' olarak adlandırılan CVE-2026-64561 kodlu zafiyetin, saldırganların sanal makine izolasyonunu aşarak ana makinede (host) kod yürütmesine olanak tanıdığı bildirilmiştir. Araştırmacı Hyunwoo Kim tarafından keşfedilen bu hatanın, KVM'nin gölge bellek yönetim birimindeki (shadow MMU) bir 'use-after-free' kusurundan kaynaklandığı belirtilmiştir. Zafiyetin, özellikle iç içe sanallaştırma (nested virtualization) özelliğinin kullanıldığı ortamlarda risk oluşturduğu ifade edilmiştir. Yapılan testlerde, saldırganın ana makine üzerinde kök yetkileriyle dosya oluşturabildiği kanıtlanmıştır. Linux çekirdeğinin 5.9 ve sonraki sürümlerini etkileyen bu açık için 21 Temmuz 2026 tarihinde bir düzeltme yaması yayınlanmıştır. Uzmanlar, bulut sağlayıcılarının ve sistem yöneticilerinin, yamalı çekirdek sürümlerine (6.6.148, 6.12.101 vb.) ivedilikle geçiş yapmaları gerektiğini vurgulamıştır. Zafiyetin henüz gerçek dünya saldırılarında kullanıldığına dair bir bulguya rastlanmamıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[20] Nextcloud Sunucu ve E-posta Uygulamalarında Zafiyetlerin Giderilmesi
+─────────────────────────────────────────────────────────
+Nextcloud sunucu ve e-posta uygulamalarında, veri gizliliğinin ihlaline ve güvenlik politikalarının atlatılmasına yol açan açıklar tespit edilmiştir. 6 Ağustos 2026 tarihinde yayımlanan rapora göre, Nextcloud Server'ın 32.0.12, 33.0.6 ve 34.0.1 öncesi sürümleri ile Mail uygulamasının çeşitli alt sürümlerinin risk altında olduğu belirtilmiştir. Özellikle CVE-2026-61527 ve CVE-2026-61545 referanslı açıkların, yetkisiz kişilerin hassas verilere erişmesine imkan tanıdığı ifade edilmiştir. Geliştirici ekip, 5 Ağustos 2026 tarihinde yayımlanan GHSA bültenleri ile bu zafiyetler için gerekli güvenlik güncellemelerini sunduğunu açıklamıştır. Kullanıcıların veri sızıntılarını önlemek adına sistemlerini belirtilen güvenli sürümlere yükseltmeleri gerektiği bildirilmiştir. Zafiyetlerin hem bireysel hem de kurumsal Nextcloud sürümlerini kapsadığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[21] Yapay Zeka Destekli Tavsiye Zehirlemesi Yönteminin Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Microsoft Security, ticari web sitelerinde yayılmaya başlayan ve yapay zeka asistanlarının belleklerini manipüle eden AI Recommendation Poisoning adlı yeni bir saldırı türünü raporlamıştır. Bu yöntemde saldırganların, web sitelerindeki düğmelere gizli komutlar yerleştirerek kullanıcıların ChatGPT veya Gemini gibi asistanlarına belirli alan adlarını kalıcı olarak güvenilir kaynak kaydetmesini sağladığı belirtilmiştir. Araştırmacılar, 14 farklı sektörden 31 şirketin bu tekniği kullanarak yapay zekanın gelecekteki yanıtlarını kendi lehlerine yanlı hale getirdiğini tespit etmiştir. Kullanıcının onayı olmaksızın çalışan bu komutların, asistanın uzun süreli belleğine işlendiği ve ilgili markayı uzman bir otorite olarak tanımladığı kaydedilmiştir. Güvenlik ekiplerinin, yapay zeka asistanlarına yönlendirme yapan bağlantıları ve asistan belleklerini bu tür yetkisiz veri girişlerine karşı denetlemeleri gerektiği bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 06.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
