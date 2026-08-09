@@ -30025,3 +30025,36 @@ Linux çekirdeğinin SCTP ağ kodunda, yerel kullanıcıların kök yetkisi alma
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 09 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Head Mare Grubunun TrueConf Sunucularına Arka Kapı Yerleştirmesi
+─────────────────────────────────────────────────────────
+Head Mare olarak adlandırılan aktivist siber tehdit aktörünün, Rusya'da yaygın olarak kullanılan TrueConf video konferans sunucularındaki yamalanmamış güvenlik açıklarını istismar ettiği tespit edilmiştir. Kaspersky araştırmacıları tarafından Temmuz 2026 döneminde raporlanan saldırılarda, saldırganların kimlik doğrulaması gerektirmeyen TCP portları üzerinden sisteme sızdığı ve PhantomCore ile PhantomGraph arka kapılarını yaydığı belirtilmiştir. Siber tehdit aktörünün, yasal TrueConf istemci yükleyicilerini kötü amaçlı sürümlerle değiştirerek kurumsal ve kamu ağlarındaki kullanıcılara bulaştırdığı ifade edilmiştir. Operasyon kapsamında hassas verilerin toplandığı, veri tabanlarına erişildiği ve Microsoft OneDrive üzerinden komut alan zararlı yazılımların kullanıldığı kaydedilmiştir. TrueConf'un söz konusu açıkları Haziran ayında yayınladığı güncellemelerle giderdiği, ancak enstrümantasyon, enerji ve bilişim sektörlerindeki Rus kuruluşlarına yönelik saldırıların sürdüğü bildirilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 08.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Atlassian Rovo Yapay Zeka Asistanındaki Kritik Güvenlik Açığının Kapatılması
+─────────────────────────────────────────────────────────
+Varonis Threat Labs araştırmacıları, DEF CON 34 etkinliğinde Atlassian Rovo yapay zeka asistanında tespit edilen ve RovoBlast olarak adlandırılan kritik bir güvenlik açığını açıklamıştır. Söz konusu açığın, saldırganların özel olarak hazırlanmış bir bağlantı aracılığıyla kullanıcının canlı oturumuna komut enjekte etmesine ve Confluence, Jira ile SharePoint verilerini çalmasına olanak tanıdığı belirtilmiştir. Rovo'nun harici parametreleri güvenilir girdi olarak kabul etmesi nedeniyle, herhangi bir yetki aşımına gerek duyulmadan çok aşamalı görevlerin otomatik olarak kötüye kullanılabildiği ifade edilmiştir. Atlassian'ın, bulgular kamuoyuyla paylaşılmadan önce sunucu tarafında gerekli düzeltmeleri yaptığı ve müşterilerine koruyucu kontrolleri uygulama konusunda rehberlik ettiği kaydedilmiştir. Kuruluşlara, yapay zeka asistanının erişebildiği sistemleri sınırlandırmaları, kullanılmayan entegrasyonları devre dışı bırakmaları ve asistan günlüklerini düzenli olarak izlemeleri önerilmektedir.
+(XXXXXXX, AÇIK -securityweek.com, 08.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] macOS ClickFix Kampanyasında Parmak İzi Yöntemiyle Zararlı Yazılım Dağıtılması
+─────────────────────────────────────────────────────────
+Microsoft Tehdit İstihbaratı birimi, macOS kullanıcılarını hedef alan ClickFix kampanyasının, tespit edilmekten kaçınmak için sunucu tarafında tarayıcı parmak izi alma yöntemini kullanmaya başladığını tespit etmiştir. Saldırganların, MacSync ve Atomic Stealer (AMOS) gibi bilgi çalıcı yazılımları dağıtmak amacıyla 250'den fazla sahte alan adı kullandığı belirtilmiştir. Yeni yöntemde, web sayfasının ziyaretçinin gerçek bir macOS ortamı kullanıp kullanmadığını WebGL ve JavaScript rutinleri aracılığıyla kontrol ettiği, uygun olmayan istekleri zararsız içeriklere yönlendirdiği ifade edilmiştir. Kullanıcıların, Terminal üzerinden komut çalıştırmaya ikna edilerek macOS'un geleneksel güvenlik denetimlerini atlatmalarının hedeflendiği kaydedilmiştir. Microsoft, bu taktiğin kum havuzu (sandbox) ve otomatik analiz sistemlerinden gizlenmek amacıyla geliştirildiğini açıklamıştır. Güvenlik ekiplerine, söz konusu alan adı kalıplarını ve altyapı davranışlarını izlemeleri tavsiye edilmiştir.
+(XXXXXXX, AÇIK -microsoft.com, 05.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Yapay Zeka Destekli E-posta Araçlarına Yönelik CSS Saldırı Riskleri
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacısı Gareth Heyes, popüler web posta servislerinde kullanılan CSS stil dilinin, kullanıcı arayüzlerini manipüle etmek ve yapay zeka araçlarını yanıltmak için silahlandırılabileceğini kanıtlamıştır. Araştırma kapsamında, içerik temizleyicilerin onayladığı kodlar ile tarayıcıların işlediği kodlar arasındaki farklar kullanılarak Outlook ve Gmail gibi servislerde güven sınırlarının aşılabildiği belirtilmiştir. Outlook'ta tespit edilen bir yöntemin, açılır menüleri şifre alanı gibi göstererek kullanıcı girdilerini saldırgan sunucularına aktarabildiği ifade edilmiştir. Yapay zeka bağlantılı e-posta araçlarının, gizli CSS öğeleriyle verilen talimatları okuyarak kullanıcı fark etmeden veri sızıntısı gerçekleştirebildiği kaydedilmiştir. Uzmanlar, web posta sağlayıcılarının e-postaları izole edilmiş çerçeveler içinde çalıştırması ve CSS özelliklerine yönelik katı izin listeleri uygulaması gerektiğini vurgulamıştır.
+(XXXXXXX, AÇIK -securityaffairs.com, 09.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
