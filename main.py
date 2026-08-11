@@ -3930,7 +3930,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         govde = '\n'.join(_satir(aid) for aid in list(govde_ids)[:12])
         data = self._gemini_call_json(
             get_kritik3_selection_audit_prompt(manset, govde),
-            max_output_tokens=512, label='Auditor-ManşetSeçim')
+            # 1024: 512 bütçe iki koşuda üst üste aşıldı (08-10, 08-11) ve her
+            # seferinde otomatik yükseltmeyle YENİDEN çağrıldı — yani 512 bir
+            # tasarruf değil, koşu başına fazladan bir LLM çağrısıydı.
+            max_output_tokens=1024, label='Auditor-ManşetSeçim')
         if not isinstance(data, dict):
             return list(top3_ids)
 

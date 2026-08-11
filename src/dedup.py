@@ -854,6 +854,33 @@ _STORY_STEM_DENYLIST = frozenset({
     'saldırga', 'yapılan', 'tehdit', 'araştırm', 'şirket', 'ajansı', 'altyapı',
     'güvenliğ', 'operasyo', 'kullanıc', 'sistemle', 'saldırı', 'bilgiler',
     'veriler', 'yetkilil', 'bilgi', 'servisi', 'teknoloj', 'resm', 'resmi',
+    # DÜZENLEYİCİ / KURUMSAL KALIP — 2026-08-11'de zinciri çökerten asıl neden.
+    # Kurumsal ihlal haberlerinin çoğu "U.S. Securities and Exchange
+    # Commission" bildirimine atıf yapar; bu TEK KALIP üç ayırt edici-görünen
+    # kök üretiyordu (securiti/exchange/commissi) ve iki ortak kök zinciri
+    # kurmaya yettiği için Liechtenstein şirket kaydı, İngiliz polis
+    # veritabanı, Çinli telekomlar, İsviçre SharePoint, IEH ve Levi Strauss
+    # TEK HİKÂYE sayıldı. O gün 22 aday manşetten indi ve 77 puanlık bir
+    # WordPress eklentisi haberi manşet oldu.
+    'securiti', 'securit', 'commissi', 'komisyon', 'exchange', 'borsa',
+    'menkul', 'kıymetle', 'sermaye',
+    # Cümle başı büyük harften sızan yaygın sözcükler (Türkçe metinde her
+    # cümlenin ilk sözcüğü büyük harfle başlar; _entity_sets bunları "aday"
+    # sayar). Ölçüm: bu kökler 165 haberlik korpusta 2-7 kez geçiyor, yani
+    # DF eşiğiyle ayıklanamıyorlar — adla ele alınmaları gerekiyor.
+    'people', 'three', 'however', 'despite', 'followin', 'remains', 'ongoing',
+    'because', 'select', 'scroll', 'there', 'behind', 'among', 'against',
+    'police', 'polis', 'polise', 'crime', 'legal', 'hukuk', 'license',
+    'database', 'veritaba', 'computer', 'informat', 'communic', 'i̇letişi',
+    'telecom', 'telecomm', 'telekomü', 'national', 'ulusal', 'office',
+    'ofisi', 'kurum', 'meclisi', 'komitesi', 'committe', 'congress', 'house',
+    'temsilci', 'foundati', 'corporat', 'companie', 'şirketin', 'mobile',
+    'patch', 'register', 'advertis', 'affected', 'based', 'ayrıca', 'olayın',
+    'olağandı', 'geçtiğim', 'perşembe', 'rapor', 'zararlı', 'threat',
+    'breach', 'black', 'özellikl', 'chain', 'token', 'critical', 'brand',
+    'click', 'written', 'targets', 'applicat', 'environm', 'enterpri',
+    'financia', 'artifici', 'adversar', 'continui', 'indicato', 'mitigati',
+    'signific', 'visibili', 'telemetr', 'workspac', 'middle', 'multi',
 })
 
 
