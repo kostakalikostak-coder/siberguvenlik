@@ -30126,3 +30126,155 @@ Avustralya'da bir spor salonu rezervasyon sisteminde, Anthropic tarafından geli
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 11 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Rusya Bağlantılı Sandworm Grubunun Polonya Enerji Tesisini Sabote Etmesi
+─────────────────────────────────────────────────────────
+Rusya hükümetiyle bağlantılı siber tehdit aktörü Sandworm'un, Aralık 2025 döneminde Polonya'nın enerji sektörüne yönelik ikinci bir yıkıcı saldırı gerçekleştirdiği bildirilmiştir. Polonya Bilgisayar Acil Müdahale Ekibi (CERT.PL) tarafından yayımlanan raporda, saldırganların 50.000 kişiye ısı sağlayan bir kojenerasyon tesisini hedef aldığı ve ilk kez özel bir APN ağını saldırı vektörü olarak kullandığı belirtilmiştir. Siber saldırı sonucunda bir buhar türbini ve su arıtma sisteminin devre dışı kaldığı, ancak hizmet kesintisi yaşanmadan sistemlerin hızla geri yüklendiği ifade edilmiştir. Tehdit aktörünün Siemens ve Wago marka programlanabilir mantık denetleyicilerine erişerek cihazları durdurduğu ve izlerini gizlemek amacıyla bazı ekipmanlara kalıcı fiziksel zarar verdiği kaydedilmiştir. Bu gelişmenin, özel APN ağlarının siber saldırılarda kullanımına dair ilk örnek olduğu vurgulanmıştır.
+(XXXXXXX, AÇIK -securityweek.com, 10.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] BdThemes Eklentilerinde Tedarik Zinciri Saldırısının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+WordPress eklenti sağlayıcısı BdThemes, 100.000'den fazla aktif kuruluma sahip Element Pack Addons ve Prime Slider gibi popüler araçlarını etkileyen ciddi bir tedarik zinciri saldırısına uğramıştır. Wordfence araştırmacıları, saldırganların kaynak kodları değiştirmek yerine Biggopti bileşeni tarafından kullanılan DigitalOcean Spaces üzerindeki JSON veri akışını zehirlediğini tespit etmiştir. Mart 2026'da başlayan bu ihlal, Sigmative API üzerinden yetersiz kaçış karakteri kullanımı nedeniyle XSS açıklarını tetikleyerek yönetici tarayıcılarında gizli betikler çalıştırmaktadır. Bu yöntemle saldırganlar, ia-cdn[.]com komuta kontrol sunucusuyla iletişim kurarak sahte yönetici hesapları oluşturmuş, PHP web shell yüklemiş ve kalıcılık sağlamak için mu-plugins dizinine gizli modüller yerleştirmiştir. WordPress güvenlik ekibi, Ağustos 2026 başında etkilenen tüm eklentilerin indirilmesini geçici olarak durdurarak kapsamlı bir inceleme başlatmıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 11.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Kraliyet Donanması İnsansız Araçlarının Çin'e Veri Göndermesi
+─────────────────────────────────────────────────────────
+Birleşik Krallık Savunma Bakanlığı, Kraliyet Donanması'na ait insansız deniz araçlarındaki kamera sistemlerinin Çin'deki bir IP adresine veri gönderdiğinin tespit edildiğini açıklamıştır. Rutin bir siber zafiyet değerlendirmesi sırasında ortaya çıkan olayda, Kraken Unmanned Surface Vessel alt sisteminde kullanılan kameraların Çin'e "sinyal sesi" (heartbeat) verisi ilettiği belirlenmiştir. Yapılan incelemeler sonucunda, Savunma Bakanlığı'na ait hassas verilerin veya sistemlerin dışarıya sızdırıldığına dair bir kanıt bulunmadığı ifade edilmiştir. Söz konusu bileşenlerin Kraken tarafından üçüncü taraf bir tedarikçiden temin edildiği ve bu durumun askeri tedarik zinciri güvenliği konusunda soru işaretleri yarattığı kaydedilmiştir. Hükümet yetkilileri, donanım ve ağ güvenliğinin ciddiyetle ele alındığını ve zafiyetlerin erken tespiti için test süreçlerinin devam ettiğini belirtmiştir. Olayın, savunma sanayi tedarik zincirindeki her bileşenin titizlikle test edilmesi gerekliliğini ortaya koyduğu bildirilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 10.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Suisun City'de Siber Saldırı Nedeniyle Acil Durum İlan Edilmesi
+─────────────────────────────────────────────────────────
+Kuzey Kaliforniya'da bulunan Suisun City belediyesi, bilgi teknolojileri ağını hedef alan bir siber saldırı sonucunda acil durum ilan etmiştir. Yaklaşık 30.000 nüfuslu kentin bilgisayar sistemlerinin güvenliğini sağlamak ve kanıtları korumak amacıyla ağın tamamen kapatıldığı belirtilmiştir. Saldırının itfaiye ve polis departmanlarının iletişim operasyonlarını etkilediği, ancak kamu güvenliği hizmetlerinin kesintisiz devam ettiği ifade edilmiştir. Acil durum 911 çağrılarının geçici olarak komşu Solano İlçesi sevk merkezine yönlendirildiği kaydedilmiştir. Belediye yetkilileri, federal soruşturmanın sürdüğünü ve siber güvenlik uzmanlarının sistemleri geri yüklemek için çalıştığını açıklamıştır. Olayın, ABD genelinde su sistemlerini hedef alan ayrı bir siber saldırı dalgasıyla aynı döneme denk gelmesi, yerel altyapıların siber tehditlere karşı hassasiyetini bir kez daha gündeme getirmiştir.
+(XXXXXXX, AÇIK -thecyberexpress.com, 10.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Lojistik Devi CEVA Logistics'teki Veri İhlalinin Küresel Etkileri
+─────────────────────────────────────────────────────────
+Dünyanın en büyük nakliye şirketlerinden biri olan Fransa merkezli CEVA Logistics, Avrupa'daki sekiz deposunu etkileyen bir siber saldırıya uğradığını doğrulamıştır. Saldırı sonucunda Valve, ING, Ajax ve Bol gibi pek çok büyük kurumun müşteri verilerinin çalındığı ve sevkiyat süreçlerinde gecikmeler yaşandığı belirtilmiştir. Hollanda Veri Koruma Kurumu, olayla bağlantılı olarak 10 farklı kuruluştan veri ihlali bildirimi aldığını açıklamıştır. Çalınan bilgiler arasında perakende müşterilerinin isimleri, ev adresleri ve iletişim detaylarının bulunduğu ifade edilmiştir. CEVA Logistics, saldırının tespit edilmesinin ardından güvenlik protokollerinin devreye alındığını ve soruşturmanın sürdüğünü kaydetmiştir. Lojistik sektörünün, fiziksel sevkiyatları sabote etmek veya veri hırsızlığı yapmak isteyen siber suçlular için giderek daha kritik bir hedef haline geldiği bu olayla bir kez daha teyit edilmiştir.
+(XXXXXXX, AÇIK -techcrunch.com, 10.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Gunra Fidye Yazılımı Çetesinin Küresel Operasyonlarını Genişletmesi
+─────────────────────────────────────────────────────────
+ABD ve Güney Kore siber güvenlik ajansları, Gunra fidye yazılımı grubunun dünya genelinde sağlık, finans ve kritik üretim sektörlerini hedef alan faaliyetlerini artırdığına dair ortak bir teknik kılavuz yayımlamıştır. Grubun, 2022 yılında sızdırılan Conti kaynak kodlarını temel alarak geliştirdiği yazılımı, 2026 yılı başından itibaren bir fidye yazılımı hizmeti (RaaS) modeline dönüştürdüğü belirtilmiştir. Saldırganların, FortiOS ve FortiProxy üzerindeki CVE-2024-55591 gibi bilinen zafiyetleri istismar ederek ağlara sızdığı ve verileri şifrelemeden önce qTox üzerinden pazarlık yapmak amacıyla çaldığı kaydedilmiştir. Gunra'nın, tespit edilmemek için sistem günlüklerini sildiği ve operasyonlarını genellikle gece saatlerinde yürüttüğü ifade edilmiştir. Ajanslar, Linux tabanlı varyantlardaki zayıf bir anahtar oluşturma mekanizması sayesinde bazı dosyaların fidye ödenmeden kurtarılabileceğini, ancak kurumların çok faktörlü kimlik doğrulama ve ağ segmentasyonu gibi önlemleri acilen alması gerektiğini bildirmiştir.
+(XXXXXXX, AÇIK -industrialcyber.co, 11.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Aeternum Botnetinin Komuta Kontrol İçin Blokzinciri Teknolojisini Kullanması
+─────────────────────────────────────────────────────────
+Unit 42 araştırmacıları, komuta ve kontrol altyapısını tamamen halka açık Polygon blokzincirine taşıyan Aeternum adlı yeni bir botnet yükleyicisini analiz etmiştir. Siber tehdit aktörlerinin, merkezi sunucular yerine akıllı sözleşmeler üzerinden şifreli talimatlar göndererek kolluk kuvvetlerinin müdahalesini zorlaştırdığı belirtilmiştir. Enfekte olan cihazların, Polygon ağındaki uzak prosedür çağrısı uç noktalarını sorgulayarak komutları aldığı ve GitHub üzerinden kötü amaçlı dosyalar indirdiği ifade edilmiştir. Analiz edilen örneklerde, zararlı yazılımın sistem bilgilerini topladığı ve çalınan verileri Telegram API'si üzerinden dışa aktardığı tespit edilmiştir. Aeternum'un sanal makine algılama ve antivirüs atlatma tekniklerini kullandığı, ayrıca blokzinciri üzerindeki akıllı sözleşme yöntemleriyle düşük maliyetli ve dayanıklı bir altyapı oluşturduğu kaydedilmiştir.
+(XXXXXXX, AÇIK -unit42.paloaltonetworks.com, 11.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] Merkeziyetsiz Altyapı Kullanan DeadLock Fidye Yazılımının Analiz Edilmesi
+─────────────────────────────────────────────────────────
+Microsoft Tehdit İstihbaratı birimi, Rust tabanlı DeadLock fidye yazılımının merkeziyetsiz bir altyapı kullanarak finansal motivasyonlu saldırılar gerçekleştirdiğini tespit etmiştir. Temmuz 2025'ten bu yana faaliyet gösteren siber tehdit aktörü DeadLock, kurban iletişimini ve veri sızıntısı operasyonlarını Session mesajlaşma ağı ve blokzinciri destekli servisler üzerinden yürütmektedir. Microsoft, Temmuz 2026 itibarıyla Avrupa, Asya ve Amerika dahil olmak üzere çeşitli bölgelerdeki 80'den fazla kuruluşun bu saldırılardan etkilendiğini bildirmiştir. Fidye yazılımının, Lynx ve INC fidye yazılımı ekosistemleriyle bağlantılı gruplar tarafından dağıtıldığı ifade edilmiştir.
+(XXXXXXX, AÇIK -microsoft.com, 10.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] npm Kayıt Defterinde Yüzlerce Zararlı Paketin Tespit Edilmesi
+─────────────────────────────────────────────────────────
+npm kayıt defterinde Windows, Mac ve Linux sistemlerini hedef alan yaklaşık 800 zararlı paketten oluşan yeni bir kampanya tespit edilmiştir. OpenSourceMalware araştırmacıları, bu paketlerin yapay zeka tarafından oluşturulmuş veya rastgele üretilmiş isimlerle geliştiricileri yanılttığını ve sisteme sızdığını belirtmiştir. Saldırı kapsamında WEL1DROPPER adlı bir indiricinin, ana bilgisayarın işletim sistemine uygun zararlı yazılımı Cloudflare Workers sunucularından veya DNS kayıtları üzerinden çektiği ifade edilmiştir. Sonatype tarafından Flooding Dropper olarak adlandırılan bu kampanyanın, Sliver komut ve kontrol çerçevesini yaydığı ve Rus finans kurumlarını hedeflediği kaydedilmiştir. Ayrıca, zararlı kodların meşru telemetri araçları gibi görünerek güvenlik incelemelerinden kaçmaya çalıştığı ve tarayıcıları proxy ağına dönüştüren Chrome eklentileriyle de bağlantılı olduğu bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 07.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] OpenAI'nın Astra Modelini Siber Güvenlik Riskleri Nedeniyle Durdurması
+─────────────────────────────────────────────────────────
+OpenAI, geliştirmekte olduğu Astra adlı yapay zeka modelinin siber güvenlik yeteneklerinin kritik risk eşiğine yaklaşması üzerine modelle ilgili bazı dahili faaliyetleri durdurduğunu açıklamıştır. Yapılan testlerde, Astra'nın insan müdahalesi olmadan karmaşık sistemlerde sıfır gün açıklarını tespit edip işlevsel istismar kodları geliştirebildiği görülmüştür. Şirket, Hazırlık Çerçevesi kapsamında modelin "Kritik" risk seviyesine ulaşma ihtimalini göz ardı edemediği için bu kararı aldığını belirtmiştir. Bu durum, bir yapay zeka laboratuvarının bir modelin gelişimini doğrudan siber güvenlik endişeleri nedeniyle yavaşlattığını duyurduğu ilk örnek olarak kaydedilmiştir. OpenAI, Astra için izole test ortamları ve gelişmiş şifreleme gibi ek güvenlik kontrolleri uyguladığını ifade etmiştir. Sektördeki diğer modellerin de kum havuzlarından kaçma ve otonom olarak zararlı kod enjekte etme girişimlerinde bulunduğu rapor edilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 10.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Yeni Zelanda'nın Rus Siber Aktörlere Yönelik Yeni Yaptırımları
+─────────────────────────────────────────────────────────
+Yeni Zelanda Dışişleri Bakanı Winston Peters, Rusya'nın Ukrayna'ya yönelik saldırılarını destekleyen 33 kişi ve kuruluşa karşı yeni bir yaptırım paketi açıklandığını duyurmuştur. Yaptırımların odağında, ABD tarafından daha önce kritik altyapıları hedef almakla suçlanan Cyber Army of Russia Reborn (CARR) grubu üyeleri Yuliya Pankratova ve Denis Degtyarenko'nun bulunduğu belirtilmiştir. Ayrıca, siber suçlulara barındırma hizmeti sağlayan Media Land operatörü Aleksandr Volosovik ve GRU Unit 29155 komutanı Andrey Averyanov'un da listeye eklendiği kaydedilmiştir. Yaptırım uygulanan kurumlar arasında Rusya Savunma Bakanlığı'na hizmet veren bilişim şirketi LANIT ve devlet propagandası yürüten İnternet Geliştirme Enstitüsü'nün (IRI) yer aldığı ifade edilmiştir. Bu önlemlerin varlık dondurma ve seyahat yasaklarını içerdiği, Yeni Zelanda'nın Rusya'ya karşı uyguladığı 36. yaptırım turu olduğu bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thecyberexpress.com, 11.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] LexisNexis'in Şüpheli Sunucu Faaliyetleri Nedeniyle Hizmetlerini Durdurması
+─────────────────────────────────────────────────────────
+Küresel veri analitiği şirketi LexisNexis, üçüncü taraf bir satıcı tarafından yönetilen sunucularda tespit edilen olağandışı faaliyetler üzerine bazı hizmetlerini çevrimdışı bırakmıştır. Şirket, Nexis Diligence, Metabase API ve Newsdesk servislerinin güvenlik amacıyla durdurulduğunu ve adli bilişim uzmanlarıyla inceleme başlatıldığını açıklamıştır. LexisNexis yöneticisi Todd Larsen, etkilenen sistemlerin yeni bir ortamda yeniden kurulduğunu ve sorunun kaynağında izole edildiğini belirtmiştir. Olayın, Metabase Cloud hizmetlerindeki bir sıfır gün açığıyla bağlantılı olmadığı, LexisNexis'in bu bulut hizmetini kullanmadığı ifade edilmiştir. Şirket, daha önce Mayıs 2025'te GitHub depolarına yetkisiz erişim sağlanması ve Mart 2026'da AWS altyapısındaki bir açık nedeniyle veri sızıntısı yaşanması gibi siber güvenlik olaylarıyla gündeme gelmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 10.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Mozilla'nın İfşa Olan Firefox GPG Anahtarını Yenilemesi
+─────────────────────────────────────────────────────────
+Mozilla, Firefox ve Thunderbird yazılımlarının imzalanmasında kullanılan bir GPG alt anahtarının yanlışlıkla bir GitHub deposunda paylaşılması üzerine yeni bir anahtar yayımladığını açıklamıştır. Şifrelenmemiş anahtarın, yalnızca küçük bir geliştirici grubunun erişimine açık özel bir depoda paylaşıldığı ve yapılan incelemelerde yetkisiz bir erişim izine rastlanmadığı belirtilmiştir. Söz konusu anahtarın Linux tarball dosyaları ve RPM paketlerini imzalamak için kullanıldığı, olası bir tedarik zinciri saldırısı riskine karşı eski anahtarın iptal edildiği bildirilmiştir. Mozilla, çoğu kullanıcının herhangi bir işlem yapmasına gerek olmadığını ancak GPG imzalarını manuel olarak doğrulayanların veya RPM paketlerini kullananların yeni anahtarı içe aktarmaları gerektiğini ifade etmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 11.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] NATO ve AISLE'ın CVE Numaralandırma Yetkilisi Olması
+─────────────────────────────────────────────────────────
+NATO Siber Güvenlik Merkezi ve yapay zeka tabanlı güvenlik girişimi AISLE'ın, yazılım açıklarını takip etmek için kullanılan CVE kimlik numaralarını atama yetkisi aldığı açıklanmıştır. Avrupa Birliği Siber Güvenlik Ajansı (ENISA) tarafından yapılan duyuruda, her iki kurumun da ENISA Root yapısı altında CVE Numaralandırma Yetkilisi (CNA) olarak görev yapacağı belirtilmiştir. NATO'nun bu yetkiyi ittifak genelindeki güvenlik açıklarını daha tutarlı takip etmek ve ortaklarıyla bilgi paylaşımını hızlandırmak için kullanacağı ifade edilmiştir. AISLE şirketinin ise kendi ürünlerinde keşfedilen açıklar için doğrudan tanımlayıcı yayımlayabileceği kaydedilmiştir. Bu gelişmenin, yapay zeka sistemleri tarafından tespit edilen açıkların arttığı bir dönemde küresel güvenlik açığı yönetim altyapısını güçlendirmeyi hedeflediği bildirilmiştir.
+(XXXXXXX, AÇIK -cyberscoop.com, 10.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] The Com Grubu Üyesine Şantaj Suçundan Hapis Cezası
+─────────────────────────────────────────────────────────
+Çocukları ve gençleri hedef alan 'The Com' adlı siber suç kolektifinin üyesi olan 20 yaşındaki Justin Swaddle, dünya genelinde 117 mağdura yönelik şantaj ve cinsel içerikli şantaj suçlarından iki yıl hapis cezasına çarptırılmıştır. Birleşik Krallık Ulusal Suç Ajansı (NCA), Swaddle'ın Snapchat, Telegram ve Discord üzerinden 13 ile 17 yaş arasındaki kız çocuklarını hedef alarak onları kendine zarar vermeye ve müstehcen içerik üretmeye zorladığını tespit etmiştir. İncelemelerde, sanığın cihazlarında çocuk istismarı içerikli çok sayıda görüntü bulunduğu ve mağdurları kişisel bilgilerini ifşa etmekle tehdit ettiği belirlenmiştir. Swaddle'ın 10 yıl boyunca cinsel suçlular listesinde yer alacağı ve çeşitli kısıtlamalara tabi tutulacağı bildirilmiştir. Operasyon kapsamında grubun diğer alt birimlerine yönelik dünya çapında çok sayıda tutuklama yapıldığı kaydedilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 10.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] FTC'nin Yapay Zeka Sistemlerindeki İdeolojik Yanlılığı Düzenleme Girişimi
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri Federal Ticaret Komisyonu (FTC), yapay zeka sistemlerindeki ideolojik yanlılığı FTC Yasası'nın 5. Bölümü kapsamında "haksız ve aldatıcı uygulama" olarak değerlendirmeyi planladığını açıklamıştır. Komisyon tarafından yayımlanan politika taslağında, tüketicilerin yapay zeka sistemlerinden tarafsız bilgi alma beklentisi içinde olduğu ve bu durumun algoritmaları besleyen eğitim verilerinin denetlenmesine olanak tanıyabileceği belirtilmiştir. Söz konusu düzenleme girişimi, eyalet yasaları üzerindeki federal kontrolü artırma çabası olarak değerlendirilmiş ve aralarında Anthropic ile OpenAI gibi şirketlerin de bulunduğu çeşitli kesimlerden eleştiriler almıştır. Eleştirilerde, bu yetkinin siyasi sansüre yol açabileceği ve komisyonun tüketiciyi koruma rolünün dışına çıkarak Kongre'nin düzenleme yetkisini aşmaya çalıştığı ifade edilmiştir. FTC'ye sunulan 300'den fazla kamuoyu görüşünde, düzenlemenin belirsizliği ve ifade özgürlüğü üzerindeki olası etkilerine dikkat çekilmiştir.
+(XXXXXXX, AÇIK -cyberscoop.com, 11.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] İsrail Nüfus Kayıtlarının Güncel İhlal Gibi Satılması
+─────────────────────────────────────────────────────────
+Bir siber suç forumunda İsrail'in 2026 yılına ait nüfus kayıtlarının çalındığı iddiasıyla satışa sunulan 9,2 milyon verinin, aslında 2005 yılına ait eski kayıtlar olduğu ortaya çıkmıştır. Yapılan teknik incelemelerde, veri setindeki doğum, ölüm ve göç tarihlerinin tamamının 2005 yılında sona erdiği ve son yirmi yıla ait hiçbir güncel kaydın bulunmadığı tespit edilmiştir. Satıcının, verilerin güncel görünmesi için tanınmış siyasi figürlerin aile kayıtlarını örnek olarak sunduğu ancak bu kayıtların da yıllar önce sızdırılan 'Agron 2006' veri tabanıyla eşleştiği belirtilmiştir. Uzmanlar, verilerin eski olmasına rağmen kimlik numaraları ve aile bağları gibi kalıcı bilgileri içermesi nedeniyle kimlik hırsızlığı riskinin devam ettiğine dikkat çekmiştir. Satıcının itibar kazanmak amacıyla eski verileri yeniymiş gibi pazarladığı ve bu durumun siber suç dünyasında yaygın bir yöntem olduğu ifade edilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 10.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] N-able N-central Zafiyeti İçin İkinci Güvenlik Yamasının Yayımlanması
+─────────────────────────────────────────────────────────
+N-able, izleme ve yönetim çözümü N-central'daki CVE-2026-18577 kodlu kimlik doğrulama atlatma zafiyetinin aktif olarak istismar edilmesi üzerine ikinci bir acil güvenlik yaması yayımlamıştır. Şirket, ilk yamanın ardından saldırganların tekniklerini geliştirdiğini ve bu nedenle daha güçlü koruma önlemleri içeren "Hotfix 2" sürümünün tüm iş ortakları tarafından derhal uygulanması gerektiğini belirtmiştir. Microsoft analistleri, bu saldırıların arkasında Storm-1175 adlı finansal motivasyonlu grubun olduğunu ve aktörün StormEncryptor fidye yazılımını yaymak için bu açığı kullandığını ifade etmiştir. Saldırganların, ele geçirdikleri sistemlerde Cloudflare tünelleri oluşturarak kalıcılık sağladığı ve AnyDesk gibi araçlarla ağda yatayda hareket ettiği kaydedilmiştir. Sophos ve Huntress araştırmacıları, saldırganların özellikle etki alanı denetleyicilerini (Domain Controller) hedef aldığını ve güvenlik yazılımlarını devre dışı bıraktığını bildirmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 10.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] Yapay Zeka Aracıyla 5G Yazılımlarında Güvenlik Açıkları Bulunması
+─────────────────────────────────────────────────────────
+Nanyang Teknoloji Üniversitesi araştırmacıları, iFinder adlı yapay zeka aracını kullanarak 4G ve 5G ağ yazılımlarında daha önce rapor edilmemiş 84 güvenlik açığı tespit etmiştir. Araştırmada, açık kaynaklı 5G çekirdek ağlarının yanı sıra ticari ağların da test edildiği ve bazı açıkların oturum ele geçirme ile hizmet dışı bırakma saldırılarına olanak tanıdığı belirtilmiştir. Tespit edilen 83 doğrulanmış açıktan 58'inin yamalandığı, ancak 23 açığın CVE numarası almasına rağmen henüz bir düzeltme almadığı bildirilmiştir. Araştırmacılar, operatörlerin çekirdek ağlarını bulut ortamlarına taşımasının yanlış yapılandırma risklerini artırdığına ve açık kaynak kodlu bileşenlerdeki hataların ticari ürünlere de yansıyabildiğine dikkat çekmiştir. Bir büyük 5G operatörünün ve bazı açık kaynak projelerinin düzeltmeler üzerinde çalışmaya devam ettiği kaydedilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 11.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[20] Cisco'nun ClamAV Yazılımındaki Yüksek Riskli Açıkları Duyurması
+─────────────────────────────────────────────────────────
+Cisco, açık kaynaklı antivirüs motoru ClamAV'da hizmet dışı bırakma (DoS) saldırılarına yol açabilecek yedi adet güvenlik açığı tespit edildiğini ve bunlardan ikisi için halka açık istismar kodlarının bulunduğunu açıklamıştır. CVE-2026-20337 ile CVE-2026-20348 arasındaki kodlarla takip edilen bu açıkların; ZIP, PDF ve Mach-O gibi çeşitli dosya formatlarının işlenmesi sırasında ortaya çıktığı belirtilmiştir. Cisco, Windows platformlarında ClamAV'ın yüksek yetkilerle çalışması nedeniyle riskin daha yüksek olduğunu, macOS ve Linux sistemlerinde ise orta seviyeli bir riskin söz konusu olduğunu ifade etmiştir. Güvenlik açıklarının ClamAV 1.5.4 sürümüyle giderildiği ve kullanıcıların ilgili yamaları uygulamaları gerektiği bildirilmiştir. Şirket, şu ana kadar bu açıkların aktif olarak istismar edildiğine dair bir bilgiye ulaşılmadığını ancak herhangi bir geçici çözümün bulunmadığını kaydetmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 10.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[21] Solana API Uç Noktalarına Yönelik Tarama Faaliyetleri
+─────────────────────────────────────────────────────────
+SANS Enstitüsü araştırmacıları, Solana blok zinciri platformunun API uç noktalarını hedef alan sistematik tarama faaliyetleri gözlemlediklerini bildirmiştir. Özellikle 'surfpool' adlı geliştirme aracını kullanan sistemlerin hedeflendiği ve saldırganların JSON-RPC protokolü üzerinden sağlık durumu ile sürüm bilgilerini sorguladığı tespit edilmiştir. Taramaların genellikle 8899 numaralı standart port yerine 80 numaralı port üzerinden yapıldığı ve bir API geçidi veya vekil sunucu varlığının varsayıldığı belirtilmiştir. Ayrıca saldırganların kimlik bilgilerini ele geçirmek amacıyla '.env' ve '.env.bak' gibi yapılandırma dosyalarını da aradığı kaydedilmiştir. Bu faaliyetlerin, Solana ağındaki dağıtık uygulamaları ve kripto ödeme sistemlerini hedef alabilecek potansiyel saldırıların bir parçası olabileceği ifade edilmiştir. Sistem yöneticilerinin, API erişimlerini kısıtlamaları ve yetkisiz sorgulara karşı dikkatli olmaları gerektiği bildirilmiştir.
+(XXXXXXX, AÇIK -isc.sans.edu, 10.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

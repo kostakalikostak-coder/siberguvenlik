@@ -1,42 +1,41 @@
-# KAYNAK SAĞLIK RAPORU — 2026-08-10 12:06
-# aktif=36  üretiyor=9  boş(200/0)=0  hata/timeout=0
-# çıkarım : 262/262 haberin tam metni çıktı (%100)
-# dedup   : 25/262 haber filtreleri geçti (%10)
-# 🚨 DEDUP SIFIR (7) [metin var, filtreler eliyor]: ANSSI (CERT-FR), BleepingComputer, Cyberscoop, Dark Reading, The Record, SANS ISC, Krebs on Security
+# KAYNAK SAĞLIK RAPORU — 2026-08-11 12:07
+# aktif=36  üretiyor=21  boş(200/0)=0  hata/timeout=0
+# çıkarım : 272/273 haberin tam metni çıktı (%100)
+# dedup   : 96/272 haber filtreleri geçti (%35)
 # KAYNAK                      HAM  KALAN  METİN  HAVUZ  DURUM
-Help Net Security            10     10     10      6  OK
-Security Affairs             10     42     42      5  OK
-The Cyber Express            10      5      5      3  OK
-The Register                 40     35     35      2  OK
-The Hacker News              40     28     28      2  OK
-SecurityWeek                 10     10     10      2  OK
-TechCrunch Security          20      9      9      2  OK
-Schneier on Security         10      3      3      2  OK
-CSO Online                   20     20     20      1  OK
-ANSSI (CERT-FR)              40     25     25      0  🚨 DEDUP SIFIR (OK)
-BleepingComputer             15     13     13      0  🚨 DEDUP SIFIR (OK)
-Unit 42                      15      6      6      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Cyberscoop                   10      6      6      0  🚨 DEDUP SIFIR (OK)
-Industrial Cyber              9      6      6      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Dark Reading                 40      5      5      0  🚨 DEDUP SIFIR (OK)
-Microsoft Security           10      5      5      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-The Record                    5      5      5      0  🚨 DEDUP SIFIR (OK)
+Security Affairs             10     46     46      9  OK
+The Hacker News              40     24     24      9  OK
+Help Net Security            10     10     10      9  OK
+BleepingComputer             15     15     15      8  OK
+The Register                 40     37     37      7  OK
+SecurityWeek                 10     10     10      7  OK
+Industrial Cyber              9      9      9      7  OK
+Dark Reading                 40      8      8      7  OK
+Cyberscoop                   10      8      8      6  OK
+CSO Online                   20     20     20      5  OK
+The Record                    5      5      5      5  OK
+ANSSI (CERT-FR)              40     26     26      4  OK
+TechCrunch Security          20      8      8      2  OK
+Microsoft Security           10      7      7      2  OK
+The Cyber Express            10      5      5      2  OK
+SANS ISC                     10      3      3      2  OK
+Unit 42                      15      6      6      1  OK
+Recorded Future              40      4      4      1  OK
+Securelist (Kaspersky)       10      3      3      1  OK
+Schneier on Security         10      3      2      1  OK
+NCSC UK                      20      2      2      1  OK
 NIST                         40      3      3      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Recorded Future              40      3      3      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Talos Intelligence           15      3      3      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Citizen Lab                  10      3      3      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-CrowdStrike                  10      3      3      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-SANS ISC                     10      3      3      0  🚨 DEDUP SIFIR (OK)
-Graham Cluley                20      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Proofpoint Threat Insight    10      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Securelist (Kaspersky)       10      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+Talos Intelligence           15      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+CrowdStrike                  10      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 BSI                          40      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+Graham Cluley                20      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Mandiant (Google Cloud)      20      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-NCSC UK                      20      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Infoblox Blog                12      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Krebs on Security            10      1      1      0  🚨 DEDUP SIFIR (OK)
+Proofpoint Threat Insight    10      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 IranWire                     40      0      -      0  OK
+Infoblox Blog                12      0      -      0  OK
 Bellingcat                   10      0      -      0  OK
 CERT-EU                      10      0      -      0  OK
+Krebs on Security            10      0      -      0  OK
 SentinelOne Labs             10      0      -      0  OK
 The DFIR Report              10      0      -      0  OK

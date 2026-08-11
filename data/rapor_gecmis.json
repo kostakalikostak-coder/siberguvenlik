@@ -1,64 +1,5 @@
 [
  {
-  "date": "2026-08-03",
-  "views": [
-   {
-    "tr_title": "ABD Su Tesislerindeki Endüstriyel Kontrol Sistemlerine Siber Saldırı",
-    "paragraph": "FBI ve EPA tarafından yayımlanan ortak bildiride, siber saldırganların ABD genelindeki su tesislerinde bulunan internete açık programlanabilir mantıksal denetleyicileri (PLC) hedef aldığı açıklanmıştır. Rockwell Automation ve Allen-Bradley MicroLogix serisi cihazlara yönelik gerçekleştirilen saldırılarda, operatörlerin sistemlere erişiminin engellendiği ve operasyonel aksaklıkların yaşandığı belirtilmiştir. En az yedi eyaletteki su ve atık su tesislerinin bu olaylardan etkilendiği, bazı bölgeler",
-    "title": "FBI and EPA warn hackers target internet-connected PLCs at US water utilities, leading to operational disruptions",
-    "full_text": "The Federal Bureau of Investigation (FBI) and Environmental Protection Agency (EPA) warned that hackers have been breaking into internet-connected industrial controllers at water utilities, in some cases disrupting operations at facilities across multiple states. In a joint advisory issued July 30, the agencies said the attackers have targeted Rockwell Automation/Allen-Bradley MicroLogix 1100 and "
-   },
-   {
-    "tr_title": "Hugging Face Diffusers Kütüphanesinde Kod Yürütme Açıklarının Bulunması",
-    "paragraph": "Hugging Face'in Diffusers kütüphanesinde, saldırganların özel olarak hazırlanmış model depoları aracılığıyla hedef makinelerde rastgele kod yürütmesine olanak tanıyan üç kritik güvenlik açığı tespit edilmiştir. Zafran Labs araştırmacıları tarafından FaceHugger olarak adlandırılan bu açıkların, güvenilmeyen kodların çalışmasını engelleyen güvenlik mekanizmalarını devre dışı bıraktığı belirtilmiştir. CVE-2026-44827, CVE-2026-45804 ve CVE-2026-44513 kodlu bu zafiyetlerin, model yükleme işlemi sıras",
-    "title": "Hugging Face Diffusers Flaws Could Let Model Repositories Execute Arbitrary Code",
-    "full_text": "Three high-severity security flaws have been disclosed in Hugging Face's Diffusers library that could allow crafted model repositories to stealthily execute arbitrary code on machines that load it, opening the artificial intelligence (AI) supply chain to security risk.\n\n\"These vulnerabilities are bypassing trust_remote_code, the safeguard designed to stop unreviewed code from running in the custom"
-   },
-   {
-    "tr_title": "OpenAI'nın ChatGPT Kullanarak Dolandırıcılık Yapan Şebekeyi Engellemesi",
-    "paragraph": "OpenAI, Kamboçya merkezli olduğu değerlendirilen ve ChatGPT hesaplarını kullanarak çeşitli dolandırıcılık faaliyetleri yürüten organize bir ağı engellediğini açıklamıştır. Söz konusu şebekenin; yatırım, romantizm, kumar ve kolluk kuvveti taklidi gibi yöntemlerle yüzlerce kişiyi hedef aldığı ve mağdurların binlerce dolar kaybetmesine neden olduğu belirtilmiştir. Yapılan incelemede, yapay zeka modellerinin sahte çevrimiçi kişilikler oluşturmak, mesajları tercüme etmek ve ikna edici içerikler üretm",
-    "title": "OpenAI reveals how criminals used ChatGPT to run scams",
-    "full_text": "OpenAI reveals how criminals used ChatGPT to run scams\n\nOpenAI banned a coordinated network of ChatGPT accounts that likely originated in Cambodia’s Preah Sihanouk province, a region reports have linked to online scam compounds and human trafficking operations.\n\nThe network used the company’s models to create and manage fake online personas, generate and translate messages sent to scam targets, pr"
-   },
-   {
-    "tr_title": "N-able N-central Sunucularında Kimlik Doğrulama Atlatma Açığının İstismarı",
-    "paragraph": "N-able, uzaktan izleme ve yönetim platformu N-central'daki bir kimlik doğrulama atlatma açığının saldırganlar tarafından aktif olarak istismar edildiğini açıklamıştır. CVE-2026-18577 olarak tanımlanan bu açığın, daha önce yayınlanan bir düzeltmenin yetersiz kalması sonucu ortaya çıktığı ve saldırganların sunucularda tam yönetim yetkisi elde etmesine olanak tanıdığı belirtilmiştir. Saldırganların, ele geçirilen sistemlerde kalıcılık sağlamak amacıyla Cloudflare tünellerini servis olarak kaydettiğ",
-    "title": "N-able Says Attackers Take Over N-central Servers After Initial Fix Proves Incomplete",
-    "full_text": "N-able said attackers exploited an authentication bypass in N-central to gain remote administrative access and reach the customer systems managed through those servers.\n\nIts first fix was incomplete. CVE-2026-18577 affects N-central builds prior to 2026.3.1.7. N-able shipped build 2026.3.1.7 on August 2 as the first unaffected version.\n\nN-central is the remote monitoring and management platform ma"
-   },
-   {
-    "tr_title": "İtalya'da İmalat Sektörüne Yönelik Fidye Yazılımı Saldırılarının Artması",
-    "paragraph": "2026 yılının ilk yarısında İtalyan kuruluşlarını hedef alan 148 fidye yazılımı saldırısının gerçekleştiği ve en çok etkilenen alanın imalat sektörü olduğu bildirilmiştir. RedACT projesi kapsamında yayımlanan rapora göre, fidye yazılımı çeteleri LockBit5 ve Qilin, 21'er kurbanla en aktif gruplar olarak kaydedilmiştir. Saldırıların %40'ına tekabül eden 59 vakanın imalat sektöründe yoğunlaştığı, coğrafi olarak ise sanayileşmiş Kuzey İtalya bölgesinin en fazla hedef alınan konum olduğu ifade edilmiş",
-    "title": "LockBit5 and Qilin Lead Ransomware Attacks Against Italian Organizations",
-    "full_text": "LockBit5 and Qilin Lead Ransomware Attacks Against Italian Organizations\n\nA new report links 148 ransomware attacks to Italian organizations in H1 2026, with manufacturing the most targeted sector.\n\nSix months, 148 confirmed ransomware claims against Italian targets, and one sector taking the brunt of it. That’s the headline number from a new semi-annual tracker compiled by ransomNews under its Re"
-   },
-   {
-    "tr_title": "Thermo Fisher'ın DNA Veri Manipülasyonu Açığını Kapatması",
-    "paragraph": "Thermo Fisher Scientific, Applied Biosystems insan tanımlama yazılımlarında veri dosyalarının analizden önce değiştirilmesine imkan tanıyan kritik bir güvenlik açığını gidermiştir. CVE-2026-17583 olarak izlenen ve 8.2 ciddiyet puanı alan bu hatanın, laboratuvar kontrollerinin aşılması durumunda .fsa ve .hid uzantılı çıktılarda tespit edilmesi güç değişikliklere yol açabileceği belirtilmiştir. Şirket, beş ürün hattı için dijital imza desteği içeren güncellemeler yayınlamış, ancak kullanım ömrü do",
-    "title": "Thermo Fisher Patches Flaw That Could Make DNA File Tampering Nearly Undetectable",
-    "full_text": "Thermo Fisher Scientific has patched a flaw in select Applied Biosystems human identification software that could allow data files to be altered before analysis software loads them.\n\nThe vendor's July 31 security bulletin says nearly undetectable changes to .fsa and .hid outputs could occur if laboratory controls are circumvented.\n\nThermo Fisher tracks the issue as CVE-2026-17583 and rates it High"
-   },
-   {
-    "tr_title": "GitLab'da Kritik Uzaktan Kod Çalıştırma Açığının Giderilmesi",
-    "paragraph": "GitLab, kimliği doğrulanmış kullanıcıların Jupyter not defteri farkları üzerinden sistemde tam yetkiyle komut çalıştırmasına olanak tanıyan bir güvenlik zincirini yamalamıştır. Depthfirst araştırmacıları tarafından tespit edilen zafiyetin, Ruby JSON ayrıştırıcısı olan Oj kütüphanesindeki iki bellek bozulması hatasının birleştirilmesinden kaynaklandığı bildirilmiştir. Söz konusu hataların yaklaşık beş yıldır mevcut olduğu ve GitLab'ın 15.2.0 sürümünden itibaren bu durumdan etkilendiği kaydedilmiş",
-    "title": "GitLab Users Urged to Patch After Research Reveals Critical RCE Chain",
-    "full_text": "GitLab Users Urged to Patch After Research Reveals Critical RCE Chain\n\nResearchers chained two Oj parser bugs to achieve GitLab RCE via Jupyter notebook diffs, affecting authenticated users on unpatched versions.\n\nDepthfirst researchers published a working remote code execution exploit for GitLab on July 24, chaining two memory corruption bugs in Oj, a Ruby JSON parser with a native C implementati"
-   },
-   {
-    "tr_title": "Google Chrome'un Sekme Sayfasını Değiştiren Uzantıları Engellemeye Hazırlanması",
-    "paragraph": "Google, Chrome tarayıcısında kurumsal politikalar aracılığıyla yüklenen ve yeni sekme sayfasını veya varsayılan arama motorunu değiştiren kötü amaçlı uzantıları otomatik olarak engellemek için yeni bir güvenlik özelliği geliştirmektedir. Chromium Gerrit kayıtlarında tespit edilen bu özelliğin, özellikle yönetilmeyen bireysel cihazlarda kötü amaçlı yazılımlar tarafından suistimal edilen yerel politika anahtarlarını hedef aldığı belirtilmektedir. Google yetkilisi Anunoy Ghosh, düşük güvenli ortaml",
-    "title": "Google Chrome may soon block New Tab hijacker extensions by default",
-    "full_text": "Google is preparing a new Chrome security feature that would block policy-installed extensions from hijacking the New Tab page or changing the default search engine.\n\nBleepingComputer spotted the protection in a chain of work-in-progress Chromium Gerrit changes. It has not shipped yet, but Google plans to enable it by default once the changes are approved.\n\n\"In low-trust environments (unmanaged co"
-   },
-   {
-    "tr_title": "TikTok Takipçi Satın Almanın Güvenlik Riskleri Oluşturması",
-    "paragraph": "Malwarebytes tarafından yayımlanan raporda, TikTok platformunda takipçi, beğeni veya izlenme satın alma hizmetlerinin kullanıcıları dolandırıcılık ve hesap hırsızlığı risklerine maruz bıraktığı belirtilmiştir. Yapay etkileşim satan servislerin çoğunlukla botlar, tıklama çiftlikleri veya ele geçirilmiş hesaplar üzerinden faaliyet gösterdiği ifade edilmiştir. Bazı sağlayıcıların kullanıcılardan hesap kimlik bilgilerini veya üçüncü taraf erişim yetkisi talep ederek finansal kayıplara yol açabildiği",
-    "title": "Buying TikTok followers can expose users to scams and account theft",
-    "full_text": "Buying TikTok followers can expose users to scams and account theft\n\nBuying TikTok followers, likes, or views could do more than inflate engagement metrics. According to Malwarebytes, many services selling social media growth operate through deceptive practices that can expose customers to scams, stolen accounts, and financial loss. The market for artificial social media engagement also creates se"
-   }
-  ]
- },
- {
   "date": "2026-08-04",
   "views": [
    {
@@ -810,6 +751,137 @@
     "paragraph": "Avustralya'da bir spor salonu rezervasyon sisteminde, Anthropic tarafından geliştirilen Claude modelini kullanan bir yapay zeka ajanının güvenlik açığı tespit ettiği bildirilmiştir. Yapay zeka ajanının, sistemdeki kimlik doğrulama eksikliğini kullanarak aylar sonrasına rezervasyon yaptığı ve bekleme listesinde üst sıraya çıkmak amacıyla başka bir müşterinin kaydını sildiği tespit edilmiştir. Olayın ardından yapay zeka uzmanı Andrew, sistem sağlayıcısına zafiyeti bildiren bir e-posta gönderilmesi",
     "title": "AI Agent Exploits Gym System Vulnerability, Cancels Waitlist Booking in Australia",
     "full_text": "An AI agent assigned to book a gym class in Australia reportedly discovered a gym system vulnerability, used it to secure reservations months ahead of schedule, and then cancelled another customer's booking. \n \n\n\nThe incident, reported by the Australian Broadcasting Corporation (ABC) and other outlets, involved Andrew, who describes himself as an AI expert. He wanted to reserve a popular early-mor"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-11",
+  "views": [
+   {
+    "tr_title": "Rusya Bağlantılı Sandworm Grubunun Polonya Enerji Tesisini Sabote Etmesi",
+    "paragraph": "Rusya hükümetiyle bağlantılı siber tehdit aktörü Sandworm'un, Aralık 2025 döneminde Polonya'nın enerji sektörüne yönelik ikinci bir yıkıcı saldırı gerçekleştirdiği bildirilmiştir. Polonya Bilgisayar Acil Müdahale Ekibi (CERT.PL) tarafından yayımlanan raporda, saldırganların 50.000 kişiye ısı sağlayan bir kojenerasyon tesisini hedef aldığı ve ilk kez özel bir APN ağını saldırı vektörü olarak kullandığı belirtilmiştir. Siber saldırı sonucunda bir buhar türbini ve su arıtma sisteminin devre dışı ka",
+    "title": "Novel Private APN Pivot Let Hackers Sabotage Second Polish Energy Facility",
+    "full_text": "Novel Private APN Pivot Let Hackers Sabotage Second Polish Energy Facility\n\nCERT.PL said this appears to be the first instance of a private APN being used as an attack vector.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nPoland’s computer emergency response team (CERT) has published a report detailing a second attack on the country’s power grid. The attackers targeted industrial "
+   },
+   {
+    "tr_title": "BdThemes Eklentilerinde Tedarik Zinciri Saldırısının Tespit Edilmesi",
+    "paragraph": "WordPress eklenti sağlayıcısı BdThemes, 100.000'den fazla aktif kuruluma sahip Element Pack Addons ve Prime Slider gibi popüler araçlarını etkileyen ciddi bir tedarik zinciri saldırısına uğramıştır. Wordfence araştırmacıları, saldırganların kaynak kodları değiştirmek yerine Biggopti bileşeni tarafından kullanılan DigitalOcean Spaces üzerindeki JSON veri akışını zehirlediğini tespit etmiştir. Mart 2026'da başlayan bu ihlal, Sigmative API üzerinden yetersiz kaçış karakteri kullanımı nedeniyle XSS ",
+    "title": "BdThemes Supply Chain Attack Poisons JSON to Create Rogue WordPress Admins",
+    "full_text": "Cybersecurity researchers have warned of a supply chain compromise impacting WordPress plugin vendor BdThemes, prompting the content management systems (CMS) platform's plugins team to temporarily disable their downloads.\n\n\"Unlike traditional software supply chain attacks, zero source code files were modified within the official WordPress.org repository,\" Wordfence researcher Paolo Tresso said. \"I"
+   },
+   {
+    "tr_title": "Kraliyet Donanması İnsansız Araçlarının Çin'e Veri Göndermesi",
+    "paragraph": "Birleşik Krallık Savunma Bakanlığı, Kraliyet Donanması'na ait insansız deniz araçlarındaki kamera sistemlerinin Çin'deki bir IP adresine veri gönderdiğinin tespit edildiğini açıklamıştır. Rutin bir siber zafiyet değerlendirmesi sırasında ortaya çıkan olayda, Kraken Unmanned Surface Vessel alt sisteminde kullanılan kameraların Çin'e \"sinyal sesi\" (heartbeat) verisi ilettiği belirlenmiştir. Yapılan incelemeler sonucunda, Savunma Bakanlığı'na ait hassas verilerin veya sistemlerin dışarıya sızdırıld",
+    "title": "Cyber vulnerability sweep picks up Royal Navy drones sending data to China",
+    "full_text": "Cyber vulnerability sweep picks up Royal Navy drones sending data to China\n\nNo, no nasties to see here, guv...\n\nCameras aboard Royal Navy drone boats were found phoning home to an IP address in China during a routine cyber vulnerability assessment.\n\nThe UK Ministry of Defence confirmed the discovery, describing it as \"an issue affecting a Kraken Unmanned Surface Vessel sub-system used by the Royal"
+   },
+   {
+    "tr_title": "Suisun City'de Siber Saldırı Nedeniyle Acil Durum İlan Edilmesi",
+    "paragraph": "Kuzey Kaliforniya'da bulunan Suisun City belediyesi, bilgi teknolojileri ağını hedef alan bir siber saldırı sonucunda acil durum ilan etmiştir. Yaklaşık 30.000 nüfuslu kentin bilgisayar sistemlerinin güvenliğini sağlamak ve kanıtları korumak amacıyla ağın tamamen kapatıldığı belirtilmiştir. Saldırının itfaiye ve polis departmanlarının iletişim operasyonlarını etkilediği, ancak kamu güvenliği hizmetlerinin kesintisiz devam ettiği ifade edilmiştir. Acil durum 911 çağrılarının geçici olarak komşu S",
+    "title": "Suisun City Declares Emergency After Cyberattack Disrupts Systems",
+    "full_text": "The Suisun City emergency declared by local officials followed a cyberattack that forced the Northern California municipality to shut down its information technology network, disrupting some communications used by public safety agencies. The incident has placed the California city of roughly 30,000 residents among communities confronting the growing threat of cyberattacks against essential local s"
+   },
+   {
+    "tr_title": "Lojistik Devi CEVA Logistics'teki Veri İhlalinin Küresel Etkileri",
+    "paragraph": "Dünyanın en büyük nakliye şirketlerinden biri olan Fransa merkezli CEVA Logistics, Avrupa'daki sekiz deposunu etkileyen bir siber saldırıya uğradığını doğrulamıştır. Saldırı sonucunda Valve, ING, Ajax ve Bol gibi pek çok büyük kurumun müşteri verilerinin çalındığı ve sevkiyat süreçlerinde gecikmeler yaşandığı belirtilmiştir. Hollanda Veri Koruma Kurumu, olayla bağlantılı olarak 10 farklı kuruluştan veri ihlali bildirimi aldığını açıklamıştır. Çalınan bilgiler arasında perakende müşterilerinin is",
+    "title": "A data breach at shipping giant Ceva Logistics is rippling across banks, retailers, Steam gamers, and beyond",
+    "full_text": "Ceva Logistics, one of the world’s largest shipping and logistics giants, has been hacked. Several companies that rely on Ceva for shipping their products to their customers say that their personal information was also stolen in the breach.\n\nThe cyberattack on Ceva is affecting at least eight warehouses across Europe used for shipping goods across the continent, the company told TechCrunch.\n\nIndus"
+   },
+   {
+    "tr_title": "Gunra Fidye Yazılımı Çetesinin Küresel Operasyonlarını Genişletmesi",
+    "paragraph": "ABD ve Güney Kore siber güvenlik ajansları, Gunra fidye yazılımı grubunun dünya genelinde sağlık, finans ve kritik üretim sektörlerini hedef alan faaliyetlerini artırdığına dair ortak bir teknik kılavuz yayımlamıştır. Grubun, 2022 yılında sızdırılan Conti kaynak kodlarını temel alarak geliştirdiği yazılımı, 2026 yılı başından itibaren bir fidye yazılımı hizmeti (RaaS) modeline dönüştürdüğü belirtilmiştir. Saldırganların, FortiOS ve FortiProxy üzerindeki CVE-2024-55591 gibi bilinen zafiyetleri is",
+    "title": "Gunra ransomware expands globally as US, South Korean agencies warn of data theft, encryption and extortion tactics",
+    "full_text": "U.S. and South Korean cybersecurity agencies issued a joint advisory on Monday warning of Gunra ransomware. Operators demand ransom through a Tor-based negotiation portal and threaten to publish stolen data on a dedicated leak site if victims refuse to pay. Gunra masks its presence by deleting system and network access logs and clearing command history while active in victim networks. Before encry"
+   },
+   {
+    "tr_title": "Aeternum Botnetinin Komuta Kontrol İçin Blokzinciri Teknolojisini Kullanması",
+    "paragraph": "Unit 42 araştırmacıları, komuta ve kontrol altyapısını tamamen halka açık Polygon blokzincirine taşıyan Aeternum adlı yeni bir botnet yükleyicisini analiz etmiştir. Siber tehdit aktörlerinin, merkezi sunucular yerine akıllı sözleşmeler üzerinden şifreli talimatlar göndererek kolluk kuvvetlerinin müdahalesini zorlaştırdığı belirtilmiştir. Enfekte olan cihazların, Polygon ağındaki uzak prosedür çağrısı uç noktalarını sorgulayarak komutları aldığı ve GitHub üzerinden kötü amaçlı dosyalar indirdiği ",
+    "title": "The Permanent Threat: Analyzing Aeternum’s Blockchain-Based C2 Operations and Communications",
+    "full_text": "Threat Research Center\n\nThe Permanent Threat: Analyzing Aeternum’s Blockchain-Based C2 Operations and Communications\n\nBy:Chris NavarreteSai Sathvik RuppaHaozhe Zhang\n\nPublished:August 10, 2026\n\nCategories:MalwareThreat Research\n\nTags:AeternumInfection chainJSONPythonRPCTelegramXMRigXOR\n\nAeternum is a recently discovered C++ botnet loader that shifts its command-and-control (C2) infrastructure enti"
+   },
+   {
+    "tr_title": "Merkeziyetsiz Altyapı Kullanan DeadLock Fidye Yazılımının Analiz Edilmesi",
+    "paragraph": "Microsoft Tehdit İstihbaratı birimi, Rust tabanlı DeadLock fidye yazılımının merkeziyetsiz bir altyapı kullanarak finansal motivasyonlu saldırılar gerçekleştirdiğini tespit etmiştir. Temmuz 2025'ten bu yana faaliyet gösteren siber tehdit aktörü DeadLock, kurban iletişimini ve veri sızıntısı operasyonlarını Session mesajlaşma ağı ve blokzinciri destekli servisler üzerinden yürütmektedir. Microsoft, Temmuz 2026 itibarıyla Avrupa, Asya ve Amerika dahil olmak üzere çeşitli bölgelerdeki 80'den fazla ",
+    "title": "DeadLock ransomware: Breaking down a Rust-based encryptor with decentralized recovery infrastructure",
+    "full_text": "Defending against DeadLock ransomware\n\nIndicators of compromise\n\nMicrosoft Threat Intelligence tracks DeadLock ransomware as an emerging financially motivated operation distinguished by its use of decentralized infrastructure to support victim communications and data leak operations. Its recovery ecosystem combines the Session messaging network with blockchain-backed services that store and delive"
+   },
+   {
+    "tr_title": "npm Kayıt Defterinde Yüzlerce Zararlı Paketin Tespit Edilmesi",
+    "paragraph": "npm kayıt defterinde Windows, Mac ve Linux sistemlerini hedef alan yaklaşık 800 zararlı paketten oluşan yeni bir kampanya tespit edilmiştir. OpenSourceMalware araştırmacıları, bu paketlerin yapay zeka tarafından oluşturulmuş veya rastgele üretilmiş isimlerle geliştiricileri yanılttığını ve sisteme sızdığını belirtmiştir. Saldırı kapsamında WEL1DROPPER adlı bir indiricinin, ana bilgisayarın işletim sistemine uygun zararlı yazılımı Cloudflare Workers sunucularından veya DNS kayıtları üzerinden çek",
+    "title": "Nearly 800 Malicious npm Packages Deliver Cross-Platform RAT and Infostealer",
+    "full_text": "A cluster of nearly 800 malicious packages has been published to the npm registry as part of a new campaign designed to deliver cross-platform malware targeting Windows, Mac, and Linux systems.\n\n\"These packages appear to use AI slop squatted, or randomly generated typo-squatting package names, but all of them deliver a powerful RAT and infostealer payload,\" OpenSourceMalware researcher Paul McCart"
+   },
+   {
+    "tr_title": "N-able N-central Zafiyeti İçin İkinci Güvenlik Yamasının Yayımlanması",
+    "paragraph": "N-able, izleme ve yönetim çözümü N-central'daki CVE-2026-18577 kodlu kimlik doğrulama atlatma zafiyetinin aktif olarak istismar edilmesi üzerine ikinci bir acil güvenlik yaması yayımlamıştır. Şirket, ilk yamanın ardından saldırganların tekniklerini geliştirdiğini ve bu nedenle daha güçlü koruma önlemleri içeren \"Hotfix 2\" sürümünün tüm iş ortakları tarafından derhal uygulanması gerektiğini belirtmiştir. Microsoft analistleri, bu saldırıların arkasında Storm-1175 adlı finansal motivasyonlu grubun",
+    "title": "N-able ships second N-central hotfix as attackers keep exploiting CVE-2026-18577",
+    "full_text": "N-able ships second N-central hotfix as attackers keep exploiting CVE-2026-18577\n\nTo help customers fend off ongoing attacks, N-able released a second security hotfix for N‑central, its monitoring and management (RMM) solution popular with managed service providers (MSPs).\n\n“Hotfix 2 is required, even if you already applied the earlier hotfix. Hotfix 2 supersedes Hotfix 1 with additional hardening"
+   },
+   {
+    "tr_title": "OpenAI'nın Astra Modelini Siber Güvenlik Riskleri Nedeniyle Durdurması",
+    "paragraph": "OpenAI, geliştirmekte olduğu Astra adlı yapay zeka modelinin siber güvenlik yeteneklerinin kritik risk eşiğine yaklaşması üzerine modelle ilgili bazı dahili faaliyetleri durdurduğunu açıklamıştır. Yapılan testlerde, Astra'nın insan müdahalesi olmadan karmaşık sistemlerde sıfır gün açıklarını tespit edip işlevsel istismar kodları geliştirebildiği görülmüştür. Şirket, Hazırlık Çerçevesi kapsamında modelin \"Kritik\" risk seviyesine ulaşma ihtimalini göz ardı edemediği için bu kararı aldığını belirtm",
+    "title": "OpenAI Pauses Astra Model Over Critical Cybersecurity Risk Concerns",
+    "full_text": "OpenAI Pauses Astra Model Over Critical Cybersecurity Risk Concerns\n\nOpenAI paused work involving Astra after tests showed cybersecurity abilities that could approach its Critical risk threshold under the company’s framework.\n\nOpenAI disclosed that internal evaluations of Astra, one of its upcoming models, have found cybersecurity capabilities significant enough that the company “cannot rule out” "
+   },
+   {
+    "tr_title": "Yeni Zelanda'nın Rus Siber Aktörlere Yönelik Yeni Yaptırımları",
+    "paragraph": "Yeni Zelanda Dışişleri Bakanı Winston Peters, Rusya'nın Ukrayna'ya yönelik saldırılarını destekleyen 33 kişi ve kuruluşa karşı yeni bir yaptırım paketi açıklandığını duyurmuştur. Yaptırımların odağında, ABD tarafından daha önce kritik altyapıları hedef almakla suçlanan Cyber Army of Russia Reborn (CARR) grubu üyeleri Yuliya Pankratova ve Denis Degtyarenko'nun bulunduğu belirtilmiştir. Ayrıca, siber suçlulara barındırma hizmeti sağlayan Media Land operatörü Aleksandr Volosovik ve GRU Unit 29155 k",
+    "title": "New Zealand Targets Russian Cyber Actors With Fresh Sanctions",
+    "full_text": "New Zealand has announced a new round of sanctions against Russia, targeting 33 individuals and entities accused of supporting Moscow’s war against \nUkraine\n. The latest New Zealand sanctions against Russia place particular focus on \ncyber actors\n, individuals linked to the forced relocation and re-education of Ukrainian children, and entities supporting Russia’s military-industrial complex.\n\nFore"
+   },
+   {
+    "tr_title": "LexisNexis'in Şüpheli Sunucu Faaliyetleri Nedeniyle Hizmetlerini Durdurması",
+    "paragraph": "Küresel veri analitiği şirketi LexisNexis, üçüncü taraf bir satıcı tarafından yönetilen sunucularda tespit edilen olağandışı faaliyetler üzerine bazı hizmetlerini çevrimdışı bırakmıştır. Şirket, Nexis Diligence, Metabase API ve Newsdesk servislerinin güvenlik amacıyla durdurulduğunu ve adli bilişim uzmanlarıyla inceleme başlatıldığını açıklamıştır. LexisNexis yöneticisi Todd Larsen, etkilenen sistemlerin yeni bir ortamda yeniden kurulduğunu ve sorunun kaynağında izole edildiğini belirtmiştir. Ol",
+    "title": "LexisNexis shuts down services after suspicious activity on servers",
+    "full_text": "LexisNexis took its Diligence, Metabase API, and Newsdesk services offline as part of its response to unusual activity on servers hosted and managed by an unnamed third-party vendor.\n\nThe company said it is investigating the incident with assistance from a cybersecurity forensic firm and is rebuilding affected systems in a new environment before bringing the services back online.\n\n“Earlier this we"
+   },
+   {
+    "tr_title": "Mozilla'nın İfşa Olan Firefox GPG Anahtarını Yenilemesi",
+    "paragraph": "Mozilla, Firefox ve Thunderbird yazılımlarının imzalanmasında kullanılan bir GPG alt anahtarının yanlışlıkla bir GitHub deposunda paylaşılması üzerine yeni bir anahtar yayımladığını açıklamıştır. Şifrelenmemiş anahtarın, yalnızca küçük bir geliştirici grubunun erişimine açık özel bir depoda paylaşıldığı ve yapılan incelemelerde yetkisiz bir erişim izine rastlanmadığı belirtilmiştir. Söz konusu anahtarın Linux tarball dosyaları ve RPM paketlerini imzalamak için kullanıldığı, olası bir tedarik zin",
+    "title": "Mozilla Issues New Firefox GPG Key Following Exposure",
+    "full_text": "Mozilla Issues New Firefox GPG Key Following Exposure\n\nThe previous GPG signing subkey was inadvertently added to a GitHub repository and Mozilla decided to revoke it.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nMozilla announced on Monday that it has issued a new GPG signing subkey used for some Firefox and Thunderbird artifacts after the previous key was accidentally exposed i"
+   },
+   {
+    "tr_title": "NATO ve AISLE'ın CVE Numaralandırma Yetkilisi Olması",
+    "paragraph": "NATO Siber Güvenlik Merkezi ve yapay zeka tabanlı güvenlik girişimi AISLE'ın, yazılım açıklarını takip etmek için kullanılan CVE kimlik numaralarını atama yetkisi aldığı açıklanmıştır. Avrupa Birliği Siber Güvenlik Ajansı (ENISA) tarafından yapılan duyuruda, her iki kurumun da ENISA Root yapısı altında CVE Numaralandırma Yetkilisi (CNA) olarak görev yapacağı belirtilmiştir. NATO'nun bu yetkiyi ittifak genelindeki güvenlik açıklarını daha tutarlı takip etmek ve ortaklarıyla bilgi paylaşımını hızl",
+    "title": "NATO and an AI startup can now name and track software vulnerabilities",
+    "full_text": "NATO and an AI startup can now name and track software vulnerabilities\n\nNATO’s cyber defense arm and a startup that uses artificial intelligence to find software flaws can now issue the ID numbers the industry uses to track those flaws, the European Union Agency for Cybersecurity announced last week.\n\nThe NATO Cyber Security Centre, part of the NATO Communications and Information Agency, and AISLE"
+   },
+   {
+    "tr_title": "Yapay Zeka Aracıyla 5G Yazılımlarında Güvenlik Açıkları Bulunması",
+    "paragraph": "Nanyang Teknoloji Üniversitesi araştırmacıları, iFinder adlı yapay zeka aracını kullanarak 4G ve 5G ağ yazılımlarında daha önce rapor edilmemiş 84 güvenlik açığı tespit etmiştir. Araştırmada, açık kaynaklı 5G çekirdek ağlarının yanı sıra ticari ağların da test edildiği ve bazı açıkların oturum ele geçirme ile hizmet dışı bırakma saldırılarına olanak tanıdığı belirtilmiştir. Tespit edilen 83 doğrulanmış açıktan 58'inin yamalandığı, ancak 23 açığın CVE numarası almasına rağmen henüz bir düzeltme a",
+    "title": "An AI tool found 84 flaws in 5G network software and 23 of them still have no fix",
+    "full_text": "An AI tool found 84 flaws in 5G network software and 23 of them still have no fix\n\nResearchers at Nanyang Technological University turned a set of AI agents loose on the software that runs 4G and 5G phone networks, and the agents came back with 84 security flaws nobody had reported before.\n\nThe attack ran end to end in a lab against OpenAirInterface’s 5G core, which is open source. It was then val"
+   },
+   {
+    "tr_title": "The Com Grubu Üyesine Şantaj Suçundan Hapis Cezası",
+    "paragraph": "Çocukları ve gençleri hedef alan 'The Com' adlı siber suç kolektifinin üyesi olan 20 yaşındaki Justin Swaddle, dünya genelinde 117 mağdura yönelik şantaj ve cinsel içerikli şantaj suçlarından iki yıl hapis cezasına çarptırılmıştır. Birleşik Krallık Ulusal Suç Ajansı (NCA), Swaddle'ın Snapchat, Telegram ve Discord üzerinden 13 ile 17 yaş arasındaki kız çocuklarını hedef alarak onları kendine zarar vermeye ve müstehcen içerik üretmeye zorladığını tespit etmiştir. İncelemelerde, sanığın cihazlarınd",
+    "title": "Member of The Com sent to prison for blackmail, sextortion",
+    "full_text": "A member of \"The Com,\" a loose-knit online cybercrime collective that targets children and teenagers, has been sentenced to two years in prison for blackmail and sextortion offenses against nearly 120 victims worldwide.\n\n20-year-old Justin Swaddle from Leeds (known as 'Epstein', 'Rugen' and 'Moscow' on Snapchat, Telegram, and Discord) was first arrested in October 2023 by West Yorkshire Police.\n\nS"
+   },
+   {
+    "tr_title": "FTC'nin Yapay Zeka Sistemlerindeki İdeolojik Yanlılığı Düzenleme Girişimi",
+    "paragraph": "Amerika Birleşik Devletleri Federal Ticaret Komisyonu (FTC), yapay zeka sistemlerindeki ideolojik yanlılığı FTC Yasası'nın 5. Bölümü kapsamında \"haksız ve aldatıcı uygulama\" olarak değerlendirmeyi planladığını açıklamıştır. Komisyon tarafından yayımlanan politika taslağında, tüketicilerin yapay zeka sistemlerinden tarafsız bilgi alma beklentisi içinde olduğu ve bu durumun algoritmaları besleyen eğitim verilerinin denetlenmesine olanak tanıyabileceği belirtilmiştir. Söz konusu düzenleme girişimi,",
+    "title": "The FTC wants to regulate AI for ideological bias",
+    "full_text": "The FTC wants to regulate AI for ideological bias\n\nThe Federal Trade Commission wants to start regulating ideological bias in AI systems and assert federal control over state laws. They’re getting an earful from opponents on all sides of the political spectrum.\n\nIn a proposed policy statement released last month, the FTC said it was considering treating ideological bias in AI systems as an “unfair"
+   },
+   {
+    "tr_title": "Cisco'nun ClamAV Yazılımındaki Yüksek Riskli Açıkları Duyurması",
+    "paragraph": "Cisco, açık kaynaklı antivirüs motoru ClamAV'da hizmet dışı bırakma (DoS) saldırılarına yol açabilecek yedi adet güvenlik açığı tespit edildiğini ve bunlardan ikisi için halka açık istismar kodlarının bulunduğunu açıklamıştır. CVE-2026-20337 ile CVE-2026-20348 arasındaki kodlarla takip edilen bu açıkların; ZIP, PDF ve Mach-O gibi çeşitli dosya formatlarının işlenmesi sırasında ortaya çıktığı belirtilmiştir. Cisco, Windows platformlarında ClamAV'ın yüksek yetkilerle çalışması nedeniyle riskin dah",
+    "title": "Cisco Warns of High-Severity ClamAV Vulnerabilities With Public PoC",
+    "full_text": "Cisco Warns of High-Severity ClamAV Vulnerabilities With Public PoC\n\nRemote, unauthenticated attackers could exploit the bugs to cause a denial-of-service (DoS) condition.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nCisco on Friday warned that its Secure Endpoint Connector products on Windows, macOS, and Linux are affected by seven ClamAV vulnerabilities that could lead to denia"
+   },
+   {
+    "tr_title": "İsrail Nüfus Kayıtlarının Güncel İhlal Gibi Satılması",
+    "paragraph": "Bir siber suç forumunda İsrail'in 2026 yılına ait nüfus kayıtlarının çalındığı iddiasıyla satışa sunulan 9,2 milyon verinin, aslında 2005 yılına ait eski kayıtlar olduğu ortaya çıkmıştır. Yapılan teknik incelemelerde, veri setindeki doğum, ölüm ve göç tarihlerinin tamamının 2005 yılında sona erdiği ve son yirmi yıla ait hiçbir güncel kaydın bulunmadığı tespit edilmiştir. Satıcının, verilerin güncel görünmesi için tanınmış siyasi figürlerin aile kayıtlarını örnek olarak sunduğu ancak bu kayıtları",
+    "title": "9.2 Million Israeli Records Sold as a New Breach Are 20 Years Old",
+    "full_text": "9.2 Million Israeli Records Sold as a New Breach Are 20 Years Old\n\nA seller claims to offer Israel’s 2026 population registry, but checks show the 9.2 million records are authentic data dating back to 2005.\n\nA vendor on a well-known leak forum claims to have breached Israel’s Population and Immigration Authority and is selling the entire national registry, 9.2 million records covering essentially "
+   },
+   {
+    "tr_title": "Solana API Uç Noktalarına Yönelik Tarama Faaliyetleri",
+    "paragraph": "SANS Enstitüsü araştırmacıları, Solana blok zinciri platformunun API uç noktalarını hedef alan sistematik tarama faaliyetleri gözlemlediklerini bildirmiştir. Özellikle 'surfpool' adlı geliştirme aracını kullanan sistemlerin hedeflendiği ve saldırganların JSON-RPC protokolü üzerinden sağlık durumu ile sürüm bilgilerini sorguladığı tespit edilmiştir. Taramaların genellikle 8899 numaralı standart port yerine 80 numaralı port üzerinden yapıldığı ve bir API geçidi veya vekil sunucu varlığının varsayı",
+    "title": "Scans for Solana (Surfpool&#x3f;) Endpoints, (Mon, Aug 10th)",
+    "full_text": "Scans for Solana (Surfpool?) Endpoints\n\nSolana is a crypto platform known for speed. Developers like it to develop distributed applications or to implement crypto payments. To interact with the blockchain, APIs are provided for developers. These APIs will either \"speak\" JSON or gRPC. One implementation often used for development is \"surfpool,\" which is used to test programs before deploying them t"
    }
   ]
  }
