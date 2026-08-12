@@ -5505,6 +5505,67 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             print(f"      → {new_wc} kelime" +
                   (" ✅" if ok else " (hâlâ hedefin altında, en iyi deneme kullanıldı)"))
 
+    # Paragraftaki 4 haneli yıl. Kaynakta HİÇ geçmeyen bir yıl, üretim
+    # sırasında uydurulmuş demektir.
+    _YIL_RE = re.compile(r'\b(19\d{2}|20\d{2})\b')
+
+    def _tarih_denetimi(self, content_by_id, articles_by_id):
+        """Üretilen metinde KAYNAKTA OLMAYAN yılı yakalar; güvenliyse düzeltir.
+
+        NEDEN VAR (ölçülen vaka, 2026-08-12 üretim koşusu): İran su altyapısı
+        manşetinin paragrafı "27 Temmuz 2024" yazdı; kaynak "July 27" diyor ve
+        haber Ağustos 2026 tarihli — doğrusu 2026. Aynı haber bir önceki koşuda
+        doğru yazılmıştı, yani bu kararlı bir hata değil rastgele bir kayma;
+        prompt sıkılaştırmak böyle bir kaymayı garanti altına almaz, deterministik
+        denetim alır.
+
+        ÖLÇÜM (aynı günün 27 rapor paragrafı, TAM kaynak metne karşı): 1 vaka
+        (%3.7). NOT: aynı tarama rapor_gecmis'in KIRPILMIŞ görünümleriyle
+        yapıldığında %29 çıkıyor — çünkü yıl çoğu zaman kırpılan kuyrukta
+        kalıyor. Bu yüzden denetim TAM kaynak metinle çalışmak ZORUNDADIR;
+        kırpılmış metinle çalıştırılırsa neredeyse tamamı yanlış alarmdır.
+
+        DÜZELTME YALNIZCA BELİRSİZLİK YOKKEN: kaynakta tek bir yıl geçiyorsa
+        uydurulan yıl onunla değiştirilir. Kaynakta birden çok yıl varsa hangisi
+        kastedildiği bilinemez — o durumda DEĞİŞTİRİLMEZ, yalnızca işaretlenir.
+        Yanlış bir otomatik düzeltme, işaretlenmemiş bir hatadan daha kötüdür.
+        """
+        duzeltilen, isaretli = [], []
+        for aid, c in (content_by_id or {}).items():
+            if not isinstance(c, dict):
+                continue
+            a = articles_by_id.get(aid) or {}
+            kaynak = ' '.join(str(a.get(k, '') or '')
+                              for k in ('title', 'full_text', 'date'))
+            kaynak_yillar = set(self._YIL_RE.findall(kaynak))
+            if not kaynak_yillar:
+                continue          # kaynakta hiç yıl yok → karar verilemez
+            for alan in ('paragraph', 'tr_title'):
+                metin = c.get(alan) or ''
+                kacak = set(self._YIL_RE.findall(metin)) - kaynak_yillar
+                if not kacak:
+                    continue
+                if len(kaynak_yillar) == 1:
+                    dogru = next(iter(kaynak_yillar))
+                    for y in kacak:
+                        metin = re.sub(rf'\b{y}\b', dogru, metin)
+                    c[alan] = metin
+                    duzeltilen.append({'id': aid, 'alan': alan,
+                                       'yanlis': sorted(kacak), 'dogru': dogru})
+                else:
+                    isaretli.append({'id': aid, 'alan': alan,
+                                     'yanlis': sorted(kacak),
+                                     'kaynak_yillar': sorted(kaynak_yillar)})
+        for d in duzeltilen:
+            print(f"   📅 Tarih denetimi: ID {d['id']} ({d['alan']}) "
+                  f"{d['yanlis']} → {d['dogru']} (kaynakta olmayan yıl).")
+        for i in isaretli:
+            print(f"   ⚠️  Tarih denetimi: ID {i['id']} ({i['alan']}) "
+                  f"{i['yanlis']} kaynakta yok ama kaynak {i['kaynak_yillar']} "
+                  f"içeriyor — belirsiz, DEĞİŞTİRİLMEDİ.")
+        self._tarih_izi = {'duzeltilen': duzeltilen, 'isaretli': isaretli}
+        return duzeltilen, isaretli
+
     def _manset_karar_kaydet(self, katman, aid, yedek, neden):
         """Manşet DEĞİŞTİRME kararlarını kalıcı ize yazar.
 
@@ -5655,6 +5716,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 },
                 # Hangi katman hangi manşeti düşürdü (bkz. _manset_karar_kaydet)
                 'manset_karar_izi': getattr(self, '_manset_izi', []),
+                # Kaynakta olmayan yıl (bkz. _tarih_denetimi)
+                'tarih_denetimi': getattr(self, '_tarih_izi', {}),
             }
             with open('data/kalite_denetim.jsonl', 'a', encoding='utf-8') as f:
                 f.write(json.dumps(kayit, ensure_ascii=False) + '\n')
@@ -6240,6 +6303,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # + hangi katmanın elediği. TÜM eleme katmanlarından SONRA yazılır; Pass
         # 4'te yazıldığı sürümde `yerlesim` alanı rapora hiç girmemiş haberleri
         # 'govde' gösteriyordu (31.07.2026'da 7 haber).
+        # Kaynakta olmayan yıl (üretim kayması) — render'dan ÖNCE düzeltilir.
+        self._tarih_denetimi(content_by_id, articles_by_id)
+
         self._write_scoring_log(articles, score_records, top10_ids,
                                 remaining_ids, top3_ids, critique_changed,
                                 attr_downgraded=attr_downgraded,
