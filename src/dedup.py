@@ -78,6 +78,18 @@ _ACRONYM_DENYLIST = {
     # TR jenerik büyük-harf sözcükler
     'siber', 'guvenlik', 'saldiri', 'zararli', 'yazilim', 'devlet', 'hukumet',
     'kurum', 'rapor', 'uyari', 'turkiye',
+    # Windows/yetki bağlamının kaçınılmaz sözcükleri. ÖLÇÜLDÜ (2026-08-12,
+    # scripts/dedup_olc.py): 'SYSTEM' o günün 79 ham haberinin 8'inde geçti
+    # ("SYSTEM-level privileges" kalıbı) ve ShieldBreak Defender-atlatma PoC'si
+    # ile Yama Salısı toplamını 'codename-body:system+topic=0.13' gerekçesiyle
+    # AYNI OLAY saydırdı — iki alakasız haber birleşti. 'winsock' aynı gün 8
+    # haberde geçti (tek bir CVE'nin bileşen adı, olay kimliği değil).
+    'system', 'systems', 'winsock',
+    # Haber sitesi adları: her alıntıda geçer, olayın parmak izi değildir.
+    'techcrunch', 'bloomberg', 'reuters', 'wired',
+    # Yaygın web/teknoloji bileşen adları (CamelCase oldukları için kod adı
+    # sanılıyorlardı).
+    'webgl', 'webrtc', 'webhook', 'webview',
 }
 
 
@@ -225,6 +237,14 @@ def extract_codenames(text):
         if len(w) < 5 or lw in CODENAME_DENYLIST or lw in _ACRONYM_DENYLIST:
             continue
         if _GENERIC_AAS_RE.match(lw):   # PhaaS/RaaS/MaaS... jenerik, kod adı değil
+            continue
+        # Tek harfin tekrarı (XXXXXXX, AAAAA) bir kod adı değil, REDAKSİYON
+        # İŞARETİDİR. Arşiv/rapor paragrafları kaynak adını "(XXXXXXX, AÇIK -
+        # domain, tarih)" kalıbıyla maskeliyor; ALL-CAPS ve ≥5 harf olduğu için
+        # kod adı sayılıyordu. ÖLÇÜLDÜ (2026-08-12): 79 ham haberin 6'sında
+        # geçti — Kural 2c (codename-body) üzerinden alakasız haberleri
+        # birbirine bağlayabilecek bir sinyal.
+        if len(set(lw)) == 1:
             continue
         is_camel   = re.search(r'[a-z][A-Z]', w)
         is_allcaps = w.isupper() and w.isalpha()
