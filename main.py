@@ -5538,20 +5538,43 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         try:
             view_fn = self._dedup_view_fn(content_by_id, articles_by_id)
             gecmis = self._load_recent_report_views()   # bugünü HARİÇ tutar
-            rapor_ids = list(top3_ids) + list(govde_ids)
+            # TEKİLLEŞTİR: çağıran top10_ids gönderiyor ve top10, top3'ü ZATEN
+            # İÇERİYOR (ranked[:10]). Tekilleştirilmezse manşet haberleri listede
+            # iki kez yer alır, kendileriyle karşılaştırılır ve denetim sahte
+            # alarm üretir. ÖLÇÜLDÜ (2026-08-12 koşusu): "2 rapor-içi kaçak"
+            # raporlandı, ikisi de bir haberin KENDİSİYLE eşleşmesiydi; aynı
+            # sebeple manşetin kendisi "manşetten yüksek puanlı gövde haberi"
+            # olarak listelendi. Denetim Faz 4 sökümünün kanıt kaynağı olduğu
+            # için sahte alarm doğrudan yanlış karara yol açar.
+            gorulen_id = set()
+            rapor_ids = []
+            for aid in list(top3_ids) + list(govde_ids):
+                if aid not in gorulen_id:
+                    gorulen_id.add(aid)
+                    rapor_ids.append(aid)
+            govde_ids = [a for a in rapor_ids if a not in set(top3_ids)]
 
             def _ad(aid):
                 c = content_by_id.get(aid) or {}
                 a = articles_by_id.get(aid) or {}
                 return (c.get('tr_title') or a.get('title') or f'ID {aid}')[:90]
 
-            capraz, gorulen = [], {}
+            # KAÇAK ÖLÇÜSÜ = ÜRETİMDE UYGULANAN POLİTİKA. Denetim eskiden
+            # _dedup.same_event kullanıyordu; o karşılaştırıcı "aynı olay" ile
+            # "aynı olayın YENİ gelişmesi"ni ayırmaz, dolayısıyla politikanın
+            # BİLEREK rapora aldığı haberleri kaçak sayardı. ÖLÇÜLDÜ (2026-08-12):
+            # İran su altyapısı haberi (yeni eyaletler → YENI_GELISME, manşet
+            # olması DOĞRU) "çapraz-gün kaçak" olarak raporlandı. Denetim
+            # politikadan farklı bir ölçüt kullanırsa Faz 4 söküm kriteri asla
+            # sağlanamaz ve kalıcı sahte alarm üretir.
+            sozluk = getattr(self, '_olay_sozlugu', None)
+            capraz = []
             for aid in rapor_ids:
                 v = view_fn(aid)
                 for ev in gecmis:
-                    ayni, neden = _dedup.same_event(v, ev, explain=True,
-                                                    cross_day=True)
-                    if ayni:
+                    iliski, neden = _olay.iliski_belirle(
+                        v, ev, explain=True, sozluk=sozluk)
+                    if iliski == _olay.AYNI_GELISME:
                         capraz.append({
                             'id': aid, 'baslik': _ad(aid),
                             'gecmis': (ev.get('tr_title')
@@ -5564,9 +5587,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             ici = []
             for i, a in enumerate(rapor_ids):
                 for b in rapor_ids[i + 1:]:
-                    ayni, neden = _dedup.same_event(view_fn(a), view_fn(b),
-                                                    explain=True)
-                    if ayni:
+                    iliski, neden = _olay.iliski_belirle(
+                        view_fn(a), view_fn(b), ayni_gun=True,
+                        explain=True, sozluk=sozluk)
+                    if iliski == _olay.AYNI_GELISME:
                         ici.append({'a': a, 'b': b, 'a_baslik': _ad(a),
                                     'b_baslik': _ad(b), 'neden': neden})
 

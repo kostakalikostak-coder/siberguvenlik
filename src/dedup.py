@@ -479,6 +479,14 @@ _ENTITY_DENYLIST = frozenset({
     # {bilgisayar, acil, müdahale, ekibi} ortaklığıyla aynı olaya bağlandı.
     'computer', 'emergency', 'response', 'team', 'bilgisayar', 'müdahale',
     'ekibi', 'merkezi', 'kurumu', 'ajansı',
+    # Araştırma kurumu / model sağlayıcı adları. Bunlar neredeyse her yapay
+    # zeka haberinde geçer, yani OLAYIN değil ALANIN adıdır. ÖLÇÜLDÜ
+    # (2026-08-12 üretim koşusu): "Yapay Zeka Ajanlarının Yetki Aşımı" haberi,
+    # 6 gün önceki "Otonom Fidye Yazılımları" haberiyle {anthropic, enstitüs}
+    # ortaklığı üzerinden AYNI_GELISME sayıldı — tamamen farklı iki olay.
+    'enstitü', 'enstitüsü', 'institute', 'university', 'üniversite',
+    'üniversitesi', 'foundation', 'vakfı', 'laboratuvarı', 'labs',
+    'anthropic', 'openai', 'meta',
 })
 
 
