@@ -3897,6 +3897,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             else:
                 print(f"   🔁 Manşet içi mükerrer: ID {aid} → ID {yedek} ile "
                       f"DEĞİŞTİRİLDİ.")
+                self._manset_karar_kaydet('manset_ici_ayni_olay', aid, yedek,
+                                          'başka bir manşetle aynı olay')
                 sonuc.append(yedek)
         return sonuc
 
@@ -3960,6 +3962,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                       f"({neden}) ama yedek aday yok — YERİNDE BIRAKILDI.")
                 continue
             sonuc[sonuc.index(aid)] = yedek
+            self._manset_karar_kaydet('auditor_manset_secimi', aid, yedek, neden)
             print(f"   🔁 Manşet seçimi: ID {aid} manşetlik değil ({neden}) → "
                   f"ID {yedek} ile DEĞİŞTİRİLDİ (eski haber gövdede kalır).")
         return sonuc
@@ -4087,6 +4090,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                       f"ama uygun yedek aday yok — YERİNDE BIRAKILDI (KRİTİK 3 eksilmez).")
                 continue
             sonuc[sonuc.index(aid)] = yedek
+            self._manset_karar_kaydet(
+                'manset_capraz_gun_llm', aid, yedek,
+                f'son {REPORT_HISTORY_DAYS} günde raporlanmış olayın tekrarı')
             print(f"   🔁 Manşet çapraz-gün: ID {aid} son {REPORT_HISTORY_DAYS} günde "
                   f"raporlanmış olayın tekrarı → ID {yedek} ile DEĞİŞTİRİLDİ "
                   f"(eski haber gövdede kalır).")
@@ -5325,6 +5331,141 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             print(f"      → {new_wc} kelime" +
                   (" ✅" if ok else " (hâlâ hedefin altında, en iyi deneme kullanıldı)"))
 
+    def _manset_karar_kaydet(self, katman, aid, yedek, neden):
+        """Manşet DEĞİŞTİRME kararlarını kalıcı ize yazar.
+
+        NEDEN VAR: KRİTİK 3'ü üç ayrı katman değiştirebiliyor (_dedup_kritik3_
+        ici, _dedup_kritik3_cross_day_llm, _audit_kritik3_selection) ve her biri
+        kararını YALNIZCA stdout'a basıyordu. Actions çıktısı koşudan sonra
+        pratikte kaybolduğu için, "bu haber neden manşette değil?" sorusu ancak
+        skorlama logunu adli biçimde okuyarak yanıtlanabiliyordu.
+
+        Ölçülen maliyet (2026-08-12): Sandworm/UAC-0145 haberi 92 puanla ve
+        mukerrer=0 ile deterministik sırada 2. sıradaydı, yani manşete girmesi
+        gerekiyordu; 90 puanlı iki haber manşete girdi. Bayrak temiz olduğu için
+        sebebin bir LLM katmanı olduğu ancak eleme yollarının tek tek elenmesiyle
+        anlaşıldı. Bu iz o soruyu tek dosyadan yanıtlanır kılar."""
+        if not hasattr(self, '_manset_izi'):
+            self._manset_izi = []
+        self._manset_izi.append({
+            'katman': katman, 'dusen': aid, 'giren': yedek,
+            'neden': str(neden or '')[:120],
+        })
+
+    def _kalite_denetimi_yaz(self, top3_ids, govde_ids, records,
+                             content_by_id, articles_by_id):
+        """RAPOR SONRASI KAÇAK TARAMASI — sessiz arızayı görünür kılar.
+
+        NEDEN VAR: mükerrer sızıntıları ve manşet seçim hataları bugüne kadar
+        ancak KULLANICI fark edince görüldü. scripts/manset_tekrar_tarama.py
+        aynı soruyu soruyor ama elle çalıştırılıyor ve hiçbir yere YAZMIYOR;
+        data/dedup_log.jsonl 30 gün boyunca hiç oluşmadı (bkz. dedup.
+        nearmiss_signal). Bu metot her koşuda üç arıza sınıfını ölçer ve
+        data/kalite_denetim.jsonl'e tek satır olarak ekler:
+
+          capraz_gun_kacak — rapora giren bir haber, son 7 günde raporlanmış
+                             bir olayla same_event(cross_day) eşleşiyor.
+          rapor_ici_kacak  — raporun İKİ haberi birbiriyle aynı olay.
+          manset_sirasi    — KRİTİK 3'e girenlerin puanı ile manşete uygun ama
+                             girmeyen en yüksek puanlıların karşılaştırması.
+                             Sıra tersine dönmüşse (gövdede manşetten yüksek
+                             puanlı haber varsa) nedeni de yazılır.
+
+        İşlevsel DEĞİLDİR — rapor içeriğini değiştirmez, hata olursa sessiz
+        geçer. Tek işi: bir sonraki arızanın kullanıcıdan önce görülmesi."""
+        try:
+            view_fn = self._dedup_view_fn(content_by_id, articles_by_id)
+            gecmis = self._load_recent_report_views()   # bugünü HARİÇ tutar
+            rapor_ids = list(top3_ids) + list(govde_ids)
+
+            def _ad(aid):
+                c = content_by_id.get(aid) or {}
+                a = articles_by_id.get(aid) or {}
+                return (c.get('tr_title') or a.get('title') or f'ID {aid}')[:90]
+
+            capraz, gorulen = [], {}
+            for aid in rapor_ids:
+                v = view_fn(aid)
+                for ev in gecmis:
+                    ayni, neden = _dedup.same_event(v, ev, explain=True,
+                                                    cross_day=True)
+                    if ayni:
+                        capraz.append({
+                            'id': aid, 'baslik': _ad(aid),
+                            'gecmis': (ev.get('tr_title')
+                                       or ev.get('title') or '')[:90],
+                            'neden': neden,
+                            'manset': aid in set(top3_ids),
+                        })
+                        break
+
+            ici = []
+            for i, a in enumerate(rapor_ids):
+                for b in rapor_ids[i + 1:]:
+                    ayni, neden = _dedup.same_event(view_fn(a), view_fn(b),
+                                                    explain=True)
+                    if ayni:
+                        ici.append({'a': a, 'b': b, 'a_baslik': _ad(a),
+                                    'b_baslik': _ad(b), 'neden': neden})
+
+            def _puan(aid):
+                return (records.get(aid) or {}).get('toplam', 0)
+
+            # Manşete UYGUN (kategori kapısını geçen) ama girmeyen adaylar:
+            # manşettekinden yüksek puanlıysa sıra tersine dönmüş demektir.
+            manset_puan = [_puan(a) for a in top3_ids]
+            en_dusuk_manset = min(manset_puan) if manset_puan else 0
+            tersine = []
+            for aid in govde_ids:
+                rec = records.get(aid) or {}
+                if rec.get('kat') in KRITIK3_HARIC_KATEGORILER:
+                    continue
+                if _puan(aid) > en_dusuk_manset:
+                    tersine.append({
+                        'id': aid, 'baslik': _ad(aid), 'puan': _puan(aid),
+                        'mukerrer': bool(rec.get('mukerrer')),
+                    })
+            tersine.sort(key=lambda x: -x['puan'])
+
+            kayit = {
+                'tarih': _now_tr().strftime('%Y-%m-%d'),
+                'rapor_haber': len(rapor_ids),
+                'capraz_gun_kacak': capraz,
+                'rapor_ici_kacak': ici,
+                'manset_sirasi': {
+                    'manset': [{'id': a, 'puan': _puan(a), 'baslik': _ad(a)}
+                               for a in top3_ids],
+                    'daha_yuksek_puanli_govde': tersine[:5],
+                },
+                # Hangi katman hangi manşeti düşürdü (bkz. _manset_karar_kaydet)
+                'manset_karar_izi': getattr(self, '_manset_izi', []),
+            }
+            with open('data/kalite_denetim.jsonl', 'a', encoding='utf-8') as f:
+                f.write(json.dumps(kayit, ensure_ascii=False) + '\n')
+
+            for k in getattr(self, '_manset_izi', []):
+                print(f"      🧾 Manşet izi [{k['katman']}]: ID {k['dusen']} "
+                      f"düştü → ID {k['giren']} girdi ({k['neden']})")
+
+            if capraz or ici or tersine:
+                print(f"   🔎 Kalite denetimi: {len(capraz)} çapraz-gün kaçak, "
+                      f"{len(ici)} rapor-içi kaçak, {len(tersine)} manşetten "
+                      f"yüksek puanlı gövde haberi → data/kalite_denetim.jsonl")
+                for k in capraz[:3]:
+                    print(f"      ⚠️  {'MANŞET' if k['manset'] else 'gövde'} "
+                          f"'{k['baslik']}' ↔ geçmiş '{k['gecmis']}' ({k['neden']})")
+                for k in ici[:3]:
+                    print(f"      ⚠️  rapor-içi: '{k['a_baslik']}' ↔ "
+                          f"'{k['b_baslik']}' ({k['neden']})")
+                for k in tersine[:3]:
+                    print(f"      ⚠️  gövdede {k['puan']} puanlı "
+                          f"'{k['baslik']}' (manşet tabanı {en_dusuk_manset}"
+                          + (", mukerrer=1" if k['mukerrer'] else "") + ")")
+            else:
+                print("   🔎 Kalite denetimi: temiz.")
+        except Exception as e:
+            print(f"   ⚠️  Kalite denetimi yazılamadı ({e}) — rapor etkilenmedi.")
+
     def _write_scoring_log(self, articles, records, top10_ids, remaining_ids,
                            top3_ids, critique_changed, attr_downgraded=(),
                            eleme_nedeni=None):
@@ -5883,6 +6024,12 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                                 remaining_ids, top3_ids, critique_changed,
                                 attr_downgraded=attr_downgraded,
                                 eleme_nedeni=eleme_nedeni)
+
+        # Kaçak taraması — mükerrer sızıntısı ve manşet sıra tersineliği artık
+        # sessizce geçemez (bkz. _kalite_denetimi_yaz).
+        self._kalite_denetimi_yaz(
+            top3_ids, list(top10_ids) + list(remaining_ids),
+            score_records, content_by_id, articles_by_id)
 
         # NOT: Eski "az-haber guard" KALDIRILDI. Önceden az haber günlerinde
         # top3 dışında gövde haberi kalmayınca KRİTİK 3 kutusu boşaltılıyordu;
