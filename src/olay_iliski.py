@@ -103,6 +103,47 @@ JENERIK_DF_ORANI = 0.03
 MIN_DERLEM = 25
 
 
+# ── ÖNBELLEK ────────────────────────────────────────────────────────────────
+# Kimlik çıkarımı (regex ağırlıklı) aynı görünüm için defalarca çağrılır:
+# defter kurulurken her ADAY her KAYIT ile karşılaştırılır, yani N görünüm
+# O(N²) çift üretir ve her çift iki tarafı da yeniden çıkarır. ÖLÇÜLDÜ
+# (2026-08-12 fikstürü, 139 görünüm): 8.780 çift için 17.644 kimlik çıkarımı,
+# toplam 39 saniye. Görünüm içeriği koşu boyunca değişmediğinden sonuç
+# önbelleğe alınabilir.
+#
+# Anahtar, görünümün METİN İÇERİĞİDİR (id() değil): id yeniden kullanılabilir
+# ve aynı içerik farklı sözlük nesnelerinde gelebilir.
+_ONBELLEK_SINIRI = 4096
+_onbellek = {}
+
+
+def _anahtar(view):
+    if not isinstance(view, dict):
+        return ('duz', str(view or ''))
+    return (view.get('tr_title') or '', view.get('title') or '',
+            view.get('paragraph') or '', (view.get('full_text') or '')[:2000])
+
+
+def _onbellekli(ad, view, uret):
+    """uret() sonucunu (ad, görünüm içeriği) anahtarıyla önbelleğe alır."""
+    try:
+        k = (ad, _anahtar(view))
+    except TypeError:
+        return uret()
+    if k in _onbellek:
+        return _onbellek[k]
+    if len(_onbellek) >= _ONBELLEK_SINIRI:
+        _onbellek.clear()      # basit taşma stratejisi: koşu içinde yeterli
+    sonuc = uret()
+    _onbellek[k] = sonuc
+    return sonuc
+
+
+def onbellek_temizle():
+    """Koşular/testler arası yalıtım için."""
+    _onbellek.clear()
+
+
 def _metin(view, tam=True):
     """Görünümün taranacak metni. tam=False ise yalnızca başlıklar."""
     if not isinstance(view, dict):
@@ -143,6 +184,10 @@ def ozel_adlar(view):
     değil, full_text de taranır — üretim öncesi karşılaştırma (mükerrer
     doğrulaması) ancak böyle mümkündür; (2) başlıklar ve Başlık-Düzeni
     parçalar dışlanır (bkz. _govde_metinleri)."""
+    return _onbellekli('ad', view, lambda: _ozel_adlar_ham(view))
+
+
+def _ozel_adlar_ham(view):
     kesin, aday = set(), set()
     parcalar = []
     for alan in _govde_metinleri(view):
@@ -233,6 +278,10 @@ def _aktor_kokleri(view):
     kökler üretir ('blizzard', 'star'). İki temsil doğrudan karşılaştırılamaz,
     bu yüzden aktör adları metindeki sözcüklerine bölünüp aynı biçimde
     köklenir."""
+    return _onbellekli('aktorkok', view, lambda: _aktor_kokleri_ham(view))
+
+
+def _aktor_kokleri_ham(view):
     kokler = set()
     blob = _metin(view)
     for ad in dedup.extract_actors(blob):
@@ -260,6 +309,11 @@ def olay_kimlikleri(view, sozluk=None):
     Aktör (Sandworm, Lazarus) BURAYA GİRMEZ — aktör olayın kimliği değil,
     failidir; aynı fail farklı olaylar yapar (bkz. modül başlığı, A maddesi)."""
     sozluk = sozluk or BOS_SOZLUK
+    return _onbellekli(('kimlik', id(sozluk)), view,
+                       lambda: _olay_kimlikleri_ham(view, sozluk))
+
+
+def _olay_kimlikleri_ham(view, sozluk):
     blob = _metin(view)
     kimlikler = set()
     kimlikler |= {'cve:' + c for c in dedup.extract_actors(blob)
@@ -281,20 +335,34 @@ def olay_kimlikleri(view, sozluk=None):
 
 def aktor_kimlikleri(view):
     """Bir haberin AKTÖR kimliği (CVE hariç — o zafiyet kimliğidir)."""
-    return {a for a in dedup.extract_actors(_metin(view))
-            if not a.startswith('cve')}
+    return _onbellekli('aktor', view, lambda: {
+        a for a in dedup.extract_actors(_metin(view))
+        if not a.startswith('cve')})
+
+
+def _konu_anahtarlari(view):
+    """Görünümün üç anahtar-sözcük kümesi (paragraf / tüm metin / giriş).
+
+    Görünüm başına BİR kez hesaplanır; _konu_ortusmesi her çift için iki
+    tarafı da yeniden çıkarıyordu ve defter kurulumunun süresinin yarısı
+    buradaydı (bkz. _onbellek yorumu)."""
+    def _uret():
+        ha, pa, ea, fa = dedup._bundle(view)
+        blob = ' '.join((ha, pa, ea, fa))
+        return (dedup.event_keywords(pa),
+                dedup.event_keywords(blob),
+                dedup.event_keywords(pa, limit=dedup._TOPIC_LEAD_TOKENS))
+    return _onbellekli('konu', view, _uret)
 
 
 def _konu_ortusmesi(view_a, view_b):
     """src.dedup.same_event ile AYNI konu örtüşmesi ölçüsü (tek kaynak)."""
-    ha, pa, ea, fa = dedup._bundle(view_a)
-    hb, pb, eb, fb = dedup._bundle(view_b)
-    blob_a, blob_b = ' '.join((ha, pa, ea, fa)), ' '.join((hb, pb, eb, fb))
+    a_par, a_blob, a_giris = _konu_anahtarlari(view_a)
+    b_par, b_blob, b_giris = _konu_anahtarlari(view_b)
     return max(
-        dedup._jaccard(dedup.event_keywords(pa), dedup.event_keywords(pb)),
-        dedup._jaccard(dedup.event_keywords(blob_a), dedup.event_keywords(blob_b)),
-        dedup._jaccard(dedup.event_keywords(pa, limit=dedup._TOPIC_LEAD_TOKENS),
-                       dedup.event_keywords(pb, limit=dedup._TOPIC_LEAD_TOKENS)),
+        dedup._jaccard(a_par, b_par),
+        dedup._jaccard(a_blob, b_blob),
+        dedup._jaccard(a_giris, b_giris),
     )
 
 

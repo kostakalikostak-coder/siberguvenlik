@@ -90,6 +90,10 @@ from src import llm_client as _llm
 # Aynı-olay (same-event) dedup — KRİTİK 3 içinde ve rapor genelinde mükerrer
 # haberleri DETERMİNİSTİK (LLM'den bağımsız) olarak engeller. Bkz. src/dedup.py.
 from src import dedup as _dedup
+# Dört değerli OLAY İLİŞKİSİ — 'mukerrer' tek bitinin yerini alır: aynı
+# gelişme / YENİ gelişme / aynı aktör-farklı olay ayrımını yapar ve olay
+# defterini kurar. Bkz. src/olay_iliski.py.
+from src import olay_iliski as _olay
 # Resmi-dil (register) denetimi — gövde paragraflarında laubali (-DI) basit geçmiş
 # zamanı DETERMİNİSTİK tespit eder; düzeltmeyi Auditor'ın LLM adımı yapar.
 from src import register as _register
@@ -4953,32 +4957,104 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         except Exception:
             return False   # güvenli taraf: artefakt varsayma, korumayı sürdür
 
-    # Bu puanın ÜSTÜNDE 'mukerrer' bayrağı tek başına eleyemez; deterministik
-    # doğrulama aranır (bkz. _rank_by_score). Altında LLM sözü yeterlidir —
-    # orada yanlış elemenin maliyeti düşüktür.
+    # ARTIK KULLANILMIYOR (geriye uyumluluk için duruyor).
+    # Eskiden 'mukerrer' bayrağı yalnızca bu puanın ÜSTÜNDE denetleniyordu;
+    # altındaki haberlerde LLM sözü sorgusuz kabul ediliyordu. Eşik bir
+    # ölçüme değil, denetimin PAHALI olduğu varsayımına dayanıyordu — oysa
+    # denetim deterministiktir ve bedava. Sonuç olarak düşük puanlı haberler
+    # sessizce yanlış eleniyordu. Bugün her 'mukerrer' bayrağı puan gözetmeksizin
+    # dört değerli ilişkiyle denetlenir (bkz. _rank_by_score, _olay_iliskisi).
     MUKERRER_KORUMA_ESIGI = 85
 
-    def _mukerrer_dogrulandi(self, aid, articles_by_id, recent_views):
-        """Skorlayıcının 'mukerrer' iddiası geçmişte DOĞRULANIYOR mu?
-
-        Referans, son 7 günde RAPORA GİRMİŞ haberlerdir (rapor_gecmis) — depo
-        İngilizce `title` ve `full_text` de sakladığı için karşılaştırma bu
-        aşamada (içerik üretiminden ÖNCE, elimizde yalnızca kaynak metni
-        varken) çalışabiliyor.
-
-        True  → gerçekten daha önce raporlanmış, eleme haklı.
-        False → doğrulanamadı; haber elenmez, gövdeye düşer.
-        """
-        if not recent_views:
-            return False
+    def _kaynak_view(self, aid, articles_by_id):
+        """Üretim ÖNCESİ görünüm: elde yalnızca kaynak metin varken (tr_title
+        ve paragraph henüz üretilmemişken) karşılaştırma için kullanılır."""
         a = articles_by_id.get(aid) or {}
-        view = {'tr_title': '', 'paragraph': '',
+        return {'tr_title': '', 'paragraph': '',
                 'title': a.get('title', ''),
                 'full_text': (a.get('full_text', '') or '')[:2500]}
+
+    def _olay_iliskisi(self, aid, articles_by_id, recent_views):
+        """Haberin son 7 gündeki EN GÜÇLÜ olay ilişkisi (dört değerli).
+
+        'mukerrer' tek bitinin yerini alır (bkz. src/olay_iliski.py). Tek bit
+        üç durumu karıştırıp üçüne de aynı cezayı veriyordu; burada üçü ayrılır
+        ve politikayı çağıran karar verir:
+            AYNI_GELISME            → gerçek mükerrer (elenir)
+            YENI_GELISME            → rapora girer, manşete de çıkabilir
+            AYNI_AKTOR_FARKLI_OLAY  → tamamen serbest
+            ILISKISIZ               → tamamen serbest
+
+        Dönüş: (iliski, gerekçe).
+        """
+        if not recent_views:
+            return _olay.ILISKISIZ, 'geçmiş kayıt yok'
+        view = self._kaynak_view(aid, articles_by_id)
         if not (view['title'] or view['full_text']):
-            return True      # kıyaslayacak metin yok → LLM kararına dokunma
-        return any(_dedup.same_event(view, ev, cross_day=True)
-                   for ev in recent_views)
+            # Kıyaslayacak metin yok — LLM'in kararına dokunma (eski
+            # _mukerrer_dogrulandi sözleşmesiyle aynı: bayrak geçerli sayılır).
+            return _olay.AYNI_GELISME, 'kaynak metin yok'
+        sozluk = getattr(self, '_olay_sozlugu', None)
+        en_iyi, neden = _olay.ILISKISIZ, ''
+        for ev in recent_views:
+            iliski, gerekce = _olay.iliski_belirle(
+                view, ev, explain=True, sozluk=sozluk)
+            if iliski == _olay.AYNI_GELISME:
+                return iliski, gerekce
+            if iliski == _olay.YENI_GELISME and en_iyi == _olay.ILISKISIZ:
+                en_iyi, neden = iliski, gerekce
+        return en_iyi, neden
+
+    def _mukerrer_dogrulandi(self, aid, articles_by_id, recent_views):
+        """GERİYE UYUMLULUK — 'bu haber gerçekten daha önce raporlandı mı?'
+
+        Artık dört değerli sınıflandırıcıya devrediyor; yalnızca AYNI_GELISME
+        gerçek mükerrerdir (bkz. _olay_iliskisi)."""
+        iliski, _ = self._olay_iliskisi(aid, articles_by_id, recent_views)
+        return iliski == _olay.AYNI_GELISME
+
+    def _olay_baglami_kur(self, recent_views):
+        """Koşu başına olay sözlüğü + defterini kurar.
+
+        Sözlük (belge frekansı) jenerik özel adları derlemden öğrenir; defter
+        olayları günler boyunca gruplar ve manşet geçmişini tutar. İkisi de
+        MEVCUT geçmişten türetilir — yeni bir durum dosyası yoktur (bkz.
+        src/olay_iliski.py OlayDefteri)."""
+        try:
+            self._olay_sozlugu = _olay.OlaySozlugu(recent_views)
+            gunler = self._gecmis_gunler()
+            self._olay_defteri = _olay.defter_kur(
+                gunler, sozluk=self._olay_sozlugu)
+            print(f"   📒 Olay defteri: {len(self._olay_defteri.kayitlar)} olay "
+                  f"({self._olay_sozlugu.n} geçmiş haber), "
+                  f"{len(self._olay_sozlugu.df)} özel ad kökü.")
+        except Exception as e:
+            # Defter işlevsel bir zorunluluk değildir; kurulamazsa politika
+            # manşet geçmişi olmadan çalışır (eski davranışa güvenli düşüş).
+            self._olay_sozlugu, self._olay_defteri = None, None
+            print(f"   ⚠️  Olay defteri kurulamadı ({e}) — manşet geçmişi "
+                  f"olmadan devam ediliyor.")
+
+    def _gecmis_gunler(self):
+        """[(gun, views, manset_views), ...] — defter kurulumu için geçmiş."""
+        def _oku(path):
+            try:
+                with open(path, encoding='utf-8') as f:
+                    return {r['date']: r.get('views', []) or []
+                            for r in json.load(f)
+                            if isinstance(r, dict) and r.get('date')}
+            except (OSError, ValueError, KeyError):
+                return {}
+        rapor = _oku('data/rapor_gecmis.json')
+        k3 = _oku('data/kritik3_gecmis.json')
+        bugun = _now_tr().strftime('%Y-%m-%d')
+        gunler = []
+        for gun in sorted(set(rapor) | set(k3)):
+            if gun >= bugun:
+                continue        # bugünün kaydı kendi kendini eşleştirirdi
+            manset = k3.get(gun, [])
+            gunler.append((gun, manset + rapor.get(gun, []), manset))
+        return gunler
 
     def _rank_by_score(self, articles, records):
         """DETERMİNİSTİK sıralama — düzeltilmiş skorlara göre kod tarafında sırala.
@@ -5048,7 +5124,13 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # Mükerrer bayrağının deterministik doğrulaması için referanslar.
         articles_by_id = {a['id']: a for a in articles}
         recent_report_views = self._load_recent_report_views()
+        self._olay_baglami_kur(recent_report_views)
         mukerrer_korunan = []
+        # MANŞET YASAĞI — 'mukerrer' bayrağının yerini alan ölçülmüş küme.
+        # Yalnızca AYNI_GELISME (gerçek mükerrer) buraya girer; YENİ gelişme
+        # ve aynı-aktör-farklı-olay manşete çıkabilir (bkz. _derive_top3_by_score).
+        self._manset_yasak = set()
+        self._iliski_izi = {}
 
         ranked, filtered_ids = [], []
         for a in articles:
@@ -5070,18 +5152,32 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             # — skorlayıcı tema benzerliğini olay aynılığıyla karıştırıyor.
             # 8 günde 81 tane ≥85 puanlı haber böyle gitmiş.
             #
-            # Bayrak KALDIRILMAZ, ETKİSİ değişir: deterministik doğrulama yoksa
-            # haber ELENMEZ ama GÖVDEYE düşer. Manşete çıkamaz çünkü kritik3
-            # kapısı 'mukerrer' işaretine bakar (bkz. _derive_top3_by_score) ve
-            # bayrak duruyor. Bu ayrım kritik: bayrağı temizlemek, süregelen
-            # hikâyeleri (su altyapısı, npm solucanı) manşete geri sokardı —
-            # hikâye zinciri filtresi 7 günlük pencereden düştüğünde boşalıyor,
-            # yani tek koruma bu bayrak.
-            if (is_muk and rec['toplam'] >= self.MUKERRER_KORUMA_ESIGI
-                    and not self._mukerrer_dogrulandi(aid, articles_by_id,
-                                                      recent_report_views)):
-                is_muk = False
-                mukerrer_korunan.append(aid)
+            # Bayrak KALDIRILMAZ, ETKİSİ İLİŞKİ TÜRÜNE bağlanır ─────────────
+            # Eskiden doğrulama ikiliydi ("geçmişte var mı?") ve doğrulanamayan
+            # haber elenmese bile MANŞET YASAĞI yiyordu — bayrak duruyordu ve
+            # kritik3 kapısı bayrağa bakıyordu. Bu, tam da korunmak istenen
+            # haberi cezalandırıyordu: 08-12'de İran'ın ABD su altyapısına
+            # saldırısı (96 puan, günün 2. haberi) YENİ eyaletler bildiriyordu
+            # ama bayrak yüzünden manşete çıkamadı.
+            #
+            # Artık dört değerli ilişki sorulur (bkz. _olay_iliskisi):
+            #   AYNI_GELISME → gerçek mükerrer: elenir.
+            #   YENI_GELISME / AYNI_AKTOR_FARKLI_OLAY / ILISKISIZ → elenmez VE
+            #   manşet yasağı YOKTUR; manşet kararını puan ile olay defterinin
+            #   manşet geçmişi birlikte verir.
+            #
+            # Süregelen hikâyelerin (su altyapısı, npm solucanı) her gün manşet
+            # olmasını engelleyen koruma kaybolmaz, YERİ DEĞİŞİR: kaba bayrak
+            # yerine defterdeki ölçülmüş manset_gunleri kullanılır.
+            if is_muk:
+                iliski, gerekce = self._olay_iliskisi(
+                    aid, articles_by_id, recent_report_views)
+                self._iliski_izi[aid] = (iliski, gerekce)
+                if iliski == _olay.AYNI_GELISME:
+                    self._manset_yasak.add(aid)
+                else:
+                    is_muk = False
+                    mukerrer_korunan.append(aid)
             # Elenenler: siber kapısı kapalı / ürün-içerik-dışı / MÜKERRER (çapraz-gün)
             if (rec['toplam'] <= 0 or is_muk
                     or rec['kat'] in ('urun_icerik', 'siber_disi') or not rec['siber']):
@@ -5090,10 +5186,18 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 ranked.append(aid)
 
         if mukerrer_korunan:
-            print(f"   🛡️  Mükerrer doğrulaması: {len(mukerrer_korunan)} yüksek "
-                  f"puanlı haber ({self.MUKERRER_KORUMA_ESIGI}+) geçmişte "
-                  f"bulunamadı → elenmedi, GÖVDEYE alındı (manşete çıkamaz): "
-                  f"{sorted(mukerrer_korunan)}")
+            ozet = {}
+            for aid in mukerrer_korunan:
+                il = self._iliski_izi.get(aid, ('?', ''))[0]
+                ozet.setdefault(il, []).append(aid)
+            print(f"   🛡️  Mükerrer bayrağı denetlendi: {len(mukerrer_korunan)} "
+                  f"haber gerçek mükerrer DEĞİL → elendi değil, MANŞETE DE "
+                  f"çıkabilir:")
+            for il, ids in sorted(ozet.items()):
+                print(f"        {il}: {sorted(ids)}")
+        if self._manset_yasak:
+            print(f"   🚫 Gerçek mükerrer (AYNI_GELISME): "
+                  f"{sorted(self._manset_yasak)}")
 
         # ── AZ-HABER KURTARMA: baraj düşür — İNCE/BOŞ GÖVDE YAYIMLANMASIN ──────
         # Hafta sonu gibi az-haber günlerinde katı önemlilik eşiği (toplam<=0)
@@ -5192,6 +5296,13 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                       f"(gövdede kalır) — zincir {z['days']} "
                       f"({len(z['days'])} gün), ortak={z['shared']}")
 
+    # Bir OLAY son REPORT_HISTORY_DAYS gün içinde bu kadar kez manşet olduysa
+    # yeniden manşet olamaz (gövdede serbesttir). 1 seçildi: aynı olayın iki
+    # farklı gün manşet olması okuyucuya tekrar hissi verir — 2026-07-29..31'de
+    # Minnesota su saldırısı ÜÇ gün üst üste manşetti. Ama YENİ bir gelişme
+    # taşıyorsa (yeni kurban, yeni istismar) gövdede tam boyutuyla yer alır.
+    MANSET_TEKRAR_SINIRI = 1
+
     def _derive_top3_by_score(self, ranked_ids, records, content_by_id,
                               articles_by_id):
         """KRİTİK 3 — deterministik, GARANTİLİ 3 haber.
@@ -5216,21 +5327,54 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         eligible = [aid for aid in ranked_ids
                     if records.get(aid, {}).get('kat') not in KRITIK3_HARIC_KATEGORILER]
 
-        # Skorlayıcının 'mükerrer' işareti KRİTİK 3'te ayrı bir kapıdır: gövde
-        # tabanı gevşetilse bile manşet gevşemez (bkz. _rank_by_score). 08-06'da
-        # taban ateşleyince bu işaret TÜM raporda yok sayılmış, dünkü manşet
-        # (keyv/cacheable npm solucanı) yeniden manşet olmuştu. Kademe 1'de
-        # uygulanır; aday kalmazsa alt kademeler zaten ham havuza döner, yani
-        # "KRİTİK 3 asla 3'ten az" garantisi bozulmaz.
+        # MANŞET KAPISI — ham 'mukerrer' bayrağı DEĞİL, ölçülmüş iki ölçüt:
+        #
+        #   (a) GERÇEK MÜKERRER (AYNI_GELISME) — aynı olayın aynı gelişmesi.
+        #       Bunlar zaten gövdeden de elenir; kapı yine de tutulur çünkü
+        #       güvenlik tabanı gövdeyi gevşetebilir, manşeti ASLA gevşetmez.
+        #   (b) ÜST ÜSTE MANŞET — olay defterine göre bu olay son günlerde
+        #       zaten manşet olmuş (bkz. MANSET_TEKRAR_SINIRI).
+        #
+        # ESKİ DAVRANIŞ VE MALİYETİ: kapı `records[aid]['mukerrer']` bayrağına
+        # bakıyordu. Bayrak üç durumu (aynı gelişme / YENİ gelişme / aynı aktör
+        # farklı olay) ayırt etmediği için 08-12'de günün 2. ve 3. en yüksek
+        # puanlı haberleri manşetten düştü: İran'ın ABD su altyapısına saldırısı
+        # (96 puan, YENİ eyaletler) ve Sandworm/UAC-0145 (92 puan, dünküyle
+        # ortak olan tek şey aktör). Yerlerine 90 puanlı iki haber girdi.
+        #
+        # Süregelen hikâyenin her gün manşet olmasını engelleyen koruma
+        # KAYBOLMAZ, ÖLÇÜLÜR: artık "bayrak var mı" değil, "bu olay kaç gün
+        # manşet oldu" sorulur.
+        manset_yasak = getattr(self, '_manset_yasak', None) or set()
+        defter = getattr(self, '_olay_defteri', None)
         if getattr(self, '_mukerrer_kritik3', True):
-            muk_disi = [aid for aid in eligible
-                        if not records.get(aid, {}).get('mukerrer')]
-            if len(muk_disi) >= 3:
-                atilan = len(eligible) - len(muk_disi)
-                if atilan:
-                    print(f"   🔁 KRİTİK 3: 'mükerrer' işaretli {atilan} aday "
-                          f"manşet havuzundan düşürüldü.")
-                eligible = muk_disi
+            uygun, dusen = [], {}
+            for aid in eligible:
+                if aid in manset_yasak:
+                    dusen[aid] = 'gerçek mükerrer (AYNI_GELISME)'
+                    continue
+                tekrar = 0
+                if defter is not None:
+                    try:
+                        tekrar = defter.manset_gunu_sayisi(
+                            self._kaynak_view(aid, articles_by_id))
+                    except Exception:
+                        tekrar = 0
+                if tekrar >= self.MANSET_TEKRAR_SINIRI:
+                    dusen[aid] = (f'olay son {REPORT_HISTORY_DAYS} günde '
+                                  f'{tekrar} kez manşet oldu')
+                    continue
+                uygun.append(aid)
+            # Garanti korunur: yeterli aday kalmıyorsa kapı UYGULANMAZ.
+            if len(uygun) >= 3:
+                for aid, neden in dusen.items():
+                    print(f"   🔁 KRİTİK 3: ID {aid} manşet havuzundan düştü "
+                          f"— {neden}.")
+                eligible = uygun
+            elif dusen:
+                print(f"   ⚠️  KRİTİK 3: manşet kapısı {len(dusen)} adayı "
+                      f"düşürecekti ama geriye {len(uygun)}<3 kalıyordu — "
+                      f"kapı UYGULANMADI (3 manşet garantisi).")
 
         eligible = self._apply_novelty_tiebreak(eligible, records, view_fn, recent_k3)
 

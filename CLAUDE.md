@@ -37,7 +37,12 @@ CERRAHİ DÜZENLE (silme, sadece bugünü çıkar — yoksa re-fetch mükerrer s
 DOKUNMA (kendi kendini düzeltir / değerli geçmiş / append-only):
 - `data/kritik3_gecmis.json`, `data/rapor_gecmis.json` — yükleme bugünü (`d >= today`) HARİÇ tutar, kayıt bugünü değiştirir; silme.
 - `data/skorlama_log.jsonl`, `data/rss_errors.txt` — işlevsel değil; silme.
+- `data/kalite_denetim.jsonl` — rapor sonrası kaçak taraması; append-only, işlevsel değil; silme.
+- `data/dedup_golden.json` — elle etiketli kalite kapısı referansı; ÜRETİM VERİSİ DEĞİL, silme.
 - `docs/index.html` — üretimde üzerine yazılır; silme.
+
+Not: olay defteri (manşet tekrar sayımı) kalıcı dosya DEĞİLDİR — her koşuda
+`rapor_gecmis` + `kritik3_gecmis`'ten türetilir, ayrı reset gerektirmez.
 
 SONRA: değişiklikleri `main`'e commit+push et (workflow `main`'i checkout eder;
 push edilmezse reset workflow'a yansımaz). Yedek: silmeden önce dosyaları
