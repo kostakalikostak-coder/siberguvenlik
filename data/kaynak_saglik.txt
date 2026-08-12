@@ -1,20 +1,22 @@
-# KAYNAK SAĞLIK RAPORU — 2026-08-12 12:06
-# aktif=36  üretiyor=22  boş(200/0)=0  hata/timeout=1
-# çıkarım : 222/224 haberin tam metni çıktı (%99)
-# dedup   : 84/222 haber filtreleri geçti (%38)
+# KAYNAK SAĞLIK RAPORU — 2026-08-12 15:56
+# aktif=36  üretiyor=24  boş(200/0)=0  hata/timeout=0
+# çıkarım : 255/258 haberin tam metni çıktı (%99)
+# dedup   : 101/255 haber filtreleri geçti (%40)
 # KAYNAK                      HAM  KALAN  METİN  HAVUZ  DURUM
-The Hacker News              40     27     27     16  OK
-BleepingComputer             15     15     15     11  OK
+The Hacker News              40     29     29     19  OK
+BleepingComputer             15     15     15     12  OK
 Help Net Security            10     10     10     10  OK
-SecurityWeek                 10     10     10      8  OK
-The Register                 40     37     37      6  OK
+CSO Online                   20     20     20      9  OK
+The Register                 40     37     37      7  OK
+SecurityWeek                 10     10     10      7  OK
 The Record                    5      5      5      5  OK
 Cyberscoop                   10     10     10      4  OK
 Security Affairs             10     10     10      4  OK
+Industrial Cyber              9      9      9      3  OK
 TechCrunch Security          20      8      8      3  OK
-ANSSI (CERT-FR)              40     28     27      2  OK
+Schneier on Security         10      4      3      3  OK
+ANSSI (CERT-FR)              40     38     36      2  OK
 Securelist (Kaspersky)       10      4      4      2  OK
-Schneier on Security         10      3      2      2  OK
 Infoblox Blog                12      2      2      2  OK
 Dark Reading                 40      9      9      1  OK
 The Cyber Express            10      7      7      1  OK
@@ -25,11 +27,10 @@ CrowdStrike                  10      3      3      1  OK
 NCSC UK                      20      2      2      1  OK
 Talos Intelligence           15      2      2      1  OK
 Krebs on Security            10      1      1      1  OK
-Industrial Cyber              9      7      7      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Microsoft Security           10      4      4      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-NIST                         40      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Citizen Lab                  10      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 BSI                          40      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+NIST                         40      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Mandiant (Google Cloud)      20      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 IranWire                     40      0      -      0  OK
 Graham Cluley                20      0      -      0  OK
@@ -38,4 +39,3 @@ CERT-EU                      10      0      -      0  OK
 Proofpoint Threat Insight    10      0      -      0  OK
 SentinelOne Labs             10      0      -      0  OK
 The DFIR Report              10      0      -      0  OK
-CSO Online                    0      0      -      0  HATA: HTTPSConnectionPool(host='www.csoonline.com', port=443): Rea
