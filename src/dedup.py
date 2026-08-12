@@ -472,6 +472,13 @@ _ENTITY_DENYLIST = frozenset({
     'news', 'justice', 'federal', 'national', 'state', 'states', 'police',
     'ulusal', 'komisyon', 'bakanlık', 'başkanlık', 'i̇stihbarat', 'tehdit',
     'araştırma', 'araştırmacı', 'grubu', 'kimlik', 'güncelleme', 'acil',
+    # CERT/CSIRT kurum tamlamalarının sözcükleri. Her ülkenin ekibi aynı
+    # sözcüklerle anılır ("Computer Emergency Response Team", "Bilgisayar Acil
+    # Müdahale Ekibi"), dolayısıyla bunlar OLAYIN değil KURUM TÜRÜNÜN adıdır.
+    # ÖLÇÜLDÜ (2026-08-12): Sandworm/Polonya ile Sandworm/UAC-0145 haberleri
+    # {bilgisayar, acil, müdahale, ekibi} ortaklığıyla aynı olaya bağlandı.
+    'computer', 'emergency', 'response', 'team', 'bilgisayar', 'müdahale',
+    'ekibi', 'merkezi', 'kurumu', 'ajansı',
 })
 
 

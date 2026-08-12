@@ -129,3 +129,52 @@ def test_sozluk_kucuk_derlemde_jenerik_saymaz():
     """Derlem küçükken DF güvenilmezdir; hiçbir ad jenerik sayılmamalı."""
     s = oi.OlaySozlugu([{'paragraph': 'Test Kurumu bir açıklama yaptı.'}] * 3)
     assert s.jenerik_mi('test') is False
+
+
+# ── OLAY DEFTERİ ─────────────────────────────────────────────────────────────
+
+def _v(tr_title='', paragraph='', title='', full_text=''):
+    return {'tr_title': tr_title, 'paragraph': paragraph,
+            'title': title, 'full_text': full_text}
+
+
+def test_defter_ayni_olayi_gunler_boyunca_baglar():
+    # Özel adlar bilinçli olarak cümle ORTASINDA: cümle başındaki büyük harf
+    # özel adlıktan değil konumdan gelebilir, o yüzden yalnızca 'aday' sayılır
+    # ve tek başına olay bağı kurmaz (bkz. ozel_adlar / _ortak_adlar).
+    gun1 = _v(paragraph='Kuzey Kaliforniya\'daki Suisun City belediyesi '
+                        'ağını kapattı ve Solano ilçesi sevk merkezine geçti.')
+    gun2 = _v(paragraph='Yetkililer Suisun City sistemlerinin geri '
+                        'yüklendiğini, Solano ilçesindeki yönlendirmenin '
+                        'sona erdiğini açıkladı.')
+    d = oi.defter_kur([('2026-08-11', [gun1], [gun1]),
+                       ('2026-08-12', [gun2], [])])
+    assert len(d.kayitlar) == 1, 'aynı olay iki kayda bölündü'
+    assert d.kayitlar[0]['gunler'] == ['2026-08-11', '2026-08-12']
+    assert d.manset_gunu_sayisi(gun2) == 1
+    assert d.son_manset_gunu(gun2) == '2026-08-11'
+
+
+def test_defter_ayni_aktoru_farkli_olaya_baglamaz():
+    """Aktör adı olay kimliği DEĞİLDİR (08-12 Sandworm vakası)."""
+    polonya = _v(paragraph='Sandworm, Polonya\'da bir kojenerasyon tesisinde '
+                           'buhar türbinini devre dışı bıraktı.')
+    ukrayna = _v(paragraph='Sandworm, Ukraynalı yazılımcılara sahte mülakatla '
+                           'zararlı bir VPN istemcisi yükletti.')
+    d = oi.defter_kur([('2026-08-11', [polonya], [polonya]),
+                       ('2026-08-12', [ukrayna], [])])
+    assert len(d.kayitlar) == 2, 'aynı aktör farklı olayları birleştirdi'
+    assert d.manset_gunu_sayisi(ukrayna) == 0, (
+        'farklı olay, dünkü manşetin manşet geçmişini devraldı')
+
+
+def test_defter_manset_gunu_sayisi_hic_manset_olmayanda_sifir():
+    v = _v(paragraph='Tamamen yeni bir olay hakkında haber metni.')
+    d = oi.defter_kur([('2026-08-12', [v], [])])
+    assert d.manset_gunu_sayisi(v) == 0
+    assert d.son_manset_gunu(v) is None
+
+
+def test_aktor_kokleri_olay_kimliginden_dusulur():
+    v = _v(paragraph='Lazarus grubu bir savunma şirketini hedef aldı.')
+    assert 'ad:lazarus' not in oi.olay_kimlikleri(v)

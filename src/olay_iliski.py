@@ -225,6 +225,35 @@ def _ortak_adlar(view_a, view_b, sozluk):
     return sozluk.ayirt_edici(ortak)
 
 
+def _aktor_kokleri(view):
+    """Aktör adlarının özel-ad KÖKLERİ (ozel_adlar ile aynı köklemeyle).
+
+    extract_actors normalize edilmiş adlar döndürür (boşluk/tire silinmiş,
+    küçük harf: 'starblizzard'); ozel_adlar ise sözcük başına 8 karakterlik
+    kökler üretir ('blizzard', 'star'). İki temsil doğrudan karşılaştırılamaz,
+    bu yüzden aktör adları metindeki sözcüklerine bölünüp aynı biçimde
+    köklenir."""
+    kokler = set()
+    blob = _metin(view)
+    for ad in dedup.extract_actors(blob):
+        if ad.startswith('cve'):
+            continue
+        kokler.add(ad[:_KOK])
+    # Adlandırılmış aktörler metinde boşluklu geçer ("Star Blizzard"); her
+    # sözcüğü ayrı ayrı köklenmelidir.
+    dusuk = blob.lower()
+    for ad in dedup._NAMED_ACTORS:
+        if ad in dusuk:
+            for sozcuk in ad.split():
+                kokler.add(sozcuk[:_KOK])
+    for m in dedup._TAXONOMY_ACTOR_RE.finditer(blob):
+        kokler.add(m.group(1).lower()[:_KOK])
+    for m in dedup._TREND_ACTOR_RE.finditer(blob):
+        for sozcuk in m.group(0).split():
+            kokler.add(sozcuk.lower()[:_KOK])
+    return kokler
+
+
 def olay_kimlikleri(view, sozluk=None):
     """Bir haberin OLAY kimliği: kurban/hedef/zafiyet/paket/kod adı.
 
@@ -238,6 +267,14 @@ def olay_kimlikleri(view, sozluk=None):
     kimlikler |= {'pkg:' + p for p in dedup.extract_package_names(blob)}
     kimlikler |= {'kod:' + k for k in dedup.extract_codenames(blob)}
     kesin, _ = ozel_adlar(view)
+    # AKTÖR ADLARI OLAY KİMLİĞİNDEN ÇIKARILIR — modülün varlık sebebi olan
+    # ayrımın uygulandığı yer burasıdır. Aktör adı aynı zamanda bir özel addır
+    # ('Sandworm', 'Lazarus'), dolayısıyla ozel_adlar onu doğal olarak
+    # yakalar; çıkarılmazsa "ortak aktör" sinyali "ortak olay kimliği" gibi
+    # davranır ve tam da engellemek istediğimiz birleşmeyi yapar.
+    # ÖLÇÜLDÜ (2026-08-12 olay defteri): Sandworm/Polonya ve Sandworm/UAC-0145
+    # haberleri 'ad:sandworm' ortaklığı üzerinden AYNI OLAYA bağlandı.
+    kesin = kesin - _aktor_kokleri(view)
     kimlikler |= {'ad:' + a for a in sozluk.ayirt_edici(kesin)}
     return kimlikler
 
@@ -393,3 +430,115 @@ def iliski_belirle(view_a, view_b, ayni_gun=False, explain=False, sozluk=None):
         return _ret(AYNI_GELISME, f'topic={topic:.2f}')
 
     return _ret(ILISKISIZ, f'topic={topic:.2f}')
+
+
+# ── OLAY DEFTERİ ─────────────────────────────────────────────────────────────
+class OlayDefteri:
+    """Son günlerin haberlerini OLAYLARA gruplayan defter.
+
+    NEDEN VAR: boru hattı bugüne kadar her gün her çifti YENİDEN karşılaştırıyor
+    ve hiçbir yerde "bu olay" diye kalıcı bir kimlik tutmuyordu. Sonuç iki
+    yönlü arıza: (a) aynı olay farklı sözcüklerle yazıldığında bağ kopuyor,
+    (b) "bu olay kaç gündür manşette?" sorusu yanıtlanamadığı için manşet
+    tekrarı ancak kaba bir 'mukerrer' bayrağıyla engellenebiliyor — o bayrak
+    da YENİ gelişmeleri birlikte eliyor (08-12: İran su altyapısı 96 puan).
+
+    Defter, kalıcı bir DOSYA DEĞİLDİR: her koşuda mevcut geçmişten (rapor_
+    gecmis + kritik3_gecmis) yeniden kurulur. Böylece yeni bir durum dosyası
+    ve ona bağlı bir sıfırlama prosedürü doğmaz (bkz. CLAUDE.md "Taze Rapor
+    İçin Reset"); defterin doğruluğu tamamen sınıflandırıcıya bağlıdır ve
+    sınıflandırıcı iyileştikçe geçmişe dönük olarak da düzelir.
+
+    Kayıt alanları:
+      olay_id        — sıralı, koşu içinde kararlı
+      gunler         — olayın raporlandığı günler (artan)
+      manset_gunleri — olayın KRİTİK 3 manşeti olduğu günler
+      views          — temsilci görünümler (en yeniden eskiye, en fazla 3)
+    """
+
+    # Bir olayın temsilcisi olarak saklanan en fazla görünüm sayısı. Eşleştirme
+    # bunların HEPSİNE bakar: olay geliştikçe sözcükleri değişir, tek temsilci
+    # birkaç gün sonra artık eşleşmez.
+    TEMSILCI = 3
+
+    def __init__(self, sozluk=None):
+        self.sozluk = sozluk or BOS_SOZLUK
+        self.kayitlar = []
+
+    def _yeni_kayit(self, gun, view, manset):
+        kayit = {
+            'olay_id': len(self.kayitlar) + 1,
+            'gunler': [gun],
+            'manset_gunleri': [gun] if manset else [],
+            'views': [view],
+        }
+        self.kayitlar.append(kayit)
+        return kayit
+
+    def esle(self, view, explain=False):
+        """Görünümü defterdeki bir olayla eşleştirir.
+
+        Dönüş: (kayit, iliski, neden) — eşleşme yoksa (None, ILISKISIZ, ...).
+        En GÜÇLÜ eşleşme kazanır: AYNI_GELISME > YENI_GELISME. Aktör-only
+        eşleşmeler olay bağı KURMAZ (farklı olaydırlar)."""
+        en_iyi, en_iyi_iliski, en_iyi_neden = None, ILISKISIZ, ''
+        for kayit in self.kayitlar:
+            for gecmis_view in kayit['views']:
+                iliski, neden = iliski_belirle(
+                    view, gecmis_view, explain=True, sozluk=self.sozluk)
+                if iliski == AYNI_GELISME:
+                    return (kayit, iliski, neden) if explain else (kayit, iliski)
+                if iliski == YENI_GELISME and en_iyi is None:
+                    en_iyi, en_iyi_iliski, en_iyi_neden = kayit, iliski, neden
+        if explain:
+            return en_iyi, en_iyi_iliski, en_iyi_neden
+        return en_iyi, en_iyi_iliski
+
+    def ekle(self, gun, view, manset=False):
+        """Görünümü deftere işler; eşleşen olay varsa ona bağlar.
+
+        Dönüş: (kayit, iliski) — iliski, görünümün DEFTERE göre durumudur."""
+        kayit, iliski = self.esle(view)
+        if kayit is None:
+            return self._yeni_kayit(gun, view, manset), ILISKISIZ
+        if gun not in kayit['gunler']:
+            kayit['gunler'].append(gun)
+            kayit['gunler'].sort()
+        if manset and gun not in kayit['manset_gunleri']:
+            kayit['manset_gunleri'].append(gun)
+            kayit['manset_gunleri'].sort()
+        # En yeni görünüm başa; olay geliştikçe temsilciler tazelenir.
+        kayit['views'].insert(0, view)
+        del kayit['views'][self.TEMSILCI:]
+        return kayit, iliski
+
+    def gunleri_isle(self, gunler):
+        """[(gun, views, manset_views), ...] — defteri toplu kurar.
+
+        Günler ESKİDEN YENİYE işlenmelidir; olay kimliği ilk görülme sırasına
+        göre atanır ve temsilciler doğru sırayla tazelenir."""
+        for gun, views, manset_views in gunler:
+            manset_kimlik = {id(v) for v in (manset_views or ())}
+            for v in views or ():
+                self.ekle(gun, v, manset=id(v) in manset_kimlik)
+        return self
+
+    def manset_gunu_sayisi(self, view):
+        """Bu görünümün olayı son günlerde kaç kez MANŞET olmuş?
+
+        Faz 2 politikasının çekirdeği: 'mukerrer' bayrağı gibi kaba bir yasak
+        yerine ÖLÇÜLEN bir gerçek. Olay hiç manşet olmamışsa 0 döner ve haber
+        puanına göre serbestçe manşete çıkabilir."""
+        kayit, _ = self.esle(view)
+        return len(kayit['manset_gunleri']) if kayit else 0
+
+    def son_manset_gunu(self, view):
+        kayit, _ = self.esle(view)
+        if not kayit or not kayit['manset_gunleri']:
+            return None
+        return kayit['manset_gunleri'][-1]
+
+
+def defter_kur(gunler, sozluk=None):
+    """Kısayol: [(gun, views, manset_views), ...] → kurulmuş OlayDefteri."""
+    return OlayDefteri(sozluk=sozluk).gunleri_isle(gunler)
