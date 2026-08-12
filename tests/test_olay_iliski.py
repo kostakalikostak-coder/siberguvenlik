@@ -178,3 +178,41 @@ def test_defter_manset_gunu_sayisi_hic_manset_olmayanda_sifir():
 def test_aktor_kokleri_olay_kimliginden_dusulur():
     v = _v(paragraph='Lazarus grubu bir savunma şirketini hedef aldı.')
     assert 'ad:lazarus' not in oi.olay_kimlikleri(v)
+
+
+# ── GÜN İÇİ KÜMELEME ─────────────────────────────────────────────────────────
+
+def test_kumele_ayni_olayi_gruplar():
+    a = _v(paragraph='Redmond bu ay 421 açığı kapattı; Lazarus bir sıfır günü '
+                     'istismar etti.', title='421 bugs in Patch Tuesday')
+    b = _v(paragraph='Microsoft bu ay 421 güvenlik açığını kapattı ve Lazarus '
+                     'grubunun istismar ettiği sıfır günü yamaladı.',
+           title='Microsoft Plugs Nearly 400 Holes')
+    c = _v(paragraph='Bir fidye çetesi bir hastanenin sosyal medya hesabını '
+                     'ele geçirdi.', title='Ransomware hijacks hospital page')
+    gruplar = oi.kumele({1: a, 2: b, 3: c})
+    assert sorted(len(g) for g in gruplar) == [1, 2]
+    ikili = next(g for g in gruplar if len(g) == 2)
+    assert set(ikili) == {1, 2}
+
+
+def test_kumele_gecisli_zincirleme_yapmaz():
+    """Temsilci tabanlıdır: A~B ve B~C, A~C demek DEĞİLDİR.
+
+    İlk uygulama union-find'dı ve gerçek veride 64 adayın 28'ini tek gruba
+    düşürdü (bkz. kumele docstring)."""
+    a = _v(paragraph='Ortak Alfa Kurumu ve Beta Sistemi hakkında ayrıntılı '
+                     'bir inceleme yayımlandı.')
+    b = _v(paragraph='Beta Sistemi ile Gama Platformu arasındaki bağlantı '
+                     'ayrıntılı biçimde incelendi.')
+    c = _v(paragraph='Gama Platformu üzerinde yürütülen ayrı bir çalışma '
+                     'ayrıntılı olarak duyuruldu.')
+    gruplar = oi.kumele({1: a, 2: b, 3: c})
+    assert not any(len(g) == 3 for g in gruplar), 'zincirleme birleştirme oldu'
+
+
+def test_kumele_varsayilan_kati():
+    """Varsayılan eşik KATI olmalı (ölçümle seçildi: 2 vs 4 yanlış birleştirme)."""
+    import inspect
+    imza = inspect.signature(oi.kumele)
+    assert imza.parameters['gevsek'].default is False

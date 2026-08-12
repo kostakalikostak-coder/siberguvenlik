@@ -5571,9 +5571,27 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     })
             tersine.sort(key=lambda x: -x['puan'])
 
+            # GÖLGE MOD — gün içi olay kümelemesi (bkz. src/olay_iliski.kumele).
+            # Karar VERMEZ, yalnızca kaydeder. Gerekçe ölçümdür: 08-12 verisinde
+            # katı eşikle 9 çok üyeli grubun 2'si yanlış birleştirmeydi
+            # (LiteLLM↔Mozilla GPG). Eleme yetkisi verilseydi gerçek haber
+            # kaybettirirdi — tam da düzeltmeye çalıştığımız arıza sınıfı.
+            # Yetki, üretimde biriken bu kayıtlar temiz çıkınca verilecek.
+            kume_golge = []
+            try:
+                sirali = sorted(rapor_ids, key=lambda a: -_puan(a))
+                gruplar = _olay.kumele(
+                    {a: view_fn(a) for a in sirali},
+                    sozluk=getattr(self, '_olay_sozlugu', None))
+                kume_golge = [[{'id': a, 'baslik': _ad(a)} for a in g]
+                              for g in gruplar if len(g) > 1]
+            except Exception as e:
+                print(f"   ⚠️  Kümeleme (gölge) çalışmadı: {e}")
+
             kayit = {
                 'tarih': _now_tr().strftime('%Y-%m-%d'),
                 'rapor_haber': len(rapor_ids),
+                'kume_golge': kume_golge,
                 'capraz_gun_kacak': capraz,
                 'rapor_ici_kacak': ici,
                 'manset_sirasi': {
@@ -5590,6 +5608,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             for k in getattr(self, '_manset_izi', []):
                 print(f"      🧾 Manşet izi [{k['katman']}]: ID {k['dusen']} "
                       f"düştü → ID {k['giren']} girdi ({k['neden']})")
+
+            for g in kume_golge:
+                print("      🧪 Kümeleme (gölge, karar vermez): "
+                      + ' | '.join(f"{x['id']}:{x['baslik'][:34]}" for x in g))
 
             if capraz or ici or tersine:
                 print(f"   🔎 Kalite denetimi: {len(capraz)} çapraz-gün kaçak, "

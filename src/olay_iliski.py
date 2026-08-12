@@ -486,16 +486,22 @@ def iliski_belirle(view_a, view_b, ayni_gun=False, explain=False, sozluk=None):
                         f'ortak={etiket} topic={topic:.2f} yeni={yeni}')
         return _ret(AYNI_GELISME, f'ortak={etiket} topic={topic:.2f}')
 
-    ortak_aktor = aktor_kimlikleri(view_a) & aktor_kimlikleri(view_b)
-    if ortak_aktor:
-        return _ret(AYNI_AKTOR_FARKLI_OLAY,
-                    f'aktör={",".join(sorted(ortak_aktor))} topic={topic:.2f}')
-
+    # ÇOK YÜKSEK konu örtüşmesi, ortak kimlik bulunamasa bile aynı olaydır ve
+    # bu kontrol AKTÖR kuralından ÖNCE gelmek zorundadır. Aksi hâlde aynı
+    # olayı anlatan iki haber, ortak kimlikleri denylist'e takıldığı için
+    # (ör. Microsoft/Redmond satıcı adı olarak elenir) yalnızca aktörü
+    # paylaşıyor görünür ve AYNI_AKTOR_FARKLI_OLAY sayılır — oysa topic=0.46
+    # gibi bir örtüşme tesadüf değildir.
     if topic >= KONU_TEK_BASINA:
         yeni_var, yeni = _yeni_gelisme_mi(view_a, view_b, sozluk)
         if yeni_var:
             return _ret(YENI_GELISME, f'topic={topic:.2f} yeni={yeni}')
         return _ret(AYNI_GELISME, f'topic={topic:.2f}')
+
+    ortak_aktor = aktor_kimlikleri(view_a) & aktor_kimlikleri(view_b)
+    if ortak_aktor:
+        return _ret(AYNI_AKTOR_FARKLI_OLAY,
+                    f'aktör={",".join(sorted(ortak_aktor))} topic={topic:.2f}')
 
     return _ret(ILISKISIZ, f'topic={topic:.2f}')
 
@@ -610,3 +616,54 @@ class OlayDefteri:
 def defter_kur(gunler, sozluk=None):
     """Kısayol: [(gun, views, manset_views), ...] → kurulmuş OlayDefteri."""
     return OlayDefteri(sozluk=sozluk).gunleri_isle(gunler)
+
+
+# ── GÜN İÇİ KÜMELEME ─────────────────────────────────────────────────────────
+def kumele(views_by_id, sozluk=None, ayni_gun=True, gevsek=False):
+    """Aynı günün adaylarını OLAY GRUPLARINA böler.
+
+    NEDEN VAR: gün-içi mükerrer bugüne kadar DÖRT ayrı yerde, dört ayrı
+    ölçütle aranıyordu (manşet-içi ayrıklık, gövde aynı-olay taraması,
+    LLM auditor, çapraz-gün kalıntısı). Her biri kendi eşiğiyle aynı soruyu
+    sorduğu için hem kaçırıyor hem çelişiyorlardı. Tek geçiş tek yanıt üretir
+    ve sonraki katmanlar onu kullanır.
+
+    Kümeleme AÇGÖZLÜ ve TEMSİLCİ TABANLIDIR: her aday yalnızca mevcut
+    grupların TEMSİLCİSİYLE karşılaştırılır, eşleşirse o gruba katılır, yoksa
+    yeni grup açar.
+
+    GEÇİŞLİLİK (union-find) BİLİNÇLİ OLARAK KULLANILMAZ. İlk uygulama
+    geçişliydi ve gerçek veride yıkıcı biçimde zincirlendi: 2026-08-12'nin 64
+    adayından 28'i (SAP + ShieldBreak + Cisco + Kimwolf + SharePoint + Adobe +
+    SonicWall + Chrome bildirimleri...) TEK gruba düştü. Sebep yapısaldır —
+    A~B ve B~C bağlarının her biri tek başına zayıf olsa bile geçişlilik
+    hepsini birleştirir ve tek bir yanlış-pozitif tüm günü tek olay yapar.
+    Temsilci tabanlı kümeleme bu yayılmayı kapatır: yanlış bir bağın etkisi
+    o grupla sınırlı kalır.
+
+    Dönüş: [[id, ...], ...] — her grup bir olay; tek üyeli gruplar da döner.
+    Grup içi sıra girdideki sıradır (çağıran genelde puan sırasında verir),
+    dolayısıyla grubun İLK üyesi doğal temsilcidir.
+    """
+    # gevsek=True, aynı gün içindeki YENI_GELISME'yi de aynı olay sayar
+    # (iki kaynak aynı olayı farklı ayrıntı derinliğinde anlatır, biri
+    # diğerinden 'yeni' görünür). Kulağa doğru gelir ama ÖLÇÜM AKSİNİ SÖYLER
+    # (2026-08-12, 64 aday):
+    #     gevşek : 12 çok üyeli grup, 4'ü yanlış birleştirme
+    #              (LiteLLM↔Mozilla GPG, SonicWall↔ICS↔SAP, Kuzey Kore↔Delta)
+    #     katı   :  9 çok üyeli grup, 2'si yanlış birleştirme
+    # Katı eşik hem daha az yanlış birleştirir hem gerçek grupları (Patch
+    # Tuesday ×7, Delta ×4, Cisco ×3) yakalamaya devam eder. Varsayılan KATI.
+    kabul = ((AYNI_GELISME, YENI_GELISME) if gevsek else (AYNI_GELISME,))
+    gruplar = []
+    for aid in views_by_id:
+        view = views_by_id[aid]
+        for grup in gruplar:
+            temsilci = views_by_id[grup[0]]
+            if iliski_belirle(view, temsilci, ayni_gun=ayni_gun,
+                              sozluk=sozluk) in kabul:
+                grup.append(aid)
+                break
+        else:
+            gruplar.append([aid])
+    return gruplar
