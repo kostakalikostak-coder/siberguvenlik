@@ -152,6 +152,12 @@ def test_metin_yoksa_llm_karari_korunur():
     assert _dogrula('', '')
 
 
-def test_esik_altinda_bayrak_tek_basina_yeter():
-    """Düşük puanda yanlış elemenin maliyeti düşük — doğrulama aranmaz."""
-    assert main.HaberSistemi.MUKERRER_KORUMA_ESIGI == 85
+def test_puan_esigi_kalkti_her_bayrak_denetlenir():
+    """Artık puan eşiği YOK — her 'mukerrer' bayrağı denetlenir.
+
+    Eski davranış: yalnızca ≥85 puanlı haberlerde doğrulama aranıyor, altında
+    LLM sözü sorgusuz kabul ediliyordu. Eşik bir ölçüme değil, denetimin
+    pahalı olduğu varsayımına dayanıyordu; oysa denetim deterministiktir ve
+    bedava. Sonuç olarak düşük puanlı haberler sessizce yanlış eleniyordu."""
+    assert not hasattr(main.HaberSistemi, 'MUKERRER_KORUMA_ESIGI'), (
+        'Ölü sabit geri gelmiş — puan eşiği kaldırıldı (bkz. _rank_by_score)')

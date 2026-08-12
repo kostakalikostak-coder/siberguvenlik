@@ -3911,6 +3911,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                                  govde_ids=()):
         """AUDITOR — manşet SEÇİM denetimi ("bu haber gerçekten manşetlik mi?").
 
+        ⚠️ SÖKÜM ADAYI (Faz 4, kriter: scripts/sokum_hazirlik.py).
+        Manşeti üç ayrı katman değiştirebiliyor ve üçü de özünde aynı soruyu
+        soruyor. 2026-08-12'de bu katmanlardan biri, mukerrer=0 ve 92 puanla
+        deterministik sırada 2. olan Sandworm/UAC-0145 haberini düşürdü;
+        yerine 90 puanlı bir haber girdi. Kararı hiçbir yere yazılmadığı için
+        sebep ancak adli inceleme ile bulunabildi (artık _manset_karar_kaydet
+        yazıyor). Söküm kanıt biriktikten sonra.
+
         Boru hattındaki denetimlerin tamamı manşetin İÇERİĞİNİ sorguluyordu
         (kesik paragraf, resmi dil, mükerrer); hiçbiri SEÇİMİ sorgulamıyordu.
         Yanlış bir haber manşete çıktığında onu geri çevirecek katman yoktu.
@@ -4030,6 +4038,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                   f"konuca en ilgili {len(secilen)} tanesi denetime taşındı.")
         return secilen
 
+    # ⚠️ SÖKÜM ADAYI (Faz 4, kriter: scripts/sokum_hazirlik.py) — bkz.
+    # _audit_kritik3_selection docstring'i; üç manşet denetiminden biri.
     def _dedup_kritik3_cross_day_llm(self, top3_ids, yedek_ids, records,
                                      content_by_id, articles_by_id, recent_views):
         """Manşet çapraz-gün SEMANTİK denetimi — ELEME DEĞİL, DEĞİŞTİRME.
@@ -4957,14 +4967,12 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         except Exception:
             return False   # güvenli taraf: artefakt varsayma, korumayı sürdür
 
-    # ARTIK KULLANILMIYOR (geriye uyumluluk için duruyor).
-    # Eskiden 'mukerrer' bayrağı yalnızca bu puanın ÜSTÜNDE denetleniyordu;
-    # altındaki haberlerde LLM sözü sorgusuz kabul ediliyordu. Eşik bir
-    # ölçüme değil, denetimin PAHALI olduğu varsayımına dayanıyordu — oysa
-    # denetim deterministiktir ve bedava. Sonuç olarak düşük puanlı haberler
-    # sessizce yanlış eleniyordu. Bugün her 'mukerrer' bayrağı puan gözetmeksizin
-    # dört değerli ilişkiyle denetlenir (bkz. _rank_by_score, _olay_iliskisi).
-    MUKERRER_KORUMA_ESIGI = 85
+    # NOT: MUKERRER_KORUMA_ESIGI (=85) KALDIRILDI. 'mukerrer' bayrağı eskiden
+    # yalnızca bu puanın ÜSTÜNDE denetleniyor, altında LLM sözü sorgusuz kabul
+    # ediliyordu. Eşik bir ölçüme değil, denetimin pahalı olduğu varsayımına
+    # dayanıyordu — oysa denetim deterministiktir ve bedava; eşik yüzünden
+    # düşük puanlı haberler sessizce yanlış eleniyordu. Bugün her bayrak puan
+    # gözetmeksizin dört değerli ilişkiyle denetlenir (bkz. _olay_iliskisi).
 
     def _kaynak_view(self, aid, articles_by_id):
         """Üretim ÖNCESİ görünüm: elde yalnızca kaynak metin varken (tr_title
@@ -5265,6 +5273,16 @@ document.addEventListener('DOMContentLoaded', initDragFile);
     # hatanın sessizce tekrarlanmasını engeller.
     def _hikaye_zinciri_filtrele(self, aday_ids, view_fn):
         """Süregelen hikâyeye bağlanan adayları KRİTİK 3 havuzundan düşürür.
+
+        ⚠️ SÖKÜM ADAYI (Faz 4, kriter: scripts/sokum_hazirlik.py).
+        Bu filtrenin işlevi artık olay defterinin manset_gunleri alanı
+        tarafından KAPSANIYOR ve defter DAHA GENİŞ: zincir bir olayın ≥3 gün
+        manşet olmasını beklerken (STORY_CHAIN_MIN_DAYS), defter ≥1 manşet
+        gününde devreye giriyor (MANSET_TEKRAR_SINIRI). Yani defter tetiklenen
+        her zincir vakasını zaten yakalar.
+        Yine de HEMEN kaldırılmadı: kaldırmak için üretimde birikmiş kanıt
+        gerekir; ölçmeden katman kaldırmak bu projenin bugüne kadarki arıza
+        deseninin ta kendisidir.
 
         Dönüş: (filtrelenmiş_id_listesi, {düşen_id: zincir}). Zincir yoksa
         liste değişmeden döner."""
