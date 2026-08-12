@@ -117,3 +117,18 @@ def test_system_kod_adi_sayilmaz():
     """'SYSTEM-level privileges' kalıbı olay parmak izi değildir."""
     assert 'system' not in dedup.extract_codenames(
         'execute code with SYSTEM-level privileges on the host')
+
+
+def test_yama_dongusu_kurali_promptta_duruyor():
+    """Yama döngüsü kuralı ve satıcı koruması sessizce düşmemeli.
+
+    2026-08-12 üretim koşusunda Microsoft'un Yama Salısı toplamı ile Windows 10
+    ESU bülteni raporda AYNI ANDA yer aldı — deterministik katman ikisini
+    bağlayamıyor (ortak kimlik yok, topic=0.15), bu ayrım dünya bilgisi ister.
+    Kural LLM denetim promptuna eklendi. İkinci assert eşit derecede önemli:
+    kuralı satıcı sınırı olmadan bırakmak, ölçülmüş yanlış-birleştirme sınıfını
+    (SAP↔Adobe, Ivanti↔SonicWall, ICS↔Microsoft) geri getirirdi."""
+    from src.config import get_dedup_review_prompt
+    p = get_dedup_review_prompt('=== HABER ID: 1 ===\nBaşlık: x\nÖzet: y\n')
+    assert 'AYNI SATICININ AYNI YAMA DÖNGÜSÜ' in p
+    assert 'FARKLI SATICILARIN' in p

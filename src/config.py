@@ -1564,12 +1564,22 @@ kelimelerle yazılmış olsalar bile aynı olaydır):
 - Aynı mağdur/hedef + aynı saldırgan/aktör + aynı olay (ör. aynı kişinin aynı
   casus yazılımla hedeflenmesi; aynı şirkete aynı ihlal),
 - VEYA aynı zafiyet (aynı CVE/ürün) hakkında aynı gelişme,
-- VEYA aynı kampanya/operasyon/takedown hakkında aynı haber.
+- VEYA aynı kampanya/operasyon/takedown hakkında aynı haber,
+- VEYA AYNI SATICININ AYNI YAMA DÖNGÜSÜ: biri döngünün TOPLAMI, diğeri o
+  toplamın bir ALT BÜLTENİ/bileşeni ise aynı olaydır. Örnek: "Microsoft
+  Ağustos 2026 Yama Salısı'nda 400+ açığı kapattı" ile "Windows 10 için
+  Ağustos 2026 KB… güvenlik güncellemesi yayımlandı" AYNI olaydır — ikincisi
+  birincisinin bir parçasıdır, okuyucuya yeni bir olay katmaz.
 
 FARKLI OLAY (gruplama!):
 - Aynı ürün/aktör ama FARKLI zafiyet/olay (ör. SharePoint RCE ≠ Cisco CM açığı;
   aynı grubun iki ayrı saldırısı),
-- Aynı konu ama farklı vaka (ör. iki ayrı kurumda iki ayrı fidye saldırısı).
+- Aynı konu ama farklı vaka (ör. iki ayrı kurumda iki ayrı fidye saldırısı),
+- ⚠️ FARKLI SATICILARIN aynı gün çıkan yama bültenleri: SAP ≠ Adobe ≠ Ivanti ≠
+  SonicWall ≠ Cisco. "Yama Salısı" aynı gün olmaları onları aynı olay YAPMAZ.
+  "ICS Yama Salısı" (Siemens/Schneider/Phoenix Contact) da Microsoft'unkinden
+  AYRI bir olaydır. Üstteki yama-döngüsü kuralı YALNIZCA tek bir satıcının
+  kendi döngüsü içinde geçerlidir.
 
 Emin değilsen GRUPLAMA (yalnızca açıkça aynı olan haberleri grupla — yanlışlıkla
 farklı haberleri birleştirmek, mükerreri kaçırmaktan daha kötüdür).
