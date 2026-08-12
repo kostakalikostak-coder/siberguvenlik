@@ -458,6 +458,20 @@ _ENTITY_DENYLIST = frozenset({
     'network', 'platform', 'cloud', 'server', 'browser', 'update', 'report',
     'linux', 'windows', 'android', 'chrome', 'edge', 'firefox', 'safari',
     'azure', 'siber', 'güvenlik', 'yapay', 'zeka', 'zekâ',
+    # Ulus/millet SIFATLARI ve yön sözcükleri. Ülke ADLARI yukarıda zaten var
+    # ama sıfat biçimleri yoktu; İngilizce metinde tam da bu biçim geçer
+    # ("North Korean operatives", "Spanish police"). ÖLÇÜLDÜ (2026-08-12):
+    # Kuzey Koreli sahte kripto şirketi ↔ FBI federal kurum haberleri —
+    # tamamen FARKLI iki olay — {korean, north, news, justice} ortak "özel
+    # adları" yüzünden aynı olay sayıldı. Deepfake çiftinde de 'spain/spanish'
+    # yeni gelişme sanıldı.
+    'korean', 'chinese', 'russian', 'iranian', 'israeli', 'ukrainian',
+    'spanish', 'french', 'german', 'british', 'dutch', 'indian', 'japanese',
+    'american', 'european', 'north', 'south', 'east', 'west', 'spain',
+    # Haber/kurum bağlamının kaçınılmaz sözcükleri
+    'news', 'justice', 'federal', 'national', 'state', 'states', 'police',
+    'ulusal', 'komisyon', 'bakanlık', 'başkanlık', 'i̇stihbarat', 'tehdit',
+    'araştırma', 'araştırmacı', 'grubu', 'kimlik', 'güncelleme', 'acil',
 })
 
 

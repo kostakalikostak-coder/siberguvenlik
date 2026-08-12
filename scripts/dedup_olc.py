@@ -65,19 +65,40 @@ def olc_same_event(ciftler):
     return kayitlar, hata
 
 
+def _sozluk_kur(olay_iliski):
+    """Belge frekansı sözlüğünü GERÇEK derlemden kurar.
+
+    Sözlük olmadan ölçüm anlamsızdır: jenerik özel adlar (Patch, Tuesday,
+    News) ayıklanmadığı için her çift birbirine benzer. Derlem = son 7 günün
+    rapor + manşet geçmişi; üretimde de aynı kaynak kullanılır."""
+    views = []
+    for p in ('data/rapor_gecmis.json', 'data/kritik3_gecmis.json'):
+        if not os.path.exists(p):
+            continue
+        with open(p, encoding='utf-8') as f:
+            for rec in json.load(f):
+                views.extend(rec.get('views', []) or [])
+    return olay_iliski.OlaySozlugu(views)
+
+
 def olc_iliski(ciftler):
     """Dört değerli sınıflandırıcıyı ölçer; yoksa None döner."""
     try:
         from src import olay_iliski
     except ImportError:
         return None, None
+    sozluk = _sozluk_kur(olay_iliski)
+    print(f'   📚 Olay sözlüğü: {sozluk.n} görünüm, '
+          f'{len(sozluk.df)} özel ad kökü')
     kayitlar = []
     for c in ciftler:
         tahmin, neden = olay_iliski.iliski_belirle(
-            c['a'], c['b'], ayni_gun=c['ayni_gun'], explain=True)
+            c['a'], c['b'], ayni_gun=c['ayni_gun'], explain=True,
+            sozluk=sozluk)
         kayitlar.append({
             'ad': c['ad'], 'beklenen': c['iliski'], 'tahmin': tahmin,
             'neden': neden, 'gecti': tahmin == c['iliski'], 'not': c['not'],
+            'ayni_gun': c['ayni_gun'],
         })
     hata = sum(1 for k in kayitlar if not k['gecti'])
     return kayitlar, hata
@@ -101,6 +122,38 @@ def _yaz(baslik, kayitlar, alan_beklenen, alan_tahmin):
             print(f'      ↳ {k["not"]}')
 
 
+def _yaz_politika(kayitlar):
+    """POLİTİKA SONUCU — asıl önemli olan ölçüm.
+
+    Etiketin kendisi değil, etiketin RAPORDA yol açtığı davranış önemlidir.
+    İki farklı etiket aynı davranışa yol açıyorsa (ör. ILISKISIZ ve
+    AYNI_AKTOR_FARKLI_OLAY: ikisi de 'rapora girer + manşete çıkabilir')
+    aralarındaki fark raporu DEĞİŞTİRMEZ. Bu bölüm doğruluğu davranış
+    düzeyinde ölçer; sınıflandırıcının gerçek maliyeti burada görünür."""
+    from src import olay_iliski as oi
+
+    def _politika(et):
+        return (et not in oi.RAPORA_GIRER,          # elenir mi
+                et not in oi.MANSETE_CIKAR)         # manşet yasağı var mı
+
+    print(f'\n{"=" * 78}\n3) POLİTİKA SONUCU (elenir mi / manşet yasağı)\n{"=" * 78}')
+    hata = 0
+    for k in kayitlar:
+        bek, tah = _politika(k['beklenen']), _politika(k['tahmin'])
+        if bek == tah:
+            continue
+        hata += 1
+        print(f'❌ {k["ad"]}')
+        print(f'      beklenen: elenir={bek[0]} manşet_yasak={bek[1]}  '
+              f'({k["beklenen"]})')
+        print(f'      gerçek  : elenir={tah[0]} manşet_yasak={tah[1]}  '
+              f'({k["tahmin"]})')
+        print(f'      ↳ {k["not"]}')
+    print(f'\n   SONUÇ: {len(kayitlar) - hata}/{len(kayitlar)} davranış doğru, '
+          f'{hata} hata')
+    return hata
+
+
 def main():
     kapi = '--kapi' in sys.argv
     ciftler = yukle()
@@ -122,6 +175,7 @@ def main():
              il_kayit, 'beklenen', 'tahmin')
         print(f'\n   SONUÇ: {len(il_kayit) - il_hata}/{len(il_kayit)} doğru, '
               f'{il_hata} hata')
+        _yaz_politika(il_kayit)
 
     if kapi:
         # Kapı YALNIZCA sınıflandırıcıya bakar: same_event tek başına
