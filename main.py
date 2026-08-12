@@ -3705,15 +3705,27 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         olayla AYNI olanları (deterministik same_event cross_day) eler. Sıra
         korunur. recent_views boşsa aday listesi değişmeden döner.
 
-        Yüksek-özgüllük modu (cross_day=True): yalnızca ortak kod adı / ortak
-        aktör+konu / yüksek konu örtüşmesi eşleşir; jenerik TR başlık kalıpları
-        yanlış-pozitif üretmez (bkz. src.dedup.same_event)."""
+        ÖLÇÜT = DÖRT DEĞERLİ İLİŞKİ, yalnızca AYNI_GELISME eler.
+        Bu katman eskiden _dedup.same_event kullanıyordu ve o karşılaştırıcı
+        "aynı olay" ile "aynı olayın YENİ gelişmesi"ni ayırmaz. ÖLÇÜLEN MALİYET
+        (2026-08-12 üretim koşusu, ID 10): Sandworm/UAC-0145'in Ukraynalı BT
+        çalışanlarına sahte mülakat kampanyası 92 puanla RAPORDAN TAMAMEN
+        elendi — dünkü Polonya enerji sabotajıyla ortak olan tek şey aktördü.
+        Aynı koşuda İran su altyapısı haberi (ID 35, 96 puan) de bu katman
+        tarafından düşürüldü; rapora girmesinin tek sebebi KRİTİK 3 korumasıydı,
+        yani doğru karar değil kazara kurtulmaydı.
+
+        Faz 2 'mukerrer' bayrağı yolunu ve manşet kapısını dört değerli
+        ilişkiye çevirmişti; bu katman atlanmıştı — aynı kök neden, farklı
+        yer."""
         if not recent_views or not body_ids:
             return list(body_ids)
+        sozluk = getattr(self, '_olay_sozlugu', None)
         kept, dropped = [], []
         for aid in body_ids:
             view = view_fn(aid)
-            if any(_dedup.same_event(view, ev, cross_day=True) for ev in recent_views):
+            if any(_olay.iliski_belirle(view, ev, sozluk=sozluk)
+                   == _olay.AYNI_GELISME for ev in recent_views):
                 dropped.append(aid)
                 continue
             kept.append(aid)
