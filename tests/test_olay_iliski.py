@@ -14,11 +14,11 @@ from src import olay_iliski as oi
 GOLDEN = os.path.join(os.path.dirname(__file__), '..', 'data', 'dedup_golden.json')
 
 # Politika sonucu doğru olması gereken asgari çift sayısı (bkz. dedup_olc.py
-# 3. bölüm). 20 çiftin 17'si. Kalan 3 kaçak GÜVENLİ yöndedir ve anlamsal
+# 3. bölüm). 22 çiftin 19'u. Kalan 3 kaçak GÜVENLİ yöndedir ve anlamsal
 # yargı gerektirir; LLM denetim katmanları kapsar.
-TABAN_POLITIKA = 17
+TABAN_POLITIKA = 19
 # Etiket düzeyinde doğruluk tabanı.
-TABAN_ETIKET = 15
+TABAN_ETIKET = 17
 
 
 def _ciftler():

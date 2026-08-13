@@ -231,6 +231,30 @@ VAKALAR = [
         'ayni_gun': True,
         'not': 'İki ayrı satıcı yaması; jenerik başlık kalıbı benzerliği.',
     },
+    # ══ 2026-08-13 ÜRETİM YANLIŞ-POZİTİFLERİ (jenerik kurum sözcükleri) ═══
+    {
+        'ad': '2026-08-13 Kolombiya Adalet Bakanlığı ↔ 08-06 Ransom Cartel hapis',
+        'a': ('rapor', '2026-08-13', 'Kolombiya Adalet'),
+        'b': ('rapor', '2026-08-06', 'Ransom Cartel'),
+        'iliski': 'ILISKISIZ',
+        'ayni_gun': False,
+        'not': 'Kolombiya Adalet Bakanlığına fidye saldırısı ile Ransom Cartel '
+               'kurucusunun ABD\'de hapis cezası tamamen farklı olaylar. '
+               'Üretimde {ad:adalet, ad:bakanlığ} ortaklığıyla AYNI_GELISME '
+               'sayıldı — "Adalet Bakanlığı" kurum TÜRÜ adıdır, olay kimliği '
+               'değil. Manşette olduğu için elenmedi; gövdede olsa ölürdü.',
+    },
+    {
+        'ad': '2026-08-13 İngiltere Adli Sicil Ofisi ↔ 08-07 İsviçre SharePoint',
+        'a': ('rapor', '2026-08-13', 'Adli Sicil'),
+        'b': ('rapor', '2026-08-07', 'SharePoint'),
+        'iliski': 'ILISKISIZ',
+        'ayni_gun': False,
+        'not': 'İngiltere adli sicil ofisindeki ihlal ile İsviçre hükümetinin '
+               'SharePoint sunucuları farklı olaylar. Üretimde {ad:informat, '
+               'ad:office, ad:ofisi} ortaklığıyla AYNI_GELISME sayıldı — '
+               '"Information Commissioner\'s Office" jenerik kurum tamlamasıdır.',
+    },
     {
         'ad': '2026-08-12 LiteLLM/TeamPCP ↔ Project CAV3RN',
         'a': ('ham', 1),
@@ -240,6 +264,20 @@ VAKALAR = [
         'not': 'İkisi de tedarik zinciri/C2 temalı ama alakasız kampanyalar.',
     },
 ]
+
+
+def _ham_gunu():
+    """data/haberler_ham.txt'in SESSION_DATE'i (yoksa None).
+
+    ham ID'leri GÜNE ÖZGÜDÜR: dosya her gün üzerine yazılır ve [31] bir gün
+    İran su altyapısı, ertesi gün bambaşka bir haberdir. Bu yüzden ham kaynaklı
+    vakalar YALNIZCA kendi günlerinde yeniden üretilebilir."""
+    if not os.path.exists(HAM):
+        return None
+    with open(HAM, encoding='utf-8') as f:
+        bas = f.read(200)
+    m = re.search(r'SESSION_DATE:\s*(\d{4}-\d{2}-\d{2})', bas)
+    return m.group(1) if m else None
 
 
 def _ham_yukle():
@@ -302,13 +340,31 @@ def _view_bul(kaynak, ham, rapor, kritik3):
     return None, f'{tur}[{tarih}] içinde "{parca}" bulunamadı'
 
 
+def _vaka_gunu(vaka):
+    """Vakanın ait olduğu gün — 'ad' alanının başındaki tarihten okunur."""
+    m = re.match(r'(\d{4}-\d{2}-\d{2})', vaka['ad'])
+    return m.group(1) if m else None
+
+
 def main():
     ham = _ham_yukle()
+    ham_gun = _ham_gunu()
     rapor = _gecmis_yukle(RAPOR_GECMIS)
     kritik3 = _gecmis_yukle(KRITIK3_GECMIS)
 
-    ciftler, eksik = [], []
+    ciftler, eksik, atlanan = [], [], []
     for vaka in VAKALAR:
+        # GÜN GÜVENLİĞİ (kritik): ham ID'leri güne özgüdür ve dosya her gün
+        # üzerine yazılır. Bu kontrol olmadan script, farklı bir günde
+        # çalıştırıldığında ham kaynaklı vakaları SESSİZCE yanlış makalelerle
+        # doldurur. ÖLÇÜLDÜ (2026-08-13): 22 vakanın 16'sı böyle bozuldu —
+        # 'İran su altyapısı' vakasının a tarafı 'UK criminal records office'
+        # oldu ve golden set puanı 15/20 → 8/22'ye düştü. Kalite kapısının
+        # kendisi sessizce çürüdüğü için fark edilmesi de zordu.
+        ham_kaynakli = 'ham' in (vaka['a'][0], vaka['b'][0])
+        if ham_kaynakli and _vaka_gunu(vaka) != ham_gun:
+            atlanan.append((vaka['ad'], f'ham dosyası {ham_gun} gününe ait'))
+            continue
         va, ea = _view_bul(vaka['a'], ham, rapor, kritik3)
         vb, eb = _view_bul(vaka['b'], ham, rapor, kritik3)
         if not va or not vb:
@@ -351,6 +407,11 @@ def main():
         dagitim[c['iliski']] = dagitim.get(c['iliski'], 0) + 1
     for k, v in sorted(dagitim.items()):
         print(f'   {k:<24} {v}')
+    if atlanan:
+        print(f'\nℹ️  {len(atlanan)} ham kaynaklı vaka BUGÜN üretilemez '
+              f'(mevcut kayıtları korundu):')
+        for ad, neden in atlanan:
+            print(f'   • {ad} → {neden}')
     if eksik:
         print(f'\n⚠️  {len(eksik)} vaka doldurulamadı:')
         for ad, neden in eksik:

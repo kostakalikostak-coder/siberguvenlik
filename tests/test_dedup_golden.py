@@ -39,7 +39,7 @@ BIRLESMELI = {'AYNI_GELISME'}
 
 # TABAN ÇİZGİSİ — 2026-08-12'de ölçülen doğru karar sayısı.
 #
-# 18 puanlanan çiftin 12'si doğru. Kaçan 6 vaka (Patch Tuesday↔ESU, Delta,
+# 20 puanlanan çiftin 14'ü doğru. Kaçan 6 vaka (Patch Tuesday↔ESU, Delta,
 # kötü amaçlı SIM, Mozilla GPG, Gunra, CEVA) same_event'in YAPISAL sınırıdır:
 # hepsi ortak kod adı/aktör/CVE taşımaz ve konu örtüşmesi eşiğin altındadır.
 # Bunları eşik indirerek yakalamak yanlış-birleştirme üretir (ölçüldü:
@@ -48,7 +48,7 @@ BIRLESMELI = {'AYNI_GELISME'}
 #
 # Bu sayı DÜŞERSE bir regresyon vardır. YÜKSELİRSE burayı güncelle — kapı
 # yeni seviyeyi korusun.
-TABAN_DOGRU = 12
+TABAN_DOGRU = 14
 
 
 def _ciftler():
@@ -132,3 +132,26 @@ def test_yama_dongusu_kurali_promptta_duruyor():
     p = get_dedup_review_prompt('=== HABER ID: 1 ===\nBaşlık: x\nÖzet: y\n')
     assert 'AYNI SATICININ AYNI YAMA DÖNGÜSÜ' in p
     assert 'FARKLI SATICILARIN' in p
+
+
+def test_golden_kurucu_gun_guvenli():
+    """Kurucu, BAŞKA bir günün ham dosyasıyla vakaları ezmemeli.
+
+    ham ID'leri güne özgüdür ve data/haberler_ham.txt her gün üzerine yazılır;
+    [31] bir gün İran su altyapısı, ertesi gün bambaşka bir haberdir.
+    ÖLÇÜLDÜ (2026-08-13): gün kontrolü yokken kurucu 22 vakanın 16'sını
+    sessizce yanlış makalelerle doldurdu ve golden set puanı 15/20 → 8/22'ye
+    düştü. Kalite kapısının kendisi çürüdüğü için fark edilmesi de zordu."""
+    import importlib.util
+    yol = os.path.join(os.path.dirname(__file__), '..', 'scripts',
+                       'golden_set_kur.py')
+    spec = importlib.util.spec_from_file_location('golden_set_kur', yol)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    ham_gun = mod._ham_gunu()
+    if ham_gun is None:
+        pytest.skip('data/haberler_ham.txt yok')
+    for vaka in mod.VAKALAR:
+        if 'ham' not in (vaka['a'][0], vaka['b'][0]):
+            continue
+        assert mod._vaka_gunu(vaka), f'{vaka["ad"]}: adında tarih yok'

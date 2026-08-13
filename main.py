@@ -5033,15 +5033,31 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         iliski, _ = self._olay_iliskisi(aid, articles_by_id, recent_views)
         return iliski == _olay.AYNI_GELISME
 
-    def _olay_baglami_kur(self, recent_views):
+    def _olay_baglami_kur(self, recent_views, bugun_views=()):
         """Koşu başına olay sözlüğü + defterini kurar.
 
         Sözlük (belge frekansı) jenerik özel adları derlemden öğrenir; defter
         olayları günler boyunca gruplar ve manşet geçmişini tutar. İkisi de
         MEVCUT geçmişten türetilir — yeni bir durum dosyası yoktur (bkz.
-        src/olay_iliski.py OlayDefteri)."""
+        src/olay_iliski.py OlayDefteri).
+
+        SÖZLÜK GEÇMİŞ + BUGÜN'DEN kurulur. Yalnızca geçmişten kurmak ölçülen
+        bir arızaya yol açtı (2026-08-13 üretim koşusu): "Kolombiya Adalet
+        Bakanlığına fidye saldırısı" ile "Ransom Cartel kurucusuna hapis
+        cezası" {ad:adalet, ad:bakanlığ} ortaklığıyla AYNI_GELISME sayıldı;
+        "İngiltere Adli Sicil Ofisi" ile "İsviçre SharePoint sunucuları" da
+        {ad:informat, ad:office, ad:ofisi} ile. İkisi de tamamen farklı olay.
+        Sebep: bu kurum sözcükleri o günkü 128 görünümlük geçmiş derlemde
+        jenerik eşiğinin ALTINDAYDI. Bugünün adayları eklenince (N=150)
+        birincisi tamamen düzeliyor.
+
+        Gerekçe yalnızca 'daha çok veri' değil: karşılaştırılan popülasyon
+        BUGÜNÜN adaylarıdır, dolayısıyla jeneriklik de o dağılımda ölçülmelidir.
+        Bir sözcük bugünkü haberlerin çoğunda geçiyorsa bugün ayırt edici
+        değildir — geçmişte nadir olması bunu değiştirmez."""
         try:
-            self._olay_sozlugu = _olay.OlaySozlugu(recent_views)
+            self._olay_sozlugu = _olay.OlaySozlugu(
+                list(recent_views) + list(bugun_views or ()))
             gunler = self._gecmis_gunler()
             self._olay_defteri = _olay.defter_kur(
                 gunler, sozluk=self._olay_sozlugu)
@@ -5144,7 +5160,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # Mükerrer bayrağının deterministik doğrulaması için referanslar.
         articles_by_id = {a['id']: a for a in articles}
         recent_report_views = self._load_recent_report_views()
-        self._olay_baglami_kur(recent_report_views)
+        self._olay_baglami_kur(
+            recent_report_views,
+            bugun_views=[self._kaynak_view(a['id'], articles_by_id)
+                         for a in articles])
         mukerrer_korunan = []
         # MANŞET YASAĞI — 'mukerrer' bayrağının yerini alan ölçülmüş küme.
         # Yalnızca AYNI_GELISME (gerçek mükerrer) buraya girer; YENİ gelişme

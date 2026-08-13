@@ -366,6 +366,42 @@
         "title": "Project CAV3RN continues: Google Apps Script as C2 relay and DNS-based C2 channel selection",
         "full_text": "Project CAV3RN is a modular espionage framework used against targets in Israel. This report expands on two earlier publications: the first was published in June 2026 as part of our Kaspersky Threat Intelligence Reporting service, and the second was published on Securelist the following month, further documenting the framework’s evolving architecture and C2 capabilities.\n\nContinued tracking of this cluster in early August 2026 uncovered several previously undocumented components that expanded the framework’s communication and orchestration capabilities. The main finding is a complex C2 module that uses DNS A-record responses to choose between direct HTTPS and a Google Apps Script relay for each transaction. The same DNS infrastructure can validate and replace the relay deployment ID, allowing the operator to rotate the Google channel.\n\nWe also identified the framework’s local broker, which discovers and loads DLL components, routes messages between them, and supports runtime upgrades.\n\nMulti-transport C2 communication module\n\nThe communication module, GoogleService.dll, is a 64-bit DLL compiled with Microsoft .NET 8 NativeAOT. Its PDB path is:\n\nNativeAOT data also revealed references to eight source files, including the Direct.cs, FindMode.cs, and Google.cs.\n\nThe DLL exports GroupByCategory, CheckAvailability, IsPrimeNumber, and OrderByDate. During initialization, its host (local broker) registers the module’s callback and starts CheckAvailability. After three seconds, the module sends a type-0 frame to the fixed identifier 33A4BA78-E286-4FF2-85EC-7365265F3D93. The broker returns Err1::33A4BA78-E286-4FF2-85EC-7365265F3D93, which the module expects and uses to learn the broker’s name before starting its C2 worker.\n\nC2 packets contain type, cid, and payload fields. Packets of the type icmgdd are processed by the communication module itself, while other types, including broker, are forwarded to the local broker. Within command payloads, _;;_ separates the command from its arguments and _,_ separates individual arguments.\n\nAt startup, the worker internally sends:\n\nThe s_version handler enumerates DLLs under AppContext.BaseDirectory, collects their company names and versions, and appends the communication module’s name/version and the local broker’s name. This inventory is serialized as JSON, XORed with 0xAC, Base64-encoded, and sent as the module’s initial C2 report.\n\nThe module supports five internal commands:\n\nThe module reads conf.json from the process’s cur"
       }
+    },
+    {
+      "ad": "2026-08-13 Kolombiya Adalet Bakanlığı ↔ 08-06 Ransom Cartel hapis",
+      "iliski": "ILISKISIZ",
+      "ayni_gun": false,
+      "not": "Kolombiya Adalet Bakanlığına fidye saldırısı ile Ransom Cartel kurucusunun ABD'de hapis cezası tamamen farklı olaylar. Üretimde {ad:adalet, ad:bakanlığ} ortaklığıyla AYNI_GELISME sayıldı — \"Adalet Bakanlığı\" kurum TÜRÜ adıdır, olay kimliği değil. Manşette olduğu için elenmedi; gövdede olsa ölürdü.",
+      "a": {
+        "tr_title": "Kolombiya Adalet Bakanlığına Yönelik Fidye Yazılımı Saldırısı",
+        "paragraph": "Kolombiya Adalet Bakanlığı, başkanlık devir teslim töreninden beş gün önce, 2 Ağustos 2026 tarihinde teknoloji altyapısını hedef alan bir fidye yazılımı saldırısına uğradığını doğrulamıştır. Saldırının yasa dışı uyuşturucu izleme ve adli süreçlerle ilgili kamu hizmetlerinde aksamalara neden olduğu, bazı dosyaların şifrelendiği ancak veri hırsızlığına dair bir kanıt bulunmadığı belirtilmiştir. Fortinet uzmanları, Kolombiya'da 2025 yılından bu yana siber saldırı girişimlerinin üç kat arttığını ve ",
+        "title": "Ransomware Hits Colombian Justice Ministry Days Before Presidential Transition",
+        "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nCyberattacks & Data Breaches\n\nCybersecurity Operations\n\nBreaking cybersecurity news, news analysis, commentary, and other content from around the world, with an initial focus on the Middle East & Africa, the Asia Pacific, Europe, and La"
+      },
+      "b": {
+        "tr_title": "Ransom Cartel Kurucusunun 16 Yıl Hapis Cezasına Çarptırılması",
+        "paragraph": "Ransom Cartel adlı hizmet olarak fidye yazılımı (RaaS) operasyonunun kurucusu Maksim Silnikau, 5 Ağustos 2026 tarihinde Virginia'daki federal mahkeme tarafından 16 yıl hapis cezasına çarptırılmıştır. 40 yaşındaki Belarus vatandaşı Silnikau'nun, 2021 ve 2023 yılları arasında en az 18 şirkete yönelik saldırıları yönettiği belirtilmiştir. Adalet Bakanlığı, sanığın saldırganlar için şifreleme yazılımı geliştirdiğini, çalınan kimlik bilgilerini temin ettiğini ve fidye ödemelerini kripto para karıştır",
+        "title": "Ransom Cartel Creator Gets 16 Years in Prison for Operating Ransomware-as-a-Service",
+        "full_text": "A federal judge in Alexandria, Virginia, sentenced Maksim Silnikau to 16 years in prison on August 5 for creating and running Ransom Cartel, the ransomware-as-a-service operation he stood up in 2021.\n\nBetween 2021 and 2023, Ransom Cartel conspirators attacked at least 18 companies, including firms in California, New York and Nebraska, and others abroad, according to the Justice Department.\n\nSilnik"
+      }
+    },
+    {
+      "ad": "2026-08-13 İngiltere Adli Sicil Ofisi ↔ 08-07 İsviçre SharePoint",
+      "iliski": "ILISKISIZ",
+      "ayni_gun": false,
+      "not": "İngiltere adli sicil ofisindeki ihlal ile İsviçre hükümetinin SharePoint sunucuları farklı olaylar. Üretimde {ad:informat, ad:office, ad:ofisi} ortaklığıyla AYNI_GELISME sayıldı — \"Information Commissioner's Office\" jenerik kurum tamlamasıdır.",
+      "a": {
+        "tr_title": "İngiltere Adli Sicil Ofisinde İki Yıl Süren İhlal",
+        "paragraph": "İngiltere'nin adli sicil kayıtlarını yöneten ACRO biriminin, Temmuz 2021 ile Haziran 2023 tarihleri arasında üç ayrı siber saldırıya maruz kaldığı ve bu durumun iki yıl boyunca fark edilmediği açıklanmıştır. Bilgi Komisyonu Ofisi (ICO) tarafından yapılan incelemede, kurumun kritik sistemleri dört yıl boyunca yamalamadığı ve antivirüs yazılımından gelen uyarıları dikkate almadığı tespit edilmiştir. Saldırıların Kentico içerik yönetim sistemindeki bilinen açıklar üzerinden gerçekleştirildiği ve ya",
+        "title": "Three intrusions at UK criminal records office went undetected for two years",
+        "full_text": "Three intrusions at UK criminal records office went undetected for two years\n\nBritain's criminal records office has been reprimanded by the country’s data protection regulator after being repeatedly breached over nearly two years, exposing the personal data of thousands of people including victims of domestic violence.\n\nThe Information Commissioner’s Office (ICO) announced in the reprimand notice "
+      },
+      "b": {
+        "tr_title": "İsviçre Hükümetine Ait SharePoint Sunucularına Siber Saldırı Düzenlenmesi",
+        "paragraph": "İsviçre Federal Bilgi Teknolojileri ve Telekomünikasyon Ofisi (BIT), Microsoft SharePoint sunucularındaki güvenlik açıklarından yararlanan saldırganların yaklaşık 200 hesabı ele geçirdiğini açıklamıştır. Olağandışı faaliyetlerin 28 Temmuz tarihinde fark edildiği ve 31 Temmuz'da hesap bilgilerinin sızdırıldığının kesinleştiği belirtilmiştir. Kurum, saldırganların Microsoft'un Temmuz ayı güncellemeleriyle kapattığı CVE-2026-56164 veya CVE-2026-50522 kodlu açıklardan birini istismar etmiş olabilece",
+        "title": "Swiss government SharePoint breach compromised 200 accounts",
+        "full_text": "Switzerland’s federal IT office says hackers exploited vulnerabilities to breach its Microsoft SharePoint servers and compromised approximately 200 accounts.\n\nThe Federal Office for Information Technology and Telecommunication (BIT) detected the cyberattack after security specialists noticed unusual activity on its SharePoint servers on July 28.\n\nAfter confirming the breach, BIT blocked external i"
+      }
     }
   ]
 }

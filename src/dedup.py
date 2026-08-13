@@ -487,6 +487,16 @@ _ENTITY_DENYLIST = frozenset({
     'enstitü', 'enstitüsü', 'institute', 'university', 'üniversite',
     'üniversitesi', 'foundation', 'vakfı', 'laboratuvarı', 'labs',
     'anthropic', 'openai', 'meta',
+    # KURUM TÜRÜ adları. Her ülkenin bakanlığı/ofisi aynı sözcüklerle anılır;
+    # bunlar olayın değil kurumun TÜRÜNÜN adıdır. ÖLÇÜLDÜ (2026-08-13 üretim
+    # koşusu): "İngiltere Adli Sicil Ofisi ihlali" ile "İsviçre hükümetinin
+    # SharePoint sunucuları" {ad:informat, ad:office, ad:ofisi} ortaklığıyla
+    # AYNI_GELISME sayıldı; "Kolombiya Adalet Bakanlığına fidye saldırısı" ile
+    # "Ransom Cartel kurucusuna hapis cezası" {ad:adalet, ad:bakanlığ} ile.
+    # İkisi de manşette oldukları için elendi DEĞİL — gövdede olsalar ölürlerdi.
+    'office', 'ofis', 'ofisi', 'information', 'bilgi', 'ministry',
+    'bakanlık', 'bakanlığı', 'bureau', 'directorate', 'müdürlüğü',
+    'authority', 'otorite', 'daire', 'commissioner', 'komiser',
 })
 
 
