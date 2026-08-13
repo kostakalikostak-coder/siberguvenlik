@@ -5714,11 +5714,20 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             kume_golge = []
             try:
                 sirali = sorted(rapor_ids, key=lambda a: -_puan(a))
-                gruplar = _olay.kumele(
+                gruplar, gerekce = _olay.kumele(
                     {a: view_fn(a) for a in sirali},
-                    sozluk=getattr(self, '_olay_sozlugu', None))
-                kume_golge = [[{'id': a, 'baslik': _ad(a)} for a in g]
-                              for g in gruplar if len(g) > 1]
+                    sozluk=getattr(self, '_olay_sozlugu', None), explain=True)
+                # GEREKÇE ŞART: gözlemin tek amacı yanlış birleştirmeleri
+                # bulmak; "şu ikisi birleşti" bilgisi bunu sağlamıyor.
+                # 2026-08-13'te gölge kayıt bir yanlış birleştirme gösterdi
+                # ama hangi sinyalin sebep olduğu kayıtlı olmadığı için olay
+                # kayıtlı veriyle YENİDEN ÜRETİLEMEDİ — denetim canlı
+                # bellekteki tam metinlerle koşar, rapor_gecmis görünümleri
+                # ise kırpılmıştır. Gerekçe olmadan gölge mod işini yapmıyor.
+                kume_golge = [
+                    [{'id': a, 'baslik': _ad(a), 'neden': gerekce.get(a, 'temsilci')}
+                     for a in g]
+                    for g in gruplar if len(g) > 1]
             except Exception as e:
                 print(f"   ⚠️  Kümeleme (gölge) çalışmadı: {e}")
 
@@ -5748,6 +5757,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             for g in kume_golge:
                 print("      🧪 Kümeleme (gölge, karar vermez): "
                       + ' | '.join(f"{x['id']}:{x['baslik'][:34]}" for x in g))
+                for x in g[1:]:
+                    print(f"           ↳ ID {x['id']} gerekçe: {x['neden']}")
 
             if capraz or ici or tersine:
                 print(f"   🔎 Kalite denetimi: {len(capraz)} çapraz-gün kaçak, "

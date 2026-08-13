@@ -619,7 +619,8 @@ def defter_kur(gunler, sozluk=None):
 
 
 # ── GÜN İÇİ KÜMELEME ─────────────────────────────────────────────────────────
-def kumele(views_by_id, sozluk=None, ayni_gun=True, gevsek=False):
+def kumele(views_by_id, sozluk=None, ayni_gun=True, gevsek=False,
+           explain=False):
     """Aynı günün adaylarını OLAY GRUPLARINA böler.
 
     NEDEN VAR: gün-içi mükerrer bugüne kadar DÖRT ayrı yerde, dört ayrı
@@ -644,6 +645,14 @@ def kumele(views_by_id, sozluk=None, ayni_gun=True, gevsek=False):
     Dönüş: [[id, ...], ...] — her grup bir olay; tek üyeli gruplar da döner.
     Grup içi sıra girdideki sıradır (çağıran genelde puan sırasında verir),
     dolayısıyla grubun İLK üyesi doğal temsilcidir.
+
+    explain=True ise (gruplar, {id: gerekçe}) döner. GEREKÇE ŞART: kümeleme
+    gölge modda gözlem için çalışıyor ve gözlemin tek amacı yanlış
+    birleştirmeleri BULMAK. Yalnızca "şu ikisi birleşti" bilgisi bunu
+    sağlamıyor — 2026-08-13'te gölge kayıt bir yanlış birleştirme gösterdi
+    ama hangi sinyalin sebep olduğu kayıtlı olmadığı için olay kayıtlı
+    veriyle yeniden üretilemedi (denetim canlı bellekteki tam metinlerle
+    koşar; rapor_gecmis görünümleri kırpılmıştır).
     """
     # gevsek=True, aynı gün içindeki YENI_GELISME'yi de aynı olay sayar
     # (iki kaynak aynı olayı farklı ayrıntı derinliğinde anlatır, biri
@@ -655,15 +664,19 @@ def kumele(views_by_id, sozluk=None, ayni_gun=True, gevsek=False):
     # Katı eşik hem daha az yanlış birleştirir hem gerçek grupları (Patch
     # Tuesday ×7, Delta ×4, Cisco ×3) yakalamaya devam eder. Varsayılan KATI.
     kabul = ((AYNI_GELISME, YENI_GELISME) if gevsek else (AYNI_GELISME,))
-    gruplar = []
+    gruplar, gerekceler = [], {}
     for aid in views_by_id:
         view = views_by_id[aid]
         for grup in gruplar:
             temsilci = views_by_id[grup[0]]
-            if iliski_belirle(view, temsilci, ayni_gun=ayni_gun,
-                              sozluk=sozluk) in kabul:
+            iliski, neden = iliski_belirle(view, temsilci, ayni_gun=ayni_gun,
+                                           sozluk=sozluk, explain=True)
+            if iliski in kabul:
                 grup.append(aid)
+                gerekceler[aid] = f'{iliski}: {neden}'
                 break
         else:
             gruplar.append([aid])
+    if explain:
+        return gruplar, gerekceler
     return gruplar

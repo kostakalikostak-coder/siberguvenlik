@@ -216,3 +216,29 @@ def test_kumele_varsayilan_kati():
     import inspect
     imza = inspect.signature(oi.kumele)
     assert imza.parameters['gevsek'].default is False
+
+
+def test_kumele_gerekce_dondurur():
+    """explain=True birleşme GEREKÇESİNİ döndürmeli.
+
+    Gölge modun tek amacı yanlış birleştirmeleri bulmak; "şu ikisi birleşti"
+    bilgisi bunu sağlamıyor. 2026-08-13'te gölge kayıt bir yanlış birleştirme
+    gösterdi ama gerekçe kayıtlı olmadığı için olay kayıtlı veriyle yeniden
+    üretilemedi (denetim canlı tam metinlerle koşar, kayıtlar kırpılmıştır)."""
+    a = _v(paragraph='Kuzey Kaliforniya\'daki Suisun City belediyesi ağını '
+                     'kapattı ve Solano ilçesine geçti.')
+    b = _v(paragraph='Yetkililer Suisun City ile Solano ilçesindeki durumu '
+                     'ayrıntılı biçimde açıkladı.')
+    c = _v(paragraph='Bambaşka bir konuda kısa bir haber metni.')
+    gruplar, gerekce = oi.kumele({1: a, 2: b, 3: c}, explain=True)
+    ikili = next(g for g in gruplar if len(g) > 1)
+    katilan = ikili[1]
+    assert katilan in gerekce, 'birleşen üye için gerekçe yok'
+    assert oi.AYNI_GELISME in gerekce[katilan]
+    assert 'ad:' in gerekce[katilan], 'hangi sinyalin bağladığı yazılmamış'
+
+
+def test_kumele_explain_olmadan_eski_sozlesme():
+    """explain=False eski davranışı korumalı (yalnızca grup listesi)."""
+    a = _v(paragraph='Bir haber.')
+    assert oi.kumele({1: a}) == [[1]]
