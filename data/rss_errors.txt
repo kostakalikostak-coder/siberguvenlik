@@ -1,5 +1,3 @@
-2026-08-06 12:06 | SESSİZ BOŞ - The Register: 200 OK ama 0 madde
-2026-08-06 12:06 | RSS hatası - CSO Online: HTTPSConnectionPool(host='www.csoonline.com', port=443): Read timed out. (read timeout=5)
 2026-08-07 12:06 | DEDUP SIFIR - Krebs on Security: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 0)
 2026-08-07 12:06 | DEDUP SIFIR - Microsoft Security: 6 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 5)
 2026-08-08 12:06 | DEDUP SIFIR - Krebs on Security: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 0)
@@ -22,3 +20,4 @@
 2026-08-10 12:06 | DEDUP SIFIR - The Record: 5 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 4)
 2026-08-10 12:06 | DEDUP SIFIR - ANSSI (CERT-FR): 25 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 16, daha önce raporlanmış: 9)
 2026-08-12 12:06 | RSS hatası - CSO Online: HTTPSConnectionPool(host='www.csoonline.com', port=443): Read timed out. (read timeout=5)
+2026-08-13 12:06 | SESSİZ BOŞ - Graham Cluley: 200 OK ama 0 madde

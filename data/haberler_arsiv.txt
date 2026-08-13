@@ -30472,3 +30472,162 @@ Zoom Workplace ve ilgili yazılım geliştirme kitlerinde, katılımcıların bi
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 13 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Çin Bağlantılı Aktörlerin Tayvan'a Otonom Yapay Zeka Saldırısı
+─────────────────────────────────────────────────────────
+Çin bağlantılı siber tehdit aktörlerinin, Tayvan'daki hükümet ağlarına sızmak ve veri çalmak için sekiz yapay zeka ajanı kullanarak otonom bir saldırı gerçekleştirdiği bildirilmiştir. İsrail merkezli siber güvenlik firması Dream tarafından belgelenen operasyonda, Temmuz 2026 başında dört gün boyunca 21 hükümet sisteminin haritalandığı ve 85 hesabın ele geçirildiği belirtilmiştir. Saldırganların, Hermes ve OpenClaw gibi açık kaynaklı çerçeveler üzerine kurulu araçlarla nükleer güvenlik ajansı ve yedi enerji şirketini hedef aldığı kaydedilmiştir. Uzmanlar, saldırı sırasında yapay zeka araçlarının engellerle karşılaştığında taktik değiştirdiğini ve süreci bir insan sızma testi uzmanı gibi yönettiğini ifade etmiştir. Tayvan Dijital İşler Bakanlığı, olayla ilgili standart müdahale prosedürlerinin uygulandığını açıklamıştır.
+(XXXXXXX, AÇIK -securityaffairs.com, 12.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Kolombiya Adalet Bakanlığına Yönelik Fidye Yazılımı Saldırısı
+─────────────────────────────────────────────────────────
+Kolombiya Adalet Bakanlığı, başkanlık devir teslim töreninden beş gün önce, 2 Ağustos 2026 tarihinde teknoloji altyapısını hedef alan bir fidye yazılımı saldırısına uğradığını doğrulamıştır. Saldırının yasa dışı uyuşturucu izleme ve adli süreçlerle ilgili kamu hizmetlerinde aksamalara neden olduğu, bazı dosyaların şifrelendiği ancak veri hırsızlığına dair bir kanıt bulunmadığı belirtilmiştir. Fortinet uzmanları, Kolombiya'da 2025 yılından bu yana siber saldırı girişimlerinin üç kat arttığını ve kamu kurumlarının sistematik olarak hedef alındığını ifade etmiştir. Ülkedeki vergi dairesi ve ulusal petrol şirketi Ecopetrol'ün de benzer ihlaller yaşadığı, saldırganların özellikle bulut altyapılarındaki zayıflıkları istismar ettiği kaydedilmiştir. Bölgesel tehdit ekosisteminin otomasyon yoluyla olgunlaştığı ve Latin Amerika genelinde devlet kurumlarına yönelik baskının arttığı bildirilmiştir.
+(XXXXXXX, AÇIK -darkreading.com, 12.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] İngiltere Adli Sicil Ofisinde İki Yıl Süren İhlal
+─────────────────────────────────────────────────────────
+İngiltere'nin adli sicil kayıtlarını yöneten ACRO biriminin, Temmuz 2021 ile Haziran 2023 tarihleri arasında üç ayrı siber saldırıya maruz kaldığı ve bu durumun iki yıl boyunca fark edilmediği açıklanmıştır. Bilgi Komisyonu Ofisi (ICO) tarafından yapılan incelemede, kurumun kritik sistemleri dört yıl boyunca yamalamadığı ve antivirüs yazılımından gelen uyarıları dikkate almadığı tespit edilmiştir. Saldırıların Kentico içerik yönetim sistemindeki bilinen açıklar üzerinden gerçekleştirildiği ve yaklaşık 11.000 kişinin hassas verilerinin sızdırılma riskiyle karşı karşıya kaldığı belirtilmiştir. Medusa fidye yazılımı grubunun saldırıyı üstlendiği ancak çalınan verilerin kamuoyuna açıklanmadığı kaydedilmiştir. ICO, kurumun ağ segmentasyonu sayesinde saldırganların ana polis veri tabanına erişemediğini belirterek ACRO'ya yönelik resmi bir kınama yayımlamıştır.
+(XXXXXXX, AÇIK -therecord.media, 12.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Lazarus Grubunun Windows Sıfır Gün Açığını İstismar Etmesi
+─────────────────────────────────────────────────────────
+Kuzey Kore menşeli siber tehdit aktörü Lazarus Grubunun, Microsoft Windows işletim sistemindeki CVE-2026-68820 kodlu sıfır gün açığını istismar ederek savunma ve havacılık şirketlerini hedef aldığı tespit edilmiştir. Check Point Research tarafından yayımlanan raporda, saldırganların Operation Dream Job kapsamında sahte iş ilanlarıyla kurbanlara ulaştığı ve Troy isimli yeni bir arka kapı yazılımı yüklediği belirtilmiştir. Saldırı zincirinde, AFD.sys sürücüsündeki yetki yükseltme açığının kullanılarak sistem seviyesinde erişim sağlandığı ve güvenlik yazılımlarını atlatmak için FudModule 3.1 rootkit bileşeninin devreye sokulduğu bildirilmiştir. Operasyonun Fransa, Almanya, Brezilya ve Hindistan'daki kritik sektörleri hedef aldığı ve saldırganların meşru WordPress siteleri ile Roundcube e-posta sunucularını komuta kontrol merkezi olarak kullandığı kaydedilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 12.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Armored Likho Grubunun Siber Casusluk Araçlarını Genişletmesi
+─────────────────────────────────────────────────────────
+Rusya bağlantılı siber tehdit aktörü Armored Likho'nun, Still Toolkit adı verilen yeni bir Rust tabanlı casusluk araç seti geliştirdiği tespit edilmiştir. Kaspersky tarafından yayımlanan rapora göre, grubun Mayıs 2026'da başlattığı kampanyada bağış uygulaması kılığındaki zararlı yazılımlarla Rusya'daki kamu, bilişim ve eğitim sektörlerini hedef aldığı belirtilmiştir. Still Toolkit'in iki ana bileşenden oluştuğu; Still Sync'in Telegram oturum verilerini çalarak mesajlara ve medyaya erişim sağladığı, Still Audio'nun ise ortam dinlemesi yaparak konuşmaları otonom olarak kaydettiği ifade edilmiştir. Saldırganların, komuta kontrol sunucusu adreslerini güncel tutmak için GitHub depolarını kullandığı ve verileri gRPC protokolü üzerinden aktardığı kaydedilmiştir. Grubun, Telegram verilerini çalmak için sistemdeki yedekleme yetkilerini kötüye kullandığı ve güvenlik yazılımlarından kaçınmak için karmaşık yöntemler uyguladığı bildirilmiştir.
+(XXXXXXX, AÇIK -securelist.com, 13.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Storm-1175 Grubunun Yeni StormEncryptor Fidye Yazılımını Kullanmaya Başlaması
+─────────────────────────────────────────────────────────
+Microsoft, Çin bağlantılı ve finansal motivasyonlu siber tehdit aktörü Storm-1175'in, daha önce kullandığı Medusa fidye yazılımının yerine StormEncryptor adlı yeni bir zararlı yazılımı kullanmaya başladığını bildirmiştir. 2 Ağustos 2026 tarihinde tespit edilen bu yeni yazılımın, C++ diliyle yazıldığı ve dosyaları şifreleyerek sistemlere fidye notu bıraktığı belirtilmektedir. Microsoft'un açıklamasına göre söz konusu grup, kurumlar yamaları uygulamadan önce yeni açıklanan güvenlik açıklarını hızla istismar etmesiyle tanınmaktadır. Bu kapsamda aktörün, N-able platformundaki CVE-2026-18577 kodlu kimlik doğrulama atlatma açığını hedef aldığı ifade edilmiştir. Grubun sağlık, eğitim ve finans sektörlerini hedef alarak ilk erişimden veri hırsızlığına kadar olan süreci 24 saat gibi kısa bir sürede tamamladığı kaydedilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 13.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Kuzey Koreli Sahte Uzaktan Çalışanların Kurumsal Ağlara Sızması
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri Dışişleri Bakanlığı ve FBI, Kuzey Koreli bilişim çalışanlarının başka ülke vatandaşlarının kimliklerine bürünerek batılı şirketlerde işe girmesine yönelik bir siber tehdit uyarısı yayımlamıştır. Bu şahısların, yapay zeka yardımıyla oluşturulmuş sahte profiller ve çalınmış kimlik belgeleri kullanarak işe alım süreçlerini suistimal ettikleri belirtilmiştir. İşe giren sahte çalışanların, elde ettikleri maaşları Kuzey Kore devlet kurumlarına aktardıkları ve kurumsal kaynak kodlarını çalarak şirketlere şantaj yaptıkları ifade edilmiştir. Operasyonlarda, cihazların fiziksel olarak şirketlerin bulunduğu ülkelerde görünmesini sağlamak için yerel aracılar ve VPN sistemlerinin kullanıldığı kaydedilmiştir. Uzmanlar, işe alım süreçlerinde biyometrik canlılık testleri ve hükümet onaylı kimlik doğrulama sistemlerinin kullanılmasının bu tür sızma girişimlerini engelleyebileceğini bildirmektedir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 12.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] LiteLLM Tedarik Zinciri Saldırısından 2.500 Kurumun Etkilenmesi
+─────────────────────────────────────────────────────────
+CloudSEK tarafından yayımlanan raporda, LiteLLM adlı açık kaynaklı Python kütüphanesine yönelik gerçekleştirilen tedarik zinciri saldırısının 2.500'den fazla kuruluşu ve 430.000'den fazla CI/CD hattını etkilediği belirtilmiştir. Saldırının, Aqua Security'nin Trivy tarayıcısındaki bir sızıntıdan kaynaklandığı ve kötü amaçlı kodun LiteLLM sürümlerine otomatik olarak enjekte edildiği tespit edilmiştir. Etkilenen kurumlar arasında Nvidia, Samsung, Siemens ve Volkswagen gibi küresel devlerin bulunduğu ifade edilmiştir. Kötü amaçlı yazılımın, yüklendiği sistemlerden bulut anahtarlarını, SSH anahtarlarını ve yapay zeka sağlayıcı jetonlarını çaldığı kaydedilmiştir. Uzmanlar, bu olayın yapay zeka altyapılarının kritik birer hedef haline geldiğini gösterdiğini vurgulamıştır. Etkilenen kuruluşların tüm erişim anahtarlarını ve oturumlarını derhal yenilemeleri gerektiği bilgisi paylaşılmıştır.
+(XXXXXXX, AÇIK -securityweek.com, 12.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Akira Fidye Yazılımı Grubunun Güvenlik Araçlarını Engelleme Girişimi
+─────────────────────────────────────────────────────────
+Akira fidye yazılımı grubuna bağlı bir saldırganın, kurbanın bilgisayarını 'Güvenli Mod'da yeniden başlatarak güvenlik yazılımlarını devre dışı bırakmaya çalıştığı ancak bu işlemin kendi şifreleme aracını da bozduğu bildirilmiştir. Huntress araştırmacıları, fidye yazılımının yüksek performanslı ve çok iş parçacıklı yapısının, Güvenli Mod'un kısıtlı bellek ortamında hata vererek çalışmadığını tespit etmiştir. Saldırının, MFA koruması bulunmayan bir VPN hesabı üzerinden gerçekleştirildiği ve saldırganın şifreleme aşamasından önce ağdaki verileri dışarı sızdırdığı belirtilmiştir. Olayın, Güvenli Mod'un uç nokta koruma (EDR) araçlarını atlatmak için bir yöntem olarak kullanıldığını ancak her zaman başarılı olmadığını gösterdiği ifade edilmiştir. Uzmanlar, bu tür sızmaları önlemek için tüm VPN hesaplarında çok faktörlü kimlik doğrulamanın zorunlu tutulması gerektiğini kaydetmiştir.
+(XXXXXXX, AÇIK -theregister.com, 12.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Siber Suç Grubu ExfilSquad'ın Torrent Üzerinden Veri Sızdırması
+─────────────────────────────────────────────────────────
+Resecurity tarafından yayımlanan rapora göre, 2026 yılının ortalarında ortaya çıkan siber suç grubu ExfilSquad, Amerika Birleşik Devletleri, Birleşik Krallık ve İsveç'teki 13 kuruluşu hedef almıştır. Grubun, Temmuz ayında Nijerya'daki büyük bir finans kurumuna da saldırı düzenlediği ve çalınan verilerin yayımlanmaması karşılığında fidye talep ettiği bildirilmiştir. Siber tehdit aktörü ExfilSquad'ın, bulut ve SaaS portallarındaki yapılandırma hatalarını istismar ederek veri hırsızlığı gerçekleştirdiği ve çalınan bilgileri dağıtmak için torrent dosyalarını kullandığı kaydedilmiştir. Bu yöntemin, verilerin silinmesini imkansız kılarak mağdur kurumların itibar ve finansal zararlarını artırdığı ifade edilmektedir. Yapılan analizlerde, 7 Ağustos 2026 tarihinde torrent paylaşımlarında Çin ve Rusya kaynaklı ana bilgisayarların aktif olduğu tespit edilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 11.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] NIST'in Ulusal Zafiyet Veritabanını Modernize Etme Çalışmaları
+─────────────────────────────────────────────────────────
+Ulusal Standartlar ve Teknoloji Enstitüsü (NIST), yapay zekanın güvenlik süreçlerini dönüştürdüğü bir dönemde Ulusal Zafiyet Veritabanı (NVD) sistemini modernize etmek için paydaşlardan görüş talep etmiştir. NIST, yüksek riskli kararlarda insan denetimini korurken darboğazları azaltmak amacıyla otomasyon kullanımına odaklanan yedi temel alanda yanıt aramaktadır. Bu alanlar arasında zafiyet bilgilerinin güvenli paylaşımı, risk temelli önceliklendirmede yapay zeka kullanımı ve yapay zeka tarafından oluşturulan düzeltmelerin izlenmesi yer almaktadır. Ayrıca, zafiyet verilerinin kalitesinin artırılması, makine tarafından okunabilirliğin sağlanması ve yazılım geliştirme süreçlerine yapay zeka araçlarının entegrasyonu hedeflenmektedir. NIST'in, NVD'nin önümüzdeki beş yıllık süreçteki yetenekleri, hizmetleri ve performans metrikleri konusunda stratejik öneriler beklediği belirtilmiştir. Bu girişimle, siber güvenlik ekosisteminde zafiyet yönetiminin daha etkin ve şeffaf hale getirilmesi amaçlanmaktadır.
+(XXXXXXX, AÇIK -thecyberexpress.com, 13.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] Chrome Web Mağazasındaki Sahte VPN Eklentilerinin Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Socket güvenlik araştırmacıları, Chrome Web Mağazasında Proton VPN ve NordVPN gibi tanınmış markaları taklit eden 737 adet kötü amaçlı tarayıcı eklentisi tespit etmiştir. Bu eklentilerin, kullanıcı trafiğini tek bir sağlayıcı tarafından işletilen SOCKS5 proxy sunucuları üzerinden yönlendirdiği ve yaklaşık 75.000 kez indirildiği belirtilmiştir. Saldırganların bu yöntemle kurbanların IP adreslerini, TLS SNI değerlerini ve HTTP üzerinden gönderilen tüm istek içeriklerini izleyebildiği ifade edilmiştir. Kampanyanın özellikle Rusya'daki kullanıcıları hedeflediği ve sahte abonelik tabanlı VPN hizmetlerine yönlendirme amacı taşıdığı kaydedilmiştir. Google'ın tespit edilen eklentilerin 200'den fazlasını kaldırdığı, ancak 500'den fazlasının halen mağazada mevcut olduğu bildirilmiştir. Araştırmacılar, kullanıcıların tarayıcılarındaki eklentileri kontrol etmeleri ve şüpheli olanları derhal kaldırmaları konusunda uyarıda bulunmuştur.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 12.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Android Cihazlarda WindRelay ve SpyNote Zararlı Yazılım Kombinasyonu
+─────────────────────────────────────────────────────────
+Group-IB araştırmacıları, Android cihazlardan kart verilerini çalmak için WindRelay adlı yeni bir NFC röle zararlısının SpyNote uzaktan erişim aracı (RAT) ile birlikte kullanıldığını tespit etmiştir. Saldırganların, banka çalışanı kılığına girerek kurbanları sahte bir uygulamayı yüklemeye ikna ettiği ve cihaz üzerinde tam kontrol sağladığı belirtilmiştir. SpyNote aracılığıyla cihaza erişen saldırganların, WindRelay yazılımını yükleyerek kurban adına kredi çektiği ve NFC üzerinden temassız kart verilerini gerçek zamanlı olarak kendi cihazlarına aktardığı ifade edilmiştir. Bu yöntemin, saldırganların fiziksel ödeme terminallerinde kurbanın kartıyla işlem yapmasına olanak tanıdığı kaydedilmiştir. Saldırıların özellikle Çekya, Slovakya ve Slovenya'daki finans kurumlarını hedeflediği bildirilmiştir. Kullanıcıların, Google Play dışındaki kaynaklardan uygulama yüklememeleri ve şüpheli banka aramalarına karşı dikkatli olmaları gerektiği vurgulanmıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 13.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] Google Dokümanlar'da Saklanan Parolaların Arama Sonuçlarında Görünmesi
+─────────────────────────────────────────────────────────
+Pageloot kurucu ortağı Siim Kostabi, bir dış yüklenicinin Google Dokümanlar üzerinde sakladığı sistem kimlik bilgilerinin Google arama sonuçlarında indekslendiğini ortaya koymuştur. Yüklenicinin, farklı cihazlardan erişim sağlamak amacıyla hazırlık ortamı şifrelerini içeren dokümanı 'bağlantıya sahip olan herkes görüntüleyebilir' şeklinde ayarladığı belirtilmiştir. Bir şirket çalışanının Google araması yaparken otomatik tamamlama özelliğinde hazırlık sunucusu ana bilgisayar adını ve kimlik dizisini fark etmesiyle durumun anlaşıldığı ifade edilmiştir. Olayın ardından şirketin tüm erişim yetkilerini iptal ettiği ve maruz kalan kimlik bilgilerini yenilediği kaydedilmiştir. Ayrıca, Google Dokümanlar, Slack veya Notion gibi iş birliği araçlarında parola saklanmasını yasaklayan yeni bir kuralın yürürlüğe girdiği bildirilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 13.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Cisco'nun Güvenlik Duvarlarındaki Hizmet Dışı Bırakma Açığını Kapatması
+─────────────────────────────────────────────────────────
+Cisco, Secure Firewall cihazlarını etkileyen ve aktif olarak istismar edilen CVE-2026-20349 kodlu yüksek öncelikli bir güvenlik açığı için yamalar yayımlamıştır. Söz konusu açığın, saldırganların kimlik doğrulaması yapmadan özel olarak hazırlanmış HTTP istekleri göndererek cihazların beklenmedik şekilde yeniden başlamasına ve hizmet dışı kalmasına yol açtığı belirtilmiştir. CISA, bu açığı Bilinen İstismar Edilen Zafiyetler kataloğuna ekleyerek federal kurumlara 14 Ağustos 2026 tarihine kadar düzeltme talimatı vermiştir. Sorunun ASA ve FTD yazılımlarındaki uzaktan erişim SSL VPN servislerini etkilediği, zafiyetin hem Cisco'nun iç testlerinde hem de harici araştırmacılar tarafından tespit edildiği bildirilmiştir. Şirket, etkilenen yazılım sürümleri için hızlı düzeltme paketleri sunarken, kullanıcıların herhangi bir geçici çözüm bulunmadığı konusunda uyarıldığı kaydedilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 13.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] City-Forum Kampanyasının Salesforce ve ServiceNow Platformlarını Hedeflemesi
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacıları, Salesforce ve ServiceNow platformlarındaki kimlik doğrulaması yapılmamış misafir kullanıcı erişimlerini hedef alan 'City-Forum' adlı yeni bir veri sızıntısı kampanyası tespit etmiştir. Mart 2025 tarihinden bu yana aktif olduğu belirlenen bu saldırıların, telekomünikasyon şirketleri, bankalar ve kamu sektörü portallarını hedef aldığı ifade edilmiştir. Saldırganların, platformların az bilinen arama uç noktalarını ve veri erişim katmanlarını taramak için özel olarak geliştirilmiş bir araç seti kullandıkları belirtilmiştir. Yapılan analizlerde, saldırıların tek bir IP adresi üzerinden gerçekleştirildiği ve kuruluşların yanlış yapılandırılmış misafir izinleri nedeniyle binlerce kaydın dışarı sızdırıldığı kaydedilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 12.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] Çin Menşeli Loongson İşlemcilerinde Veri Sızıntısı Açığı
+─────────────────────────────────────────────────────────
+Almanya'daki Helmholtz Bilgi Güvenliği Merkezi araştırmacıları, Çinli Loongson şirketi tarafından üretilen işlemcilerin önbellek yapısında kritik bir güvenlik açığı tespit etmiştir. 'LoongLeak' olarak adlandırılan bu açığın, saldırganların işletim sistemi ve diğer uygulamalara ait gizli verileri, şifreleme anahtarlarını ve parola özetlerini ele geçirmesine olanak tanıdığı belirtilmiştir. Araştırmacılar, zafiyetin sanal makineler arasındaki sınırları aşabildiğini ve donanımsal bir tasarım hatasından kaynaklandığını ifade etmiştir. Loongson'un 3A6000 modelinde bu sorunu giderdiği ancak eski modellerde yazılımsal bir çözümün mümkün olmadığı kaydedilmiştir. Açığın kapatılması için işlemci çekirdeklerindeki bazı özelliklerin devre dışı bırakılmasının gerektiği ve bunun da performansı düşürdüğü bildirilmiştir. Söz konusu işlemcilerin ağırlıklı olarak Çin kamu kurumlarında kullanıldığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 13.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] Adobe Commerce Platformunda Müşteri Hesaplarının Ele Geçirilmesi
+─────────────────────────────────────────────────────────
+Adobe Commerce ve Magento e-ticaret platformlarında, saldırganların müşteri hesaplarını ele geçirmesine olanak tanıyan kritik bir güvenlik açığının (CVE-2026-71362) aktif olarak istismar edildiği tespit edilmiştir. Yanlış yetkilendirme hatasından kaynaklanan bu zafiyetin, herhangi bir kullanıcı etkileşimi veya yönetici yetkisi gerektirmeden hassas verilere erişim sağladığı belirtilmiştir. Güvenlik firması Sansec, web uygulaması güvenlik duvarlarının bu açığı hedef alan saldırıları engellemeye başladığını açıklamıştır. Adobe, Ağustos 2026 güvenlik güncellemesiyle bu sorunu ve beraberindeki altı farklı zafiyeti giderdiğini duyurmuştur. Mağaza yöneticilerine, müşteri verilerinin ve ödeme bilgilerinin korunması için yayımlanan yamaları vakit kaybetmeden uygulamaları tavsiye edilmiştir. Güncelleme yapılmayan platformlarda saldırganların oturumları başka kullanıcılara yönlendirebildiği ve özel verilere tam erişim sağladığı kaydedilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 12.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] Yapay Zeka Modellerindeki Mantık Yürütme Verilerinin API Üzerinden Sızdırılması
+─────────────────────────────────────────────────────────
+OpenAI, Anthropic ve Google'ın yapay zeka modellerinde, gizli mantık yürütme süreçlerinin API çağrıları arasında taşınma biçimindeki bir hata nedeniyle veri sızıntısı yaşandığı tespit edilmiştir. Araştırmacılar, güçlü modeller tarafından oluşturulan şifreli mantık bloklarının daha zayıf modellere aktarılarak çözülebildiğini ve bu yolla kullanıcı oturumlarından API anahtarları ile parolaların elde edilebildiğini bildirmiştir. Yapılan incelemelerde, 6.708 genel aracı kaydı üzerinden 315.320 düşünce bloğunun deşifre edildiği ve aralarında 62 API anahtarı ile 33 parolanın bulunduğu 704 gizlilik ihlalinin saptandığı belirtilmiştir. Söz konusu zafiyetin, kötü niyetli komut enjeksiyonlarını gizlemek için de kullanılabileceği ifade edilmiştir. İlgili teknoloji sağlayıcılarının Ağustos 2026 itibarıyla gerekli önlemleri aldığı ve saldırı yöntemlerinin artık bu platformlarda çalışmadığı bilgisi araştırmacılar tarafından paylaşılmıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 12.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[20] RISC-V İşlemcilerin Spectre Güvenlik Açıklarına Karşı Hassasiyetinin Belirlenmesi
+─────────────────────────────────────────────────────────
+Belçika ve Almanya'daki akademik kurumlardan araştırmacılar, RISC-V yonga mimarisinin Spectre güvenlik açıklarına karşı bağışıklığı olduğu yönündeki yaygın varsayımın yanlış olduğunu ortaya koymuştur. 35. Usenix Güvenlik Sempozyumu'nda sunulan çalışmada, SiFive P550 ve T-Head Xuantie C910/C920 gibi ticari olarak temin edilebilen işlemcilerin tüm ana Spectre varyantlarına karşı savunmasız olduğu tespit edilmiştir. Araştırmacılar, Xuantie C910 üzerinde saniyede 338 bayt hızla rastgele Linux çekirdek belleği sızdıran bir kavram kanıtlama saldırısı gerçekleştirmiştir. RISC-V ekosistemindeki donanım çeşitliliği nedeniyle tek bir azaltma stratejisinin tüm sistemlerde etkili olamayacağı, mimari şeffaflık ve ekosistem genelinde araç setlerine ihtiyaç duyulduğu belirtilmiştir. SiFive ve T-Head şirketlerinin ilgili bulgulara yönelik yama ve bariyer yayımlama taahhüdünde bulunduğu kaydedilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 12.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[21] Debian Linux Çekirdeğinde Çok Sayıda Güvenlik Zafiyeti
+─────────────────────────────────────────────────────────
+ANSSI (CERT-FR), Debian Linux çekirdeğinde veri bütünlüğünün bozulmasına, ayrıcalık yükseltilmesine ve hizmet dışı bırakma (DoS) saldırılarına yol açabilecek çok sayıda güvenlik zafiyeti tespit edildiğini duyurmuştur. Söz konusu açıkların, 6.12.100-1 sürümünden önceki Debian Trixie versiyonlarını etkilediği belirtilmiştir. Yayınlanan güvenlik duyurusunda, CVE-2026-45944 ve CVE-2026-64560 dahil olmak üzere geniş bir CVE listesi paylaşılmıştır. Bu zafiyetlerin, saldırganların sistem üzerinde yetkisiz erişim sağlamasına veya kritik verileri değiştirmesine imkan tanıyabileceği ifade edilmiştir. CERT-FR, sistem yöneticilerinin ve kullanıcıların veri güvenliğini korumak adına ilgili düzeltme eklerini edinmek için Debian tarafından yayımlanan resmi güvenlik bültenlerine başvurmaları gerektiğini kaydetmiştir. Güncellemelerin ivedilikle uygulanmasının, olası siber saldırı risklerini azaltmak açısından kritik önem taşıdığı bildirilmiştir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 07.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[22] Wireshark 4.6.8 Sürümünde 28 Güvenlik Açığının Kapatılması
+─────────────────────────────────────────────────────────
+Popüler ağ protokolü analiz aracı Wireshark'ın 4.6.8 sürümü, 28 adet güvenlik açığını gidermek üzere yayımlanmıştır. Bu açıkların dokuzunun, pcapng ve Endace ERF gibi dosya ayrıştırıcılarında bulunduğu ve kötü amaçlı bir kayıt dosyasının açılmasıyla tetiklenebildiği belirtilmiştir. RDP, SSH ve Kerberos gibi protokollerin raw verilerini işleyen dissektör kodlarında da çökme sorunlarının giderildiği ifade edilmiştir. Ayrıca, 5G NAS ve 5GSM protokollerindeki sekiz alanın yanlış çözümlenmesine neden olan hataların düzeltildiği kaydedilmiştir. Windows kullanıcıları için uygulama donmalarına ve segfault hatalarına yol açan sorunların da bu sürümle çözüldüğü bildirilmiştir. Wireshark ekibi, bazı bellek güvenliği açıklarının resmi bir danışma numarası almasa da bu sürümde kapatıldığını açıklamıştır. Kullanıcıların, ağ trafiği analiz süreçlerinde güvenlik risklerini minimize etmek için güncel sürüme geçmeleri tavsiye edilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 13.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
