@@ -402,6 +402,24 @@
         "title": "Swiss government SharePoint breach compromised 200 accounts",
         "full_text": "Switzerland’s federal IT office says hackers exploited vulnerabilities to breach its Microsoft SharePoint servers and compromised approximately 200 accounts.\n\nThe Federal Office for Information Technology and Telecommunication (BIT) detected the cyberattack after security specialists noticed unusual activity on its SharePoint servers on July 28.\n\nAfter confirming the breach, BIT blocked external i"
       }
+    },
+    {
+      "ad": "2026-08-14 Jewelbug casusluk ↔ JWR kimlik avı çerçevesi",
+      "iliski": "ILISKISIZ",
+      "ayni_gun": true,
+      "not": "Symantec'in Çin menşeli Jewelbug casusluk operasyonu ile Cisco Talos'un JWR kimlik avı çerçevesi analizi tamamen farklı olaylar. Gölge kümeleme GEREKÇESİ sınıfı tek bakışta gösterdi: ortak=ad:asya,ad:doğu,ad:middle,ad:orta — yani \"Orta Doğu\" ve \"Asya\" bölge adları. Bunlar olay kimliği değil COĞRAFYADIR; ülke adları zaten denylist'teydi, bölge ve yön adları eksikti.",
+      "a": {
+        "tr_title": "Çin Menşeli Jewelbug Grubunun Casusluk ve Dolandırıcılık Faaliyetleri",
+        "paragraph": "Symantec, Çin merkezli siber tehdit aktörü Jewelbug'ın Orta Doğu ve Asya'daki hükümet ve askeri kurumları hedef alan casusluk operasyonları yürüttüğünü tespit etmiştir. Grubun casusluk faaliyetlerinin yanı sıra aynı altyapı ve kontrol paneli üzerinden büyük ölçekli bir kripto para dolandırıcılığı işi yürüttüğü belirtilmiştir. Jewelbug'ın, Orta Doğu'daki bir devletin telekomünikasyon sağlayıcısını ele geçirerek 15'ten fazla hükümet biriminin e-posta trafiğine sızdığı bildirilmiştir. Saldırganları",
+        "title": "Symantec reveals Jewelbug espionage campaign targeting Asian governments, telecoms, critical infrastructure",
+        "full_text": "Symantec’s Threat Hunter Team identified Jewelbug, a China-based hackers-for-hire group, conducting espionage campaigns against governments and militaries across the Middle East, Southeast Asia and South Asia while operating a parallel cryptocurrency fraud business. The group manages both activities through the same XG-Web control panel, a browser-based remote-access and information-stealing frame"
+      },
+      "b": {
+        "tr_title": "JWR Kimlik Avı Çerçevesinin Teknik Analizinin Yapılması",
+        "paragraph": "Cisco Talos araştırmacıları, \"JWR\" olarak adlandırılan ve popüler ödeme platformlarını taklit eden gelişmiş bir kimlik avı çerçevesini ortaya çıkarmıştır. Bu sistemin, statik sayfalardan farklı olarak saldırganların kurban oturumlarını gerçek zamanlı olarak yönetmesine olanak tanıyan şifreli bir WebSocket bağlantısı kullandığı belirtilmiştir. JWR çerçevesinin kurbanların kredi kartı bilgilerini, sosyal güvenlik numaralarını, kimlik belgelerini ve iki faktörlü doğrulama kodlarını ele geçirebildiğ",
+        "title": "Dissecting the JWR phishing framework",
+        "full_text": "Dissecting the JWR phishing framework\n\nCisco Talos recently identified an undocumented phishing framework, internally branded \"JWR\" by its developer, built to convincingly impersonate checkout and login pages across major payment and shopping platforms.\n\nThe client engine of the JWR phishing framework is a real-time, operator-driven system that, rather than merely logging form submissions like a s"
+      }
     }
   ]
 }

@@ -468,6 +468,17 @@ _ENTITY_DENYLIST = frozenset({
     'korean', 'chinese', 'russian', 'iranian', 'israeli', 'ukrainian',
     'spanish', 'french', 'german', 'british', 'dutch', 'indian', 'japanese',
     'american', 'european', 'north', 'south', 'east', 'west', 'spain',
+    # BÖLGE ve YÖN adları. Ülke ADLARI yukarıda vardı ama bölge/yön yoktu.
+    # ÖLÇÜLDÜ (2026-08-14 üretim koşusu, gölge kümeleme gerekçesi):
+    # "Çin menşeli Jewelbug casusluk operasyonu" (Symantec) ile "JWR kimlik
+    # avı çerçevesi analizi" (Cisco Talos) — tamamen farklı iki olay —
+    # {ad:asya, ad:doğu, ad:middle, ad:orta} ortaklığıyla AYNI_GELISME
+    # sayıldı. Ortak olan tek şey "Orta Doğu"/"Asya" idi.
+    'asya', 'asia', 'afrika', 'africa', 'okyanusya', 'oceania',
+    'doğu', 'batı', 'orta', 'middle', 'central', 'western', 'eastern',
+    'northern', 'southern', 'pasifik', 'pacific', 'atlantik', 'atlantic',
+    'balkan', 'balkanlar', 'körfez', 'gulf', 'baltık', 'baltic', 'nordic',
+    'i̇skandinav', 'latin', 'karayip', 'caribbean', 'anadolu',
     # Haber/kurum bağlamının kaçınılmaz sözcükleri
     'news', 'justice', 'federal', 'national', 'state', 'states', 'police',
     'ulusal', 'komisyon', 'bakanlık', 'başkanlık', 'i̇stihbarat', 'tehdit',

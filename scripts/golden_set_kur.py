@@ -255,6 +255,21 @@ VAKALAR = [
                'ad:office, ad:ofisi} ortaklığıyla AYNI_GELISME sayıldı — '
                '"Information Commissioner\'s Office" jenerik kurum tamlamasıdır.',
     },
+    # ══ 2026-08-14 ÜRETİM YANLIŞ-POZİTİFİ (coğrafi bölge sözcükleri) ══════
+    {
+        'ad': '2026-08-14 Jewelbug casusluk ↔ JWR kimlik avı çerçevesi',
+        'a': ('rapor', '2026-08-14', 'Jewelbug'),
+        'b': ('rapor', '2026-08-14', 'JWR'),
+        'iliski': 'ILISKISIZ',
+        'ayni_gun': True,
+        'not': 'Symantec\'in Çin menşeli Jewelbug casusluk operasyonu ile '
+               'Cisco Talos\'un JWR kimlik avı çerçevesi analizi tamamen '
+               'farklı olaylar. Gölge kümeleme GEREKÇESİ sınıfı tek bakışta '
+               'gösterdi: ortak=ad:asya,ad:doğu,ad:middle,ad:orta — yani '
+               '"Orta Doğu" ve "Asya" bölge adları. Bunlar olay kimliği '
+               'değil COĞRAFYADIR; ülke adları zaten denylist\'teydi, bölge '
+               've yön adları eksikti.',
+    },
     {
         'ad': '2026-08-12 LiteLLM/TeamPCP ↔ Project CAV3RN',
         'a': ('ham', 1),

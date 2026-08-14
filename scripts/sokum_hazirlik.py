@@ -73,18 +73,41 @@ def main():
     print(f'📊 {len(kayitlar)} günlük kalite denetimi kaydı '
           f'({kayitlar[0]["tarih"]} → {kayitlar[-1]["tarih"]})\n')
 
-    capraz = sum(len(k.get('capraz_gun_kacak', [])) for k in kayitlar)
-    ici = sum(len(k.get('rapor_ici_kacak', [])) for k in kayitlar)
-    tersine = sum(len(k.get('manset_sirasi', {})
-                      .get('daha_yuksek_puanli_govde', [])) for k in kayitlar)
+    def _kirli(k):
+        """Bu günün kaydında kapıyı kapatan bir bulgu var mı?"""
+        return (len(k.get('capraz_gun_kacak', []))
+                + len(k.get('rapor_ici_kacak', []))
+                + len(k.get('manset_sirasi', {})
+                      .get('daha_yuksek_puanli_govde', [])))
+
+    # ARDIŞIK TEMİZ GÜN SAYISI — kümülatif toplam DEĞİL.
+    # İlk sürüm tüm günlerin bulgularını topluyordu; bu, DÜZELTİLMİŞ eski bir
+    # hatanın kapıyı sonsuza dek kapalı tutması demekti (2026-08-12 ve 08-13
+    # kayıtlarındaki bulguların hepsi o gün düzeltildi, ama toplam asla
+    # sıfırlanmıyordu). Söküm kararı için anlamlı ölçü, SON DÜZELTMEDEN BU
+    # YANA kaç gün temiz geçtiğidir — kapı ancak öyle geçilebilir hale gelir.
+    seri, kirli_gun = 0, []
+    for k in reversed(kayitlar):
+        if _kirli(k):
+            kirli_gun.append(k['tarih'])
+            break
+        seri += 1
+    son = kayitlar[-1]
     kume = [(k['tarih'], g) for k in kayitlar for g in k.get('kume_golge', [])]
 
     olcutler = [
-        (f'≥{MIN_GUN} gün veri', len(kayitlar) >= MIN_GUN,
-         f'{len(kayitlar)} gün'),
-        ('çapraz-gün kaçak yok', capraz == 0, f'{capraz} kaçak'),
-        ('rapor-içi kaçak yok', ici == 0, f'{ici} kaçak'),
-        ('manşet sırası tersineliği yok', tersine == 0, f'{tersine} vaka'),
+        (f'≥{MIN_GUN} ardışık temiz gün', seri >= MIN_GUN,
+         f'{seri} gün (toplam {len(kayitlar)} kayıt)'
+         + (f'; seriyi kıran: {kirli_gun[0]}' if kirli_gun else '')),
+        ('son gün: çapraz-gün kaçak yok',
+         not son.get('capraz_gun_kacak'),
+         f'{len(son.get("capraz_gun_kacak", []))} kaçak'),
+        ('son gün: rapor-içi kaçak yok',
+         not son.get('rapor_ici_kacak'),
+         f'{len(son.get("rapor_ici_kacak", []))} kaçak'),
+        ('son gün: manşet sırası doğru',
+         not son.get('manset_sirasi', {}).get('daha_yuksek_puanli_govde'),
+         f'{len(son.get("manset_sirasi", {}).get("daha_yuksek_puanli_govde", []))} vaka'),
     ]
     for ad, ok, ayrinti in olcutler:
         print(f'   {"✅" if ok else "❌"} {ad:<32} {ayrinti}')

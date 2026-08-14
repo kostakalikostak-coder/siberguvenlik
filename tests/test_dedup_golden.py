@@ -39,7 +39,7 @@ BIRLESMELI = {'AYNI_GELISME'}
 
 # TABAN ÇİZGİSİ — 2026-08-12'de ölçülen doğru karar sayısı.
 #
-# 20 puanlanan çiftin 14'ü doğru. Kaçan 6 vaka (Patch Tuesday↔ESU, Delta,
+# 21 puanlanan çiftin 15'i doğru. Kaçan 6 vaka (Patch Tuesday↔ESU, Delta,
 # kötü amaçlı SIM, Mozilla GPG, Gunra, CEVA) same_event'in YAPISAL sınırıdır:
 # hepsi ortak kod adı/aktör/CVE taşımaz ve konu örtüşmesi eşiğin altındadır.
 # Bunları eşik indirerek yakalamak yanlış-birleştirme üretir (ölçüldü:
@@ -48,7 +48,7 @@ BIRLESMELI = {'AYNI_GELISME'}
 #
 # Bu sayı DÜŞERSE bir regresyon vardır. YÜKSELİRSE burayı güncelle — kapı
 # yeni seviyeyi korusun.
-TABAN_DOGRU = 14
+TABAN_DOGRU = 15
 
 
 def _ciftler():
