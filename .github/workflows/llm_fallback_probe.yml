@@ -1,0 +1,25 @@
+name: LLM Yedek Probu (teşhis)
+
+# Elle tetiklenen teşhis: OpenRouter → Gemini (AI Studio) sağlayıcı yedeğinin
+# gerçekten çalıştığını minik bir JSON çağrısıyla kanıtlar. Rapor üretmez,
+# commit'lemez, veri dosyalarına dokunmaz.
+# Çalıştır: Actions → "LLM Yedek Probu (teşhis)" → Run workflow.
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - env:
+          LLM_PROVIDER: openrouter
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -u scripts/llm_fallback_probe.py
