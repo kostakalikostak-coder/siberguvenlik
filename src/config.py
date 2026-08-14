@@ -51,6 +51,28 @@ OPENROUTER_HTTP_REFERER = os.getenv('OPENROUTER_HTTP_REFERER') or 'https://githu
 OPENROUTER_APP_TITLE = os.getenv('OPENROUTER_APP_TITLE') or 'Siber Guvenlik Haberleri'
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# GEMINI (Google AI Studio) — hem birincil sağlayıcı hem OpenRouter YEDEĞİ
+# ─────────────────────────────────────────────────────────────────────────────
+# GEMINI_MODELS         : LLM_PROVIDER=gemini iken denenecek model sırası.
+# GEMINI_FALLBACK_MODELS: OpenRouter TÜM modellerinde başarısız olduğunda
+#                         (kredi bitti / 402 / kalıcı hata) denenecek sıra.
+#                         AI Studio ücretsiz kotası Flash'ta cömert, Pro'da
+#                         yok denecek kadar az → yedekte ÖNCE flash denenir.
+GEMINI_MODELS = [
+    m.strip() for m in os.getenv(
+        'GEMINI_MODELS',
+        'gemini-2.5-pro,gemini-2.5-pro,gemini-2.5-flash,gemini-2.5-flash'
+    ).split(',') if m.strip()
+]
+GEMINI_FALLBACK_MODELS = [
+    m.strip() for m in os.getenv(
+        'GEMINI_FALLBACK_MODELS',
+        'gemini-2.5-flash,gemini-2.5-flash,gemini-2.5-pro'
+    ).split(',') if m.strip()
+]
+
+
 def is_openrouter_active():
     """OpenRouter sağlayıcısı seçili VE API anahtarı mevcut mu?
 
@@ -58,6 +80,17 @@ def is_openrouter_active():
     mevcut Gemini akışı hiç etkilenmez.
     """
     return LLM_PROVIDER == 'openrouter' and bool(OPENROUTER_API_KEY)
+
+
+def is_gemini_fallback_active():
+    """OpenRouter çöktüğünde Gemini'ye (AI Studio) düşülebilir mi?
+
+    Yalnızca OpenRouter birincilken anlamlıdır: OPENROUTER_API_KEY'in kredisi
+    biter ya da kalıcı hata verirse, GEMINI_API_KEY varsa çağrı ücretsiz
+    AI Studio kotası üzerinden tekrarlanır. Anahtar yoksa False → eski davranış
+    (OpenRouter başarısızsa çağrı None döner).
+    """
+    return is_openrouter_active() and bool(GEMINI_API_KEY)
 
 # Dosya yolları
 ARCHIVE_FILE = "data/haberler_arsiv.txt"

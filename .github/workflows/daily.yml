@@ -65,9 +65,12 @@ jobs:
       - env:
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
           # OpenRouter (varsayılan model: src/config.py OPENROUTER_MODEL) — AKTİF.
-          # Gemini API devre dışı.
           LLM_PROVIDER: openrouter
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          # SAĞLAYICI YEDEĞİ: OpenRouter kredisi biterse/kalıcı hata verirse aynı
+          # istem Google AI Studio (ücretsiz kota) üzerinden tekrarlanır.
+          # Secret tanımsızsa boş gelir → yedek sessizce devre dışı kalır.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
           # Elle "Run workflow" → reset_today işaretlenirse bugünü sıfırdan üretir.
           # Otomatik cron/dispatch'te input gelmez → boş → reset ÇALIŞMAZ.

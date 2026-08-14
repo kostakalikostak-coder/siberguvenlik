@@ -81,7 +81,7 @@ from src.config import (
     get_scoring_prompt, get_critique_prompt,
     SCORING_WEIGHTS, SCORING_CATEGORIES, ZAFIYET_KATEGORILERI,
     KRITIK3_HARIC_KATEGORILER, KATEGORI_ONCELIK,
-    is_openrouter_active,
+    is_openrouter_active, GEMINI_MODELS, GEMINI_FALLBACK_MODELS,
 )
 from src.http_utils import requests_get_with_retry as _requests_get_with_retry
 # OpenRouter (Gemini 3 Flash) — PASİF altyapı. Yalnızca is_openrouter_active()
@@ -943,18 +943,31 @@ class HaberSistemi:
         OpenRouter aktifse (LLM_PROVIDER=openrouter + OPENROUTER_API_KEY) çağrı
         Gemini yerine OpenRouter (Gemini 3 Flash) üzerinden yapılır. Pasifken
         bu satırın hiçbir etkisi yoktur.
+
+        SAĞLAYICI YEDEĞİ: OpenRouter TÜM modellerinde başarısız olursa (kredi
+        bitti/402, kalıcı hata, boş yanıt) ve GEMINI_API_KEY tanımlıysa, aynı
+        istem Google AI Studio (ücretsiz kota) üzerinden tekrar denenir. Eskiden
+        burada erken `return` vardı: OpenRouter kredisi bittiği an tüm koşu
+        fallback HTML'e düşüyordu, elde duran Gemini anahtarı hiç denenmiyordu.
         """
+        _MODELS = GEMINI_MODELS
+
         if is_openrouter_active():
-            return _llm.generate_json(
+            data = _llm.generate_json(
                 prompt, max_output_tokens=max_output_tokens, label=label,
             )
+            if data is not None:
+                return data
+            if not GEMINI_API_KEY:
+                print(f"   [{label}] ❌ OpenRouter başarısız, GEMINI_API_KEY yok — yedek yok.")
+                return None
+            print(f"   [{label}] 🔁 OpenRouter başarısız — Google AI Studio (Gemini) yedeğine düşülüyor.")
+            _MODELS = GEMINI_FALLBACK_MODELS
 
         if not GEMINI_API_KEY:
             print(f"   ⚠️  [{label}] GEMINI_API_KEY yok, atlanıyor.")
             return None
 
-        _MODELS = ['gemini-2.5-pro', 'gemini-2.5-pro',
-                   'gemini-2.5-flash', 'gemini-2.5-flash']
         client = genai.Client(api_key=GEMINI_API_KEY)
 
         # Kesilme (MAX_TOKENS) güvenliği: thinking modellerinde reasoning de
@@ -966,7 +979,7 @@ class HaberSistemi:
 
         for attempt, model in enumerate(_MODELS):
             try:
-                print(f"   [{label}] Deneme {attempt + 1}/4 [{model}] (bütçe={budget})...")
+                print(f"   [{label}] Deneme {attempt + 1}/{len(_MODELS)} [{model}] (bütçe={budget})...")
                 # Büyük çıktılar (>8K token) için daha uzun HTTP timeout (ms)
                 http_timeout_ms = 300_000 if budget > 8000 else 180_000
                 response = client.models.generate_content(
@@ -1017,11 +1030,11 @@ class HaberSistemi:
                 return data
             except Exception as e:
                 print(f"   [{label}] ⚠️  Hata [{type(e).__name__}]: {e}")
-                if attempt < 3:
+                if attempt < len(_MODELS) - 1:
                     print(f"   [{label}] ⏳ 15s bekleniyor...")
                     time.sleep(15)
 
-        print(f"   [{label}] ❌ Gemini 4 deneme başarısız.")
+        print(f"   [{label}] ❌ Gemini {len(_MODELS)} deneme başarısız.")
         return None
 
     @staticmethod
@@ -6969,9 +6982,18 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     matched += 1
             print(f"   Sosyal sinyal Türkçe özetler (OpenRouter): "
                   f"{matched}/{len(self.social_data)}")
+            if matched > 0:
+                return
+            if not GEMINI_API_KEY:
+                return
+            # Hiç eşleşme yok → OpenRouter çuvalladı (kredi/hata). Ücretsiz AI
+            # Studio kotasıyla tekrar dene; aksi halde başlıklar İngilizce kalır.
+            print("   🔁 OpenRouter sonuç vermedi — Gemini (AI Studio) yedeği deneniyor.")
+
+        if not GEMINI_API_KEY:
             return
 
-        for model_name in ['gemini-2.5-pro', 'gemini-2.5-flash', 'gemini-2.0-flash']:
+        for model_name in ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash']:
             try:
                 client = genai.Client(api_key=GEMINI_API_KEY)
                 chunks = []
@@ -7579,6 +7601,13 @@ def main():
     print("🔒 SİBER GÜVENLİK HABERLERİ")
     print("=" * 70)
     print(f"📅 {_now_tr().strftime('%d %B %Y %H:%M')}")
+    # LLM sağlayıcı durumu — yedeğin gerçekten kurulu olup olmadığını koşu
+    # loglarından tek bakışta görmek için (anahtarın kendisi ASLA basılmaz).
+    if is_openrouter_active():
+        yedek = 'Gemini/AI Studio' if GEMINI_API_KEY else 'YOK (GEMINI_API_KEY tanımsız)'
+        print(f"🤖 LLM: OpenRouter (birincil) | yedek: {yedek}")
+    else:
+        print(f"🤖 LLM: Gemini/AI Studio {'(anahtar var)' if GEMINI_API_KEY else '(ANAHTAR YOK)'}")
     print("=" * 70 + "\n")
 
     # ── RESET_TODAY: elle taze üretim (workflow_dispatch input) ─────────────
