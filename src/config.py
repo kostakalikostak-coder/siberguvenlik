@@ -57,18 +57,22 @@ OPENROUTER_APP_TITLE = os.getenv('OPENROUTER_APP_TITLE') or 'Siber Guvenlik Habe
 # GEMINI_MODELS         : LLM_PROVIDER=gemini iken denenecek model sırası.
 # GEMINI_FALLBACK_MODELS: OpenRouter TÜM modellerinde başarısız olduğunda
 #                         (kredi bitti / 402 / kalıcı hata) denenecek sıra.
-#                         AI Studio ücretsiz kotası Flash'ta cömert, Pro'da
-#                         yok denecek kadar az → yedekte ÖNCE flash denenir.
+#
+# gemini-2.5-pro LİSTEDE YOK: 14 Ağu 2026 probunda ListModels'te görünmesine
+# rağmen generateContent 404 verdi ("no longer available to new users").
+# Listede kalsaydı her yedeğe düşüşte 2 boş deneme + 30 sn beklemeye mal
+# olurdu. Aşağıdaki sıra prob koşusunda AI Studio'da AÇIK doğrulanan
+# modellerden seçildi; Flash sınıfı ücretsiz kotada cömerttir.
 GEMINI_MODELS = [
     m.strip() for m in os.getenv(
         'GEMINI_MODELS',
-        'gemini-2.5-pro,gemini-2.5-pro,gemini-2.5-flash,gemini-2.5-flash'
+        'gemini-3.5-flash,gemini-3.5-flash,gemini-2.5-flash,gemini-2.5-flash'
     ).split(',') if m.strip()
 ]
 GEMINI_FALLBACK_MODELS = [
     m.strip() for m in os.getenv(
         'GEMINI_FALLBACK_MODELS',
-        'gemini-2.5-flash,gemini-2.5-flash,gemini-2.5-pro'
+        'gemini-3.5-flash,gemini-2.5-flash,gemini-flash-latest'
     ).split(',') if m.strip()
 ]
 

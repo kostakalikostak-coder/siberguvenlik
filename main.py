@@ -6993,7 +6993,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         if not GEMINI_API_KEY:
             return
 
-        for model_name in ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash']:
+        # 2.5-pro / 2.0-flash listeden çıkarıldı: bu anahtarda generateContent
+        # 404 veriyor (bkz. src/config.py GEMINI_MODELS notu).
+        for model_name in ['gemini-3.5-flash', 'gemini-2.5-flash']:
             try:
                 client = genai.Client(api_key=GEMINI_API_KEY)
                 chunks = []

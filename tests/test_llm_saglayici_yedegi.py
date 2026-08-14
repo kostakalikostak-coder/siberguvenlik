@@ -62,8 +62,9 @@ class TestGeminiFallback:
 
         assert data == {'ok': 2}
         mock_genai.Client.assert_called_once_with(api_key='test-key')
-        # Yedekte ÖNCE flash denenmeli (AI Studio ücretsiz kotası Pro'da yok denecek kadar az)
-        assert client.models.generate_content.call_args.kwargs['model'] == 'gemini-2.5-flash'
+        # Yedekte ÖNCE yapılandırılmış ilk model denenmeli
+        assert (client.models.generate_content.call_args.kwargs['model']
+                == cfg.GEMINI_FALLBACK_MODELS[0])
 
     @patch('main.time.sleep')
     @patch.object(main_mod, 'genai')
@@ -100,7 +101,7 @@ class TestGeminiFallback:
     @patch.object(main_mod, 'genai')
     @patch.object(main_mod, 'is_openrouter_active', return_value=False)
     def test_provider_gemini_normal_sira(self, _aktif, mock_genai, _sleep):
-        """LLM_PROVIDER=gemini iken sıra değişmez: birincil model pro."""
+        """LLM_PROVIDER=gemini iken GEMINI_MODELS sırası kullanılır."""
         client = MagicMock()
         client.models.generate_content.return_value = _gemini_yanit('{"ok": 3}')
         mock_genai.Client.return_value = client
@@ -109,7 +110,8 @@ class TestGeminiFallback:
             data = _kolektor()._gemini_call_json('istem', label='t')
 
         assert data == {'ok': 3}
-        assert client.models.generate_content.call_args.kwargs['model'] == 'gemini-2.5-pro'
+        assert (client.models.generate_content.call_args.kwargs['model']
+                == cfg.GEMINI_MODELS[0])
 
 
 class TestConfigBayragi:
