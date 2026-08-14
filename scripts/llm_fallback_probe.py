@@ -56,9 +56,12 @@ def main():
     if g_key:
         try:
             from google import genai
+            # İstemci yerel değişkende TUTULUR: geçici nesne çöpe gidince
+            # sayfalayıcı "client has been closed" hatası veriyor.
+            _c = genai.Client(api_key=g_key)
             adlar = [
                 mo.name.replace('models/', '')
-                for mo in genai.Client(api_key=g_key).models.list()
+                for mo in _c.models.list()
                 if 'generateContent' in (getattr(mo, 'supported_actions', None) or [])
             ]
             print("\nAI Studio'da generateContent'e AÇIK modeller:")
