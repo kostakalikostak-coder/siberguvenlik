@@ -51,6 +51,22 @@ def main():
     print(f"  Gemini yedek sırası: {config.GEMINI_FALLBACK_MODELS}")
     print("=" * 70)
 
+    # Bu anahtara AÇIK olan modelleri listele — model adlarını tahmin etmemek
+    # için. (2.5-pro gibi kapanan modeller sessizce 404 verip deneme harcıyor.)
+    if g_key:
+        try:
+            from google import genai
+            adlar = [
+                mo.name.replace('models/', '')
+                for mo in genai.Client(api_key=g_key).models.list()
+                if 'generateContent' in (getattr(mo, 'supported_actions', None) or [])
+            ]
+            print("\nAI Studio'da generateContent'e AÇIK modeller:")
+            for a in sorted(adlar):
+                print(f"   • {a}")
+        except Exception as e:
+            print(f"\n⚠️  Model listesi alınamadı: {type(e).__name__}: {e}")
+
     sonuc = {}
 
     # ── 1) Normal yol: OpenRouter birincil ───────────────────────────────────
