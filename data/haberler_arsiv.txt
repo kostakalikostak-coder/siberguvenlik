@@ -30811,3 +30811,78 @@ ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Metabase, Microsoft 
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 15 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Enerji Devi Shell'in Clop Fidye Yazılımı Saldırısını Soruşturması
+─────────────────────────────────────────────────────────
+İngiliz enerji şirketi Shell, Clop fidye yazılımı çetesinin 89 GB boyutunda veri çaldığı iddiaları üzerine bir güvenlik incelemesi başlatmıştır. Saldırganların, şirkete ait mühendislik çizimleri, tesis test raporları ve proje planlarını ele geçirdiklerini iddia ederek verileri karanlık web platformunda listelediği bildirilmiştir. Shell sözcüsü, güvenlik ekiplerinin ve uzmanların olası olayı araştırdığını teyit etmiştir. Clop çetesinin, PTC Windchill ve FlexPLM yazılımlarındaki CVE-2026-12569 kodlu kritik bir güvenlik açığını istismar ederek Shell dahil 43 farklı kuruluşu hedef aldığı ifade edilmiştir. CISA, söz konusu açığın aktif olarak istismar edildiğini doğrulayarak federal kurumlara sistemlerini acilen yamalama talimatı vermiştir. Saldırıların General Electric ve Philips gibi diğer teknoloji devlerini de etkilediği iddia edilmektedir. Siber güvenlik uzmanları, saldırganların hassas verileri çalmak için JSP web kabukları kullandığını tespit etmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 14.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Fransa Vergi Dairesinden İki Milyon Mükellefin Verisinin Çalınması
+─────────────────────────────────────────────────────────
+Fransa Kamu Finansmanı Genel Müdürlüğü (DGFiP), 'ZeroBytes' takma adlı bir saldırganın Haziran 2026 sonunda sistemlerine sızarak 2 milyon mükellefe ait veriyi ele geçirdiğini doğrulamıştır. Kimlik hırsızlığı ve MFA mekanizmasının atlatılmasıyla gerçekleşen ihlalde, hem bireylerin hem de profesyonellerin verileri sızdırılmıştır. Saldırganın sistemlere erişiminin sürdüğü yönündeki iddiaları reddeden kurum, erişimin kesildiğini ve CNIL'e bildirim yapıldığını açıklamıştır. Bu olay; 15,8 milyon tıbbi kaydın çalındığı Sağlık Bakanlığı saldırısı, 19 milyon kişiyi etkileyen France Titres ihlali ve Tchap platformundaki sızıntı gibi Fransa kamu sektörünü hedef alan bir dizi siber saldırının son halkasıdır. DGFiP, etkilenen kullanıcıları belirleme çalışmalarını sürdürürken, Maliye Bakanlığı bünyesinde daha önce yaşanan 1,2 milyon banka bilgisi sızıntısı da ülkedeki kritik veri güvenliği açıklarını bir kez daha gündeme taşımıştır.
+(XXXXXXX, AÇIK -theregister.com, 14.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Commerzbank Müşterilerini Hedef Alan 30 Milyon Avroluk Vurgun
+─────────────────────────────────────────────────────────
+Brezilya ve Alman federal polis teşkilatları, Commerzbank müşterilerinin hesaplarından yaklaşık 30 milyon avro çalan bir siber suç şebekesine yönelik ortak operasyon düzenlemiştir. 'Klonen Operasyonu' kapsamında Brezilya'da dört kişi tutuklanırken, Avrupa'da üç şüpheli hakkında suç duyurusunda bulunulmuştur. Saldırganların, bir hizmet sağlayıcının ödeme sistemindeki yazılım güncellemesi hatasından kaynaklanan bir güvenlik açığını istismar ederek Kasım 2023'te dört gün boyunca yetkisiz para çekme işlemleri gerçekleştirdiği belirtilmiştir. Çalınan fonların Brezilya ve dört Avrupa ülkesindeki paravan şirketler ve sanal varlık platformları üzerinden aklandığı tespit edilmiştir. Banka yetkilileri, müşterilerin finansal bir kayba uğramadığını ve tüm zararın karşılandığını açıklamıştır. Soruşturma kapsamında Brezilya'da 22 milyon dolar değerinde mal varlığına el konulduğu ve bir şüphelinin bu fonları siyasi kampanyasında kullandığı kaydedilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 14.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Apple'ın Yüzlerce Kullanıcıyı Casus Yazılım Saldırılarına Karşı Uyarması
+─────────────────────────────────────────────────────────
+Apple, 110 ülkedeki yüzlerce kullanıcısına gönderdiği yeni tehdit bildirimleriyle, bu kişilerin paralı asker tipi casus yazılımlar tarafından hedef alınmış olabileceği konusunda kritik bir uyarı yayınlamıştır. 2021'den bu yana 150'den fazla ülkede benzer bildirimler yapan şirket; gazeteciler, aktivistler, diplomatlar ve avukatlar gibi hassas veriye sahip kişilerin hedef alındığını belirtmiştir. Milyonlarca dolarlık maliyete sahip bu sofistike saldırılara karşı Apple, kullanıcıların account.apple.com adresinden doğrulanabilen bildirimleri ciddiye almalarını ve 'Kilitleme Modu'nu etkinleştirmelerini önermektedir. Ayrıca cihazların güncel tutulması, iki faktörlü kimlik doğrulama ve Çalınan Cihaz Koruması gibi güvenlik katmanlarının kullanılması tavsiye edilmektedir. Şirket, saldırganların yöntemlerini deşifre etmemek adına tespit mantığına dair detay vermezken, risk altındaki kişilerin Access Now gibi kuruluşlardan uzman yardımı alması gerektiğini vurgulamıştır.
+(XXXXXXX, AÇIK -securityaffairs.com, 14.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] AmnesiaStealer Zararlı Yazılımının macOS Sistemlerini Hedeflemesi
+─────────────────────────────────────────────────────────
+macOS işletim sistemlerini hedef alan AmnesiaStealer isimli yeni bir zararlı yazılımın, kullanıcı verilerini çaldığı ve tarayıcı oturumlarını uzaktan kontrol ettiği tespit edilmiştir. Jamf tarafından yapılan analizlerde, zararlı yazılımın Chrome DevTools Protokolü'nü (CDP) kullanarak tarayıcının gizli bir kopyasını başlattığı ve saldırganlara kurbanın oturumu üzerinde tam kontrol sağladığı bildirilmiştir. Operatörlerin, saniyede yaklaşık 3 kare hızında canlı ekran görüntüsü alabildiği ve klavye, fare ile sekme yönetimi gibi tüm giriş setlerini gerçek zamanlı olarak iletebildiği kaydedilmiştir. Bu yöntemin otomatik bir veri dökümünden ziyade, doğrudan klavye başında gerçekleştirilen gizli bir tarayıcı oturumu olduğu ifade edilmiştir. Saldırganların bu yolla hassas verilere erişim sağladığı ve oturumları manipüle ettiği belirtilmektedir.
+(XXXXXXX, AÇIK -securityweek.com, 14.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Trivy Kaynaklı Tedarik Zinciri Saldırısının Binlerce Kurumu Etkilemesi
+─────────────────────────────────────────────────────────
+LiteLLM paketlerine yönelik olduğu düşünülen tedarik zinciri saldırısının, aslında Aqua Security'nin Trivy tarayıcısındaki bir zafiyetten kaynaklandığı ve 2.500'den fazla kuruluşu etkilediği bildirilmiştir. SOCRadar tarafından hazırlanan raporda, etkilenen kurumların %95'inin zararlı LiteLLM paketleri yayınlanmadan önce Trivy üzerinden maruz kaldığı tespit edilmiştir. TeamPCP olarak adlandırılan siber tehdit aktörünün, Shai-Hulud solucanını kullanarak kimlik bilgilerini, API anahtarlarını ve gizli verileri ele geçirdiği ifade edilmiştir. Saldırının GitHub Actions ve GitLab CI gibi altı farklı CI/CD platformunu kapsadığı ve özellikle Almanya, Brezilya ile Fransa'daki kuruluşları hedef aldığı kaydedilmiştir. Çalınan verilerin Telegram üzerinden pazarlanmaya başlandığı ve saldırganların hem geliştirici kimliklerine hem de makine belirteçlerine erişim sağladığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 14.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] İskoçya Savcılık Ofisinde Çalışan Verilerinin Sızdırılması
+─────────────────────────────────────────────────────────
+İskoçya Kraliyet Ofisi ve Savcılık Servisi (COPFS), bir dış tedarikçinin yaşadığı veri ihlali sonucunda çalışanlarına ait kişisel bilgilerin sızdırıldığını açıklamıştır. İhlalin, ulusal hükümet tarafından düzenlenen ve bir üçüncü tarafça yönetilen veri olgunluğu değerlendirmesi sırasında gerçekleştiği belirtilmiştir. COPFS temsilcisi, yaklaşık 300 çalışanın isim, görev ve iş e-posta adresi bilgilerinin etkilendiğini, ancak dava dosyaları veya tanık bilgilerinin güvende olduğunu ifade etmiştir. Güvenlik uzmanları, sızdırılan bu sınırlı bilgilerin bile hedefli kimlik avı saldırıları için kritik keşif verisi sağlayabileceği konusunda uyarıda bulunmuştur. İskoçya hükümetinin diğer kurumlarının da aynı değerlendirme programına katılması nedeniyle, ihlalin kapsamının genişleyebileceği değerlendirilmektedir. Olayın, tedarikçi risk yönetiminin sürekli izlenmesi gerekliliğini bir kez daha gündeme getirdiği kaydedilmiştir.
+(XXXXXXX, AÇIK -darkreading.com, 14.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] RingCentral Veri İhlalinde Milyonlarca Hesabın Etkilenmesi
+─────────────────────────────────────────────────────────
+Bulut tabanlı iletişim platformu RingCentral'ın, Temmuz ayında gerçekleşen bir siber saldırı sonucunda 1,6 milyon hesabına ait kişisel verilerin çalındığını doğrulanmıştır. Have I Been Pwned servisinin analizlerine göre, siber tehdit aktörü ShinyHunters'ın 623 GB boyutunda veri çaldığı ve fidye ödenmemesi üzerine 280 GB'lık bir arşivi sızdırdığı belirtilmiştir. Sızdırılan veriler arasında kullanıcı isimleri, e-posta adresleri, telefon numaraları ve fiziksel adreslerin yer aldığı ifade edilmiştir. RingCentral, olayın karmaşık bir sosyal mühendislik kampanyası sonucunda meydana geldiğini ve etkilenen müşterilerle doğrudan iletişime geçildiğini açıklamıştır. Şirket, ana platformun bu durumdan etkilenmediğini ve hizmetlerin kesintisiz sürdüğünü kaydetmiştir. Saldırgan grubun, benzer yöntemlerle daha önce birçok farklı teknoloji sağlayıcısını ve kurumu da hedef aldığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 14.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] macOS Ekran Paylaşımı Açığıyla Monero Madenciliği Yapılması
+─────────────────────────────────────────────────────────
+Hollanda Ulusal Siber Güvenlik Merkezi (NCSC), macOS işletim sistemindeki bir kimlik doğrulama atlama açığının siber saldırganlar tarafından aktif olarak istismar edildiği konusunda uyarıda bulunmuştur. CVE-2026-65400 kodlu açığın, macOS Ekran Paylaşımı özelliğindeki bir hata nedeniyle saldırganların geçerli kimlik bilgileri olmadan sistemlere erişmesine olanak tanıdığı belirtilmiştir. İnternete açık 5900 numaralı port üzerinden gerçekleştirilen saldırılarda, kurbanların cihazlarına root erişimi sağlandığı ve Monero kripto para madenciliği yazılımlarının yerleştirildiği tespit edilmiştir. Apple'ın bu açığı kapatmak için macOS Tahoe 26.6.1 sürümünü yayınladığı bildirilmiştir. NCSC, güncellemeyi hemen yapamayan kullanıcıların ekran paylaşımı özelliğini tamamen devre dışı bırakmalarını önermiştir. Saldırıların kaç sistemi etkilediği ve madencilik dışında başka bir casusluk faaliyeti yürütülüp yürütülmediği konusundaki incelemelerin sürdüğü ifade edilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 14.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] SAP Commerce Cloud Platformundaki Kritik Açığın İstismar Edilmesi
+─────────────────────────────────────────────────────────
+SAP Commerce Cloud platformunda tespit edilen ve CVE-2026-58231 koduyla izlenen en yüksek öncelikli uzaktan kod yürütme zafiyetinin aktif saldırılarda kullanıldığı bildirilmiştir. Tehdit istihbaratı kuruluşu Defused, yamanın yayınlanmasından yalnızca üç gün sonra bal küpü sistemlerine yönelik ilk istismar girişimlerinin başladığını duyurmuştur. Söz konusu zafiyetin, Data Hub Adapter eklentisindeki yetkilendirme hatasından kaynaklandığı ve düşük karmaşıklıktaki saldırılarla kimlik doğrulaması yapılmadan rastgele kod yürütülmesine olanak tanıdığı ifade edilmiştir. Shadowserver verilerine göre, çoğu Avrupa ve Kuzey Amerika'da bulunan 4.200'den fazla IP adresinin bu platformu kullandığı kaydedilmiştir. SAP, müşterilerine sistemlerini derhal güncellemeleri yönünde çağrıda bulunmuş ve zafiyetin gizlilik ile bütünlük üzerinde yüksek etki yarattığını açıklamıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 14.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

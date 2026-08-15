@@ -1,136 +1,5 @@
 [
  {
-  "date": "2026-08-07",
-  "views": [
-   {
-    "tr_title": "Kuzey Carolina Limanlarına Yönelik Siber Saldırının Kontrol Altına Alınması",
-    "paragraph": "Kuzey Carolina Limanları, Salı günü gerçekleşen ve operasyonların manuel olarak yürütülmesine neden olan bir siber güvenlik olayının ardından sistemlerini geri yükleme sürecine girmiştir. Liman sözcüsü, bilişim sistemlerinin dış bir aktör veya grup tarafından saldırıya uğradığını ve bu durumun ABD Sahil Güvenlik ile eyalet kurumlarını içeren bir acil durum planının devreye alınmasını gerektirdiğini açıklamıştır. Wilmington, Morehead City ve Charlotte lokasyonlarını etkileyen ihlalin kontrol altı",
-    "title": "Cyberattack on North Carolina Ports ‘contained’ as Coast Guard, state officials investigate",
-    "full_text": "Cyberattack on North Carolina Ports ‘contained’ as Coast Guard, state officials investigate\n\nNorth Carolina Ports is in the process of restoring its systems after a cybersecurity incident forced a shift to manual operations on Tuesday.\n\nA spokesperson for the ports, which handle more than 4 million tons of cargo each year, said the IT system was “hacked by an outside actor or group” requiring them"
-   },
-   {
-    "tr_title": "Siber Tehdit Aktörü UNC6671'in Finans Sektörünü Sesli Kimlik Avıyla Hedeflemesi",
-    "paragraph": "Google Tehdit İstihbarat Grubu, BlackFile markasının emekliye ayrıldığı iddialarına rağmen siber tehdit aktörü UNC6671'in faaliyetlerini sürdürdüğünü tespit etmiştir. Tehdit aktörünün Redact, Pink, Helix ve Falcon gibi farklı isimler altında operasyonlarını çeşitlendirdiği ve finansal hizmetler ile kurumsal bulut ortamlarını hedeflediği belirtilmektedir. Grubun, kurumsal çalışanları kişisel telefonlarından arayarak kendilerini bilişim destek personeli olarak tanıttığı ve kurbanları sahte giriş p",
-    "title": "UNC6671 Rebrands: Multi-Brand Vishing Extortion Targets Financial Services and Enterprise Cloud Environments",
-    "full_text": "UNC6671 Rebrands: Multi-Brand Vishing Extortion Targets Financial Services and Enterprise Cloud Environments\n\nVisibility and context on the threats that matter most.\n\nWritten by: Tyler McLellan, Austin Larsen\n\nGoogle Threat Intelligence Group (GTIG) continues to track UNC6671 actively conducting compromises leading to data theft extortion, despite the alleged announced retirement of the BlackFile "
-   },
-   {
-    "tr_title": "İsviçre Hükümetine Ait SharePoint Sunucularına Siber Saldırı Düzenlenmesi",
-    "paragraph": "İsviçre Federal Bilgi Teknolojileri ve Telekomünikasyon Ofisi (BIT), Microsoft SharePoint sunucularındaki güvenlik açıklarından yararlanan saldırganların yaklaşık 200 hesabı ele geçirdiğini açıklamıştır. Olağandışı faaliyetlerin 28 Temmuz tarihinde fark edildiği ve 31 Temmuz'da hesap bilgilerinin sızdırıldığının kesinleştiği belirtilmiştir. Kurum, saldırganların Microsoft'un Temmuz ayı güncellemeleriyle kapattığı CVE-2026-56164 veya CVE-2026-50522 kodlu açıklardan birini istismar etmiş olabilece",
-    "title": "Swiss government SharePoint breach compromised 200 accounts",
-    "full_text": "Switzerland’s federal IT office says hackers exploited vulnerabilities to breach its Microsoft SharePoint servers and compromised approximately 200 accounts.\n\nThe Federal Office for Information Technology and Telecommunication (BIT) detected the cyberattack after security specialists noticed unusual activity on its SharePoint servers on July 28.\n\nAfter confirming the breach, BIT blocked external i"
-   },
-   {
-    "tr_title": "IBM Langflow Platformundaki Kritik Güvenlik Açığının İstismar Edilmesi",
-    "paragraph": "IBM bünyesindeki düşük kodlu yapay zeka geliştirme platformu Langflow'da, saldırganların uzaktan kod yürütmesine (RCE) olanak tanıyan kritik bir güvenlik açığı tespit edilmiştir. CISA, CVE-2026-9198 kodlu bu açığın aktif olarak istismar edildiğini doğrulayarak Known Exploited Vulnerabilities kataloğuna eklemiş ve kuruluşlara acil yama çağrısında bulunmuştur. Sorunun, varsayılan kurulumlardaki otomatik giriş uç noktasının yetkisiz kişilere süper kullanıcı hakları tanıması ve Python kodlarını doğr",
-    "title": "IBM's agentic AI platform is under active attack - patch now",
-    "full_text": "IBM's agentic AI platform is under active attack - patch now\n\nA critical Langflow flaw allowing RCE on default deployments is being exploited, says the CISA\n\nA critical vulnerability in IBM-owned, low-code AI builder Langflow lets unauthenticated attackers execute code remotely on vulnerable default deployments, potentially putting organizations running those instances at immediate risk.\n\nThe Cybe"
-   },
-   {
-    "tr_title": "Unlimited Technology Systems Veri İhlalinden 3,8 Milyon Kişinin Etkilenmesi",
-    "paragraph": "Montgomery merkezli sağlık teknolojileri firması Unlimited Technology Systems, 3,8 milyondan fazla bireyin kişisel ve tıbbi bilgilerinin çalındığını duyurmuştur. Şirket, Ekim 2025 tarihinde ticari veri merkezlerinden birinde gerçekleşen siber saldırıyı tespit ettiğini ve incelemelerin verilerin 5-10 Ekim 2025 tarihleri arasında çalındığını gösterdiğini açıklamıştır. Çalınan veriler arasında isim, adres, Sosyal Güvenlik numarası, tıbbi kayıt numaraları, tanılar ve sigorta poliçe bilgileri gibi ha",
-    "title": "3.8 Million Impacted by Unlimited Technology Systems Data Breach",
-    "full_text": "3.8 Million Impacted by Unlimited Technology Systems Data Breach\n\nHackers stole personal, medical, and health insurance information from a company’s data center.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nUnlimited Technology Systems is notifying over 3.8 million individuals that their personal information was stolen in a data breach.\nBased in Montgomery, Ohio, Unlimited provid"
-   },
-   {
-    "tr_title": "Siber Suçluların Yapay Zeka Kaynaklarını Çalmak İçin Token Jacking Yapması",
-    "paragraph": "Unit 42 araştırmacıları, geliştiricilerin yapay zeka platformlarına erişmek için kullandığı API anahtarlarının çalınmasıyla sonuçlanan ve token jacking olarak adlandırılan vakalarda artış tespit etmiştir. Siber suçluların, çalınan bu anahtarları kullanarak yüksek maliyetli yapay zeka işlem gücüne ücretsiz erişim sağladığı veya bu erişimi yasa dışı pazarlarda sattığı belirtilmektedir. Bazı vakalarda, sızdırılan kimlik bilgilerinin dakikalar içinde kötü amaçlı sistemlere entegre edildiği ve tespit",
-    "title": "Token Jacking: Cybercriminals Could Be Stealing Your AI Resources",
-    "full_text": "Threat Research Center\n\nToken Jacking: Cybercriminals Could Be Stealing Your AI Resources\n\nPublished:August 6, 2026\n\nCategories:MalwareThreat Research\n\nTags:AI APIAI gatewayAPI keysNpm packagesObfuscationToken jackingTransfer stations\n\nIt’s three a.m., do you know what your AI agent is doing? Unit 42 has responded to a growing number of AI token jacking cases resulting in staggering financial loss"
-   },
-   {
-    "tr_title": "Çin'in Palo Alto Networks Ürünlerine Güvenlik İncelemesi Başlatması",
-    "paragraph": "Çin Siber Uzay İdaresi (CAC), Palo Alto Networks tarafından sunulan ürünlere yönelik kapsamlı bir güvenlik incelemesi başlattığını duyurmuştur. Kurum tarafından yapılan açıklamada, söz konusu incelemenin kritik bilgi altyapılarının güvenli işleyişini sağlamak, siber güvenlik risklerini önlemek ve ulusal güvenliği korumak amacıyla gerçekleştirildiği belirtilmiştir. Palo Alto Networks sözcüsü, şirketin küresel operasyonlarında en yüksek iş ahlakı ve güvenlik standartlarını koruduğunu ve bölgedeki ",
-    "title": "China launches mysterious probe into security of Palo Alto Networks' products",
-    "full_text": "China launches mysterious probe into security of Palo Alto Networks' products\n\nBeijing’s not saying why, which is just what happened when it investigated Micron\n\nChina’s Cyberspace Administration (CAC) has conducted a review of Palo Alto Networks’ products.\n\nThe regulator’s announcement of its review says it’s needed “to ensure the safe and stable operation of critical information infrastructure, "
-   },
-   {
-    "tr_title": "Brezilya Sağlık Gözetim Sisteminde Veri Sızıntısı Yaşanması",
-    "paragraph": "Brezilya Sağlık Gözetim Bilgi Sistemi'ne (SISVISA) ait bir veri tabanının, herhangi bir kimlik doğrulama veya şifreleme mekanizması olmaksızın internete açık kaldığı tespit edilmiştir. Güvenlik araştırmacısı Jeremiah Fowler tarafından ortaya çıkarılan bu durumun, yaklaşık 79 GB boyutunda 102.215 dosyayı etkilediği bildirilmiştir. Sızan veriler arasında vatandaşların tam adları, ev adresleri, telefon numaraları, vergi kimlik numaraları, sürücü belgeleri ve parmak izi taramaları gibi hassas bilgil",
-    "title": "Exposed SISVISA Database Leaks 102,000 Brazilian Health Surveillance Records",
-    "full_text": "Exposed SISVISA Database Leaks 102,000 Brazilian Health Surveillance Records\n\nAn exposed SISVISA database leaked 102,215 Brazilian health records, exposing IDs, tax data, and regulatory documents without authentication.\n\nResearcher Jeremiah Fowler found a publicly accessible database that turned out to belong to SISVISA, Brazil’s Health Surveillance Information System, and alerted ExpressVPN, whic"
-   },
-   {
-    "tr_title": "Birleşik Krallık'taki Hayır Kurumlarının Siber Saldırıya Uğraması",
-    "paragraph": "Hayır kurumlarına yönelik yazılım hizmeti sunan Beacon CRM, sistemlerine düzenlenen bir siber saldırı sonucunda müşteri veri tabanı yedeklerinin çalındığını doğrulamıştır. Şirket, 1.500'den fazla müşterisine yönelik yaptığı uyarıda, platformda saklanan tüm verilerin yetkisiz üçüncü taraflarca indirilmiş olabileceğini belirtmiştir. Saldırıdan etkilenen kurumlar arasında Molly Rose Foundation ve English National Ballet gibi kuruluşların bulunduğu, destekçi ve bağışçıların kimlik bilgilerinin sızdı",
-    "title": "UK charities count the cost of Beacon CRM cyberattack",
-    "full_text": "UK charities count the cost of Beacon CRM cyberattack\n\nDatabase backups likely stolen, potentially exposing donor, supporter, and service user details\n\nBeacon CRM has confirmed it was hit by a cyberattack that exposed data belonging to a growing list of UK charities.\n\nThe company, which markets its software to charities and has more than 1,500 customers, said its investigation remains ongoing. How"
-   },
-   {
-    "tr_title": "Palo Alto Networks Araştırmacısının ChatGPT Sandbox Kontrolünü Ele Geçirmesi",
-    "paragraph": "Palo Alto Networks kıdemli güvenlik araştırmacısı Simcha Kosman, Black Hat USA 2026 konferansında ChatGPT'nin izole edilmiş güvenli sandbox ortamını ele geçiren bir kavram kanıtlama saldırısı sunmuştur. Araştırmacı, iPhone ve Mac cihazlarında URL tabanlı komutların otomatik olarak yürütülmesinden yararlanarak kurbanın ChatGPT oturumuna kötü amaçlı kod enjekte etmiştir. Bu yöntemle, ChatGPT'nin düşünme sürecinde kullandığı Python ortamının yamalandığı ve Google Drive ile Gmail gibi araçlardan ver",
-    "title": "Researcher Claims Control of ChatGPT Secure Sandbox",
-    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nResearcher Claims Control of ChatGPT Secure Sandbox\n\nA researcher demonstrated a proof-of-concept attack chain that provided C2-style influence over ChatGPT's isolated sandbox during a session at Black Hat USA 2026.\n\nBlack Hat USA 2026 "
-   },
-   {
-    "tr_title": "Ağ Adresi Çevirisi Protokolünde NatJack Zafiyet Sınıfının Keşfedilmesi",
-    "paragraph": "Araştırmacı Malcolm Stagg, Black Hat USA 2026 konferansında ağ adresi çevirisi (NAT) altyapılarındaki tasarım kusurlarını istismar eden 'NatJack' adlı yeni bir saldırı sınıfını duyurmuştur. Bu zafiyetin, saldırganların aynı NAT sınırını paylaşan kurbanların aktif bağlantılarını ele geçirmesine, DNS yanıtlarını zehirlemesine ve hizmet dışı bırakma saldırıları düzenlemesine olanak tanıdığı belirtilmiştir. Yapılan testlerde, Windows, Linux ve macOS dahil olmak üzere incelenen 32 ürünün tamamının bu",
-    "title": "NatJack exploits put NAT security assumptions to the test at Black Hat",
-    "full_text": "NatJack attack class exposes design flaw across decades of network infrastructure.\n\nFor decades, Network Address Translation (NAT) has been the default way IP addresses are provided inside larger networks, as a means to deal with the challenges of IPv4 address availability.\n\nThe basic premise behind NAT is that private addresses stay private, but that assumption might not be entirely accurate anym"
-   },
-   {
-    "tr_title": "CryptoJS Kütüphanesindeki Zafiyetin Milyonlarca Dolarlık Kayba Yol Açması",
-    "paragraph": "Güvenlik firması Coinspect, CryptoJS kütüphanesindeki zayıf rastgele sayı üretecinden kaynaklanan bir açık nedeniyle kripto para cüzdanlarından yaklaşık 5,7 milyon dolar çalındığını açıklamıştır. Ill Bloom olarak adlandırılan bu saldırı dalgasının, kurtarma ifadelerinin oluşturulmasında yetersiz entropi sağlayan bir fonksiyondan kaynaklandığı belirtilmiştir. Yapılan incelemelerde RRWallet, Bexo Wallet, NanChat, Bitcoin Libre ve Milo isimli beş uygulamanın bu zafiyetten etkilendiği tespit edilmiş",
-    "title": "CryptoJS Weak RNG Behind $5.7 Million in Drains Affects Five Crypto Wallet Apps",
-    "full_text": "Coinspect has identified CryptoJS.lib.WordArray.random() as the weak random number generator behind the Ill Bloom wallet drains.\n\nIntroduced in the JavaScript cryptography library 12 years ago, the function supplied weak entropy that affected wallet apps used to generate recovery phrases. Coinspect's on-chain analysis puts the measured theft across two sweeps since late May at a lower bound of rou"
-   },
-   {
-    "tr_title": "Cisco'nun Kritik SD-WAN ve IOS XE Açıklarını Yamalaması",
-    "paragraph": "Cisco, Catalyst SD-WAN ve IOS XE yazılımlarını etkileyen, üçü 9.9 CVSS puanına sahip toplam 12 güvenlik zafiyetini gidermek amacıyla güncellemeler yayımlamıştır. Şirket tarafından yapılan açıklamada, söz konusu açıkların dahili güvenlik testleri ve yapay zeka modelleri kullanılarak tespit edildiği, henüz aktif bir istismarın bilinmediği bildirilmiştir. Özellikle Catalyst SD-WAN yazılımındaki CVE-2026-20303, CVE-2026-20304 ve CVE-2026-20310 kodlu açıkların kritik seviyede olduğu kaydedilmiştir. A",
-    "title": "Cisco Patches 12 SD-WAN and IOS XE Flaws, Including Three 9.9 CVSS Score Bugs",
-    "full_text": "Cisco has rolled out updates to address multiple critical security vulnerabilities impacting Catalyst SD-WAN and IOS XE Software as part of a comprehensive internal security review.\n\nThe security issues affect Cisco Catalyst SD-WAN Software, regardless of device configuration, and Cisco IOS XE Software when it is running in autonomous or controller mode.\n\n\"These vulnerabilities were found during i"
-   },
-   {
-    "tr_title": "İşlemcilerde Spectre v2 Korumalarını Atlayan Yeni Saldırı Yöntemi",
-    "paragraph": "MIT CSAIL araştırmacıları, Intel ve AMD işlemcilerdeki Spectre v2 savunmalarını etkisiz hale getiren 'Interrupt Injection' adlı yeni bir saldırı tekniği keşfetmiştir. Bu yöntemin, işlemcinin dallanma tahmincisini temizlemesi ile çekirdeğin bu tahminciyi kullanması arasındaki milisaniyelik boşluğa donanım kesintisi enjekte ederek korumayı bozduğu belirtilmiştir. Araştırmacılar, AMD Zen 2 mimarisine sahip bir sistemde tüm savunmalar açıkken kernel belleğinden saniyede 5.47 bayt hızla veri sızdırma",
-    "title": "New Interrupt Injection Attack Can Bypass Spectre v2 Defenses on Intel and AMD CPUs",
-    "full_text": "An unprivileged Linux program can time a hardware interrupt to land in the gap between a processor sanitizing its branch predictor and the kernel using it, re-poisoning the predictor after the defense has run.\n\nMIT CSAIL researchers Daniël Trujillo and Mengjia Yan named the technique INTERRUPT INJECTION. On an AMD Zen 2 machine running Linux 6.14 with every default Spectre v2 mitigation on, their "
-   },
-   {
-    "tr_title": "KARR Araç Güvenlik Sistemlerinde Kritik Zafiyetlerin Tespiti",
-    "paragraph": "UC San Diego araştırmacıları, ABD genelinde yaklaşık 2 milyon araçta yüklü olan KARR Güvenlik Sistemi adlı araç alarm modelinde ciddi güvenlik açıkları bulmuştur. Bluetooth menzilindeki herhangi bir saldırganın, araçlara radyo komutları göndererek kapıları sessizce açabildiği, alarmı devre dışı bırakabildiği ve kornayı çalabildiği tespit edilmiştir. Daha kritik bir bulgu olarak, saldırganların aracın ateşleme sistemini engelleyerek sürücüyü yolda bırakabileceği ifade edilmiştir. Araştırmacılar, ",
-    "title": "Vulnerabilities in Car Anti-Theft Device",
-    "full_text": "# [Schneier on Security](https://www.schneier.com/)\n\n[Menu](https://www.schneier.com/blog/archives/2026/08/vulnerabilities-in-car-anti-theft-device.html#)\n\n*   [Blog](https://www.schneier.com/)\n*   [Newsletter](https://www.schneier.com/crypto-gram/)\n*   [Books](https://www.schneier.com/books/)\n*   [Essays](https://www.schneier.com/essays/)\n*   [News](https://www.schneier.com/news/)\n*   [Talks](htt"
-   },
-   {
-    "tr_title": "Yapay Zeka Ajan Çerçevelerinde Kritik Güvenlik Kusurları",
-    "paragraph": "Check Point araştırmacıları, işletmelerin yapay zeka uygulamaları geliştirmek için kullandığı popüler ajan çerçevelerinde 11 adet güvenlik zafiyeti tespit etmiştir. LangChain, LangGraph, CrewAI ve Microsoft Agent Framework gibi platformlarda bulunan bu açıkların, saldırganların güvenilmeyen içerikleri sistemin karar mekanizmalarına sızdırmasına izin verdiği belirtilmiştir. Araştırmacılar, Microsoft Agent Framework üzerinde uzaktan kod yürütülmesine olanak tanıyan kritik bir 'insecure deserializa",
-    "title": "Prompt injection isn't the bug, AI agent frameworks are",
-    "full_text": "Prompt injection isn't the bug, AI agent frameworks are\n\nCheck Point researchers tried to break the frameworks enterprises use to build AI apps. Now they're telling Black Hat attendees what they found\n\nNearly a dozen flaws, some critical, in major AI agent frameworks that enterprises use to build apps reveal a security failure that extends beyond prompt injection - or any single model - according "
-   },
-   {
-    "tr_title": "Linux KVM Sistemlerinde Zapscape Zafiyetiyle Ana Makineye Sızılması",
-    "paragraph": "Linux çekirdeğinde tespit edilen ve 'Zapscape' olarak adlandırılan CVE-2026-64561 kodlu zafiyetin, saldırganların sanal makine izolasyonunu aşarak ana makinede (host) kod yürütmesine olanak tanıdığı bildirilmiştir. Araştırmacı Hyunwoo Kim tarafından keşfedilen bu hatanın, KVM'nin gölge bellek yönetim birimindeki (shadow MMU) bir 'use-after-free' kusurundan kaynaklandığı belirtilmiştir. Zafiyetin, özellikle iç içe sanallaştırma (nested virtualization) özelliğinin kullanıldığı ortamlarda risk oluş",
-    "title": "New Zapscape KVM Flaw Could Let Privileged L1 Guest Code Escape to Linux Hosts",
-    "full_text": "Zapscape, a new Linux kernel vulnerability, could allow an attacker with kernel privileges inside an L1 guest virtual machine (VM) to escape KVM isolation and execute code on the host. The risk applies when nested virtualization is exposed to untrusted guests.\n\nThe flaw is tracked as CVE-2026-64561 and affects KVM/x86's shadow memory management unit (MMU), which manages shadow page tables used for"
-   },
-   {
-    "tr_title": "Papyrus Operasyonu İle Mobil Uygulamalarda Reklam Dolandırıcılığı Yapılması",
-    "paragraph": "IAS Threat Lab araştırmacıları, Papyrus olarak adlandırılan ve roman okuma uygulamalarını kullanan yeni bir mobil reklam dolandırıcılığı şemasını tespit etmiştir. BootNova adlı bir yönetim katmanı üzerinden çalışan sistemin, kullanıcılar uygulama içinde vakit geçirirken arka planda gizli tarayıcı pencereleri açtığı ve sahte trafik oluşturduğu belirtilmiştir. Komuta kontrol altyapısı üzerinden yapılandırılan sistemin, 800'den fazla alan adını ve yaklaşık 8.000 benzersiz ana bilgisayar adını hedef",
-    "title": "Novel-reading apps used users’ phones to generate fake ad traffic",
-    "full_text": "Novel-reading apps used users’ phones to generate fake ad traffic\n\nA new mobile ad fraud scheme, dubbed Papyrus, is using a cluster of novel-reading apps to generate hidden browser traffic, according to IAS Threat Lab.\n\nSample novel-reading apps associated with Papyrus (Source: IAS Threat Lab)\n\nWhile a person taps through chapters of a romance or fantasy story, the app is quietly loading websites "
-   },
-   {
-    "tr_title": "Avustralyalı Updoc Şirketinde Üçüncü Taraf Kaynaklı Veri İhlali",
-    "paragraph": "Avustralya merkezli teletıp sağlayıcısı Updoc, dış kaynaklı bir operasyonel sistem üzerinden müşteri iletişim bilgilerinin yetkisiz erişime maruz kaldığını açıklamıştır. 7 Ağustos 2026 tarihinde duyurulan olayda, 31 Temmuz 2026 tarihinde tespit edilen sızıntının kullanıcıların isim, e-posta ve posta adresi bilgilerini kapsadığı belirtilmiştir. Şirket, tıbbi kayıtların, finansal verilerin veya ödeme bilgilerinin bu ihlalden etkilenmediğini ve dahili sistemlere herhangi bir erişim sağlanmadığını i",
-    "title": "Updoc Data Breach Exposes Patient Contact Information Following Third-Party Security Incident",
-    "full_text": "The Updoc data breach has raised fresh concerns about cybersecurity in Australia's healthcare sector after the telehealth provider confirmed that an unauthorized third party may have accessed customer contact information through an external system. \n \n\n\nThe data breach at Updoc, disclosed on August 7, stemmed from a brief security incident involving a third-party platform that supports the company"
-   },
-   {
-    "tr_title": "Nextcloud Sunucu ve E-posta Uygulamalarında Zafiyetlerin Giderilmesi",
-    "paragraph": "Nextcloud sunucu ve e-posta uygulamalarında, veri gizliliğinin ihlaline ve güvenlik politikalarının atlatılmasına yol açan açıklar tespit edilmiştir. 6 Ağustos 2026 tarihinde yayımlanan rapora göre, Nextcloud Server'ın 32.0.12, 33.0.6 ve 34.0.1 öncesi sürümleri ile Mail uygulamasının çeşitli alt sürümlerinin risk altında olduğu belirtilmiştir. Özellikle CVE-2026-61527 ve CVE-2026-61545 referanslı açıkların, yetkisiz kişilerin hassas verilere erişmesine imkan tanıdığı ifade edilmiştir. Geliştiric",
-    "title": "Multiples vulnérabilités dans les produits Nextcloud (06 août 2026)",
-    "full_text": "Atteinte Ã  la confidentialitÃ© des donnÃ©es\n\nContournement de la politique de sÃ©curitÃ©\n\nMail versions 3.5.x Ã  3.7.x antÃ©rieures Ã  3.7.25\n\nMail versions 4.x et 5.x antÃ©rieures Ã  5.5.16\n\nMail versions 5.6.x antÃ©rieures Ã  5.6.20\n\nMail versions 5.7.x antÃ©rieures Ã  5.7.13\n\nServer versions 32.0.10 Ã  32.0.x antÃ©rieures Ã  32.0.12 pour nextcloud et nextcloud enterprise\n\nServer versions 33.0."
-   },
-   {
-    "tr_title": "Yapay Zeka Destekli Tavsiye Zehirlemesi Yönteminin Tespit Edilmesi",
-    "paragraph": "Microsoft Security, ticari web sitelerinde yayılmaya başlayan ve yapay zeka asistanlarının belleklerini manipüle eden AI Recommendation Poisoning adlı yeni bir saldırı türünü raporlamıştır. Bu yöntemde saldırganların, web sitelerindeki düğmelere gizli komutlar yerleştirerek kullanıcıların ChatGPT veya Gemini gibi asistanlarına belirli alan adlarını kalıcı olarak güvenilir kaynak kaydetmesini sağladığı belirtilmiştir. Araştırmacılar, 14 farklı sektörden 31 şirketin bu tekniği kullanarak yapay zek",
-    "title": "AI Recommendation Poisoning: How \"Ask AI\" Buttons Silently Alter LLM Memory",
-    "full_text": "A new class of prompt injection is spreading across commercial websites. It requires no malware, no stolen credentials, and no zero-day exploit. It abuses a standard feature built into almost every major AI assistant: pre-filled deep links.\n\nWe observed production websites embedding hidden prompt injection payloads inside \"Ask AI\" buttons on marketing and competitor comparison pages. When a user l"
-   }
-  ]
- },
- {
   "date": "2026-08-08",
   "views": [
    {
@@ -924,6 +793,71 @@
     "paragraph": "ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Metabase, Microsoft Windows ve Cisco Secure Firewall ürünlerinde bulunan üç yeni zafiyeti Bilinen İstismar Edilen Zafiyetler (KEV) kataloğuna eklemiştir. Cisco yazılımlarındaki CVE-2026-20349 kodlu açığın, saldırganların cihazları çökerterek hizmet dışı bırakma saldırıları düzenlemesine yol açtığı belirtilmiştir. Windows çekirdek sürücüsündeki CVE-2026-68820 kodlu hatanın ise sistem düzeyinde yetki yükseltilmesine imkan tanıdığı ve aktif ola",
     "title": "U.S. CISA adds Metabase, Windows, and Cisco Secure Firewall flaws to its Known Exploited Vulnerabilities catalog",
     "full_text": "U.S. CISA adds Metabase, Windows, and Cisco Secure Firewall flaws to its Known Exploited Vulnerabilities catalog\n\nU.S. Cybersecurity and Infrastructure Security Agency (CISA) adds Metabase, Windows, and Cisco Secure Firewall flaws to its Known Exploited Vulnerabilities catalog.\n\nThe U.S. Cybersecurity and Infrastructure Security Agency (CISA) added the following vulnerabilities to its Known Exploi"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-15",
+  "views": [
+   {
+    "tr_title": "Enerji Devi Shell'in Clop Fidye Yazılımı Saldırısını Soruşturması",
+    "paragraph": "İngiliz enerji şirketi Shell, Clop fidye yazılımı çetesinin 89 GB boyutunda veri çaldığı iddiaları üzerine bir güvenlik incelemesi başlatmıştır. Saldırganların, şirkete ait mühendislik çizimleri, tesis test raporları ve proje planlarını ele geçirdiklerini iddia ederek verileri karanlık web platformunda listelediği bildirilmiştir. Shell sözcüsü, güvenlik ekiplerinin ve uzmanların olası olayı araştırdığını teyit etmiştir. Clop çetesinin, PTC Windchill ve FlexPLM yazılımlarındaki CVE-2026-12569 kod",
+    "title": "Shell investigates 'potential incident' after Clop data theft claims",
+    "full_text": "Oil giant Shell has confirmed it is investigating a potential security incident after the Clop ransomware gang claimed it stole 89GB of data.\n\nShell is a British multinational energy conglomerate and one of the world's top three oil and gas companies, after Chevron and ExxonMobil. It has 85,000 employees in more than 70 countries and operates a massive network of tens of thousands of service and r"
+   },
+   {
+    "tr_title": "Fransa Vergi Dairesinden İki Milyon Mükellefin Verisinin Çalınması",
+    "paragraph": "Fransa Kamu Finansmanı Genel Müdürlüğü (DGFiP), 'ZeroBytes' takma adlı bir saldırganın Haziran 2026 sonunda sistemlerine sızarak 2 milyon mükellefe ait veriyi ele geçirdiğini doğrulamıştır. Kimlik hırsızlığı ve MFA mekanizmasının atlatılmasıyla gerçekleşen ihlalde, hem bireylerin hem de profesyonellerin verileri sızdırılmıştır. Saldırganın sistemlere erişiminin sürdüğü yönündeki iddiaları reddeden kurum, erişimin kesildiğini ve CNIL'e bildirim yapıldığını açıklamıştır. Bu olay; 15,8 milyon tıbbi",
+    "title": "French tax authority admits data heist after crook touts 2M records",
+    "full_text": "French tax authority admits data heist after crook touts 2M records\n\nGovernment disputes claims of continued access as investigators measure damage\n\nFrance's tax authority has confirmed that an intruder accessed its systems and extracted data in June after an alleged cybercriminal advertised a purported database of 2 million taxpayers.\n\nUsing the alias \"ZeroBytes,\" the alleged crook behind the att"
+   },
+   {
+    "tr_title": "Commerzbank Müşterilerini Hedef Alan 30 Milyon Avroluk Vurgun",
+    "paragraph": "Brezilya ve Alman federal polis teşkilatları, Commerzbank müşterilerinin hesaplarından yaklaşık 30 milyon avro çalan bir siber suç şebekesine yönelik ortak operasyon düzenlemiştir. 'Klonen Operasyonu' kapsamında Brezilya'da dört kişi tutuklanırken, Avrupa'da üç şüpheli hakkında suç duyurusunda bulunulmuştur. Saldırganların, bir hizmet sağlayıcının ödeme sistemindeki yazılım güncellemesi hatasından kaynaklanan bir güvenlik açığını istismar ederek Kasım 2023'te dört gün boyunca yetkisiz para çekme",
+    "title": "Hackers arrested over €30M bank fraud exploiting service provider flaw",
+    "full_text": "Four cybercriminals were arrested in Brazil, and three others were charged in Europe over allegations that they exploited a vulnerability at a service provider, allowing them to withdraw funds from Commerzbank customers’ bank accounts.\n\nThe theft, investigated by the Brazilian and German federal police agencies, occurred over four days in November 2023 and caused losses of around €30 million ($34."
+   },
+   {
+    "tr_title": "Apple'ın Yüzlerce Kullanıcıyı Casus Yazılım Saldırılarına Karşı Uyarması",
+    "paragraph": "Apple, 110 ülkedeki yüzlerce kullanıcısına gönderdiği yeni tehdit bildirimleriyle, bu kişilerin paralı asker tipi casus yazılımlar tarafından hedef alınmış olabileceği konusunda kritik bir uyarı yayınlamıştır. 2021'den bu yana 150'den fazla ülkede benzer bildirimler yapan şirket; gazeteciler, aktivistler, diplomatlar ve avukatlar gibi hassas veriye sahip kişilerin hedef alındığını belirtmiştir. Milyonlarca dolarlık maliyete sahip bu sofistike saldırılara karşı Apple, kullanıcıların account.apple",
+    "title": "Apple warned hundreds of users of mercenary spyware attacks",
+    "full_text": "Apple warned hundreds of users of mercenary spyware attacks\n\nApple warns users of credible, targeted attacks and urges immediate verification, stronger protections, and expert assistance.\n\nApple has sent a new round of threat notifications to users it believes may have been singled out by mercenary spyware. The company told TechCrunch the latest alerts reached people in 110 countries, adding to no"
+   },
+   {
+    "tr_title": "macOS Ekran Paylaşımı Açığıyla Monero Madenciliği Yapılması",
+    "paragraph": "Hollanda Ulusal Siber Güvenlik Merkezi (NCSC), macOS işletim sistemindeki bir kimlik doğrulama atlama açığının siber saldırganlar tarafından aktif olarak istismar edildiği konusunda uyarıda bulunmuştur. CVE-2026-65400 kodlu açığın, macOS Ekran Paylaşımı özelliğindeki bir hata nedeniyle saldırganların geçerli kimlik bilgileri olmadan sistemlere erişmesine olanak tanıdığı belirtilmiştir. İnternete açık 5900 numaralı port üzerinden gerçekleştirilen saldırılarda, kurbanların cihazlarına root erişimi",
+    "title": "Hackers exploit macOS Screen Sharing flaw to deploy Monero miner",
+    "full_text": "The Netherlands’ National Cyber Security Centre (NCSC) is warning that hackers are actively exploiting a macOS authentication bypass vulnerability after public exploit code emerged.\n\nThe security issue lies in macOS Screen Sharing, a built-in remote desktop feature that allows remote desktop control over a network, using the VNC protocol over TCP port 5900.\n\nApple fixed CVE-2026-65400 on August 6 "
+   },
+   {
+    "tr_title": "AmnesiaStealer Zararlı Yazılımının macOS Sistemlerini Hedeflemesi",
+    "paragraph": "macOS işletim sistemlerini hedef alan AmnesiaStealer isimli yeni bir zararlı yazılımın, kullanıcı verilerini çaldığı ve tarayıcı oturumlarını uzaktan kontrol ettiği tespit edilmiştir. Jamf tarafından yapılan analizlerde, zararlı yazılımın Chrome DevTools Protokolü'nü (CDP) kullanarak tarayıcının gizli bir kopyasını başlattığı ve saldırganlara kurbanın oturumu üzerinde tam kontrol sağladığı bildirilmiştir. Operatörlerin, saniyede yaklaşık 3 kare hızında canlı ekran görüntüsü alabildiği ve klavye,",
+    "title": "AmnesiaStealer macOS Malware Steals Data, Controls Browser Sessions",
+    "full_text": "AmnesiaStealer macOS Malware Steals Data, Controls Browser Sessions\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nThe final stream module, which is executed on demand, is an interactive remote-control component that uses the Chrome DevTools Protocol (CDP) to launch a headless copy of the browser, creating a relay channel through which the attacker can control the victim’s browser "
+   },
+   {
+    "tr_title": "SAP Commerce Cloud Platformundaki Kritik Açığın İstismar Edilmesi",
+    "paragraph": "SAP Commerce Cloud platformunda tespit edilen ve CVE-2026-58231 koduyla izlenen en yüksek öncelikli uzaktan kod yürütme zafiyetinin aktif saldırılarda kullanıldığı bildirilmiştir. Tehdit istihbaratı kuruluşu Defused, yamanın yayınlanmasından yalnızca üç gün sonra bal küpü sistemlerine yönelik ilk istismar girişimlerinin başladığını duyurmuştur. Söz konusu zafiyetin, Data Hub Adapter eklentisindeki yetkilendirme hatasından kaynaklandığı ve düşük karmaşıklıktaki saldırılarla kimlik doğrulaması yap",
+    "title": "Max severity SAP Commerce Cloud flaw now targeted in attacks",
+    "full_text": "A maximum-severity SAP Commerce Cloud remote code execution vulnerability patched three days ago is already being targeted in attacks, according to threat intelligence company Defused.\n\nCommerce Cloud (formerly known as SAP Hybris) is a cloud-based e-commerce platform used by online stores owned by high-profile global brands and large retailers.\n\nTracked as CVE-2026-58231, this critical flaw stems"
+   },
+   {
+    "tr_title": "Trivy Kaynaklı Tedarik Zinciri Saldırısının Binlerce Kurumu Etkilemesi",
+    "paragraph": "LiteLLM paketlerine yönelik olduğu düşünülen tedarik zinciri saldırısının, aslında Aqua Security'nin Trivy tarayıcısındaki bir zafiyetten kaynaklandığı ve 2.500'den fazla kuruluşu etkilediği bildirilmiştir. SOCRadar tarafından hazırlanan raporda, etkilenen kurumların %95'inin zararlı LiteLLM paketleri yayınlanmadan önce Trivy üzerinden maruz kaldığı tespit edilmiştir. TeamPCP olarak adlandırılan siber tehdit aktörünün, Shai-Hulud solucanını kullanarak kimlik bilgilerini, API anahtarlarını ve giz",
+    "title": "Trivy, Not LiteLLM Behind the 2,500 Org Compromise",
+    "full_text": "Supply Chain Security\n\nTrivy, Not LiteLLM Behind the 2,500 Org Compromise\n\nOver 95% of the affected companies were exposed before the malicious LiteLLM packages were published.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nMost of the 2,500 organizations believed to have been affected by the LiteLLM supply chain attack were actually exposed before, SOCRadar reports.\nThe compromise"
+   },
+   {
+    "tr_title": "İskoçya Savcılık Ofisinde Çalışan Verilerinin Sızdırılması",
+    "paragraph": "İskoçya Kraliyet Ofisi ve Savcılık Servisi (COPFS), bir dış tedarikçinin yaşadığı veri ihlali sonucunda çalışanlarına ait kişisel bilgilerin sızdırıldığını açıklamıştır. İhlalin, ulusal hükümet tarafından düzenlenen ve bir üçüncü tarafça yönetilen veri olgunluğu değerlendirmesi sırasında gerçekleştiği belirtilmiştir. COPFS temsilcisi, yaklaşık 300 çalışanın isim, görev ve iş e-posta adresi bilgilerinin etkilendiğini, ancak dava dosyaları veya tanık bilgilerinin güvende olduğunu ifade etmiştir. G",
+    "title": "Scottish Govt Suffers Potentially Widening Data Breach at Prosecutor's Office",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nCyberattacks & Data Breaches\n\nCybersecurity Operations\n\nBreaking cybersecurity news, news analysis, commentary, and other content from around the world, with an initial focus on the Middle East & Africa, Asia Pacific, Europe, and Latin "
+   },
+   {
+    "tr_title": "RingCentral Veri İhlalinde Milyonlarca Hesabın Etkilenmesi",
+    "paragraph": "Bulut tabanlı iletişim platformu RingCentral'ın, Temmuz ayında gerçekleşen bir siber saldırı sonucunda 1,6 milyon hesabına ait kişisel verilerin çalındığını doğrulanmıştır. Have I Been Pwned servisinin analizlerine göre, siber tehdit aktörü ShinyHunters'ın 623 GB boyutunda veri çaldığı ve fidye ödenmemesi üzerine 280 GB'lık bir arşivi sızdırdığı belirtilmiştir. Sızdırılan veriler arasında kullanıcı isimleri, e-posta adresleri, telefon numaraları ve fiziksel adreslerin yer aldığı ifade edilmiştir",
+    "title": "RingCentral data breach exposed info of 1.6 million accounts",
+    "full_text": "The ShinyHunters extortion group stole personal information from 1.6 million RingCentral accounts after hacking the company in July, according to the data breach notification service Have I Been Pwned.\n\nRingCentral is a cloud-based collaboration and communication platform used by over 600,000 businesses for services such as calling, messaging, and voicemail.\n\nThe company disclosed the incident on "
    }
   ]
  }
