@@ -30886,3 +30886,43 @@ SAP Commerce Cloud platformunda tespit edilen ve CVE-2026-58231 koduyla izlenen 
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 16 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] APT36 Grubunun PATCHCORD Casusluk Kampanyasını Yürütmesi
+─────────────────────────────────────────────────────────
+Acronis Tehdit Araştırma Birimi, Afgan telekomünikasyon sağlayıcılarını ve Güney Asya'daki kritik altyapıları hedef alan PATCHCORD adlı yeni bir C/C++ arka kapı tespit etmiştir. Pakistan bağlantılı APT36 ile ilişkilendirilen bu operasyonda, Afgan Telecom (AFTEL) ve Hindistan Ulusal Bilişim Merkezi (NIC) gibi kurumları taklit eden sahte VPN yükleyicileri kullanılmaktadır. Saldırganlar, tarayıcı kısayollarını ele geçirerek sistemde kalıcılık sağlarken, Google Sheets API'sini komuta merkezi olarak kullanan SHEETCORD adlı Go tabanlı bir yazılım ve GitHub Gists üzerinden haberleşen, yapay zeka destekli HACKERAI adlı bir ajan daha geliştirmiştir. Operatörün açık bıraktığı sunucuda SuperShell çerçevesi, kimlik bilgisi toplama araçları ve iOS çağrı geçmişi verileri bulunmuştur. Çalınan verilerin kurumsal ağ trafiği içinde gizlenmesi, saldırının tespitini zorlaştırmaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 16.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] ChainDrop Solucanının Npm Tedarik Zincirine Sızması
+─────────────────────────────────────────────────────────
+Eylül 2025'te tespit edilen Shai-Hulud npm solucanının ChainDrop adlı yeni varyantı, 444 paketi zehirleyerek açık kaynak ekosistemine sızmıştır. Microsoft ve ActiveState araştırmacıları, saldırganların geleneksel savunmaları aşmak için kaynak kod taahhütleri yerine tarball arşivlerini kullandığını bildirmiştir. Ayda 2 milyar kez indirilen keyv, flat-cache ve cache-manager gibi kritik altyapı bağımlılıklarını hedef alan yazılım, VS Code veya Claude Code gibi araçlarda enfekte bir dalın açılmasıyla tetiklenmektedir. Sistemdeki npm jetonlarını, bulut anahtarlarını ve GitHub kimlik bilgilerini ele geçiren solucan, .vscode/tasks.json gibi yapılandırma dosyalarına sızarak yayılmaktadır. Güvenlik uzmanı Abby Kearns, depo yapılandırmalarının artık yürütülebilir içerik olarak değerlendirilmesi gerektiğini vurgularken, SafeDep tüm enfekte paketlerin listesini yayınlamış ve ilgili paketler npm platformundan temizlenmiştir.
+(XXXXXXX, AÇIK -theregister.com, 15.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] SAP Commerce Cloud CVE-2026-58231 Açığının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+SAP Commerce Cloud platformunda tespit edilen ve CVSS skoru en yüksek seviye olan 10.0 olarak belirlenen CVE-2026-58231 kodlu kritik güvenlik açığı, yama yayınlanmasından sadece üç gün sonra aktif olarak istismar edilmeye başlanmıştır. Defused Cyber araştırmacıları, henüz kamuya açık bir kavram kanıtlama (PoC) kodu bulunmayan bu zafiyetin bal küpü sistemlerine yönelik saldırılarda kullanıldığını raporlamıştır. Yetkisiz bir saldırganın varsayılan kimlik doğrulama istemcisini kötüye kullanarak ve yetersiz doğrulanan fonksiyonlara özel hazırlanmış girdiler göndererek sistemde rastgele kod yürütmesine olanak tanıyan bu açık, iç bileşenlerin güvenliğini tamamen tehlikeye atmaktadır. Uygulamanın gizliliği, bütünlüğü ve kullanılabilirliği üzerinde yüksek etki yaratan saldırıların arkasındaki aktörler henüz netleşmese de, geçmişteki benzer SAP açıklarının UNC5221 ve UNC5174 gibi Çin bağlantılı APT grupları ile fidye yazılımı çeteleri tarafından hedef alındığı bilinmektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 15.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] GeoServer Yazılımındaki Sıfır Gün Açığının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Açık kaynaklı coğrafi veri platformu GeoServer'da bulunan ve henüz yamalanmamış bir sıfır gün açığının, kamuya açıklanmasından saatler sonra istismar edilmeye başlandığı bildirilmiştir. WatchTowr adlı güvenlik firması, SQL enjeksiyonu yoluyla uzaktan kod yürütülmesine olanak tanıyan bu zafiyete yönelik yüzlerce saldırı girişimi kaydedildiğini açıklamıştır. Güvenlik araştırmacısı q1uf3ng tarafından ifşa edilen hatanın, GeoServer'ın belirli filtreleme işlevlerindeki yetersiz veri temizleme sürecinden kaynaklandığı belirtilmiştir. Tehdit aktörlerinin savunmasız sistemleri taramak için bu açığı kullandığı, ancak henüz ileri düzey bir faaliyetin gözlemlenmediği ifade edilmiştir. GeoServer'ın kritik altyapı sektörlerinde yaygın olarak kullanılması nedeniyle, kuruluşların yamalar yayınlanana kadar kamuya açık erişimi kısıtlamaları ve sistemlerini izlemeleri gerektiği konusunda uyarı yapılmıştır.
+(XXXXXXX, AÇIK -securityweek.com, 14.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Evooo1Bot Botnetinin Yönlendiricileri Proxy Düğümlerine Dönüştürmesi
+─────────────────────────────────────────────────────────
+Mirai tabanlı yeni bir modüler Linux botneti olan Evooo1Bot'un, internete açık ağ geçidi cihazlarını hedef alarak SOCKS5 trafik aktarım düğümlerine dönüştürdüğü tespit edilmiştir. Fortinet araştırmacıları, Temmuz ayından bu yana aktif olan botnetin D-Link, NETGEAR ve TP-Link gibi markaların cihazlarındaki bilinen zafiyetleri istismar ettiğini bildirmiştir. Zararlı yazılımın kimlik bilgisi hırsızlığı, SSH kaba kuvvet saldırıları ve dağıtık hizmet dışı bırakma eylemleri gerçekleştirme yeteneğine sahip olduğu belirtilmiştir. Evooo1Bot'un analiz araçlarından kaçınmak için kapsamlı kontroller yaptığı ve sistemde kalıcılık sağlamak için çeşitli yöntemler kullandığı kaydedilmiştir. Saldırganların, ele geçirilen sistemler üzerinden kötü niyetli trafiği gizlemek veya coğrafi kısıtlamaları aşmak amacıyla SOCKS5 modülünü kullandığı ifade edilmiştir. Botnetin, CPU mimarisine uygun 12 farklı sürümle yayıldığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 15.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
