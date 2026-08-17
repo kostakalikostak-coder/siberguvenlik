@@ -26,13 +26,14 @@ HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 # ADAY alternatifleri yaz, workflow'u çalıştır, çıktıdan çalışan varyantı seç.
 # (Örnek geçmiş: Help Net "Exceeded 30 redirects" → /feed/ ile çözüldü.)
 TARGETS = {
-    # --- The Register: 2026-07-28 üretiminde HTTP 403 verdi (önceden çalışıyordu).
-    #     Geçici mi kalıcı mı + çalışan varyant var mı, üretim IP'sinde ölçülüyor.
-    'TheReg (mevcut cyber_crime)': 'https://www.theregister.com/security/cyber_crime/headlines.atom',
-    'TheReg (security)':           'https://www.theregister.com/security/headlines.atom',
-    'TheReg (kök headlines)':      'https://www.theregister.com/headlines.atom',
-    'TheReg (offsite RSS)':        'https://www.theregister.com/security/cyber_crime/headlines.rss',
-    'TheReg (feed yolu)':          'https://www.theregister.com/security/feed/',
+    # --- The Hacker News: 14→17 Ağu koşularında pencere dışı madde sayısı
+    #     8 → 16 → 33 → 40 diye tırmandı ve 17 Ağu'da kaynak HİÇ üretmedi
+    #     (14 Ağu'da 32 haber vermişti — en verimli kaynak). Bu tırmanış
+    #     "feed donmuş, pencere kayıyor" desenidir; feedburner aynası mı
+    #     bayat, yoksa yayın mı durdu — üretim IP'sinde ölçülüyor.
+    'THN (mevcut feedburner)':     'https://feeds.feedburner.com/TheHackersNews',
+    'THN (blogger doğrudan)':      'https://thehackernews.com/feeds/posts/default',
+    'THN (blogger rss)':           'https://thehackernews.com/feeds/posts/default?alt=rss',
     # --- Kontrol grubu (çalıştığı bilinen kaynaklar) ---
     'BleepingComputer (kontrol)':  'https://www.bleepingcomputer.com/feed/',
     'Help Net Security (kontrol)': 'https://www.helpnetsecurity.com/feed/',
