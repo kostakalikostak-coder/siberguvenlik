@@ -2827,6 +2827,12 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         data/rss_errors.txt zaten bu kayıtları tutuyor:
           "2026-07-28 12:06 | RSS hatası - The Register: HTTP 403"
           "2026-07-28 12:06 | SESSİZ BOŞ - X: 200 OK ama 0 madde"
+          "2026-08-17 12:05 | AKIŞ BAYAT - The Hacker News: 40 madde geldi ama
+                              hepsi pencere dışı (>96s)"
+        AKIŞ BAYAT, bayat ayna (stale mirror) durumudur: feed 200 döner ve madde
+        verir ama en yenisi bile penceredan eski kalır. topla() bunu gördüğü
+        koşuda telafi penceresine geçer; buradaki kayıt SONRAKİ koşuların da
+        geniş pencerede kalmasını sağlar (ayna birkaç gün geriden gelebilir).
         Kaynak adı içermeyen satırlar (TABAN UYARISI) atlanır. Koşu başına bir
         kez hesaplanır. Dosya yoksa/bozuksa boş küme (güvenli taraf: herkes
         normal pencerede kalır).
@@ -2842,7 +2848,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 for line in f:
                     m = re.match(
                         r'^(\d{4}-\d{2}-\d{2}) .*?\|\s*'
-                        r'(?:RSS hatası|SESSİZ BOŞ)\s*-\s*(.+?):', line)
+                        r'(?:RSS hatası|SESSİZ BOŞ|AKIŞ BAYAT)\s*-\s*(.+?):', line)
                     if m and m.group(1) >= cutoff:
                         failed.add(m.group(2).strip())
         except (OSError, UnicodeDecodeError):
@@ -2961,6 +2967,52 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         return art_dt >= cutoff_dt
 
+    def _pencere_filtresi(self, src, articles):
+        """Kaynağın haberlerini zaman penceresine göre süzer (bayat-akış telafili).
+
+        AKIŞ BAYAT: feed 200 döndü, maddeler geldi, ama HEPSİ pencere dışı. Bu
+        "yayın durdu" değil, çoğunlukla aynanın bayat snapshot servis etmesidir:
+        2026-08-14→17'de The Hacker News'in feedburner aynası dört gün geriden
+        geldi; pencere dışı sayısı 8→16→33→40 tırmandı, 17'sinde kaynak HİÇ
+        üretmedi ve o gün en verimli kaynak (14'ünde 32 haber) tamamen kayboldu.
+        Aynı gün 11:18'de aynı URL runner IP'sinden 50 taze madde döndürüyordu,
+        yani yayın kesintisi değildi.
+
+        Mevcut telafi mekanizması bunu GÖRMÜYORDU: rss_errors.txt yalnızca
+        "RSS hatası" ve "SESSİZ BOŞ" biliyor, bayat akış ikisi de değil. Burada
+        hem AYNI koşuda telafi penceresine (168s) geçilir (maddeler elde, ek ağ
+        isteği yok) hem de kayıt düşülür ki sonraki koşular da geniş pencerede
+        kalsın (ayna birkaç gün geriden gelebilir). Kurtarılan eski haberler
+        zaten "daha önce raporlanmış" filtresinden geçtiği için mükerrer riski
+        dedup katmanında kapanır.
+        """
+        cutoff_dt = self._news_cutoff_dt(src)
+        before = len(articles)
+        ham_articles = articles
+        articles = [a for a in articles
+                    if self._article_within_window(a, cutoff_dt)]
+        gecis_penceresi = self._recently_failed_sources()
+        genis_pencerede = (src in self.LOW_CADENCE_SOURCES
+                           or src in gecis_penceresi)
+        if before - len(articles) > 0:
+            win = (self.NEWS_WINDOW_HOURS_RECOVERY if genis_pencerede
+                   else self.NEWS_WINDOW_HOURS)
+            print(f"   └─ 📅 {before - len(articles)} pencere dışı haber atlandı (>{win}s)")
+
+        if not articles and before > 0 and not genis_pencerede:
+            print(f"   └─ 🚨 AKIŞ BAYAT: {before} madde geldi ama hepsi pencere "
+                  f"dışı (>{self.NEWS_WINDOW_HOURS}s) — telafi penceresine "
+                  f"({self.NEWS_WINDOW_HOURS_RECOVERY}s) geçiliyor")
+            self.rss_errors.append(
+                f"AKIŞ BAYAT - {src}: {before} madde geldi ama hepsi "
+                f"pencere dışı (>{self.NEWS_WINDOW_HOURS}s)")
+            gecis_penceresi.add(src)      # sonraki adımlar da geniş pencere görsün
+            genis_cutoff = self._news_cutoff_dt(src)
+            articles = [a for a in ham_articles
+                        if self._article_within_window(a, genis_cutoff)]
+            print(f"   └─ 🩹 Telafi penceresiyle {len(articles)} haber kurtarıldı")
+        return articles
+
     def _filter_old_articles(self, all_news):
         """Pencere dışında (>NEWS_WINDOW_HOURS saat) kalan haberleri filtrele.
 
@@ -3003,16 +3055,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             # (Tarihsiz haberler güvenli tarafta kalıp geçer; son filtrede
             # newsletter'dan türeyen haberler de tarihe göre tekrar elenir.)
             if articles:
-                cutoff_dt = self._news_cutoff_dt(src)
-                before = len(articles)
-                articles = [a for a in articles
-                            if self._article_within_window(a, cutoff_dt)]
-                if before - len(articles) > 0:
-                    win = (self.NEWS_WINDOW_HOURS_RECOVERY
-                           if (src in self.LOW_CADENCE_SOURCES
-                               or src in self._recently_failed_sources())
-                           else self.NEWS_WINDOW_HOURS)
-                    print(f"   └─ 📅 {before - len(articles)} pencere dışı haber atlandı (>{win}s)")
+                articles = self._pencere_filtresi(src, articles)
 
             if articles:
                 # Newsletter URL'lerini ayır: atlamak yerine içlerindeki
@@ -3969,10 +4012,13 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         govde = '\n'.join(_satir(aid) for aid in list(govde_ids)[:12])
         data = self._gemini_call_json(
             get_kritik3_selection_audit_prompt(manset, govde),
-            # 1024: 512 bütçe iki koşuda üst üste aşıldı (08-10, 08-11) ve her
-            # seferinde otomatik yükseltmeyle YENİDEN çağrıldı — yani 512 bir
-            # tasarruf değil, koşu başına fazladan bir LLM çağrısıydı.
-            max_output_tokens=1024, label='Auditor-ManşetSeçim')
+            # 2048: 512 bütçe 08-10/08-11'de aşıldı, 1024'e çıkarıldı; 1024 da
+            # 08-15..08-17 koşularının HER BİRİNDE aşıldı (thinking modelinde
+            # reasoning de bu bütçeden harcanıyor). Her aşım, otomatik
+            # yükseltmeyle fazladan bir LLM çağrısı demek — küçük bütçe tasarruf
+            # değil, koşu başına ek maliyet. Gerçekte kullanılan çıktı bunun çok
+            # altında; tavan yalnızca kesilmeyi önlüyor, token'ı harcamıyor.
+            max_output_tokens=2048, label='Auditor-ManşetSeçim')
         if not isinstance(data, dict):
             return list(top3_ids)
 
@@ -4208,7 +4254,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                          f"Başlık: {tr_title}\nÖzet: {snippet}\n")
         data = self._gemini_call_json(
             get_dedup_review_prompt('\n'.join(lines)),
-            max_output_tokens=512, label=label or 'Auditor-MükerrerDenetimi')
+            # 2048: 512 bütçe 08-15..08-17 koşularında iki kademe birden aştı
+            # (512→1024→2048), yani tek denetim üç LLM çağrısına çıkıyordu.
+            max_output_tokens=2048, label=label or 'Auditor-MükerrerDenetimi')
         if not data:
             return set()
         idset = set(ids)
@@ -6069,7 +6117,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         if qr_lines:
             qr_data = self._gemini_call_json(
                 get_quality_review_prompt('\n'.join(qr_lines)),
-                max_output_tokens=512,
+                # 2048: 512 bütçe 08-15..08-17 koşularında iki kademe birden
+                # aştı (512→1024→2048) — tek kalite kontrolü üç çağrıya çıkıyordu.
+                max_output_tokens=2048,
                 label='Pass5-KaliteKontrol',
             )
 
