@@ -1,34 +1,5 @@
 [
  {
-  "date": "2026-08-09",
-  "views": [
-   {
-    "tr_title": "Head Mare Grubunun TrueConf Sunucularına Arka Kapı Yerleştirmesi",
-    "paragraph": "Head Mare olarak adlandırılan aktivist siber tehdit aktörünün, Rusya'da yaygın olarak kullanılan TrueConf video konferans sunucularındaki yamalanmamış güvenlik açıklarını istismar ettiği tespit edilmiştir. Kaspersky araştırmacıları tarafından Temmuz 2026 döneminde raporlanan saldırılarda, saldırganların kimlik doğrulaması gerektirmeyen TCP portları üzerinden sisteme sızdığı ve PhantomCore ile PhantomGraph arka kapılarını yaydığı belirtilmiştir. Siber tehdit aktörünün, yasal TrueConf istemci yükl",
-    "title": "Hackers breach TrueConf to trojanize client installers with backdoors",
-    "full_text": "The Head Mare hacktivist group has been exploiting vulnerabilities in unpatched TrueConf video conferencing servers to replace client installers with malicious versions that deliver backdoors.\n\nThe exploited vulnerabilities allowed the attacker to execute arbitrary code with the highest level of privileges and deploy the PhantomCore and PhantomGraph backdoors.\n\nTrueConf is a video conferencing too"
-   },
-   {
-    "tr_title": "Atlassian Rovo Yapay Zeka Asistanındaki Kritik Güvenlik Açığının Kapatılması",
-    "paragraph": "Varonis Threat Labs araştırmacıları, DEF CON 34 etkinliğinde Atlassian Rovo yapay zeka asistanında tespit edilen ve RovoBlast olarak adlandırılan kritik bir güvenlik açığını açıklamıştır. Söz konusu açığın, saldırganların özel olarak hazırlanmış bir bağlantı aracılığıyla kullanıcının canlı oturumuna komut enjekte etmesine ve Confluence, Jira ile SharePoint verilerini çalmasına olanak tanıdığı belirtilmiştir. Rovo'nun harici parametreleri güvenilir girdi olarak kabul etmesi nedeniyle, herhangi bi",
-    "title": "Critical One-Click Vulnerability in Atlassian’s Rovo AI Exposed Enterprise Data",
-    "full_text": "Artificial Intelligence\n\nCritical One-Click Vulnerability in Atlassian’s Rovo AI Exposed Enterprise Data\n\nThe RovoBlast attack method identified by Varonis researchers could have been exploited to steal Confluence, Jira and SharePoint data.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nDEF CON — Varonis Threat Labs has disclosed a one-click vulnerability in Rovo, Atlassian’s enter"
-   },
-   {
-    "tr_title": "macOS ClickFix Kampanyasında Parmak İzi Yöntemiyle Zararlı Yazılım Dağıtılması",
-    "paragraph": "Microsoft Tehdit İstihbaratı birimi, macOS kullanıcılarını hedef alan ClickFix kampanyasının, tespit edilmekten kaçınmak için sunucu tarafında tarayıcı parmak izi alma yöntemini kullanmaya başladığını tespit etmiştir. Saldırganların, MacSync ve Atomic Stealer (AMOS) gibi bilgi çalıcı yazılımları dağıtmak amacıyla 250'den fazla sahte alan adı kullandığı belirtilmiştir. Yeni yöntemde, web sayfasının ziyaretçinin gerçek bir macOS ortamı kullanıp kullanmadığını WebGL ve JavaScript rutinleri aracılığ",
-    "title": "From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide",
-    "full_text": "ClickFix moved from open pages to fingerprinting gates\n\nThe fingerprinting gate\n\nMitigation and protection guidance\n\nIndicators of compromise (IOC)\n\nMicrosoft Threat Intelligence observed a macOS ClickFix campaign distributing infostealers, including MacSync and Atomic Stealer (AMOS), through a large cluster of look-alike domains. The campaign evolved from broadly serving ClickFix lures to using a"
-   },
-   {
-    "tr_title": "Yapay Zeka Destekli E-posta Araçlarına Yönelik CSS Saldırı Riskleri",
-    "paragraph": "Siber güvenlik araştırmacısı Gareth Heyes, popüler web posta servislerinde kullanılan CSS stil dilinin, kullanıcı arayüzlerini manipüle etmek ve yapay zeka araçlarını yanıltmak için silahlandırılabileceğini kanıtlamıştır. Araştırma kapsamında, içerik temizleyicilerin onayladığı kodlar ile tarayıcıların işlediği kodlar arasındaki farklar kullanılarak Outlook ve Gmail gibi servislerde güven sınırlarının aşılabildiği belirtilmiştir. Outlook'ta tespit edilen bir yöntemin, açılır menüleri şifre alanı",
-    "title": "Webmail CSS Attacks Expose a New Risk for AI-Powered Email Tools",
-    "full_text": "Webmail CSS Attacks Expose a New Risk for AI-Powered Email Tools\n\nCSS attacks on major webmail services can steal credentials, hijack sessions and manipulate AI tools connected to users’ inboxes.\n\nPortSwigger researcher Gareth Heyes demonstrated something that should make every webmail team a little nervous: plain CSS, the styling language that’s supposed to just make text look nice, can be weapon"
-   }
-  ]
- },
- {
   "date": "2026-08-10",
   "views": [
    {
@@ -774,6 +745,47 @@
     "paragraph": "Mirai tabanlı yeni bir modüler Linux botneti olan Evooo1Bot'un, internete açık ağ geçidi cihazlarını hedef alarak SOCKS5 trafik aktarım düğümlerine dönüştürdüğü tespit edilmiştir. Fortinet araştırmacıları, Temmuz ayından bu yana aktif olan botnetin D-Link, NETGEAR ve TP-Link gibi markaların cihazlarındaki bilinen zafiyetleri istismar ettiğini bildirmiştir. Zararlı yazılımın kimlik bilgisi hırsızlığı, SSH kaba kuvvet saldırıları ve dağıtık hizmet dışı bırakma eylemleri gerçekleştirme yeteneğine s",
     "title": "New Evooo1Bot Linux botnet turns routers into traffic relay nodes",
     "full_text": "A new Mirai-based modular Linux botnet malware called Evooo1Bot has been targeting internet-facing gateway devices, turning them into SOCKS5 traffic relay nodes.\n\nThe malware's capabilities extend beyond turning devices into proxy nodes and include credential theft, SSH brute-forcing, and launching distributed denial-of-service (DDoS) attacks.\n\nSince at least July, Evooo1Bot has been targeting dev"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-17",
+  "views": [
+   {
+    "tr_title": "ABD'li Savunma Üreticisi IEH'ye Yönelik Oltalama Saldırısı",
+    "paragraph": "ABD merkezli savunma ve havacılık üreticisi IEH Corporation, bir çalışanın sahte bir bağlantıya tıklaması sonucu Microsoft 365 e-posta kutusuna yetkisiz erişim sağlandığını duyurmuştur. Şirketin 4 Ağustos 2026 tarihinde tespit ettiği olayda, saldırganın iş ortağı kılığında gönderdiği bağlantı aracılığıyla kimlik bilgilerini ele geçirdiği belirtilmiştir. SEC bildirimine göre, e-postalar, ekler ve potansiyel olarak ihracat kontrolüne tabi askeri verilerin ifşa olduğu ifade edilmiştir. Şirket, sald",
+    "title": "U.S. Defense Manufacturer IEH Hit by Phishing Attack, Exposing Potentially Export-Controlled Data",
+    "full_text": "U.S. Defense Manufacturer IEH Hit by Phishing Attack, Exposing Potentially Export-Controlled Data\n\nIEH was breached by a phishing attack that exposed its Microsoft 365 inbox, including emails and potentially export-controlled military data.\n\nIEH Corporation is a U.S. defense and aerospace manufacturer based in Brooklyn, New York. The company specializes in high-reliability electrical connectors, p"
+   },
+   {
+    "tr_title": "Fortune 500 Şirketlerinin Azure Veri Hırsızlığı Kampanyasından Etkilenmesi",
+    "paragraph": "TheHatman takma adını kullanan bir siber tehdit aktörünün; McDonald’s, Vodafone ve TCS gibi Fortune 500 listesinde yer alan çok sayıda küresel şirketin Azure bulut ortamlarından milyonlarca kaydı ele geçirdiği iddia edilmiştir. Hudson Rock tarafından yapılan incelemede, sızdırılan verilerin çalışan isimleri, kurumsal e-posta adresleri, telefon numaraları ve yüksek yetkili hesap bilgilerini içeren meşru dahili dizinlerden oluştuğu tespit edilmiştir. McDonald’s verilerinin 1,7 milyon kayıtla en bü",
+    "title": "Fortune 500 Companies Hit in Azure Data Theft Campaign",
+    "full_text": "Fortune 500 Companies Hit in Azure Data Theft Campaign\n\nA threat actor is claiming the exfiltration of millions of records from McDonald’s, TCS, Vodafone, and other large organizations.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nA threat actor is selling data allegedly stolen directly from the Azure tenants of several Fortune 500 organizations.\nUsing the moniker ‘TheHatman’, th"
+   },
+   {
+    "tr_title": "SafePal Müşteri Verilerinin Bir Eklenti Açığıyla Ele Geçirilmesi",
+    "paragraph": "Kripto para donanım cüzdanı sağlayıcısı SafePal, sipariş takip işlevindeki bir eklenti hatası ve yapılandırma kusuru nedeniyle 39.798 müşterisinin verilerinin çalındığını duyurmuştur. 2 Mart 2025 ile 11 Nisan 2026 tarihleri arasında sipariş veren kullanıcıların isim, e-posta, adres ve telefon bilgileri bir siber suç forumunda satışa çıkarılmıştır. Şirket, cüzdan tohum ifadeleri, özel anahtarlar ve ödeme bilgilerinin güvende olduğunu belirtirken, etkilenen müşterilere 16 Ağustos'ta bilgilendirme ",
+    "title": "SafePal data breach impacts 39,798 customers, stolen info for sale",
+    "full_text": "Cryptocurrency hardware wallet provider SafePal is warning of a data breach affecting about 39,798 customers after a flaw was exploited to steal customer order information, and a threat actor is now claiming to be selling the stolen data.\n\nSafePal says the breach impacts customers who placed orders between March 2, 2025, and April 11, 2026, exposing their names, email addresses, shipping addresses"
+   },
+   {
+    "tr_title": "Fransa'da Yüz Binlerce Mükellefin Verilerinin Ele Geçirilmesi",
+    "paragraph": "Fransa Vergi Dairesi, sofistike bir siber saldırı sonucunda 678.000 bireysel ve kurumsal mükellefe ait verilerin çalındığını doğrulamıştır. Kamu Maliyesi Genel Müdürlüğü tarafından yapılan açıklamada, çalınan bilgilerin gelir düzeyleri ve vergi oranlarını içerdiği ancak kullanıcı hesaplarına doğrudan erişim sağlamadığı belirtilmiştir. Paris Cumhuriyet Savcılığı siber suçlar biriminin olayla ilgili soruşturma başlattığı ve dosyanın siber suçlarla mücadele ofisi OFAC'a devredildiği ifade edilmişti",
+    "title": "Sophisticated Cyberattack Exposes Data of 678,000 French Taxpayers",
+    "full_text": "Sophisticated Cyberattack Exposes Data of 678,000 French Taxpayers\n\nFrance’s tax agency says hackers stole data on 678,000 taxpayers, including income and tax details, in a sophisticated cyberattack.\n\nA threat actor claimed to have breached France’s tax agency in late June. France’s tax administration confirmed that a cyberattack exposed personal data of 678,000 individuals and businesses, prompti"
+   },
+   {
+    "tr_title": "Güvenli Mesajlaşma Servisi Threema'nın Geniş Ölçekli DDoS Saldırılarına Uğraması",
+    "paragraph": "İsviçre merkezli güvenli mesajlaşma servisi Threema, hafta başında iletişimde ciddi aksamalara neden olan çok sayıda dağıtık hizmet reddi (DDoS) saldırısına maruz kalmıştır. Şirket tarafından yayımlanan analiz raporunda, saldırganın sürekli değişen taktikleri nedeniyle savunma yapmanın zorlaştığı ve hizmetin Salı akşamı ile Çarşamba sabahı arasında geçici olarak kullanılamaz hale geldiği belirtilmiştir. Saldırıların hem Threema altyapısını hem de veri merkezi ortağı Nine'ı hedef aldığı, ancak ke",
+    "title": "Large-scale DDoS attacks disrupted Threema secure messaging service",
+    "full_text": "Multiple distributed denial-of-service (DDoS) attacks targeted the Threema secure messaging service earlier this week, causing severe disruptions to communications.\n\n​Organizations using Threema On-Prem did not experience any issues because they rely on their own infrastructure.\n\nIn a post-mortem report on Friday, the end-to-end encrypted instant messaging service said that the attacks were diffic"
+   },
+   {
+    "tr_title": "RingCentral Müşteri Verilerinin ShinyHunters Tarafından Sızdırılması",
+    "paragraph": "Bulut tabanlı iletişim platformu RingCentral, Temmuz 2026 döneminde gerçekleşen karmaşık bir sosyal mühendislik saldırısı sonucunda sınırlı sayıda müşterisinin etkilendiğini açıklamıştır. Siber tehdit aktörü ShinyHunters, şirketten 623 gigabayt veri çaldığını iddia ederek 280 gigabaytlık bir arşivi Tor tabanlı sızıntı sitesinde yayımlamıştır. HaveIBeenPwned platformu, sızdırılan veriler arasında yaklaşık 1,6 milyon benzersiz e-posta adresi ile isim, adres ve telefon numaralarının bulunduğunu kay",
+    "title": "1.6 Million Likely Impacted by RingCentral Data Breach",
+    "full_text": "1.6 Million Likely Impacted by RingCentral Data Breach\n\nThe hackers published the allegedly stolen information, including names, addresses, email addresses, and phone numbers.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nThe personal information of 1.6 million individuals appears to have been stolen from the widely used business communications platform RingCentral by a notorious "
    }
   ]
  }

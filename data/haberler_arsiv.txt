@@ -30926,3 +30926,50 @@ Mirai tabanlı yeni bir modüler Linux botneti olan Evooo1Bot'un, internete aç�
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 17 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] ABD'li Savunma Üreticisi IEH'ye Yönelik Oltalama Saldırısı
+─────────────────────────────────────────────────────────
+ABD merkezli savunma ve havacılık üreticisi IEH Corporation, bir çalışanın sahte bir bağlantıya tıklaması sonucu Microsoft 365 e-posta kutusuna yetkisiz erişim sağlandığını duyurmuştur. Şirketin 4 Ağustos 2026 tarihinde tespit ettiği olayda, saldırganın iş ortağı kılığında gönderdiği bağlantı aracılığıyla kimlik bilgilerini ele geçirdiği belirtilmiştir. SEC bildirimine göre, e-postalar, ekler ve potansiyel olarak ihracat kontrolüne tabi askeri verilerin ifşa olduğu ifade edilmiştir. Şirket, saldırganın hesapta kalıcılık sağlamak amacıyla kötü amaçlı kurallar oluşturduğunu ancak veri sızıntısının henüz doğrulanmadığını kaydetmiştir. IEH Corporation, olayın ticari operasyonlar üzerinde maddi bir etkisi olmasının beklenmediğini ve incelemelerin sürmekte olduğunu açıklamıştır.
+(XXXXXXX, AÇIK -securityaffairs.com, 16.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Fortune 500 Şirketlerinin Azure Veri Hırsızlığı Kampanyasından Etkilenmesi
+─────────────────────────────────────────────────────────
+TheHatman takma adını kullanan bir siber tehdit aktörünün; McDonald’s, Vodafone ve TCS gibi Fortune 500 listesinde yer alan çok sayıda küresel şirketin Azure bulut ortamlarından milyonlarca kaydı ele geçirdiği iddia edilmiştir. Hudson Rock tarafından yapılan incelemede, sızdırılan verilerin çalışan isimleri, kurumsal e-posta adresleri, telefon numaraları ve yüksek yetkili hesap bilgilerini içeren meşru dahili dizinlerden oluştuğu tespit edilmiştir. McDonald’s verilerinin 1,7 milyon kayıtla en büyük veri setini oluşturduğu, onu 800.000 kayıtla TCS ve 425.000 kayıtla Vodafone'un izlediği bildirilmiştir. Verilerin, bir bilgi hırsızı yazılım kampanyası sonucunda ele geçirilen sızdırılmış kimlik bilgileri kullanılarak dışa aktarıldığı ifade edilmektedir. Uzmanlar, bu verilerin gelecekteki hedefli kimlik avı ve iş e-postası dolandırıcılığı saldırıları için bir yol haritası teşkil edebileceği konusunda uyarıda bulunmuştur.
+(XXXXXXX, AÇIK -securityweek.com, 17.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] SafePal Müşteri Verilerinin Bir Eklenti Açığıyla Ele Geçirilmesi
+─────────────────────────────────────────────────────────
+Kripto para donanım cüzdanı sağlayıcısı SafePal, sipariş takip işlevindeki bir eklenti hatası ve yapılandırma kusuru nedeniyle 39.798 müşterisinin verilerinin çalındığını duyurmuştur. 2 Mart 2025 ile 11 Nisan 2026 tarihleri arasında sipariş veren kullanıcıların isim, e-posta, adres ve telefon bilgileri bir siber suç forumunda satışa çıkarılmıştır. Şirket, cüzdan tohum ifadeleri, özel anahtarlar ve ödeme bilgilerinin güvende olduğunu belirtirken, etkilenen müşterilere 16 Ağustos'ta bilgilendirme e-postası göndermiştir. Mayıs ayında başlayan kimlik avı saldırılarında SafePal X1 donanım cüzdanı için sahte yazılım güncellemeleri talep edildiği saptanmıştır. SafePal, 30'dan fazla dolandırıcı web sitesini kapattığını ve kullanıcıların durumlarını kontrol edebilmesi için çevrimiçi bir doğrulama aracı sunduğunu bildirerek, veri temizleme sürecindeki aksaklıkları giderdiğini açıklamıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 17.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Fransa'da Yüz Binlerce Mükellefin Verilerinin Ele Geçirilmesi
+─────────────────────────────────────────────────────────
+Fransa Vergi Dairesi, sofistike bir siber saldırı sonucunda 678.000 bireysel ve kurumsal mükellefe ait verilerin çalındığını doğrulamıştır. Kamu Maliyesi Genel Müdürlüğü tarafından yapılan açıklamada, çalınan bilgilerin gelir düzeyleri ve vergi oranlarını içerdiği ancak kullanıcı hesaplarına doğrudan erişim sağlamadığı belirtilmiştir. Paris Cumhuriyet Savcılığı siber suçlar biriminin olayla ilgili soruşturma başlattığı ve dosyanın siber suçlarla mücadele ofisi OFAC'a devredildiği ifade edilmiştir. Yetkililer, etkilenen mükelleflerin kimlik hırsızlığı riskine karşı bilgilendirileceğini kaydetmiştir. Bu olayın, Fransa'daki diğer kamu kurumlarına yönelik son dönemde artan siber saldırıların bir parçası olduğu belirtilmektedir. Hükümetin, kamu bilgi sistemlerinin güvenliğini artırmak amacıyla yeni prosedürler üzerinde çalıştığı bildirilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 16.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Güvenli Mesajlaşma Servisi Threema'nın Geniş Ölçekli DDoS Saldırılarına Uğraması
+─────────────────────────────────────────────────────────
+İsviçre merkezli güvenli mesajlaşma servisi Threema, hafta başında iletişimde ciddi aksamalara neden olan çok sayıda dağıtık hizmet reddi (DDoS) saldırısına maruz kalmıştır. Şirket tarafından yayımlanan analiz raporunda, saldırganın sürekli değişen taktikleri nedeniyle savunma yapmanın zorlaştığı ve hizmetin Salı akşamı ile Çarşamba sabahı arasında geçici olarak kullanılamaz hale geldiği belirtilmiştir. Saldırıların hem Threema altyapısını hem de veri merkezi ortağı Nine'ı hedef aldığı, ancak kendi altyapısını kullanan kurumların bu durumdan etkilenmediği bildirilmiştir. Threema, saldırı trafiğini kaynağında filtrelemek amacıyla ek bir uzmanlaşmış DDoS koruma katmanı uyguladığını açıklamıştır. Şirket, saldırganların engelleme önlemlerini aşmak için yöntemlerini sürekli güncellediğini ve bu durumun kesintilerin süresini uzattığını ifade etmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 16.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] RingCentral Müşteri Verilerinin ShinyHunters Tarafından Sızdırılması
+─────────────────────────────────────────────────────────
+Bulut tabanlı iletişim platformu RingCentral, Temmuz 2026 döneminde gerçekleşen karmaşık bir sosyal mühendislik saldırısı sonucunda sınırlı sayıda müşterisinin etkilendiğini açıklamıştır. Siber tehdit aktörü ShinyHunters, şirketten 623 gigabayt veri çaldığını iddia ederek 280 gigabaytlık bir arşivi Tor tabanlı sızıntı sitesinde yayımlamıştır. HaveIBeenPwned platformu, sızdırılan veriler arasında yaklaşık 1,6 milyon benzersiz e-posta adresi ile isim, adres ve telefon numaralarının bulunduğunu kaydetmiştir. RingCentral yetkilileri, ana platformun saldırıdan etkilenmediğini ve hizmetlerin kesintisiz sürdüğünü belirtmiştir. Şirket, saldırının ardından üçüncü taraf bir adli bilişim firmasıyla inceleme başlatıldığını ve etkilenen müşterilerin doğrudan bilgilendirildiğini ifade etmiştir. Yetkisiz faaliyetlerin durdurulduğu ve yeni bir ihlal bulgusuna rastlanmadığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 14.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
