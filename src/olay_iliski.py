@@ -372,7 +372,23 @@ def _konu_ortusmesi(view_a, view_b):
 # ColdFusion yalnızca 'ad:commerce' yüzünden, Ivanti EPM ↔ SonicWall GMS
 # yalnızca 'ad:advertis' yüzünden aynı olay sayıldı — ikisi de farklı satıcının
 # ayrı yama bültenidir.
-_YUKSEK_DERECE = ('cve:', 'pkg:', 'kod:')
+# 'pkg:' BİLİNÇLİ OLARAK YÜKSEK DERECEDE DEĞİLDİR. Paket adı sezgisel olarak
+# güçlü bir kimlik gibi durur ama ÇIKARICISI ölçülebilir biçimde gürültülüdür:
+# 157 görünümlük derlemde 139 farklı "paket adı" üretti ve HİÇBİRİ gerçek paket
+# değildi (said, yeni, veya, poisoned, within, hundreds...), buna karşılık
+# gerçek paketlerin (litellm, keyv, trivy) hiçbiri yakalanmadı. Sebep yapısal:
+# ekosistem işaretinin (npm/PyPI/paket) 90 karakterlik penceresindeki HER
+# küçük-harfli sözcük aday sayılıyor.
+#
+# ÖLÇÜLEN MALİYET (2026-08-18 gölge kümeleme gerekçesi): "LiteLLM tedarik
+# zinciri saldırısı" ile "Snowflake GitHub deposunda komut enjeksiyonu" —
+# farklı iki olay — tek başına 'ortak=pkg:affected' yüzünden AYNI_GELISME
+# sayıldı. Tek bir 'affected' sözcüğü iki haberi birleştirmeye yetti.
+#
+# Düşük dereceye indirmek golden set'te GERİLEME YARATMIYOR (18/23 etiket,
+# 20/23 politika — değişmedi), yani sinyal zaten taşımadığı bir ağırlık
+# taşıyordu. Artık tek başına yetmez; ikinci bir kimlik gerekir.
+_YUKSEK_DERECE = ('cve:', 'kod:')
 # Yalnızca düşük dereceli (özel ad) kimlik varsa aranan asgari ortak sayısı.
 MIN_ORTAK_AD = 2
 # Yeni gelişme sayılmak için gereken asgari YENİ özel ad sayısı (yüksek

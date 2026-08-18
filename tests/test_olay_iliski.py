@@ -242,3 +242,23 @@ def test_kumele_explain_olmadan_eski_sozlesme():
     """explain=False eski davranışı korumalı (yalnızca grup listesi)."""
     a = _v(paragraph='Bir haber.')
     assert oi.kumele({1: a}) == [[1]]
+
+
+def test_paket_adi_tek_basina_yetmez():
+    """'pkg:' YÜKSEK derece DEĞİLDİR — tek eşleşme birleştirmeye yetmemeli.
+
+    Paket çıkarıcısı ölçülebilir biçimde gürültülü: 157 görünümlük derlemde
+    139 farklı "paket adı" üretti ve hiçbiri gerçek paket değildi. 2026-08-18
+    üretim koşusunda "LiteLLM tedarik zinciri saldırısı" ile "Snowflake GitHub
+    komut enjeksiyonu" tek başına 'ortak=pkg:affected' yüzünden AYNI_GELISME
+    sayıldı."""
+    assert 'pkg:' not in oi._YUKSEK_DERECE
+    assert oi._kimlik_yeterli({'pkg:birsey'}) is False
+    assert oi._kimlik_yeterli({'cve:cve202612345'}) is True
+    assert oi._kimlik_yeterli({'kod:sandworm'}) is True
+
+
+def test_affected_paket_adi_sayilmaz():
+    from src import dedup as _d
+    assert 'affected' not in _d.extract_package_names(
+        'The npm package registry listed the affected versions today.')

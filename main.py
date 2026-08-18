@@ -5668,7 +5668,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         })
 
     def _kalite_denetimi_yaz(self, top3_ids, govde_ids, records,
-                             content_by_id, articles_by_id):
+                             content_by_id, articles_by_id, eleme_nedeni=None):
         """RAPOR SONRASI KAÇAK TARAMASI — sessiz arızayı görünür kılar.
 
         NEDEN VAR: mükerrer sızıntıları ve manşet seçim hataları bugüne kadar
@@ -5752,12 +5752,35 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
             # Manşete UYGUN (kategori kapısını geçen) ama girmeyen adaylar:
             # manşettekinden yüksek puanlıysa sıra tersine dönmüş demektir.
+            #
+            # DEFTERİN BİLEREK İNDİRDİKLERİ HARİÇTİR. Süregelen bir hikâyenin
+            # yüksek puanla gövdede kalması HATA DEĞİL, tasarlanmış davranıştır
+            # (bkz. MANSET_TEKRAR_SINIRI): olay son 7 günde zaten manşet
+            # olmuşsa yeniden manşet olamaz. Bu ayrım yapılmazsa denetim
+            # doğru kararı "tersinelik" diye raporlar ve Faz 4 söküm kapısı,
+            # çok günlü bir hikâye sürdüğü sürece ASLA geçilemez.
+            # ÖLÇÜLDÜ (2026-08-18): LiteLLM tedarik zinciri haberi 92 puanla
+            # gövdedeydi ve doğru yerdeydi — olay 08-12'den beri sürüyor ve
+            # daha önce manşet olmuştu; denetim yine de tersinelik saydı.
             manset_puan = [_puan(a) for a in top3_ids]
             en_dusuk_manset = min(manset_puan) if manset_puan else 0
+            defter_t = getattr(self, '_olay_defteri', None)
+
+            def _onceden_manset(aid):
+                if defter_t is None:
+                    return False
+                try:
+                    return defter_t.manset_gunu_sayisi(view_fn(aid)) >= \
+                        self.MANSET_TEKRAR_SINIRI
+                except Exception:
+                    return False
+
             tersine = []
             for aid in govde_ids:
                 rec = records.get(aid) or {}
                 if rec.get('kat') in KRITIK3_HARIC_KATEGORILER:
+                    continue
+                if _onceden_manset(aid):
                     continue
                 if _puan(aid) > en_dusuk_manset:
                     tersine.append({
@@ -5792,9 +5815,43 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             except Exception as e:
                 print(f"   ⚠️  Kümeleme (gölge) çalışmadı: {e}")
 
+            # YÜKSEK PUANLI ELENENLER — denetimin kör noktasını kapatır.
+            # Bugüne kadar denetim yalnızca KAÇAKLARI ölçüyordu (rapora giren
+            # mükerrer). Ama bu projenin asıl arıza deseni tersiydi: DOĞRU
+            # haberin YANLIŞ elenmesi (08-12'de Sandworm 92 puanla rapordan
+            # tamamen çıkmıştı ve bunu ancak skorlama logunu adli biçimde
+            # okuyarak bulabildim). Kaçak sayısı sıfır olabilir ve rapor yine
+            # de kötü olabilir — elenmemesi gerekenler elendiyse.
+            #
+            # Burada manşet tabanının ÜSTÜNDE puan alıp rapora hiç girmemiş
+            # haberler, hangi katmanın attığı ve olay ilişkisiyle birlikte
+            # kaydedilir. Karar VERMEZ; gözden geçirilebilir kılar.
+            elenen_yuksek = []
+            try:
+                rapor_kumesi = set(rapor_ids)
+                nedenler = eleme_nedeni or {}
+                for aid, rec in (records or {}).items():
+                    if aid in rapor_kumesi or _puan(aid) <= en_dusuk_manset:
+                        continue
+                    if not rec.get('siber') or rec.get('kat') in (
+                            'urun_icerik', 'siber_disi'):
+                        continue          # zaten konu dışı, eleme doğru
+                    il = self._iliski_izi.get(aid, (None, ''))[0] \
+                        if hasattr(self, '_iliski_izi') else None
+                    elenen_yuksek.append({
+                        'id': aid, 'puan': _puan(aid), 'baslik': _ad(aid),
+                        'katman': nedenler.get(aid, '(bayrak/mukerrer)'),
+                        'iliski': il, 'mukerrer': bool(rec.get('mukerrer')),
+                    })
+                elenen_yuksek.sort(key=lambda x: -x['puan'])
+                elenen_yuksek = elenen_yuksek[:8]
+            except Exception as e:
+                print(f"   ⚠️  Yüksek puanlı eleme taraması çalışmadı: {e}")
+
             kayit = {
                 'tarih': _now_tr().strftime('%Y-%m-%d'),
                 'rapor_haber': len(rapor_ids),
+                'yuksek_puanli_elenen': elenen_yuksek,
                 'kume_golge': kume_golge,
                 'capraz_gun_kacak': capraz,
                 'rapor_ici_kacak': ici,
@@ -5814,6 +5871,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             for k in getattr(self, '_manset_izi', []):
                 print(f"      🧾 Manşet izi [{k['katman']}]: ID {k['dusen']} "
                       f"düştü → ID {k['giren']} girdi ({k['neden']})")
+
+            for k in elenen_yuksek[:4]:
+                print(f"      🔻 {k['puan']} puanlı '{k['baslik'][:44]}' RAPORA "
+                      f"GİRMEDİ — katman={k['katman']} ilişki={k['iliski']}")
 
             for g in kume_golge:
                 print("      🧪 Kümeleme (gölge, karar vermez): "
@@ -6408,7 +6469,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # sessizce geçemez (bkz. _kalite_denetimi_yaz).
         self._kalite_denetimi_yaz(
             top3_ids, list(top10_ids) + list(remaining_ids),
-            score_records, content_by_id, articles_by_id)
+            score_records, content_by_id, articles_by_id,
+            eleme_nedeni=eleme_nedeni)
 
         # NOT: Eski "az-haber guard" KALDIRILDI. Önceden az haber günlerinde
         # top3 dışında gövde haberi kalmayınca KRİTİK 3 kutusu boşaltılıyordu;

@@ -179,6 +179,14 @@ _PKG_DENYLIST = {
     'solucan', 'solucanı', 'solucani', 'ekosistem', 'ekosisteminde', 'yönelik',
     'yonelik', 'yüzlerce', 'yuzlerce', 'binlerce', 'içeren', 'iceren',
     'paketlerinde', 'paketlerini', 'paketlerde', 'kütüphanede', 'kutuphanede',
+    # ÖLÇÜLEN gürültü (2026-08-18): ekosistem penceresindeki sıradan sözcükler
+    # paket adı sanılıyordu. 'affected' tek başına iki alakasız haberi
+    # birleştirdi (bkz. olay_iliski._YUKSEK_DERECE yorumu).
+    'affected', 'poisoned', 'poisons', 'modified', 'within', 'hundreds',
+    'said', 'yeni', 'veya', 'tespit', 'gibi', 'zero', 'official', 'variant',
+    'spreads', 'adding', 'while', 'leave', 'crawls', 'evades', 'propagation',
+    'researcher', 'million', 'large-scale', 'cross-platform', 'dev-tool',
+    'credential-stealing', 'platformunda', 'zehirleyerek',
     # Jenerik İngilizce dolgu — konu kapısı bunları zaten zararsız kılıyor ama
     # iki ayrı olayı boş yere birbirine yaklaştırmasınlar.
     'that', 'this', 'these', 'those', 'into', 'other', 'others', 'with', 'from',
