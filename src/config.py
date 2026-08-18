@@ -17,9 +17,9 @@ TAVILY_API_KEY = os.getenv('TAVILY_API_KEY', '')
 # (requirements.txt'te zaten var) yalnızca base_url değiştirilerek kullanılır.
 #   Endpoint : https://openrouter.ai/api/v1/chat/completions
 #   Birincil : google/gemini-3-flash-preview  (OPENROUTER_MODEL varsayılanı)
-#   Yedek    : google/gemini-3.5-flash  (GA — 19 May 2026; Flash sınıfı, 1M bağlam)
+#   Yedek    : google/gemini-3.7-flash  (GA — 13 Ağu 2026; Flash sınıfı, 1M bağlam)
 #   Not      : Birincil model env (OPENROUTER_MODEL / Actions vars) ile değiştirilebilir;
-#              tanımsızsa preview kullanılır, başarısızlıkta GA 3.5 Flash'a düşer.
+#              tanımsızsa preview kullanılır, başarısızlıkta 3.7 Flash'a düşer.
 #              (Aşağıdaki OPENROUTER_MODEL / OPENROUTER_FALLBACK_MODELS ile birebir tutarlı.)
 #
 # Gemini 3.x Flash bir "thinking" modelidir; reasoning gücü `reasoning.effort` ile
@@ -33,11 +33,21 @@ OPENROUTER_API_KEY = os.getenv('OPENROUTER_API_KEY', '')
 OPENROUTER_BASE_URL = os.getenv('OPENROUTER_BASE_URL') or 'https://openrouter.ai/api/v1'
 # Birincil model + başarısızlıkta denenecek yedekler (sıra önemlidir)
 OPENROUTER_MODEL = os.getenv('OPENROUTER_MODEL') or 'google/gemini-3-flash-preview'
-# Birincil: Gemini 3 Flash preview. Başarısızlıkta TEK yedek: Gemini 3.5 Flash (GA).
+# Birincil: Gemini 3 Flash preview. Başarısızlıkta TEK yedek: Gemini 3.7 Flash (GA).
+#
+# Yedek neden 3.5 DEĞİL (2026-08-17 fiyat taraması): 3.5 Flash ailenin EN PAHALISI
+# ($1.50/$9.00 per 1M) ve 3.7'den eski. 3.7 Flash yarı fiyat ($0.75/$3.75) ve daha
+# yeni (13 Ağu 2026). Bu halka yalnızca birincil TÜM denemelerinde çöktüğünde
+# çalıştığı için normal günlerde maliyeti sıfırdır; kötü günde hem daha iyi hem
+# daha ucuz bir basamak olur.
+# Birincil bilinçli olarak 3-flash-preview'da BIRAKILDI: 3.7'nin kazanımları
+# kodlama/ajan benchmarklarında (DeepSWE 49→65), bizim iş yükümüz ise Türkçe
+# özetleme + sıralama + JSON. Loglarda model kaynaklı kalite hatası yok; darboğaz
+# haber hacmi. 3.7'ye geçmek maliyeti 3× (1 Oca 2027'den sonra 6×) artırırdı.
 OPENROUTER_FALLBACK_MODELS = [
     m.strip() for m in os.getenv(
         'OPENROUTER_FALLBACK_MODELS',
-        'google/gemini-3.5-flash'
+        'google/gemini-3.7-flash'
     ).split(',') if m.strip()
 ]
 # Reasoning effort: minimal|low|medium|high|xhigh ; 'none'/'' → reasoning gönderilmez
