@@ -5667,6 +5667,11 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             'neden': str(neden or '')[:120],
         })
 
+    # Rapor bu sayının altındaysa "ince" sayılır ve arz ayrıntısı yazılır.
+    # 2026-08-16'da rapor 5 haberdi; sebebin gerçek arz mı yoksa boru hattı
+    # arızası mı olduğu denetim kaydından ANLAŞILAMIYORDU.
+    INCE_RAPOR_ESIGI = 12
+
     def _kalite_denetimi_yaz(self, top3_ids, govde_ids, records,
                              content_by_id, articles_by_id, eleme_nedeni=None):
         """RAPOR SONRASI KAÇAK TARAMASI — sessiz arızayı görünür kılar.
@@ -5789,6 +5794,53 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     })
             tersine.sort(key=lambda x: -x['puan'])
 
+            # ARZ KÜNYESİ — ince raporun sebebini ayırt edilebilir kılar.
+            # 2026-08-16'da rapor 5 haberdi. İnceleme, sebebin GERÇEK ARZ
+            # olduğunu gösterdi (o gün yalnızca 10 taze aday geldi, 4'ü zaten
+            # ürün/içerik yazısıydı) — boru hattı doğru davranmıştı. Ama bunu
+            # anlamak skorlama logunu elle ayrıştırmayı gerektirdi: denetim
+            # kaydında "5 haberlik rapor" ile "beslemeler çöktü" AYNI görünüyor.
+            # Besleme gerçekten çökerse kimse fark etmez.
+            arz = {}
+            try:
+                nedenler = eleme_nedeni or {}
+                tum = list((records or {}).values())
+                siber = [r for r in tum if r.get('siber')
+                         and r.get('kat') not in ('urun_icerik', 'siber_disi')]
+                puanli = [r for r in siber if r.get('toplam', 0) > 0]
+                katman = {}
+                for aid, rec in (records or {}).items():
+                    if aid in set(rapor_ids) or not rec.get('siber'):
+                        continue
+                    if rec.get('kat') in ('urun_icerik', 'siber_disi'):
+                        continue
+                    if rec.get('toplam', 0) <= 0:
+                        continue
+                    k = nedenler.get(aid) or ('mukerrer' if rec.get('mukerrer')
+                                              else 'diger')
+                    katman[k] = katman.get(k, 0) + 1
+                arz = {
+                    'aday': len(tum),
+                    'siber': len(siber),
+                    'puanli': len(puanli),
+                    'rapora_giren': len(rapor_ids),
+                    'elenen_katman': katman,
+                    'ince': len(rapor_ids) < self.INCE_RAPOR_ESIGI,
+                }
+                if arz['ince']:
+                    print(f"   📉 İNCE RAPOR ({len(rapor_ids)} haber < "
+                          f"{self.INCE_RAPOR_ESIGI}): {arz['aday']} aday → "
+                          f"{arz['siber']} siber → {arz['puanli']} puanlı. "
+                          f"Eleme: {katman or '(yok)'}")
+                    if arz['puanli'] <= self.INCE_RAPOR_ESIGI:
+                        print("      ↳ sebep ARZ (havuzda zaten yeterli haber "
+                              "yoktu) — boru hattı değil.")
+                    else:
+                        print("      ↳ sebep ELEME (havuz yeterliydi) — "
+                              "yukarıdaki katman dağılımına bak.")
+            except Exception as e:
+                print(f"   ⚠️  Arz künyesi çıkarılamadı: {e}")
+
             # GÖLGE MOD — gün içi olay kümelemesi (bkz. src/olay_iliski.kumele).
             # Karar VERMEZ, yalnızca kaydeder. Gerekçe ölçümdür: 08-12 verisinde
             # katı eşikle 9 çok üyeli grubun 2'si yanlış birleştirmeydi
@@ -5864,6 +5916,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 'manset_karar_izi': getattr(self, '_manset_izi', []),
                 # Kaynakta olmayan yıl (bkz. _tarih_denetimi)
                 'tarih_denetimi': getattr(self, '_tarih_izi', {}),
+                # Arz künyesi (bkz. _arz_kunyesi)
+                'arz': arz,
             }
             with open('data/kalite_denetim.jsonl', 'a', encoding='utf-8') as f:
                 f.write(json.dumps(kayit, ensure_ascii=False) + '\n')
