@@ -3382,6 +3382,37 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             print(f"   🛡️  ID {aid}: devlet/APT kanıtı bulunamadı → "
                   f"zafiyet_aktif_apt → zafiyet_rutin (kritik3 dışı)")
 
+        # ── casus_yazilim DOĞRULAMASI ─────────────────────────────────────
+        # casus_yazilim, KATEGORI_ONCELIK'te 9 ile EN YÜKSEK öncelik — yani
+        # bu etiket tek başına bir haberi manşete taşıyabilir. Buna rağmen
+        # kardeş kategoriler (zafiyet_aktif_apt, nation_state_apt) denetlenirken
+        # bu denetlenmiyordu; kodun kendi ifadesiyle "en çok zarar verebilecek
+        # etiket, en az korunan"dı.
+        #
+        # ÖLÇÜLDÜ (2026-08-19): "Apple plugs image-processing hole RIPE FOR
+        # spyware abuse" haberi casus_yazilim etiketiyle 94 puan alıp KRİTİK 3'e
+        # çıktı. Oysa haber yamalanmış bir zafiyeti anlatıyor: kurban yok,
+        # kampanya yok, satıcı yok — yalnızca "casus yazılım için kullanılabilir"
+        # değerlendirmesi var. Aynı gün gövdede kalanlar: iki Alman bakanlığının
+        # devlet ağından çıkarılması (92), fidye çetelerince AKTİF İSTİSMAR
+        # EDİLEN Windows açığı (93), Ukrayna varlık kurtarma ajansına saldırı (90).
+        #
+        # Tarihsel ölçüm: 14 casus_yazilim etiketinin 13'ü gerçek operasyondu
+        # (Pegasus/Predator/Intellexa davaları, LightSpy, Apple kurban
+        # bildirimleri); kritik3'e çıkan TEK etiket bu istisnaydı.
+        for aid, rec in records.items():
+            if rec.get('kat') != 'casus_yazilim':
+                continue
+            a = articles_by_id.get(aid, {})
+            if self._has_spyware_evidence(a.get('full_text', ''), a.get('title', '')):
+                continue
+            rec['kat'] = 'zafiyet_rutin'
+            rec['toplam'] = self._record_total(rec)
+            downgraded.add(aid)
+            print(f"   🛡️  ID {aid}: casus yazılım OPERASYONU kanıtı yok "
+                  f"(kurban/kampanya/satıcı) → casus_yazilim → zafiyet_rutin "
+                  f"(kritik3 dışı)")
+
         # ── nation_state_apt DOĞRULAMASI ──────────────────────────────────
         # nation_state_apt, KATEGORI_ONCELIK'te 8 ile casus_yazilim'dan sonraki
         # EN YÜKSEK öncelik. Yani aynı puanda bu etiket beraberliği tek başına
@@ -3422,6 +3453,53 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         if rec.get('apt_dogrulanmadi'):
             return min(oncelik, self.DOGRULANMAMIS_APT_ONCELIK)
         return oncelik
+
+    # Gerçek bir casus yazılım OPERASYONUNU gösteren kanıt kalıpları.
+    # Bilinen satıcı/aile adları src.dedup._NAMED_ACTORS'tan gelir (pegasus,
+    # nso group, intellexa, predator, candiru, cytrox, quadream, finfisher).
+    _CASUS_OPERASYON_RE = re.compile(
+        r'(?:'
+        r'mercenary spyware|commercial spyware|spyware vendor'
+        r'|threat notification|notified? (?:users|victims|targets)'
+        r'|(?:were|was|been) targeted|victims? (?:of|were)'
+        r'|zero-click (?:attack|campaign|exploit)'
+        r'|exploited in (?:the wild|targeted attacks)'
+        r'|actively exploited|in-the-wild (?:attack|exploitation)'
+        r'|casus yazılım (?:kampanyası|saldırısı|operasyonu)'
+        r'|hedef alındığı|kurbanları?n'
+        r')', re.IGNORECASE)
+
+    # Kanıtın aranacağı giriş uzunluğu (başlık + gövde başı).
+    CASUS_GIRIS_SOZCUK = 60
+
+    def _has_spyware_evidence(self, *texts):
+        """`casus_yazilim` iddiasını destekleyen KANIT var mı?
+
+        Kategori GERÇEK casus yazılım OPERASYONLARI içindir: adlandırılmış bir
+        satıcı/aile (Pegasus, Predator, Intellexa, LightSpy...), kurban/bildirim
+        dili, ya da doğrulanmış vahşi doğa istismarı. "Bu açık casus yazılım
+        için KULLANILABİLİR" demek bir operasyon değil, bir ZAFİYET haberidir.
+        """
+        # KANIT GİRİŞTE ARANIR (başlık + gövdenin ilk CASUS_GIRIS_SOZCUK
+        # sözcüğü). Tüm metinde aranırsa YAMA haberleri de geçer: bu yazılar
+        # arka planda "bu tür açıklar geçmişte sıfır tıklamalı casus yazılım
+        # kampanyalarında kullanıldı" der ve kalıp oradan eşleşir. ÖLÇÜLDÜ
+        # (2026-08-19): kanıt tüm metinde arandığında Apple'ın yamalanmış
+        # ImageIO açığı haberi de "kanıtlı" çıkıyordu. Gazetecilik yapısı
+        # ayrımı verir — olayın kendisi girişte duyurulur, arka plan gövdede
+        # kalır (aynı gerekçe: src/olay_iliski._giris_view).
+        parcalar = [str(t or '') for t in texts]
+        giris = []
+        for t in parcalar:
+            sozcuk = t.split()
+            giris.append(' '.join(sozcuk[:self.CASUS_GIRIS_SOZCUK]))
+        blob = ' '.join(giris)
+        if self._CASUS_OPERASYON_RE.search(blob):
+            return True
+        dusuk = blob.lower()
+        return any(ad in dusuk for ad in _dedup._NAMED_ACTORS
+                   if ad in ('pegasus', 'nso group', 'intellexa', 'predator',
+                             'candiru', 'cytrox', 'quadream', 'finfisher'))
 
     def _has_apt_evidence(self, *texts):
         """Devlet/APT iddiasını destekleyen KANITI iki yoldan arar.

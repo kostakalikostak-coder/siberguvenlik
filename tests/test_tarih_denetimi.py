@@ -103,3 +103,45 @@ def test_ince_rapor_sebebi_arz_olarak_ayrilir(tmp_path, monkeypatch):
 def test_normal_rapor_ince_isaretlenmez():
     import json as _j
     assert main.HaberSistemi.INCE_RAPOR_ESIGI == 12
+
+
+# ── CASUS YAZILIM KANIT KAPISI ───────────────────────────────────────────────
+
+def test_yamalanmis_zafiyet_casus_yazilim_sayilmaz():
+    """"Casus yazılım için KULLANILABİLİR" bir operasyon değil, zafiyettir.
+
+    ÖLÇÜLDÜ (2026-08-19): "Apple plugs image-processing hole ripe for spyware
+    abuse" haberi casus_yazilim etiketiyle 94 puan alıp KRİTİK 3'e çıktı;
+    kurban yok, kampanya yok, satıcı yok. casus_yazilim KATEGORI_ONCELIK'te 9
+    ile EN YÜKSEK öncelik, yani tek başına manşete taşıyabiliyor."""
+    s = _sistem()
+    assert not s._has_spyware_evidence(
+        'Apple plugs image-processing hole ripe for spyware abuse',
+        'Apple has released a batch of vulnerability fixes for iPhones and Macs, '
+        'including an image-processing flaw that experts say has the hallmarks '
+        'of a spyware delivery vector. The most notable patch is for '
+        'CVE-2026-65346, a defect in the ImageIO framework.')
+
+
+def test_gercek_casus_yazilim_operasyonu_gecer():
+    s = _sistem()
+    assert s._has_spyware_evidence(
+        'Apple warns users of mercenary spyware attacks',
+        'Apple has notified users in 110 countries that they were targeted by '
+        'mercenary spyware.')
+    assert s._has_spyware_evidence(
+        'Greek victims sue Intellexa',
+        'The lawsuit concerns Predator infections on the phones of journalists.')
+
+
+def test_kanit_govdenin_derinlerinden_gelmez():
+    """Arka plan cümlesi kanıt sayılmamalı — kanıt GİRİŞTE aranır.
+
+    Yama haberleri gövdede 'bu tür açıklar geçmişte sıfır tıklamalı casus
+    yazılım kampanyalarında kullanıldı' der; tüm metinde arandığında bu kalıp
+    eşleşiyor ve yama haberi 'operasyon' sayılıyordu."""
+    s = _sistem()
+    arka_plan = ('Vendor shipped a routine patch today. ' + ('filler word ' * 80)
+                 + 'Historically such flaws were exploited in the wild by '
+                   'mercenary spyware vendors.')
+    assert not s._has_spyware_evidence('Vendor ships routine patch', arka_plan)
