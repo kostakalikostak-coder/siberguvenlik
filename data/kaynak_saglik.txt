@@ -1,41 +1,42 @@
-# KAYNAK SAĞLIK RAPORU — 2026-08-18 12:05
-# aktif=36  üretiyor=19  boş(200/0)=0  hata/timeout=0
-# çıkarım : 201/203 haberin tam metni çıktı (%99)
-# dedup   : 71/201 haber filtreleri geçti (%35)
+# KAYNAK SAĞLIK RAPORU — 2026-08-19 12:06
+# aktif=36  üretiyor=20  boş(200/0)=0  hata/timeout=0
+# çıkarım : 193/198 haberin tam metni çıktı (%97)
+# dedup   : 77/193 haber filtreleri geçti (%40)
+# 🚨 DEDUP SIFIR (2) [metin var, filtreler eliyor]: SANS ISC, Graham Cluley
 # KAYNAK                      HAM  KALAN  METİN  HAVUZ  DURUM
-The Hacker News              40     19     19     17  OK
-BleepingComputer             15     15     15      8  OK
-Help Net Security            10     10     10      7  OK
-CSO Online                   20     20     20      5  OK
-SecurityWeek                 10     10     10      5  OK
-Dark Reading                 40      9      9      4  OK
-The Record                    5      5      5      4  OK
-Security Affairs             10     27     27      3  OK
-SANS ISC                     10      5      4      3  OK
-Industrial Cyber              9      3      3      3  OK
-The Register                 40     11     11      2  OK
-TechCrunch Security          20      5      5      2  OK
-Cyberscoop                   10      2      2      2  OK
-ANSSI (CERT-FR)              40     35     35      1  OK
-NCSC UK                      20      3      3      1  OK
-Graham Cluley                20      2      2      1  OK
-The Cyber Express            10      2      2      1  OK
-Citizen Lab                  10      1      1      1  OK
-CrowdStrike                  10      1      1      1  OK
-Securelist (Kaspersky)       10      4      4      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Schneier on Security         10      4      3      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Talos Intelligence           15      3      3      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Infoblox Blog                12      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+The Hacker News              40     18     18      8  OK
+SecurityWeek                 10     10     10      8  OK
+Help Net Security            10     10      9      8  OK
+BleepingComputer             15     15     15      7  OK
+CSO Online                   20     20     20      6  OK
+The Register                 40     13     13      6  OK
+Dark Reading                 40     10     10      5  OK
+The Record                    5      5      5      5  OK
+Security Affairs             10     10     10      4  OK
+Industrial Cyber              9      8      8      4  OK
+TechCrunch Security          20      6      6      3  OK
+ANSSI (CERT-FR)              40     31     29      2  OK
+The Cyber Express            10      5      5      2  OK
+Cyberscoop                   10      4      4      2  OK
+Recorded Future              40      3      3      2  OK
+NCSC UK                      20      2      2      1  OK
+Schneier on Security         10      2      1      1  OK
+Mandiant (Google Cloud)      20      1      1      1  OK
+Unit 42                      15      1      1      1  OK
+Microsoft Security           10      1      1      1  OK
+SANS ISC                     10      6      5      0  🚨 DEDUP SIFIR (OK)
+Infoblox Blog                12      5      5      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+Graham Cluley                20      3      3      0  🚨 DEDUP SIFIR (OK)
+Talos Intelligence           15      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+Securelist (Kaspersky)       10      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 NIST                         40      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Recorded Future              40      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Unit 42                      15      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+Citizen Lab                  10      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+CrowdStrike                  10      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Krebs on Security            10      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 SentinelOne Labs             10      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 BSI                          40      0      -      0  OK
 IranWire                     40      0      -      0  OK
-Mandiant (Google Cloud)      20      0      -      0  OK
 Bellingcat                   10      0      -      0  OK
 CERT-EU                      10      0      -      0  OK
-Microsoft Security           10      0      -      0  OK
 Proofpoint Threat Insight    10      0      -      0  OK
 The DFIR Report              10      0      -      0  OK
