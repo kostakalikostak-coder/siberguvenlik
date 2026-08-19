@@ -99,3 +99,21 @@ def test_bozuk_yanit_raporu_degistirmez():
     s = _sistem(None)
     top3, govde = s._yayin_yonetmeni([1, 2, 3], [4], records, content, arts)
     assert top3 == [1, 2, 3] and govde == [4]
+
+
+def test_govde_argumani_manseti_icermez():
+    """Çağıran taraf sözleşmesi: `govde_ids` manşet id'lerini İÇERMEMELİ.
+
+    2026-08-19 koşusunda main.py takas sonrası gövde listesini top10+remaining
+    üzerinden yeniden bölüyordu; top10 zaten top3'ü içerdiği için manşetten
+    inen haber gövdeye İKİNCİ kez giriyordu (28 girdi / 26 benzersiz). Test
+    çağrı yerindeki ifadeyi kilitler.
+    """
+    import inspect
+    kaynak = inspect.getsource(main.HaberSistemi.create_html)
+    assert '_yayin_yonetmeni(' in kaynak
+    parca = kaynak.split('_yayin_yonetmeni(', 1)[1][:300]
+    assert 'if a not in set(top3_ids)' in parca, \
+        'gövde listesi manşet id\'lerinden arındırılmıyor — mükerrer gövde riski'
+    assert 'top10_ids, remaining_ids =' not in parca, \
+        'takas sonrası top10/remaining yeniden bölünüyor — mükerrer gövde riski'

@@ -1541,7 +1541,17 @@ class HaberSistemi:
         # Top3 haberleri yalnızca üstteki kartlarda gösterilir;
         # Önemli Gelişmeler listesi, Yönetici Özeti tablosu ve
         # haber paragrafları bölümüne kesinlikle dahil edilmez.
-        all_ids = list(top10_ids) + list(remaining_ids)
+        # YAPISAL TEKİLLİK: aynı id iki kez gelirse haber raporda İKİ KEZ
+        # basılır. 2026-08-19 koşusunda oldu (28 gövde girdisi / 26 benzersiz)
+        # — yayın yönetmeni takasından sonra gövde listesi yeniden bölünürken
+        # manşetten inen haber listeye ikinci kez girmişti. Çağıran taraf
+        # düzeltildi; buradaki sıra-koruyan tekilleştirme, aynı sınıftan
+        # herhangi bir yukarı-akış hatasının rapora YANSIMASINI engeller.
+        all_ids, _gorulen = [], set()
+        for aid in list(top10_ids) + list(remaining_ids):
+            if aid not in _gorulen:
+                _gorulen.add(aid)
+                all_ids.append(aid)
         non_top3_ids = [aid for aid in all_ids if aid not in top3_set]
         vuln_ids     = [aid for aid in non_top3_ids if _is_vuln(aid)]
         regular_ids  = [aid for aid in non_top3_ids if not _is_vuln(aid)]
@@ -6720,12 +6730,21 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # Buraya kadarki tüm denetimler PARÇA gördü. Bu katman manşeti ve tüm
         # gövdeyi yan yana okuyup açık editoryal hataları düzeltir; haber
         # silemez, olgu değiştiremez (bkz. _yayin_yonetmeni).
-        top3_ids, _yy_govde = self._yayin_yonetmeni(
-            top3_ids, list(top10_ids) + list(remaining_ids),
+        # top10_ids ZATEN top3_ids'i içerir (ranked[:10]) ve renderer gövdeyi
+        # çizerken top3'ü kendisi dışlar. Dolayısıyla takas SETİ değiştirmez,
+        # yalnızca hangi id'lerin manşet olduğunu değiştirir — top10/remaining
+        # OLDUĞU GİBİ KALIR.
+        #
+        # İlk sürüm bunu kaçırdı: gövde listesini top10+remaining'den türetip
+        # takas sonrası geri yazıyordu. Manşetten inen haber gövdede zaten
+        # bulunduğu için listeye İKİNCİ kez giriyordu. ÖLÇÜLDÜ (2026-08-19
+        # koşusu): 28 gövde girdisi / 26 benzersiz — İranlı aktörler ve Apple
+        # haberleri raporda ikişer kez göründü.
+        top3_ids, _ = self._yayin_yonetmeni(
+            top3_ids,
+            [a for a in list(top10_ids) + list(remaining_ids)
+             if a not in set(top3_ids)],
             score_records, content_by_id, articles_by_id)
-        # Takas sonrası gövde sırasını koru: top10 ve remaining yeniden bölünür.
-        _n10 = len(top10_ids)
-        top10_ids, remaining_ids = _yy_govde[:_n10], _yy_govde[_n10:]
 
         self._write_scoring_log(articles, score_records, top10_ids,
                                 remaining_ids, top3_ids, critique_changed,
