@@ -1,9 +1,12 @@
 # Claude Code — Proje Kuralları
 
-## Cevap Biçimi — KESİN KURAL
-- KISA cevap ver. Kısa ve açıklayıcı; uzun cevaplar okunmuyor.
-- Sonucu ve gerekçeyi söyle, süreci anlatma. Gereksiz tablo/başlık/tekrar yok.
-- Ayrıntıyı ancak istenirse ver.
+## ⛔ 1 NUMARALI KURAL — KISA CEVAP (HER ŞEYDEN ÖNCE)
+- Varsayılan uzunluk: **en fazla 5-6 cümle.** Aşmak için açık istek gerekir.
+- Sonucu söyle, süreci ANLATMA. Ne yaptığını değil, ne çıktığını yaz.
+- Başlık/tablo/madde listesi KULLANMA — istenirse kullan.
+- "Ne bulduğumu anlatayım", "önce şunu ölçtüm" gibi giriş cümleleri YASAK.
+- Kod/commit ayrıntısı isteniyorsa verilir; kendiliğinden dökülmez.
+- Bu kural ihlal edilirse cevap yanlıştır — içeriği doğru olsa bile.
 
 ## URL / Dış Kaynak — KESİN KURAL (İSTİSNASIZ)
 - Herhangi bir URL, RSS feed adresi veya dış kaynak eklemeden önce WebFetch ile DOĞRULA.
