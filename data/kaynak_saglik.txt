@@ -1,38 +1,38 @@
-# KAYNAK SAĞLIK RAPORU — 2026-08-19 12:06
-# aktif=36  üretiyor=20  boş(200/0)=0  hata/timeout=0
-# çıkarım : 193/198 haberin tam metni çıktı (%97)
-# dedup   : 77/193 haber filtreleri geçti (%40)
-# 🚨 DEDUP SIFIR (2) [metin var, filtreler eliyor]: SANS ISC, Graham Cluley
+# KAYNAK SAĞLIK RAPORU — 2026-08-19 16:20
+# aktif=36  üretiyor=19  boş(200/0)=0  hata/timeout=0
+# çıkarım : 193/199 haberin tam metni çıktı (%97)
+# dedup   : 91/193 haber filtreleri geçti (%47)
+# 🚨 DEDUP SIFIR (3) [metin var, filtreler eliyor]: SANS ISC, Graham Cluley, Microsoft Security
 # KAYNAK                      HAM  KALAN  METİN  HAVUZ  DURUM
-The Hacker News              40     18     18      8  OK
-SecurityWeek                 10     10     10      8  OK
-Help Net Security            10     10      9      8  OK
-BleepingComputer             15     15     15      7  OK
-CSO Online                   20     20     20      6  OK
-The Register                 40     13     13      6  OK
+The Hacker News              40     22     22     12  OK
+BleepingComputer             15     15     15      9  OK
+SecurityWeek                 10     10     10      9  OK
+Help Net Security            10     10      9      9  OK
+Industrial Cyber              9      9      9      9  OK
+CSO Online                   20     14     14      7  OK
+The Register                 40     13     13      7  OK
 Dark Reading                 40     10     10      5  OK
 The Record                    5      5      5      5  OK
-Security Affairs             10     10     10      4  OK
-Industrial Cyber              9      8      8      4  OK
-TechCrunch Security          20      6      6      3  OK
+TechCrunch Security          20      7      7      4  OK
+Security Affairs             10     10     10      3  OK
 ANSSI (CERT-FR)              40     31     29      2  OK
 The Cyber Express            10      5      5      2  OK
 Cyberscoop                   10      4      4      2  OK
 Recorded Future              40      3      3      2  OK
-NCSC UK                      20      2      2      1  OK
-Schneier on Security         10      2      1      1  OK
+Talos Intelligence           15      3      3      1  OK
+Schneier on Security         10      3      1      1  OK
 Mandiant (Google Cloud)      20      1      1      1  OK
 Unit 42                      15      1      1      1  OK
-Microsoft Security           10      1      1      1  OK
 SANS ISC                     10      6      5      0  🚨 DEDUP SIFIR (OK)
 Infoblox Blog                12      5      5      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Graham Cluley                20      3      3      0  🚨 DEDUP SIFIR (OK)
-Talos Intelligence           15      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Securelist (Kaspersky)       10      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 NIST                         40      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+NCSC UK                      20      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Citizen Lab                  10      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 CrowdStrike                  10      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Krebs on Security            10      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+Microsoft Security           10      1      1      0  🚨 DEDUP SIFIR (OK)
 SentinelOne Labs             10      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 BSI                          40      0      -      0  OK
 IranWire                     40      0      -      0  OK

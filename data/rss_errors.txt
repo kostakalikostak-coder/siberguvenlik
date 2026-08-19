@@ -19,3 +19,6 @@
 2026-08-19 12:06 | AKIŞ BAYAT - Infoblox Blog: 12 madde geldi ama hepsi pencere dışı (>96s)
 2026-08-19 12:06 | DEDUP SIFIR - Graham Cluley: 3 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 2)
 2026-08-19 12:06 | DEDUP SIFIR - SANS ISC: 5 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 2, daha önce raporlanmış: 3)
+2026-08-19 16:20 | DEDUP SIFIR - Graham Cluley: 3 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 2)
+2026-08-19 16:20 | DEDUP SIFIR - SANS ISC: 5 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 2, daha önce raporlanmış: 3)
+2026-08-19 16:20 | DEDUP SIFIR - Microsoft Security: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 0)

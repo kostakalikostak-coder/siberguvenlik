@@ -31097,3 +31097,225 @@ GitLab, kendi yönetilen sunucularında bulunan ve kimlik doğrulaması gerektir
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 19 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Medusa Fidye Yazılımı Grubunun 500'den Fazla Kritik Altyapıyı Hedeflemesi
+─────────────────────────────────────────────────────────
+ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Medusa fidye yazılımı çetesinin Haziran 2021 tarihinden bu yana Amerika Birleşik Devletleri'ndeki 500'den fazla kritik altyapı kuruluşuna sızdığını açıklamıştır. Sağlık, savunma sanayii, kritik üretim ve finansal hizmetler gibi stratejik sektörlerin hedef alındığı, FBI ve HHS ile koordineli yayımlanan ortak bildiride belirtilmiştir. 2021 yılında faaliyetlerine başlayan grubun, 2023 yılında veri sızıntısı sitesi kurarak baskı unsuru oluşturduğu ve hizmet olarak fidye yazılımı (RaaS) modeline geçtiği kaydedilmiştir. Geliştiricilerin, ağlara ilk erişimi sağlamak için yasa dışı forumlarda aracılarla çalıştığı ve iştiraklerine 100 ile 1 milyon dolar arasında ödemeler teklif ettiği bildirilmiştir. Federal kurumlar, ağ savunucularına sistem açıklarını kapatmaları ve yanal hareketleri engellemek için ağ segmentasyonu yapmaları yönünde tavsiyelerde bulunmuştur.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Windows IKE Bileşenindeki Kritik Güvenlik Açığının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Windows İnternet Anahtar Değişimi (IKE) servisindeki kritik bir uzaktan kod yürütme açığının saldırganlar tarafından aktif olarak kullanıldığını duyurmuştur. CVE-2026-33824 olarak tanımlanan bu hatanın, yetkisiz bir saldırganın UDP 500 veya 4500 portları üzerinden özel hazırlanmış paketler göndererek sistemde tam kontrol sağlamasına imkan tanıdığı belirtilmiştir. Microsoft'un Nisan 2026'da yama yayımladığı bu açığın, Windows 10, 11 ve Windows Server sürümlerini etkilediği ifade edilmiştir. CISA, federal kurumlara cihazlarını üç gün içinde güvence altına almalarını emretmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Çin Bağlantılı Aktörün Tayvan'a Yönelik Yapay Zekâ Destekli Saldırısı
+─────────────────────────────────────────────────────────
+Çin bağlantılı bir siber tehdit aktörünün, Tayvan'daki hükümet kurumlarını hedef alan ve neredeyse tamamen otonom özellik taşıyan karmaşık bir yapay zekâ saldırısı gerçekleştirdiği tespit edilmiştir. Dream adlı siber güvenlik firması tarafından yayımlanan araştırma raporunda, saldırganın keşif, zafiyet değerlendirmesi ve sistem sızma süreçlerini yönetmek için sekiz farklı yapay zekâ ajanı kullandığı belirtilmiştir. Tayvan Dijital İşler Bakanlığı (MODA), Temmuz 2026 tarihinde gerçekleşen bu saldırıları doğrulamış ve OpenClaw gibi yapay zekâ araçlarının kullanıldığına dikkat çekmiştir. Saldırıda kullanılan ajanların, personel kayıtlarını sızdırmak ve web uygulamalarına kalıcı arka kapılar yerleştirmek için otonom olarak hareket ettiği ifade edilmiştir. Uzmanlar, saldırganların yapay zekâ kullanarak maliyetleri düşürdüğünü ve saldırı hızını artırdığını belirterek, savunma tarafının da benzer ölçekte yapay zekâ çözümlerine geçmesi gerektiğini vurgulamıştır.
+(XXXXXXX, AÇIK -darkreading.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] ABD'nin 17 İranlı Siber Tehdit Aktörünü Suçlaması ve Ödül Koyması
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri, dünya genelinde yüzlerce üniversite ve kuruluşa yönelik siber saldırılar düzenleyen İran merkezli Mabna Institute üyesi 17 kişi hakkında iddianame hazırlamıştır. İran Devrim Muhafızları Ordusu (IRGC) adına hareket ettikleri belirtilen şahısların, 2013 yılından bu yana akademik verileri ve fikri mülkiyetleri çalmak amacıyla faaliyet yürüttükleri ifade edilmiştir. Operasyonlar kapsamında ABD ve aralarında Türkiye'nin de bulunduğu 21 ülkede 300'den fazla üniversitenin hedef alındığı, 31 terabayttan fazla verinin sızdırıldığı kaydedilmiştir. ABD hükümeti, Adalet İçin Ödül programı çerçevesinde beş firari sanığın yakalanmasını sağlayacak bilgiler için 10 milyon dolara kadar ödül teklif etmiştir. İddianamede, çalınan verilerin Megapaper ve Gigapaper adlı şirketler aracılığıyla satıldığı ve özel şirketlere yönelik milyonlarca dolarlık şantaj girişimlerinde bulunulduğu bilgisi verilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] ABD'nin 17 İranlı Siber Tehdit Aktörünü Suçlaması ve Ödül Koyması
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri, dünya genelinde yüzlerce üniversite ve kuruluşa yönelik siber saldırılar düzenleyen İran merkezli Mabna Institute üyesi 17 kişi hakkında iddianame hazırlamıştır. İran Devrim Muhafızları Ordusu (IRGC) adına hareket ettikleri belirtilen şahısların, 2013 yılından bu yana akademik verileri ve fikri mülkiyetleri çalmak amacıyla faaliyet yürüttükleri ifade edilmiştir. Operasyonlar kapsamında ABD ve aralarında Türkiye'nin de bulunduğu 21 ülkede 300'den fazla üniversitenin hedef alındığı, 31 terabayttan fazla verinin sızdırıldığı kaydedilmiştir. ABD hükümeti, Adalet İçin Ödül programı çerçevesinde beş firari sanığın yakalanmasını sağlayacak bilgiler için 10 milyon dolara kadar ödül teklif etmiştir. İddianamede, çalınan verilerin Megapaper ve Gigapaper adlı şirketler aracılığıyla satıldığı ve özel şirketlere yönelik milyonlarca dolarlık şantaj girişimlerinde bulunulduğu bilgisi verilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Kuzey Koreli PurpleDelta Grubunun Sahte İstihdam Operasyonları Yürütmesi
+─────────────────────────────────────────────────────────
+Kuzey Kore bağlantılı siber tehdit aktörü PurpleDelta'nın, dünya genelinde 1.100'den fazla şirkete sahte kimliklerle iş başvurusu yaparak sızma operasyonları yürüttüğü tespit edilmiştir. Recorded Future tarafından yayımlanan raporda, Çin merkezli olduğu değerlendirilen operatörlerin yapay zekâ destekli profil fotoğrafları ve özelleştirilmiş ChatGPT asistanları kullanarak en az 22 sahte kimlik oluşturduğu belirtilmiştir. Grubun, mülakatlar sırasında gerçek zamanlı yapay zekâ çeviri ve transkripsiyon araçlarını kullanarak işe alım yöneticilerini yanılttığı ve en az 10 kuruluşta aktif olarak istihdam edildiği kaydedilmiştir. Elde edilen gelirlerin Kuzey Kore rejiminin askeri programlarını finanse etmek için kullanıldığı, operatörlerin Telegram ve Slack üzerinden koordine olduğu ifade edilmiştir. Şirketlere, uzaktan çalışan teknik personelin erişim yetkilerini ve geçmişlerini titizlikle incelemeleri yönünde uyarıda bulunulmuş, bu faaliyetlerin ciddi bir içeriden tehdit riski oluşturduğu bildirilmiştir.
+(XXXXXXX, AÇIK -recordedfuture.com, 18.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Berlin'de İki Bakanlığın Siber Saldırı Sonrası İzole Edilmesi
+─────────────────────────────────────────────────────────
+Berlin eyalet hükümeti, bir güvenlik ihlalinin tespit edilmesinin ardından kentsel gelişim ve ulaşım konularından sorumlu iki bakanlığı hükümet ağından ayırmıştır. Berlin Senato Şansölyeliği tarafından yapılan açıklamada, kentsel gelişim, inşaat ve konut ile mobilite, ulaşım, iklim koruma ve çevre bakanlıklarının tedbir amaçlı olarak Cuma gününden bu yana izole edildiği belirtilmiştir. Saldırganların kimliği veya veri hırsızlığı yapılıp yapılmadığı konusunda henüz resmi bir bilgi verilmezken, olayla ilgili soruşturmanın sürdüğü ifade edilmiştir. Bakanlık çalışanlarının e-posta ve internet erişiminin kesildiği, iletişimin telefon ve faks yoluyla sağlandığı kaydedilmiştir. Bu kesintinin, konut yardımı ve eğitim destek başvuruları gibi bazı kamu hizmetlerinin işleyişinde aksamalara yol açtığı bildirilmiştir.
+(XXXXXXX, AÇIK -therecord.media, 18.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] Ukrayna Varlık Yönetim Ajansı ARMA'nın Siber Saldırıya Uğraması
+─────────────────────────────────────────────────────────
+Ukrayna'nın el konulan varlıkları yöneten kurumu ARMA, yaptırım uygulanan Rus şahıslara ait varlıkların yönetimi için yürütülen ihale sürecinde siber saldırıya uğradığını açıklamıştır. Kurum, IDS Ukraine şirketinin kurumsal hakları için yönetici seçimi hazırlıkları sürerken gerçekleşen bu saldırının, operasyonları aksatmaya yönelik koordineli bir çaba olabileceğini belirtmiştir. ARMA Başkan Vekili Yaroslava Maksymenko, Rus sermayesinin çıkarlarına hizmet eden bir ağın kurum içi veri tabanlarına yetkisiz erişim sağladığını ifade etmiştir. Ukrayna Güvenlik Servisi (SBU) tarafından incelenen olayda, saldırganların kimliği hakkında henüz teknik bir detay paylaşılmamıştır. Kurum, siber müdahalelere ve bilgi baskısına rağmen IDS Ukraine varlıkları için yürütülen ihale sürecinin planlandığı şekilde devam edeceğini kaydetmiştir.
+(XXXXXXX, AÇIK -therecord.media, 18.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] TWINLOOT Çerçevesinin Microsoft Hizmetlerini Komuta Kontrol İçin Kötüye Kullanması
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacıları, TWINLOOT olarak adlandırılan ve komuta kontrol (C2) altyapısını tamamen güvenilir Microsoft hizmetleri üzerinde barındıran yeni bir Python tabanlı zararlı yazılım çerçevesi keşfetmiştir. Ontinue tarafından yayımlanan raporda, yazılımın SharePoint Online üzerinden görevlendirme yaptığı ve etkileşimli erişim için Microsoft Teams sunucularını kullandığı belirtilmiştir. Zararlı yazılımın, kurbanın kendi Edge tarayıcısını gizli modda çalıştırarak ağ trafiğini meşru faaliyetlerden ayırt edilemez hale getirdiği ifade edilmiştir. TWINLOOT'un sahte kilit ekranları aracılığıyla Windows kimlik bilgilerini topladığı ve ağ içinde yanal hareket imkanı sağladığı tespit edilmiştir. Ayrıca, yazılımın Windows kayıt defterinde tespit edilmeden kalıcılık sağlamak için NTUSER.MAN dosyalarını manipüle eden yeni bir yöntem kullandığı kaydedilmiştir. Bu gelişmiş aracın, Teams üzerinden sesli kimlik avı saldırıları düzenleyen STAC4749 grubuyla operasyonel benzerlikler taşıdığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 18.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Teksas Üniversitesi San Antonio Kampüsünde Siber Saldırı Sonrası Sistemlerin Kapatılması
+─────────────────────────────────────────────────────────
+Teksas Üniversitesi San Antonio kampüsü, hafta sonu tespit edilen şüpheli siber faaliyetler nedeniyle telefonlar dahil olmak üzere birçok bilişim sistemini çevrimdışı bırakmak zorunda kalmıştır. Üniversite yetkilileri, tehdit etkinliğinin ağın uç noktalarında tespit edildiğini ve ana sistemlere ulaşmadan kontrol altına alındığını açıklamıştır. 40.000 öğrenciye hizmet veren kurumda, yeni akademik yılın başlamasına günler kala yaşanan bu kesinti nedeniyle öğrenci ödeme tarihlerinin uzatıldığı ve ders kayıt listelerinde düzenlemeler yapıldığı bildirilmiştir. Yapılan incelemelerde şu ana kadar herhangi bir veri sızıntısına dair kanıt bulunmadığı belirtilmiştir. Üniversite yönetimi, güvenlik önlemleri kapsamında tüm öğrenci ve personelin şifrelerini sıfırlamasını talep etmiş ancak bu süreçte teknik gecikmeler yaşandığı kaydedilmiştir. Saldırıyı henüz üstlenen bir grup olmamıştır.
+(XXXXXXX, AÇIK -therecord.media, 18.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Rusya Bağlantılı CopyCop Grubunun Ermenistan'daki Yatırımları Hedeflemesi
+─────────────────────────────────────────────────────────
+Rusya bağlantılı etki operasyonu ağı CopyCop, Ermenistan'ın Batı ile jeopolitik yakınlaşmasını engellemek amacıyla Hrazdan'daki Firebird yapay zeka veri merkezini hedef alan bir kampanya yürütmüştür. Insikt Group tarafından yapılan incelemelerde, grubun Haziran ve Temmuz 2026 döneminde tesisin açılışı öncesinde dezenformasyon içerikli medya taklitleri gerçekleştirdiği tespit edilmiştir. Söz konusu operasyonlarda sahte deprem riskleri, ekonomik sürdürülebilirlik iddiaları ve tesisin askeri hedef olduğuna dair İran kaynaklıymış gibi sunulan sahte mesajların yayıldığı belirtilmiştir. Yaklaşık 500 milyon dolarlık bu yatırımın, ABD ve Ermenistan arasındaki stratejik iş birliğinin bir parçası olduğu kaydedilmiştir. CopyCop ağının, Ermenistan'ın Batı eksenli projelerini itibarsızlaştırmak için sosyal medya üzerinden 1,6 milyondan fazla izlenmeye ulaşan içerikler paylaştığı bildirilmiştir.
+(XXXXXXX, AÇIK -recordedfuture.com, 18.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] CareCloud'un 3,7 Milyon Hastanın Verilerinin Çalındığını Doğrulaması
+─────────────────────────────────────────────────────────
+Sağlık verileri devi CareCloud, Mart 2026'da gerçekleşen siber saldırıda 3,75 milyondan fazla kişinin kişisel ve tıbbi bilgilerinin çalındığını resmi makamlara bildirmiştir. ABD Sağlık ve İnsani Hizmetler Bakanlığı'na (HHS) yapılan bildirimde, bu olayın 2026 yılının en büyük beşinci sağlık verisi hırsızlığı olduğu ifade edilmiştir. Saldırganların, şirketin bulut depolama ortamına altı gün boyunca erişim sağladığı ve Amazon Web Services hesaplarından veri sızdırdığı belirtilmiştir. Çalınan bilgiler arasında hastaların isimleri, sosyal güvenlik numaraları, pasaport bilgileri ve finansal kayıtlarının bulunduğu kaydedilmiştir. CareCloud CEO'su Stephen Snyder'ın olayla ilgili soruları yanıtsız bıraktığı ve siber güvenlik önlemleri hakkında açıklama yapmadığı bildirilmiştir. Bu ihlalin, sektördeki DentaQuest ve TriZetto gibi diğer büyük veri sızıntılarının ardından geldiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -techcrunch.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] ABD'de Elektrik Şebekesini Kuantum Tehditlerine Karşı Koruma Yasasının Sunulması
+─────────────────────────────────────────────────────────
+ABD Senatosu'nda iki senatör, elektrik şebekesini gelişen kuantum bilişim tehditlerine karşı güçlendirmeyi amaçlayan iki partili Quantum-GUARD Act yasa tasarısını sunmuştur. 19 Ağustos 2026 tarihinde duyurulan tasarı, federal kurumların kuantum kaynaklı siber güvenlik açıklarını değerlendirmesini ve elektrik dağıtım şirketlerinin kuantum sonrası kriptografiye geçişini desteklemeyi hedeflemektedir. Tasarı kapsamında Federal Enerji Düzenleme Komisyonu'nun (FERC) şebeke güvenilirliği yetkisi dahilinde kuantum risklerini dikkate alması ve Enerji Bakanlığı bünyesinde bir test ortamı oluşturulması öngörülmektedir. Sektör temsilcileri ve siber güvenlik uzmanları, kuantum bilgisayarların mevcut şifreleme standartlarını kırma potansiyeline dikkat çekerek bu adımın kritik altyapı güvenliği için gerekli olduğunu belirtmiştir. Yasa tasarısının, kamu ve özel sektör koordinasyonunu artırarak enerji sistemlerinin kuantum çağına hazırlanmasına katkı sağlayacağı ifade edilmektedir.
+(XXXXXXX, AÇIK -industrialcyber.co, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] RubyGems ve Npm Platformlarında Kimlik Bilgisi Hırsızlığı Kampanyası
+─────────────────────────────────────────────────────────
+Güvenlik araştırmacıları, RubyGems ve npm kullanıcılarını hedef alan ve StubMaker olarak adlandırılan yeni bir typosquatting kampanyasını tespit etmiştir. 15 Ağustos 2026 tarihinde ortaya çıkarılan saldırıda, popüler paketlerin isimlerini taklit eden 16 RubyGems ve 37 npm paketinin tarayıcı kimlik bilgilerini, kripto cüzdanlarını ve Telegram verilerini çalmak için kullanıldığı belirtilmiştir. Saldırganların, Windows tabanlı bir yükleyiciyi indirmek için paket kurulum kancalarını kullandığı ve Google Chrome ile Microsoft Edge gibi tarayıcılardaki şifreleme korumalarını aşan bir zararlı yazılım dağıttığı ifade edilmiştir. OpenSourceMalware, kampanya kapsamında çalınan verilerin parola korumalı arşivler halinde saldırgan kontrolündeki sunuculara yüklendiğini bildirmiştir. Söz konusu kötü amaçlı paketlerin platformlardan kaldırıldığı ve etkilenen sistemlerin izole edilmesi gerektiği kaydedilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 18.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Stripe API Anahtarlarının Halka Açık Kodlarda İfşa Olması
+─────────────────────────────────────────────────────────
+Ransomnews araştırmacıları, GitHub depoları ve hatalı yapılandırılmış sunucularda Stripe platformuna ait 50.000'den fazla benzersiz API anahtarının ifşa edildiğini raporlamıştır. 18 Ağustos 2026 tarihinde bir veri ticareti forumunda yayımlanan veri setinin, 659 ticari hesaba ait canlı anahtarları ve 35 GB tutarında müşteri ödeme verisini içerdiği belirtilmiştir. Araştırmacılar, aktif bir anahtarın ele geçirilmesinden sonraki 17 saat içinde sahte ödeme bağlantıları oluşturulabildiğini ve müşteri listelerine tam erişim sağlanabildiğini belgelemiştir. İfşaların temel kaynağının, geliştiricilerin yapılandırma dosyalarına veya GitHub Actions günlüklerine maskelenmemiş anahtarları dahil etmesi olduğu ifade edilmiştir. Stripe platformunun kendisinin bir saldırıya uğramadığı, ancak düşük anahtar rotasyon oranlarının ve yetersiz API kısıtlamalarının dolandırıcılık riskini artırdığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] Bluesky Sosyal Medya Platformuna Yönelik DDoS Saldırısı
+─────────────────────────────────────────────────────────
+Sosyal ağ platformu Bluesky, 18 Ağustos 2026 tarihinde gerçekleşen ve bir gün süren hizmet kesintisinin bir dağıtık hizmet reddi (DDoS) saldırısından kaynaklandığını açıklamıştır. Platform, son 24 saat içinde sistemlerin yoğun bir trafik akınına maruz kaldığını ve bu durumun kaynakları aşırı yükleyerek siteyi çevrimdışı bıraktığını belirtmiştir. Güvenlik forumlarındaki araştırmacılar, İran bağlantılı saldırganların bu eylemin sorumluluğunu üstlendiğini ve saldırıların bölgedeki jeopolitik gerilimlerle paralellik gösterdiğini ifade etmiştir. Bluesky yönetimi, olayın ardından savunma mekanizmalarını güncellediklerini ve durumu izlemeye devam ettiklerini kaydetmiştir. Bu gelişmenin, platformun Nisan ayında yaşadığı benzer bir büyük ölçekli kesintinin ardından gelen en son saldırı dalgası olduğu bildirilmiştir. Saldırının teknik detayları ve kullanılan botnet yapısı hakkında henüz resmi bir açıklama yapılmamıştır.
+(XXXXXXX, AÇIK -techcrunch.com, 18.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] OpenAI'ın Siber Güvenlik Riskleri Nedeniyle Model Eğitimini Durdurması
+─────────────────────────────────────────────────────────
+OpenAI, en yeni yapay zeka modellerinin takviyeli öğrenme eğitimlerini siber güvenlik riskleri ve güvenlik açıklarını gidermek amacıyla iki hafta süreyle askıya almıştır. Şirket, 19 Ağustos 2026 tarihinde yaptığı açıklamada, Astra adlı yeni modelin kritik siber güvenlik yetenek eşiğine ulaşmış olabileceğine dair ön kanıtlar bulunduğunu belirtmiştir. Bu kapsamda, internet erişimi olan veya kod yürütebilen araştırma kümelerindeki model çıkarımlarının durdurulduğu ve daha sıkı izolasyon önlemlerinin devreye alındığı ifade edilmiştir. OpenAI, model faaliyetlerini izlemek için saniyeler içinde müdahale edebilen yeni bir denetim sistemi kurduğunu ve güvenlik ihlali şüphesi durumunda faaliyetlerin 30 dakika içinde durdurulacağını kaydetmiştir. Hazırlık Çerçevesi'nin güncelleneceği ve siber yetenekleri yüksek modeller için en katı güvenlik kontrollerinin uygulanmaya devam edeceği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] Avustralyalı Otel Zinciri Quest'in Müşteri Verilerini İfşa Etmesi
+─────────────────────────────────────────────────────────
+Avustralya merkezli apart otel zinciri Quest, üçüncü taraf bir veri tabanı hizmet sağlayıcısındaki güvenlik açığı nedeniyle müşterilerine ait kişisel verilerin yetkisiz kişilerce ele geçirildiğini duyurmuştur. 19 Ağustos 2026 tarihinde paylaşılan bilgilere göre, şirket yetkilileri 17 Ağustos 2026 tarihinde veri tabanına yönelik yetkisiz erişimi tespit ederek müdahale süreçlerini başlatmıştır. İfşa olan verilerin Haziran 2025 öncesine ait kayıtları kapsadığı; misafirlerin tam isimlerini, e-posta adreslerini, iletişim bilgilerini ve bazı durumlarda doğum tarihlerini içerdiği belirtilmiştir. Quest, etkilenen tüm misafirlerle iletişime geçildiğini ve sistemlerdeki sızıntının giderildiğini açıklamıştır. Olayın kapsamını belirlemek amacıyla adli bilişim incelemelerinin başlatıldığı ve dış siber güvenlik danışmanlarının görevlendirildiği bildirilmiştir. Otel zinciri, kaç müşterinin bu durumdan etkilendiği veya verilerin ne kadar geriye gittiği konusunda henüz detaylı bir sayı paylaşmamıştır. Olayla ilgili soruşturmanın sürdüğü kaydedilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] Ransom Busters Grubunun Fidye Yazılımı Sunucularını Hedef Alması
+─────────────────────────────────────────────────────────
+Ransom Busters olarak adlandırılan bir siber tehdit aktörünün, fidye yazılımı mağduru kuruluşlara ulaşarak çalınan verileri silme karşılığında 20.000 ile 60.000 dolar arasında ücret talep ettiği bildirilmiştir. GuidePoint Research and Intelligence Team (GRIT) tarafından paylaşılan raporda, bu aktörün fidye yazılımı hizmeti (RaaS) panellerindeki açıklardan yararlanarak sunuculara sızdığını iddia ettiği belirtilmiştir. Grubun DragonForce, Settra ve Anubis gibi çetelerin mağdurlarını hedef aldığı ve operasyonlarında SoftPerfect Network Scanner ile s5cmd gibi araçları kullandığı tespit edilmiştir. Öte yandan, UNC6671 kod adlı bir başka tehdit aktörünün Nisan ayından bu yana finans ve hukuk sektörlerini hedef alan büyük ölçekli kimlik avı operasyonları yürüttüğü ve 8 milyon dolardan fazla fidye topladığı kaydedilmiştir. Uzmanlar, Ransom Busters'ın vaatlerine güvenilmemesi gerektiğini ve bu durumun bir dolandırıcılık yöntemi olduğunu ifade etmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 18.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[20] Apple'ın Görüntü İşleme Yazılımındaki Casus Yazılım Açığını Kapatması
+─────────────────────────────────────────────────────────
+Apple, iPhone, iPad ve Mac cihazlarında bulunan ve casus yazılım bulaştırmak amacıyla kullanılabilecek kritik bir güvenlik açığı için güncelleme yayımlamıştır. CVE-2026-65346 koduyla takip edilen ve ImageIO çerçevesinde tespit edilen bu hatanın, kötü amaçlı bir görüntünün işlenmesi sırasında rastgele kod yürütülmesine olanak tanıdığı belirtilmiştir. Meta Red Team X araştırmacıları tarafından raporlanan bu tam sayı taşması hatasının, geçmişte Pegasus gibi sıfır tıklama (zero-click) casus yazılımların yayılmasında kullanılan yöntemlerle benzerlik taşıdığı ifade edilmiştir. Şirket, sorunun girdi doğrulama mekanizmalarının iyileştirilmesiyle çözüldüğünü açıklamıştır. Güvenlik uzmanları, özellikle yüksek profilli hedefleri risk altında bırakan bu açığa karşı kullanıcıların 17 Ağustos tarihli güncellemeleri ivedilikle yüklemeleri gerektiğini kaydetmiştir.
+(XXXXXXX, AÇIK -theregister.com, 18.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[21] Apple'ın Görüntü İşleme Yazılımındaki Casus Yazılım Açığını Kapatması
+─────────────────────────────────────────────────────────
+Apple, iPhone, iPad ve Mac cihazlarında bulunan ve casus yazılım bulaştırmak amacıyla kullanılabilecek kritik bir güvenlik açığı için güncelleme yayımlamıştır. CVE-2026-65346 koduyla takip edilen ve ImageIO çerçevesinde tespit edilen bu hatanın, kötü amaçlı bir görüntünün işlenmesi sırasında rastgele kod yürütülmesine olanak tanıdığı belirtilmiştir. Meta Red Team X araştırmacıları tarafından raporlanan bu tam sayı taşması hatasının, geçmişte Pegasus gibi sıfır tıklama (zero-click) casus yazılımların yayılmasında kullanılan yöntemlerle benzerlik taşıdığı ifade edilmiştir. Şirket, sorunun girdi doğrulama mekanizmalarının iyileştirilmesiyle çözüldüğünü açıklamıştır. Güvenlik uzmanları, özellikle yüksek profilli hedefleri risk altında bırakan bu açığa karşı kullanıcıların 17 Ağustos tarihli güncellemeleri ivedilikle yüklemeleri gerektiğini kaydetmiştir.
+(XXXXXXX, AÇIK -theregister.com, 18.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[22] Cl0p Fidye Yazılımı Çetesinin PTC Windchill Mağdurlarını İfşa Etmesi
+─────────────────────────────────────────────────────────
+Fidye yazılımı çetesi Cl0p, PTC'nin ürün yaşam döngüsü yönetimi platformları Windchill ve FlexPLM üzerindeki bir güvenlik açığını hedef alan saldırılarında 40'tan fazla kuruluşu mağdur ettiğini açıklamıştır. CVE-2026-12569 kodlu zafiyetin istismar edilmesiyle gerçekleştirilen bu kampanyada; Shell, Philips, Fiserv ve Zebra gibi küresel ölçekli şirketlerin hedef alındığı belirtilmiştir. Siber güvenlik firması ReliaQuest, saldırganların veri hırsızlığı kapasitesine sahip özel bir implant kullanarak hassas kasa verilerini haritalandırdığını ve kimlik bilgilerini ele geçirdiğini raporlamıştır. Çetenin, mağdurlardan çaldığı veri miktarının 1 GB ile birkaç terabayt arasında değiştiği ifade edilmiştir. Bazı şirketlerin fidye ödemeyi reddettiği kaydedilirken, GE'nin listeden çıkarılmasının olası bir anlaşmaya işaret edebileceği bildirilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[23] MLflow ve FUXA Yazılımlarında Kritik Güvenlik Açıklarının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Yapay zeka platformu MLflow ve endüstriyel otomasyon yazılımı FUXA üzerinde iki kritik güvenlik açığının aktif olarak istismar edildiği tespit edilmiştir. watchTowr ve VulnCheck tarafından yapılan açıklamalarda, MLflow'daki CVE-2026-64849 kodlu açığın saldırganların bulut kimlik bilgilerini ve gizli verilerini ele geçirmesine olanak tanıdığı belirtilmiştir. FUXA yazılımındaki CVE-2026-25895 kodlu açığın ise kimlik doğrulaması gerektirmeden sunucu üzerinde uzaktan kod yürütülmesine imkan verdiği kaydedilmiştir. watchTowr, saldırganların internete açık MLflow örneklerini tarayarak bulut meta veri servislerine sızdığını ifade etmiştir. VulnCheck ise 18 Ağustos 2026 tarihinden itibaren FUXA örneklerine yönelik kötü niyetli taramaların başladığını ve yaklaşık 60 kurulumun risk altında olduğunu bildirmiştir. Kuruluşlara, etkilenen sistemleri ivedilikle yamalamaları ve denetim günlüklerini incelemeleri tavsiye edilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 18.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[24] StopAndProtect Operasyonunun WordPress Siteleri Üzerinden Zararlı Yayması
+─────────────────────────────────────────────────────────
+Check Point Research, yaklaşık 2.000 adet ele geçirilmiş WordPress web sitesini altyapı olarak kullanan StopAndProtect adlı küresel bir siber suç operasyonunu ortaya çıkarmıştır. Operasyonun, kurbanların sistemlerinden veri çalmak, ekranları kilitlemek ve fidye yazılımı yaymak için karmaşık bir araç seti kullandığı belirtilmiştir. Saldırı zincirinin ClickFix yöntemiyle başladığı ve PowerShell komutları aracılığıyla sistemlere çeşitli zararlı yazılım bileşenlerinin yüklendiği kaydedilmiştir. Ele geçirilen sitelerin çoğunun güncel olmayan WordPress sürümleri ve eklentileri çalıştırdığı, bu durumun saldırganlara uzaktan kod yürütme imkanı tanıdığı ifade edilmiştir. Temmuz 2024 itibarıyla operasyonun ABD, Rusya ve Hindistan başta olmak üzere 6.000'den fazla benzersiz IP adresini etkilediği ve 700'den fazla veri arşivinin çalındığı bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[25] Google'ın Yapay Zeka Ajanlarıyla Kritik Yazılım Açıklarını Tespit Etmesi
+─────────────────────────────────────────────────────────
+Google bünyesindeki Mandiant, Agentic Vulnerability Discovery Harness (AVDH) adlı yapay zeka tabanlı aracın, çalınan kurumsal depolar üzerinde yapılan iki günlük bir incelemede 100'den fazla doğrulanmış yüksek riskli güvenlik açığı bulduğunu açıklamıştır. 19 Ağustos 2026 tarihinde paylaşılan bilgilere göre, on aydır kullanılan bu sistem, milyonlarca satır kodu tarayarak aralarında CVE-2026-13242 ve CVE-2026-55803 kodlu açıkların da bulunduğu 12 adet atanmış CVE ile sonuçlanan bulgular üretmiştir. AVDH sisteminin, tehdit modelleme, giriş noktası keşfi ve hipotez doğrulama gibi aşamalardan oluşan bir yapay zeka ajanı zinciriyle çalıştığı belirtilmektedir. Mandiant araştırmacıları, yapay zeka tarafından tespit edilen her bulgunun uzman danışmanlar tarafından manuel olarak doğrulandığını ve hata payının bu yöntemle düşürüldüğünü ifade etmiştir. Geliştirilen bu aracın, geleneksel tarama motorlarının gözden kaçırdığı karmaşık güvenlik açıklarını tespit ederek savunma tarafına avantaj sağladığı kaydedilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[26] Oracle'ın Ağustos 2026 Güvenlik Güncellemesiyle 943 Yama Yayınlaması
+─────────────────────────────────────────────────────────
+Oracle, Ağustos 2026 Kritik Güvenlik Yaması Güncellemesi kapsamında iki düzineden fazla üründeki 1.000'den fazla güvenlik açığını gideren 943 yeni yama yayınlamıştır. Şirket tarafından yapılan açıklamada, bu açıkların 460'tan fazlasının kimlik doğrulama gerektirmeden uzaktan istismar edilebildiği belirtilmiştir. Fusion Middleware ve Hyperion ürünleri, her biri 262 yama ile en fazla güncelleme alan sistemler olarak kaydedilmiştir. Güvenlik açıklarının 150'den fazlasının kritik seviyede olduğu ve yaklaşık 90 tanesinin 9.8 veya üzeri CVSS puanına sahip olduğu ifade edilmiştir. Oracle, yama sürecini hızlandırmak için gelişmiş büyük dil modellerinden yararlandığını bildirmiştir. Tehdit aktörlerinin Oracle ürünlerindeki açıkları aktif olarak hedeflediği vurgulanarak, kullanıcıların güncellemeleri ivedilikle uygulamaları tavsiye edilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[27] Microsoft'un Windows Defender Çökmelerine Neden Olan Hatayı Gidermesi
+─────────────────────────────────────────────────────────
+Microsoft, son güvenlik güncellemesinin ardından Windows Defender yazılımının çökmesine yol açan ve sistemlerde erişim ihlali hatalarına neden olan bir sorunu çözmüştür. Kullanıcıların Windows 10 ve Windows 11 cihazlarında hızlı veya tam taramalar sırasında hizmetin durduğuna dair hata mesajları aldığı belirtilmiştir. Sorunun, Microsoft Defender Antivirus imza güncellemesi sürüm 1.457.236.0 veya daha yeni sürümlerle otomatik olarak giderildiği açıklanmıştır. Şirket sözcüsü, etkilenen müşterilerin en son güncellemeleri uygulamalarını veya otomatik güncellemeleri etkinleştirmelerini önermiştir. Geçmiş dönemlerde de benzer şekilde Defender'ın güvenli sertifikaları yanlışlıkla zararlı yazılım olarak işaretlediği ve portal kesintileri yaşandığı hatırlatılmıştır. Güncellemenin Windows Update üzerinden denetlenmesi gerektiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[28] Araştırmacıların Süresi Dolan Kredi Kartlarını Ödemelerde Yeniden Canlandırması
+─────────────────────────────────────────────────────────
+Massachusetts Amherst Üniversitesi'nden araştırmacılar, süresi dolmuş temassız kredi kartlarının ödeme terminallerinde geçerli görünmesini sağlayan bir yöntem geliştirdiklerini açıklamıştır. USENIX Security 2026 konferansında sunulan çalışmada, EMV temassız protokolündeki bütünlük koruması eksikliklerinin bu duruma yol açtığı ifade edilmiştir. Araştırmacılar, NFC proxy cihazları kullanarak yaptıkları testlerde Visa kartlarının bu saldırıya karşı savunmasız olduğunu, ancak Mastercard ve American Express kartlarının direnç gösterdiğini belirtmiştir. Sorunun, kartın son kullanma tarihinin dijital imza ile kriptografik olarak korunmamasından kaynaklandığı kaydedilmiştir. Visa ve ilgili bankaların 2025 yılından bu yana bilgilendirildiği ancak henüz resmi bir düzeltme teyidi gelmediği bildirilmiştir. Saldırının başarısının, bankaların işlem doğrulama sırasında yürüttüğü güvenlik kontrollerine bağlı olduğu vurgulanmıştır.
+(XXXXXXX, AÇIK -theregister.com, 18.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[29] Microsoft'un Kritik Copilot Güvenlik Açığını Sekiz Ay Sonra Yamalaması
+─────────────────────────────────────────────────────────
+Microsoft, yapay zeka asistanı Copilot'un kişisel sürümünde tespit edilen ve CoSnitch olarak adlandırılan kritik bir güvenlik açığını kapatmak için yama yayınlamıştır. Varonis araştırmacıları tarafından keşfedilen bu açığın, saldırganların tek bir bağlantı üzerinden kurumsal verileri sızdırmasına ve kalıcı bellek zehirlemesi yapmasına olanak tanıdığı belirtilmiştir. Araştırmacıların, Copilot'u kendi mimari zayıflıklarını açıklaması için manipüle ederek bu açığı ortaya çıkardığı ifade edilmiştir. Microsoft, kurumsal müşterilerin bu durumdan etkilenmediğini açıklasa da uzmanlar, kişisel hesapların kurumsal ortamlarda kullanılmasının risk oluşturabileceğine dikkat çekmiştir. Açığın bir kısmının Şubat ayında giderildiği, ancak tam çözümün Ağustos 2026 itibarıyla tamamlandığı kaydedilmiştir. Güvenlik analistleri, yapay zeka sistemlerinde veri ve talimat ayrımının net olmamasının bu tür saldırıları mümkün kıldığını bildirmiştir.
+(XXXXXXX, AÇIK -csoonline.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[30] Adobe Ürünlerinde Tespit Edilen Güvenlik Açığının Giderilmesi
+─────────────────────────────────────────────────────────
+Fransa Ulusal Siber Güvenlik Ajansı (ANSSI), Adobe ürünlerinde veri gizliliğinin ihlaline ve uzaktan kod yürütülmesine olanak tanıyan çok sayıda güvenlik açığı tespit edildiğini duyurmuştur. Etkilenen ürünler arasında Adobe Commerce, ColdFusion 2023, ColdFusion 2025 ve Magento Open Source yazılımlarının bulunduğu belirtilmiştir. Bu açıkların, saldırganlara ayrıcalık yükseltme, hizmet dışı bırakma (DoS) ve rastgele kod çalıştırma imkanı tanıdığı ifade edilmiştir. Yayınlanan güvenlik bülteninde, aralarında CVE-2026-21273 ve CVE-2026-71387 kodlu açıkların da bulunduğu yirmiden fazla zafiyetin listelendiği kaydedilmiştir. Adobe, Ağustos 2026 güvenlik güncellemeleri kapsamında bu hatalar için düzeltici yamalar yayınladığını açıklamıştır. Kullanıcıların ve sistem yöneticilerinin, ilgili ürünler için sağlanan en güncel güvenlik paketlerini ivedilikle yüklemeleri gerektiği bildirilmiştir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 13.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[31] Chrome ve Firefox Tarayıcılarında Onlarca Güvenlik Açığının Kapatılması
+─────────────────────────────────────────────────────────
+Google ve Mozilla, Chrome ve Firefox tarayıcılarında kod yürütme, yetki yükseltme ve korumalı alan dışına çıkma risklerine yol açan çok sayıda kritik ve yüksek öncelikli güvenlik açığını gidermek amacıyla güncellemeler yayımlamıştır. Firefox 154 sürümüyle birlikte, yaklaşık yarısı bellek güvenliği hatası olan 58 adet CVE kodlu zafiyetin yamalandığı bildirilmiştir. Mozilla ayrıca, Thunderbird 154 ve çeşitli Firefox ESR sürümleri için de benzer güvenlik düzeltmelerini kullanıma sunmuştur. Google tarafında ise Chrome 151 güncellemesiyle, WebGL ve Dawn bileşenlerindeki iki kritik arabellek taşması hatası dahil olmak üzere toplam 15 zafiyetin giderildiği belirtilmiştir. Güncellemelerin Windows, macOS ve Linux kullanıcıları için dağıtıma çıktığı ve zafiyetlerin bir kısmının harici araştırmacılar tarafından raporlandığı kaydedilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
