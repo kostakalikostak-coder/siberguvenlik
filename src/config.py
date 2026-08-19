@@ -1802,6 +1802,76 @@ HABERLER:
 
 
 
+def get_yayin_yonetmeni_prompt(manset_items, govde_items):
+    """GENEL YAYIN YÖNETMENİ — bitmiş raporun TAMAMINA bakan tek katman.
+
+    NEDEN VAR: boru hattındaki tüm LLM denetimleri PARÇA görüyordu — biri
+    yalnızca paragrafları (resmi dil), biri yalnızca 3 manşeti (seçim vetosu),
+    biri yalnızca mükerrerleri. Hiçbiri bitmiş raporu bir bütün olarak
+    okumuyordu. Oysa editoryal hataların çoğu ancak bütünde görülür.
+
+    ÖLÇÜLEN VAKA (2026-08-19): yamalanmış bir Apple ImageIO açığı (kurban yok,
+    kampanya yok) casus_yazilim etiketiyle 94 puan alıp KRİTİK 3'e çıktı;
+    aynı gün gövdede iki Alman bakanlığının devlet ağından çıkarılması (92),
+    fidye çetelerince AKTİF İSTİSMAR EDİLEN Windows açığı (93) ve Ukrayna
+    varlık kurtarma ajansına saldırı (90) kaldı. Bir yayın yönetmeni bunu tek
+    bakışta görür; mevcut seçim denetimi ise "sıralama tercihi hata değildir"
+    diyerek bunu BİLEREK dışarıda bırakıyordu.
+
+    EYLEM ALANI KAPALIDIR — yalnızca dört eylem üretebilir ve hiçbiri haber
+    SİLEMEZ. Manşetten inen haber gövdede kalır; gövdeden çıkan manşete gider.
+    Metin düzeltmesi yalnızca DİL içindir; olgular (sayı, tarih, CVE, kurum ve
+    kişi adları) kod tarafında ayrıca korunur (bkz. main._olgu_korundu_mu).
+    """
+    return f"""Sen bir siber güvenlik bülteninin GENEL YAYIN YÖNETMENİSİN.
+Bugünkü rapor hazır; yayına girmeden önceki SON okumayı yapıyorsun.
+
+Aşağıda raporun MANŞET (KRİTİK 3) haberleri ve TÜM gövde haberleri var.
+Her haberde: id, kategori, puan, başlık ve paragraf.
+
+DÖRT TÜR DÜZELTME yapabilirsin. Hiçbiri haber SİLMEZ:
+
+1) "takas" — Bir manşet gövdeye inmeli VE bir gövde haberi manşete çıkmalı.
+   Ölçüt ÖNEM: hangi haber okuyucu için daha büyük sonuç doğuruyor?
+   Daha önemli olan: gerçekleşmiş ve sürmekte olan olay > potansiyel risk;
+   geniş/kritik etki (devlet ağı, altyapı, çok sayıda kurum) > tekil ürün;
+   AKTİF İSTİSMAR edilen açık > yamalanmış ama istismar edilmemiş açık.
+   En fazla 2 takas öner. Emin değilsen takas ÖNERME.
+
+2) "kategori" — Haberin kategorisi metniyle çelişiyorsa düzelt.
+   En sık hata: yamalanmış bir zafiyet "casus_yazilim" sanılır. Kurban,
+   kampanya ya da adlandırılmış satıcı (Pegasus, Predator...) YOKSA o haber
+   casus yazılım operasyonu değil, bir ZAFİYET haberidir.
+   Geçerli kategoriler: casus_yazilim, nation_state_apt,
+   stratejik_kurum_saldirisi, politika_hukuk, tedarik_zinciri,
+   kolluk_operasyonu, veri_ihlali, zafiyet_aktif_apt, zafiyet_rutin,
+   phishing_sosyal_muhendislik.
+
+3) "baslik" — Başlıkta yazım/dil hatası varsa düzelt (ör. "Yuçlamalar" →
+   "Suçlamalar"). ANLAMI DEĞİŞTİRME, yalnızca hatayı gider.
+
+4) "paragraf" — Paragrafta yazım hatası, bozuk cümle ya da düşük anlatım
+   varsa düzelt. OLGULARA DOKUNMA: sayı, tarih, yüzde, CVE kodu, kurum ve
+   kişi adları BİREBİR korunmalı. Yalnızca dili düzelt, bilgi EKLEME.
+
+ŞÜPHEDEYSEN DOKUNMA. Düzeltme yapmamak, yanlış düzeltmekten iyidir.
+
+MANŞET (KRİTİK 3):
+{manset_items}
+
+GÖVDE:
+{govde_items}
+
+YALNIZCA şu JSON'u döndür:
+{{
+  "takaslar": [{{"inen": <manşet id>, "cikan": <gövde id>, "neden": "<en fazla 20 kelime>"}}],
+  "kategoriler": [{{"id": <id>, "yeni": "<kategori>", "neden": "<en fazla 15 kelime>"}}],
+  "basliklar": [{{"id": <id>, "yeni": "<düzeltilmiş başlık>"}}],
+  "paragraflar": [{{"id": <id>, "yeni": "<düzeltilmiş paragraf>"}}]
+}}
+Düzeltme yoksa alanları boş liste bırak."""
+
+
 def get_kritik3_selection_audit_prompt(manset_items, govde_items):
     """MANŞET SEÇİM DENETİMİ — "bu haber gerçekten günün en kritik 3'ünden mi?"
 

@@ -76,6 +76,7 @@ from src.config import (
     get_legacy_json_prompt, get_quality_review_prompt, get_dedup_review_prompt,
     get_cross_day_dedup_prompt, get_register_audit_prompt,
     get_kritik3_selection_audit_prompt,
+    get_yayin_yonetmeni_prompt,
     get_executive_summary_prompt, get_title_rescue_prompt,
     get_kritik3_length_fix_prompt,
     get_scoring_prompt, get_critique_prompt,
@@ -5724,6 +5725,29 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         self._tarih_izi = {'duzeltilen': duzeltilen, 'isaretli': isaretli}
         return duzeltilen, isaretli
 
+    # Metin düzeltmesinde KORUNMASI ZORUNLU olgu kalıpları.
+    _OLGU_RE = re.compile(
+        r'CVE-\d{4}-\d{4,7}'          # zafiyet kimliği
+        r'|\b\d[\d.,]*\s*(?:%|milyon|milyar|bin|TB|GB)?'   # sayı/ölçü
+        r'|\b(?:19|20)\d{2}\b',        # yıl
+        re.IGNORECASE)
+
+    def _olgu_korundu_mu(self, eski, yeni):
+        """Düzeltilmiş metin, orijinalin OLGULARINI birebir koruyor mu?
+
+        Yayın yönetmeni katmanına metin düzeltme yetkisi verilir ama olgu
+        değiştirme yetkisi VERİLMEZ. LLM'in dili düzeltirken sayı/tarih/CVE
+        kaydırması bu projede zaten ölçüldü (2026-08-19 tarih denetimi: bir
+        paragrafta '2027' uyduruldu). Dil düzeltmesi geri alınabilir bir
+        iyileştirme, olgu kayması ise sessiz bir yanlış bilgidir.
+
+        Karşılaştırma KÜME düzeyindedir: sıra değişebilir, içerik değişemez.
+        """
+        return (sorted(m.group(0).strip().lower()
+                       for m in self._OLGU_RE.finditer(eski or ''))
+                == sorted(m.group(0).strip().lower()
+                          for m in self._OLGU_RE.finditer(yeni or '')))
+
     def _manset_karar_kaydet(self, katman, aid, yedek, neden):
         """Manşet DEĞİŞTİRME kararlarını kalıcı ize yazar.
 
@@ -5749,6 +5773,106 @@ document.addEventListener('DOMContentLoaded', initDragFile);
     # 2026-08-16'da rapor 5 haberdi; sebebin gerçek arz mı yoksa boru hattı
     # arızası mı olduğu denetim kaydından ANLAŞILAMIYORDU.
     INCE_RAPOR_ESIGI = 12
+
+    # Yayın yönetmeninin yapabileceği en fazla takas sayısı. Sınır bilinçli:
+    # sınırsız takas, deterministik puan sıralamasını tamamen LLM tercihine
+    # devretmek olurdu; amaç sıralamayı DEVRALMAK değil AÇIK hataları
+    # düzeltmek.
+    YAYIN_YONETMENI_MAX_TAKAS = 2
+
+    def _yayin_yonetmeni(self, top3_ids, govde_ids, records,
+                         content_by_id, articles_by_id):
+        """Bitmiş raporun TAMAMINA bakan son editoryal geçiş.
+
+        Diğer tüm LLM denetimleri parça görür (yalnızca paragraflar, yalnızca
+        3 manşet, yalnızca mükerrerler); bu katman raporu bir bütün olarak
+        okur — editoryal hataların çoğu ancak bütünde görülür.
+
+        EYLEM ALANI KAPALI, HABER SİLİNEMEZ: manşetten inen gövdeye geçer,
+        gövdeden çıkan manşete gelir. Kategori düzeltmesi yalnızca geçerli
+        kategorilere; metin düzeltmesi olgu koruması altında (_olgu_korundu_mu).
+
+        Dönüş: (yeni_top3, yeni_govde). LLM boş/bozuk dönerse liste değişmez.
+        """
+        if not top3_ids:
+            return list(top3_ids), list(govde_ids)
+
+        def _satir(aid):
+            c = content_by_id.get(aid, {}) or {}
+            a = articles_by_id.get(aid, {}) or {}
+            rec = records.get(aid, {}) or {}
+            baslik = c.get('tr_title') or a.get('title', '')
+            para = ' '.join((c.get('paragraph', '') or '').split()[:80])
+            return (f"=== ID: {aid} | kategori: {rec.get('kat','')} | "
+                    f"puan: {rec.get('toplam',0)} ===\n"
+                    f"Başlık: {baslik}\nParagraf: {para}\n")
+
+        manset = '\n'.join(_satir(a) for a in top3_ids)
+        govde = '\n'.join(_satir(a) for a in list(govde_ids)[:24])
+        data = self._gemini_call_json(
+            get_yayin_yonetmeni_prompt(manset, govde),
+            max_output_tokens=4096, label='YayınYönetmeni')
+        if not isinstance(data, dict):
+            print("   📰 Yayın yönetmeni: yanıt alınamadı — rapor değişmedi.")
+            return list(top3_ids), list(govde_ids)
+
+        yeni_top3, yeni_govde = list(top3_ids), list(govde_ids)
+
+        # 1) TAKASLAR — haber silinmez, yer değiştirir.
+        takas = 0
+        for t in (data.get('takaslar') or []):
+            if takas >= self.YAYIN_YONETMENI_MAX_TAKAS:
+                break
+            try:
+                inen, cikan = int(t.get('inen')), int(t.get('cikan'))
+            except (TypeError, ValueError):
+                continue
+            if inen not in yeni_top3 or cikan not in yeni_govde:
+                continue
+            neden = str(t.get('neden', ''))[:80]
+            yeni_top3[yeni_top3.index(inen)] = cikan
+            yeni_govde[yeni_govde.index(cikan)] = inen
+            takas += 1
+            self._manset_karar_kaydet('yayin_yonetmeni_takas', inen, cikan, neden)
+            print(f"   📰 Yayın yönetmeni TAKAS: ID {inen} gövdeye indi, "
+                  f"ID {cikan} manşete çıktı — {neden}")
+
+        # 2) KATEGORİ düzeltmeleri
+        for k in (data.get('kategoriler') or []):
+            try:
+                aid = int(k.get('id'))
+            except (TypeError, ValueError):
+                continue
+            yenikat = str(k.get('yeni', '')).strip()
+            rec = records.get(aid)
+            if not rec or yenikat not in KATEGORI_ONCELIK or yenikat == rec.get('kat'):
+                continue
+            eski = rec['kat']
+            rec['kat'] = yenikat
+            rec['toplam'] = self._record_total(rec)
+            print(f"   📰 Yayın yönetmeni KATEGORİ: ID {aid} {eski} → {yenikat} "
+                  f"— {str(k.get('neden',''))[:60]}")
+
+        # 3) BAŞLIK ve 4) PARAGRAF düzeltmeleri — olgu koruması altında
+        for alan, anahtar in (('tr_title', 'basliklar'),
+                              ('paragraph', 'paragraflar')):
+            for d in (data.get(anahtar) or []):
+                try:
+                    aid = int(d.get('id'))
+                except (TypeError, ValueError):
+                    continue
+                c = content_by_id.get(aid)
+                yenimetin = str(d.get('yeni', '')).strip()
+                if not c or not yenimetin or yenimetin == (c.get(alan) or ''):
+                    continue
+                if not self._olgu_korundu_mu(c.get(alan, ''), yenimetin):
+                    print(f"   ⛔ Yayın yönetmeni {alan} düzeltmesi REDDEDİLDİ "
+                          f"(ID {aid}): olgu değişmiş (sayı/tarih/CVE).")
+                    continue
+                c[alan] = yenimetin
+                print(f"   📰 Yayın yönetmeni {alan.upper()} düzeltti: ID {aid}")
+
+        return yeni_top3, yeni_govde
 
     def _kalite_denetimi_yaz(self, top3_ids, govde_ids, records,
                              content_by_id, articles_by_id, eleme_nedeni=None):
@@ -6591,6 +6715,17 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # 'govde' gösteriyordu (31.07.2026'da 7 haber).
         # Kaynakta olmayan yıl (üretim kayması) — render'dan ÖNCE düzeltilir.
         self._tarih_denetimi(content_by_id, articles_by_id)
+
+        # ── GENEL YAYIN YÖNETMENİ — bitmiş raporun TAMAMINA son bakış ──────
+        # Buraya kadarki tüm denetimler PARÇA gördü. Bu katman manşeti ve tüm
+        # gövdeyi yan yana okuyup açık editoryal hataları düzeltir; haber
+        # silemez, olgu değiştiremez (bkz. _yayin_yonetmeni).
+        top3_ids, _yy_govde = self._yayin_yonetmeni(
+            top3_ids, list(top10_ids) + list(remaining_ids),
+            score_records, content_by_id, articles_by_id)
+        # Takas sonrası gövde sırasını koru: top10 ve remaining yeniden bölünür.
+        _n10 = len(top10_ids)
+        top10_ids, remaining_ids = _yy_govde[:_n10], _yy_govde[_n10:]
 
         self._write_scoring_log(articles, score_records, top10_ids,
                                 remaining_ids, top3_ids, critique_changed,
