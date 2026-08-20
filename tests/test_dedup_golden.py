@@ -155,3 +155,39 @@ def test_golden_kurucu_gun_guvenli():
         if 'ham' not in (vaka['a'][0], vaka['b'][0]):
             continue
         assert mod._vaka_gunu(vaka), f'{vaka["ad"]}: adında tarih yok'
+
+
+def test_farkli_urun_bultenleri_ayni_olay_degil():
+    """CERT-FR bültenlerinde ÜRÜN farklıysa aynı olay değildir.
+
+    2026-08-20 koşusunda Zimbra bülteni Chrome, Joomla ve Red Hat Linux
+    çekirdeği bültenleriyle aynı olay sayıldı; üç ayrı üründeki zafiyet
+    haberi `govde_ayni_olay` etiketiyle rapordan elendi. Kalıp sözcükleri
+    ("Multiples vulnérabilités dans ... (tarih)") tek ayırt edici parça olan
+    ürün adını Jaccard'da boğuyordu.
+    """
+    from src import dedup
+
+    def _v(tr, en):
+        return {'title': en, 'tr_title': tr, 'paragraph': '', 'full_text': en}
+
+    zimbra = _v('Synacor Zimbra Collaboration Yazılımında Çoklu Güvenlik Açıkları',
+                'Multiples vulnérabilités dans Synacor Zimbra Collaboration '
+                '(19 août 2026)')
+    for tr, en in (
+        ("Google Chrome'da Çoklu Güvenlik Açıkları",
+         'Multiples vulnérabilités dans Google Chrome (19 août 2026)'),
+        ('Joomla! İçerik Yönetim Sisteminde Çoklu Güvenlik Açıkları',
+         'Multiples vulnérabilités dans Joomla! (19 août 2026)'),
+        ('Red Hat Linux Çekirdeğinde Çoklu Güvenlik Açıkları',
+         'Multiples vulnérabilités dans le noyau Linux de Red Hat (14 août 2026)'),
+    ):
+        assert not dedup.same_event(zimbra, _v(tr, en)), \
+            f'farklı ürün bülteni aynı olay sayıldı: {tr}'
+
+    # AYNI ürünün bülteni hâlâ birleşmeli — koruma fazla geniş olmamalı.
+    assert dedup.same_event(
+        zimbra,
+        _v('Synacor Zimbra Collaboration Yazılımında Çoklu Güvenlik Açıkları',
+           'Multiples vulnérabilités dans Synacor Zimbra Collaboration '
+           '(20 août 2026)')), 'aynı ürün bülteni birleşmedi'

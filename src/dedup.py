@@ -380,6 +380,17 @@ _STOPWORDS = {
     'with', 'as', 'at', 'from', 'that', 'this', 'it', 'its', 'has', 'have',
     'was', 'were', 'be', 'been', 'or', 'into', 'their', 'they', 'which', 'said',
     'new', 'also', 'using', 'used', 'use', 'after', 'over', 'than', 'who',
+    # FR — CERT-FR bültenleri sabit kalıplıdır: "Multiples vulnérabilités dans
+    # <ÜRÜN> (<TARİH>)". Bu kalıbın kendisi jenerik olduğu için ÖLÇÜLDÜ
+    # (2026-08-20 koşusu): Zimbra bülteni Chrome, Joomla ve Red Hat Linux
+    # bültenleriyle AYNI OLAY sayıldı; üç ayrı üründeki zafiyet haberi
+    # `govde_ayni_olay` etiketiyle elendi. Ürün adı tek ayırt edici token'dı ve
+    # kalıp sözcükleri onu Jaccard'da boğuyordu.
+    'multiples', 'multiple', 'vulnérabilités', 'vulnerabilites',
+    'vulnérabilité', 'vulnerabilite', 'dans', 'pour', 'avec', 'sur', 'les',
+    'des', 'une', 'aux', 'par', 'est', 'sont', 'plusieurs', 'noyau',
+    'janvier', 'février', 'fevrier', 'mars', 'avril', 'juin', 'juillet',
+    'août', 'aout', 'septembre', 'octobre', 'novembre', 'décembre', 'decembre',
 }
 
 
@@ -642,6 +653,31 @@ def _bundle(view):
     return head_title, paragraph, en_title, full_text
 
 
+# ── ÜRÜN BÜLTENİ (CERT-FR kalıbı) ────────────────────────────────────────
+# "Multiples vulnérabilités dans <ÜRÜN> (<TARİH>)" — bülten kalıbının tek
+# ayırt edici parçası ürün adıdır. Kalıp sözcükleri konu örtüşmesinde ürünü
+# boğduğu için ürün adı AYRI bir sinyal olarak çıkarılır (bkz. same_event 2f).
+_BULTEN_RE = re.compile(
+    r'multiples?\s+vuln[ée]rabilit[ée]s?\s+dans\s+(.+?)(?:\s*\(|$)',
+    re.IGNORECASE)
+# Ürün adının kendisinde geçen ama ürünü ADLANDIRMAYAN bağlaç/nitelemeler.
+_BULTEN_DOLGU = {'le', 'la', 'les', 'de', 'du', 'des', 'un', 'une', 'et',
+                 'noyau', 'produits', 'produit'}
+
+
+def bulten_urunu(text):
+    """CERT-FR bülten başlığındaki ÜRÜN adının köklerini döner (yoksa boş küme)."""
+    m = _BULTEN_RE.search(text or '')
+    if not m:
+        return set()
+    out = set()
+    for t in re.findall(r'[0-9a-zà-ÿ]+', m.group(1).lower()):
+        if len(t) < 3 or t in _BULTEN_DOLGU:
+            continue
+        out.add(t[:5])
+    return out
+
+
 def same_event(view_a, view_b, explain=False, cross_day=False):
     """İki haber aynı olayı/kampanyayı/zafiyeti mi anlatıyor? (deterministik)
 
@@ -718,6 +754,22 @@ def same_event(view_a, view_b, explain=False, cross_day=False):
     #     aynı felsefe.) Bu, "CVE-2026-XXXX Açığı" gibi kalıp başlıkların
     #     SequenceMatcher'da yanlışlıkla eşleşmesini (rule 4) engeller.
     if actors_a and actors_b and not shared_actors:
+        return _ret(False, '')
+
+    # 2f) ÜRÜN BÜLTENİ ÇAKIŞMASI — farklı ürün = farklı olay.
+    #     CERT-FR bültenleri sabit kalıplıdır ("Multiples vulnérabilités dans
+    #     <ÜRÜN> (<TARİH>)") ve tek ayırt edici parça ÜRÜN adıdır. Kalıbın
+    #     kendisi Jaccard'da o kadar ağır basar ki iki farklı ürün bülteni
+    #     _TOPIC_ALONE eşiğini tek başına aşar.
+    #
+    #     ÖLÇÜLDÜ (2026-08-20 koşusu): Zimbra bülteni Chrome, Joomla ve Red Hat
+    #     Linux çekirdeği bültenleriyle AYNI OLAY sayıldı; üç ayrı üründeki
+    #     zafiyet haberi `govde_ayni_olay` etiketiyle rapordan elendi.
+    #
+    #     Kural 2b ile aynı felsefe: İKİSİNDE DE ürün adı var ama ORTAK YOKSA
+    #     erken False. Tek taraflı eşleşmede karar diğer kurallara bırakılır.
+    ua, ub = bulten_urunu(ha + ' ' + fa), bulten_urunu(hb + ' ' + fb)
+    if ua and ub and not (ua & ub):
         return _ret(False, '')
 
     # 3) Yüksek içerik örtüşmesi tek başına
