@@ -22,3 +22,4 @@
 2026-08-19 16:20 | DEDUP SIFIR - Graham Cluley: 3 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 2)
 2026-08-19 16:20 | DEDUP SIFIR - SANS ISC: 5 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 2, daha önce raporlanmış: 3)
 2026-08-19 16:20 | DEDUP SIFIR - Microsoft Security: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 0)
+2026-08-20 12:05 | DEDUP SIFIR - CERT-EU: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 0)
