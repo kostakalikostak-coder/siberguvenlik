@@ -175,3 +175,33 @@ def test_govdenin_tamami_gosterilir():
     s._yayin_yonetmeni([1, 2, 3], govde, records, content, arts)
     for aid in govde:
         assert f'ID: {aid} |' in gorulen['p'], f'ID {aid} yönetmene gösterilmedi'
+
+
+def test_kategori_listesi_config_ile_senkron():
+    """Yönetmene sunulan kategori listesi SCORING_CATEGORIES'ten türetilmeli.
+
+    Liste elle yazılıyken yeni kategori eklendiğinde sessizce eskiyordu:
+    yönetmen o etiketi hiç ÖNERMİYOR, dolayısıyla yanlış kategoriyi
+    düzeltemiyordu.
+    """
+    from src import config
+    metin = config.get_yayin_yonetmeni_prompt('a', 'b')
+    for kat in config.SCORING_CATEGORIES:
+        if kat in ('urun_icerik', 'siber_disi'):
+            assert kat not in metin.split('Geçerli kategoriler:')[1][:400], \
+                f'{kat} yönetmene önerilmemeli (haber silmeye eşdeğer)'
+        else:
+            assert kat in metin, f'{kat} yönetmene sunulmuyor'
+
+
+def test_yeni_kategori_oncelik_tablosunda():
+    """Her skorlama kategorisinin eşitlik-bozucu önceliği tanımlı olmalı.
+
+    Tanımsız kategori KATEGORI_ONCELIK.get(...) ile sessizce 0 alır ve
+    sıralamada en dibe düşer; ayrıca yönetmenin kategori düzeltmesi
+    `yenikat not in KATEGORI_ONCELIK` kontrolüne takılıp uygulanmaz.
+    """
+    from src import config
+    eksik = [k for k in config.SCORING_CATEGORIES
+             if k not in config.KATEGORI_ONCELIK]
+    assert not eksik, f'öncelik tablosunda eksik kategori: {eksik}'

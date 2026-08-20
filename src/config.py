@@ -173,6 +173,7 @@ SCORING_CATEGORIES = (
     'zafiyet_aktif_apt',          # zafiyet + AKTİF istismar + APT/nation-state atfı
     'zafiyet_rutin',              # CVE/patch/PoC — rutin teknik zafiyet
     'phishing_sosyal_muhendislik', # kimlik avı/sosyal mühendislik kampanyası (nation-state atfı YOKSA)
+    'yapay_zeka_guvenligi',       # YZ ajanı/modeli kaynaklı somut güvenlik olayı
     'urun_icerik',                # ürün lansmanı, webinar, röportaj, inceleme, tavsiye
     'siber_disi',                 # doğrudan siber boyutu olmayan haber
 )
@@ -195,6 +196,7 @@ KATEGORI_ONCELIK = {
     'politika_hukuk':              7,
     'tedarik_zinciri':             5,
     'kolluk_operasyonu':           5,
+    'yapay_zeka_guvenligi':        4,
     'veri_ihlali':                 3,
     'zafiyet_aktif_apt':           2,
     'zafiyet_rutin':               1,
@@ -623,6 +625,7 @@ Her haber için şunları belirle:
    • zafiyet_aktif_apt          → güvenlik açığı + KANITLANMIŞ aktif istismar + devlet/APT atfı (ikisi de olmalı)
    • zafiyet_rutin              → CVE/yama/PoC/güvenlik açığı tespiti (aktif APT istismarı YOKSA buraya)
    • phishing_sosyal_muhendislik → kimlik avı/sosyal mühendislik/oltalama kampanyası — nation-state atfı YOKSA (varsa `nation_state_apt`)
+   • yapay_zeka_guvenligi       → YZ ajanı/modeli/aracının KENDİSİNDEN kaynaklanan somut güvenlik olayı: ajanın güvenli alandan (sandbox) kaçması, prompt injection ile ele geçirilmesi, ajanın zararlı paket/kod önermesi, YZ üretimi saldırı aracı. Bir CVE/yama haberi DEĞİLDİR.
    • urun_icerik                → ürün lansmanı, beta, webinar, konferans, röportaj, inceleme, genel tavsiye, pazar araştırması
    • siber_disi                 → doğrudan siber boyutu OLMAYAN haber (saf diplomatik/askeri/ekonomik/siyasi)
 
@@ -633,6 +636,17 @@ Her haber için şunları belirle:
      CVE/yazılım açığı DEĞİLDİR → `zafiyet_rutin`e KOYMA, `phishing_sosyal_muhendislik`
      ver (nation-state atfı varsa `nation_state_apt`).
    - `zafiyet_aktif_apt` yüksek eşiktir: hem AKTİF istismar hem de nation-state/APT atfı METİNDE açıkça olmalı; şüphedeysen `zafiyet_rutin` ver.
+   - `yapay_zeka_guvenligi` DAR bir etikettir ve ÖNCELİĞİ EN DÜŞÜKTÜR:
+     • Haberde devlet/APT atfı varsa → `nation_state_apt`.
+     • Hedef bir devlet kurumu/kritik altyapı ise → `stratejik_kurum_saldirisi`.
+     • Zararlı kod yaygın bir PAKET/güncelleme mekanizmasına girmişse → `tedarik_zinciri`.
+     • Bir üründe CVE/yama varsa → `zafiyet_rutin`/`zafiyet_aktif_apt`.
+     Yalnızca bunların HİÇBİRİ tutmuyorsa, yani olayın öznesi YZ ajanının/modelinin
+     kendi davranışıysa bu etiket verilir. (Ör. "YZ ajanları güvenli alandan kaçarak
+     saldırı düzenliyor" → `yapay_zeka_guvenligi`; "YZ üretimi kodla kritik altyapıdaki
+     Siemens PLC'lere saldırı" → `stratejik_kurum_saldirisi`.)
+   - SOMUT OLAY ŞARTI bu etiket için de geçerlidir: "YZ güvenliği nasıl sağlanır",
+     "ajan riskleri üzerine düşünceler" gibi görüş/analiz yazıları `urun_icerik`tir.
    - ⛔ SOMUT OLAY ZORUNLULUĞU: `nation_state_apt`, `stratejik_kurum_saldirisi`,
      `casus_yazilim`, `tedarik_zinciri` etiketleri YALNIZCA gerçekleşmiş/süren
      SOMUT BİR OLAY (saldırı, kampanya, keşif, operasyon) anlatan haberlere verilir.
@@ -770,6 +784,12 @@ Her haber için şu denetimleri yap:
    • Kimlik avı/sahte iş ilanı/sosyal mühendislik kampanyası yanlışlıkla `zafiyet_rutin`e
      mi konmuş (CVE/yazılım açığı değil)? `phishing_sosyal_muhendislik`e düzelt
      (nation-state atfı varsa `nation_state_apt`).
+   • YZ ajanının/modelinin KENDİ davranışından doğan somut güvenlik olayı (güvenli
+     alandan kaçma, prompt injection ile ele geçirilme, zararlı paket önerme)
+     yanlışlıkla `zafiyet_rutin`e mi konmuş? Ortada CVE/yama YOKSA bu bir zafiyet
+     haberi değildir → `yapay_zeka_guvenligi`ne düzelt. Ama devlet/APT atfı,
+     kritik altyapı hedefi veya paket/güncelleme mekanizması varsa o kategoriler
+     ÖNCELİKLİDİR (`nation_state_apt` / `stratejik_kurum_saldirisi` / `tedarik_zinciri`).
    • ⛔ ANALİZ/GÖRÜŞ/RİSK yazısı stratejik kategoriye mi ŞİŞİRİLMİŞ? Somut bir
      olay (saldırı/kampanya/keşif) bildirmeyen değerlendirme/tahmin/genel durum
      yazıları (ör. "FIFA riski üzerine sayılar", "AI gözetiminin gerçekleri")
@@ -1802,6 +1822,19 @@ HABERLER:
 
 
 
+def _yy_kategori_listesi():
+    """Yayın yönetmenine sunulan geçerli kategori adları.
+
+    SCORING_CATEGORIES'ten TÜRETİLİR — elle yazılan kopya, yeni kategori
+    eklendiğinde sessizce eskiyordu ve yönetmenin düzeltmesi
+    `yenikat not in KATEGORI_ONCELIK` kontrolüne takılmadan önce hiç
+    ÖNERİLMİYORDU. 'urun_icerik'/'siber_disi' listede yoktur: bu katman haber
+    silemez, bir haberi rapor dışı kategoriye taşımak silmeye eşdeğer olurdu.
+    """
+    return ', '.join(k for k in SCORING_CATEGORIES
+                     if k not in ('urun_icerik', 'siber_disi'))
+
+
 def get_yayin_yonetmeni_prompt(manset_items, govde_items):
     """GENEL YAYIN YÖNETMENİ — bitmiş raporun TAMAMINA bakan tek katman.
 
@@ -1842,10 +1875,7 @@ DÖRT TÜR DÜZELTME yapabilirsin. Hiçbiri haber SİLMEZ:
    En sık hata: yamalanmış bir zafiyet "casus_yazilim" sanılır. Kurban,
    kampanya ya da adlandırılmış satıcı (Pegasus, Predator...) YOKSA o haber
    casus yazılım operasyonu değil, bir ZAFİYET haberidir.
-   Geçerli kategoriler: casus_yazilim, nation_state_apt,
-   stratejik_kurum_saldirisi, politika_hukuk, tedarik_zinciri,
-   kolluk_operasyonu, veri_ihlali, zafiyet_aktif_apt, zafiyet_rutin,
-   phishing_sosyal_muhendislik.
+   Geçerli kategoriler: {_yy_kategori_listesi()}.
 
 3) "baslik" — Başlıkta yazım/dil hatası varsa düzelt (ör. "Yuçlamalar" →
    "Suçlamalar"). ANLAMI DEĞİŞTİRME, yalnızca hatayı gider.
