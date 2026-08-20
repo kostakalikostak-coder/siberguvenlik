@@ -117,3 +117,22 @@ def test_govde_argumani_manseti_icermez():
         'gövde listesi manşet id\'lerinden arındırılmıyor — mükerrer gövde riski'
     assert 'top10_ids, remaining_ids =' not in parca, \
         'takas sonrası top10/remaining yeniden bölünüyor — mükerrer gövde riski'
+
+
+def test_takas_disi_eylemler_denetime_yazilir():
+    """Kategori/başlık/paragraf düzeltmeleri kayda geçmeli.
+
+    Önceden yalnızca stdout'a basılıyordu; koşu bittikten sonra katmanın
+    gerçekten ne düzelttiği data/kalite_denetim.jsonl'den görülemiyordu.
+    """
+    records, content, arts = _veri()
+    s = _sistem({'kategoriler': [{'id': 1, 'yeni': 'zafiyet_rutin',
+                                  'neden': 'kurban yok'}],
+                 'basliklar': [{'id': 2, 'yeni': 'Duzeltilmis Baslik 2'}],
+                 'paragraflar': [{'id': 3, 'yeni': 'Olgu bozan metin.'}]})
+    s._yayin_yonetmeni([1, 2, 3], [4], records, content, arts)
+    turler = {(e['tur'], e.get('karar')) for e in s._yy_eylemler}
+    assert ('kategori', None) in turler, 'kategori düzeltmesi kayda geçmedi'
+    assert ('tr_title', 'uygulandi') in turler, 'başlık düzeltmesi kayda geçmedi'
+    assert ('paragraph', 'reddedildi') in turler, \
+        'olgu koruması reddi kayda geçmedi'

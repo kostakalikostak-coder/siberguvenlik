@@ -5804,6 +5804,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         Dönüş: (yeni_top3, yeni_govde). LLM boş/bozuk dönerse liste değişmez.
         """
+        self._yy_eylemler = []
         if not top3_ids:
             return list(top3_ids), list(govde_ids)
 
@@ -5860,6 +5861,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             eski = rec['kat']
             rec['kat'] = yenikat
             rec['toplam'] = self._record_total(rec)
+            self._yy_eylemler.append({'tur': 'kategori', 'id': aid,
+                                      'eski': eski, 'yeni': yenikat,
+                                      'neden': str(k.get('neden', ''))[:80]})
             print(f"   📰 Yayın yönetmeni KATEGORİ: ID {aid} {eski} → {yenikat} "
                   f"— {str(k.get('neden',''))[:60]}")
 
@@ -5878,8 +5882,13 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 if not self._olgu_korundu_mu(c.get(alan, ''), yenimetin):
                     print(f"   ⛔ Yayın yönetmeni {alan} düzeltmesi REDDEDİLDİ "
                           f"(ID {aid}): olgu değişmiş (sayı/tarih/CVE).")
+                    self._yy_eylemler.append({'tur': alan, 'id': aid,
+                                              'karar': 'reddedildi',
+                                              'neden': 'olgu_degismis'})
                     continue
                 c[alan] = yenimetin
+                self._yy_eylemler.append({'tur': alan, 'id': aid,
+                                          'karar': 'uygulandi'})
                 print(f"   📰 Yayın yönetmeni {alan.upper()} düzeltti: ID {aid}")
 
         return yeni_top3, yeni_govde
@@ -6126,6 +6135,11 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 },
                 # Hangi katman hangi manşeti düşürdü (bkz. _manset_karar_kaydet)
                 'manset_karar_izi': getattr(self, '_manset_izi', []),
+                # Yayın yönetmeninin takas DIŞI eylemleri (kategori/başlık/
+                # paragraf düzeltmeleri ve olgu koruması nedeniyle reddedilenler).
+                # Önceden yalnızca stdout'a yazılıyordu; koşu bittikten sonra
+                # katmanın gerçekten ne düzelttiği kayıttan GÖRÜLEMİYORDU.
+                'yayin_yonetmeni': getattr(self, '_yy_eylemler', []),
                 # Kaynakta olmayan yıl (bkz. _tarih_denetimi)
                 'tarih_denetimi': getattr(self, '_tarih_izi', {}),
                 # Arz künyesi (bkz. _arz_kunyesi)
