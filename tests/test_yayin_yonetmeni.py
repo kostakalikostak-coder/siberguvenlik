@@ -136,3 +136,26 @@ def test_takas_disi_eylemler_denetime_yazilir():
     assert ('tr_title', 'uygulandi') in turler, 'başlık düzeltmesi kayda geçmedi'
     assert ('paragraph', 'reddedildi') in turler, \
         'olgu koruması reddi kayda geçmedi'
+
+
+def test_govdenin_tamami_gosterilir():
+    """Yönetmen gövdenin TAMAMINI görmeli — kırpma yok.
+
+    Eski sürüm ilk 24 haberle sınırlıydı; kalabalık günlerde kuyruk haberleri
+    kategori/dil düzeltmesi alamıyordu.
+    """
+    records, content, arts = _veri()
+    for i in range(5, 40):
+        records[i] = dict(records[4]); content[i] = dict(content[4])
+        arts[i] = dict(arts[4])
+    gorulen = {}
+
+    def _yakala(prompt, **k):
+        gorulen['p'] = prompt
+        return {}
+    s = _sistem(None)
+    s._gemini_call_json = _yakala
+    govde = list(range(4, 40))
+    s._yayin_yonetmeni([1, 2, 3], govde, records, content, arts)
+    for aid in govde:
+        assert f'ID: {aid} |' in gorulen['p'], f'ID {aid} yönetmene gösterilmedi'

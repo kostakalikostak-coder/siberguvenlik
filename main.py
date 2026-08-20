@@ -5819,7 +5819,13 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     f"Başlık: {baslik}\nParagraf: {para}\n")
 
         manset = '\n'.join(_satir(a) for a in top3_ids)
-        govde = '\n'.join(_satir(a) for a in list(govde_ids)[:24])
+        # SINIR YOK — yönetmen gövdenin TAMAMINI görür. Eskiden ilk 24 haberle
+        # sınırlıydı; kesilenler listenin en düşük puanlılarıydı, yani manşete
+        # çıkma ihtimali en düşük olanlar — ama kategori ve dil düzeltmesi
+        # onlara da gerekiyor. ÖLÇÜLDÜ: son 9 günün en kalabalık raporu 29
+        # haber (gövde 26), yani sınır 2 haberi kesiyordu; tam gövde günde tek
+        # çağrıda ~%7 girdi artışı demek.
+        govde = '\n'.join(_satir(a) for a in govde_ids)
         data = self._gemini_call_json(
             get_yayin_yonetmeni_prompt(manset, govde),
             max_output_tokens=4096, label='YayınYönetmeni')
