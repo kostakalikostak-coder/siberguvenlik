@@ -119,6 +119,22 @@ def test_govde_argumani_manseti_icermez():
         'takas sonrası top10/remaining yeniden bölünüyor — mükerrer gövde riski'
 
 
+def test_takas_sonrasi_mutabakat_var():
+    """Manşetten düşen haber gövdede DEĞİLSE gövdeye eklenmeli.
+
+    2026-08-20 koşusunda SilkParasite (94 puan) manşete yedek olarak
+    çıkarılmış, bu sırada top10/remaining'den çıkarılmıştı. Yönetmen onu
+    gövdeye indirince dönecek yer kalmadı ve haber rapordan sessizce düştü.
+    """
+    import inspect
+    kaynak = inspect.getsource(main.HaberSistemi.create_html)
+    parca = kaynak.split('_yayin_yonetmeni(', 1)[1][:1600]
+    assert 'top10_ids.insert(0, _eski)' in parca, \
+        'manşetten düşen haber gövdeye geri eklenmiyor — haber kaybı riski'
+    assert 'if i != _yeni' in parca, \
+        'manşete çıkan haber gövdeden çıkarılmıyor — mükerrer gövde riski'
+
+
 def test_takas_disi_eylemler_denetime_yazilir():
     """Kategori/başlık/paragraf düzeltmeleri kayda geçmeli.
 

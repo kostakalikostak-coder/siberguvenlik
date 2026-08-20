@@ -6760,11 +6760,34 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # bulunduğu için listeye İKİNCİ kez giriyordu. ÖLÇÜLDÜ (2026-08-19
         # koşusu): 28 gövde girdisi / 26 benzersiz — İranlı aktörler ve Apple
         # haberleri raporda ikişer kez göründü.
+        _yy_before = list(top3_ids)
         top3_ids, _ = self._yayin_yonetmeni(
             top3_ids,
             [a for a in list(top10_ids) + list(remaining_ids)
              if a not in set(top3_ids)],
             score_records, content_by_id, articles_by_id)
+
+        # MUTABAKAT — manşet katmanlarının ortak kuralı: manşete ÇIKAN gövdeden
+        # alınır, manşetten DÜŞEN gövdeye eklenir (bkz. Auditor (d) sonrası aynı
+        # blok). Yönetmen için bu adım ilk sürümde yoktu ve haber KAYBETTİ:
+        #
+        # ÖLÇÜLDÜ (2026-08-20 koşusu): SilkParasite kampanyası (ID 4, 94 puan)
+        # gövdede DEĞİLDİ — manşet çapraz-gün katmanı onu yedek olarak manşete
+        # çıkarırken top10/remaining'den çıkarmıştı. Yönetmen onu gövdeye
+        # indirince dönecek yer kalmadı; 94 puanlı haber rapordan sessizce
+        # düştü. Gövdede zaten bulunan id'ler için bu blok NO-OP'tur.
+        if top3_ids != _yy_before:
+            for _yeni in top3_ids:
+                if _yeni not in _yy_before:
+                    top10_ids     = [i for i in top10_ids     if i != _yeni]
+                    remaining_ids = [i for i in remaining_ids if i != _yeni]
+            for _eski in _yy_before:
+                if _eski not in top3_ids and _eski not in top10_ids \
+                        and _eski not in remaining_ids:
+                    top10_ids.insert(0, _eski)
+            self._enforce_kritik3_paragraph_length(
+                [i for i in top3_ids if i not in _yy_before],
+                content_by_id, articles_by_id)
 
         self._write_scoring_log(articles, score_records, top10_ids,
                                 remaining_ids, top3_ids, critique_changed,
