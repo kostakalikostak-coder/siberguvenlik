@@ -1,11 +1,11 @@
-# KAYNAK SAĞLIK RAPORU — 2026-08-21 16:06
+# KAYNAK SAĞLIK RAPORU — 2026-08-21 16:35
 # aktif=36  üretiyor=24  boş(200/0)=0  hata/timeout=0
-# çıkarım : 254/255 haberin tam metni çıktı (%100)
-# dedup   : 110/254 haber filtreleri geçti (%43)
+# çıkarım : 256/257 haberin tam metni çıktı (%100)
+# dedup   : 112/256 haber filtreleri geçti (%44)
 # 🚨 DEDUP SIFIR (3) [metin var, filtreler eliyor]: CrowdStrike, Citizen Lab, CERT-EU
 # KAYNAK                      HAM  KALAN  METİN  HAVUZ  DURUM
 The Hacker News              40     40     40     19  OK
-Dark Reading                 40     21     21      9  OK
+Dark Reading                 40     22     22     10  OK
 BleepingComputer             15     15     15      9  OK
 SecurityWeek                 10     10     10      9  OK
 Help Net Security            10     10     10      8  OK
@@ -14,7 +14,7 @@ Industrial Cyber              9      9      9      7  OK
 CSO Online                   20     19     19      6  OK
 The Register                 40     18     18      6  OK
 ANSSI (CERT-FR)              40     29     29      5  OK
-TechCrunch Security          20     10     10      3  OK
+TechCrunch Security          20     11     11      4  OK
 Cyberscoop                   10     10     10      3  OK
 SANS ISC                     10     10     10      3  OK
 Schneier on Security         10      5      4      3  OK
