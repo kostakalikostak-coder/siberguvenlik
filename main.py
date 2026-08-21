@@ -95,6 +95,8 @@ from src import dedup as _dedup
 # gelişme / YENİ gelişme / aynı aktör-farklı olay ayrımını yapar ve olay
 # defterini kurar. Bkz. src/olay_iliski.py.
 from src import olay_iliski as _olay
+# Raporun tek doğruluk kaynağı ve değişmez bekçisi (bkz. src/rapor_durumu).
+from src import rapor_durumu as _rapor_durumu
 # Resmi-dil (register) denetimi — gövde paragraflarında laubali (-DI) basit geçmiş
 # zamanı DETERMİNİSTİK tespit eder; düzeltmeyi Auditor'ın LLM adımı yapar.
 from src import register as _register
@@ -6075,6 +6077,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             arz = {}
             try:
                 nedenler = eleme_nedeni or {}
+                nedensiz_ids = []
                 tum = list((records or {}).values())
                 siber = [r for r in tum if r.get('siber')
                          and r.get('kat') not in ('urun_icerik', 'siber_disi')]
@@ -6087,17 +6090,29 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                         continue
                     if rec.get('toplam', 0) <= 0:
                         continue
+                    # `diger` KOVASI KALDIRILDI. Eskiden nedeni kaydedilmemiş
+                    # her eleme bu kovaya yazılıyordu; muhasebe TUTUYORDU, yani
+                    # 2026-08-20'de SilkParasite (94 puan) kaybolduğu gün bile
+                    # `arz` sağlıklı görünüyordu. Nedensiz çıkış artık ayrı ve
+                    # GÖRÜNÜR bir alarmdır (aşağıda `nedensiz`).
                     k = nedenler.get(aid) or ('mukerrer' if rec.get('mukerrer')
-                                              else 'diger')
+                                              else 'NEDENSIZ')
                     katman[k] = katman.get(k, 0) + 1
+                    if k == 'NEDENSIZ':
+                        nedensiz_ids.append(aid)
                 arz = {
                     'aday': len(tum),
                     'siber': len(siber),
                     'puanli': len(puanli),
                     'rapora_giren': len(rapor_ids),
                     'elenen_katman': katman,
+                    'nedensiz': sorted(nedensiz_ids),
                     'ince': len(rapor_ids) < self.INCE_RAPOR_ESIGI,
                 }
+                if nedensiz_ids:
+                    print(f"   🚨 NEDENSİZ ÇIKIŞ: {len(nedensiz_ids)} puanlı "
+                          f"siber haber rapordan KAYITLI NEDEN OLMADAN düştü "
+                          f"→ {sorted(nedensiz_ids)}")
                 if arz['ince']:
                     print(f"   📉 İNCE RAPOR ({len(rapor_ids)} haber < "
                           f"{self.INCE_RAPOR_ESIGI}): {arz['aday']} aday → "
@@ -6192,6 +6207,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 'yayin_yonetmeni': getattr(self, '_yy_eylemler', []),
                 # Kaynakta olmayan yıl (bkz. _tarih_denetimi)
                 'tarih_denetimi': getattr(self, '_tarih_izi', {}),
+                # Değişmez bekçisinin bu koşuda yakaladıkları (bkz.
+                # src/rapor_durumu). Boş olmalı; dolu ise bir katman
+                # rapor kurallarından birini çiğnemiş ve ONARILMIŞTIR.
+                'degismez': getattr(self, '_durum_ozeti', {}),
                 # Arz künyesi (bkz. _arz_kunyesi)
                 'arz': arz,
             }
@@ -6470,6 +6489,21 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         print(f"   Seçilen Top 3 ID: {top3_ids}")
 
+        # ── DEĞİŞMEZ BEKÇİSİ — buradan sonraki HER katman durumdan geçer ──
+        # Rapor bu noktadan itibaren ~20 ayrı yerde elle değiştiriliyor ve
+        # katmanların paylaştığı kurallar bugüne dek yalnızca yorum
+        # satırlarında yazıyordu (bkz. src/rapor_durumu). Artık her katmandan
+        # sonra senkronla() çağrılır: mükerrer girdi tekilleştirilir, nedensiz
+        # düşen haber gövdeye geri alınır, yasaklı manşet bildirilir.
+        _durum = _rapor_durumu.RaporDurumu(
+            top3_ids, top10_ids, remaining_ids,
+            manset_yasak=getattr(self, '_manset_yasak', None))
+
+        def _senkron(katman):
+            """Katman sonrası değişmez denetimi + onarım (tek satırlık kanca)."""
+            return _durum.senkronla(katman, top3_ids, top10_ids, remaining_ids,
+                                    nedenler=eleme_nedeni)
+
         # Hangi eleme katmanının hangi haberi düşürdüğü — skorlama log'una
         # yazılır. Log'un kendisi ELEME KATMANLARINDAN SONRA yazılır (aşağıda),
         # yoksa `yerlesim` alanı raporun sonucunu değil niyetini gösterir.
@@ -6546,6 +6580,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             top10_ids     = [i for i in top10_ids     if i not in p5_remove]
             remaining_ids = [i for i in remaining_ids if i not in p5_remove]
             top3_ids      = [i for i in top3_ids      if i not in p5_remove]
+            top3_ids, top10_ids, remaining_ids = _senkron('p5_kalite')
             # Pass 5 top3'ten haber çıkardıysa 3'e tamamla. Tamamlama da AYNI-OLAY
             # dedup'tan geçer (pick_distinct) — KRİTİK 3 garantisi backfill'de de
             # korunur; mevcut top3 ile mükerrer aday asla eklenmez.
@@ -6646,6 +6681,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 eleme_nedeni[_rid] = 'auditor_mukerrer'
             top10_ids     = [i for i in top10_ids     if i not in dup_remove]
             remaining_ids = [i for i in remaining_ids if i not in dup_remove]
+            top3_ids, top10_ids, remaining_ids = _senkron('auditor_mukerrer')
         else:
             print("   ✅ LLM ek mükerrer bulmadı")
 
@@ -6660,6 +6696,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 eleme_nedeni[_rid] = 'kesik_paragraf'
             top10_ids     = [i for i in top10_ids     if i not in trunc_drop]
             remaining_ids = [i for i in remaining_ids if i not in trunc_drop]
+            top3_ids, top10_ids, remaining_ids = _senkron('kesik_paragraf')
 
         # (c) Anlatım / resmi-dil denetimi — laubali (-DI) basit geçmiş zaman
         # ("oldu/yaptı/etti") içeren paragrafları resmi register'a ("-mIştIr")
@@ -6709,6 +6746,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 [i for i in top3_ids if i not in _k3_before],
                 content_by_id, articles_by_id)
             print(f"   📌 Manşet güncellendi: {_k3_before} → {top3_ids}")
+            top3_ids, top10_ids, remaining_ids = _senkron('manset_butunluk')
         else:
             print("   ✅ Manşet bütünlük denetimi: değişiklik gerekmedi.")
 
@@ -6732,6 +6770,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     eleme_nedeni[_rid] = 'govde_ayni_olay'
                 top10_ids     = [i for i in top10_ids     if i in kept_set]
                 remaining_ids = [i for i in remaining_ids if i in kept_set]
+                top3_ids, top10_ids, remaining_ids = _senkron('govde_ayni_olay')
 
         # ── AYNI-OLAY GRUBU BOŞALMA KORUMASI ─────────────────────────────
         # Buraya kadarki ÜÇ eleme katmanı (Pass 5 kalite, Auditor mükerrer,
@@ -6751,6 +6790,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                                                  if aid not in remaining_ids]
                 for _rid in restored_ids:
                     eleme_nedeni[_rid] = 'grup_geri_alindi'
+                top3_ids, top10_ids, remaining_ids = _senkron('grup_geri_alma')
 
         # ── ÇAPRAZ-GÜN RAPOR-GENELİ DEDUP (gövde ↔ son 7 gün raporu) ──────
         # Yukarıdaki blok yalnızca AYNI RUN içinde (gövde ↔ bugünkü KRİTİK 3 +
@@ -6766,6 +6806,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             remaining_ids = self._dedup_body_cross_day(remaining_ids, view_fn_x, recent_report)
             for _rid in _xday_before - (set(top10_ids) | set(remaining_ids)):
                 eleme_nedeni[_rid] = 'capraz_gun'
+            # NEDEN ATAMASINDAN SONRA: senkronla() gerekçesiz düşen haberi geri
+            # alır; bu katman gerekçeyi eleme SONRASI yazdığı için sıra kritik.
+            top3_ids, top10_ids, remaining_ids = _senkron('capraz_gun')
             # ── LLM SEMANTİK ÇAPRAZ-GÜN DEDUP (opsiyonel, güçlendirilmiş) ──────
             # İlk sürüm (0ad9a9c, 07-09; 7 gün + gevşek prompt) YÜZEYSEL benzeyen
             # GERÇEKTEN YENİ haberleri eledi (07-11→07-13 daralması). 07-13'te
@@ -6782,6 +6825,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 remaining_ids = self._dedup_body_cross_day_llm(remaining_ids, content_by_id, articles_by_id, recent_narrow)
                 for _rid in _llm_before - (set(top10_ids) | set(remaining_ids)):
                     eleme_nedeni[_rid] = 'capraz_gun_llm'
+                top3_ids, top10_ids, remaining_ids = _senkron('capraz_gun_llm')
 
         # Kalibrasyon/denetim log'u — kategori/puan/GERÇEK yerleşim + Critique izi
         # + hangi katmanın elediği. TÜM eleme katmanlarından SONRA yazılır; Pass
@@ -6839,6 +6883,16 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             self._enforce_kritik3_paragraph_length(
                 [i for i in top3_ids if i not in _yy_before],
                 content_by_id, articles_by_id)
+        top3_ids, top10_ids, remaining_ids = _senkron('yayin_yonetmeni')
+
+        # Bekçinin bu koşudaki bulguları denetim kaydına taşınır.
+        self._durum_ozeti = _durum.ozet()
+        if self._durum_ozeti['ihlal_sayisi']:
+            print(f"   🚨 DEĞİŞMEZ İHLALİ ÖZETİ: "
+                  f"{self._durum_ozeti['ihlal_turleri']} — onarıldı, "
+                  f"denetim kaydına yazıldı.")
+        else:
+            print("   ✅ Değişmez denetimi: tüm katmanlar rapor kurallarına uydu.")
 
         self._write_scoring_log(articles, score_records, top10_ids,
                                 remaining_ids, top3_ids, critique_changed,
