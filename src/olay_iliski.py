@@ -397,6 +397,18 @@ MIN_ORTAK_AD = 2
 # 3'te Suisun çifti (4 yeni kurban/yer adı) doğru biçimde yeni kalıyor.
 MIN_YENI_AD = 3
 
+# Manşet geçmişi sorgusunda TEK ortak kimlikle eşleşmek için gereken konu
+# örtüşmesi (bkz. OlayDefteri._manset_kaydi). Gövde elemesinin
+# KIMLIK_ILE_KONU_MIN'i (0.10) İKİ ortak kimlik varsayar; tek kimliğe
+# uygulanınca çok gevşek kalıyor.
+#
+# ÖLÇÜLDÜ (2026-08-21 raporu, 38 haber — kaç haber manşete yasaklanıyor):
+#   0.10 → 12/38   (aşırı: manşet havuzu açlıktan zayıf haberlere düşüyor)
+#   0.20 →  3/38
+#   0.25 →  2/38   ← seçildi; Siemens tekrarını (topic=0.37) hâlâ yakalıyor
+#   yalnızca same_event → 2/38   (0.25 ek maliyet getirmiyor, ek kapsam veriyor)
+MANSET_TEK_KIMLIK_KONU = 0.25
+
 
 def _yuksek_derece_var(kimlikler):
     return any(k.startswith(_YUKSEK_DERECE) for k in kimlikler)
@@ -649,7 +661,7 @@ class OlayDefteri:
                 #     ad yanlış birleştirme üretiyordu. Manşet sorgusunda
                 #     maliyet tersine döndüğü için eşik 1'e iner.
                 if kimlik & olay_kimlikleri(gecmis_view, self.sozluk) and \
-                        _konu_ortusmesi(view, gecmis_view) >= KIMLIK_ILE_KONU_MIN:
+                        _konu_ortusmesi(view, gecmis_view) >= MANSET_TEK_KIMLIK_KONU:
                     return k
                 # (b) Çapraz-gün same_event — kimlik çıkarımı boş kalsa bile
                 #     kurum/ürün adı üzerinden eşleşmeyi yakalar.

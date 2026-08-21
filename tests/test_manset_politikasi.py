@@ -183,3 +183,37 @@ def test_manset_sorgusu_govde_politikasini_degistirmez():
          'full_text': ''}
     iliski, _ = _olay.iliski_belirle(a, b, explain=True)
     assert iliski in _olay.ILISKILER, 'sınıflandırıcı sözleşmesi bozuldu'
+
+
+def test_manset_yasagi_havuzu_ackta_birakmaz():
+    """Gevşetme DAR olmalı: tek ortak kimlik + zayıf konu desteği yetmez.
+
+    İlk sürüm eşiği KIMLIK_ILE_KONU_MIN'e (0.10) bağladı; o değer İKİ ortak
+    kimlik varsayar. ÖLÇÜLDÜ (2026-08-21, 38 haberlik rapor): 0.10'da 38
+    haberin 12'si manşete yasaklandı ve havuz açlıktan zayıf haberlere düştü
+    (86 puanlı bir zafiyet duyurusu manşet oldu, 94 puanlı iki haber gövdede
+    kaldı). 0.25'te yalnızca gerçek tekrar (Siemens) yasaklanıyor.
+    """
+    from src import olay_iliski as _olay
+    assert _olay.MANSET_TEK_KIMLIK_KONU >= 0.20, \
+        'tek kimlik eşiği fazla gevşek — manşet havuzu açlığa düşer'
+
+    gecmis = {'tr_title': 'Kritik Altyapılardaki Siemens PLC Cihazlarının Yapay '
+                          'Zekayla Hedeflenmesi',
+              'title': 'US warns of AI-powered attacks on Siemens PLCs',
+              'paragraph': 'NSA, CISA, FBI, EPA ve DOE, ABD\'deki kritik altyapı '
+                           'kuruluşlarını Siemens programlanabilir mantık '
+                           'denetleyicilerine (PLC) yönelik siber saldırılar '
+                           'konusunda uyarmıştır. İnternete açık S7 serisi '
+                           'cihazlar hedeftedir.',
+              'full_text': ''}
+    # Aynı geçmiş kayıtla YALNIZCA bir jenerik ortaklık taşıyan, konuca uzak
+    # bir haber yasaklanmamalı.
+    uzak = {'tr_title': 'Bir Sağlık Kuruluşunda Fidye Yazılımı Saldırısı',
+            'title': 'Ransomware hits healthcare provider',
+            'paragraph': 'Bir sağlık kuruluşu fidye yazılımı saldırısı sonrası '
+                         'hasta kayıtlarının sızdırıldığını bildirmiştir.',
+            'full_text': ''}
+    defter = _olay.defter_kur([('2026-08-20', [gecmis], [gecmis])])
+    assert defter.manset_gunu_sayisi(uzak) == 0, \
+        'konuca uzak haber manşet geçmişine bağlandı'
