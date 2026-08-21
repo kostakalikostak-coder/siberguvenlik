@@ -112,6 +112,7 @@ class RaporDurumu:
         """
         nedenler = nedenler or {}
         onceki = set(self._tumu())
+        onceki_manset = set(self.manset)
 
         yeni_manset = list(manset)
         yeni_top10 = list(top10)
@@ -151,9 +152,16 @@ class RaporDurumu:
             self.karar[aid] = {'akibet': 'govde', 'katman': katman,
                                'neden': 'nedensiz kayıp onarıldı'}
 
-        # ── D3: kapının yasakladığı haber manşette olamaz.
+        # ── D3: kapının yasakladığı haber manşete BU KATMANDA çıkamaz.
+        #
+        # Yalnızca YENİ girenler denetlenir. `_derive_top3_by_score` üç manşet
+        # garantisi için kapıyı bilerek gevşetebilir ("geriye <3 kalıyordu →
+        # kapı UYGULANMADI"); o tasarlanmış durumu ihlal saymak her katmanda
+        # tekrarlayan yanlış alarm üretirdi. Asıl arıza, kapının düşürdüğü bir
+        # haberi SONRAKİ bir katmanın geri çıkarmasıdır — 2026-08-21'de yayın
+        # yönetmeninin yaptığı gibi.
         for aid in yeni_manset:
-            if aid in self.manset_yasak:
+            if aid in self.manset_yasak and aid not in onceki_manset:
                 self._kaydet(YASAKLI_MANSET, katman, aid,
                              'manşet kapısı bu haberi düşürmüştü — katman '
                              'kararı EZDİ')

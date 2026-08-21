@@ -145,3 +145,15 @@ def test_capraz_gun_kancasi_neden_atamasindan_sonra():
         i_kanca = kaynak.index(f"_senkron('{katman}')")
         assert i_neden < i_kanca, \
             f'{katman}: kanca gerekçe atamasından ÖNCE çağrılıyor'
+
+
+def test_bastan_gelen_yasakli_manset_tekrar_tekrar_bildirilmez():
+    """Üç manşet garantisi için kapı bilerek gevşeyebilir; bu tasarlanmış
+    durumu her katmanda ihlal saymak yanlış alarm üretirdi. Yalnızca
+    manşete YENİ giren yasaklı id bildirilir."""
+    d = _durum(manset=[6, 2, 3], top10=[4, 5, 1], kalan=[7, 8],
+               manset_yasak={6})
+    d.senkronla('p5_kalite', [6, 2, 3], [4, 5, 1], [7, 8])
+    assert d.ihlaller == [], 'baştan gelen gevşetme ihlal sayıldı'
+    d.senkronla('yayin_yonetmeni', [6, 2, 5], [4, 3, 1], [7, 8])
+    assert d.ihlaller == [], 'değişmeyen yasaklı manşet yeniden bildirildi'
