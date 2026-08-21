@@ -617,7 +617,7 @@ Her haber için şunları belirle:
 1) KATEGORİ (tam olarak şu etiketlerden BİRİ):
    • casus_yazilim              → ticari/devlet casus yazılımı (NSO/Pegasus, Intellexa/Predator, Candiru, Paragon vb.)
    • nation_state_apt           → devlet destekli APT, ülkeler-arası siber saldırı/casusluk/atıf, siber operasyon
-   • stratejik_kurum_saldirisi  → devlet başkanlığı/bakanlık/meclis/istihbarat/ordu/savunma/uluslararası kurum/kritik altyapı HEDEFLİ saldırı
+   • stratejik_kurum_saldirisi  → devlet başkanlığı/bakanlık/meclis/istihbarat/ordu/savunma/uluslararası kurum/kritik altyapı HEDEFLİ saldırı (GERÇEKLEŞMİŞ saldırı; kurumun kullandığı yazılımda BULUNAN bir açık DEĞİL)
    • kolluk_operasyonu          → forum/botnet/altyapı ÇÖKERTME, takedown, tutuklama, iade, kovuşturma (kolluğun failleri hedef aldığı operasyon)
    • tedarik_zinciri            → supply-chain (yaygın paket/araç/güncelleme mekanizmasına arka kapı/zararlı kod)
    • veri_ihlali                → veri sızıntısı/ihlali
@@ -636,6 +636,17 @@ Her haber için şunları belirle:
      CVE/yazılım açığı DEĞİLDİR → `zafiyet_rutin`e KOYMA, `phishing_sosyal_muhendislik`
      ver (nation-state atfı varsa `nation_state_apt`).
    - `zafiyet_aktif_apt` yüksek eşiktir: hem AKTİF istismar hem de nation-state/APT atfı METİNDE açıkça olmalı; şüphedeysen `zafiyet_rutin` ver.
+   - ⛔ KURUM ADI ETİKET YAPMAZ: `stratejik_kurum_saldirisi` için o kuruma
+     yönelik GERÇEKLEŞMİŞ/SÜREN bir saldırı gerekir. Araştırmacıların stratejik
+     bir kurumun (NASA, bakanlık, savunma sanayii) kullandığı YAZILIMDA açık
+     BULMASI bir saldırı değildir → `zafiyet_rutin` (aktif istismar + APT atfı
+     varsa `zafiyet_aktif_apt`). Sinyaller: "researchers found/disclosed",
+     "could let attackers", "flaws could allow", istismar edildiğine dair kanıt
+     YOK, adı geçen bir saldırgan/kurban YOK.
+     ÖLÇÜLDÜ (2026-08-21): NASA'nın AMMOS/AIT-GUI yazılımında Cycode
+     araştırmacılarının bulduğu açıklar `stratejik_kurum_saldirisi` etiketiyle
+     91 puan alıp KRİTİK 3'e çıktı; ortada saldırı, saldırgan ve kurban yoktu.
+     Doğru etiketle (zafiyet_rutin) manşete ZATEN çıkamazdı.
    - `yapay_zeka_guvenligi` DAR bir etikettir ve ÖNCELİĞİ EN DÜŞÜKTÜR:
      • Haberde devlet/APT atfı varsa → `nation_state_apt`.
      • Hedef bir devlet kurumu/kritik altyapı ise → `stratejik_kurum_saldirisi`.
@@ -784,6 +795,11 @@ Her haber için şu denetimleri yap:
    • Kimlik avı/sahte iş ilanı/sosyal mühendislik kampanyası yanlışlıkla `zafiyet_rutin`e
      mi konmuş (CVE/yazılım açığı değil)? `phishing_sosyal_muhendislik`e düzelt
      (nation-state atfı varsa `nation_state_apt`).
+   • Stratejik bir kurumun (NASA, bakanlık, savunma) kullandığı yazılımda
+     ARAŞTIRMACILARIN bulduğu açık `stratejik_kurum_saldirisi` mi etiketlenmiş?
+     Ortada gerçekleşmiş saldırı, saldırgan ve kurban YOKSA bu bir zafiyet
+     haberidir → `zafiyet_rutin`e indir (aktif istismar + APT atfı varsa
+     `zafiyet_aktif_apt`). Kurum adının geçmesi etiketi HAK ETTİRMEZ.
    • YZ ajanının/modelinin KENDİ davranışından doğan somut güvenlik olayı (güvenli
      alandan kaçma, prompt injection ile ele geçirilme, zararlı paket önerme)
      yanlışlıkla `zafiyet_rutin`e mi konmuş? Ortada CVE/yama YOKSA bu bir zafiyet

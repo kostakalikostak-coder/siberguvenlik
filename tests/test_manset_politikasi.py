@@ -217,3 +217,24 @@ def test_manset_yasagi_havuzu_ackta_birakmaz():
     defter = _olay.defter_kur([('2026-08-20', [gecmis], [gecmis])])
     assert defter.manset_gunu_sayisi(uzak) == 0, \
         'konuca uzak haber manşet geçmişine bağlandı'
+
+
+def test_kurum_adi_stratejik_etiketi_hak_ettirmez_kurali_var():
+    """Skorlama ve Critique promptları bu ayrımı AÇIKÇA söylemeli.
+
+    ÖLÇÜLDÜ (2026-08-21): Cycode araştırmacılarının NASA'nın AMMOS/AIT-GUI
+    yazılımında bulduğu açıklar `stratejik_kurum_saldirisi` etiketiyle 91 puan
+    aldı ve KRİTİK 3'e çıktı — ortada saldırı, saldırgan ve kurban yoktu.
+    Doğru etiketle (zafiyet_rutin, KRITIK3_HARIC_KATEGORILER içinde) manşete
+    zaten çıkamazdı.
+    """
+    from src import config
+    skor = config.get_scoring_prompt('x') if hasattr(config, 'get_scoring_prompt') \
+        else ''
+    metinler = [skor, config.get_critique_prompt('x')]
+    for metin in metinler:
+        if not metin:
+            continue
+        assert 'KURUM ADI ETİKET YAPMAZ' in metin or \
+               'ARAŞTIRMACILARIN bulduğu açık' in metin, \
+            'kurum adı → stratejik etiket ayrımı prompta girmemiş'
