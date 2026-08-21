@@ -5814,8 +5814,26 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             if aid in manset_yasak:
                 disi[aid] = 'gerçek mükerrer (AYNI_GELISME)'
                 continue
-            if (records.get(aid) or {}).get('kat') in KRITIK3_HARIC_KATEGORILER:
+            kat = (records.get(aid) or {}).get('kat')
+            if kat in KRITIK3_HARIC_KATEGORILER:
                 disi[aid] = 'kategori manşete uygun değil'
+                continue
+            # ZAFİYET HABERİ YÖNETMEN ELİYLE MANŞETE ÇIKMAZ.
+            #
+            # `zafiyet_aktif_apt` KRITIK3_HARIC listesinde DEĞİLDİR ve bu
+            # bilinçlidir: az-haber günlerinde deterministik seçici (kademe 3)
+            # bu haberleri manşete alabilmelidir, yoksa KRİTİK 3 dolmaz. Ama
+            # havuz doluyken editoryal tercihle bir zafiyet haberini gerçek bir
+            # olayın önüne geçirmek başka şeydir — zafiyetin raporda kendi
+            # bölümü var (Güvenlik Açıkları).
+            #
+            # ÖLÇÜLDÜ (2026-08-21): yönetmen Rus OAuth istismarını (94,
+            # nation_state_apt) manşetten indirip CISA'nın TrueConf yama
+            # talimatını (91, zafiyet_aktif_apt) manşete çıkardı. Haber zayıf
+            # değildi ama yeri Güvenlik Açıkları bölümüydü.
+            if kat in ZAFIYET_KATEGORILERI:
+                disi[aid] = ('zafiyet haberi — yeri Güvenlik Açıkları bölümü, '
+                             'manşete yönetmen eliyle taşınmaz')
                 continue
             if defter is not None:
                 try:
@@ -5937,6 +5955,24 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 self._yy_eylemler.append({'tur': 'takas', 'id': cikan,
                                           'karar': 'reddedildi',
                                           'neden': 'kategori manşete uygun değil'})
+                continue
+            # ÇİFT DÜŞÜŞ REDDİ — takas hem puanı hem kategori önceliğini
+            # düşürüyorsa ortada düzeltilecek bir sıralama hatası yoktur.
+            # Yönetmenin işi puanı EZMEKTİR (yamalanmış zafiyet yerine süren
+            # kampanya), ama iki eksenin İKİSİNDE DE aşağı inen bir takasın
+            # dayanağı kalmaz. ÖLÇÜLDÜ (2026-08-21): 94 puanlı nation_state_apt
+            # haberi indirilip 91 puanlı zafiyet_aktif_apt haberi çıkarıldı.
+            _p_in = (records.get(inen) or {}).get('toplam', 0)
+            _p_ck = (records.get(cikan) or {}).get('toplam', 0)
+            _o_in = KATEGORI_ONCELIK.get((records.get(inen) or {}).get('kat'), 0)
+            _o_ck = KATEGORI_ONCELIK.get((records.get(cikan) or {}).get('kat'), 0)
+            if _p_ck < _p_in and _o_ck < _o_in:
+                print(f"   ⛔ Yayın yönetmeni takası REDDEDİLDİ: ID {cikan} "
+                      f"hem puanca ({_p_ck}<{_p_in}) hem kategorice "
+                      f"({_o_ck}<{_o_in}) daha zayıf.")
+                self._yy_eylemler.append({'tur': 'takas', 'id': cikan,
+                                          'karar': 'reddedildi',
+                                          'neden': 'puan ve kategori birlikte düşüyor'})
                 continue
             neden = str(t.get('neden', ''))[:80]
             yeni_top3[yeni_top3.index(inen)] = cikan

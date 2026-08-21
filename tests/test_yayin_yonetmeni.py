@@ -26,7 +26,11 @@ def _veri():
                    'a': 19, 'k': 15, 'siber': 1, 'mukerrer': 0},
                3: {'kat': 'kolluk_operasyonu', 'toplam': 95, 's': 39, 'e': 22,
                    'a': 19, 'k': 15, 'siber': 1, 'mukerrer': 0},
-               4: {'kat': 'stratejik_kurum_saldirisi', 'toplam': 92, 's': 38,
+               # NOT: gövde adayı (4) manşettekilerden YÜKSEK puanlı seçildi.
+               # Aksi halde her takas "hem puanı hem kategorisi zayıf" korumasına
+               # takılırdı ve testler takas mekaniğini değil o korumayı ölçerdi
+               # (bkz. test_puan_ve_kategori_birlikte_dusen_takas_reddedilir).
+               4: {'kat': 'stratejik_kurum_saldirisi', 'toplam': 97, 's': 38,
                    'e': 20, 'a': 19, 'k': 15, 'siber': 1, 'mukerrer': 0}}
     content = {i: {'tr_title': f'Baslik {i}',
                    'paragraph': f'Paragraf {i} — CVE-2026-6534{i} açığı 2026 '
@@ -267,3 +271,53 @@ def test_manset_disi_kategoriye_yukseltme_reddedilir():
     assert set(top3) == {1, 2, 3}, 'manşete uygun olmayan kategori manşete çıktı'
     assert any(e.get('tur') == 'takas' and e.get('karar') == 'reddedildi'
                for e in s._yy_eylemler)
+
+
+def test_zafiyet_haberi_yonetmen_eliyle_manşete_cikamaz():
+    """Zafiyet haberinin raporda KENDİ bölümü var (Güvenlik Açıkları).
+
+    ÖLÇÜLDÜ (2026-08-21): yönetmen Rus OAuth istismarını (94,
+    nation_state_apt) manşetten indirip CISA'nın TrueConf yama talimatını
+    (91, zafiyet_aktif_apt) manşete çıkardı.
+
+    NOT: `zafiyet_aktif_apt` KRITIK3_HARIC listesinde DEĞİLDİR ve öyle
+    kalmalı — az-haber günlerinde deterministik seçici manşeti onunla
+    doldurabilmelidir. Yasak yalnızca YÖNETMEN takasına aittir.
+    """
+    records, content, arts = _veri()
+    records[4]['kat'] = 'zafiyet_aktif_apt'
+    view = {4: 'x'}
+    s = _sistem({'takaslar': [{'manşetten_dusen': 1, 'manşete_yukselen': 4,
+                               'neden': 'aktif istismar'}]})
+    disi = s._manset_disi_ids([4], records, view.get)
+    assert 4 in disi, 'zafiyet haberi manşet dışı sayılmadı'
+    top3, _ = s._yayin_yonetmeni([1, 2, 3], [4], records, content, arts,
+                                 manset_disi=disi)
+    assert set(top3) == {1, 2, 3}, 'zafiyet haberi manşete çıktı'
+
+
+def test_puan_ve_kategori_birlikte_dusen_takas_reddedilir():
+    """Yönetmenin işi puanı ezmektir, ama iki eksende birden aşağı inen bir
+    takasın dayanağı yoktur."""
+    records, content, arts = _veri()
+    # 1: nation_state_apt 96 (manşette) | 4: veri_ihlali 90 (gövdede)
+    records[1].update({'kat': 'nation_state_apt', 'toplam': 96})
+    records[4].update({'kat': 'veri_ihlali', 'toplam': 90})
+    s = _sistem({'takaslar': [{'manşetten_dusen': 1, 'manşete_yukselen': 4,
+                               'neden': 'test'}]})
+    top3, _ = s._yayin_yonetmeni([1, 2, 3], [4], records, content, arts)
+    assert set(top3) == {1, 2, 3}, 'çift düşüşlü takas uygulandı'
+    assert any(e.get('neden') == 'puan ve kategori birlikte düşüyor'
+               for e in s._yy_eylemler)
+
+
+def test_puani_dusuk_ama_kategorisi_guclu_takas_calisir():
+    """Koruma fazla geniş olmamalı: yamalanmış zafiyet yerine süren kampanya
+    çıkarmak yönetmenin ASIL işidir ve puan düşse de geçerlidir."""
+    records, content, arts = _veri()
+    records[1].update({'kat': 'zafiyet_aktif_apt', 'toplam': 95})
+    records[4].update({'kat': 'nation_state_apt', 'toplam': 92})
+    s = _sistem({'takaslar': [{'manşetten_dusen': 1, 'manşete_yukselen': 4,
+                               'neden': 'süren kampanya'}]})
+    top3, _ = s._yayin_yonetmeni([1, 2, 3], [4], records, content, arts)
+    assert 4 in top3, 'meşru takas engellendi'

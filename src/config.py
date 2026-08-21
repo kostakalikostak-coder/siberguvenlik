@@ -1896,6 +1896,18 @@ DÖRT TÜR DÜZELTME yapabilirsin. Hiçbiri haber SİLMEZ:
    tarafında kapatılmış Entra ID açığı, Orta Asya hükümetlerini hedefleyen
    süren bir casusluk kampanyasının yerine manşete çıkarıldı — yanlıştı.
 
+   ⛔ ZAFİYET HABERİNİ MANŞETE ÇIKARMA. Bir CVE/yama/güvenlik açığı haberi —
+   aktif istismar edilse ve resmi bir yama talimatı olsa bile — raporda KENDİ
+   bölümüne (Güvenlik Açıkları) aittir. Gerçekleşmiş bir olayı (casusluk
+   kampanyası, ihlal, kolluk operasyonu, altyapı saldırısı) manşetten indirip
+   yerine zafiyet haberi koyma.
+   ÖLÇÜLDÜ (2026-08-21): Rus istihbarat gruplarının OAuth istismarı (94)
+   manşetten indirilip CISA'nın TrueConf yama talimatı (91) çıkarıldı.
+
+   ⛔ HEM PUANI HEM KATEGORİSİ DAHA ZAYIF olan haberi manşete çıkarma. Puanı
+   ezmen beklenir (yamalanmış zafiyet yerine süren kampanya), ama iki eksende
+   birden aşağı inen bir takasın dayanağı yoktur.
+
    ⚠️ YÖN: `manşetten_dusen` MANŞET listesinden, `manşete_yukselen` GÖVDE
    listesinden seçilir. Gerekçeni yazdıktan sonra yönü BİR KEZ DAHA KONTROL
    ET: daha önemli bulduğun haber `manşete_yukselen` olmalı.
