@@ -1880,6 +1880,13 @@ DÖRT TÜR DÜZELTME yapabilirsin. Hiçbiri haber SİLMEZ:
    tarafında kapatılmış Entra ID açığı, Orta Asya hükümetlerini hedefleyen
    süren bir casusluk kampanyasının yerine manşete çıkarıldı — yanlıştı.
 
+   ⚠️ YÖN: `manşetten_dusen` MANŞET listesinden, `manşete_yukselen` GÖVDE
+   listesinden seçilir. Gerekçeni yazdıktan sonra yönü BİR KEZ DAHA KONTROL
+   ET: daha önemli bulduğun haber `manşete_yukselen` olmalı.
+   ÖLÇÜLDÜ (2026-08-21): gerekçe "kapatılmış zafiyet süregelen casusluk
+   kampanyasından daha az önemli" diyordu ama alanlar TERS doldurulmuş,
+   kapatılmış zafiyet manşete çıkarılmıştı.
+
    En fazla 2 takas öner. Emin değilsen takas ÖNERME.
 
 2) "kategori" — Haberin kategorisi metniyle çelişiyorsa düzelt.
@@ -1905,7 +1912,9 @@ GÖVDE:
 
 YALNIZCA şu JSON'u döndür:
 {{
-  "takaslar": [{{"inen": <manşet id>, "cikan": <gövde id>, "neden": "<en fazla 20 kelime>"}}],
+  "takaslar": [{{"manşetten_dusen": <şu an MANŞETTE olan, gövdeye inecek id>,
+                "manşete_yukselen": <şu an GÖVDEDE olan, manşete çıkacak id>,
+                "neden": "<en fazla 20 kelime>"}}],
   "kategoriler": [{{"id": <id>, "yeni": "<kategori>", "neden": "<en fazla 15 kelime>"}}],
   "basliklar": [{{"id": <id>, "yeni": "<düzeltilmiş başlık>"}}],
   "paragraflar": [{{"id": <id>, "yeni": "<düzeltilmiş paragraf>"}}]

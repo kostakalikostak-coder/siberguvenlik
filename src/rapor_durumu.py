@@ -32,6 +32,7 @@ arar ve dört değişmezi denetler:
   D1  Bir haber manşette en fazla bir kez, gövdede en fazla bir kez görünür.
   D2  Rapordan ayrılan her haberin KAYITLI bir nedeni vardır.
   D3  Manşet kapısının yasakladığı haber manşette olamaz.
+  D4  Manşete asla giremeyecek kategorideki haber manşette olamaz.
 
 ⚠️ MANŞETİN GÖVDE LİSTESİNDE BULUNMASI İHLAL DEĞİLDİR. Bu kod tabanında
 `top3_ids`, `top10_ids`in ALT KÜMESİDİR (`_derive_top3_by_score` havuzdan
@@ -56,6 +57,7 @@ MUKERRER_GIRDI = 'mukerrer_girdi'
 NEDENSIZ_KAYIP = 'nedensiz_kayip'
 # Onarılamaz (yerine geçecek haberi seçmek bu katmanın işi değil) — bildirilir.
 YASAKLI_MANSET = 'yasakli_manset'
+UYGUNSUZ_KATEGORI = 'uygunsuz_manset_kategorisi'
 
 
 class RaporDurumu:
@@ -68,7 +70,11 @@ class RaporDurumu:
     bölünmeyi yeniden türetmek 2026-08-19'da mükerrer gövde üretmişti.
     """
 
-    def __init__(self, manset, top10, kalan, manset_yasak=None, yazdir=None):
+    def __init__(self, manset, top10, kalan, manset_yasak=None, yazdir=None,
+                 kat_fn=None, manset_disi_katlar=()):
+        # kat_fn: id → kategori. Verilmezse D4 denetlenmez (geriye dönük uyum).
+        self._kat_fn = kat_fn
+        self._manset_disi_katlar = set(manset_disi_katlar or ())
         self.manset = list(manset)
         self.top10 = list(top10)
         self.kalan = list(kalan)
@@ -165,6 +171,21 @@ class RaporDurumu:
                 self._kaydet(YASAKLI_MANSET, katman, aid,
                              'manşet kapısı bu haberi düşürmüştü — katman '
                              'kararı EZDİ')
+
+        # ── D4: manşete asla giremeyecek kategori manşette olamaz.
+        #
+        # ÖLÇÜLDÜ (2026-08-21): yayın yönetmeni Entra ID haberini `zafiyet_aktif_apt`
+        # iken manşete çıkardı, ardından AYNI katman onu `zafiyet_rutin`e indirdi —
+        # yani manşette kalıcı olarak uygunsuz bir kategori kaldı. Kategori
+        # herhangi bir katmanda değişebildiği için denetim manşetin KENDİSİNDE
+        # olmalı, tek tek katmanlarda değil.
+        if self._kat_fn and self._manset_disi_katlar:
+            for aid in yeni_manset:
+                kat = self._kat_fn(aid)
+                if kat in self._manset_disi_katlar:
+                    self._kaydet(UYGUNSUZ_KATEGORI, katman, aid,
+                                 f'manşette ama kategorisi manşete uygun '
+                                 f'değil ({kat})')
 
         for aid in yeni_manset:
             self.karar[aid] = {'akibet': 'manset', 'katman': katman,

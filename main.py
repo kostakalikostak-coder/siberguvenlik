@@ -5872,35 +5872,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         yeni_top3, yeni_govde = list(top3_ids), list(govde_ids)
 
-        # 1) TAKASLAR — haber silinmez, yer değiştirir.
-        takas = 0
-        for t in (data.get('takaslar') or []):
-            if takas >= self.YAYIN_YONETMENI_MAX_TAKAS:
-                break
-            try:
-                inen, cikan = int(t.get('inen')), int(t.get('cikan'))
-            except (TypeError, ValueError):
-                continue
-            if inen not in yeni_top3 or cikan not in yeni_govde:
-                continue
-            # KAPI KARARLARI YÖNETMENİN ÜSTÜNDEDİR: manşet havuzundan BİLEREK
-            # düşürülmüş bir haber geri çıkarılamaz (bkz. _manset_disi_ids).
-            if manset_disi and cikan in manset_disi:
-                print(f"   ⛔ Yayın yönetmeni takası REDDEDİLDİ: ID {cikan} "
-                      f"manşete çıkamaz — {manset_disi[cikan]}.")
-                self._yy_eylemler.append({'tur': 'takas', 'id': cikan,
-                                          'karar': 'reddedildi',
-                                          'neden': manset_disi[cikan]})
-                continue
-            neden = str(t.get('neden', ''))[:80]
-            yeni_top3[yeni_top3.index(inen)] = cikan
-            yeni_govde[yeni_govde.index(cikan)] = inen
-            takas += 1
-            self._manset_karar_kaydet('yayin_yonetmeni_takas', inen, cikan, neden)
-            print(f"   📰 Yayın yönetmeni TAKAS: ID {inen} gövdeye indi, "
-                  f"ID {cikan} manşete çıktı — {neden}")
-
-        # 2) KATEGORİ düzeltmeleri
+        # 1) KATEGORİ düzeltmeleri — TAKASTAN ÖNCE.
+        #
+        # SIRA KRİTİK: takas kapısı `KRITIK3_HARIC_KATEGORILER`e bakar. Kategori
+        # düzeltmesi takastan SONRA çalıştığında yönetmen kendi kendisiyle
+        # çelişebiliyordu. ÖLÇÜLDÜ (2026-08-21): Entra ID haberi
+        # `zafiyet_aktif_apt` iken manşete çıkarıldı, hemen ardından aynı katman
+        # onu `zafiyet_rutin`e indirdi — yani manşete ASLA çıkamayacak bir
+        # kategori manşette kaldı.
         for k in (data.get('kategoriler') or []):
             try:
                 aid = int(k.get('id'))
@@ -5918,6 +5897,54 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                                       'neden': str(k.get('neden', ''))[:80]})
             print(f"   📰 Yayın yönetmeni KATEGORİ: ID {aid} {eski} → {yenikat} "
                   f"— {str(k.get('neden',''))[:60]}")
+
+        # 2) TAKASLAR — haber silinmez, yer değiştirir.
+        takas = 0
+        for t in (data.get('takaslar') or []):
+            if takas >= self.YAYIN_YONETMENI_MAX_TAKAS:
+                break
+            # ALAN ADLARI: `cikan` bu kod tabanında İKİ KARŞIT anlamda
+            # kullanılıyordu — manşet seçim promptunda "manşetten çıkan"
+            # (ayrılan), burada "manşete çıkan" (yükselen). ÖLÇÜLDÜ
+            # (2026-08-21): model gerekçesinde doğru kararı yazdı ama alanları
+            # TERS doldurdu; kapatılmış bir zafiyet, süregelen bir casusluk
+            # kampanyasının yerine manşete çıktı. Alanlar `manşetten_dusen` /
+            # `manşete_yukselen` olarak netleştirildi; eski adlar geriye dönük
+            # okunmaya devam ediyor.
+            try:
+                inen = int(t.get('manşetten_dusen', t.get('inen')))
+                cikan = int(t.get('manşete_yukselen', t.get('cikan')))
+            except (TypeError, ValueError):
+                continue
+            if inen not in yeni_top3 or cikan not in yeni_govde:
+                continue
+            # KAPI KARARLARI YÖNETMENİN ÜSTÜNDEDİR: manşet havuzundan BİLEREK
+            # düşürülmüş bir haber geri çıkarılamaz (bkz. _manset_disi_ids).
+            if manset_disi and cikan in manset_disi:
+                print(f"   ⛔ Yayın yönetmeni takası REDDEDİLDİ: ID {cikan} "
+                      f"manşete çıkamaz — {manset_disi[cikan]}.")
+                self._yy_eylemler.append({'tur': 'takas', 'id': cikan,
+                                          'karar': 'reddedildi',
+                                          'neden': manset_disi[cikan]})
+                continue
+            # Manşete ÇIKAN haberin kategorisi manşete uygun olmalı. Kategori
+            # düzeltmeleri artık YUKARIDA uygulandığı için burada güncel değer
+            # okunur.
+            if (records.get(cikan) or {}).get('kat') in KRITIK3_HARIC_KATEGORILER:
+                print(f"   ⛔ Yayın yönetmeni takası REDDEDİLDİ: ID {cikan} "
+                      f"kategorisi manşete uygun değil "
+                      f"({records[cikan]['kat']}).")
+                self._yy_eylemler.append({'tur': 'takas', 'id': cikan,
+                                          'karar': 'reddedildi',
+                                          'neden': 'kategori manşete uygun değil'})
+                continue
+            neden = str(t.get('neden', ''))[:80]
+            yeni_top3[yeni_top3.index(inen)] = cikan
+            yeni_govde[yeni_govde.index(cikan)] = inen
+            takas += 1
+            self._manset_karar_kaydet('yayin_yonetmeni_takas', inen, cikan, neden)
+            print(f"   📰 Yayın yönetmeni TAKAS: ID {inen} gövdeye indi, "
+                  f"ID {cikan} manşete çıktı — {neden}")
 
         # 3) BAŞLIK ve 4) PARAGRAF düzeltmeleri — olgu koruması altında
         for alan, anahtar in (('tr_title', 'basliklar'),
@@ -6497,7 +6524,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # düşen haber gövdeye geri alınır, yasaklı manşet bildirilir.
         _durum = _rapor_durumu.RaporDurumu(
             top3_ids, top10_ids, remaining_ids,
-            manset_yasak=getattr(self, '_manset_yasak', None))
+            manset_yasak=getattr(self, '_manset_yasak', None),
+            kat_fn=lambda aid: (score_records.get(aid) or {}).get('kat'),
+            manset_disi_katlar=KRITIK3_HARIC_KATEGORILER)
 
         def _senkron(katman):
             """Katman sonrası değişmez denetimi + onarım (tek satırlık kanca)."""

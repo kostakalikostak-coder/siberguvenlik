@@ -235,3 +235,35 @@ def test_kapi_disinda_kalan_takas_calisir():
         [1, 2, 3], [4, 5], records, content, arts,
         manset_disi={4: 'olay son 7 günde 1 kez manşet oldu'})
     assert 5 in top3, 'yasaklı olmayan takas uygulanmadı'
+
+
+def test_takas_yon_alanlari_net_adlarla_okunur():
+    """`cikan` bu kod tabanında iki karşıt anlamda kullanılıyordu (manşet
+    seçim promptunda 'ayrılan', yönetmende 'yükselen'). 2026-08-21'de model
+    gerekçesinde doğru kararı yazdı ama alanları TERS doldurdu."""
+    records, content, arts = _veri()
+    s = _sistem({'takaslar': [{'manşetten_dusen': 1, 'manşete_yukselen': 4,
+                               'neden': 'test'}]})
+    top3, _ = s._yayin_yonetmeni([1, 2, 3], [4], records, content, arts)
+    assert set(top3) == {4, 2, 3}, 'net alan adları okunmadı'
+
+
+def test_eski_alan_adlari_geriye_donuk_calisir():
+    records, content, arts = _veri()
+    s = _sistem({'takaslar': [{'inen': 1, 'cikan': 4, 'neden': 'test'}]})
+    top3, _ = s._yayin_yonetmeni([1, 2, 3], [4], records, content, arts)
+    assert set(top3) == {4, 2, 3}, 'eski alan adları artık okunmuyor'
+
+
+def test_manset_disi_kategoriye_yukseltme_reddedilir():
+    """Kategori düzeltmesi artık takastan ÖNCE uygulanır; bu yüzden takas
+    kapısı GÜNCEL kategoriyi görür ve uygunsuz yükseltmeyi reddeder."""
+    records, content, arts = _veri()
+    s = _sistem({'kategoriler': [{'id': 4, 'yeni': 'zafiyet_rutin',
+                                  'neden': 'yamalanmış'}],
+                 'takaslar': [{'manşetten_dusen': 1, 'manşete_yukselen': 4,
+                               'neden': 'test'}]})
+    top3, _ = s._yayin_yonetmeni([1, 2, 3], [4], records, content, arts)
+    assert set(top3) == {1, 2, 3}, 'manşete uygun olmayan kategori manşete çıktı'
+    assert any(e.get('tur') == 'takas' and e.get('karar') == 'reddedildi'
+               for e in s._yy_eylemler)

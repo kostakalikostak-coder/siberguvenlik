@@ -157,3 +157,18 @@ def test_bastan_gelen_yasakli_manset_tekrar_tekrar_bildirilmez():
     assert d.ihlaller == [], 'baştan gelen gevşetme ihlal sayıldı'
     d.senkronla('yayin_yonetmeni', [6, 2, 5], [4, 3, 1], [7, 8])
     assert d.ihlaller == [], 'değişmeyen yasaklı manşet yeniden bildirildi'
+
+
+def test_uygunsuz_manset_kategorisi_bildirilir():
+    """2026-08-21: yönetmen Entra ID haberini zafiyet_aktif_apt iken manşete
+    çıkardı, ardından AYNI katman onu zafiyet_rutin'e indirdi — manşete asla
+    giremeyecek bir kategori manşette kaldı."""
+    from src.rapor_durumu import UYGUNSUZ_KATEGORI
+    katlar = {3: 'zafiyet_rutin', 2: 'nation_state_apt', 1: 'nation_state_apt'}
+    d = _durum(manset=[1, 2], top10=[3, 4], kalan=[7],
+               kat_fn=katlar.get, manset_disi_katlar={'zafiyet_rutin'})
+    d.senkronla('a', [1, 2], [3, 4], [7])
+    assert d.ihlaller == [], 'gövdedeki uygunsuz kategori ihlal sayıldı'
+    d.senkronla('yayin_yonetmeni', [3, 2], [1, 4], [7])
+    assert any(i['tur'] == UYGUNSUZ_KATEGORI and i['id'] == 3
+               for i in d.ihlaller), 'uygunsuz manşet kategorisi yakalanmadı'
