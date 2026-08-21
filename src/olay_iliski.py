@@ -613,17 +613,61 @@ class OlayDefteri:
                 self.ekle(gun, v, manset=id(v) in manset_kimlik)
         return self
 
+    def _manset_kaydi(self, view):
+        """Manşet geçmişi sorgusu için kayıt bulur — GEVŞEK eşleşmeyle.
+
+        NEDEN GEVŞEK: defterin dört değerli sınıflandırıcısı GÖVDE ELEMESİ için
+        ayarlanmıştır ve orada yanlış-pozitifin maliyeti yüksektir (haber
+        SİLİNİR). Manşet tekrarı sorusunda maliyet TERSİNE döner: yanlış pozitif
+        yalnızca bir manşet yuvasını başka habere bırakır (telafi edilebilir),
+        yanlış negatif ise ÜST ÜSTE AYNI MANŞET demektir — kullanıcının sürekli
+        bildirdiği arıza.
+
+        ÖLÇÜLDÜ (2026-08-21): "Kritik Altyapılardaki Siemens PLC Cihazlarının
+        Yapay Zekayla Hedeflenmesi" (08-20 manşeti) ile "ABD Kurumlarının
+        Siemens S7 PLC Cihazlarına Yönelik Yapay Zeka Destekli Saldırı Uyarısı"
+        (08-21) AYNI olaydır; `dedup.same_event` ikisini eşleştiriyor
+        ('entity:siemens+topic=0.37') ama defter ILISKISIZ diyor — paylaşılan
+        tek düşük dereceli kimlik (`ad:siemens`) MIN_ORTAK_AD=2 eşiğini
+        geçmiyor, konu örtüşmesi de KONU_TEK_BASINA=0.42'nin altında kalıyor.
+        Sonuç: Siemens PLC haberi üst üste iki gün manşet oldu.
+
+        Bu yüzden defterin KENDİ eşiğini düşürmek yerine (gövde elemesinde
+        gerileme yaratırdı) manşet sorgusuna çapraz-gün `same_event` yedeği
+        eklendi. Gövde politikası DEĞİŞMEZ.
+        """
+        kayit, _ = self.esle(view)
+        if kayit is not None:
+            return kayit
+        kimlik = olay_kimlikleri(view, self.sozluk)
+        for k in self.kayitlar:
+            if not k['manset_gunleri']:
+                continue          # yalnızca manşet olmuş olaylar sorgulanır
+            for gecmis_view in k['views']:
+                # (a) TEK ortak olay kimliği + zayıf konu desteği yeter.
+                #     Gövde elemesi MIN_ORTAK_AD=2 ister; orada tek bir ortak
+                #     ad yanlış birleştirme üretiyordu. Manşet sorgusunda
+                #     maliyet tersine döndüğü için eşik 1'e iner.
+                if kimlik & olay_kimlikleri(gecmis_view, self.sozluk) and \
+                        _konu_ortusmesi(view, gecmis_view) >= KIMLIK_ILE_KONU_MIN:
+                    return k
+                # (b) Çapraz-gün same_event — kimlik çıkarımı boş kalsa bile
+                #     kurum/ürün adı üzerinden eşleşmeyi yakalar.
+                if dedup.same_event(view, gecmis_view, cross_day=True):
+                    return k
+        return None
+
     def manset_gunu_sayisi(self, view):
         """Bu görünümün olayı son günlerde kaç kez MANŞET olmuş?
 
         Faz 2 politikasının çekirdeği: 'mukerrer' bayrağı gibi kaba bir yasak
         yerine ÖLÇÜLEN bir gerçek. Olay hiç manşet olmamışsa 0 döner ve haber
         puanına göre serbestçe manşete çıkabilir."""
-        kayit, _ = self.esle(view)
+        kayit = self._manset_kaydi(view)
         return len(kayit['manset_gunleri']) if kayit else 0
 
     def son_manset_gunu(self, view):
-        kayit, _ = self.esle(view)
+        kayit = self._manset_kaydi(view)
         if not kayit or not kayit['manset_gunleri']:
             return None
         return kayit['manset_gunleri'][-1]

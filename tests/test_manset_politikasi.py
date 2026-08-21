@@ -117,3 +117,69 @@ def test_gercek_mukerrerler_hala_elenir(fx, baglam):
 def test_uretimdeki_sonuc_gercekten_hataliydi(fx):
     """Fikstürün taşıdığı üretim sonucu, düzeltilen hatayı gösteriyor olmalı."""
     assert sorted(fx['uretimdeki_kritik3']) == [90, 90, 97]
+
+
+def test_manset_gecmisi_sorgusu_tek_ortak_kimlikle_eslesir():
+    """Defterin manşet sorgusu, gövde elemesinden GEVŞEK olmalı.
+
+    ÖLÇÜLDÜ (2026-08-21): "Kritik Altyapılardaki Siemens PLC Cihazlarının
+    Yapay Zekayla Hedeflenmesi" (08-20 manşeti) ile "ABD Kurumlarının Siemens
+    S7 PLC Cihazlarına Yönelik Yapay Zeka Destekli Saldırı Uyarısı" (08-21)
+    aynı olaydır, ama paylaşılan tek düşük dereceli kimlik (ad:siemens)
+    MIN_ORTAK_AD=2 eşiğini geçmediği için defter ILISKISIZ dedi ve haber üst
+    üste iki gün manşet oldu.
+
+    Maliyet asimetriktir: yanlış pozitif bir manşet yuvasını başka habere
+    bırakır (telafi edilebilir), yanlış negatif üst üste aynı manşet demektir.
+    """
+    from src import olay_iliski as _olay
+
+    dun = {'tr_title': 'Kritik Altyapılardaki Siemens PLC Cihazlarının Yapay '
+                       'Zekayla Hedeflenmesi',
+           'title': 'US warns of AI-powered attacks on Siemens PLCs',
+           'paragraph': 'NSA, CISA, FBI, EPA ve DOE, Amerika Birleşik '
+                        'Devletleri\'ndeki kritik altyapı kuruluşlarını Siemens '
+                        'programlanabilir mantık denetleyicilerine (PLC) yönelik '
+                        'siber saldırılar konusunda uyarmıştır. Kimliği belirsiz '
+                        'tehdit aktörlerinin internete açık S7 serisi cihazları '
+                        'tespit ettiği belirtilmiştir.',
+           'full_text': ''}
+    bugun = {'tr_title': 'ABD Kurumlarının Siemens S7 PLC Cihazlarına Yönelik '
+                         'Yapay Zeka Destekli Saldırı Uyarısı',
+             'title': 'AI-Generated Exploit Scripts Target Siemens S7 PLCs',
+             'paragraph': 'NSA, CISA, FBI, DOE ve EPA tarafından yayımlanan '
+                          'ortak bildiride, ABD\'deki kritik altyapı '
+                          'kuruluşlarının yapay zeka destekli kötü amaçlı '
+                          'yazılım betikleriyle hedef alındığı duyurulmuştur. '
+                          'Siber saldırganlar, Siemens S7-200, 300, 400, 1200 ve '
+                          '1500 serisi programlanabilir mantık '
+                          'denetleyicilerini (PLC) hedef alarak Python tabanlı '
+                          'saldırı kodları geliştirmektedir.',
+             'full_text': ''}
+    alakasiz = {'tr_title': 'Manic Zararlısının Çevrimdışı Cihazlardan Veri '
+                            'Sızdırması',
+                'title': 'Manic Android Malware Exfiltrates Data',
+                'paragraph': 'Manic zararlısı çevrimdışı Android cihazlardan '
+                             'mesh ağı üzerinden veri sızdırmaktadır.',
+                'full_text': ''}
+
+    defter = _olay.defter_kur([('2026-08-20', [dun], [dun])])
+    assert defter.manset_gunu_sayisi(bugun) >= 1, \
+        'dün manşet olan olay bugün manşet geçmişsiz görünüyor'
+    assert defter.son_manset_gunu(bugun) == '2026-08-20'
+    assert defter.manset_gunu_sayisi(alakasiz) == 0, \
+        'ilgisiz haber manşet geçmişine bağlandı (fazla gevşek)'
+
+
+def test_manset_sorgusu_govde_politikasini_degistirmez():
+    """Gevşetme YALNIZCA manşet geçmişi sorgusundadır; dört değerli
+    sınıflandırıcı (gövde elemesinin dayanağı) aynı kalmalıdır."""
+    from src import olay_iliski as _olay
+    a = {'tr_title': 'Siemens PLC Cihazlarının Hedeflenmesi', 'title': 'x',
+         'paragraph': 'Siemens denetleyicileri hedef alınmıştır.',
+         'full_text': ''}
+    b = {'tr_title': 'Siemens Ürünlerinde Yama Yayımlanması', 'title': 'y',
+         'paragraph': 'Siemens ürünleri için güncelleme yayımlanmıştır.',
+         'full_text': ''}
+    iliski, _ = _olay.iliski_belirle(a, b, explain=True)
+    assert iliski in _olay.ILISKILER, 'sınıflandırıcı sözleşmesi bozuldu'
