@@ -1869,6 +1869,17 @@ DÖRT TÜR DÜZELTME yapabilirsin. Hiçbiri haber SİLMEZ:
    Daha önemli olan: gerçekleşmiş ve sürmekte olan olay > potansiyel risk;
    geniş/kritik etki (devlet ağı, altyapı, çok sayıda kurum) > tekil ürün;
    AKTİF İSTİSMAR edilen açık > yamalanmış ama istismar edilmemiş açık.
+
+   ⛔ KAPANMIŞ ZAFİYET MANŞET DEĞİLDİR — CVSS puanı ne olursa olsun.
+   Satıcı açığı kendi tarafında kapattıysa ve metinde "kullanıcıların ek işlem
+   yapmasına gerek yok" / "no customer action required" deniyorsa okuyucunun
+   yapacağı bir şey, sürmekte olan bir tehdit ve adı geçen bir kurban YOKTUR.
+   Böyle bir haberi, gerçekleşmiş/süren bir kampanyayı (casusluk, tedarik
+   zinciri, kritik altyapı) manşetten indirerek yukarı ÇIKARMA.
+   ÖLÇÜLDÜ (2026-08-21): CVSS 10.0'lık ama Microsoft tarafından bulut
+   tarafında kapatılmış Entra ID açığı, Orta Asya hükümetlerini hedefleyen
+   süren bir casusluk kampanyasının yerine manşete çıkarıldı — yanlıştı.
+
    En fazla 2 takas öner. Emin değilsen takas ÖNERME.
 
 2) "kategori" — Haberin kategorisi metniyle çelişiyorsa düzelt.

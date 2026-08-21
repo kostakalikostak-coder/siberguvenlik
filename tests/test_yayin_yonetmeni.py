@@ -112,7 +112,7 @@ def test_govde_argumani_manseti_icermez():
     import inspect
     kaynak = inspect.getsource(main.HaberSistemi.create_html)
     assert '_yayin_yonetmeni(' in kaynak
-    parca = kaynak.split('_yayin_yonetmeni(', 1)[1][:300]
+    parca = kaynak.split('_yy_govde = ', 1)[1][:300]
     assert 'if a not in set(top3_ids)' in parca, \
         'gövde listesi manşet id\'lerinden arındırılmıyor — mükerrer gövde riski'
     assert 'top10_ids, remaining_ids =' not in parca, \
@@ -205,3 +205,33 @@ def test_yeni_kategori_oncelik_tablosunda():
     eksik = [k for k in config.SCORING_CATEGORIES
              if k not in config.KATEGORI_ONCELIK]
     assert not eksik, f'öncelik tablosunda eksik kategori: {eksik}'
+
+
+def test_kapi_karari_yonetmenin_ustunde():
+    """Manşet havuzundan BİLEREK düşürülmüş haber geri çıkarılamaz.
+
+    2026-08-21 koşusunda Siemens PLC / yapay zeka saldırısı haberi 100 puanla
+    manşet havuzundan düşürülmüştü — aynı olay bir gün önce zaten manşetti.
+    Yönetmen onu gövdede görüp geri manşete çıkardı; üst üste iki gün aynı
+    manşet yayımlandı.
+    """
+    records, content, arts = _veri()
+    s = _sistem({'takaslar': [{'inen': 1, 'cikan': 4, 'neden': 'test'}]})
+    top3, govde = s._yayin_yonetmeni(
+        [1, 2, 3], [4], records, content, arts,
+        manset_disi={4: 'olay son 7 günde 1 kez manşet oldu'})
+    assert set(top3) == {1, 2, 3}, 'kapı kararı yönetmen tarafından ezildi'
+    assert any(e.get('tur') == 'takas' and e.get('karar') == 'reddedildi'
+               for e in s._yy_eylemler), 'red kayda geçmedi'
+
+
+def test_kapi_disinda_kalan_takas_calisir():
+    """Koruma fazla geniş olmamalı: yasaklı OLMAYAN takas uygulanır."""
+    records, content, arts = _veri()
+    records[5] = dict(records[4]); content[5] = dict(content[4])
+    arts[5] = dict(arts[4])
+    s = _sistem({'takaslar': [{'inen': 1, 'cikan': 5, 'neden': 'test'}]})
+    top3, _ = s._yayin_yonetmeni(
+        [1, 2, 3], [4, 5], records, content, arts,
+        manset_disi={4: 'olay son 7 günde 1 kez manşet oldu'})
+    assert 5 in top3, 'yasaklı olmayan takas uygulanmadı'

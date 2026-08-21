@@ -5790,8 +5790,43 @@ document.addEventListener('DOMContentLoaded', initDragFile);
     # düzeltmek.
     YAYIN_YONETMENI_MAX_TAKAS = 2
 
+    def _manset_disi_ids(self, aday_ids, records, view_fn):
+        """Manşete ÇIKAMAYACAK id'ler ve nedenleri: {id: neden}.
+
+        NEDEN VAR: KRİTİK 3 kapısı (bkz. _derive_top3_by_score) bazı adayları
+        BİLEREK gövdede bırakır — gerçek mükerrer (AYNI_GELISME), kategori
+        kapısı (KRITIK3_HARIC_KATEGORILER) ve olay defterinin "bu olay son 7
+        günde zaten manşet oldu" kaydı. Yayın yönetmeni bu kararların HİÇBİRİNİ
+        görmüyordu: yalnızca başlık, kategori ve puan okuyup takas öneriyordu.
+
+        ÖLÇÜLDÜ (2026-08-21 koşusu): Siemens PLC / yapay zeka destekli saldırı
+        haberi 100 puanla manşet havuzundan DÜŞÜRÜLMÜŞTÜ — aynı olay 08-20'de
+        zaten manşetti. Yönetmen onu gövdede görüp geri manşete çıkardı ve
+        üst üste iki gün aynı manşet yayımlandı; tam da defterin engellemek
+        için var olduğu durum.
+        """
+        disi = {}
+        defter = getattr(self, '_olay_defteri', None)
+        manset_yasak = getattr(self, '_manset_yasak', None) or set()
+        for aid in aday_ids:
+            if aid in manset_yasak:
+                disi[aid] = 'gerçek mükerrer (AYNI_GELISME)'
+                continue
+            if (records.get(aid) or {}).get('kat') in KRITIK3_HARIC_KATEGORILER:
+                disi[aid] = 'kategori manşete uygun değil'
+                continue
+            if defter is not None:
+                try:
+                    tekrar = defter.manset_gunu_sayisi(view_fn(aid))
+                except Exception:
+                    tekrar = 0
+                if tekrar >= self.MANSET_TEKRAR_SINIRI:
+                    disi[aid] = (f'olay son {REPORT_HISTORY_DAYS} günde '
+                                 f'{tekrar} kez manşet oldu')
+        return disi
+
     def _yayin_yonetmeni(self, top3_ids, govde_ids, records,
-                         content_by_id, articles_by_id):
+                         content_by_id, articles_by_id, manset_disi=None):
         """Bitmiş raporun TAMAMINA bakan son editoryal geçiş.
 
         Diğer tüm LLM denetimleri parça görür (yalnızca paragraflar, yalnızca
@@ -5845,6 +5880,15 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             except (TypeError, ValueError):
                 continue
             if inen not in yeni_top3 or cikan not in yeni_govde:
+                continue
+            # KAPI KARARLARI YÖNETMENİN ÜSTÜNDEDİR: manşet havuzundan BİLEREK
+            # düşürülmüş bir haber geri çıkarılamaz (bkz. _manset_disi_ids).
+            if manset_disi and cikan in manset_disi:
+                print(f"   ⛔ Yayın yönetmeni takası REDDEDİLDİ: ID {cikan} "
+                      f"manşete çıkamaz — {manset_disi[cikan]}.")
+                self._yy_eylemler.append({'tur': 'takas', 'id': cikan,
+                                          'karar': 'reddedildi',
+                                          'neden': manset_disi[cikan]})
                 continue
             neden = str(t.get('neden', ''))[:80]
             yeni_top3[yeni_top3.index(inen)] = cikan
@@ -6761,11 +6805,18 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # koşusu): 28 gövde girdisi / 26 benzersiz — İranlı aktörler ve Apple
         # haberleri raporda ikişer kez göründü.
         _yy_before = list(top3_ids)
+        _yy_govde = [a for a in list(top10_ids) + list(remaining_ids)
+                     if a not in set(top3_ids)]
+        _yy_disi = self._manset_disi_ids(
+            _yy_govde, score_records,
+            self._dedup_view_fn(content_by_id, articles_by_id))
+        if _yy_disi:
+            print(f"   🚧 Yayın yönetmeni: {len(_yy_disi)} gövde haberi manşete "
+                  f"ÇIKAMAZ (kapı kararı) — takas önerileri reddedilecek: "
+                  f"{sorted(_yy_disi)}")
         top3_ids, _ = self._yayin_yonetmeni(
-            top3_ids,
-            [a for a in list(top10_ids) + list(remaining_ids)
-             if a not in set(top3_ids)],
-            score_records, content_by_id, articles_by_id)
+            top3_ids, _yy_govde, score_records, content_by_id, articles_by_id,
+            manset_disi=_yy_disi)
 
         # MUTABAKAT — manşet katmanlarının ortak kuralı: manşete ÇIKAN gövdeden
         # alınır, manşetten DÜŞEN gövdeye eklenir (bkz. Auditor (d) sonrası aynı
