@@ -1,38 +1,38 @@
-# KAYNAK SAĞLIK RAPORU — 2026-08-21 16:35
-# aktif=36  üretiyor=24  boş(200/0)=0  hata/timeout=0
-# çıkarım : 256/257 haberin tam metni çıktı (%100)
-# dedup   : 112/256 haber filtreleri geçti (%44)
-# 🚨 DEDUP SIFIR (3) [metin var, filtreler eliyor]: CrowdStrike, Citizen Lab, CERT-EU
+# KAYNAK SAĞLIK RAPORU — 2026-08-22 12:05
+# aktif=36  üretiyor=13  boş(200/0)=0  hata/timeout=0
+# çıkarım : 252/261 haberin tam metni çıktı (%97)
+# dedup   : 33/252 haber filtreleri geçti (%13)
+# 🚨 DEDUP SIFIR (7) [metin var, filtreler eliyor]: CSO Online, Help Net Security, Industrial Cyber, SANS ISC, CrowdStrike, Citizen Lab, CERT-EU
 # KAYNAK                      HAM  KALAN  METİN  HAVUZ  DURUM
-The Hacker News              40     40     40     19  OK
-Dark Reading                 40     22     22     10  OK
-BleepingComputer             15     15     15      9  OK
-SecurityWeek                 10     10     10      9  OK
-Help Net Security            10     10     10      8  OK
-Security Affairs             10     10     10      7  OK
-Industrial Cyber              9      9      9      7  OK
-CSO Online                   20     19     19      6  OK
-The Register                 40     18     18      6  OK
-ANSSI (CERT-FR)              40     29     29      5  OK
-TechCrunch Security          20     11     11      4  OK
-Cyberscoop                   10     10     10      3  OK
-SANS ISC                     10     10     10      3  OK
-Schneier on Security         10      5      4      3  OK
-Talos Intelligence           15      4      4      3  OK
-The Record                    5      5      5      2  OK
-The Cyber Express            10      7      7      1  OK
-Graham Cluley                20      3      3      1  OK
-Mandiant (Google Cloud)      20      2      2      1  OK
-Unit 42                      15      2      2      1  OK
-Microsoft Security           10      2      2      1  OK
-NCSC UK                      20      1      1      1  OK
-Bellingcat                   10      1      1      1  OK
-Securelist (Kaspersky)       10      1      1      1  OK
+BleepingComputer             15     15     15      6  OK
+SecurityWeek                 10     10     10      5  OK
+The Record                    5      5      5      5  OK
+The Hacker News              40     40     40      3  OK
+The Register                 40     21     21      3  OK
+ANSSI (CERT-FR)              40     39     32      2  OK
+Cyberscoop                   10     10     10      2  OK
+Security Affairs             10     10     10      2  OK
+Dark Reading                 40     19     19      1  OK
+TechCrunch Security          20     11     11      1  OK
+The Cyber Express            10      6      6      1  OK
+Schneier on Security         10      7      5      1  OK
+Unit 42                      15      3      3      1  OK
+CSO Online                   20     15     15      0  🚨 DEDUP SIFIR (OK)
+Help Net Security            10     10     10      0  🚨 DEDUP SIFIR (OK)
+Industrial Cyber              9      9      9      0  🚨 DEDUP SIFIR (OK)
+SANS ISC                     10      8      8      0  🚨 DEDUP SIFIR (OK)
+Talos Intelligence           15      4      4      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Recorded Future              40      3      3      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 CrowdStrike                  10      3      3      0  🚨 DEDUP SIFIR (OK)
-Infoblox Blog                12      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+Graham Cluley                20      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+Mandiant (Google Cloud)      20      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Citizen Lab                  10      2      2      0  🚨 DEDUP SIFIR (OK)
+Microsoft Security           10      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+NCSC UK                      20      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+Infoblox Blog                12      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+Bellingcat                   10      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 CERT-EU                      10      1      1      0  🚨 DEDUP SIFIR (OK)
+Securelist (Kaspersky)       10      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 BSI                          40      0      -      0  OK
 IranWire                     40      0      -      0  OK
 NIST                         40      0      -      0  OK

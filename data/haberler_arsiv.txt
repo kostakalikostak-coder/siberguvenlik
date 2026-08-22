@@ -31707,3 +31707,92 @@ Node.js tabanlı isolated-vm kütüphanesinde bulunan bir tip karışıklığı 
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 22 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Çin Bağlantılı SilkParasite Operasyonunun Orta Asya'yı Hedeflemesi
+─────────────────────────────────────────────────────────
+Çin merkezli olduğu değerlendirilen SilkParasite operasyonu, Orta Asya'daki hükümet kurumlarını hedef alan kapsamlı bir siber casusluk faaliyetidir. Bitdefender tarafından yayımlanan rapor, yaklaşık bir yıldır süren bu operasyonun Özbekistan, Türkmenistan, Kırgızistan, Tacikistan, Gürcistan ve Kazakistan'daki ekonomi bakanlıklarını hedeflediğini ortaya koymuştur. Toplam 65 enfeksiyonun tespit edildiği saldırılarda, yapay zeka desteğiyle geliştirilmiş beş yeni tür dahil olmak üzere yedi farklı zararlı yazılım ailesi kullanılmıştır. Saldırganlar, e-posta ağ geçidi taramalarını atlatmak için arşivlenmiş oltalama belgeleriyle başlangıç erişimi sağlamıştır. Özellikle DriveSilkRAT adlı yazılım, tespit riskini azaltmak için komuta kontrol trafiğini doğrudan Google Drive üzerinden yürüterek normal ağ trafiği görünümü kazanmaktadır.
+(XXXXXXX, AÇIK -therecord.media, 20.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Rus Yazılım Şirketi Microolap'ın Siber Saldırıya Uğraması
+─────────────────────────────────────────────────────────
+Rusya merkezli ağ trafiği analiz yazılımları geliştiricisi Microolap, kendisini Black Spark olarak adlandıran Ukrayna yanlısı bir grubun sistemlerine sızdığını doğrulamıştır. Saldırganlar, şirketin ağında bir aydan fazla süre geçirdiklerini ve EtherSensor platformu dahil iç sistemlere eriştiklerini, ayrıca Rusya Demiryolları, Goznak, VTB Bank ve NEK.TECH gibi kritik kurumların verilerini ele geçirdiklerini iddia etmiştir. Ancak CEO Andrey Smirnov, siber güvenlik sistemlerinin başarıyla çalıştığını belirterek bu iddiaları reddetmiş; saldırının yalnızca başka bir sağlayıcıda barındırılan eski bir web sitesi, az kullanılan geliştirme sistemleri ve güncelliğini yitirmiş bir Bitrix24 müşteri yönetim sistemiyle sınırlı kaldığını açıklamıştır. Etkilenen birimlerin ana altyapıdan izole edildiğini vurgulayan şirket, olayı ismi açıklanmayan büyük bir Rus siber güvenlik firmasıyla birlikte inceleyerek ek güvenlik önlemlerini devreye almıştır.
+(XXXXXXX, AÇIK -therecord.media, 21.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Microsoft Teams Üzerinden Yeni SynkLoader Zararlı Yazılımının Yayılması
+─────────────────────────────────────────────────────────
+Microsoft Teams platformunu hedef alan bir kimlik avı kampanyasında, SynkLoader adlı yeni bir zararlı yazılım ailesinin dağıtıldığı tespit edilmiştir. Siber saldırganlar, hedef kurumların bilgi işlem destek birimlerini taklit ederek kullanıcıları Azure üzerinde barındırılan ve güvenilir görünen 'PowerShell Cleaner' adlı sahte bir MSI dosyasını yüklemeye yönlendirmektedir. Temmuz 2026'da derlendiği belirlenen bu yazılım; Python, PowerShell, C# ve C++ dillerini bir arada kullanan karmaşık bir yapıya sahiptir. Zararlı yazılım, PhishLocker modülüyle sahte bir Windows 11 kilit ekranı yansıtarak kullanıcı şifrelerini ele geçirmekte, ayrıca sistem profilini çıkarma, kalıcılık sağlama ve StreamMaster modülüyle uzak masaüstü kontrolü gerçekleştirmektedir. Araştırmacı Marcus Hutchins, saldırganların Active Directory ortamlarının boyutunu ölçmesi nedeniyle bu faaliyetin fidye yazılımı operasyonlarının bir ön hazırlığı olabileceğine dikkat çekmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 21.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] iAuthFlow V2 Kitinin Parola Sıfırlama Sonrası Erişimi Sürdürmesi
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacıları, iAuthFlow V2 adlı yeni bir kimlik avı hizmeti kitinin, parola sıfırlama işlemlerinden sonra bile hesap erişimini sürdürmek için geçiş anahtarlarını (passkeys) kullandığını tespit etmiştir. Yeraltı forumlarında pazarlanan bu aracın, saldırgan kontrolündeki bir geçiş anahtarını kurbanın hesabına kaydederek kalıcı erişim sağladığı belirtilmiştir. Geleneksel yöntemlerin aksine, parola değişikliği veya aktif oturumların sonlandırılmasının bu yeni kayıtlı kimlik bilgisini etkisiz hale getirmediği ifade edilmiştir. Abnormal tarafından yapılan analizde, sosyal mühendislik tekniklerinin giderek daha karmaşık hale geldiği ve standart güvenlik önlemlerinin yetersiz kalabildiği vurgulanmıştır. Uzmanlar, bir hesap ihlali durumunda yalnızca parola sıfırlamanın yeterli olmadığını, kayıtlı tüm yetkilendirme yöntemlerinin kontrol edilmesi gerektiğini bildirilmiştir. Söz konusu kitin gizli operasyon yürütebilme kabiliyeti nedeniyle tespit edilmesinin zor olduğu kaydedilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 21.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Popüler Rust Paketlerine Zararlı Yazılım Enjekte Edilmesi
+─────────────────────────────────────────────────────────
+Rust programlama dili ekosistemindeki popüler paketlere yönelik bir tedarik zinciri saldırısı düzenlendiği ve geliştirici kimlik bilgilerinin hedeflendiği tespit edilmiştir. Rust Güvenlik Müdahale Ekibi, proc-macro1 adlı zararlı bir paketin yanı sıra arrayref, internment ve append-only-vec gibi yaygın kullanılan paketlerin zehirlendiğini açıklamıştır. Saldırganların, yasal paketlerin yeni sürümlerine zararlı bağımlılıklar ekleyerek geliştiricilerin makinelerinde kod yürüttüğü belirtilmiştir. Zararlı kodun Chromium tabanlı tarayıcı verilerini ve kripto para cüzdan uzantılarını hedeflediği ifade edilmiştir. Zehirli paketlerin crates.io platformunda yaklaşık iki saat kaldıktan sonra kaldırıldığı kaydedilmiştir. Toplamda 245 milyondan fazla indirmeye sahip olan arrayref paketinin bu saldırıdan etkilendiği bildirilmiştir. Gelişticilere yerel kayıt defteri önbelleklerini ve kilit dosyalarını kontrol etmeleri yönünde uyarı yapılmıştır.
+(XXXXXXX, AÇIK -theregister.com, 21.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Yapay Zeka Destekli RedC2 Zararlı Yazılımının npm Paketleriyle Yayılması
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacıları, takvim ve verimlilik araçları gibi görünen 14 adet kötü amaçlı npm paketinin, RedC2 4.0 adlı yapay zeka destekli bir Linux arka kapısı yaydığını tespit etmiştir. TrendAI tarafından yayımlanan raporda, bu paketlerin meşru işlevler sunarken arka planda RedShell adlı bir Linux işaretçisi çalıştırdığı belirtilmiştir. RedC2 4.0 sürümünün, doğal dil komutlarını teknik komut dizilerine dönüştüren Red Agent adlı bir yapay zeka asistanı içerdiği ve siber suç forumlarında 99,99 dolar karşılığında satışa sunulduğu ifade edilmiştir. MarlboroMan takma adlı bir aktör tarafından pazarlanan bu çerçevenin; kimlik bilgisi hırsızlığı, veri toplama ve ağ sızma faaliyetleri için kullanıldığı kaydedilmiştir. Araştırmacılar, yapay zeka entegrasyonunun siber saldırıların karmaşıklığını artırırken saldırganlar için giriş bariyerini düşürdüğüne dikkat çekmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 21.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Android Tabanlı Araç Sistemlerine Yönelik Zararlı Yazılım Tespiti
+─────────────────────────────────────────────────────────
+Kaspersky araştırmacıları, DoFun tarafından geliştirilen Android tabanlı araç bilgi-eğlence sistemlerini hedef alan yeni bir zararlı yazılım ailesi keşfetmiştir. Yazılımın, sistemin yerleşik güncelleme mekanizmalarını istismar ederek JarService adlı bir yükleyici aracılığıyla cihazlara sızdığı tespit edilmiştir. Bu faaliyet, daha önce BADBOX reklam dolandırıcılığı şemasıyla ilişkilendirilen MoYu Group adlı tehdit aktörüne atfedilmiştir. Zararlı yazılımın, bulaştığı sistemlerde reklam dolandırıcılığı yapmak ve cihazı bir proxy botnetine dönüştürmek amacıyla kullanıldığı belirtilmiştir. Araştırmacı Dmitry Kalinin, bu olayın bir araç ana ünitesine özgü bir enfeksiyon zinciriyle bulaşan ilk belgelenmiş vaka olduğunu ifade etmiştir. Saldırganların, etkilenen cihazlardan konum, Wi-Fi bilgileri ve MAC adresleri gibi verileri topladığı ve arka planda gizli komutlar çalıştırdığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 21.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] ABD'li Milletvekillerinin Federal Hükümetin Casus Yazılım Kullanımını İnceletmesi
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri Senatörü Ron Wyden ve Temsilci Greg Casar, federal hükümetin vatandaşlara yönelik izleme ve casus yazılım faaliyetlerinin incelenmesi için Hükümet Hesap verebilirlik Ofisi'ne (GAO) başvurmuştur. Milletvekilleri, federal kolluk kuvvetlerinin yirmi beş yılı aşkın süredir kullandığı hackleme araçlarının kapsamı ve operasyonel güvenceleri hakkında kamuoyuna yeterli bilgi verilmediğini belirtmiştir. Özellikle Immigration and Customs Enforcement (ICE) kurumunun casus yazılım firması Paragon ile çalıştığının ortaya çıkması üzerine, bu tür teknolojilerin kötüye kullanım potansiyeline dikkat çekilmiştir. GAO'dan, yetkisiz kişisel amaçlarla kullanılan izleme araçlarının ve Rule 41 kapsamındaki hackleme taleplerinin denetlenmesi istenmiştir. Başvuruda, bu tür istilacı teknolojilerin web kameralarına ve şifreli yazışmalara sınırsız erişim sağladığı, bu durumun ise suistimallere davetiye çıkardığı ifade edilmiştir. İnceleme sonucunda hazırlanacak raporun kamuoyuyla paylaşılması talep edilmiştir.
+(XXXXXXX, AÇIK -cyberscoop.com, 21.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] CISA'nın TrueConf Yazılımındaki İstismar Edilen Açıklar İçin Uyarması
+─────────────────────────────────────────────────────────
+ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Rusya menşeli video konferans platformu TrueConf üzerinde aktif olarak istismar edilen iki zafiyet için yama talimatı vermiştir. CVE-2026-72529 ve CVE-2026-72530 kodlu açıkların, Head Mare adlı Ukrayna yanlısı bir grup tarafından Rus şirketlerine yönelik saldırılarda kullanıldığı belirtilmiştir. Saldırganların bu açıkları kullanarak sunuculara sızdığı ve yasal yükleyicileri PhantomCore arka kapısı içeren trojanlı sürümlerle değiştirdiği ifade edilmiştir. TrueConf yazılımının dünya genelinde çeşitli kamu kurumları ve havalimanları tarafından kullanıldığı kaydedilmiştir. CISA, federal kurumların bu açıkları 10 Eylül 2026 tarihine kadar kapatmaları gerektiğini bildirmiştir. Zafiyetlerin 2022 yılından bu yana yayımlanan sunucu sürümlerini etkilediği ve Haziran ayında yayımlanan güncellemelerle giderildiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 21.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Binlerce AWS Erişim Anahtarının Halka Açık Kaynaklarda İfşa Olması
+─────────────────────────────────────────────────────────
+Truffle Security araştırmacıları, Ağustos 2022 ile Ağustos 2026 tarihleri arasında halka açık kod depolarında ve günlüklerde paylaşılan 9.300'den fazla AWS erişim anahtarının hâlâ aktif olduğunu tespit etmiştir. İfşa olan anahtarların 817 tanesinin doğrudan şirket hesaplarıyla bağlantılı olduğu ve bunlardan 526'sının en yüksek yetkili 'root' anahtarı olduğu belirtilmiştir. Bu durumun, saldırganlara kurumsal bulut hesapları üzerinde tam kontrol sağladığı ve veri silme, sunucu ele geçirme veya kripto madenciliği yapma imkanı tanıdığı ifade edilmiştir. Hugging Face platformunun 8.482 benzersiz anahtar ifşasıyla en büyük kaynak olduğu kaydedilmiştir. Araştırma, ifşa olan anahtarların yarısından fazlasının yaklaşık beş yıldır rotasyon görmediğini ortaya koymuştur. AWS sözcüsü, ifşa olan anahtarlar konusunda müşterilerin bilgilendirildiğini ve riskleri en aza indirmek için karantina politikalarının uygulandığını açıklamıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 21.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Citrix'in NetScaler Ürünlerindeki Kritik Güvenlik Açıklarını Yamalaması
+─────────────────────────────────────────────────────────
+Citrix, NetScaler Gateway ve NetScaler ADC ürünlerini etkileyen iki yeni güvenlik açığına karşı yöneticileri acil güncelleme yapmaları konusunda uyarmıştır. CVE-2026-19490 olarak izlenen en kritik hatanın, kimlik doğrulama sunucusu olarak yapılandırılan cihazlarda yetkisiz saldırganların kimlik doğrulama mekanizmalarını atlamasına olanak tanıdığı belirtilmiştir. CVE-2026-19489 kodlu ikinci hatanın ise SIP ALG özelliği etkinleştirilmiş yapılandırmalarda bellek taşmasına yol açarak hizmet reddi saldırılarına zemin hazırladığı kaydedilmiştir. Citrix, etkilenen tüm sürümler için güvenlik yamalarının yayınlandığını ve kullanıcıların ilgili yazılımları 14.1-73.32 veya 13.1-63.21 gibi güncel sürümlere yükseltmeleri gerektiğini açıklamıştır. CISA'nın geçmişte 22 farklı Citrix açığını aktif istismar edilenler listesine eklediği hatırlatılarak, kurumların savunmasız cihazları hızla güvence altına alması istenmiştir. ShadowServer Vakfı, internete açık binlerce NetScaler örneğinin bulunduğuna dikkat çekmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 20.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] Oracle MySQL Ürünlerinde Çok Sayıda Güvenlik Açığının Belirlenmesi
+─────────────────────────────────────────────────────────
+Fransa Ulusal Siber Güvenlik Ajansı (ANSSI), Oracle MySQL veri tabanı sistemlerini etkileyen çok sayıda güvenlik açığı hakkında bir uyarı yayınlamıştır. Tespit edilen açıkların, saldırganlara uzaktan kod çalıştırma, hizmet reddi saldırısı düzenleme ve veri gizliliğini ihlal etme imkanı tanıdığı belirtilmiştir. Etkilenen ürünler arasında Enterprise Manager for MySQL, MySQL Cluster ve MySQL Shell gibi kritik bileşenlerin çeşitli sürümlerinin bulunduğu kaydedilmiştir. CVE-2026-34477 ve CVE-2026-71084 gibi çok sayıda CVE koduyla tanımlanan bu zafiyetlerin, sistem bütünlüğünü ve gizliliğini doğrudan tehdit ettiği ifade edilmiştir. Oracle tarafından 18 Ağustos 2026 tarihinde yayınlanan güvenlik bülteniyle birlikte gerekli düzeltme eklerinin sağlandığı bilgisi verilmiştir. Kullanıcıların ve sistem yöneticilerinin, olası saldırı risklerini minimize etmek amacıyla ilgili güncellemeleri ivedilikle uygulamaları ve yayınlanan teknik dokümantasyonu incelemeleri tavsiye edilmiştir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 19.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
