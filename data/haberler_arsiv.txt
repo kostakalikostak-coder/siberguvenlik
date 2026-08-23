@@ -31796,3 +31796,43 @@ Fransa Ulusal Siber Güvenlik Ajansı (ANSSI), Oracle MySQL veri tabanı sisteml
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 23 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] ToxicPanda Zararlı Yazılımının Bankacılık Uygulamalarına Yönelik Kapsamını Genişletmesi
+─────────────────────────────────────────────────────────
+Zimperium zLabs ekibi, ToxicPanda 2.0 adlı bankacılık truva atının 16 ülkedeki 349 finansal uygulamayı hedef alacak şekilde güncellendiğini raporlamıştır. Zararlı yazılımın, Android cihazlarda kablosuz hata ayıklama (ADB) özelliğini otomatik olarak etkinleştirerek shell düzeyinde erişim sağladığı tespit edilmiştir. Bu yöntemin, kullanıcı fark etmeden cihaz üzerinde tam kontrol ve yetki yükseltme imkanı tanıdığı belirtilmiştir. ToxicPanda'nın, Android Erişilebilirlik Hizmetlerini kötüye kullanarak ekran üzerindeki tüm verileri okuduğu ve sahte arayüzlerle kimlik bilgilerini çaldığı ifade edilmiştir. Dağıtım altyapısının Amazon AWS bulut servislerine taşındığı ve saldırganların operasyonlarını genişlettiği gözlemlenmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 22.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] İran Bağlantılı Hackerların Bir İngiliz Güç Santralini Devre Dışı Bırakması
+─────────────────────────────────────────────────────────
+İran bağlantılı siber tehdit aktörlerinin, Birleşik Krallık'taki bir güç santralini dört gün boyunca devre dışı bıraktığı bildirilmiştir. The Telegraph tarafından duyurulan bu olay, İngiliz enerji altyapısına yönelik türünün en başarılı ve ilk doğrulanmış saldırısı olarak nitelendirilmektedir. Eş zamanlı olarak ABD'nin 12 eyaletindeki su ve atık su tesislerine yönelik saldırılar gerçekleşmiş; Minnesota, Michigan ve New Jersey gibi bölgelerde su baskınları ile basınç kayıpları yaşanmıştır. İngiliz yetkililer, güvenlik gerekçesiyle santral adını gizli tutarken, personelin sistemi geri yüklemek için dört gün çalıştığını belirtmiştir. NCSC ve GCHQ süreci takip ederken, saldırının İran Devrim Muhafızları Ordusu'nun Batı altyapılarına erişim kapasitesini kanıtlama amacı taşıdığı değerlendirilmektedir. Hükümet, yapay zekanın siber saldırı maliyetlerini düşürdüğü ve küçük ölçekli tesislerin yasal bildirim eşikleri konusunda yeni uyarılar yayımlamıştır.
+(XXXXXXX, AÇIK -securityaffairs.com, 23.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] TikTok'un Çocuk Gizliliği Davasında 400 Milyon Dolar Ödemesi
+─────────────────────────────────────────────────────────
+ABD Adalet Bakanlığı (DoJ), ByteDance bünyesindeki TikTok'un çocukların çevrimiçi gizliliğini ihlal ettiği gerekçesiyle açılan davada 400 milyon dolarlık bir uzlaşma bedeli ödemeyi kabul ettiğini açıklamıştır. Anlaşma kapsamında şirketin 300 milyon doları derhal, kalan 100 milyon doları ise önceki bir yasal kararın iptalinin ardından ödeyeceği belirtilmiştir. Federal Ticaret Komisyonu (FTC) ile birlikte sunulan şikayette, TikTok'un 13 yaş altı çocukların hesap açmasına bilerek izin verdiği ve ebeveynlerin veri silme taleplerini yerine getirmediği ifade edilmiştir. DoJ, bu uzlaşmanın ABD federal çocuk gizliliği yasası (COPPA) tarihindeki en büyük meblağlardan biri olduğunu kaydetmiştir. TikTok'un bu süreçte yaş doğrulama kontrollerini ve ebeveyn denetimlerini güçlendirmek için kapsamlı önlemler aldığı bildirilmiştir. Şirketin daha önce Avrupa Birliği'nde de benzer ihlaller nedeniyle 345 milyon avro para cezasına çarptırıldığı hatırlatılmıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 22.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Çin Bağlantılı SilkParasite Kampanyasının Orta Asya Hükümetlerini Hedeflemesi
+─────────────────────────────────────────────────────────
+Bitdefender, Orta Asya'daki hükümet kurumlarını hedef alan ve SilkParasite olarak adlandırılan geniş kapsamlı bir siber casusluk kampanyasını raporlamıştır. Çin bağlantılı siber tehdit aktörlerinin yürüttüğü bu operasyonda, yedi farklı uzaktan erişim truva atı (RAT) ailesinin kullanıldığı tespit edilmiştir. Saldırganların Özbekistan, Türkmenistan, Kırgızistan, Tacikistan ve Kazakistan'daki bakanlıkları taklit eden kimlik avı belgeleriyle ilk erişimi sağladığı belirtilmiştir. Operasyonda DriveSilkRAT, SpiceRAT ve BloodAlchemy gibi zararlı yazılımların kullanıldığı, komuta kontrol trafiğinin Google Drive gibi güvenilir bulut servisleri üzerinden gizlendiği kaydedilmiştir. Araştırmacılar, zararlı yazılım geliştirme süreçlerinde yapay zeka desteğine dair somut izler bulmuştur. Bölgedeki Rus etkisinin azalmasıyla oluşan jeopolitik boşluğun, Çin menşeli casusluk faaliyetleri için zemin hazırladığı ifade edilmiştir. Operasyonun, ekonomik karar alma mekanizmalarına odaklandığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -industrialcyber.co, 20.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] APT36 Grubunun Güney Asya Altyapılarına Yönelik PATCHCORD Operasyonu
+─────────────────────────────────────────────────────────
+Acronis araştırmacıları, Afgan telekom sağlayıcılarını ve Güney Asya kritik altyapılarını hedef alan PATCHCORD kod adlı bir casusluk operasyonunu ortaya çıkarmıştır. Pakistan bağlantılı olduğu değerlendirilen siber tehdit aktörü APT36 ile ilişkilendirilen bu kampanyada, sahte VPN araçlarının kullanıldığı bildirilmiştir. Operasyon kapsamında SHEETCORD ve HACKERAI C2 Agent adlı yeni zararlı yazılımların tespit edildiği belirtilmiştir. Saldırganların, komuta ve kontrol faaliyetleri için Google Sheets ve GitHub Gists gibi meşru platformları kötüye kullandığı ifade edilmiştir. İncelemeler sonucunda, zararlı yazılım kodlarında yapay zeka destekli geliştirmeye işaret eden yorum satırları ve hata ayıklama mesajları bulunmuştur. Ele geçirilen bir sunucuda, grubun kimlik bilgisi hırsızlığı ve mobil veri sızıntısı için kullandığı geniş bir araç seti ele geçirilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 23.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

@@ -1,70 +1,5 @@
 [
  {
-  "date": "2026-08-15",
-  "views": [
-   {
-    "tr_title": "Enerji Devi Shell'in Clop Fidye Yazılımı Saldırısını Soruşturması",
-    "paragraph": "İngiliz enerji şirketi Shell, Clop fidye yazılımı çetesinin 89 GB boyutunda veri çaldığı iddiaları üzerine bir güvenlik incelemesi başlatmıştır. Saldırganların, şirkete ait mühendislik çizimleri, tesis test raporları ve proje planlarını ele geçirdiklerini iddia ederek verileri karanlık web platformunda listelediği bildirilmiştir. Shell sözcüsü, güvenlik ekiplerinin ve uzmanların olası olayı araştırdığını teyit etmiştir. Clop çetesinin, PTC Windchill ve FlexPLM yazılımlarındaki CVE-2026-12569 kod",
-    "title": "Shell investigates 'potential incident' after Clop data theft claims",
-    "full_text": "Oil giant Shell has confirmed it is investigating a potential security incident after the Clop ransomware gang claimed it stole 89GB of data.\n\nShell is a British multinational energy conglomerate and one of the world's top three oil and gas companies, after Chevron and ExxonMobil. It has 85,000 employees in more than 70 countries and operates a massive network of tens of thousands of service and r"
-   },
-   {
-    "tr_title": "Fransa Vergi Dairesinden İki Milyon Mükellefin Verisinin Çalınması",
-    "paragraph": "Fransa Kamu Finansmanı Genel Müdürlüğü (DGFiP), 'ZeroBytes' takma adlı bir saldırganın Haziran 2026 sonunda sistemlerine sızarak 2 milyon mükellefe ait veriyi ele geçirdiğini doğrulamıştır. Kimlik hırsızlığı ve MFA mekanizmasının atlatılmasıyla gerçekleşen ihlalde, hem bireylerin hem de profesyonellerin verileri sızdırılmıştır. Saldırganın sistemlere erişiminin sürdüğü yönündeki iddiaları reddeden kurum, erişimin kesildiğini ve CNIL'e bildirim yapıldığını açıklamıştır. Bu olay; 15,8 milyon tıbbi",
-    "title": "French tax authority admits data heist after crook touts 2M records",
-    "full_text": "French tax authority admits data heist after crook touts 2M records\n\nGovernment disputes claims of continued access as investigators measure damage\n\nFrance's tax authority has confirmed that an intruder accessed its systems and extracted data in June after an alleged cybercriminal advertised a purported database of 2 million taxpayers.\n\nUsing the alias \"ZeroBytes,\" the alleged crook behind the att"
-   },
-   {
-    "tr_title": "Commerzbank Müşterilerini Hedef Alan 30 Milyon Avroluk Vurgun",
-    "paragraph": "Brezilya ve Alman federal polis teşkilatları, Commerzbank müşterilerinin hesaplarından yaklaşık 30 milyon avro çalan bir siber suç şebekesine yönelik ortak operasyon düzenlemiştir. 'Klonen Operasyonu' kapsamında Brezilya'da dört kişi tutuklanırken, Avrupa'da üç şüpheli hakkında suç duyurusunda bulunulmuştur. Saldırganların, bir hizmet sağlayıcının ödeme sistemindeki yazılım güncellemesi hatasından kaynaklanan bir güvenlik açığını istismar ederek Kasım 2023'te dört gün boyunca yetkisiz para çekme",
-    "title": "Hackers arrested over €30M bank fraud exploiting service provider flaw",
-    "full_text": "Four cybercriminals were arrested in Brazil, and three others were charged in Europe over allegations that they exploited a vulnerability at a service provider, allowing them to withdraw funds from Commerzbank customers’ bank accounts.\n\nThe theft, investigated by the Brazilian and German federal police agencies, occurred over four days in November 2023 and caused losses of around €30 million ($34."
-   },
-   {
-    "tr_title": "Apple'ın Yüzlerce Kullanıcıyı Casus Yazılım Saldırılarına Karşı Uyarması",
-    "paragraph": "Apple, 110 ülkedeki yüzlerce kullanıcısına gönderdiği yeni tehdit bildirimleriyle, bu kişilerin paralı asker tipi casus yazılımlar tarafından hedef alınmış olabileceği konusunda kritik bir uyarı yayınlamıştır. 2021'den bu yana 150'den fazla ülkede benzer bildirimler yapan şirket; gazeteciler, aktivistler, diplomatlar ve avukatlar gibi hassas veriye sahip kişilerin hedef alındığını belirtmiştir. Milyonlarca dolarlık maliyete sahip bu sofistike saldırılara karşı Apple, kullanıcıların account.apple",
-    "title": "Apple warned hundreds of users of mercenary spyware attacks",
-    "full_text": "Apple warned hundreds of users of mercenary spyware attacks\n\nApple warns users of credible, targeted attacks and urges immediate verification, stronger protections, and expert assistance.\n\nApple has sent a new round of threat notifications to users it believes may have been singled out by mercenary spyware. The company told TechCrunch the latest alerts reached people in 110 countries, adding to no"
-   },
-   {
-    "tr_title": "macOS Ekran Paylaşımı Açığıyla Monero Madenciliği Yapılması",
-    "paragraph": "Hollanda Ulusal Siber Güvenlik Merkezi (NCSC), macOS işletim sistemindeki bir kimlik doğrulama atlama açığının siber saldırganlar tarafından aktif olarak istismar edildiği konusunda uyarıda bulunmuştur. CVE-2026-65400 kodlu açığın, macOS Ekran Paylaşımı özelliğindeki bir hata nedeniyle saldırganların geçerli kimlik bilgileri olmadan sistemlere erişmesine olanak tanıdığı belirtilmiştir. İnternete açık 5900 numaralı port üzerinden gerçekleştirilen saldırılarda, kurbanların cihazlarına root erişimi",
-    "title": "Hackers exploit macOS Screen Sharing flaw to deploy Monero miner",
-    "full_text": "The Netherlands’ National Cyber Security Centre (NCSC) is warning that hackers are actively exploiting a macOS authentication bypass vulnerability after public exploit code emerged.\n\nThe security issue lies in macOS Screen Sharing, a built-in remote desktop feature that allows remote desktop control over a network, using the VNC protocol over TCP port 5900.\n\nApple fixed CVE-2026-65400 on August 6 "
-   },
-   {
-    "tr_title": "AmnesiaStealer Zararlı Yazılımının macOS Sistemlerini Hedeflemesi",
-    "paragraph": "macOS işletim sistemlerini hedef alan AmnesiaStealer isimli yeni bir zararlı yazılımın, kullanıcı verilerini çaldığı ve tarayıcı oturumlarını uzaktan kontrol ettiği tespit edilmiştir. Jamf tarafından yapılan analizlerde, zararlı yazılımın Chrome DevTools Protokolü'nü (CDP) kullanarak tarayıcının gizli bir kopyasını başlattığı ve saldırganlara kurbanın oturumu üzerinde tam kontrol sağladığı bildirilmiştir. Operatörlerin, saniyede yaklaşık 3 kare hızında canlı ekran görüntüsü alabildiği ve klavye,",
-    "title": "AmnesiaStealer macOS Malware Steals Data, Controls Browser Sessions",
-    "full_text": "AmnesiaStealer macOS Malware Steals Data, Controls Browser Sessions\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nThe final stream module, which is executed on demand, is an interactive remote-control component that uses the Chrome DevTools Protocol (CDP) to launch a headless copy of the browser, creating a relay channel through which the attacker can control the victim’s browser "
-   },
-   {
-    "tr_title": "SAP Commerce Cloud Platformundaki Kritik Açığın İstismar Edilmesi",
-    "paragraph": "SAP Commerce Cloud platformunda tespit edilen ve CVE-2026-58231 koduyla izlenen en yüksek öncelikli uzaktan kod yürütme zafiyetinin aktif saldırılarda kullanıldığı bildirilmiştir. Tehdit istihbaratı kuruluşu Defused, yamanın yayınlanmasından yalnızca üç gün sonra bal küpü sistemlerine yönelik ilk istismar girişimlerinin başladığını duyurmuştur. Söz konusu zafiyetin, Data Hub Adapter eklentisindeki yetkilendirme hatasından kaynaklandığı ve düşük karmaşıklıktaki saldırılarla kimlik doğrulaması yap",
-    "title": "Max severity SAP Commerce Cloud flaw now targeted in attacks",
-    "full_text": "A maximum-severity SAP Commerce Cloud remote code execution vulnerability patched three days ago is already being targeted in attacks, according to threat intelligence company Defused.\n\nCommerce Cloud (formerly known as SAP Hybris) is a cloud-based e-commerce platform used by online stores owned by high-profile global brands and large retailers.\n\nTracked as CVE-2026-58231, this critical flaw stems"
-   },
-   {
-    "tr_title": "Trivy Kaynaklı Tedarik Zinciri Saldırısının Binlerce Kurumu Etkilemesi",
-    "paragraph": "LiteLLM paketlerine yönelik olduğu düşünülen tedarik zinciri saldırısının, aslında Aqua Security'nin Trivy tarayıcısındaki bir zafiyetten kaynaklandığı ve 2.500'den fazla kuruluşu etkilediği bildirilmiştir. SOCRadar tarafından hazırlanan raporda, etkilenen kurumların %95'inin zararlı LiteLLM paketleri yayınlanmadan önce Trivy üzerinden maruz kaldığı tespit edilmiştir. TeamPCP olarak adlandırılan siber tehdit aktörünün, Shai-Hulud solucanını kullanarak kimlik bilgilerini, API anahtarlarını ve giz",
-    "title": "Trivy, Not LiteLLM Behind the 2,500 Org Compromise",
-    "full_text": "Supply Chain Security\n\nTrivy, Not LiteLLM Behind the 2,500 Org Compromise\n\nOver 95% of the affected companies were exposed before the malicious LiteLLM packages were published.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nMost of the 2,500 organizations believed to have been affected by the LiteLLM supply chain attack were actually exposed before, SOCRadar reports.\nThe compromise"
-   },
-   {
-    "tr_title": "İskoçya Savcılık Ofisinde Çalışan Verilerinin Sızdırılması",
-    "paragraph": "İskoçya Kraliyet Ofisi ve Savcılık Servisi (COPFS), bir dış tedarikçinin yaşadığı veri ihlali sonucunda çalışanlarına ait kişisel bilgilerin sızdırıldığını açıklamıştır. İhlalin, ulusal hükümet tarafından düzenlenen ve bir üçüncü tarafça yönetilen veri olgunluğu değerlendirmesi sırasında gerçekleştiği belirtilmiştir. COPFS temsilcisi, yaklaşık 300 çalışanın isim, görev ve iş e-posta adresi bilgilerinin etkilendiğini, ancak dava dosyaları veya tanık bilgilerinin güvende olduğunu ifade etmiştir. G",
-    "title": "Scottish Govt Suffers Potentially Widening Data Breach at Prosecutor's Office",
-    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nCyberattacks & Data Breaches\n\nCybersecurity Operations\n\nBreaking cybersecurity news, news analysis, commentary, and other content from around the world, with an initial focus on the Middle East & Africa, Asia Pacific, Europe, and Latin "
-   },
-   {
-    "tr_title": "RingCentral Veri İhlalinde Milyonlarca Hesabın Etkilenmesi",
-    "paragraph": "Bulut tabanlı iletişim platformu RingCentral'ın, Temmuz ayında gerçekleşen bir siber saldırı sonucunda 1,6 milyon hesabına ait kişisel verilerin çalındığını doğrulanmıştır. Have I Been Pwned servisinin analizlerine göre, siber tehdit aktörü ShinyHunters'ın 623 GB boyutunda veri çaldığı ve fidye ödenmemesi üzerine 280 GB'lık bir arşivi sızdırdığı belirtilmiştir. Sızdırılan veriler arasında kullanıcı isimleri, e-posta adresleri, telefon numaraları ve fiziksel adreslerin yer aldığı ifade edilmiştir",
-    "title": "RingCentral data breach exposed info of 1.6 million accounts",
-    "full_text": "The ShinyHunters extortion group stole personal information from 1.6 million RingCentral accounts after hacking the company in July, according to the data breach notification service Have I Been Pwned.\n\nRingCentral is a cloud-based collaboration and communication platform used by over 600,000 businesses for services such as calling, messaging, and voicemail.\n\nThe company disclosed the incident on "
-   }
-  ]
- },
- {
   "date": "2026-08-16",
   "views": [
    {
@@ -834,6 +769,41 @@
     "paragraph": "Amerika Birleşik Devletleri Senatörü Ron Wyden ve Temsilci Greg Casar, federal hükümetin vatandaşlara yönelik izleme ve casus yazılım faaliyetlerinin incelenmesi için Hükümet Hesap verebilirlik Ofisi'ne (GAO) başvurmuştur. Milletvekilleri, federal kolluk kuvvetlerinin yirmi beş yılı aşkın süredir kullandığı hackleme araçlarının kapsamı ve operasyonel güvenceleri hakkında kamuoyuna yeterli bilgi verilmediğini belirtmiştir. Özellikle Immigration and Customs Enforcement (ICE) kurumunun casus yazılı",
     "title": "Lawmakers seek watchdog review of federal hacking of Americans",
     "full_text": "Lawmakers seek watchdog review of federal hacking of Americans\n\nA pair of lawmakers wants a watchdog agency to probe how the federal government hacks Americans, including with the use of spyware, and deliver a report to the public.\n\nSen. Ron Wyden, D-Ore., and Rep. Greg Casar, D-Texas, wrote to the Government Accountability Office on Friday to request the review.\n\n“While federal law enforcement ag"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-23",
+  "views": [
+   {
+    "tr_title": "ToxicPanda Zararlı Yazılımının Bankacılık Uygulamalarına Yönelik Kapsamını Genişletmesi",
+    "paragraph": "Zimperium zLabs ekibi, ToxicPanda 2.0 adlı bankacılık truva atının 16 ülkedeki 349 finansal uygulamayı hedef alacak şekilde güncellendiğini raporlamıştır. Zararlı yazılımın, Android cihazlarda kablosuz hata ayıklama (ADB) özelliğini otomatik olarak etkinleştirerek shell düzeyinde erişim sağladığı tespit edilmiştir. Bu yöntemin, kullanıcı fark etmeden cihaz üzerinde tam kontrol ve yetki yükseltme imkanı tanıdığı belirtilmiştir. ToxicPanda'nın, Android Erişilebilirlik Hizmetlerini kötüye kullanara",
+    "title": "ToxicPanda 2.0 Gets a Major Upgrade, Expanding Attacks Across 16 Countries",
+    "full_text": "ToxicPanda 2.0 Gets a Major Upgrade, Expanding Attacks Across 16 Countries\n\nToxicPanda 2.0 targets 349 financial apps and abuses Android Wireless Debugging to gain deeper device access and steal banking credentials.\n\nToxicPanda used to be a Europe-focused nuisance targeting a manageable list of banks. That version is gone. Zimperium’s zLabs team just documented ToxicPanda 2.0, and the numbers alon"
+   },
+   {
+    "tr_title": "İran Bağlantılı Hackerların Bir İngiliz Güç Santralini Devre Dışı Bırakması",
+    "paragraph": "İran bağlantılı siber tehdit aktörlerinin, Birleşik Krallık'taki bir güç santralini dört gün boyunca devre dışı bıraktığı bildirilmiştir. The Telegraph tarafından duyurulan bu olay, İngiliz enerji altyapısına yönelik türünün en başarılı ve ilk doğrulanmış saldırısı olarak nitelendirilmektedir. Eş zamanlı olarak ABD'nin 12 eyaletindeki su ve atık su tesislerine yönelik saldırılar gerçekleşmiş; Minnesota, Michigan ve New Jersey gibi bölgelerde su baskınları ile basınç kayıpları yaşanmıştır. İngili",
+    "title": "UK Power Plant Disabled for Four Days by Iran-Linked Hackers, Concurrent with US Water Attacks",
+    "full_text": "UK Power Plant Disabled for Four Days by Iran-Linked Hackers, Concurrent with US Water Attacks\n\nIran-linked hackers shut down a UK power plant for four days in the first confirmed attack of its kind, concurrent with water infrastructure attacks across 12 US states.\n\nIran-linked hackers shut down a British power plant for four days in what The Telegraph describes as the most successful cyberattack "
+   },
+   {
+    "tr_title": "TikTok'un Çocuk Gizliliği Davasında 400 Milyon Dolar Ödemesi",
+    "paragraph": "ABD Adalet Bakanlığı (DoJ), ByteDance bünyesindeki TikTok'un çocukların çevrimiçi gizliliğini ihlal ettiği gerekçesiyle açılan davada 400 milyon dolarlık bir uzlaşma bedeli ödemeyi kabul ettiğini açıklamıştır. Anlaşma kapsamında şirketin 300 milyon doları derhal, kalan 100 milyon doları ise önceki bir yasal kararın iptalinin ardından ödeyeceği belirtilmiştir. Federal Ticaret Komisyonu (FTC) ile birlikte sunulan şikayette, TikTok'un 13 yaş altı çocukların hesap açmasına bilerek izin verdiği ve eb",
+    "title": "TikTok Agrees to $400 Million Settlement in U.S. Child Privacy Lawsuit",
+    "full_text": "The U.S. Department of Justice (DoJ) announced on Friday that ByteDance-owned TikTok will pay $400 million to settle a 2024 lawsuit accusing the company of violating child privacy laws in the country.\n\nAs part of the settlement, the social media platform will pay $300 million immediately, and an additional $100 million \"upon entry of an order vacating a prior consent decree entered against TikTok’"
+   },
+   {
+    "tr_title": "Çin Bağlantılı SilkParasite Kampanyasının Orta Asya Hükümetlerini Hedeflemesi",
+    "paragraph": "Bitdefender, Orta Asya'daki hükümet kurumlarını hedef alan ve SilkParasite olarak adlandırılan geniş kapsamlı bir siber casusluk kampanyasını raporlamıştır. Çin bağlantılı siber tehdit aktörlerinin yürüttüğü bu operasyonda, yedi farklı uzaktan erişim truva atı (RAT) ailesinin kullanıldığı tespit edilmiştir. Saldırganların Özbekistan, Türkmenistan, Kırgızistan, Tacikistan ve Kazakistan'daki bakanlıkları taklit eden kimlik avı belgeleriyle ilk erişimi sağladığı belirtilmiştir. Operasyonda DriveSil",
+    "title": "Bitdefender traces SilkParasite cyberespionage campaign across Central Asia to seven RAT families, China-nexus tooling",
+    "full_text": "The campaign primarily gains initial access through malicious Microsoft Office documents delivered through likely spear-phishing emails, with lures tailored to government entities in Uzbekistan, Turkmenistan, Kyrgyzstan, Tajikistan and Kazakhstan. Bitdefender observed that operators rely heavily on DLL sideloading and, in the case of DriveSilkRAT, use Google Drive to deliver commands and plugins, "
+   },
+   {
+    "tr_title": "APT36 Grubunun Güney Asya Altyapılarına Yönelik PATCHCORD Operasyonu",
+    "paragraph": "Acronis araştırmacıları, Afgan telekom sağlayıcılarını ve Güney Asya kritik altyapılarını hedef alan PATCHCORD kod adlı bir casusluk operasyonunu ortaya çıkarmıştır. Pakistan bağlantılı olduğu değerlendirilen siber tehdit aktörü APT36 ile ilişkilendirilen bu kampanyada, sahte VPN araçlarının kullanıldığı bildirilmiştir. Operasyon kapsamında SHEETCORD ve HACKERAI C2 Agent adlı yeni zararlı yazılımların tespit edildiği belirtilmiştir. Saldırganların, komuta ve kontrol faaliyetleri için Google Shee",
+    "title": "APT36 Suspected in PATCHCORD Espionage Campaign Using Google Sheets C2",
+    "full_text": "APT36 Suspected in PATCHCORD Espionage Campaign Using Google Sheets C2\n\nAcronis uncovered PATCHCORD, a stealthy backdoor targeting Afghan telecom and South Asian infrastructure via fake VPN tools and Google Sheets C2.\n\nResearchers at Acronis just documented an espionage operation that reads like it was built by someone with genuinely good taste in disguises. Their Threat Research Unit report track"
    }
   ]
  }
