@@ -78,6 +78,7 @@ from src.config import (
     get_kritik3_selection_audit_prompt,
     get_yayin_yonetmeni_prompt,
     get_mukerrer_hakem_prompt,
+    get_manset_secim_prompt,
     get_executive_summary_prompt, get_title_rescue_prompt,
     get_kritik3_length_fix_prompt,
     get_scoring_prompt, get_critique_prompt,
@@ -5553,6 +5554,74 @@ document.addEventListener('DOMContentLoaded', initDragFile);
     # taşıyorsa (yeni kurban, yeni istismar) gövdede tam boyutuyla yer alır.
     MANSET_TEKRAR_SINIRI = 1
 
+    # KRİTİK 3'ü LLM'in seçmesi. Kapatılırsa deterministik puan sırası
+    # kullanılır (test ve acil durum düşüşü için).
+    ENABLE_MANSET_LLM_SECIM = True
+    MANSET_ADAY_SAYISI = 10
+
+    def _manset_llm_sec(self, aday_ids, deterministik_top3, records,
+                        content_by_id, articles_by_id, recent_k3):
+        """KRİTİK 3'ü kısa listeden LLM seçer. Dönüş: seçilen 3 id.
+
+        NEDEN: manşet bugüne dek deterministik seçiliyor, LLM yalnızca
+        sonradan İTİRAZ ediyordu. Puan rubriği kaba bir vekildir ve tekrar
+        tekrar yanlış manşet üretti (yamalanmış Apple açığı 08-19, kapatılmış
+        Entra ID açığı 08-21, NASA zafiyet ifşası 08-24). Seçimi baştan
+        yaptırmak aynı maliyetle daha iyi karar üretir.
+
+        GÜVENLİK: aday listesi KODDA süzülür (manşete uygun kategori, mükerrer
+        değil, defterin yasaklamadığı). LLM yalnızca bu listeden seçer; liste
+        dışına çıkarsa ya da 3 geçerli id dönmezse DETERMİNİSTİK seçim
+        korunur — yani bu katman raporu asla bozamaz.
+        """
+        if len(aday_ids) <= 3:
+            return list(deterministik_top3)
+
+        def _satir(aid):
+            c = content_by_id.get(aid, {}) or {}
+            a = articles_by_id.get(aid, {}) or {}
+            rec = records.get(aid, {}) or {}
+            return (f"=== ID: {aid} | kategori: {rec.get('kat','')} | "
+                    f"puan: {rec.get('toplam', 0)} ===\n"
+                    f"Başlık: {c.get('tr_title') or a.get('title','')}\n"
+                    f"Özet: {' '.join((c.get('paragraph','') or '').split()[:90])}\n")
+
+        gecmis = '\n'.join(
+            f"- {(v.get('tr_title') or v.get('title') or '')[:90]}"
+            for v in (recent_k3 or [])[:15]) or '(yok)'
+        data = self._gemini_call_json(
+            get_manset_secim_prompt('\n'.join(_satir(a) for a in aday_ids),
+                                    gecmis),
+            max_output_tokens=1024, label='ManşetSeçimi')
+        if not isinstance(data, dict):
+            print("   📰 Manşet seçimi: yanıt alınamadı — deterministik "
+                  "seçim korundu.")
+            return list(deterministik_top3)
+        try:
+            secim = [int(x) for x in (data.get('secim') or [])]
+        except (TypeError, ValueError):
+            secim = []
+        uygun = [a for a in dict.fromkeys(secim) if a in set(aday_ids)]
+        if len(uygun) != 3:
+            print(f"   ⚠️  Manşet seçimi geçersiz ({secim}) — deterministik "
+                  f"seçim korundu.")
+            return list(deterministik_top3)
+        if set(uygun) != set(deterministik_top3):
+            gerekce = {}
+            for g in (data.get('gerekce') or []):
+                try:
+                    gerekce[int(g.get('id'))] = str(g.get('neden', ''))[:60]
+                except (TypeError, ValueError):
+                    continue
+            print(f"   📰 Manşet seçimi LLM: {list(deterministik_top3)} → "
+                  f"{uygun}")
+            for aid in uygun:
+                if aid not in deterministik_top3:
+                    self._manset_karar_kaydet(
+                        'manset_llm_secim', 0, aid,
+                        gerekce.get(aid, 'LLM seçimi'))
+        return uygun
+
     def _derive_top3_by_score(self, ranked_ids, records, content_by_id,
                               articles_by_id):
         """KRİTİK 3 — deterministik, GARANTİLİ 3 haber.
@@ -5680,6 +5749,23 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     break
 
         self._log_hikaye_zinciri(zincir_dusen, top3_ids[:3])
+        top3_ids = top3_ids[:3]
+
+        # ── KRİTİK 3'Ü LLM SEÇER (kısa liste KODDA süzülür) ───────────────
+        # Yukarısı manşete UYGUN, MÜKERRER OLMAYAN, defterin yasaklamadığı
+        # adayları puan sırasında hazırlar. Seçimi puanın kendisine bırakmak
+        # tekrar tekrar yanlış manşet üretti (yamalanmış Apple açığı 08-19,
+        # kapatılmış Entra ID açığı 08-21, NASA zafiyet ifşası 08-24).
+        # LLM yalnızca bu kısa listeden seçer; geçersiz cevapta deterministik
+        # seçim korunur — katman raporu bozamaz.
+        if getattr(self, 'ENABLE_MANSET_LLM_SECIM', True):
+            kisa_liste = list(dict.fromkeys(
+                list(top3_ids)
+                + [a for a in eligible if a not in top3_ids]))[
+                    :self.MANSET_ADAY_SAYISI]
+            top3_ids = self._manset_llm_sec(
+                kisa_liste, top3_ids, records, content_by_id,
+                articles_by_id, recent_k3)
         return top3_ids[:3]
 
     # KRİTİK3 paragraflarının hedef alt sınırı — prompt'un istediği 110-130

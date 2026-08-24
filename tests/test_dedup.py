@@ -794,6 +794,10 @@ def _sistem_kur(monkeypatch, gunler):
     monkeypatch.setattr(s, '_load_recent_kritik3_by_day', lambda *a, **k: gunler)
     monkeypatch.setattr(s, '_load_recent_kritik3_views', lambda *a, **k: [])
     monkeypatch.setattr(s, '_load_recent_report_views', lambda *a, **k: [])
+    # Bu testler DETERMİNİSTİK seçiciyi ölçüyor; LLM manşet seçimi kapatılır
+    # (açık kalırsa gerçek istemci ağa gidip test başına ~47 s harcıyor ve
+    # ölçülen şey deterministik yol olmaktan çıkıyor).
+    monkeypatch.setattr(s, 'ENABLE_MANSET_LLM_SECIM', False)
     return s
 
 

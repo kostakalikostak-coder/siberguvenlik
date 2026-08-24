@@ -1856,6 +1856,62 @@ def _yy_kategori_listesi():
                      if k not in ('urun_icerik', 'siber_disi'))
 
 
+def get_manset_secim_prompt(adaylar_metni, gecmis_metni):
+    """KRİTİK 3 SEÇİCİSİ — kısa listeden manşeti LLM seçer.
+
+    NEDEN VAR: manşet bugüne dek DETERMİNİSTİK seçiliyordu (en yüksek puanlı
+    üç uygun haber), LLM yalnızca sonradan İTİRAZ ediyordu. Puan rubriği
+    kaba bir vekildir ve tekrar tekrar yanlış manşet üretti:
+      • 2026-08-19 yamalanmış bir Apple açığı 94 puanla manşet oldu.
+      • 2026-08-21 satıcının kapattığı Entra ID açığı (95) süregelen bir
+        casusluk kampanyasının (94) yerine manşete çıkarıldı.
+      • 2026-08-24 araştırmacıların NASA yazılımında bulduğu açık (91)
+        manşete çıktı — saldırı, saldırgan, kurban yok.
+    Sonradan itiraz etmek yerine seçimi baştan yaptırmak, aynı LLM
+    maliyetiyle daha iyi bir karar üretir.
+
+    KISITLAR KODDA: aday listesine yalnızca manşete UYGUN, MÜKERRER OLMAYAN
+    haberler girer. LLM listeden seçer; liste dışına çıkamaz.
+    """
+    return f"""Sen bir siber güvenlik bülteninin GENEL YAYIN YÖNETMENİSİN.
+Bugünkü bültenin KRİTİK 3 manşetini seçiyorsun.
+
+Aşağıdaki ADAYLARDAN tam olarak ÜÇ tanesini seç ve ÖNEM SIRASINA diz.
+
+ÖNEM ÖLÇÜTÜ — okuyucu için doğurduğu sonuç:
+1. GERÇEKLEŞMİŞ ve SÜREN olay > potansiyel risk. Saldırı, ihlal, casusluk
+   kampanyası, kolluk operasyonu > "açık bulundu / yama çıktı".
+2. Geniş ve kritik etki > tekil ürün. Devlet ağı, kritik altyapı, çok sayıda
+   kurum/ülke/kullanıcı > tek bir yazılımın kullanıcıları.
+3. Devlet destekli/stratejik faaliyet > adi suç.
+4. AKTİF İSTİSMAR edilen açık > yamalanmış açık.
+
+⛔ MANŞET OLMAYACAKLAR:
+• Satıcının KAPATTIĞI ve kullanıcı işlemi gerektirmeyen zafiyet — CVSS'i
+  10.0 olsa bile. Okuyucunun yapacağı bir şey, süren bir tehdit ve adı geçen
+  bir kurban yoktur.
+• Araştırmacıların bir yazılımda BULDUĞU açık — kurumun adı ne kadar büyük
+  olursa olsun (NASA, bakanlık, savunma). Saldırı, saldırgan ve kurban yoksa
+  bu bir zafiyet haberidir.
+• Rutin yama/bülten duyuruları ve resmi kurum talimatları.
+• Analiz, görüş, risk değerlendirmesi, tahmin yazıları.
+
+ÇEŞİTLİLİK: üç manşet mümkünse ÜÇ FARKLI konuyu göstermeli; ikisi aynı
+temanın (ör. iki ayrı kimlik/kimlik doğrulama haberi) etrafında dönüyorsa
+birini bırakıp farklı bir güçlü haberi al.
+
+SON 7 GÜNÜN MANŞETLERİ (aynı hikâyeyi tekrar manşet YAPMA):
+{gecmis_metni}
+
+ADAYLAR:
+{adaylar_metni}
+
+YALNIZCA şu JSON'u döndür:
+{{"secim": [<id>, <id>, <id>],
+  "gerekce": [{{"id": <id>, "neden": "<en fazla 15 kelime>"}}]}}
+Üç id de ADAYLAR listesinden olmalı; başka id yazma."""
+
+
 def get_mukerrer_hakem_prompt(ciftler_metni):
     """MÜKERRER HAKEMİ — deterministik mantığın KARARSIZ bıraktığı çiftler.
 
