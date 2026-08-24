@@ -31836,3 +31836,85 @@ Acronis araştırmacıları, Afgan telekom sağlayıcılarını ve Güney Asya k
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 24 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Mustang Panda'nın CoolClient Arka Kapısını Çekirdek Rootkit'iyle Güncellemesi
+─────────────────────────────────────────────────────────
+Çin bağlantılı siber tehdit aktörü Mustang Panda'nın, CoolClient adlı arka kapı yazılımını süreçleri, dosyaları ve ağ etkinliklerini gizleyen imzalı bir çekirdek sürücüsüyle güncellediği tespit edilmiştir. Kaspersky tarafından yayımlanan analizde, yeni varyantın Windows servisleri üzerinden çekirdek modu sürücüsü dağıtabildiği ve bu sayede tespit edilmesinin zorlaştığı belirtilmiştir. Söz konusu zararlı yazılımın Pakistan, Moğolistan, Myanmar ve Rusya'daki kamu kurumlarını hedef aldığı kaydedilmiştir. Saldırganların Microsoft Defender üzerinde istisnalar oluşturmak için sahte dizinler kullandığı ve DLL yan yükleme tekniklerine başvurduğu ifade edilmiştir. Çekirdek düzeyindeki bu güncelleme, saldırıların kalıcılığını artırmaktadır.
+(XXXXXXX, AÇIK -securityaffairs.com, 23.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] DDoS Saldırılarının Threema Mesajlaşma Servisinde Kesintilere Yol Açması
+─────────────────────────────────────────────────────────
+İsviçre merkezli güvenli mesajlaşma platformu Threema, 23 Ağustos 2026 tarihinde başlayan ve geniş ölçekli dağıtık hizmet dışı bırakma (DDoS) saldırıları nedeniyle ciddi iletişim kesintileri yaşamıştır. Şirket tarafından yapılan açıklamada, saldırıların hem kendi altyapısını hem de veri merkezi ortağı Nine'ı hedef aldığı, saldırı kalıplarının sürekli değişmesi nedeniyle savunma süreçlerinin zorlaştığı belirtilmiştir. Salı akşamı yaklaşık dört saat boyunca tamamen ulaşılamaz olan servisin, Çarşamba sabahı da aralıklı kesintiler yaşadığı ifade edilmiştir. Kendi altyapısını kullanan Threema On-Prem kullanıcılarının bu durumdan etkilenmediği kaydedilmiştir. Threema, saldırılara karşı savunmasını güçlendirmek amacıyla 14 Ağustos 2026 tarihinde ek bir koruma katmanı devreye aldığını ve kötü niyetli trafiği filtrelemeye başladığını bildirmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 23.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Fransa'da Siber Saldırı Sonucu 678.000 Mükellefin Verilerinin Sızdırılması
+─────────────────────────────────────────────────────────
+Fransa vergi dairesi, Haziran ayı sonunda gerçekleşen karmaşık bir siber saldırı neticesinde 678.000 bireysel ve kurumsal mükellefin kişisel verilerinin sızdırıldığını açıklamıştır. Paris Kamu Savcılığı Siber Suçlar Birimi olayla ilgili soruşturma başlatmış ve dosyayı Fransa'nın siber suçlarla mücadele ofisi olan OFAC'a devretmiştir. Kamu Maliyesi Genel Müdürlüğü, çalınan veriler arasında gelir rakamları, vergi oranları ve aile durum bilgilerinin bulunduğunu ancak mükellef hesaplarına doğrudan erişim sağlanamadığını belirtmiştir. Yetkililer, bu bilgilerin kimlik hırsızlığı ve hedefli kimlik avı saldırılarında kullanılabileceği konusunda uyarıda bulunmuştur. Saldırının, Fransa'daki diğer kamu kurumları olan ANTS ve INSEE'ye yönelik son dönemdeki ihlallerle benzerlik taşıdığı ifade edilmiştir. Etkilenen mükelleflerin bilgilendirilme sürecinin başladığı ve güvenlik prosedürlerinin güçlendirilmesi için yeni öneriler talep edildiği kaydedilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 23.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] UAT-10147 Grubunun Sunucu Saldırılarında Yapay Zeka ve SPECTRE Kullanması
+─────────────────────────────────────────────────────────
+Çinçe konuşan siber suç grubu UAT-10147'nin, eğitim, medya ve teknoloji sektörlerindeki Windows ve Linux sunucularını hedef alan küresel bir kampanya yürüttüğü tespit edilmiştir. Cisco Talos tarafından yayımlanan raporda, grubun saldırı döngüsünün çeşitli aşamalarında keşif, sızma ve veri hırsızlığını otomatize etmek için yapay zekâ destekli araçlar kullandığı belirtilmiştir. Saldırganların, SPECTRE adı verilen ve hem Windows hem de Linux platformlarında çalışan, güvenlik yazılımlarını devre dışı bırakma özelliğine sahip yeni bir arka kapı dağıttığı bildirilmiştir. Windows sistemlerinde EDR çözümlerini kör etmek için BYOVD tekniğinden yararlanıldığı, Linux sistemlerinde ise çekirdek düzeyinde rootkit yerleştirildiği ifade edilmiştir. Grubun yaklaşık 170.000 hedef içeren bir listeye sahip olduğu ve exfiltrasyon trafiğini meşru bulut hizmetleri üzerinden yönlendirerek gizlediği kaydedilmiştir. Operasyonlarda PentestGPT ve DeepAudit gibi açık kaynaklı yapay zekâ çerçevelerinin kullanıldığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Akira Fidye Yazılımı Çetesinin Güvenli Modu Kullanarak EDR'yi Atlatması
+─────────────────────────────────────────────────────────
+Fidye yazılımı çetesi Akira'nın bir iştirakinin, hedef bir şirketin sistemine çok faktörlü kimlik doğrulaması bulunmayan bir VPN üzerinden sızdığı ve güvenlik araçlarını devre dışı bırakmak için sistemi "Ağ ile Güvenli Mod"da yeniden başlattığı tespit edilmiştir. Huntress tarafından yayımlanan raporda, saldırganın EDR çözümlerini bu yöntemle etkisiz hale getirdiği ancak fidye yazılımının kısıtlı bellek ortamı nedeniyle başarısız olduğu belirtilmiştir. Akira sürecinin, Güvenli Mod'un sunduğu sınırlı sanal bellek kapasitesi sebebiyle başlatıldıktan kısa süre sonra hata verdiği kaydedilmiştir. Saldırganın, yeniden başlatma sonrasında erişimi sürdürmek için AnyDesk yazılımını Güvenli Mod kayıt defterine eklediği ifade edilmiştir. Şifreleme işlemi başarısız olsa da, saldırganın verileri şifreleme girişiminden önce dışarı sızdırdığı ve bu durumun şantaj riskini devam ettirdiği bildirilmiştir. Güvenlik uzmanları, bu yöntemin Akira tarafından ilk kez kullanıldığını ve gelecekte daha düşük bellek tüketen varyantların geliştirilebileceğini belirtmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 23.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] ToxicPanda Zararlı Yazılımının Android Cihazlarda Google Play'i Engellemesi
+─────────────────────────────────────────────────────────
+Siber güvenlik kuruluşu Zimperium, ToxicPanda Android zararlı yazılımının yeni bir sürümünün 349 farklı uygulamayı hedef aldığını ve 167 uzaktan komut desteği kazandığını tespit etmiştir. Zararlı yazılımın, VPN servis izinlerini kullanarak yerel bir ağ arayüzü oluşturduğu ve bu sayede Google Play ile Google Play Hizmetleri arasındaki iletişimi engellediği belirtilmiştir. Bu yöntemin, Play Protect gibi güvenlik kontrollerini ve uygulama güncellemelerini devre dışı bırakmak için kullanıldığı ifade edilmiştir. Ayrıca yazılımın, Android Kablosuz Hata Ayıklama Köprüsü (ADB) üzerinden kabuk düzeyinde erişim sağlayarak persistence sağladığı ve kullanıcıların PIN kodlarını ele geçirmek için sahte ekranlar oluşturduğu kaydedilmiştir. Zararlı yazılımın özellikle finansal ve kripto para uygulamalarını hedefleyen kimlik avı katmanları içerdiği bilgisi paylaşılmıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 23.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Mahkeme Dosyasına Gizlenen Yapay Zeka Komutlarına Yaptırım Uygulanması
+─────────────────────────────────────────────────────────
+Connecticut'ta bir davacının, mahkeme belgelerine yapay zeka sistemlerini manipüle etmek amacıyla gizli komutlar yerleştirdiği tespit edilmiştir. Davacının, belgelerin içine insan gözüyle görülmeyen beyaz renkli ve küçük boyutlu yazı tipleriyle "istemi enjeksiyonu" (prompt injection) teknikleri eklediği belirtilmiştir. Bu gizli metinlerin, belgeyi tarayan olası yapay zeka modellerine davacı lehine karar verme talimatı verdiği ifade edilmiştir. Yargıç Spader, bu eylemi ciddi bir dava suistimali olarak nitelendirmiş ve davacının elektronik dosyalama yetkisini iptal etmiştir. Olayın, ABD mahkemelerine yönelik belgelenmiş ilk istemi enjeksiyonu saldırısı olduğu kaydedilmiştir. Davacının daha sonraki belgelerde de benzer yöntemleri sürdürdüğü ve bu durumun yapay zeka destekli hukuk çalışmalarında taraflı sonuçlar doğurabileceği riskine dikkat çekilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 23.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] Chameleon SEO Zehirlemesiyle Sahte Banka Sitelerinin Yayılması
+─────────────────────────────────────────────────────────
+Fortra tarafından yapılan araştırmada, Chameleon SEO Zehirlemesi olarak adlandırılan ve güvenlik tarayıcılarından kaçmak için gizleme teknikleri kullanan yeni bir kimlik avı yöntemi keşfedilmiştir. Saldırganların, Google ve Bing gibi arama motorlarında bankacılıkla ilgili anahtar kelimeleri hedefleyerek sahte siteleri üst sıralara taşıdığı ve 2026 yılının ikinci çeyreğinde bu vakalarda %40 artış yaşandığı bildirilmiştir. Söz konusu yöntemde, web sunucusunun ziyaretçinin geliş kaynağına göre farklı içerik sunduğu; siteye doğrudan girildiğinde kapalı bir sayfa görünürken, arama motoru üzerinden tıklandığında inandırıcı bir sahte banka giriş sayfasının açıldığı tespit edilmiştir. Bu teknik sayesinde zararlı sitelerin haftalarca aktif kalabildiği belirtilmektedir. Güvenlik ekiplerine, bildirilen bağlantıları test ederken tarayıcı emülasyonu ve yönlendirici taklidi yapmaları tavsiye edilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Endüstriyel TSN Protokollerindeki Zafiyetlerin Fiziksel Süreçleri Riski Atması
+─────────────────────────────────────────────────────────
+Nozomi Networks araştırmacıları, Black Hat USA konferansında yaptıkları sunumda, Zaman Duyarlı Ağ (TSN) protokollerindeki güvenlik zayıflıklarının endüstriyel süreçlerin manipüle edilmesine yol açabileceğini açıklamıştır. Araştırmada, özellikle Mitsubishi Electric tarafından geliştirilen CC-Link IE TSN protokolündeki bir açığın, saldırganların robotik kolları durdurmasına veya operasyonel zamanlama saatlerini bozmasına imkan tanıdığı belirtilmiştir. CISA tarafından 30 Temmuz 2026 tarihinde yayımlanan bir uyarıya da konu olan bu durumun, ağ anahtarlarındaki yönetim arayüzü açıklarından yararlanılarak gerçekleştirilebildiği ifade edilmiştir. Uzmanlar, bu tür saldırıların mikro saniye düzeyindeki hassas iletişimleri bozarak sistemleri koruyucu kapatma moduna sokabileceğine dikkat çekmiştir. Mevcut durumda en etkili koruma yöntemi olarak ağ segmentasyonu ve donanım yazılımı güncellemelerinin uygulanması önerilmektedir.
+(XXXXXXX, AÇIK -darkreading.com, 21.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Slovakya'nın Trafik Hız Kameralarındaki Siber Güvenlik Risklerini Duyurması
+─────────────────────────────────────────────────────────
+Slovakya Ulusal Güvenlik Otoritesi (NBÚ), 24 Ağustos 2026 tarihinde yaptığı açıklamada, kamu ağlarında kullanılan bazı hız kamerası sistemlerinin ciddi siber tehditler barındırdığı konusunda uyarıda bulunmuştur. Yapılan analizlerde, NERO R-ONE ve Rus menşeli Simicon Cordon serisi cihazlarda, belgelenmemiş iletişim ayarları ve operatör kontrolü dışındaki uzaktan erişim mekanizmaları tespit edilmiştir. Kurum, bu zafiyetlerin saldırganlara araç verilerine erişme, kayıtları manipüle etme veya kamu ağlarına sızma imkanı tanıyabileceğini belirtmiştir. Slovakya İçişleri Bakanlığı'nın, incelemeler sürerken söz konusu ekipmanları pilot uygulamadan çıkardığı ve tedarikçiden güvenlik standartlarını karşılayan yeni cihazlar talep ettiği bildirilmiştir. Yetkililer, bu tür bağlı cihazların sadece markasına değil, yazılım menşei ve uzaktan yönetim özelliklerine göre bağımsız testlerden geçirilmesi gerektiğini vurgulamıştır.
+(XXXXXXX, AÇIK -securityaffairs.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Zararlı Yazılım DOUBLECUP'ın PNG Dosyalarına Veri Gizlemesi
+─────────────────────────────────────────────────────────
+SANS ISC tarafından yapılan analizde, DOUBLECUP isimli yeni bir zararlı yazılımın PNG dosyalarını kullanarak veri gizleme tekniklerini uyguladığı tespit edilmiştir. Söz konusu yazılımın, PowerShell yüklerini görüntü piksellerine kodlamak yerine doğrudan dosya sonuna eklediği bildirilmiştir. Didier Stevens tarafından aktarılan bilgilere göre, PowerShell betiğinin Windows işletim sisteminde satır sonlandırma işlevi gören özel karakterlerle başladığı ve bu sayede standart komut satırı araçlarıyla kolayca ayıklanabildiği belirtilmektedir. Bu yöntemin, özel bir veri çıkarıcıya ihtiyaç duymadan zararlı kodun doğrudan PowerShell yorumlayıcısına aktarılmasına olanak tanıdığı ifade edilmiştir. Analizde, yöntemin teknik açıdan basit ancak tespit kaçınma noktasında işlevsel bir yaklaşım sunduğuna dikkat çekilmiştir.
+(XXXXXXX, AÇIK -isc.sans.edu, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

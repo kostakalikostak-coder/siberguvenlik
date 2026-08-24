@@ -1,40 +1,5 @@
 [
  {
-  "date": "2026-08-16",
-  "views": [
-   {
-    "tr_title": "APT36 Grubunun PATCHCORD Casusluk Kampanyasını Yürütmesi",
-    "paragraph": "Acronis Tehdit Araştırma Birimi, Afgan telekomünikasyon sağlayıcılarını ve Güney Asya'daki kritik altyapıları hedef alan PATCHCORD adlı yeni bir C/C++ arka kapı tespit etmiştir. Pakistan bağlantılı APT36 ile ilişkilendirilen bu operasyonda, Afgan Telecom (AFTEL) ve Hindistan Ulusal Bilişim Merkezi (NIC) gibi kurumları taklit eden sahte VPN yükleyicileri kullanılmaktadır. Saldırganlar, tarayıcı kısayollarını ele geçirerek sistemde kalıcılık sağlarken, Google Sheets API'sini komuta merkezi olarak ",
-    "title": "APT36 Suspected in PATCHCORD Espionage Campaign Using Google Sheets C2",
-    "full_text": "APT36 Suspected in PATCHCORD Espionage Campaign Using Google Sheets C2\n\nAcronis uncovered PATCHCORD, a stealthy backdoor targeting Afghan telecom and South Asian infrastructure via fake VPN tools and Google Sheets C2.\n\nResearchers at Acronis just documented an espionage operation that reads like it was built by someone with genuinely good taste in disguises. Their Threat Research Unit report track"
-   },
-   {
-    "tr_title": "ChainDrop Solucanının Npm Tedarik Zincirine Sızması",
-    "paragraph": "Eylül 2025'te tespit edilen Shai-Hulud npm solucanının ChainDrop adlı yeni varyantı, 444 paketi zehirleyerek açık kaynak ekosistemine sızmıştır. Microsoft ve ActiveState araştırmacıları, saldırganların geleneksel savunmaları aşmak için kaynak kod taahhütleri yerine tarball arşivlerini kullandığını bildirmiştir. Ayda 2 milyar kez indirilen keyv, flat-cache ve cache-manager gibi kritik altyapı bağımlılıklarını hedef alan yazılım, VS Code veya Claude Code gibi araçlarda enfekte bir dalın açılmasıyl",
-    "title": "ChainDrop worm crawls into npm supply chain, evades standard defenses",
-    "full_text": "ChainDrop worm crawls into npm supply chain, evades standard defenses\n\nShai-Hulud variant poisons 444 packages, spreads via tarballs and dev-tool hooks\n\nA new variant of the Shai-Hulud npm worm has poisoned hundreds of packages while adding propagation techniques that can leave little trace in the corresponding source repositories.\n\nIn Frank Herbert’s Dune, Shai-Hulud was the name of the giant sel"
-   },
-   {
-    "tr_title": "SAP Commerce Cloud CVE-2026-58231 Açığının İstismar Edilmesi",
-    "paragraph": "SAP Commerce Cloud platformunda tespit edilen ve CVSS skoru en yüksek seviye olan 10.0 olarak belirlenen CVE-2026-58231 kodlu kritik güvenlik açığı, yama yayınlanmasından sadece üç gün sonra aktif olarak istismar edilmeye başlanmıştır. Defused Cyber araştırmacıları, henüz kamuya açık bir kavram kanıtlama (PoC) kodu bulunmayan bu zafiyetin bal küpü sistemlerine yönelik saldırılarda kullanıldığını raporlamıştır. Yetkisiz bir saldırganın varsayılan kimlik doğrulama istemcisini kötüye kullanarak ve ",
-    "title": "SAP Commerce Cloud CVE-2026-58231 Exploited in the Wild",
-    "full_text": "SAP Commerce Cloud CVE-2026-58231 Exploited in the Wild\n\nAttackers are actively exploiting a maximum severity SAP Commerce Cloud vulnerability, tracked as CVE-2026-58231, just days after SAP released a patch.\n\nA critical SAP Commerce Cloud vulnerability, tracked as CVE-2026-58231 (CVSS score of 10.0), is under active exploitation just days after SAP released a patch. The flaw stems from insufficie"
-   },
-   {
-    "tr_title": "GeoServer Yazılımındaki Sıfır Gün Açığının İstismar Edilmesi",
-    "paragraph": "Açık kaynaklı coğrafi veri platformu GeoServer'da bulunan ve henüz yamalanmamış bir sıfır gün açığının, kamuya açıklanmasından saatler sonra istismar edilmeye başlandığı bildirilmiştir. WatchTowr adlı güvenlik firması, SQL enjeksiyonu yoluyla uzaktan kod yürütülmesine olanak tanıyan bu zafiyete yönelik yüzlerce saldırı girişimi kaydedildiğini açıklamıştır. Güvenlik araştırmacısı q1uf3ng tarafından ifşa edilen hatanın, GeoServer'ın belirli filtreleme işlevlerindeki yetersiz veri temizleme sürecin",
-    "title": "Hackers Exploiting Unpatched GeoServer Zero-Day",
-    "full_text": "Hackers Exploiting Unpatched GeoServer Zero-Day\n\nThe security defect is described as an SQL injection that could allow attackers to achieve remote code execution.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nThreat actors started exploiting an unpatched zero-day vulnerability in GeoServer hours after it was publicly disclosed, attack surface management firm WatchTowr says.\nThe se"
-   },
-   {
-    "tr_title": "Evooo1Bot Botnetinin Yönlendiricileri Proxy Düğümlerine Dönüştürmesi",
-    "paragraph": "Mirai tabanlı yeni bir modüler Linux botneti olan Evooo1Bot'un, internete açık ağ geçidi cihazlarını hedef alarak SOCKS5 trafik aktarım düğümlerine dönüştürdüğü tespit edilmiştir. Fortinet araştırmacıları, Temmuz ayından bu yana aktif olan botnetin D-Link, NETGEAR ve TP-Link gibi markaların cihazlarındaki bilinen zafiyetleri istismar ettiğini bildirmiştir. Zararlı yazılımın kimlik bilgisi hırsızlığı, SSH kaba kuvvet saldırıları ve dağıtık hizmet dışı bırakma eylemleri gerçekleştirme yeteneğine s",
-    "title": "New Evooo1Bot Linux botnet turns routers into traffic relay nodes",
-    "full_text": "A new Mirai-based modular Linux botnet malware called Evooo1Bot has been targeting internet-facing gateway devices, turning them into SOCKS5 traffic relay nodes.\n\nThe malware's capabilities extend beyond turning devices into proxy nodes and include credential theft, SSH brute-forcing, and launching distributed denial-of-service (DDoS) attacks.\n\nSince at least July, Evooo1Bot has been targeting dev"
-   }
-  ]
- },
- {
   "date": "2026-08-17",
   "views": [
    {
@@ -804,6 +769,77 @@
     "paragraph": "Acronis araştırmacıları, Afgan telekom sağlayıcılarını ve Güney Asya kritik altyapılarını hedef alan PATCHCORD kod adlı bir casusluk operasyonunu ortaya çıkarmıştır. Pakistan bağlantılı olduğu değerlendirilen siber tehdit aktörü APT36 ile ilişkilendirilen bu kampanyada, sahte VPN araçlarının kullanıldığı bildirilmiştir. Operasyon kapsamında SHEETCORD ve HACKERAI C2 Agent adlı yeni zararlı yazılımların tespit edildiği belirtilmiştir. Saldırganların, komuta ve kontrol faaliyetleri için Google Shee",
     "title": "APT36 Suspected in PATCHCORD Espionage Campaign Using Google Sheets C2",
     "full_text": "APT36 Suspected in PATCHCORD Espionage Campaign Using Google Sheets C2\n\nAcronis uncovered PATCHCORD, a stealthy backdoor targeting Afghan telecom and South Asian infrastructure via fake VPN tools and Google Sheets C2.\n\nResearchers at Acronis just documented an espionage operation that reads like it was built by someone with genuinely good taste in disguises. Their Threat Research Unit report track"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-24",
+  "views": [
+   {
+    "tr_title": "Mustang Panda'nın CoolClient Arka Kapısını Çekirdek Rootkit'iyle Güncellemesi",
+    "paragraph": "Çin bağlantılı siber tehdit aktörü Mustang Panda'nın, CoolClient adlı arka kapı yazılımını süreçleri, dosyaları ve ağ etkinliklerini gizleyen imzalı bir çekirdek sürücüsüyle güncellediği tespit edilmiştir. Kaspersky tarafından yayımlanan analizde, yeni varyantın Windows servisleri üzerinden çekirdek modu sürücüsü dağıtabildiği ve bu sayede tespit edilmesinin zorlaştığı belirtilmiştir. Söz konusu zararlı yazılımın Pakistan, Moğolistan, Myanmar ve Rusya'daki kamu kurumlarını hedef aldığı kaydedilm",
+    "title": "Mustang Panda Upgrades CoolClient With a Kernel Rootkit",
+    "full_text": "Mustang Panda Upgrades CoolClient With a Kernel Rootkit\n\nMustang Panda upgraded CoolClient with a signed kernel driver that hides processes, files and network activity, making the backdoor harder to detect.\n\nHoneyMyte, also known as Mustang Panda, has pushed its CoolClient backdoor another step deeper into Windows. Kaspersky’s latest analysis shows a new variant that can deploy a signed kernel-mod"
+   },
+   {
+    "tr_title": "DDoS Saldırılarının Threema Mesajlaşma Servisinde Kesintilere Yol Açması",
+    "paragraph": "İsviçre merkezli güvenli mesajlaşma platformu Threema, 23 Ağustos 2026 tarihinde başlayan ve geniş ölçekli dağıtık hizmet dışı bırakma (DDoS) saldırıları nedeniyle ciddi iletişim kesintileri yaşamıştır. Şirket tarafından yapılan açıklamada, saldırıların hem kendi altyapısını hem de veri merkezi ortağı Nine'ı hedef aldığı, saldırı kalıplarının sürekli değişmesi nedeniyle savunma süreçlerinin zorlaştığı belirtilmiştir. Salı akşamı yaklaşık dört saat boyunca tamamen ulaşılamaz olan servisin, Çarşam",
+    "title": "DDoS Attacks Cause Major Threema Outages",
+    "full_text": "DDoS Attacks Cause Major Threema Outages\n\nLarge DDoS attacks disrupted Threema, causing severe communication outages. Threema On-Prem users were unaffected by the attacks.\n\nThreema suffered multiple large-scale DDoS attacks that disrupted its secure messaging service and caused severe communication issues. Organizations using Threema On-Prem were not affected, as their deployments run on their own"
+   },
+   {
+    "tr_title": "Fransa'da Siber Saldırı Sonucu 678.000 Mükellefin Verilerinin Sızdırılması",
+    "paragraph": "Fransa vergi dairesi, Haziran ayı sonunda gerçekleşen karmaşık bir siber saldırı neticesinde 678.000 bireysel ve kurumsal mükellefin kişisel verilerinin sızdırıldığını açıklamıştır. Paris Kamu Savcılığı Siber Suçlar Birimi olayla ilgili soruşturma başlatmış ve dosyayı Fransa'nın siber suçlarla mücadele ofisi olan OFAC'a devretmiştir. Kamu Maliyesi Genel Müdürlüğü, çalınan veriler arasında gelir rakamları, vergi oranları ve aile durum bilgilerinin bulunduğunu ancak mükellef hesaplarına doğrudan e",
+    "title": "Sophisticated Cyberattack Exposes Data of 678,000 French Taxpayers",
+    "full_text": "Sophisticated Cyberattack Exposes Data of 678,000 French Taxpayers\n\nFrance’s tax agency says hackers stole data on 678,000 taxpayers, including income and tax details, in a sophisticated cyberattack.\n\nA threat actor claimed to have breached France’s tax agency in late June. France’s tax administration confirmed that a cyberattack exposed personal data of 678,000 individuals and businesses, prompti"
+   },
+   {
+    "tr_title": "UAT-10147 Grubunun Sunucu Saldırılarında Yapay Zeka ve SPECTRE Kullanması",
+    "paragraph": "Çinçe konuşan siber suç grubu UAT-10147'nin, eğitim, medya ve teknoloji sektörlerindeki Windows ve Linux sunucularını hedef alan küresel bir kampanya yürüttüğü tespit edilmiştir. Cisco Talos tarafından yayımlanan raporda, grubun saldırı döngüsünün çeşitli aşamalarında keşif, sızma ve veri hırsızlığını otomatize etmek için yapay zekâ destekli araçlar kullandığı belirtilmiştir. Saldırganların, SPECTRE adı verilen ve hem Windows hem de Linux platformlarında çalışan, güvenlik yazılımlarını devre dış",
+    "title": "UAT-10147 Uses AI to Scale Server Attacks, Deploys SPECTRE With EDR Bypass and Linux Rootkit",
+    "full_text": "Cybersecurity researchers have disclosed details of a Chinese-speaking cybercrime group dubbed UAT-10147 that's targeting Windows and Linux web servers globally across the education, media, technology, and gaming sectors.\n\nThe vast majority of the targets are located in Brazil, Bolivia, China, Canada, and Vietnam. Details of the threat activity came to light following the discovery of an open dire"
+   },
+   {
+    "tr_title": "Akira Fidye Yazılımı Çetesinin Güvenli Modu Kullanarak EDR'yi Atlatması",
+    "paragraph": "Fidye yazılımı çetesi Akira'nın bir iştirakinin, hedef bir şirketin sistemine çok faktörlü kimlik doğrulaması bulunmayan bir VPN üzerinden sızdığı ve güvenlik araçlarını devre dışı bırakmak için sistemi \"Ağ ile Güvenli Mod\"da yeniden başlattığı tespit edilmiştir. Huntress tarafından yayımlanan raporda, saldırganın EDR çözümlerini bu yöntemle etkisiz hale getirdiği ancak fidye yazılımının kısıtlı bellek ortamı nedeniyle başarısız olduğu belirtilmiştir. Akira sürecinin, Güvenli Mod'un sunduğu sını",
+    "title": "Akira Ransomware Uses Safe Mode to Bypass EDR",
+    "full_text": "Akira Ransomware Uses Safe Mode to Bypass EDR\n\nAkira attackers used Safe Mode to disable EDR before deploying ransomware, but memory issues caused the encryptor to fail.\n\nAn Akira ransomware affiliate broke into a company through an MFA-less SonicWall VPN on August 4, stole credentials and file shares, and then rebooted the compromised host into Safe Mode with Networking to kill the security tools"
+   },
+   {
+    "tr_title": "ToxicPanda Zararlı Yazılımının Android Cihazlarda Google Play'i Engellemesi",
+    "paragraph": "Siber güvenlik kuruluşu Zimperium, ToxicPanda Android zararlı yazılımının yeni bir sürümünün 349 farklı uygulamayı hedef aldığını ve 167 uzaktan komut desteği kazandığını tespit etmiştir. Zararlı yazılımın, VPN servis izinlerini kullanarak yerel bir ağ arayüzü oluşturduğu ve bu sayede Google Play ile Google Play Hizmetleri arasındaki iletişimi engellediği belirtilmiştir. Bu yöntemin, Play Protect gibi güvenlik kontrollerini ve uygulama güncellemelerini devre dışı bırakmak için kullanıldığı ifade",
+    "title": "ToxicPanda Android malware uses VPN permissions to block Google Play",
+    "full_text": "The ToxicPanda Android malware has evolved with new malicious functionality, expanding its targeting to 349 applications and adding support for 167 remote commands.\n\nThe malware now requests VPN service permissions to create a local interface that allows it to control network traffic passing through it. The feature enables ToxicPanda 2.0 to block communication from Google Play and Google Play Serv"
+   },
+   {
+    "tr_title": "Endüstriyel TSN Protokollerindeki Zafiyetlerin Fiziksel Süreçleri Riski Atması",
+    "paragraph": "Nozomi Networks araştırmacıları, Black Hat USA konferansında yaptıkları sunumda, Zaman Duyarlı Ağ (TSN) protokollerindeki güvenlik zayıflıklarının endüstriyel süreçlerin manipüle edilmesine yol açabileceğini açıklamıştır. Araştırmada, özellikle Mitsubishi Electric tarafından geliştirilen CC-Link IE TSN protokolündeki bir açığın, saldırganların robotik kolları durdurmasına veya operasyonel zamanlama saatlerini bozmasına imkan tanıdığı belirtilmiştir. CISA tarafından 30 Temmuz 2026 tarihinde yayım",
+    "title": "How an Emerging Industrial Protocol Family Could Put OT at Risk",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nNews, news analysis, and commentary on the latest trends in cybersecurity technology.\n\nHow an Emerging Industrial Protocol Family Could Put OT at Risk\n\nNew research shows how attacks against some unprotected TSN protocols could allow at"
+   },
+   {
+    "tr_title": "Slovakya'nın Trafik Hız Kameralarındaki Siber Güvenlik Risklerini Duyurması",
+    "paragraph": "Slovakya Ulusal Güvenlik Otoritesi (NBÚ), 24 Ağustos 2026 tarihinde yaptığı açıklamada, kamu ağlarında kullanılan bazı hız kamerası sistemlerinin ciddi siber tehditler barındırdığı konusunda uyarıda bulunmuştur. Yapılan analizlerde, NERO R-ONE ve Rus menşeli Simicon Cordon serisi cihazlarda, belgelenmemiş iletişim ayarları ve operatör kontrolü dışındaki uzaktan erişim mekanizmaları tespit edilmiştir. Kurum, bu zafiyetlerin saldırganlara araç verilerine erişme, kayıtları manipüle etme veya kamu a",
+    "title": "Slovakia Warns of Cyber Risks in Road Speed Cameras",
+    "full_text": "Slovakia Warns of Cyber Risks in Road Speed Cameras\n\nSlovakia warns that vulnerable speed cameras could expose vehicle data, enable remote access and provide attackers with a foothold into public networks.\n\nSlovakia’s National Security Authority, NBÚ, recently issued a warning about several road speed cameras, calling them a significant cyber threat. The alert is not about someone deleting a speed"
+   },
+   {
+    "tr_title": "Mahkeme Dosyasına Gizlenen Yapay Zeka Komutlarına Yaptırım Uygulanması",
+    "paragraph": "Connecticut'ta bir davacının, mahkeme belgelerine yapay zeka sistemlerini manipüle etmek amacıyla gizli komutlar yerleştirdiği tespit edilmiştir. Davacının, belgelerin içine insan gözüyle görülmeyen beyaz renkli ve küçük boyutlu yazı tipleriyle \"istemi enjeksiyonu\" (prompt injection) teknikleri eklediği belirtilmiştir. Bu gizli metinlerin, belgeyi tarayan olası yapay zeka modellerine davacı lehine karar verme talimatı verdiği ifade edilmiştir. Yargıç Spader, bu eylemi ciddi bir dava suistimali o",
+    "title": "Invisible AI Prompts Trigger Court Sanctions",
+    "full_text": "Invisible AI Prompts Trigger Court Sanctions\n\nA litigant hid AI prompt injections in a court filing to influence a ruling. The judge caught it and banned him from electronic filing.\n\nA man suing the New York Bariatric Group reportedly hid AI prompt in a court filing, instructing any AI system that read it to rule in his favor. The July 26 filing used a prompt injection to manipulate an AI’s output"
+   },
+   {
+    "tr_title": "Zararlı Yazılım DOUBLECUP'ın PNG Dosyalarına Veri Gizlemesi",
+    "paragraph": "SANS ISC tarafından yapılan analizde, DOUBLECUP isimli yeni bir zararlı yazılımın PNG dosyalarını kullanarak veri gizleme tekniklerini uyguladığı tespit edilmiştir. Söz konusu yazılımın, PowerShell yüklerini görüntü piksellerine kodlamak yerine doğrudan dosya sonuna eklediği bildirilmiştir. Didier Stevens tarafından aktarılan bilgilere göre, PowerShell betiğinin Windows işletim sisteminde satır sonlandırma işlevi gören özel karakterlerle başladığı ve bu sayede standart komut satırı araçlarıyla k",
+    "title": "DOUBLECUP's PNG Payload, (Mon, Aug 24th)",
+    "full_text": "DOUBLECUP's PNG Payload\n\nNew malware that uses steganography always gets my attention, but I was disappointed when I looked at the latest DOUBLECUP write-up. It doesn't use real steganography:\n\nYou can see the PowerShell payload as cleartext: it has not been encoded into the pixels of the image.\n\nIt's even not embedded in the image (like inside the metadata), it's just appended after the PNG file:"
+   },
+   {
+    "tr_title": "Chameleon SEO Zehirlemesiyle Sahte Banka Sitelerinin Yayılması",
+    "paragraph": "Fortra tarafından yapılan araştırmada, Chameleon SEO Zehirlemesi olarak adlandırılan ve güvenlik tarayıcılarından kaçmak için gizleme teknikleri kullanan yeni bir kimlik avı yöntemi keşfedilmiştir. Saldırganların, Google ve Bing gibi arama motorlarında bankacılıkla ilgili anahtar kelimeleri hedefleyerek sahte siteleri üst sıralara taşıdığı ve 2026 yılının ikinci çeyreğinde bu vakalarda %40 artış yaşandığı bildirilmiştir. Söz konusu yöntemde, web sunucusunun ziyaretçinin geliş kaynağına göre fark",
+    "title": "Fake bank websites play dead to evade security scanners",
+    "full_text": "Fake bank websites play dead to evade security scanners\n\nA phishing method, named Chameleon SEO Poisoning, that uses manipulated search results and cloaked fake banking websites to steal credentials while evading security scanners has been discovered by Fortra.\n\nThe company’s threat intelligence unit, Fortra Intelligence and Research Experts (FIRE), spent three months tracking the technique and re"
    }
   ]
  }
