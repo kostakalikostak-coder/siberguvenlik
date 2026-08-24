@@ -115,3 +115,51 @@ def test_etiketli_referansta_gerileme_yok():
         pytest.skip(f'referans çiftlerinin yalnızca {degerlendirilen}/{TABAN} '
                     f'tanesi geçmişte duruyor')
     assert dogru >= TABAN, f'gerileme: {dogru}/{degerlendirilen} (taban {TABAN})'
+
+
+def test_ayni_aktor_farkli_operasyon_mukerrer_degildir():
+    """Aktör olayın FAİLİDİR, kimliği değil — aynı grup farklı olaylar yapar.
+
+    Bellek 30 güne çıkınca risk büyüdü: aynı APT 30 gün içinde birçok ayrı
+    operasyonla görünüyor. ÖLÇÜLDÜ (2026-08-24): "Mustang Panda'nın
+    CoolClient'ı çekirdek rootkit'le güncellemesi" ile "Mustang Panda'nın
+    QuickFox üzerinden tedarik zinciri saldırısı" 'actor:mustangpanda+
+    topic=0.19' ile eşleşti — apayrı iki operasyon.
+    """
+    a = _v("Mustang Panda'nın CoolClient Arka Kapısını Çekirdek Rootkit'iyle "
+           'Güncellemesi',
+           'Mustang Panda, CoolClient arka kapısını imzalı bir çekirdek '
+           'sürücüsüyle güncellemiş, Pakistan ve Moğolistan kamu kurumlarını '
+           'hedef almıştır.')
+    b = _v("Mustang Panda'nın QuickFox Üzerinden Tedarik Zinciri Saldırısı "
+           'Düzenlemesi',
+           'Mustang Panda, QuickFox VPN uygulamasının Windows yükleyicisini '
+           'değiştirerek FDMTP arka kapısını yerleştirmiştir.')
+    assert not O.ayni_olay(a, b), 'aynı aktörün farklı operasyonu birleştirildi'
+
+
+def test_ayni_kod_adi_farkli_takma_adla_da_yakalanir():
+    """HoneyMyte = Mustang Panda. Aktör adı değişse de OLAY aynıdır.
+
+    Bu çift 10 gün arayla yayımlandı; 7 günlük bellekte hiç görülemiyordu.
+    """
+    a = _v('HoneyMyte Grubunun CoolClient Arka Kapısını Rootkit İle '
+           'Güncellemesi',
+           'HoneyMyte, CoolClient arka kapısını Windows çekirdek düzeyinde '
+           'çalışan bir rootkit ile güncelleyerek casusluk operasyonlarını '
+           'genişletmiştir.')
+    b = _v("Mustang Panda'nın CoolClient Arka Kapısını Çekirdek Rootkit'iyle "
+           'Güncellemesi',
+           'Mustang Panda, CoolClient arka kapısını süreçleri gizleyen imzalı '
+           'bir çekirdek sürücüsüyle güncellemiştir.')
+    assert O.ayni_olay(a, b), 'takma ad değişince aynı olay kaçırıldı'
+
+
+def test_cve_eslesmesi_aktor_kapisindan_muaf():
+    """'actor:cve...' bir aktör değil, yapısal zafiyet kimliğidir."""
+    from src import olay_iliski as _O
+    assert _O.AKTOR_KONU_MIN > 0
+    import inspect
+    kaynak = inspect.getsource(_O.ayni_olay)
+    assert "not gerekce.startswith('actor:cve')" in kaynak, \
+        'CVE eşleşmesi aktör konu kapısına takılıyor'

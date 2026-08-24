@@ -303,6 +303,25 @@ def _aktor_kokleri_ham(view):
     return kokler
 
 
+# ── KİMLİK SAYILMAYAN KÖKLER ─────────────────────────────────────────────
+# Haber metinlerinde YAPISAL olarak sık geçen, olayı ayırt etmeyen kökler.
+# DF tabanlı sözlük bunları YETERİNCE BÜYÜK bir derlemde zaten yakalar, ama
+# derlem boyutu tesadüfe bağlıdır: 2026-08-24'te rapor geçmişi 8 günden 31
+# güne doldurulunca dört değerli sınıflandırıcının etiket isabeti 18'den 16'ya
+# düştü — çünkü DF eşiği farklı sözcükleri jenerik saymaya başladı. Sabit
+# liste bu kaymayı taşımaz.
+#
+# Ölçülen sahte eşleşmeler:
+#   ad:cvss              SAP Commerce ↔ Adobe ColdFusion
+#   ad:tuesday           Ivanti EPM ↔ SonicWall GMS ("Patch Tuesday")
+#   ad:altyapı,güvenliğ  iki farklı CISA duyurusu
+_MANSIZ_AD = {
+    'cvss', 'altyapı', 'güvenliğ', 'güvenlik', 'zafiyet', 'saldırı',
+    'tuesday', 'salı', 'advertis', 'reklam', 'commerce', 'update',
+    'güncelle', 'patch', 'yama', 'critical', 'kritik',
+}
+
+
 def olay_kimlikleri(view, sozluk=None):
     """Bir haberin OLAY kimliği: kurban/hedef/zafiyet/paket/kod adı.
 
@@ -329,7 +348,8 @@ def _olay_kimlikleri_ham(view, sozluk):
     # ÖLÇÜLDÜ (2026-08-12 olay defteri): Sandworm/Polonya ve Sandworm/UAC-0145
     # haberleri 'ad:sandworm' ortaklığı üzerinden AYNI OLAYA bağlandı.
     kesin = kesin - _aktor_kokleri(view)
-    kimlikler |= {'ad:' + a for a in sozluk.ayirt_edici(kesin)}
+    kimlikler |= {'ad:' + a for a in sozluk.ayirt_edici(kesin)
+                  if a not in _MANSIZ_AD}
     return kimlikler
 
 
@@ -418,9 +438,11 @@ KOD_ADI_KONU_MIN = 0.15
 # gövdede geçen bir ad haberin öznesi olmayabilir (araştırmacı, kurum, örnek).
 GOVDE_KOD_ADI_KONU_MIN = 0.35
 
-# Konu/kimlik sinyali sayılmayan, haber metinlerinde yapısal olarak sık geçen
-# kökler. Sözlük DF filtresi bunları küçük derlemde kaçırabiliyor.
-_MANSIZ_AD = {'cvss', 'altyapı', 'güvenliğ', 'güvenlik', 'zafiyet', 'saldırı'}
+# Aktör (APT adı) eşleşmesinin geçerli sayılması için gereken asgari konu
+# örtüşmesi. Aktör olayın faili, kimliği değil — aynı grup farklı operasyonlar
+# yapar. CVE eşleşmesi bundan MUAFTIR (yapısal kimliktir, 'actor:cve...').
+AKTOR_KONU_MIN = 0.25
+
 
 
 def _yuksek_derece_var(kimlikler):
@@ -515,7 +537,11 @@ def iliski_belirle(view_a, view_b, ayni_gun=False, explain=False, sozluk=None):
     ortak_kimlik = ka & kb
     # Özel adlar ayrıca 'aday' (cümle başı) yoluyla da eşleşebilir; olay
     # kimliği kümesi yalnızca 'kesin' adları taşıdığı için burada tamamlanır.
-    ortak_kimlik |= {'ad:' + a for a in _ortak_adlar(view_a, view_b, sozluk)}
+    # _MANSIZ_AD burada da uygulanır: bu ikinci yol 'aday' (cümle başı)
+    # adlarını ekler ve olay_kimlikleri'ndeki filtreyi ATLIYORDU —
+    # 'ad:cvss' ve 'ad:tuesday' sahte eşleşmeleri buradan geliyordu.
+    ortak_kimlik |= {'ad:' + a for a in _ortak_adlar(view_a, view_b, sozluk)
+                     if a not in _MANSIZ_AD}
 
     topic = _konu_ortusmesi(view_a, view_b)
 
@@ -898,5 +924,24 @@ def ayni_olay(a, b, sozluk=None, ayni_gun=False, explain=False):
         if konu < KOD_ADI_KONU_MIN:
             return _ret(False, '')
         return _ret(True, f'{gerekce}+topic={konu:.2f}')
+
+    # (5) AKTÖR EŞLEŞMESİ TEK BAŞINA YETMEZ — aktör olayın FAİLİDİR, kimliği
+    #     değil; aynı fail farklı olaylar yapar (bu modülün varlık sebebi,
+    #     modül başlığı A maddesi). Bellek 30 güne çıkınca risk büyüyor: aynı
+    #     APT 30 gün içinde birçok ayrı operasyonla görünüyor.
+    #
+    #     ÖLÇÜLDÜ (2026-08-24, geçmiş arşivden geri doldurulduktan sonra):
+    #     "Mustang Panda'nın CoolClient'ı çekirdek rootkit'le güncellemesi"
+    #     ile "Mustang Panda'nın QuickFox üzerinden tedarik zinciri saldırısı"
+    #     'actor:mustangpanda+topic=0.19' ile eşleşti — apayrı iki operasyon.
+    #     Gerçek eşleşmelerin konu örtüşmesi ölçümde 0.29-0.31 (APT36/PATCHCORD,
+    #     UAT-10147); eşik ikisinin arasına konur.
+    #     CVE MUAFTIR: 'actor:cve2026...' bir aktör değil, yapısal zafiyet
+    #     kimliğidir; aynı CVE iki haberde geçiyorsa aynı zafiyettir.
+    if gerekce.startswith('actor:') and not gerekce.startswith('actor:cve'):
+        konu = _konu_ortusmesi(a, b)
+        if konu < AKTOR_KONU_MIN:
+            return _ret(False, '')
+        return _ret(True, f'same_event:{gerekce}')
 
     return _ret(True, f'same_event:{gerekce}')

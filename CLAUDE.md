@@ -44,6 +44,9 @@ DOKUNMA (kendi kendini düzeltir / değerli geçmiş / append-only):
 - `data/dedup_golden.json` — elle etiketli kalite kapısı referansı; ÜRETİM VERİSİ DEĞİL, silme.
 - `data/mukerrer_golden.json` — elle etiketli MÜKERRER referansı (38 çift);
   ÜRETİM VERİSİ DEĞİL, silme. Ölçüm: `scripts/mukerrer_olc.py`.
+- `data/rapor_gecmis.json` artık 30 gün tutar (arşivle hizalı). Eksik günler
+  `scripts/gecmis_geri_doldur.py --uygula` ile arşivden geri doldurulabilir;
+  betik yalnızca EKSİK günleri ekler, mevcut kayıtlara dokunmaz.
 - `docs/index.html` — üretimde üzerine yazılır; silme.
 
 Not: olay defteri (manşet tekrar sayımı) kalıcı dosya DEĞİLDİR — her koşuda
