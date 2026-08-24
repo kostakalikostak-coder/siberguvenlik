@@ -1,0 +1,117 @@
+"""TEK TANIM — `olay_iliski.ayni_olay` sözleşmesi.
+
+Sistemde "aynı olay"ın ÜÇ ayrı tanımı vardı (same_event, dört değerli
+iliski_belirle, LLM) ve farklı katmanlar farklı tanımı kullanıyordu; bu
+yüzden "denetim kaçak buldu ama politika bulmadı" mümkündü. Bu dosya tek
+tanımın davranışını kilitler.
+
+Politika (kullanıcı kararı, 2026-08-24): aynı olay bir kez yayımlanır.
+"Yeni gelişme" olması onu mükerrer olmaktan ÇIKARMAZ.
+"""
+import json
+import os
+
+import pytest
+
+from src import dedup, olay_iliski as O
+
+GOLDEN = 'data/mukerrer_golden.json'
+GECMIS = 'data/rapor_gecmis.json'
+
+
+def _v(tr, para=''):
+    return {'tr_title': tr, 'title': '', 'paragraph': para, 'full_text': ''}
+
+
+def test_kurum_ve_arastirmaci_adlari_kod_adi_degildir():
+    """ANSSI, watchTowr gibi adlar olayı DUYURAN taraftır, olayın öznesi değil.
+
+    ÖLÇÜLDÜ: 38 etiketli çiftin 7'si tam olarak buradan sahte eşleşiyordu —
+    'kod:anssi' dört ayrı CERT-FR ürün bültenini (Adobe, Zimbra, Microsoft,
+    Oracle) birbirine bağladı.
+    """
+    for ad in ('anssi', 'watchtowr', 'kaspersky', 'mandiant', 'europol'):
+        assert ad in dedup.CODENAME_DENYLIST, f'{ad} kod adı sayılıyor'
+
+
+def test_farkli_cert_bultenleri_ayni_olay_degil():
+    a = _v('Adobe Ürünlerinde Tespit Edilen Güvenlik Açığının Giderilmesi',
+           'ANSSI, Adobe ürünlerinde çok sayıda güvenlik açığı bildirmiştir.')
+    b = _v('Oracle MySQL Ürünlerinde Çok Sayıda Güvenlik Açığının Belirlenmesi',
+           'ANSSI, Oracle MySQL ürünlerinde güvenlik açıkları bildirmiştir.')
+    assert not O.ayni_olay(a, b), 'iki ayrı ürün bülteni aynı olay sayıldı'
+
+
+def test_jenerik_ad_tek_basina_ayni_olay_yapmaz():
+    a = _v("GitLab'daki Kritik GraphQL Zafiyetinin Acil Yamayla Giderilmesi",
+           'GitLab, GraphQL bileşenindeki CVSS 9.8 puanlı açığı yamalamıştır.')
+    b = _v('Citrix NetScaler Cihazlarında Kritik Kimlik Doğrulama Atlatma Açığı',
+           'Citrix, NetScaler ürününde CVSS 9.2 puanlı açığı duyurmuştur.')
+    assert not O.ayni_olay(a, b), "'cvss' ortaklığı aynı olay sayıldı"
+
+
+def test_sirket_adi_kod_adi_olarak_iki_olayi_birlestirmez():
+    """Kod adı çıkarıcı şirket/platform adlarını da yakalıyor; konu kapısı
+    olmadan TikTok senatör baskısı ile TikTok gizlilik davası birleşiyordu."""
+    a = _v("ABD'li Senatörlerin TikTok'a Güvenlik Özellikleri Hakkında Baskı "
+           'Yapması',
+           'Senatörler TikTok yönetiminden ebeveyn denetimi özellikleri '
+           'talep etmiştir.')
+    b = _v("TikTok'un Çocuk Gizliliği Davasında 400 Milyon Dolar Ödemesi",
+           'TikTok, çocuk gizliliği ihlali davasında uzlaşma ödemesi '
+           'yapacaktır.')
+    assert not O.ayni_olay(a, b), 'iki ayrı TikTok olayı birleştirildi'
+
+
+def test_baslik_benzerligi_tek_basina_yetmez():
+    a = _v('Stripe API Anahtarlarının Halka Açık Kodlarda İfşa Olması',
+           'Araştırmacılar halka açık depolarda Stripe API anahtarları '
+           'bulmuştur.')
+    b = _v('Binlerce AWS Erişim Anahtarının Halka Açık Kaynaklarda İfşa Olması',
+           'Araştırmacılar halka açık kaynaklarda AWS erişim anahtarları '
+           'bulmuştur.')
+    assert not O.ayni_olay(a, b), 'benzer başlık kalıbı aynı olay sayıldı'
+
+
+def test_yeni_gelisme_de_mukerrerdir():
+    """Politika: aynı olay bir kez yayımlanır."""
+    a = _v('Dahua Cihazlarına Yönelik Operation CameraSwarm Siber Saldırı '
+           'Kampanyası',
+           'Operation CameraSwarm kapsamında Dahua kameraları hedef '
+           'alınmıştır.')
+    b = _v('Operation CameraSwarm Kapsamında 14.000 IP Kameranın Ele '
+           'Geçirilmesi',
+           'Operation CameraSwarm kampanyasında 14.000 Dahua kamerası ele '
+           'geçirilmiştir.')
+    assert O.ayni_olay(a, b), 'aynı kampanyanın yeni gelişmesi mükerrer sayılmadı'
+
+
+@pytest.mark.skipif(not (os.path.exists(GOLDEN) and os.path.exists(GECMIS)),
+                    reason='referans veya geçmiş dosyası yok')
+def test_etiketli_referansta_gerileme_yok():
+    """data/mukerrer_golden.json — 38 elle etiketli çift.
+
+    TABAN 38: ayni_olay bu referansta kaçan=0, sahte=0 ile ölçüldü. Düşerse
+    bir değişiklik mükerrer politikasını GERİLETMİŞTİR.
+    """
+    TABAN = 38
+    with open(GECMIS, encoding='utf-8') as f:
+        rapor = {r['date']: r.get('views', []) or [] for r in json.load(f)}
+    with open(GOLDEN, encoding='utf-8') as f:
+        altin = json.load(f)['ciftler']
+    indeks = {(g, (v.get('tr_title') or '')): v
+              for g, vs in rapor.items() for v in vs}
+    sz = O.OlaySozlugu([v for vs in rapor.values() for v in vs])
+    dogru = degerlendirilen = 0
+    for c in altin:
+        a = indeks.get((c['gun_a'], c['baslik_a']))
+        b = indeks.get((c['gun_b'], c['baslik_b']))
+        if a is None or b is None:
+            continue          # geçmiş penceresinden düşmüş çift
+        degerlendirilen += 1
+        if bool(O.ayni_olay(b, a, sozluk=sz)) == c['mukerrer']:
+            dogru += 1
+    if degerlendirilen < TABAN:
+        pytest.skip(f'referans çiftlerinin yalnızca {degerlendirilen}/{TABAN} '
+                    f'tanesi geçmişte duruyor')
+    assert dogru >= TABAN, f'gerileme: {dogru}/{degerlendirilen} (taban {TABAN})'

@@ -409,6 +409,19 @@ MIN_YENI_AD = 3
 #   yalnızca same_event → 2/38   (0.25 ek maliyet getirmiyor, ek kapsam veriyor)
 MANSET_TEK_KIMLIK_KONU = 0.25
 
+# Başlık düzeyi kod adı eşleşmesinin geçerli sayılması için gereken asgari konu
+# örtüşmesi. Kod adı çıkarıcı şirket/platform adlarını da yakalıyor; ölçümde
+# 'codename:tiktok' iki apayrı TikTok haberini birleştirdi (topic=0.03).
+# Gerçek kod adı eşleşmelerinin ölçülen konu örtüşmesi 0.20-0.48 aralığında.
+KOD_ADI_KONU_MIN = 0.15
+# Gövde düzeyi kod adı için asgari konu örtüşmesi. Başlıktakinden YÜKSEKTİR:
+# gövdede geçen bir ad haberin öznesi olmayabilir (araştırmacı, kurum, örnek).
+GOVDE_KOD_ADI_KONU_MIN = 0.35
+
+# Konu/kimlik sinyali sayılmayan, haber metinlerinde yapısal olarak sık geçen
+# kökler. Sözlük DF filtresi bunları küçük derlemde kaçırabiliyor.
+_MANSIZ_AD = {'cvss', 'altyapı', 'güvenliğ', 'güvenlik', 'zafiyet', 'saldırı'}
+
 
 def _yuksek_derece_var(kimlikler):
     return any(k.startswith(_YUKSEK_DERECE) for k in kimlikler)
@@ -752,3 +765,118 @@ def kumele(views_by_id, sozluk=None, ayni_gun=True, gevsek=False,
     if explain:
         return gruplar, gerekceler
     return gruplar
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TEK TANIM — "bu iki haber aynı olayı mı anlatıyor?"
+# ─────────────────────────────────────────────────────────────────────────────
+# NEDEN VAR (ölçülmüş kök neden): sistemde "aynı olay"ın ÜÇ ayrı tanımı vardı
+# ve farklı katmanlar farklı tanımı kullanıyordu — `dedup.same_event`,
+# buradaki dört değerli `iliski_belirle` ve LLM. Ölçüm (son 10 günün
+# yayımlanmış raporları, çapraz-gün): same_event 32 çifti "aynı olay" sayıyor,
+# dört değerli sınıflandırıcı bunların yalnızca 2'sine AYNI_GELISME diyor
+# (25 YENI_GELISME, 5 ILISKISIZ). Politika yalnızca AYNI_GELISME'yi elediği
+# için 30 çift rapora giriyordu. Denetim ise ÜÇÜNCÜ bir eşikle bakıyordu;
+# "denetim kaçak buldu ama politika bulmadı" bu yüzden mümkündü.
+#
+# POLİTİKA KARARI (kullanıcı, 2026-08-24): aynı olay bir kez yayımlanır.
+# "Yeni gelişme" olması onu mükerrer olmaktan ÇIKARMAZ — CameraSwarm'ın ertesi
+# gün kamera sayısıyla dönmesi de mükerrerdir. Bu yüzden AYNI_GELISME ve
+# YENI_GELISME'nin İKİSİ de mükerrer sayılır; ayrım yalnızca gerekçe için
+# tutulur.
+#
+# İKİNCİ SİNYAL VE NEDEN FİLTRELENİYOR: kimlik çıkarımı bazı gerçek
+# özdeşlikleri kaçırıyor (Siemens PLC 08-20↔08-21: tek ortak ad, MIN_ORTAK_AD=2
+# eşiğinin altında). Bu boşluğu `dedup.same_event` kapatıyor — ama onun DF
+# tabanlı jeneriklik filtresi YOK ve ölçümde şu sahte birleşmeleri üretiyor:
+#   entity:cvss              → GitLab ↔ Citrix
+#   entity:altyapı,güvenliğ  → iki farklı CISA duyurusu
+#   codename-body:anssi      → Adobe ↔ Zimbra ↔ Microsoft bültenleri
+#   codename-body:watchtowr  → MLflow ↔ GitLab (araştırmacı firma adı)
+# Bu yüzden same_event'in gerekçesi AYRIŞTIRILIR ve dayandığı adlar sözlüğün
+# ayırt-edicilik testinden geçmezse sinyal SAYILMAZ.
+
+# Gerekçesi sözlükle doğrulanması gereken sinyaller (ad tabanlı olanlar).
+_DOGRULANACAK_SINYAL = ('entity:', 'codename-body:')
+# Doğrulama gerektirmeyenler: başlık düzeyi kod adı ve CVE yapısal kimliktir.
+_GUVENILIR_SINYAL = ('codename:', 'actor:cve')
+
+
+def _gerekce_adlari(gerekce):
+    """'entity:cvss,siemens+topic=0.25' → ('entity:', {'cvss','siemens'})."""
+    for on in _DOGRULANACAK_SINYAL:
+        if gerekce.startswith(on):
+            govde = gerekce[len(on):].split('+topic')[0]
+            return on, {a.strip() for a in govde.split(',') if a.strip()}
+    return None, set()
+
+
+def ayni_olay(a, b, sozluk=None, ayni_gun=False, explain=False):
+    """Aynı olay mı? TEK tanım — kapı, eleme ve denetim bunu çağırır.
+
+    TASARIM, ÖLÇÜMLE SEÇİLDİ (data/mukerrer_golden.json, 38 elle etiketli çift):
+        same_event      27/38  kaçan=0   sahte=11
+        dört-değerli    22/38  kaçan=2   sahte=14
+        ikisinin OR'u   23/38  kaçan=0   sahte=15   ← daha KÖTÜ
+    same_event 21 gerçek mükerrerin 21'ini de yakalıyor; tek sorunu sahte
+    eşleşmeleri. Bu yüzden temel same_event'tir ve buradaki iş onu ELEMEKTİR,
+    ikinci bir tanımla birleştirmek değil.
+
+    Sahte eşleşmelerin ölçülen dağılımı ve elenme gerekçeleri:
+      codename-body:anssi     ×6  Adobe↔Zimbra↔Microsoft↔Oracle CERT-FR bültenleri
+      codename-body:watchtowr ×1  MLflow/FUXA ↔ GitLab (araştırmacı firma adı)
+      entity:cvss             ×1  GitLab ↔ Citrix
+      entity:altyapı,güvenliğ ×1  iki farklı CISA duyurusu
+      trtitle-xday=0.77       ×1  Stripe API anahtarları ↔ AWS erişim anahtarları
+      codename:tiktok         ×1  TikTok senatör baskısı ↔ TikTok gizlilik davası
+    """
+    def _ret(v, why=''):
+        return (v, why) if explain else v
+
+    tamam, gerekce = dedup.same_event(a, b, explain=True,
+                                      cross_day=not ayni_gun)
+    if not tamam:
+        return _ret(False, '')
+
+    # (1) GÖVDE KOD ADI + GÜÇLÜ KONU DESTEĞİ. Bu sinyal ilk ölçümde 11 sahte
+    #     eşleşmenin 7'sini üretiyordu; kaynağı kurum (ANSSI) ve araştırmacı
+    #     firma (watchTowr) adlarının gövdede kod adı sanılmasıydı. Onlar
+    #     dedup.CODENAME_DENYLIST'e alındıktan sonra sinyal temizlendi, ama
+    #     gövde düzeyi kod adı başlık düzeyinden daha zayıf olduğu için
+    #     KONU KAPISI korunur (gerçek eşleşme jarservice: topic=0.48).
+    if gerekce.startswith('codename-body:'):
+        konu = _konu_ortusmesi(a, b)
+        if konu < GOVDE_KOD_ADI_KONU_MIN:
+            return _ret(False, '')
+        return _ret(True, f'{gerekce}')
+
+    # (2) SALT BAŞLIK BENZERLİĞİ YETMEZ. Ad taşımadığı için doğrulanamaz;
+    #     ölçümde Stripe↔AWS anahtar ifşası çiftini birleştirdi.
+    if gerekce.startswith(('trtitle', 'topic=')):
+        return _ret(False, '')
+
+    # (3) ÖZEL AD SİNYALİ SÖZLÜKTEN GEÇMELİ. same_event'te DF tabanlı
+    #     jeneriklik filtresi YOK; 'cvss', 'altyapı', 'güvenlik' gibi kökler
+    #     olay kimliği sayılıyor.
+    if gerekce.startswith('entity:'):
+        adlar = {x.strip() for x in
+                 gerekce[len('entity:'):].split('+topic')[0].split(',')
+                 if x.strip()}
+        if sozluk is not None:
+            adlar = sozluk.ayirt_edici(adlar)
+        adlar -= _MANSIZ_AD
+        if not adlar:
+            return _ret(False, '')
+        return _ret(True, f'entity:{",".join(sorted(adlar))}')
+
+    # (4) BAŞLIK KOD ADI + ASGARİ KONU DESTEĞİ. Kod adı güçlü sinyaldir ama
+    #     şirket/platform adları da kod adı gibi çıkarılıyor: TikTok'a yönelik
+    #     senatör baskısı ile TikTok gizlilik davası 'codename:tiktok' ile
+    #     birleşti (konu örtüşmesi 0.03 — apayrı olaylar).
+    if gerekce.startswith('codename:'):
+        konu = _konu_ortusmesi(a, b)
+        if konu < KOD_ADI_KONU_MIN:
+            return _ret(False, '')
+        return _ret(True, f'{gerekce}+topic={konu:.2f}')
+
+    return _ret(True, f'same_event:{gerekce}')

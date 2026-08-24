@@ -46,6 +46,18 @@ CODENAME_DENYLIST = {
     'pytorch', 'tensorflow', 'macbook', 'airpods', 'playstation',
     # TR/sık geçen ek gürültü
     'cobalt', 'anyconnect', 'cloudstrike', 'androidos',
+    # ─ KURUM ve ARAŞTIRMACI FİRMA ADLARI ─────────────────────────────────
+    # Bunlar olayın FAİLİ ya da ÖZNESİ değil, olayı DUYURAN taraftır; iki
+    # haberde ortak geçmeleri "aynı olay" demek değildir. Elle etiketli
+    # ölçümde (data/mukerrer_golden.json) 38 çiftin 7'si tam olarak buradan
+    # sahte eşleşti: 'kod:anssi' Adobe↔Zimbra↔Microsoft↔Oracle CERT-FR
+    # bültenlerini birbirine bağladı (×6), 'kod:watchtowr' ise MLflow/FUXA
+    # haberini GitLab haberine (×1).
+    'anssi', 'watchtowr', 'kaspersky', 'securelist', 'mandiant', 'unit42',
+    'talos', 'zimperium', 'bitdefender', 'trendmicro', 'sophoslabs',
+    'recordedfuture', 'zscaler', 'darktrace', 'cybereason', 'malwarebytes',
+    'threatfabric', 'group-ib', 'eset', 'welivesecurity', 'fortiguard',
+    'certfr', 'cert-fr', 'cisagov', 'europol', 'interpol',
 }
 
 

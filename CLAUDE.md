@@ -42,6 +42,8 @@ DOKUNMA (kendi kendini düzeltir / değerli geçmiş / append-only):
 - `data/skorlama_log.jsonl`, `data/rss_errors.txt` — işlevsel değil; silme.
 - `data/kalite_denetim.jsonl` — rapor sonrası kaçak taraması; append-only, işlevsel değil; silme.
 - `data/dedup_golden.json` — elle etiketli kalite kapısı referansı; ÜRETİM VERİSİ DEĞİL, silme.
+- `data/mukerrer_golden.json` — elle etiketli MÜKERRER referansı (38 çift);
+  ÜRETİM VERİSİ DEĞİL, silme. Ölçüm: `scripts/mukerrer_olc.py`.
 - `docs/index.html` — üretimde üzerine yazılır; silme.
 
 Not: olay defteri (manşet tekrar sayımı) kalıcı dosya DEĞİLDİR — her koşuda

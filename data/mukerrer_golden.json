@@ -1,0 +1,309 @@
+{
+ "aciklama": "Elle etiketli MÜKERRER referansı. Kaynak: rapor_gecmis.json 2026-08-17..24 arası çapraz-gün aday çiftleri (same_event VEYA dört-değerli en az biri \"aynı olay\" diyen tüm çiftler). Politika: aynı olay bir kez yayımlanır; \"yeni gelişme\" olması mükerrer olmaktan çıkarmaz (kullanıcı kararı, 2026-08-24). ÜRETİM VERİSİ DEĞİL — silme.",
+ "ciftler": [
+  {
+   "no": 1,
+   "gun_a": "2026-08-18",
+   "baslik_a": "Polonya'da Sağlık Yazılımı Şirketi MyDr'ye Yönelik Siber Saldırı Soruşturması",
+   "gun_b": "2026-08-19",
+   "baslik_b": "Çin Bağlantılı Aktörün Tayvan'a Yönelik Yapay Zekâ Destekli Saldırısı",
+   "mukerrer": false
+  },
+  {
+   "no": 2,
+   "gun_a": "2026-08-18",
+   "baslik_a": "Philips ve GE Şirketlerinin Clop Fidye Yazılımı Saldırısını Araştırması",
+   "gun_b": "2026-08-19",
+   "baslik_b": "Cl0p Fidye Yazılımı Çetesinin PTC Windchill Mağdurlarını İfşa Etmesi",
+   "mukerrer": true
+  },
+  {
+   "no": 3,
+   "gun_a": "2026-08-18",
+   "baslik_a": "LiteLLM Tedarik Zinciri Saldırısının Binlerce Kuruluşu Etkilemesi",
+   "gun_b": "2026-08-19",
+   "baslik_b": "RubyGems ve Npm Platformlarında Kimlik Bilgisi Hırsızlığı Kampanyası",
+   "mukerrer": false
+  },
+  {
+   "no": 4,
+   "gun_a": "2026-08-18",
+   "baslik_a": "GitLab'daki Kritik GraphQL Zafiyetinin Acil Yamayla Giderilmesi",
+   "gun_b": "2026-08-20",
+   "baslik_b": "Kritik GitLab Güvenlik Açığının İfşa Sonrası İstismar Edilmesi",
+   "mukerrer": true
+  },
+  {
+   "no": 5,
+   "gun_a": "2026-08-19",
+   "baslik_a": "MLflow ve FUXA Yazılımlarında Kritik Güvenlik Açıklarının İstismar Edilmesi",
+   "gun_b": "2026-08-20",
+   "baslik_b": "Kritik GitLab Güvenlik Açığının İfşa Sonrası İstismar Edilmesi",
+   "mukerrer": false
+  },
+  {
+   "no": 6,
+   "gun_a": "2026-08-18",
+   "baslik_a": "CISA'nın Ray Çerçevesindeki Aktif Olarak İstismar Edilen Açığı Duyurması",
+   "gun_b": "2026-08-20",
+   "baslik_b": "CISA'nın Bilinen İstismar Edilen Zafiyetler Kataloğunu Güncellemesi",
+   "mukerrer": false
+  },
+  {
+   "no": 7,
+   "gun_a": "2026-08-19",
+   "baslik_a": "Adobe Ürünlerinde Tespit Edilen Güvenlik Açığının Giderilmesi",
+   "gun_b": "2026-08-20",
+   "baslik_b": "Synacor Zimbra Collaboration Yazılımında Çoklu Güvenlik Açıkları",
+   "mukerrer": false
+  },
+  {
+   "no": 8,
+   "gun_a": "2026-08-18",
+   "baslik_a": "GitLab'daki Kritik GraphQL Zafiyetinin Acil Yamayla Giderilmesi",
+   "gun_b": "2026-08-20",
+   "baslik_b": "Citrix NetScaler Cihazlarında Kritik Kimlik Doğrulama Atlatma Açığı",
+   "mukerrer": false
+  },
+  {
+   "no": 9,
+   "gun_a": "2026-08-20",
+   "baslik_a": "Kritik Altyapılardaki Siemens PLC Cihazlarının Yapay Zekayla Hedeflenmesi",
+   "gun_b": "2026-08-21",
+   "baslik_b": "ABD Kurumlarının Siemens S7 PLC Cihazlarına Yönelik Yapay Zeka Destekli Saldırı Uyarısı",
+   "mukerrer": true
+  },
+  {
+   "no": 10,
+   "gun_a": "2026-08-18",
+   "baslik_a": "Certighost Zafiyetinin Active Directory Kimlik Doğrulamasını Tehdit Etmesi",
+   "gun_b": "2026-08-21",
+   "baslik_b": "Microsoft Entra ID Platformundaki Kritik Güvenlik Açığının Kapatılması",
+   "mukerrer": false
+  },
+  {
+   "no": 11,
+   "gun_a": "2026-08-20",
+   "baslik_a": "Dahua Cihazlarına Yönelik Operation CameraSwarm Siber Saldırı Kampanyası",
+   "gun_b": "2026-08-21",
+   "baslik_b": "Operation CameraSwarm Kapsamında 14.000 IP Kameranın Ele Geçirilmesi",
+   "mukerrer": true
+  },
+  {
+   "no": 12,
+   "gun_a": "2026-08-20",
+   "baslik_a": "Synacor Zimbra Collaboration Yazılımında Çoklu Güvenlik Açıkları",
+   "gun_b": "2026-08-21",
+   "baslik_b": "Zimbra Sunucularındaki Kritik Güvenlik Açığının Aktif Olarak İstismar Edilmesi",
+   "mukerrer": true
+  },
+  {
+   "no": 13,
+   "gun_a": "2026-08-20",
+   "baslik_a": "Microsoft'un MacSync Stealer Zararlısını Davranış Analiziyle İzlemesi",
+   "gun_b": "2026-08-21",
+   "baslik_b": "MacSync Stealer Zararlı Yazılım Altyapısının Davranışsal Analizle Tespit Edilmesi",
+   "mukerrer": true
+  },
+  {
+   "no": 14,
+   "gun_a": "2026-08-18",
+   "baslik_a": "Certighost Zafiyetinin Active Directory Kimlik Doğrulamasını Tehdit Etmesi",
+   "gun_b": "2026-08-21",
+   "baslik_b": "Cisco'nun Kritik Güvenlik Açıkları İçin Yeni Yamalar Yayınlaması",
+   "mukerrer": false
+  },
+  {
+   "no": 15,
+   "gun_a": "2026-08-19",
+   "baslik_a": "Adobe Ürünlerinde Tespit Edilen Güvenlik Açığının Giderilmesi",
+   "gun_b": "2026-08-21",
+   "baslik_b": "Microsoft Ürünlerinde Tespit Edilen Kritik Güvenlik Zafiyetlerinin Giderilmesi",
+   "mukerrer": false
+  },
+  {
+   "no": 16,
+   "gun_a": "2026-08-20",
+   "baslik_a": "Synacor Zimbra Collaboration Yazılımında Çoklu Güvenlik Açıkları",
+   "gun_b": "2026-08-21",
+   "baslik_b": "Microsoft Ürünlerinde Tespit Edilen Kritik Güvenlik Zafiyetlerinin Giderilmesi",
+   "mukerrer": false
+  },
+  {
+   "no": 17,
+   "gun_a": "2026-08-20",
+   "baslik_a": "Yapay Zeka Ajanlarının Güvenli Alanlardan Kaçarak Saldırı Düzenlemesi",
+   "gun_b": "2026-08-21",
+   "baslik_b": "Delta Havayolları Uçağında Wi-Fi Ağı Üzerinden Kimlik Avı Saldırısı Gerçekleştirilmesi",
+   "mukerrer": false
+  },
+  {
+   "no": 18,
+   "gun_a": "2026-08-21",
+   "baslik_a": "SilkParasite Grubunun Orta Asya Hükümetlerini Hedef Alması",
+   "gun_b": "2026-08-22",
+   "baslik_b": "Çin Bağlantılı SilkParasite Operasyonunun Orta Asya'yı Hedeflemesi",
+   "mukerrer": true
+  },
+  {
+   "no": 19,
+   "gun_a": "2026-08-19",
+   "baslik_a": "TWINLOOT Çerçevesinin Microsoft Hizmetlerini Komuta Kontrol İçin Kötüye Kullanması",
+   "gun_b": "2026-08-22",
+   "baslik_b": "Microsoft Teams Üzerinden Yeni SynkLoader Zararlı Yazılımının Yayılması",
+   "mukerrer": false
+  },
+  {
+   "no": 20,
+   "gun_a": "2026-08-21",
+   "baslik_a": "Kuzey Koreli Hackerların Rust Ekosistemine Tedarik Zinciri Saldırısı Düzenlemesi",
+   "gun_b": "2026-08-22",
+   "baslik_b": "Popüler Rust Paketlerine Zararlı Yazılım Enjekte Edilmesi",
+   "mukerrer": true
+  },
+  {
+   "no": 21,
+   "gun_a": "2026-08-21",
+   "baslik_a": "CISA'nın TrueConf Sunucularındaki Kritik Açıklar İçin Talimatı",
+   "gun_b": "2026-08-22",
+   "baslik_b": "CISA'nın TrueConf Yazılımındaki İstismar Edilen Açıklar İçin Uyarması",
+   "mukerrer": true
+  },
+  {
+   "no": 22,
+   "gun_a": "2026-08-21",
+   "baslik_a": "Araç Multimedya Sistemlerini Hedef Alan Zararlı Yazılımın Tespiti",
+   "gun_b": "2026-08-22",
+   "baslik_b": "Android Tabanlı Araç Sistemlerine Yönelik Zararlı Yazılım Tespiti",
+   "mukerrer": true
+  },
+  {
+   "no": 23,
+   "gun_a": "2026-08-19",
+   "baslik_a": "Stripe API Anahtarlarının Halka Açık Kodlarda İfşa Olması",
+   "gun_b": "2026-08-22",
+   "baslik_b": "Binlerce AWS Erişim Anahtarının Halka Açık Kaynaklarda İfşa Olması",
+   "mukerrer": false
+  },
+  {
+   "no": 24,
+   "gun_a": "2026-08-20",
+   "baslik_a": "Citrix NetScaler Cihazlarında Kritik Kimlik Doğrulama Atlatma Açığı",
+   "gun_b": "2026-08-22",
+   "baslik_b": "Citrix'in NetScaler Ürünlerindeki Kritik Güvenlik Açıklarını Yamalaması",
+   "mukerrer": true
+  },
+  {
+   "no": 25,
+   "gun_a": "2026-08-19",
+   "baslik_a": "Adobe Ürünlerinde Tespit Edilen Güvenlik Açığının Giderilmesi",
+   "gun_b": "2026-08-22",
+   "baslik_b": "Oracle MySQL Ürünlerinde Çok Sayıda Güvenlik Açığının Belirlenmesi",
+   "mukerrer": false
+  },
+  {
+   "no": 26,
+   "gun_a": "2026-08-20",
+   "baslik_a": "Synacor Zimbra Collaboration Yazılımında Çoklu Güvenlik Açıkları",
+   "gun_b": "2026-08-22",
+   "baslik_b": "Oracle MySQL Ürünlerinde Çok Sayıda Güvenlik Açığının Belirlenmesi",
+   "mukerrer": false
+  },
+  {
+   "no": 27,
+   "gun_a": "2026-08-21",
+   "baslik_a": "Microsoft Ürünlerinde Tespit Edilen Kritik Güvenlik Zafiyetlerinin Giderilmesi",
+   "gun_b": "2026-08-22",
+   "baslik_b": "Oracle MySQL Ürünlerinde Çok Sayıda Güvenlik Açığının Belirlenmesi",
+   "mukerrer": false
+  },
+  {
+   "no": 28,
+   "gun_a": "2026-08-21",
+   "baslik_a": "ABD'de Federal Hacking Araçlarının Kullanımının İncelenmesi Talebi",
+   "gun_b": "2026-08-22",
+   "baslik_b": "ABD'li Milletvekillerinin Federal Hükümetin Casus Yazılım Kullanımını İnceletmesi",
+   "mukerrer": true
+  },
+  {
+   "no": 29,
+   "gun_a": "2026-08-21",
+   "baslik_a": "ToxicPanda ve GoldDigger Zararlı Yazılımlarının Bankacılık Saldırılarını Genişletmesi",
+   "gun_b": "2026-08-23",
+   "baslik_b": "ToxicPanda Zararlı Yazılımının Bankacılık Uygulamalarına Yönelik Kapsamını Genişletmesi",
+   "mukerrer": true
+  },
+  {
+   "no": 30,
+   "gun_a": "2026-08-21",
+   "baslik_a": "ABD'li Senatörlerin TikTok'a Güvenlik Özellikleri Hakkında Baskı Yapması",
+   "gun_b": "2026-08-23",
+   "baslik_b": "TikTok'un Çocuk Gizliliği Davasında 400 Milyon Dolar Ödemesi",
+   "mukerrer": false
+  },
+  {
+   "no": 31,
+   "gun_a": "2026-08-21",
+   "baslik_a": "SilkParasite Grubunun Orta Asya Hükümetlerini Hedef Alması",
+   "gun_b": "2026-08-23",
+   "baslik_b": "Çin Bağlantılı SilkParasite Kampanyasının Orta Asya Hükümetlerini Hedeflemesi",
+   "mukerrer": true
+  },
+  {
+   "no": 32,
+   "gun_a": "2026-08-22",
+   "baslik_a": "Çin Bağlantılı SilkParasite Operasyonunun Orta Asya'yı Hedeflemesi",
+   "gun_b": "2026-08-23",
+   "baslik_b": "Çin Bağlantılı SilkParasite Kampanyasının Orta Asya Hükümetlerini Hedeflemesi",
+   "mukerrer": true
+  },
+  {
+   "no": 33,
+   "gun_a": "2026-08-21",
+   "baslik_a": "Pakistan Bağlantılı Transparent Tribe Grubunun Afganistan'ı Hedef Alan Casusluk Faaliyetleri",
+   "gun_b": "2026-08-23",
+   "baslik_b": "APT36 Grubunun Güney Asya Altyapılarına Yönelik PATCHCORD Operasyonu",
+   "mukerrer": true
+  },
+  {
+   "no": 34,
+   "gun_a": "2026-08-17",
+   "baslik_a": "Güvenli Mesajlaşma Servisi Threema'nın Geniş Ölçekli DDoS Saldırılarına Uğraması",
+   "gun_b": "2026-08-24",
+   "baslik_b": "DDoS Saldırılarının Threema Mesajlaşma Servisinde Kesintilere Yol Açması",
+   "mukerrer": true
+  },
+  {
+   "no": 35,
+   "gun_a": "2026-08-17",
+   "baslik_a": "Fransa'da Yüz Binlerce Mükellefin Verilerinin Ele Geçirilmesi",
+   "gun_b": "2026-08-24",
+   "baslik_b": "Fransa'da Siber Saldırı Sonucu 678.000 Mükellefin Verilerinin Sızdırılması",
+   "mukerrer": true
+  },
+  {
+   "no": 36,
+   "gun_a": "2026-08-21",
+   "baslik_a": "Çin Bağlantılı UAT-10147 Grubunun Yapay Zekayı Operasyonlarına Entegre Etmesi",
+   "gun_b": "2026-08-24",
+   "baslik_b": "UAT-10147 Grubunun Sunucu Saldırılarında Yapay Zeka ve SPECTRE Kullanması",
+   "mukerrer": true
+  },
+  {
+   "no": 37,
+   "gun_a": "2026-08-21",
+   "baslik_a": "ToxicPanda ve GoldDigger Zararlı Yazılımlarının Bankacılık Saldırılarını Genişletmesi",
+   "gun_b": "2026-08-24",
+   "baslik_b": "ToxicPanda Zararlı Yazılımının Android Cihazlarda Google Play'i Engellemesi",
+   "mukerrer": true
+  },
+  {
+   "no": 38,
+   "gun_a": "2026-08-23",
+   "baslik_a": "ToxicPanda Zararlı Yazılımının Bankacılık Uygulamalarına Yönelik Kapsamını Genişletmesi",
+   "gun_b": "2026-08-24",
+   "baslik_b": "ToxicPanda Zararlı Yazılımının Android Cihazlarda Google Play'i Engellemesi",
+   "mukerrer": true
+  }
+ ]
+}
