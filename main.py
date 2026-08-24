@@ -5522,7 +5522,26 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         """
 
         view_fn = self._dedup_view_fn(content_by_id, articles_by_id)
-        recent_k3 = self._load_recent_kritik3_views()
+        # GEÇMİŞ = SON 7 GÜNÜN TÜM RAPORU, yalnızca eski MANŞETLER değil.
+        #
+        # Eski sürüm burada sadece `_load_recent_kritik3_views()` kullanıyordu;
+        # yani bir olay üç gün önce GÖVDEDE yayımlandıysa bugün manşet olmasını
+        # hiçbir deterministik katman engellemiyordu. Gövde çapraz-gün elemesi
+        # ise manşeti kapsam dışı bırakır (KRİTİK 3 eleme paslarından muaftır),
+        # dolayısıyla arada kapalı bir boşluk kalıyordu. Denetim (kalite
+        # denetimi tam rapor geçmişine baktığı için) bunu 'çapraz-gün kaçağı'
+        # diye bildiriyor ama iş işten geçmiş oluyordu.
+        #
+        # ÖLÇÜLDÜ — iki manşet arka arkaya bu boşluktan geçti:
+        #   2026-08-23  ToxicPanda (08-21 raporunda vardı) → same_event
+        #               cross_day 'codename:toxicpanda' ile YAKALANIYOR
+        #   2026-08-24  Threema DDoS (08-17 raporunda vardı) → same_event
+        #               cross_day 'entity:nine,salı,threema+topic=0.42'
+        # İkisi de deterministik olarak yakalanabilirdi; yalnızca KARŞILAŞTIRMA
+        # KÜMESİ dardı. Üç manşet garantisi bozulmaz: kademe 2 çapraz-gün
+        # kısıtını zaten gevşetiyor.
+        recent_k3 = (self._load_recent_kritik3_views()
+                     + self._load_recent_report_views())
 
         # ranked_ids zaten puan sırasında; en güçlü adaylar başta.
         eligible = [aid for aid in ranked_ids

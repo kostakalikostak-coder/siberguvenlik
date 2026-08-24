@@ -238,3 +238,23 @@ def test_kurum_adi_stratejik_etiketi_hak_ettirmez_kurali_var():
         assert 'KURUM ADI ETİKET YAPMAZ' in metin or \
                'ARAŞTIRMACILARIN bulduğu açık' in metin, \
             'kurum adı → stratejik etiket ayrımı prompta girmemiş'
+
+
+def test_manset_capraz_gun_karsilastirmasi_tum_raporu_kapsar():
+    """Manşet seçicisi geçmişi SON 7 GÜNÜN TÜM RAPORU üzerinden görmeli.
+
+    Eski sürüm yalnızca eski MANŞETLERE bakıyordu: bir olay üç gün önce
+    GÖVDEDE yayımlandıysa bugün manşet olmasını hiçbir deterministik katman
+    engellemiyordu (gövde çapraz-gün elemesi manşeti kapsam dışı bırakır).
+
+    ÖLÇÜLDÜ — iki manşet arka arkaya bu boşluktan geçti:
+      2026-08-23  ToxicPanda (08-21 raporunda vardı)
+      2026-08-24  Threema DDoS (08-17 raporunda vardı)
+    """
+    import inspect
+    import main
+    kaynak = inspect.getsource(main.HaberSistemi._derive_top3_by_score)
+    assert '_load_recent_report_views()' in kaynak, \
+        'manşet seçicisi tam rapor geçmişini görmüyor — çapraz-gün kaçağı riski'
+    assert '_load_recent_kritik3_views()' in kaynak, \
+        'manşet geçmişi karşılaştırmadan çıkmış'
