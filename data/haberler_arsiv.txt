@@ -31836,3 +31836,92 @@ Acronis araştırmacıları, Afgan telekom sağlayıcılarını ve Güney Asya k
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 24 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Uber'e Hollanda'da Veri Gizliliği İhlali Nedeniyle Ceza
+─────────────────────────────────────────────────────────
+Hollanda Veri Koruma Kurumu, Uber şirketine sürücü hesaplarını insan müdahalesi olmaksızın otomatik yazılımlarla askıya aldığı gerekçesiyle 825 milyon avro para cezası kesmiştir. Kurum, bu uygulamanın Avrupa Birliği Genel Veri Koruma Yönetmeliği'ni ihlal ettiğini ve sürücülerin bu süreç hakkında bilgilendirilmediğini açıklamıştır. İhlallerin 2018 ile 2022 yılları arasında gerçekleştiği ve AB kurallarının tamamen otomatik karar verme mekanizmalarını yasakladığı belirtilmiştir. Uber yetkilileri, karara itiraz edeceklerini ve söz konusu politikaların yıllar önce durdurulduğunu ifade etmiştir. Şirket, sürücülerin kararlara itiraz etme hakkına sahip olduğunu ve süreçlerin insan denetiminden geçtiğini savunmuştur. Bu cezanın, Uber'in Hollanda'da karşılaştığı dördüncü yaptırım olduğu ve 2024 yılında sürücü verilerinin ABD'ye yetersiz korumayla aktarılması nedeniyle verilen 290 milyon avroluk cezayı aştığı kaydedilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] ABD'de ATM Dolandırıcılığı Yapan Şahsa Rekor Hapis Cezası Verilmesi
+─────────────────────────────────────────────────────────
+ABD Adalet Bakanlığı, ATM jackpotting yöntemiyle 3,5 milyon dolardan fazla zarara yol açan 27 yaşındaki Venezuela vatandaşı Juan Manuel Gouveia-Aguilera'nın 8 yıl hapis cezasına çarptırıldığını duyurmuştur. Banka dolandırıcılığı, banka hırsızlığı ve siber suçlamaları kabul eden sanık; 96 ay hapis, 5 yıl denetimli serbestlik ve tazminat ödemeye mahkûm edilmiştir. Bu ceza, ATM jackpotting suçları için verilen en uzun federal ceza olarak kayıtlara geçerken, suç ortağı olan Oddry Arnoldo Cabrera Torrealba ve Carlos Javier Padron da 78'er ay hapis cezası almıştır. Nebraska'da suçlanan 119 kişiden biri olan sanığın, Tren de Aragua terör örgütü adına hareket ettiği belirtilmiştir. Teknik olarak ATM dış kasasının sökülüp dizüstü bilgisayarla zararlı yazılım yüklenmesini içeren bu saldırılar sonucunda, FBI 2020'den beri 1.900 vaka raporlamış ve geçen yılki toplam kayıpların 20 milyon doları aştığını bildirmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Güney Koreli Girişim Platformunda Şifreleme Anahtarı Yönetimi İhlali
+─────────────────────────────────────────────────────────
+Güney Kore hükümeti destekli Modu-ui Changup platformunda, şifreleme anahtarlarının API yanıtları üzerinden sızdırılması sonucu yaklaşık 5.000 girişimci adayının e-posta adresleri, değerlendirme notları ve proje özetleri açığa çıkmıştır. Temmuz 2024'te doğrulanan olayda, KOBİ ve Girişim Bakanlığı (MSS) verilerin şifreli olmasına rağmen şifre çözme anahtarının API verileriyle birlikte sunulmasının ihlale yol açtığını açıklamıştır. Ulusal İstihbarat Servisi ve Siber Güvenlik Merkezi'nin dahil olduğu soruşturmada, verilerin yapay zeka tabanlı web tarama yöntemleriyle toplandığı ve 39 yerel IP adresinin olaya karıştığı belirlenmiştir. Uzmanlar, anahtarların uygulama koduna sabitlenmesinin büyük risk oluşturduğunu vurgulayarak, kuruluşların şifreleme anahtarlarını D.AMO KMS gibi merkezi yönetim sistemleriyle verilerden fiziksel veya mantıksal olarak ayırması gerektiğini belirtmektedir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Siber Tehdit Aktörü UAT-10147'nin Yapay Zekalı Saldırıları
+─────────────────────────────────────────────────────────
+Çince konuşan siber suç grubu UAT-10147'nin, eğitim, medya ve teknoloji sektörlerindeki web sunucularını hedef almak için yapay zeka destekli araçlar kullandığı açıklanmıştır. Cisco Talos tarafından hazırlanan raporda, grubun yaklaşık 170.000 URL içeren bir hedef listesi üzerinden küresel ölçekte operasyon yürüttüğü belirtilmiştir. Saldırganların, SPECTRE adlı yeni bir platformlar arası arka kapı yazılımını ve BadIIS zararlı yazılımını yaymak için bilinen güvenlik açıklarından yararlandığı kaydedilmiştir. Yapay zekanın, istismar kodlarının iyileştirilmesi, operasyonel belgelerin oluşturulması ve siber saldırı süreçlerinin otomatize edilmesi aşamalarında kullanıldığı ifade edilmiştir. SPECTRE yazılımının, güvenlik ürünlerini etkisiz hale getirmek için çekirdek seviyesinde müdahaleler yapabildiği ve veri sızdırma trafiğini meşru bulut hizmetleriyle maskelediği bildirilmiştir. Grubun, Brezilya, Çin ve Kanada başta olmak üzere birçok ülkede aktif olduğu saptanmıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Keycloak Sunucularında Kritik Parola Sıfırlama Açığının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Red Hat ve Keycloak projesi, kimlik doğrulaması yapmamış saldırganların herhangi bir kullanıcı hesabını ele geçirmesine olanak tanıyan kritik bir güvenlik açığını gidermek için yamalar yayınlamıştır. CVE-2026-18963 koduyla tanımlanan ve 9.1 önem puanı verilen açığın, parola sıfırlama akışındaki hatalı durum doğrulamasından kaynaklandığı belirtilmiştir. Saldırganların, özel olarak yapılandırılmış istekler göndererek e-posta doğrulama adımını atlayabildiği ve doğrudan parola güncelleme aşamasına geçebildiği tespit edilmiştir. Bu durumun yönetici hesapları dahil tüm hesapların tam kontrolünün ele geçirilmesine yol açabileceği ifade edilmiştir. Kullanıcıların Keycloak 26.7.2 veya Red Hat build of Keycloak güncel sürümlerine geçmeleri tavsiye edilmiştir. Güncelleme yapamayan kurumlar için parola sıfırlama özelliğinin geçici olarak kapatılması önerilmektedir.
+(XXXXXXX, AÇIK -thehackernews.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Gunra Fidye Yazılımı Grubunun Küresel Operasyonlarını Genişletmesi
+─────────────────────────────────────────────────────────
+Nisan 2025 tarihinde ortaya çıkan Gunra fidye yazılımı grubunun, 2026 yılı itibarıyla tam teşekküllü bir hizmet olarak fidye yazılımı (RaaS) operasyonuna dönüştüğü bildirilmiştir. FBI, CISA ve Güney Kore Ulusal Polis Ajansı, grubun sağlık, finans ve üretim dahil birçok sektörü hedef aldığına dair ortak bir uyarı yayınlamıştır. Gunra'nın, 2022 yılında sızdırılan Conti fidye yazılımı kaynak kodlarını kullandığı ve "Golden Community" gibi takma adlar altında faaliyet gösterdiği tespit edilmiştir. Saldırganların, yamanmamış VPN ve güvenlik duvarı açıklarını kullanarak ağlara sızdığı ve verileri şifrelemeden önce dışarı aktardığı belirtilmiştir. Linux sistemlerini hedef alan varyantta şifreleme anahtarı üretiminde bir zayıflık bulunduğu, ancak Windows sürümünde benzer bir açık tespit edilmediği kaydedilmiştir. Kurumlara, çok faktörlü kimlik doğrulama ve ağ segmentasyonu gibi önlemler almaları önerilmektedir.
+(XXXXXXX, AÇIK -fortra.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Sahte Banka Sitelerinin Güvenlik Taramalarından Kaçınma Yöntemleri
+─────────────────────────────────────────────────────────
+Fortra araştırmacıları, "Chameleon SEO Poisoning" olarak adlandırılan ve sahte bankacılık sitelerinin güvenlik tarayıcılarından gizlenmesini sağlayan yeni bir kimlik avı yöntemi tespit etmiştir. Bu yöntemde saldırganların, Google ve Bing gibi arama motorlarında üst sıralara çıkmak için SEO tekniklerini kullandığı ve ziyaretçinin geliş kaynağına göre farklı içerik sunduğu belirlenmiştir. Siteye doğrudan erişildiğinde çevrimdışı bir sayfa görünürken, arama motoru üzerinden tıklandığında inandırıcı bir sahte banka giriş sayfasının açıldığı ifade edilmiştir. 2026 yılının ikinci çeyreğinde bu tür vakalarda %40 oranında artış kaydedildiği bildirilmiştir. Özellikle .ph.com ve .gr.com gibi ikinci seviye alan adlarının bu saldırılarda yoğun olarak kullanıldığı tespit edilmiştir. Güvenlik ekiplerine, şüpheli bağlantıları test ederken tarayıcı emülasyonu ve yönlendirici taklidi yapmaları önerilmektedir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] WordlistLoader ve SynkLoader Zararlı Yazılımlarının Dağıtım Faaliyetleri
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacıları, fidye yazılımı gruplarına erişim sağlamak amacıyla kullanılan WordlistLoader ve SynkLoader adlı iki yeni zararlı yazılım ailesini tespit etmiştir. WordlistLoader'ın, sahte CAPTCHA doğrulama yöntemlerini kullanan ClickFix kampanyaları aracılığıyla Amatera Stealer yazılımını yaymak için kullanıldığı bildirilmiştir. Saldırganların, meşru içerik dağıtım ağlarını (CDN) ve blok zinciri tabanlı akıllı sözleşmeleri kötü amaçlı komutları gizlemek için kullandığı belirlenmiştir. Diğer yandan SynkLoader'ın, Microsoft Teams üzerinden yapılan kimlik avı saldırılarıyla dağıtıldığı ve sahte Windows kilit ekranları aracılığıyla kullanıcı parolalarını çaldığı tespit edilmiştir. Bu yazılımların, sistem bilgilerini toplama, kalıcılık sağlama ve uzaktan masaüstü kontrolü gibi modüler özelliklere sahip olduğu ifade edilmiştir. Microsoft, WebDAV tabanlı bu saldırı zincirlerinin tespit edilmesinin ve analiz edilmesinin oldukça güç olduğunu kaydetmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Slovakya'da Trafik Denetleme Kameralarında Siber Güvenlik Riskleri
+─────────────────────────────────────────────────────────
+Slovakya Ulusal Güvenlik Otoritesi (NBÚ), kamu ağlarında kullanılan bazı trafik hız kameralarının ciddi siber tehditler barındırdığına dair bir uyarı yayınlamıştır. Yapılan incelemelerde, NERO R-ONE ve Cordon serisi kameraların operatör kontrolü dışında önceden yapılandırılmış uzaktan erişim mekanizmalarına sahip olduğu tespit edilmiştir. NBÚ, cihazların donanım ve yazılım kökenlerinin belirsiz olduğunu, ayrıca belgelenen yapılandırmalar ile gerçek ayarlar arasında farklılıklar bulunduğunu açıklamıştır. Bu açıkların, saldırganların araç verilerine erişmesine, kayıtları manipüle etmesine veya kamu ağlarına sızmasına olanak tanıyabileceği belirtilmiştir. Slovakya İçişleri Bakanlığı'nın, inceleme süresince ilgili ekipmanları kullanım dışı bıraktığı ve tedarikçiden güvenlik standartlarına uygun yeni cihazlar talep ettiği kaydedilmiştir. Yetkililer, akıllı altyapı cihazlarının bağımsız güvenlik testlerinden geçirilmesi gerektiğini vurgulamıştır.
+(XXXXXXX, AÇIK -securityaffairs.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Spring Uygulama Çerçevesinde 91 Güvenlik Açığının Yamalanması
+─────────────────────────────────────────────────────────
+Broadcom bünyesindeki Spring uygulama geliştirme çerçevesi geliştiricileri, 91 farklı güvenlik açığını gideren kapsamlı güncellemeler yayınlamıştır. 2026 yılı içinde Spring platformunda yamalanan toplam açık sayısının 200'ü geçtiği ve bu artışın yapay zeka odaklı geliştirmelerden kaynaklandığı belirtilmiştir. CVE-2026-59270 koduyla tanımlanan kritik bir açığın, Spring Security içindeki LDAP sunucusunu etkilediği ve yetkisiz veri değişikliğine izin verebildiği tespit edilmiştir. Sonatype firması, bu yamaların 200.000'den fazla yazılım bileşenini etkilediğini açıklamıştır. Ayrıca Spring AI ve Spring for GraphQL projelerinde uzaktan kod yürütme ve yetki yükseltme riskleri barındıran yüksek öncelikli açıklar bulunduğu kaydedilmiştir. CISA, Spring açıklarının geçmişte aktif olarak istismar edildiğini hatırlatarak, açık kaynaklı projelerin ve kurumların en son yamaları ivedilikle uygulamaları gerektiğini bildirmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] ToxicPanda Zararlı Yazılımının Google Play Korumalarını Engellemesi
+─────────────────────────────────────────────────────────
+ToxicPanda Android zararlı yazılımının yeni sürümü, VPN izinlerini kullanarak Google Play ve Play Protect servislerinin iletişimini engelleme özelliği kazanmıştır. Zimperium tarafından yapılan analizde, yazılımın 16 farklı ülkede 349 bankacılık ve finans uygulamasını hedef aldığı tespit edilmiştir. Zararlı yazılımın, Android Kablosuz Hata Ayıklama Köprüsü (ADB) üzerinden cihazlarda yüksek ayrıcalıklı komutlar yürütebildiği ve kullanıcı etkileşimi olmadan geniş izinler alabildiği belirtilmiştir. ToxicPanda 2.0'ın, ekran dokunuşlarını yakalayan sahte arayüzler ve PIN kodlarını çalan modüller içerdiği ifade edilmiştir. Ayrıca, Xiaomi, Samsung ve Huawei gibi cihazlardaki pil tasarrufu kısıtlamalarını aşarak arka planda kalıcılık sağladığı kaydedilmiştir. Yazılımın Amazon AWS üzerinden dağıtıldığı ve 167 farklı uzaktan komutu desteklediği bildirilmiştir. Uzmanlar, bu tür gelişmiş tehditlerin standart Android güvenlik uyarılarını devre dışı bırakabildiğine dikkat çekmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 23.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] DOUBLECUP Zararlı Yazılımının Basit Veri Gizleme Yöntemi
+─────────────────────────────────────────────────────────
+SANS ISC araştırmacıları, DOUBLECUP adlı zararlı yazılımın PNG dosyalarını kullanarak PowerShell komutlarını gizlediği yeni bir yöntemi analiz etmiştir. Yapılan incelemede, yazılımın gerçek steganografi tekniklerini kullanmadığı, bunun yerine PowerShell kodunu doğrudan PNG dosyasının sonuna eklediği tespit edilmiştir. Saldırganların, Windows'un yerel "FINDSTR" komutunu kullanarak bu gizli kodu ayıkladığı ve ardından PowerShell yorumlayıcısına aktardığı belirlenmiştir. Kodun başlangıcına eklenen satır başı ve yeni satır karakterlerinin, ayıklama işlemini kolaylaştıran bir yöntem olarak kullanıldığı ifade edilmiştir. Araştırmacı Didier Stevens, bu yöntemin karmaşık bir kod çözücü gerektirmemesi nedeniyle dikkat çekici olduğunu belirtmiştir. Bu tür tekniklerin, dosya tabanlı güvenlik taramalarını atlatmak amacıyla geliştirildiği ve meşru görünümlü görsellerin içine kötü amaçlı içerik yerleştirilmesine dayandığı kaydedilmiştir.
+(XXXXXXX, AÇIK -isc.sans.edu, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
