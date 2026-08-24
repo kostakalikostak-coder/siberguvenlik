@@ -1,14 +1,14 @@
-# KAYNAK SAĞLIK RAPORU — 2026-08-24 16:42
+# KAYNAK SAĞLIK RAPORU — 2026-08-24 17:10
 # aktif=36  üretiyor=14  boş(200/0)=0  hata/timeout=0
 # çıkarım : 225/228 haberin tam metni çıktı (%99)
-# dedup   : 45/225 haber filtreleri geçti (%20)
+# dedup   : 50/225 haber filtreleri geçti (%22)
 # 🚨 DEDUP SIFIR (4) [metin var, filtreler eliyor]: ANSSI (CERT-FR), The Record, Citizen Lab, CrowdStrike
 # KAYNAK                      HAM  KALAN  METİN  HAVUZ  DURUM
 Security Affairs             10     47     47      9  OK
-Help Net Security            10     10     10      6  OK
-SecurityWeek                 10     10     10      6  OK
-The Hacker News              40     19     19      5  OK
-BleepingComputer             15     15     15      3  OK
+Help Net Security            10     10     10      7  OK
+SecurityWeek                 10     10     10      7  OK
+The Hacker News              40     19     19      6  OK
+BleepingComputer             15     15     15      5  OK
 Industrial Cyber              9      9      9      3  OK
 The Register                 40     11     11      2  OK
 Dark Reading                 40     10     10      2  OK
