@@ -31836,3 +31836,113 @@ Acronis araştırmacıları, Afgan telekom sağlayıcılarını ve Güney Asya k
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 24 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Myanmar Hükümetini Hedef Alan Operation QUICSILVER Siber Casusluk Faaliyeti
+─────────────────────────────────────────────────────────
+Myanmar hükümetini ve bilgi teknolojileri sektörünü hedef alan ve Operation QUICSILVER olarak adlandırılan bir siber casusluk kampanyası tespit edilmiştir. Çin bağlantılı bir tehdit aktörü tarafından yürütüldüğü değerlendirilen saldırılarda, sahte mezuniyet töreni davetiyeleri kullanılarak QUICAgent adlı Go tabanlı bir arka kapı yazılımının yayıldığı belirtilmiştir. Saldırı zincirinin, meşru Windows bileşenlerini kötüye kullanarak kumanda ve kontrol sunucusuyla QUIC protokolü üzerinden iletişim kurduğu ifade edilmiştir. Öte yandan, Mustang Panda olarak bilinen bir diğer aktörün, Myanmar ve çevre ülkelerde COOLCLIENT adlı gelişmiş bir arka kapı kullandığı saptanmıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Hollandalı Düzenleyicilerin Uber'e Yaklaşık 1 Milyar Dolar Ceza Kesmesi
+─────────────────────────────────────────────────────────
+Hollanda Veri Koruma Kurumu, ulaşım platformu Uber'e Avrupa Birliği Genel Veri Koruma Yönetmeliği'ni (GDPR) ihlal ettiği gerekçesiyle 825 milyon avro (yaklaşık 964 milyon dolar) tutarında idari para cezası uygulamıştır. Kurum tarafından yapılan incelemede, şirketin 2018 ile 2022 yılları arasında sürücü hesaplarını askıya almak veya kalıcı olarak kapatmak amacıyla, herhangi bir insan denetimi olmaksızın tam otomatik yazılımlar kullandığı tespit edilmiştir. Uber'in sürücüleri bu otomatik karar alma süreçleri hakkında bilgilendirmediği ve şeffaflık kurallarını çiğnediği vurgulanmıştır. Şirket yönetimi, söz konusu politikaların yıllar önce durdurulduğunu savunarak karara itiraz edeceğini açıklamıştır. Bu yaptırım, Hollandalı yetkililerin Uber'e veri güvenliği ihlalleri nedeniyle verdiği dördüncü cezadır; daha önce 2024 yılında da sürücü verilerinin ABD'ye korunmasız aktarılması sebebiyle 290 milyon avro ceza kesilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] ABD'de Bir Davacının Mahkeme Dosyasına Gizli Yapay Zeka Komutları Yerleştirmesi
+─────────────────────────────────────────────────────────
+Connecticut'ta bir davacının, mahkeme belgelerine yapay zeka sistemlerini kendi lehine karar vermeye zorlayan gizli komutlar yerleştirdiği tespit edilmiştir. Belgelerin içine insan gözüyle görülemeyecek kadar küçük ve beyaz renkte yazılan bu metinlerin, dosyayı okuyan herhangi bir yapay zeka modeline davacıyı haklı bulması talimatını verdiği belirtilmiştir. Yargıç Spader, bu eylemi ciddi bir dava suistimali olarak nitelendirmiş ve davacının elektronik dosyalama yetkisini iptal etmiştir. Davacının, mahkemenin uyarılarına rağmen benzer yöntemleri kullanmaya devam ettiği ve durumu bir denetim veya şaka olarak savunduğu kaydedilmiştir. Bu olayın, bir ABD mahkemesini hedef alan ilk belgeli dolaylı komut enjeksiyonu saldırısı olduğu ifade edilmektedir. Uzmanlar, yapay zekanın hukuk süreçlerine dahil olmasıyla birlikte bu tür manipülasyon girişimlerinin artabileceği ve yargı sistemleri için yeni bir tehdit oluşturabileceği konusunda uyarılarda bulunmuştur.
+(XXXXXXX, AÇIK -securityaffairs.com, 23.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Çin Bağlantılı UAT-10147 Grubunun Yapay Zeka Destekli Sunucu Saldırıları
+─────────────────────────────────────────────────────────
+Çin bağlantılı siber tehdit aktörü UAT-10147'nin, yapay zeka araçlarını kullanarak küresel ölçekte Windows ve Linux sunucularını hedef aldığı tespit edilmiştir. Grubun, PentestGPT ve DeepAudit gibi yapay zeka destekli platformlar aracılığıyla keşif, istismar ve kalıcılık aşamalarını otomatize ettiği ve SPECTRE adlı yeni bir platformlar arası arka kapı kullandığı belirtilmiştir. Cisco Talos tarafından yayımlanan raporda, saldırganların 170.000 civarında hedef URL listesine sahip olduğu ve özellikle eğitim, medya ve teknoloji sektörlerini hedeflediği ifade edilmiştir. Tehdit aktörünün, güvenlik yazılımlarını etkisiz hale getirmek için çekirdek düzeyinde sürücü istismarı (BYOVD) tekniklerini kullandığı ve Linux sistemlerde Specter adlı bir rootkit yaydığı kaydedilmiştir. Saldırı trafiğinin meşru bulut hizmetleri üzerinden yönlendirilerek tespit edilmesinin zorlaştırıldığı bilgisi verilmiştir. Grubun, operasyonel verimliliği artırmak için yapay zekayı kod yazımı ve dokümantasyon süreçlerine de entegre ettiği bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] ABD'de ATM Jackpotting Saldırıları Yapan Şahsa Hapis Cezası Verilmesi
+─────────────────────────────────────────────────────────
+ABD Adalet Bakanlığı, ATM cihazlarına kötü amaçlı yazılım yükleyerek nakit boşaltma işlemi gerçekleştiren Juan Manuel Gouveia-Aguilera'nın 8 yıl hapis cezasına çarptırıldığını açıklamıştır. 27 yaşındaki Venezuela vatandaşının, 3,5 milyon dolardan fazla zarara yol açtığı ve bu cezanın ATM jackpotting suçları için verilen en uzun federal ceza olduğu belirtilmiştir. Sanığın, Venezuela merkezli Tren de Aragua (TdA) suç örgütü adına faaliyet gösterdiği ve Nebraska'da aynı suçtan yargılanan 119 kişi arasında yer aldığı ifade edilmiştir. FBI, 2020 yılından bu yana ABD genelinde yaklaşık 1.900 benzer saldırının rapor edildiğini ve geçen yılki kayıpların 20 milyon doları aştığını kaydetmiştir. Mahkeme ayrıca sanığın 5 yıl denetimli serbestlik süresine tabi tutulmasına ve verdiği zararın tazmin edilmesine hükmetmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Güney Koreli Girişim Platformunda Şifreleme Anahtarı Yönetimi İhlali
+─────────────────────────────────────────────────────────
+Güney Kore hükümeti tarafından desteklenen girişim platformu Modu-ui Changup'ta, Temmuz ayında gerçekleşen bir veri ihlalinin kritik şifreleme anahtarı yönetimi hatalarından kaynaklandığı tespit edilmiştir. KOBİ ve Girişimler Bakanlığı (MSS) tarafından denetlenen platformda, yaklaşık 5.000 başarılı başvuru sahibinin e-posta adresleri, değerlendirme notları ve girişim fikirlerinin sızdırıldığı bildirilmiştir. Yapılan incelemeler sonucunda, şifrelenmiş verilerin çözülmesi için gereken anahtarın API yanıtları içerisinde açıkça paylaşıldığı ve web kazıma yöntemleriyle ele geçirildiği belirlenmiştir. Ulusal İstihbarat Servisi ve Siber Güvenlik Merkezi ile yürütülen soruşturmada, ihlale karışan 39 IP adresinin tamamının Güney Kore menşeli olduğu kaydedilmiştir. Yetkililer, şifreleme anahtarlarının uygulama koduna sabitlenmesinin güvenlik mimarisindeki temel zafiyet olduğunu ifade etmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] ReliaQuest Çalışanına Yönelik Sosyal Mühendislik Saldırısının Engellenmesi
+─────────────────────────────────────────────────────────
+Siber güvenlik firması ReliaQuest, bir çalışanının ShinyHunters siber tehdit aktörü tarafından düzenlenen vishing (sesli kimlik avı) saldırısına hedef olduğunu açıklamıştır. Saldırganın, şirketin güvenlik ekibinden birini taklit ederek çalışanı sahte bir tekli oturum açma (SSO) sayfasına yönlendirdiği ve kimlik bilgilerini ele geçirdiği belirtilmiştir. Tehdit aktörünün ReliaQuest'in Okta paneline sınırlı ve yalnızca görüntüleme yetkisiyle erişim sağladığı, ancak cihaz güvenliği kontrolleri sayesinde kritik uygulamalara ulaşamadığı kaydedilmiştir. Şirket, hiçbir müşteri verisine veya dahili sisteme yetkisiz erişim sağlanmadığını ve saldırganın kalıcılık elde edemediğini ifade etmiştir. Olayın ardından tüm kimlik doğrulama belirteçlerinin sıfırlandığı ve şüpheli oturumların sonlandırıldığı bildirilmiştir. ShinyHunters grubu da saldırıyı üstlenerek, elde ettikleri erişimin sınırlı kaldığını ve veri hırsızlığı gerçekleştiremediklerini doğrulamıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] WordlistLoader ve SynkLoader Zararlı Yazılımlarının Dağıtılması
+─────────────────────────────────────────────────────────
+Güvenlik araştırmacıları, ClickFix tekniğini kullanarak Amatera Stealer ve SynkLoader gibi zararlı yazılımları yayan yeni siber saldırı kampanyalarını raporlamıştır. Gen Digital tarafından yapılan incelemelerde, WordlistLoader adlı yükleyicinin sahte CAPTCHA doğrulama sayfaları üzerinden kurbanları kandırarak Windows komut satırı aracılığıyla sisteme sızdığı tespit edilmiştir. Öte yandan, SynkLoader zararlı yazılımının Ağustos 2025 döneminde Microsoft Teams üzerinden yürütülen kimlik avı saldırılarıyla dağıtıldığı ve sahte kilit ekranları aracılığıyla sistem giriş bilgilerini ele geçirdiği belirtilmiştir. Saldırganların, jsDelivr gibi meşru içerik dağıtım ağlarını ve akıllı sözleşmeleri kullanarak kötü amaçlı kodlarını gizledikleri ifade edilmiştir. Bu araçların temel amacının, hassas verileri çalmak ve elde edilen sistem erişimlerini fidye yazılımı gruplarına satmak olduğu bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] CISA'nın Kamu ve Özel Sektör İçin Güncel Günlük Tutma Kılavuzunu Yayımlaması
+─────────────────────────────────────────────────────────
+ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), federal kurumların ve kritik altyapı operatörlerinin günlük tutma stratejilerini geliştirmeleri amacıyla Günlük Tutma Referans Mimarisi kılavuzunu yayımlamıştır. Kılavuzun, bir saldırı anında olayların yeniden kurgulanabilmesi ve saldırganların yakalanabilmesi için gerekli olan veri kalitesini sağlamayı hedeflediği belirtilmiştir. CISA, günlüklerin yalnızca toplanmasının yeterli olmadığını, verilerin zamanında, güvenilir ve kullanılabilir olması gerektiğini vurgulamıştır. Belgede, sürekli olay izleme ve tehdit avcılığı gibi operasyonel hedefler için farklı depolama katmanlarının kullanılması önerilmektedir. Ayrıca, yapay zeka çıktılarının kesin kayıtlar olarak değil, insan denetimine tabi türetilmiş veriler olarak değerlendirilmesi gerektiği kaydedilmiştir. Federal kurumların bu kılavuz doğrultusunda 90 gün içinde kendi planlarını sunmaları ve belirlenen olgunluk seviyelerine ulaşmaları beklenmektedir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Yapay Zeka Destekli Endüstriyel Kontrol Sistemlerine Yönelik Siber Tehditler
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri hükümeti, siber tehdit aktörlerinin kritik altyapılarda kullanılan Siemens S7 serisi programlanabilir mantık denetleyicilerini (PLC) hedef almak için yapay zeka destekli saldırı betikleri kullandığını açıklamıştır. Tehdit aktörlerinin, internete açık sistemleri tespit etmek için Censys ve ZoomEye gibi tarama servislerinden yararlandığı ve yapay zeka ile üretilen kötü amaçlı yazılımları meşru izleme araçları gibi maskelediği belirtilmiştir. Öte yandan, GitLab platformunda tespit edilen CVE-2026-19478 kodlu kritik bir güvenlik açığının, kamuya açıklanmasından kısa süre sonra aktif olarak istismar edilmeye başlandığı kaydedilmiştir. Ayrıca, Rusya bağlantılı olduğundan şüphelenilen UNC6293 ve UNC7005 gibi grupların, Avrupa ve ABD'deki akademik ve askeri kurumları hedef alan sofistike kimlik avı kampanyaları yürüttüğü bildirilmiştir. Cl0p fidye yazılımı çetesinin ise kurumsal yazılımları hedef alan özel web kabukları kullanarak veri sızdırma faaliyetlerini sürdürdüğü bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Akira Fidye Yazılımı Çetesinin EDR Sistemlerini Güvenli Modla Aşması
+─────────────────────────────────────────────────────────
+Huntress tarafından yayımlanan raporda, Akira fidye yazılımı çetesiyle bağlantılı bir aktörün, 4 Ağustos tarihinde çok faktörlü kimlik doğrulaması bulunmayan bir SonicWall VPN üzerinden bir şirkete sızdığı bildirilmiştir. Saldırganın, güvenlik araçlarını devre dışı bırakmak amacıyla hedef sistemi ağ desteğiyle güvenli modda yeniden başlattığı ve bu yöntemle Uç Nokta Tespit ve Yanıt (EDR) sistemini etkisiz hale getirdiği belirtilmiştir. Ancak güvenli modun sunduğu kısıtlı bellek ortamı nedeniyle Akira yazılımının sanal bellek hatası vererek şifreleme aşamasında başarısız olduğu kaydedilmiştir. Buna rağmen saldırganın, şifreleme girişiminden önce verileri s5cmd aracıyla dışa aktardığı ifade edilmiştir. Microsoft Defender'ın, sistem normal moda döndüğünde zararlı yazılımı tespit ederek karantinaya aldığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 23.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] Spring Uygulama Çerçevesinde 91 Güvenlik Açığının Kapatılması
+─────────────────────────────────────────────────────────
+Broadcom bünyesindeki Spring uygulama geliştirme çerçevesi geliştiricileri, geçtiğimiz hafta 91 farklı güvenlik açığını gideren güncellemeler yayımlamıştır. Yayımlanan yamalar arasında, Spring Security bileşenini etkileyen ve saldırganların bellek içi dizinlerde yetkisiz değişiklik yapmasına olanak tanıyan CVE-2026-59270 kodlu kritik bir açığın bulunduğu belirtilmiştir. Siber güvenlik firması Sonatype, bu açıkların 200.000'den fazla yazılım bileşenini etkilediğini ve yüksek riskli açıkların uzaktan kod yürütme ile hizmet dışı bırakma saldırılarına yol açabileceğini ifade etmiştir. Spring platformunda bu yıl yamalanan toplam açık sayısının 200'ü geçtiği ve bu artışın Broadcom'un yapay zeka kullanımından kaynaklandığı kaydedilmiştir. CISA, Spring açıklarının aktif olarak istismar edilebildiği konusunda uyarıda bulunarak kurumların güncellemeleri ivedilikle uygulaması gerektiğini bildirmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Slovakya'da Trafik Denetleme Kameralarındaki Siber Risklerin Bildirilmesi
+─────────────────────────────────────────────────────────
+Slovakya Ulusal Güvenlik Otoritesi (NBÚ), kamu ağlarına sızma riski taşıyan yol denetleme kameraları hakkında güvenlik uyarısı yayımlamıştır. İçişleri Bakanlığı'nın talebi üzerine NERO R-ONE kamera sistemini inceleyen kurum, Kıbrıs menşeli SODASUS, Rusya merkezli Simicon ve Hırvatistan merkezli NEROline tarafından satılan ürün hatlarında ciddi tehditler tespit etmiştir. Yapılan analizlerde, cihazların belgelenmiş ayarlarından farklı iletişim yapılarına sahip olduğu ve operatör kontrolü dışındaki önceden yapılandırılmış uzaktan erişim mekanizmaları barındırdığı belirlenmiştir. NBÚ, donanım ve yazılım menşei belirsiz olan bu cihazların veri hırsızlığı veya sistem sabotajı için kullanılabileceği konusunda uyarıda bulunmuştur. Slovakya İçişleri Bakanlığı, inceleme süresince ilgili ekipmanları pilot uygulamadan kaldırmış ve tedarikçiden yasal gereklilikleri karşılayan yeni cihazlar talep etmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] ToxicPanda Zararlı Yazılımının VPN İzinlerini Kötüye Kullanması
+─────────────────────────────────────────────────────────
+Android işletim sistemini hedef alan ToxicPanda zararlı yazılımının, Google Play iletişimini engellemek ve güvenlik denetimlerini aşmak için VPN hizmet izinlerini kullanmaya başladığı tespit edilmiştir. Zimperium tarafından yayımlanan raporda, yazılımın 16 ülkedeki 349 bankacılık ve kripto para uygulamasına yönelik kimlik avı arayüzleri sunduğu ve 167 uzaktan komutu desteklediği belirtilmiştir. Zararlı yazılımın, Android Kablosuz Hata Ayıklama Köprüsü (ADB) üzerinden kabuk erişimi elde ederek yüksek ayrıcalıklı komutlar çalıştırdığı ve cihaz PIN kodlarını ele geçirmek için kilit ekranlarını taklit ettiği kaydedilmiştir. Ayrıca, yazılımın Xiaomi ve Samsung gibi üreticilerin pil tasarrufu kısıtlamalarını aşarak arka planda kalıcılık sağladığı ifade edilmiştir. ToxicPanda'nın Amazon AWS üzerinden dağıtıldığı ve bulaştığı cihazlarda Google Play Protect gibi koruma mekanizmalarını devre dışı bıraktığı bildirilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 23.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] AliExpress'in Kullanıcıları Sesli Parmak İzi Yöntemiyle Takip Etmesi
+─────────────────────────────────────────────────────────
+Yazılım mühendisi Matt Callaghan, AliExpress web sitesinin kullanıcıları takip etmek amacıyla tarayıcılar üzerinden duyulamayan ses dalgaları yayan bir yöntem kullandığını tespit etmiştir. Yapılan incelemede, Alibaba'nın güvenlik araçları içerisine gizlenmiş betiklerin, WebAudio grafiği oluşturarak kullanıcıların donanım özelliklerini belirleyen bir dijital parmak izi çıkardığı belirtilmiştir. Bu işlemin, kullanıcının Bluetooth kulaklık bağlantılarını bozacak kadar etkili olduğu ve cihaz belleği, ekran boyutları ile tarayıcı eklentileri gibi verileri topladığı ifade edilmiştir. Firefox ve Brave gibi gizlilik odaklı tarayıcıların temsilcileri, bu tür takip girişimlerine karşı koruma sağladıklarını açıklamıştır. Google Chrome'un ise bu tür parmak izi çıkarma tekniklerine karşı yeterli koruma sunmadığı ve milyonlarca web sitesinde benzer yöntemlerin aktif olarak kullanıldığı kaydedilmiştir. Alibaba'nın toplanan verileri şifreleyerek kendi telemetri servislerine gönderdiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

@@ -65,3 +65,8 @@
 2026-08-24 19:03 | DEDUP SIFIR - Citizen Lab: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 1)
 2026-08-24 19:03 | DEDUP SIFIR - CrowdStrike: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 1)
 2026-08-24 19:03 | DEDUP SIFIR - ANSSI (CERT-FR): 31 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 29, daha önce raporlanmış: 6)
+2026-08-24 19:25 | RSS hatası - SANS ISC: syntax error: line 1, column 0
+2026-08-24 19:25 | DEDUP SIFIR - The Record: 5 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 4)
+2026-08-24 19:25 | DEDUP SIFIR - Citizen Lab: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 1)
+2026-08-24 19:25 | DEDUP SIFIR - CrowdStrike: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 1)
+2026-08-24 19:25 | DEDUP SIFIR - ANSSI (CERT-FR): 35 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 29, daha önce raporlanmış: 6)

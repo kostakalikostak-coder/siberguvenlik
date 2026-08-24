@@ -1,23 +1,23 @@
-# KAYNAK SAĞLIK RAPORU — 2026-08-24 19:03
+# KAYNAK SAĞLIK RAPORU — 2026-08-24 19:25
 # aktif=36  üretiyor=13  boş(200/0)=0  hata/timeout=1
-# çıkarım : 210/215 haberin tam metni çıktı (%98)
-# dedup   : 50/210 haber filtreleri geçti (%24)
+# çıkarım : 235/236 haberin tam metni çıktı (%100)
+# dedup   : 53/235 haber filtreleri geçti (%23)
 # 🚨 DEDUP SIFIR (4) [metin var, filtreler eliyor]: ANSSI (CERT-FR), The Record, Citizen Lab, CrowdStrike
 # KAYNAK                      HAM  KALAN  METİN  HAVUZ  DURUM
 Security Affairs             10     47     47      9  OK
+The Hacker News              40     19     19      7  OK
 Help Net Security            10     10     10      7  OK
 SecurityWeek                 10     10     10      7  OK
-The Hacker News              40     18     18      6  OK
 BleepingComputer             15     15     15      6  OK
-Industrial Cyber              9      9      9      3  OK
-The Register                 40     10     10      2  OK
+Industrial Cyber              9      9      9      4  OK
+Dark Reading                 40     26     26      2  OK
+The Register                 40      9      9      2  OK
 CSO Online                   20      8      8      2  OK
 Schneier on Security         10      5      4      2  OK
 Graham Cluley                20      4      4      2  OK
 The Cyber Express            10      3      3      2  OK
-SANS ISC                     10      5      5      1  OK
 CERT-EU                      10      1      1      1  OK
-ANSSI (CERT-FR)              40     35     31      0  🚨 DEDUP SIFIR (OK)
+ANSSI (CERT-FR)              40     35     35      0  🚨 DEDUP SIFIR (OK)
 The Record                    5      5      5      0  🚨 DEDUP SIFIR (OK)
 TechCrunch Security          20      4      4      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Talos Intelligence           15      4      4      0  ↩️  ZATEN RAPORLANMIŞ (OK)
@@ -39,4 +39,4 @@ Krebs on Security            10      0      -      0  OK
 Proofpoint Threat Insight    10      0      -      0  OK
 SentinelOne Labs             10      0      -      0  OK
 The DFIR Report              10      0      -      0  OK
-Dark Reading                  0      0      -      0  HATA: HTTP 404
+SANS ISC                      0      0      -      0  HATA: syntax error: line 1, column 0
