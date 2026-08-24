@@ -39,3 +39,7 @@
 2026-08-24 12:05 | DEDUP SIFIR - Citizen Lab: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 1)
 2026-08-24 12:05 | DEDUP SIFIR - CrowdStrike: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 1)
 2026-08-24 12:05 | DEDUP SIFIR - ANSSI (CERT-FR): 38 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 29, daha önce raporlanmış: 10)
+2026-08-24 16:42 | DEDUP SIFIR - The Record: 5 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 4)
+2026-08-24 16:42 | DEDUP SIFIR - Citizen Lab: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 1)
+2026-08-24 16:42 | DEDUP SIFIR - CrowdStrike: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 1)
+2026-08-24 16:42 | DEDUP SIFIR - ANSSI (CERT-FR): 33 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 29, daha önce raporlanmış: 6)
