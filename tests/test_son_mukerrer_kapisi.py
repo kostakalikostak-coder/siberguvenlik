@@ -55,8 +55,13 @@ def _kur(top3, top10, kalan, icerik, gecmis=()):
     return s, records, content, arts
 
 
-def test_manset_capraz_gun_muaf_degildir():
-    """Manşetteki haber geçmişte yayımlandıysa DEĞİŞTİRİLİR."""
+def test_manset_gelismeyi_indirir_ama_silmez():
+    """Manşetteki haber aynı olayın DEVAMIYSA manşetten iner, gövdede KALIR.
+
+    CAMERASWARM_B, CAMERASWARM_A'ya göre yeni bir olgu taşır (14.000 kamera)
+    → GELISME. Kullanıcının şikâyeti MANŞET TEKRARI olduğu için manşetten
+    inmesi şarttır; ama yeni olgu getirdiği için rapordan silinmez.
+    """
     icerik = {1: CAMERASWARM_B, 2: BAGIMSIZ, 3: BAGIMSIZ2,
               4: ('Akira Fidye Yazılımının Güvenli Modu Kullanması',
                   'Akira fidye yazılımı EDR atlatmak için güvenli modu '
@@ -68,10 +73,33 @@ def test_manset_capraz_gun_muaf_degildir():
     nedenler = {}
     t3, t10, kal = s._son_mukerrer_kapisi([1, 2, 3], [1, 2, 3, 4], [],
                                           rec, cnt, art, nedenler)
-    assert 1 not in t3, 'geçmişte yayımlanmış haber manşette kaldı'
+    assert 1 not in t3, 'manşet tekrarı manşette kaldı'
     assert 4 in t3, 'manşet yedekle doldurulmadı'
     assert len(t3) == 3, 'KRİTİK 3 eksildi'
+    assert 1 in (t10 + kal), 'yeni olgu getiren devam haberi rapordan silindi'
+    assert 1 not in nedenler, 'gövdede kalan haber elenmiş gibi kaydedildi'
+
+
+def test_manset_tam_mukerreri_hem_indirir_hem_siler():
+    """Yeni olgu YOKSA haber manşetten iner VE rapordan çıkar."""
+    aynen = ('Operation CameraSwarm ile Dahua Kameralarının Hedeflenmesi',
+             'Operation CameraSwarm kampanyasında Dahua kameraları kimlik '
+             'bilgisi saldırılarıyla hedef alınmıştır.')
+    icerik = {1: aynen, 2: BAGIMSIZ, 3: BAGIMSIZ2,
+              4: ('Akira Fidye Yazılımının Güvenli Modu Kullanması',
+                  'Akira fidye yazılımı EDR atlatmak için güvenli modu '
+                  'kullanmaktadır.')}
+    gecmis = [{'tr_title': CAMERASWARM_A[0], 'title': '',
+               'paragraph': CAMERASWARM_A[1], 'full_text': ''}]
+    s, rec, cnt, art = _kur([1, 2, 3], [4], [], icerik, gecmis)
+    s._load_recent_report_views = lambda *a, **k: gecmis
+    nedenler = {}
+    t3, t10, kal = s._son_mukerrer_kapisi([1, 2, 3], [1, 2, 3, 4], [],
+                                          rec, cnt, art, nedenler)
+    assert 1 not in t3 and 1 not in (t10 + kal), \
+        'yeni olgu getirmeyen tekrar rapordan çıkmadı'
     assert nedenler.get(1, '').startswith('kapi_'), 'eleme nedeni kaydedilmedi'
+    assert len(t3) == 3, 'KRİTİK 3 eksildi'
 
 
 def test_rapor_ici_mukerrer_yuksek_puanli_kalir():
@@ -337,3 +365,29 @@ def test_hakem_rapor_ici_mukerreri_de_yakalar():
     assert 4 not in hepsi, 'rapor içi mükerrerin düşük puanlısı elenmedi'
     assert 3 in hepsi, 'yüksek puanlı temsilci de elendi'
     assert nedenler.get(4, '').startswith('kapi_rapor_ici_llm')
+
+
+def test_kapi_haberi_kendisiyle_eslestirmez():
+    """`top3_ids`, `top10_ids`in ALT KÜMESİDİR — tekilleştirilmeden
+    birleştirilirse her manşet haberi listeye İKİ KEZ girer ve rapor içi
+    tarama onu KENDİSİYLE eşleştirip eler.
+
+    ÖLÇÜLDÜ (2026-08-24): karar izinde "ID 4 düştü — kapi_rapor_ici (ID 4 ile
+    aynı olay)" satırı çıktı. LLM'in manşet için seçtiği iki haber tam olarak
+    böyle elendi; yerlerine Uber para cezası ve ATM dolandırıcılığı geçti.
+    """
+    icerik = {1: BAGIMSIZ, 2: BAGIMSIZ2,
+              3: ('Akira Fidye Yazılımının Güvenli Modu Kullanması',
+                  'Akira fidye yazılımı EDR atlatmak için güvenli modu '
+                  'kullanmaktadır.'),
+              4: CAMERASWARM_A}
+    s, rec, cnt, art = _kur([1, 2, 3], [1, 2, 3, 4], [], icerik)
+    nedenler = {}
+    # ÜRETİMDEKİ GİBİ: top3 ⊆ top10
+    t3, t10, kal = s._son_mukerrer_kapisi([1, 2, 3], [1, 2, 3, 4], [],
+                                          rec, cnt, art, nedenler)
+    for aid, neden in nedenler.items():
+        assert f'ID {aid} ile aynı olay' not in neden, \
+            f'ID {aid} kendisiyle eşleştirilip elendi: {neden}'
+    assert set(t3) == {1, 2, 3}, 'manşet kendi kendini eleyerek değişti'
+    assert not nedenler, f'temiz raporda eleme oldu: {nedenler}'

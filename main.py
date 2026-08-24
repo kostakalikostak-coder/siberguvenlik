@@ -6303,6 +6303,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         gecmis = self._load_recent_report_views() + \
             self._load_recent_kritik3_views()
         _puan = lambda aid: (records.get(aid) or {}).get('toplam', 0)  # noqa: E731
+        # Rapordan ÇIKMAZ ama MANŞETTEN iner (aynı olayın devam haberi).
+        manset_cikar = {}
 
         # KAYIPSIZ ÖN FİLTRE — ayni_olay'ın kabul ettiği dört yolun dördü de
         # ortak bir ad/kod adı/CVE/aktör gerektirir; kesişim boşsa sonuç
@@ -6324,13 +6326,29 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 if karar == _olay.TAM_MUKERRER:
                     return neden
                 if karar == _olay.GELISME:
+                    # Gövdede kalır, manşetten İNER. Yasak yalnızca YENİ
+                    # girişleri engelliyordu; zaten manşette olan bir devam
+                    # haberi orada kalıyordu — oysa kullanıcının şikâyet
+                    # ettiği şey tam olarak MANŞET TEKRARIDIR.
                     if not hasattr(self, '_manset_yasak'):
                         self._manset_yasak = set()
                     self._manset_yasak.add(aid)
+                    manset_cikar[aid] = f'gelişme, manşet tekrarı — {neden}'
             return None
 
         # ── (a) ÇAPRAZ-GÜN — deterministik ────────────────────────────────
-        rapor_ids = list(top3_ids) + list(top10_ids) + list(remaining_ids)
+        # TEKİLLEŞTİRME ZORUNLU: `top3_ids`, `top10_ids`in ALT KÜMESİDİR
+        # (bkz. src/rapor_durumu modül başlığı). Tekilleştirmeden birleştirmek
+        # her manşet haberini listeye İKİ KEZ koyar ve rapor içi tarama onu
+        # KENDİSİYLE eşleştirip eler.
+        #
+        # ÖLÇÜLDÜ (2026-08-24): karar izinde "ID 4 düştü — kapi_rapor_ici
+        # (ID 4 ile aynı olay)" satırı çıktı. LLM'in manşet için seçtiği iki
+        # haber (Myanmar/CoolClient casusluğu ve mahkeme sistemine yapay zeka
+        # komut enjeksiyonu) tam olarak böyle elendi; yerlerine Uber para
+        # cezası ve ATM dolandırıcılığı geçti.
+        rapor_ids = list(dict.fromkeys(
+            list(top3_ids) + list(top10_ids) + list(remaining_ids)))
         dusen = {}
         for aid in rapor_ids:
             if aid in dusen:
@@ -6375,9 +6393,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     print(f"   🤖 Hakem: ID {aid} MÜKERRER — {olay}")
 
         # ── (b) RAPOR İÇİ — yüksek puanlı temsilci kalır ───────────────────
-        kalan = [aid for aid in
-                 list(top3_ids) + list(top10_ids) + list(remaining_ids)
-                 if aid not in dusen]
+        kalan = [aid for aid in rapor_ids if aid not in dusen]
         kalan.sort(key=lambda aid: -_puan(aid))
         tutulan = []
         ici_ciftler, ici_esleme = [], {}
@@ -6418,7 +6434,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 print(f"   🤖 Hakem (rapor içi): ID {dus_aid} ↔ ID "
                       f"{kalan_aid} AYNI OLAY — {olay}")
 
-        if not dusen:
+        if not dusen and not manset_cikar:
             print("   ✅ Son mükerrer kapısı: rapor temiz.")
             return list(top3_ids), list(top10_ids), list(remaining_ids)
 
@@ -6432,7 +6448,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                        if aid not in dusen and aid not in yeni_top3]
         yedek_havuz.sort(key=lambda aid: -_puan(aid))
         manset_disi = self._manset_disi_ids(yedek_havuz, records, view_fn)
-        for aid in [a for a in yeni_top3 if a in dusen]:
+        for aid in [a for a in yeni_top3 if a in dusen or a in manset_cikar]:
             yedek = next(
                 (c for c in yedek_havuz
                  if c not in yeni_top3 and c not in manset_disi
@@ -6443,15 +6459,25 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 print(f"   ⚠️  Son mükerrer kapısı: ID {aid} manşette MÜKERRER "
                       f"ama uygun yedek yok — YERİNDE BIRAKILDI "
                       f"(KRİTİK 3 eksilmez).")
-                del dusen[aid]
+                dusen.pop(aid, None)
+                manset_cikar.pop(aid, None)
                 eleme_nedeni.pop(aid, None)
                 continue
             yeni_top3[yeni_top3.index(aid)] = yedek
-            self._manset_karar_kaydet('son_mukerrer_kapisi', aid, yedek,
-                                      dusen[aid][:80])
+            self._manset_karar_kaydet(
+                'son_mukerrer_kapisi', aid, yedek,
+                (dusen.get(aid) or manset_cikar.get(aid, ''))[:80])
             print(f"   🔁 Son mükerrer kapısı: manşetteki ID {aid} mükerrer → "
                   f"ID {yedek} ile DEĞİŞTİRİLDİ.")
 
+        # Manşetten inen GELISME haberi gövdede KALIR: yalnızca `dusen`
+        # rapordan çıkarılır.
+        for aid, neden in manset_cikar.items():
+            if aid not in yeni_top3 and aid not in top10_ids \
+                    and aid not in remaining_ids:
+                top10_ids = list(top10_ids) + [aid]
+                print(f"   ↩️  Manşetten inen ID {aid} gövdeye alındı "
+                      f"({neden[:44]}).")
         dus = set(dusen)
         yeni_top10 = [i for i in top10_ids if i not in dus or i in yeni_top3]
         yeni_kalan = [i for i in remaining_ids if i not in dus or i in yeni_top3]
