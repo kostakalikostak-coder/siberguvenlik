@@ -391,3 +391,35 @@ def test_kapi_haberi_kendisiyle_eslestirmez():
             f'ID {aid} kendisiyle eşleştirilip elendi: {neden}'
     assert set(t3) == {1, 2, 3}, 'manşet kendi kendini eleyerek değişti'
     assert not nedenler, f'temiz raporda eleme oldu: {nedenler}'
+
+
+def test_hakem_ayni_cifti_iki_kez_sormaz():
+    """Hakem boru hattında İKİ KEZ koşuyor (seçim öncesi + son kapı) ve LLM
+    deterministik olmadığı için aynı çifte iki farklı cevap verebiliyor.
+
+    ÖLÇÜLDÜ (2026-08-24): seçim öncesi hakem Myanmar/QUICSILVER çiftine
+    'farklı' dedi, haber manşet seçildi; son kapıdaki hakem AYNI çifte
+    'aynı' deyip onu eledi ve yerine CISA günlükleme kılavuzu geçti.
+    """
+    s = _sistem()
+    a = {'tr_title': 'Myanmar Hükümetini Hedef Alan Casusluk Kampanyası',
+         'title': '', 'paragraph': 'QUICSILVER kampanyası.', 'full_text': ''}
+    b = {'tr_title': 'Çin Bağlantılı Aktörün Myanmar Operasyonu', 'title': '',
+         'paragraph': 'Myanmar kamu kurumları hedef alınmıştır.',
+         'full_text': ''}
+    cagri = []
+
+    def _hakem(prompt, **k):
+        cagri.append(prompt)
+        return {'kararlar': [{'no': 1, 'ayni': False, 'olay': ''}]}
+    s._gemini_call_json = _hakem
+
+    ilk = s._mukerrer_llm_hakem([(1, a, b, '')])
+    assert ilk[1][0] is False
+    # İKİNCİ kez sorulursa LLM farklı cevap verebilir — önbellek buna izin
+    # vermemeli.
+    s._gemini_call_json = lambda *x, **k: {
+        'kararlar': [{'no': 7, 'ayni': True, 'olay': 'aynı olay'}]}
+    ikinci = s._mukerrer_llm_hakem([(7, a, b, '')])
+    assert ikinci[7][0] is False, 'aynı çifte ikinci kez farklı karar verildi'
+    assert len(cagri) == 1, 'çift ikinci kez LLM\'e soruldu'

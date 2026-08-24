@@ -6283,6 +6283,39 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         sonuc = {}
         if not ciftler:
             return sonuc
+
+        # KARAR ÖNBELLEĞİ — AYNI ÇİFT İKİ KEZ SORULMAZ.
+        #
+        # Hakem boru hattında İKİ KEZ koşuyor: manşet seçiminden ÖNCE (kısa
+        # listeyi temizlemek için) ve son kapıda (garanti için). LLM
+        # deterministik olmadığı için aynı çifte iki farklı cevap verebiliyor.
+        #
+        # ÖLÇÜLDÜ (2026-08-24): seçim öncesi hakem Myanmar/QUICSILVER çiftine
+        # "farklı" dedi, haber manşet seçildi; son kapıdaki hakem AYNI çifte
+        # "aynı" deyip onu eledi ve yerine CISA günlükleme kılavuzu geçti.
+        # Önbellek bu çelişkiyi imkânsız kılar: ilk karar bağlayıcıdır.
+        if not hasattr(self, '_hakem_onbellek'):
+            self._hakem_onbellek = {}
+
+        def _anahtar(a, b):
+            ax = (a.get('tr_title') or a.get('title') or '')[:120]
+            bx = (b.get('tr_title') or b.get('title') or '')[:120]
+            return tuple(sorted((ax, bx)))
+
+        sorulacak = []
+        for no, a, b, ipucu in ciftler:
+            k = _anahtar(a, b)
+            if k in self._hakem_onbellek:
+                sonuc[no] = self._hakem_onbellek[k]
+            else:
+                sorulacak.append((no, a, b, ipucu))
+        if sonuc:
+            print(f"   ♻️  Mükerrer hakemi: {len(sonuc)} çift önbellekten "
+                  f"(aynı çift iki kez sorulmaz).")
+        if not sorulacak:
+            return sonuc
+        ciftler = sorulacak
+
         for bas in range(0, len(ciftler), self.MUKERRER_HAKEM_BATCH):
             grup = ciftler[bas:bas + self.MUKERRER_HAKEM_BATCH]
             satirlar = []
@@ -6306,7 +6339,11 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     no = int(k.get('no'))
                 except (TypeError, ValueError):
                     continue
-                sonuc[no] = (bool(k.get('ayni')), str(k.get('olay', ''))[:60])
+                karar = (bool(k.get('ayni')), str(k.get('olay', ''))[:60])
+                sonuc[no] = karar
+                esles = next((c for c in grup if c[0] == no), None)
+                if esles is not None:
+                    self._hakem_onbellek[_anahtar(esles[1], esles[2])] = karar
         return sonuc
 
     def _son_mukerrer_kapisi(self, top3_ids, top10_ids, remaining_ids,
