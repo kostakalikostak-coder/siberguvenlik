@@ -4049,17 +4049,34 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         DEĞİL. Manşet düzeltmelerinin ORTAK yedek seçicisidir — her denetim
         kendi kopyasını taşırsa ölçütler zamanla ayrışır.
         """
+        sozluk = getattr(self, '_olay_sozlugu', None)
+        yasak = getattr(self, '_manset_yasak', None) or set()
         for cand in aday_ids:
             if cand in sonuc or cand in haric:
                 continue
             rec = records.get(cand, {})
             if rec.get('kat') in KRITIK3_HARIC_KATEGORILER or rec.get('mukerrer'):
                 continue
+            # MANŞET YASAĞI YEDEK SEÇİMİNDE DE GEÇERLİDİR.
+            #
+            # ÖLÇÜLDÜ (2026-08-24): "İran Bağlantılı Aktörlerin Birleşik
+            # Krallık Enerji Santralini Hedeflemesi" haberi manşet oldu —
+            # oysa aynı olay 08-23'te de manşetti ve GELISME olarak manşet
+            # yasağı almıştı. Yasak `_derive_top3_by_score` kapısında
+            # uygulanıyordu ama SONRAKİ yedek bulucular ona hiç bakmıyordu;
+            # bir manşet çapraz-gün elemesi tetiklenince yasaklı haber
+            # yedek olarak manşete geri geldi.
+            if cand in yasak:
+                continue
             cv = view_fn(cand)
             if any(_dedup.same_event(cv, view_fn(o)) for o in sonuc):
                 continue
-            if recent_views and any(_dedup.same_event(cv, ev, cross_day=True)
-                                    for ev in recent_views):
+            # Geçmişle KISMEN bile aynı olan haber manşete yedek olamaz —
+            # burada GELISME de yeterli sebeptir (manşet tekrarı tam da
+            # kullanıcının şikâyet ettiği şey).
+            if recent_views and any(
+                    _olay.mukerrer_karari(cv, ev, sozluk=sozluk) != _olay.FARKLI
+                    for ev in recent_views):
                 continue
             return cand
         return None
@@ -5769,10 +5786,29 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # LLM yalnızca bu kısa listeden seçer; geçersiz cevapta deterministik
         # seçim korunur — katman raporu bozamaz.
         if getattr(self, 'ENABLE_MANSET_LLM_SECIM', True):
-            kisa_liste = list(dict.fromkeys(
-                list(top3_ids)
-                + [a for a in eligible if a not in top3_ids]))[
-                    :self.MANSET_ADAY_SAYISI]
+            # KISA LİSTE ÇAPRAZ-GÜN TEMİZ OLMALI.
+            #
+            # ÖLÇÜLDÜ (2026-08-24): LLM 19, 4 ve 18'i seçti; üçü de SONRAKİ
+            # çapraz-gün katmanlarında mükerrer çıkıp mekanik yedeklerle
+            # değiştirildi ve manşet 74-76 puanlık zayıf haberlere düştü.
+            # Seçim, elenmeyecek adaylar arasından yapılmalı.
+            _k3_gecmis = (recent_k3 or [])
+            _sz = getattr(self, '_olay_sozlugu', None)
+
+            def _temiz(aid):
+                cv = view_fn(aid)
+                ka = _olay.aday_anahtarlari(cv)
+                for ev in _k3_gecmis:
+                    if not (ka & _olay.aday_anahtarlari(ev)):
+                        continue
+                    if _olay.mukerrer_karari(cv, ev, sozluk=_sz) != _olay.FARKLI:
+                        return False
+                return True
+
+            _aday = [a for a in dict.fromkeys(
+                list(top3_ids) + [a for a in eligible if a not in top3_ids])
+                if _temiz(a)]
+            kisa_liste = (_aday or list(top3_ids))[:self.MANSET_ADAY_SAYISI]
             top3_ids = self._manset_llm_sec(
                 kisa_liste, top3_ids, records, content_by_id,
                 articles_by_id, recent_k3)
@@ -6465,9 +6501,16 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 for ev in gecmis:
                     if not (anahtar & _olay.aday_anahtarlari(ev)):
                         continue
-                    tamam, neden = _olay.ayni_olay(
+                    # ÜÇ DEĞERLİ: yalnızca TAM_MUKERRER kaçaktır. GELISME
+                    # (aynı olayın yeni olgu getiren devamı) gövdede
+                    # MEŞRUDUR — ama MANŞETTE olması ihlaldir.
+                    karar, neden = _olay.mukerrer_karari(
                         v, ev, explain=True, sozluk=sozluk)
-                    if tamam:
+                    manset_mi = aid in set(top3_ids)
+                    if karar == _olay.TAM_MUKERRER or (
+                            karar == _olay.GELISME and manset_mi):
+                        neden = (neden if karar == _olay.TAM_MUKERRER
+                                 else f'GELİŞME ama MANŞETTE — {neden}')
                         capraz.append({
                             'id': aid, 'baslik': _ad(aid),
                             'gecmis': (ev.get('tr_title')
@@ -6480,10 +6523,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             ici = []
             for i, a in enumerate(rapor_ids):
                 for b in rapor_ids[i + 1:]:
-                    tamam, neden = _olay.ayni_olay(
+                    karar, neden = _olay.mukerrer_karari(
                         view_fn(a), view_fn(b), ayni_gun=True,
                         explain=True, sozluk=sozluk)
-                    if tamam:
+                    if karar == _olay.TAM_MUKERRER:
                         ici.append({'a': a, 'b': b, 'a_baslik': _ad(a),
                                     'b_baslik': _ad(b), 'neden': neden})
 

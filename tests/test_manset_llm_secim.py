@@ -90,3 +90,35 @@ def test_secici_kisa_listeyi_kodda_suzer():
     assert i_kapi < i_llm, 'LLM seçimi manşet kapısından ÖNCE çalışıyor'
     assert 'eligible' in kaynak.split('_manset_llm_sec(')[0][-600:], \
         'kısa liste süzülmüş havuzdan kurulmuyor'
+
+
+def test_kisa_liste_capraz_gun_temiz():
+    """LLM seçimi, SONRA elenecek adaylar arasından yapılmamalı.
+
+    ÖLÇÜLDÜ (2026-08-24): LLM 19, 4 ve 18'i seçti; üçü de sonraki çapraz-gün
+    katmanlarında mükerrer çıkıp mekanik yedeklerle değiştirildi ve manşet
+    74-76 puanlık zayıf haberlere düştü. Seçimin bir anlamı olması için kısa
+    liste elenmeyecek adaylardan kurulmalı.
+    """
+    import inspect
+    kaynak = inspect.getsource(main.HaberSistemi._derive_top3_by_score)
+    parca = kaynak.split('kisa_liste')[0][-1200:]
+    assert 'mukerrer_karari(' in parca, \
+        'kısa liste çapraz-gün mükerrerlerinden arındırılmıyor'
+    assert '_aday or list(top3_ids)' in kaynak, \
+        'tüm adaylar elenirse deterministik seçime düşülmüyor'
+
+
+def test_yedek_bulucu_manset_yasagina_uyar():
+    """Manşet yasağı YEDEK seçiminde de geçerli olmalı.
+
+    ÖLÇÜLDÜ (2026-08-24): İran/Birleşik Krallık enerji santrali haberi
+    manşet oldu — aynı olay 08-23'te de manşetti ve GELISME olarak yasak
+    almıştı. Yasak yalnızca ana kapıda uygulanıyordu; bir çapraz-gün elemesi
+    tetiklenince yasaklı haber YEDEK olarak manşete geri geldi.
+    """
+    import inspect
+    kaynak = inspect.getsource(main.HaberSistemi._kritik3_yedek_bul)
+    assert '_manset_yasak' in kaynak, 'yedek bulucu manşet yasağına bakmıyor'
+    assert 'mukerrer_karari(' in kaynak, \
+        'yedek bulucu geçmişi eski karşılaştırıcıyla ölçüyor'

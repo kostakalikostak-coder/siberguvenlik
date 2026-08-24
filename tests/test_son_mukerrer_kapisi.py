@@ -135,9 +135,16 @@ def test_denetim_ve_kapi_ayni_tanimi_kullanir():
     denetim = inspect.getsource(main.HaberSistemi._kalite_denetimi_yaz)
     assert ('_olay.ayni_olay(' in kapi
             or '_olay.mukerrer_karari(' in kapi), 'kapı tek tanımı kullanmıyor'
-    assert '_olay.ayni_olay(' in denetim, 'denetim tek tanımı kullanmıyor'
+    assert '_olay.mukerrer_karari(' in denetim, \
+        'denetim tek tanımı kullanmıyor'
     assert 'iliski_belirle(' not in denetim, \
         'denetim hâlâ ayrı bir tanım kullanıyor — kapıyla ayrışır'
+    # ÜÇ DEĞERLİ AYRIM DENETİMDE DE OLMALI: GELISME gövdede meşrudur,
+    # manşette ihlaldir. Denetim 'her aynı olay kaçaktır' derse, kapının
+    # bilerek gövdede bıraktığı devam haberlerini kalıcı sahte alarma çevirir
+    # (2026-08-24: 2 'kaçak'ın biri tam olarak buydu).
+    assert '_olay.TAM_MUKERRER' in denetim and '_olay.GELISME' in denetim, \
+        'denetim üç değerli ayrımı uygulamıyor'
 
 
 def test_bellek_arsivle_hizali():
