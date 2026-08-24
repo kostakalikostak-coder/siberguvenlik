@@ -5585,6 +5585,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
     # kullanılır (test ve acil durum düşüşü için).
     ENABLE_MANSET_LLM_SECIM = True
     MANSET_ADAY_SAYISI = 10
+    # LLM manşet seçiminde izin verilen puan uçurumu. Seçilen haber, en
+    # yüksek puanlı adaydan bu kadar puandan fazla geride olamaz.
+    MANSET_PUAN_TOLERANSI = 25
 
     def _manset_llm_sec(self, aday_ids, deterministik_top3, records,
                         content_by_id, articles_by_id, recent_k3):
@@ -5629,6 +5632,31 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         except (TypeError, ValueError):
             secim = []
         uygun = [a for a in dict.fromkeys(secim) if a in set(aday_ids)]
+
+        # PUAN BANDI — LLM puanı EZEBİLİR ama UÇURUM AÇAMAZ.
+        #
+        # Yönetmenin işi puan sıralamasını editoryal gerekçeyle düzeltmektir
+        # (yamalanmış zafiyet yerine süren kampanya). Ama ÖLÇÜLDÜ (2026-08-24):
+        # elenmemiş adaylar arasında 89, 83, 81, 80, 77, 76, 75 puanlılar
+        # dururken 51 puanlık bir SEO zehirlenmesi haberi manşet seçildi.
+        # Tolerans bandı, editoryal özgürlüğü korurken bu uçurumu kapatır.
+        if uygun:
+            _p = lambda x: (records.get(x) or {}).get('toplam', 0)  # noqa: E731
+            tavan = max((_p(x) for x in aday_ids), default=0)
+            taban = tavan - self.MANSET_PUAN_TOLERANSI
+            zayif = [x for x in uygun if _p(x) < taban]
+            if zayif:
+                yedekler = [x for x in sorted(aday_ids, key=lambda y: -_p(y))
+                            if x not in uygun and _p(x) >= taban]
+                for x in zayif:
+                    if not yedekler:
+                        break
+                    y = yedekler.pop(0)
+                    print(f"   ⚖️  Manşet puan bandı: ID {x} ({_p(x)}) tavanın "
+                          f"{self.MANSET_PUAN_TOLERANSI} puandan fazla altında "
+                          f"(tavan {tavan}) → ID {y} ({_p(y)}) ile değiştirildi.")
+                    uygun[uygun.index(x)] = y
+
         if len(uygun) != 3:
             print(f"   ⚠️  Manşet seçimi geçersiz ({secim}) — deterministik "
                   f"seçim korundu.")

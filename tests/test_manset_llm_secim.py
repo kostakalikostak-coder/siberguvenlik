@@ -137,3 +137,40 @@ def test_hakem_secimden_once_de_kosar():
     on = kaynak.split('kisa_liste = ')[0]
     assert '_mukerrer_llm_hakem(' in on, \
         'hakem manşet seçiminden önce çalışmıyor'
+
+
+def test_puan_bandi_ucurumu_kapatir():
+    """LLM puanı EZEBİLİR ama UÇURUM AÇAMAZ.
+
+    ÖLÇÜLDÜ (2026-08-24): elenmemiş adaylar arasında 89, 83, 81, 80, 77, 76,
+    75 puanlılar dururken 51 puanlık bir SEO zehirlenmesi haberi manşet
+    seçildi.
+    """
+    records = {1: {'kat': 'nation_state_apt', 'toplam': 89},
+               2: {'kat': 'kolluk_operasyonu', 'toplam': 83},
+               3: {'kat': 'veri_ihlali', 'toplam': 77},
+               4: {'kat': 'nation_state_apt', 'toplam': 76},
+               5: {'kat': 'phishing_sosyal_muhendislik', 'toplam': 51}}
+    content = {i: {'tr_title': f'Haber {i}', 'paragraph': f'P{i}'} for i in records}
+    arts = {i: {'id': i, 'title': '', 'full_text': ''} for i in records}
+    s = _sistem({'secim': [1, 5, 2]})
+    secim = s._manset_llm_sec([1, 2, 3, 4, 5], [1, 2, 3],
+                              records, content, arts, [])
+    assert 5 not in secim, 'uçurum açan seçim kabul edildi'
+    assert 3 in secim, 'yerine en yüksek puanlı uygun yedek konmadı'
+    assert len(secim) == 3
+
+
+def test_puan_bandi_icinde_ezme_serbest():
+    """Bant içinde kalan editoryal ezme ENGELLENMEMELİ — yönetmenin asıl
+    işi budur."""
+    records = {1: {'kat': 'zafiyet_rutin', 'toplam': 95},
+               2: {'kat': 'nation_state_apt', 'toplam': 80},
+               3: {'kat': 'veri_ihlali', 'toplam': 78},
+               4: {'kat': 'kolluk_operasyonu', 'toplam': 76}}
+    content = {i: {'tr_title': f'Haber {i}', 'paragraph': f'P{i}'} for i in records}
+    arts = {i: {'id': i, 'title': '', 'full_text': ''} for i in records}
+    s = _sistem({'secim': [2, 3, 4]})
+    secim = s._manset_llm_sec([1, 2, 3, 4], [1, 2, 3],
+                              records, content, arts, [])
+    assert secim == [2, 3, 4], 'bant içindeki meşru ezme engellendi'
