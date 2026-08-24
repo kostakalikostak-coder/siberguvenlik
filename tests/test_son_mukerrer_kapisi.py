@@ -170,3 +170,33 @@ def test_on_filtre_kayipsizdir():
     assert O.ayni_olay(a, b)
     assert not (O.aday_anahtarlari(a) & O.aday_anahtarlari(c)) or \
         not O.ayni_olay(a, c)
+
+
+def test_erken_eleme_ve_son_kapi_ayni_tanimi_paylasir():
+    """"Erken ele, geç doğrula": iki katman, TEK tanım.
+
+    Son kapı doğruluk garantisidir ama boru hattının sonunda çalışır; orada
+    düşen haberin yeri boş kalır. Geri-testte (22-24 Ağustos) yalnızca son
+    kapı olsaydı 08-22 raporu 12→6, 08-23 5→2, 08-24 11→7 habere düşerdi.
+    Aynı eleme sıralama anında yapılınca sıradaki aday yukarı kayar.
+    """
+    import inspect
+    erken = inspect.getsource(main.HaberSistemi._erken_capraz_gun_mukerrer)
+    assert '_olay.ayni_olay(' in erken, 'erken eleme farklı bir tanım kullanıyor'
+    assert 'aday_anahtarlari' in erken, 'erken elemede ön filtre yok'
+    siralama = inspect.getsource(main.HaberSistemi._rank_by_score)
+    assert '_erken_capraz_gun_mukerrer(' in siralama, \
+        'erken eleme sıralamaya bağlı değil — havuz refill edemez'
+
+
+def test_erken_eleme_az_haber_kurtarmasindan_once():
+    """Sıra: önce mükerrer düşsün, sonra taban gerekiyorsa devreye girsin.
+
+    Ters sırada kurtarma, birazdan elenecek mükerrerleri havuza alır ve
+    taban yanlış yerde tetiklenir.
+    """
+    import inspect
+    kaynak = inspect.getsource(main.HaberSistemi._rank_by_score)
+    i_erken = kaynak.index('_erken_capraz_gun_mukerrer(')
+    i_kurtarma = kaynak.index('MIN_POOL')
+    assert i_erken < i_kurtarma, 'erken eleme az-haber kurtarmasından sonra'

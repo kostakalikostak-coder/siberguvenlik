@@ -4005,6 +4005,29 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     if aid in kept_set or aid in restored_set]
         return new_kept, restored
 
+    def _erken_capraz_gun_mukerrer(self, aid, articles_by_id, recent_views):
+        """Sıralama anında: bu haber son günlerde zaten yayımlandı mı?
+
+        Son mükerrer kapısıyla AYNI tanımı (`olay_iliski.ayni_olay`) kullanır;
+        tek farkı görünümün KAYNAK METİN olmasıdır (Türkçe başlık/paragraf
+        henüz üretilmedi), dolayısıyla eşleşmesi daha zayıftır. Bilinçli:
+        burada amaç garanti değil, havuzu ERKEN temizleyip sıradaki adayların
+        yukarı kaymasını sağlamaktır. Garanti son kapıdadır.
+        """
+        if not recent_views:
+            return False
+        sozluk = getattr(self, '_olay_sozlugu', None)
+        v = self._kaynak_view(aid, articles_by_id)
+        anahtar = _olay.aday_anahtarlari(v)
+        if not anahtar:
+            return False
+        for ev in recent_views:
+            if not (anahtar & _olay.aday_anahtarlari(ev)):
+                continue
+            if _olay.ayni_olay(v, ev, sozluk=sozluk):
+                return True
+        return False
+
     def _kritik3_yedek_bul(self, aday_ids, sonuc, records, view_fn,
                            recent_views, haric=()):
         """Manşete uygun ilk yedek adayı bulur (yoksa None).
@@ -5252,6 +5275,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
           aciliyet → id (tam deterministik).
         """
         category_by_id = {}
+        erken_elenen = []
         source_pos = {a['id']: idx for idx, a in enumerate(articles)}  # kararlı id sırası
 
         # ── GÜVENLİK TABANI: mükerrer eleme raporu ASLA boşaltamaz ───────────
@@ -5370,12 +5394,36 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     is_muk = False
                     mukerrer_korunan.append(aid)
             # Elenenler: siber kapısı kapalı / ürün-içerik-dışı / MÜKERRER (çapraz-gün)
+            # ── ERKEN ÇAPRAZ-GÜN ELEMESİ (havuz hâlâ dolabilirken) ───────
+            # NEDEN BURADA: son mükerrer kapısı doğruluk garantisidir ama
+            # boru hattının SONUNDA çalışır; orada düşen haberin yeri boş
+            # kalır. Aynı elemeyi sıralama anında yapınca sıradaki aday
+            # yukarı kayar ve rapor incelmez. "Erken ele, geç doğrula".
+            #
+            # ÖLÇÜLDÜ (geri-test, 22-24 Ağustos): yalnızca son kapı olsaydı
+            # 08-22 raporu 12→6, 08-23 5→2, 08-24 11→7 haberе düşerdi.
+            #
+            # Burada kaynak metin görünümü kullanılır (tr_title/paragraph
+            # henüz üretilmedi); bu yüzden eşleşme SON KAPIDAN ZAYIFTIR ve
+            # kaçanları kapı yakalar. Kapı bu katmanın yerini almaz, tersi de
+            # geçerli değildir.
+            if not is_muk and rec['toplam'] > 0 and rec.get('siber') \
+                    and rec['kat'] not in ('urun_icerik', 'siber_disi') \
+                    and self._erken_capraz_gun_mukerrer(aid, articles_by_id,
+                                                        recent_report_views):
+                is_muk = True
+                erken_elenen.append(aid)
             if (rec['toplam'] <= 0 or is_muk
                     or rec['kat'] in ('urun_icerik', 'siber_disi') or not rec['siber']):
                 filtered_ids.append(aid)
             else:
                 ranked.append(aid)
 
+        if erken_elenen:
+            print(f"   📅 Erken çapraz-gün elemesi: {len(erken_elenen)} haber "
+                  f"son {REPORT_HISTORY_DAYS} günde zaten yayımlanmış → "
+                  f"havuzdan düştü (sıradaki adaylar yukarı kayar): "
+                  f"{sorted(erken_elenen)}")
         if mukerrer_korunan:
             ozet = {}
             for aid in mukerrer_korunan:
