@@ -6683,11 +6683,20 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     return False
 
             tersine = []
+            _yasak = getattr(self, '_manset_yasak', None) or set()
             for aid in govde_ids:
                 rec = records.get(aid) or {}
                 if rec.get('kat') in KRITIK3_HARIC_KATEGORILER:
                     continue
                 if _onceden_manset(aid):
+                    continue
+                # GELISME olarak manşetten men edilmiş haber "tersinelik"
+                # DEĞİLDİR — bilerek gövdede tutuluyor. ÖLÇÜLDÜ (2026-08-24):
+                # 97 puanlı "YZ destekli endüstriyel kontrol sistemleri"
+                # haberi, 08-20 Siemens PLC haberinin devamı olduğu için
+                # manşet olamıyordu; denetim bunu kalıcı sahte alarm olarak
+                # bildiriyordu.
+                if aid in _yasak:
                     continue
                 if _puan(aid) > en_dusuk_manset:
                     tersine.append({
