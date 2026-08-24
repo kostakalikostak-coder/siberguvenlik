@@ -6027,6 +6027,110 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         return yeni_top3, yeni_govde
 
+    def _son_mukerrer_kapisi(self, top3_ids, top10_ids, remaining_ids,
+                             records, content_by_id, articles_by_id,
+                             eleme_nedeni):
+        """RAPORUN TAMAMINA son mükerrer taraması — TEK tanım, MUAFİYET YOK.
+
+        İki soruyu sorar ve ikisini de aynı `olay_iliski.ayni_olay` ile
+        cevaplar:
+          (a) RAPOR İÇİ  — raporun iki haberi aynı olayı mı anlatıyor?
+          (b) ÇAPRAZ-GÜN — bu haber son günlerde zaten yayımlandı mı?
+
+        MANŞET MUAF DEĞİLDİR. Manşetten çıkan haber silinmez, manşete uygun
+        ilk yedekle DEĞİŞTİRİLİR (KRİTİK 3 garantisi korunur); yedek yoksa
+        yerinde bırakılır ve durum kayda geçer. Gövdeden çıkan düşürülür.
+
+        Sıra bilinçlidir: önce çapraz-gün (geçmişte olan kesin mükerrerdir),
+        sonra rapor içi (bugünün kopyalarından en yüksek puanlı tutulur).
+        """
+        sozluk = getattr(self, '_olay_sozlugu', None)
+        view_fn = self._dedup_view_fn(content_by_id, articles_by_id)
+        gecmis = self._load_recent_report_views() + \
+            self._load_recent_kritik3_views()
+        _puan = lambda aid: (records.get(aid) or {}).get('toplam', 0)  # noqa: E731
+
+        def _mukerrer_gecmis(aid):
+            v = view_fn(aid)
+            for ev in gecmis:
+                tamam, neden = _olay.ayni_olay(v, ev, sozluk=sozluk,
+                                               explain=True)
+                if tamam:
+                    return neden
+            return None
+
+        # ── (a) ÇAPRAZ-GÜN ────────────────────────────────────────────────
+        dusen = {}
+        for aid in list(top3_ids) + list(top10_ids) + list(remaining_ids):
+            if aid in dusen:
+                continue
+            neden = _mukerrer_gecmis(aid)
+            if neden:
+                dusen[aid] = f'kapi_capraz_gun ({neden[:48]})'
+
+        # ── (b) RAPOR İÇİ — yüksek puanlı temsilci kalır ───────────────────
+        kalan = [aid for aid in
+                 list(top3_ids) + list(top10_ids) + list(remaining_ids)
+                 if aid not in dusen]
+        kalan.sort(key=lambda aid: -_puan(aid))
+        tutulan = []
+        for aid in kalan:
+            v = view_fn(aid)
+            esles = next((t for t in tutulan
+                          if _olay.ayni_olay(v, view_fn(t), sozluk=sozluk)), None)
+            if esles is None:
+                tutulan.append(aid)
+            else:
+                dusen[aid] = f'kapi_rapor_ici (ID {esles} ile aynı olay)'
+
+        if not dusen:
+            print("   ✅ Son mükerrer kapısı: rapor temiz.")
+            return list(top3_ids), list(top10_ids), list(remaining_ids)
+
+        for aid, neden in sorted(dusen.items()):
+            eleme_nedeni[aid] = neden.split(' ')[0]
+            print(f"   🚧 Son mükerrer kapısı: ID {aid} düştü — {neden}")
+
+        # ── MANŞET: eleme değil DEĞİŞTİRME ────────────────────────────────
+        yeni_top3 = list(top3_ids)
+        yedek_havuz = [aid for aid in list(top10_ids) + list(remaining_ids)
+                       if aid not in dusen and aid not in yeni_top3]
+        yedek_havuz.sort(key=lambda aid: -_puan(aid))
+        manset_disi = self._manset_disi_ids(yedek_havuz, records, view_fn)
+        for aid in [a for a in yeni_top3 if a in dusen]:
+            yedek = next(
+                (c for c in yedek_havuz
+                 if c not in yeni_top3 and c not in manset_disi
+                 and not any(_olay.ayni_olay(view_fn(c), view_fn(o),
+                                             sozluk=sozluk)
+                             for o in yeni_top3 if o != aid)), None)
+            if yedek is None:
+                print(f"   ⚠️  Son mükerrer kapısı: ID {aid} manşette MÜKERRER "
+                      f"ama uygun yedek yok — YERİNDE BIRAKILDI "
+                      f"(KRİTİK 3 eksilmez).")
+                del dusen[aid]
+                eleme_nedeni.pop(aid, None)
+                continue
+            yeni_top3[yeni_top3.index(aid)] = yedek
+            self._manset_karar_kaydet('son_mukerrer_kapisi', aid, yedek,
+                                      dusen[aid][:80])
+            print(f"   🔁 Son mükerrer kapısı: manşetteki ID {aid} mükerrer → "
+                  f"ID {yedek} ile DEĞİŞTİRİLDİ.")
+
+        dus = set(dusen)
+        yeni_top10 = [i for i in top10_ids if i not in dus or i in yeni_top3]
+        yeni_kalan = [i for i in remaining_ids if i not in dus or i in yeni_top3]
+        # Manşete yükselen haber gövdeden çıkar (renderer zaten dışlar, ama
+        # listeler tutarlı kalsın diye burada da uygulanır).
+        for y in yeni_top3:
+            if y not in top3_ids:
+                yeni_top10 = [i for i in yeni_top10 if i != y]
+                yeni_kalan = [i for i in yeni_kalan if i != y]
+        self._enforce_kritik3_paragraph_length(
+            [i for i in yeni_top3 if i not in top3_ids],
+            content_by_id, articles_by_id)
+        return yeni_top3, yeni_top10, yeni_kalan
+
     def _kalite_denetimi_yaz(self, top3_ids, govde_ids, records,
                              content_by_id, articles_by_id, eleme_nedeni=None):
         """RAPOR SONRASI KAÇAK TARAMASI — sessiz arızayı görünür kılar.
@@ -6968,6 +7072,30 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 [i for i in top3_ids if i not in _yy_before],
                 content_by_id, articles_by_id)
         top3_ids, top10_ids, remaining_ids = _senkron('yayin_yonetmeni')
+
+        # ── SON MÜKERRER KAPISI — RAPORUN TAMAMI, TEK TANIM, MUAFİYET YOK ──
+        #
+        # NEDEN VAR (ölçülmüş kök neden): mükerrer elemesi ~10 katmana
+        # dağılmıştı ve her katmanın KAPSAMI farklıydı. En büyük boşluk:
+        # `_dedup_body_cross_day` yalnızca top10/remaining üzerinde çalışır,
+        # `top3_ids` ayrı bir listedir ve ona hiç dokunulmaz. Yani MANŞET,
+        # çapraz-gün elemesinden yapısal olarak MUAFTI.
+        #
+        # ÖLÇÜLDÜ (2026-08-24): Threema DDoS haberinin skorlama kaydında
+        # `yerlesim=kritik3` ve `eleme_nedeni=capraz_gun` yan yana duruyor —
+        # sistem haberi mükerrer diye ELEDİ, ama karar manşete uygulanmadı ve
+        # haber manşette yayımlandı. Karar zaten verilmişti; yanlış listeye
+        # uygulandı.
+        #
+        # Bu kapı raporun TAMAMINI (manşet + gövde) tek liste gibi görür,
+        # `olay_iliski.ayni_olay` TEK tanımıyla hem rapor içini hem geçmişi
+        # tarar. Manşetten çıkan haber SİLİNMEZ, yedekle değiştirilir; gövdeden
+        # çıkan düşürülür. Yukarıdaki katmanlar artık optimizasyondur —
+        # doğruluk garantisi buradadır.
+        top3_ids, top10_ids, remaining_ids = self._son_mukerrer_kapisi(
+            top3_ids, top10_ids, remaining_ids, score_records,
+            content_by_id, articles_by_id, eleme_nedeni)
+        top3_ids, top10_ids, remaining_ids = _senkron('son_mukerrer_kapisi')
 
         # Bekçinin bu koşudaki bulguları denetim kaydına taşınır.
         self._durum_ozeti = _durum.ozet()
