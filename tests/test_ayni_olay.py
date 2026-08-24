@@ -163,3 +163,54 @@ def test_cve_eslesmesi_aktor_kapisindan_muaf():
     kaynak = inspect.getsource(_O.ayni_olay)
     assert "not gerekce.startswith('actor:cve')" in kaynak, \
         'CVE eşleşmesi aktör konu kapısına takılıyor'
+
+
+def test_uc_degerli_karar_gelismeyi_ayirir():
+    """"Aynı olay bir kez" kuralı TEK BAŞINA raporu çökertti.
+
+    ÖLÇÜLDÜ (2026-08-24 koşusu): günün en yüksek puanlı SEKİZ haberinin
+    sekizi de mükerrer diye elendi (Mustang Panda 94, Fransa 678.000
+    mükellef 94, UAT-10147 91, QUICSILVER 89...); rapor 10 habere düştü ve
+    KRİTİK 3, ATM dolandırıcılığı ile Uber para cezasından seçilmek zorunda
+    kaldı. Sebep politikanın kendisi: büyük siber olaylar günlerce sürer.
+
+    Ayrım: aynı olayın YENİ OLGU getirmeyen tekrarı rapordan çıkar;
+    gerçekten yeni bir olgu getiren devamı gövdede kalır ama MANŞET OLAMAZ.
+    """
+    eski = _v('Dahua Cihazlarına Yönelik Operation CameraSwarm Kampanyası',
+              'Operation CameraSwarm kapsamında Dahua kameraları kimlik '
+              'bilgisi saldırılarıyla hedef alınmıştır.')
+    aynen = _v('Operation CameraSwarm ile Dahua Kameralarının Hedeflenmesi',
+               'Operation CameraSwarm kampanyasında Dahua kameraları kimlik '
+               'saldırılarıyla hedef alınmıştır.')
+    gelisme = _v('Operation CameraSwarm Kapsamında 14.000 Kameranın Ele '
+                 'Geçirilmesi',
+                 'Operation CameraSwarm kampanyasında 14.000 Dahua kamerası '
+                 'ele geçirilmiştir.')
+    assert O.mukerrer_karari(aynen, eski) == O.TAM_MUKERRER, \
+        'yeni olgu getirmeyen tekrar rapordan çıkmalı'
+    assert O.mukerrer_karari(gelisme, eski) == O.GELISME, \
+        'yeni sayı getiren devam haberi tamamen elendi'
+
+
+def test_durum_degisimi_yeni_olgudur():
+    eski = _v('Citrix NetScaler Ürününde Kritik Açık Bulunması',
+              'Citrix, NetScaler ürününde kimlik doğrulama atlatma açığı '
+              'bildirmiştir.')
+    yeni = _v('Citrix NetScaler Açığının Aktif Olarak İstismar Edilmesi',
+              'Citrix NetScaler açığının aktif olarak istismar edildiği '
+              'doğrulanmıştır.')
+    assert O.mukerrer_karari(yeni, eski) == O.GELISME, \
+        'aktif istismara geçiş yeni olgu sayılmadı'
+
+
+def test_gelisme_manset_olamaz_kodda():
+    """GELISME gövdede kalır ama manşet yasağı ALIR."""
+    import inspect
+    import main
+    for metot in (main.HaberSistemi._erken_capraz_gun_mukerrer,
+                  main.HaberSistemi._son_mukerrer_kapisi):
+        kaynak = inspect.getsource(metot)
+        assert '_olay.GELISME' in kaynak, f'{metot.__name__}: GELISME ayrımı yok'
+        assert '_manset_yasak' in kaynak, \
+            f'{metot.__name__}: GELISME manşet yasağı almıyor'

@@ -133,7 +133,8 @@ def test_denetim_ve_kapi_ayni_tanimi_kullanir():
     import inspect
     kapi = inspect.getsource(main.HaberSistemi._son_mukerrer_kapisi)
     denetim = inspect.getsource(main.HaberSistemi._kalite_denetimi_yaz)
-    assert '_olay.ayni_olay(' in kapi, 'kapı tek tanımı kullanmıyor'
+    assert ('_olay.ayni_olay(' in kapi
+            or '_olay.mukerrer_karari(' in kapi), 'kapı tek tanımı kullanmıyor'
     assert '_olay.ayni_olay(' in denetim, 'denetim tek tanımı kullanmıyor'
     assert 'iliski_belirle(' not in denetim, \
         'denetim hâlâ ayrı bir tanım kullanıyor — kapıyla ayrışır'
@@ -185,7 +186,7 @@ def test_erken_eleme_ve_son_kapi_ayni_tanimi_paylasir():
     """
     import inspect
     erken = inspect.getsource(main.HaberSistemi._erken_capraz_gun_mukerrer)
-    assert '_olay.ayni_olay(' in erken, 'erken eleme farklı bir tanım kullanıyor'
+    assert '_olay.mukerrer_karari(' in erken, 'erken eleme farklı bir tanım kullanıyor'
     assert 'aday_anahtarlari' in erken, 'erken elemede ön filtre yok'
     siralama = inspect.getsource(main.HaberSistemi._rank_by_score)
     assert '_erken_capraz_gun_mukerrer(' in siralama, \

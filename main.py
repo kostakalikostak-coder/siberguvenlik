@@ -4026,8 +4026,18 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         for ev in recent_views:
             if not (anahtar & _olay.aday_anahtarlari(ev)):
                 continue
-            if _olay.ayni_olay(v, ev, sozluk=sozluk):
+            karar = _olay.mukerrer_karari(v, ev, sozluk=sozluk)
+            if karar == _olay.TAM_MUKERRER:
                 return True
+            if karar == _olay.GELISME:
+                # Aynı olayın GERÇEKTEN yeni bir olgu getiren devamı: gövdede
+                # yeri var, manşette YOK. ÖLÇÜLDÜ (2026-08-24): "aynı olay bir
+                # kez" kuralı tek başına günün en yüksek puanlı SEKİZ haberini
+                # birden eledi, rapor 10 habere düştü ve manşet ATM
+                # dolandırıcılığı + Uber para cezasından seçilmek zorunda kaldı.
+                if not hasattr(self, '_manset_yasak'):
+                    self._manset_yasak = set()
+                self._manset_yasak.add(aid)
         return False
 
     def _kritik3_yedek_bul(self, aday_ids, sonuc, records, view_fn,
@@ -6233,15 +6243,21 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         gecmis_anahtar = [(_olay.aday_anahtarlari(ev), ev) for ev in gecmis]
 
         def _mukerrer_gecmis(aid):
+            """TAM_MUKERRER ise gerekçe döner; GELISME ise manşet yasağı koyup
+            None döner (haber gövdede kalır)."""
             v = view_fn(aid)
             anahtar = _olay.aday_anahtarlari(v)
             for ga, ev in gecmis_anahtar:
                 if not (anahtar & ga):
                     continue
-                tamam, neden = _olay.ayni_olay(v, ev, sozluk=sozluk,
-                                               explain=True)
-                if tamam:
+                karar, neden = _olay.mukerrer_karari(
+                    v, ev, sozluk=sozluk, explain=True)
+                if karar == _olay.TAM_MUKERRER:
                     return neden
+                if karar == _olay.GELISME:
+                    if not hasattr(self, '_manset_yasak'):
+                        self._manset_yasak = set()
+                    self._manset_yasak.add(aid)
             return None
 
         # ── (a) ÇAPRAZ-GÜN — deterministik ────────────────────────────────

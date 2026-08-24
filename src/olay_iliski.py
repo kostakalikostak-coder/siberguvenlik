@@ -1015,3 +1015,91 @@ def llm_adaylari(view, gecmis_kayitlar, sozluk=None, ust_sinir=ADAY_UST_SINIR):
             sirali.append((puan, etiket, ev, sorted(ortak), topic))
     sirali.sort(key=lambda x: -x[0])
     return sirali[:ust_sinir]
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MÜKERRER KARARI — üç değerli
+# ─────────────────────────────────────────────────────────────────────────────
+# NEDEN ÜÇ DEĞERLİ: "aynı olay bir kez yayımlanır" kuralı tek başına ölçüldü
+# ve raporu ÇÖKERTTİ. 2026-08-24 koşusu: günün en yüksek puanlı SEKİZ
+# haberinin sekizi de mükerrer diye elendi (Mustang Panda 94, Fransa 678.000
+# mükellef 94, UAT-10147 91, QUICSILVER 89...), rapor 10 habere düştü ve
+# manşet ATM dolandırıcılığı + Uber para cezasından seçilmek zorunda kaldı.
+#
+# Sebep politikanın kendisi: büyük siber olaylar doğaları gereği GÜNLERCE
+# sürer. "Bir kez yayımla" kuralı onları tamamen siler ve geriye yalnızca tek
+# günlük küçük haberler kalır — yani kural, raporun kalitesini sistematik
+# olarak düşürür.
+#
+# Ayrım şudur: kullanıcının şikâyet ettiği şey AYNI HABERİN TEKRAR TEKRAR
+# GÖRÜNMESİ, özellikle MANŞETTE. Gerçekten yeni bir olgu getiren devam
+# haberleri (yeni kurban sayısı, yeni CVE, yeni ülke, aktif istismara geçiş)
+# okuyucu için değerlidir — ama manşet olmamalıdır.
+
+TAM_MUKERRER = 'TAM_MUKERRER'      # aynı olay, yeni olgu YOK → rapordan çıkar
+GELISME = 'GELISME'                # aynı olay, YENİ olgu var → gövde, manşet YASAK
+FARKLI = 'FARKLI'                  # ayrı olaylar → serbest
+
+
+# Haberin GİRİŞİNDE yeni bir olgu duyuran DURUM DEĞİŞİMİ işaretleri.
+# `_yeni_gelisme_mi` yalnızca kimlik sınıfına (CVE/paket/kod adı/özel ad)
+# bakar; oysa siber haberlerinde yeni olgu çoğu zaman bir SAYI ya da bir
+# DURUM DEĞİŞİMİDİR. ÖLÇÜLDÜ (2026-08-24): "Fransa'da 678.000 mükellefin
+# verisi sızdırıldı" haberi, 17 Ağustos'taki "yüz binlerce mükellef"
+# haberiyle TAM_MUKERRER sayıldı — oysa 678.000 rakamı yeni bir olgudur.
+_DURUM_DEGISIMI = (
+    'aktif olarak istismar', 'aktif istismar', 'istismar edilmeye',
+    'yama yayımla', 'yama yayınla', 'güncelleme yayımla', 'yamalanmış',
+    'tutukla', 'gözaltı', 'dava açıl', 'iddianame', 'suçlama',
+    'itiraf', 'üstlen', 'kabul et', 'istifa',
+    'genişle', 'yayıl', 'artmış', 'yükselmiş', 'ikiye katla',
+    'geri çek', 'iptal et', 'kapat', 'çökert', 'ele geçir',
+    'exploited in the wild', 'now exploited', 'patch released',
+    'arrested', 'indicted', 'charged', 'sentenced', 'resigned',
+)
+# Yeni sayı sayılmak için gereken en az basamak (yıllar hariç tutulur).
+_SAYI_RE = re.compile(r'\b\d[\d.,]{2,}\b')
+
+
+def _yeni_olgu_var(a, b):
+    """A'nın GİRİŞİNDE, B'de olmayan bir SAYI ya da DURUM DEĞİŞİMİ var mı?"""
+    ag = _metin(_giris_view(a)).lower()
+    bt = _metin(b).lower()
+
+    def _sayilar(metin):
+        out = set()
+        for h in _SAYI_RE.findall(metin):
+            temiz = h.replace('.', '').replace(',', '')
+            if len(temiz) < 3 or (len(temiz) == 4 and temiz.startswith('20')):
+                continue          # yıl değil, anlamlı büyüklük aranıyor
+            out.add(temiz)
+        return out
+
+    yeni_sayi = _sayilar(ag) - _sayilar(bt)
+    if yeni_sayi:
+        return True, f'yeni sayı: {sorted(yeni_sayi)[:3]}'
+    for im in _DURUM_DEGISIMI:
+        if im in ag and im not in bt:
+            return True, f'durum değişimi: {im}'
+    return False, ''
+
+
+def mukerrer_karari(a, b, sozluk=None, ayni_gun=False, explain=False):
+    """`a` (bugünkü haber) ile `b` (geçmiş/başka haber) arasındaki karar.
+
+    Dönüş: TAM_MUKERRER | GELISME | FARKLI  (explain=True ise (karar, gerekçe))
+    """
+    tamam, neden = ayni_olay(a, b, sozluk=sozluk, ayni_gun=ayni_gun,
+                             explain=True)
+    if not tamam:
+        return (FARKLI, '') if explain else FARKLI
+    var, yeni = _yeni_gelisme_mi(a, b, sozluk or BOS_SOZLUK)
+    if var:
+        karar, ek = GELISME, f'{neden} yeni={yeni}'
+    else:
+        olgu, olgu_neden = _yeni_olgu_var(a, b)
+        if olgu:
+            karar, ek = GELISME, f'{neden} {olgu_neden}'
+        else:
+            karar, ek = TAM_MUKERRER, neden
+    return (karar, ek) if explain else karar
