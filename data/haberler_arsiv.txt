@@ -31836,3 +31836,127 @@ Acronis araştırmacıları, Afgan telekom sağlayıcılarını ve Güney Asya k
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 24 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Myanmar Hükümetini Hedef Alan Operation QUICSILVER Casusluk Kampanyası
+─────────────────────────────────────────────────────────
+Myanmar hükümetini ve bilgi teknolojileri sektörünü hedef alan Operation QUICSILVER kod adlı bir siber casusluk kampanyası tespit edilmiştir. Seqrite Labs tarafından paylaşılan bilgilere göre, Çin bağlantılı olduğu değerlendirilen bir tehdit aktörü, mezuniyet töreni davetiyesi temalı sahte belgeler kullanarak QUICAgent adlı Go tabanlı bir arka kapı yaymaktadır. Saldırı zincirinde, Microsoft imzalı meşru ftp.exe dosyasının kötüye kullanıldığı ve zararlı yazılımın kum havuzu analizlerinden kaçmak için geciktirme teknikleri uyguladığı belirtilmiştir. QUICAgent yazılımının, komuta kontrol sunucusuyla iletişim kurmak için UDP 443 portu üzerinden QUIC protokolünü kullandığı saptanmıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Chameleon SEO Zehirlenmesi Yöntemiyle Banka Müşterilerinin Hedeflenmesi
+─────────────────────────────────────────────────────────
+Fortra Intelligence and Research Experts (FIRE) birimi, Chameleon SEO Zehirlenmesi olarak adlandırılan ve sahte banka sitelerini güvenlik tarayıcılarından gizleyen yeni bir kimlik avı yöntemi keşfetmiştir. 2026'nın ikinci çeyreğinde vakalarda yüzde 40 artış gözlemlenirken, saldırganların Google ve Bing üzerinde üst sıralara çıkmak için .ph.com ve .gr.com gibi ikinci seviye alan adlarını (SLD) kullandığı belirtilmiştir. Sunucu taraflı sunum kontrolü sayesinde, doğrudan erişimlerde site kapalı görünürken; arama motoru referansıyla gelen kullanıcılar inandırıcı sahte giriş sayfalarına yönlendirilmektedir. Güvenlik ekiplerine, şüpheli bağlantıları incelerken yönlendirici sahteciliği yöntemine karşı dikkatli olmaları önerilmektedir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] ABD'de ATM Jackpotting Yöntemiyle Dolandırıcılık Yapan Şahsa Hapis Cezası
+─────────────────────────────────────────────────────────
+ABD Adalet Bakanlığı, ATM jackpotting yöntemiyle 3,5 milyon dolardan fazla zarara yol açan 27 yaşındaki Venezuela uyruklu Juan Manuel Gouveia-Aguilera'nın 96 ay hapis ve 5 yıl denetimli serbestlik cezasına çarptırıldığını duyurmuştur. Banka dolandırıcılığı ve siber suçlardan hüküm giyen şahsın, Tren de Aragua (TdA) adlı suç örgütü adına hareket ederek ATM cihazlarının dış kasasını söküp dizüstü bilgisayar aracılığıyla zararlı yazılım yüklediği belirtilmiştir. Nebraska'da bu suç kapsamında yargılanan 119 kişiden biri olan sanığın aldığı bu ceza, türünün en uzun federal hapis cezasıdır. FBI, 2020'den bu yana ABD genelinde yaklaşık 1.900 benzer saldırı rapor edildiğini ve geçen yılki toplam zararın 20 milyon doları aştığını vurgulayarak, fiziksel erişim odaklı bu siber saldırıların artışına karşı uyarıda bulunmuştur.
+(XXXXXXX, AÇIK -securityweek.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] İran Bağlantılı Siber Saldırının Birleşik Krallık Güç Santralini Devre Dışı Bırakması
+─────────────────────────────────────────────────────────
+İran bağlantılı olduğundan şüphelenilen siber tehdit aktörlerinin, Birleşik Krallık'taki bir güç santralini Temmuz 2026 döneminde dört gün boyunca devre dışı bıraktığı bildirilmiştir. Birleşik Krallık Enerji Güvenliği ve Net Sıfır Departmanı Devlet Bakanı Michael Shanks, olayın küçük ölçekli bir enerji üreticisini etkilediğini ancak tesisin adının açıklanmadığını ifade etmiştir. Ulusal Siber Güvenlik Merkezi'ne (NCSC) bildirilen saldırının, ülkenin genel elektrik arzında fark edilebilir bir kesintiye yol açmadığı kaydedilmiştir. Güvenlik uzmanları, santralin ulusal şebekeye olan bağlantı düzeyinin ve saldırganların diğer alanlara sızma potansiyelinin incelendiğini belirtmiştir. Olayın ardından enerji sektörü yöneticilerine yönelik bilgilendirme yapıldığı ve kritik altyapıların korunması için güvenlik önlemlerinin artırılması yönünde tavsiyeler paylaşıldığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Çin Bağlantılı UAT-10147 Grubunun Sunuculara Yönelik Yapay Zeka Destekli Saldırıları
+─────────────────────────────────────────────────────────
+Çin bağlantılı siber tehdit aktörü UAT-10147'nin, eğitim, medya, teknoloji ve oyun sektörlerindeki Windows ve Linux web sunucularını hedef alan küresel bir kampanya yürüttüğü tespit edilmiştir. Cisco Talos tarafından yayımlanan raporda, saldırganın keşif, zararlı yazılım üretimi ve kalıcılık sağlama aşamalarında yapay zeka araçlarını kullandığı belirtilmiştir. Tehdit aktörünün, SPECTRE adlı yeni bir platformlar arası arka kapı ve Linux çekirdek seviyesinde çalışan Specter rootkit yazılımını yaymak için bilinen güvenlik açıklarından yararlandığı ifade edilmiştir. Operasyon kapsamında yaklaşık 170.000 URL içeren bir hedef listesinin kullanıldığı ve EDR çözümlerini devre dışı bırakmak için BYOVD tekniklerine başvurulduğu kaydedilmiştir. Saldırganların, verileri meşru bulut servisleri üzerinden sızdırarak tespit riskini azalttığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Hollanda'da Uber'e Otomatik Hesap Askıya Alma İşlemleri Nedeniyle Ceza Verilmesi
+─────────────────────────────────────────────────────────
+Hollanda Veri Koruma Kurumu, Uber şirketine sürücü hesaplarını insan incelemesi olmaksızın otomatik yazılımlarla askıya aldığı gerekçesiyle 825 milyon avro para cezası kesmiştir. Şirketin bu uygulamayla Avrupa Birliği Genel Veri Koruma Yönetmeliği'ni (GDPR) ihlal ettiği ve sürücüleri bu süreç hakkında bilgilendirmediği belirtilmiştir. İhlallerin 2018 ile 2022 yılları arasında gerçekleştiği ifade edilmiştir. Uber, karara itiraz edeceğini açıklayarak söz konusu politikaların yıllar önce sona erdirildiğini savunmuştur. Bu cezanın, Hollandalı düzenleyicilerin Uber'e verdiği dördüncü ceza olduğu kaydedilmiştir. Daha önce 2024 yılında, Avrupalı sürücülerin verilerinin yetersiz koruma ile ABD'ye aktarılması nedeniyle şirkete 290 milyon avro ceza verildiği hatırlatılmıştır. Düzenleyici kurum, tam otomatik karar verme süreçlerinin AB kuralları çerçevesinde yasak olduğunu bir kez daha vurgulamıştır.
+(XXXXXXX, AÇIK -securityweek.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] ReliaQuest Firmasının ShinyHunters Kaynaklı Veri Hırsızlığı Girişimini Doğrulaması
+─────────────────────────────────────────────────────────
+Siber güvenlik şirketi ReliaQuest, bir çalışanının ShinyHunters adlı fidye yazılımı grubu tarafından hedef alındığını ve bir sosyal mühendislik saldırısına maruz kaldığını doğrulamıştır. Saldırganın, şirketin güvenlik ekibinden biri gibi davranarak çalışanları sahte bir tekli oturum açma (SSO) sayfasına yönlendirmeye çalıştığı belirtilmiştir. Bir çalışanın kimlik bilgilerini girmesiyle saldırganın kimlik paneline sınırlı ve yalnızca görüntüleme yetkili erişim sağladığı ifade edilmiştir. Ancak şirketin cihaz güvenliği kontrollerinin, saldırganın diğer uygulamalara ve müşteri verilerine erişmesini engellediği kaydedilmiştir. ReliaQuest, ihlalin tespit edilmesinin ardından oturumların sonlandırıldığını ve tüm kimlik doğrulama belirteçlerinin sıfırlandığını açıklamıştır. ShinyHunters grubunun, saldırıyı kanıtlamak için ele geçirdiği ekran görüntülerini kendi sızıntı sitesinde yayınladığı bildirilmiştir. Şirket, olaydan hiçbir müşteri verisinin etkilenmediğini ve sistemlerde kalıcılık sağlanmadığını vurgulamıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] DOUBLECUP Zararlı Yazılımının PNG Dosyalarını Kullanarak Komut Yürütmesi
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacısı Didier Stevens, DOUBLECUP adlı yeni bir zararlı yazılımın PowerShell komutlarını PNG resim dosyalarının sonuna ekleyerek gizlediğini tespit etmiştir. Yazılımın gerçek bir steganografi yöntemi kullanmadığı, bunun yerine verileri görüntü dosyasının sonuna düz metin olarak eklediği belirtilmiştir. PowerShell betiğinin Windows satır sonu karakterleriyle başladığı ve bu sayede özel bir ayıklama aracına gerek duymadan Windows'un yerleşik "FINDSTR" komutuyla çalıştırılabildiği ifade edilmiştir. Bu yöntemin, kötü amaçlı kodun resim dosyası gibi görünmesini sağlayarak güvenlik denetimlerinden kaçmayı hedeflediği kaydedilmiştir. Ayıklanan kodun doğrudan PowerShell yorumlayıcısına aktarılarak sistemde yürütüldüğü bildirilmiştir. Araştırmacı, yöntemin basitliğine rağmen standart Windows araçlarını akıllıca kullanarak tespit edilmeyi zorlaştırdığına dikkat çekmiştir. Zararlı yazılımın yayılma şekli ve hedefleri hakkında detaylı bilgi verilmemiştir.
+(XXXXXXX, AÇIK -isc.sans.edu, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Güney Koreli Girişim Platformunda Şifreleme Anahtarı Yönetimi Hatası
+─────────────────────────────────────────────────────────
+Güney Kore hükümeti destekli girişim platformu Modu-ui Changup, Temmuz 2026'da yaklaşık 5.000 kullanıcının verilerinin sızdırıldığı bir veri ihlali yaşamıştır. Yapılan incelemeler, şifrelenmiş verilerin çözülmesi için gereken anahtarın API yanıtları içinde açıkça paylaşıldığını ortaya koymuştur. Bu yönetim hatası nedeniyle, dış tarafların web kazıma yöntemleriyle şifreleme anahtarını ele geçirdiği ve e-posta adresleri ile girişim fikirlerini içeren hassas verileri deşifre ettiği belirtilmiştir. Güney Kore KOBİ ve Girişimler Bakanlığı, olayın ardından ulusal istihbarat ve polis birimleriyle koordineli bir soruşturma başlatmıştır. Uzmanlar, şifreleme anahtarlarının uygulama koduna veya API'lere gömülmesinin büyük bir risk oluşturduğunu vurgulamıştır. Güvenli bir mimari için anahtarların veriden ayrı bir anahtar yönetim sisteminde (KMS) saklanması gerektiği ifade edilmiştir. İhlalden etkilenen 39 farklı IP adresinin Güney Kore merkezli olduğu tespit edilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Mahkeme Dosyasına Gizlenen Yapay Zeka Komutları Nedeniyle Yaptırım Uygulanması
+─────────────────────────────────────────────────────────
+Connecticut'ta bir davacı, mahkeme dosyasına yapay zeka sistemlerini manipüle etmeyi amaçlayan gizli talimatlar eklediği gerekçesiyle yaptırıma maruz kalmıştır. Şahsın, belgeleri tarayan yapay zeka modellerini kendi lehine karar vermeye zorlamak için beyaz renkli ve çok küçük boyutlu metinler kullandığı belirtilmiştir. Siber güvenlik dünyasında "komut enjeksiyonu" olarak bilinen bu yöntemin, bir ABD mahkemesine karşı belgelenmiş ilk saldırı girişimi olduğu ifade edilmiştir. Yargıç Spader, bu taktiği "ciddi bir dava suistimali" olarak nitelendirmiş ve davacının elektronik dosyalama yetkisini iptal etmiştir. Davacının, mahkemenin yapay zeka kullanıp kullanmadığını denetlemek amacıyla bu eylemi gerçekleştirdiğini savunduğu ancak bu savunmanın reddedildiği kaydedilmiştir. Uzmanlar, bu olayın yapay zeka destekli hukuk çalışmalarında dolaylı komut enjeksiyonu risklerine karşı bir uyarı niteliği taşıdığına dikkat çekmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 23.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] AliExpress'in Kullanıcıları Takip Etmek İçin Sessiz Ses Tekniklerini Kullanması
+─────────────────────────────────────────────────────────
+Yazılım mühendisi Matt Callaghan, AliExpress web sitesinin kullanıcıları tarayıcı üzerinden takip etmek için duyulamaz ses dalgaları kullanan bir "ses parmak izi" tekniği uyguladığını iddia etmiştir. Bu yöntemin, kullanıcının Bluetooth kulaklıklarının diğer cihazlarla bağlantısını kesmesine neden olacak kadar aktif bir ses işleme grafiği oluşturduğu belirtilmiştir. Yapılan incelemeler, Alibaba'nın web sitesinde ekran boyutları, cihaz belleği ve tarayıcı eklentileri gibi verileri toplayan karmaşık parmak izi betiklerinin bulunduğunu ortaya koymuştur. Firefox ve Brave tarayıcı geliştiricileri, bu tür takip yöntemlerine karşı yıllardır koruma sağladıklarını açıklamıştır. Firefox'un, kullanıcıları anonim gruplara ayırarak parmak izi almayı etkisiz hale getirdiği, Brave'in ise rastgele veriler enjekte ederek takibi engellediği ifade edilmiştir. Google Chrome'un ise bu tür parmak izi tekniklerine karşı yeterince agresif bir koruma sunmadığı eleştirisi yapılmıştır. Alibaba'nın konuyla ilgili henüz bir açıklama yapmadığı kaydedilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] WordlistLoader ve SynkLoader Zararlı Yazılımlarının Kimlik Avı Yöntemleri
+─────────────────────────────────────────────────────────
+Gen Digital araştırmacıları, WordlistLoader ve SynkLoader adlı iki yeni zararlı yazılım ailesinin fidye yazılımı gruplarına erişim sağlamak amacıyla kullanıldığını tespit etmiştir. WordlistLoader yazılımının, sahte CAPTCHA doğrulama adımlarıyla kurbanları kandıran ClickFix tekniği üzerinden Amatera adlı veri hırsızını yaydığı belirtilmiştir. SynkLoader yazılımının ise Microsoft Teams üzerinden yürütülen bir kimlik avı kampanyasıyla, sahte bir Windows kilit ekranı sunarak kullanıcı parolalarını ele geçirdiği ifade edilmiştir. Saldırganların, meşru içerik dağıtım ağlarını ve Azure depolama uç noktalarını kötü amaçlı dosyaları barındırmak için kullandığı kaydedilmiştir. Her iki yazılımın da sistemde kalıcılık sağlamak için zamanlanmış görevler oluşturduğu ve güvenlik çözümlerini atlatmak için gelişmiş gizleme tekniklerine başvurduğu bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] CISA'nın Federal Kurumlar İçin Günlük Kaydı Kılavuzu Yayınlaması
+─────────────────────────────────────────────────────────
+ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), federal sivil kurumların günlük kaydı stratejilerini geliştirmeleri amacıyla Günlük Kaydı Referans Mimarisi (LRA) kılavuzunu yayınlamıştır. Ağustos 2026'da paylaşılan bu belgenin, kurumların saldırıları tespit etme ve olay sonrası yeniden yapılandırma yeteneklerini artırmayı hedeflediği belirtilmiştir. Kılavuzun, sürekli olay izleme ile tehdit avcılığı ve adli bilişim hedefleri etrafında şekillendiği ifade edilmiştir. CISA, günlük verilerinin sadece toplanmasının yeterli olmadığını, verilerin zamanında, kullanılabilir ve yüksek doğrulukta olması gerektiğini vurgulamıştır. Belgede ayrıca, yapay zeka çıktılarının yetkili kayıtlar değil, türetilmiş veriler olarak kabul edilmesi ve insan denetimine tabi tutulması gerektiği kaydedilmiştir. Federal kurumların 90 gün içinde günlük kaydı planlarını sunmaları ve 320 gün içinde gelişmiş olgunluk seviyesine ulaşmaları beklenmektedir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] Keycloak Sunucularında Kritik Parola Sıfırlama Zafiyetinin Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Red Hat ve Keycloak projesi, kimlik doğrulama sunucusunda herhangi bir kullanıcı hesabının ele geçirilmesine olanak tanıyan kritik bir güvenlik açığını gidermek için yamalar yayınlamıştır. CVE-2026-18963 koduyla tanımlanan ve 9.1 önem puanı verilen zafiyetin, parola sıfırlama akışındaki hatalı durum doğrulamasından kaynaklandığı belirtilmiştir. Saldırganların, e-posta ile gönderilen doğrulama koduna ihtiyaç duymadan doğrudan parola güncelleme aşamasına geçebildiği ifade edilmiştir. Bu durumun yönetici hesapları dahil tüm hesapların tam kontrolünün ele geçirilmesine yol açabileceği kaydedilmiştir. Kullanıcıların Keycloak 26.7.2 veya ilgili Red Hat sürümlerine güncellemeleri tavsiye edilmiştir. Güncelleme yapamayan kuruluşlar için geçici çözüm olarak tüm alanlarda "parolamı unuttum" özelliğinin devre dışı bırakılması önerilmiştir. Henüz bu açığın aktif olarak istismar edildiğine dair bir kanıt bulunmadığı bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Spring Uygulama Çerçevesinde Doksan Bir Güvenlik Zafiyetinin Yamalanması
+─────────────────────────────────────────────────────────
+Broadcom bünyesindeki Spring uygulama geliştirme çerçevesi geliştiricileri, 91 farklı güvenlik zafiyetini gideren güncellemeler yayınlamıştır. Bu yıl içinde Spring platformunda yamalanan toplam zafiyet sayısının 200'ü aşarak geçmiş yıllara oranla büyük bir artış gösterdiği belirtilmiştir. Yayınlanan güncellemeler arasında CVE-2026-59270 kodlu kritik bir zafiyetin bulunduğu ve bunun gömülü LDAP sunucusunu etkilediği ifade edilmiştir. Ayrıca Spring for GraphQL ve Spring AI bileşenlerinde uzaktan kod yürütme ve yetki yükseltme riskleri taşıyan yüksek önem dereceli açıklar tespit edilmiştir. Siber güvenlik firması Sonatype, bu yamaların 200.000'den fazla yazılım bileşenini etkilediğini açıklamıştır. Zafiyet sayısındaki artışın Broadcom'un yapay zeka kullanımından kaynaklandığı değerlendirilmektedir. CISA, Spring zafiyetlerinin tehdit aktörleri tarafından aktif olarak istismar edildiğini belirterek kurumları acil güncelleme yapmaya çağırmıştır.
+(XXXXXXX, AÇIK -securityweek.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] Slovakya Ulusal Güvenlik Otoritesinin Trafik Kameralarındaki Siber Risklere Karşı Uyarısı
+─────────────────────────────────────────────────────────
+Slovakya Ulusal Güvenlik Otoritesi (NBÚ), belirli yol hız kameralarının kamu ağları için ciddi bir siber tehdit oluşturduğunu açıklamıştır. Yapılan analizlerde, NERO R-ONE ve Rus menşeli Cordon serisi kameralarda belgelenmemiş iletişim ayarları ve operatör kontrolü dışındaki uzaktan erişim mekanizmaları tespit edilmiştir. Bu açıkların, saldırganların araç verilerine erişmesine, kayıtları değiştirmesine veya kamerayı ağa sızmak için bir basamak olarak kullanmasına olanak tanıyabileceği belirtilmiştir. Slovakya İçişleri Bakanlığı'nın, incelemeler sürerken söz konusu ekipmanları pilot uygulamadan kaldırdığı ifade edilmiştir. NBÚ, cihazların donanım ve yazılım kökenlerindeki belirsizliğin güvenlik risklerini artırdığını vurgulamıştır. Yetkililer, akıllı şehir altyapısındaki bağlı cihazların sadece markasına değil, teknik güvenlik standartlarına ve ağ segmentasyonuna göre değerlendirilmesi gerektiğini kaydetmiştir. Olayın, kritik altyapı güvenliğinde tedarik zinciri denetiminin önemini ortaya koyduğu bildirilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] Endüstriyel Protokollerdeki Zayıflıkların Fiziksel Süreçleri Sabotaj Riski Oluşturması
+─────────────────────────────────────────────────────────
+Nozomi Networks araştırmacıları, endüstriyel otomasyonda kullanılan Zaman Duyarlı Ağ (TSN) protokollerindeki güvenlik açıklarının fiziksel süreçlerin manipüle edilmesine yol açabileceğini ortaya koymuştur. Özellikle Mitsubishi Electric tarafından geliştirilen CC-Link IE TSN protokolünde, zamanlama dizilerinin tahmin edilebilirliği sayesinde kötü amaçlı sinyallerin meşru iletişim gibi sisteme enjekte edilebildiği belirtilmiştir. Bu yöntemin, robotik kolların durdurulması veya operasyonel zamanlama saatlerinin bozulması gibi ciddi fiziksel sonuçlar doğurabileceği ifade edilmiştir. CISA, Temmuz 2026'da bu zafiyetle ilgili bir endüstriyel kontrol sistemleri uyarısı yayınlamıştır. Saldırının gerçekleştirilmesi için TSN anahtarlarının yönetim arayüzlerine erişim sağlanması gerektiği kaydedilmiştir. Araştırmacılar, performans ve güvenlik arasındaki dengeyi korumak için kriptografik korumalar üzerinde çalıştıklarını açıklamıştır. Mevcut durumda en etkili koruma yönteminin, TSN ağlarının diğer sistemlerden sıkı bir şekilde izole edilmesi olduğu vurgulanmıştır.
+(XXXXXXX, AÇIK -darkreading.com, 21.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
