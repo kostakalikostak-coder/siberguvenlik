@@ -114,7 +114,12 @@ ARCHIVE_FILE = "data/haberler_arsiv.txt"
 # okuyarak aynı olayın üst üste iki gün KRİTİK 3 manşeti olmasını engeller.
 KRITIK3_HISTORY_FILE = "data/kritik3_gecmis.json"
 # Çapraz-gün KRİTİK 3 dedup penceresi (gün).
-KRITIK3_HISTORY_DAYS = 7
+# 7 → 30 (2026-08-24). ÖLÇÜLDÜ: Mustang Panda / CoolClient + çekirdek rootkit
+# haberi 14 Ağustos'ta gövdede yayımlandı (arşivde HoneyMyte takma adıyla),
+# 24 Ağustos'ta MANŞET oldu — aynı Kaspersky analizi, aynı arka kapı, aynı
+# hedefler. Arada 10 gün var; 7 günlük pencerede hiçbir katman göremezdi.
+# Arşiv 30 gün tuttuğu için pencere ona hizalandı.
+KRITIK3_HISTORY_DAYS = 30
 
 # Son günlerde RAPORA giren TÜM haberlerin (KRİTİK 3 + gövde) zengin parmak-izi
 # deposu. Çapraz-gün deterministik dedup (src.dedup.same_event cross_day) bu
@@ -125,7 +130,7 @@ REPORT_HISTORY_FILE = "data/rapor_gecmis.json"
 # Çapraz-gün rapor-geneli DETERMİNİSTİK dedup penceresi (gün). Yüksek-özgüllük
 # (ortak CVE/kod-adı/aktör) gerektirdiği için 7 gün güvenlidir, yanlış-pozitif
 # üretmez.
-REPORT_HISTORY_DAYS = 7
+REPORT_HISTORY_DAYS = 30  # bkz. KRITIK3_HISTORY_DAYS yorumu
 
 # ── LLM SEMANTİK ÇAPRAZ-GÜN DEDUP (opsiyonel, güçlendirilmiş) ──────────────────
 # 2026-07-09'da eklenen ilk sürüm (7 günlük pencere + gevşek prompt) YÜZEYSEL

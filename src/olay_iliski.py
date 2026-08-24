@@ -811,6 +811,26 @@ def _gerekce_adlari(gerekce):
     return None, set()
 
 
+def aday_anahtarlari(view):
+    """`ayni_olay`ın EŞLEŞEBİLMESİ için ortak olması gereken anahtar kümesi.
+
+    KAYIPSIZ ÖN FİLTRE: ayni_olay'ın kabul ettiği DÖRT yolun dördü de ortak bir
+    ad/kod adı/CVE/aktör gerektirir (entity, codename, codename-body,
+    same_event:actor). Salt konu örtüşmesi ve salt başlık benzerliği zaten
+    reddediliyor. Dolayısıyla bu kümelerin kesişimi BOŞSA ayni_olay kesinlikle
+    False döner ve karşılaştırma hiç yapılmayabilir.
+
+    Neden gerekli: bellek 7 günden 30 güne çıkınca karşılaştırma sayısı ~4
+    katına çıkıyor (ölçüm: 38 haberlik gün × 527 geçmiş görünüm ≈ 20.000 çift,
+    çift başına 1.57 ms → ~31 s). Ön filtre bunu ortak anahtarı olan birkaç
+    yüz çifte indirir.
+    """
+    blob = _metin(view)
+    return (dedup.extract_actors(blob)
+            | dedup.extract_codenames(blob)
+            | {a.lower() for a in (ozel_adlar(view)[0] | ozel_adlar(view)[1])})
+
+
 def ayni_olay(a, b, sozluk=None, ayni_gun=False, explain=False):
     """Aynı olay mı? TEK tanım — kapı, eleme ve denetim bunu çağırır.
 

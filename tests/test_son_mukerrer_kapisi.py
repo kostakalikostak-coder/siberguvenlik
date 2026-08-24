@@ -118,3 +118,55 @@ def test_kapi_boru_hattinda_ve_render_oncesinde():
     i_log = kaynak.index('_write_scoring_log(')
     assert i_yy < i_kapi < i_log, \
         'kapı yayın yönetmeninden SONRA ve log/render ÖNCESİNDE olmalı'
+
+
+def test_denetim_ve_kapi_ayni_tanimi_kullanir():
+    """"Denetim kaçak buldu ama politika bulmadı" YAPISAL olarak imkânsız olmalı.
+
+    Kök nedenin ikinci yarısı buydu: denetim dört değerli sınıflandırıcıyı,
+    eleme katmanları same_event'i kullanıyordu. İki farklı tanım = kapının
+    göremediğini denetimin görmesi (ve tersi).
+    """
+    import inspect
+    kapi = inspect.getsource(main.HaberSistemi._son_mukerrer_kapisi)
+    denetim = inspect.getsource(main.HaberSistemi._kalite_denetimi_yaz)
+    assert '_olay.ayni_olay(' in kapi, 'kapı tek tanımı kullanmıyor'
+    assert '_olay.ayni_olay(' in denetim, 'denetim tek tanımı kullanmıyor'
+    assert 'iliski_belirle(' not in denetim, \
+        'denetim hâlâ ayrı bir tanım kullanıyor — kapıyla ayrışır'
+
+
+def test_bellek_arsivle_hizali():
+    """Mustang Panda sınıfı: 10 gün önce yayımlanmış haber manşet oldu.
+
+    Pencere 7 gündü, arşiv 30 gün tutuyor. Pencere arşivden kısa kaldığı
+    sürece 7 günü aşan aralıkla dönen hiçbir olay görülemez.
+    """
+    from src import config
+    assert config.REPORT_HISTORY_DAYS >= 30, 'rapor geçmişi arşivden kısa'
+    assert config.KRITIK3_HISTORY_DAYS >= 30, 'manşet geçmişi arşivden kısa'
+
+
+def test_on_filtre_kayipsizdir():
+    """Ön filtre yalnızca HIZ içindir; eşleşme kümesini değiştirmemeli.
+
+    ayni_olay'ın kabul ettiği dört yolun dördü de ortak bir ad/kod adı/CVE/
+    aktör gerektirir; kesişim boşsa sonuç kesinlikle False'tur.
+    """
+    from src import olay_iliski as O
+    a = {'tr_title': 'Operation CameraSwarm Kapsamında Kameraların Ele '
+                     'Geçirilmesi', 'title': '',
+         'paragraph': 'Operation CameraSwarm kampanyasında Dahua kameraları '
+                      'ele geçirilmiştir.', 'full_text': ''}
+    b = {'tr_title': 'Dahua Cihazlarına Yönelik Operation CameraSwarm '
+                     'Kampanyası', 'title': '',
+         'paragraph': 'Operation CameraSwarm kapsamında Dahua kameraları '
+                      'hedef alınmıştır.', 'full_text': ''}
+    c = {'tr_title': 'Fransa Vergi Dairesinde Veri İhlali', 'title': '',
+         'paragraph': 'Fransa kamu maliyesi kurumundan mükellef verileri '
+                      'sızdırılmıştır.', 'full_text': ''}
+    assert O.aday_anahtarlari(a) & O.aday_anahtarlari(b), \
+        'eşleşen çift ön filtreden geçemiyor — KAYIP'
+    assert O.ayni_olay(a, b)
+    assert not (O.aday_anahtarlari(a) & O.aday_anahtarlari(c)) or \
+        not O.ayni_olay(a, c)

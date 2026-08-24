@@ -6050,9 +6050,19 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             self._load_recent_kritik3_views()
         _puan = lambda aid: (records.get(aid) or {}).get('toplam', 0)  # noqa: E731
 
+        # KAYIPSIZ ÖN FİLTRE — ayni_olay'ın kabul ettiği dört yolun dördü de
+        # ortak bir ad/kod adı/CVE/aktör gerektirir; kesişim boşsa sonuç
+        # kesinlikle False'tur. Pencere 30 güne çıkınca karşılaştırma sayısı
+        # ~4 katına çıkıyor; ölçümde filtre 1353 çifti 146'ya, süreyi
+        # 2.12 s'den 0.27 s'ye indirdi ve sonuç KÜMESİ AYNI kaldı.
+        gecmis_anahtar = [(_olay.aday_anahtarlari(ev), ev) for ev in gecmis]
+
         def _mukerrer_gecmis(aid):
             v = view_fn(aid)
-            for ev in gecmis:
+            anahtar = _olay.aday_anahtarlari(v)
+            for ga, ev in gecmis_anahtar:
+                if not (anahtar & ga):
+                    continue
                 tamam, neden = _olay.ayni_olay(v, ev, sozluk=sozluk,
                                                explain=True)
                 if tamam:
@@ -6184,14 +6194,24 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             # olması DOĞRU) "çapraz-gün kaçak" olarak raporlandı. Denetim
             # politikadan farklı bir ölçüt kullanırsa Faz 4 söküm kriteri asla
             # sağlanamaz ve kalıcı sahte alarm üretir.
+            #
+            # 2026-08-24: denetim ve politika artık AYNI fonksiyonu
+            # (olay_iliski.ayni_olay) çağırır. Eskiden denetim dört değerli
+            # sınıflandırıcıyı, eleme katmanları same_event'i kullanıyordu;
+            # "denetim kaçak buldu ama politika bulmadı" bu yüzden YAPISAL
+            # olarak mümkündü. Artık kapı ile denetim aynı tanımı paylaştığı
+            # için burada dolu bir liste, kapının ÇALIŞMADIĞI anlamına gelir.
             sozluk = getattr(self, '_olay_sozlugu', None)
             capraz = []
             for aid in rapor_ids:
                 v = view_fn(aid)
+                anahtar = _olay.aday_anahtarlari(v)
                 for ev in gecmis:
-                    iliski, neden = _olay.iliski_belirle(
+                    if not (anahtar & _olay.aday_anahtarlari(ev)):
+                        continue
+                    tamam, neden = _olay.ayni_olay(
                         v, ev, explain=True, sozluk=sozluk)
-                    if iliski == _olay.AYNI_GELISME:
+                    if tamam:
                         capraz.append({
                             'id': aid, 'baslik': _ad(aid),
                             'gecmis': (ev.get('tr_title')
@@ -6204,10 +6224,10 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             ici = []
             for i, a in enumerate(rapor_ids):
                 for b in rapor_ids[i + 1:]:
-                    iliski, neden = _olay.iliski_belirle(
+                    tamam, neden = _olay.ayni_olay(
                         view_fn(a), view_fn(b), ayni_gun=True,
                         explain=True, sozluk=sozluk)
-                    if iliski == _olay.AYNI_GELISME:
+                    if tamam:
                         ici.append({'a': a, 'b': b, 'a_baslik': _ad(a),
                                     'b_baslik': _ad(b), 'neden': neden})
 
