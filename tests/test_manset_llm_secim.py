@@ -88,7 +88,7 @@ def test_secici_kisa_listeyi_kodda_suzer():
     i_kapi = kaynak.index('manset_yasak')
     i_llm = kaynak.index('_manset_llm_sec(')
     assert i_kapi < i_llm, 'LLM seçimi manşet kapısından ÖNCE çalışıyor'
-    assert 'eligible' in kaynak.split('_manset_llm_sec(')[0][-600:], \
+    assert 'eligible' in kaynak.split('kisa_liste')[0][-3000:], \
         'kısa liste süzülmüş havuzdan kurulmuyor'
 
 
@@ -122,3 +122,18 @@ def test_yedek_bulucu_manset_yasagina_uyar():
     assert '_manset_yasak' in kaynak, 'yedek bulucu manşet yasağına bakmıyor'
     assert 'mukerrer_karari(' in kaynak, \
         'yedek bulucu geçmişi eski karşılaştırıcıyla ölçüyor'
+
+
+def test_hakem_secimden_once_de_kosar():
+    """Seçicinin göremediği bir eleyici seçimden SONRA çalışmamalı.
+
+    ÖLÇÜLDÜ (2026-08-24): LLM Myanmar/CoolClient casusluk haberini manşet
+    seçti; SON kapıdaki LLM HAKEMİ onu çapraz-gün mükerreri diye eledi ve
+    manşet, yerine geçen CISA günlükleme kılavuzuna düştü. Deterministik
+    temizlik yetmiyor — hakem de kısa listeye seçimden ÖNCE bakmalı.
+    """
+    import inspect
+    kaynak = inspect.getsource(main.HaberSistemi._derive_top3_by_score)
+    on = kaynak.split('kisa_liste = ')[0]
+    assert '_mukerrer_llm_hakem(' in on, \
+        'hakem manşet seçiminden önce çalışmıyor'

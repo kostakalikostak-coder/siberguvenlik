@@ -5807,7 +5807,40 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
             _aday = [a for a in dict.fromkeys(
                 list(top3_ids) + [a for a in eligible if a not in top3_ids])
-                if _temiz(a)]
+                if _temiz(a)][:self.MANSET_ADAY_SAYISI]
+
+            # HAKEM DE SEÇİMDEN ÖNCE KOŞAR.
+            #
+            # ÖLÇÜLDÜ (2026-08-24): deterministik temizlik yetmedi — LLM
+            # Myanmar/CoolClient casusluk haberini seçti, SON kapıdaki LLM
+            # HAKEMİ onu çapraz-gün mükerreri diye eledi ve manşet, yerine
+            # geçen CISA günlükleme kılavuzuna düştü. Yani seçicinin göremediği
+            # bir eleyici seçimden SONRA çalışıyordu — aynı 'kapsam ayrışması'
+            # sınıfı. Hakem artık seçimden ÖNCE de aynı adaylara bakar.
+            _gk = [(_olay.aday_anahtarlari(ev), '', ev) for ev in _k3_gecmis]
+            _ciftler, _esleme = [], {}
+            for aid in _aday:
+                cv = view_fn(aid)
+                for _p, _e, ev, ortak, topic in _olay.llm_adaylari(
+                        cv, _gk, sozluk=_sz):
+                    if _olay.mukerrer_karari(cv, ev, sozluk=_sz) != _olay.FARKLI:
+                        continue
+                    no = len(_ciftler) + 1
+                    _ciftler.append((no, cv, ev,
+                                     f'ortak={",".join(ortak[:3]) or "-"} '
+                                     f'konu={topic:.2f}'))
+                    _esleme[no] = aid
+            if _ciftler:
+                _dus = set()
+                for no, (ayni, olay) in self._mukerrer_llm_hakem(
+                        _ciftler).items():
+                    if ayni and no in _esleme:
+                        _dus.add(_esleme[no])
+                if _dus:
+                    print(f"   🤖 Manşet kısa listesi: {len(_dus)} aday hakem "
+                          f"tarafından mükerrer bulundu → çıkarıldı {sorted(_dus)}")
+                    _aday = [a for a in _aday if a not in _dus]
+
             kisa_liste = (_aday or list(top3_ids))[:self.MANSET_ADAY_SAYISI]
             top3_ids = self._manset_llm_sec(
                 kisa_liste, top3_ids, records, content_by_id,
