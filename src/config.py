@@ -1856,6 +1856,62 @@ def _yy_kategori_listesi():
                      if k not in ('urun_icerik', 'siber_disi'))
 
 
+def get_mukerrer_hakem_prompt(ciftler_metni):
+    """MÜKERRER HAKEMİ — deterministik mantığın KARARSIZ bıraktığı çiftler.
+
+    NEDEN VAR: deterministik `olay_iliski.ayni_olay` yüksek isabetlidir (elle
+    etiketli 38 çiftte sahte=0) ama YAPISAL bir kör noktası vardır — ortak
+    ad/kod adı/CVE taşımayan ya da sözcük örtüşmesi düşük kalan mükerrerleri
+    göremez. Bunlar tipik olarak ÇAPRAZ-DİL çiftlerdir: İngilizce özgün haber
+    ile Türkçe yeniden yazım aynı olayı anlatır ama örtüşme 0.05-0.19'da kalır.
+
+    ÖLÇÜLDÜ (data/dedup_golden.json): 11 gerçek mükerrer bu yüzden kaçıyor —
+    Mozilla GPG anahtarı (0.05), Gunra fidye yazılımı (0.11), CEVA Logistics
+    (0.12), DeadLock (0.14), Delta Wi-Fi (0.12), kötü amaçlı SIM (0.15),
+    Deepfake sertifika dolandırıcısı (ortak anahtar BİLE yok).
+
+    Kesin olanları kod eler; buraya yalnızca KARARSIZ çiftler gelir.
+    """
+    return f"""Sen bir siber güvenlik bülteninin MÜKERRER DENETÇİSİSİN.
+
+Aşağıda haber ÇİFTLERİ var. Her çift için tek soru: **AYNI OLAYI mı
+anlatıyorlar?**
+
+AYNI OLAY demek: aynı somut vaka — aynı saldırı, aynı kampanya, aynı ihlal,
+aynı zafiyet ifşası, aynı operasyon, aynı dava.
+
+⚠️ ŞUNLAR AYNI OLAYI FARKLI YAPMAZ:
+• Dil farkı (biri İngilizce özgün, diğeri Türkçe yeniden yazım).
+• Farklı kaynak, farklı başlık kalıbı, farklı vurgu.
+• Aktörün BAŞKA ADLA anılması — HoneyMyte / Mustang Panda / TA416 /
+  Twill Typhoon aynı gruptur; Cl0p / Clop aynıdır.
+• Yeni ayrıntı eklenmesi: yeni kurban sayısı, yeni ülke, "artık aktif
+  istismar ediliyor", "yama yayımlandı", resmi kurum duyurusu.
+  Aynı olayın DEVAMI da AYNI OLAYDIR.
+
+⚠️ ŞUNLAR FARKLI OLAYDIR:
+• Aynı aktör, FARKLI operasyon (Mustang Panda'nın CoolClient güncellemesi ile
+  QuickFox tedarik zinciri saldırısı AYRI olaylardır).
+• Aynı satıcı, FARKLI ürün ya da FARKLI CVE (Adobe bülteni ile Oracle
+  bülteni; GitLab açığı ile Citrix açığı).
+• Aynı kurum, FARKLI duyuru (CISA'nın Ray uyarısı ile CISA'nın katalog
+  güncellemesi).
+• Aynı tür saldırı, farklı kurban (iki ayrı fidye yazılımı vakası).
+• Yalnızca konu/tema benzerliği (iki ayrı API anahtarı ifşası vakası).
+
+KARAR KURALI: "AYNI" diyebilmen için PAYLAŞILAN SOMUT OLAYI adlandırabilmen
+gerekir (ör. "Threema'ya yönelik DDoS kesintisi", "CoolClient'a çekirdek
+rootkit eklenmesi"). Adlandıramıyorsan cevabın FARKLI'dır.
+
+ÇİFTLER:
+{ciftler_metni}
+
+YALNIZCA şu JSON'u döndür:
+{{"kararlar": [{{"no": <çift no>, "ayni": true|false,
+                "olay": "<AYNI ise paylaşılan olay, en fazla 10 kelime>"}}]}}
+Her çift için TAM BİR karar ver; hiçbirini atlama."""
+
+
 def get_yayin_yonetmeni_prompt(manset_items, govde_items):
     """GENEL YAYIN YÖNETMENİ — bitmiş raporun TAMAMINA bakan tek katman.
 

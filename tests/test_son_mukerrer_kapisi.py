@@ -11,8 +11,11 @@ manşete uygulanmadı.
 import main
 
 
-def _sistem(gecmis=(), sozluk=None):
+def _sistem(gecmis=(), sozluk=None, hakem=None):
     s = main.HaberSistemi.__new__(main.HaberSistemi)
+    # LLM ÇAĞRISI STUB'LANIR: gerçek istemci ağa gider ve yeniden denemelerle
+    # test başına ~47 s harcar. Hakemin kendi sözleşmesi ayrı test edilir.
+    s._gemini_call_json = lambda *a, **k: (hakem if hakem is not None else {})
     s._manset_izi = []
     s._olay_sozlugu = sozluk
     s._manset_yasak = set()
@@ -200,3 +203,129 @@ def test_erken_eleme_az_haber_kurtarmasindan_once():
     i_erken = kaynak.index('_erken_capraz_gun_mukerrer(')
     i_kurtarma = kaynak.index('MIN_POOL')
     assert i_erken < i_kurtarma, 'erken eleme az-haber kurtarmasından sonra'
+
+
+# ── LLM HAKEMİ ────────────────────────────────────────────────────────────
+# Deterministik katman yüksek isabetlidir (elle etiketli 38 çiftte sahte=0)
+# ama ortak ad/kod adı/CVE taşımayan mükerrerleri GÖREMEZ — çapraz-dil
+# çiftleri (İngilizce özgün ↔ Türkçe yeniden yazım) sözcük örtüşmesi
+# 0.05-0.19'da kalıyor. Hakem tam o boşluğu kapatır.
+
+def test_hakem_kararsiz_cifti_mukerrer_ilan_edebilir():
+    icerik = {1: ('Mozilla GPG Anahtarının Yenilenmesi',
+                  'Mozilla, ifşa olan Firefox imzalama anahtarını '
+                  'yenilemiştir.'),
+              2: BAGIMSIZ, 3: BAGIMSIZ2,
+              4: ('Akira Fidye Yazılımının Güvenli Modu Kullanması',
+                  'Akira fidye yazılımı EDR atlatmak için güvenli modu '
+                  'kullanmaktadır.')}
+    gecmis = [{'tr_title': 'Mozilla Revokes Firefox and Thunderbird Linux '
+                           'Signing Key', 'title': '',
+               'paragraph': 'Mozilla revoked its Linux signing key after a '
+                            'key compromise.', 'full_text': ''}]
+    s, rec, cnt, art = _kur([1, 2, 3], [4], [], icerik, gecmis)
+    s._load_recent_report_views = lambda *a, **k: gecmis
+    s._gemini_call_json = lambda *a, **k: {
+        'kararlar': [{'no': 1, 'ayni': True,
+                      'olay': 'Mozilla imzalama anahtarının yenilenmesi'}]}
+    nedenler = {}
+    t3, t10, kal = s._son_mukerrer_kapisi([1, 2, 3], [1, 2, 3, 4], [],
+                                          rec, cnt, art, nedenler)
+    assert nedenler.get(1, '').startswith('kapi_capraz_gun_llm'), \
+        'hakem kararı uygulanmadı'
+    assert 1 not in t3, 'hakem mükerrer dediği hâlde manşette kaldı'
+    assert 4 in t3, 'manşet yedekle doldurulmadı'
+
+
+def test_hakem_farkli_derse_haber_kalir():
+    icerik = {1: ('Mustang Panda QuickFox Tedarik Zinciri Saldırısı',
+                  'Mustang Panda, QuickFox VPN yükleyicisine arka kapı '
+                  'yerleştirmiştir.'),
+              2: BAGIMSIZ, 3: BAGIMSIZ2}
+    gecmis = [{'tr_title': "Mustang Panda'nın CoolClient Arka Kapısını "
+                           'Güncellemesi', 'title': '',
+               'paragraph': 'Mustang Panda CoolClient arka kapısını çekirdek '
+                            'rootkit ile güncellemiştir.', 'full_text': ''}]
+    s, rec, cnt, art = _kur([1, 2, 3], [], [], icerik, gecmis)
+    s._load_recent_report_views = lambda *a, **k: gecmis
+    s._gemini_call_json = lambda *a, **k: {
+        'kararlar': [{'no': 1, 'ayni': False, 'olay': ''}]}
+    nedenler = {}
+    s._son_mukerrer_kapisi([1, 2, 3], [1, 2, 3], [], rec, cnt, art, nedenler)
+    assert 1 not in nedenler, 'hakem FARKLI dediği hâlde haber elendi'
+
+
+def test_hakem_yanit_vermezse_haber_kaybolmaz():
+    """LLM erişilemediğinde haber KAYBETMEK, mükerrer yayımlamaktan kötüdür;
+    deterministik katman zaten kesin olanları elemiştir."""
+    icerik = {1: ('Mozilla GPG Anahtarının Yenilenmesi',
+                  'Mozilla imzalama anahtarını yenilemiştir.'),
+              2: BAGIMSIZ, 3: BAGIMSIZ2}
+    gecmis = [{'tr_title': 'Mozilla Revokes Firefox Signing Key', 'title': '',
+               'paragraph': 'Mozilla revoked its signing key.',
+               'full_text': ''}]
+    s, rec, cnt, art = _kur([1, 2, 3], [], [], icerik, gecmis)
+    s._load_recent_report_views = lambda *a, **k: gecmis
+    s._gemini_call_json = lambda *a, **k: None
+    nedenler = {}
+    s._son_mukerrer_kapisi([1, 2, 3], [1, 2, 3], [], rec, cnt, art, nedenler)
+    assert 1 not in nedenler, 'LLM sessizken haber elendi'
+
+
+def test_hakem_deterministigin_yakaladigini_tekrar_sormaz():
+    """Maliyet: kesin olanlar LLM'e gitmemeli."""
+    icerik = {1: CAMERASWARM_B, 2: BAGIMSIZ, 3: BAGIMSIZ2}
+    gecmis = [{'tr_title': CAMERASWARM_A[0], 'title': '',
+               'paragraph': CAMERASWARM_A[1], 'full_text': ''}]
+    sorulan = []
+    s, rec, cnt, art = _kur([1, 2, 3], [], [], icerik, gecmis)
+    s._load_recent_report_views = lambda *a, **k: gecmis
+
+    def _yakala(prompt, **k):
+        sorulan.append(prompt)
+        return {}
+    s._gemini_call_json = _yakala
+    s._son_mukerrer_kapisi([1, 2, 3], [1, 2, 3], [], rec, cnt, art, {})
+    # Deterministik yakaladığı haber (ID 1) hakemin A tarafında GÖRÜNMEMELİ.
+    # NOT: aynı geçmiş kayıt, BAŞKA haberlerin adayı olarak B tarafında
+    # görünebilir — bu doğrudur ve maliyet israfı değildir.
+    assert not any(f"A (" in p and CAMERASWARM_B[0][:30] in p
+                   for p in sorulan), \
+        'deterministik yakalanan haber yine de hakeme soruldu'
+
+
+def test_hakem_rapor_ici_mukerreri_de_yakalar():
+    """Kör nokta rapor İÇİNDE de var: aynı olayın iki farklı kaynaktan
+    gelen, ortak ad taşımayan iki versiyonu."""
+    icerik = {1: BAGIMSIZ, 2: BAGIMSIZ2,
+              3: ('Deepfake Hatası Sertifika Dolandırıcısını Ele Verdi',
+                  'Bir saniyelik deepfake aksaması, sahte dijital sertifika '
+                  'düzenleyen dolandırıcının kimliğini açığa çıkarmıştır.'),
+              4: ('Anlık Deepfake Arızası Dolandırıcının Kimliğini Açığa '
+                  'Çıkardı',
+                  'Görüntüdeki ani bozulma, dijital sertifika sahtekârının '
+                  'gerçek yüzünü göstermiştir.')}
+    s, rec, cnt, art = _kur([1, 2, 3], [4], [], icerik)
+    rec[3]['toplam'] = 90
+    rec[4]['toplam'] = 70
+    def _hakem(prompt, **k):
+        # Çift numarası boru hattının iç sırasına bağlıdır; testin ona
+        # bağlanması kırılgan olur. Bunun yerine prompt AYRIŞTIRILIR ve
+        # yalnızca İKİ TARAFI DA deepfake olan çifte 'ayni' denir.
+        import re as _re
+        kararlar = []
+        for blok in _re.split(r'--- ÇİFT ', prompt)[1:]:
+            no = int(blok.split(' ---')[0])
+            kararlar.append({'no': no,
+                             'ayni': blok.lower().count('deepfake') >= 2,
+                             'olay': 'deepfake ile sertifika dolandırıcısının '
+                                     'yakalanması'})
+        return {'kararlar': kararlar}
+    s._gemini_call_json = _hakem
+    nedenler = {}
+    t3, t10, kal = s._son_mukerrer_kapisi([1, 2, 3], [1, 2, 3, 4], [],
+                                          rec, cnt, art, nedenler)
+    hepsi = set(t3) | set(t10) | set(kal)
+    assert 4 not in hepsi, 'rapor içi mükerrerin düşük puanlısı elenmedi'
+    assert 3 in hepsi, 'yüksek puanlı temsilci de elendi'
+    assert nedenler.get(4, '').startswith('kapi_rapor_ici_llm')

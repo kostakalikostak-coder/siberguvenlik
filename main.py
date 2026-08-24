@@ -77,6 +77,7 @@ from src.config import (
     get_cross_day_dedup_prompt, get_register_audit_prompt,
     get_kritik3_selection_audit_prompt,
     get_yayin_yonetmeni_prompt,
+    get_mukerrer_hakem_prompt,
     get_executive_summary_prompt, get_title_rescue_prompt,
     get_kritik3_length_fix_prompt,
     get_scoring_prompt, get_critique_prompt,
@@ -6075,6 +6076,46 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         return yeni_top3, yeni_govde
 
+    MUKERRER_HAKEM_BATCH = 12
+
+    def _mukerrer_llm_hakem(self, ciftler):
+        """Kararsız çiftleri LLM'e sorar. Dönüş: {no: (ayni, olay)}.
+
+        `ciftler`: [(no, a_view, b_view, ipucu), ...]
+        Yanıt alınamazsa BOŞ döner — yani karar verilemeyen çift MÜKERRER
+        SAYILMAZ. Bu bilinçli: LLM erişilemediğinde haber kaybetmek, mükerrer
+        yayımlamaktan daha kötüdür ve deterministik katman zaten kesin
+        olanları elemiştir.
+        """
+        sonuc = {}
+        if not ciftler:
+            return sonuc
+        for bas in range(0, len(ciftler), self.MUKERRER_HAKEM_BATCH):
+            grup = ciftler[bas:bas + self.MUKERRER_HAKEM_BATCH]
+            satirlar = []
+            for no, a, b, ipucu in grup:
+                satirlar.append(
+                    f"--- ÇİFT {no} ---\n"
+                    f"A ({ipucu}) Başlık: {(a.get('tr_title') or a.get('title') or '')[:120]}\n"
+                    f"   Özet: {' '.join((a.get('paragraph') or '').split()[:70])}\n"
+                    f"B Başlık: {(b.get('tr_title') or b.get('title') or '')[:120]}\n"
+                    f"   Özet: {' '.join((b.get('paragraph') or '').split()[:70])}\n")
+            data = self._gemini_call_json(
+                get_mukerrer_hakem_prompt('\n'.join(satirlar)),
+                max_output_tokens=2048,
+                label=f'MükerrerHakem({len(grup)})')
+            if not isinstance(data, dict):
+                print(f"   ⚠️  Mükerrer hakemi yanıt vermedi ({len(grup)} çift) "
+                      f"— bu çiftler mükerrer SAYILMADI.")
+                continue
+            for k in (data.get('kararlar') or []):
+                try:
+                    no = int(k.get('no'))
+                except (TypeError, ValueError):
+                    continue
+                sonuc[no] = (bool(k.get('ayni')), str(k.get('olay', ''))[:60])
+        return sonuc
+
     def _son_mukerrer_kapisi(self, top3_ids, top10_ids, remaining_ids,
                              records, content_by_id, articles_by_id,
                              eleme_nedeni):
@@ -6117,14 +6158,50 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     return neden
             return None
 
-        # ── (a) ÇAPRAZ-GÜN ────────────────────────────────────────────────
+        # ── (a) ÇAPRAZ-GÜN — deterministik ────────────────────────────────
+        rapor_ids = list(top3_ids) + list(top10_ids) + list(remaining_ids)
         dusen = {}
-        for aid in list(top3_ids) + list(top10_ids) + list(remaining_ids):
+        for aid in rapor_ids:
             if aid in dusen:
                 continue
             neden = _mukerrer_gecmis(aid)
             if neden:
                 dusen[aid] = f'kapi_capraz_gun ({neden[:48]})'
+
+        # ── (a2) ÇAPRAZ-GÜN — LLM HAKEMİ (deterministiğin kör noktası) ─────
+        # Deterministik katman yüksek isabetlidir ama ortak ad/kod adı/CVE
+        # taşımayan ya da sözcük örtüşmesi düşük kalan mükerrerleri GÖREMEZ.
+        # Bunlar tipik olarak çapraz-dil çiftlerdir (İngilizce özgün ↔ Türkçe
+        # yeniden yazım). ÖLÇÜLDÜ (data/dedup_golden.json): 11 gerçek mükerrer
+        # bu yüzden kaçıyor — Mozilla GPG (topic 0.05), Gunra (0.11), CEVA
+        # (0.12), DeadLock (0.14), Deepfake (ortak anahtar BİLE yok).
+        #
+        # Kesin olanları kod eledi; buraya yalnızca KARARSIZ ve EN OLASI
+        # birkaç aday gelir (bkz. olay_iliski.llm_adaylari).
+        gecmis_kayit = [(_olay.aday_anahtarlari(ev), '', ev) for ev in gecmis]
+        ciftler, esleme = [], {}
+        for aid in rapor_ids:
+            if aid in dusen:
+                continue
+            v = view_fn(aid)
+            for _p, _e, ev, ortak, topic in _olay.llm_adaylari(
+                    v, gecmis_kayit, sozluk=sozluk):
+                if _olay.ayni_olay(v, ev, sozluk=sozluk):
+                    continue          # zaten deterministik yakaladı
+                no = len(ciftler) + 1
+                ciftler.append((no, v, ev,
+                                f'ortak={",".join(ortak[:3]) or "-"} '
+                                f'konu={topic:.2f}'))
+                esleme[no] = aid
+        if ciftler:
+            print(f"   🤖 Mükerrer hakemi: {len(ciftler)} kararsız çift "
+                  f"LLM'e soruluyor (deterministik {len(dusen)} tanesini "
+                  f"zaten eledi)...")
+            for no, (ayni, olay) in self._mukerrer_llm_hakem(ciftler).items():
+                aid = esleme.get(no)
+                if ayni and aid is not None and aid not in dusen:
+                    dusen[aid] = f'kapi_capraz_gun_llm ({olay})'
+                    print(f"   🤖 Hakem: ID {aid} MÜKERRER — {olay}")
 
         # ── (b) RAPOR İÇİ — yüksek puanlı temsilci kalır ───────────────────
         kalan = [aid for aid in
@@ -6132,14 +6209,43 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                  if aid not in dusen]
         kalan.sort(key=lambda aid: -_puan(aid))
         tutulan = []
+        ici_ciftler, ici_esleme = [], {}
         for aid in kalan:
             v = view_fn(aid)
             esles = next((t for t in tutulan
                           if _olay.ayni_olay(v, view_fn(t), sozluk=sozluk)), None)
             if esles is None:
+                # Deterministik "farklı" dedi — ama kör noktası var. En olası
+                # birkaç RAPOR İÇİ komşuyu hakeme taşı.
+                komsular = _olay.llm_adaylari(
+                    v, [(_olay.aday_anahtarlari(view_fn(t)), t, view_fn(t))
+                        for t in tutulan],
+                    sozluk=sozluk, ust_sinir=2)
+                for _p, t, tv, ortak, topic in komsular:
+                    no = 10000 + len(ici_ciftler) + 1
+                    ici_ciftler.append((no, v, tv,
+                                        f'ortak={",".join(ortak[:3]) or "-"} '
+                                        f'konu={topic:.2f}'))
+                    ici_esleme[no] = (aid, t)
                 tutulan.append(aid)
             else:
                 dusen[aid] = f'kapi_rapor_ici (ID {esles} ile aynı olay)'
+        if ici_ciftler:
+            print(f"   🤖 Mükerrer hakemi (rapor içi): {len(ici_ciftler)} "
+                  f"kararsız çift soruluyor...")
+            for no, (ayni, olay) in self._mukerrer_llm_hakem(ici_ciftler).items():
+                aid, t = ici_esleme.get(no, (None, None))
+                if not ayni or aid is None or aid in dusen:
+                    continue
+                # Düşük puanlı olan düşer — temsilci en güçlü haberdir.
+                dus_aid, kalan_aid = ((aid, t) if _puan(aid) <= _puan(t)
+                                      else (t, aid))
+                if dus_aid in dusen:
+                    continue
+                dusen[dus_aid] = (f'kapi_rapor_ici_llm '
+                                  f'(ID {kalan_aid} ile aynı olay: {olay})')
+                print(f"   🤖 Hakem (rapor içi): ID {dus_aid} ↔ ID "
+                      f"{kalan_aid} AYNI OLAY — {olay}")
 
         if not dusen:
             print("   ✅ Son mükerrer kapısı: rapor temiz.")

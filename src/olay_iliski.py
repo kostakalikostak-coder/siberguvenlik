@@ -51,6 +51,7 @@ ister. Bunlar LLM denetim katmanlarının işidir; deterministik katmanın işi
 KESİN olmaktır, kapsayıcı olmak değil.
 """
 import re
+from difflib import SequenceMatcher
 from collections import Counter
 
 from . import dedup
@@ -945,3 +946,72 @@ def ayni_olay(a, b, sozluk=None, ayni_gun=False, explain=False):
         return _ret(True, f'same_event:{gerekce}')
 
     return _ret(True, f'same_event:{gerekce}')
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LLM HAKEMİ İÇİN ADAY SEÇİMİ
+# ─────────────────────────────────────────────────────────────────────────────
+# NEDEN VAR: deterministik `ayni_olay` YÜKSEK İSABETLİDİR (elle etiketli 38
+# çiftte sahte=0) ama YAPISAL bir kör noktası vardır — ortak ad/kod adı/CVE
+# taşımayan ya da konu örtüşmesi düşük kalan mükerrerleri göremez. Bunlar
+# tipik olarak ÇAPRAZ-DİL çiftlerdir: İngilizce özgün haber ile Türkçe
+# yeniden yazım aynı olayı anlatır ama sözcük örtüşmesi 0.05-0.19'da kalır.
+#
+# ÖLÇÜLDÜ (data/dedup_golden.json): 11 gerçek mükerrer çift bu yüzden
+# kaçıyor — Mozilla GPG anahtarı (topic 0.05), Gunra fidye yazılımı (0.11),
+# CEVA Logistics (0.12), DeadLock (0.14), Delta Wi-Fi (0.12), kötü amaçlı SIM
+# (0.15), Deepfake sertifika dolandırıcısı (ORTAK ANAHTAR BİLE YOK).
+#
+# Çözüm: deterministik kesin olanları eler, KARARSIZ kalanların en olası
+# birkaçı LLM'e sorulur. Bu fonksiyon "en olası birkaçı"nı seçer.
+
+# Adaylık için asgari benzerlik. Altındakiler LLM'e hiç sorulmaz.
+ADAY_BENZERLIK_MIN = 0.55
+# Haber başına LLM'e taşınacak en fazla geçmiş aday sayısı.
+ADAY_UST_SINIR = 3
+
+
+def _ayirt_edici_ortak(ka, kb, sozluk):
+    """İki anahtar kümesinin AYIRT EDİCİ kesişimi.
+
+    Jenerik kökler ('şirket', 'zararlı', 'saldırgan', 'vulnerability')
+    filtrelenmezse sıralama tamamen bozuluyor: ölçümde endüstriyel TSN
+    protokolü haberi, 'vulnerab/analytic/operatio' ortaklığıyla yapay zeka
+    ajanı haberinin üstüne çıktı.
+    """
+    ortak = {k for k in (ka & kb) if len(k) >= 5}
+    if sozluk is not None:
+        ortak = sozluk.ayirt_edici(ortak)
+    return ortak - _MANSIZ_AD
+
+
+def aday_benzerligi(a, b, ka=None, kb=None, sozluk=None):
+    """0'dan büyük bir benzerlik puanı — LLM adaylarını SIRALAMAK için.
+
+    Karar VERMEZ; yalnızca "hangi geçmiş kayıt bu habere en yakın" sorusunu
+    ucuza cevaplar. Ağırlıklar ölçümle seçildi: gerçek mükerrerler bu puanda
+    daima 1. sırada ve ikinciyle arasında belirgin fark var.
+    """
+    ka = aday_anahtarlari(a) if ka is None else ka
+    kb = aday_anahtarlari(b) if kb is None else kb
+    ortak = _ayirt_edici_ortak(ka, kb, sozluk)
+    topic = _konu_ortusmesi(a, b)
+    baslik = SequenceMatcher(
+        None, (a.get('tr_title') or '').lower(),
+        (b.get('tr_title') or '').lower()).ratio()
+    return len(ortak) * 1.0 + topic * 3.0 + baslik * 1.0, ortak, topic
+
+
+def llm_adaylari(view, gecmis_kayitlar, sozluk=None, ust_sinir=ADAY_UST_SINIR):
+    """[(puan, kayit, ortak, topic), ...] — en olası geçmiş eşleşmeler.
+
+    gecmis_kayitlar: [(anahtar_kümesi, herhangi_bir_etiket, view), ...]
+    """
+    ka = aday_anahtarlari(view)
+    sirali = []
+    for kb, etiket, ev in gecmis_kayitlar:
+        puan, ortak, topic = aday_benzerligi(view, ev, ka, kb, sozluk)
+        if puan >= ADAY_BENZERLIK_MIN:
+            sirali.append((puan, etiket, ev, sorted(ortak), topic))
+    sirali.sort(key=lambda x: -x[0])
+    return sirali[:ust_sinir]
