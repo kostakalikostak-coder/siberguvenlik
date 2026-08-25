@@ -4041,7 +4041,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         return False
 
     def _kritik3_yedek_bul(self, aday_ids, sonuc, records, view_fn,
-                           recent_views, haric=()):
+                           recent_views, haric=(), aday_puanlari=None):
         """Manşete uygun ilk yedek adayı bulur (yoksa None).
 
         Ölçütler: manşete uygun kategori, 'mükerrer' işaretsiz, mevcut
@@ -4051,6 +4051,12 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         """
         sozluk = getattr(self, '_olay_sozlugu', None)
         yasak = getattr(self, '_manset_yasak', None) or set()
+        # Havuz PUAN SIRASINDA taranır; eskiden çağıranın verdiği sırayla
+        # taranıyor ve ilk uygun aday alınıyordu.
+        if aday_puanlari is None:
+            aday_puanlari = {a: (records.get(a) or {}).get('toplam', 0)
+                             for a in aday_ids}
+        aday_ids = sorted(aday_ids, key=lambda a: -aday_puanlari.get(a, 0))
         for cand in aday_ids:
             if cand in sonuc or cand in haric:
                 continue
@@ -4078,6 +4084,18 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     _olay.mukerrer_karari(cv, ev, sozluk=sozluk) != _olay.FARKLI
                     for ev in recent_views):
                 continue
+            # PUAN BANDI YEDEK SEÇİMİNDE DE GEÇERLİDİR.
+            #
+            # Bant `_manset_llm_sec` içinde vardı ama SONRAKİ katmanların
+            # koyduğu yedekler ona hiç bakmıyordu. ÖLÇÜLDÜ (2026-08-25):
+            # 44 puanlık "Weedhack zararlısının sahte Minecraft istemcileri
+            # üzerinden yayılması" haberi manşet oldu; aynı raporda 96 puanlı
+            # İran yaptırımı manşetteydi. Yedek bulucu havuzu puan sırasında
+            # taramadığı ve bant uygulamadığı için ilk uygun adayı alıyordu.
+            if aday_puanlari:
+                tavan = max(aday_puanlari.values(), default=0)
+                if aday_puanlari.get(cand, 0) < tavan - self.MANSET_PUAN_TOLERANSI:
+                    continue
             return cand
         return None
 
@@ -4179,6 +4197,16 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
         view_fn = self._dedup_view_fn(content_by_id, articles_by_id)
         sonuc = list(top3_ids)
+        # AUDITOR'IN "MANŞETLİK DEĞİL" KARARI KALICIDIR.
+        #
+        # ÖLÇÜLDÜ (2026-08-25): Auditor "ABD'de yaşlıları dolandıran şebeke"
+        # haberini "siber güvenlik olayı değil; fiziksel para/altın toplama"
+        # gerekçesiyle manşetten çıkardı; birkaç katman sonra SON KAPI aynı
+        # haberi yedek olarak manşete GERİ getirdi ve 63 puanla manşette
+        # kaldı. Karar yalnızca o an uygulanıyor, hiçbir yere yazılmıyordu.
+        if not hasattr(self, '_manset_yasak'):
+            self._manset_yasak = set()
+        self._manset_yasak |= set(hatali)
         for aid, neden in hatali.items():
             yedek = self._kritik3_yedek_bul(
                 yedek_ids, [o for o in sonuc if o != aid], records, view_fn,

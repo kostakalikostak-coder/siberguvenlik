@@ -258,3 +258,32 @@ def test_manset_capraz_gun_karsilastirmasi_tum_raporu_kapsar():
         'manşet seçicisi tam rapor geçmişini görmüyor — çapraz-gün kaçağı riski'
     assert '_load_recent_kritik3_views()' in kaynak, \
         'manşet geçmişi karşılaştırmadan çıkmış'
+
+
+def test_auditorun_manset_reddi_kalicidir():
+    """Auditor "manşetlik değil" dediği haber yedek olarak geri gelmemeli.
+
+    ÖLÇÜLDÜ (2026-08-25): Auditor "ABD'de yaşlıları dolandıran şebeke"
+    haberini "siber güvenlik olayı değil" gerekçesiyle manşetten çıkardı;
+    birkaç katman sonra SON KAPI aynı haberi yedek olarak geri getirdi ve
+    63 puanla manşette kaldı.
+    """
+    import inspect
+    import main
+    kaynak = inspect.getsource(main.HaberSistemi._audit_kritik3_selection)
+    assert '_manset_yasak' in kaynak, \
+        'Auditor manşet reddi hiçbir yere yazılmıyor — yedek olarak geri gelir'
+
+
+def test_yedek_bulucu_puan_bandi_uygular():
+    """Puan bandı yalnızca LLM seçiminde değil, YEDEK seçiminde de geçerli.
+
+    ÖLÇÜLDÜ (2026-08-25): 44 puanlık "Weedhack zararlısının sahte Minecraft
+    istemcileri üzerinden yayılması" haberi manşet oldu; aynı raporda 96
+    puanlı İran yaptırımı manşetteydi.
+    """
+    import inspect
+    import main
+    kaynak = inspect.getsource(main.HaberSistemi._kritik3_yedek_bul)
+    assert 'MANSET_PUAN_TOLERANSI' in kaynak, 'yedek bulucuda puan bandı yok'
+    assert 'sorted(aday_ids' in kaynak, 'yedek havuzu puan sırasında taranmıyor'
