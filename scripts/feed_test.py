@@ -26,14 +26,21 @@ HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 # ADAY alternatifleri yaz, workflow'u çalıştır, çıktıdan çalışan varyantı seç.
 # (Örnek geçmiş: Help Net "Exceeded 30 redirects" → /feed/ ile çözüldü.)
 TARGETS = {
-    # --- The Hacker News: 14→17 Ağu koşularında pencere dışı madde sayısı
-    #     8 → 16 → 33 → 40 diye tırmandı ve 17 Ağu'da kaynak HİÇ üretmedi
-    #     (14 Ağu'da 32 haber vermişti — en verimli kaynak). Bu tırmanış
-    #     "feed donmuş, pencere kayıyor" desenidir; feedburner aynası mı
-    #     bayat, yoksa yayın mı durdu — üretim IP'sinde ölçülüyor.
-    'THN (mevcut feedburner)':     'https://feeds.feedburner.com/TheHackersNews',
-    'THN (blogger doğrudan)':      'https://thehackernews.com/feeds/posts/default',
-    'THN (blogger rss)':           'https://thehackernews.com/feeds/posts/default?alt=rss',
+    # --- SANS ISC: 2026-08-24/25 koşularında "syntax error: line 1, column 0"
+    #     (yani XML değil → bot/IP challenge sayfası). 2026-07-27'de kalkmış
+    #     görünen Actions-IP engeli geri gelmiş olabilir. Doğrudan + tam metin
+    #     varyantı + ham gövde döndüren proxy'ler ölçülüyor.
+    'SANS ISC (mevcut)':           'https://isc.sans.edu/rssfeed.xml',
+    'SANS ISC (tam metin)':        'https://isc.sans.edu/rssfeed_full.xml',
+    'SANS ISC (allorigins)':       'https://api.allorigins.win/raw?url=https%3A%2F%2Fisc.sans.edu%2Frssfeed.xml',
+    'SANS ISC (codetabs)':         'https://api.codetabs.com/v1/proxy/?quest=https%3A%2F%2Fisc.sans.edu%2Frssfeed.xml',
+    # --- The Register: 2026-08-25'te 200 OK ama 0 madde ("SESSİZ BOŞ").
+    #     08-24'te aynı URL 18 madde vermişti → aralıklı. Atom yerine RSS
+    #     varyantı ve genel manşet akışı alternatif olarak ölçülüyor.
+    'Register (mevcut atom)':      'https://www.theregister.com/security/headlines.atom',
+    'Register (security rss)':     'https://www.theregister.com/security/headlines.rss',
+    'Register (genel atom)':       'https://www.theregister.com/headlines.atom',
+    'Register (allorigins)':       'https://api.allorigins.win/raw?url=https%3A%2F%2Fwww.theregister.com%2Fsecurity%2Fheadlines.atom',
     # --- Kontrol grubu (çalıştığı bilinen kaynaklar) ---
     'BleepingComputer (kontrol)':  'https://www.bleepingcomputer.com/feed/',
     'Help Net Security (kontrol)': 'https://www.helpnetsecurity.com/feed/',
