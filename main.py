@@ -2151,9 +2151,37 @@ document.addEventListener('DOMContentLoaded', initDragFile);
     def fetch_rss(self, url, source_name):
         """RSS çeker — max 15 saniye timeout korumalı"""
         import threading
+        import time as _time
         result_holder = {'articles': [], 'error': None}
 
+        # 200 OK ama işe yaramaz yanıt (XML yerine anti-bot sayfası, ya da geçerli
+        # XML ama 0 madde) HTTP hatası sayılmadığı için retry_statuses'a takılmıyor
+        # ve kaynak o günkü TÜM haberlerini kaybediyordu. 2026-08-25 12:06 koşusunda
+        # ikisi de aynı anda oldu: SANS ISC "syntax error: line 1, column 0",
+        # The Register "200 OK ama 0 madde". feed_test aynı gün üretim IP'sinden
+        # AYNI URL'leri sorunsuz çekti (SANS 10 madde, Register 50 madde) → arıza
+        # URL'de değil, geçici. Bu yüzden tek bir yeniden deneme yeter.
+        # Bütçe: yeniden deneme YALNIZCA ilk deneme hızlı bittiyse (<8s) yapılır;
+        # böylece en kötü durum 8+1.5+8 = 17.5s < join(20s) sınırında kalır ve
+        # 403-retry'ye giren yavaş kaynaklarda ikinci tur hiç başlamaz.
+        BOS_YENIDEN_DENEME = 1
+        BOS_BEKLEME = 1.5
+        HIZLI_ESIK = 8.0
+
         def _fetch_rss():
+            for _deneme in range(BOS_YENIDEN_DENEME + 1):
+                _t0 = _time.monotonic()
+                result_holder['articles'] = []
+                result_holder['error'] = None
+                _bir_deneme()
+                _sure = _time.monotonic() - _t0
+                if result_holder['articles']:
+                    return
+                if _deneme >= BOS_YENIDEN_DENEME or _sure >= HIZLI_ESIK:
+                    return
+                _time.sleep(BOS_BEKLEME)
+
+        def _bir_deneme():
             try:
                 # 403'ü de yeniden dene: WAF/anti-bot katmanları ara sıra tek bir
                 # isteğe 403 döndürüyor (The Register 2026-07-28: üretimde 403,
