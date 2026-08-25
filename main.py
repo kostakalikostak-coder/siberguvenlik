@@ -7730,6 +7730,18 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 print(f"   🛡️→📰 Gövde ince ({len(_regular)}<{BODY_MIN}) — en güçlü "
                       f"{len(promote_ids)} güvenlik açığı 'Önemli Gelişmeler'e çıkarıldı.")
 
+        # KATEGORİ ANLIK GÖRÜNTÜSÜNÜ TAZELE — zafiyet bölümü yönlendirmesi
+        # `category_by_id`ye bakar, ama bu harita SIRALAMA anında kurulur ve
+        # sonrasında kategori ÜÇ yerde daha değişir: `_enforce_apt_attribution`
+        # (zafiyet_aktif_apt → zafiyet_rutin) ve yayın yönetmeninin kategori
+        # düzeltmesi. Tazelenmediğinde renderer bayat etiketi okuyor.
+        # ÖLÇÜLDÜ (2026-08-25): ToxicPanda haberini yönetmen
+        # `phishing_sosyal_muhendislik`e taşıdı, rapor yine de onu "Güvenlik
+        # Açıkları" bölümünde bastı. Hemen üstteki terfi bloğu zaten CANLI
+        # `score_records`e bakıyordu — tutarsızlık buradaydı.
+        category_by_id = {aid: rec['kat'] for aid, rec in score_records.items()
+                          if rec.get('kat')}
+
         html = self._build_html(
             articles    = articles,
             top10_ids   = top10_ids,
