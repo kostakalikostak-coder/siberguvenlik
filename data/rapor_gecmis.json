@@ -1,70 +1,5 @@
 [
  {
-  "date": "2026-07-25",
-  "views": [
-   {
-    "tr_title": "Vatikan'ın Resmi Dua Uygulamasında 700 Binden Fazla Kullanıcı Verisinin Sızdırılması",
-    "paragraph": "───────────────────────────────────────────────────────── Vatikan'ın resmi dua uygulaması olan Click to Pray bünyesinde, 700.000'den fazla kullanıcının kişisel bilgilerinin sızmasına neden olan bir güvenlik açığı tespit edilmiştir. \"BobDaHacker\" takma adlı bir araştırmacı tarafından keşfedilen zafiyetin, uygulamanın uygulama programlama arayüzü (API) üzerindeki bir yetkilendirme hatasından kaynaklandığı belirtilmiştir. Sızıntı kapsamında kullanıcıların isimleri, e-posta adresleri, ülkeleri ve hesap durumlarının herhangi bir kimlik doğrulaması gerekmeksizin erişilebilir hale geldiği ifade edilmiştir. Uygulamayı geliştiren La Machi şirketinin ve uygulamanın sahibi olan Papa'nın Dünya Dua Ağı'nın konuyla ilgili henüz bir çözüm sunmadığı kaydedilmiştir. Uzmanlar, bu tür verilerin kimlik avı saldırılarında ve sosyal mühendislik faaliyetlerinde kullanılabileceğine dikkat çekerek kullanıcıların anonim bilgilerle kayıt olmalarını tavsiye etmektedir. (XXXXXXX, AÇIK -darkreading.com, 24.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Microsoft'un Windows Kurumsal Etkinleştirme Güvenliğini Donanım Tabanlı Doğrulamayla Sıkılaştırması",
-    "paragraph": "───────────────────────────────────────────────────────── Microsoft, Windows toplu etkinleştirme işlemleri için kullanılan şirket içi Anahtar Yönetim Hizmeti (KMS) için Güvenilir Platform Modülü (TPM) destekli kanıtlamayı zorunlu hale getireceğini açıklamıştır. Bu değişiklikle birlikte, yazılım tabanlı güven modelinin yerini donanım destekli doğrulamanın alacağı ve kurumsal etkinleştirme güvenliğinin artırılacağı belirtilmiştir. Yeni modelde KMS sunucusunun, etkinleştirme tamamlanmadan önce kimliğini ve bütünlüğünü kanıtlayan bir rapor oluşturmak için TPM kullanacağı ifade edilmiştir. Bu sürecin, KMS sunucusunun kopyalanması veya taklit edilmesi riskini azaltacağı kaydedilmiştir. Uygulamanın bir sonraki Windows Server Uzun Süreli Hizmet Kanalı (LTSC) sürümüyle zorunlu olacağı, Ağustos 2026'dan itibaren ise Windows Server 2025'in yöneticilere hazırlık mesajları sunmaya başlayacağı bildirilmiştir. (XXXXXXX, AÇIK -helpnetsecurity.com, 24.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "OnTrac Lojistik Şirketinin Ağ İhlali Sonrası Müşteri Verilerinin Sızdırılması",
-    "paragraph": "───────────────────────────────────────────────────────── Amerika Birleşik Devletleri merkezli paket teslimat şirketi OnTrac, kurumsal ağının siber saldırganlar tarafından ihlal edildiğini ve müşteri kişisel bilgilerine erişilmiş olabileceğini açıklamıştır. Güvenlik olayının 23 Mart 2026 tarihinde tespit edildiği, yapılan incelemeler sonucunda saldırganların 20-22 Mart 2026 tarihleri arasında belirli dosyalara erişim sağladığının belirlendiği ifade edilmiştir. Şirket, yetkililerle paylaştığı bildirimde isimler dışındaki veri türlerini gizli tuttuğu için sızdırılan bilgilerin tam kapsamının belirsizliğini koruduğu belirtilmiştir. OnTrac, verilerin yeniden güvenli hale getirilmesi ve dağıtılmaması için gerekli adımların atıldığını bildirmiştir. Şirketin, etkilenen müşterilere olası riskleri azaltmak amacıyla 12 aylık ücretsiz kredi izleme ve kimlik koruma hizmeti sunduğu kaydedilmiştir. Olayla ilgili herhangi bir fidye yazılımı grubunun henüz sorumluluk üstlenmediği bilgisi verilmiştir. (XXXXXXX, AÇIK -bleepingcomputer.com, 24.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Siber Tehdit Aktörlerinin Otel Wi-Fi Ağlarını Microsoft 365 Hesaplarını Çalmak İçin Kullanması",
-    "paragraph": "───────────────────────────────────────────────────────── Siber tehdit aktörlerinin, otel ve konferans merkezlerindeki Wi-Fi cihazlarının DNS ayarlarını değiştirerek kullanıcıları sahte Microsoft 365 giriş sayfalarına yönlendirdiği tespit edilmiştir. Siber güvenlik şirketi ReliaQuest tarafından yapılan incelemede, en az Haziran 2026'dan beri süregelen bu kampanyanın finans, sağlık, enerji ve perakende gibi çeşitli sektörlerdeki kuruluşları hedef aldığı belirtilmiştir. Araştırmacılar, söz konusu faaliyetlerin Rusya bağlantılı APT grubu APT28 ile ilişkilendirilen FrostArmada operasyonlarına benzerlik gösterdiğini ifade etmiştir. Saldırganların, ağ geçitlerinin DNS ayarlarını değiştirerek trafiği kontrol ettikleri altyapılara yönlendirdikleri ve bu yöntemle çok faktörlü kimlik doğrulama (MFA) korumalarını baypas ettikleri kaydedilmiştir. Tehdit aktörlerinin m365-owa[.]com ve owa-ms365[.]com gibi en az dört adet sahte alan adı kaydettiği bilgisi verilmiştir. (XXXXXXX, AÇIK -bleepingcomputer.com, 24.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Teknoloji Şirketlerinin Açık Kaynak Yapay Zekanın Yaygınlaşmasına Destek Vermesi",
-    "paragraph": "───────────────────────────────────────────────────────── Microsoft ve Meta dahil olmak üzere yirmiden fazla teknoloji şirketi, politika yapıcılara açık kaynak yapay zeka sistemlerini desteklemeleri yönünde çağrıda bulunmuştur. Yayınlanan açık mektupta, açık kaynaklı modellerin kısıtlı veya kapalı modellere kıyasla daha güvenli bir yaklaşım sunduğu ve savunma tarafındaki aktörlerin tehditleri tespit etme kabiliyetini artıracağı ifade edilmiştir. NVIDIA, IBM ve Dell Technologies gibi kurumların da imzaladığı metinde, açık modellerin şeffaflığı artırarak zafiyetlerin daha hızlı giderilmesine olanak tanıdığı belirtilmektedir. Öte yandan siber güvenlik uzmanlarının, teknik yetkinliği düşük suçluların bu araçları kötüye kullanabileceği yönünde uyarılarda bulunduğu kaydedilmiştir. Beyaz Saray'ın ise açık kaynak yaklaşımının faydalarını kabul ederken, Çin menşeli modellerin oluşturabileceği riskleri dengelemek adına çeşitli düzenlemeler üzerinde çalıştığı bildirilmiştir. (XXXXXXX, AÇIK -cyberscoop.com, 24.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Microsoft Azure Automation Hizmetindeki Kritik Bir Açığın Kimlik Hırsızlığına Yol Açması",
-    "paragraph": "───────────────────────────────────────────────────────── Microsoft, Azure Automation hizmetinde saldırganların diğer kiracıların kimliklerini ele geçirmesine ve verilerine erişmesine neden olabilecek kritik bir güvenlik açığını gidermiştir. CVE-2025-29827 kodlu ve 9.9 önem puanına sahip bu açığın, varsayılan bir yapılandırma hatası ile kod düzeyindeki kusurların birleşmesinden kaynaklandığı belirtilmiştir. Microsoft Azure Ağ Güvenliği Araştırma ekibinden Shay Shavit tarafından tespit edilen zafiyetin, saldırganların otomasyon betikleri oluşturmasına veya değiştirmesine, hassas kimlik bilgilerine erişmesine ve bulut iş yüklerini yönetmesine imkan tanıdığı ifade edilmiştir. Söz konusu varsayılan ayarın artık kamuya açık olmadığı ve Microsoft tarafından değiştirildiği kaydedilmiştir. Araştırmacı Shavit, zafiyetin henüz aktif olarak istismar edildiğine dair bir kanıt bulunmadığını ancak bulut ortamlarındaki kimlik güvenliğinin kritik önemini vurguladığını bildirmiştir. (XXXXXXX, AÇIK -darkreading.com, 24.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Microsoft Bing Sunucularında Komut Çalıştırılmasına İzin Veren Güvenlik Açıklarının Tespit Edilmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Otonom ofansif güvenlik girişimi XBOW, Microsoft Bing'in görsel işleme sunucularında sistem düzeyinde yetki erişimine imkan tanıyan iki kritik güvenlik açığı tespit etmiştir. CVE-2026-32194 ve CVE-2026-32191 kodlarıyla tanımlanan ve 9.8 CVSS puanı alan bu açıkların, özel olarak hazırlanmış SVG dosyaları aracılığıyla Microsoft'un üretim ortamındaki işçilerinde komut çalıştırılmasına yol açtığı belirtilmiştir. Yapılan testlerde, Windows sunucularında sistem yetkisi, Linux makinelerinde ise kök kullanıcı erişimi elde edildiği ifade edilmiştir. Microsoft'un söz konusu açıkları Mart 2026 tarihinde sunucu tarafında giderdiği ve kullanıcıların herhangi bir işlem yapmasına gerek kalmadığı bildirilmiştir. Güvenlik açıklarının ImageMagick benzeri görsel işleme bileşenlerindeki hatalı yapılandırmalardan kaynaklandığı ve XBOW'un bulgularını 23 Temmuz 2026 tarihinde kamuoyuyla paylaştığı kaydedilmiştir. Şirket, analiz süresince yalnızca zararsız komutların çalıştırıldığını ve müşteri verilerine erişilmediğini açıklamıştır. (XXXXXXX, AÇIK -thehackernews.com, 24.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Rockwell Automation'ın Arena Simülasyon Yazılımındaki Kod Çalıştırma Açıklarını Kapatması",
-    "paragraph": "───────────────────────────────────────────────────────── Rockwell Automation, endüstriyel iş akışlarını modellemek için kullanılan Arena Simulation yazılımındaki dört adet yüksek kritiklikteki güvenlik açığını gidermiştir. CVE-2026-8085, CVE-2026-8312, CVE-2026-8313 ve CVE-2026-8314 olarak tanımlanan bu bellek bozulması hatalarının, kullanıcı verilerinin yetersiz doğrulanmasından kaynaklandığı belirtilmiştir. Siber güvenlik araştırmacısı Michael Heinzl tarafından tespit edilen bu açıkların, saldırganların hedef sistemde rastgele kod çalıştırmasına olanak tanıyabileceği ifade edilmiştir. İstismarın gerçekleşmesi için bir kullanıcının kötü amaçlı bir dosyayı açması gerektiği, bu durumun sosyal mühendislik saldırılarına zemin hazırladığı kaydedilmiştir. CISA ve Rockwell Automation, söz konusu açıkların halihazırda kötüye kullanıldığına dair bir kanıt bulunmadığını açıklamıştır. Şirket, 17.00.00 ve önceki sürümleri etkileyen bu sorunlar için 17.00.01 sürümünü yayınlamıştır. (XXXXXXX, AÇIK -securityweek.com, 25.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Active Directory Kullanıcılarının Etki Alanı Denetleyicisi Kimliğine Bürünmesine Yol Açan Zafiyetin Belirlenmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Siber güvenlik araştırmacıları H0j3n ve Aniq Fakhrul, düşük yetkili Active Directory kullanıcılarının bir Etki Alanı Denetleyicisi gibi kimlik doğrulaması yapmasına olanak tanıyan Certighost kod adlı bir istismar yöntemi yayınlamıştır. Microsoft tarafından CVE-2026-54121 koduyla tanımlanan ve 14 Temmuz 2026 tarihinde yamalanan bu zafiyetin, Active Directory Sertifika Servisleri (AD CS) içindeki bir yetkilendirme hatasından kaynaklandığı belirtilmiştir. Araştırmacılar, saldırganların bu yöntemle krbtgt gizli anahtarı gibi kritik verileri ele geçirebileceğini ifade etmiştir. Microsoft'un sunduğu güncellemenin, sertifika kayıt sürecindeki doğrulama mekanizmalarını sıkılaştırdığı ve sahte sunucu taleplerini engellediği bildirilmiştir. Henüz aktif bir saldırı rapor edilmemiş olsa da, tam kapsamlı bir kavram kanıtlama (PoC) çalışmasının kamuya açıklandığı ve kuruluşların acilen ilgili yamaları uygulamaları gerektiği vurgulanmıştır. (XXXXXXX, AÇIK -thehackernews.com, 24.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "GitLab Sunucularında Kimlik Doğrulamalı Kullanıcıların Uzaktan Kod Çalıştırmasının Sağlanması",
-    "paragraph": "───────────────────────────────────────────────────────── Güvenlik araştırmacısı Yuhang Wu, yamalanmamış GitLab 18.11.3 sunucularında \"git\" kullanıcısı yetkileriyle komut çalıştırılmasına olanak tanıyan bir kavram kanıtlama (PoC) çalışması yayımlamıştır. Söz konusu zafiyetin, GitLab Community Edition ve Enterprise Edition sürümlerinin 15.2.0 ile 19.0.1 arasındaki geniş bir aralığını etkilediği belirtilmiştir. Kimlik doğrulaması yapmış herhangi bir kullanıcının, özel olarak hazırlanmış iki Jupyter not defterini sisteme yükleyerek ve aralarındaki farkı talep ederek saldırıyı tetikleyebildiği ifade edilmiştir. GitLab.com platformunun 10 Haziran 2026 tarihinde yamalandığı, ancak kendi yönetilen sunucularını kullanan operatörlerin 18.10.8, 18.11.5 veya 19.0.2 sürümlerine yükseltme yapmaları gerektiği kaydedilmiştir. Araştırmacı, Ruby için yüksek performanslı bir JSON ayrıştırıcısı olan Oj kütüphanesindeki hataların bu zincirleme saldırıya imkan verdiğini bildirmiştir. (XXXXXXX, AÇIK -thehackernews.com, 25.07.2026) ──────────────────────────────────────────────────────────────────────────────── ================================================================================",
-    "title": "",
-    "full_text": ""
-   }
-  ]
- },
- {
   "date": "2026-07-26",
   "views": [
    {
@@ -3115,6 +3050,65 @@
     "paragraph": "ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), federal kurumların ve kritik altyapı operatörlerinin günlük tutma stratejilerini geliştirmeleri amacıyla Günlük Tutma Referans Mimarisi kılavuzunu yayımlamıştır. Kılavuzun, bir saldırı anında olayların yeniden kurgulanabilmesi ve saldırganların yakalanabilmesi için gerekli olan veri kalitesini sağlamayı hedeflediği belirtilmiştir. CISA, günlüklerin yalnızca toplanmasının yeterli olmadığını, verilerin zamanında, güvenilir ve kullanılabilir ol",
     "title": "CISA’s logging guidance works beyond government",
     "full_text": "CISA’s logging guidance works beyond government\n\nThe US Cybersecurity and Infrastructure Security Agency (CISA) wants federal agencies to (re)shape their logging strategy around one question: when an attack hits, can you actually use the logs you’ve collected to catch it and reconstruct what happened afterward?\n\nThe Logging Reference Architecture (LRA), released in August 2026, is meant to help US"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-25",
+  "views": [
+   {
+    "tr_title": "ABD'nin İranlı Siber Tehdit Aktörlerine Yönelik Yaptırım Kararı Alması",
+    "paragraph": "ABD Hazine Bakanlığı, kritik altyapı hedeflerine yönelik siber hırsızlık faaliyetleri yürüten dört İranlı şahsa yaptırım uygulandığını açıklamıştır. Tahran merkezli Mabna Enstitüsü ile bağlantılı Keyvan Fayyaz Ghareh Blagh, Saber Shahbazi Balujeh ve Mohammad Reza Kadkhoda’i'nin, 2023 yılının sonlarından itibaren enerji, savunma, sağlık, bilişim ve finans sektörlerindeki ABD şirketlerinden veri sızdırdığı tespit edilmiştir. Bakanlık, Mojtaba Ghal’eh-Kuhi’nin İran İstihbarat ve Güvenlik Bakanlığı ",
+    "title": "Treasury sanctions alleged Iranian hackers as part of ‘economic D-Day’",
+    "full_text": "Treasury sanctions alleged Iranian hackers as part of ‘economic D-Day’\n\nAs part of its “economic D-Day” against Iran, the Treasury Department designated four Iranians for sanctions Monday stemming from their alleged role in hacking critical infrastructure targets and waging cybertheft against the United States.\n\nIt’s the second time in as many weeks that the Trump administration has taken aim at t"
+   },
+   {
+    "tr_title": "ABD'de Yaşlıları Dolandıran Şebekeye Yardım Eden Şahsın Yakalanması",
+    "paragraph": "ABD Adalet Bakanlığı, New York ve New Jersey'de yaşayan yaşlı vatandaşlardan 7,5 milyon dolardan fazla para sızdıran bir şebekeye aracılık eden 21 yaşındaki Hindistan vatandaşı Jay Sunilbharthi Goswami'nin yakalandığını açıklamıştır. Fairleigh Dickinson Üniversitesi'nde öğrenci vizesiyle bulunan Goswami'nin, kendilerini kolluk kuvveti olarak tanıtan Hindistan merkezli dolandırıcılar adına mağdurlardan nakit ve altın topladığı tespit edilmiştir. FBI ve IRS tarafından yürütülen soruşturmada, şüphe",
+    "title": "Indian man who fled US arrested on charges he helped scammers siphon $7.5 million from the elderly",
+    "full_text": "Indian man who fled US arrested on charges he helped scammers siphon $7.5 million from the elderly\n\nA Jersey City resident is facing charges for his alleged role as a money mule for overseas cyberscammers who stole millions from elderly New Yorkers.\n\nThe Justice Department said Indian national Jay Sunilbharthi Goswami, 21, was tasked with picking up money and gold from people who had been convince"
+   },
+   {
+    "tr_title": "Weedhack Zararlı Yazılımının Sahte Minecraft İstemcileri Üzerinden Yayılması",
+    "paragraph": "McAfee Labs, Weedhack adlı zararlı yazılımın sahte Minecraft istemcileri ve SEO zehirlemesi yöntemleriyle oyuncuları hedef aldığını tespit etmiştir. Araştırmacılar, 6.300'den fazla saldırı girişimini engellerken, saldırganların Lovable gibi yapay zeka araçlarıyla Glazed, Radium ve Meteor gibi popüler istemcileri taklit eden profesyonel web siteleri oluşturduğunu belirtmiştir. Haziran 2026'da belgelenen bu yazılım; sistem bilgilerini toplamakta, Microsoft Defender istisnaları oluşturmakta ve JAR ",
+    "title": "Weedhack Malware Spreads via Fake Minecraft Clients and SEO Poisoning",
+    "full_text": "Cybersecurity researchers have found that several websites are still actively distributing a malware family known as Weedhack to gamers by masquerading as Minecraft clients.\n\nMcAfee Labs said it detected and blocked more than 6,300 attempts to access malicious sites, adding that it found lookalike gaming websites designed to mimic legitimate projects, including branding, feature lists, FAQs, insta"
+   },
+   {
+    "tr_title": "Oracle WebLogic Sunucularındaki Kritik Güvenlik Açığının İstismar Edilmesi",
+    "paragraph": "ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Oracle HTTP Server ve Oracle WebLogic Server ürünlerini etkileyen CVE-2026-21962 kodlu kritik güvenlik açığını aktif olarak istismar edilen açıklar kataloğuna eklemiştir. 10.0 üzerinden 10.0 tam puan alan bu açığın, kimlik doğrulaması yapmamış saldırganların kritik verilere yetkisiz erişim sağlamasına veya bu verileri değiştirmesine olanak tanıdığı belirtilmiştir. Oracle'ın Ocak ayında yama yayınlamasına rağmen, GreyNoise ve CloudSEK gibi ku",
+    "title": "Actively Exploited Oracle WebLogic Flaw Lets Unauthenticated Attackers Access Critical Data",
+    "full_text": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a maximum-severity security flaw impacting Oracle HTTP Server and Oracle WebLogic Server to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerability, tracked as CVE-2026-21962 (CVSS score: 10.0), allows an unauthenticated attacker with network access via HTTP to com"
+   },
+   {
+    "tr_title": "WordPress miniOrange Eklentisindeki Kimlik Doğrulama Açıklarının İstismar Edilmesi",
+    "paragraph": "Siber tehdit aktörlerinin, WordPress sitelerinde kullanılan miniOrange SAML 2.0 Single Sign On eklentisindeki iki kritik güvenlik açığını istismar etmeye başladığı bildirilmiştir. CVE-2026-61979 ve CVE-2026-15981 kodlu bu zafiyetlerin birleştirilerek kullanılması durumunda, saldırganların yönetici olarak oturum açabildiği tespit edilmiştir. Güvenlik firması Patchstack, Temmuz ayında yayınlanan yamaların sadece ücretsiz sürüm için duyurulduğunu, bu durumun ücretli sürüm kullanan birçok siteyi sav",
+    "title": "Hackers target WordPress sites in miniOrange auth bypass attacks",
+    "full_text": "Hackers are attempting to exploit two critical authentication bypass vulnerabilities in the miniOrange SAML 2.0 Single Sign On plugin for WordPress that can be used to forge SAML responses and log in as administrators.\n\nThe miniOrange SAML SSO plugin turns a WordPress site into a SAML service provider, letting users log in through corporate identity platforms such as Microsoft Entra ID, Okta, Goog"
+   },
+   {
+    "tr_title": "ToxicPanda Bankacılık Truva Atının Kurumsal Tehdide Dönüşmesi",
+    "paragraph": "Zimperium zLabs araştırmacıları, Android işletim sistemini hedef alan ToxicPanda bankacılık truva atının 2.0 sürümünün 349 finansal uygulamayı kapsayacak şekilde genişlediğini tespit etmiştir. İlk kez Kasım 2024 tarihinde Latin Amerika ve Avrupa'da görülen yazılımın, yeni sürümüyle 167 uzaktan komut yeteneği kazandığı ve 16 farklı ülkeye yayıldığı bildirilmiştir. Zararlı yazılımın, Android'in Kablosuz Hata Ayıklama ve Erişilebilirlik Hizmetleri'ni kötüye kullanarak cihaz üzerinde kabuk düzeyinde",
+    "title": "ToxicPanda Banking Trojan Matures Into Enterprise Threat",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nToxicPanda Banking Trojan Matures Into Enterprise Threat\n\nThe latest version of the Android malware has new features that expand its global reach and put more than users' financial applications at risk.\n\nAn Android banking Trojan has re"
+   },
+   {
+    "tr_title": "Calix Yönlendiricilerindeki Güvenlik Açığının Yerel Ağ Cihazlarını İfşa Etmesi",
+    "paragraph": "Calix GS7 XGS model ev tipi yönlendiricilerde, kimlik doğrulaması gerektirmeden yerel ağ cihazlarını internete açık hale getiren kritik bir güvenlik açığı tespit edilmiştir. CVE-2026-75501 koduyla izlenen hatanın, cihazın WAN arayüzü üzerinden MiniUPnPd kontrol noktasına erişim izni vermesinden kaynaklandığı belirtilmiştir. Güvenlik araştırmacısı Brian Khan Quintana, bu açık sayesinde saldırganların ağ adresi çevirisi (NAT) ve güvenlik duvarı korumalarını aşarak dahili kameralara ve depolama bir",
+    "title": "Unpatched Calix flaw lets hackers bypass NAT to expose internal devices",
+    "full_text": "An unpatched vulnerability in Calix GS7 XGS (GS5239XG) residential routers used by multiple U.S. broadband providers allows remote, unauthenticated attackers to create port-forwarding rules that can expose local network devices to the public internet.\n\nThe flaw is tracked as CVE-2026-75501 and is described as a missing authentication issue that affects devices running EXOS/6.6.47 firmware.\n\nSecuri"
+   },
+   {
+    "tr_title": "SPIP Yazılımında Tespit Edilen Kritik Güvenlik Açıkları İçin Güncelleme",
+    "paragraph": "Fransa Ulusal Siber Güvenlik Ajansı (ANSSI) bünyesindeki CERT-FR, SPIP içerik yönetim sisteminde tespit edilen birden fazla kritik güvenlik açığına yönelik bir bülten yayımlamıştır. CVE-2026-66738, CVE-2026-77647 ve CVE-2026-77806 kodlu açıkların, sistemin güvenliğini ciddi şekilde tehdit ettiği belirtilmiştir. Geliştiricilerin bu zafiyetleri gidermek amacıyla 10, 17 ve 20 Ağustos 2026 tarihlerinde ardışık olarak 4.4.18, 4.4.20 ve 4.4.21 sürümlerini yayımladığı ifade edilmiştir. CERT-FR, tüm kul",
+    "title": "Bulletin d'actualité CERTFR-2026-ACT-036 (24 août 2026)",
+    "full_text": "Ce bulletin d'actualitÃ© du CERT-FR revient sur les vulnÃ©rabilitÃ©s significatives de la semaine passÃ©e pour souligner\nleurs criticitÃ©s. Il ne remplace pas l'analyse de l'ensemble des avis et alertes publiÃ©s par le CERT-FR dans le cadre\nd'une analyse de risques pour prioriser l'application des correctifs.\nToutes les vulnÃ©rabilitÃ©s Ã©voquÃ©es dans les avis du CERT-FR doivent Ãªtre prises en c"
+   },
+   {
+    "tr_title": "Siber Suçluların GTA VI Sızıntılarını Zararlı Yazılım Yemi Olarak Kullanması",
+    "paragraph": "Grand Theft Auto VI (GTA VI) oyununa yönelik yoğun ilgiyi fırsat bilen siber suçluların, 113 GB boyutunda sahte bir oyun dosyası üzerinden zararlı yazılım dağıttığı tespit edilmiştir. Yapılan analizlerde, dosyanın %99,99'unun boş veriden oluştuğu ve içine gizlenmiş 50 KB boyutunda küçük bir zararlı kod barındırdığı belirlenmiştir. Bu kodun, Windows Defender'ı devre dışı bırakmak ve güvenlik yazılımlarını kapatmak için tasarlandığı ifade edilmiştir. Sahte indirme bağlantılarının, gerçek sızıntı h",
+    "title": "Cybercriminals Turn GTA VI Leaks Into Malware Bait",
+    "full_text": "Cybercriminals Turn GTA VI Leaks Into Malware Bait\n\nA fake 113GB GTA VI build is packed with malware, using massive empty files to hide a tiny malicious payload.\n\nGTA VI hype has reached the point where people are volunteering to infect their own computers just to check if a leak is real. Someone on X asked their followers to “take one for the team” and test a 113GB file claiming to be a playable "
    }
   ]
  }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siber Güvenlik Raporu - 26.07.2026</title>
+    <title>Siber Güvenlik Raporu - 25.08.2026</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -403,12 +403,76 @@
         }
             </style>
     <script>(function(){var m=(localStorage.getItem('theme')==='light')?'light':'dark';document.documentElement.setAttribute('data-theme',m);})()</script>
+
+    <style>
+        .archive-section {
+            max-width: 1200px;
+            margin: 24px auto 40px;
+            padding: 0 16px;
+            text-align: center;
+        }
+        .archive-section h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0 0 12px;
+        }
+        .archive-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .archive-link {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 13px;
+            line-height: 1.2;
+            border-radius: 6px;
+            background: #ffffff;
+            border: 1px solid #d7dde5;
+        }
+        /* Ziyaret durumundan BAĞIMSIZ tek renk (bkz. yukarıdaki not). */
+        .archive-link:link,
+        .archive-link:visited,
+        .archive-link:hover,
+        .archive-link:active,
+        .archive-link:focus {
+            color: #1a237e;
+            text-decoration: none;
+        }
+        .archive-link:hover { background: #eef2f7; border-color: #1a237e; }
+        .archive-link:focus-visible { outline: 2px solid #1a237e; outline-offset: 2px; }
+
+        [data-theme="dark"] .archive-section h3 { color: #e6edf3; }
+        [data-theme="dark"] .archive-link {
+            background: #21262d;
+            border-color: #30363d;
+        }
+        [data-theme="dark"] .archive-link:link,
+        [data-theme="dark"] .archive-link:visited,
+        [data-theme="dark"] .archive-link:active,
+        [data-theme="dark"] .archive-link:focus {
+            color: #c9d1d9;
+        }
+        [data-theme="dark"] .archive-link:hover {
+            background: #30363d;
+            border-color: #58a6ff;
+            color: #e6edf3;
+        }
+        [data-theme="dark"] .archive-link:focus-visible { outline-color: #58a6ff; }
+
+        @media (max-width: 600px) {
+            .archive-section { margin: 16px auto 28px; }
+            .archive-link { padding: 5px 10px; font-size: 12px; }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="report-header">
             <div>
-                <h1><span class="header-date">26.07.2026</span> Siber Güvenlik Haber Özetleri</h1>
+                <h1><span class="header-date">25.08.2026</span> Siber Güvenlik Haber Özetleri</h1>
                 <p class="header-subtitle">Rapor, saat 12:15 civarı güncellenmektedir.</p>
             </div>
             <div class="header-actions">
@@ -422,7 +486,8 @@
 
         <div class="exec-brief" id="yonetici-ozeti-block">
             <h2>Yönetici Özeti</h2>
-            <p class="exec-brief-paragraph">Son 48 saatin siber güvenlik gündeminde belirleyici olan gelişmeler değerlendirildiğinde, İran bağlantılı aktörlerin ABD'deki kritik su ve enerji kontrol sistemlerine sızarak operasyonel süreçleri manipüle ettiği bildirilmiştir. CISA ve FBI tarafından yayımlanan kılavuzda, saldırganların Rockwell Automation ve Siemens gibi üreticilerin ekipmanlarını hedef alarak güvenlik işlevlerini devre dışı bıraktığı belirtilmiştir. Öte yandan Cl0p fidye yazılımı grubuyla ilişkili aktörlerin, PTC Windchill ve FlexPLM yazılımlarındaki CVE-2026-12569 kodlu açığı istismar ederek mühendislik verilerini çaldığı kaydedilmiştir. Chaos fidye yazılımı grubunun ise ağ denetimlerinden kaçınmak amacıyla tarayıcı hata ayıklama arayüzünü kullanan msaRAT adlı yeni bir truva atı kullandığı tespit edilmiştir. SourTrade operasyonu kapsamında saldırganların, tarayıcı içinde parçalı verilerden zararlı dosyalar oluşturarak imza tabanlı tespit mekanizmalarını atlattığı ifade edilmektedir. Steam forumlarında ise kullanıcıların ClickFix yöntemiyle kandırılarak PowerShell komutları üzerinden XMRig kripto madenci yazılımıyla enfekte edildiği bilgisi verilmiştir. Son olarak Europol, The Com ağıyla bağlantılı 4.340 internet adresini propaganda ve yasa dışı içerik yayılımını durdurmak amacıyla işaretlemiştir.</p>
+            <p class="exec-brief-paragraph">Son günlerde küresel siber güvenlik gündemini şekillendiren kritik gelişmeler incelendiğinde, devlet destekli tehdit aktörlerinin ve finansal odaklı suç şebekelerinin faaliyetlerinin ön plana çıktığı görülmektedir. ABD Hazine Bakanlığı, kritik altyapı hedeflerine yönelik siber hırsızlık faaliyetleri yürüten ve Mabna Enstitüsü ile bağlantılı olan dört İranlı şahsa yaptırım uygulandığını açıklamıştır. Söz konusu şahısların 2023 yılının sonlarından itibaren enerji, savunma, sağlık ve finans sektörlerindeki ABD şirketlerinden veri sızdırdığı tespit edilmiştir. Öte yandan, sahte Minecraft istemcileri ve arama motoru optimizasyonu zehirlemesi yöntemlerini kullanan Weedhack adlı zararlı yazılımın oyuncuları hedef aldığı bildirilmiştir. McAfee Labs tarafından yapılan incelemelerde, saldırganların yapay zeka araçlarıyla profesyonel web siteleri oluşturduğu ve sistem bilgilerini ele geçirdiği kaydedilmiştir. Ayrıca ABD Adalet Bakanlığı, yaşlı vatandaşları hedef alarak 7,5 milyon dolardan fazla haksız kazanç sağlayan bir dolandırıcılık şebekesine aracılık eden bir şahsın yakalandığını duyurmuştur. Hindistan merkezli bu şebekenin, kendilerini kolluk kuvveti olarak tanıtarak mağdurlardan nakit ve altın topladığı bilgisi paylaşılmıştır.</p>
+            <p class="exec-brief-vuln-link"><a href="#guvenlik-aciklari">&#128272; Güvenlik Açıkları &#8595;</a></p>
         </div>
 
         <div class="executive-summary">
@@ -438,10 +503,10 @@
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                             Kaydet
                         </button>
-                        <span class="drag-file-chip" draggable="true" data-filename="26.07.2026.txt" title="Masaüstüne veya klasöre sürükleyin → .txt olarak kaydeder (Chrome/Edge)">
+                        <span class="drag-file-chip" draggable="true" data-filename="25.08.2026.txt" title="Masaüstüne veya klasöre sürükleyin → .txt olarak kaydeder (Chrome/Edge)">
                             <span class="drag-file-chip-inner">
                                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                26.07.2026.txt
+                                25.08.2026.txt
                             </span>
                             <span class="drag-file-chip-hint">↔ sürükle</span>
                         </span>
@@ -449,19 +514,19 @@
                 </div>
             <div class="top3-section">
                 <div class="top3-card">
-                    <div class="top3-card-title"><a href="https://securityaffairs.com/195991/apt/iran-linked-actors-breach-are-targeting-us-water-and-energy-control-systems.html" target="_blank" style="color:inherit;text-decoration:none;">İran Bağlantılı Siber Tehdit Aktörlerinin ABD Su ve Enerji Kontrol Sistemlerini Hedeflemesi</a></div>
-                    <p class="top3-card-paragraph">CISA, FBI, NSA ve Enerji Bakanlığı tarafından yayımlanan güncel siber güvenlik kılavuzunda, İran bağlantılı siber tehdit aktörlerinin ABD'deki su ve enerji kontrol sistemlerine sızdığı bildirilmiştir. Mart 2026 tarihinden bu yana süregelen faaliyetlerde, saldırganların internete açık programlanabilir mantık denetleyicilerine (PLC) erişim sağlayarak operasyonel süreçleri manipüle ettiği belirtilmiştir. Rockwell Automation, Schneider Electric ve Siemens gibi üreticilerin ekipmanlarını hedef alan aktörlerin, güvenlik alarmlarını ve kapatma işlevlerini devre dışı bırakan kötü amaçlı proje dosyaları yüklediği ifade edilmiştir. Bu müdahalelerin kritik altyapı sektörlerinde operasyonel aksamalara ve maddi kayıplara yol açtığı kaydedilmiştir. Yetkililer, operatörlerin HMI ve SCADA ekranlarında yanıltıcı veriler görmesine neden olan bu saldırıların, sistemlerin güvenli olmayan koşullarda çalışmasına sebebiyet verdiğini açıklamıştır.</p>
-                    <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://securityaffairs.com/195991/apt/iran-linked-actors-breach-are-targeting-us-water-and-energy-control-systems.html" target="_blank">securityaffairs.com</a>, 25.07.2026)</b></p>
+                    <div class="top3-card-title"><a href="https://cyberscoop.com/us-treasury-sanctions-iranian-hackers-economic-dday/" target="_blank" style="color:inherit;text-decoration:none;">ABD'nin İranlı Siber Tehdit Aktörlerine Yönelik Yaptırım Kararı Alması</a></div>
+                    <p class="top3-card-paragraph">ABD Hazine Bakanlığı, kritik altyapı hedeflerine yönelik siber hırsızlık faaliyetleri yürüten dört İranlı şahsa yaptırım uygulandığını açıklamıştır. Tahran merkezli Mabna Enstitüsü ile bağlantılı Keyvan Fayyaz Ghareh Blagh, Saber Shahbazi Balujeh ve Mohammad Reza Kadkhoda’i'nin, 2023 yılının sonlarından itibaren enerji, savunma, sağlık, bilişim ve finans sektörlerindeki ABD şirketlerinden veri sızdırdığı tespit edilmiştir. Bakanlık, Mojtaba Ghal’eh-Kuhi’nin İran İstihbarat ve Güvenlik Bakanlığı (MOIS) tarafından yönlendirilen saldırıları yönettiğini, Arman Kahzadian’ın ise çalınan ticari bilgileri kullandığını bildirmiştir. Hazine Bakanı Scott Bessent; dijital varlıklar, teknoloji ve altın üzerinden yürütülen bu faaliyetlerin durdurulacağını belirtmiştir.</p>
+                    <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://cyberscoop.com/us-treasury-sanctions-iranian-hackers-economic-dday/" target="_blank">cyberscoop.com</a>, 24.08.2026)</b></p>
                 </div>
                 <div class="top3-card">
-                    <div class="top3-card-title"><a href="https://thehackernews.com/2026/07/cl0p-affiliates-target-internet-exposed.html" target="_blank" style="color:inherit;text-decoration:none;">Fidye Yazılımı Grubu Cl0p Bağlantılı Aktörlerin PTC Yazılımlarını Hedeflemesi</a></div>
-                    <p class="top3-card-paragraph">Cl0p fidye yazılımı kampanyasıyla bağlantılı siber tehdit aktörlerinin, veri sızdırma operasyonları kapsamında internete açık PTC Windchill ve FlexPLM kurulumlarındaki güvenlik açıklarını istismar ettiği bildirilmiştir. Ransom-ISAC, eCrime.ch ve DEFUSED tarafından yayımlanan ortak rapora göre saldırganlar, kimlik doğrulaması gerektirmeyen uzaktan kod yürütme yetkisi kazanmak için iki farklı hatayı birleştirmekte ve sistemlere zararlı web kabukları yerleştirmektedir. Üretim, otomotiv, havacılık ve perakende sektörlerinin hedef alındığı bu kampanyada, mühendislik ve tasarım verilerinin çalınarak çift şantaj yönteminin uygulandığı belirtilmiştir. Saldırılarda, kritik öneme sahip CVE-2026-12569 kodlu güvenlik açığının kullanıldığı ifade edilmektedir. PTC, artan tehdit faaliyetlerine karşı müşterilerini uyarmış ve yüzlerce kullanıcıya gönderilen şantaj e-postalarının daha önce ele geçirilmiş hesaplardan kaynaklandığı bilgisini paylaşmıştır.</p>
-                    <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://thehackernews.com/2026/07/cl0p-affiliates-target-internet-exposed.html" target="_blank">thehackernews.com</a>, 25.07.2026)</b></p>
+                    <div class="top3-card-title"><a href="https://therecord.media/cyber-scam-indian-arrested" target="_blank" style="color:inherit;text-decoration:none;">ABD'de Yaşlıları Dolandıran Şebekeye Yardım Eden Şahsın Yakalanması</a></div>
+                    <p class="top3-card-paragraph">ABD Adalet Bakanlığı, New York ve New Jersey'de yaşayan yaşlı vatandaşlardan 7,5 milyon dolardan fazla para sızdıran bir şebekeye aracılık eden 21 yaşındaki Hindistan vatandaşı Jay Sunilbharthi Goswami'nin yakalandığını açıklamıştır. Fairleigh Dickinson Üniversitesi'nde öğrenci vizesiyle bulunan Goswami'nin, kendilerini kolluk kuvveti olarak tanıtan Hindistan merkezli dolandırıcılar adına mağdurlardan nakit ve altın topladığı tespit edilmiştir. FBI ve IRS tarafından yürütülen soruşturmada, şüphelinin 17 Ağustos 2026'da tutuklandığı, kefaletle serbest bırakıldıktan sonra Kanada'daki Peace Bridge üzerinden kaçarak Toronto'dan Doha'ya gitmeye çalışırken yakalandığı bildirilmiştir. Çoğu 70 ve 80'li yaşlarda olan en az dokuz kurbanın, banka hesaplarının uyuşturucu suçlarıyla ilişkili olduğuna ikna edilerek birikimlerini elden çıkarmaya zorlandığı kaydedilmiştir. Bu faaliyetlerden 90.000 dolar kazanan Goswami, elektronik dolandırıcılık ve para aklama suçlarından 20 yıla kadar hapis cezasıyla karşı karşıyadır.</p>
+                    <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://therecord.media/cyber-scam-indian-arrested" target="_blank">therecord.media</a>, 24.08.2026)</b></p>
                 </div>
                 <div class="top3-card">
-                    <div class="top3-card-title"><a href="https://blog.talosintelligence.com/chaos-msarat-living-off-the-browser-to-build-covert-c2-channel/" target="_blank" style="color:inherit;text-decoration:none;">Chaos Fidye Yazılımı Grubunun Tarayıcı Üzerinden Komuta Kontrol Kanalı Oluşturan msaRAT Yazılımını Kullanması</a></div>
-                    <p class="top3-card-paragraph">Chaos fidye yazılımı grubunun, komuta kontrol (C2) iletişimini doğrudan ağ üzerinden değil, tarayıcı hata ayıklama arayüzü aracılığıyla yürüten Rust tabanlı msaRAT adlı yeni bir uzaktan erişim truva atı kullandığı tespit edilmiştir. Söz konusu zararlı yazılımın, Chrome DevTools Protokolü (CDP) üzerinden tarayıcıyı manipüle ederek WebRTC veri kanalları oluşturduğu ve Cloudflare Workers altyapısını sinyalleşme amacıyla kullandığı belirtilmiştir. msaRAT'ın, Windows güncellemesi gibi görünerek sisteme sızdığı ve tarayıcıyı gizli modda başlatarak JavaScript kodları enjekte ettiği kaydedilmiştir. Bu yöntemin, ağ trafiği denetimlerinden kaçınmak için tarayıcıyı bir köprü olarak kullandığı ifade edilmiştir. Grubun, büyük kuruluşları hedef alarak çift şantaj taktikleri uyguladığı ve başlangıç erişimi için sosyal mühendislik yöntemlerine başvurduğu bildirilmiştir.</p>
-                    <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://blog.talosintelligence.com/chaos-msarat-living-off-the-browser-to-build-covert-c2-channel/" target="_blank">blog.talosintelligence.com</a>, 23.07.2026)</b></p>
+                    <div class="top3-card-title"><a href="https://thehackernews.com/2026/08/weedhack-malware-spreads-via-fake.html" target="_blank" style="color:inherit;text-decoration:none;">Weedhack Zararlı Yazılımının Sahte Minecraft İstemcileri Üzerinden Yayılması</a></div>
+                    <p class="top3-card-paragraph">McAfee Labs, Weedhack adlı zararlı yazılımın sahte Minecraft istemcileri ve SEO zehirlemesi yöntemleriyle oyuncuları hedef aldığını tespit etmiştir. Araştırmacılar, 6.300'den fazla saldırı girişimini engellerken, saldırganların Lovable gibi yapay zeka araçlarıyla Glazed, Radium ve Meteor gibi popüler istemcileri taklit eden profesyonel web siteleri oluşturduğunu belirtmiştir. Haziran 2026'da belgelenen bu yazılım; sistem bilgilerini toplamakta, Microsoft Defender istisnaları oluşturmakta ve JAR yükleri aracılığıyla veri çalmaktadır. Zararlı bağlantıların %49,6'sı Discord, %23,4'ü MediaFire ve %8,2'si GitHub üzerinden dağıtılmaktadır. Saldırganlar, Planet Minecraft ve EndMods gibi resmi topluluklara sızarak Xenon ve Nova gibi istemcilerin arama motoru sonuçlarında üst sıralarda yer almasını sağlamıştır. Kullanıcıların, güvenlik yazılımlarını devre dışı bırakma taleplerine karşı dikkatli olmaları ve yalnızca Modrinth gibi güvenilir kaynakları kullanmaları önerilmektedir.</p>
+                    <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://thehackernews.com/2026/08/weedhack-malware-spreads-via-fake.html" target="_blank">thehackernews.com</a>, 24.08.2026)</b></p>
                 </div>
             </div>
                 <div class="block-actions-bottom">
@@ -473,67 +538,71 @@
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Kaydet
                     </button>
-                    <span class="drag-file-chip" draggable="true" data-filename="26.07.2026.txt" title="Chrome/Edge: masaüstüne sürükleyin → .txt olarak kaydeder">
+                    <span class="drag-file-chip" draggable="true" data-filename="25.08.2026.txt" title="Chrome/Edge: masaüstüne sürükleyin → .txt olarak kaydeder">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                        26.07.2026.txt
+                        25.08.2026.txt
                     </span>
                 </div>
             </div>
 
             <table class="executive-table">
                 <tr>
-                    <td><a href="#haber-1">1. Fastjson 1.x Kütüphanesindeki Kritik Açığın Aktif Olarak İstismar Edilmesi</a></td>
-                    <td><a href="#haber-2">2. Europol'ün The Com Bağlantılı 4.340 İnternet Adresini İşaretlemesi</a></td>
+                    <td><a href="#haber-1">1. Oracle WebLogic Sunucularındaki Kritik Güvenlik Açığının İstismar Edilmesi</a></td>
+                    <td><a href="#haber-2">2. WordPress miniOrange Eklentisindeki Kimlik Doğrulama Açıklarının İstismar Edilmesi</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#haber-3">3. SourTrade Operasyonu Kapsamında Tarayıcı Üzerinden Zararlı Yazılım Oluşturulması</a></td>
-                    <td><a href="#haber-4">4. Steam Forumlarında ClickFix Yöntemiyle Kripto Madenci Yazılımı Bulaştırılması</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#haber-5">5. ShinyHunters Sızıntılarının Bitcoin Talepli Şantaj E-postalarında Kullanılması</a></td>
-                    <td></td>
+                    <td><a href="#haber-3">3. Calix Yönlendiricilerindeki Güvenlik Açığının Yerel Ağ Cihazlarını İfşa Etmesi</a></td>
+                    <td><a href="#haber-4">4. Siber Suçluların GTA VI Sızıntılarını Zararlı Yazılım Yemi Olarak Kullanması</a></td>
                 </tr>
             </table>
         </div>
 
         <div class="news-section">
             <div class="news-item" id="haber-1">
-                <div class="news-title"><b>Fastjson 1.x Kütüphanesindeki Kritik Açığın Aktif Olarak İstismar Edilmesi</b></div>
-                <p class="news-content">Güvenlik firmaları ThreatBook ve Imperva, Alibaba tarafından geliştirilen Fastjson 1.x Java kütüphanesindeki kritik bir zafiyetin siber saldırılarda hedef alındığını bildirmiştir. CVE-2026-16723 kodlu ve 9.0 ciddiyet puanına sahip olan bu açığın, Spring Boot uygulamalarında kimlik doğrulaması gerektirmeden uzaktan kod yürütülmesine imkan tanıdığı belirtilmiştir. Alibaba, 21 Temmuz 2026 tarihinde bir güvenlik uyarısı yayınlamış ancak 25 Temmuz 2026 itibarıyla Fastjson 1.x için henüz resmi bir yama sunmamıştır. Imperva, Amerika Birleşik Devletleri, Singapur ve Kanada'daki finans, sağlık ve perakende sektörlerine yönelik saldırı girişimleri tespit etmiştir. ThreatBook ise platformunun gerçek dünya senaryolarında istismar faaliyetlerini yakaladığını açıklamıştır. Uzmanlar, kalıcı çözüm olarak Fastjson2 sürümüne geçilmesini veya geçici önlem olarak güvenli modun etkinleştirilmesini tavsiye etmektedir.</p>
-                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://thehackernews.com/2026/07/fastjson-1x-rce-vulnerability-targeted.html" target="_blank">thehackernews.com</a>, 25.07.2026)</b></p>
+                <div class="news-title"><b>Oracle WebLogic Sunucularındaki Kritik Güvenlik Açığının İstismar Edilmesi</b></div>
+                <p class="news-content">ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Oracle HTTP Server ve Oracle WebLogic Server ürünlerini etkileyen CVE-2026-21962 kodlu kritik güvenlik açığını aktif olarak istismar edilen açıklar kataloğuna eklemiştir. 10.0 üzerinden 10.0 tam puan alan bu açığın, kimlik doğrulaması yapmamış saldırganların kritik verilere yetkisiz erişim sağlamasına veya bu verileri değiştirmesine olanak tanıdığı belirtilmiştir. Oracle'ın Ocak ayında yama yayınlamasına rağmen, GreyNoise ve CloudSEK gibi kuruluşlar tarafından aktif saldırı girişimlerinin rapor edildiği kaydedilmiştir. Özellikle tek bir IP adresinden birden fazla WebLogic açığının hedef alındığı gözlemlenmiştir. CISA, federal kurumlara ağlarını korumak amacıyla gerekli düzeltmeleri 27 Ağustos 2026 tarihine kadar uygulamaları talimatını vermiştir. Tehdit aktörlerinin, WebLogic ortamlarını ele geçirmek için basit ama etkili olan bu tür zafiyetlere güvenmeye devam ettiği ifade edilmiştir.</p>
+                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://thehackernews.com/2026/08/actively-exploited-oracle-weblogic-flaw.html" target="_blank">thehackernews.com</a>, 25.08.2026)</b></p>
             </div>
             <div class="news-item" id="haber-2">
-                <div class="news-title"><b>Europol'ün The Com Bağlantılı 4.340 İnternet Adresini İşaretlemesi</b></div>
-                <p class="news-content">Europol ve ortak soruşturma birimleri, 2026 yılının Haziran ve Temmuz aylarını kapsayan birkaç haftalık süreçte, The Com isimli çevrim içi ağla bağlantılı 4.340 internet adresini kaldırılması amacıyla işaretlemiştir. Project Compass operasyonu kapsamında yürütülen bu faaliyetin, genç üyelerden oluşan ağın propaganda yayılımını ve üye toplama ekosistemini bozmayı hedeflediği belirtilmiştir. Soruşturmacılar; Belçika, Finlandiya, Macaristan, İrlanda, Lüksemburg, Hollanda, Portekiz, İspanya ve İsveç'ten katılım sağlamıştır. İşaretlenen içerikler arasında kendine zarar verme, çocuk cinsel istismarı materyalleri, hayvan zulmü ve fiziksel saldırı videolarının bulunduğu kaydedilmiştir. Europol, söz konusu ağın reşit olmayan bireyleri hem mağdur hem de fail olarak kapsayan küresel bir tehdit olduğunu ve son iki yılda yüzlerce yardım talebi aldığını açıklamıştır.</p>
-                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://www.theregister.com/cyber-crime/2026/07/24/europol-flags-4340-horrific-urls-linked-to-the-com/5278556" target="_blank">theregister.com</a>, 24.07.2026)</b></p>
+                <div class="news-title"><b>WordPress miniOrange Eklentisindeki Kimlik Doğrulama Açıklarının İstismar Edilmesi</b></div>
+                <p class="news-content">Siber tehdit aktörlerinin, WordPress sitelerinde kullanılan miniOrange SAML 2.0 Single Sign On eklentisindeki iki kritik güvenlik açığını istismar etmeye başladığı bildirilmiştir. CVE-2026-61979 ve CVE-2026-15981 kodlu bu zafiyetlerin birleştirilerek kullanılması durumunda, saldırganların yönetici olarak oturum açabildiği tespit edilmiştir. Güvenlik firması Patchstack, Temmuz ayında yayınlanan yamaların sadece ücretsiz sürüm için duyurulduğunu, bu durumun ücretli sürüm kullanan birçok siteyi savunmasız bıraktığını açıklamıştır. Avrupa, Afrika ve ABD merkezli IP adreslerinden gelen fırsatçı tarama ve saldırı girişimlerinin sürdüğü kaydedilmiştir. Ücretli sürümler için güncelleme uyarılarının WordPress panelinde görünmediği, bu nedenle site sahiplerinin güncellemeleri manuel olarak yapmaları gerektiği vurgulanmıştır. Bir kavram kanıtlama (PoC) kodunun kamuya açık olması nedeniyle saldırıların hız kazanabileceği belirtilmektedir. Eklentinin dünya çapında on binlerce aktif kullanıcısı olduğu ifade edilmiştir.</p>
+                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://www.bleepingcomputer.com/news/security/hackers-target-wordpress-sites-in-miniorange-auth-bypass-attacks/" target="_blank">bleepingcomputer.com</a>, 24.08.2026)</b></p>
             </div>
             <div class="news-item" id="haber-3">
-                <div class="news-title"><b>SourTrade Operasyonu Kapsamında Tarayıcı Üzerinden Zararlı Yazılım Oluşturulması</b></div>
-                <p class="news-content">SourTrade olarak adlandırılan bir reklam tabanlı saldırı operasyonunun, kurbanların tarayıcılarını kullanarak Windows yürütülebilir dosyaları oluşturduğu tespit edilmiştir. Confiant tarafından 23 Temmuz 2026 tarihinde detaylandırılan kampanyanın, 2024 sonundan bu yana TradingView, Solana ve Luno gibi platformları taklit ederek 12 ülkedeki kripto para yatırımcılarını hedef aldığı belirtilmiştir. Saldırganların, sabit bir URL üzerinden tam bir zararlı dosya sunmak yerine, meşru Bun çalışma zamanını temel alarak tarayıcı içinde parçalı verilerden dosya oluşturduğu ifade edilmiştir. Bu yöntemin, ağ üzerinde tam bir zararlı yazılımın bulunmamasını sağlayarak basit imza tabanlı tespit mekanizmalarını atlattığı kaydedilmiştir. Bitdefender'ın Eylül 2025 tarihinde benzer bir kümeyi JSCEAL veya WeevilProxy olarak bilinen bilgi hırsızlarıyla ilişkilendirdiği bilgisi verilmiştir.</p>
-                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://thehackernews.com/2026/07/malvertising-sends-malware-in-pieces.html" target="_blank">thehackernews.com</a>, 25.07.2026)</b></p>
+                <div class="news-title"><b>Calix Yönlendiricilerindeki Güvenlik Açığının Yerel Ağ Cihazlarını İfşa Etmesi</b></div>
+                <p class="news-content">Calix GS7 XGS model ev tipi yönlendiricilerde, kimlik doğrulaması gerektirmeden yerel ağ cihazlarını internete açık hale getiren kritik bir güvenlik açığı tespit edilmiştir. CVE-2026-75501 koduyla izlenen hatanın, cihazın WAN arayüzü üzerinden MiniUPnPd kontrol noktasına erişim izni vermesinden kaynaklandığı belirtilmiştir. Güvenlik araştırmacısı Brian Khan Quintana, bu açık sayesinde saldırganların ağ adresi çevirisi (NAT) ve güvenlik duvarı korumalarını aşarak dahili kameralara ve depolama birimlerine erişebildiğini ifade etmiştir. Üretici firmaya yapılan bildirimlere yanıt alınamaması üzerine CERT/CC tarafından kamuoyuna duyuru yapıldığı kaydedilmiştir. Etkilenen cihazlar için henüz bir yama yayımlanmadığı, kullanıcıların güvenlik önlemi olarak UPnP özelliğini yönetim arayüzünden devre dışı bırakmaları veya internet servis sağlayıcılarıyla iletişime geçmeleri gerektiği bildirilmiştir.</p>
+                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://www.bleepingcomputer.com/news/security/unpatched-calix-flaw-lets-hackers-bypass-nat-to-expose-internal-devices/" target="_blank">bleepingcomputer.com</a>, 25.08.2026)</b></p>
             </div>
             <div class="news-item" id="haber-4">
-                <div class="news-title"><b>Steam Forumlarında ClickFix Yöntemiyle Kripto Madenci Yazılımı Bulaştırılması</b></div>
-                <p class="news-content">Steam tartışma forumlarının, oyun ve bilgisayar sorunlarına çözüm sunma vaadiyle kullanıcıları XMRig kripto madenci yazılımıyla enfekte eden ClickFix saldırılarına maruz kaldığı bildirilmiştir. Siber tehdit aktörlerinin, teknik sorun yaşayan kullanıcılara yönetici haklarıyla PowerShell komutları çalıştırmalarını önerdiği ve bu komutların arka planda zararlı yazılım indirdiği tespit edilmiştir. Yürütülen PowerShell betiğinin, kendisini bir Windows optimizasyon aracı olarak gizlediği ve Microsoft Defender taramalarından kaçınmak için belirli dizinleri dışlama listesine eklediği belirtilmiştir. Saldırganların, 'C:\Windows\Background' dizini altında 'system.exe' adıyla yapılandırdıkları zararlı yazılımın her başlangıçta çalışması için zamanlanmış görevler oluşturduğu kaydedilmiştir. Uzmanlar, forumlardaki bilinmeyen kaynaklardan gelen komutların çalıştırılmaması ve enfeksiyon şüphesi durumunda ilgili dizinlerin kontrol edilmesi gerektiğini ifade etmiştir.</p>
-                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://www.bleepingcomputer.com/news/security/steam-forum-clickfix-attacks-infect-gamers-with-xmrig-cryptominers/" target="_blank">bleepingcomputer.com</a>, 26.07.2026)</b></p>
+                <div class="news-title"><b>Siber Suçluların GTA VI Sızıntılarını Zararlı Yazılım Yemi Olarak Kullanması</b></div>
+                <p class="news-content">Grand Theft Auto VI (GTA VI) oyununa yönelik yoğun ilgiyi fırsat bilen siber suçluların, 113 GB boyutunda sahte bir oyun dosyası üzerinden zararlı yazılım dağıttığı tespit edilmiştir. Yapılan analizlerde, dosyanın %99,99'unun boş veriden oluştuğu ve içine gizlenmiş 50 KB boyutunda küçük bir zararlı kod barındırdığı belirlenmiştir. Bu kodun, Windows Defender'ı devre dışı bırakmak ve güvenlik yazılımlarını kapatmak için tasarlandığı ifade edilmiştir. Sahte indirme bağlantılarının, gerçek sızıntı haberlerinin yarattığı karmaşa ortamında Discord ve torrent siteleri üzerinden yayıldığı kaydedilmiştir. Ayrıca, kullanıcıları veri hırsızı yazılımlara yönlendiren sahte mobil uygulamalar ve kimlik bilgilerini çalmayı hedefleyen sahte Rockstar Social Club giriş sayfalarının bulunduğu bildirilmiştir. Oyunun henüz resmi bir oynanabilir sürümünün bulunmadığı ve bu tür dosyaların tamamen saldırı amaçlı olduğu vurgulanmıştır.</p>
+                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://securityaffairs.com/197772/malware/cybercriminals-turn-gta-vi-leaks-into-malware-bait.html" target="_blank">securityaffairs.com</a>, 24.08.2026)</b></p>
             </div>
-            <div class="news-item" id="haber-5">
-                <div class="news-title"><b>ShinyHunters Sızıntılarının Bitcoin Talepli Şantaj E-postalarında Kullanılması</b></div>
-                <p class="news-content">Siber tehdit aktörlerinin, ShinyHunters grubu tarafından sızdırılan e-posta adreslerini kullanarak 2.000 dolar değerinde Bitcoin talep eden cinsel içerikli şantaj kampanyaları yürüttüğü tespit edilmiştir. BleepingComputer tarafından yapılan incelemede; Amtrak, Hallmark ve Panera Bread gibi kurumlara ait sızıntı verilerinin, tehditlerin meşruiyetini artırmak amacıyla kullanıldığı belirtilmiştir. E-postalarda, kurbanların cihazlarının ele geçirildiği ve kamera kayıtlarının alındığı iddia edilse de, bu iddiaların asılsız olduğu ve saldırganların yalnızca halka açık sızıntı verilerini kullandığı ifade edilmiştir. ShinyHunters grubunun söz konusu kampanyayla bir bağlantısı olmadığını açıkladığı kaydedilmiştir. Betterment gibi etkilenen kurumların, bu mesajların korkutma amaçlı dolandırıcılık faaliyetleri olduğunu vurgulayarak kullanıcıları ödeme yapmamaları, bağlantılara tıklamamaları ve e-postaları silmeleri konusunda uyardığı bilgisi verilmiştir.</p>
-                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://www.bleepingcomputer.com/news/security/shinyhunters-data-leaks-fuel-2-000-sextortion-email-scam/" target="_blank">bleepingcomputer.com</a>, 25.07.2026)</b></p>
-            </div>
-<div class="social-signals"><h2>Sosyal Medya Sinyalleri</h2><div class="signal-list"><div class="signal-item github-item">  <div class="signal-meta">    <span class="signal-platform-label">GitHub Advisory</span>    <span class="signal-engagement">ÖNEM: YÜKSEK  |  CVSS: 7.8</span>  </div>  <a href="https://github.com/advisories/GHSA-6xj8-qv9j-xcjq" target="_blank" rel="noopener noreferrer">Oh My Posh: Path segment içindeki template injection aracılığıyla rastgele komut yürütme tespit edilmiştir.</a></div>
-<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★1  |  ↺6</span>  </div>  <a href="https://defcon.social/@sshmitm/116985164537801356" target="_blank" rel="noopener noreferrer">While reading through sshd's seccomp sandbox code (sandbox-seccomp-filter.c), I noticed the error handling around setting up PR_SET_NO_NEW_PRIVS and PR_SET_SECCOMP: if either failed, sshd only logged</a></div>
-<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★3  |  ↺5</span>  </div>  <a href="https://infosec.exchange/@aristot73/116981746995286548" target="_blank" rel="noopener noreferrer">RE: https:// infosec.exchange/@aristot73/11 6562947812685451 New in the References bibliography for "When buffers overflow into policy" — 13 entries. The Hugging Face incident cluster, newest first: C</a></div>
-<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0  |  ↺5</span>  </div>  <a href="https://poliversity.it/@nuke/116985249151800015" target="_blank" rel="noopener noreferrer">☕ CYBERBRIEFING MATTUTINO — Domenica 26 luglio 2026 👉 Leggi tutti gli aggiornamenti delle ultime 24 ore: https:// ilpuntocyber.rfeed.it/article. php?s=2026-07-26 # newsletter # cybersecurity @ informa</a></div>
-<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0  |  ↺2</span>  </div>  <a href="https://techhub.social/@yazad3/116985108556907310" target="_blank" rel="noopener noreferrer">Ubuntu üzerinde tedarik zinciri saldırısının (SupplyChainAttack) etki alanını azaltma sorusu: Bazı geliştirme çalışmaları için kişisel dizüstü bilgisayarımı kullanmam gerekiyor. Bir tedarik zinciri saldırısının etki alanını nasıl azaltabilirim?</a></div>
-<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★1  |  ↺2</span>  </div>  <a href="https://infosec.exchange/@offseq/116984750038327145" target="_blank" rel="noopener noreferrer">CVE-2026-63720 (HIGH): koxudaxi datamodel-code-generator &lt;0.70.0 sürümü kod enjeksiyonuna karşı savunmasızdır. Kötü niyetli girdi şemaları uzaktan Python kod yürütülmesini tetikleyebilmektedir. Güvenilmeyen şemalardan kaçınılmalı ve güncelleme yapılmalıdır.</a></div>
-<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲50</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1v6iybv/do_product_security_governance_roles_actually/" target="_blank" rel="noopener noreferrer">Ürün Güvenliği yönetişim rolleri gerçekte mevcut mudur?</a></div>
-<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲49</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1v6gr9i/security_flaw_in_vaticans_click_to_pray_app/" target="_blank" rel="noopener noreferrer">Vatikan'ın ‘Click to Pray’ uygulamasındaki güvenlik açığı dünya çapında 700.000'den fazla kullanıcıyı savunmasız bırakmıştır; uygulamanın altı aydan uzun süredir kullanıcı verilerini sızdırdığı ve sızdırmaya devam ettiği belirlenmiştir.</a></div>
-<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲48</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1v5pa8w/hackers_use_dns_poisoning_on_hotel_wifi_to_steal/" target="_blank" rel="noopener noreferrer">Hackerların, Microsoft 365 hesaplarını çalmak için otel Wi-Fi ağlarında DNS poisoning yöntemini kullandığı tespit edilmiştir.</a></div>
-<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲47</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1v6cx2k/snort_for_enterprise_ipsids/" target="_blank" rel="noopener noreferrer">Snort for Enterprise IPS/IDS????</a></div>
-<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲46</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1v6ibkt/looking_for_feedback_on_a_model_we_built_for/" target="_blank" rel="noopener noreferrer">Yetkili AI red teaming ve adversarial testing için oluşturduğumuz bir model hakkında geri bildirim aranmaktadır.</a></div>
+<div class="social-signals"><h2>Sosyal Medya Sinyalleri</h2><div class="signal-list"><div class="signal-item github-item">  <div class="signal-meta">    <span class="signal-platform-label">GitHub Advisory</span>    <span class="signal-engagement">ÖNEM: YÜKSEK  |  CVSS: 7.2</span>  </div>  <a href="https://github.com/advisories/GHSA-jm48-m3rr-9hgg" target="_blank" rel="noopener noreferrer">3X-UI'nın, veritabanı içe aktarma ve Xray günlük yolu manipülasyonu aracılığıyla kimliği doğrulanmış rastgele dosya yazma zafiyetine karşı savunmasız olduğu tespit edilmiştir.</a></div>
+<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0  |  ↺5</span>  </div>  <a href="https://infosec.exchange/@eteryu/117155260861524841" target="_blank" rel="noopener noreferrer">Dzień dobry, jak mija dzień? Kawka już była pita? Jeżeli nie, to mam do niej mały dodatek. Może to nie ciastko, ale jeżeli kogoś w ostatnich dniach ominęły moje wpisy, to lektura w sam raz do kubka: 2</a></div>
+<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★1  |  ↺5</span>  </div>  <a href="https://mastodon.online/@blueghost/117155260213415123" target="_blank" rel="noopener noreferrer">ATTENTION YOUTUBERS Please provide a PeerTube option in addition to your YouTube account. EXAMPLE The Linux Experiment Website: https:// tilvids.com/c/thelinuxexperime nt_channel/videos Fediverse: @ t</a></div>
+<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★2  |  ↺3</span>  </div>  <a href="https://fosstodon.org/@nicfab/117154854814283897" target="_blank" rel="noopener noreferrer">📬 NicFab Newsletter | August 25, 2026 Privacy, Data Protection, AI & Cybersecurity — weekly review. 👉 Read the full issue: nicfab.eu/en/newsletter-issues /2026-08-25-issue-35/?utm_source=mastodon&utm_</a></div>
+<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0  |  ↺3</span>  </div>  <a href="https://infosec.exchange/@DevaOnBreaches/117154993888401327" target="_blank" rel="noopener noreferrer">I spent the last few months building a CTF. WATCHLIST: 24 challenges, one investigation, 24 hours. DNS forensics. Memory analysis. A live honeypot. Disk images. OSINT. Sep 19. Teams 1-6. $750 first pl</a></div>
+<div class="signal-item mastodon-item">  <div class="signal-meta">    <span class="signal-platform-label">Mastodon</span>    <span class="signal-engagement">★0  |  ↺2</span>  </div>  <a href="https://infosec.exchange/@security_crawler_carl/117155142873171917" target="_blank" rel="noopener noreferrer">Dijital tahliye başarısız olduğunda uygulanması gereken doğru prosedürün fiziksel bağlantıyı kesmek ve sonlanmış oturumu tesis dışına çıkarmak olduğu belirtilmiştir; operatörlerin, güvenliği ihlal edilmiş ağ bölümlerinin durumunu gözden geçirmeleri gerektiği ifade edilmiştir.</a></div>
+<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲50</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1vxlv4e/what_logs_have_shown_a_surprisingly_high_value/" target="_blank" rel="noopener noreferrer">Hangi günlüklerin, artık vazgeçilemeyecek kadar şaşırtıcı derecede yüksek bir değer sunduğu sorulmuştur.</a></div>
+<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲49</span>  </div>  <a href="https://www.reddit.com/r/netsec/comments/1vxfd50/the_citizen_lab_bad_connection_uncovering_global/" target="_blank" rel="noopener noreferrer">Citizen Lab'in "Bad Connection" başlıklı çalışmasında, gizli gözetleme aktörleri tarafından gerçekleştirilen küresel telekom istismarlarının açığa çıkarıldığı bildirilmiştir.</a></div>
+<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲48</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1vx9i0l/can_running_local_llms_be_a_security_threat/" target="_blank" rel="noopener noreferrer">Yerel LLM'lerin çalıştırılmasının bir güvenlik tehdidi oluşturup oluşturmayacağı değerlendirilmiştir.</a></div>
+<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲47</span>  </div>  <a href="https://www.reddit.com/r/cybersecurity/comments/1vxguce/does_anyone_have_personal_experience_using_dragos/" target="_blank" rel="noopener noreferrer">Dragos OT güvenlik ürünlerini kullanma konusunda kişisel deneyimi olanların olup olmadığı sorulmuştur.</a></div>
+<div class="signal-item reddit-item">  <div class="signal-meta">    <span class="signal-platform-label">Reddit</span>    <span class="signal-engagement">▲46</span>  </div>  <a href="https://www.reddit.com/r/netsec/comments/1vx4j41/tatas_b2b_platform_returned_otps_in_api_responses/" target="_blank" rel="noopener noreferrer">Tata’nın B2B platformunun, API yanıtlarında OTP'leri döndürdüğü tespit edilmiştir.</a></div>
 </div></div>
+            <div class="vuln-section-heading" id="guvenlik-aciklari">
+                <h2>&#128272; Güvenlik Açıkları</h2>
+            </div>
+            <div class="news-item vuln-item" id="haber-5">
+                <div class="news-title"><b>ToxicPanda Bankacılık Truva Atının Kurumsal Tehdide Dönüşmesi</b></div>
+                <p class="news-content">Zimperium zLabs araştırmacıları, Android işletim sistemini hedef alan ToxicPanda bankacılık truva atının 2.0 sürümünün 349 finansal uygulamayı kapsayacak şekilde genişlediğini tespit etmiştir. İlk kez Kasım 2024 tarihinde Latin Amerika ve Avrupa'da görülen yazılımın, yeni sürümüyle 167 uzaktan komut yeteneği kazandığı ve 16 farklı ülkeye yayıldığı bildirilmiştir. Zararlı yazılımın, Android'in Kablosuz Hata Ayıklama ve Erişilebilirlik Hizmetleri'ni kötüye kullanarak cihaz üzerinde kabuk düzeyinde erişim sağladığı ifade edilmiştir. Bu yöntemin, saldırganların çok faktörlü kimlik doğrulama bildirimlerini onaylamasına ve kurumsal kaynaklara erişmesine olanak tanıdığı kaydedilmiştir. Uzmanlar, ToxicPanda 2.0'ın bireysel bankacılık dolandırıcılığının ötesine geçerek, çalışan cihazları üzerinden kurumsal ağlar için ciddi bir güvenlik riski oluşturmaya başladığını belirtmektedir.</p>
+                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://www.darkreading.com/mobile-security/toxicpanda-banking-trojan-matures-enterprise-threat" target="_blank">darkreading.com</a>, 24.08.2026)</b></p>
+            </div>
+            <div class="news-item vuln-item" id="haber-6">
+                <div class="news-title"><b>SPIP Yazılımında Tespit Edilen Kritik Güvenlik Açıkları İçin Güncelleme</b></div>
+                <p class="news-content">Fransa Ulusal Siber Güvenlik Ajansı (ANSSI) bünyesindeki CERT-FR, SPIP içerik yönetim sisteminde tespit edilen birden fazla kritik güvenlik açığına yönelik bir bülten yayımlamıştır. CVE-2026-66738, CVE-2026-77647 ve CVE-2026-77806 kodlu açıkların, sistemin güvenliğini ciddi şekilde tehdit ettiği belirtilmiştir. Geliştiricilerin bu zafiyetleri gidermek amacıyla 10, 17 ve 20 Ağustos 2026 tarihlerinde ardışık olarak 4.4.18, 4.4.20 ve 4.4.21 sürümlerini yayımladığı ifade edilmiştir. CERT-FR, tüm kullanıcıların risk analizi yaparak ilgili yamaları öncelikli olarak uygulamaları gerektiğini kaydetmiştir. Söz konusu açıkların istismar edilmesi durumunda bilgi sistemleri üzerinde yüksek risk oluşturabileceğine dikkat çekilmiştir. Kuruluşların, yazılım sağlayıcısı tarafından sunulan resmi düzeltmeleri takip etmeleri ve güncel sürümlere geçiş yapmaları gerektiği bildirilmiştir.</p>
+                <p class="source"><b>(XXXXXXX, AÇIK - <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-036/" target="_blank">cert.ssi.gouv.fr</a>, 24.08.2026)</b></p>
+            </div>
         </div>
     </div>
     <a href="#" class="back-to-top" title="Başa Dön"
@@ -593,7 +662,7 @@ function saveBlock(btn) {
     var blob = new Blob([text], {type: 'text/plain;charset=utf-8'});
     var url  = URL.createObjectURL(blob);
     var a    = document.createElement('a');
-    a.href = url; a.download = '26.07.2026.txt';
+    a.href = url; a.download = '25.08.2026.txt';
     document.body.appendChild(a); a.click();
     document.body.removeChild(a); URL.revokeObjectURL(url);
     _flashBtn(btn, 'Kaydedildi!');
@@ -614,39 +683,40 @@ function initDragFile() {
 }
 document.addEventListener('DOMContentLoaded', initDragFile);
 </script>
+<!-- RAPOR_TAZE_HAVUZ: 15 -->
 
     <div class="archive-section">
         <h3>📚 Arşiv - Son 30 Gün</h3>
         <div class="archive-links">
-            <a href="./2026-07-25.html" class="archive-link">25.07.2026</a>
-            <a href="./2026-07-24.html" class="archive-link">24.07.2026</a>
-            <a href="./2026-07-23.html" class="archive-link">23.07.2026</a>
-            <a href="./2026-07-22.html" class="archive-link">22.07.2026</a>
-            <a href="./2026-07-21.html" class="archive-link">21.07.2026</a>
-            <a href="./2026-07-20.html" class="archive-link">20.07.2026</a>
-            <a href="./2026-07-19.html" class="archive-link">19.07.2026</a>
-            <a href="./2026-07-18.html" class="archive-link">18.07.2026</a>
-            <a href="./2026-07-17.html" class="archive-link">17.07.2026</a>
-            <a href="./2026-07-16.html" class="archive-link">16.07.2026</a>
-            <a href="./2026-07-15.html" class="archive-link">15.07.2026</a>
-            <a href="./2026-07-14.html" class="archive-link">14.07.2026</a>
-            <a href="./2026-07-13.html" class="archive-link">13.07.2026</a>
-            <a href="./2026-07-12.html" class="archive-link">12.07.2026</a>
-            <a href="./2026-07-11.html" class="archive-link">11.07.2026</a>
-            <a href="./2026-07-10.html" class="archive-link">10.07.2026</a>
-            <a href="./2026-07-09.html" class="archive-link">09.07.2026</a>
-            <a href="./2026-07-08.html" class="archive-link">08.07.2026</a>
-            <a href="./2026-07-07.html" class="archive-link">07.07.2026</a>
-            <a href="./2026-07-06.html" class="archive-link">06.07.2026</a>
-            <a href="./2026-07-05.html" class="archive-link">05.07.2026</a>
-            <a href="./2026-07-04.html" class="archive-link">04.07.2026</a>
-            <a href="./2026-07-03.html" class="archive-link">03.07.2026</a>
-            <a href="./2026-07-02.html" class="archive-link">02.07.2026</a>
-            <a href="./2026-07-01.html" class="archive-link">01.07.2026</a>
-            <a href="./2026-06-30.html" class="archive-link">30.06.2026</a>
-            <a href="./2026-06-29.html" class="archive-link">29.06.2026</a>
-            <a href="./2026-06-28.html" class="archive-link">28.06.2026</a>
-            <a href="./2026-06-27.html" class="archive-link">27.06.2026</a>
+            <a href="./2026-08-24.html" class="archive-link">24.08.2026</a>
+            <a href="./2026-08-23.html" class="archive-link">23.08.2026</a>
+            <a href="./2026-08-22.html" class="archive-link">22.08.2026</a>
+            <a href="./2026-08-21.html" class="archive-link">21.08.2026</a>
+            <a href="./2026-08-20.html" class="archive-link">20.08.2026</a>
+            <a href="./2026-08-19.html" class="archive-link">19.08.2026</a>
+            <a href="./2026-08-18.html" class="archive-link">18.08.2026</a>
+            <a href="./2026-08-17.html" class="archive-link">17.08.2026</a>
+            <a href="./2026-08-16.html" class="archive-link">16.08.2026</a>
+            <a href="./2026-08-15.html" class="archive-link">15.08.2026</a>
+            <a href="./2026-08-14.html" class="archive-link">14.08.2026</a>
+            <a href="./2026-08-13.html" class="archive-link">13.08.2026</a>
+            <a href="./2026-08-12.html" class="archive-link">12.08.2026</a>
+            <a href="./2026-08-11.html" class="archive-link">11.08.2026</a>
+            <a href="./2026-08-10.html" class="archive-link">10.08.2026</a>
+            <a href="./2026-08-09.html" class="archive-link">09.08.2026</a>
+            <a href="./2026-08-08.html" class="archive-link">08.08.2026</a>
+            <a href="./2026-08-07.html" class="archive-link">07.08.2026</a>
+            <a href="./2026-08-06.html" class="archive-link">06.08.2026</a>
+            <a href="./2026-08-05.html" class="archive-link">05.08.2026</a>
+            <a href="./2026-08-04.html" class="archive-link">04.08.2026</a>
+            <a href="./2026-08-03.html" class="archive-link">03.08.2026</a>
+            <a href="./2026-08-02.html" class="archive-link">02.08.2026</a>
+            <a href="./2026-08-01.html" class="archive-link">01.08.2026</a>
+            <a href="./2026-07-31.html" class="archive-link">31.07.2026</a>
+            <a href="./2026-07-30.html" class="archive-link">30.07.2026</a>
+            <a href="./2026-07-29.html" class="archive-link">29.07.2026</a>
+            <a href="./2026-07-28.html" class="archive-link">28.07.2026</a>
+            <a href="./2026-07-27.html" class="archive-link">27.07.2026</a>
         </div>
     </div>
 

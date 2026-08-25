@@ -1,4 +1,3 @@
-2026-08-18 12:05 | AKIŞ BAYAT - IranWire: 40 madde geldi ama hepsi pencere dışı (>96s)
 2026-08-19 12:06 | AKIŞ BAYAT - Krebs on Security: 10 madde geldi ama hepsi pencere dışı (>96s)
 2026-08-19 12:06 | AKIŞ BAYAT - Infoblox Blog: 12 madde geldi ama hepsi pencere dışı (>96s)
 2026-08-19 12:06 | DEDUP SIFIR - Graham Cluley: 3 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 2)
@@ -70,3 +69,7 @@
 2026-08-24 19:25 | DEDUP SIFIR - Citizen Lab: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 1)
 2026-08-24 19:25 | DEDUP SIFIR - CrowdStrike: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 1)
 2026-08-24 19:25 | DEDUP SIFIR - ANSSI (CERT-FR): 35 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 29, daha önce raporlanmış: 6)
+2026-08-25 12:06 | RSS hatası - SANS ISC: syntax error: line 1, column 0
+2026-08-25 12:06 | SESSİZ BOŞ - The Register: 200 OK ama 0 madde
+2026-08-25 12:06 | DEDUP SIFIR - CERT-EU: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 0)
+2026-08-25 12:06 | DEDUP SIFIR - CrowdStrike: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 1)

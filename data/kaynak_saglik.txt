@@ -1,42 +1,42 @@
-# KAYNAK SAĞLIK RAPORU — 2026-08-24 19:25
-# aktif=36  üretiyor=13  boş(200/0)=0  hata/timeout=1
-# çıkarım : 235/236 haberin tam metni çıktı (%100)
-# dedup   : 53/235 haber filtreleri geçti (%23)
-# 🚨 DEDUP SIFIR (4) [metin var, filtreler eliyor]: ANSSI (CERT-FR), The Record, Citizen Lab, CrowdStrike
+# KAYNAK SAĞLIK RAPORU — 2026-08-25 12:06
+# aktif=36  üretiyor=16  boş(200/0)=1  hata/timeout=1
+# çıkarım : 224/225 haberin tam metni çıktı (%100)
+# dedup   : 37/224 haber filtreleri geçti (%17)
+# 🚨 DEDUP SIFIR (2) [metin var, filtreler eliyor]: CrowdStrike, CERT-EU
 # KAYNAK                      HAM  KALAN  METİN  HAVUZ  DURUM
-Security Affairs             10     47     47      9  OK
-The Hacker News              40     19     19      7  OK
-Help Net Security            10     10     10      7  OK
-SecurityWeek                 10     10     10      7  OK
-BleepingComputer             15     15     15      6  OK
-Industrial Cyber              9      9      9      4  OK
-Dark Reading                 40     26     26      2  OK
-The Register                 40      9      9      2  OK
-CSO Online                   20      8      8      2  OK
-Schneier on Security         10      5      4      2  OK
-Graham Cluley                20      4      4      2  OK
-The Cyber Express            10      3      3      2  OK
-CERT-EU                      10      1      1      1  OK
-ANSSI (CERT-FR)              40     35     35      0  🚨 DEDUP SIFIR (OK)
-The Record                    5      5      5      0  🚨 DEDUP SIFIR (OK)
-TechCrunch Security          20      4      4      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+Help Net Security            10     10     10      6  OK
+Security Affairs             10     49     49      5  OK
+Dark Reading                 40     26     26      5  OK
+BleepingComputer             15     15     15      3  OK
+Cyberscoop                   10      6      6      3  OK
+The Record                    5      5      5      3  OK
+The Hacker News              40     15     15      2  OK
+TechCrunch Security          20      5      5      2  OK
+ANSSI (CERT-FR)              40     35     34      1  OK
+SecurityWeek                 10     10     10      1  OK
+Industrial Cyber              9      9      9      1  OK
+CSO Online                   20      5      5      1  OK
+The Cyber Express            10      5      5      1  OK
+Bellingcat                   10      2      2      1  OK
+NIST                         40      1      1      1  OK
+Citizen Lab                  10      1      1      1  OK
+Graham Cluley                20      4      4      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Talos Intelligence           15      4      4      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Cyberscoop                   10      4      4      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Recorded Future              40      3      3      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+Schneier on Security         10      4      4      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Unit 42                      15      3      3      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Mandiant (Google Cloud)      20      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Citizen Lab                  10      2      2      0  🚨 DEDUP SIFIR (OK)
 CrowdStrike                  10      2      2      0  🚨 DEDUP SIFIR (OK)
 Microsoft Security           10      2      2      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+Recorded Future              40      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 NCSC UK                      20      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 Infoblox Blog                12      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
-Bellingcat                   10      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
+CERT-EU                      10      1      1      0  🚨 DEDUP SIFIR (OK)
 Securelist (Kaspersky)       10      1      1      0  ↩️  ZATEN RAPORLANMIŞ (OK)
 BSI                          40      0      -      0  OK
 IranWire                     40      0      -      0  OK
-NIST                         40      0      -      0  OK
 Krebs on Security            10      0      -      0  OK
 Proofpoint Threat Insight    10      0      -      0  OK
 SentinelOne Labs             10      0      -      0  OK
 The DFIR Report              10      0      -      0  OK
 SANS ISC                      0      0      -      0  HATA: syntax error: line 1, column 0
+The Register                  0      0      -      0  BOŞ (200/0 madde)

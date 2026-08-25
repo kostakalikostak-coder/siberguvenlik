@@ -31946,3 +31946,71 @@ Yazılım mühendisi Matt Callaghan, AliExpress web sitesinin kullanıcıları t
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 25 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] ABD'nin İranlı Siber Tehdit Aktörlerine Yönelik Yaptırım Kararı Alması
+─────────────────────────────────────────────────────────
+ABD Hazine Bakanlığı, kritik altyapı hedeflerine yönelik siber hırsızlık faaliyetleri yürüten dört İranlı şahsa yaptırım uygulandığını açıklamıştır. Tahran merkezli Mabna Enstitüsü ile bağlantılı Keyvan Fayyaz Ghareh Blagh, Saber Shahbazi Balujeh ve Mohammad Reza Kadkhoda’i'nin, 2023 yılının sonlarından itibaren enerji, savunma, sağlık, bilişim ve finans sektörlerindeki ABD şirketlerinden veri sızdırdığı tespit edilmiştir. Bakanlık, Mojtaba Ghal’eh-Kuhi’nin İran İstihbarat ve Güvenlik Bakanlığı (MOIS) tarafından yönlendirilen saldırıları yönettiğini, Arman Kahzadian’ın ise çalınan ticari bilgileri kullandığını bildirmiştir. Hazine Bakanı Scott Bessent; dijital varlıklar, teknoloji ve altın üzerinden yürütülen bu faaliyetlerin durdurulacağını belirtmiştir.
+(XXXXXXX, AÇIK -cyberscoop.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] ABD'de Yaşlıları Dolandıran Şebekeye Yardım Eden Şahsın Yakalanması
+─────────────────────────────────────────────────────────
+ABD Adalet Bakanlığı, New York ve New Jersey'de yaşayan yaşlı vatandaşlardan 7,5 milyon dolardan fazla para sızdıran bir şebekeye aracılık eden 21 yaşındaki Hindistan vatandaşı Jay Sunilbharthi Goswami'nin yakalandığını açıklamıştır. Fairleigh Dickinson Üniversitesi'nde öğrenci vizesiyle bulunan Goswami'nin, kendilerini kolluk kuvveti olarak tanıtan Hindistan merkezli dolandırıcılar adına mağdurlardan nakit ve altın topladığı tespit edilmiştir. FBI ve IRS tarafından yürütülen soruşturmada, şüphelinin 17 Ağustos 2026'da tutuklandığı, kefaletle serbest bırakıldıktan sonra Kanada'daki Peace Bridge üzerinden kaçarak Toronto'dan Doha'ya gitmeye çalışırken yakalandığı bildirilmiştir. Çoğu 70 ve 80'li yaşlarda olan en az dokuz kurbanın, banka hesaplarının uyuşturucu suçlarıyla ilişkili olduğuna ikna edilerek birikimlerini elden çıkarmaya zorlandığı kaydedilmiştir. Bu faaliyetlerden 90.000 dolar kazanan Goswami, elektronik dolandırıcılık ve para aklama suçlarından 20 yıla kadar hapis cezasıyla karşı karşıyadır.
+(XXXXXXX, AÇIK -therecord.media, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Weedhack Zararlı Yazılımının Sahte Minecraft İstemcileri Üzerinden Yayılması
+─────────────────────────────────────────────────────────
+McAfee Labs, Weedhack adlı zararlı yazılımın sahte Minecraft istemcileri ve SEO zehirlemesi yöntemleriyle oyuncuları hedef aldığını tespit etmiştir. Araştırmacılar, 6.300'den fazla saldırı girişimini engellerken, saldırganların Lovable gibi yapay zeka araçlarıyla Glazed, Radium ve Meteor gibi popüler istemcileri taklit eden profesyonel web siteleri oluşturduğunu belirtmiştir. Haziran 2026'da belgelenen bu yazılım; sistem bilgilerini toplamakta, Microsoft Defender istisnaları oluşturmakta ve JAR yükleri aracılığıyla veri çalmaktadır. Zararlı bağlantıların %49,6'sı Discord, %23,4'ü MediaFire ve %8,2'si GitHub üzerinden dağıtılmaktadır. Saldırganlar, Planet Minecraft ve EndMods gibi resmi topluluklara sızarak Xenon ve Nova gibi istemcilerin arama motoru sonuçlarında üst sıralarda yer almasını sağlamıştır. Kullanıcıların, güvenlik yazılımlarını devre dışı bırakma taleplerine karşı dikkatli olmaları ve yalnızca Modrinth gibi güvenilir kaynakları kullanmaları önerilmektedir.
+(XXXXXXX, AÇIK -thehackernews.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Oracle WebLogic Sunucularındaki Kritik Güvenlik Açığının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Oracle HTTP Server ve Oracle WebLogic Server ürünlerini etkileyen CVE-2026-21962 kodlu kritik güvenlik açığını aktif olarak istismar edilen açıklar kataloğuna eklemiştir. 10.0 üzerinden 10.0 tam puan alan bu açığın, kimlik doğrulaması yapmamış saldırganların kritik verilere yetkisiz erişim sağlamasına veya bu verileri değiştirmesine olanak tanıdığı belirtilmiştir. Oracle'ın Ocak ayında yama yayınlamasına rağmen, GreyNoise ve CloudSEK gibi kuruluşlar tarafından aktif saldırı girişimlerinin rapor edildiği kaydedilmiştir. Özellikle tek bir IP adresinden birden fazla WebLogic açığının hedef alındığı gözlemlenmiştir. CISA, federal kurumlara ağlarını korumak amacıyla gerekli düzeltmeleri 27 Ağustos 2026 tarihine kadar uygulamaları talimatını vermiştir. Tehdit aktörlerinin, WebLogic ortamlarını ele geçirmek için basit ama etkili olan bu tür zafiyetlere güvenmeye devam ettiği ifade edilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 25.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] WordPress miniOrange Eklentisindeki Kimlik Doğrulama Açıklarının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Siber tehdit aktörlerinin, WordPress sitelerinde kullanılan miniOrange SAML 2.0 Single Sign On eklentisindeki iki kritik güvenlik açığını istismar etmeye başladığı bildirilmiştir. CVE-2026-61979 ve CVE-2026-15981 kodlu bu zafiyetlerin birleştirilerek kullanılması durumunda, saldırganların yönetici olarak oturum açabildiği tespit edilmiştir. Güvenlik firması Patchstack, Temmuz ayında yayınlanan yamaların sadece ücretsiz sürüm için duyurulduğunu, bu durumun ücretli sürüm kullanan birçok siteyi savunmasız bıraktığını açıklamıştır. Avrupa, Afrika ve ABD merkezli IP adreslerinden gelen fırsatçı tarama ve saldırı girişimlerinin sürdüğü kaydedilmiştir. Ücretli sürümler için güncelleme uyarılarının WordPress panelinde görünmediği, bu nedenle site sahiplerinin güncellemeleri manuel olarak yapmaları gerektiği vurgulanmıştır. Bir kavram kanıtlama (PoC) kodunun kamuya açık olması nedeniyle saldırıların hız kazanabileceği belirtilmektedir. Eklentinin dünya çapında on binlerce aktif kullanıcısı olduğu ifade edilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Calix Yönlendiricilerindeki Güvenlik Açığının Yerel Ağ Cihazlarını İfşa Etmesi
+─────────────────────────────────────────────────────────
+Calix GS7 XGS model ev tipi yönlendiricilerde, kimlik doğrulaması gerektirmeden yerel ağ cihazlarını internete açık hale getiren kritik bir güvenlik açığı tespit edilmiştir. CVE-2026-75501 koduyla izlenen hatanın, cihazın WAN arayüzü üzerinden MiniUPnPd kontrol noktasına erişim izni vermesinden kaynaklandığı belirtilmiştir. Güvenlik araştırmacısı Brian Khan Quintana, bu açık sayesinde saldırganların ağ adresi çevirisi (NAT) ve güvenlik duvarı korumalarını aşarak dahili kameralara ve depolama birimlerine erişebildiğini ifade etmiştir. Üretici firmaya yapılan bildirimlere yanıt alınamaması üzerine CERT/CC tarafından kamuoyuna duyuru yapıldığı kaydedilmiştir. Etkilenen cihazlar için henüz bir yama yayımlanmadığı, kullanıcıların güvenlik önlemi olarak UPnP özelliğini yönetim arayüzünden devre dışı bırakmaları veya internet servis sağlayıcılarıyla iletişime geçmeleri gerektiği bildirilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 25.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Siber Suçluların GTA VI Sızıntılarını Zararlı Yazılım Yemi Olarak Kullanması
+─────────────────────────────────────────────────────────
+Grand Theft Auto VI (GTA VI) oyununa yönelik yoğun ilgiyi fırsat bilen siber suçluların, 113 GB boyutunda sahte bir oyun dosyası üzerinden zararlı yazılım dağıttığı tespit edilmiştir. Yapılan analizlerde, dosyanın %99,99'unun boş veriden oluştuğu ve içine gizlenmiş 50 KB boyutunda küçük bir zararlı kod barındırdığı belirlenmiştir. Bu kodun, Windows Defender'ı devre dışı bırakmak ve güvenlik yazılımlarını kapatmak için tasarlandığı ifade edilmiştir. Sahte indirme bağlantılarının, gerçek sızıntı haberlerinin yarattığı karmaşa ortamında Discord ve torrent siteleri üzerinden yayıldığı kaydedilmiştir. Ayrıca, kullanıcıları veri hırsızı yazılımlara yönlendiren sahte mobil uygulamalar ve kimlik bilgilerini çalmayı hedefleyen sahte Rockstar Social Club giriş sayfalarının bulunduğu bildirilmiştir. Oyunun henüz resmi bir oynanabilir sürümünün bulunmadığı ve bu tür dosyaların tamamen saldırı amaçlı olduğu vurgulanmıştır.
+(XXXXXXX, AÇIK -securityaffairs.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] ToxicPanda Bankacılık Truva Atının Kurumsal Tehdide Dönüşmesi
+─────────────────────────────────────────────────────────
+Zimperium zLabs araştırmacıları, Android işletim sistemini hedef alan ToxicPanda bankacılık truva atının 2.0 sürümünün 349 finansal uygulamayı kapsayacak şekilde genişlediğini tespit etmiştir. İlk kez Kasım 2024 tarihinde Latin Amerika ve Avrupa'da görülen yazılımın, yeni sürümüyle 167 uzaktan komut yeteneği kazandığı ve 16 farklı ülkeye yayıldığı bildirilmiştir. Zararlı yazılımın, Android'in Kablosuz Hata Ayıklama ve Erişilebilirlik Hizmetleri'ni kötüye kullanarak cihaz üzerinde kabuk düzeyinde erişim sağladığı ifade edilmiştir. Bu yöntemin, saldırganların çok faktörlü kimlik doğrulama bildirimlerini onaylamasına ve kurumsal kaynaklara erişmesine olanak tanıdığı kaydedilmiştir. Uzmanlar, ToxicPanda 2.0'ın bireysel bankacılık dolandırıcılığının ötesine geçerek, çalışan cihazları üzerinden kurumsal ağlar için ciddi bir güvenlik riski oluşturmaya başladığını belirtmektedir.
+(XXXXXXX, AÇIK -darkreading.com, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] SPIP Yazılımında Tespit Edilen Kritik Güvenlik Açıkları İçin Güncelleme
+─────────────────────────────────────────────────────────
+Fransa Ulusal Siber Güvenlik Ajansı (ANSSI) bünyesindeki CERT-FR, SPIP içerik yönetim sisteminde tespit edilen birden fazla kritik güvenlik açığına yönelik bir bülten yayımlamıştır. CVE-2026-66738, CVE-2026-77647 ve CVE-2026-77806 kodlu açıkların, sistemin güvenliğini ciddi şekilde tehdit ettiği belirtilmiştir. Geliştiricilerin bu zafiyetleri gidermek amacıyla 10, 17 ve 20 Ağustos 2026 tarihlerinde ardışık olarak 4.4.18, 4.4.20 ve 4.4.21 sürümlerini yayımladığı ifade edilmiştir. CERT-FR, tüm kullanıcıların risk analizi yaparak ilgili yamaları öncelikli olarak uygulamaları gerektiğini kaydetmiştir. Söz konusu açıkların istismar edilmesi durumunda bilgi sistemleri üzerinde yüksek risk oluşturabileceğine dikkat çekilmiştir. Kuruluşların, yazılım sağlayıcısı tarafından sunulan resmi düzeltmeleri takip etmeleri ve güncel sürümlere geçiş yapmaları gerektiği bildirilmiştir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
