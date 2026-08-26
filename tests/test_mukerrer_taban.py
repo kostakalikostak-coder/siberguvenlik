@@ -161,3 +161,46 @@ def test_puan_esigi_kalkti_her_bayrak_denetlenir():
     bedava. Sonuç olarak düşük puanlı haberler sessizce yanlış eleniyordu."""
     assert not hasattr(main.HaberSistemi, 'MUKERRER_KORUMA_ESIGI'), (
         'Ölü sabit geri gelmiş — puan eşiği kaldırıldı (bkz. _rank_by_score)')
+
+
+# ── Sahte yenilik: B'nin metninde geçen ad "yeni" değildir ─────────────────
+
+def _v(tr_title, paragraph, title=''):
+    return {'tr_title': tr_title, 'paragraph': paragraph,
+            'title': title, 'full_text': ''}
+
+
+def test_bde_gecen_ad_yeni_sayilmaz():
+    """2026-08-26: ABD'nin İran bağlantılı aktörlere yaptırımı 25 ve 26
+    Ağustos'ta üst üste yayımlandı. Çift AYNI OLAY tanındı ama dört 'yeni ad'
+    yüzünden GELISME sayılıp gövdeye girdi; oysa 'tahran' ve 'economic' dünkü
+    haberin metninde AYNEN geçiyordu — yalnızca kimlik çıkarımı onları
+    görmemişti (biri cümle içinde, diğeri küçük harfle)."""
+    from src.olay_iliski import mukerrer_karari
+    a = _v("ABD'nin İran Bağlantılı Aktörlere Yaptırım Uygulaması",
+           "ABD Hazine Bakanlığı, İran bağlantılı siber tehdit aktörlerine "
+           "yaptırım açıklamıştır. Operation Economic Outcast kapsamında "
+           "MOIS ile bağlantılı Tahran merkezli Mabna Institute hedef "
+           "alınmıştır.")
+    b = _v("ABD'nin İranlı Aktörlere Yönelik Yaptırım Kararı Alması",
+           "ABD Hazine Bakanlığı, kritik altyapı hedeflerine yönelik siber "
+           "hırsızlık yürüten dört İranlı şahsa yaptırım uygulandığını "
+           "açıklamıştır. Tahran merkezli Mabna Enstitüsü ile bağlantılı "
+           "şahısların İran İstihbarat ve Güvenlik Bakanlığı'na bağlı "
+           "olduğu belirtilmiştir.",
+           title="Treasury sanctions Iranian hackers as part of 'economic D-Day'")
+    karar, gerekce = mukerrer_karari(a, b, ayni_gun=False, explain=True)
+    assert karar == 'TAM_MUKERRER', f'sahte yenilik GELISME üretti: {gerekce}'
+
+
+def test_gercek_yeni_ad_hala_gelisme_uretir():
+    """Karşı taraf bozulmamalı: B'nin metninde GEÇMEYEN adlar hâlâ yeniliktir."""
+    from src.olay_iliski import mukerrer_karari
+    a = _v("Acme Fidye Saldırısında Yeni Kurbanların Ortaya Çıkması",
+           "Acme Corp'a yapılan fidye saldırısında Zenithcorp, Borealis ve "
+           "Kestrelbank şirketlerinin de etkilendiği tespit edilmiştir.")
+    b = _v("Acme Şirketine Fidye Saldırısı Düzenlenmesi",
+           "Acme Corp'un sistemlerine fidye yazılımı saldırısı düzenlendiği "
+           "ve verilerin şifrelendiği bildirilmiştir.")
+    karar, gerekce = mukerrer_karari(a, b, ayni_gun=False, explain=True)
+    assert karar == 'GELISME', f'gerçek yeni gelişme yutuldu: {karar} {gerekce}'

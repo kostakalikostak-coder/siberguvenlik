@@ -505,6 +505,20 @@ def _yeni_gelisme_mi(view_a, view_b, sozluk):
     ka = olay_kimlikleri(_giris_view(view_a), sozluk)
     kb = olay_kimlikleri(view_b, sozluk)          # B'nin TAMAMIYLA karşılaştır
     yeni = ka - kb
+    # KİMLİK KÜMESİ FARKI TEK BAŞINA YETMEZ — B'nin METNİNDE geçen bir ad
+    # "yeni" değildir. `olay_kimlikleri` özel ad çıkarımı yapar ve bu çıkarım
+    # kaçırabilir (küçük harfle yazılmış ad, farklı cümle konumu); kaçırılan
+    # her ad sahte bir yenilik üretir.
+    # ÖLÇÜLDÜ (2026-08-26): ABD'nin İran bağlantılı aktörlere yaptırımı 25 ve
+    # 26 Ağustos'ta ÜST ÜSTE yayımlandı. Çift AYNI OLAY olarak tanındı ama
+    # dört "yeni ad" yüzünden GELISME sayıldı: 'tahran' ve 'economic' B'nin
+    # metninde AYNEN geçiyordu (biri cümle içinde, diğeri küçük harfle),
+    # yalnızca kimlik çıkarımı onları görmemişti. Gerçekten yeni olan tek ad
+    # 'outcast' idi — eşiğin (3) altında.
+    if yeni:
+        b_metin = _metin(view_b).lower()
+        yeni = {k for k in yeni
+                if (k.split(':', 1)[-1] or '\0') not in b_metin}
     # Yüksek dereceli tek bir yenilik (yeni CVE / yeni paket / yeni kod adı)
     # başlı başına yeni gelişmedir. Yalnızca özel ad varsa daha fazlası
     # aranır: aynı olayı anlatan iki kaynak girişte bile bir-iki farklı yan ad
