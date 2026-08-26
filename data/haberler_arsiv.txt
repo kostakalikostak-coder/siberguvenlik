@@ -32014,3 +32014,106 @@ Fransa Ulusal Siber Güvenlik Ajansı (ANSSI) bünyesindeki CERT-FR, SPIP içeri
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 26 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Norveç Kamu Hizmetlerine Yönelik Kapsamlı DDoS Saldırısı Düzenlenmesi
+─────────────────────────────────────────────────────────
+Norveç Dijitalleşme Ajansı (Digdir), ülkedeki kamu hizmetlerini hedef alan ve 30 saattir devam eden geniş çaplı bir dağıtık hizmet reddi (DDoS) saldırısı gerçekleştiğini bildirmiştir. Saldırının, Digdir'in bilişim ortağı Vivicta'nın altyapısını hedef aldığı ve kimlik doğrulama sistemi ID-porten dahil olmak üzere 10 dijital hizmeti kesintiye uğrattığı belirtilmiştir. Bu durumun, 4,5 milyondan fazla kullanıcının kamu kayıtlarına, eczanelere ve elektronik reçete sistemlerine erişimini engellediği ifade edilmiştir. Yetkililer, söz konusu saldırının Haziran ayından bu yana gerçekleşen üçüncü olay olduğunu belirtmiştir.
+(XXXXXXX, AÇIK -therecord.media, 25.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] DOUBLECUP Zararlı Yazılımının PNG Dosyalarını Komut İletimi İçin Kullanması
+─────────────────────────────────────────────────────────
+Güvenlik araştırmacıları, DOUBLECUP adlı yeni bir zararlı yazılımın, komutlarını PNG resim dosyalarının sonuna ekleyerek ilettiğini tespit etmiştir. Yazılımın gerçek bir steganografi yöntemi kullanmadığı, bunun yerine PowerShell komutlarını resim dosyasının sonuna düz metin olarak eklediği belirtilmiştir. Bu yöntemde, PowerShell betiğinin başına eklenen satır başı ve yeni satır karakterleri sayesinde Windows'un FINDSTR komutuyla betiğin kolayca ayrıştırılabildiği ifade edilmiştir. Ayrıştırılan komutların doğrudan PowerShell yorumlayıcısına aktarılarak çalıştırıldığı kaydedilmiştir. Araştırmacı Didier Stevens, bu tekniğin karmaşık bir veri çıkarıcıya ihtiyaç duymadan basit sistem araçlarıyla operasyon yürütülmesine olanak tanıdığını vurgulamıştır. Yöntemin, ağ trafiğinde masum bir resim dosyası gibi görünerek temel güvenlik kontrollerini atlatmayı amaçladığı bildirilmiştir. Zararlı yazılımın, komut iletimi için basit ama etkili bir yöntem geliştirdiği tespit edilmiştir.
+(XXXXXXX, AÇIK -isc.sans.edu, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] SLEEPWALKER Arka Kapısının ESET Yazılımı Üzerinden İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Bir siber güvenlik araştırmacısı, Windows sistemlerini hedef alan ve SLEEPWALKER olarak adlandırılan, daha önce raporlanmamış bir arka kapı tespit etmiştir. Zararlı yazılımın, ESET Management Agent'a ait ERAAgent.exe dosyasına yan yükleme (side-loading) yöntemiyle dahil edildiği ve meşru dpapi.dll dosyasını taklit ettiği belirtilmiştir. SLEEPWALKER'ın, özel olarak yapılandırılmış bir ağ paketi alana kadar bellekte pasif kaldığı ve ardından kendi 23 komutluk diliyle talimatları yürüttüğü ifade edilmiştir. Araştırmacı Dominik Reichel, bu yöntemin fırsatçı bir saldırıdan ziyade hedefli ve yüksek kaynaklı bir operasyonla uyumlu olduğunu kaydetmiştir. Yazılımın dışa dönük bağlantı kurmadığı, bu sayede geleneksel güvenlik araçlarından kaçındığı ve VMware VMCI gibi farklı taşıma protokollerini kullandığı bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Batı Afrikalı Suç Şebekelerine Yönelik Küresel Operasyonda 58 Tutuklama
+─────────────────────────────────────────────────────────
+Interpol tarafından koordine edilen ve Kasım 2025 ile Haziran 2026 tarihleri arasında 22 ülkede yürütülen Operation Jackal IV kapsamında, Batı Afrikalı organize suç gruplarıyla bağlantılı 58 şahsın tutuklandığı bildirilmiştir. Sekiz ay süren operasyon süresince 263 şüphelinin tespit edildiği ve küresel çapta yaklaşık 143 milyon avro tutarında suç gelirinin aklandığının tahmin edildiği açıklanmıştır. Güney Afrika'da emeklileri hedef alan bir şebekeye yönelik baskınlarda 39 kişinin yakalandığı ve 2,67 milyon dolara el konulduğu belirtilmiştir. Arjantin'de ise suç şebekelerine altyapı desteği sağlayan bir ağa yönelik operasyonda 17 kişinin tutuklandığı kaydedilmiştir. Interpol, suç gruplarının son dönemde reşit olmayan bireyleri hedef alan cinsel şantaj eylemlerine ve karanlık web üzerinden hizmet olarak suç (CaaS) modellerine yöneldiğini ifade etmiştir.
+(XXXXXXX, AÇIK -thecyberexpress.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] ABD'nin İran Bağlantılı Siber Tehdit Aktörlerine Yaptırım Uygulaması
+─────────────────────────────────────────────────────────
+ABD Hazine Bakanlığı, İran'ın kritik altyapılarına yönelik siber saldırılar ve finansal hırsızlık faaliyetleri nedeniyle İran bağlantılı siber tehdit aktörlerine yönelik yeni yaptırımlar açıklamıştır. Operation Economic Outcast kod adlı operasyon kapsamında, İran İstihbarat ve Güvenlik Bakanlığı (MOIS) ile bağlantılı yaklaşık 60 kuruluş, birey ve geminin hedef alındığı belirtilmiştir. Yaptırım listesinde, ABD'deki enerji, savunma ve sağlık sektörlerini hedef alan Tahran merkezli Mabna Institute üyesi beş kişinin de bulunduğu kaydedilmiştir. Bu şahısların 2023 yılından bu yana kritik altyapı verilerini sızdırdığı ve kripto para hırsızlığı yoluyla yaklaşık 16,8 milyon dolar elde ettiği tespit edilmiştir. ABD Dışişleri Bakanlığı, kritik altyapılara yönelik kötü niyetli siber faaliyetler hakkında bilgi sağlayanlara 10 milyon dolara kadar ödül verileceğini duyurmuştur.
+(XXXXXXX, AÇIK -thehackernews.com, 25.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] GTA VI Oyununa Ait Verilerin Sızdırılması ve Şantaj Girişimleri
+─────────────────────────────────────────────────────────
+Rockstar Games tarafından geliştirilen Grand Theft Auto VI oyununa ait oynanış videolarının, CyberLeek takma adlı bir siber suçlu tarafından yasa dışı yollarla sızdırıldığı bildirilmiştir. Sızıntının, şirketin hassas sistemlerine doğrudan erişim sağlanması veya bir içeriden tehdit aracılığıyla gerçekleştiği tahmin edilmektedir. Yayıncı kuruluş Take-Two Interactive, sızıntıların ardından Discord, Google, Microsoft ve X platformlarından şüphelilerin kimlik bilgilerini talep eden mahkeme celpleri çıkarmıştır. Saldırganın, sızdırılan videolara kripto para cüzdan adreslerini ekleyerek finansal kazanç elde etmeye çalıştığı ve bir anti-kurumsal manifesto yayınladığı belirtilmiştir. Güvenlik uzmanları, bu olayın 2014'teki Sony Pictures ve 2017'deki HBO sızıntılarıyla benzerlik taşıdığına dikkat çekmiştir. 2022 yılında da benzer bir sızıntı nedeniyle Lapsus$ grubu üyesi bir şahsın tutuklandığı hatırlatılmıştır. Olayla ilgili yasal süreçlerin ve adli bilişim incelemelerinin devam ettiği ifade edilmiştir.
+(XXXXXXX, AÇIK -cyberscoop.com, 25.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Mirage2FA Kampanyasının Binlerce Şirketi Hedef Alması
+─────────────────────────────────────────────────────────
+2024 ile 2026 yılları arasında faaliyet gösteren Mirage2FA adlı kimlik avı hizmeti (PhaaS) araç setinin, dünya genelinde 4.500'den fazla şirketi etkilediği tespit edilmiştir. ANY.RUN tarafından yapılan araştırmada, saldırganların Microsoft 365 oturumlarını ele geçirerek iki faktörlü kimlik doğrulamayı (MFA) devre dışı bıraktığı belirtilmiştir. Hedeflenen e-posta adreslerinin yaklaşık %48'inin güvenliğinin ihlal edildiği ve kurbanların %63,7'sinin ABD merkezli olduğu ifade edilmiştir. Saldırıların teknoloji, imalat ve eğitim sektörlerinde yoğunlaştığı kaydedilmiştir. Ele geçirilen oturumlar aracılığıyla saldırganların kurumsal ortamlara sızdığı, tekli oturum açma (SSO) bağlantılı uygulamalara eriştiği ve veri hırsızlığı gerçekleştirdiği bildirilmiştir. Güvenlik uzmanları, kuruluşların oturum hırsızlığını bir kimlik olayı olarak ele almalarını ve şüpheli oturum jetonlarını derhal iptal etmelerini tavsiye etmiştir. Phishing saldırılarının parola hırsızlığının ötesine geçerek doğrudan güvenilir kimlikleri suistimal ettiği vurgulanmıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 25.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] LACMA Veri İhlalinde Sosyal Güvenlik ve Tıbbi Verilerin Sızması
+─────────────────────────────────────────────────────────
+Los Angeles County Sanat Müzesi (LACMA), geçtiğimiz yıl gerçekleşen bir siber saldırı sonucunda müşteri ve çalışan verilerinin ifşa olduğunu açıklamıştır. Temmuz 2025'te tespit edilen ihlalin kapsamlı incelemesinin Şubat 2026'da tamamlandığı ve sızdırılan veriler arasında Sosyal Güvenlik numaraları, sürücü belgesi bilgileri ve tıbbi teşhis kayıtlarının bulunduğu belirtilmiştir. Müze yönetimi, etkilenen kişilere yönelik bildirimlerin gönderilmeye başlandığını ve mağdurlara bir yıllık kimlik hırsızlığı koruma hizmeti sunulduğunu ifade etmiştir. Olayın ardından kolluk kuvvetleriyle iş birliği yapıldığı ve sistem güvenliğinin artırılması için önlemler alındığı kaydedilmiştir. Saldırının tam olarak kaç kişiyi etkilediği konusunda net bir sayı verilmezken, LACMA'nın yılda bir milyondan fazla ziyaretçi ağırlayan büyük bir kuruluş olduğu hatırlatılmıştır. Mağdurların banka hesaplarını şüpheli işlemlere karşı izlemeleri ve kredi dosyalarına güvenlik blokajı koymaları tavsiye edilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Yapay Zeka Belleğine Gizli Talimat Yerleştirilmesini Sağlayan InjecMEM Tekniği
+─────────────────────────────────────────────────────────
+Şanghay Jiao Tong Üniversitesi ve Ant Group araştırmacıları, yapay zeka ajanlarının bellek sistemlerini hedef alan InjecMEM isimli yeni bir saldırı tekniği geliştirmiştir. Söz konusu yöntemin, tek bir girdi aracılığıyla yapay zeka sisteminin belleğine gizli talimatlar yerleştirilmesine ve sistemin gelecekteki sorgulara vereceği yanıtların manipüle edilmesine olanak tanıdığı belirtilmiştir. Araştırmacılar, InjecMEM tekniğinin MemoryOS üzerinde yüzde 76,6 saldırı başarı oranına ulaştığını kaydetmiştir. Geleneksel komut enjeksiyonu saldırılarının aksine bu yöntemin, kötü amaçlı içeriği sistem belleğinde kalıcı hale getirerek farklı oturumlarda da etkisini sürdürdüğü ifade edilmiştir. Uzmanlar, mevcut güvenlik önlemlerinin genellikle anlık girdi ve çıktılara odaklandığını, ancak bellek katmanındaki bu tür kalıcı tehditlere karşı yetersiz kaldığını bildirilmiştir.
+(XXXXXXX, AÇIK -csoonline.com, 25.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Yapay Zeka Destekli Sesli Kimlik Avı Platformu AnonyMousKIT'in İfşası
+─────────────────────────────────────────────────────────
+SOCRadar tarafından yayımlanan raporda, çalınan Apple cihazlarının Etkinleştirme Kilidi'ni kaldırmak amacıyla geliştirilen AnonyMousKIT isimli hizmet tabanlı kimlik avı platformu analiz edilmiştir. Platformun, kiralık yapay zeka sesli asistanlarını kullanarak mağdurları Apple Destek ekibi adına aradığı ve cihaz parolaları ile iki faktörlü doğrulama kodlarını talep ettiği belirtilmiştir. Yapılan incelemelerde, Ağustos 2025 ile Mayıs 2026 tarihleri arasında gerçekleşen 200 aramanın büyük çoğunluğunun Brezilya'daki kullanıcıları hedef aldığı tespit edilmiştir. Saldırganların, cihazlardan elde edilen model ve konum bilgilerini kullanarak kimlik avı mesajlarını özelleştirdiği ifade edilmiştir. Apple, kullanıcılarına destek sağlamak amacıyla asla parola veya doğrulama kodu talep etmediğini açıklamıştır. Araştırmacılar, yüksek değerli hesaplar için fiziksel güvenlik anahtarlarının kullanılmasını tavsiye etmektedir.
+(XXXXXXX, AÇIK -thehackernews.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Gitea Yazılımındaki Kritik Güvenlik Açığının Kripto Madencilik İçin Kullanılması
+─────────────────────────────────────────────────────────
+ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Gitea platformundaki CVE-2026-60004 kodlu kritik uzaktan kod yürütme açığının aktif olarak istismar edildiği konusunda uyarıda bulunmuştur. 9.8 şiddet puanına sahip olan bu açığın, saldırganların depo yazma yetkisini kötüye kullanarak sistem üzerinde keyfi komutlar çalıştırmasına olanak tanıdığı belirtilmiştir. Yapılan analizlerde, bir saldırganın bu açığı kullanarak savunmasız Gitea sunucularına kripto para madenciliği yapan zararlı yazılımlar yüklediği tespit edilmiştir. Gitea'nın varsayılan olarak açık olan kayıt özelliğinin, dış aktörlerin hesap oluşturup depo kurarak saldırıyı tetiklemesini kolaylaştırdığı ifade edilmiştir. CISA, söz konusu açığı bilinen istismar edilen zafiyetler kataloğuna ekleyerek federal kurumlara 28 Ağustos 2026 tarihine kadar güncelleme yapma zorunluluğu getirmiştir. Saldırıların yüksek işlemci kullanımıyla fark edildiği ve etkilenen sistemlerin geçici olarak kısıtlandığı kaydedilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] NVIDIA NemoClaw Aracılığıyla Yerel Yapay Zeka Modellerinin Zehirlenmesi
+─────────────────────────────────────────────────────────
+Oasis Security araştırmacıları, NVIDIA NemoClaw aracında saldırganların yerel Ollama örneklerini ele geçirmesine olanak tanıyan bir zafiyet tespit etmiştir. Bu zafiyetin, saldırgan kontrolündeki bir web sayfası aracılığıyla kimlik doğrulaması gerektirmeksizin yerel yapay zeka ajanlarına gizli talimatlar yerleştirilmesine imkan verdiği belirtilmiştir. Sorunun, NemoClaw'ın Ollama'yı tüm ağ arayüzlerine bağlayarak API erişimini dış saldırılara açık hale getirmesinden kaynaklandığı ifade edilmiştir. DNS yeniden bağlama teknikleri kullanılarak modelin sohbet şablonlarının değiştirilebildiği ve bu durumun kalıcı model zehirlenmesine yol açtığı kaydedilmiştir. NVIDIA'nın macOS ve Linux sistemleri için v0.0.35 sürümüyle düzeltme yayınladığı, ancak Windows platformu için henüz tam bir çözüm sunulmadığı bildirilmiştir. Araştırmacılar, bu tür saldırıların yapay zeka ajanlarının yetkili olduğu araçlar ve veriler üzerinde tam kontrol sağlayabileceğine dikkat çekmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 25.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Keycloak Yazılımında Çok Sayıda Güvenlik Zafiyetinin Giderilmesi
+─────────────────────────────────────────────────────────
+Açık kaynaklı kimlik ve erişim yönetimi yazılımı Keycloak'ta, güvenlik politikalarının atlatılmasına neden olan birden fazla zafiyet tespit edilmiştir. CERT-FR, özellikle CVE-2026-18963 kodlu zafiyet için kamuya açık bir kavram kanıtlama kodunun bulunduğunu ve bu açığın kimlik doğrulaması yapmamış saldırganların hesapları ele geçirmesine izin verdiğini bildirmiştir. Etkilenen sürümlerin 26.7.2 öncesi versiyonlar olduğu ve kullanıcıların acilen güncelleme yapmaları gerektiği ifade edilmiştir. Red Hat güvenlik ekibi, güncelleme uygulanamayan durumlarda geçici bir önlem olarak "şifremi unuttum" özelliğinin tüm alan adları için devre dışı bırakılmasını önermiştir. Tespit edilen diğer açıklar arasında CVE-2026-14613 ve CVE-2026-59889 gibi çeşitli risk seviyelerinde kodların bulunduğu kaydedilmiştir. Yayınlanan güvenlik bülteninde, bu açıkların veri gizliliği ve bütünlüğünü doğrudan tehdit ettiği belirtilerek düzeltme eklerinin uygulanmasının kritik olduğu vurgulanmıştır.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 25.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] Marimo Notebook Yazılımında Yüksek Riskli Kod Enjeksiyonu Zafiyeti
+─────────────────────────────────────────────────────────
+Marimo notebook yazılımında, saldırganların özel olarak hazırlanmış bir dosya aracılığıyla yerel alt süreçlerde komut çalıştırmasına izin veren yüksek riskli bir güvenlik açığı giderilmiştir. CVE-2026-75149 olarak tanımlanan bu zafiyetin, notebook düzenleme modunda açıldığında herhangi bir hücre çalıştırılmadan önce saldırgan kontrolündeki Model Context Protocol (MCP) komutlarını tetiklediği belirtilmiştir. VulnCheck tarafından 8.8 CVSS puanı ile derecelendirilen açığın, 0.23.15 sürümünden önceki tüm versiyonları etkilediği ifade edilmiştir. Marimo'nun yayınladığı güncelleme ile notebook meta verilerini güvensiz kabul eden ve yapılandırmaları bir izin listesinden geçiren sertleştirme önlemlerini devreye aldığı kaydedilmiştir. Kullanıcıların güvenliğini sağlamak amacıyla en güncel kararlı sürüm olan 0.24.0'a geçmeleri tavsiye edilmiştir. Ayrıca, aynı yazılımda daha önce tespit edilen ve API anahtarlarının sızmasına yol açan diğer zafiyetlerin de bu güncellemeyle kapatıldığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 25.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

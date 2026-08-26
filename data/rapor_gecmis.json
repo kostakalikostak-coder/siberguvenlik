@@ -1,40 +1,5 @@
 [
  {
-  "date": "2026-07-26",
-  "views": [
-   {
-    "tr_title": "Fastjson 1.x Kütüphanesindeki Kritik Açığın Aktif Olarak İstismar Edilmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Güvenlik firmaları ThreatBook ve Imperva, Alibaba tarafından geliştirilen Fastjson 1.x Java kütüphanesindeki kritik bir zafiyetin siber saldırılarda hedef alındığını bildirmiştir. CVE-2026-16723 kodlu ve 9.0 ciddiyet puanına sahip olan bu açığın, Spring Boot uygulamalarında kimlik doğrulaması gerektirmeden uzaktan kod yürütülmesine imkan tanıdığı belirtilmiştir. Alibaba, 21 Temmuz 2026 tarihinde bir güvenlik uyarısı yayınlamış ancak 25 Temmuz 2026 itibarıyla Fastjson 1.x için henüz resmi bir yama sunmamıştır. Imperva, Amerika Birleşik Devletleri, Singapur ve Kanada'daki finans, sağlık ve perakende sektörlerine yönelik saldırı girişimleri tespit etmiştir. ThreatBook ise platformunun gerçek dünya senaryolarında istismar faaliyetlerini yakaladığını açıklamıştır. Uzmanlar, kalıcı çözüm olarak Fastjson2 sürümüne geçilmesini veya geçici önlem olarak güvenli modun etkinleştirilmesini tavsiye etmektedir. (XXXXXXX, AÇIK -thehackernews.com, 25.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Europol'ün The Com Bağlantılı 4.340 İnternet Adresini İşaretlemesi",
-    "paragraph": "───────────────────────────────────────────────────────── Europol ve ortak soruşturma birimleri, 2026 yılının Haziran ve Temmuz aylarını kapsayan birkaç haftalık süreçte, The Com isimli çevrim içi ağla bağlantılı 4.340 internet adresini kaldırılması amacıyla işaretlemiştir. Project Compass operasyonu kapsamında yürütülen bu faaliyetin, genç üyelerden oluşan ağın propaganda yayılımını ve üye toplama ekosistemini bozmayı hedeflediği belirtilmiştir. Soruşturmacılar; Belçika, Finlandiya, Macaristan, İrlanda, Lüksemburg, Hollanda, Portekiz, İspanya ve İsveç'ten katılım sağlamıştır. İşaretlenen içerikler arasında kendine zarar verme, çocuk cinsel istismarı materyalleri, hayvan zulmü ve fiziksel saldırı videolarının bulunduğu kaydedilmiştir. Europol, söz konusu ağın reşit olmayan bireyleri hem mağdur hem de fail olarak kapsayan küresel bir tehdit olduğunu ve son iki yılda yüzlerce yardım talebi aldığını açıklamıştır. (XXXXXXX, AÇIK -theregister.com, 24.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "SourTrade Operasyonu Kapsamında Tarayıcı Üzerinden Zararlı Yazılım Oluşturulması",
-    "paragraph": "───────────────────────────────────────────────────────── SourTrade olarak adlandırılan bir reklam tabanlı saldırı operasyonunun, kurbanların tarayıcılarını kullanarak Windows yürütülebilir dosyaları oluşturduğu tespit edilmiştir. Confiant tarafından 23 Temmuz 2026 tarihinde detaylandırılan kampanyanın, 2024 sonundan bu yana TradingView, Solana ve Luno gibi platformları taklit ederek 12 ülkedeki kripto para yatırımcılarını hedef aldığı belirtilmiştir. Saldırganların, sabit bir URL üzerinden tam bir zararlı dosya sunmak yerine, meşru Bun çalışma zamanını temel alarak tarayıcı içinde parçalı verilerden dosya oluşturduğu ifade edilmiştir. Bu yöntemin, ağ üzerinde tam bir zararlı yazılımın bulunmamasını sağlayarak basit imza tabanlı tespit mekanizmalarını atlattığı kaydedilmiştir. Bitdefender'ın Eylül 2025 tarihinde benzer bir kümeyi JSCEAL veya WeevilProxy olarak bilinen bilgi hırsızlarıyla ilişkilendirdiği bilgisi verilmiştir. (XXXXXXX, AÇIK -thehackernews.com, 25.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Steam Forumlarında ClickFix Yöntemiyle Kripto Madenci Yazılımı Bulaştırılması",
-    "paragraph": "───────────────────────────────────────────────────────── Steam tartışma forumlarının, oyun ve bilgisayar sorunlarına çözüm sunma vaadiyle kullanıcıları XMRig kripto madenci yazılımıyla enfekte eden ClickFix saldırılarına maruz kaldığı bildirilmiştir. Siber tehdit aktörlerinin, teknik sorun yaşayan kullanıcılara yönetici haklarıyla PowerShell komutları çalıştırmalarını önerdiği ve bu komutların arka planda zararlı yazılım indirdiği tespit edilmiştir. Yürütülen PowerShell betiğinin, kendisini bir Windows optimizasyon aracı olarak gizlediği ve Microsoft Defender taramalarından kaçınmak için belirli dizinleri dışlama listesine eklediği belirtilmiştir. Saldırganların, 'C:\\Windows\\Background' dizini altında 'system.exe' adıyla yapılandırdıkları zararlı yazılımın her başlangıçta çalışması için zamanlanmış görevler oluşturduğu kaydedilmiştir. Uzmanlar, forumlardaki bilinmeyen kaynaklardan gelen komutların çalıştırılmaması ve enfeksiyon şüphesi durumunda ilgili dizinlerin kontrol edilmesi gerektiğini ifade etmiştir. (XXXXXXX, AÇIK -bleepingcomputer.com, 26.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "ShinyHunters Sızıntılarının Bitcoin Talepli Şantaj E-postalarında Kullanılması",
-    "paragraph": "───────────────────────────────────────────────────────── Siber tehdit aktörlerinin, ShinyHunters grubu tarafından sızdırılan e-posta adreslerini kullanarak 2.000 dolar değerinde Bitcoin talep eden cinsel içerikli şantaj kampanyaları yürüttüğü tespit edilmiştir. BleepingComputer tarafından yapılan incelemede; Amtrak, Hallmark ve Panera Bread gibi kurumlara ait sızıntı verilerinin, tehditlerin meşruiyetini artırmak amacıyla kullanıldığı belirtilmiştir. E-postalarda, kurbanların cihazlarının ele geçirildiği ve kamera kayıtlarının alındığı iddia edilse de, bu iddiaların asılsız olduğu ve saldırganların yalnızca halka açık sızıntı verilerini kullandığı ifade edilmiştir. ShinyHunters grubunun söz konusu kampanyayla bir bağlantısı olmadığını açıkladığı kaydedilmiştir. Betterment gibi etkilenen kurumların, bu mesajların korkutma amaçlı dolandırıcılık faaliyetleri olduğunu vurgulayarak kullanıcıları ödeme yapmamaları, bağlantılara tıklamamaları ve e-postaları silmeleri konusunda uyardığı bilgisi verilmiştir. (XXXXXXX, AÇIK -bleepingcomputer.com, 25.07.2026) ──────────────────────────────────────────────────────────────────────────────── ================================================================================",
-    "title": "",
-    "full_text": ""
-   }
-  ]
- },
- {
   "date": "2026-07-27",
   "views": [
    {
@@ -3109,6 +3074,95 @@
     "paragraph": "Grand Theft Auto VI (GTA VI) oyununa yönelik yoğun ilgiyi fırsat bilen siber suçluların, 113 GB boyutunda sahte bir oyun dosyası üzerinden zararlı yazılım dağıttığı tespit edilmiştir. Yapılan analizlerde, dosyanın %99,99'unun boş veriden oluştuğu ve içine gizlenmiş 50 KB boyutunda küçük bir zararlı kod barındırdığı belirlenmiştir. Bu kodun, Windows Defender'ı devre dışı bırakmak ve güvenlik yazılımlarını kapatmak için tasarlandığı ifade edilmiştir. Sahte indirme bağlantılarının, gerçek sızıntı h",
     "title": "Cybercriminals Turn GTA VI Leaks Into Malware Bait",
     "full_text": "Cybercriminals Turn GTA VI Leaks Into Malware Bait\n\nA fake 113GB GTA VI build is packed with malware, using massive empty files to hide a tiny malicious payload.\n\nGTA VI hype has reached the point where people are volunteering to infect their own computers just to check if a leak is real. Someone on X asked their followers to “take one for the team” and test a 113GB file claiming to be a playable "
+   }
+  ]
+ },
+ {
+  "date": "2026-08-26",
+  "views": [
+   {
+    "tr_title": "Norveç Kamu Hizmetlerine Yönelik Kapsamlı DDoS Saldırısı Düzenlenmesi",
+    "paragraph": "Norveç Dijitalleşme Ajansı (Digdir), ülkedeki kamu hizmetlerini hedef alan ve 30 saattir devam eden geniş çaplı bir dağıtık hizmet reddi (DDoS) saldırısı gerçekleştiğini bildirmiştir. Saldırının, Digdir'in bilişim ortağı Vivicta'nın altyapısını hedef aldığı ve kimlik doğrulama sistemi ID-porten dahil olmak üzere 10 dijital hizmeti kesintiye uğrattığı belirtilmiştir. Bu durumun, 4,5 milyondan fazla kullanıcının kamu kayıtlarına, eczanelere ve elektronik reçete sistemlerine erişimini engellediği i",
+    "title": "Large DDoS attack knocks Norwegian public services offline",
+    "full_text": "Large DDoS attack knocks Norwegian public services offline\n\nA handful of Norwegian government services have been disrupted for more than a day after a large-scale cyberattack targeted the infrastructure used to operate them, authorities said.\n\nThe Norwegian Digitalisation Agency, known as Digdir, said the distributed denial-of-service (DDoS) attack began Monday and targeted the infrastructure of i"
+   },
+   {
+    "tr_title": "DOUBLECUP Zararlı Yazılımının PNG Dosyalarını Komut İletimi İçin Kullanması",
+    "paragraph": "Güvenlik araştırmacıları, DOUBLECUP adlı yeni bir zararlı yazılımın, komutlarını PNG resim dosyalarının sonuna ekleyerek ilettiğini tespit etmiştir. Yazılımın gerçek bir steganografi yöntemi kullanmadığı, bunun yerine PowerShell komutlarını resim dosyasının sonuna düz metin olarak eklediği belirtilmiştir. Bu yöntemde, PowerShell betiğinin başına eklenen satır başı ve yeni satır karakterleri sayesinde Windows'un FINDSTR komutuyla betiğin kolayca ayrıştırılabildiği ifade edilmiştir. Ayrıştırılan k",
+    "title": "DOUBLECUP's PNG Payload, (Mon, Aug 24th)",
+    "full_text": "DOUBLECUP's PNG Payload\n\nNew malware that uses steganography always gets my attention, but I was disappointed when I looked at the latest DOUBLECUP write-up. It doesn't use real steganography:\n\nYou can see the PowerShell payload as cleartext: it has not been encoded into the pixels of the image.\n\nIt's even not embedded in the image (like inside the metadata), it's just appended after the PNG file:"
+   },
+   {
+    "tr_title": "SLEEPWALKER Arka Kapısının ESET Yazılımı Üzerinden İstismar Edilmesi",
+    "paragraph": "Bir siber güvenlik araştırmacısı, Windows sistemlerini hedef alan ve SLEEPWALKER olarak adlandırılan, daha önce raporlanmamış bir arka kapı tespit etmiştir. Zararlı yazılımın, ESET Management Agent'a ait ERAAgent.exe dosyasına yan yükleme (side-loading) yöntemiyle dahil edildiği ve meşru dpapi.dll dosyasını taklit ettiği belirtilmiştir. SLEEPWALKER'ın, özel olarak yapılandırılmış bir ağ paketi alana kadar bellekte pasif kaldığı ve ardından kendi 23 komutluk diliyle talimatları yürüttüğü ifade ed",
+    "title": "Newly SLEEPWALKER Backdoor Waits for One Crafted Packet, Then Runs Its Own Bytecode",
+    "full_text": "An independent malware researcher has documented a previously unreported Windows backdoor, dubbed SLEEPWALKER, that stays inert in memory until a specifically crafted network packet reaches the machine and then runs commands written in a 23-instruction language of its own design.\n\nThe sample is an unsigned 64-bit Windows dynamic-link library (DLL) of 59,904 bytes, built to be side-loaded into ERAA"
+   },
+   {
+    "tr_title": "Batı Afrikalı Suç Şebekelerine Yönelik Küresel Operasyonda 58 Tutuklama",
+    "paragraph": "Interpol tarafından koordine edilen ve Kasım 2025 ile Haziran 2026 tarihleri arasında 22 ülkede yürütülen Operation Jackal IV kapsamında, Batı Afrikalı organize suç gruplarıyla bağlantılı 58 şahsın tutuklandığı bildirilmiştir. Sekiz ay süren operasyon süresince 263 şüphelinin tespit edildiği ve küresel çapta yaklaşık 143 milyon avro tutarında suç gelirinin aklandığının tahmin edildiği açıklanmıştır. Güney Afrika'da emeklileri hedef alan bir şebekeye yönelik baskınlarda 39 kişinin yakalandığı ve ",
+    "title": "Global Crackdown on West African Crime Networks Leads to 58 Arrests",
+    "full_text": "An eight-month international operation targeting West African organized crime groups has resulted in 58 arrests and the identification of 263 suspects across 22 countries, according to \nINTERPOL\n. Operation Jackal IV, conducted from November 2025 to June 2026, focused on disrupting criminal networks, tracing illicit funds, identifying high-value targets and supporting arrests and prosecutions.\n\nTh"
+   },
+   {
+    "tr_title": "ABD'nin İran Bağlantılı Siber Tehdit Aktörlerine Yaptırım Uygulaması",
+    "paragraph": "ABD Hazine Bakanlığı, İran'ın kritik altyapılarına yönelik siber saldırılar ve finansal hırsızlık faaliyetleri nedeniyle İran bağlantılı siber tehdit aktörlerine yönelik yeni yaptırımlar açıklamıştır. Operation Economic Outcast kod adlı operasyon kapsamında, İran İstihbarat ve Güvenlik Bakanlığı (MOIS) ile bağlantılı yaklaşık 60 kuruluş, birey ve geminin hedef alındığı belirtilmiştir. Yaptırım listesinde, ABD'deki enerji, savunma ve sağlık sektörlerini hedef alan Tahran merkezli Mabna Institute ",
+    "title": "U.S. Sanctions Iran-Linked Hackers Behind Critical Infrastructure Breaches",
+    "full_text": "The U.S. Department of the Treasury has announced fresh sanctions on Iranian cyber actors as part of what it called an \"unprecedented, whole-of-government, economic campaign\" against the nation and its enablers.\n\n\"We are launching an economic onslaught against Iran's financial connections around the globe. Our objective is to sever every economic lifeline that sustains this tyrannical regime until"
+   },
+   {
+    "tr_title": "Gitea Yazılımındaki Kritik Güvenlik Açığının Kripto Madencilik İçin Kullanılması",
+    "paragraph": "ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), Gitea platformundaki CVE-2026-60004 kodlu kritik uzaktan kod yürütme açığının aktif olarak istismar edildiği konusunda uyarıda bulunmuştur. 9.8 şiddet puanına sahip olan bu açığın, saldırganların depo yazma yetkisini kötüye kullanarak sistem üzerinde keyfi komutlar çalıştırmasına olanak tanıdığı belirtilmiştir. Yapılan analizlerde, bir saldırganın bu açığı kullanarak savunmasız Gitea sunucularına kripto para madenciliği yapan zararlı yazılım",
+    "title": "Critical Gitea RCE Actively Exploited as Reported Attack Drops Miner-Like Payload",
+    "full_text": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday warned of active exploitation efforts targeting a recently patched critical security flaw impacting Gitea.\n\nThe vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of remote code execution that allows an attacker with ordinary write access to a repository to execute arbitrary shell commands as the Gitea O"
+   },
+   {
+    "tr_title": "GTA VI Oyununa Ait Verilerin Sızdırılması ve Şantaj Girişimleri",
+    "paragraph": "Rockstar Games tarafından geliştirilen Grand Theft Auto VI oyununa ait oynanış videolarının, CyberLeek takma adlı bir siber suçlu tarafından yasa dışı yollarla sızdırıldığı bildirilmiştir. Sızıntının, şirketin hassas sistemlerine doğrudan erişim sağlanması veya bir içeriden tehdit aracılığıyla gerçekleştiği tahmin edilmektedir. Yayıncı kuruluş Take-Two Interactive, sızıntıların ardından Discord, Google, Microsoft ve X platformlarından şüphelilerin kimlik bilgilerini talep eden mahkeme celpleri ç",
+    "title": "The GTA VI leaks are breaking the internet. Security researchers have seen this before.",
+    "full_text": "The GTA VI leaks are breaking the internet. Security researchers have seen this before.\n\nGrand Theft Auto VI, widely heralded as the game event of the decade, took a significant hit last week after a cybercriminal sent much of the internet into pandemonium after publishing gameplay footage a week before the game’s publisher planned to reveal core portions of the game to the public.\n\nThe files post"
+   },
+   {
+    "tr_title": "NVIDIA NemoClaw Aracılığıyla Yerel Yapay Zeka Modellerinin Zehirlenmesi",
+    "paragraph": "Oasis Security araştırmacıları, NVIDIA NemoClaw aracında saldırganların yerel Ollama örneklerini ele geçirmesine olanak tanıyan bir zafiyet tespit etmiştir. Bu zafiyetin, saldırgan kontrolündeki bir web sayfası aracılığıyla kimlik doğrulaması gerektirmeksizin yerel yapay zeka ajanlarına gizli talimatlar yerleştirilmesine imkan verdiği belirtilmiştir. Sorunun, NemoClaw'ın Ollama'yı tüm ağ arayüzlerine bağlayarak API erişimini dış saldırılara açık hale getirmesinden kaynaklandığı ifade edilmiştir.",
+    "title": "A Malicious Webpage Could Poison Your Local AI Model Behind NVIDIA NemoClaw",
+    "full_text": "Oasis Security has disclosed a weakness in NVIDIA NemoClaw that could let an attacker-controlled webpage take unauthenticated control of the local Ollama instance serving an AI agent and plant hidden instructions inside the model itself.\n\nThe findings were shared with The Hacker News ahead of publication, and the report says Oasis Security reported them to NVIDIA's Product Security Incident Respon"
+   },
+   {
+    "tr_title": "Keycloak Yazılımında Çok Sayıda Güvenlik Zafiyetinin Giderilmesi",
+    "paragraph": "Açık kaynaklı kimlik ve erişim yönetimi yazılımı Keycloak'ta, güvenlik politikalarının atlatılmasına neden olan birden fazla zafiyet tespit edilmiştir. CERT-FR, özellikle CVE-2026-18963 kodlu zafiyet için kamuya açık bir kavram kanıtlama kodunun bulunduğunu ve bu açığın kimlik doğrulaması yapmamış saldırganların hesapları ele geçirmesine izin verdiğini bildirmiştir. Etkilenen sürümlerin 26.7.2 öncesi versiyonlar olduğu ve kullanıcıların acilen güncelleme yapmaları gerektiği ifade edilmiştir. Red",
+    "title": "Multiples vulnérabilités dans Keycloak (25 août 2026)",
+    "full_text": "Contournement de la politique de sÃ©curitÃ©\n\nNon spÃ©cifiÃ© par l'Ã©diteur\n\nKeycloak versions antÃ©rieures Ã  26.7.2\n\nDe multiples vulnÃ©rabilitÃ©s ont Ã©tÃ© dÃ©couvertes dans Keycloak. Elles permettent Ã  un attaquant de provoquer un contournement de la politique de sÃ©curitÃ© et un problÃ¨me de sÃ©curitÃ© non spÃ©cifiÃ© par l'Ã©diteur.\n\nLe CERT-FR a connaissance d'une preuve de concept publique "
+   },
+   {
+    "tr_title": "Mirage2FA Kampanyasının Binlerce Şirketi Hedef Alması",
+    "paragraph": "2024 ile 2026 yılları arasında faaliyet gösteren Mirage2FA adlı kimlik avı hizmeti (PhaaS) araç setinin, dünya genelinde 4.500'den fazla şirketi etkilediği tespit edilmiştir. ANY.RUN tarafından yapılan araştırmada, saldırganların Microsoft 365 oturumlarını ele geçirerek iki faktörlü kimlik doğrulamayı (MFA) devre dışı bıraktığı belirtilmiştir. Hedeflenen e-posta adreslerinin yaklaşık %48'inin güvenliğinin ihlal edildiği ve kurbanların %63,7'sinin ABD merkezli olduğu ifade edilmiştir. Saldırıları",
+    "title": "Mirage2FA Surge Hits 4,500 US and EU Companies, Abusing Microsoft 365 Login Flows",
+    "full_text": "Thousands of companies have been affected by the Mirage2FA campaign from 2024 to 2026. The commercial phishing-as-a-service toolkit targets Microsoft 365 accounts by abusing legitimate login flows and bypassing two-factor authentication.\n\nAccording to ANY.RUN research, 48% of targeted email addresses were potentially compromised. Most of the affected companies are US-based.\n\nMirage2FA Campaign Sco"
+   },
+   {
+    "tr_title": "LACMA Veri İhlalinde Sosyal Güvenlik ve Tıbbi Verilerin Sızması",
+    "paragraph": "Los Angeles County Sanat Müzesi (LACMA), geçtiğimiz yıl gerçekleşen bir siber saldırı sonucunda müşteri ve çalışan verilerinin ifşa olduğunu açıklamıştır. Temmuz 2025'te tespit edilen ihlalin kapsamlı incelemesinin Şubat 2026'da tamamlandığı ve sızdırılan veriler arasında Sosyal Güvenlik numaraları, sürücü belgesi bilgileri ve tıbbi teşhis kayıtlarının bulunduğu belirtilmiştir. Müze yönetimi, etkilenen kişilere yönelik bildirimlerin gönderilmeye başlandığını ve mağdurlara bir yıllık kimlik hırsı",
+    "title": "LACMA data breach last year exposed social security and medical data",
+    "full_text": "The Los Angeles County Museum of Art (LACMA) has announced that a breach last year exposed customer and employee information.\n\nThe museum says that on July 11, 2025, it detected suspicious activity on its systems that had started four days earlier. A month later, the investigation confirmed that the network was compromised.\n\nAt the time, the type of exposed data could not be determined, and the fi"
+   },
+   {
+    "tr_title": "Marimo Notebook Yazılımında Yüksek Riskli Kod Enjeksiyonu Zafiyeti",
+    "paragraph": "Marimo notebook yazılımında, saldırganların özel olarak hazırlanmış bir dosya aracılığıyla yerel alt süreçlerde komut çalıştırmasına izin veren yüksek riskli bir güvenlik açığı giderilmiştir. CVE-2026-75149 olarak tanımlanan bu zafiyetin, notebook düzenleme modunda açıldığında herhangi bir hücre çalıştırılmadan önce saldırgan kontrolündeki Model Context Protocol (MCP) komutlarını tetiklediği belirtilmiştir. VulnCheck tarafından 8.8 CVSS puanı ile derecelendirilen açığın, 0.23.15 sürümünden öncek",
+    "title": "Marimo Notebook Flaw Could Run MCP Commands Before Cells Execute in Edit Mode",
+    "full_text": "Marimo has addressed a high-severity security flaw in its notebook software that allowed an attacker to execute an attacker-supplied Model Context Protocol (MCP) command in a specially crafted notebook, according to VulnCheck's CVE Numbering Authority (CNA) record.\n\nThe CNA record says the command can run as a local subprocess when the notebook is opened in edit mode.\n\nThe vulnerability, tracked a"
+   },
+   {
+    "tr_title": "Yapay Zeka Belleğine Gizli Talimat Yerleştirilmesini Sağlayan InjecMEM Tekniği",
+    "paragraph": "Şanghay Jiao Tong Üniversitesi ve Ant Group araştırmacıları, yapay zeka ajanlarının bellek sistemlerini hedef alan InjecMEM isimli yeni bir saldırı tekniği geliştirmiştir. Söz konusu yöntemin, tek bir girdi aracılığıyla yapay zeka sisteminin belleğine gizli talimatlar yerleştirilmesine ve sistemin gelecekteki sorgulara vereceği yanıtların manipüle edilmesine olanak tanıdığı belirtilmiştir. Araştırmacılar, InjecMEM tekniğinin MemoryOS üzerinde yüzde 76,6 saldırı başarı oranına ulaştığını kaydetmi",
+    "title": "New attack lets hackers plant hidden instructions in AI memory with a single prompt",
+    "full_text": "InjecMEM technique shows how a single input can persistently influence AI agent responses.\n\nA newly demonstrated attack technique allows hackers to plant hidden instructions inside an AI agent’s memory with a single prompt, enabling them to influence how the system responds to future queries.\n\nThe technique, called InjecMEM, is described in a research paper as a “targeted red-teaming attack paradi"
+   },
+   {
+    "tr_title": "Yapay Zeka Destekli Sesli Kimlik Avı Platformu AnonyMousKIT'in İfşası",
+    "paragraph": "SOCRadar tarafından yayımlanan raporda, çalınan Apple cihazlarının Etkinleştirme Kilidi'ni kaldırmak amacıyla geliştirilen AnonyMousKIT isimli hizmet tabanlı kimlik avı platformu analiz edilmiştir. Platformun, kiralık yapay zeka sesli asistanlarını kullanarak mağdurları Apple Destek ekibi adına aradığı ve cihaz parolaları ile iki faktörlü doğrulama kodlarını talep ettiği belirtilmiştir. Yapılan incelemelerde, Ağustos 2025 ile Mayıs 2026 tarihleri arasında gerçekleşen 200 aramanın büyük çoğunluğu",
+    "title": "Fake Apple Support AI Calls Target Stolen-Device Owners for Passcodes and 2FA Codes",
+    "full_text": "Cybersecurity researchers have disclosed details of a phishing-as-a-service (PhaaS) platform built to strip Apple's Activation Lock from stolen devices, using rented AI voice agents that call theft victims posing as Apple Support and ask for their device passcode.\n\nSOCRadar Threat Research Unit (STRU) said the platform, which it tracks as AnonyMousKIT, is credit-metered and drives lures across fiv"
    }
   ]
  }
