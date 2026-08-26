@@ -78,6 +78,7 @@ from src.config import (
     get_kritik3_selection_audit_prompt,
     get_yayin_yonetmeni_prompt,
     get_mukerrer_hakem_prompt,
+    get_gelisme_hakem_prompt,
     get_manset_secim_prompt,
     get_executive_summary_prompt, get_title_rescue_prompt,
     get_kritik3_length_fix_prompt,
@@ -6425,6 +6426,71 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     self._hakem_onbellek[_anahtar(esles[1], esles[2])] = karar
         return sonuc
 
+    def _gelisme_llm_hakem(self, ciftler):
+        """AYNI OLAY olduğu kesin çiftlerde: devam mı, tekrar mı?
+
+        `ciftler`: [(no, a_view, b_view, ipucu), ...]
+        Dönüş: {no: (tekrar_mi, yeni_olgu)} — tekrar_mi=True ise A, B'nin
+        yeniden anlatımıdır ve TAM MÜKERRER sayılır.
+
+        Yanıt alınamazsa BOŞ döner: karar deterministik katmanın dediği gibi
+        kalır (gövdede kalır, manşetten iner). Yani LLM erişilemediğinde
+        sistem bugünkü davranışına düşer, haber KAYBETMEZ.
+        """
+        sonuc = {}
+        if not ciftler:
+            return sonuc
+        if not hasattr(self, '_gelisme_onbellek'):
+            self._gelisme_onbellek = {}
+
+        def _anahtar(a, b):
+            ax = (a.get('tr_title') or a.get('title') or '')[:120]
+            bx = (b.get('tr_title') or b.get('title') or '')[:120]
+            return tuple(sorted((ax, bx)))
+
+        sorulacak = []
+        for no, a, b, ipucu in ciftler:
+            k = _anahtar(a, b)
+            if k in self._gelisme_onbellek:
+                sonuc[no] = self._gelisme_onbellek[k]
+            else:
+                sorulacak.append((no, a, b, ipucu))
+        if not sorulacak:
+            return sonuc
+
+        for bas in range(0, len(sorulacak), self.MUKERRER_HAKEM_BATCH):
+            grup = sorulacak[bas:bas + self.MUKERRER_HAKEM_BATCH]
+            satirlar = []
+            for no, a, b, ipucu in grup:
+                satirlar.append(
+                    f"--- ÇİFT {no} ---\n"
+                    f"A (BUGÜN, {ipucu}) Başlık: "
+                    f"{(a.get('tr_title') or a.get('title') or '')[:120]}\n"
+                    f"   Özet: {' '.join((a.get('paragraph') or '').split()[:70])}\n"
+                    f"B (YAYIMLANMIŞ) Başlık: "
+                    f"{(b.get('tr_title') or b.get('title') or '')[:120]}\n"
+                    f"   Özet: {' '.join((b.get('paragraph') or '').split()[:70])}\n")
+            data = self._gemini_call_json(
+                get_gelisme_hakem_prompt('\n'.join(satirlar)),
+                max_output_tokens=2048,
+                label=f'GelişmeHakemi({len(grup)})')
+            if not isinstance(data, dict):
+                print(f"   ⚠️  Gelişme hakemi yanıt vermedi ({len(grup)} çift) "
+                      f"— deterministik karar korundu (gövdede kalır).")
+                continue
+            for k in (data.get('kararlar') or []):
+                try:
+                    no = int(k.get('no'))
+                except (TypeError, ValueError):
+                    continue
+                tekrar = str(k.get('karar', '')).strip().upper() == 'TEKRAR'
+                karar = (tekrar, str(k.get('yeni', ''))[:60])
+                sonuc[no] = karar
+                esles = next((c for c in grup if c[0] == no), None)
+                if esles is not None:
+                    self._gelisme_onbellek[_anahtar(esles[1], esles[2])] = karar
+        return sonuc
+
     def _son_mukerrer_kapisi(self, top3_ids, top10_ids, remaining_ids,
                              records, content_by_id, articles_by_id,
                              eleme_nedeni):
@@ -6457,9 +6523,12 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # 2.12 s'den 0.27 s'ye indirdi ve sonuç KÜMESİ AYNI kaldı.
         gecmis_anahtar = [(_olay.aday_anahtarlari(ev), ev) for ev in gecmis]
 
+        # GELISME çiftleri: deterministik karar SON SÖZ DEĞİLDİR, hakem onaylar.
+        gelisme_ciftleri, gelisme_esleme = [], {}
+
         def _mukerrer_gecmis(aid):
             """TAM_MUKERRER ise gerekçe döner; GELISME ise manşet yasağı koyup
-            None döner (haber gövdede kalır)."""
+            None döner (haber gövdede kalır) ve çift hakeme kuyruklanır."""
             v = view_fn(aid)
             anahtar = _olay.aday_anahtarlari(v)
             for ga, ev in gecmis_anahtar:
@@ -6478,6 +6547,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                         self._manset_yasak = set()
                     self._manset_yasak.add(aid)
                     manset_cikar[aid] = f'gelişme, manşet tekrarı — {neden}'
+                    no = len(gelisme_ciftleri) + 1
+                    gelisme_ciftleri.append((no, v, ev, neden[:40]))
+                    gelisme_esleme[no] = aid
             return None
 
         # ── (a) ÇAPRAZ-GÜN — deterministik ────────────────────────────────
@@ -6500,6 +6572,40 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             neden = _mukerrer_gecmis(aid)
             if neden:
                 dusen[aid] = f'kapi_capraz_gun ({neden[:48]})'
+
+        # ── (a1) GELİŞME HAKEMİ — deterministik "devam haberi" kararını doğrula
+        #
+        # `mukerrer_karari` üç değerlidir ve GELISME dalında haber RAPORDA
+        # KALIR. O dalın ölçütü deterministikti: "girişte B'de bulunmayan en
+        # az 3 özel ad". Ölçüt bağlamı okuyamıyor, bu yüzden yüzeysel farkları
+        # gelişme sanıyor ve mükerrer haber gövdeye giriyor.
+        #
+        # ÖLÇÜLDÜ (2026-08-26): ABD'nin İran bağlantılı aktörlere yaptırımı 25
+        # ve 26 Ağustos'ta ÜST ÜSTE yayımlandı. Çift aynı olay olarak
+        # tanınmıştı; dört "yeni ad" bulununca gelişme sayıldı, oysa ikisi
+        # dünkü metinde zaten geçiyordu ve biri aynı kurumun kısaltmasıydı.
+        #
+        # Artık son söz hakemindir: TEKRAR derse haber TAM MÜKERRER olur ve
+        # rapordan düşer. Hakem yanıt vermezse deterministik karar korunur —
+        # yani sistem eski davranışına düşer, haber KAYBETMEZ.
+        # Hacim küçüktür: ölçümde günde ortalama 6 GELISME kararı (son 7 gün,
+        # 4.234 çiftin 43'ü), 12'lik gruplarla günde 1-2 ek çağrı.
+        if gelisme_ciftleri:
+            print(f"   🤖 Gelişme hakemi: {len(gelisme_ciftleri)} 'devam haberi' "
+                  f"kararı doğrulanıyor.")
+            for no, (tekrar, yeni_olgu) in self._gelisme_llm_hakem(
+                    gelisme_ciftleri).items():
+                aid = gelisme_esleme.get(no)
+                if aid is None or aid in dusen:
+                    continue
+                if tekrar:
+                    manset_cikar.pop(aid, None)
+                    dusen[aid] = 'kapi_capraz_gun_gelisme (hakem: yeni gelişme yok)'
+                    print(f"   🚫 ID {aid}: hakem 'yeni gelişme yok' dedi — "
+                          f"TAM MÜKERRER olarak düşürüldü.")
+                elif yeni_olgu:
+                    print(f"   ✅ ID {aid}: gerçek devam haberi ({yeni_olgu}) — "
+                          f"gövdede kalır, manşete çıkamaz.")
 
         # ── (a2) ÇAPRAZ-GÜN — LLM HAKEMİ (deterministiğin kör noktası) ─────
         # Deterministik katman yüksek isabetlidir ama ortak ad/kod adı/CVE

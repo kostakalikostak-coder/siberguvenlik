@@ -318,7 +318,11 @@ def test_hakem_deterministigin_yakaladigini_tekrar_sormaz():
     s._load_recent_report_views = lambda *a, **k: gecmis
 
     def _yakala(prompt, **k):
-        sorulan.append(prompt)
+        # YALNIZCA mükerrer hakemi — gelişme hakemi BAŞKA bir soru sorar
+        # ("devam mı tekrar mı") ve deterministiğin RAPORDA BIRAKTIĞI
+        # haberleri sorması onun görevidir.
+        if str(k.get('label', '')).startswith('MükerrerHakem'):
+            sorulan.append(prompt)
         return {}
     s._gemini_call_json = _yakala
     s._son_mukerrer_kapisi([1, 2, 3], [1, 2, 3], [], rec, cnt, art, {})
@@ -423,3 +427,85 @@ def test_hakem_ayni_cifti_iki_kez_sormaz():
     ikinci = s._mukerrer_llm_hakem([(7, a, b, '')])
     assert ikinci[7][0] is False, 'aynı çifte ikinci kez farklı karar verildi'
     assert len(cagri) == 1, 'çift ikinci kez LLM\'e soruldu'
+
+
+# ── GELİŞME HAKEMİ — deterministik "devam haberi" kararının son sözü ───────
+
+def _hakemli(gecmis, kararlar):
+    """Yalnızca GelişmeHakemi çağrısına yanıt veren sistem."""
+    s = _sistem(gecmis)
+
+    def _cagri(prompt, **kw):
+        if str(kw.get('label', '')).startswith('GelişmeHakemi'):
+            return {'kararlar': kararlar}
+        return {}
+    s._gemini_call_json = _cagri
+    return s
+
+
+_ICERIK = {1: CAMERASWARM_B, 2: BAGIMSIZ, 3: BAGIMSIZ2,
+           4: ('Akira Fidye Yazılımının Güvenli Modu Kullanması',
+               'Akira fidye yazılımı EDR atlatmak için güvenli modu '
+               'kullanmaktadır.')}
+_GECMIS = [{'tr_title': CAMERASWARM_A[0], 'title': '',
+            'paragraph': CAMERASWARM_A[1], 'full_text': ''}]
+
+
+def _kapi(s, nedenler):
+    records = {aid: {'kat': 'nation_state_apt', 'toplam': 90 - i, 'siber': 1}
+               for i, aid in enumerate([1, 2, 3, 4])}
+    content = {aid: _icerik(*_ICERIK[aid]) for aid in _ICERIK}
+    arts = {aid: {'id': aid, 'title': '', 'full_text': ''} for aid in _ICERIK}
+    s._load_recent_report_views = lambda *a, **k: _GECMIS
+    return s._son_mukerrer_kapisi([1, 2, 3], [1, 2, 3, 4], [],
+                                  records, content, arts, nedenler)
+
+
+def test_hakem_tekrar_derse_gelisme_rapordan_duser():
+    """2026-08-26: ABD'nin İran bağlantılı aktörlere yaptırımı iki gün üst
+    üste yayımlandı. Deterministik ölçüt ('girişte 3 yeni özel ad') yüzeysel
+    farkları gelişme sandı; bağlamı okuyan hakem bunu görebilir."""
+    s = _hakemli(_GECMIS, [{'no': 1, 'karar': 'TEKRAR'}])
+    nedenler = {}
+    t3, t10, kal = _kapi(s, nedenler)
+    assert 1 not in t3 and 1 not in (t10 + kal), \
+        'hakem TEKRAR dedi ama haber raporda kaldı'
+    assert nedenler.get(1, '').startswith('kapi_capraz_gun_gelisme')
+    assert len(t3) == 3, 'KRİTİK 3 eksildi'
+
+
+def test_hakem_gelisme_derse_govdede_kalir():
+    """Gerçek devam haberi korunur — manşete çıkamaz ama rapordan silinmez."""
+    s = _hakemli(_GECMIS, [{'no': 1, 'karar': 'GELISME',
+                            'yeni': '14.000 kamera ele geçirildi'}])
+    nedenler = {}
+    t3, t10, kal = _kapi(s, nedenler)
+    assert 1 in (t10 + kal), 'gerçek devam haberi rapordan silindi'
+    assert 1 not in t3, 'devam haberi manşette kaldı'
+    assert 1 not in nedenler
+
+
+def test_hakem_yanit_vermezse_deterministik_karar_korunur():
+    """LLM erişilemediğinde sistem eski davranışına düşer — haber KAYBETMEZ."""
+    s = _sistem(_GECMIS)
+    s._gemini_call_json = lambda *a, **k: None
+    nedenler = {}
+    t3, t10, kal = _kapi(s, nedenler)
+    assert 1 in (t10 + kal), 'hakem sessizken haber düşürüldü'
+    assert 1 not in t3
+
+
+def test_hakem_ayni_cifti_iki_kez_sormaz():
+    """Önbellek: mükerrer hakeminde LLM aynı çifte iki farklı cevap vermişti."""
+    s = _sistem()
+    cagri = {'n': 0}
+
+    def _cagri(prompt, **kw):
+        cagri['n'] += 1
+        return {'kararlar': [{'no': 1, 'karar': 'TEKRAR'}]}
+    s._gemini_call_json = _cagri
+    a = {'tr_title': 'A', 'title': '', 'paragraph': 'a', 'full_text': ''}
+    b = {'tr_title': 'B', 'title': '', 'paragraph': 'b', 'full_text': ''}
+    assert s._gelisme_llm_hakem([(1, a, b, '')])[1][0] is True
+    assert s._gelisme_llm_hakem([(1, a, b, '')])[1][0] is True
+    assert cagri['n'] == 1, 'aynı çift ikinci kez LLM'"'"'e soruldu'

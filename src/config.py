@@ -1968,6 +1968,69 @@ YALNIZCA şu JSON'u döndür:
 Her çift için TAM BİR karar ver; hiçbirini atlama."""
 
 
+def get_gelisme_hakem_prompt(ciftler_metni):
+    """GELİŞME HAKEMİ — "aynı olay" kesin, soru DEVAM MI TEKRAR MI.
+
+    NEDEN AYRI BİR HAKEM: mükerrer hakemi "aynı olay mı?" diye sorar ve bu
+    çiftlerde cevap ZATEN evettir — deterministik katman onları aynı olay
+    olarak tanımıştır. Buradaki soru bir sonrakidir: bugünkü haber, geçmiş
+    haberde OLMAYAN gerçek bir gelişme mi duyuruyor, yoksa aynı haberin
+    yeniden anlatımı mı?
+
+    NEDEN LLM: bu ayrımı bugüne kadar deterministik bir ölçüt yapıyordu —
+    "girişte B'de bulunmayan en az 3 özel ad". Ölçüt bağlamı okuyamadığı için
+    yüzeysel farkları gelişme sanıyor.
+
+    ÖLÇÜLDÜ (2026-08-26): ABD'nin İran bağlantılı aktörlere yaptırımı 25 ve
+    26 Ağustos'ta ÜST ÜSTE yayımlandı. Çift aynı olay olarak tanınmıştı ama
+    dört "yeni ad" bulununca gelişme sayıldı; adların ikisi ('tahran',
+    'economic') dünkü metinde zaten geçiyordu, biri ('mois') aynı kurumun
+    kısaltmasıydı. Bağlamı okuyan bir hakem bu üçünü de yenilik saymazdı.
+
+    ŞÜPHEDE TEKRAR: kullanıcının kuralı "hiçbir şekilde mükerrer olmasın".
+    Somut olarak adlandırılamayan bir yenilik, yenilik değildir.
+    """
+    return f"""Sen bir siber güvenlik bülteninin MÜKERRER DENETÇİSİSİN.
+
+Aşağıdaki her çiftte A (bugünkü haber) ile B (daha önce YAYIMLANMIŞ haber)
+AYNI OLAYI anlatıyor — bu kesin, tartışma konusu değil.
+
+Tek soru: **A, B'de OLMAYAN gerçek bir gelişme duyuruyor mu?**
+
+GERÇEK GELİŞME (A yayımlanabilir):
+• Olay yeni bir AŞAMAYA geçmiş: tutuklama yapılmış, iddianame düzenlenmiş,
+  yama yayımlanmış, açık artık aktif istismar ediliyor, fail resmen
+  atfedilmiş, kurum sorumluluğu üstlenmiş.
+• Olayın ÖLÇEĞİ somut biçimde değişmiş: yeni ve daha büyük bir kurban sayısı,
+  yeni ülkeler, yeni sektörler — B'deki rakamdan FARKLI ve DAHA BÜYÜK.
+• Olayla ilgili yeni ve ayrı bir OLGU: yeni bir zafiyet, yeni bir zararlı
+  bileşen, yeni bir kurban kurum.
+
+GELİŞME DEĞİLDİR (A mükerrerdir, TEKRAR):
+• Aynı olgunun başka sözcüklerle anlatılması, farklı kaynak, farklı başlık.
+• Aynı şeyin kısaltmayla ya da açık adıyla anılması (MOIS = İran İstihbarat
+  ve Güvenlik Bakanlığı; Cl0p = Clop).
+• B'de zaten geçen bir adın A'da öne çıkarılması.
+• Operasyona/kampanyaya sonradan verilen kod adı — olayın kendisi aynıdır.
+• Arka plan, uzman yorumu, "ne yapmalı" tavsiyeleri, genel bağlam.
+• Rakamın yalnızca farklı yuvarlanması ("yüz binlerce" ↔ "678.000" AYNI
+  olguysa gelişme değildir; B'de olmayan YENİ bir sayım ise gelişmedir).
+
+KARAR KURALI: "GELISME" diyebilmen için yeni olguyu SOMUT olarak
+adlandırabilmen gerekir (ör. "58 kişi tutuklandı", "yama yayımlandı",
+"kurban sayısı 40'tan 270'e çıktı"). Adlandıramıyorsan cevabın TEKRAR'dır.
+Şüphedeysen TEKRAR de — mükerrer yayımlamak, bir devam haberini atlamaktan
+daha kötüdür.
+
+ÇİFTLER:
+{ciftler_metni}
+
+YALNIZCA şu JSON'u döndür:
+{{"kararlar": [{{"no": <çift no>, "karar": "GELISME"|"TEKRAR",
+                "yeni": "<GELISME ise yeni olgu, en fazla 10 kelime>"}}]}}
+Her çift için TAM BİR karar ver; hiçbirini atlama."""
+
+
 def get_yayin_yonetmeni_prompt(manset_items, govde_items):
     """GENEL YAYIN YÖNETMENİ — bitmiş raporun TAMAMINA bakan tek katman.
 
