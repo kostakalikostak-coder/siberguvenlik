@@ -465,6 +465,10 @@ def _kimlik_yeterli(ortak):
 KIMLIK_ILE_KONU_MIN = 0.10
 # Hiçbir ortak kimlik yokken tek başına "aynı olay" demek için gereken örtüşme.
 KONU_TEK_BASINA = dedup._TOPIC_ALONE
+# Ortak AD olmasa bile "aynı olay" demeye yeten konu örtüşmesi (bkz. ayni_olay
+# filtre 2). Ölçülen sahte eşleşmelerin en yükseği 0.27 idi; eşik onun çok
+# üstünde tutulur ki yalnızca neredeyse birebir metinler geçsin.
+KONU_KESINLIK = 0.75
 
 
 # Haberin "girişi": başlık + gövdenin ilk bu kadar sözcüğü. Gazetecilik
@@ -913,7 +917,18 @@ def ayni_olay(a, b, sozluk=None, ayni_gun=False, explain=False):
 
     # (2) SALT BAŞLIK BENZERLİĞİ YETMEZ. Ad taşımadığı için doğrulanamaz;
     #     ölçümde Stripe↔AWS anahtar ifşası çiftini birleştirdi.
+    #
+    #     TEK İSTİSNA — METİN NEREDEYSE AYNIYSA. Ad yokluğu "doğrulanamaz"
+    #     demektir, "farklı" demek değildir; iki metin birbirinin kopyasıysa
+    #     aynı olay olduğu ortadadır. ÖLÇÜLDÜ (mukerrer_golden, 38 çift):
+    #     bu yoldan gelen İKİ sahte eşleşmenin konu örtüşmesi 0.27 ve 0.21;
+    #     eşik 0.75 ikisini de dışarıda bırakır. Kural olmadan aynı olayın
+    #     farklı sözcüklerle yazılmış ama gövdesi birebir aynı iki kopyası
+    #     (ör. aynı paragrafın iki başlıkla dolaşması) mükerrer sayılmıyordu.
     if gerekce.startswith(('trtitle', 'topic=')):
+        konu = _konu_ortusmesi(a, b)
+        if konu >= KONU_KESINLIK:
+            return _ret(True, f'konu-kesinlik={konu:.2f}')
         return _ret(False, '')
 
     # (3) ÖZEL AD SİNYALİ SÖZLÜKTEN GEÇMELİ. same_event'te DF tabanlı

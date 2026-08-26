@@ -509,3 +509,43 @@ def test_hakem_ayni_cifti_iki_kez_sormaz():
     assert s._gelisme_llm_hakem([(1, a, b, '')])[1][0] is True
     assert s._gelisme_llm_hakem([(1, a, b, '')])[1][0] is True
     assert cagri['n'] == 1, 'aynı çift ikinci kez LLM'"'"'e soruldu'
+
+
+def test_son_kapi_yedek_secerken_puan_bandini_uygular():
+    """Manşete dokunan SON katman kendi satır-içi seçicisini taşıyordu ve o
+    seçici ne puan bandını ne manşet yasağını uyguluyordu.
+
+    ÖLÇÜLDÜ (2026-08-26): manşetteki ID 11 (80 puan) çapraz-gün mükerreri
+    çıkınca yerine ID 30 (74 puan) kondu; aynı raporda 95 puanlı Interpol
+    haberi gövdede duruyordu.
+    """
+    import inspect
+    kaynak = inspect.getsource(main.HaberSistemi._son_mukerrer_kapisi)
+    i_manset = kaynak.index('MANŞET: eleme değil DEĞİŞTİRME')
+    assert '_kritik3_yedek_bul(' in kaynak[i_manset:], \
+        'son kapı ortak yedek seçicisinden geçmiyor'
+
+
+def test_son_kapi_zayif_yedegi_almaz():
+    """Bant devrede: 74 puanlık aday, 95 puanlık aday dururken manşete
+    konmamalı."""
+    gecmis = [{'tr_title': CAMERASWARM_A[0], 'title': '',
+               'paragraph': CAMERASWARM_A[1], 'full_text': ''}]
+    icerik = {1: CAMERASWARM_B, 2: BAGIMSIZ, 3: BAGIMSIZ2,
+              4: ('Interpol Operasyonunda Elli Sekiz Tutuklama',
+                  'Interpol operasyonunda 58 kisi tutuklanmistir.'),
+              5: ('Zayif Bir Zararli Yazilim Haberi',
+                  'Kucuk olcekli bir zararli yazilim tespit edilmistir.')}
+    s = _sistem(gecmis)
+    s._load_recent_report_views = lambda *a, **k: gecmis
+    records = {1: {'kat': 'nation_state_apt', 'toplam': 90, 'siber': 1},
+               2: {'kat': 'nation_state_apt', 'toplam': 88, 'siber': 1},
+               3: {'kat': 'nation_state_apt', 'toplam': 87, 'siber': 1},
+               4: {'kat': 'kolluk_operasyonu', 'toplam': 95, 'siber': 1},
+               5: {'kat': 'nation_state_apt', 'toplam': 44, 'siber': 1}}
+    content = {aid: _icerik(*icerik[aid]) for aid in icerik}
+    arts = {aid: {'id': aid, 'title': '', 'full_text': ''} for aid in icerik}
+    t3, _t10, _kal = s._son_mukerrer_kapisi(
+        [1, 2, 3], [1, 2, 3, 4, 5], [], records, content, arts, {})
+    assert 5 not in t3, 'bandın çok altındaki aday manşete kondu'
+    assert 4 in t3, 'en yüksek puanlı uygun yedek seçilmedi'

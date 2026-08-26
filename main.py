@@ -4001,6 +4001,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             return (score_records.get(aid, {}) or {}).get('toplam', 0)
 
         dropped_set = set(dropped)
+        _grup_sozluk = getattr(self, '_olay_sozlugu', None)
         restored = []
         for aid in sorted(dropped, key=lambda x: -_puan(x)):
             view = view_fn(aid)
@@ -4013,15 +4014,20 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             # düşük puanlı (52-73) politika/analiz haberi böyle geri geldi ve
             # gövde 12'den 17'ye şişti.
             grup_uyesi = any(
-                other != aid and _dedup.same_event(view, view_fn(other))
+                other != aid and _olay.ayni_olay(view, view_fn(other),
+                                                 sozluk=_grup_sozluk,
+                                                 ayni_gun=True)
                 for other in dropped_set
             )
             if not grup_uyesi:
                 continue
             # Grubun bir üyesi hâlâ rapordaysa (gövde ya da KRİTİK 3) olay temsil
             # ediliyor demektir — geri alma.
+            # Sahte pozitif burada HABER KAYBIDIR: olay "zaten temsil
+            # ediliyor" sanılıp geri alma yapılmaz.
             represented = any(
-                _dedup.same_event(view, view_fn(other))
+                _olay.ayni_olay(view, view_fn(other), sozluk=_grup_sozluk,
+                                ayni_gun=True)
                 for other in list(kept_set) + list(top3_ids) + restored
             )
             if not represented:
@@ -4104,7 +4110,15 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             if cand in yasak:
                 continue
             cv = view_fn(cand)
-            if any(_dedup.same_event(cv, view_fn(o)) for o in sonuc):
+            # TANIM BİRLİĞİ: burası `_dedup.same_event` kullanıyordu. ÖLÇÜLDÜ
+            # (data/mukerrer_golden.json, 38 elle etiketli çift): iki tanımın
+            # ayrıştığı 5 çiftin BEŞİNDE de same_event yanılıyor ve hepsi
+            # SAHTE POZİTİF — GitLab↔Citrix, Adobe↔Microsoft, Stripe↔AWS,
+            # CISA Ray↔CISA katalog, TikTok senatörler↔TikTok cezası "aynı
+            # olay" sayılıyor. Manşet yolunda bu, farklı iki haberi mükerrer
+            # sanıp birini zayıf bir haberle değiştirmek demek.
+            if any(_olay.ayni_olay(cv, view_fn(o), sozluk=sozluk, ayni_gun=True)
+                   for o in sonuc):
                 continue
             # Geçmişle KISMEN bile aynı olan haber manşete yedek olamaz —
             # burada GELISME de yeterli sebeptir (manşet tekrarı tam da
@@ -4144,10 +4158,13 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         if len(top3_ids) < 2:
             return list(top3_ids)
         view_fn = self._dedup_view_fn(content_by_id, articles_by_id)
+        sozluk = getattr(self, '_olay_sozlugu', None)
         sonuc = []
         for aid in top3_ids:
             av = view_fn(aid)
-            if not any(_dedup.same_event(av, view_fn(o)) for o in sonuc):
+            # TANIM BİRLİĞİ — bkz. _kritik3_yedek_bul'daki ölçüm notu.
+            if not any(_olay.ayni_olay(av, view_fn(o), sozluk=sozluk,
+                                       ayni_gun=True) for o in sonuc):
                 sonuc.append(aid)
                 continue
             yedek = self._kritik3_yedek_bul(yedek_ids, sonuc, records, view_fn,
@@ -6730,13 +6747,24 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                        if aid not in dusen and aid not in yeni_top3]
         yedek_havuz.sort(key=lambda aid: -_puan(aid))
         manset_disi = self._manset_disi_ids(yedek_havuz, records, view_fn)
+        # TEK YEDEK SEÇİCİ. Burası kendi satır-içi seçicisini taşıyordu ve o
+        # seçici PUAN BANDINI da MANŞET YASAĞINI da uygulamıyordu — oysa bu
+        # katman manşete dokunan SON katmandır, yani son sözü o söylüyor.
+        #
+        # ÖLÇÜLDÜ (2026-08-26): manşetteki ID 11 (80 puan) çapraz-gün mükerreri
+        # çıkınca yerine ID 30 (74 puan) kondu; aynı raporda 95 puanlı Interpol
+        # haberi gövdede duruyordu. Bant `_kritik3_yedek_bul` içinde vardı ama
+        # bu katman oradan geçmiyordu.
+        #
+        # `_manset_disi_ids` kararları haric olarak taşınır ki kapı kararları
+        # kaybolmasın.
+        _bant_puan = {a: _puan(a) for a in yedek_havuz}
         for aid in [a for a in yeni_top3 if a in dusen or a in manset_cikar]:
-            yedek = next(
-                (c for c in yedek_havuz
-                 if c not in yeni_top3 and c not in manset_disi
-                 and not any(_olay.ayni_olay(view_fn(c), view_fn(o),
-                                             sozluk=sozluk)
-                             for o in yeni_top3 if o != aid)), None)
+            yedek = self._kritik3_yedek_bul(
+                yedek_havuz, [o for o in yeni_top3 if o != aid], records,
+                view_fn, gecmis,
+                haric=set(manset_disi) | set(dusen) | set(manset_cikar),
+                aday_puanlari=_bant_puan)
             if yedek is None:
                 print(f"   ⚠️  Son mükerrer kapısı: ID {aid} manşette MÜKERRER "
                       f"ama uygun yedek yok — YERİNDE BIRAKILDI "
