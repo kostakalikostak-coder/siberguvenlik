@@ -88,7 +88,9 @@ def test_secici_kisa_listeyi_kodda_suzer():
     i_kapi = kaynak.index('manset_yasak')
     i_llm = kaynak.index('_manset_llm_sec(')
     assert i_kapi < i_llm, 'LLM seçimi manşet kapısından ÖNCE çalışıyor'
-    assert 'eligible' in kaynak.split('kisa_liste')[0][-3000:], \
+    # Karakter penceresi DEĞİL sıra karşılaştırması: araya yorum/katman
+    # eklendiğinde sabit pencere testi yanlış yere kırılıyordu.
+    assert kaynak.index('eligible') < kaynak.index('kisa_liste'), \
         'kısa liste süzülmüş havuzdan kurulmuyor'
 
 
@@ -174,3 +176,33 @@ def test_puan_bandi_icinde_ezme_serbest():
     secim = s._manset_llm_sec([1, 2, 3, 4], [1, 2, 3],
                               records, content, arts, [])
     assert secim == [2, 3, 4], 'bant içindeki meşru ezme engellendi'
+
+
+def test_kisa_liste_kendi_icinde_tekil():
+    """Kısa listede aynı olayın birden çok kopyası bulunmamalı.
+
+    ÖLÇÜLDÜ (2026-08-26): Interpol Jackal IV operasyonunun YEDİ kopyası vardı
+    (94-95 puan). Çapraz-gün temizliği yalnızca GEÇMİŞ günlere baktığı için
+    kopyalar listede kaldı; LLM manşete ikisini birden seçti (ID 71 ve 83),
+    sonraki katmanlar ikisini de temizleyince manşet 74 ve 76 puanlık
+    haberlere düştü. Kopyalar ayrıca 10 kişilik listenin slotlarını yiyor.
+    """
+    import inspect
+    kaynak = inspect.getsource(main.HaberSistemi._derive_top3_by_score)
+    i_tekil = kaynak.index('_dusen_kopya')
+    i_kap = kaynak.index('_aday = _tekil[:self.MANSET_ADAY_SAYISI]')
+    i_llm = kaynak.index('_manset_llm_sec(')
+    assert i_tekil < i_kap < i_llm, \
+        'kısa liste tekilleştirme LLM seçiminden önce/kırpmadan önce değil'
+    assert 'ayni_olay' in kaynak[i_tekil - 800:i_kap], \
+        'tekilleştirme kapının olay tanımını (ayni_olay) kullanmıyor'
+
+
+def test_tekillestirme_en_yuksek_puanliyi_tutar():
+    """Kopyalardan hangisinin kalacağı rastgele olamaz — puan belirler."""
+    import inspect
+    kaynak = inspect.getsource(main.HaberSistemi._derive_top3_by_score)
+    i_tekil = kaynak.index('_tekil, _dusen_kopya')
+    parca = kaynak[i_tekil:i_tekil + 400]
+    assert 'sorted(_aday, key=lambda x: -_p_aday(x))' in parca, \
+        'kopya taraması puan sırasında yapılmıyor — düşük puanlı kopya kalabilir'

@@ -5915,7 +5915,39 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
             _aday = [a for a in dict.fromkeys(
                 list(top3_ids) + [a for a in eligible if a not in top3_ids])
-                if _temiz(a)][:self.MANSET_ADAY_SAYISI]
+                if _temiz(a)]
+
+            # KISA LİSTE KENDİ İÇİNDE DE TEKİL OLMALI.
+            #
+            # Yukarıdaki temizlik yalnızca GEÇMİŞ günlere bakar; aynı olayın
+            # BUGÜNKÜ kopyaları listede yan yana durabiliyordu. LLM'e aynı
+            # olayın birden çok kopyasını göstermek iki ayrı zarar üretir:
+            # (a) manşete aynı olay iki kez seçilebilir, (b) kopyalar 10
+            # kişilik kısa listenin slotlarını yiyip gerçek alternatifleri
+            # dışarıda bırakır.
+            #
+            # ÖLÇÜLDÜ (2026-08-26): Interpol Jackal IV operasyonunun YEDİ
+            # kopyası vardı (94-95 puan). LLM manşete ikisini birden seçti
+            # (ID 71 ve ID 83); sonraki katmanlar ikisini de temizleyince
+            # manşet 74 ve 76 puanlık haberlere düştü.
+            #
+            # Aynı olaydan EN YÜKSEK PUANLI kopya tutulur; eleme değil
+            # daraltmadır — kopyalar gövdedeki yerlerini korur.
+            _p_aday = lambda x: (records.get(x) or {}).get('toplam', 0)  # noqa: E731
+            _tekil, _dusen_kopya = [], []
+            for a in sorted(_aday, key=lambda x: -_p_aday(x)):
+                av = view_fn(a)
+                if any(_olay.ayni_olay(av, view_fn(t), sozluk=_sz)
+                       for t in _tekil):
+                    _dusen_kopya.append(a)
+                    continue
+                _tekil.append(a)
+            if _dusen_kopya:
+                print(f"   🧹 Manşet kısa listesi: aynı olayın "
+                      f"{len(_dusen_kopya)} kopyası çıkarıldı "
+                      f"{sorted(_dusen_kopya)} (en yüksek puanlı tutuldu).")
+            # Puan sırası korunur: kısa liste zaten puan sırasında kuruldu.
+            _aday = _tekil[:self.MANSET_ADAY_SAYISI]
 
             # HAKEM DE SEÇİMDEN ÖNCE KOŞAR.
             #
