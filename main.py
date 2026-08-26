@@ -4096,8 +4096,25 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             if cand in sonuc or cand in haric:
                 continue
             rec = records.get(cand, {})
-            if rec.get('kat') in KRITIK3_HARIC_KATEGORILER or rec.get('mukerrer'):
+            if rec.get('kat') in KRITIK3_HARIC_KATEGORILER:
                 continue
+            # HAM `mukerrer` BAYRAĞI BURADA KULLANILMAZ.
+            #
+            # Bayrak "bu haber bir aynı-olay grubunun üyesiydi" der; grubun
+            # RAPORDA TUTULAN kopyası da bayrağı taşır. Yani mükerrer temizliği
+            # bir olaydan tek temsilci bıraktığında, o temsilci manşete
+            # ÇIKAMAZ hâle geliyordu. Manşet kapısı (_derive_top3_by_score) bu
+            # bayrağı tam da bu yüzden terk edip ölçülmüş `_manset_yasak`
+            # kümesine geçmişti; yedek bulucu geride kalmıştı.
+            #
+            # ÖLÇÜLDÜ (2026-08-26): Interpol Jackal IV operasyonunun yedi
+            # kopyasından hayatta kalan ID 83 (95 puan, günün 2. haberi)
+            # mukerrer=1 taşıdığı için yedek havuzunda hiç değerlendirilmedi;
+            # manşet sırayla 76 ve 74 puanlı haberlere düştü.
+            #
+            # Gerçek mükerrerler zaten iki ölçütle eleniyor: `_manset_yasak`
+            # (aşağıda) ve geçmişe karşı `mukerrer_karari` (birkaç satır
+            # aşağıda) — ikisi de bayraktan daha dar ve ölçülmüş tanımlar.
             # MANŞET YASAĞI YEDEK SEÇİMİNDE DE GEÇERLİDİR.
             #
             # ÖLÇÜLDÜ (2026-08-24): "İran Bağlantılı Aktörlerin Birleşik
@@ -6363,6 +6380,43 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 self._yy_eylemler.append({'tur': 'takas', 'id': cikan,
                                           'karar': 'reddedildi',
                                           'neden': 'puan ve kategori birlikte düşüyor'})
+                continue
+            # PUAN BANDI YÖNETMENDE DE GEÇERLİDİR.
+            #
+            # Yukarıdaki "çift düşüş" kuralı yalnızca puan VE kategori birlikte
+            # inerse reddediyor; kategori önceliği yükselen bir takas puanı
+            # istediği kadar düşürebiliyordu (ör. 95 puanlı kolluk operasyonu
+            # yerine 55 puanlık bir casus yazılım haberi). Yönetmenin işi puan
+            # sıralamasını düzeltmektir, uçurum açmak değil — bant boru
+            # hattının geri kalanında (seçici, yedek bulucu, son kapı) zaten
+            # uygulanıyordu, tek istisna burasıydı.
+            _tavan = max((( records.get(x) or {}).get('toplam', 0)
+                          for x in list(yeni_top3) + list(yeni_govde)),
+                         default=0)
+            if _p_ck < _tavan - self.MANSET_PUAN_TOLERANSI:
+                print(f"   ⛔ Yayın yönetmeni takası REDDEDİLDİ: ID {cikan} "
+                      f"({_p_ck}) tavanın ({_tavan}) "
+                      f"{self.MANSET_PUAN_TOLERANSI} puandan fazla altında.")
+                self._yy_eylemler.append({'tur': 'takas', 'id': cikan,
+                                          'karar': 'reddedildi',
+                                          'neden': 'puan bandı dışı'})
+                continue
+            # MANŞETE ÇIKAN HABER DİĞER MANŞETLERLE AYNI OLAY OLAMAZ.
+            #
+            # Bu denetim yoktu: yönetmen aynı olayın gövdedeki kopyasını
+            # manşete çıkarabiliyordu. Son kapı bunu yakalıyor ama çaresi
+            # DEĞİŞTİRME olduğu için manşet bir kademe daha zayıflıyordu —
+            # yani hata bir katman sonra, daha pahalıya kapanıyordu.
+            _vfn = self._dedup_view_fn(content_by_id, articles_by_id)
+            _sz_yy = getattr(self, '_olay_sozlugu', None)
+            if any(_olay.ayni_olay(_vfn(cikan), _vfn(o), sozluk=_sz_yy,
+                                   ayni_gun=True)
+                   for o in yeni_top3 if o != inen):
+                print(f"   ⛔ Yayın yönetmeni takası REDDEDİLDİ: ID {cikan} "
+                      f"mevcut bir manşetle aynı olay.")
+                self._yy_eylemler.append({'tur': 'takas', 'id': cikan,
+                                          'karar': 'reddedildi',
+                                          'neden': 'başka manşetle aynı olay'})
                 continue
             neden = str(t.get('neden', ''))[:80]
             yeni_top3[yeni_top3.index(inen)] = cikan

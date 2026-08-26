@@ -321,3 +321,51 @@ def test_puani_dusuk_ama_kategorisi_guclu_takas_calisir():
                                'neden': 'süren kampanya'}]})
     top3, _ = s._yayin_yonetmeni([1, 2, 3], [4], records, content, arts)
     assert 4 in top3, 'meşru takas engellendi'
+
+
+def test_puan_bandi_disi_takas_reddedilir():
+    """Yönetmen puanı EZEBİLİR ama UÇURUM AÇAMAZ.
+
+    'Çift düşüş' kuralı yalnızca puan VE kategori birlikte inerse reddediyor;
+    kategori önceliği yükselen bir takas puanı istediği kadar düşürebiliyordu.
+    Bant boru hattının geri kalanında (seçici, yedek bulucu, son kapı) zaten
+    uygulanıyordu — tek istisna yönetmendi.
+    """
+    records, content, arts = _veri()
+    # 5: kategori önceliği YÜKSEK (casus_yazilim=9) ama puanı çok düşük.
+    records[5] = {'kat': 'casus_yazilim', 'toplam': 50, 's': 20, 'e': 10,
+                  'a': 10, 'k': 10, 'siber': 1, 'mukerrer': 0}
+    content[5] = {'tr_title': 'Baslik 5', 'paragraph': 'Paragraf 5 hakkinda.'}
+    arts[5] = {'id': 5, 'title': 'T5', 'full_text': 'x'}
+    s = _sistem({'takaslar': [{'manşetten_dusen': 3, 'manşete_yukselen': 5,
+                               'neden': 'casusluk daha kritik'}]})
+    s._yy_eylemler = []
+    t3, govde = s._yayin_yonetmeni([1, 2, 3], [4, 5], records, content, arts)
+    assert 5 not in t3, 'bandın çok altındaki haber yönetmen eliyle manşete çıktı'
+    assert 3 in t3
+    assert any(e.get('neden') == 'puan bandı dışı' for e in s._yy_eylemler)
+
+
+def test_mansetle_ayni_olay_takasi_reddedilir():
+    """Yönetmen aynı olayın gövdedeki kopyasını manşete çıkaramamalı.
+
+    Son kapı bunu yakalıyordu ama çaresi DEĞİŞTİRME olduğu için manşet bir
+    kademe daha zayıflıyordu — hata bir katman sonra, daha pahalıya kapanıyordu.
+    """
+    records, content, arts = _veri()
+    ayni = ('Interpol operasyonunda elli sekiz kisinin tutuklanmasi',
+            'Interpol operasyonunda 58 kisi tutuklanmis, Black Axe agi '
+            'cokertilmistir.')
+    content[3] = {'tr_title': ayni[0], 'paragraph': ayni[1]}
+    records[5] = {'kat': 'kolluk_operasyonu', 'toplam': 96, 's': 38, 'e': 24,
+                  'a': 19, 'k': 15, 'siber': 1, 'mukerrer': 0}
+    content[5] = {'tr_title': 'Interpol operasyonunda 58 tutuklama yapilmasi',
+                  'paragraph': ayni[1]}
+    arts[5] = {'id': 5, 'title': 'T5', 'full_text': 'x'}
+    s = _sistem({'takaslar': [{'manşetten_dusen': 1, 'manşete_yukselen': 5,
+                               'neden': 'daha önemli'}]})
+    s._yy_eylemler = []
+    t3, govde = s._yayin_yonetmeni([1, 2, 3], [4, 5], records, content, arts)
+    assert 5 not in t3, 'manşetle aynı olay olan haber manşete çıkarıldı'
+    assert any(e.get('neden') == 'başka manşetle aynı olay'
+               for e in s._yy_eylemler)

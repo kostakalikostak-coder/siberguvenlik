@@ -120,12 +120,29 @@ def test_yedek_secici_manset_disi_kategoriyi_atlar():
     assert s._kritik3_yedek_bul([3, 4], [1], KAYITLAR, view_fn, []) == 4
 
 
-def test_yedek_secici_mukerreri_atlar():
+def test_yedek_secici_manset_yasaklisini_atlar():
+    """Gerçek mükerrer ölçütü HAM BAYRAK değil, ölçülmüş `_manset_yasak`tır.
+
+    Ham `mukerrer` bayrağı "bu haber bir aynı-olay grubunun üyesiydi" der ve
+    grubun RAPORDA TUTULAN kopyası da onu taşır. ÖLÇÜLDÜ (2026-08-26): Interpol
+    Jackal IV'ün yedi kopyasından hayatta kalan ID 83 (95 puan, günün 2.
+    haberi) bayrağı taşıdığı için yedek havuzunda hiç değerlendirilmedi; manşet
+    76 ve 74 puanlı haberlere düştü.
+    """
+    s = _sistem()
+    s._manset_yasak = {4}
+    view_fn = s._dedup_view_fn(ICERIK, {})
+    assert s._kritik3_yedek_bul([4, 5], [1], KAYITLAR, view_fn, []) == 5
+
+
+def test_yedek_secici_grup_hayatta_kalanini_kabul_eder():
+    """Bayrak taşıyan ama gerçekte mükerrer OLMAYAN aday manşete çıkabilmeli."""
     kayitlar = dict(KAYITLAR)
     kayitlar[4] = {'kat': 'kolluk_operasyonu', 'mukerrer': 1}
     s = _sistem()
     view_fn = s._dedup_view_fn(ICERIK, {})
-    assert s._kritik3_yedek_bul([4, 5], [1], kayitlar, view_fn, []) == 5
+    assert s._kritik3_yedek_bul([4, 5], [1], kayitlar, view_fn, []) == 4, \
+        'aynı-olay grubunun hayatta kalan kopyası manşete alınmadı'
 
 
 def test_yedek_secici_mevcut_mansetle_ayni_olayi_atlar():

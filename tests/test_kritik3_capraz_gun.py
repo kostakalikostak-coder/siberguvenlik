@@ -83,13 +83,14 @@ def test_gecmis_bossa_hic_calismaz():
         [1, 2, 3], [1, 2, 3, 4, 5], KAYITLAR, ICERIK, {}, []) == [1, 2, 3]
 
 
-def test_mukerrer_isaretli_aday_yedek_olamaz():
-    kayitlar = dict(KAYITLAR)
-    kayitlar[4] = {'kat': 'kolluk_operasyonu', 'mukerrer': 1}
+def test_manset_yasakli_aday_yedek_olamaz():
+    """Ölçüt ham bayrak değil `_manset_yasak` — bkz. test_kritik3_butunluk
+    içindeki 2026-08-26 ölçümü (grup hayatta kalanı bayrağı taşıyor)."""
     s = _sistem([3])
+    s._manset_yasak = {4}
     out = s._dedup_kritik3_cross_day_llm(
-        [1, 2, 3], [1, 2, 3, 4, 5], kayitlar, ICERIK, {}, GECMIS)
-    assert out[2] == 5, 'mükerrer işaretli aday manşete yedek olmamalı'
+        [1, 2, 3], [1, 2, 3, 4, 5], KAYITLAR, ICERIK, {}, GECMIS)
+    assert out[2] == 5, 'manşete yasaklı aday yedek oldu'
 
 
 def test_manset_disi_kategori_yedek_olamaz():
