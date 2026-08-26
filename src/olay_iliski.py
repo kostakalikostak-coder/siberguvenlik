@@ -980,9 +980,29 @@ def ayni_olay(a, b, sozluk=None, ayni_gun=False, explain=False):
 # birkaçı LLM'e sorulur. Bu fonksiyon "en olası birkaçı"nı seçer.
 
 # Adaylık için asgari benzerlik. Altındakiler LLM'e hiç sorulmaz.
+#
+# BAĞLAYICI DEĞİLDİR — ölçüldü (2026-08-26, son 7 gün): ön elemeyi geçen 433
+# çiftin yalnızca 9'u bu eşiğin altında kalıyor, çünkü `aday_benzerligi`
+# 0-1 arası değil TOPLAMSAL bir puan döndürüyor (ortak ad sayısı + 3×konu +
+# başlık) ve tipik çift 1.4-1.6 alıyor. Eşiği 0.30'a indirmek sorulan çift
+# sayısını HİÇ değiştirmedi. Gerçek kapı `ADAY_UST_SINIR`dir.
 ADAY_BENZERLIK_MIN = 0.55
 # Haber başına LLM'e taşınacak en fazla geçmiş aday sayısı.
-ADAY_UST_SINIR = 3
+#
+# 3 → 8 (2026-08-26). Asıl darboğaz buydu: deterministiğin kaçırdığı 9 gerçek
+# mükerrerin 8'i ortak anahtar TAŞIYOR ve 1.36-6.36 puan alıyor, yani hepsi
+# eşiği geçiyor; tek engelleri günün rekabetinde ilk 3'e girememeleriydi
+# (CEVA Logistics 1.36 ile tipik yığının bile altında).
+#
+# MALİYET ÖLÇÜLDÜ (son 7 gün, rapora giren haberler üzerinden ×3.5 havuz
+# tahminiyle): üst sınır 3 iken günde ~148 çift / ~12 çağrı, 8 iken ~418 çift
+# / ~35 çağrı. Yani günde ~23 ek çağrı. 12'lik gruplar ve flash model ile bu,
+# koşunun çeviri geçişlerinin yanında küçük kalıyor.
+#
+# Sınırsız YAPILMADI: aynı ölçümde üst sınır kaldırılınca günde ~8.855 çift /
+# ~738 çağrı çıkıyor — 60 katı maliyet, üstelik ek çiftlerin ezici çoğunluğu
+# puan yığınının dibinde ve alakasız.
+ADAY_UST_SINIR = 8
 
 
 def _ayirt_edici_ortak(ka, kb, sozluk):

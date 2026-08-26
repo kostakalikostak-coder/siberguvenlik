@@ -214,3 +214,28 @@ def test_gelisme_manset_olamaz_kodda():
         assert '_olay.GELISME' in kaynak, f'{metot.__name__}: GELISME ayrımı yok'
         assert '_manset_yasak' in kaynak, \
             f'{metot.__name__}: GELISME manşet yasağı almıyor'
+
+
+def test_hakem_kapisi_ust_sinirdir_esik_degil():
+    """Hangi çiftlerin LLM'e sorulacağını `ADAY_UST_SINIR` belirler.
+
+    ÖLÇÜLDÜ (2026-08-26): `aday_benzerligi` 0-1 arası değil TOPLAMSAL bir puan
+    döndürüyor (ortak ad sayısı + 3×konu + başlık) ve tipik çift 1.4-1.6
+    alıyor; 433 çiftin yalnızca 9'u 0.55 eşiğinin altında. Eşiği 0.30'a
+    indirmek sorulan çift sayısını HİÇ değiştirmedi. Bu test, eşiğin bağlayıcı
+    sanılıp üst sınırın sessizce 3'e düşürülmesini engeller.
+    """
+    from src import olay_iliski as OI
+    assert OI.ADAY_UST_SINIR >= 8, \
+        'hakeme taşınan aday sayısı ölçülmüş seviyenin altına düştü'
+
+    def _v(t, p):
+        return {'tr_title': t, 'title': '', 'paragraph': p, 'full_text': ''}
+
+    aday = _v('Acme Şirketine Fidye Saldırısı',
+              'Acme Corp sistemlerine fidye yazılımı saldırısı düzenlendi.')
+    gecmis = [(OI.aday_anahtarlari(v), '', v) for v in
+              [_v(f'Acme Olayı {i}', f'Acme Corp hakkında {i}. haber.')
+               for i in range(12)]]
+    assert len(OI.llm_adaylari(aday, gecmis)) == OI.ADAY_UST_SINIR, \
+        'aday sayısı üst sınıra göre kırpılmıyor'
