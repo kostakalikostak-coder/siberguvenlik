@@ -4211,14 +4211,37 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         if not isinstance(data, dict):
             return list(top3_ids)
 
-        hatali = {}
+        # İKİ AYRI KUSUR, İKİ AYRI ÇARE.
+        #
+        # Denetimin 1-3. maddeleri SEÇİM hatasıdır ("bu haber manşetlik değil")
+        # → haber değiştirilir ve manşete kalıcı olarak kapatılır. 4. madde ise
+        # İÇERİK kusurudur ("metin bozuk") → bu bir YAZIM sorunudur ve haberin
+        # manşet hakkını düşürmez; metni onaran ayrı katmanlar zaten var
+        # (kesik_paragraf, manset_butunluk).
+        #
+        # ÖLÇÜLDÜ (2026-08-26): denetim günün 2. haberini (Interpol Jackal IV,
+        # 95 puan) "operasyon tarihleri gelecek zamanı gösteriyor, tutarsız"
+        # gerekçesiyle işaretledi. Tek çare seçim hatasınınkiydi: haber manşetten
+        # düştü, manşete 74 puanlı DOUBLECUP haberi girdi ve 95 puanlı haber
+        # gövdeye indi — üstelik kusurlu metniyle birlikte.
+        #
+        # `tur` gelmezse eski davranış korunur (seçim hatası sayılır).
+        hatali, icerik_kusuru = {}, {}
         for item in (data.get('hatali', []) or []):
             try:
                 hid = int(item.get('id'))
             except (TypeError, ValueError, AttributeError):
                 continue
-            if hid in top3_ids:
-                hatali[hid] = str(item.get('neden', '')).strip()[:80]
+            if hid not in top3_ids:
+                continue
+            neden = str(item.get('neden', '')).strip()[:80]
+            if str(item.get('tur', '')).strip().lower() == 'icerik':
+                icerik_kusuru[hid] = neden
+            else:
+                hatali[hid] = neden
+        for aid, neden in icerik_kusuru.items():
+            print(f"   ✍️  Manşet içeriği kusurlu: ID {aid} ({neden}) — manşet "
+                  f"hakkı DÜŞMEZ, metin onarım katmanlarına bırakıldı.")
         if not hatali:
             print("   ✅ Manşet seçimi: denetim tamam, hatalı seçim yok.")
             return list(top3_ids)

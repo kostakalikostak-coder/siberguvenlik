@@ -133,3 +133,50 @@ def test_yedek_secici_mevcut_mansetle_ayni_olayi_atlar():
     view_fn = s._dedup_view_fn(ICERIK, {})
     # 6, mevcut manşet 1 ile aynı olay → atlanmalı
     assert s._kritik3_yedek_bul([6, 5], [1], KAYITLAR, view_fn, []) == 5
+
+
+# ── İçerik kusuru manşet hakkını düşürmez ──────────────────────────────────
+
+def test_icerik_kusuru_manseti_dusurmez():
+    """2026-08-26: denetim günün 2. haberini (Interpol Jackal IV, 95 puan)
+    "operasyon tarihleri gelecek zamanı gösteriyor, tutarsız" gerekçesiyle
+    işaretledi. Tek çare seçim hatasınınkiydi: haber manşetten düştü, yerine
+    74 puanlı bir haber girdi. İçerik kusuru bir YAZIM sorunudur — metni
+    onaran ayrı katmanlar var, manşet hakkı düşmemeli."""
+    out = _secim({'hatali': [{'id': 3, 'tur': 'icerik',
+                              'neden': 'tarihler tutarsız'}]}, [1, 2, 3], [4, 5])
+    assert out == [1, 2, 3], 'içerik kusuru manşeti değiştirdi'
+
+
+def test_icerik_kusuru_manset_yasagi_yazmaz():
+    """Yasak KALICIDIR — yazım kusuru yüzünden bir haberi manşete ömür boyu
+    kapatmak, o haber günün en güçlüsü olsa bile geri dönmesini engellerdi."""
+    s = _sistem({'hatali': [{'id': 3, 'tur': 'icerik', 'neden': 'tarih hatası'}]})
+    s._audit_kritik3_selection([1, 2, 3], [4, 5], KAYITLAR, ICERIK, {}, [],
+                               govde_ids=[4, 5])
+    assert 3 not in getattr(s, '_manset_yasak', set()), \
+        'içerik kusuru kalıcı manşet yasağı yazdı'
+
+
+def test_secim_hatasi_hala_yasak_yazar():
+    """Karşı taraf bozulmamalı: gerçek seçim hatası hâlâ kalıcı yasak yazar."""
+    s = _sistem({'hatali': [{'id': 3, 'tur': 'secim', 'neden': 'olay yok'}]})
+    out = s._audit_kritik3_selection([1, 2, 3], [4, 5], KAYITLAR, ICERIK, {}, [],
+                                     govde_ids=[4, 5])
+    assert 3 not in out
+    assert 3 in s._manset_yasak
+
+
+def test_tur_gelmezse_eski_davranis_korunur():
+    """Model alanı hiç doldurmazsa güvenli taraf seçim hatasıdır."""
+    out = _secim({'hatali': [{'id': 3, 'neden': 'ürün duyurusu'}]}, [1, 2, 3], [4, 5])
+    assert 3 not in out
+
+
+def test_prompt_tur_alanini_istiyor():
+    """Kod `tur` okuyorsa prompt onu İSTEMELİ; yoksa alan hiç gelmez ve
+    ayrım sessizce ölü kalır."""
+    from src.config import get_kritik3_selection_audit_prompt
+    p = get_kritik3_selection_audit_prompt('m', 'g')
+    assert '"tur"' in p and 'icerik' in p and 'secim' in p, \
+        'prompt tür alanını istemiyor'

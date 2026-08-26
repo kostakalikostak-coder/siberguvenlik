@@ -2090,7 +2090,14 @@ Bir manşeti YALNIZCA şu durumlarda işaretle:
 3. RUTİN/ÖNEMSİZ — tekil bir CVE yaması, küçük ölçekli sıradan bir olay ya da
    günün gövdesindeki haberlerin belirgin biçimde altında kalan bir gelişme.
    (Ölçüt: gövdedeki haberlerin ÇOĞU bundan daha önemliyse manşet yanlıştır.)
-4. İÇERİK BOZUK — paragraf konuyla ilgisiz, anlamsız ya da başlıkla çelişiyor.
+4. İÇERİK BOZUK — paragraf başka bir olayı anlatıyor, anlamsız ya da başlıkla
+   çelişiyor. (Yalnızca paragrafın YANLIŞ OLAYI anlatması. Tarih/zaman kipi,
+   üslup, eksik ayrıntı gibi YAZIM kusurları bu madde DEĞİLDİR.)
+
+Her işaret için TÜR de ver:
+- "secim"  → 1, 2 veya 3: haber manşetlik değil. Yerine başka haber geçer.
+- "icerik" → 4: haber manşetlik ama METNİ kusurlu. Bu bir YAZIM sorunudur;
+  haberin manşet hakkını düşürmez ve o haber manşete kapatılmaz.
 
 ASLA işaretleme:
 - Yalnızca "başka bir haber daha önemliydi" diye düşündüğün için.
@@ -2105,5 +2112,5 @@ GÖVDE HABERLERİ (yalnızca önem karşılaştırması için):
 {govde_items}
 
 YALNIZCA şu JSON'u döndür (gerekçe kısa ve somut olsun):
-{{"hatali": [{{"id": <manşet id>, "neden": "<en fazla 15 kelime>"}}]}}
+{{"hatali": [{{"id": <manşet id>, "tur": "secim"|"icerik", "neden": "<en fazla 15 kelime>"}}]}}
 Hata yoksa: {{"hatali": []}}"""
