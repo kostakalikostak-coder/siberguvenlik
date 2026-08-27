@@ -26,21 +26,20 @@ HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 # ADAY alternatifleri yaz, workflow'u çalıştır, çıktıdan çalışan varyantı seç.
 # (Örnek geçmiş: Help Net "Exceeded 30 redirects" → /feed/ ile çözüldü.)
 TARGETS = {
-    # --- SANS ISC: 2026-08-24/25 koşularında "syntax error: line 1, column 0"
-    #     (yani XML değil → bot/IP challenge sayfası). 2026-07-27'de kalkmış
-    #     görünen Actions-IP engeli geri gelmiş olabilir. Doğrudan + tam metin
-    #     varyantı + ham gövde döndüren proxy'ler ölçülüyor.
+    # --- Securelist: 2026-08-27 koşusunda HTTP 404. Mevcut URL + Securelist'in
+    #     kendi "RSS Feeds" sayfasında geçen varyantlar ve WordPress'in
+    #     standart alternatifleri ölçülüyor.
+    'Securelist (mevcut)':         'https://securelist.com/feed/',
+    'Securelist (slash yok)':      'https://securelist.com/feed',
+    'Securelist (rss)':            'https://securelist.com/rss/feed/',
+    'Securelist (feed=rss2)':      'https://securelist.com/?feed=rss2',
+    'Securelist (en/feed)':        'https://securelist.com/en/feed/',
+    # --- SANS ISC: 3 gündür 12:06'da XML yerine engelleme sayfası. 08-25'te
+    #     12:52'de AYNI URL çalışmıştı → saat/oran sınırı olabilir; yeniden
+    #     ölçülüyor.
     'SANS ISC (mevcut)':           'https://isc.sans.edu/rssfeed.xml',
     'SANS ISC (tam metin)':        'https://isc.sans.edu/rssfeed_full.xml',
-    'SANS ISC (allorigins)':       'https://api.allorigins.win/raw?url=https%3A%2F%2Fisc.sans.edu%2Frssfeed.xml',
-    'SANS ISC (codetabs)':         'https://api.codetabs.com/v1/proxy/?quest=https%3A%2F%2Fisc.sans.edu%2Frssfeed.xml',
-    # --- The Register: 2026-08-25'te 200 OK ama 0 madde ("SESSİZ BOŞ").
-    #     08-24'te aynı URL 18 madde vermişti → aralıklı. Atom yerine RSS
-    #     varyantı ve genel manşet akışı alternatif olarak ölçülüyor.
-    'Register (mevcut atom)':      'https://www.theregister.com/security/headlines.atom',
-    'Register (security rss)':     'https://www.theregister.com/security/headlines.rss',
-    'Register (genel atom)':       'https://www.theregister.com/headlines.atom',
-    'Register (allorigins)':       'https://api.allorigins.win/raw?url=https%3A%2F%2Fwww.theregister.com%2Fsecurity%2Fheadlines.atom',
+    'SANS ISC (diaryarchive)':     'https://isc.sans.edu/diaryarchive.xml',
     # --- Kontrol grubu (çalıştığı bilinen kaynaklar) ---
     'BleepingComputer (kontrol)':  'https://www.bleepingcomputer.com/feed/',
     'Help Net Security (kontrol)': 'https://www.helpnetsecurity.com/feed/',
