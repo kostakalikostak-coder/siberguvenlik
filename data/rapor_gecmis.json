@@ -1,52 +1,5 @@
 [
  {
-  "date": "2026-07-27",
-  "views": [
-   {
-    "tr_title": "Çin Bağlantılı Siber Suç Grubunun Cruciferra Şifreleme Servisini Kullanması",
-    "paragraph": "───────────────────────────────────────────────────────── Proofpoint tarafından yayımlanan analizde, Çin bağlantılı TA4922 siber suç grubunun Cruciferra adlı gelişmiş bir şifreleme servisini kullandığı tespit edilmiştir. Bu servisin, çeşitli kötü amaçlı yazılımları güvenlik yazılımlarından gizlemek amacıyla siber suç ekosisteminde kiralandığı belirtilmiştir. Cruciferra yazılımının, tespit edilmekten kaçınmak için dolaylı sistem çağrıları ve savunmasız sürücüleri kötüye kullanma gibi teknikler barındırdığı ifade edilmiştir. Özellikle Hindistan'daki vergi mükelleflerini ve finans ekiplerini hedef alan kimlik avı kampanyalarında bu aracın aktif olarak kullanıldığı kaydedilmiştir. Yazılımın, zararlı kodları bellek üzerinde çalıştıran bir yöntem kullanarak diskte iz bırakmadığı ve bu sayede adli incelemeleri zorlaştırdığı bilgisi verilmiştir. Servisin yeraltı forumlarında aylık 450 ile 2.000 dolar arasında değişen fiyatlarla pazarlandığı ve Agent Tesla gibi yaygın casus yazılımların dağıtımında rol oynadığı bildirilmiştir. (XXXXXXX, AÇIK -thehackernews.com, 27.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "ABD'de Kritik Altyapı Güvenliği İçin ISA/IEC 62443 Standardının Benimsenmesi Çağrısı",
-    "paragraph": "───────────────────────────────────────────────────────── Operasyonel Teknoloji Siber Güvenlik Koalisyonu (OTCC), Amerika Birleşik Devletleri'ndeki politika yapıcılara ISA/IEC 62443 standardını ülkenin temel operasyonel teknoloji siber güvenlik standardı olarak resmen tanıma çağrısında bulunmuştur. Koalisyon tarafından yayımlanan görüş belgesinde, küresel olarak birlikte çalışabilir tek bir çerçevenin kritik altyapı operatörlerinin uyum yükünü hafifleteceği belirtilmiştir. Mevcut düzenleyici parçalanmanın operatörleri mükerrer talimatlarla uğraşmaya zorladığı ifade edilerek, hükümet politikasının uyum kontrol listesi modelinden birlikte çalışabilirliğe kaydırılması önerilmiştir. Belgede ayrıca, ISA/IEC 62443 standardının Avustralya, Suudi Arabistan ve Singapur gibi ülkelerde halihazırda resmen tanındığına dikkat çekilmiştir. Koalisyon, bu standardın NIST SP 800-82 ve NIST CSF 2.0 ile tamamlayıcı bir rol oynayarak endüstriyel kontrol sistemlerinin güvenliğini artıracağını kaydetmiştir. Söz konusu raporun, iş gücü eğitimi ve güvenli tasarım bileşenlerinin teşvik edilmesini içeren beş temel tavsiyeyi kapsadığı bildirilmiştir. (XXXXXXX, AÇIK -industrialcyber.co, 27.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Coca-Cola'nın Fairlife Fidye Yazılımı Saldırısı Sonrası Veri İhlalini Doğrulaması",
-    "paragraph": "───────────────────────────────────────────────────────── Coca-Cola, süt ürünleri iştiraki Fairlife'a yönelik gerçekleştirilen fidye yazılımı saldırısının bir veri ihlaliyle sonuçlandığını 27 Temmuz 2026 tarihinde doğrulamıştır. Siber suç grubu Anubis, 20 Temmuz 2026 tarihinde Coca-Cola ve Fairlife'ı sızıntı sitesine ekleyerek sistemlerdeki dosyaları şifrelediğini ve 1 TB boyutunda gizli veri çaldığını iddia etmiştir. Şirket tarafından yapılan açıklamada, Amerika Birleşik Devletleri'ndeki dört Fairlife tesisinde üretimin büyük ölçüde yeniden başladığı ve ürün güvenliğinin etkilenmediği bildirilmiştir. Siber tehdit aktörü Anubis'in, çalınan verileri yayınlamak için bir geri sayım başlattığı ve ödeme yapılmaması durumunda bilgileri kamuoyuyla paylaşmakla tehdit ettiği kaydedilmiştir. Anubis grubunun, verileri kalıcı olarak silen bir silici moduna sahip olduğu ve çift şantaj yöntemi kullandığı belirtilmektedir. (XXXXXXX, AÇIK -securityweek.com, 27.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Fidye Yazılımı Grubu PEAR'ın MCBS Verilerini Ele Geçirmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Atlanta merkezli tıbbi işletme yönetim şirketi MCBS, Eylül 2025 tarihinde gerçekleşen bir siber saldırı sonucunda 1,2 milyondan fazla bireyin verilerinin sızdırıldığını açıklamıştır. Yapılan incelemeler sonucunda, fidye yazılımı çetesi PEAR'ın 22-26 Eylül 2025 tarihleri arasında sistemlere erişim sağladığı ve 3 TB boyutunda veriyi ele geçirdiği tespit edilmiştir. Çalınan veriler arasında isim, adres, sosyal güvenlik numarası, doğum tarihi ve sağlık sigortası bilgilerinin bulunduğu bildirilmiştir. ABD Sağlık ve İnsani Hizmetler Bakanlığı, söz konusu ihlalden tam olarak 1.261.464 kişinin etkilendiğini kaydetmiştir. Fidye yazılımı çetesi PEAR, ele geçirdiği finansal belgeleri, insan kaynakları dosyalarını ve hasta kayıtlarını internet üzerinden indirmeye sunmuştur. Grubun ayrıca Motility Software Solutions ve Tri-Century Eye Care gibi diğer sağlık kuruluşlarını da hedef aldığı belirtilmiştir. (XXXXXXX, AÇIK -securityweek.com, 27.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Tribeca Film Festivali Veri Sızıntısında Hollywood Yıldızlarının Bilgilerinin İfşa Olması",
-    "paragraph": "───────────────────────────────────────────────────────── Tribeca Film Festivali ile bağlantılı dört veri tabanında, aralarında Angelina Jolie ve Robert De Niro gibi isimlerin de bulunduğu Hollywood yıldızlarına ait yaklaşık 666.000 kaydın ifşa olduğu bildirilmiştir. Siber güvenlik araştırmacısı Jeremiah Fowler tarafından tespit edilen sızıntının, 2019 ile 2026 yılları arasındaki isim, telefon numarası ve e-posta adresi gibi iletişim bilgilerini kapsadığı ifade edilmiştir. Sızan verilerin büyük çoğunluğunun ünlülerden ziyade onların menajer ve temsilcilerine ait olduğu, ancak cihaz ve yazılım sürümü bilgilerinin de kayıtlarda yer aldığı belirtilmiştir. Fowler, sızıntının muhtemelen bir insan hatası sonucu açıkta kalan yedekleme dosyasından kaynaklandığını açıklamıştır. Festival yönetimi, söz konusu veri tabanlarını erişime kapattıklarını ve olayla ilgili inceleme başlattıklarını duyurmuştur. Araştırmacı, verilerin kötü niyetli kişilerce ele geçirildiğine dair henüz somut bir kanıt bulunmadığını kaydetmiştir. (XXXXXXX, AÇIK -thecyberexpress.com, 27.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Microsoft Active Directory Sertifika Hizmetlerinde Certighost Güvenlik Açığının Tespit Edilmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Microsoft Active Directory Sertifika Hizmetleri bünyesinde, düşük yetkili kullanıcıların etki alanı denetleyicisi taklidi yapmasına olanak tanıyan Certighost adlı bir güvenlik açığı tespit edilmiştir. Güvenlik araştırmacıları, bu açığın sertifika yetkilisinin kimlik çözünürlüğü sırasında kullandığı bir geri dönüş mekanizmasından kaynaklandığını açıklamıştır. Saldırganların, sertifika yetkilisini meşru bir denetleyici yerine kendi kontrollerindeki bir ana bilgisayardan veri almaya zorlayabildiği ifade edilmiştir. Microsoft, söz konusu zafiyeti Temmuz 2026 güvenlik güncellemeleri kapsamında yayımladığı bir doğrulama adımıyla giderdiğini duyurmuştur. Araştırmacılar, güncellemeyi hemen uygulayamayan kuruluşlar için ilgili mekanizmanın bir politika bayrağı ile tamamen kapatılabileceği bilgisini vermiştir. Kuruluşlara, sertifika kayıt davranışlarını düzenli olarak denetlemeleri ve güncellemeleri ivedilikle uygulamaları tavsiye edilmiştir. (XXXXXXX, AÇIK -csoonline.com, 27.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "WordPress Sitelerinin Ele Geçirilmesine Yol Açan Kritik Açıkların Tespit Edilmesi",
-    "paragraph": "───────────────────────────────────────────────────────── WordPress Core sisteminde, saldırganların kimlik doğrulaması yapmadan uzaktan kod yürütmesine (RCE) olanak tanıyan iki kritik güvenlik açığı tespit edilmiştir. CVE-2026-63030 ve CVE-2026-60137 kodlu bu açıkların, WordPress 6.9.x ve 7.0.x sürümlerini kullanan varsayılan kurulumlarda zincirleme şekilde istismar edilebildiği bildirilmiştir. Searchlight Cyber araştırmacıları tarafından keşfedilen bu hataların, dünya genelinde 500 milyondan fazla web sitesini etkileme potansiyeline sahip olduğu belirtilmiştir. WordPress ekibi, durumun ciddiyeti nedeniyle etkilenen sürümler için otomatik güvenlik güncellemelerini zorunlu olarak etkinleştirmiştir. Site yöneticilerine, wp2shell saldırı zincirinden korunmak amacıyla sistemlerini derhal 7.0.2 veya 6.9.5 sürümlerine yükseltmeleri tavsiye edilmiştir. Güncelleme yapılamayan durumlarda, REST API uç noktalarına anonim erişimin geçici olarak engellenmesi önerilmiştir. (XXXXXXX, AÇIK -securityaffairs.com, 26.07.2026) ──────────────────────────────────────────────────────────────────────────────── ================================================================================",
-    "title": "",
-    "full_text": ""
-   }
-  ]
- },
- {
   "date": "2026-07-28",
   "views": [
    {
@@ -3163,6 +3116,143 @@
     "paragraph": "SOCRadar tarafından yayımlanan raporda, çalınan Apple cihazlarının Etkinleştirme Kilidi'ni kaldırmak amacıyla geliştirilen AnonyMousKIT isimli hizmet tabanlı kimlik avı platformu analiz edilmiştir. Platformun, kiralık yapay zeka sesli asistanlarını kullanarak mağdurları Apple Destek ekibi adına aradığı ve cihaz parolaları ile iki faktörlü doğrulama kodlarını talep ettiği belirtilmiştir. Yapılan incelemelerde, Ağustos 2025 ile Mayıs 2026 tarihleri arasında gerçekleşen 200 aramanın büyük çoğunluğu",
     "title": "Fake Apple Support AI Calls Target Stolen-Device Owners for Passcodes and 2FA Codes",
     "full_text": "Cybersecurity researchers have disclosed details of a phishing-as-a-service (PhaaS) platform built to strip Apple's Activation Lock from stolen devices, using rented AI voice agents that call theft victims posing as Apple Support and ask for their device passcode.\n\nSOCRadar Threat Research Unit (STRU) said the platform, which it tracks as AnonyMousKIT, is credit-metered and drives lures across fiv"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-27",
+  "views": [
+   {
+    "tr_title": "Qilin Fidye Yazılımı Çetesinin ATF Sistemlerine Sızması",
+    "paragraph": "Amerika Birleşik Devletleri Alkol, Tütün, Ateşli Silahlar ve Patlayıcılar Bürosu (ATF), siber tehdit aktörü Qilin fidye yazılımı çetesinin iddialarının ardından bir sisteminin ele geçirildiğini doğrulamıştır. Kurum tarafından yapılan açıklamada, ihlalin ana kurumsal ağdan bağımsız çalışan münferit bir sistemde gerçekleştiği ve \"büyük bir olay\" olarak nitelendirildiği belirtilmiştir. Adalet Bakanlığı ile koordineli bir inceleme başlatıldığı ve etkilenen ortamla bağlantıların derhal kesildiği bild",
+    "title": "ATF confirms “major incident” after recent Qilin breach claims",
+    "full_text": "ATF, the regulatory agency that enforces federal laws governing firearms and explosives in the United States, has confirmed that one of its systems was compromised after breach claims made by the Qilin ransomware gang.\n\nThis follows Qilin adding the U.S. Bureau of Alcohol, Tobacco, Firearms and Explosives to its dark web data leak portal on Wednesday, without saying whether it had stolen files fro"
+   },
+   {
+    "tr_title": "ABD'nin Çin Bağlantılı QTFY Hacking Platformunu Çökertmesi",
+    "paragraph": "Amerika Birleşik Devletleri Adalet Bakanlığı, Çin hükümeti adına askeri ve kritik altyapı sistemlerini hedef alan QTFY isimli siber tehdit aktörünün operasyonlarını durdurduğunu açıklamıştır. Nanjing Xinjiuwei Network Technology adlı şirket bünyesinde faaliyet gösteren grubun, 2018 yılından bu yana QScan ve QTRouter isimli platformlar aracılığıyla internete bağlı cihazları istismar ettiği belirtilmiştir. Federal Soruşturma Bürosu (FBI) tarafından yayımlanan teknik raporda, grubun NASA, Adalet Ba",
+    "title": "US Disrupts Chinese Hacking Platform Used in Military and Critical Infrastructure Attacks",
+    "full_text": "US Disrupts Chinese Hacking Platform Used in Military and Critical Infrastructure Attacks\n\nThe operation focused on a group named QTFY, which offers hacking services to the Chinese government and others.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nThe US government announced on Wednesday that it has disrupted a hacking platform and botnet used by Chinese threat actors in attacks"
+   },
+   {
+    "tr_title": "ABD Enerji Altyapısında Yabancı Ekipman Kullanımının Yasaklanması",
+    "paragraph": "Başkan Donald Trump, ABD'nin ana güç sistemini siber ve diğer güvenlik tehditlerine karşı korumak amacıyla ulusal acil durum ilan eden bir icra emri imzalamıştır. Söz konusu karar, ulusal güvenlik riski oluşturduğu belirlenen yabancı menşeli ekipman, yazılım ve sistemlerin enerji altyapısında kullanımını, ithalatını veya kurulumunu yasaklamaktadır. Beyaz Saray tarafından yapılan açıklamada, özellikle Çin yapımı ekipmanların sistemlere uzaktan erişim sağlayan dijital arka kapılar barındırabileceğ",
+    "title": "Cyber threats nudge Trump to sign executive order on foreign equipment in U.S. energy infrastructure",
+    "full_text": "Cyber threats nudge Trump to sign executive order on foreign equipment in U.S. energy infrastructure\n\nCiting cyber and other security threats, President Donald Trump signed an executive order Wednesday that declares a national emergency to secure the U.S. bulk-power system and aims to prohibit certain foreign-produced equipment, software and systems from being used in the  country.\n\nThe order says"
+   },
+   {
+    "tr_title": "Boston Scientific Şirketinin Siber Saldırı Nedeniyle Operasyonlarını Durdurması",
+    "paragraph": "Tıbbi cihaz devi Boston Scientific, 25 Ağustos 2026 tarihinde tespit edilen ve küresel operasyonlarını aksatan bir siber saldırıya uğradığını SEC bildiriminde açıklamıştır. Kalp pilleri ve stentler gibi kritik ürünler üreten firmanın belirli işletim sistemlerine ve iş uygulamalarına erişimi engellenen saldırı, müşteri siparişlerinin işlenmesi ve sevkiyat süreçlerinde ciddi kesintilere yol açmıştır. 2026'nın ikinci çeyreğinde 5,4 milyar dolar net satış bildiren şirketin mali durumu üzerindeki etk",
+    "title": "Medical device firm Boston Scientific says cyberattack has disrupted shipment processes",
+    "full_text": "Medical device firm Boston Scientific says cyberattack has disrupted shipment processes\n\nA cyberattack has disrupted the business operations of medical device giant Boston Scientific.\n\nThe company released a statement and filed documents with the Securities and Exchange Commission (SEC) saying a cybersecurity incident was discovered on Tuesday.\n\n“The incident has impacted access to certain operati"
+   },
+   {
+    "tr_title": "CISA'nın Altı Güvenlik Açığını KEV Kataloğuna Eklemesi",
+    "paragraph": "ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), aktif olarak istismar edildiği tespit edilen altı güvenlik açığını Bilinen İstismar Edilen Güvenlik Açıkları (KEV) kataloğuna eklemiştir. Listeye eklenen zafiyetler arasında Citrix NetScaler, Microsoft SQL Server, Linux Çekirdeği ve Red Hat yazılımlarındaki kritik hataların bulunduğu belirtilmiştir. Özellikle Citrix ürünlerini etkileyen CVE-2026-8452 kodlu açığın, saldırganlar tarafından web kabuğu yerleştirmek amacıyla kullanıldığı ifade ed",
+    "title": "CISA Adds Six Exploited Flaws to KEV, Including NetScaler, Linux, and SQL Server Bugs",
+    "full_text": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added six flaws to its Known Exploited Vulnerabilities (KEV) catalog, including a high-severity security vulnerability impacting Citrix NetScaler ADC and NetScaler Gateway, citing evidence of active exploitation.\n\nThe vulnerabilities are listed below -\n\nCVE-2019-1068 - A remote code execution vulnerability in  Microsoft "
+   },
+   {
+    "tr_title": "Lübnan Bağlantılı Dark Caracal Grubunun GoCaracal Yazılımını Geliştirmesi",
+    "paragraph": "Lübnan menşeli siber tehdit aktörü Dark Caracal'ın, casusluk faaliyetlerinde kullanmak üzere GoCaracal adlı yeni bir modüler zararlı yazılım çerçevesi geliştirdiği tespit edilmiştir. Arctic Wolf araştırmacıları tarafından Venezuela'daki bir saldırı incelenirken ortaya çıkarılan bu yazılımın, veri hırsızlığı ve sistemlerde kalıcılık sağlama yeteneklerine sahip olduğu belirtilmiştir. GoCaracal'ın, ana komuta kontrol sunucularına erişilemediği durumlarda yedek iletişim kanalı olarak Ethereum blok z",
+    "title": "Dark Caracal Adds New Malware to Cyber Espionage Arsenal",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nCyberattacks & Data Breaches\n\nBreaking cybersecurity news, news analysis, commentary, and other content from around the world, with an initial focus on the Middle East & Africa, the Asia Pacific, Europe, and Latin America.\n\nDark Caracal"
+   },
+   {
+    "tr_title": "OpenAI'nın Rusya Bağlantılı Etki Operasyonu Hesaplarını Engellemesi",
+    "paragraph": "OpenAI, yapay zeka araçlarını kullanarak dezenformasyon yayan ve Rusya menşeli olduğu tespit edilen bir grup ChatGPT hesabını kapattığını duyurmuştur. Söz konusu hesapların, İsrail merkezli gibi görünen ancak Rusya yanlısı içerikler üreten International Burke Institute (IBI) adlı bir kuruluşu tanıtmak amacıyla kullanıldığı belirtilmiştir. Operasyon kapsamında, Rusya'yı olumlu gösteren ve Batılı ülkeleri eleştiren yapay zeka üretimi sosyal medya paylaşımlarının Telegram, X ve Facebook gibi platfo",
+    "title": "OpenAI Bans Russian ChatGPT Accounts Used to Run Influence Operation",
+    "full_text": "OpenAI on Tuesday said it banned a cluster of Russian ChatGPT accounts that used VPNs to bypass access restrictions and run an influence operation, which relied on its artificial intelligence (AI) tool to generate social media posts and comments that were shared on Substack, Telegram, X, Facebook and LinkedIn.\n\nThe accounts \"were being used to promote the International Burke Institute (IBI), a sel"
+   },
+   {
+    "tr_title": "İranlı APT Grubu Nimbus Manticore'un Araç Setini Genişletmesi",
+    "paragraph": "İran menşeli APT grubu Nimbus Manticore'un, Orta Doğu ve Avrupa'daki hedeflere yönelik yeni zararlı yazılımlar ve altyapılar geliştirdiği tespit edilmiştir. Group-IB tarafından yayımlanan analizde, siber tehdit aktörünün TWOSTROKE benzeri bir arka kapı ve SSH tünelleme aracı kullanmaya başladığı belirtilmiştir. Nimbus Manticore'un savunma, havacılık ve bilişim sektörlerini hedef aldığı, sahte iş ilanları üzerinden sosyal mühendislik saldırıları düzenlediği ifade edilmiştir. Yeni tespit edilen C+",
+    "title": "Nimbus Manticore Expands Toolset With TWOSTROKE-Like Backdoor and SSH Tunneler",
+    "full_text": "Cybersecurity researchers have discovered additional infrastructure and previously undocumented malware associated with Nimbus Manticore, an Iranian state-sponsored hacking group affiliated with the Islamic Revolutionary Guard Corps (IRGC).\n\nGroup-IB, in a new analysis published today, described the cyber espionage actor as among the most active Iranian APT groups in 2026. Nimbus Manticore (aka Ga"
+   },
+   {
+    "tr_title": "Kuzey Koreli Sahte Bilgi Teknolojileri Çalışanlarının Tespit Edilmesi",
+    "paragraph": "Kuzey Kore menşeli siber tehdit aktörlerinin, sahte kimliklerle bilgi teknolojileri çalışanı olarak şirketlere sızma faaliyetlerini artırdığı bildirilmiştir. Huntress tarafından yapılan incelemelerde, 2026 yılı boyunca sağlık ve finans sektörlerindeki kuruluşların farkında olmadan Kuzey Koreli ajanları işe aldığı tespit edilmiştir. Bu kişilerin, gerçek konumlarını gizlemek için VPN ve ticari proxy hizmetlerini kullandığı, ayrıca uzaktan donanım kontrolü sağlayan PiKVM gibi cihazlardan yararlandı",
+    "title": "Red Flags That Expose Fake North Korean IT Workers",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nCybersecurity Operations\n\nRed Flags That Expose Fake North Korean IT Workers\n\nNorth Korean operatives posing as IT workers are improving their tactics, but researchers say there are still ways to spot them before they do damage.\n\nFraudu"
+   },
+   {
+    "tr_title": "NSA'nın Elit Hacker Birimini Yeniden Yapılandırma Çalışmaları",
+    "paragraph": "Amerika Birleşik Devletleri Ulusal Güvenlik Ajansı (NSA), en gizli siber operasyon birimi olan Tailored Access Operations (TAO) bünyesinden ayrılan eski çalışanlarını geri kazanmak için özel bir etkinlik düzenlemiştir. Fort Meade yerleşkesinde gerçekleştirilen buluşmanın, birimin yeniden markalaşma sürecini kutlamak ve personel açığını kapatmak amacıyla yapıldığı belirtilmiştir. TAO'nun, yabancı bilgisayar sistemlerine sızarak istihbarat toplama ve Stuxnet gibi dijital silahların geliştirilmesin",
+    "title": "Exclusive: NSA to host a hacker reunion in bid to rebuild secretive unit",
+    "full_text": "Exclusive: NSA to host a hacker reunion in bid to rebuild secretive unit\n\nA top U.S. spy agency will resemble a college for a while on Friday, as it hosts a first-of-its-kind reunion for alumni of its most secretive hacking unit.\n\nThe National Security Agency will welcome back to campus potentially hundreds of former members of the elite group known as Tailored Access Operations (TAO) to celebrate"
+   },
+   {
+    "tr_title": "Meta'nın Çocuk Güvenliği Davasında 17 Milyar Dolar Ödemeyi Kabul Etmesi",
+    "paragraph": "Sosyal medya devi Meta, Facebook ve Instagram uygulamalarının çocuklar üzerindeki zararlı etkilerini gizlediği suçlamasıyla açılan davada 17 milyar dolar tazminat ödemeyi ve kapsamlı reformlar yapmayı kabul etmiştir. ABD eyaletlerinin çoğunluğu tarafından açılan davada, şirketin bağımlılık yapıcı özellikleri bildiği halde sakladığı ve çocukların verilerini yasa dışı şekilde topladığı iddia edilmiştir. Uzlaşma kapsamında Meta'nın, 18 yaş altı kullanıcılar için günlük kullanım süresini iki saatle ",
+    "title": "Meta pledges to overhaul kids’ safety protections, pay $17 billion to settle social media case",
+    "full_text": "Meta pledges to overhaul kids’ safety protections, pay $17 billion to settle social media case\n\nIn a bellwether case for U.S. privacy and kids’ online safety rules, social media giant Meta agreed Monday to pay $17 billion and implement a series of landmark reforms, settling accusations that it knew and hid findings that its Facebook and Instagram apps are addictive.\n\nThe settlement, agreed to just"
+   },
+   {
+    "tr_title": "Microsoft SharePoint Sunucularına Yönelik Uzaktan Kod Çalıştırma Saldırıları",
+    "paragraph": "Siber saldırganların, Microsoft SharePoint sunucularında tam yetkiyle kod çalıştırmalarına olanak tanıyan iki kritik zafiyeti zincirleme olarak istismar etmeye başladığı bildirilmiştir. CVE-2026-55040 kodlu kimlik doğrulama atlatma açığı ile CVE-2026-63520 kodlu uzaktan kod çalıştırma (RCE) açığının birlikte kullanıldığı saldırıların, bal küpü (honeypot) sistemlerinde tespit edildiği belirtilmiştir. Güvenlik araştırmacıları, bu açıklar için internette yayımlanan kavram kanıtlama (PoC) kodlarının",
+    "title": "Hackers target Microsoft SharePoint RCE chain with PoC exploit",
+    "full_text": "Attackers are now targeting a chain of two Microsoft SharePoint vulnerabilities that can allow them to execute arbitrary code on unpatched servers, according to threat intelligence company Defused.\n\nThe first (tracked as CVE-2026-55040) is an authentication bypass flaw in the JWT token validation pipeline that attackers without privileges can exploit to perform operations as a SharePoint site user"
+   },
+   {
+    "tr_title": "Google Chrome'da 300'den Fazla Güvenlik Açığının Kapatılması",
+    "paragraph": "Google, Chrome 152 sürümünü yayınlayarak 300'den fazla güvenlik açığını giderdiğini duyurmuştur. Tespit edilen zayıflıkların büyük çoğunluğunun yapay zeka kullanımıyla şirket içinde belirlendiği ifade edilmiştir. Güncelleme kapsamında on adet kritik seviyeli hata düzeltilirken, CVE-2026-79282 kodlu kritik bir açık için dış araştırmacıya 25.000 dolar ödül verildiği kaydedilmiştir. Google, bu yıl içerisinde şimdiye kadar 2.000'den fazla Chrome açığını yamaladığını belirtmiştir. Şirket tarafından y",
+    "title": "Chrome 152 Patches Over 300 Vulnerabilities",
+    "full_text": "Chrome 152 Patches Over 300 Vulnerabilities\n\nMost of the flaws were discovered by Google using AI, but researchers are still discovering high-value Chrome vulnerabilities.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nGoogle on Tuesday announced the release of Chrome 152, with patches for more than 300 vulnerabilities, the majority of which were discovered internally using AI.\nTen"
+   },
+   {
+    "tr_title": "Ubiquiti'nin UniFi Ürünlerindeki Kritik Güvenlik Açıklarını Yamalaması",
+    "paragraph": "Ubiquiti, UniFi ürün ailesinde tespit edilen ve en yüksek ciddiyet seviyesine sahip üç yeni güvenlik açığı için yamalar yayınlamıştır. CVE-2026-77537, CVE-2026-77550 ve CVE-2026-77554 kodlu bu açıkların, saldırganlara yetkisiz erişim ve komut çalıştırma imkanı tanıdığı belirtilmiştir. Şirket, zayıflıkların UniFi Protect, UniFi Talk ve UniFi OS cihazlarını etkilediğini açıklamıştır. Söz konusu hataların düşük karmaşıklığa sahip saldırılarla ve kullanıcı etkileşimi gerektirmeden istismar edilebild",
+    "title": "Ubiquiti patches three max severity security vulnerabilities",
+    "full_text": "Ubiquiti has released security patches for three new maximum-severity vulnerabilities that threat actors can exploit remotely without privileges.\n\nThe first (tracked as CVE-2026-77537) lets unauthenticated attackers compromise unpatched devices by exploiting an improper input validation weakness in the UniFi Protect Application video surveillance management platform.\n\nUbiquiti also addressed a CRL"
+   },
+   {
+    "tr_title": "Avada WordPress Temasında Kritik Kod Çalıştırma Açığı",
+    "paragraph": "Popüler WordPress teması Avada ve Fusion Builder eklentisinde, saldırganların sunucuda rastgele PHP kodu çalıştırmasına olanak tanıyan kritik bir açık zinciri tespit edilmiştir. CVE-2026-18431 kodlu ve 9.8 ciddiyet puanına sahip olan bu zayıflığın, kimlik doğrulaması gerektirmeyen bir saldırıyla istismar edilebildiği belirtilmiştir. Wordfence araştırmacıları, altı farklı güvenlik hatasının birleştirilmesiyle web sitelerinin tam kontrolünün ele geçirilebildiğini ifade etmiştir. Geliştirici ekip T",
+    "title": "Critical Avada WordPress theme flaw enables zero-click RCE",
+    "full_text": "A critical vulnerability chain in the popular Avada theme for WordPress can be exploited by an unauthenticated attacker to execute arbitrary PHP code on the server.\n\nThe exploit chains six security issues into a zero-click attack. The flaws are collectively tracked as CVE-2026-18431 and received a 9.8 critical severity score.\n\nThe attack comprises exploits for authorization, input-validation, trus"
+   },
+   {
+    "tr_title": "Apache Tomcat Sunucularında Çok Sayıda Güvenlik Zayıflığı",
+    "paragraph": "Apache Tomcat yazılımında, uzaktan hizmet dışı bırakma (DoS) saldırılarına ve güvenlik politikalarının aşılmasına neden olabilecek birden fazla zayıflık tespit edilmiştir. CERT-FR tarafından yapılan açıklamada, bu hataların özellikle 10.1.59 sürümünden önceki 10.1.x versiyonlarını etkilediği belirtilmiştir. CVE-2026-32990 ve CVE-2026-73180 dahil olmak üzere toplam 12 farklı CVE kaydıyla ilişkilendirilen bu açıkların, sistem bütünlüğünü tehdit ettiği ifade edilmiştir. Geliştirici ekip, sorunların",
+    "title": "Multiples vulnérabilités dans Apache Tomcat (26 août 2026)",
+    "full_text": "Contournement de la politique de sÃ©curitÃ©\n\nDÃ©ni de service Ã  distance\n\nTomcat versions 10.1.x antÃ©rieures Ã  10.1.59\n\nDe multiples vulnÃ©rabilitÃ©s ont Ã©tÃ© dÃ©couvertes dans Apache Tomcat. Elles permettent Ã  un attaquant de provoquer un dÃ©ni de service Ã  distance et un contournement de la politique de sÃ©curitÃ©.\n\nSe rÃ©fÃ©rer au bulletin de sÃ©curitÃ© de l'Ã©diteur pour l'obtention des "
+   },
+   {
+    "tr_title": "Kaltura Video Oynatıcı Kitaplığında Yamalanmamış Kritik Açıklar",
+    "paragraph": "Kaltura'nın mwEmbed HTML5 video oynatıcı kitaplığında, saldırganların sunucudaki dosyaları okumasına ve kod çalıştırmasına izin veren iki adet yamalanmamış güvenlik açığı tespit edilmiştir. CVE-2026-19913 ve CVE-2026-19912 olarak tanımlanan bu hataların, mwEmbedLoader.php uç noktasındaki güvensiz seri durumdan çıkarma işleminden kaynaklandığı belirtilmiştir. CERT/CC, zayıflıkların kimlik doğrulaması gerektirmediğini ve Kaltura'nın paylaşımlı altyapısını kullanan tüm müşterileri etkilediğini açık",
+    "title": "Unpatched Kaltura mwEmbed Flaws Could Let Remote Attackers Read Files and Run Code",
+    "full_text": "The CERT Coordination Center (CERT/CC) has disclosed two unpatched vulnerabilities in Kaltura's HTML5 video player library that allow a remote, unauthenticated attacker to read arbitrary files from a server and execute code on it.\n\nThe flaws, tracked as CVE-2026-19913 and CVE-2026-19912, both stem from the same unsafe deserialization in the mwEmbedLoader.php endpoint of the mwEmbed player library,"
+   },
+   {
+    "tr_title": "SUSE Linux Çekirdeğinde Çok Sayıda Güvenlik Zayıflığının Giderilmesi",
+    "paragraph": "SUSE Linux Micro Extras 6.2 sürümündeki Linux çekirdeğinde, veri gizliliği ve bütünlüğünü tehdit eden çok sayıda güvenlik açığı tespit edilmiştir. CERT-FR, bu zayıflıkların saldırganlara yetki yükseltme ve güvenlik politikalarını devre dışı bırakma imkanı tanıdığını duyurmuştur. Yayınlanan güvenlik bültenlerinde, 2023 ile 2026 yılları arasında tanımlanmış yüzlerce farklı CVE kaydına atıfta bulunulmuştur. Özellikle çekirdek seviyesindeki bu hataların, sistemin tam kontrolünün ele geçirilmesine yo",
+    "title": "Multiples vulnérabilités dans le noyau Linux de SUSE (21 août 2026)",
+    "full_text": "Atteinte Ã  l'intÃ©gritÃ© des donnÃ©es\n\nAtteinte Ã  la confidentialitÃ© des donnÃ©es\n\nContournement de la politique de sÃ©curitÃ©\n\nÃlÃ©vation de privilÃ¨ges\n\nSUSE Linux Micro Extras 6.2\n\nDe multiples vulnÃ©rabilitÃ©s ont Ã©tÃ© dÃ©couvertes dans le noyau Linux de SUSE. Certaines d'entre elles permettent Ã  un attaquant de provoquer une Ã©lÃ©vation de privilÃ¨ges, une atteinte Ã  la confidentialitÃ"
+   },
+   {
+    "tr_title": "SonicWall NetExtender Yazılımında Güvenlik Politikası İhlali Riski",
+    "paragraph": "SonicWall NetExtender Linux istemcisinde, saldırganların güvenlik politikalarını aşmasına neden olabilecek birden fazla zayıflık tespit edilmiştir. CERT-FR tarafından yayınlanan duyuruda, 10.3.6 sürümünden önceki tüm Linux istemcilerinin bu risk altında olduğu belirtilmiştir. CVE-2026-66152 ve CVE-2026-66153 kodlu bu açıkların, yetkisiz kişilerin ağ erişim kontrollerini manipüle etmesine zemin hazırladığı ifade edilmiştir. SonicWall, 25 Ağustos 2026 tarihinde yayınladığı SNWLID-2026-0013 numaral",
+    "title": "Multiples vulnérabilités dans SonicWall NetExtender (26 août 2026)",
+    "full_text": "Toggle navigation[![Image 3: Logo République Française](https://www.cert.ssi.gouv.fr/static/images/logo_rf_header.svg)![Image 4: Logo ANSSI](https://www.cert.ssi.gouv.fr/static/images/logo_anssi.svg)![Image 5: Logo CertFR](https://www.cert.ssi.gouv.fr/static/images/logo_cert_fr.svg)](https://www.cert.ssi.gouv.fr/)\n\n*   [Publications](https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-1084/#)\n    * "
+   },
+   {
+    "tr_title": "Nvidia GPU'larda ECC Korumasını Aşan GPUThor Saldırısı",
+    "paragraph": "Toronto Üniversitesi araştırmacıları, Nvidia iş istasyonu GPU'larında hata düzeltme kodlarını (ECC) devre dışı bırakabilen GPUThor adlı yeni bir Rowhammer saldırısı geliştirmiştir. RTX A6000 ve A4000 serisi kartları etkileyen bu yöntemin, kök kullanıcı yetkileri elde edilmesine ve hizmet dışı bırakma saldırılarına olanak tanıdığı belirtilmiştir. Araştırmacılar, GDDR6 belleklerdeki mevcut savunma mekanizmalarının bu yeni teknikle aşılabildiğini ifade etmiştir. Nvidia, Temmuz 2025'te yayınladığı b",
+    "title": "New GPUThor Rowhammer Defeats ECC on NVIDIA RTX A6000 to Gain Host Root Access",
+    "full_text": "Academic researchers have disclosed a Rowhammer attack impacting NVIDIA workstation GPUs with GDDR6 memory that defeats error correction codes (ECC), the mitigation NVIDIA recommends against GPU Rowhammer, and enables denial-of-service (DoS) and privilege escalation to a root shell.\n\nDubbed GPUThor, the attack was developed by researchers at the University of Toronto, who hammered four DRAM banks "
+   },
+   {
+    "tr_title": "Bebek İzleme Sistemlerinde Yapay Zeka Tabanlı Veri Toplanması",
+    "paragraph": "Bebek izleme sistemleri üreten Nanit ve benzeri teknoloji şirketlerinin, yapay zeka kullanarak 24 saat kesintisiz sağlık takibi ve veri toplama faaliyetlerini genişlettiği bildirilmiştir. Şirketin, konuşma gelişimi, motor beceriler ve dil yeteneklerini takip etmek amacıyla 50 milyon dolarlık yeni bir yatırım aldığı ifade edilmiştir. Bu teknolojilerin, çocukların yatak odalarındaki varlığını erken ergenlik dönemine kadar sürdürmeyi hedeflediği belirtilmiştir. Toplanan verilerin kapsamının, gelene",
+    "title": "Spyware for Babies",
+    "full_text": "The New York Times has a long article (alt link) on surveillance systems aimed at babies. They are increasingly using AI.\n\nNanit and its rivals want to own 24/7 health tracking for the sub-four-foot set. And their already astonishing levels of baby data collection are just the beginning. Nanit recently raised $50 million from investors to expand its use of A.I. and use its camera to track speech a"
+   },
+   {
+    "tr_title": "NovaCookies Hizmetinin Microsoft 365 Oturumlarını Ele Geçirmek İçin Docusign'ı Kötüye Kullanması",
+    "paragraph": "Siber güvenlik kuruluşu Island, NovaCookies olarak adlandırılan ve aylık 320 dolar abonelik ücretiyle sunulan bir kimlik avı platformunun faaliyetlerini raporlamıştır. Söz konusu platformun, gerçek Docusign bildirimlerini taklit ederek Amerika Birleşik Devletleri, Birleşik Krallık, Kanada ve Almanya dahil olmak üzere birçok ülkedeki yüzlerce kuruluşu hedef aldığı belirtilmiştir. Saldırı kapsamında, yasal Microsoft veya Google oturum açma uç noktalarının yönlendirme amacıyla kullanıldığı ve kötü ",
+    "title": "NovaCookies Campaigns Abuse Genuine Docusign Notifications to Steal Microsoft 365 Sessions",
+    "full_text": "In a report shared with The Hacker News ahead of publication, Island characterized the $320/month service as a subscription-based phishing platform that facilitates real-time Microsoft 365 session theft. The kit has been used to target hundreds of organizations across multiple sectors in the U.S., the U.K., Canada, Germany, Israel, and the U.A.E. to date.\n\n\"Observed campaigns used genuine Docusign"
    }
   ]
  }

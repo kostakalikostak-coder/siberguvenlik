@@ -1,7 +1,3 @@
-2026-08-19 16:20 | DEDUP SIFIR - Graham Cluley: 3 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 2)
-2026-08-19 16:20 | DEDUP SIFIR - SANS ISC: 5 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 2, daha önce raporlanmış: 3)
-2026-08-19 16:20 | DEDUP SIFIR - Microsoft Security: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 0)
-2026-08-20 12:05 | DEDUP SIFIR - CERT-EU: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 0)
 2026-08-21 12:06 | DEDUP SIFIR - CERT-EU: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 0)
 2026-08-21 12:06 | DEDUP SIFIR - Citizen Lab: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 1)
 2026-08-21 12:06 | DEDUP SIFIR - CrowdStrike: 3 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 2)
@@ -72,3 +68,8 @@
 2026-08-26 12:06 | AKIŞ BAYAT - IranWire: 40 madde geldi ama hepsi pencere dışı (>96s)
 2026-08-26 12:06 | DEDUP SIFIR - CERT-EU: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 0)
 2026-08-26 12:06 | DEDUP SIFIR - CrowdStrike: 1 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 0)
+2026-08-27 12:06 | AKIŞ BAYAT - Krebs on Security: 10 madde geldi ama hepsi pencere dışı (>96s)
+2026-08-27 12:06 | RSS hatası - SANS ISC: syntax error: line 1, column 0
+2026-08-27 12:06 | AKIŞ BAYAT - Infoblox Blog: 12 madde geldi ama hepsi pencere dışı (>96s)
+2026-08-27 12:06 | RSS hatası - Securelist (Kaspersky): HTTP 404
+2026-08-27 12:06 | DEDUP SIFIR - Industrial Cyber: 9 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 8)

@@ -32117,3 +32117,162 @@ Marimo notebook yazılımında, saldırganların özel olarak hazırlanmış bir
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 27 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Qilin Fidye Yazılımı Çetesinin ATF Sistemlerine Sızması
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri Alkol, Tütün, Ateşli Silahlar ve Patlayıcılar Bürosu (ATF), siber tehdit aktörü Qilin fidye yazılımı çetesinin iddialarının ardından bir sisteminin ele geçirildiğini doğrulamıştır. Kurum tarafından yapılan açıklamada, ihlalin ana kurumsal ağdan bağımsız çalışan münferit bir sistemde gerçekleştiği ve "büyük bir olay" olarak nitelendirildiği belirtilmiştir. Adalet Bakanlığı ile koordineli bir inceleme başlatıldığı ve etkilenen ortamla bağlantıların derhal kesildiği bildirilmiştir. Rusya bağlantılı olduğu değerlendirilen Qilin grubunun, karanlık web sızıntı portalına ATF'yi eklediği ancak çalınan veriler veya fidye talebi hakkında detay vermediği kaydedilmiştir. Olayın kurum operasyonlarını etkilemediği ifade edilirken, benzer siber saldırıların son dönemde FBI ve İç Güvenlik Bakanlığı gibi diğer federal kurumları da hedef aldığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] ABD'nin Çin Bağlantılı QTFY Hacking Platformunu Çökertmesi
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri Adalet Bakanlığı, Çin hükümeti adına askeri ve kritik altyapı sistemlerini hedef alan QTFY isimli siber tehdit aktörünün operasyonlarını durdurduğunu açıklamıştır. Nanjing Xinjiuwei Network Technology adlı şirket bünyesinde faaliyet gösteren grubun, 2018 yılından bu yana QScan ve QTRouter isimli platformlar aracılığıyla internete bağlı cihazları istismar ettiği belirtilmiştir. Federal Soruşturma Bürosu (FBI) tarafından yayımlanan teknik raporda, grubun NASA, Adalet Bakanlığı ve Federal Rezerv gibi kurumların yanı sıra telekomünikasyon ve enerji sektörlerini de hedef aldığı kaydedilmiştir. Operasyon kapsamında, kötü amaçlı altyapı etkisiz hale getirilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] ABD Enerji Altyapısında Yabancı Ekipman Kullanımının Yasaklanması
+─────────────────────────────────────────────────────────
+Başkan Donald Trump, ABD'nin ana güç sistemini siber ve diğer güvenlik tehditlerine karşı korumak amacıyla ulusal acil durum ilan eden bir icra emri imzalamıştır. Söz konusu karar, ulusal güvenlik riski oluşturduğu belirlenen yabancı menşeli ekipman, yazılım ve sistemlerin enerji altyapısında kullanımını, ithalatını veya kurulumunu yasaklamaktadır. Beyaz Saray tarafından yapılan açıklamada, özellikle Çin yapımı ekipmanların sistemlere uzaktan erişim sağlayan dijital arka kapılar barındırabileceği endişesine dikkat çekilmiştir. FBI Direktörü Christopher Wray'in daha önce Kongre'ye sunduğu raporlarda, yabancı hackerların olası bir çatışma durumunda elektrik şebekesini hedef almak üzere hazırlık yaptıkları uyarısında bulunduğu hatırlatılmıştır. Enerji Bakanlığı'nın, ilgili diğer kurumlarla koordineli olarak bu kararın uygulanmasına yönelik kuralları 120 gün içerisinde geliştirmesi ve yürürlüğe koyması kararlaştırılmıştır.
+(XXXXXXX, AÇIK -cyberscoop.com, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Boston Scientific Şirketinin Siber Saldırı Nedeniyle Operasyonlarını Durdurması
+─────────────────────────────────────────────────────────
+Tıbbi cihaz devi Boston Scientific, 25 Ağustos 2026 tarihinde tespit edilen ve küresel operasyonlarını aksatan bir siber saldırıya uğradığını SEC bildiriminde açıklamıştır. Kalp pilleri ve stentler gibi kritik ürünler üreten firmanın belirli işletim sistemlerine ve iş uygulamalarına erişimi engellenen saldırı, müşteri siparişlerinin işlenmesi ve sevkiyat süreçlerinde ciddi kesintilere yol açmıştır. 2026'nın ikinci çeyreğinde 5,4 milyar dolar net satış bildiren şirketin mali durumu üzerindeki etkisi araştırılırken, sistemlerin tam olarak eski haline dönmesinin haftalar sürebileceği belirtilmektedir. Harici uzmanların inceleme başlattığı olay henüz bir grup tarafından üstlenilmemiştir. Benzer şekilde, yakın zamanda Medtronic firmasının 3,8 milyon kişiyi etkileyen veri sızıntısı ve Stryker şirketinin İran bağlantılı gruplarca hedef alınması, tıbbi teknoloji sektöründeki artan siber tehditleri göz önüne sermektedir.
+(XXXXXXX, AÇIK -therecord.media, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Lübnan Bağlantılı Dark Caracal Grubunun GoCaracal Yazılımını Geliştirmesi
+─────────────────────────────────────────────────────────
+Lübnan menşeli siber tehdit aktörü Dark Caracal'ın, casusluk faaliyetlerinde kullanmak üzere GoCaracal adlı yeni bir modüler zararlı yazılım çerçevesi geliştirdiği tespit edilmiştir. Arctic Wolf araştırmacıları tarafından Venezuela'daki bir saldırı incelenirken ortaya çıkarılan bu yazılımın, veri hırsızlığı ve sistemlerde kalıcılık sağlama yeteneklerine sahip olduğu belirtilmiştir. GoCaracal'ın, ana komuta kontrol sunucularına erişilemediği durumlarda yedek iletişim kanalı olarak Ethereum blok zinciri tabanlı bir veritabanını kullandığı ifade edilmiştir. Grubun Latin Amerika'daki kampanyasında İspanyolca içerikli belgeler ve zararlı SVG dosyaları kullanarak finans, hükümet ve askeri personeli hedef aldığı kaydedilmiştir. Dark Caracal'ın Lübnan Genel Güvenlik Müdürlüğü ile bağlantılı olduğu ve 2012 yılından bu yana aktif casusluk operasyonları yürüttüğü bildirilmiştir. Yeni yazılımın, grubun mevcut Bandook truva atı yeteneklerini tamamlayıcı nitelikte olduğu değerlendirilmektedir.
+(XXXXXXX, AÇIK -darkreading.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] OpenAI'nın Rusya Bağlantılı Etki Operasyonu Hesaplarını Engellemesi
+─────────────────────────────────────────────────────────
+OpenAI, yapay zeka araçlarını kullanarak dezenformasyon yayan ve Rusya menşeli olduğu tespit edilen bir grup ChatGPT hesabını kapattığını duyurmuştur. Söz konusu hesapların, İsrail merkezli gibi görünen ancak Rusya yanlısı içerikler üreten International Burke Institute (IBI) adlı bir kuruluşu tanıtmak amacıyla kullanıldığı belirtilmiştir. Operasyon kapsamında, Rusya'yı olumlu gösteren ve Batılı ülkeleri eleştiren yapay zeka üretimi sosyal medya paylaşımlarının Telegram, X ve Facebook gibi platformlarda yayıldığı ifade edilmiştir. OpenAI, saldırganların Rusya kökenlerini gizlemek için VPN kullandığını ve içerikleri İngilizceye çevirdiğini kaydetmiştir. Kampanyanın ulaştığı kitlenin nispeten küçük olduğu ancak yapay zekanın sahte otorite oluşturmak ve anlatıları ölçeklendirmek için nasıl bir destek aracı olarak kullanılabileceğini gösterdiği bildirilmiştir. Bu gelişmenin, yapay zeka sistemlerinin kötü niyetli aktörler tarafından istismar edilmesine karşı bir uyarı niteliği taşıdığı vurgulanmıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] İranlı APT Grubu Nimbus Manticore'un Araç Setini Genişletmesi
+─────────────────────────────────────────────────────────
+İran menşeli APT grubu Nimbus Manticore'un, Orta Doğu ve Avrupa'daki hedeflere yönelik yeni zararlı yazılımlar ve altyapılar geliştirdiği tespit edilmiştir. Group-IB tarafından yayımlanan analizde, siber tehdit aktörünün TWOSTROKE benzeri bir arka kapı ve SSH tünelleme aracı kullanmaya başladığı belirtilmiştir. Nimbus Manticore'un savunma, havacılık ve bilişim sektörlerini hedef aldığı, sahte iş ilanları üzerinden sosyal mühendislik saldırıları düzenlediği ifade edilmiştir. Yeni tespit edilen C++ tabanlı arka kapının, sistem bilgilerini toplama ve dosya manipülasyonu yeteneklerine sahip olduğu kaydedilmiştir. Araştırmacılar, grubun NightLedger adlı bir Windows arka kapısı ile ArcBridge gibi özel tünelleme araçlarını da kullandığını bildirmiştir. Söz konusu gelişmelerin, aktörün hedef menzilini genişletme ve kalıcılık sağlama stratejisinin bir parçası olduğu vurgulanmıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] Kuzey Koreli Sahte Bilgi Teknolojileri Çalışanlarının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Kuzey Kore menşeli siber tehdit aktörlerinin, sahte kimliklerle bilgi teknolojileri çalışanı olarak şirketlere sızma faaliyetlerini artırdığı bildirilmiştir. Huntress tarafından yapılan incelemelerde, 2026 yılı boyunca sağlık ve finans sektörlerindeki kuruluşların farkında olmadan Kuzey Koreli ajanları işe aldığı tespit edilmiştir. Bu kişilerin, gerçek konumlarını gizlemek için VPN ve ticari proxy hizmetlerini kullandığı, ayrıca uzaktan donanım kontrolü sağlayan PiKVM gibi cihazlardan yararlandığı ifade edilmiştir. Ele geçirilen belgelerde, dijital olarak değiştirilmiş pasaport fotoğrafları ve hatalı elektrik faturalarının bulunduğu kaydedilmiştir. İşe alınan bu kişilerin maaşlarını Kuzey Kore rejimine aktardığı ve sistemlere zararlı yazılım yerleştirme riski taşıdığı belirtilmiştir. Şirketlere, işe alım süreçlerinde noter onaylı kimlik belgeleri istemeleri ve şüpheli donanım kullanımlarına karşı tetikte olmaları tavsiye edilmiştir. Bu durumun, devlet destekli ciddi bir içeriden tehdit oluşturduğu vurgulanmıştır.
+(XXXXXXX, AÇIK -darkreading.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] NSA'nın Elit Hacker Birimini Yeniden Yapılandırma Çalışmaları
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri Ulusal Güvenlik Ajansı (NSA), en gizli siber operasyon birimi olan Tailored Access Operations (TAO) bünyesinden ayrılan eski çalışanlarını geri kazanmak için özel bir etkinlik düzenlemiştir. Fort Meade yerleşkesinde gerçekleştirilen buluşmanın, birimin yeniden markalaşma sürecini kutlamak ve personel açığını kapatmak amacıyla yapıldığı belirtilmiştir. TAO'nun, yabancı bilgisayar sistemlerine sızarak istihbarat toplama ve Stuxnet gibi dijital silahların geliştirilmesinde rol oynadığı ifade edilmiştir. NSA'nın son yıllarda yaklaşık 2.100 çalışanını kaybettiği ve bu durumun operasyonel kapasiteyi etkilediği kaydedilmiştir. Etkinlik kapsamında eski çalışanlara yeni tesislerin gezdirildiği ve kuruma geri dönmeleri için teklifler sunulduğu bildirilmiştir. Bu sıra dışı işe alım yaklaşımının, özellikle özel sektöre geçen yetenekli siber operatörleri yeniden devlet hizmetine çekmeyi hedeflediği aktarılmıştır.
+(XXXXXXX, AÇIK -therecord.media, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Meta'nın Çocuk Güvenliği Davasında 17 Milyar Dolar Ödemeyi Kabul Etmesi
+─────────────────────────────────────────────────────────
+Sosyal medya devi Meta, Facebook ve Instagram uygulamalarının çocuklar üzerindeki zararlı etkilerini gizlediği suçlamasıyla açılan davada 17 milyar dolar tazminat ödemeyi ve kapsamlı reformlar yapmayı kabul etmiştir. ABD eyaletlerinin çoğunluğu tarafından açılan davada, şirketin bağımlılık yapıcı özellikleri bildiği halde sakladığı ve çocukların verilerini yasa dışı şekilde topladığı iddia edilmiştir. Uzlaşma kapsamında Meta'nın, 18 yaş altı kullanıcılar için günlük kullanım süresini iki saatle sınırlayacağı ve gece yarısı ile sabah 06:00 arasında erişimi engelleyeceği belirtilmiştir. Ayrıca genç kullanıcıların "beğeni" sayılarını görmesinin yasaklanacağı ve algoritmik olmayan akış seçeneklerinin sunulacağı ifade edilmiştir. Şirketin bu reformları denetlemek üzere bağımsız bir denetçi atayacağı kaydedilmiştir. Bu anlaşmanın, teknoloji endüstrisi için çocuk güvenliği konusunda yeni bir standart oluşturduğu değerlendirilmektedir.
+(XXXXXXX, AÇIK -therecord.media, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Bebek İzleme Sistemlerinde Yapay Zeka Tabanlı Veri Toplanması
+─────────────────────────────────────────────────────────
+Bebek izleme sistemleri üreten Nanit ve benzeri teknoloji şirketlerinin, yapay zeka kullanarak 24 saat kesintisiz sağlık takibi ve veri toplama faaliyetlerini genişlettiği bildirilmiştir. Şirketin, konuşma gelişimi, motor beceriler ve dil yeteneklerini takip etmek amacıyla 50 milyon dolarlık yeni bir yatırım aldığı ifade edilmiştir. Bu teknolojilerin, çocukların yatak odalarındaki varlığını erken ergenlik dönemine kadar sürdürmeyi hedeflediği belirtilmiştir. Toplanan verilerin kapsamının, geleneksel izleme yöntemlerinin ötesine geçerek kapsamlı bir gözetim ağı oluşturduğu kaydedilmiştir. Söz konusu sistemlerin, bebeklerin gelişimsel süreçlerini yapay zeka algoritmalarıyla analiz ederek dijital veri setlerine dönüştürdüğü aktarılmıştır. Bu gelişmenin, çocuk sağlığı takibi adı altında yürütülen geniş ölçekli bir veri toplama stratejisinin parçası olduğu ifade edilmiştir.
+(XXXXXXX, AÇIK -schneier.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] NovaCookies Hizmetinin Microsoft 365 Oturumlarını Ele Geçirmek İçin Docusign'ı Kötüye Kullanması
+─────────────────────────────────────────────────────────
+Siber güvenlik kuruluşu Island, NovaCookies olarak adlandırılan ve aylık 320 dolar abonelik ücretiyle sunulan bir kimlik avı platformunun faaliyetlerini raporlamıştır. Söz konusu platformun, gerçek Docusign bildirimlerini taklit ederek Amerika Birleşik Devletleri, Birleşik Krallık, Kanada ve Almanya dahil olmak üzere birçok ülkedeki yüzlerce kuruluşu hedef aldığı belirtilmiştir. Saldırı kapsamında, yasal Microsoft veya Google oturum açma uç noktalarının yönlendirme amacıyla kullanıldığı ve kötü amaçlı bağlantıların belge içerisine gizlendiği ifade edilmiştir. Raporda ayrıca AnonyMousKIT, Bluekit ve EvilTokens gibi yapay zeka destekli çeşitli hizmetlerin de kimlik bilgilerini ve oturum belirteçlerini çalmak için kullanıldığı kaydedilmiştir. DOUBLOON DREDGER olarak izlenen bir tehdit aktörünün, Notion hesaplarını kötüye kullanarak mağdurları zararlı bağlantılar içeren belgelere yönlendirdiği tespit edilmiştir. Bu tür platformların, teknik bilgi düzeyi düşük suçluların büyük ölçekli saldırılar düzenlemesine olanak sağladığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] CISA'nın Altı Güvenlik Açığını KEV Kataloğuna Eklemesi
+─────────────────────────────────────────────────────────
+ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), aktif olarak istismar edildiği tespit edilen altı güvenlik açığını Bilinen İstismar Edilen Güvenlik Açıkları (KEV) kataloğuna eklemiştir. Listeye eklenen zafiyetler arasında Citrix NetScaler, Microsoft SQL Server, Linux Çekirdeği ve Red Hat yazılımlarındaki kritik hataların bulunduğu belirtilmiştir. Özellikle Citrix ürünlerini etkileyen CVE-2026-8452 kodlu açığın, saldırganlar tarafından web kabuğu yerleştirmek amacıyla kullanıldığı ifade edilmiştir. Telemetri verileri, son 12 gün içinde Türkiye dahil 10 farklı ülkeden gelen 36 istismar girişimi kaydedildiğini göstermektedir. CISA, federal kurumlara bu açıklar için 29 Ağustos ve 9 Eylül 2026 tarihlerine kadar yama uygulama talimatı vermiştir. Kurum ayrıca, 2025 yılındaki güvenlik açıklarının büyük çoğunluğunun enjeksiyon zayıflıklarından kaynaklandığını açıklamıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] Microsoft SharePoint Sunucularına Yönelik Uzaktan Kod Çalıştırma Saldırıları
+─────────────────────────────────────────────────────────
+Siber saldırganların, Microsoft SharePoint sunucularında tam yetkiyle kod çalıştırmalarına olanak tanıyan iki kritik zafiyeti zincirleme olarak istismar etmeye başladığı bildirilmiştir. CVE-2026-55040 kodlu kimlik doğrulama atlatma açığı ile CVE-2026-63520 kodlu uzaktan kod çalıştırma (RCE) açığının birlikte kullanıldığı saldırıların, bal küpü (honeypot) sistemlerinde tespit edildiği belirtilmiştir. Güvenlik araştırmacıları, bu açıklar için internette yayımlanan kavram kanıtlama (PoC) kodlarının saldırganlar tarafından hızla silah haline getirildiğini ifade etmiştir. CISA, federal kurumlara SharePoint sunucularını acilen yamalamaları talimatını vermiştir. Dünya genelinde 8.700'den fazla SharePoint sunucusunun internete açık olduğu ve bunlardan bir kısmının halihazırda fidye yazılımı saldırılarında kullanıldığı kaydedilmiştir. Uzmanlar, sunucuların doğrudan internete açılmaması ve Microsoft'un güvenlik sıkılaştırma rehberlerinin uygulanması gerektiği konusunda uyarıda bulunmuştur.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Google Chrome'da 300'den Fazla Güvenlik Açığının Kapatılması
+─────────────────────────────────────────────────────────
+Google, Chrome 152 sürümünü yayınlayarak 300'den fazla güvenlik açığını giderdiğini duyurmuştur. Tespit edilen zayıflıkların büyük çoğunluğunun yapay zeka kullanımıyla şirket içinde belirlendiği ifade edilmiştir. Güncelleme kapsamında on adet kritik seviyeli hata düzeltilirken, CVE-2026-79282 kodlu kritik bir açık için dış araştırmacıya 25.000 dolar ödül verildiği kaydedilmiştir. Google, bu yıl içerisinde şimdiye kadar 2.000'den fazla Chrome açığını yamaladığını belirtmiştir. Şirket tarafından yapılan açıklamada, söz konusu zayıflıkların aktif olarak istismar edildiğine dair bir bilgiye yer verilmemiştir. Yapay zeka destekli analizlerin, tarayıcıdaki güvenlik açıklarının tespit edilme hızını önemli ölçüde artırdığı ve yamalama sürecini hızlandırdığı bildirilmektedir.
+(XXXXXXX, AÇIK -securityweek.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] Ubiquiti'nin UniFi Ürünlerindeki Kritik Güvenlik Açıklarını Yamalaması
+─────────────────────────────────────────────────────────
+Ubiquiti, UniFi ürün ailesinde tespit edilen ve en yüksek ciddiyet seviyesine sahip üç yeni güvenlik açığı için yamalar yayınlamıştır. CVE-2026-77537, CVE-2026-77550 ve CVE-2026-77554 kodlu bu açıkların, saldırganlara yetkisiz erişim ve komut çalıştırma imkanı tanıdığı belirtilmiştir. Şirket, zayıflıkların UniFi Protect, UniFi Talk ve UniFi OS cihazlarını etkilediğini açıklamıştır. Söz konusu hataların düşük karmaşıklığa sahip saldırılarla ve kullanıcı etkileşimi gerektirmeden istismar edilebildiği ifade edilmiştir. CISA, daha önce benzer Ubiquiti açıklarının aktif olarak kullanıldığı konusunda uyarılarda bulunmuştur. Censys verilerine göre, internete açık durumda olan 100.000'den fazla UniFi OS örneği bulunduğu kaydedilmiştir. Kullanıcılara, sistemlerini en kısa sürede güncel sürümlere yükseltmeleri tavsiye edilmektedir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] Avada WordPress Temasında Kritik Kod Çalıştırma Açığı
+─────────────────────────────────────────────────────────
+Popüler WordPress teması Avada ve Fusion Builder eklentisinde, saldırganların sunucuda rastgele PHP kodu çalıştırmasına olanak tanıyan kritik bir açık zinciri tespit edilmiştir. CVE-2026-18431 kodlu ve 9.8 ciddiyet puanına sahip olan bu zayıflığın, kimlik doğrulaması gerektirmeyen bir saldırıyla istismar edilebildiği belirtilmiştir. Wordfence araştırmacıları, altı farklı güvenlik hatasının birleştirilmesiyle web sitelerinin tam kontrolünün ele geçirilebildiğini ifade etmiştir. Geliştirici ekip ThemeFusion, sorunu gidermek için Avada 7.16.1 ve Fusion Builder 3.16.1 sürümlerini yayınlamıştır. Dünya genelinde 1 milyondan fazla satışı olan Avada temasını kullanan tüm sitelerin bu risk altında olduğu kaydedilmiştir. Site yöneticilerine, kötü amaçlı yazılım enjeksiyonu ve veri hırsızlığı riskine karşı sistemlerini derhal güncellemeleri tavsiye edilmektedir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] Apache Tomcat Sunucularında Çok Sayıda Güvenlik Zayıflığı
+─────────────────────────────────────────────────────────
+Apache Tomcat yazılımında, uzaktan hizmet dışı bırakma (DoS) saldırılarına ve güvenlik politikalarının aşılmasına neden olabilecek birden fazla zayıflık tespit edilmiştir. CERT-FR tarafından yapılan açıklamada, bu hataların özellikle 10.1.59 sürümünden önceki 10.1.x versiyonlarını etkilediği belirtilmiştir. CVE-2026-32990 ve CVE-2026-73180 dahil olmak üzere toplam 12 farklı CVE kaydıyla ilişkilendirilen bu açıkların, sistem bütünlüğünü tehdit ettiği ifade edilmiştir. Geliştirici ekip, sorunların giderilmesi için 20 Ağustos 2026 tarihinde Apache Tomcat 10.1.59 sürümünü yayınlamıştır. Kullanıcıların ve sistem yöneticilerinin, güncel güvenlik bültenlerini inceleyerek ilgili düzeltme eklerini uygulamaları gerektiği kaydedilmiştir. Söz konusu açıkların, yetkisiz kişilerin sunucu yapılandırmalarına müdahale etmesine zemin hazırlayabildiği bildirilmektedir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] Kaltura Video Oynatıcı Kitaplığında Yamalanmamış Kritik Açıklar
+─────────────────────────────────────────────────────────
+Kaltura'nın mwEmbed HTML5 video oynatıcı kitaplığında, saldırganların sunucudaki dosyaları okumasına ve kod çalıştırmasına izin veren iki adet yamalanmamış güvenlik açığı tespit edilmiştir. CVE-2026-19913 ve CVE-2026-19912 olarak tanımlanan bu hataların, mwEmbedLoader.php uç noktasındaki güvensiz seri durumdan çıkarma işleminden kaynaklandığı belirtilmiştir. CERT/CC, zayıflıkların kimlik doğrulaması gerektirmediğini ve Kaltura'nın paylaşımlı altyapısını kullanan tüm müşterileri etkilediğini açıklamıştır. Henüz resmi bir yama yayınlanmadığı için yöneticilere dış erişimi kısıtlamaları ve beyaz liste uygulamaları tavsiye edilmektedir. Araştırmacı Gerjan Wemekamp, bu açıklar sayesinde veritabanı kimlik bilgileri ve yönetici şifreleri gibi hassas verilerin ele geçirilebildiğini kanıtlamıştır. Zayıflığın 2014 yılından bu yana yayınlanan birçok sürümde mevcut olduğu kaydedilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[20] SUSE Linux Çekirdeğinde Çok Sayıda Güvenlik Zayıflığının Giderilmesi
+─────────────────────────────────────────────────────────
+SUSE Linux Micro Extras 6.2 sürümündeki Linux çekirdeğinde, veri gizliliği ve bütünlüğünü tehdit eden çok sayıda güvenlik açığı tespit edilmiştir. CERT-FR, bu zayıflıkların saldırganlara yetki yükseltme ve güvenlik politikalarını devre dışı bırakma imkanı tanıdığını duyurmuştur. Yayınlanan güvenlik bültenlerinde, 2023 ile 2026 yılları arasında tanımlanmış yüzlerce farklı CVE kaydına atıfta bulunulmuştur. Özellikle çekirdek seviyesindeki bu hataların, sistemin tam kontrolünün ele geçirilmesine yol açabileceği belirtilmiştir. SUSE, Temmuz ve Ağustos 2026 tarihlerinde yayınladığı çeşitli bültenlerle bu sorunlar için düzeltme ekleri sağladığını açıklamıştır. Kullanıcıların, veri sızıntısı ve yetkisiz erişim risklerini önlemek amacıyla ilgili çekirdek güncellemelerini ivedilikle yüklemeleri gerektiği kaydedilmiştir. Açıkların, işletim sisteminin temel bileşenlerini etkilediği ifade edilmektedir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 21.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[21] SonicWall NetExtender Yazılımında Güvenlik Politikası İhlali Riski
+─────────────────────────────────────────────────────────
+SonicWall NetExtender Linux istemcisinde, saldırganların güvenlik politikalarını aşmasına neden olabilecek birden fazla zayıflık tespit edilmiştir. CERT-FR tarafından yayınlanan duyuruda, 10.3.6 sürümünden önceki tüm Linux istemcilerinin bu risk altında olduğu belirtilmiştir. CVE-2026-66152 ve CVE-2026-66153 kodlu bu açıkların, yetkisiz kişilerin ağ erişim kontrollerini manipüle etmesine zemin hazırladığı ifade edilmiştir. SonicWall, 25 Ağustos 2026 tarihinde yayınladığı SNWLID-2026-0013 numaralı bültenle kullanıcılarını bilgilendirmiş ve gerekli güncellemelerin yapılmasını istemiştir. Söz konusu hataların, kurumsal ağlara sızma girişimlerinde kullanılabileceği kaydedilmiştir. Şirket, etkilenen sistemlerin güvenliğini sağlamak için yeni sürümün yüklenmesinin kritik öneme sahip olduğunu vurgulamıştır. Olayla ilgili herhangi bir aktif istismar vakası henüz rapor edilmemiştir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[22] Nvidia GPU'larda ECC Korumasını Aşan GPUThor Saldırısı
+─────────────────────────────────────────────────────────
+Toronto Üniversitesi araştırmacıları, Nvidia iş istasyonu GPU'larında hata düzeltme kodlarını (ECC) devre dışı bırakabilen GPUThor adlı yeni bir Rowhammer saldırısı geliştirmiştir. RTX A6000 ve A4000 serisi kartları etkileyen bu yöntemin, kök kullanıcı yetkileri elde edilmesine ve hizmet dışı bırakma saldırılarına olanak tanıdığı belirtilmiştir. Araştırmacılar, GDDR6 belleklerdeki mevcut savunma mekanizmalarının bu yeni teknikle aşılabildiğini ifade etmiştir. Nvidia, Temmuz 2025'te yayınladığı bir bildiriyle sistem seviyesinde ECC kullanımının riski azalttığını belirtmiş olsa da, GPUThor'un bu korumayı da geçebildiği kaydedilmiştir. Saldırının, paylaşımlı GPU ortamlarında veri sızıntısına ve sistem çökmesine neden olabildiği bildirilmektedir. Uzmanlar, tam bir çözüm için gelecekteki donanımlarda daha güçlü çoklu bit hata düzeltme mekanizmalarının kullanılması gerektiğini vurgulamıştır. Olayla ilgili henüz bir aktif istismar vakası bildirilmemiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
