@@ -287,3 +287,23 @@ def test_yedek_bulucu_puan_bandi_uygular():
     kaynak = inspect.getsource(main.HaberSistemi._kritik3_yedek_bul)
     assert 'MANSET_PUAN_TOLERANSI' in kaynak, 'yedek bulucuda puan bandı yok'
     assert 'sorted(aday_ids' in kaynak, 'yedek havuzu puan sırasında taranmıyor'
+
+
+def test_denetim_kapsami_etki_operasyonlarini_dislamaz():
+    """"Siber güvenlik haberi değil" kuralı DAR okunmamalı.
+
+    ÖLÇÜLDÜ (2026-08-27): denetim, OpenAI'nın Rusya bağlantılı etki operasyonu
+    hesaplarını kapatmasını (85 puan, nation_state_apt) "siber saldırı değil,
+    dezenformasyon amaçlı hesap kapatma" diyerek manşetten çıkardı. Bu bir
+    SEÇİM reddi olduğu için haberi manşete KALICI olarak kapatıyor; oysa
+    devlet bağlantılı bilgi harbi operasyonlarının ifşası siber güvenlik
+    haberidir. Prompt kapsamı hiç tanımlamadığı için model "saldırı var mı"
+    diye okumuştu.
+    """
+    from src.config import get_kritik3_selection_audit_prompt
+    p = get_kritik3_selection_audit_prompt('m', 'g')
+    for parca in ('ETKİ/DEZENFORMASYON', 'yapay zekâ', 'Yaptırım',
+                  'DEVLET EYLEMLERİ', 'Kritik altyapı'):
+        assert parca in p, f'denetim kapsamında {parca} tanımlı değil'
+    assert 'somut bir gelişme mi' in p, \
+        'ölçüt "saldırı var mı" olmaktan çıkarılmamış'

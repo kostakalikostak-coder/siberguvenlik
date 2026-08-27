@@ -2148,6 +2148,17 @@ Görevin TEK: manşete AÇIKÇA YANLIŞ seçilmiş haber var mı?
 
 Bir manşeti YALNIZCA şu durumlarda işaretle:
 1. SİBER GÜVENLİK HABERİ DEĞİL — konu siber bir olay/tehdit/zafiyet/politika değil.
+   ⚠️ KAPSAM DAR DEĞİLDİR. Şunlar SİBER GÜVENLİK HABERİDİR, işaretleme:
+   • Devlet bağlantılı ETKİ/DEZENFORMASYON operasyonları ve platformların
+     (OpenAI, Meta, Google) bu hesapları kapatması — bunlar devlet destekli
+     bilgi harbi operasyonlarının ifşasıdır.
+   • Tehdit aktörlerinin yapay zekâyı kötüye kullanması, yapay zekâ
+     sağlayıcılarının aktör hesaplarını engellemesi.
+   • Yaptırım, iddianame, tutuklama, kolluk operasyonu, ihracat kısıtı gibi
+     siber tehdit aktörlerine yönelik DEVLET EYLEMLERİ.
+   • Kritik altyapı, tedarik zinciri ve ekipman güvenliğine dair düzenlemeler.
+   Ölçüt "bir saldırı anlatılıyor mu" DEĞİL, "siber tehdit ekosistemine dair
+   somut bir gelişme mi" olmalıdır.
 2. OLAY YOK — ürün duyurusu, pazarlama, webinar, röportaj, genel tavsiye ya da
    somut bir olay bildirmeyen analiz/tahmin yazısı.
 3. RUTİN/ÖNEMSİZ — tekil bir CVE yaması, küçük ölçekli sıradan bir olay ya da
