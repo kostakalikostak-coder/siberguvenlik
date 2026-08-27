@@ -239,3 +239,16 @@ def test_hakem_kapisi_ust_sinirdir_esik_degil():
                for i in range(12)]]
     assert len(OI.llm_adaylari(aday, gecmis)) == OI.ADAY_UST_SINIR, \
         'aday sayısı üst sınıra göre kırpılmıyor'
+
+
+def test_kurum_bulten_etiketi_olay_kimligi_degildir():
+    """Bülteni YAYIMLAYAN kurumun adı, olayın kimliği değildir.
+
+    ÖLÇÜLDÜ (2026-08-27): 'cert' ortak adı üzerinden SonicWall NetExtender
+    haberi, CERT-FR'nin Microsoft bülteniyle aynı olay sayıldı; ikisinin ortak
+    yanı yalnızca bülteni yayımlayan kurumdu. Sonuç zararsız görünüyordu
+    (GELISME → gövdede kalır) ama haber gereksiz yere manşete kapanıyordu.
+    """
+    from src import olay_iliski as OI
+    for ad in ('cert', 'bülten', 'bulletin', 'advisory', 'duyuru'):
+        assert ad in OI._MANSIZ_AD, f'{ad} olay kimliği sayılıyor'

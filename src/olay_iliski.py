@@ -320,6 +320,11 @@ _MANSIZ_AD = {
     'cvss', 'altyapı', 'güvenliğ', 'güvenlik', 'zafiyet', 'saldırı',
     'tuesday', 'salı', 'advertis', 'reklam', 'commerce', 'update',
     'güncelle', 'patch', 'yama', 'critical', 'kritik',
+    # Kurum/bülten etiketleri — olay kimliği değil, yayıncı adıdır.
+    # ÖLÇÜLDÜ (2026-08-27): 'cert' ortak adı üzerinden SonicWall NetExtender
+    # haberi, CERT-FR'nin Microsoft bülteniyle aynı olay sayıldı; ikisinin
+    # ortak yanı yalnızca bülteni yayımlayan kurumdu.
+    'cert', 'bülten', 'bulletin', 'advisory', 'duyuru',
 }
 
 
