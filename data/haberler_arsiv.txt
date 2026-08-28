@@ -32276,3 +32276,113 @@ Toronto Üniversitesi araştırmacıları, Nvidia iş istasyonu GPU'larında hat
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 28 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Rus Tehdit Aktörlerinin AB Yetkililerini Mesajlaşma Uygulamalarıyla Hedeflemesi
+─────────────────────────────────────────────────────────
+Avrupa Birliği kurumları ve üye devlet hükümetlerinin, Rusya bağlantılı siber tehdit aktörlerinin WhatsApp ve Signal gibi mesajlaşma uygulamaları üzerinden yürüttüğü kimlik avı saldırılarına maruz kaldığı açıklanmıştır. 2026 yılı içerisinde yüksek rütbeli askeri, diplomatik ve siyasi figürlere yönelik en az sekiz önemli spear-phishing vakasının gerçekleştiği belirtilmiştir. Saldırganların, resmi destek ekiplerini taklit ederek veya sosyal mühendislik yöntemleriyle kullanıcıların PIN kodlarını ve hesap erişimlerini ele geçirmeye çalıştıkları ifade edilmiştir. Almanya'da Bundestag Başkanı Julia Klöeckner'in bu yöntemle hedef alındığı ve bazı hesapların ele geçirildiği kaydedilmiştir. AB Ortak Siber Birimi, üst düzey yetkililerin hesaplarının ele geçirilmesini 2026 yılı için en büyük tehditlerden biri olarak tanımlamıştır. Bu gelişmeler üzerine birçok AB ülkesinin, ticari uygulamalar yerine Matrix protokolü tabanlı yerli ve güvenli mesajlaşma çözümlerine geçiş yaptığı bildirilmiştir.
+(XXXXXXX, AÇIK -darkreading.com, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Rusya Bağlantılı APT28'in Avrupa'daki Diplomatik Kurumları Hedeflemesi
+─────────────────────────────────────────────────────────
+Rusya devlet destekli APT28 (BlueDelta) grubunun, Eylül 2025 ile Nisan 2026 tarihleri arasında Romanya, İspanya ve Türkiye'deki diplomatik kurumları hedef alan yeni siber saldırıları tespit edilmiştir. Recorded Future Insikt Group raporuna göre, saldırılarda HEADLACE yazılımının ardılı olan HOOKEDGE adlı yeni bir Windows toplu iş dosyası arka kapısı kullanılmaktadır. Diplomatik temalı ve makro içeren Microsoft Word belgeleriyle yayılan bu zararlı yazılım, kurbanın bilgisayarında her 30 dakikada bir çalışan zamanlanmış görevler oluşturmaktadır. Saldırganlar, komuta kontrol ve veri sızdırma işlemleri için webhook[.]site servislerini kötüye kullanarak trafiği meşru ağ hareketleriyle gizlemektedir. Operasyonel esneklik için headless Microsoft Edge üzerinden komut yürüten grup, yüksek öncelikli hedeflerde beaconing aralığını beş dakikaya indirerek etkileşimli sızma faaliyetlerini artırmaktadır.
+(XXXXXXX, AÇIK -thehackernews.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] CISA'nın İnternete Açık Endüstriyel Sistemlerin Güvenliği İçin Kılavuz Yayınlaması
+─────────────────────────────────────────────────────────
+ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), endüstriyel kontrol sistemleri ve kritik altyapıların internete maruz kalma risklerini azaltmak amacıyla yeni bir güvenlik kılavuzu yayınlamıştır. Temmuz 2026 döneminde su ve atık su sektöründeki 100'den fazla sistemin doğrudan hücresel modemler üzerinden internete bağlanması nedeniyle hedef alındığı belirtilmiştir. Tehdit aktörlerinin bu açıklıklardan yararlanarak programlanabilir mantık denetleyicilerine (PLC) eriştiği, cihaz şifrelerini değiştirdiği ve operasyonel aksamalara neden olduğu ifade edilmiştir. CISA, kuruluşlara gereksiz uzaktan erişimleri kaldırmaları, varsayılan şifreleri değiştirmeleri ve çok faktörlü kimlik doğrulama kullanmaları yönünde tavsiyelerde bulunmuştur. Ayrıca, dış kaynaklı hizmet sağlayıcıların ve üçüncü taraf tedarikçilerin ağ erişimlerinin sıkı bir şekilde denetlenmesi ve internete açık varlıkların Shodan veya Censys gibi araçlarla düzenli olarak taranması gerektiği kaydedilmiştir.
+(XXXXXXX, AÇIK -industrialcyber.co, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] ABD Donanmasının Personeline Sosyal Medya Temizliği Talimatı Vermesi
+─────────────────────────────────────────────────────────
+ABD Donanması, 340.000 aktif görevli, 58.000 yedek ve 210.000 sivil çalışandan oluşan tüm iş gücüne, "Epic Vigilance" adlı bültenle sosyal medya profillerini temizleme talimatı vermiştir. Hasımların istihbarat toplamak ve operasyonları aksatmak amacıyla yürüttüğü çok alanlı kampanyalara karşı yayınlanan bu rehberde, personelden donanma bağlantılı içerikleri silmeleri ve Strava gibi uygulamaların geçmişte sızdırdığı jogging rotaları benzeri yaşam tarzı verilerini gizlemeleri istenmiştir. Ayrıca, askeri tesislerin fotoğraflanması, gece uçan dronlar, gemi hareketlerine dair sorular ve üniformalı personelin takip edilmesi gibi şüpheli durumların rapor edilmesi vurgulanmıştır.
+(XXXXXXX, AÇIK -bitdefender.com, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Alman Şirketlerine Yönelik Çin ve Rusya Kaynaklı Siber Saldırıların Artması
+─────────────────────────────────────────────────────────
+Alman dijital endüstri birliği Bitkom tarafından yapılan bir araştırma, Alman şirketlerine yönelik siber saldırıların arkasında giderek daha fazla yabancı istihbarat servisinin bulunduğunu ortaya koymuştur. Veri hırsızlığı, casusluk veya sabotaja maruz kalan şirketlerin yaklaşık %40'ı, bu olaylardan en az birini yabancı bir devlet servisiyle ilişkilendirmiştir. Çin, saldırıların en sık görülen kaynağı olarak belirtilirken, Rusya ikinci sırada yer almış ve İran'ın da önemli bir tehdit kaynağı haline geldiği kaydedilmiştir. Siber saldırıların Alman ekonomisine yıllık maliyetinin 186 milyar ile 240 milyar dolar arasında olduğu tahmin edilmektedir. Almanya iç istihbarat servisi başkanı Sinan Selen, özellikle savunma ve güvenlik sektörünün hedef alındığını açıklamıştır. Raporda, organize suç grupları ile devlet servisleri arasındaki sınırların giderek belirsizleştiği ve suç yapılarını devletlerin kendi siyasi amaçları doğrultusunda kullandığı belirtilmiştir.
+(XXXXXXX, AÇIK -therecord.media, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] İngiltere'de Havalimanı İşletmecisi MAG'ın Veri İhlaline Uğraması
+─────────────────────────────────────────────────────────
+Manchester Airports Group (MAG), Manchester, London Stansted ve East Midlands havalimanlarında hizmet alan yaklaşık 8,7 milyon müşterinin verilerinin yetkisiz bir üçüncü tarafça ele geçirildiğini duyurmuştur. 25 Ağustos 2026 tarihinde tespit edilen ihlalin, bir önceki hafta sonu gerçekleştiği ve otopark, VIP salonu ile hızlı geçiş rezervasyonlarını kapsadığı belirtilmiştir. Saldırganların e-posta adresleri, telefon numaraları, araç plaka kayıtları ve posta kodlarına eriştiği, ancak sistemde banka veya ödeme bilgilerinin tutulmadığı kaydedilmiştir. MAG yetkilileri, uçuş operasyonlarının olaydan etkilenmediğini ve rezervasyon sistemlerinin önlem amaçlı geçici olarak askıya alındığını açıklamıştır. Uzmanlar, çalınan verilerin özellikle seyahat sezonunda hedefli kimlik avı saldırıları için kullanılabileceği konusunda uyarılarda bulunmuştur. Olayla ilgili harici siber güvenlik uzmanlarının görevlendirildiği ve ilgili resmi makamlara gerekli bildirimlerin yapıldığı ifade edilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] CRPx0 Siber Suç Grubunun Kurban Sayısını Beş Katına Çıkarması
+─────────────────────────────────────────────────────────
+CRPx0 adlı siber suç grubunun, Haziran ayından bu yana faaliyetlerini genişleterek kurban sayısını 48 kuruluşa çıkardığı tespit edilmiştir. Grubun, teknik bilgisi olmayan kişilerin bile kullanabileceği "beyaz etiketli" bir fidye yazılımı hizmeti (RaaS) sunduğu belirtilmiştir. Saldırıların, sahte Windows güncellemeleri veya Google reCAPTCHA görünümlü ClickFix yöntemleriyle gerçekleştirildiği ve kurbanların PowerShell komutlarını çalıştırmaya zorlandığı ifade edilmiştir. Zararlı yazılımın hem Windows hem de macOS sistemlerini hedef alabildiği ve verileri şifrelemeden önce çaldığı kaydedilmiştir. CRPx0'ın, Bağımsız Devletler Topluluğu (BDT) üyesi ülkeleri hedef almayı yasakladığı ve ödemeler için Monero para birimini tercih ettiği bildirilmiştir. Güvenlik uzmanları, kuruluşların standart kullanıcılar için "Çalıştır" diyaloğunu kısıtlamalarını ve şüpheli PowerShell etkinliklerini izlemelerini tavsiye etmektedir.
+(XXXXXXX, AÇIK -theregister.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] Yapay Zeka E-posta Özetleyicilerinin Gizli Talimatlarla Manipüle Edilmesi
+─────────────────────────────────────────────────────────
+Forcepoint X-Labs araştırmacıları, görünmez HTML kodları kullanarak yapay zeka tabanlı e-posta özetleme sistemlerinin çıktılarını sessizce manipüle etmenin mümkün olduğunu kanıtlamıştır. Yapılan testlerde, Outlook üzerinde kullanıcı tarafından görülmeyen ancak büyük dil modelleri (LLM) tarafından okunabilen stil kodlarının, özetleyiciye gizli komutlar enjekte etmek için kullanıldığı belirtilmiştir. Araştırmacı Ben Gibney, korumasız bir LLM hattı üzerinden yürütülen deneylerde, özetleyicinin orijinal metindeki tarihleri değiştirdiğini ve belirli isimleri e-posta özetinden çıkardığını ifade etmiştir. On denemenin tamamında başarılı olan bu yöntemin, herhangi bir model veya platforma özgü olmadığı, güvenilmeyen verilerin doğrudan yapay zekaya aktarılmasından kaynaklanan genel bir risk olduğu kaydedilmiştir. Uzmanların, bu tür saldırılara karşı e-posta başlıklarının gövdeden ayrılması ve içeriklerin doğrulanması gibi güvenlik önlemleri önerdiği bildirilmiştir.
+(XXXXXXX, AÇIK -csoonline.com, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Android 17 İşletim Sistemine Ağ Güvenliği Korumalarının Eklenmesi
+─────────────────────────────────────────────────────────
+Google, Android 17 sürümüyle birlikte kullanıcı gizliliğini artırmak ve ağ izlemeyi zorlaştırmak amacıyla Encrypted Client Hello (ECH) desteğini platform düzeyinde kullanıma sunmuştur. Bu yeni standardın, TLS el sıkışma sürecindeki ana bilgisayar adlarını şifreleyerek internet servis sağlayıcılarının ve ağ gözetleyicilerinin ziyaret edilen alan adlarını görmesini engellediği belirtilmiştir. Google tarafından yapılan açıklamada, ECH korumasının Android 17'yi hedefleyen uygulamalar için varsayılan olarak etkinleştirileceği ifade edilmiştir. Ayrıca, yerel ağ taramaları için yeni izin gereksinimlerinin getirildiği ve sahte sertifikaların tespitini kolaylaştıran Sertifika Şeffaflığı özelliğinin standart hale getirildiği kaydedilmiştir. Jigsaw birimi tarafından yapılan testlerde, bu korumaların dünya genelindeki internet sağlayıcılarında herhangi bir erişim sorununa yol açmadığının tespit edildiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Yapay Zeka İnceleme Sitesinin Test Verilerinin İnternete Sızması
+─────────────────────────────────────────────────────────
+Yapay zeka arkadaşlık servislerini inceleyen Intimeros platformunun, bir yeniden tasarım süreci sırasında test sitesindeki verileri üç hafta boyunca korumasız bıraktığı tespit edilmiştir. Bir çalışanın istemciye göstermek amacıyla şifre korumasını devre dışı bırakması ve bu durumun unutulması sonucunda, sitenin Google tarafından indekslendiği belirtilmiştir. Test sitesinin canlı üretim veritabanına bağlı olması nedeniyle, henüz yayınlanmamış incelemelerin, fiyatlandırma bilgilerinin ve özel ürün notlarının kamuya açık hale geldiği ifade edilmiştir. Olayın fark edilmesinin ardından şifre korumasının geri yüklendiği, arama motoru indekslemesinin engellendiği ve sistem erişim anahtarlarının değiştirildiği kaydedilmiştir. Herhangi bir kullanıcı verisinin sızmadığı vurgulanırken, kuruluşun gelecekteki sızıntıları önlemek adına haftalık otomatik taramalar başlattığı bildirilmiştir. Uzmanlar, test ortamlarının VPN arkasında tutulması ve arama motoru botlarından arındırılması gerektiğini hatırlatmaktadır.
+(XXXXXXX, AÇIK -theregister.com, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Polimorfik Kimlik Avı Sayfasındaki Kodlama Hatalarının Tespiti
+─────────────────────────────────────────────────────────
+SANS İnternet Fırtına Merkezi araştırmacıları, kimlik avı mesajlarını analiz ederken polimorfik özellikler gösteren ancak kodlama hataları nedeniyle zaman zaman işlevsiz kalan bir zararlı sayfa tespit etmiştir. Yapılan incelemelerde, sayfanın tarayıcıda açıldığında işlemci yükünü %100'e çıkardığı ve yaklaşık 30 saniye boyunca yanıt vermediği kaydedilmiştir. Bu durumun, JavaScript kodundaki karmaşıklaştırma rutininde kullanılan döngü sayaçlarının küresel değişken olarak tanımlanmasından kaynaklandığı ve sonsuz döngüye yol açtığı belirlenmiştir. Araştırmacı tarafından yapılan 50 farklı denemede, sunucunun her istekte farklı SHA-256 özetine sahip varyantlar ürettiği ve bu örneklerin yaklaşık %4'ünün hatalı kod nedeniyle çalışmadığı ifade edilmiştir. Polimorfik yapının statik analiz araçlarını atlatmayı hedeflediği ancak hatalı değişken kullanımı sebebiyle saldırganın amacına ulaşmasını engellediği bildirilmiştir.
+(XXXXXXX, AÇIK -isc.sans.edu, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] PaperCut Yazılımlarında Sıfır Gün Açığının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+PaperCut, NG ve MF baskı yönetim yazılımlarının tüm sürümlerini etkileyen bir sıfır gün açığının siber saldırganlar tarafından aktif olarak kullanıldığını duyurmuştur. Şirket, doğrulanmış müşteri olaylarının ardından v25 ve v26 sürümleri için acil güvenlik yamaları yayınladığını açıklamıştır. Saldırıların detayları ve faili hakkında henüz somut bilgi paylaşılmazken, sistem günlüklerinde şüpheli veri tabanı hatalarının ve uygulama sunucusu dosyalarında olağan dışı etkinliklerin görüldüğü belirtilmiştir. PaperCut, internete açık sunucusu bulunan kullanıcıların, yama uygulayana kadar erişimi yalnızca güvenilir IP adresleriyle sınırlandırması gerektiğini vurgulamıştır. Geçmişte benzer PaperCut açıklarının fidye yazılımı grupları tarafından kullanıldığı hatırlatılarak, herhangi bir şüpheli etkinlik görülmese dahi koruyucu önlemlerin derhal alınması gerektiği ifade edilmiştir. Olayla ilgili teknik incelemelerin sürdüğü bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Next.js Web Çerçevesinde Kritik Uzaktan Kod Yürütme Açıklarının Kapatılması
+─────────────────────────────────────────────────────────
+Vercel, Next.js web çerçevesinde unvanlı uzaktan kod yürütülmesine (RCE) olanak tanıyan iki kritik güvenlik açığı için yamalar yayınlamıştır. İlk açığın, özel olarak hazırlanmış AVIF görüntü dosyaları aracılığıyla libheif kütüphanesindeki bir bellek taşmasını tetiklediği belirtilmiştir. İkinci açığın ise Windows dosya sistemi kullanan sunucuları etkileyen bir dizin geçişi (path traversal) hatası olduğu ifade edilmiştir. CVE-2026-75604 koduyla takip edilen Windows açığının 9,0 ciddiyet puanına sahip olduğu ve Linux veya macOS sistemlerini etkilemediği kaydedilmiştir. Vercel, etkilenen kullanıcıların derhal Next.js 15.5.24 veya 16.3.3 sürümlerine yükseltme yapmalarını istemiştir. AVIF açığının yalnızca yapılandırma dosyasında bu formatın açıkça etkinleştirildiği durumlarda risk teşkil ettiği bildirilmiştir. Şu ana kadar bu açıkların aktif olarak istismar edildiğine dair bir rapor ulaşmadığı belirtilmektedir.
+(XXXXXXX, AÇIK -thehackernews.com, 27.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] Cisco IOS XE Yazılımında Güvenlik Açığının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Fransa Ulusal Siber Güvenlik Ajansı (ANSSI), Cisco IOS XE işletim sisteminde birden fazla güvenlik açığı tespit edildiğini duyurmuştur. Bu açıkların, saldırganların güvenlik politikalarını atlatmasına ve tanımlanmamış güvenlik sorunlarına yol açmasına neden olabileceği belirtilmiştir. Etkilenen sürümler arasında IOS XE 17.12.x, 17.15.x, 17.18, 17.9.x ve 26.1.x serilerinin belirli versiyonları yer almaktadır. CVE-2026-20267 ile CVE-2026-20273 arasındaki kodlarla tanımlanan bu açıklar için üretici tarafından düzeltme ekleri yayınlandığı bildirilmiştir. ANSSI, sistem yöneticilerinin ilgili güvenlik bültenlerini inceleyerek gerekli güncellemeleri ivedilikle uygulamaları gerektiğini vurgulamıştır. Söz konusu açıkların ağ cihazlarının bütünlüğünü ve erişim kontrol mekanizmalarını doğrudan tehdit ettiği ifade edilmektedir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 25.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Metabase Yazılımında Tespit Edilen Çoklu Güvenlik Zafiyetlerinin Giderilmesi
+─────────────────────────────────────────────────────────
+Fransa Ulusal Siber Güvenlik Ajansı (ANSSI), veri analitiği platformu Metabase üzerinde birden fazla güvenlik zafiyetinin tespit edildiğini duyurmuştur. Yayımlanan resmi bildiride, bu açıkların saldırganlara veri gizliliğini ihlal etme ve SQL enjeksiyonu saldırıları gerçekleştirme imkanı tanıdığı belirtilmiştir. CVE-2026-72898, CVE-2026-72899 ve CVE-2026-72900 kodlarıyla tanımlanan zafiyetlerin, yazılımın x.58.28, x.63.10 ve önceki sürümlerini etkilediği ifade edilmiştir. Geliştirici firmanın Ağustos 2026 başında yayımladığı güvenlik bültenleriyle bu sorunlara yönelik düzeltmeleri sunduğu kaydedilmiştir. Kullanıcıların ve sistem yöneticilerinin, veri güvenliğini sağlamak amacıyla etkilenen sürümleri ivedilikle güncellemeleri gerektiği vurgulanmıştır. Kurum, teknik detaylar ve yamalar için doğrudan üreticinin yayımladığı dokümantasyonun referans alınması gerektiğini bildirmiştir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 24.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
