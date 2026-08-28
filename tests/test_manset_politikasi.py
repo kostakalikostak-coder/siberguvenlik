@@ -307,3 +307,38 @@ def test_denetim_kapsami_etki_operasyonlarini_dislamaz():
         assert parca in p, f'denetim kapsamında {parca} tanımlı değil'
     assert 'somut bir gelişme mi' in p, \
         'ölçüt "saldırı var mı" olmaktan çıkarılmamış'
+
+
+def test_zafiyet_kisiti_yalnizca_yonetmene_ozeldir():
+    """"Zafiyet haberi manşete taşınmaz" kuralı EDİTORYAL bir kısıttır.
+
+    Amacı, havuz doluyken editoryal tercihle bir zafiyet haberini gerçek bir
+    olayın önüne geçirmeyi engellemek. Mekanik yedek doldurmada aynı kuralı
+    uygulamak başka şeydir: orada bir manşet zaten boşalmıştır ve soru "en iyi
+    kim doldurur"dur.
+
+    ÖLÇÜLDÜ (2026-08-28): son kapı bir manşeti boşalttı; 89 puanlı, aktif
+    istismar edilen PaperCut sıfır-gün haberi bu kural yüzünden yedek
+    havuzundan çıkarıldı ve manşete 75 puanlık bir CISA KILAVUZU girdi.
+    """
+    import main
+    s = main.HaberSistemi.__new__(main.HaberSistemi)
+    s._olay_defteri = None
+    s._manset_yasak = set()
+    kayit = {1: {'kat': 'zafiyet_aktif_apt', 'toplam': 89},
+             2: {'kat': 'politika_hukuk', 'toplam': 75}}
+    vf = lambda aid: {'tr_title': f'H{aid}', 'title': '',
+                      'paragraph': '', 'full_text': ''}
+    assert 1 in s._manset_disi_ids([1, 2], kayit, vf, yonetmen=True), \
+        'yönetmen için zafiyet kısıtı kalkmış'
+    assert 1 not in s._manset_disi_ids([1, 2], kayit, vf, yonetmen=False), \
+        'mekanik doldurmada zafiyet kısıtı hâlâ uygulanıyor'
+
+
+def test_son_kapi_mekanik_kisit_kullanir():
+    """Kanca yerinde mi — son kapı `yonetmen=False` ile çağırmalı."""
+    import inspect
+    import main
+    kaynak = inspect.getsource(main.HaberSistemi._son_mukerrer_kapisi)
+    assert 'yonetmen=False' in kaynak, \
+        'son kapı yönetmene özel kısıtı mekanik doldurmaya uyguluyor'

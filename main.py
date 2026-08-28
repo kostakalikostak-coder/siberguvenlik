@@ -6199,7 +6199,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
     # düzeltmek.
     YAYIN_YONETMENI_MAX_TAKAS = 2
 
-    def _manset_disi_ids(self, aday_ids, records, view_fn):
+    def _manset_disi_ids(self, aday_ids, records, view_fn, yonetmen=True):
         """Manşete ÇIKAMAYACAK id'ler ve nedenleri: {id: neden}.
 
         NEDEN VAR: KRİTİK 3 kapısı (bkz. _derive_top3_by_score) bazı adayları
@@ -6238,7 +6238,19 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             # nation_state_apt) manşetten indirip CISA'nın TrueConf yama
             # talimatını (91, zafiyet_aktif_apt) manşete çıkardı. Haber zayıf
             # değildi ama yeri Güvenlik Açıkları bölümüydü.
-            if kat in ZAFIYET_KATEGORILERI:
+            # BU KURAL YALNIZCA YÖNETMEN İÇİNDİR (yonetmen=True).
+            #
+            # Amaç, havuz doluyken editoryal TERCİHLE bir zafiyet haberini
+            # gerçek bir olayın önüne geçirmeyi engellemek. Mekanik yedek
+            # doldurmada aynı kuralı uygulamak başka bir şeydir: orada zaten
+            # bir manşet boşalmıştır ve soru "en iyi kim doldurur"dur.
+            #
+            # ÖLÇÜLDÜ (2026-08-28): son kapı çapraz-gün mükerreri yüzünden bir
+            # manşeti boşalttı; 89 puanlı, aktif istismar edilen PaperCut
+            # sıfır-gün haberi bu kural yüzünden yedek havuzundan çıkarıldı ve
+            # manşete 75 puanlık bir CISA KILAVUZU girdi. Denetim bunu
+            # "manşetten yüksek puanlı gövde haberi" diye bildirdi.
+            if yonetmen and kat in ZAFIYET_KATEGORILERI:
                 disi[aid] = ('zafiyet haberi — yeri Güvenlik Açıkları bölümü, '
                              'manşete yönetmen eliyle taşınmaz')
                 continue
@@ -6800,7 +6812,9 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         yedek_havuz = [aid for aid in list(top10_ids) + list(remaining_ids)
                        if aid not in dusen and aid not in yeni_top3]
         yedek_havuz.sort(key=lambda aid: -_puan(aid))
-        manset_disi = self._manset_disi_ids(yedek_havuz, records, view_fn)
+        # Mekanik doldurma: yönetmene özel zafiyet kısıtı UYGULANMAZ.
+        manset_disi = self._manset_disi_ids(yedek_havuz, records, view_fn,
+                                            yonetmen=False)
         # TEK YEDEK SEÇİCİ. Burası kendi satır-içi seçicisini taşıyordu ve o
         # seçici PUAN BANDINI da MANŞET YASAĞINI da uygulamıyordu — oysa bu
         # katman manşete dokunan SON katmandır, yani son sözü o söylüyor.
