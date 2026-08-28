@@ -32386,3 +32386,85 @@ Fransa Ulusal Siber Güvenlik Ajansı (ANSSI), veri analitiği platformu Metabas
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 29 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Filipinler'deki Nükleer Araştırma Kurumundan Veri Sızdırılması
+─────────────────────────────────────────────────────────
+Çin bağlantılı bir siber tehdit aktörünün, ownCloud yazılımındaki kritik bir güvenlik açığını istismar ederek Filipinler Nükleer Araştırma Kurumu ve bir gemi inşa şirketinden veri sızdırdığı tespit edilmiştir. CISA, aktif olarak istismar edilen CVE-2023-49105 kodlu bu açığı bilinen istismar edilen zafiyetler kataloğuna eklemiştir. Saldırganın, nükleer materyal kayıtları, stratejik planlar, yakıt envanterleri ve çalışanların kişisel bilgilerini içeren yaklaşık 372 MB boyutunda 176 dosyayı ele geçirdiği bildirilmiştir. Ayrıca, gemi inşa şirketinin WordPress sitesindeki bir eklenti açığının da istismar edildiği ve bu durumun Filipinler Donanması'na hizmet veren kuruluşun güvenliğini tehlikeye attığı belirtilmiştir. Hunt.io tarafından yapılan analizde, saldırganın kullandığı Python betiklerinde basitleştirilmiş Çince karakterlere rastlandığı ifade edilmiştir. ABD'li yetkililer, federal kurumlara söz konusu güvenlik açıklarını 30 Ağustos 2026 tarihine kadar yamalamaları talimatını vermiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Tarayıcı Eklentilerinde Kripto Varlık Hırsızlığı Yapan Zararlı Kodların Bulunması
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacıları, Google Chrome ve Microsoft Edge tarayıcılarında cüzdan bilgilerini çalan ve kripto varlıkları boşaltan 19 adet kötü amaçlı eklenti tespit etmiştir. Socket güvenlik araştırmacısı Karlo Zanki, 'Superior' olarak adlandırılan bu kampanyanın Şubat 2024'ten beri aktif olduğunu ve özellikle 80.000 kullanıcıya ulaşan 'Enable Right Click & Copy' eklentisiyle geniş kitleleri etkilediğini belirtmiştir. Saldırganlar, meşru eklentileri satın alarak veya temiz sürümler yayınlayıp sonradan zararlı güncellemeler göndererek kullanıcıları hedef almaktadır. Tespit edilen eklentiler, Content Security Policy başlıklarını kaldırarak hedef sitelere JavaScript enjekte etmektedir.
+(XXXXXXX, AÇIK -thehackernews.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] İngiltere NCSC'nin Operasyonel Teknoloji Sistemlerine Yönelik Tehdit Uyarısı
+─────────────────────────────────────────────────────────
+İngiltere Ulusal Siber Güvenlik Merkezi (NCSC), dünya genelinde operasyonel teknoloji (OT) sistemlerini hedef alan siber saldırıların arttığını ve bu durumun gerçek dünyada fiziksel aksamalara yol açtığını bildirmiştir. Yayınlanan resmi uyarıda, internete açık bırakılan veya yanlış yapılandırılan uç cihazların siber tehdit aktörleri için birincil hedef haline geldiği belirtilmiştir. NCSC, kritik altyapı kuruluşlarına internete bağlı varlıklarını doğrulamaları ve varsayılan kimlik bilgilerini değiştirmeleri yönünde çağrıda bulunmuştur. Özellikle PLC ve HMI gibi endüstriyel kontrol cihazlarının doğrudan kamuya açık internete maruz bırakılmaması gerektiği vurgulanmıştır. Kurum, bu önlemlerin ulusal güvenlik için elzem olduğunu hatırlatmıştır.
+(XXXXXXX, AÇIK -industrialcyber.co, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Teknoloji Devlerinin OpenAI Liderliğinde Siber Savunma Taahhüdü Vermesi
+─────────────────────────────────────────────────────────
+Aralarında Microsoft, Google, Cisco ve IBM'in de bulunduğu yaklaşık 130 teknoloji ve siber güvenlik kuruluşu, yapay zeka destekli saldırılara karşı küresel bir savunma seferberliği çağrısı yapan açık mektubu imzalamıştır. OpenAI liderliğinde başlatılan girişimde, yapay zekanın saldırı kapasitesini artırdığı ancak savunmacılara da yeni imkanlar sunduğu belirtilmiştir. İmzacı kurumlar, kritik altyapıların korunması için teknik borçların giderilmesini, yapay zeka tabanlı savunma araçlarının yaygınlaştırılmasını ve küresel koordinasyonun sağlanmasını taahhüt etmiştir. OpenAI, kamu sektörü ve kar amacı gütmeyen kuruluşlara Daybreak Cyber modellerine sübvansiyonlu erişim sağlayacağını ve savunma testleri için iş birliği programları sunacağını açıklamıştır. Girişim kapsamında hükümetlere, temel hizmetleri finanse etmeleri ve saldırganlara karşı caydırıcı maliyetler yüklemeleri yönünde çağrıda bulunulduğu kaydedilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] ServiceNow Platformunda Kritik Güvenlik Açıklarının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+ServiceNow, yapay zeka platformunu etkileyen ve üçü en yüksek ciddiyet seviyesi olan 10.0 puanla derecelendirilen toplam dört güvenlik açığı için yamalar yayımlamıştır. CVE-2026-18885, CVE-2026-18886 ve CVE-2026-74820 kodlu zafiyetlerin, kimliği doğrulanmamış saldırganların uzaktan kod yürütmesine, yetki yükseltmesine ve veri tabanı üzerinde SQL komutları çalıştırmasına olanak tanıdığı belirtilmiştir. Şirket, barındırılan örnekler için güncellemeleri uyguladığını, ancak kendi sunucularını yöneten müşterilerin düzeltmeleri manuel olarak yapması gerektiğini açıklamıştır. Temmuz ayında benzer bir açığın aktif olarak istismar edildiğine dair raporlar gelmesine rağmen, ServiceNow bu yeni açıkların henüz kötüye kullanıldığına dair bir kanıt bulunmadığını ifade etmiştir. Güvenlik araştırmacıları, Xanadu, Yokohama ve Zurich gibi farklı sürüm ailelerinin bu açıklardan etkilendiğini ve acil yama uygulanması gerektiğini bildirmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] OpenSSL Yazılımında Çok Sayıda Güvenlik Zafiyetinin Giderilmesi
+─────────────────────────────────────────────────────────
+Fransa Ulusal Siber Güvenlik Ajansı (ANSSI), OpenSSL kütüphanesinin çeşitli sürümlerinde tespit edilen birden fazla güvenlik zafiyeti hakkında bir uyarı yayımlamıştır. Bu açıkların, uzak bir saldırganın hizmet dışı bırakma saldırısı gerçekleştirmesine ve güvenlik politikalarını atlatmasına imkan tanıdığı belirtilmiştir. Etkilenen sürümler arasında OpenSSL 1.0.2, 1.1.1, 3.0, 3.4, 3.5, 3.6 ve 4.0 serilerinin bulunduğu kaydedilmiştir. CVE-2026-14457 ve CVE-2026-75803 dahil olmak üzere toplam dokuz farklı CVE kaydının bu kapsamda değerlendirildiği ifade edilmiştir. OpenSSL geliştiricilerinin 25 Ağustos 2026 tarihinde ilgili düzeltmeleri içeren güncellemeleri yayımladığı bilgisi verilmiştir. ANSSI, sistem yöneticilerine ve geliştiricilere, kullanılan OpenSSL sürümlerini üretici tarafından belirtilen güncel sürümlere yükseltmeleri ve ilgili güvenlik bültenlerini incelemeleri yönünde tavsiyede bulunmuştur.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 26.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] PaperCut NG ve MF Yazılımlarında İki Güvenlik Açığının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Siber tehdit aktörlerinin PaperCut NG ve MF yazılımlarındaki iki farklı güvenlik açığını birleştirerek hedef sistemlerde kimlik doğrulaması olmaksızın kod yürüttüğü tespit edilmiştir. Huntress araştırmacıları tarafından yapılan incelemelerde, CVE-2026-81578 kodlu erişim kontrolü açığı ile kimlik doğrulama mekanizmalarının aşıldığı, ardından CVE-2026-82078 kodlu dinamik sınıf yükleme açığı kullanılarak sunucu yapılandırmasının değiştirildiği belirtilmiştir. Saldırganların bu yöntemle sistemlerde keşif faaliyetleri yürüttüğü ve işletim sistemi bilgilerini toplamak için Base64 ile kodlanmış komutlar çalıştırdığı kaydedilmiştir. PaperCut firması, söz konusu risklere karşı ek güvenlik sertleştirmeleri içeren ikinci bir acil durum yaması yayımlamıştır. Uzmanlar, internete açık PaperCut sunucularının erişiminin kısıtlanmasını ve yamanın ivedilikle uygulanmasını tavsiye etmektedir.
+(XXXXXXX, AÇIK -thehackernews.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] Oyuncak Üreticisi Hasbro'nun Çalışan Verilerini Kapsayan Veri İhlalini Bildirmesi
+─────────────────────────────────────────────────────────
+Dünyanın en büyük oyuncak ve eğlence şirketlerinden Hasbro, çalışanlarının kişisel ve finansal bilgilerine yetkisiz erişim sağlandığını açıklamıştır. Massachusetts Başsavcılığına sunulan bildirim raporuna göre, ihlalden eyalet genelinde 436 çalışanın etkilendiği ve bu kişilerin Sosyal Güvenlik numaraları, sürücü belgesi bilgileri ile kredi kartı verilerinin sızdırıldığı tespit edilmiştir. Şirket, ihlalin ardından tehlikeye giren çalışan hesaplarını devre dışı bıraktığını ve yetkisiz erişimi sonlandırdığını ifade etmiştir. Hasbro, Mart 2028 tarihinde gerçekleşen ve yaklaşık 25 milyon dolar gelir kaybına yol açan siber saldırı ile bu yeni veri ihlali arasında doğrudan bir bağlantı kurmamıştır. Şirket sözcüsü, müşterilerin bu olaydan etkilenip etkilenmediği veya saldırganların bir fidye talebinde bulunup bulunmadığı konusunda henüz bir açıklama yapmamıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] cPanel ve WHM Sistemlerinde Root Yetkisi Sağlayan Kritik Açığın Kapatılması
+─────────────────────────────────────────────────────────
+cPanel, alan adı park etme ve eklenti etki alanı işlevlerini etkileyen ve saldırganlara root düzeyinde tam kontrol imkanı tanıyan kritik bir güvenlik açığını gidermek için yamalar yayımlamıştır. CVE-2026-65643 olarak tanımlanan bu güvenlik açığının, kimlik doğrulaması yapmış bir hesap sahibinin sunucuda rastgele dosyalar oluşturmasına ve root yetkisiyle kod yürütmesine olanak tanıdığı ifade edilmiştir. Güncellemenin 11.110.0.141 ve 11.138.1.7 üzerindeki sürümleri kapsadığı, otomatik güncelleme yapılandırmasına sahip sunucuların yamayı aldığı bildirilmiştir. CISA'nın henüz aktif istismar kataloğuna eklemediği bu açık için cPanel, herhangi bir geçici çözüm sunmamış ve doğrudan yama uygulanması gerektiğini vurgulamıştır. Yöneticilerin sistem güvenliğini sağlamak adına WHM arayüzü veya komut satırı üzerinden en güncel sürüme yükseltme yapmaları istenmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Unitree G1 EDU İnsansı Robotlarında Uzaktan Kod Çalıştırma Zafiyetlerinin Bulunması
+─────────────────────────────────────────────────────────
+Güvenlik araştırmacısı Olivier Laflamme, Unitree G1 EDU insansı robotlarında kök dizin seviyesinde uzaktan kod çalıştırılmasına (RCE) olanak tanıyan iki bağımsız zafiyet zinciri tespit etmiştir. CVE-2026-76639 ve CVE-2026-76640 kodlarıyla izlenen bu açıkların, robotun hareket bilgisayarına Bluetooth Düşük Enerji (BLE) veya ağ komşuluğu üzerinden erişim sağladığı belirtilmiştir. Araştırmacı, Unitree bulut hizmetindeki bir yetkilendirme açığı sayesinde hedeflenen robota ait anahtar materyallerinin ele geçirilebildiğini ve bu durumun Wi-Fi yapılandırma kodunda bellek taşmasına yol açtığını ifade etmiştir. Unitree firmasının Temmuz 2026 tarihinde bulut tabanlı mülkiyet kontrolünü düzelttiği ancak robot yazılımı için henüz doğrulanmış bir güncelleme yayımlamadığı bildirilmiştir. Söz konusu zafiyetlerin diğer Unitree modellerini etkileyip etkilemediği henüz doğrulanmamıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] GiveWP WordPress Eklentisinde Sunucu Komutu Çalıştırma Zafiyetinin Giderilmesi
+─────────────────────────────────────────────────────────
+WordPress tabanlı bağış toplama eklentisi GiveWP'de, kimliği doğrulanmamış saldırganların sunucuda rastgele komut çalıştırmasına izin veren kritik bir güvenlik açığı tespit edilmiştir. CVE-2026-82222 koduyla tanımlanan zafiyetin, eklentinin 4.16.7.1 ve önceki sürümlerini etkilediği ve 100.000'den fazla kurulumu risk altında bıraktığı belirtilmiştir. Patchstack araştırmacıları, zafiyetin PHP veri serileştirme hataları ve güvenli olmayan nesne işleme süreçlerinin birleştirilmesiyle istismar edilebildiğini açıklamıştır. Geliştirici ekip, 27 Ağustos 2026 tarihinde yayımlanan 4.16.7.2 sürümü ile bağış işlemleri sırasında serileştirilmiş verileri engelleyerek ve zararlı yükleri veritabanından temizleyerek sorunu gidermiştir. Web yöneticilerine, sunucu güvenliğini sağlamak amacıyla eklentiyi acilen güncellemeleri gerektiği yönünde çağrıda bulunulmuştur.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

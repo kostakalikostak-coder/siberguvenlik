@@ -476,10 +476,6 @@
                 <p class="header-subtitle">Rapor, saat 12:15 civarı güncellenmektedir.</p>
             </div>
             <div class="header-actions">
-            <button class="manual-add-btn" onclick="openManualAddModal()" title="Rapora haber ekle / sil">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Haber Ekle / Sil
-            </button>
             <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Gece / Gündüz tema geçişi">
                 <svg id="theme-icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                 <span class="sep">/</span>
@@ -706,38 +702,37 @@ document.addEventListener('DOMContentLoaded', initDragFile);
     <div class="archive-section">
         <h3>📚 Arşiv - Son 30 Gün</h3>
         <div class="archive-links">
-            <a href="./raporlar/2026-08-28.html" class="archive-link">28.08.2026</a>
-            <a href="./raporlar/2026-08-27.html" class="archive-link">27.08.2026</a>
-            <a href="./raporlar/2026-08-26.html" class="archive-link">26.08.2026</a>
-            <a href="./raporlar/2026-08-25.html" class="archive-link">25.08.2026</a>
-            <a href="./raporlar/2026-08-24.html" class="archive-link">24.08.2026</a>
-            <a href="./raporlar/2026-08-23.html" class="archive-link">23.08.2026</a>
-            <a href="./raporlar/2026-08-22.html" class="archive-link">22.08.2026</a>
-            <a href="./raporlar/2026-08-21.html" class="archive-link">21.08.2026</a>
-            <a href="./raporlar/2026-08-20.html" class="archive-link">20.08.2026</a>
-            <a href="./raporlar/2026-08-19.html" class="archive-link">19.08.2026</a>
-            <a href="./raporlar/2026-08-18.html" class="archive-link">18.08.2026</a>
-            <a href="./raporlar/2026-08-17.html" class="archive-link">17.08.2026</a>
-            <a href="./raporlar/2026-08-16.html" class="archive-link">16.08.2026</a>
-            <a href="./raporlar/2026-08-15.html" class="archive-link">15.08.2026</a>
-            <a href="./raporlar/2026-08-14.html" class="archive-link">14.08.2026</a>
-            <a href="./raporlar/2026-08-13.html" class="archive-link">13.08.2026</a>
-            <a href="./raporlar/2026-08-12.html" class="archive-link">12.08.2026</a>
-            <a href="./raporlar/2026-08-11.html" class="archive-link">11.08.2026</a>
-            <a href="./raporlar/2026-08-10.html" class="archive-link">10.08.2026</a>
-            <a href="./raporlar/2026-08-09.html" class="archive-link">09.08.2026</a>
-            <a href="./raporlar/2026-08-08.html" class="archive-link">08.08.2026</a>
-            <a href="./raporlar/2026-08-07.html" class="archive-link">07.08.2026</a>
-            <a href="./raporlar/2026-08-06.html" class="archive-link">06.08.2026</a>
-            <a href="./raporlar/2026-08-05.html" class="archive-link">05.08.2026</a>
-            <a href="./raporlar/2026-08-04.html" class="archive-link">04.08.2026</a>
-            <a href="./raporlar/2026-08-03.html" class="archive-link">03.08.2026</a>
-            <a href="./raporlar/2026-08-02.html" class="archive-link">02.08.2026</a>
-            <a href="./raporlar/2026-08-01.html" class="archive-link">01.08.2026</a>
-            <a href="./raporlar/2026-07-31.html" class="archive-link">31.07.2026</a>
+            <a href="./2026-08-28.html" class="archive-link">28.08.2026</a>
+            <a href="./2026-08-27.html" class="archive-link">27.08.2026</a>
+            <a href="./2026-08-26.html" class="archive-link">26.08.2026</a>
+            <a href="./2026-08-25.html" class="archive-link">25.08.2026</a>
+            <a href="./2026-08-24.html" class="archive-link">24.08.2026</a>
+            <a href="./2026-08-23.html" class="archive-link">23.08.2026</a>
+            <a href="./2026-08-22.html" class="archive-link">22.08.2026</a>
+            <a href="./2026-08-21.html" class="archive-link">21.08.2026</a>
+            <a href="./2026-08-20.html" class="archive-link">20.08.2026</a>
+            <a href="./2026-08-19.html" class="archive-link">19.08.2026</a>
+            <a href="./2026-08-18.html" class="archive-link">18.08.2026</a>
+            <a href="./2026-08-17.html" class="archive-link">17.08.2026</a>
+            <a href="./2026-08-16.html" class="archive-link">16.08.2026</a>
+            <a href="./2026-08-15.html" class="archive-link">15.08.2026</a>
+            <a href="./2026-08-14.html" class="archive-link">14.08.2026</a>
+            <a href="./2026-08-13.html" class="archive-link">13.08.2026</a>
+            <a href="./2026-08-12.html" class="archive-link">12.08.2026</a>
+            <a href="./2026-08-11.html" class="archive-link">11.08.2026</a>
+            <a href="./2026-08-10.html" class="archive-link">10.08.2026</a>
+            <a href="./2026-08-09.html" class="archive-link">09.08.2026</a>
+            <a href="./2026-08-08.html" class="archive-link">08.08.2026</a>
+            <a href="./2026-08-07.html" class="archive-link">07.08.2026</a>
+            <a href="./2026-08-06.html" class="archive-link">06.08.2026</a>
+            <a href="./2026-08-05.html" class="archive-link">05.08.2026</a>
+            <a href="./2026-08-04.html" class="archive-link">04.08.2026</a>
+            <a href="./2026-08-03.html" class="archive-link">03.08.2026</a>
+            <a href="./2026-08-02.html" class="archive-link">02.08.2026</a>
+            <a href="./2026-08-01.html" class="archive-link">01.08.2026</a>
+            <a href="./2026-07-31.html" class="archive-link">31.07.2026</a>
         </div>
     </div>
 
-    <script src="/siberguvenlik/manual-add.js?v=bc4f47a462"></script>
 </body>
 </html>

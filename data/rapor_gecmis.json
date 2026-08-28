@@ -1,136 +1,5 @@
 [
  {
-  "date": "2026-07-29",
-  "views": [
-   {
-    "tr_title": "ABD'nin Tedarik Zinciri Riskleri Nedeniyle İthal Robotları Yasaklaması",
-    "paragraph": "───────────────────────────────────────────────────────── Amerika Birleşik Devletleri hükümeti, tedarik zinciri ve güvenlik risklerini gerekçe göstererek yabancı ülkelerde üretilen gelişmiş robotların satışını yasaklamıştır. Federal İletişim Komisyonu (FCC) tarafından yayımlanan ulusal güvenlik kararı kapsamında, modern robotların ağlara sürekli bağlı olmasının veri sızıntısı ve uzaktan müdahale gibi geniş saldırı yüzeyleri oluşturduğu belirtilmiştir. Çin menşeli Unitree firmasının insansı robotlarında tespit edilen UniPwn açıklarının bu risklere örnek teşkil ettiği ifade edilmiştir. Karar uyarınca, yabancı üretim cihazlar ulusal güvenlik için kabul edilemez risk taşıyan ürünler listesine dahil edilmiştir. Güney Koreli Hyundai bünyesindeki Boston Dynamics gibi üretimini ABD içerisinde gerçekleştiren yabancı ortaklı şirketlerin bu yasaktan muaf tutulduğu bildirilmiştir. Mevcut onaylı cihazların kullanımına izin verilirken, gelecekteki tüm ithalat süreçlerinin kısıtlandığı kaydedilmiştir. (XXXXXXX, AÇIK -theregister.com, 29.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "CAF Bank'ın Güvenlik Endişeleri Nedeniyle Çevrim İçi Hizmetleri Durdurması",
-    "paragraph": "───────────────────────────────────────────────────────── Charities Aid Foundation bünyesinde faaliyet gösteren ve 14.000 hayır kurumuna hizmet veren CAF Bank, çevrim içi bankacılık portalındaki bir güvenlik açığı nedeniyle dijital hizmetlerini askıya almıştır. Banka tarafından yapılan açıklamada, bazı müşteri hesaplarında şüpheli etkinliklerin tespit edildiği ve üçüncü taraf bir yazılımın portala bağlanma biçiminde daha önce fark edilmeyen bir zafiyetin belirlendiği ifade edilmiştir. 24 Temmuz 2026 tarihinden bu yana kapalı olan sistemlerin, teknoloji ortaklarıyla yürütülen onarım çalışmaları tamamlanana kadar hizmet vermeyeceği bildirilmiştir. Kurumun icra kurulu başkanı Alison Taylor, ana bankacılık sistemlerinin ve müşteri fonlarının güvende olduğunu, ancak maaş ödemeleri gibi acil işlemlerin telefon bankacılığı üzerinden yürütüldüğünü açıklamıştır. Hizmet kesintisinin, özellikle zaman hassasiyeti olan ödemeleri gerçekleştiremeyen kuruluşları olumsuz etkilediği kaydedilmiştir. (XXXXXXX, AÇIK -theregister.com, 28.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Kuzey Kore Bağlantılı Tehdit Aktörünün npm Paketlerine Zararlı Yazılım Yerleştirmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Kuzey Kore menşeli siber tehdit aktörlerinin, @joyfill kapsamındaki iki npm paketini DEV#POPPER zararlı yazılım ailesiyle bağlantılı bir uzaktan erişim truva atı (RAT) yaymak amacıyla ele geçirdiği tespit edilmiştir. Söz konusu paketlerin, Node.js CommonJS giriş noktasını yüklediğinde çalışan ve Tron, Aptos ile BNB Smart Chain işlemlerini kullanan çok katmanlı bir blok zinciri tabanlı komuta kontrol altyapısı barındırdığı belirtilmiştir. Yapılan analizlerde, bu yöntemin PolinRider ve ViteVenom operasyonlarıyla benzerlik taşıdığı ve operasyonel dayanıklılık sağladığı ifade edilmiştir. Zararlı yazılımın; pano verilerini okuma, dosya sızdırma ve kimlik bilgisi toplama yeteneklerine sahip olduğu kaydedilmiştir. Etkilenen sürümleri kullanan geliştiricilerin, kimlik bilgilerini sıfırlamaları ve paketleri güvenli sürümlerle değiştirmeleri tavsiye edilmiştir. (XXXXXXX, AÇIK -thehackernews.com, 29.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "FBI'ın Anthropic Mythos Yapay Zeka Modelini Güvenlik Tehdidi Olarak Değerlendirmesi",
-    "paragraph": "───────────────────────────────────────────────────────── FBI yetkilileri, Anthropic tarafından geliştirilen Mythos adlı yapay zeka modelinin gelişmiş yeteneklerinin kolluk kuvvetleri için yeni zorluklar oluşturduğunu açıklamıştır. FBI Direktör Yardımcısı Todd Hemmen, modelin işletim sistemleri, web altyapısı ve şifreleme gibi temel alanlarda kullanılan yaygın açık kaynak kodlardaki zafiyetleri tespit edebildiğine dikkat çekmiştir. ABD hükümetinin, ulusal güvenlik gerekçesiyle Mythos 5 modeline Haziran 2026'da ihracat kısıtlamaları getirdiği ancak üreticiyle yapılan güvenlik incelemelerinin ardından bu yasakların kaldırıldığı belirtilmiştir. Kurumun, yapay zekayı dahili olarak yüz tanıma ve suç ihbarlarını tasnif etme gibi yüksek etkili alanlarda kullandığı ifade edilmiştir. FBI'ın, bu teknolojinin gelecekte düşman aktörler tarafından büyük ölçekli saldırılarda kullanılabileceği yönündeki endişeleri sürerken, risk yönetimi gereksinimlerini henüz tamamlamadığı bilgisi verilmiştir. (XXXXXXX, AÇIK -fedscoop.com, 28.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Bank of Baroda'nın Veri Hırsızlığı İddiaları Sonrası Siber Olayı Doğrulaması",
-    "paragraph": "───────────────────────────────────────────────────────── Hindistan'ın en büyük devlet bankalarından biri olan Bank of Baroda, bir çalışanının e-posta hesabının ele geçirilmesi sonucunda belirli verilere yetkisiz erişim sağlandığını doğrulamıştır. Siber suçluların karanlık web forumlarında bankaya ait müşteri bilgileri, kurumsal kayıtlar ve iç yazışmaları sızdırdıklarını iddia etmelerinin ardından banka yönetimi olayı kabul etmiştir. Yapılan açıklamada, siber olayın hemen kontrol altına alındığı ve temel bankacılık sistemlerinin bu durumdan etkilenmediği belirtilmiştir. Araştırmacılar, \"leak-king-F\" takma adını kullanan bir aktörün çalınan verileri satışa çıkardığını ve potansiyel alıcıları Telegram kanallarına yönlendirdiğini ifade etmiştir. Banka, sızdırılan verilerin orijinalliği veya kapsamı hakkında detaylı bilgi vermezken, olayın hangi saldırgan grup tarafından gerçekleştirildiğine dair bir atıfta bulunulmadığı kaydedilmiştir. (XXXXXXX, AÇIK -therecord.media, 28.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "SplitVPN'in Kayıt Tutmama Vaadine Rağmen Milyonlarca Bağlantı Verisinin Sızdırılması",
-    "paragraph": "───────────────────────────────────────────────────────── Rusya merkezli SplitVPN (eski adıyla NotVPN) hizmetinde meydana gelen veri ihlali sonucunda, kurumun \"kayıt tutmama\" vaadinin aksine 58 milyon bağlantı günlüğünün açığa çıktığı tespit edilmiştir. Bir siber suç forumunda paylaşılan 17 GB boyutundaki veri tabanında, 23,4 milyon kullanıcı kaydı, 13,6 milyon cihaz bilgisi ve 2,6 milyon ödeme kaydının yer aldığı belirtilmiştir. Mysterium araştırma ekibi, sızdırılan verilerin Haziran 2025 ile 21 Temmuz 2026 tarihleri arasındaki güncel kayıtları içerdiğini doğrulamıştır. İhlal edilen veriler arasında e-posta adresleri, IP adresleri, cihaz tanımlayıcıları ve yaklaşık konum bilgilerinin bulunduğu ifade edilmiştir. Özellikle Rusya, İran, Hindistan ve Myanmar gibi internet sansürünün yoğun olduğu ülkelerdeki kullanıcıların, bu sızıntı nedeniyle devlet takibine maruz kalma riskiyle karşı karşıya kaldığına dikkat çekilmiştir. (XXXXXXX, AÇIK -securityaffairs.com, 29.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "ABD ve Avustralya'nın Kritik Altyapı Sistemlerinin İzole Edilmesine Yönelik Kılavuz Yayınlaması",
-    "paragraph": "───────────────────────────────────────────────────────── Amerika Birleşik Devletleri ve Avustralya hükümetleri, siber saldırı veya büyük aksamalar durumunda kritik operasyonel teknoloji (OT) sistemlerinin izole edilmesine yönelik yeni bir kılavuz paylaşmıştır. CISA, FBI ve uluslararası ortaklar tarafından hazırlanan belgede, devlet destekli tehdit aktörlerinin casusluk ve sabotaj amacıyla enerji, su ve ulaşım gibi hayati sektörleri hedef aldığı belirtilmiştir. Kılavuzda, kuruluşların kritik hizmetleri sürdürmek için gereken minimum sistemleri belirlemeleri ve bu sistemlerin kurumsal ağlarla olan fiziksel veya mantıksal bağlantılarını kesmeye hazır olmaları tavsiye edilmiştir. Özellikle Volt Typhoon ve Salt Typhoon gibi grupların kritik altyapılara sızdığı hatırlatılarak, fiziksel izolasyonun en etkili koruma yöntemi olduğu vurgulanmıştır. Kuruluşların, izolasyon planlarını düzenli olarak test etmeleri ve çevrimdışı kopyalar bulundurmaları gerektiği bildirilmiştir. (XXXXXXX, AÇIK -bleepingcomputer.com, 28.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "ABD'nin Siber Suçlara Karışan Yabancı Uyruklulara Vize Kısıtlaması Getirmesi",
-    "paragraph": "───────────────────────────────────────────────────────── ABD Dışişleri Bakanı Marco Rubio, siber suç faaliyetlerine karışan yabancı uyruklu şahıslara ve potansiyel olarak bu kişilerin birinci derece aile üyelerine vize kısıtlaması uygulanacağını açıklamıştır. Yeni politikanın özellikle Çin merkezli ulusötesi suç örgütleri tarafından yönetilen yatırım dolandırıcılıklarını ve Batı Afrika ile Güneydoğu Asya kaynaklı şantaj şemalarını hedef aldığı belirtilmiştir. Rubio, 2024 yılında dolandırıcıların ABD vatandaşlarını 10 milyar dolardan fazla zarara uğrattığını ve çocukları hedef alan cinsel içerikli şantaj suçlarının arttığını ifade etmiştir. Vize kısıtlamalarının, Göçmenlik ve Milliyet Yasası'nın dış politika sonuçlarına dayanan ilgili maddesi uyarınca uygulanacağı kaydedilmiştir. Bu adımın, suç şebekelerini çökertmek ve ABD vatandaşlarını hedef alan aktörlere bedel ödetmek amacıyla atılan kapsamlı bir stratejinin parçası olduğu bildirilmiştir. (XXXXXXX, AÇIK -theregister.com, 24.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "CISA'nın Risk Odaklı Zafiyet Yönetimi İçin Yeni Direktif Yayımlaması",
-    "paragraph": "───────────────────────────────────────────────────────── ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), federal kurumların zafiyet yönetimi süreçlerini kökten değiştiren BOD 26-04 numaralı yeni bir operasyonel direktif yayımlamıştır. Yeni düzenlemenin, tüm kritik zafiyetlerin aynı sürede yamalanması yerine, risk düzeyine göre 3 günden başlayan kademeli süreler belirlediği ifade edilmiştir. Yapay zekanın saldırı döngülerini hızlandırdığı ve e-suç gruplarının ilk erişimden yanal harekete geçme süresinin ortalama 29 dakikaya düştüğü belirtilmiştir. Direktifin, kurumların sadece CVSS skorlarına değil, zafiyetin internetten erişilebilirliği ve aktif istismar durumuna odaklanmasını hedeflediği kaydedilmiştir. Güvenlik ekiplerinin, kimlik hırsızlığı ve bulut yapılandırma hatalarıyla birleşen karmaşık saldırı yollarına karşı Sürekli Tehdit Maruziyeti Yönetimi (CTEM) programlarını benimsemeleri gerektiği vurgulanmıştır. (XXXXXXX, AÇIK -csoonline.com, 29.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Birleşik Krallık'ta Kuantum Sonrası Kriptografiye Geçiş İçin Stratejik Çalıştay Düzenlenmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Birleşik Krallık Ulusal Siber Güvenlik Merkezi (NCSC) ve Vodafone, kuantum sonrası kriptografiye (PQC) geçiş sürecini ele almak amacıyla hükümet ve endüstri liderlerinin katıldığı ilk ortak çalıştayı gerçekleştirmiştir. Etkinlikte, gelecekteki güçlü kuantum bilgisayarların mevcut açık anahtarlı şifreleme sistemlerini kırabileceği ve bu durumun küresel bir stratejik dayanıklılık sorunu olduğu belirtilmiştir. NCSC, kurumların 2028 ve 2031 yılları için belirlenen geçiş hedeflerine uyum sağlamak amacıyla şimdiden planlama yapmaları gerektiğini ifade etmiştir. Çalıştayda, PQC geçişinin sadece teknik bir zorluk değil, aynı zamanda yönetim kurulu düzeyinde bir iş riski olarak ele alınması gerektiği vurgulanmıştır. Tedarik zinciri hazırlığının kritik öneme sahip olduğu ve kuruluşların tedarikçileriyle PQC yol haritaları konusunda erkenden iletişime geçmeleri gerektiği kaydedilmiştir. (XXXXXXX, AÇIK -ncsc.gov.uk, 22.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Siber Tehdit Aktörü Tanaka'nın Veri Sızıntısı Pazarında Lider Konuma Gelmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Cyble tarafından yayımlanan 2026 yılının ilk yarısına ait siber tehdit raporunda, Tanaka takma adlı veri sızıntısı aracısının en aktif aktör olarak öne çıktığı belirtilmiştir. Tanaka'nın, Ocak ve Haziran 2026 döneminde dünya genelinde kaydedilen 367 veri ihlali olayının 25'inden sorumlu olduğu ve en yakın rakiplerinin iki katından fazla faaliyet gösterdiği ifade edilmiştir. Tehdit aktörünün belirli bir sektörü hedeflemek yerine, finans, teknoloji ve kamu kurumları gibi stratejik değeri yüksek veriye sahip kuruluşlara odaklandığı kaydedilmiştir. Kuzey Amerika ve Avrupa pazarlarında yoğunlaşan Tanaka'nın, çalınan veri tabanlarını yasa dışı forumlarda dolandırıcılık ve şantaj amaçlı satışa sunduğu bildirilmiştir. Veri sızıntılarının artık fidye yazılımı saldırılarının bir yan ürünü olmaktan çıkıp, bağımsız bir iş modeli haline geldiğine dikkat çekilmiştir. (XXXXXXX, AÇIK -thecyberexpress.com, 28.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Microsoft SharePoint Sunucularındaki Kritik Güvenlik Açıklarının Aktif Olarak İstismar Edilmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Microsoft SharePoint Server üzerinde tespit edilen ve uzaktan kod yürütülmesine olanak tanıyan kritik güvenlik açıklarının aktif olarak istismar edildiği bildirilmiştir. CERT-EU tarafından yayımlanan rapora göre, özellikle CVE-2026-50522 kodlu seri durumdan çıkarma hatasının, saldırganların etkilenen sistemlerde yetkisiz kod çalıştırmasına imkan tanıdığı belirtilmiştir. WatchTowr adlı güvenlik kuruluşunun 20 Temmuz 2026 tarihinde bir kavram kanıtlama kodu tanımladığı ve ardından aktif istismar faaliyetlerini gözlemlediği ifade edilmiştir. Söz konusu açıkların SharePoint Server 2016, 2019 ve Subscription Edition sürümlerini etkilediği kaydedilmiştir. Microsoft'un ayrıca son aylarda CVE-2026-32201, CVE-2026-45659, CVE-2026-56164 ve CVE-2026-58644 kodlu diğer kritik hatalar için de güvenlik güncellemeleri yayımladığı bilgisi verilmiştir. CERT-EU, etkilenen sunucuların derhal güncellenmesini ve internete açık varlıklar için kimlik bilgilerinin değiştirilmesini tavsiye etmiştir. (XXXXXXX, AÇIK -, ) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Apple'ın İşletim Sistemlerindeki 187 Güvenlik Zafiyeti İçin Güncelleme Yayımlaması",
-    "paragraph": "───────────────────────────────────────────────────────── Apple, Temmuz 2026 güvenlik güncellemeleri kapsamında tüm işletim sistemleri ve Safari tarayıcısı için toplam 187 güvenlik zafiyetini gideren yamalar yayımlamıştır. Güncellemelerin macOS, iOS, watchOS, tvOS ve visionOS platformlarını kapsadığı ve özellikle hizmet dışı bırakma (DoS), ayrıcalık yükseltme ve WebKit açıklarına odaklandığı belirtilmiştir. SANS Enstitüsü'nden Johannes Ullrich, CVE-2026-28849 ve CVE-2026-28900 kodlu açıkların macOS uygulamalarının yürütülebilir dosyalarının üzerine yazılmasına izin veren bir zafiyetle ilişkili olabileceğine dikkat çekmiştir. Apple'ın bu sürümde herhangi bir açığın aktif olarak istismar edildiğine dair bir bilgi paylaşmadığı ifade edilmiştir. Ayrıca bu güncellemelerin, sonbaharda çıkacak olan yeni ana işletim sistemi sürümlerine hazırlık niteliğinde bazı altyapı düzenlemelerini de içerdiği kaydedilmiştir. (XXXXXXX, AÇIK -isc.sans.edu, 29.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "JetBrains'in TeamCity Sunucularındaki Kritik Komut Çalıştırma Açığını Kapatması",
-    "paragraph": "───────────────────────────────────────────────────────── JetBrains, TeamCity yazılımının kurum içi sürümlerinde tespit edilen ve saldırganların kimlik doğrulaması yapmadan işletim sistemi komutları çalıştırmasına izin veren kritik bir güvenlik açığı için acil güncelleme çağrısında bulunmuştur. CVE-2026-63077 koduyla tanımlanan ve 9.8 ciddiyet puanı alan zafiyetin, tüm TeamCity On-Premises sürümlerini etkilediği belirtilmiştir. Flaw'ın, ajan yoklama protokolü üzerinden kimlik doğrulama kontrollerini atlayarak sunucu ayrıcalıklarıyla kod yürütülmesine olanak tanıdığı ifade edilmiştir. JetBrains, bulut tabanlı örneklerin otomatik olarak güncellendiğini, kurum içi kullanıcıların ise 2025.11.7 veya 2026.1.3 sürümlerine geçmesi gerektiğini açıklamıştır. Şu ana kadar açığın aktif olarak istismar edildiğine dair bir kanıt bulunmadığı ancak internete açık sunucuların VPN arkasına alınması gibi ek güvenlik önlemlerinin uygulanması tavsiye edilmiştir. (XXXXXXX, AÇIK -thehackernews.com, 28.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Milyonlarca Araçta Bluetooth Üzerinden Kapı Kilidi Açma Zafiyeti Tespit Edilmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Kaliforniya Üniversitesi San Diego (UCSD) araştırmacıları, bayiler tarafından takılan KARR ve SWDS güvenlik sistemlerine sahip en az 2,2 milyon aracın Bluetooth saldırılarına karşı savunmasız olduğunu ortaya çıkarmıştır. Acrisure tarafından üretilen bu cihazların tamamının aynı güvenlik anahtarını kullandığı ve bu durumun saldırganların araç kapılarını açmasına veya motorun çalışmasını engellemesine yol açtığı belirtilmiştir. Araştırmacılar, etkilenen araçların çoğunun son dokuz yıl içinde Güney Kaliforniya'daki Honda, Toyota, Mazda, Ford ve Jeep bayilerinden satın alındığını ifade etmiştir. KARR Security firmasının zafiyeti gidermek için bir yazılım güncellemesi yayımladığı ancak riskin gerçek dünya koşullarında düşük olduğunu iddia ettiği kaydedilmiştir. Cihazların araç bilgisayarı ve ateşleme sistemiyle iç içe olması nedeniyle fiziksel olarak sökülmesinin zor olduğu bilgisi verilmiştir. (XXXXXXX, AÇIK -theregister.com, 23.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Microsoft Defender Güncellemesinin Linux Sunucularını Korumasız Bırakması",
-    "paragraph": "───────────────────────────────────────────────────────── Microsoft, Linux için Defender for Endpoint yazılımında yapılan bir güncellemenin ardından bazı sistemlerin savunmasız kaldığını açıklamıştır. 101.26042.0000 ile 101.26042.0009 arasındaki sürümleri etkileyen bir hata nedeniyle, sunucuların yeniden başlatılmasının ardından güvenlik servisinin devre dışı kalabildiği belirtilmiştir. Ayrıca, FIPS modu etkinleştirilmiş Red Hat Enterprise Linux (RHEL) 8 ve 9 sistemlerinde güncellemenin tamamen başarısız olduğu ifade edilmiştir. Microsoft, servisin devre dışı kalma sorununun 101.26042.0011 sürümüyle, FIPS kurulum hatasının ise 101.26052.0011 sürümüyle giderildiğini duyurmuştur. Otomatik güncelleme özelliği açık olan cihazların bu hatalı sürümleri almış olabileceği ve aktif korumanın durmuş olabileceği uyarısı yapılmıştır. Yöneticilerin, uç nokta korumasının durumunu Microsoft Defender portalı üzerinden kontrol etmeleri ve gerekli yamaları uygulamaları istenmiştir. (XXXXXXX, AÇIK -theregister.com, 27.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Yapay Zeka Destekli Dolphin X Zararlı Yazılımının Windows Kullanıcılarını Hedeflemesi",
-    "paragraph": "───────────────────────────────────────────────────────── Varonis Tehdit Laboratuvarı araştırmacıları, 300'den fazla uygulamayı hedef alan ve yapay zeka tabanlı bir profil oluşturma aracına sahip olan Dolphin X adlı yeni bir bilgi çalıcı ve uzak erişim truva atı tespit etmiştir. Siber suç forumlarında satışa sunulan bu zararlı yazılımın, tarayıcı şifrelerini, kurumsal kimlik bilgilerini, kripto para cüzdanlarını ve bulut jetonlarını çalma kapasitesine sahip olduğu belirtilmiştir. Yazılımın bünyesinde barındırdığı yapay zeka profilleyicinin, kurbanları uygulama kullanımı ve tarama geçmişine göre analiz ederek saldırganlara en yüksek kazanç sağlayacak hedefleri raporladığı ifade edilmiştir. Kontraktnik takma adını kullanan bir satıcı tarafından pazarlanan yazılımın, tespit edilmeyi zorlaştırmak için kod yapısını ve imzasını sürekli değiştiren abonelik tabanlı bir modelle sunulduğu bildirilmiştir. Uzmanlar, bu tür gelişmiş araçların siber suçlara giriş bariyerini düşürdüğüne dikkat çekmiştir. (XXXXXXX, AÇIK -theregister.com, 22.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Veri Merkezi Yönetim Sistemlerinde 13 Yıllık Güvenlik Açığının Tespit Edilmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Lava güvenlik araştırmacıları, dünya genelinde 36.000'den fazla internete açık Anakart Yönetim Denetleyicisinin (BMC) 13 yıllık bir IPMI protokolü açığına karşı savunmasız olduğunu ortaya çıkarmıştır. CVE-2013-4786 koduyla izlenen bu zafiyetin, saldırganların işletim sistemi katmanının altına sızarak sunucular üzerinde tam kontrol sağlamasına olanak tanıdığı belirtilmiştir. İncelenen cihazların %66'sının kimlik doğrulama hash bilgilerini dışarı sızdırdığı ve zayıf parolaların dakikalar içinde kırılabildiği ifade edilmiştir. Özellikle Supermicro ve HPE sunucularının bu durumdan etkilendiği, bir kez ele geçirilen bir BMC'nin veri merkezi içindeki diğer sistemlere sızmak için bir basamak olarak kullanılabileceği kaydedilmiştir. Uzmanlar, IPMI ve Redfish gibi yönetim arayüzlerinin asla kamuya açık internete maruz bırakılmaması ve erişimin özel yönetim ağları veya VPN üzerinden sınırlandırılması gerektiğini vurgulamıştır. (XXXXXXX, AÇIK -csoonline.com, 29.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Linux Çekirdek Ekibinin İki Gün İçinde 432 Güvenlik Açığı Yayınlaması",
-    "paragraph": "───────────────────────────────────────────────────────── Linux çekirdek ekibi, geçtiğimiz Pazar ve Pazartesi günleri arasında toplam 432 adet CVE (Ortak Güvenlik Açıkları ve Pozlamalar) kaydı yayınlayarak sistem yöneticileri için yoğun bir iş yükü oluşturmuştur. Akamai Technologies ve nixCraft gibi kurumlardan uzmanlar, bu denli yüksek hacimli bir paylaşımın bireysel değişiklikleri önceliklendirmeyi imkansız kıldığını ifade etmiştir. Söz konusu artışın arkasında, yapay zeka destekli hata bulma araçlarının kullanımının yattığı tahmin edilmektedir. Linux maintainer'ı Greg Kroah-Hartman, çekirdek seviyesinde çalışan sistemlerde hemen her hatanın bir güvenlik açığı olarak sınıflandırılabileceğini ve stabil sürümlere eklenen her düzeltme için bir CVE atandığını açıklamıştır. Uzmanlar, büyük kuruluşların bu yoğun güncellemelerle başa çıkabilmesi için otomatize edilmiş ve düzenli güncelleme süreçlerini benimsemesi gerektiğini, aksi takdirde güvenlik açıklarının takibinin zorlaşacağını belirtmiştir. (XXXXXXX, AÇIK -theregister.com, 22.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Linux Cihazları Hedef Alan Tengu Botnetinin Kendini Koruma Mekanizmalarının Belirlenmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Nozomi Networks Labs, Mirai tabanlı yeni bir botnet olan Tengu'nun, Linux cihazlarda savunmacıların müdahalelerine karşı donanımsal izleme mekanizmalarını kötüye kullandığını tespit etmiştir. Zararlı yazılımın, ana süreci durdurulduğunda cihazı otomatik olarak yeniden başlatarak kalıcılık mekanizmalarını tekrar devreye soktuğu belirtilmiştir. Telnet üzerinden kaba kuvvet saldırılarıyla yayılan botnetin, 25 farklı dağıtık hizmet reddi saldırısı yöntemini desteklediği ve sistem verilerini toplama yeteneğine sahip olduğu ifade edilmiştir. Tengu'nun ayrıca sistemdeki yeniden başlatma ve kapatma araçlarını bozarak yöneticilerin cihaza müdahale etmesini engellemeye çalıştığı kaydedilmiştir. Yapılan analizlerde, botnetin komuta kontrol sunucusuyla iletişim kurmak için özel bir şifreleme yöntemi kullandığı ve Android tabanlı cihazları da hedefleyebilecek şekilde geliştirildiği bilgisi verilmiştir. Güvenlik uzmanları, internete açık gereksiz servislerin kapatılması ve varsayılan parolaların değiştirilmesi gerektiğini vurgulamıştır. (XXXXXXX, AÇIK -thehackernews.com, 28.07.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Linux Trafik Kontrol Sistemindeki Bir Açığın Root Yetkisine Dönüştürülmesi",
-    "paragraph": "───────────────────────────────────────────────────────── STAR Labs araştırmacısı Lee Jia Jie, Linux çekirdeğinin ağ trafik kontrol alt sisteminde bulunan CVE-2026-53264 kodlu bir güvenlik açığını istismar ederek yerel bir kullanıcıyı root yetkisine yükselten bir yöntem yayınlamıştır. Araştırmacı, zafiyetin keşfi ve istismar kodunun geliştirilmesi süreçlerinde yapay zekadan faydalandığını açıklamıştır. Söz konusu açığın, CentOS Stream 9 üzerinde test edildiği ve on denemenin tamamında başarıyla sonuçlandığı bildirilmiştir. Güvenlik açığının giderilmesine yönelik yamanın Haziran 2026'da yayınlandığı ve çeşitli stabil çekirdek dallarına aktarıldığı belirtilmiştir. İstismarın çalışması için kullanıcı ad alanları ve belirli çekirdek seçeneklerinin etkin olması gerektiği, bu durumun doğrudan maruz kalma riskini daralttığı kaydedilmiştir. Uzmanlar, istismar kodunun artık kamuya açık olması nedeniyle kullanıcıların dağıtımları tarafından sunulan güncel çekirdek sürümlerini vakit kaybetmeden yüklemeleri gerektiğini ifade etmiştir. (XXXXXXX, AÇIK -thehackernews.com, 28.07.2026) ──────────────────────────────────────────────────────────────────────────────── ================================================================================",
-    "title": "",
-    "full_text": ""
-   }
-  ]
- },
- {
   "date": "2026-07-30",
   "views": [
    {
@@ -3211,6 +3080,77 @@
     "paragraph": "SANS İnternet Fırtına Merkezi araştırmacıları, kimlik avı mesajlarını analiz ederken polimorfik özellikler gösteren ancak kodlama hataları nedeniyle zaman zaman işlevsiz kalan bir zararlı sayfa tespit etmiştir. Yapılan incelemelerde, sayfanın tarayıcıda açıldığında işlemci yükünü %100'e çıkardığı ve yaklaşık 30 saniye boyunca yanıt vermediği kaydedilmiştir. Bu durumun, JavaScript kodundaki karmaşıklaştırma rutininde kullanılan döngü sayaçlarının küresel değişken olarak tanımlanmasından kaynaklan",
     "title": "A polymorphic phishing page (that occasionally breaks itself), (Thu, Aug 27th)",
     "full_text": "A polymorphic phishing page (that occasionally breaks itself)\n\nAs I’ve mentioned before in some of my diaries, from time to time, I like to go over phishing messages that get caught in my various spam traps or sent to us here at the Internet Storm Center.\n\nAfter looking at enough phishing messages, one quickly gets used to seeing the same lures, the same credential-harvesting pages and, quite ofte"
+   }
+  ]
+ },
+ {
+  "date": "2026-08-29",
+  "views": [
+   {
+    "tr_title": "Filipinler'deki Nükleer Araştırma Kurumundan Veri Sızdırılması",
+    "paragraph": "Çin bağlantılı bir siber tehdit aktörünün, ownCloud yazılımındaki kritik bir güvenlik açığını istismar ederek Filipinler Nükleer Araştırma Kurumu ve bir gemi inşa şirketinden veri sızdırdığı tespit edilmiştir. CISA, aktif olarak istismar edilen CVE-2023-49105 kodlu bu açığı bilinen istismar edilen zafiyetler kataloğuna eklemiştir. Saldırganın, nükleer materyal kayıtları, stratejik planlar, yakıt envanterleri ve çalışanların kişisel bilgilerini içeren yaklaşık 372 MB boyutunda 176 dosyayı ele geç",
+    "title": "ownCloud Flaw Exploited to Steal Nuclear Records From Philippine Research Body",
+    "full_text": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added a critical security flaw impacting ownCloud to its Known Exploited Vulnerabilities (KEV) catalog following reports that a Chinese-speaking threat actor weaponized the vulnerability to target a nuclear research body in the Philippines.\n\nThe vulnerability, tracked as CVE-2023-49105 (CVSS score: 9.8), is a case of WebD"
+   },
+   {
+    "tr_title": "Tarayıcı Eklentilerinde Kripto Varlık Hırsızlığı Yapan Zararlı Kodların Bulunması",
+    "paragraph": "Siber güvenlik araştırmacıları, Google Chrome ve Microsoft Edge tarayıcılarında cüzdan bilgilerini çalan ve kripto varlıkları boşaltan 19 adet kötü amaçlı eklenti tespit etmiştir. Socket güvenlik araştırmacısı Karlo Zanki, 'Superior' olarak adlandırılan bu kampanyanın Şubat 2024'ten beri aktif olduğunu ve özellikle 80.000 kullanıcıya ulaşan 'Enable Right Click & Copy' eklentisiyle geniş kitleleri etkilediğini belirtmiştir. Saldırganlar, meşru eklentileri satın alarak veya temiz sürümler yayınlay",
+    "title": "19 Chrome and Edge Extensions Found With Wallet-Stealing and Crypto-Draining Code",
+    "full_text": "Cybersecurity researchers have discovered a cluster of 18 Google Chrome and one Microsoft Edge extensions that were published over the last six months and harbored wallet secret stealing and cryptocurrency draining capabilities.\n\nThe extensions, per Socket security researcher Karlo Zanki, share similarities in code and tradecraft, with evidence indicating that the campaign may have been active sin"
+   },
+   {
+    "tr_title": "İngiltere NCSC'nin Operasyonel Teknoloji Sistemlerine Yönelik Tehdit Uyarısı",
+    "paragraph": "İngiltere Ulusal Siber Güvenlik Merkezi (NCSC), dünya genelinde operasyonel teknoloji (OT) sistemlerini hedef alan siber saldırıların arttığını ve bu durumun gerçek dünyada fiziksel aksamalara yol açtığını bildirmiştir. Yayınlanan resmi uyarıda, internete açık bırakılan veya yanlış yapılandırılan uç cihazların siber tehdit aktörleri için birincil hedef haline geldiği belirtilmiştir. NCSC, kritik altyapı kuruluşlarına internete bağlı varlıklarını doğrulamaları ve varsayılan kimlik bilgilerini değ",
+    "title": "UK NCSC warns of increased OT targeting as threat actors exploit internet-exposed systems and edge devices",
+    "full_text": "UK NCSC warns of increased OT targeting as threat actors exploit internet-exposed systems and edge devices\n\nThe U.K. National Cyber Security Centre (NCSC) said it has seen increased targeting of OT (operational technology) systems across multiple sectors globally, including in the U.K., with activity by a range of threat actors causing limited real-world disruption. The agency said organizations u"
+   },
+   {
+    "tr_title": "Teknoloji Devlerinin OpenAI Liderliğinde Siber Savunma Taahhüdü Vermesi",
+    "paragraph": "Aralarında Microsoft, Google, Cisco ve IBM'in de bulunduğu yaklaşık 130 teknoloji ve siber güvenlik kuruluşu, yapay zeka destekli saldırılara karşı küresel bir savunma seferberliği çağrısı yapan açık mektubu imzalamıştır. OpenAI liderliğinde başlatılan girişimde, yapay zekanın saldırı kapasitesini artırdığı ancak savunmacılara da yeni imkanlar sunduğu belirtilmiştir. İmzacı kurumlar, kritik altyapıların korunması için teknik borçların giderilmesini, yapay zeka tabanlı savunma araçlarının yaygınl",
+    "title": "Tech, Cybersecurity Giants Unite Behind OpenAI-Led Cyber Defense Pledge",
+    "full_text": "Artificial Intelligence\n\nTech, Cybersecurity Giants Unite Behind OpenAI-Led Cyber Defense Pledge\n\nNearly 130 tech and cybersecurity companies back a collective call to boost cyber defenses as AI-enabled attacks grow more sophisticated.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nNearly 130 organizations spanning cybersecurity, cloud computing, finance and other industries have s"
+   },
+   {
+    "tr_title": "ServiceNow Platformunda Kritik Güvenlik Açıklarının Tespit Edilmesi",
+    "paragraph": "ServiceNow, yapay zeka platformunu etkileyen ve üçü en yüksek ciddiyet seviyesi olan 10.0 puanla derecelendirilen toplam dört güvenlik açığı için yamalar yayımlamıştır. CVE-2026-18885, CVE-2026-18886 ve CVE-2026-74820 kodlu zafiyetlerin, kimliği doğrulanmamış saldırganların uzaktan kod yürütmesine, yetki yükseltmesine ve veri tabanı üzerinde SQL komutları çalıştırmasına olanak tanıdığı belirtilmiştir. Şirket, barındırılan örnekler için güncellemeleri uyguladığını, ancak kendi sunucularını yönete",
+    "title": "Three CVSS 10.0 ServiceNow Flaws Could Let Unauthenticated Attackers Execute Code and SQL",
+    "full_text": "ServiceNow has released patches for four security flaws impacting the ServiceNow AI Platform, three of them rated 10.0 on the CVSS scoring system and exploitable, in certain circumstances, by an unauthenticated attacker.\n\nThe company said it deployed a security update to hosted instances and provided the update to its partners and self-hosted customers, which leaves organizations that run their ow"
+   },
+   {
+    "tr_title": "OpenSSL Yazılımında Çok Sayıda Güvenlik Zafiyetinin Giderilmesi",
+    "paragraph": "Fransa Ulusal Siber Güvenlik Ajansı (ANSSI), OpenSSL kütüphanesinin çeşitli sürümlerinde tespit edilen birden fazla güvenlik zafiyeti hakkında bir uyarı yayımlamıştır. Bu açıkların, uzak bir saldırganın hizmet dışı bırakma saldırısı gerçekleştirmesine ve güvenlik politikalarını atlatmasına imkan tanıdığı belirtilmiştir. Etkilenen sürümler arasında OpenSSL 1.0.2, 1.1.1, 3.0, 3.4, 3.5, 3.6 ve 4.0 serilerinin bulunduğu kaydedilmiştir. CVE-2026-14457 ve CVE-2026-75803 dahil olmak üzere toplam dokuz ",
+    "title": "Multiples vulnérabilités dans OpenSSL (26 août 2026)",
+    "full_text": "Contournement de la politique de sÃ©curitÃ©\n\nDÃ©ni de service Ã  distance\n\nOpenSSL versions 1.0.2x antÃ©rieures Ã  1.0.2zr\n\nOpenSSL versions 1.1.1x antÃ©rieures Ã  1.1.1zi\n\nOpenSSL versions 3.0.x antÃ©rieures Ã  3.0.22\n\nOpenSSL versions 3.4.x antÃ©rieures Ã  3.4.7\n\nOpenSSL versions 3.5.x antÃ©rieures Ã  3.5.8\n\nOpenSSL versions 3.6.x antÃ©rieures Ã  3.6.4\n\nOpenSSL versions 4.0.x antÃ©rieures Ã  4.0"
+   },
+   {
+    "tr_title": "PaperCut NG ve MF Yazılımlarında İki Güvenlik Açığının İstismar Edilmesi",
+    "paragraph": "Siber tehdit aktörlerinin PaperCut NG ve MF yazılımlarındaki iki farklı güvenlik açığını birleştirerek hedef sistemlerde kimlik doğrulaması olmaksızın kod yürüttüğü tespit edilmiştir. Huntress araştırmacıları tarafından yapılan incelemelerde, CVE-2026-81578 kodlu erişim kontrolü açığı ile kimlik doğrulama mekanizmalarının aşıldığı, ardından CVE-2026-82078 kodlu dinamik sınıf yükleme açığı kullanılarak sunucu yapılandırmasının değiştirildiği belirtilmiştir. Saldırganların bu yöntemle sistemlerde ",
+    "title": "Attackers Chain Two PaperCut Flaws to Execute Code Without Authentication",
+    "full_text": "Malicious actors are exploiting a newly patched security flaw in PaperCut NG and MF to execute arbitrary code on susceptible instances, as the company released a fresh emergency fix with additional hardening.\n\n\"This vulnerability gives an unauthenticated attacker remote control over PaperCut's trusted configuration, which could be used to execute arbitrary Java code inside the application's proces"
+   },
+   {
+    "tr_title": "cPanel ve WHM Sistemlerinde Root Yetkisi Sağlayan Kritik Açığın Kapatılması",
+    "paragraph": "cPanel, alan adı park etme ve eklenti etki alanı işlevlerini etkileyen ve saldırganlara root düzeyinde tam kontrol imkanı tanıyan kritik bir güvenlik açığını gidermek için yamalar yayımlamıştır. CVE-2026-65643 olarak tanımlanan bu güvenlik açığının, kimlik doğrulaması yapmış bir hesap sahibinin sunucuda rastgele dosyalar oluşturmasına ve root yetkisiyle kod yürütmesine olanak tanıdığı ifade edilmiştir. Güncellemenin 11.110.0.141 ve 11.138.1.7 üzerindeki sürümleri kapsadığı, otomatik güncelleme y",
+    "title": "Critical cPanel Flaw Could Let One Hosting Customer Take Root Control of a Whole Server",
+    "full_text": "cPanel has released patches for a security flaw affecting domain parking and addon domain functionality in cPanel and WebHost Manager (WHM), which could allow code execution as the root user.\n\nThe vulnerability, assigned the CVE identifier CVE-2026-65643, impacts all supported versions of cPanel & WHM.\n\ncPanel described the issue as a critical security vulnerability and said that an authenticated "
+   },
+   {
+    "tr_title": "Unitree G1 EDU İnsansı Robotlarında Uzaktan Kod Çalıştırma Zafiyetlerinin Bulunması",
+    "paragraph": "Güvenlik araştırmacısı Olivier Laflamme, Unitree G1 EDU insansı robotlarında kök dizin seviyesinde uzaktan kod çalıştırılmasına (RCE) olanak tanıyan iki bağımsız zafiyet zinciri tespit etmiştir. CVE-2026-76639 ve CVE-2026-76640 kodlarıyla izlenen bu açıkların, robotun hareket bilgisayarına Bluetooth Düşük Enerji (BLE) veya ağ komşuluğu üzerinden erişim sağladığı belirtilmiştir. Araştırmacı, Unitree bulut hizmetindeki bir yetkilendirme açığı sayesinde hedeflenen robota ait anahtar materyallerinin",
+    "title": "Two Unitree G1 EDU Humanoid Robot Flaws Enable Root RCE, One Starts Over Bluetooth",
+    "full_text": "Security researcher Olivier Laflamme has disclosed two independent root remote code execution (RCE) chains affecting the Unitree G1 EDU, including a Bluetooth Low Energy (BLE) path that can reach root on the robot's Locomotion PC.\n\nThe flaws are tracked as CVE-2026-76639 and CVE-2026-76640, with the first involving a network-adjacent path through chat_go and bashrunner and the second beginning fro"
+   },
+   {
+    "tr_title": "GiveWP WordPress Eklentisinde Sunucu Komutu Çalıştırma Zafiyetinin Giderilmesi",
+    "paragraph": "WordPress tabanlı bağış toplama eklentisi GiveWP'de, kimliği doğrulanmamış saldırganların sunucuda rastgele komut çalıştırmasına izin veren kritik bir güvenlik açığı tespit edilmiştir. CVE-2026-82222 koduyla tanımlanan zafiyetin, eklentinin 4.16.7.1 ve önceki sürümlerini etkilediği ve 100.000'den fazla kurulumu risk altında bıraktığı belirtilmiştir. Patchstack araştırmacıları, zafiyetin PHP veri serileştirme hataları ve güvenli olmayan nesne işleme süreçlerinin birleştirilmesiyle istismar edileb",
+    "title": "GiveWP WordPress donation plugin flaw lets hackers execute server commands",
+    "full_text": "A maximum-severity vulnerability in the GiveWP plugin for WordPress allows an unauthenticated attacker to execute arbitrary commands on the hosting server.\n\nThe security issue is identified as CVE-2026-82222 and affects GiveWP through version 4.16.7.1. It was reported by bug researcher Udin Chan on July 28 through the Patchstack vulnerability intelligence platform.\n\nThe GiveWP plugin has more than"
+   },
+   {
+    "tr_title": "Oyuncak Üreticisi Hasbro'nun Çalışan Verilerini Kapsayan Veri İhlalini Bildirmesi",
+    "paragraph": "Dünyanın en büyük oyuncak ve eğlence şirketlerinden Hasbro, çalışanlarının kişisel ve finansal bilgilerine yetkisiz erişim sağlandığını açıklamıştır. Massachusetts Başsavcılığına sunulan bildirim raporuna göre, ihlalden eyalet genelinde 436 çalışanın etkilendiği ve bu kişilerin Sosyal Güvenlik numaraları, sürücü belgesi bilgileri ile kredi kartı verilerinin sızdırıldığı tespit edilmiştir. Şirket, ihlalin ardından tehlikeye giren çalışan hesaplarını devre dışı bıraktığını ve yetkisiz erişimi sonl",
+    "title": "Toy-making giant Hasbro disclose data breach affecting employees",
+    "full_text": "Hasbro, one of the world's largest toy and game companies, has disclosed that attackers have accessed the personal and financial information of an undisclosed number of employees.\n\nFounded in 1923, Hasbro is a publicly traded American multinational entertainment conglomerate on the NASDAQ and owns many brands, including Monopoly, Clue, Nerf, Transformers, Play-Doh, Peppa Pig, Scrabble, Magic: The "
    }
   ]
  }
