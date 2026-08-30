@@ -32468,3 +32468,50 @@ WordPress tabanlı bağış toplama eklentisi GiveWP'de, kimliği doğrulanmamı
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 30 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Claude Code Aracının Web Özetleme İstekleriyle Manipüle Edilmesi
+─────────────────────────────────────────────────────────
+Anthropic'in Claude Code yazılım geliştirme aracının, kötü niyetli bir web sitesini özetleme isteği üzerinden saldırgan kontrolündeki kodları yürütecek şekilde kandırılabildiği tespit edilmiştir. Güvenlik araştırmacısı Johann Rehberger, Opus 5 modelinin otomatik modda çalışırken güvenlik bariyerlerini aşarak zararlı Python dosyalarını çalıştırdığını kanıtlamıştır. Saldırının, Python modül gölgeleme tekniği kullanılarak meşru kütüphanelerin yerine sahte dosyaların yüklenmesi prensibine dayandığı belirtilmiştir. Test edilen senaryolarda saldırının başarı oranının yüzde 60 ile 80 arasında değiştiği ifade edilmiştir. Bu yöntemle saldırganların hedef sistemde komut yürütebildiği veya yeni bir yapay zeka güvenlik riski oluşturabildiği vurgulanmıştır.
+(XXXXXXX, AÇIK -theregister.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Fidye Yazılımı Çetesi Rhysida'nın Berlin Eyalet Yönetimini Hedef Alması
+─────────────────────────────────────────────────────────
+Fidye yazılımı çetesi Rhysida, Berlin eyalet yönetiminin idari ağına saldırarak yaklaşık 5,79 terabayt veriyi ele geçirdiğini iddia etmiştir. Çalınan veriler arasında 12 binden fazla kişiye ait özel bilgiler, personel dosyaları ve Berlin'in su şebekesine yönelik zafiyet analizlerinin bulunduğu belirtilmiştir. Berlin Belediye Başkanı Kai Wegner ve İçişleri Senatörü Iris Spranger, saldırganların fidye taleplerini kesin bir dille reddettiklerini açıklamıştır. Saldırının 20 Eylül 2026 tarihinde yapılacak eyalet parlamentosu seçimlerinden hemen önce gerçekleşmesi dikkat çekmiştir. Yetkililer, seçimle ilgili verilerin sızdırılmadığını ve seçim güvenliğinin korunduğunu ifade etmiştir. Adli incelemeler, veri sızıntısının 7 Ağustos ile 12 Ağustos 2026 tarihleri arasında gerçekleştiğini ortaya koymuştur. Federal Siber Güvenlik Ofisi (BSI) ve veri koruma komiserliğinin soruşturma sürecine dahil olduğu bildirilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 29.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Avustralya'da TeamPCP Üyesi İki Şahsın Veri Hırsızlığıyla Suçlanması
+─────────────────────────────────────────────────────────
+Avustralya Federal Polisi ve FBI'ın ortak operasyonuyla, TeamPCP siber suç şebekesi üyesi 21 ve 23 yaşlarındaki iki şahıs Perth'te yakalanmıştır. 26 Ağustos 2026 tarihinde gerçekleşen baskınlarda, şüphelilerin Trivy, KICS ve LiteLLM gibi kritik geliştirici araçlarına zararlı kod yerleştirerek binden fazla kuruluşu etkilediği saptanmıştır. Bu tedarik zinciri saldırısıyla 500 binden fazla kimlik bilgisi çalınmış ve 300 gigabayt veri sızdırılmıştır. Operasyonda CanisterWorm, SANDCLOCK ve kendini klonlayan Mini Shai-Hulud gibi dört farklı zararlı yazılım ailesi tespit edilmiştir. Kamu, akademi ve özel sektörü hedef alan saldırıların yüz milyonlarca dolar zarara yol açtığı belirtilmektedir. Toplam 14 suçlamayla yargılanan zanlıların, suç gelirlerini aklama ve verileri izinsiz değiştirme suçlarından 20 yıla kadar hapis cezası alabileceği öngörülmektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 30.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Filipinler'deki Nükleer ve Denizcilik Kurumlarına Yönelik Siber Saldırıların Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Çince konuştuğu değerlendirilen bir siber tehdit aktörünün, Filipinler'deki bir nükleer araştırma kurumunu ve Filipin Donanması'na destek veren bir deniz mühendisliği şirketini hedef aldığı bildirilmiştir. Saldırganların, ownCloud ve WordPress sistemlerindeki CVE-2023-49105 ve CVE-2024-28000 kodlu bilinen güvenlik açıklarını istismar ettiği belirtilmiştir. Amsterdam'daki bir sunucuda bulunan saldırı günlüklerine göre, nükleer kurumdan yaklaşık 9 gigabayt verinin çalındığı ifade edilmiştir. Sızdırılan bilgiler arasında nükleer reaktör bileşen veri tabanları, yakıt envanterleri ve personel kayıtlarının bulunduğu kaydedilmiştir. Hunt.io tarafından hazırlanan raporda, saldırganların tespit edilmemek için veri toplama sürecinde rastgele gecikmeler kullandığına dikkat çekilmiştir. Olayın, Güney Çin Denizi'ndeki bölgesel gerilimlerin sürdüğü bir dönemde gerçekleştiği ve stratejik casusluk amacı taşıdığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 29.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Sağlık Devi McKesson'ın ShinyHunters Kaynaklı Veri İhlalini Bildirmesi
+─────────────────────────────────────────────────────────
+ABD merkezli sağlık ve ilaç dağıtım şirketi McKesson, üçüncü taraf uygulamalar üzerinden gerçekleştirilen bir siber güvenlik olayı yaşadığını açıklamıştır. Siber tehdit aktörü ShinyHunters, şirkete yönelik sesli oltalama saldırıları düzenleyerek çalışanların Okta hesaplarını ele geçirdiğini iddia etmiştir. Saldırganların bu erişimi kullanarak Salesforce ve Snowflake ortamlarından yaklaşık 284 milyon veri kaydını sızdırdığı belirtilmiştir. Çalınan veriler arasında hasta isimleri, sosyal güvenlik numaraları, tıbbi kayıtlar ve ilaç bilgilerinin bulunduğu ifade edilmektedir. ShinyHunters'ın 21-25 Ağustos 2026 tarihleri arasında yaklaşık 1 terabayt veri sızdırdığı ve 55 milyon doların üzerinde fidye talep ettiği bildirilmiştir. McKesson, olayın finansal sonuçlarını değerlendirmeye devam ettiğini ve sistemlerde kesintiler yaşanabileceğini duyurmuştur. Health-ISAC, sağlık sektöründeki kuruluşları ShinyHunters'ın artan bulut tabanlı saldırılarına karşı uyarmıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 29.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Popüler WordPress Eklenti ve Temalarında Kritik Açıkların Keşfedilmesi
+─────────────────────────────────────────────────────────
+WordPress ekosisteminde yaygın olarak kullanılan WPMU DEV Dashboard, Avada, TranslatePress, Pods ve GiveWP eklenti ve temalarında kritik güvenlik açıkları tespit edilmiştir. Wordfence ve Patchstack tarafından yapılan analizlerde, bu açıkların kimlik doğrulama atlatma, hesap ele geçirme ve uzaktan kod yürütme (RCE) riskleri taşıdığı belirtilmiştir. GiveWP eklentisindeki CVE-2026-82222 kodlu açığın, 10.0 tam puanla en yüksek risk seviyesinde olduğu ve sunucuda rastgele komut çalıştırılmasına izin verdiği kaydedilmiştir. Avada temasındaki bir dosya yazma hatasının ise sunucu üzerinde tam kontrol sağlanmasına yol açabileceği ifade edilmiştir. Uzmanlar, bu açıkların temel nedeninin güvenilmeyen verilerin işlenmesi ve üretim ortamlarında geliştirme kütüphanelerinin bırakılması olduğunu açıklamıştır. Etkilenen tüm yazılımlar için kullanıcıların güncel sürümlere geçiş yapmaları tavsiye edilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 29.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
