@@ -32515,3 +32515,29 @@ WordPress ekosisteminde yaygın olarak kullanılan WPMU DEV Dashboard, Avada, Tr
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 31 AUGUST 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Debian Geliştiricilerinin Yapay Zeka Kullanımına Yönelik Politikayı Belirlemesi
+─────────────────────────────────────────────────────────
+Debian projesi geliştiricileri, 28 Ağustos 2026 tarihinde sona eren oylama sonucunda, yazılım geliştirme süreçlerinde Büyük Dil Modellerinin (LLM) kullanımına yönelik yasaklama teklifini reddetmiş ve açıklama yükümlülüğünü gönüllülük esasına bırakmıştır. Proje sekreteri Kurt Roeckx tarafından açıklanan sonuçlara göre, Debian üretken yapay zeka kullanımını ne desteklemekte ne de yasaklamaktadır. Katkıda bulunanların yapay zeka desteğini beyan etmeleri teşvik edilmekle birlikte, tüm sorumluluğun içeriği sunan kişide kalmaya devam edeceği bildirilmiştir. Yeni düzenleme uyarınca gizli materyallerin, özel iletişimlerin ve ambargolu güvenlik açıklarının üçüncü taraf yapay zeka araçlarıyla paylaşılmaması gerektiği vurgulanmıştır.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 31.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] TerminalFix Kampanyasının Çok Aşamalı Saldırı Zinciriyle Kurumları Hedeflemesi
+─────────────────────────────────────────────────────────
+Microsoft Tehdit İstihbaratı birimi, ClickFix varyantı olan TerminalFix kampanyasının çeşitli sektörlerdeki kuruluşları hedef aldığını gözlemlemiştir. Saldırganlar, ele geçirilmiş web sitelerinde sahte Cloudflare CAPTCHA doğrulaması göstererek kullanıcıları zararlı PowerShell komutlarını Windows Terminal üzerinde çalıştırmaya ikna etmektedir. Saldırı zinciri, LockScreenContentServer.exe adlı meşru dosyayı kullanarak dui70.dll üzerinden yandan yükleme (sideloading) yapmakta ve steganografi yöntemiyle PNG dosyalarına gizlenmiş zararlıları indirmektedir. Kayıt defteri ve zamanlanmış görevler aracılığıyla kalıcılık sağlayan bu kampanya, Active Directory üzerinde kapsamlı keşif faaliyetleri yürüterek domain admin bilgilerini ve sunucu yapılarını toplamaktadır. Son aşamada, gitnow[.]dev üzerinden Python tabanlı bir ters tünel (reverse tunnel) implantı yerleştirilerek saldırganlara kurban ağında kalıcı proxy erişimi ve tam SOCKS-style TCP tünelleme imkanı sunulmaktadır.
+(XXXXXXX, AÇIK -microsoft.com, 29.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Avustralya'da TeamPCP Üyesi İki Şahsın Siber Suçlarla Suçlanması
+─────────────────────────────────────────────────────────
+Avustralya Federal Polisi, FBI ve yerel birimlerle yürüttüğü operasyonda, TeamPCP adlı siber suç şebekesinin lideri olduğu iddia edilen 21 yaşındaki Ruben Thomson (Ellis) ve 23 yaşındaki suç ortağını 26 Ağustos 2026'da gözaltına almıştır. Shai-Hulud adlı kendi kendine yayılan solucan yazılımı kullanan zanlıların, GitHub ve NPM gibi platformlardaki açık kaynaklı paketleri zehirleyerek dünya genelinde binden fazla kuruluşu hedef aldığı belirtilmiştir. Trivy tarayıcısı ve Mercor gibi yapıların yanı sıra OpenAI ile Avrupa Komisyonu'nun bulut altyapısını da etkileyen saldırılarda, 500.000'den fazla kimlik bilgisi ve 300 GB veri çalınmıştır. Geliştiricilerin API anahtarlarını ele geçiren şebekenin, Telegram üzerinden saldırı yarışmaları düzenlediği ve LiteLLM üzerinden 2.500'den fazla kurumun verilerine sızdığı saptanmıştır.
+(XXXXXXX, AÇIK -bitdefender.com, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
