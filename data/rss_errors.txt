@@ -72,3 +72,4 @@
 2026-08-31 12:10 | DEDUP SIFIR - The Record: 5 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 2, daha önce raporlanmış: 3)
 2026-08-31 12:10 | DEDUP SIFIR - ANSSI (CERT-FR): 19 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 12, daha önce raporlanmış: 7)
 2026-08-31 12:10 | TABAN UYARISI - rapor 4 haber (<6, taze havuz 13)
+2026-08-31 13:05 | TABAN UYARISI - rapor 3 haber (<8, taze havuz 17)
