@@ -5410,7 +5410,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             gunler.append((gun, manset + rapor.get(gun, []), manset))
         return gunler
 
-    def _rank_by_score(self, articles, records):
+    def _rank_by_score(self, articles, records, eleme_nedeni=None):
         """DETERMİNİSTİK sıralama — düzeltilmiş skorlara göre kod tarafında sırala.
         Dönüş: (top10_ids, remaining_ids, filtered_ids, category_by_id).
         - Elenen: siber kapısı kapalı VEYA kategori urun_icerik/siber_disi (toplam 0).
@@ -5556,6 +5556,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                                                         recent_report_views):
                 is_muk = True
                 erken_elenen.append(aid)
+                # GEREKÇEYİ KAYDET. Bu katman haberi havuzdan düşürüyor ama
+                # `rec['mukerrer']` bayrağını KURMUYOR; muhasebe de gerekçesiz
+                # çıkışı 'NEDENSİZ' alarmına yazıyordu.
+                # ÖLÇÜLDÜ (2026-08-29/30/31): üç koşunun ÜÇÜNDE de aynı haber
+                # (ID 13, AliExpress parmak izi, 49 puan) nedensiz çıkış olarak
+                # alarma girdi — oysa eleme doğruydu, yalnızca sahibi yoktu.
+                if eleme_nedeni is not None:
+                    eleme_nedeni[aid] = 'erken_capraz_gun'
             if (rec['toplam'] <= 0 or is_muk
                     or rec['kat'] in ('urun_icerik', 'siber_disi') or not rec['siber']):
                 filtered_ids.append(aid)
@@ -7339,8 +7347,12 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         attr_downgraded = self._enforce_apt_attribution(score_records, articles_by_id)
 
         print("\n📐 Pass 1c — Deterministik sıralama...")
+        # Hangi eleme katmanının hangi haberi düşürdüğü — sıralama katmanı da
+        # eleme yapıyor (erken çapraz-gün), bu yüzden sözlük ONDAN ÖNCE kurulur.
+        eleme_nedeni = {}
         top10_ids, remaining_ids, filtered_list, category_by_id = \
-            self._rank_by_score(articles, score_records)
+            self._rank_by_score(articles, score_records,
+                                eleme_nedeni=eleme_nedeni)
         filtered_ids = set(filtered_list)
 
         print(f"   Top-10: {top10_ids}")
@@ -7457,10 +7469,8 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             return _durum.senkronla(katman, top3_ids, top10_ids, remaining_ids,
                                     nedenler=eleme_nedeni)
 
-        # Hangi eleme katmanının hangi haberi düşürdüğü — skorlama log'una
-        # yazılır. Log'un kendisi ELEME KATMANLARINDAN SONRA yazılır (aşağıda),
-        # yoksa `yerlesim` alanı raporun sonucunu değil niyetini gösterir.
-        eleme_nedeni = {}
+        # NOT: `eleme_nedeni` yukarıda, SIRALAMADAN ÖNCE kuruldu — sıralama
+        # katmanı da eleme yapıyor. Burada yeniden kurmak o gerekçeleri silerdi.
 
         # ════════════════════════════════════════════════════════════════
         # PASS 5 — KALİTE KONTROL (boş/İngilizce/kriter dışı/kopya)
