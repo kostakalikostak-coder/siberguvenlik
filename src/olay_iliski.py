@@ -325,6 +325,12 @@ _MANSIZ_AD = {
     # haberi, CERT-FR'nin Microsoft bülteniyle aynı olay sayıldı; ikisinin
     # ortak yanı yalnızca bülteni yayımlayan kurumdu.
     'cert', 'bülten', 'bulletin', 'advisory', 'duyuru',
+    # Takma adların ORTAK yarısı kimlik değildir. ÖLÇÜLDÜ (2026-09-01):
+    # "Nightmare Eclipse" araştırmacısının Kaspersky açığı ile "Chaotic
+    # Eclipse" araştırmacısının Microsoft Defender açığı 'entity:eclipse'
+    # üzerinden aynı olay sayıldı — farklı satıcı, farklı ürün, farklı CVE,
+    # ortak olan tek şey iki ayrı takma adın ikinci sözcüğü.
+    'eclipse',
 }
 
 

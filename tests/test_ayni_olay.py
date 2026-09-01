@@ -252,3 +252,24 @@ def test_kurum_bulten_etiketi_olay_kimligi_degildir():
     from src import olay_iliski as OI
     for ad in ('cert', 'bülten', 'bulletin', 'advisory', 'duyuru'):
         assert ad in OI._MANSIZ_AD, f'{ad} olay kimliği sayılıyor'
+
+
+def test_takma_adin_ortak_yarisi_kimlik_degildir():
+    """ÖLÇÜLDÜ (2026-09-01): "Nightmare Eclipse" araştırmacısının Kaspersky
+    Endpoint Security açığı (HardBreacher) ile "Chaotic Eclipse"
+    araştırmacısının Microsoft Defender açığı (ShieldBreak) 'entity:eclipse'
+    üzerinden aynı olay sayıldı. Farklı satıcı, farklı ürün, farklı açık —
+    ortak olan tek şey iki ayrı takma adın ikinci sözcüğü."""
+    from src import olay_iliski as OI
+
+    def _v(t, p):
+        return {'tr_title': t, 'title': '', 'paragraph': p, 'full_text': ''}
+
+    a = _v('Kaspersky Ürünündeki Yetki Yükseltme Zafiyetinin Giderilmesi',
+           'Nightmare Eclipse takma adlı araştırmacı, Kaspersky Endpoint '
+           'Security ürününde HardBreacher adlı sıfır gün açığını paylaşmıştır.')
+    b = _v('Microsoft Defender Açığının Yama Geçilmesi',
+           'Chaotic Eclipse takma adlı araştırmacı, Microsoft Defender for '
+           'Windows üzerinde ShieldBreak adlı sıfır gün açığını yayımlamıştır.')
+    assert OI.mukerrer_karari(a, b, ayni_gun=False) == 'FARKLI', \
+        'iki ayrı takma adın ortak sözcüğü aynı olay üretti'
