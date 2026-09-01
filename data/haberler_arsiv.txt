@@ -32541,3 +32541,127 @@ Avustralya Federal Polisi, FBI ve yerel birimlerle yürüttüğü operasyonda, T
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 01 SEPTEMBER 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Çin Bağlantılı Fire Ant Grubunun Cisco Yönlendiricileri Hedef Alması
+─────────────────────────────────────────────────────────
+Çin menşeli siber casusluk grubu Fire Ant'ın, Cisco yönlendiricilerini ele geçirerek ağ trafiğini izlemek amacıyla birer gözetleme platformuna dönüştürdüğü tespit edilmiştir. Sygnia tarafından yayımlanan raporda, saldırganların Cisco IOS XR cihazlarına özel kötü amaçlı yazılımlar yerleştirdiği ve gizli tüneller aracılığıyla kritik altyapılara sızmaya çalıştığı belirtilmiştir. Tehdit aktörünün, sistem günlüklerini silerek ve dosya zaman damgalarını değiştirerek izlerini gizlediği, ayrıca 'BridgeAgent' adlı yeni bir arka kapı kullandığı bilgisi verilmiştir. Bu operasyonun, başlangıçta ele geçirilen güvenli altyapıyı bir köprü olarak kullanarak daha yüksek değerli hedeflere ulaşmayı amaçladığı kaydedilmiştir. Araştırmacılar, Fire Ant grubunun faaliyetlerinin daha önce belgelenen UNC3886 grubuyla büyük benzerlikler taşıdığına ancak uygulama detaylarında farklılıklar gösterdiğine dikkat çekmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 31.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Rus Bağlantılı UAC-0099'un Yapay Zekayı Yanıltma Girişimi
+─────────────────────────────────────────────────────────
+Rusya bağlantılı siber tehdit aktörü UAC-0099, Ukrayna'daki hedeflerine yönelik saldırılarında yapay zeka destekli analizleri engellemek amacıyla GuardBreaker adlı yeni bir teknik kullanmaya başlamıştır. ESET tarafından yapılan açıklamada, saldırganın kötü amaçlı VBS betiklerine nükleer silah yapımıyla ilgili hassas metinler yerleştirerek büyük dil modellerinin güvenlik mekanizmalarını tetiklediği ve kod analizini durdurduğu belirtilmiştir. Söz konusu betiğin, tehdit aktörü tarafından ek yükleri iletmek için kullanılan MATCHBOIL adlı yükleyiciyi sisteme indirmek üzere tasarlandığı ifade edilmiştir. Ukrayna Bilgisayar Acil Durum Müdahale Ekibi (CERT-UA), Temmuz 2026 sonunda saldırganın Notepad++ eklentisi görünümünde zararlı yazılımlar kullandığı konusunda uyarıda bulunmuştur. Benzer yöntemlerin daha önce TeamPCP adlı siber suç grubu tarafından da kullanıldığı ve bu grubun iki üyesinin Avustralya'da tutuklandığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Mirage Kitten Grubunun Havacılık ve Finans Sektörlerine Zararlılarla Saldırması
+─────────────────────────────────────────────────────────
+İran menşeli Mirage Kitten APT grubunun, Orta Doğu ve Afrika'daki havacılık ve finans teknolojileri sektörlerini hedef alan NodeRabbit ve PollCat adlı yeni çapraz platformlu zararlı yazılım ailelerini kullandığı tespit edilmiştir. Kaspersky analizine göre saldırganlar, LinkedIn üzerinden sahte işe alım uzmanı profilleriyle yazılım mühendislerine ulaşarak Amazon S3 üzerinde barındırılan 'Front-Technical-Challenge.zip' gibi zararlı kodlama görevleri iletmektedir. Node.js ve JavaScript tabanlı bu RAT aileleri; Windows, Linux ve macOS sistemlerini hedef alırken, analiz ortamlarını tespit etmek için düşük CPU ve bellek kontrolü yapmaktadır. Üç farklı varyantı bulunan NodeRabbit, bulaştığı sistemlerde kalıcılık sağlamak için 'GitHub Copilot Helper' görünümlü sahte VS Code eklentileri, Git kancaları ve Intel Driver & Support Assistant taklidini kullanmaktadır. Toplamda 23 farklı komutu destekleyen bu gelişmiş yazılımlar, C2 sunucularıyla AES-256-GCM şifreleme yöntemini kullanarak Azure ve Cloudflare altyapıları üzerinden haberleşmektedir.
+(XXXXXXX, AÇIK -securelist.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] BREEZE COMET'in Brezilya Finans Sektörünü Hedef Alması
+─────────────────────────────────────────────────────────
+Brezilya merkezli finans, perakende ve e-ticaret kuruluşlarını hedef alan BREEZE COMET adlı finansal motivasyonlu siber tehdit aktörü, ödeme sistemlerini ve bankacılık yazılımlarını manipüle ederek sahte transferler gerçekleştirmektedir. Mandiant tarafından yapılan analizde, grubun Pix ve STR gibi ödeme sistemlerine erişmek için mTLS kimlik bilgilerini ve Active Directory hesaplarını ele geçirdiği belirtilmiştir. Tehdit aktörünün, başlangıç erişimi sağlamak için BT destek ekiplerini taklit eden sesli kimlik avı yöntemlerini ve ele geçirilmiş devlet web sitelerini kullandığı tespit edilmiştir. Grubun operasyonlarında LIGHTPAINT, MILDFROST ve KICKPLATE gibi özel geliştirilmiş arka kapıların yanı sıra ağ trafiğini yönlendirmek için COBALTSPIN adlı bir tünelleme aracı kullandığı kaydedilmiştir. Ayrıca, aktörün kötü amaçlı yazılım geliştirme ve ağ keşif süreçlerini hızlandırmak amacıyla üretken yapay zeka modellerinden yararlandığına dair kanıtlar bulunduğu ifade edilmiştir.
+(XXXXXXX, AÇIK -cloud.google.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] ValleyRAT Arka Kapısının İmzalı Reklam Yazılımları İçinde Gizlenmesi
+─────────────────────────────────────────────────────────
+Silver Fox olarak bilinen siber tehdit aktörünün, ValleyRAT arka kapısını imzalı bir Çin reklam yazılımı olan QN Wallpaper içine gizleyerek yaydığı tespit edilmiştir. Kaspersky tarafından yapılan analizde, saldırganların DLL yan yükleme tekniğini kullanarak zararlı kodları yasal ve imzalı bir işlem altında çalıştırdıkları belirtilmiştir. Bu yöntemin, kullanıcıların söz konusu yazılımı antivirüs dışlama listelerine eklemesini sağlayarak güvenlik kontrollerini atlattığı ifade edilmiştir. Kurulum sırasında zararlı yazılımın Windows Defender'ı devre dışı bıraktığı ve sistemde kalıcılık sağladığı kaydedilmiştir. ValleyRAT'ın klavye vuruşlarını kaydetme, ekran görüntüsü alma ve ek zararlı modüller indirme yeteneklerine sahip olduğu bildirilmiştir. 2026 yılı boyunca Çin ve Hindistan başta olmak üzere 1.500'den fazla kullanıcının bu ve benzeri yazılımlardan etkilendiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 31.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Cronos Blokzincirinin 74 Milyon Dolarlık Saldırı Sonrası Durdurulması
+─────────────────────────────────────────────────────────
+Cronos blokzinciri ağı, Tectonic kripto borç verme platformuna yönelik gerçekleştirilen ve 74 milyon dolarlık varlığı etkileyen bir fiyat manipülasyonu saldırısı nedeniyle geçici olarak durdurulmuştur. Saldırganın, TONIC tokenının fiyatını 20 dakika içinde yapay olarak 100 kat artırdığı ve bu varlığı teminat göstererek gerçek varlıklar ödünç aldığı belirtilmiştir. PeckShield verilerine göre, saldırganın yaklaşık 6 milyon dolar değerinde Ethereum çalmayı başardığı, geri kalan fonların ise ağ üzerinde bloke edildiği ifade edilmiştir. Cronos ağının, kullanıcıları korumak amacıyla işlemleri dondurduğu ve ardından ağı saldırı öncesi bir duruma geri döndürerek yeniden başlattığı kaydedilmiştir. Tectonic platformundaki kilitli toplam varlık değerinin olay sonrası 3 milyon doların altına düştüğü bildirilmiştir. Blokzinciri yönetiminin olayla ilgili ayrıntılı bir inceleme raporu yayımlayacağı açıklanmıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 31.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Microsoft Entra ID Sisteminde Geçiş Anahtarlarının Varsayılan Olması
+─────────────────────────────────────────────────────────
+Microsoft, 1 Eylül 2026 tarihinden itibaren Entra ID bulut kimlik doğrulama hizmetinde geçiş anahtarlarını (passkeys) varsayılan yöntem olarak belirlediğini açıklamıştır. Bu adımın, işletmeleri şifresiz kimlik doğrulama modellerine yönlendirmeyi amaçladığı belirtilmiştir. Microsoft'un planına göre, SMS ve sesli arama yoluyla yapılan kimlik doğrulamaların Şubat 2027'ye kadar tamamen kullanımdan kaldırılacağı ifade edilmiştir. Geçiş anahtarlarının, biyometrik veriler veya PIN kodları kullanarak kimlik avı saldırılarına karşı yüksek direnç sağladığı kaydedilmiştir. Ancak uzmanlar, eski uygulamaların ve özel kullanım durumlarının tam bir geçişi zorlaştırdığını, bu nedenle hibrit bir modelin uzun süre devam edeceğini öngörmektedir. Kurumsal kimliklerin kişisel ekosistemlere bağlanmasının, cihaz kayıpları ve hesap kurtarma süreçlerinde operasyonel zorluklar yaratabileceğine dikkat çekilmiştir.
+(XXXXXXX, AÇIK -csoonline.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] Aurora Fidye Yazılımı Grubunun Cursor Yapay Zeka Aracını Kullanması
+─────────────────────────────────────────────────────────
+Rusça konuşan siber suç grubu Aurora'nın, ağlara sızmak ve saldırılarını planlamak için SpaceX'in yapay zeka destekli kodlama asistanı Cursor'ı kullandığı tespit edilmiştir. CloudSEK ve Gambit Security tarafından yapılan analizlerde, saldırganların Active Directory sömürü planlarını yapay zeka yardımıyla hazırladıkları ve saldırı adımlarını bu araç üzerinden yönettikleri belirtilmiştir. Nisan ve Temmuz 2026 tarihleri arasında dokuz ülkede 20'den fazla kuruluşun bu yöntemle hedef alındığı ifade edilmiştir. Saldırganların, kurbanların sistemlerinde kalıcılık sağlamak ve Microsoft Defender'ı devre dışı bırakmak için yapay zeka ajanlarından komut aldıkları kaydedilmiştir. Ayrıca, Linux ve ESXi sistemlerini hedef alan Zig dilinde yazılmış yeni şifreleyici varyantlarının da kullanıldığı tespit edilmiştir. Yapay zeka araçlarının, saldırganların teknik beceri eşiğini düşürerek operasyon hızını artırdığı vurgulanmıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 31.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] ABD'de İki Nijeryalının Şantaj Suçlamasıyla İade Edilmesi
+─────────────────────────────────────────────────────────
+Nijerya'dan ABD'ye iade edilen iki şahıs, Mississippi ve Kuzey Karolina eyaletlerinde iki reşit olmayan mağdurun ölümüyle sonuçlanan çevrimiçi cinsel şantaj şemalarına karışmakla suçlanmıştır. 26 yaşındaki Adebola Festus Adekunle ve 24 yaşındaki Mudasiru Afeez Olawale, Ağustos 2023 tarihinde düzenlenen uluslararası Operation Artemis kapsamında Nijerya'da tutuklanmıştır. FBI Direktörü Kash Patel, sanıkların çocukların cinsel istismarı, şantaj amaçlı eyaletler arası tehdit ve çocuk pornografisi dağıtımı gibi suçlarla yargılandığını açıklamıştır. Suçlu bulunmaları halinde sanıkların müebbet hapis cezasıyla karşı karşıya kalabileceği ve ölümle sonuçlanan çocuk istismarı suçundan en az 30 yıl hapis cezası alabileceği belirtilmiştir. FBI, siber suçluların sosyal medya hesaplarını ele geçirerek elde ettikleri içeriklerle mağdurlara baskı uyguladığı konusunda uyarılarını sürdürmektedir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 31.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] NIS2 Denetimi Öncesinde Kimlik ve Erişim Yönetimi Düzenlemeleri
+─────────────────────────────────────────────────────────
+Avrupa Birliği genelinde Ekim ayında yürürlüğe girecek yasal süreler öncesinde, kurumların NIS2 direktifine uyum sağlamak amacıyla kimlik ve erişim yönetimi kontrollerine odaklanmaları gerektiği belirtilmektedir. NIS2 uyumsuzluğunun temel kuruluşlar için 10 milyon avroya veya küresel cironun %2'sine kadar para cezası riski taşıdığı ifade edilmiştir. 2026 veri ihlali raporlarına göre, kimlik bilgilerinin kötüye kullanımı tüm ihlallerin %39'unda görülmekte ve kritik bir hafifletme noktası olarak değerlendirilmektedir. Uzmanlar, servis hesaplarının envanterinin çıkarılması, atıl hesapların kapatılması ve kimlik avına dayanıklı çok faktörlü kimlik doğrulama yöntemlerinin uygulanmasının önemine dikkat çekmiştir. Denetimler sırasında politika metinleri, teknik uygulama kanıtları ve erişim inceleme kayıtlarının belgelenmiş olmasının zorunlu olduğu, aksi takdirde uyumun kanıtlanamayacağı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Slovenya'da Siber Saldırı Sonrası Kumarhanelerin Yeniden Açılması
+─────────────────────────────────────────────────────────
+Slovenya'nın en büyük kumarhane ve turizm gruplarından biri olan Hit, sistemlerini devre dışı bırakan siber saldırının ardından tesislerini kademeli olarak yeniden açmaya başladığını duyurmuştur. Şirket, Ağustos 2026 sonunda tespit edilen siber güvenlik olayı nedeniyle altı kumarhanesini yaklaşık üç gün boyunca kapatmak zorunda kalmıştır. Hit Yönetim Kurulu Başkanı Sandi Bratasevec, BT altyapısının bir kısmının geri yüklendiğini ancak sadakat sistemleri ve bazı oyun işlevlerinin henüz kullanılamadığını açıklamıştır. Yerel medya, saldırı sırasında kasa işlemlerinin aksadığını ve müşterilere el yazısıyla makbuz verildiğini bildirmiştir. Slovenya polisinin olayla ilgili soruşturma başlattığı ve şirketin veri hırsızlığı veya fidye talebi konusunda ayrıntı paylaşmadığı kaydedilmiştir. Sektördeki benzer saldırıların geçmişte MGM Resorts ve Caesars Entertainment gibi büyük operatörlerde ciddi mali kayıplara yol açtığı hatırlatılmıştır.
+(XXXXXXX, AÇIK -therecord.media, 31.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] ABD Savunma Bakanlığı Kantinlerinde Soğutma Sistemleri Aksaklığı
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri'ndeki çeşitli askeri üslerde bulunan Savunma Komiserliği Ajansı (DeCA) kantinlerinde, soğutma sistemlerinde eş zamanlı aksaklıklar yaşandığı bildirilmiştir. Etkilenen tesisler arasında Kaliforniya'daki Fort Irwin, Wyoming'deki F.E. Warren Hava Üssü ve Rhode Island'daki Newport Deniz İstasyonu gibi stratejik noktaların bulunduğu açıklanmıştır. Savunma Bakanlığı yetkilileri, kesintilerin nedenine ilişkin soruları yanıtsız bırakırken, bir yetkili isminin açıklanmaması kaydıyla olası bir soğutma kesintisinden haberdar olduklarını doğrulamıştır. Siber güvenlik uzmanı Bruce Schneier, farklı bölgelerdeki üslerde aynı anda meydana gelen bu durumun bir siber saldırı ihtimalini güçlendirdiğine dikkat çekmiştir. Pentagon'un konuyla ilgili resmi bir açıklama yapmadığı ve kaç üssün tam olarak etkilendiğinin henüz netleşmediği kaydedilmiştir. Olayın askeri altyapıya yönelik olası bir müdahale olup olmadığına dair incelemelerin sürdüğü ifade edilmiştir.
+(XXXXXXX, AÇIK -schneier.com, 31.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Brezilya Odaklı E-postalarla Guildma Zararlı Yazılımı Enfeksiyonu
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacıları, Brezilya Portekizcesi ile yazılmış kimlik avı e-postaları üzerinden yayılan Guildma (Astaroth) zararlı yazılımı operasyonunu tespit etmiştir. Saldırının, hedef sistemin IP adresinin Brezilya merkezli olması ve dil ayarlarının Portekizce olması durumunda tetiklenen coğrafi kısıtlama (geofencing) özelliğine sahip olduğu belirtilmiştir. Kötü amaçlı bağlantıya tıklandığında indirilen ZIP arşivinin içindeki Windows kısayol dosyasının, sistemde gizli veri akışları oluşturarak AutoIt tabanlı Guildma paketini yüklediği açıklanmıştır. Araştırmacı Bradley Duncan, enfeksiyon sırasında GitHub ve WhatsApp gibi meşru alan adlarının da kötüye kullanıldığını gözlemlemiştir. Analizler, saldırganların sistemde kalıcılık sağlamak için özel kayıt defteri anahtarları ve zamanlanmış görevler oluşturduğunu ortaya koymuştur. Bu kampanya kapsamında kullanılan bazı SHA-256 özet değerlerinin bu enfeksiyona özgü olduğu ve tespit edilmesinin güçleştirildiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -isc.sans.edu, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] Ruby on Rails Yazılımındaki Kritik RCE Açığının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Ruby on Rails çerçevesinde tespit edilen ve KindaRails2Shell olarak adlandırılan kritik bir güvenlik açığının siber saldırganlar tarafından istismar edilmeye başlandığı bildirilmiştir. CVE-2026-66066 kodlu ve 9.5 önem puanına sahip olan bu açığın, kimlik doğrulaması yapılmamış saldırganların sunucudaki hassas dosyaları okumasına ve uzaktan kod yürütmesine olanak tanıdığı belirtilmiştir. VulnCheck, libvips kütüphanesini kullanan uygulamaların, özel olarak hazırlanmış dosyalar aracılığıyla gizli anahtarları ve veri tabanı parolalarını sızdırabildiğini ifade etmiştir. Temmuz ayı sonunda yayımlanan yamalara rağmen, yaklaşık 7.000 Ruby on Rails örneğinin halen savunmasız olduğu tahmin edilmektedir. Saldırganların ele geçirdikleri sırlar sayesinde sahte oturumlar oluşturabildikleri ve sistemler arasında yanal hareket gerçekleştirebildikleri kaydedilmiştir. Yamalanmış sunucularda bile bazı özel durumlarda riskin devam edebileceği uyarısı yapılmıştır.
+(XXXXXXX, AÇIK -securityweek.com, 31.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Kaspersky Ürünündeki Yetki Yükseltme Zafiyetinin Giderilmesi
+─────────────────────────────────────────────────────────
+Nightmare Eclipse takma adıyla bilinen bir güvenlik araştırmacısı, Kaspersky Endpoint Security ürününde yetki yükseltilmesine olanak tanıyan HardBreacher adlı bir sıfır gün açığı ve buna ait kavram kanıtlama kodunu paylaşmıştır. Araştırmacı, söz konusu zafiyetin kullanıcı arayüzü sürecinin kontrol edilmesine, dosya erişimlerinin engellenmesine veya yetkisiz erişim sağlanmasına yol açarak işletim sisteminin kararlılığını bozabileceğini belirtmiştir. Kaspersky, SecurityWeek platformuna yaptığı açıklamada, ilgili güvenlik açığının giderildiğini ve düzeltmenin otomatik güncellemeler aracılığıyla kullanıcılara sunulduğunu bildirmiştir. Aynı araştırmacının geçmişte Microsoft Defender ve Windows zafiyetleri için de ShieldBreak ve LegacyHive gibi çeşitli istismar kodları yayımladığı hatırlatılmıştır. Kaspersky, kullanıcıların veritabanı güncellemelerini manuel olarak da tetikleyebileceklerini ifade ederek sorunun çözüldüğünü teyit etmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 31.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] WatchGuard'ın Fireware OS Sistemindeki Kritik Güvenlik Açıklarını Yamalaması
+─────────────────────────────────────────────────────────
+WatchGuard, Fireware OS ve Dimension ürünlerinde tespit edilen ve aralarında uzaktan kod yürütmeye (RCE) olanak tanıyan beş kritik hatanın da bulunduğu yirmiden fazla güvenlik açığı için yamalar yayımlamıştır. Kritik açıkların üçünün, VPN müzakerelerini yöneten 'iked' işlemindeki bellek taşmalarından kaynaklandığı ve kimlik doğrulaması gerektirmeden istismar edilebildiği belirtilmiştir. Saldırganların özel olarak hazırlanmış ağ trafiği göndererek sistemlerin kontrolünü ele geçirebileceği ifade edilmiştir. Ayrıca, WatchGuard Dimension platformunda düşük yetkili yöneticilerin üst düzey yönetici hesaplarını ele geçirmesine neden olabilecek bir açığın da giderildiği kaydedilmiştir. Şirket, söz konusu açıkların henüz sahada istismar edildiğine dair bir bilgi bulunmadığını ancak kullanıcıların güncel sürümlere geçmesinin kritik olduğunu vurgulamıştır. Toplamda 9.3 önem puanına sahip olan bu açıkların ağ güvenliği için ciddi risk oluşturduğu bildirilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] AshSqlite Yazılımındaki Zafiyetin Hassas Verileri İfşa Etmesi
+─────────────────────────────────────────────────────────
+Erlang Ekosistem Vakfı, AshSqlite veri katmanında JSON yollarının güvensiz oluşturulmasından kaynaklanan CVE-2026-77846 kodlu bir güvenlik açığı yayımlamıştır. Bu zafiyetin, uygulamaların doğrulanmamış girdileri get_path/2 işlevine iletmesi durumunda saldırganların gizli JSON alanlarına erişmesine olanak tanıdığı belirtilmiştir. Sorunun bir SQL enjeksiyonu olmadığı, ancak SQLite'ın özel karakterleri yorumlama biçimi nedeniyle JSONPath enjeksiyonuna dönüştüğü ifade edilmiştir. Yapılan kavram kanıtı çalışmalarında, normalde erişilmemesi gereken iç içe geçmiş 'özel anahtar' verilerinin manipüle edilmiş sorgularla sızdırılabildiği kanıtlanmıştır. AshSqlite'ın 0.1.2-rc.0 ile 0.2.18 arasındaki sürümlerinin etkilendiği ve 0.2.18 sürümüyle güvenli kodlama yöntemine geçildiği bildirilmiştir. Sistem yöneticilerine, yazılımlarını güncellemeleri ve ağ üzerinden gelen alan seçim taleplerini sıkı bir şekilde denetlemeleri tavsiye edilmiştir.
+(XXXXXXX, AÇIK -thecyberexpress.com, 31.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
