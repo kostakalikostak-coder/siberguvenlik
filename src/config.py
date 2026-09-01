@@ -1604,6 +1604,17 @@ Paragraf okunduğunda açıkça şunlardan biri olduğu anlaşılıyorsa → "re
 - Ürün lansmanı / pazar araştırması / beta duyurusu
 - Podcast, webinar, konferans veya etkinlik tanıtımı
 - Genel tavsiye / eğitim / röportaj (somut olay/saldırı/ihlal yok)
+- SPEKÜLASYON: metin doğrulanmış bir olay bildirmiyor, bir ihtimali TARTIŞIYOR.
+  İşareti içeriktedir, başlığın soru biçiminde olması TEK BAŞINA yeterli değildir.
+  Ara: doğrulanmış kurban/fail/tarih YOK ve metin "olabilir", "acaba",
+  "iddia edildiği gibi bir kanıt yok", "henüz bilinmiyor", "spekülasyon"
+  gibi ifadelerle bir arızanın siber saldırı OLUP OLMADIĞINI sorguluyor.
+  ÖLÇÜLDÜ (2026-09-01): "Is Someone Hacking DoD Refrigerators?" — Savunma
+  Bakanlığı kantinlerindeki soğutma arızalarının siber saldırı olabileceğini
+  TARTIŞAN, doğrulanmış hiçbir olay bildirmeyen yazı, 55 puanla rapora girdi.
+  ⚠️ KALDIRMA: doğrulanmış bir olayın SÜREN soruşturması, resmî bir kurumun
+  açtığı inceleme, ya da faili henüz belirlenmemiş GERÇEK bir saldırı —
+  bunlar haberdir; failin bilinmemesi olayı spekülasyon yapmaz.
 
 KONTROL 4 — KOPYALAR (Pass 1'den kaçan):
 Farklı ID'li iki haber aynı olayı anlatıyorsa (aynı mağdur + saldırgan + tarihli olay),
