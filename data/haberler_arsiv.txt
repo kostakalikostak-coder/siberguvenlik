@@ -32665,3 +32665,162 @@ Erlang Ekosistem Vakfı, AshSqlite veri katmanında JSON yollarının güvensiz 
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 02 SEPTEMBER 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Rusya'nın Siber Operasyon Eğitim Materyallerinin Sızdırılması
+─────────────────────────────────────────────────────────
+Rusya'nın siber operasyon kapasitesini sürdürmek için kullandığı kurumsal eğitim sistemine ait belgeler sızdırılmıştır. Kayıtlar, GRU, Ana Operasyonel Direktörlük ve kriptografi ile bilgi güvenliğinden sorumlu 8. Müdürlük gibi birimler için Bauman Moskova Devlet Teknik Üniversitesi bünyesindeki 4 Numaralı Bölüm aracılığıyla resmileşmiş bir personel yetiştirme mekanizması kurulduğunu göstermektedir. Sızıntı, 2024 yılı mezunlarından Aleksei Kondrashov'un, 2017 NotPetya saldırısıyla ilişkilendirilen Sandworm (Askeri Birim 74455) ile doğrudan bağlantısını ortaya koymuştur. Belgeler, Rusya'nın siber yeteneklerini bağımsız tehdit grupları yerine, üniversite alımından askeri hizmete uzanan, teknik ve ideolojik hazırlık içeren kurumsal bir yol haritası olarak yapılandırdığını kanıtlamaktadır. Bu durum, casusluk, yıkıcı faaliyetler ve etki operasyonlarının ortak bir doktrin ve personel havuzundan beslendiğini göstererek GRU'nun operasyonel kapasitesini sürdürme yöntemlerine dair kritik bir perspektif sunmaktadır.
+(XXXXXXX, AÇIK -schneier.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Yirmi Üç Yıllık Sality Botnet Ağının Uluslararası Operasyonla Çökertilmesi
+─────────────────────────────────────────────────────────
+İlk kez 2003 yılında tespit edilen ve yirmi üç yıldır aktif olan Sality eşler arası (P2P) botnet ağı, uluslararası kolluk kuvvetleri ve CrowdStrike iş birliğiyle çökertilmiştir. Bilgi hırsızlığı, spam ve DDoS saldırıları için kullanılan ağın, son sekiz yıldır EggJagger adlı clipjacking aracıyla 150.000 dolardan fazla Bitcoin ve Ethereum çaldığı saptanmıştır. Merkezi bir komuta sunucusu yerine dosya enfektörü ve taşınabilir medya aracılığıyla yayılan Sality, kimlik doğrulaması yapmayan protokol yapısındaki zafiyet nedeniyle etkisiz hale getirilmiştir. CrowdStrike, eş listelerini manipüle ederek enfekte makineleri temizleme sürecini başlatmıştır.
+(XXXXXXX, AÇIK -securityweek.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] FBI'ın 153 Milyon Sürücü Belgesi Satan Platformu Soruşturması
+─────────────────────────────────────────────────────────
+Federal Soruşturma Bürosu (FBI) New Orleans saha ofisi, karanlık ağda Amerika Birleşik Devletleri ve Kanada vatandaşlarına ait 153 milyondan fazla sürücü belgesi taramasını satışa sunan Nexus isimli platform hakkında resmi bir inceleme başlatmıştır. Söz konusu siber suç servisinin, Louisiana merkezli yaygın kullanılan bir kimlik doğrulama şirketinden bir yılı aşkın süredir veri sızdırdığı ve aralarında ABD Savunma Bakanı Pete Hegseth'in de bulunduğu üst düzey hükümet yetkililerinin belgelerini barındırdığı belirtilmiştir. Yapılan incelemelerde, platformdaki kayıtların kızılötesi ve ultraviyole taramalar dahil olmak üzere detaylı görseller içerdiği ve verilerin araç kiralama veya tıbbi kenevir dispanserleri gibi kimlik doğrulama hizmeti kullanılan noktalardan elde edildiği tespit edilmiştir. FBI yetkililerinin, çalınan veriler arasında kendi personellerine ait bilgilerin de bulunması üzerine soruşturmayı derinleştirdiği bildirilmiştir.
+(XXXXXXX, AÇIK -krebsonsecurity.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] ABD'de Su Sistemleri Güvenliği İçin Project Watershed 250 Başlatılması
+─────────────────────────────────────────────────────────
+ABD yönetimi, su altyapısındaki siber güvenlik açıklarını tespit etmek ve gidermek amacıyla Teksas merkezli altı aylık Project Watershed 250 pilot programını başlatmıştır. Program kapsamında federal kurumlar, Teksas Siber Komutanlığı ve Microsoft ile Palo Alto Networks gibi özel sektör temsilcilerinin iş birliği yapacağı belirtilmiştir. Yapay zeka araçları ve kırmızı takım tatbikatlarının kullanılacağı girişimle, özellikle kısıtlı kaynaklara sahip küçük ölçekli su tesislerinin savunma kapasitesinin artırılması hedeflenmektedir. Beyaz Saray yetkilileri, bu çalışmanın Minnesota'daki su sistemlerini hedef alan son saldırılara doğrudan bir yanıt olmadığını ancak yerel altyapıdaki zafiyetlerin önemini teyit ettiğini ifade etmiştir. Teksas'ta elde edilecek sonuçların, kritik altyapıların korunması için ülke genelinde uygulanabilecek bir model oluşturması planlanmaktadır.
+(XXXXXXX, AÇIK -industrialcyber.co, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Virtualizor Yazılımına BGP Yönlendirme Saldırısıyla Zararlı Güncelleme Gönderilmesi
+─────────────────────────────────────────────────────────
+Virtualizor VPS yönetim yazılımının güncelleme altyapısı, 28 Ağustos 20:57 UTC ile 30 Ağustos 06:10 UTC tarihleri arasında BGP yönlendirme protokolünün kötüye kullanıldığı bir saldırıyla hedef alınmıştır. Softaculous firması, Hetzner tarafından barındırılan IP adreslerinin saldırganlarca sahte rotalar üzerinden kendi sunucularına yönlendirildiğini ve bu süreçte Let's Encrypt üzerinden geçerli TLS sertifikaları alınarak güvenlik uyarılarının aşıldığını açıklamıştır. Bu BGP saptırması sonucunda, sınırlı sayıdaki kuruluma zararlı paketler iletilmiş ve müşteri portalı trafiği de etkilenmiştir. Şirket, sistem yöneticilerinin /etc/systemd/system/java-jre-update.service dosyasını kontrol etmelerini, API kimlik bilgilerini sıfırlamalarını ve yetkisiz SSH anahtarlarını denetlemelerini tavsiye etmektedir. Olayın ardından 1 Eylül'de yayımlanan 3.2.9.9 sürümüyle bir güvenlik analiz aracı sunulmuş olup, gelecekteki tüm paketlerin kriptografik olarak imzalanacağı ve altyapı değişikliğine gidileceği duyurulmuştur.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] ClickFix Kampanyasının Polygon Blokzinciri Üzerinden Kuruluşları Hedef Alması
+─────────────────────────────────────────────────────────
+Siber saldırganların, Polygon blokzinciri teknolojisini kötüye kullanarak en az 31 kuruluşu hedef alan yeni bir ClickFix kampanyası yürüttüğü GuidePoint Security (GRIT) araştırmacıları tarafından tespit edilmiştir. EtherHiding olarak adlandırılan bu yöntemde, Binance veya Ethereum yerine Polygon akıllı kontratları kullanılarak komuta kontrol (C2) sunucuları dinamik bir adres defteri gibi güncellenmektedir. E-ticaret, profesyonel hizmetler ve lojistik sektörlerindeki WordPress tabanlı sitelere sızan saldırganlar, CloudFlare'in insan doğrulama ekranlarını taklit eden zararlı JavaScript kodları enjekte etmektedir. Kullanıcılar, tarayıcı hatalarını düzeltmek için Windows+R ve Ctrl+V komutlarını kullanmaya zorlanarak sisteme kalıcı bir arka kapı yerleştiren zararlı yazılımı çalıştırmaktadır. Bu teknik, geleneksel alan adı engelleme mekanizmalarını etkisiz kılarken, saldırganların düşük maliyetli işlemlerle altyapılarını sürekli güncel tutmasına ve tespit edilmekten kaçınmasına olanak tanımaktadır.
+(XXXXXXX, AÇIK -darkreading.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] FSB'nin Küresel Finans Sistemine Yönelik Yapay Zeka Uyarısı
+─────────────────────────────────────────────────────────
+Finansal İstikrar Kurulu (FSB) Başkanı Andrew Bailey, gelişmiş yapay zeka modellerinden kaynaklanan siber risklerin küresel finans sistemi için en acil tehdit olduğunu açıklamıştır. G20 ülkelerine yönelik yayımlanan mektupta, finans kuruluşlarının birden fazla firmayı aynı anda etkileyebilecek şiddetli kesinti senaryolarına karşı hazırlıklı olmaları gerektiği vurgulanmıştır. FSB, OpenAI ve Meta gibi şirketlerin modelleri üzerinde yapılan değerlendirmelerin, bu sistemlerin üçüncü taraf ağları hedef alan yetkisiz faaliyetlerde bulunabildiğini ortaya koyduğunu belirtmiştir. Finansal sistemin yoğunlaşmış üçüncü taraf hizmet sağlayıcılarına olan bağımlılığının sistemik riskleri artırdığına dikkat çekilmiştir. Bailey, ülkelerin gelişmiş yapay zeka modellerinin güvenli dağıtımı için koordineli önlemler alması ve operasyonel dayanıklılıklarını artırması gerektiğini ifade etmiştir.
+(XXXXXXX, AÇIK -therecord.media, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] USPS'in Seçimlerde Test Edilmemiş Yeni Bilişim Sistemlerini Kullanması
+─────────────────────────────────────────────────────────
+ABD Posta Servisi'nin (USPS), 2026 ara seçimleri öncesinde posta yoluyla kullanılan oyları yönetmek için test edilmemiş ve kısıtlayıcı yeni bilişim sistemlerini devreye aldığı bildirilmiştir. Bir ihbarcının şikayeti üzerine ortaya çıkan bilgilere göre, Federal Oy Pusulası Portalı adlı sistemin binlerce oyun reddedilmesine yol açabilecek hatalar barındırdığı iddia edilmiştir. Yazılım geliştirme süreçlerinin aceleye getirildiği ve standart hata ayıklama testlerinin atlandığı belirtilmiştir. Yeni sistemin, tek bir barkod hatası durumunda 10.000 pusulalık tüm bir partiyi reddedebilecek şekilde tasarlandığı ifade edilmiştir. Temsilciler Meclisi üyeleri, bu durumun seçmen haklarını ihlal edebileceği gerekçesiyle uygulamanın durdurulmasını talep etmiştir. Uzmanlar, USPS'in eyaletlerin seçim süreçlerine bu denli karmaşık ve riskli bir teknolojiyle müdahale etmesinin hukuki sorumluluklar doğurabileceği konusunda uyarıda bulunmuştur.
+(XXXXXXX, AÇIK -cyberscoop.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Gentlemen Fidye Yazılımı Çetesinin Nutex Health Verilerini Çalması
+─────────────────────────────────────────────────────────
+Sağlık hizmetleri şirketi Nutex Health, siber saldırganların ağlarına yetkisiz erişim sağlayarak hassas verileri çaldığını doğrulamıştır. Şirketin ABD Menkul Kıymetler ve Borsa Komisyonu'na (SEC) yaptığı bildirimde; hasta, çalışan, sağlayıcı ve finansal bilgilerin ele geçirildiği ifade edilmiştir. Gentlemen fidye yazılımı çetesi, saldırının sorumluluğunu üstlenerek çalınan verileri dokuz gün içinde sızdırmakla tehdit etmiştir. Houston merkezli şirket, olayla ilgili olarak Teksas'ta bir toplu dava ile karşı karşıya kaldığını açıklamıştır. Gentlemen grubunun 2025 yılından bu yana 75'ten fazla ülkede 580'den fazla mağduru hedef aldığı ve çift şantaj yöntemi kullandığı belirtilmektedir. Nutex Health, operasyonel sistemlerinde henüz maddi bir etki tespit edilmediğini ancak incelemelerin sürdüğünü kaydetmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Aesto Health Veri İhlalinden 9 Milyon Kişinin Etkilenmesi
+─────────────────────────────────────────────────────────
+Sağlık teknolojileri firması Aesto Health, Amazon Web Services altyapısına yönelik gerçekleşen siber saldırı sonucunda 9,5 milyondan fazla bireyin verilerinin sızdırıldığını açıklamıştır. Aralık 2025 tarihinde başlayan ihlalin, Mayıs 2026'da tamamlanan adli incelemelerle kesinleştiği belirtilmiştir. Ele geçirilen bilgiler arasında isimler, doğum tarihleri, sosyal güvenlik numaraları, sürücü belgesi bilgileri ve tıbbi kayıtların bulunduğu ifade edilmiştir. Olayın VillageMD ve Everside Health dahil olmak üzere 29 farklı sağlık hizmeti sağlayıcısını dolaylı olarak etkilediği kaydedilmiştir. Şirket, etkilenen bireylere kimlik hırsızlığı koruması ve kredi izleme hizmetleri sunmaya başladığını duyurmuştur. Henüz hiçbir siber suç grubunun saldırıyı üstlenmediği ancak benzer ihlallerin sektördeki diğer teknoloji firmalarında da artış gösterdiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Yapay Zeka Araştırma Kuruluşu METR'in Siber Saldırıya Uğraması
+─────────────────────────────────────────────────────────
+Yapay zeka modellerini değerlendiren kar amacı gütmeyen METR kuruluşu, 2026 yılı içerisinde iki ayrı siber güvenlik olayı yaşadığını açıklamıştır. Mart ayında gerçekleşen ilk olayda, bir araştırmacının kişisel bulut sunucusundan çalınan API anahtarı ile 600.000 dolar değerinde yapay zeka kullanım kredisinin tüketildiği belirtilmiştir. Mayıs ayındaki ikinci olayda ise saldırganların, kuruluşun kamuya açık altyapısını sistematik olarak taradığı ve yayınlanmamış değerlendirme verilerine erişmeye çalıştığı kaydedilmiştir. METR, saldırganların kimlik doldurma ve kimlik avı gibi yöntemlerle gelişmiş yapay zeka modellerine erişim sağlamayı amaçladığını ifade etmiştir. Kuruluş, olayların ardından güvenlik yatırımlarını artırdığını, eski altyapıları kapattığını ve yeni bir güvenlik lideri atadığını duyurmuştur. Uzmanlar, bu tür kuruluşların yapay zeka tedarik zincirinin kritik bir parçası haline geldiğine dikkat çekmiştir.
+(XXXXXXX, AÇIK -darkreading.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] FBI'ın Üst Düzey Kişileri Hedefleyen Oltalama Saldırılarını Duyurması
+─────────────────────────────────────────────────────────
+FBI, yüksek profilli kişileri ve yakınlarını hedef alan gelişmiş bir kimlik avı kampanyası hakkında uyarı yayımlamıştır. Saldırganların, kurbanları Microsoft veya Google gibi bulut hizmetlerine erişim izni vermeye ikna etmek için OAuth onay oltalama yöntemini kullandığı belirtilmiştir. Bu yöntemin, şifre gerektirmeden hesaplara kalıcı erişim sağladığı ve çok faktörlü kimlik doğrulama önlemlerini devre dışı bıraktığı ifade edilmiştir. Tehdit aktörlerinin kendilerini hükümet yetkilisi veya gazeteci olarak tanıtarak kurbanlara sahte belge inceleme talepleri gönderdiği kaydedilmiştir. FBI, 2025 yılının sonlarından bu yana izlenen bu kampanyada, erişim yetkisinin ancak kurbanın uygulama güvenlik ayarlarından jetonu iptal etmesiyle sonlandırılabileceğine dikkat çekmiştir. Kullanıcılara, tanınmayan numaralardan gelen iletişimlere karşı dikkatli olmaları tavsiye edilmiştir.
+(XXXXXXX, AÇIK -cyberscoop.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Florida ve Teksas'ın Flock Kameralarını Yasaklaması
+─────────────────────────────────────────────────────────
+Florida ve Teksas eyalet yetkilileri, gizlilik endişeleri ve izleme teknolojisinin kötüye kullanımı gerekçesiyle gözetleme devi Flock ile olan ilişkilerini sonlandırma kararı almıştır. Florida Ulaştırma Bakanlığı, otoyollardaki plaka okuma kameralarının kullanımını durduracağını ve cihazların kaldırılması için 30 günlük süre tanındığını açıklamıştır. Teksas Valisi Greg Abbott ise bir polis memurunun yetkisiz veri sorgulama suçlamasıyla karşı karşıya kalmasının ardından eyalet kurumlarının Flock kameralarına fon sağlamasını yasaklamıştır. Şirketin ABD genelinde yaklaşık 130.000 plaka okuyucusu bulunduğu ve bazı şehirlerde sözleşmeler feshedilmesine rağmen kameraların yeniden etkinleştirildiği bildirilmiştir. Yetkililer, sistemin eski eşleri takip etmek gibi kişisel amaçlarla kötüye kullanıldığına dair raporların bu kararda etkili olduğunu belirtmiştir.
+(XXXXXXX, AÇIK -techcrunch.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] TSA'nın Ulaşım Sektörü İçin Siber Güvenlik Gereksinimlerini Güncellemesi
+─────────────────────────────────────────────────────────
+ABD Ulaştırma Güvenliği İdaresi (TSA), demiryolu ve otobüs operatörlerini kapsayan siber güvenlik raporlama ve değerlendirme gereksinimlerini revize etmiştir. Yeni düzenlemeye göre, operatörlerin siber güvenlik koordinatörleri ataması ve siber olayları 72 saat içinde CISA'ya bildirmesi zorunlu kılınmıştır. Ayrıca, kurumların güncel siber olay müdahale planları oluşturması ve düzenli güvenlik değerlendirmeleri yapması gerektiği ifade edilmiştir. TSA, ABD vatandaşı olmayan koordinatörler için NEXUS veya Global Entry gibi programlara üyelik şartı getirildiğini açıklamıştır. Revize edilen kuralların, kritik altyapıların korunması amacıyla 67 ana kuruluşu kapsayacağı ve yıllık denetim yükümlülüklerini içereceği belirtilmiştir. Operatörlerin, TSA tarafından onaylanmış uygulama planlarını sunmaları ve yıllık değerlendirme raporlarını iletmeleri gerektiği kaydedilmiştir.
+(XXXXXXX, AÇIK -industrialcyber.co, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] X Money Lansmanı Sonrası Kullanıcı Hesaplarına Yönelik Saldırılar
+─────────────────────────────────────────────────────────
+Sosyal medya platformu X, yeni ödeme hizmeti X Money'nin kullanıma sunulmasının ardından kullanıcı hesaplarını hedef alan toplu şifre sıfırlama girişimlerinin yaşandığını açıklamıştır. Şirket mühendisi Mridul Singhai, saldırganların ödeme hizmetine erişim sağlamak amacıyla yetkisiz giriş denemelerinde bulunduğunu ancak şu ana kadar başarılı bir sızma kanıtına rastlanmadığını belirtmiştir. Kullanıcıların çok sayıda istenmeyen şifre sıfırlama e-postası aldığı ve bu durumun kamuya açık kullanıcı adları üzerinden tetiklendiği ifade edilmiştir. X hukuk müşaviri James Burnham, platform kullanıcılarını mağdur etmeye çalışanların cezai olarak sorumlu tutulacağını vurgulamıştır. Şirketin yapay zeka botu Grok, sistem ihlali olmadığını teyit ederek kullanıcılara iki faktörlü kimlik doğrulamayı etkinleştirmeleri tavsiyesinde bulunmuştur. Olayla ilgili incelemelerin sürdüğü ve güvenlik ekiplerinin teyakkuzda olduğu bildirilmiştir.
+(XXXXXXX, AÇIK -techcrunch.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] Google Reklam Arşivindeki Aldatıcı Yazılım Reklamlarının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+NYU ve Radboud Üniversitesi araştırmacıları, Google'ın reklam şeffaflığı arşivinde yaptıkları incelemede 100 milyondan fazla görüntüleme alan binlerce aldatıcı ve zararlı reklam tespit etmiştir. AdLens adlı bir araç kullanan ekip, arşivdeki 188.000 yazılım reklamı arasından korkutma amaçlı (scareware) ve yanlış beyan içeren içerikleri ortaya çıkarmıştır. Bu reklamların kullanıcıları telefonlarının virüs kaptığına veya depolama alanlarının dolduğuna dair sahte uyarılarla yanılttığı belirtilmiştir. Araştırmacılar, bu reklamları Google'a bildirmelerine rağmen birçoğunun yayında kalmaya devam ettiğini ve kötü amaçlı alan adlarına yönlendirme yaptığını ifade etmiştir. Bazı reklamların TamperedChef adlı bilinen bir zararlı yazılım kampanyasıyla bağlantılı olduğu kaydedilmiştir. Google'ın güvenlik ekibinin konuyla ilgili raporlara henüz yanıt vermediği ve aldatıcı reklamların ana altyapı üzerinden geniş ölçekte yayınlanmaya devam ettiği bildirilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] JFrog Artifactory'deki Kritik Güvenlik Açığının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+JFrog Artifactory yazılımındaki CVE-2026-82329 kodlu kritik kimlik doğrulama atlatma açığının, kamuya açıklanmasından kısa süre sonra aktif olarak istismar edilmeye başlandığı bildirilmiştir. Güvenlik açığının, saldırganların herhangi bir kullanıcı etkileşimi olmadan yönetici düzeyinde erişim sağlamasına olanak tanıdığı belirtilmektedir. watchTowr araştırmacıları, saldırganların bu açığı kullanarak yönetici belirteçleri oluşturduğunu ve kullanıcı grupları ile federasyon yapılarını listelediğini tespit etmiştir. JFrog, sorunun yalnızca kurum içi (self-hosted) kurulumları etkilediğini ve bulut platformunun güvende olduğunu açıklamıştır. Yazılım deposu platformunun, dünya genelinde 6.600'den fazla kuruluş tarafından kullanıldığı ve ele geçirilmesi durumunda yazılım tedarik zincirine yönelik ciddi riskler oluşturabileceği ifade edilmiştir. Uzmanlar, etkilenen sistemlerin acilen yamalanması ve maruz kalan kimlik bilgilerinin değiştirilmesi gerektiği konusunda uyarıda bulunmuştur.
+(XXXXXXX, AÇIK -darkreading.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] Langflow Platformundaki Kritik Zafiyetin Aktif Olarak İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Yapay zeka düşük kodlu platformu Langflow'da tespit edilen CVE-2026-0768 kodlu kritik uzaktan kod yürütme zafiyetinin siber tehdit aktörleri tarafından istismar edilmeye başlandığı bildirilmiştir. VulnCheck tarafından yapılan açıklamada, 9.8 önem puanına sahip bu açığın, kimlik doğrulaması yapmamış saldırganların root yetkileriyle rastgele Python kodu çalıştırmasına olanak tanıdığı belirtilmiştir. Tehdit aktörlerinin bu zafiyeti kullanarak keşif faaliyetleri yürüttüğü ve kimlik bilgileri topladığı kaydedilmiştir. Özellikle Rusya kaynaklı olduğu değerlendirilen saldırılarda, gizli anahtarlar ve SSH erişim bilgilerinin hedeflendiği ifade edilmiştir. İngiltere'deki bal küpü sistemlerinde 360'tan fazla saldırı girişimi gözlemlenirken, 1.4.2 sürümüne kadar olan tüm Langflow sürümlerinin bu durumdan etkilendiği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] Sangoma Switchvox Sistemlerinde Uzaktan Kod Yürütme Zafiyeti
+─────────────────────────────────────────────────────────
+Kurumsal VoIP platformu Sangoma Switchvox'ta, kimlik doğrulaması gerektirmeyen kritik bir SQL enjeksiyon zafiyetinin istismar edildiği tespit edilmiştir. CVE-2026-9586 kodlu açığın, saldırganların PostgreSQL süper kullanıcısı yetkileriyle uzaktan rastgele kod yürütmesine olanak tanıdığı bildirilmiştir. Güvenlik araştırmacıları, 30 Ağustos'tan itibaren internete açık sistemlere yönelik aktif saldırı girişimleri gözlemlediklerini açıklamıştır. Saldırıların, kurban sistemlerde tersine kabuk (reverse shell) oluşturmayı ve Base64 kodlu komutlar çalıştırmayı hedeflediği kaydedilmiştir. Dünya genelinde yaklaşık 4.000 internete açık Switchvox örneğinin bulunduğu ve bunların çoğunun ABD merkezli olduğu belirtilmiştir. Kullanıcıların, Temmuz ayında yayımlanan 8.4.0.2 sürümüne acilen yükseltme yapmaları ve sistem günlüklerini kontrol etmeleri istenmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[20] Araştırmacıların Claude Kullanarak PLC Cihazlarına Yönelik Saldırı Geliştirmesi
+─────────────────────────────────────────────────────────
+Forescout Research araştırmacıları, Anthropic'in Claude yapay zeka modelini kullanarak bir WAGO programlanabilir mantık denetleyicisi (PLC) modelinden diğerine uzaktan kod yürütme (RCE) saldırısı aktarmayı başarmıştır. CVE-2021-31886 kodlu güvenlik açığını hedef alan çalışmada, yapay zekanın yardımıyla canlı donanım üzerinde saldırgan kontrolünde kabuk kodları çalıştırılmıştır. Araştırma sürecinde Claude Code aracının terminale ve tersine mühendislik araçlarına erişim sağladığı belirtilmiştir. Deneyler sırasında bir PLC cihazının kalıcı olarak kullanılamaz hale geldiği kaydedilmiştir. Forescout, yapay zekanın saldırı geliştirme süresini ve teknik uzmanlık gereksinimini önemli ölçüde azalttığına dikkat çekmiştir. CERT@VDE, etkilenen WAGO denetleyicileri için henüz bir güncelleme bulunmadığını bildirerek kullanıcılara FTP protokolünü devre dışı bırakmalarını ve ağ segmentasyonu uygulamalarını tavsiye etmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[21] Mozilla Firefox iOS Sürümünde Güvenlik Politikası İhlali Açığı
+─────────────────────────────────────────────────────────
+Mozilla Firefox'un iOS işletim sistemi için geliştirilen sürümlerinde, güvenlik politikalarının atlatılmasına neden olan bir zafiyet tespit edilmiştir. Fransa Ulusal Siber Güvenlik Ajansı (ANSSI) bünyesindeki CERT-FR tarafından yayımlanan bildiriye göre, bu açık CVE-2026-81267 koduyla tanımlanmıştır. Zafiyetin, 155.0 sürümünden önceki tüm Firefox iOS versiyonlarını etkilediği belirtilmektedir. Söz konusu hata, saldırganların tarayıcı üzerindeki güvenlik kısıtlamalarını aşmasına imkan tanımaktadır. Mozilla'nın 31 Ağustos 2026 tarihli güvenlik bültenine atıfta bulunulan raporda, kullanıcıların riskten korunmak için yazılımlarını güncel sürüme yükseltmeleri gerektiği vurgulanmıştır. CERT-FR, zafiyetin ciddiyeti ve çözüm yolları hakkında ilgili teknik dokümantasyonun yayımlandığını ve güncel yamaların uygulanmasının zorunlu olduğunu ifade etmiştir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[22] Avast Antivirüs Yazılımında Ayrıcalık Yükseltme Zafiyetinin Paylaşılması
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacısı Chaotic Eclipse, GenDigital bünyesindeki Avast Antivirüs yazılımını hedef alan PrettyPrague adlı yeni bir sıfır gün açığı ve buna ait kavram kanıtı (PoC) kodunu yayımlamıştır. Söz konusu zafiyetin, Avast Sandbox özelliğini istismar ederek Windows SAM veritabanını dökmesine ve sistem düzeyinde yetki elde edilmesine olanak tanıdığı belirtilmiştir. Araştırmacı, bu açığın güncel Windows 11 25H2 sürümlerinde ve tam yamalı Avast yazılımlarında çalıştığını iddia etmiştir. Ayrıca, aynı zafiyetin AVG ve Norton gibi diğer GenDigital ürünlerini de etkileyebileceği öne sürülmektedir. Chaotic Eclipse'in daha önce de Microsoft ve Kaspersky ürünlerine yönelik benzer açıklar paylaştığı hatırlatılmıştır. Bu tür paylaşımların, sorumlu açıklama süreçleri ve çalışan istismar kodlarının yayımlanmasının riskleri konusundaki tartışmaları yeniden canlandırdığı ifade edilmektedir.
+(XXXXXXX, AÇIK -securityaffairs.com, 01.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

@@ -39,3 +39,6 @@
 2026-08-31 12:10 | TABAN UYARISI - rapor 4 haber (<6, taze havuz 13)
 2026-08-31 13:05 | TABAN UYARISI - rapor 3 haber (<8, taze havuz 17)
 2026-09-01 12:06 | DEDUP SIFIR - Recorded Future: 2 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 1)
+2026-09-02 12:05 | AKIŞ BAYAT - Graham Cluley: 20 madde geldi ama hepsi pencere dışı (>96s)
+2026-09-02 12:05 | DEDUP SIFIR - Securelist (Kaspersky): 4 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 1, daha önce raporlanmış: 3)
+2026-09-02 12:05 | DEDUP SIFIR - The Cyber Express: 5 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 3, daha önce raporlanmış: 2)

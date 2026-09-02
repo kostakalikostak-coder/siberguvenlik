@@ -1,34 +1,5 @@
 [
  {
-  "date": "2026-08-02",
-  "views": [
-   {
-    "tr_title": "Adform Betiğine Yapılan Müdahaleyle Kripto Adreslerinin Değiştirilmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Reklam teknolojisi şirketi Adform, 27 Temmuz 2026 tarihinde s2.adform[.]net üzerinden sunulan trackpoint-async.js dosyasının manipüle edildiği bir tedarik zinciri saldırısı tespit etmiştir. Siber saldırganlar, meşru kütüphaneye XOR anahtarıyla gizlenmiş iki kötü amaçlı blok ekleyerek tarayıcı tarafında Bitcoin, Ethereum ve Tron cüzdan adreslerini otomatik değiştiren bir araç yerleştirmiştir. Bu kod, pano verilerini dört saniyede bir kontrol etmenin yanı sıra form alanlarındaki metin düğümlerini de değiştirerek ödemeleri saldırganlara yönlendirmiştir. Araştırmacı Kevin Beaumont, faaliyetin bir haftadır sürdüğünü ve adreslerin sürekli değiştirildiğini belirtirken, zararlı yazılımın 84.32.102[.]230 IP adresine sayfa bilgilerini sızdırma potansiyeli taşıdığı saptanmıştır. Adform, 1.800 müşterisi bulunan platformundaki etkilenen dosyayı temizlemiş ve kullanıcılara tarayıcı önbelleklerini boşaltmaları yönünde kritik bir uyarı yayınlamıştır. (XXXXXXX, AÇIK -thehackernews.com, 01.08.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "macOS Sistemlerini Hedef Alan AMOS Zararlı Yazılımı Tespit Edilmesi",
-    "paragraph": "───────────────────────────────────────────────────────── 31 Temmuz 2026 tarihinde yapılan laboratuvar analizlerinde, macOS kullanıcılarını hedef alan Atomic MacOS (AMOS) adlı bir casus yazılım enfeksiyonu tespit edilmiştir. Zararlı yazılımın, 'macOS araç takımı' adı altında sahte bir web sayfası üzerinden dağıtıldığı ve kullanıcıları Terminal penceresine belirli bir komut dizisini yapıştırmaya ikna ettiği belirlenmiştir. Bu komutun çalıştırılmasıyla birlikte AMOS zararlısının sisteme indirildiği ve kalıcılık sağladığı kaydedilmiştir. Yapılan incelemelerde, yazılımın kurbanın sisteminden tarayıcı verileri, kripto cüzdan bilgileri, mesajlaşma geçmişi ve kimlik bilgilerini çalarak 188.166.78[.]138 IP adresli komuta kontrol sunucusuna gönderdiği tespit edilmiştir. Analiz raporu, zararlının hem x86_64 hem de arm64 mimarileriyle uyumlu Mach-O ikili dosyaları kullandığını ortaya koymuştur. Kullanıcıların, kaynağı belirsiz komutları Terminal üzerinde çalıştırmamaları konusunda uyarıldığı bildirilmiştir. (XXXXXXX, AÇIK -isc.sans.edu, 02.08.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "CISA'nın Su Sistemlerine Yönelik Siber Saldırı Uyarısı Yapması",
-    "paragraph": "───────────────────────────────────────────────────────── ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), 26-27 Temmuz 2026 tarihlerinde Minnesota'daki 30'dan fazla topluluk su sistemini hedef alan koordinatörlü siber saldırılar üzerine kritik bir uyarı yayımlamıştır. Braham, Maple Plain, Plymouth ve South St. Paul gibi şehirleri etkileyen saldırılarda, özellikle Braham'da su arıtma tesisleri tamamen çevrimdışı kalarak manuel operasyonlara geçilmiştir. MNIT eyalet genelinde müdahale yeteneklerini etkinleştirirken, saldırganların internete açık Rockwell Automation, Schneider Electric ve Siemens marka programlanabilir mantık denetleyicilerinin (PLC) şifrelerini ve IP adreslerini değiştirerek operatörleri sistem dışı bıraktığı saptanmıştır. Operasyonel kalıplar İran bağlantılı CyberAv3ngers grubuyla uyumlu bulunurken, CISA özellikle CVE-2021-22681 zafiyetine karşı internete açık tüm OT sistemlerinin ve hücresel modemlerin acilen izole edilmesini önermektedir. (XXXXXXX, AÇIK -securityaffairs.com, 02.08.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Coldcard Donanım Cüzdanlarındaki Hata Nedeniyle Büyük Hırsızlık Yaşanması",
-    "paragraph": "───────────────────────────────────────────────────────── Galaxy Research tarafından yapılan analizde, 30 Temmuz 2026 tarihinde 41 dakika içerisinde 1.196 Bitcoin adresinden yaklaşık 70,2 milyon dolar değerinde 1.082,65 BTC'nin çalındığı bildirilmiştir. Söz konusu varlık kaybının, Coinkite firması tarafından üretilen Coldcard donanım cüzdanlarındaki bir yazılım hatasından kaynaklandığı tespit edilmiştir. Mart 2021 tarihli bir donanım yazılımı entegrasyon hatasının, tohum anahtar oluşturma sürecini donanımsal rastgele sayı üreteci yerine zayıf bir yazılımsal algoritmaya yönlendirdiği açıklanmıştır. Coinkite, 31 Temmuz 2026 tarihinde tüm etkilenen modeller için acil durum yazılımı yayımlamış ancak mevcut tohum anahtarların güvenli olmadığını belirtmiştir. Şirket, kullanıcıların yeni yazılımla yeni bir anahtar oluşturarak varlıklarını taşımaları gerektiğini vurgulamıştır. Saldırıyı gerçekleştiren aktörün kimliği henüz belirlenememiştir. (XXXXXXX, AÇIK -thehackernews.com, 01.08.2026) ──────────────────────────────────────────────────────────────────────────────── ================================================================================",
-    "title": "",
-    "full_text": ""
-   }
-  ]
- },
- {
   "date": "2026-08-03",
   "views": [
    {
@@ -3025,6 +2996,143 @@
     "paragraph": "Siber güvenlik araştırmacıları, Brezilya Portekizcesi ile yazılmış kimlik avı e-postaları üzerinden yayılan Guildma (Astaroth) zararlı yazılımı operasyonunu tespit etmiştir. Saldırının, hedef sistemin IP adresinin Brezilya merkezli olması ve dil ayarlarının Portekizce olması durumunda tetiklenen coğrafi kısıtlama (geofencing) özelliğine sahip olduğu belirtilmiştir. Kötü amaçlı bağlantıya tıklandığında indirilen ZIP arşivinin içindeki Windows kısayol dosyasının, sistemde gizli veri akışları oluşt",
     "title": "Guildma (Astaroth) malware infection from Brazilian Portuguese email, (Tue, Sep 1st)",
     "full_text": "Guildma (Astaroth) malware infection from Brazilian Portuguese email\n\nOn Monday 2026-08-31, I used a link from a malicious Brazilian Portuguese email to infect a Windows host in my lab. This was a Guildma (Astaroth) malware infection.\n\nThe link from the email is geofenced for Brazil, meaning that it would only deliver the malware if I checked it from a Brazil-based IP address. Otherwise, it would "
+   }
+  ]
+ },
+ {
+  "date": "2026-09-02",
+  "views": [
+   {
+    "tr_title": "Rusya'nın Siber Operasyon Eğitim Materyallerinin Sızdırılması",
+    "paragraph": "Rusya'nın siber operasyon kapasitesini sürdürmek için kullandığı kurumsal eğitim sistemine ait belgeler sızdırılmıştır. Kayıtlar, GRU, Ana Operasyonel Direktörlük ve kriptografi ile bilgi güvenliğinden sorumlu 8. Müdürlük gibi birimler için Bauman Moskova Devlet Teknik Üniversitesi bünyesindeki 4 Numaralı Bölüm aracılığıyla resmileşmiş bir personel yetiştirme mekanizması kurulduğunu göstermektedir. Sızıntı, 2024 yılı mezunlarından Aleksei Kondrashov'un, 2017 NotPetya saldırısıyla ilişkilendirile",
+    "title": "Leaked Russian Cyber-Operations Training Materials",
+    "full_text": "Leaked Russian Cyber-Operations Training Materials\n\nThe records describe a force-generation mechanism for several General Staff components, including the GRU, Main Operational Directorate, and 8th Directorate, which is associated with protected communications, cryptography, and information security.\n\nThe reporting also linked a 2024 Department No. 4 graduate, Aleksei Kondrashov, to Military Unit 7"
+   },
+   {
+    "tr_title": "Yirmi Üç Yıllık Sality Botnet Ağının Uluslararası Operasyonla Çökertilmesi",
+    "paragraph": "İlk kez 2003 yılında tespit edilen ve yirmi üç yıldır aktif olan Sality eşler arası (P2P) botnet ağı, uluslararası kolluk kuvvetleri ve CrowdStrike iş birliğiyle çökertilmiştir. Bilgi hırsızlığı, spam ve DDoS saldırıları için kullanılan ağın, son sekiz yıldır EggJagger adlı clipjacking aracıyla 150.000 dolardan fazla Bitcoin ve Ethereum çaldığı saptanmıştır. Merkezi bir komuta sunucusu yerine dosya enfektörü ve taşınabilir medya aracılığıyla yayılan Sality, kimlik doğrulaması yapmayan protokol y",
+    "title": "23-Year-Old Sality P2P Botnet Disrupted",
+    "full_text": "23-Year-Old Sality P2P Botnet Disrupted\n\nThe shutdown operation involved peer list manipulation and Sality payload URL takedown.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nAfter 23 years of operation, the Sality peer-to-peer (P2P) botnet has been disrupted as part of an international law enforcement effort.\nFirst observed in 2003, Sality has been used for distributing various m"
+   },
+   {
+    "tr_title": "FBI'ın 153 Milyon Sürücü Belgesi Satan Platformu Soruşturması",
+    "paragraph": "Federal Soruşturma Bürosu (FBI) New Orleans saha ofisi, karanlık ağda Amerika Birleşik Devletleri ve Kanada vatandaşlarına ait 153 milyondan fazla sürücü belgesi taramasını satışa sunan Nexus isimli platform hakkında resmi bir inceleme başlatmıştır. Söz konusu siber suç servisinin, Louisiana merkezli yaygın kullanılan bir kimlik doğrulama şirketinden bir yılı aşkın süredir veri sızdırdığı ve aralarında ABD Savunma Bakanı Pete Hegseth'in de bulunduğu üst düzey hükümet yetkililerinin belgelerini b",
+    "title": "FBI Probes Service Selling 153M+ Drivers Licenses",
+    "full_text": "A new identity theft service launched on the dark web this week is selling digital scans of more than 153 million drivers licenses from people in the United States and Canada. Based on interviews with individuals whose licenses are available for purchase on this service, it appears to be siphoning images collected by a widely-used identity verification company based in Louisiana. KrebsOnSecurity a"
+   },
+   {
+    "tr_title": "JFrog Artifactory'deki Kritik Güvenlik Açığının İstismar Edilmesi",
+    "paragraph": "JFrog Artifactory yazılımındaki CVE-2026-82329 kodlu kritik kimlik doğrulama atlatma açığının, kamuya açıklanmasından kısa süre sonra aktif olarak istismar edilmeye başlandığı bildirilmiştir. Güvenlik açığının, saldırganların herhangi bir kullanıcı etkileşimi olmadan yönetici düzeyinde erişim sağlamasına olanak tanıdığı belirtilmektedir. watchTowr araştırmacıları, saldırganların bu açığı kullanarak yönetici belirteçleri oluşturduğunu ve kullanıcı grupları ile federasyon yapılarını listelediğini ",
+    "title": "Attackers Pounce on Critical Artifactory Flaw Following Disclosure",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nVulnerabilities & Threats\n\nAttackers Pounce on Critical Artifactory Flaw Following Disclosure\n\nCVE-2026-82329 is an authentication bypass flaw in JFrog's repository manager that enables bad actors to gain admin-level access on affected "
+   },
+   {
+    "tr_title": "ABD'de Su Sistemleri Güvenliği İçin Project Watershed 250 Başlatılması",
+    "paragraph": "ABD yönetimi, su altyapısındaki siber güvenlik açıklarını tespit etmek ve gidermek amacıyla Teksas merkezli altı aylık Project Watershed 250 pilot programını başlatmıştır. Program kapsamında federal kurumlar, Teksas Siber Komutanlığı ve Microsoft ile Palo Alto Networks gibi özel sektör temsilcilerinin iş birliği yapacağı belirtilmiştir. Yapay zeka araçları ve kırmızı takım tatbikatlarının kullanılacağı girişimle, özellikle kısıtlı kaynaklara sahip küçük ölçekli su tesislerinin savunma kapasitesi",
+    "title": "US launches Project Watershed 250 to tackle water system cybersecurity vulnerabilities with AI, red-team exercises",
+    "full_text": "US launches Project Watershed 250 to tackle water system cybersecurity vulnerabilities with AI, red-team exercises\n\nThe U.S. administration is launching Project Watershed 250, a six-month pilot in Texas designed to identify and address cybersecurity vulnerabilities in water systems before adversaries can exploit them. The initiative brings together federal agencies, Texas Cyber Command, local gove"
+   },
+   {
+    "tr_title": "Virtualizor Yazılımına BGP Yönlendirme Saldırısıyla Zararlı Güncelleme Gönderilmesi",
+    "paragraph": "Virtualizor VPS yönetim yazılımının güncelleme altyapısı, 28 Ağustos 20:57 UTC ile 30 Ağustos 06:10 UTC tarihleri arasında BGP yönlendirme protokolünün kötüye kullanıldığı bir saldırıyla hedef alınmıştır. Softaculous firması, Hetzner tarafından barındırılan IP adreslerinin saldırganlarca sahte rotalar üzerinden kendi sunucularına yönlendirildiğini ve bu süreçte Let's Encrypt üzerinden geçerli TLS sertifikaları alınarak güvenlik uyarılarının aşıldığını açıklamıştır. Bu BGP saptırması sonucunda, s",
+    "title": "Hackers push malicious Virtualizor update in BGP hijacking attack",
+    "full_text": "Hackers delivered malicious updates to the Virtualizor VPS management software after hijacking BGP routing for its update infrastructure and redirecting update requests to malicious servers.\n\nVirtualizor is a legacy web control panel from Softaculous that hosting providers use to create, sell, and manage virtual private servers (VPS).\n\nAn urgent notice from the vendor warns that between 20:57 UTC "
+   },
+   {
+    "tr_title": "ClickFix Kampanyasının Polygon Blokzinciri Üzerinden Kuruluşları Hedef Alması",
+    "paragraph": "Siber saldırganların, Polygon blokzinciri teknolojisini kötüye kullanarak en az 31 kuruluşu hedef alan yeni bir ClickFix kampanyası yürüttüğü GuidePoint Security (GRIT) araştırmacıları tarafından tespit edilmiştir. EtherHiding olarak adlandırılan bu yöntemde, Binance veya Ethereum yerine Polygon akıllı kontratları kullanılarak komuta kontrol (C2) sunucuları dinamik bir adres defteri gibi güncellenmektedir. E-ticaret, profesyonel hizmetler ve lojistik sektörlerindeki WordPress tabanlı sitelere sı",
+    "title": "ClickFix Campaign Compromises 31 Orgs, Abuses Polygon Blockchain",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nCyberattacks & Data Breaches\n\nClickFix Campaign Compromises 31 Orgs, Abuses Polygon Blockchain\n\nThe campaign uses EtherHiding to dynamically update its command-and-control server, abusing the blockchain as an attacker-controlled address"
+   },
+   {
+    "tr_title": "FSB'nin Küresel Finans Sistemine Yönelik Yapay Zeka Uyarısı",
+    "paragraph": "Finansal İstikrar Kurulu (FSB) Başkanı Andrew Bailey, gelişmiş yapay zeka modellerinden kaynaklanan siber risklerin küresel finans sistemi için en acil tehdit olduğunu açıklamıştır. G20 ülkelerine yönelik yayımlanan mektupta, finans kuruluşlarının birden fazla firmayı aynı anda etkileyebilecek şiddetli kesinti senaryolarına karşı hazırlıklı olmaları gerektiği vurgulanmıştır. FSB, OpenAI ve Meta gibi şirketlerin modelleri üzerinde yapılan değerlendirmelerin, bu sistemlerin üçüncü taraf ağları hed",
+    "title": "Cyber risk from frontier AI poses ‘most immediate concern’ to global financial system, watchdog warns",
+    "full_text": "Cyber risk from frontier AI poses ‘most immediate concern’ to global financial system, watchdog warns\n\nThe cyber risk posed by frontier AI is the “most immediate concern” facing the global financial system, ministers and central bank governors from the world’s largest economies were warned in a letter published Monday.\n\nAndrew Bailey, chair of the Financial Stability Board, called on financial ins"
+   },
+   {
+    "tr_title": "USPS'in Seçimlerde Test Edilmemiş Yeni Bilişim Sistemlerini Kullanması",
+    "paragraph": "ABD Posta Servisi'nin (USPS), 2026 ara seçimleri öncesinde posta yoluyla kullanılan oyları yönetmek için test edilmemiş ve kısıtlayıcı yeni bilişim sistemlerini devreye aldığı bildirilmiştir. Bir ihbarcının şikayeti üzerine ortaya çıkan bilgilere göre, Federal Oy Pusulası Portalı adlı sistemin binlerce oyun reddedilmesine yol açabilecek hatalar barındırdığı iddia edilmiştir. Yazılım geliştirme süreçlerinin aceleye getirildiği ve standart hata ayıklama testlerinin atlandığı belirtilmiştir. Yeni s",
+    "title": "Whistleblower says USPS deploying new, ‘untested’ IT systems governing mail-in ballots",
+    "full_text": "Whistleblower says USPS deploying new, ‘untested’ IT systems governing mail-in ballots\n\nA newly released whistleblower complaint reveals details about the “rushed” effort by the Trump administration and U.S. Postal Service to install three new restrictive IT systems that would potentially deny thousands of mail-in ballots, if the federal government disagrees on their eligibility.\n\nAccording to the"
+   },
+   {
+    "tr_title": "Langflow Platformundaki Kritik Zafiyetin Aktif Olarak İstismar Edilmesi",
+    "paragraph": "Yapay zeka düşük kodlu platformu Langflow'da tespit edilen CVE-2026-0768 kodlu kritik uzaktan kod yürütme zafiyetinin siber tehdit aktörleri tarafından istismar edilmeye başlandığı bildirilmiştir. VulnCheck tarafından yapılan açıklamada, 9.8 önem puanına sahip bu açığın, kimlik doğrulaması yapmamış saldırganların root yetkileriyle rastgele Python kodu çalıştırmasına olanak tanıdığı belirtilmiştir. Tehdit aktörlerinin bu zafiyeti kullanarak keşif faaliyetleri yürüttüğü ve kimlik bilgileri topladı",
+    "title": "Hackers Start Exploiting Critical Langflow Vulnerability",
+    "full_text": "Artificial Intelligence\n\nHackers Start Exploiting Critical Langflow Vulnerability\n\nTracked as CVE-2026-0768, the security defect allows unauthenticated attackers to execute arbitrary Python code remotely.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nThreat actors have started exploiting a critical-severity remote code execution (RCE) vulnerability in the AI low-code platform Lang"
+   },
+   {
+    "tr_title": "Gentlemen Fidye Yazılımı Çetesinin Nutex Health Verilerini Çalması",
+    "paragraph": "Sağlık hizmetleri şirketi Nutex Health, siber saldırganların ağlarına yetkisiz erişim sağlayarak hassas verileri çaldığını doğrulamıştır. Şirketin ABD Menkul Kıymetler ve Borsa Komisyonu'na (SEC) yaptığı bildirimde; hasta, çalışan, sağlayıcı ve finansal bilgilerin ele geçirildiği ifade edilmiştir. Gentlemen fidye yazılımı çetesi, saldırının sorumluluğunu üstlenerek çalınan verileri dokuz gün içinde sızdırmakla tehdit etmiştir. Houston merkezli şirket, olayla ilgili olarak Teksas'ta bir toplu dav",
+    "title": "Ransomware Gang Claims Nutex Health Data Breach",
+    "full_text": "Ransomware Gang Claims Nutex Health Data Breach\n\nThe company has notified the SEC that hackers accessed patient, employee, provider, business, and financial information.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nHealthcare services and operations company Nutex Health has confirmed that personal and business information was stolen in a recently disclosed data breach.\nLast week,"
+   },
+   {
+    "tr_title": "Aesto Health Veri İhlalinden 9 Milyon Kişinin Etkilenmesi",
+    "paragraph": "Sağlık teknolojileri firması Aesto Health, Amazon Web Services altyapısına yönelik gerçekleşen siber saldırı sonucunda 9,5 milyondan fazla bireyin verilerinin sızdırıldığını açıklamıştır. Aralık 2025 tarihinde başlayan ihlalin, Mayıs 2026'da tamamlanan adli incelemelerle kesinleştiği belirtilmiştir. Ele geçirilen bilgiler arasında isimler, doğum tarihleri, sosyal güvenlik numaraları, sürücü belgesi bilgileri ve tıbbi kayıtların bulunduğu ifade edilmiştir. Olayın VillageMD ve Everside Health dahi",
+    "title": "Aesto Health says data breach affects over 9.5 million patients",
+    "full_text": "Aesto LLC, operating as Aesto Health, disclosed that a data breach discovered recently affects more than 9.5 million individuals.\n\nThe private technology company provides software-as-a-service solutions that help healthcare organizations migrate, archive, and access patient data when replacing electronic health record systems or acquiring medical practices.\n\nThe company first informed the public o"
+   },
+   {
+    "tr_title": "Yapay Zeka Araştırma Kuruluşu METR'in Siber Saldırıya Uğraması",
+    "paragraph": "Yapay zeka modellerini değerlendiren kar amacı gütmeyen METR kuruluşu, 2026 yılı içerisinde iki ayrı siber güvenlik olayı yaşadığını açıklamıştır. Mart ayında gerçekleşen ilk olayda, bir araştırmacının kişisel bulut sunucusundan çalınan API anahtarı ile 600.000 dolar değerinde yapay zeka kullanım kredisinin tüketildiği belirtilmiştir. Mayıs ayındaki ikinci olayda ise saldırganların, kuruluşun kamuya açık altyapısını sistematik olarak taradığı ve yayınlanmamış değerlendirme verilerine erişmeye ça",
+    "title": "AI Model Evaluator METR Hit by Credential Theft, Probing",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nIdentity & Access Management Security\n\nAI Model Evaluator METR Hit by Credential Theft, Probing\n\nIn one attack, threat actors stole an API key that ultimately led to the consumption of $600,000 in public AI model credits for the securit"
+   },
+   {
+    "tr_title": "FBI'ın Üst Düzey Kişileri Hedefleyen Oltalama Saldırılarını Duyurması",
+    "paragraph": "FBI, yüksek profilli kişileri ve yakınlarını hedef alan gelişmiş bir kimlik avı kampanyası hakkında uyarı yayımlamıştır. Saldırganların, kurbanları Microsoft veya Google gibi bulut hizmetlerine erişim izni vermeye ikna etmek için OAuth onay oltalama yöntemini kullandığı belirtilmiştir. Bu yöntemin, şifre gerektirmeden hesaplara kalıcı erişim sağladığı ve çok faktörlü kimlik doğrulama önlemlerini devre dışı bıraktığı ifade edilmiştir. Tehdit aktörlerinin kendilerini hükümet yetkilisi veya gazetec",
+    "title": "FBI raises alarm over deceptive phishing campaign targeting prominent people",
+    "full_text": "FBI raises alarm over deceptive phishing campaign targeting prominent people\n\nAttackers are targeting prominent, high-profile people, their family members and acquaintances on a commercial messaging application to gain long-term access to their accounts containing sensitive data, the FBI warned in an alert Tuesday.\n\nOfficials did not describe the objectives or origins of the attackers, which have "
+   },
+   {
+    "tr_title": "Florida ve Teksas'ın Flock Kameralarını Yasaklaması",
+    "paragraph": "Florida ve Teksas eyalet yetkilileri, gizlilik endişeleri ve izleme teknolojisinin kötüye kullanımı gerekçesiyle gözetleme devi Flock ile olan ilişkilerini sonlandırma kararı almıştır. Florida Ulaştırma Bakanlığı, otoyollardaki plaka okuma kameralarının kullanımını durduracağını ve cihazların kaldırılması için 30 günlük süre tanındığını açıklamıştır. Teksas Valisi Greg Abbott ise bir polis memurunun yetkisiz veri sorgulama suçlamasıyla karşı karşıya kalmasının ardından eyalet kurumlarının Flock ",
+    "title": "Florida and Texas move to block Flock cameras over privacy concerns",
+    "full_text": "The states of Florida and Texas are moving to end their relationship with surveillance giant Flock, as the company faces increasing backlash over privacy concerns and misuse of its tracking technology.\n\nFlorida’s Department of Transportation said in a memo on Monday that it will cease using license plate readers across the state’s highways, such as Flock’s cameras, citing “concerning reports of mi"
+   },
+   {
+    "tr_title": "TSA'nın Ulaşım Sektörü İçin Siber Güvenlik Gereksinimlerini Güncellemesi",
+    "paragraph": "ABD Ulaştırma Güvenliği İdaresi (TSA), demiryolu ve otobüs operatörlerini kapsayan siber güvenlik raporlama ve değerlendirme gereksinimlerini revize etmiştir. Yeni düzenlemeye göre, operatörlerin siber güvenlik koordinatörleri ataması ve siber olayları 72 saat içinde CISA'ya bildirmesi zorunlu kılınmıştır. Ayrıca, kurumların güncel siber olay müdahale planları oluşturması ve düzenli güvenlik değerlendirmeleri yapması gerektiği ifade edilmiştir. TSA, ABD vatandaşı olmayan koordinatörler için NEXU",
+    "title": "TSA updates cybersecurity reporting and assessment requirements for surface transportation",
+    "full_text": "TSA updates cybersecurity reporting and assessment requirements for surface transportation\n\nThe U.S. Transportation Security Administration has sent the Office of Management and Budget a revised information collection request covering cybersecurity measures for surface transportation operators, with the proposal applying to certain freight rail, mass transit and passenger rail, and over-the-road b"
+   },
+   {
+    "tr_title": "Sangoma Switchvox Sistemlerinde Uzaktan Kod Yürütme Zafiyeti",
+    "paragraph": "Kurumsal VoIP platformu Sangoma Switchvox'ta, kimlik doğrulaması gerektirmeyen kritik bir SQL enjeksiyon zafiyetinin istismar edildiği tespit edilmiştir. CVE-2026-9586 kodlu açığın, saldırganların PostgreSQL süper kullanıcısı yetkileriyle uzaktan rastgele kod yürütmesine olanak tanıdığı bildirilmiştir. Güvenlik araştırmacıları, 30 Ağustos'tan itibaren internete açık sistemlere yönelik aktif saldırı girişimleri gözlemlediklerini açıklamıştır. Saldırıların, kurban sistemlerde tersine kabuk (revers",
+    "title": "Attackers Exploit Critical Switchvox Flaw to Deploy Reverse Shells Without Credentials",
+    "full_text": "Threat actors are exploiting a severe security vulnerability in Sangoma Switchvox, an enterprise VoIP platform, that could allow unauthenticated remote code execution.\n\nThe vulnerability in question is CVE-2026-9586 (CVSS score: 9.3), a critical unauthenticated SQL injection vulnerability in Sangoma Switchvox SMB Edition 8.3 (104997) that can allow attackers to remotely execute arbitrary code as t"
+   },
+   {
+    "tr_title": "Araştırmacıların Claude Kullanarak PLC Cihazlarına Yönelik Saldırı Geliştirmesi",
+    "paragraph": "Forescout Research araştırmacıları, Anthropic'in Claude yapay zeka modelini kullanarak bir WAGO programlanabilir mantık denetleyicisi (PLC) modelinden diğerine uzaktan kod yürütme (RCE) saldırısı aktarmayı başarmıştır. CVE-2021-31886 kodlu güvenlik açığını hedef alan çalışmada, yapay zekanın yardımıyla canlı donanım üzerinde saldırgan kontrolünde kabuk kodları çalıştırılmıştır. Araştırma sürecinde Claude Code aracının terminale ve tersine mühendislik araçlarına erişim sağladığı belirtilmiştir. D",
+    "title": "Researchers Use Claude to Port Pre-Auth RCE Exploit From One PLC Model to Another",
+    "full_text": "Forescout Research - Vedere Labs said it used Anthropic's Claude to port a working pre-authentication remote code execution (RCE) exploit from one WAGO programmable logic controller (PLC) to another, executing attacker-supplied ARM shellcode on live hardware.\n\nThe exploit targets CVE-2021-31886, a stack-based buffer overflow in the Nucleus FTP server's handling of the USER command, which carries a"
+   },
+   {
+    "tr_title": "X Money Lansmanı Sonrası Kullanıcı Hesaplarına Yönelik Saldırılar",
+    "paragraph": "Sosyal medya platformu X, yeni ödeme hizmeti X Money'nin kullanıma sunulmasının ardından kullanıcı hesaplarını hedef alan toplu şifre sıfırlama girişimlerinin yaşandığını açıklamıştır. Şirket mühendisi Mridul Singhai, saldırganların ödeme hizmetine erişim sağlamak amacıyla yetkisiz giriş denemelerinde bulunduğunu ancak şu ana kadar başarılı bir sızma kanıtına rastlanmadığını belirtmiştir. Kullanıcıların çok sayıda istenmeyen şifre sıfırlama e-postası aldığı ve bu durumun kamuya açık kullanıcı ad",
+    "title": "X says attackers are targeting user accounts after the launch of X Money",
+    "full_text": "Attackers are attempting to target X users following the launch of X Money. After numerous X users reported receiving unsolicited password reset emails, a representative said the social media company was actively investigating the issue but had not yet found evidence that the hacks were successful.\n\nOn Tuesday, X product engineer Mridul Singhai posted to the social network that the company was loo"
+   },
+   {
+    "tr_title": "Mozilla Firefox iOS Sürümünde Güvenlik Politikası İhlali Açığı",
+    "paragraph": "Mozilla Firefox'un iOS işletim sistemi için geliştirilen sürümlerinde, güvenlik politikalarının atlatılmasına neden olan bir zafiyet tespit edilmiştir. Fransa Ulusal Siber Güvenlik Ajansı (ANSSI) bünyesindeki CERT-FR tarafından yayımlanan bildiriye göre, bu açık CVE-2026-81267 koduyla tanımlanmıştır. Zafiyetin, 155.0 sürümünden önceki tüm Firefox iOS versiyonlarını etkilediği belirtilmektedir. Söz konusu hata, saldırganların tarayıcı üzerindeki güvenlik kısıtlamalarını aşmasına imkan tanımaktadı",
+    "title": "Vulnérabilité dans Mozilla Firefox pour iOS (01 septembre 2026)",
+    "full_text": "Toggle navigation[![Image 2: Logo République Française](https://www.cert.ssi.gouv.fr/static/images/logo_rf_header.svg)![Image 3: Logo ANSSI](https://www.cert.ssi.gouv.fr/static/images/logo_anssi.svg)![Image 4: Logo CertFR](https://www.cert.ssi.gouv.fr/static/images/logo_cert_fr.svg)](https://www.cert.ssi.gouv.fr/)\n\n*   [Publications](https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-1099/#)\n    * "
+   },
+   {
+    "tr_title": "Avast Antivirüs Yazılımında Ayrıcalık Yükseltme Zafiyetinin Paylaşılması",
+    "paragraph": "Siber güvenlik araştırmacısı Chaotic Eclipse, GenDigital bünyesindeki Avast Antivirüs yazılımını hedef alan PrettyPrague adlı yeni bir sıfır gün açığı ve buna ait kavram kanıtı (PoC) kodunu yayımlamıştır. Söz konusu zafiyetin, Avast Sandbox özelliğini istismar ederek Windows SAM veritabanını dökmesine ve sistem düzeyinde yetki elde edilmesine olanak tanıdığı belirtilmiştir. Araştırmacı, bu açığın güncel Windows 11 25H2 sürümlerinde ve tam yamalı Avast yazılımlarında çalıştığını iddia etmiştir. A",
+    "title": "Chaotic Eclipse Releases GenDigital Avast Antivirus ZeroDay PrettyPrague",
+    "full_text": "Chaotic Eclipse Releases GenDigital Avast Antivirus ZeroDay PrettyPrague\n\nChaotic Eclipse released PrettyPrague, a PoC exploit for a GenDigital Avast Antivirus ZeroDay Elevation of Privileges Vulnerability\n\nSecurity researcher Chaotic Eclipse, also known as INFINITE NIGHTMARE, MSNightmare and Nightmare-Eclipse, released a new zero-day exploit targeting GenDigital Avast Antivirus. The researcher na"
+   },
+   {
+    "tr_title": "Google Reklam Arşivindeki Aldatıcı Yazılım Reklamlarının Tespit Edilmesi",
+    "paragraph": "NYU ve Radboud Üniversitesi araştırmacıları, Google'ın reklam şeffaflığı arşivinde yaptıkları incelemede 100 milyondan fazla görüntüleme alan binlerce aldatıcı ve zararlı reklam tespit etmiştir. AdLens adlı bir araç kullanan ekip, arşivdeki 188.000 yazılım reklamı arasından korkutma amaçlı (scareware) ve yanlış beyan içeren içerikleri ortaya çıkarmıştır. Bu reklamların kullanıcıları telefonlarının virüs kaptığına veya depolama alanlarının dolduğuna dair sahte uyarılarla yanılttığı belirtilmiştir",
+    "title": "Scareware ads keep running on Google’s transparency tool, even after they’re reported",
+    "full_text": "Scareware ads keep running on Google’s transparency tool, even after they’re reported\n\nA team of NYU and Radboud University researchers spent a year building a tool to find deceptive software ads inside Google’s public ad archive. It works. It also exposed something more uncomfortable: reporting a bad ad to Google doesn’t mean the ad, or the domain behind it, stops running.\n\nThe tool is called AdL"
    }
   ]
  }
