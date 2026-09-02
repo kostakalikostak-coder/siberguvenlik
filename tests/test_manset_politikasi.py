@@ -342,3 +342,30 @@ def test_son_kapi_mekanik_kisit_kullanir():
     kaynak = inspect.getsource(main.HaberSistemi._son_mukerrer_kapisi)
     assert 'yonetmen=False' in kaynak, \
         'son kapı yönetmene özel kısıtı mekanik doldurmaya uyguluyor'
+
+
+def test_tersinelik_alarmi_gurultuyu_susturur_gercegi_bildirir():
+    """Alarm ancak SUSABİLDİĞİNDE bilgi taşır.
+
+    Eşik yokken 1 puanlık fark bile alarm üretiyordu. ÖLÇÜLDÜ
+    (kalite_denetim.jsonl, 38 satır): dağılım iki kutuplu — gerçek
+    tersinelikler 14-45 puan, gürültü 1-7 puan. 10 puanlık eşik ikisini temiz
+    ayırıyor; 08-28'deki PaperCut hatasını (89↔75, 14 puan) bu alarm
+    yakalatmıştı, o eşiğin üstünde kalmalı.
+    """
+    import main
+    esik = main.HaberSistemi.MANSET_TERSINELIK_MIN
+    assert 8 <= esik <= 14, f'eşik ölçülen aralığın dışında: {esik}'
+    # 08-28 gerçek bulgusu bildirilmeye devam etmeli
+    assert 89 - 75 >= esik, 'gerçek tersinelik eşiğin altında kalıyor'
+    # 09-02 gürültüsü susmalı
+    for gurultu in (1, 2, 5, 7):
+        assert gurultu < esik, f'{gurultu} puanlık gürültü hâlâ alarm üretiyor'
+
+
+def test_tersinelik_esigi_kodda_uygulaniyor():
+    import inspect
+    import main
+    kaynak = inspect.getsource(main.HaberSistemi._kalite_denetimi_yaz)
+    assert 'MANSET_TERSINELIK_MIN' in kaynak, \
+        'tersinelik alarmı eşiği kullanmıyor'

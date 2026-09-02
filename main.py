@@ -6201,6 +6201,18 @@ document.addEventListener('DOMContentLoaded', initDragFile);
     # arızası mı olduğu denetim kaydından ANLAŞILAMIYORDU.
     INCE_RAPOR_ESIGI = 12
 
+    # "Gövdede manşetten yüksek puanlı haber var" alarmının en az fark eşiği.
+    #
+    # Eskiden eşik YOKTU: 1 puanlık fark bile alarm üretiyordu. ÖLÇÜLDÜ
+    # (kalite_denetim.jsonl, 38 alarm satırı) — dağılım iki kutuplu:
+    #   gerçek tersinelikler : 14, 15, 23, 24, 25, 26, 28, 29, 30, 39, 41, 45
+    #   gürültü              : 1, 1, 1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5,
+    #                          6, 6, 6, 7, 7
+    # 10 puanlık eşik ikisini temiz ayırıyor: gerçek bulguların HEPSİ kalıyor
+    # (08-28'de 89↔75 farkıyla PaperCut hatasını bu alarm yakalatmıştı),
+    # 21 gürültü satırı susuyor. Alarm ancak susabildiğinde bilgi taşır.
+    MANSET_TERSINELIK_MIN = 10
+
     # Yayın yönetmeninin yapabileceği en fazla takas sayısı. Sınır bilinçli:
     # sınırsız takas, deterministik puan sıralamasını tamamen LLM tercihine
     # devretmek olurdu; amaç sıralamayı DEVRALMAK değil AÇIK hataları
@@ -7005,6 +7017,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
 
             tersine = []
             _yasak = getattr(self, '_manset_yasak', None) or set()
+            # Eşik için bkz. MANSET_TERSINELIK_MIN.
             for aid in govde_ids:
                 rec = records.get(aid) or {}
                 if rec.get('kat') in KRITIK3_HARIC_KATEGORILER:
@@ -7019,7 +7032,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                 # bildiriyordu.
                 if aid in _yasak:
                     continue
-                if _puan(aid) > en_dusuk_manset:
+                if _puan(aid) - en_dusuk_manset >= self.MANSET_TERSINELIK_MIN:
                     tersine.append({
                         'id': aid, 'baslik': _ad(aid), 'puan': _puan(aid),
                         'mukerrer': bool(rec.get('mukerrer')),
