@@ -330,7 +330,18 @@ _MANSIZ_AD = {
     # Eclipse" araştırmacısının Microsoft Defender açığı 'entity:eclipse'
     # üzerinden aynı olay sayıldı — farklı satıcı, farklı ürün, farklı CVE,
     # ortak olan tek şey iki ayrı takma adın ikinci sözcüğü.
-    'eclipse',
+    'eclipse', 'chaotic',
+    # SEKTÖR/ALAN sözcükleri kimlik değildir: iki ayrı sağlık kuruluşunun ayrı
+    # veri ihlali 'entity:sağlık' ya da 'entity:health' üzerinden aynı olay
+    # sayılıyordu. ÖLÇÜLDÜ (2026-09-02): Aesto Health ihlali, Brown Health /
+    # Unlimited Technology / CareCloud ihlallerinin ÜÇÜYLE birden eşleşti.
+    # Şirket adının ayırt edici yarısı (aesto, brown, nutex) kimlik olmaya
+    # devam eder — düşen yalnızca ORTAK sektör sözcüğüdür.
+    'sağlık', 'health', 'medical', 'hastane', 'hospital',
+    # Menkul kıymet bildirimi kalıbı (SEC/SPK) — her halka açık şirketin
+    # ihlal duyurusunda geçer. 'Gentlemen fidyesi ↔ Levi Strauss' bu yüzden
+    # aynı olay sayıldı.
+    'borsa', 'komisyon', 'menkul', 'kıymetle',
 }
 
 

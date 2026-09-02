@@ -57,7 +57,7 @@ CODENAME_DENYLIST = {
     # haberi (WordlistLoader kimlik hırsızlığı ↔ Steam forumlarında kripto
     # madenci) 'codename:clickfix' ile birleştirdi (2026-08-24).
     'clickfix', 'fakecaptcha', 'sideloading', 'typosquatting',
-    'anssi', 'watchtowr', 'kaspersky', 'securelist', 'mandiant', 'unit42',
+    'anssi', 'watchtowr', 'vulncheck', 'kaspersky', 'securelist', 'mandiant', 'unit42',
     'talos', 'zimperium', 'bitdefender', 'trendmicro', 'sophoslabs',
     'recordedfuture', 'zscaler', 'darktrace', 'cybereason', 'malwarebytes',
     'threatfabric', 'group-ib', 'eset', 'welivesecurity', 'fortiguard',

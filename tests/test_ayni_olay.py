@@ -273,3 +273,38 @@ def test_takma_adin_ortak_yarisi_kimlik_degildir():
            'Windows üzerinde ShieldBreak adlı sıfır gün açığını yayımlamıştır.')
     assert OI.mukerrer_karari(a, b, ayni_gun=False) == 'FARKLI', \
         'iki ayrı takma adın ortak sözcüğü aynı olay üretti'
+
+
+def test_sektor_sozcugu_kimlik_degildir():
+    """İki ayrı sağlık kuruluşunun ayrı veri ihlali aynı olay değildir.
+
+    ÖLÇÜLDÜ (2026-09-02): Aesto Health ihlali, 'entity:sağlık' / 'entity:health'
+    üzerinden Brown Health, Unlimited Technology ve CareCloud ihlallerinin
+    ÜÇÜYLE birden eşleşti. Şirket adının ayırt edici yarısı (aesto, brown)
+    kimlik olmaya devam etmeli — düşen yalnızca ORTAK sektör sözcüğü.
+    """
+    from src import olay_iliski as OI
+
+    def _v(t, p):
+        return {'tr_title': t, 'title': '', 'paragraph': p, 'full_text': ''}
+
+    a = _v('Aesto Health Veri İhlalinden 9 Milyon Kişinin Etkilenmesi',
+           'Aesto Health şirketinde yaşanan veri ihlalinde 9 milyon kişinin '
+           'sağlık verisi sızmıştır.')
+    b = _v('Brown Health Medical Group Veri İhlali',
+           'Brown Health Medical Group şirketinde yaşanan veri ihlalinde '
+           'hastaların sağlık verileri açığa çıkmıştır.')
+    assert OI.mukerrer_karari(a, b, ayni_gun=False) == 'FARKLI', \
+        'iki ayrı sağlık kuruluşunun ihlali aynı olay sayıldı'
+    for ad in ('sağlık', 'health', 'borsa', 'menkul'):
+        assert ad in OI._MANSIZ_AD, f'{ad} hâlâ olay kimliği'
+
+
+def test_arastirmaci_firma_kod_adi_degildir():
+    """VulnCheck bir araştırmacı firmadır; watchTowr/Kaspersky ile aynı sınıf.
+
+    ÖLÇÜLDÜ (2026-09-02): Langflow açığı ile Ruby on Rails açığı
+    'codename-body:vulncheck' üzerinden aynı olay sayıldı.
+    """
+    from src import dedup
+    assert 'vulncheck' in dedup.CODENAME_DENYLIST
