@@ -316,21 +316,30 @@ def test_on_filtre_kayipsiz_kalir():
 
     Boru hattı bu varsayıma dayanıyor (bkz. _son_mukerrer_kapisi) — bozulursa
     filtre sessizce kayıplı hale gelir ve gerçek mükerrerler kapıya HİÇ
-    ulaşmaz. 2026-08-28'de eklenen konu-kesinlik yolu bu varsayımı bozmuştu;
-    ortak anahtar şartı geri koydu.
+    ulaşmaz. 2026-08-28'de eklenen konu-kesinlik yolu ortak anahtar
+    gerektirmiyordu ve varsayımı bozmuştu.
+
+    Varsayım TEK BİR ÇİFTLE değil, gerçek arşiv üzerinde taranarak sınanır —
+    yeni bir kabul yolu eklendiğinde bu test onu yakalar.
     """
+    import itertools
+    import json
+    import os
     from src import olay_iliski as OI
 
-    def _v(t, p):
-        return {'tr_title': t, 'title': '', 'paragraph': p, 'full_text': ''}
-
-    # Ayırt edici ad taşımayan, metni NEREDEYSE AYNI iki haber
-    a = _v('Sıfır Gün Açığının İstismar Edilmesi',
-           'Cihazlardaki iki sıfır gün açığının aktif olarak istismar '
-           'edildiği bildirilmiştir.')
-    b = _v('Sıfır Gün Açığının Aktif İstismarı',
-           'Cihazlardaki iki sıfır gün açığının aktif olarak istismar '
-           'edildiği bildirilmiştir.')
-    assert not (OI.aday_anahtarlari(a) & OI.aday_anahtarlari(b))
-    assert OI.ayni_olay(a, b, ayni_gun=True) is False, \
-        'ön filtre kayıplı: kesişim boşken ayni_olay True dedi'
+    yol = 'data/rapor_gecmis.json'
+    if not os.path.exists(yol):
+        import pytest
+        pytest.skip('arşiv yok')
+    with open(yol, encoding='utf-8') as f:
+        gunler = json.load(f)
+    views = [v for g in gunler[-6:] for v in g.get('views', [])][:60]
+    sz = OI.OlaySozlugu(views)
+    anahtar = {id(v): OI.aday_anahtarlari(v) for v in views}
+    ihlal = []
+    for a, b in itertools.combinations(views, 2):
+        if anahtar[id(a)] & anahtar[id(b)]:
+            continue
+        if OI.ayni_olay(a, b, sozluk=sz, ayni_gun=True):
+            ihlal.append((a.get('tr_title', '')[:40], b.get('tr_title', '')[:40]))
+    assert not ihlal, f'ön filtre kayıplı — kesişimsiz çift AYNI OLAY dedi: {ihlal[:3]}'
