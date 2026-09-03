@@ -308,3 +308,29 @@ def test_arastirmaci_firma_kod_adi_degildir():
     """
     from src import dedup
     assert 'vulncheck' in dedup.CODENAME_DENYLIST
+
+
+def test_on_filtre_kayipsiz_kalir():
+    """`aday_anahtarlari` kesişimi KAYIPSIZ ön filtredir: kesişim boşsa
+    `ayni_olay` kesinlikle False olmalı.
+
+    Boru hattı bu varsayıma dayanıyor (bkz. _son_mukerrer_kapisi) — bozulursa
+    filtre sessizce kayıplı hale gelir ve gerçek mükerrerler kapıya HİÇ
+    ulaşmaz. 2026-08-28'de eklenen konu-kesinlik yolu bu varsayımı bozmuştu;
+    ortak anahtar şartı geri koydu.
+    """
+    from src import olay_iliski as OI
+
+    def _v(t, p):
+        return {'tr_title': t, 'title': '', 'paragraph': p, 'full_text': ''}
+
+    # Ayırt edici ad taşımayan, metni NEREDEYSE AYNI iki haber
+    a = _v('Sıfır Gün Açığının İstismar Edilmesi',
+           'Cihazlardaki iki sıfır gün açığının aktif olarak istismar '
+           'edildiği bildirilmiştir.')
+    b = _v('Sıfır Gün Açığının Aktif İstismarı',
+           'Cihazlardaki iki sıfır gün açığının aktif olarak istismar '
+           'edildiği bildirilmiştir.')
+    assert not (OI.aday_anahtarlari(a) & OI.aday_anahtarlari(b))
+    assert OI.ayni_olay(a, b, ayni_gun=True) is False, \
+        'ön filtre kayıplı: kesişim boşken ayni_olay True dedi'

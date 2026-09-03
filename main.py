@@ -6626,6 +6626,85 @@ document.addEventListener('DOMContentLoaded', initDragFile);
                     self._gelisme_onbellek[_anahtar(esles[1], esles[2])] = karar
         return sonuc
 
+    # Mükerrer GEREKÇESİYLE elenen katman adları. Kalite gerekçeleri
+    # (p5_kalite) BİLEREK dışarıda: onlar "bu haber zayıf" der ve korumanın
+    # işi kalite filtresini iptal etmek değildir.
+    MUKERRER_ELEME_NEDENLERI = (
+        'mukerrer', 'auditor_mukerrer', 'govde_ayni_olay',
+        'capraz_gun', 'capraz_gun_llm', 'erken_capraz_gun',
+        'kapi_capraz_gun', 'kapi_capraz_gun_llm', 'kapi_capraz_gun_gelisme',
+        'kapi_rapor_ici', 'kapi_rapor_ici_llm',
+    )
+
+    def _son_grup_bosalmasi(self, top3_ids, top10_ids, remaining_ids,
+                            records, content_by_id, articles_by_id,
+                            eleme_nedeni):
+        """MÜKERRER diye elenmiş ama hiçbir şeyin kopyası olmayan haberi geri alır.
+
+        Ölçüt basittir ve kendi kendini doğrular: bir haber "mükerrer" gerekçesiyle
+        elendiyse raporda ya da geçmişte AYNI OLAYI anlatan bir karşılığı olmalıdır.
+        İkisi de yoksa o eleme dayanaksızdır.
+
+        NEDEN AYRI BİR KATMAN: `_restore_orphaned_groups` benzer bir işi yapıyor
+        ama BORU HATTININ ORTASINDA, Pass 5'ten hemen sonra koşuyor. O anda
+        olayın başka kopyaları hâlâ raporda olduğu için "temsil ediliyor" der ve
+        geri alma yapmaz; sonraki katmanlar kalan kopyaları da eleyince olay
+        sessizce düşer. Hiçbir katman tek başına yanlış davranmaz — kayıp
+        yalnızca TOPLAMDA görünür, bu yüzden koruma da EN SONDA olmalıdır.
+
+        ÖLÇÜLDÜ (2026-09-03): SonicWall SMA 1000 sıfır-gün açığının aktif
+        istismarı (89 puan) yedi ayrı kaynaktan geldi. Beşi p5_kalite, biri
+        auditor_mukerrer, biri de son kapının LLM hakemi tarafından elendi;
+        olay rapora HİÇ girmedi. Geçmişteki SonicWall haberleri farklı ürünlere
+        aitti (GMS platformu 08-12, NetExtender 08-27) — yani çapraz-gün
+        gerekçesi hatalıydı ve tek bir yanlış hakem kararı 89 puanlık haberi
+        rapordan sildi.
+
+        GEÇMİŞ KONTROLÜ ŞART: olay gerçekten daha önce yayımlandıysa geri alma
+        YAPILMAZ. Çapraz-gün elemesi bilinçlidir ve kullanıcının asıl şikâyeti
+        odur; koruma yalnızca DAYANAKSIZ elemeyi kurtarır.
+        """
+        rapor = set(top3_ids) | set(top10_ids) | set(remaining_ids)
+        adaylar = [a for a, n in (eleme_nedeni or {}).items()
+                   if a not in rapor and n in self.MUKERRER_ELEME_NEDENLERI]
+        if not adaylar:
+            return list(top3_ids), list(top10_ids), list(remaining_ids)
+
+        sozluk = getattr(self, '_olay_sozlugu', None)
+        view_fn = self._dedup_view_fn(content_by_id, articles_by_id)
+        _puan = lambda a: (records.get(a) or {}).get('toplam', 0)  # noqa: E731
+        gecmis = (self._load_recent_report_views()
+                  + self._load_recent_kritik3_views())
+        gecmis_anahtar = [(_olay.aday_anahtarlari(ev), ev) for ev in gecmis]
+
+        geri = []
+        for aid in sorted(adaylar, key=lambda a: -_puan(a)):
+            rec = records.get(aid) or {}
+            if not rec.get('siber') or rec.get('kat') in ('urun_icerik',
+                                                          'siber_disi'):
+                continue
+            av = view_fn(aid)
+            # Raporda (ya da bu turda geri alınanlar arasında) karşılığı var mı?
+            if any(_olay.ayni_olay(av, view_fn(o), sozluk=sozluk, ayni_gun=True)
+                   for o in list(rapor) + geri):
+                continue
+            # Geçmişte yayımlandı mı? Yayımlandıysa eleme DOĞRUDUR.
+            ka = _olay.aday_anahtarlari(av)
+            if any(ka & gk and _olay.ayni_olay(av, ev, sozluk=sozluk)
+                   for gk, ev in gecmis_anahtar):
+                continue
+            geri.append(aid)
+
+        if not geri:
+            return list(top3_ids), list(top10_ids), list(remaining_ids)
+
+        for aid in geri:
+            print(f"   ♻️  Dayanaksız mükerrer elemesi: ID {aid} "
+                  f"({_puan(aid)} puan, {eleme_nedeni.get(aid)}) — ne raporda "
+                  f"ne geçmişte karşılığı var, gövdeye geri alındı.")
+            eleme_nedeni.pop(aid, None)
+        return list(top3_ids), list(geri) + list(top10_ids), list(remaining_ids)
+
     def _son_mukerrer_kapisi(self, top3_ids, top10_ids, remaining_ids,
                              records, content_by_id, articles_by_id,
                              eleme_nedeni):
@@ -7884,6 +7963,13 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             top3_ids, top10_ids, remaining_ids, score_records,
             content_by_id, articles_by_id, eleme_nedeni)
         top3_ids, top10_ids, remaining_ids = _senkron('son_mukerrer_kapisi')
+
+        # SON KORUMA — bkz. _son_grup_bosalmasi. Bu çağrı EN SONDA olmalı:
+        # koruduğu kayıp yalnızca tüm katmanların TOPLAMINDA görünür.
+        top3_ids, top10_ids, remaining_ids = self._son_grup_bosalmasi(
+            top3_ids, top10_ids, remaining_ids, score_records,
+            content_by_id, articles_by_id, eleme_nedeni)
+        top3_ids, top10_ids, remaining_ids = _senkron('son_grup_bosalmasi')
 
         # Bekçinin bu koşudaki bulguları denetim kaydına taşınır.
         self._durum_ozeti = _durum.ozet()

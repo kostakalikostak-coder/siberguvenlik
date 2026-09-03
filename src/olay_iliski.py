@@ -947,9 +947,15 @@ def ayni_olay(a, b, sozluk=None, ayni_gun=False, explain=False):
     #     eşik 0.75 ikisini de dışarıda bırakır. Kural olmadan aynı olayın
     #     farklı sözcüklerle yazılmış ama gövdesi birebir aynı iki kopyası
     #     (ör. aynı paragrafın iki başlıkla dolaşması) mükerrer sayılmıyordu.
+    #     ORTAK ANAHTAR ŞARTI: boru hattı `aday_anahtarlari` kesişimini
+    #     KAYIPSIZ ön filtre olarak kullanıyor (bkz. _son_mukerrer_kapisi) —
+    #     "kesişim boşsa sonuç kesinlikle False" varsayımı. Bu yol o varsayımı
+    #     bozmamalı, yoksa filtre sessizce kayıplı hale gelir ve gerçek
+    #     mükerrerler kapıya HİÇ ulaşmaz. Şart, kuralı doğuran vakayı
+    #     (Snowflake çifti, ortak anahtar 'kanadalı') etkilemez.
     if gerekce.startswith(('trtitle', 'topic=')):
         konu = _konu_ortusmesi(a, b)
-        if konu >= KONU_KESINLIK:
+        if konu >= KONU_KESINLIK and (aday_anahtarlari(a) & aday_anahtarlari(b)):
             return _ret(True, f'konu-kesinlik={konu:.2f}')
         return _ret(False, '')
 
