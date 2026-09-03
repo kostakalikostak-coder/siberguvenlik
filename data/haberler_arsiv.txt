@@ -32824,3 +32824,155 @@ Siber güvenlik araştırmacısı Chaotic Eclipse, GenDigital bünyesindeki Avas
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 03 SEPTEMBER 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Sırbistan'da Aktivistlerin Cihazlarında Pegasus ve NoviSpy Yazılımlarının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Sırbistan'da öğrenci aktivistleri, bir milletvekilini ve yerel bir yetkiliyi hedef alan, ülkedeki en büyük izleme dalgası olarak nitelendirilen kapsamlı bir casus yazılım saldırısı ortaya çıkarılmıştır. SHARE Vakfı, Citizen Lab ve Amnesty International tarafından yürütülen incelemelerde, toplam 14 kişinin cihazında Pegasus ve NoviSpy yazılım aileleri tespit edilmiştir. Pegasus enfeksiyonunun, Aralık 2025 ile Ocak 2026 arasında kullanıcı etkileşimi gerektirmeyen sıfır tıklama yöntemiyle gerçekleştirildiği doğrulanmıştır. NoviSpy vakalarında ise cihazların polis sorgusu sırasında fiziksel erişimle enfekte edildiği ve elde edilen özel mesajların hükümet yanlısı medyaya sızdırıldığı belirtilmiştir. Apple'ın tehdit bildirimleriyle ortaya çıkan bu saldırıların, Mart 2026 yerel seçimleri ve Novi Sad tren istasyonu faciası sonrası artan protestolarla örtüştüğü, demokratik faaliyetleri baskılamayı amaçladığı kaydedilmiştir.
+(XXXXXXX, AÇIK -cyberscoop.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Ukrayna Yanlısı VantaCore Grubunun Rus Şirketlerini Hedef Alması
+─────────────────────────────────────────────────────────
+Rus siber güvenlik firması F6, Ukrayna bağlantılı olduğu değerlendirilen VantaCore adlı yeni bir fidye yazılımı grubunun Rus kuruluşlarını hedef aldığını duyurmuştur. 2025 yılında aktif olan Thor grubunun yeniden markalanmış hali olduğu belirtilen grup, Ağustos ayından bu yana en az yedi kuruluşu hedef alarak milyonlarca dolarlık fidyeler talep etmiştir. VantaCore, ağlara sızmak için zayıf VPN'leri ve internete açık uygulama açıklarını kullanırken, operasyonlarını fidye yazılımı servisi (RaaS) modeliyle yürütmektedir. Saldırganlar, güvenlik yazılımlarını devre dışı bırakmak için SnowKiller, sistemlerde kalıcılık sağlamak için VantaCoreRAT ve zararlı yazılım dağıtımı için VantaCoreLoader gibi özel araçlar kullanmaktadır.
+(XXXXXXX, AÇIK -therecord.media, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Yapay Zeka Ajanları Kullanılarak Gerçekleştirilen Otonom Siber Saldırının İncelenmesi
+─────────────────────────────────────────────────────────
+Unit 42 araştırmacıları, bir saldırganın gelişmiş yapay zeka modelleri ve otonom ajan çerçeveleri kullanarak bir kurumsal ağa sızdığı ransomware operasyonunu analiz etmiştir. Saldırganın, normalde insan operatörler için iki hafta sürecek olan karmaşık sızma işlemlerini yapay zeka ajanları sayesinde 10 saatin altına indirdiği tespit edilmiştir. Otonom ajanların iç mimariyi haritalandırdığı, kod depolarından kimlik bilgilerini topladığı ve kurbanın bulut yapay zeka altyapısını ele geçirdiği belirtilmiştir. Saldırı sırasında 50'den fazla MITRE ATT&CK tekniğinin kullanıldığı ve ajanların gerçek zamanlı olarak strateji güncellediği ifade edilmiştir. Operasyon sonunda yapay zeka ajanı tarafından hazırlanan 80 sayfalık teknik denetim raporunun kurban kuruluşa bırakıldığı kaydedilmiştir. Bu vakanın, yapay zekanın saldırı hızını ve verimliliğini artırmadaki rolünü somut bir şekilde ortaya koyduğu bildirilmiştir.
+(XXXXXXX, AÇIK -unit42.paloaltonetworks.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Spring Ring Operasyonunun Microsoft Teams Kullanıcılarını Hedeflemesi
+─────────────────────────────────────────────────────────
+Palo Alto Networks araştırmacıları, Spring Ring olarak adlandırılan bir siber tehdit aktörünün Microsoft Teams üzerinden en az 150 kullanıcıya yönelik sesli kimlik avı (vishing) saldırıları düzenlediğini raporlamıştır. Saldırganların, kurumların BT destek birimlerini taklit ederek kullanıcıları uzak masaüstü araçlarını yüklemeye veya zararlı dosyaları çalıştırmaya ikna ettiği belirtilmiştir. Ocak ve Nisan 2026 döneminde yoğunlaşan bu faaliyetlerin, geleneksel e-posta kimlik avından kurumsal iş birliği platformlarına doğru bir stratejik kaymayı temsil ettiği ifade edilmiştir. Operasyonun daha gelişmiş aşamalarında, kuruluşların etki alanı denetleyicilerini ele geçirmek amacıyla NTLM bayraklama saldırılarının denendiği kaydedilmiştir. Uzmanlar, bu tür saldırıların başarılı olması durumunda saldırganların tüm organizasyonun kimlik yönetim sistemlerine erişim sağlayabileceği konusunda uyarıda bulunmuştur.
+(XXXXXXX, AÇIK -darkreading.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Lenovo Kimlik Doğrulama Hatasıyla Dropbox Hesaplarının Ele Geçirilmesi
+─────────────────────────────────────────────────────────
+Dropbox, Lenovo'nun e-posta doğrulama sürecindeki bir güvenlik açığından yararlanan yetkisiz tarafların yaklaşık 5.000 kullanıcı hesabına eriştiğini bildirmiştir. 4 ile 21 Ağustos 2026 tarihleri arasında gerçekleşen olayda, saldırganların Dropbox kullanıcılarının e-posta adreslerini kullanarak sahte Lenovo ID'leri oluşturduğu ve bu kimliklerle ilgili hesaplara şifresiz giriş yaptığı tespit edilmiştir. Dropbox, Lenovo Kimlik Sağlayıcı Hizmetleri ile olan eski entegrasyonun, saldırganların e-posta kontrolünü kanıtlamasına gerek kalmadan güven ilişkisi kurmasına neden olduğunu açıklamıştır. Şirket, etkilenen tüm oturumları sonlandırmış ve Lenovo ID ile girişlerde Dropbox şifresi girilmesini zorunlu kılan yeni bir güvenlik katmanı eklemiştir. Reuters'a göre saldırganlar, bazı kullanıcıların içeriklerini görüntülemiş ve indirmiştir. Lenovo, kendi müşterilerinin bu durumdan etkilenmediğini ifade etmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] CISA ve FBI'dan Hizmet Kesintilerinde İletişim Rehberi
+─────────────────────────────────────────────────────────
+CISA ve FBI, Avustralya, Kanada, Yeni Zelanda ve Birleşik Krallık siber güvenlik ajanslarıyla birlikte, büyük bilgi teknolojisi ve operasyonel teknoloji kesintileri sırasında uygulanacak yeni bir iletişim rehberi yayınlamıştır. 'Baskı Altında İletişim: Hizmet Sağlayıcılar İçin En İyi Uygulamalar' başlıklı doküman, siber saldırılar veya teknik arızalar sırasında hızlı ve şeffaf bilgi paylaşımının önemine dikkat çekmiştir. Rehberde, kuruluşların olay öncesinde müdahale planları oluşturması ve teknik ekiplerin çözüm çalışmalarına odaklanabilmesi için paralel iletişim iş akışları kurması önerilmektedir. Hizmet sağlayıcıların, teknik ekipler, yöneticiler ve kamuoyu için mesajlarını özelleştirmeleri gerektiği belirtilmiştir. Şeffaflık, hesap verebilirlik ve sürekli güncelleme ilkelerinin operasyonel etkiyi sınırlamak için kritik olduğu ifade edilmiştir. Kuruluşlara, belirsiz durumları dürüstçe kabul etmeleri ve kullanıcılara uygulanabilir tavsiyeler sunmaları tavsiye edilmiştir.
+(XXXXXXX, AÇIK -thecyberexpress.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Rus Hackerın 80 Bin Freelance Çalışanı Hedeflemekten Yargılanması
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri Adalet Bakanlığı, Kıbrıs'tan iade edilen 40 yaşındaki Rus vatandaşı Searzhudin Tamirlanovich Aktulaev'in, binlerce freelance çalışanı zararlı yazılımlarla hedeflemek suçlamasıyla hakim karşısına çıktığını açıklamıştır. İddianameye göre Aktulaev, 2016 ve 2017 yıllarında bir freelance platformunda 255 sahte hesap kullanarak 80.000 kullanıcıya makro içeren kötü amaçlı Excel dosyaları göndermiştir. Bu saldırılar sonucunda kurbanların bilgisayarlarına TVRAT ve DarkVNC adlı zararlı yazılımların yüklendiği ve saldırganların sistemler üzerinde tam kontrol sağladığı belirtilmiştir. Enfekte olan bilgisayarların yaklaşık yarısının ABD'de bulunduğu ve çalınan verilerin dolandırıcılık faaliyetlerinde kullanıldığı ifade edilmiştir. Aktulaev, bilgisayar dolandırıcılığı, kimlik hırsızlığı ve korunan bilgisayarlara yetkisiz erişim dahil olmak üzere çeşitli suçlarla itham edilmektedir. Sanığın 5 Ekim 2026 tarihinde mahkemeye çıkması planlanmaktadır.
+(XXXXXXX, AÇIK -thehackernews.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] ABD'de 764 Grubu Üyesi Reşit Olmayan Şahsa Hapis Cezası Verilmesi
+─────────────────────────────────────────────────────────
+FBI, Maine eyaletinde yaşayan 17 yaşındaki bir gencin, 764 adlı şiddet yanlısı aşırılıkçı kolektife üyeliği nedeniyle federal düzeyde suçlanan ve mahkum edilen ilk çocuk olduğunu açıklamıştır. Söz konusu şahsın çocukların cinsel istismarı, eyaletler arası tehditler, siber zorbalık ve kimlik hırsızlığı gibi suçlardan suçlu bulunduğu belirtilmiştir. FBI Boston Bölümü, bu davanın yaş faktörünün federal hesap verebilirlik konusunda bir kalkan oluşturmayacağını gösterdiğini ifade etmiştir. 764 grubunun, çocukları istismar ederek toplumsal huzursuzluk yaratmayı amaçlayan The Com adlı daha geniş bir ağla bağlantılı olduğu kaydedilmiştir. Adalet Bakanlığı'nın bu kararı, reşit olmayan şahısların federal suçlarla yargılanması konusunda bir politika değişikliği olarak değerlendirilmektedir. FBI'ın ülke genelinde bu grupla bağlantılı 500'den fazla kişiyi soruşturduğu bildirilmiştir.
+(XXXXXXX, AÇIK -cyberscoop.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] FCC'nin İstenmeyen Aramalarla Mücadele İçin Puanlama Sistemi Kurması
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri Federal İletişim Komisyonu (FCC), tüketicilerin telekomünikasyon sağlayıcılarının istenmeyen otomatik aramaları (robocall) engelleme performansını değerlendirebileceği yeni bir puanlama sistemi kuracağını açıklamıştır. Bu sistemin, hizmet sağlayıcıların şeffaflığını artırmayı ve yasa dışı aramalarla mücadele çabalarını teşvik etmeyi amaçladığı belirtilmiştir. FCC, puanlamanın yalnızca idari bir kontrol listesi olmayacağını, engellenen meşru aramaların oranı gibi operasyonel metrikleri de içereceğini ifade etmiştir. Eş zamanlı olarak kurum, STIR/SHAKEN protokollerine uyum sağlamayan 14 telekomünikasyon şirketini veri tabanından çıkararak ABD ağlarından men etmiştir. FCC Başkanı Brendan Carr, tüketicileri dolandırıcılığa karşı korumak amacıyla ekosistemdeki tüm aktörlerin sorumluluk alması gerektiğini vurgulamıştır.
+(XXXXXXX, AÇIK -cyberscoop.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Meta Reklamları Aracılığıyla StreamRat Android Truva Atının Yayılması
+─────────────────────────────────────────────────────────
+ThreatFabric araştırmacıları, İspanyolca konuşan kullanıcıları hedef alan StreamRat adlı yeni bir Android bankacılık truva atını ortaya çıkarmıştır. Zararlı yazılımın, Meta platformları üzerinden sahte bir televizyon yayıncılığı kampanyasıyla tanıtıldığı ve yaklaşık 570.950 hesaba ulaştığı belirtilmiştir. Kurbanların cihazlarına APK dosyasını yükledikten sonra erişilebilirlik izinlerini vermesiyle saldırganların cihaz üzerinde tam kontrol sağladığı ifade edilmiştir. StreamRat'in klavye hareketlerini kaydetme, kimlik bilgisi çalma amaçlı arayüzler görüntüleme ve uzaktan kontrol gibi yeteneklere sahip olduğu kaydedilmiştir. Kampanyanın, tespit mekanizmalarını atlatmak için kurulum sırasında geçici olarak VPN bağlantısı kurarak internet trafiğini kestiği tespit edilmiştir. 11 Haziran 2026 tarihinde başlayan reklam kampanyasının Temmuz ayı başında sona erdiği ve zararlı yazılımın GitHub üzerinden dağıtıldığı bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] OpenAI'ın Astra Modelinin Kritik Siber Güvenlik Eşiğini Aşması
+─────────────────────────────────────────────────────────
+OpenAI, yeni yapay zeka modeli Astra'nın, şirketin Hazırlık Çerçevesi kapsamında 'Kritik' siber güvenlik yetenek seviyesine ulaşan ilk model olduğunu duyurmuştur. Astra'nın, iyi korunan sistemlerdeki sıfır gün açıklarını bağımsız olarak bulup istismar edebildiği ve sadece yüksek seviyeli talimatlarla karmaşık siber saldırılar gerçekleştirebildiği belirtilmiştir. Yapılan testlerde modelin ExploitBench üzerinde tam puan aldığı ve tarayıcı korumalı alanlarından çıkarak işletim sistemi seviyesinde yetki yükseltebildiği kaydedilmiştir. OpenAI, bu gelişmiş yeteneklerin kötüye kullanım riskine karşı modelin genel kullanıma sunulmadan önce ek güvenlik önlemleriyle donatılacağını açıklamıştır. Şirket, yapay zeka modellerinin siber savunma amaçlı kullanımını teşvik etmek için 130 teknoloji firmasıyla iş birliği yaptığını ve Astra'nın güvenlik kısıtlamalarını aşma girişimlerine karşı önceki modellere göre daha dirençli olduğunu ifade etmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] Rockwell Automation Ürünlerinde Çok Sayıda Güvenlik Açığının Kapatılması
+─────────────────────────────────────────────────────────
+Endüstriyel otomasyon devi Rockwell Automation, RSLinx Classic, FactoryTalk ve ControlLogix gibi kritik ürünlerini etkileyen ondan fazla güvenlik açığı için yama ve geçici çözümler yayınlamıştır. Yayınlanan bültende, RSLinx Classic yazılımını etkileyen dört adet kritik seviyeli hizmet dışı bırakma (DoS) zafiyetinin sistemlerin çökmesine neden olabileceği belirtilmiştir. FactoryTalk Historian ürününde yüksek öncelikli uzaktan kod yürütme hatasının giderildiği, ControlFLASH yardımcı yazılımında ise saldırganların kullanıcı yetkileriyle komut çalıştırmasına izin veren bir açığın kapatıldığı ifade edilmiştir. CISA, Rockwell tarafından CVE-2026-9637 kodlu açığın istismar edildiğine dair yapılan ilk bildirimin muhtemelen bir hata olduğunu ve şu an için aktif bir saldırı bilgisi bulunmadığını açıklamıştır. Şirket, endüstriyel kontrol sistemlerinin güvenliği için tüm müşterilerini ilgili güncellemeleri yapmaya ve ağ yapılandırmalarını gözden geçirmeye çağırmıştır.
+(XXXXXXX, AÇIK -securityweek.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Microsoft Exchange Sunucularında Kritik Güvenlik Açığının Sürmesi
+─────────────────────────────────────────────────────────
+Shadowserver Foundation tarafından yapılan günlük taramalar, dünya genelinde yaklaşık 22.000 Microsoft Exchange sunucusunun CVE-2026-62911 kodlu kritik kimlik doğrulama atlatma açığına karşı hala yamasız olduğunu ortaya koymuştur. Amerika Birleşik Devletleri ve Almanya, sırasıyla 6.200 ve 5.100 yamasız sunucu ile listenin başında yer almaktadır. Microsoft'un 11 Ağustos 2026 tarihinde düzeltme yayınladığı bu açığın, yetkili bir saldırganın ağ üzerinden ayrıcalık yükseltmesine olanak tanıdığı belirtilmektedir. Hollanda Ulusal Siber Güvenlik Merkezi, söz konusu açık için çalışan bir istismar kodunun internette dolaşıma girdiğini bildirmiştir. Almanya Federal Bilgi Güvenliği Ofisi, ülkedeki yerel Exchange sunucularının yaklaşık yüzde 85'inin hala savunmasız olduğunu açıklamıştır. Uzmanlar, destek süresi dolan Exchange 2016 ve 2019 sürümlerini kullanan kuruluşların acilen güvenlik güncellemelerini yüklemeleri gerektiğini vurgulamıştır.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] GeoNetwork Yazılımında Kritik Uzaktan Kod Çalıştırma Açıklarının Kapatılması
+─────────────────────────────────────────────────────────
+Açık kaynaklı coğrafi veri kataloğu yazılımı GeoNetwork, hükümet ve kamu kurumlarının jeoportallarını etkileyen iki kritik güvenlik açığı için düzeltme yayınlamıştır. CVE-2026-63219 ve CVE-2026-58400 kodlu açıkların birleştirilmesiyle, kimliği belirsiz saldırganların sunucularda uzaktan kod çalıştırabildiği tespit edilmiştir. Güvenlik firması Ethiack, internete açık 121 GeoNetwork kurulumunun etkilendiğini ve bunların %89'unun askeri veya ulusal ajanslarla bağlantılı olduğunu bildirmiştir. Hatanın, 4.0.6 sürümünden itibaren bir yetkilendirme kontrolünün eksikliğinden kaynaklandığı ifade edilmiştir. Geliştiriciler, tüm kullanıcıların acilen 4.4.12 veya 4.2.17 sürümlerine yükseltme yapmalarını tavsiye etmiştir. Güncelleme yapılamayan durumlar için Apache ve Nginx sunucularında belirli yazma isteklerinin engellenmesi önerilmiştir. Söz konusu açıkların henüz aktif olarak istismar edildiğine dair bir kanıt bulunmadığı bilgisi verilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Google Chrome'da Çok Sayıda Güvenlik Açığının Giderilmesi
+─────────────────────────────────────────────────────────
+Fransız siber güvenlik ajansı ANSSI, Google Chrome tarayıcısında tespit edilen ve saldırganların belirtilmemiş güvenlik sorunlarına yol açmasına neden olan çok sayıda güvenlik açığı hakkında bir uyarı yayınlamıştır. CVE-2026-84323 ile CVE-2026-84359 arasındaki geniş bir yelpazeyi kapsayan bu açıkların, Windows, Linux ve Mac işletim sistemlerindeki belirli Chrome sürümlerini etkilediği belirtilmiştir. Google'ın 1 Eylül 2026 tarihli güvenlik bültenine atıfta bulunularak, kullanıcıların Windows ve Linux için 152.0.7977.75, Mac için ise 152.0.7977.76 öncesi sürümleri acilen güncellemeleri gerektiği bildirilmiştir. Açıkların teknik detayları ve istismar edilme durumları hakkında yayıncı tarafından spesifik bir bilgi paylaşılmadığı kaydedilmiştir. ANSSI, kuruluşların ve bireysel kullanıcıların veri bütünlüğünü korumak adına ilgili yamaları vakit kaybetmeden uygulamaları gerektiğini ifade etmiştir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] HPE Aruba Networking Ürünlerinde Kritik Güvenlik Açıkları
+─────────────────────────────────────────────────────────
+HPE Aruba Networking ürünlerinde, uzaktan kod çalıştırma, ayrıcalık yükseltme ve hizmet dışı bırakma (DoS) saldırılarına olanak tanıyan çok sayıda güvenlik açığı tespit edilmiştir. ANSSI tarafından yayınlanan bildiriye göre, CVE-2026-19766 ve CVE-2026-73700 serisi dahil olmak üzere onlarca açık AOS-CX ve Fabric Composer yazılımlarını etkilemektedir. Saldırganların bu açıklar vasıtasıyla veri gizliliğini ihlal edebildiği, güvenlik politikalarını atlatabildiği ve sunucu tarafı istek sahteciliği (SSRF) gerçekleştirebildiği belirtilmiştir. Özellikle AOS-CX 10.10.x sürümlerinin artık desteklenmediği ve sadece kritik yamaları aldığı, bu nedenle kullanıcıların güncel sürümlere geçiş yapmalarının önerildiği ifade edilmiştir. HPE'nin 1 Eylül 2026 tarihli güvenlik bültenlerinde yer alan düzeltmelerin uygulanması gerektiği vurgulanmıştır. Etkilenen kurumların ağ altyapılarını korumak için ilgili yazılım güncellemelerini tamamlamaları beklenmektedir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] Cleo Harmony Yazılımında Kimlik Doğrulama Atlatma Açığı
+─────────────────────────────────────────────────────────
+Dosya transfer uygulaması Cleo Harmony'de, saldırganların kimlik doğrulama mekanizmalarını atlatmasına ve yetki yükseltmesine olanak tanıyan kritik bir güvenlik açığı tespit edilmiştir. CVE-2026-84115 olarak izlenen bu hatanın, JWT yenileme belirteci mantığındaki bir kusurdan kaynaklandığı ve HTTP başlıklarındaki argüman manipülasyonu ile istismar edilebildiği belirtilmiştir. Güvenlik araştırmacıları, söz konusu açık için çalışan bir istismar kodunun yayınlandığını ve bunun tüm kullanıcı kuruluşlar için riski önemli ölçüde artırdığını bildirmiştir. Cleo Harmony'nin fidye yazılımı grupları için popüler bir hedef olduğu, geçmişte Cl0p grubunun benzer açıklardan yararlandığı hatırlatılmıştır. Sorunun 5.8.1.11 sürümü ile giderildiği ancak şirketin hatanın detaylarını paylaşmaktan kaçındığı ifade edilmiştir. WatchTowr firması, açığı başarıyla yeniden ürettiklerini açıklayarak kuruluşlara acil yama yapma çağrısında bulunmuştur.
+(XXXXXXX, AÇIK -securityweek.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] WordPress Eklentisindeki SQL Enjeksiyon Açığının Milyonlarca Siteyi Etkilemesi
+─────────────────────────────────────────────────────────
+Beş milyondan fazla aktif kuruluma sahip 'All-in-One WP Migration and Backup' adlı WordPress eklentisinde, yetkisiz saldırganların uzaktan kod çalıştırmasına ve siteleri ele geçirmesine neden olan kritik bir SQL enjeksiyon açığı tespit edilmiştir. CVE-2026-19949 kodlu bu açığın, eklentinin arşiv geri yükleme işlemi sırasında veritabanı içeriğini hatalı işlemesinden kaynaklandığı belirtilmiştir. Wordfence araştırmacıları, saldırganların WordPress trackback'leri üzerinden zararlı veriler yerleştirebildiğini ve bu verilerin yönetici bir dışa aktarma/içe aktarma işlemi yaptığında tetiklendiğini açıklamıştır. Eklenti geliştiricisi ServMask'ın 20 Ağustos 2026 tarihinde 7.110 sürümü ile sorunu giderdiği ancak kullanıcıların yaklaşık %65'inin henüz güncellemeyi yapmadığı kaydedilmiştir. Bu durumun yaklaşık 3,25 milyon web sitesini saldırılara açık bıraktığı ifade edilmiştir. Uzmanlar, eklentinin temel işlevi olan yedekleme ve geri yükleme işlemlerinin bu açığı tetiklemek için yeterli olduğunu vurgulamıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] Elastic Ürünlerinde Çok Sayıda Kritik Güvenlik Açığı
+─────────────────────────────────────────────────────────
+Elasticsearch, Kibana ve Elastic Agent dahil olmak üzere çeşitli Elastic ürünlerinde, uzaktan kod çalıştırma ve ayrıcalık yükseltme imkanı tanıyan çok sayıda güvenlik açığı tespit edilmiştir. ANSSI tarafından yayınlanan duyuruda, CVE-2026-56143 ve CVE-2026-78584 gibi birçok farklı açığın veri gizliliğini ve bütünlüğünü tehdit ettiği belirtilmiştir. Etkilenen ürünler arasında APM Server, Fleet Server ve Elastic Cloud on Kubernetes gibi kritik bileşenlerin bulunduğu ifade edilmiştir. Saldırganların bu açıklar üzerinden hizmet dışı bırakma saldırıları gerçekleştirebildiği ve güvenlik politikalarını devre dışı bırakabildiği kaydedilmiştir. Elastic firmasının 1 Eylül 2026 tarihinde yayınladığı güvenlik bültenlerinde, etkilenen tüm sürümler için yamalar sunulduğu bildirilmiştir. Kuruluşların, sistemlerini korumak ve yetkisiz erişimleri engellemek amacıyla ilgili yazılım güncellemelerini ivedilikle uygulamaları gerektiği vurgulanmıştır.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[20] Debian Linux Çekirdeğinde Güvenlik Açığının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Fransa Ulusal Siber Güvenlik Ajansı (ANSSI), Debian Linux çekirdeğinde tespit edilen çok sayıda güvenlik açığına yönelik bir uyarı yayımlamıştır. Söz konusu zafiyetlerin Debian Trixie sürümünün 6.12.105-1 öncesindeki versiyonlarını etkilediği belirtilmiştir. Tespit edilen açıkların, saldırganların sistemlerde yetki yükseltmesine, veri gizliliğinin ihlal edilmesine ve hizmet dışı bırakma (DoS) saldırılarına olanak tanıdığı ifade edilmiştir. Yayınlanan listede CVE-2025-38525 ve CVE-2026-74732 dahil olmak üzere 200'den fazla CVE kodu yer almaktadır. ANSSI, kullanıcıların ve sistem yöneticilerinin ilgili düzeltmeleri edinmek için yayıncının 25 Ağustos 2026 tarihli güvenlik bültenine başvurması gerektiğini bildirmiştir. Güvenlik güncellemelerinin uygulanmasının sistem bütünlüğünü korumak adına gerekli olduğu kaydedilmiştir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 28.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[21] Windows Bellek Bütünlüğü Korumasının Otomatik Olarak Etkinleştirilmesi
+─────────────────────────────────────────────────────────
+Microsoft, Ekim 2026 tarihinden itibaren uygun cihazlarda Windows kalite güncellemeleri aracılığıyla bellek bütünlüğü korumasını otomatik olarak etkinleştirmeye başlayacağını duyurmuştur. Bu özelliğin, yalnızca güvenilir çekirdek modu kodlarının ve sürücülerinin çalışmasına izin vererek Windows çekirdeğini hedef alan saldırıları engellediği belirtilmektedir. Sanallaştırma tabanlı güvenliğin (VBS) çalışmadığı makinelerde, güncellemelerin bu özelliği de aktif hale getireceği ifade edilmiştir. Microsoft, sistemin etkinleştirme öncesinde donanım yeteneklerini, uyumluluğu ve performans kriterlerini değerlendireceğini açıklamıştır. Bellek bütünlüğünün halihazırda devre dışı bırakıldığı cihazlarda mevcut yönetici kararlarının korunacağı kaydedilmiştir. Ayrıca bu koruma katmanının, yeniden başlatma gerektirmeyen sıcak yama (hotpatch) güncellemeleri için temel teşkil ettiği ve korunmayan cihazların bu hizmet modelinden yararlanamayacağı bildirilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

@@ -1,46 +1,5 @@
 [
  {
-  "date": "2026-08-03",
-  "views": [
-   {
-    "tr_title": "FBI ve EPA'nın Su Tesislerine Yönelik Uyarıları",
-    "paragraph": "───────────────────────────────────────────────────────── FBI ve EPA tarafından yayımlanan ortak bildiride, siber saldırganların su tesislerindeki internete bağlı endüstriyel denetleyicilere sızarak operasyonel aksamalara neden olduğu açıklanmıştır. 27 Temmuz 2026 tarihinden itibaren en az yedi eyaletteki su ve atık su tesislerinin, Rockwell Automation MicroLogix serisi cihazlarda parola ve IP adresi değişiklikleri yaşandığını bildirdiği ifade edilmiştir. Bazı tesislerde basınç kaybı ve su baskını gibi fiziksel etkilerin görüldüğü, bu durumun arıtılmamış yeraltı sularının şebekeye sızma riskini doğurduğu belirtilmiştir. Kurumlar, özellikle kullanım ömrü dolmuş donanımların hedef alındığına dikkat çekerek, bu cihazların güvenli ağ geçitleri arkasına alınmasını ve güçlü kimlik doğrulama yöntemlerinin kullanılmasını önermiştir. Ayrıca, tesislerin siber olaylar sırasında hizmet sürekliliğini sağlamak amacıyla manuel kontrol yeteneklerini düzenli olarak test etmeleri ve güncel yedekler bulundurmaları gerektiği kaydedilmiştir. (XXXXXXX, AÇIK -industrialcyber.co, 03.08.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "OpenAI'nin ChatGPT Üzerinden Yürütülen Dolandırıcılık Ağını Engellemesi",
-    "paragraph": "───────────────────────────────────────────────────────── OpenAI, Kamboçya merkezli olduğu değerlendirilen ve ChatGPT hesaplarını sahte çevrimiçi kişilikler oluşturmak için kullanan koordineli bir ağı engellediğini açıklamıştır. Söz konusu ağın; yatırım, romantizm, kumar ve kolluk kuvveti taklidi gibi çeşitli dolandırıcılık yöntemlerini desteklemek amacıyla yapay zekayı kullandığı belirtilmiştir. OpenAI tarafından yapılan incelemede, dolandırıcıların hedef kişilere yönelik mesajlar oluşturmak, içerikleri tercüme etmek ve sosyal medya için tanıtım materyalleri üretmek amacıyla platformdan faydalandığı tespit edilmiştir. Operasyonun, Doğu Asya'daki organize suç gruplarıyla bağlantılı insan ticareti ve zorla çalıştırma faaliyetleriyle de ilişkili olduğu kaydedilmiştir. Şirket, dolandırıcılık faaliyetleri sonucunda mağdurların binlerce dolar kaybetmiş olabileceğini, ancak toplam finansal zararın boyutunun henüz tam olarak belirlenemediğini ifade etmiştir. (XXXXXXX, AÇIK -helpnetsecurity.com, 03.08.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Hugging Face Diffusers Kütüphanesinde Kod Yürütme Zafiyetlerinin Belirlenmesi",
-    "paragraph": "───────────────────────────────────────────────────────── Hugging Face'in Diffusers kütüphanesinde, saldırganların yapay zeka tedarik zinciri üzerinden hedef makinelerde gizlice kod yürütmesine imkan tanıyan üç adet yüksek riskli güvenlik açığı tespit edilmiştir. FaceHugger olarak adlandırılan bu zafiyetlerin, güvenilmeyen kodların çalışmasını engellemek için tasarlanan güvenlik mekanizmalarını devre dışı bıraktığı belirtilmiştir. CVE-2026-44827, CVE-2026-45804 ve CVE-2026-44513 kodlu bu açıkların, model yükleme süreçlerindeki kontrol zamanı ile kullanım zamanı arasındaki uyumsuzluklardan kaynaklandığı ifade edilmiştir. Araştırmacılar, Diffusers kütüphanesinin 8 milyondan fazla indirilmiş olması nedeniyle kurumsal üretim hatlarının ve CI/CD sistemlerinin risk altında olduğunu kaydetmiştir. Söz konusu sorunlar Diffusers 0.38.0 sürümüyle giderilmiş olup, kullanıcıların yalnızca güvenilir kaynaklardan model yüklemeleri gerektiği bildirilmiştir. (XXXXXXX, AÇIK -thehackernews.com, 03.08.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "N-able N-central Sunucularında Kimlik Doğrulama Açığının İstismar Edilmesi",
-    "paragraph": "───────────────────────────────────────────────────────── N-able, N-central uzaktan izleme ve yönetim platformundaki bir kimlik doğrulama atlatma açığının saldırganlar tarafından yönetici erişimi sağlamak amacıyla istismar edildiğini açıklamıştır. CVE-2026-18577 olarak tanımlanan ve ilk yamanın yetersiz kalması nedeniyle ortaya çıkan bu açığın, saldırganların müşteri uç noktalarına Cloudflare tünelleri kurarak kalıcılık sağlamasına olanak tanıdığı belirtilmiştir. N-able, 31 Temmuz 2026 tarihinde on-premise müşterilerden gelen lisans hataları üzerine inceleme başlatmış ve 2026.3.1.7 sürümünden önceki tüm yapıların savunmasız olduğunu teyit etmiştir. Huntress araştırmacıları, saldırganların bazı sistemlerde süreç listeleme faaliyetleri yürüttüğünü ve Mullvad ile NordVPN çıkış düğümlerini kullandığını raporlamıştır. Şirket, tüm kullanıcıların acilen en güncel sürüme yükseltme yapması ve yönetilen cihazlardaki yetkisiz servisleri denetlemesi gerektiğini ifade etmiştir. (XXXXXXX, AÇIK -thehackernews.com, 03.08.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "Thermo Fisher'ın DNA Veri Dosyalarındaki Güvenlik Açığını Yamalaması",
-    "paragraph": "───────────────────────────────────────────────────────── Thermo Fisher Scientific, Applied Biosystems insan tanımlama yazılımlarında, DNA veri dosyalarının analiz öncesinde fark edilmeden değiştirilmesine yol açan kritik bir güvenlik açığını gidermiştir. CVE-2026-17583 olarak tanımlanan zafiyetin, laboratuvar kontrollerinin aşılması durumunda .fsa ve .hid uzantılı çıktıların manipüle edilmesine imkan tanıdığı belirtilmiştir. Yapılan testlerde, yapay zeka araçları kullanılarak iki farklı DNA profilinin tek bir dosyada birleştirilebildiği ve yazılımların bu değişikliğe karşı uyarı vermediği tespit edilmiştir. Şirket, desteklenen beş ürün grubu için dijital imza desteği içeren güncellemeler yayınlamış, ancak kullanım ömrü dolmuş üç ürün grubu için güncelleme yapılmayacağını açıklamıştır. Henüz aktif bir istismar vakasına rastlanmadığı bildirilmekle birlikte, laboratuvarlara dosya erişim yetkilerini kısıtlamaları ve ağ bağlantılarını güvenli kaynaklarla sınırlandırmaları önerilmiştir. (XXXXXXX, AÇIK -thehackernews.com, 03.08.2026) ────────────────────────────────────────────────────────────────────────────────",
-    "title": "",
-    "full_text": ""
-   },
-   {
-    "tr_title": "GitLab'da Kritik Uzaktan Kod Yürütme Zincirinin Tespit Edilmesi",
-    "paragraph": "───────────────────────────────────────────────────────── GitLab kullanıcıları, Oj adlı Ruby JSON ayrıştırıcısındaki iki hatanın birleştirilmesiyle elde edilen kritik bir uzaktan kod yürütme zafiyetine karşı uyarılmıştır. Araştırmacılar, Jupyter notebook dosyalarının işlenmesi sırasında bellek bozulmasına yol açan bu hataları kullanarak, yetkili bir kullanıcının Puma işçi süreci üzerinde tam komut yürütme yetkisi kazanabildiğini kanıtlamıştır. Zafiyetin GitLab CE ve EE sürümlerinin 15.2.0 ile 19.0.1 arasındaki geniş bir aralığı etkilediği ve saldırı için yönetici haklarına ihtiyaç duyulmadığı belirtilmiştir. Başarılı bir istismarın kaynak kod ifşasına, kimlik bilgisi hırsızlığına ve yanal hareket imkanına yol açabileceği kaydedilmiştir. GitLab'ın söz konusu hataları Haziran 2026'da giderdiği, ancak düzeltmenin başlangıçta kritik bir güvenlik güncellemesi olarak etiketlenmediği ifade edilmiştir. Kullanıcıların sistemlerini 19.0.2 veya ilgili güncel sürümlere yükseltmeleri istenmiştir. (XXXXXXX, AÇIK -securityaffairs.com, 02.08.2026) ──────────────────────────────────────────────────────────────────────────────── ================================================================================",
-    "title": "",
-    "full_text": ""
-   }
-  ]
- },
- {
   "date": "2026-08-04",
   "views": [
    {
@@ -3133,6 +3092,137 @@
     "paragraph": "NYU ve Radboud Üniversitesi araştırmacıları, Google'ın reklam şeffaflığı arşivinde yaptıkları incelemede 100 milyondan fazla görüntüleme alan binlerce aldatıcı ve zararlı reklam tespit etmiştir. AdLens adlı bir araç kullanan ekip, arşivdeki 188.000 yazılım reklamı arasından korkutma amaçlı (scareware) ve yanlış beyan içeren içerikleri ortaya çıkarmıştır. Bu reklamların kullanıcıları telefonlarının virüs kaptığına veya depolama alanlarının dolduğuna dair sahte uyarılarla yanılttığı belirtilmiştir",
     "title": "Scareware ads keep running on Google’s transparency tool, even after they’re reported",
     "full_text": "Scareware ads keep running on Google’s transparency tool, even after they’re reported\n\nA team of NYU and Radboud University researchers spent a year building a tool to find deceptive software ads inside Google’s public ad archive. It works. It also exposed something more uncomfortable: reporting a bad ad to Google doesn’t mean the ad, or the domain behind it, stops running.\n\nThe tool is called AdL"
+   }
+  ]
+ },
+ {
+  "date": "2026-09-03",
+  "views": [
+   {
+    "tr_title": "Sırbistan'da Aktivistlerin Cihazlarında Pegasus ve NoviSpy Yazılımlarının Tespit Edilmesi",
+    "paragraph": "Sırbistan'da öğrenci aktivistleri, bir milletvekilini ve yerel bir yetkiliyi hedef alan, ülkedeki en büyük izleme dalgası olarak nitelendirilen kapsamlı bir casus yazılım saldırısı ortaya çıkarılmıştır. SHARE Vakfı, Citizen Lab ve Amnesty International tarafından yürütülen incelemelerde, toplam 14 kişinin cihazında Pegasus ve NoviSpy yazılım aileleri tespit edilmiştir. Pegasus enfeksiyonunun, Aralık 2025 ile Ocak 2026 arasında kullanıcı etkileşimi gerektirmeyen sıfır tıklama yöntemiyle gerçekleş",
+    "title": "Pegasus, NoviSpy variant spyware found on devices of Serbian activists",
+    "full_text": "Pegasus, NoviSpy variant spyware found on devices of Serbian activists\n\nResearchers say they have uncovered the first confirmed Pegasus spyware infection of 2026, as well as another spyware variant infection, targeting Serbian student activists and others in what one group called the largest documented wave of that kind of surveillance in the country to date.\n\nThe SHARE Foundation said Wednesday t"
+   },
+   {
+    "tr_title": "Ukrayna Yanlısı VantaCore Grubunun Rus Şirketlerini Hedef Alması",
+    "paragraph": "Rus siber güvenlik firması F6, Ukrayna bağlantılı olduğu değerlendirilen VantaCore adlı yeni bir fidye yazılımı grubunun Rus kuruluşlarını hedef aldığını duyurmuştur. 2025 yılında aktif olan Thor grubunun yeniden markalanmış hali olduğu belirtilen grup, Ağustos ayından bu yana en az yedi kuruluşu hedef alarak milyonlarca dolarlık fidyeler talep etmiştir. VantaCore, ağlara sızmak için zayıf VPN'leri ve internete açık uygulama açıklarını kullanırken, operasyonlarını fidye yazılımı servisi (RaaS) m",
+    "title": "New pro-Ukraine hacker group targets Russian companies with custom ransomware",
+    "full_text": "New pro-Ukraine hacker group targets Russian companies with custom ransomware\n\nA ransomware group believed to be linked to pro-Ukrainian hackers is targeting Russian organizations with custom malware and demanding multimillion-dollar payments, according to new research.\n\nThe group, which calls itself VantaCore, has targeted at least seven known victims, Russian cybersecurity firm F6 said in a repo"
+   },
+   {
+    "tr_title": "Yapay Zeka Ajanları Kullanılarak Gerçekleştirilen Otonom Siber Saldırının İncelenmesi",
+    "paragraph": "Unit 42 araştırmacıları, bir saldırganın gelişmiş yapay zeka modelleri ve otonom ajan çerçeveleri kullanarak bir kurumsal ağa sızdığı ransomware operasyonunu analiz etmiştir. Saldırganın, normalde insan operatörler için iki hafta sürecek olan karmaşık sızma işlemlerini yapay zeka ajanları sayesinde 10 saatin altına indirdiği tespit edilmiştir. Otonom ajanların iç mimariyi haritalandırdığı, kod depolarından kimlik bilgilerini topladığı ve kurbanın bulut yapay zeka altyapısını ele geçirdiği belirt",
+    "title": "An AI-Assisted Cyber Attack: Inside a Unit 42 Investigation",
+    "full_text": "Threat Research Center\n\nAn AI-Assisted Cyber Attack: Inside a Unit 42 Investigation\n\nBy:Renzon CruzNicolas BareilEric SemaanOmar Jbari\n\nPublished:September 2, 2026\n\nCategories:GeneralInsightsRansomwareThreat Research\n\nTags:Agentic AIFrontier AI\n\nUnit 42 responded to an incident where a human attacker used frontier AI to breach an enterprise network autonomously as part of a ransomware attack. The "
+   },
+   {
+    "tr_title": "Spring Ring Operasyonunun Microsoft Teams Kullanıcılarını Hedeflemesi",
+    "paragraph": "Palo Alto Networks araştırmacıları, Spring Ring olarak adlandırılan bir siber tehdit aktörünün Microsoft Teams üzerinden en az 150 kullanıcıya yönelik sesli kimlik avı (vishing) saldırıları düzenlediğini raporlamıştır. Saldırganların, kurumların BT destek birimlerini taklit ederek kullanıcıları uzak masaüstü araçlarını yüklemeye veya zararlı dosyaları çalıştırmaya ikna ettiği belirtilmiştir. Ocak ve Nisan 2026 döneminde yoğunlaşan bu faaliyetlerin, geleneksel e-posta kimlik avından kurumsal iş b",
+    "title": "Threat Gang 'Springs' Vishing Attacks on Microsoft Teams Users",
+    "full_text": "Cybersecurity Careers\n\nCyberattacks & Data Breaches\n\nCybersecurity Analytics\n\nCybersecurity Operations\n\nIdentity & Access Mgmt Security\n\nVulnerabilities & Threats\n\nCyberattacks & Data Breaches\n\nThreat Gang 'Springs' Vishing Attacks on Microsoft Teams Users\n\nThe \"Spring Ring\" operation aims to compromise users of the collaboration suite to remotely access their sessions, spread malware, and even ta"
+   },
+   {
+    "tr_title": "Rockwell Automation Ürünlerinde Çok Sayıda Güvenlik Açığının Kapatılması",
+    "paragraph": "Endüstriyel otomasyon devi Rockwell Automation, RSLinx Classic, FactoryTalk ve ControlLogix gibi kritik ürünlerini etkileyen ondan fazla güvenlik açığı için yama ve geçici çözümler yayınlamıştır. Yayınlanan bültende, RSLinx Classic yazılımını etkileyen dört adet kritik seviyeli hizmet dışı bırakma (DoS) zafiyetinin sistemlerin çökmesine neden olabileceği belirtilmiştir. FactoryTalk Historian ürününde yüksek öncelikli uzaktan kod yürütme hatasının giderildiği, ControlFLASH yardımcı yazılımında is",
+    "title": "Rockwell Automation Patches Over a Dozen Vulnerabilities Across Products",
+    "full_text": "Rockwell Automation Patches Over a Dozen Vulnerabilities Across Products\n\nThe industrial giant has released advisories for its RSLinx Classic, ArmorStart, ControlFLASH, FactoryTalk, and other products.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nRockwell Automation on Tuesday informed customers that patches or workarounds are available for more than a dozen vulnerabilities disco"
+   },
+   {
+    "tr_title": "Lenovo Kimlik Doğrulama Hatasıyla Dropbox Hesaplarının Ele Geçirilmesi",
+    "paragraph": "Dropbox, Lenovo'nun e-posta doğrulama sürecindeki bir güvenlik açığından yararlanan yetkisiz tarafların yaklaşık 5.000 kullanıcı hesabına eriştiğini bildirmiştir. 4 ile 21 Ağustos 2026 tarihleri arasında gerçekleşen olayda, saldırganların Dropbox kullanıcılarının e-posta adreslerini kullanarak sahte Lenovo ID'leri oluşturduğu ve bu kimliklerle ilgili hesaplara şifresiz giriş yaptığı tespit edilmiştir. Dropbox, Lenovo Kimlik Sağlayıcı Hizmetleri ile olan eski entegrasyonun, saldırganların e-posta",
+    "title": "Dropbox accounts breached through Lenovo email verification flaw",
+    "full_text": "Dropbox is warning some users that an unauthorized party accessed their accounts by exploiting a flaw in Lenovo’s email verification process to register fraudulent Lenovo IDs.\n\nAlthough some affected users did not have Lenovo accounts, the cloud-storage provider said it uses Lenovo Identity Provider Services as part of its authentication infrastructure. This allows users to log into Dropbox accoun"
+   },
+   {
+    "tr_title": "Microsoft Exchange Sunucularında Kritik Güvenlik Açığının Sürmesi",
+    "paragraph": "Shadowserver Foundation tarafından yapılan günlük taramalar, dünya genelinde yaklaşık 22.000 Microsoft Exchange sunucusunun CVE-2026-62911 kodlu kritik kimlik doğrulama atlatma açığına karşı hala yamasız olduğunu ortaya koymuştur. Amerika Birleşik Devletleri ve Almanya, sırasıyla 6.200 ve 5.100 yamasız sunucu ile listenin başında yer almaktadır. Microsoft'un 11 Ağustos 2026 tarihinde düzeltme yayınladığı bu açığın, yetkili bir saldırganın ağ üzerinden ayrıcalık yükseltmesine olanak tanıdığı beli",
+    "title": "Nearly 22,000 Microsoft Exchange servers remain exposed to critical security flaw (CVE-2026-62911)",
+    "full_text": "Nearly 22,000 Microsoft Exchange servers remain exposed to critical security flaw (CVE-2026-62911)\n\nNearly 22,000 Microsoft Exchange servers remain unpatched against CVE-2026-62911, a critical authentication bypass vulnerability, according to daily scans from the Shadowserver Foundation.\n\nThe United States and Germany top the list with 6,200 and 5,100 unpatched servers.\n\nCVE-2026-62911 is a critic"
+   },
+   {
+    "tr_title": "CISA ve FBI'dan Hizmet Kesintilerinde İletişim Rehberi",
+    "paragraph": "CISA ve FBI, Avustralya, Kanada, Yeni Zelanda ve Birleşik Krallık siber güvenlik ajanslarıyla birlikte, büyük bilgi teknolojisi ve operasyonel teknoloji kesintileri sırasında uygulanacak yeni bir iletişim rehberi yayınlamıştır. 'Baskı Altında İletişim: Hizmet Sağlayıcılar İçin En İyi Uygulamalar' başlıklı doküman, siber saldırılar veya teknik arızalar sırasında hızlı ve şeffaf bilgi paylaşımının önemine dikkat çekmiştir. Rehberde, kuruluşların olay öncesinde müdahale planları oluşturması ve tekn",
+    "title": "CISA, FBI Urge Clearer Communication During Major Outages",
+    "full_text": "The CISA and FBI, along with cybersecurity agencies from Australia, Canada, New Zealand and the U.K., have released new guidance on outage communications for service providers dealing with major IT and OT outages. The guide calls for prompt, factual and audience-specific communication during disruptions caused by malicious cyber activity or non-malicious events.\n\nTitled “Communicating Under Pressu"
+   },
+   {
+    "tr_title": "GeoNetwork Yazılımında Kritik Uzaktan Kod Çalıştırma Açıklarının Kapatılması",
+    "paragraph": "Açık kaynaklı coğrafi veri kataloğu yazılımı GeoNetwork, hükümet ve kamu kurumlarının jeoportallarını etkileyen iki kritik güvenlik açığı için düzeltme yayınlamıştır. CVE-2026-63219 ve CVE-2026-58400 kodlu açıkların birleştirilmesiyle, kimliği belirsiz saldırganların sunucularda uzaktan kod çalıştırabildiği tespit edilmiştir. Güvenlik firması Ethiack, internete açık 121 GeoNetwork kurulumunun etkilendiğini ve bunların %89'unun askeri veya ulusal ajanslarla bağlantılı olduğunu bildirmiştir. Hatan",
+    "title": "GeoNetwork Fixes Unauthenticated RCE Chain Affecting Government Geoportal Backends",
+    "full_text": "Two vulnerabilities in GeoNetwork can be chained to achieve unauthenticated remote code execution (RCE) on the open-source geospatial metadata catalog, which sits behind many government and agency geoportals.\n\nThe project shipped fixes in versions 4.4.12 and 4.2.17 on July 8, 2026, and published the vulnerability details on August 31.\n\nGeoNetwork originated at the United Nations Food and Agricultu"
+   },
+   {
+    "tr_title": "Rus Hackerın 80 Bin Freelance Çalışanı Hedeflemekten Yargılanması",
+    "paragraph": "Amerika Birleşik Devletleri Adalet Bakanlığı, Kıbrıs'tan iade edilen 40 yaşındaki Rus vatandaşı Searzhudin Tamirlanovich Aktulaev'in, binlerce freelance çalışanı zararlı yazılımlarla hedeflemek suçlamasıyla hakim karşısına çıktığını açıklamıştır. İddianameye göre Aktulaev, 2016 ve 2017 yıllarında bir freelance platformunda 255 sahte hesap kullanarak 80.000 kullanıcıya makro içeren kötü amaçlı Excel dosyaları göndermiştir. Bu saldırılar sonucunda kurbanların bilgisayarlarına TVRAT ve DarkVNC adlı",
+    "title": "Extradited Russian Hacker Faces Charges Over Excel Malware Campaign That Infected Thousands",
+    "full_text": "The U.S. Department of Justice (DoJ) has charged a Russian national, extradited from Cyprus on August 28, with using roughly 255 fake accounts on a freelance platform to send malware-laced Excel attachments to about 80,000 of its users in 2016 and 2017.\n\nSearzhudin Tamirlanovich Aktulaev, 40, was arrested in Cyprus in May 2025, the U.S. Attorney's Office for the Northern District of California sai"
+   },
+   {
+    "tr_title": "Google Chrome'da Çok Sayıda Güvenlik Açığının Giderilmesi",
+    "paragraph": "Fransız siber güvenlik ajansı ANSSI, Google Chrome tarayıcısında tespit edilen ve saldırganların belirtilmemiş güvenlik sorunlarına yol açmasına neden olan çok sayıda güvenlik açığı hakkında bir uyarı yayınlamıştır. CVE-2026-84323 ile CVE-2026-84359 arasındaki geniş bir yelpazeyi kapsayan bu açıkların, Windows, Linux ve Mac işletim sistemlerindeki belirli Chrome sürümlerini etkilediği belirtilmiştir. Google'ın 1 Eylül 2026 tarihli güvenlik bültenine atıfta bulunularak, kullanıcıların Windows ve ",
+    "title": "Multiples vulnérabilités dans Google Chrome (02 septembre 2026)",
+    "full_text": "Non spÃ©cifiÃ© par l'Ã©diteur\n\nChrome versions antÃ©rieures Ã  152.0.7977.75 pour Windows et Linux\n\nChrome versions antÃ©rieures Ã  152.0.7977.76 pour Mac\n\nDe multiples vulnÃ©rabilitÃ©s ont Ã©tÃ© dÃ©couvertes dans Google Chrome. Elles permettent Ã  un attaquant de provoquer un problÃ¨me de sÃ©curitÃ© non spÃ©cifiÃ© par l'Ã©diteur.\n\nSe rÃ©fÃ©rer au bulletin de sÃ©curitÃ© de l'Ã©diteur pour l'obtent"
+   },
+   {
+    "tr_title": "HPE Aruba Networking Ürünlerinde Kritik Güvenlik Açıkları",
+    "paragraph": "HPE Aruba Networking ürünlerinde, uzaktan kod çalıştırma, ayrıcalık yükseltme ve hizmet dışı bırakma (DoS) saldırılarına olanak tanıyan çok sayıda güvenlik açığı tespit edilmiştir. ANSSI tarafından yayınlanan bildiriye göre, CVE-2026-19766 ve CVE-2026-73700 serisi dahil olmak üzere onlarca açık AOS-CX ve Fabric Composer yazılımlarını etkilemektedir. Saldırganların bu açıklar vasıtasıyla veri gizliliğini ihlal edebildiği, güvenlik politikalarını atlatabildiği ve sunucu tarafı istek sahteciliği (S",
+    "title": "Multiples vulnérabilités dans les produits HPE Aruba Networking (02 septembre 2026)",
+    "full_text": "Atteinte Ã  l'intÃ©gritÃ© des donnÃ©es\n\nAtteinte Ã  la confidentialitÃ© des donnÃ©es\n\nContournement de la politique de sÃ©curitÃ©\n\nDÃ©ni de service Ã  distance\n\nExÃ©cution de code arbitraire Ã  distance\n\nFalsification de requÃªtes cÃ´tÃ© serveur (SSRF)\n\nInjection de code indirecte Ã  distance (XSS)\n\nInjection de requÃªtes illÃ©gitimes par rebond (CSRF)\n\nÃlÃ©vation de privilÃ¨ges\n\nAOS-CX versions "
+   },
+   {
+    "tr_title": "Cleo Harmony Yazılımında Kimlik Doğrulama Atlatma Açığı",
+    "paragraph": "Dosya transfer uygulaması Cleo Harmony'de, saldırganların kimlik doğrulama mekanizmalarını atlatmasına ve yetki yükseltmesine olanak tanıyan kritik bir güvenlik açığı tespit edilmiştir. CVE-2026-84115 olarak izlenen bu hatanın, JWT yenileme belirteci mantığındaki bir kusurdan kaynaklandığı ve HTTP başlıklarındaki argüman manipülasyonu ile istismar edilebildiği belirtilmiştir. Güvenlik araştırmacıları, söz konusu açık için çalışan bir istismar kodunun yayınlandığını ve bunun tüm kullanıcı kuruluş",
+    "title": "Exploit Published for Fresh Cleo Harmony Vulnerability",
+    "full_text": "Exploit Published for Fresh Cleo Harmony Vulnerability\n\nThe security defect allows remote attackers to bypass authentication through argument bearer manipulation.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nOrganizations are advised to immediately patch a fresh authentication bypass vulnerability affecting the file transfer application Cleo Harmony.\nTracked as CVE-2026-84115, th"
+   },
+   {
+    "tr_title": "WordPress Eklentisindeki SQL Enjeksiyon Açığının Milyonlarca Siteyi Etkilemesi",
+    "paragraph": "Beş milyondan fazla aktif kuruluma sahip 'All-in-One WP Migration and Backup' adlı WordPress eklentisinde, yetkisiz saldırganların uzaktan kod çalıştırmasına ve siteleri ele geçirmesine neden olan kritik bir SQL enjeksiyon açığı tespit edilmiştir. CVE-2026-19949 kodlu bu açığın, eklentinin arşiv geri yükleme işlemi sırasında veritabanı içeriğini hatalı işlemesinden kaynaklandığı belirtilmiştir. Wordfence araştırmacıları, saldırganların WordPress trackback'leri üzerinden zararlı veriler yerleştir",
+    "title": "WordPress backup plugin flaw exposes millions of sites to takeover attacks",
+    "full_text": "An SQL injection vulnerability in the All-in-One WP Migration and Backup plugin for WordPress could allow unauthenticated attackers to execute remote code and take control of affected websites.\n\nThe plugin is used to back up, export, import, and move entire websites, including their databases, media, themes, and plugins, between servers or domains.\n\nThe security flaw is tracked as CVE-2026-19949 a"
+   },
+   {
+    "tr_title": "Elastic Ürünlerinde Çok Sayıda Kritik Güvenlik Açığı",
+    "paragraph": "Elasticsearch, Kibana ve Elastic Agent dahil olmak üzere çeşitli Elastic ürünlerinde, uzaktan kod çalıştırma ve ayrıcalık yükseltme imkanı tanıyan çok sayıda güvenlik açığı tespit edilmiştir. ANSSI tarafından yayınlanan duyuruda, CVE-2026-56143 ve CVE-2026-78584 gibi birçok farklı açığın veri gizliliğini ve bütünlüğünü tehdit ettiği belirtilmiştir. Etkilenen ürünler arasında APM Server, Fleet Server ve Elastic Cloud on Kubernetes gibi kritik bileşenlerin bulunduğu ifade edilmiştir. Saldırganları",
+    "title": "Multiples vulnérabilités dans les produits Elastic (02 septembre 2026)",
+    "full_text": "Atteinte Ã  l'intÃ©gritÃ© des donnÃ©es\n\nAtteinte Ã  la confidentialitÃ© des donnÃ©es\n\nContournement de la politique de sÃ©curitÃ©\n\nDÃ©ni de service Ã  distance\n\nExÃ©cution de code arbitraire Ã  distance\n\nÃlÃ©vation de privilÃ¨ges\n\nAPM Server versions 8.19.x antÃ©rieures Ã  8.19.20\n\nAPM Server versions 9.4.x antÃ©rieures Ã  9.4.5\n\nAPM Server versions 9.5.x antÃ©rieures Ã  9.5.1\n\nElastic Agent vers"
+   },
+   {
+    "tr_title": "Debian Linux Çekirdeğinde Güvenlik Açığının Tespit Edilmesi",
+    "paragraph": "Fransa Ulusal Siber Güvenlik Ajansı (ANSSI), Debian Linux çekirdeğinde tespit edilen çok sayıda güvenlik açığına yönelik bir uyarı yayımlamıştır. Söz konusu zafiyetlerin Debian Trixie sürümünün 6.12.105-1 öncesindeki versiyonlarını etkilediği belirtilmiştir. Tespit edilen açıkların, saldırganların sistemlerde yetki yükseltmesine, veri gizliliğinin ihlal edilmesine ve hizmet dışı bırakma (DoS) saldırılarına olanak tanıdığı ifade edilmiştir. Yayınlanan listede CVE-2025-38525 ve CVE-2026-74732 dahi",
+    "title": "Multiples vulnérabilités dans le noyau Linux de Debian (28 août 2026)",
+    "full_text": "Atteinte Ã  la confidentialitÃ© des donnÃ©es\n\nÃlÃ©vation de privilÃ¨ges\n\nDebian trixie versions antÃ©rieures Ã  6.12.105-1\n\nDe multiples vulnÃ©rabilitÃ©s ont Ã©tÃ© dÃ©couvertes dans le noyau Linux de Debian. Elles permettent Ã  un attaquant de provoquer une Ã©lÃ©vation de privilÃ¨ges, une atteinte Ã  la confidentialitÃ© des donnÃ©es et un dÃ©ni de service.\n\nSe rÃ©fÃ©rer au bulletin de sÃ©curitÃ© "
+   },
+   {
+    "tr_title": "ABD'de 764 Grubu Üyesi Reşit Olmayan Şahsa Hapis Cezası Verilmesi",
+    "paragraph": "FBI, Maine eyaletinde yaşayan 17 yaşındaki bir gencin, 764 adlı şiddet yanlısı aşırılıkçı kolektife üyeliği nedeniyle federal düzeyde suçlanan ve mahkum edilen ilk çocuk olduğunu açıklamıştır. Söz konusu şahsın çocukların cinsel istismarı, eyaletler arası tehditler, siber zorbalık ve kimlik hırsızlığı gibi suçlardan suçlu bulunduğu belirtilmiştir. FBI Boston Bölümü, bu davanın yaş faktörünün federal hesap verebilirlik konusunda bir kalkan oluşturmayacağını gösterdiğini ifade etmiştir. 764 grubun",
+    "title": "Jail time for Maine child in 764 marks turning point in federal law enforcement",
+    "full_text": "Jail time for Maine child in 764 marks turning point in federal law enforcement\n\nThe FBI said a 17-year-old from Maine is the first child federally charged and adjudicated for crimes stemming from their involvement in 764, a violent extremist collective.\n\nA judge ordered the teen to remain detained after determining they committed multiple crimes, including conspiracy to sexually exploit a child, "
+   },
+   {
+    "tr_title": "Windows Bellek Bütünlüğü Korumasının Otomatik Olarak Etkinleştirilmesi",
+    "paragraph": "Microsoft, Ekim 2026 tarihinden itibaren uygun cihazlarda Windows kalite güncellemeleri aracılığıyla bellek bütünlüğü korumasını otomatik olarak etkinleştirmeye başlayacağını duyurmuştur. Bu özelliğin, yalnızca güvenilir çekirdek modu kodlarının ve sürücülerinin çalışmasına izin vererek Windows çekirdeğini hedef alan saldırıları engellediği belirtilmektedir. Sanallaştırma tabanlı güvenliğin (VBS) çalışmadığı makinelerde, güncellemelerin bu özelliği de aktif hale getireceği ifade edilmiştir. Micr",
+    "title": "Windows memory integrity switches on automatically for eligible devices in October 2026",
+    "full_text": "Windows memory integrity switches on automatically for eligible devices in October 2026\n\nBeginning in October 2026, Windows quality updates start enabling memory integrity protection on eligible devices with little or no additional configuration. On machines where Virtualization-based Security is not already running, those same updates enable VBS too.\n\nMemory integrity is the layer that allows onl"
+   },
+   {
+    "tr_title": "FCC'nin İstenmeyen Aramalarla Mücadele İçin Puanlama Sistemi Kurması",
+    "paragraph": "Amerika Birleşik Devletleri Federal İletişim Komisyonu (FCC), tüketicilerin telekomünikasyon sağlayıcılarının istenmeyen otomatik aramaları (robocall) engelleme performansını değerlendirebileceği yeni bir puanlama sistemi kuracağını açıklamıştır. Bu sistemin, hizmet sağlayıcıların şeffaflığını artırmayı ve yasa dışı aramalarla mücadele çabalarını teşvik etmeyi amaçladığı belirtilmiştir. FCC, puanlamanın yalnızca idari bir kontrol listesi olmayacağını, engellenen meşru aramaların oranı gibi opera",
+    "title": "The FCC wants consumers to rate their telecom’s anti-robocall protections",
+    "full_text": "The FCC wants consumers to rate their telecom’s anti-robocall protections\n\nThe Federal Communications Commission wants to set up a new scorecard system that would allow consumers to rate their telecoms’ ability to prevent or deter unwanted robocalls.\n\nAccording to the agency, the scorecard “will empower consumers and encourage providers to continue to combat illegal robocalls by providing the publ"
+   },
+   {
+    "tr_title": "Meta Reklamları Aracılığıyla StreamRat Android Truva Atının Yayılması",
+    "paragraph": "ThreatFabric araştırmacıları, İspanyolca konuşan kullanıcıları hedef alan StreamRat adlı yeni bir Android bankacılık truva atını ortaya çıkarmıştır. Zararlı yazılımın, Meta platformları üzerinden sahte bir televizyon yayıncılığı kampanyasıyla tanıtıldığı ve yaklaşık 570.950 hesaba ulaştığı belirtilmiştir. Kurbanların cihazlarına APK dosyasını yükledikten sonra erişilebilirlik izinlerini vermesiyle saldırganların cihaz üzerinde tam kontrol sağladığı ifade edilmiştir. StreamRat'in klavye hareketle",
+    "title": "Meta Ads Push StreamRat Android Trojan That Can Gain Near-Complete Device Control",
+    "full_text": "Cybersecurity researchers have disclosed details of a new Android banking trojan called StreamRat that was promoted to Spanish-speaking users through a fake television-streaming campaign on Meta and can give operators near-complete control of infected devices.\n\nThreatFabric said the campaign's advertisement focused on Spain and reached an estimated 570,950 Meta accounts in the European Union that "
+   },
+   {
+    "tr_title": "OpenAI'ın Astra Modelinin Kritik Siber Güvenlik Eşiğini Aşması",
+    "paragraph": "OpenAI, yeni yapay zeka modeli Astra'nın, şirketin Hazırlık Çerçevesi kapsamında 'Kritik' siber güvenlik yetenek seviyesine ulaşan ilk model olduğunu duyurmuştur. Astra'nın, iyi korunan sistemlerdeki sıfır gün açıklarını bağımsız olarak bulup istismar edebildiği ve sadece yüksek seviyeli talimatlarla karmaşık siber saldırılar gerçekleştirebildiği belirtilmiştir. Yapılan testlerde modelin ExploitBench üzerinde tam puan aldığı ve tarayıcı korumalı alanlarından çıkarak işletim sistemi seviyesinde y",
+    "title": "OpenAI’s Astra Crosses ‘Critical’ Cyber Threshold After Finding Zero-Days",
+    "full_text": "Artificial Intelligence\n\nOpenAI’s Astra Crosses ‘Critical’ Cyber Threshold After Finding Zero-Days\n\nThe designation applies when a model can independently find and exploit zero-day vulnerabilities across many well-defended systems.\n\nFlipboard\n\n\n\n\n\nReddit\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nWhatsapp\n\n\n\n\n\nEmail\n\nOpenAI said its newest model, Astra, has reached the ‘Critical’ cybersecurity capability level under the "
    }
   ]
  }
