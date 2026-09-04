@@ -342,6 +342,12 @@ _MANSIZ_AD = {
     # ihlal duyurusunda geçer. 'Gentlemen fidyesi ↔ Levi Strauss' bu yüzden
     # aynı olay sayıldı.
     'borsa', 'komisyon', 'menkul', 'kıymetle',
+    # Genel teknik sözcükler. 'node' hem Node.js hem ağ/blokzincir düğümü
+    # anlamında geçiyor. ÖLÇÜLDÜ (2026-09-04): Node.js çalışma zamanının
+    # zararlı dağıtımında kullanılması (Symantec) ile FTP sunucu bannerlarının
+    # komut kanalı yapılması (SOCRadar, E4del/PINHOLE) 'entity:node' üzerinden
+    # TAM_MUKERRER sayıldı — yani haberi SİLECEK yönde bir sahte eşleşme.
+    'node', 'server', 'sunucu', 'client', 'istemci',
 }
 
 

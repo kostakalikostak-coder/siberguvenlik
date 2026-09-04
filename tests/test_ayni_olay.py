@@ -343,3 +343,32 @@ def test_on_filtre_kayipsiz_kalir():
         if OI.ayni_olay(a, b, sozluk=sz, ayni_gun=True):
             ihlal.append((a.get('tr_title', '')[:40], b.get('tr_title', '')[:40]))
     assert not ihlal, f'ön filtre kayıplı — kesişimsiz çift AYNI OLAY dedi: {ihlal[:3]}'
+
+
+def test_genel_teknik_sozcuk_kimlik_degildir():
+    """'node', 'sunucu' gibi genel teknik sözcükler olay kimliği değildir.
+
+    ÖLÇÜLDÜ (2026-09-04): Node.js çalışma zamanının zararlı dağıtımında
+    kullanılması (Symantec) ile FTP sunucu bannerlarının komut kanalı
+    yapılması (SOCRadar, E4del/PINHOLE) 'entity:node' üzerinden TAM_MUKERRER
+    sayıldı — yani haberi SİLECEK yönde bir sahte eşleşme. Sektör sözcüğü
+    vakalarından farkı budur: orada zarar manşet yasağıydı, burada haber
+    kaybı.
+    """
+    from src import olay_iliski as OI
+
+    def _v(t, p):
+        return {'tr_title': t, 'title': '', 'paragraph': p, 'full_text': ''}
+
+    a = _v('Saldırganların Node.js Yazılımını Zararlı Dağıtım Aracına Dönüştürmesi',
+           'Tehdit aktörlerinin meşru Node.js çalışma zamanı ortamını zararlı '
+           'yazılım yüklerini dağıtmak için kullandığı Symantec tarafından '
+           'tespit edilmiştir.')
+    b = _v('Tehdit Aktörlerinin FTP Sunucu Bannerlarını Zararlı Dağıtımda Kullanması',
+           'Tehdit aktörlerinin E4del ve PINHOLE truva atlarını yaymak için FTP '
+           'sunucu bannerlarını komut kanalı yaptığı SOCRadar tarafından '
+           'bildirilmiştir.')
+    assert OI.mukerrer_karari(a, b, ayni_gun=False) == 'FARKLI', \
+        'genel teknik sözcük üzerinden haber silinecekti'
+    for ad in ('node', 'sunucu', 'server'):
+        assert ad in OI._MANSIZ_AD, f'{ad} hâlâ olay kimliği'
