@@ -6636,6 +6636,72 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         'kapi_rapor_ici', 'kapi_rapor_ici_llm',
     )
 
+    def _manset_puan_tersinelik(self, top3_ids, top10_ids, remaining_ids,
+                                records, content_by_id, articles_by_id):
+        """Gövdede manşetten BELİRGİN ölçüde güçlü bir haber kaldıysa takas eder.
+
+        NEDEN VAR: puan bandı (`MANSET_PUAN_TOLERANSI`) TAVANA görelidir —
+        tavan 95 iken taban 70'e iner ve 79 puanlık bir haber manşette
+        "zayıf" sayılmaz, gövdede 92 puanlık uygun bir haber dursa bile.
+        Bant kötü bir manşeti engelliyor ama DAHA İYİSİ varken vasat olanı
+        seçmeyi engellemiyor.
+
+        ÖLÇÜLDÜ (2026-09-04): manşetin üçüncü sırasında 79 puanlı BraZetsu
+        zararlısı vardı; gövdede manşete UYGUN sekiz haber ondan yüksekti
+        (92 devlet destekli YZ araç kullanımı, 89 Breeze Comet, 88 Node.js,
+        88 Booz Allen...). Hiçbiri kategori ya da mükerrer nedeniyle elenmiş
+        değildi.
+
+        EŞİK ÖLÇÜMLE SEÇİLDİ — denetimin tersinelik alarmıyla AYNI sabit
+        (bkz. MANSET_TERSINELIK_MIN): alarm neyi bildiriyorsa bu katman onu
+        düzeltir; iki taraf ayrışırsa "bildirilen ama düzeltilmeyen" kalıcı
+        bir alarm doğar.
+
+        Takas, ortak yedek seçicisinden geçer: mükerrer, manşet yasağı ve
+        kategori güvenceleri aynen uygulanır. Yedek yoksa manşet DEĞİŞMEZ.
+        """
+        if len(top3_ids) < 3:
+            return list(top3_ids), list(top10_ids), list(remaining_ids)
+
+        _puan = lambda a: (records.get(a) or {}).get('toplam', 0)  # noqa: E731
+        view_fn = self._dedup_view_fn(content_by_id, articles_by_id)
+        gecmis = (self._load_recent_report_views()
+                  + self._load_recent_kritik3_views())
+        yeni_top3 = list(top3_ids)
+        yeni_top10 = list(top10_ids)
+        havuz = [a for a in list(top10_ids) + list(remaining_ids)
+                 if a not in yeni_top3]
+        # Mekanik doldurma: yönetmene özel zafiyet kısıtı UYGULANMAZ.
+        disi = self._manset_disi_ids(havuz, records, view_fn, yonetmen=False)
+        puanlar = {a: _puan(a) for a in havuz}
+
+        for _ in range(len(yeni_top3)):
+            en_zayif = min(yeni_top3, key=_puan)
+            aday = self._kritik3_yedek_bul(
+                havuz, [o for o in yeni_top3 if o != en_zayif], records,
+                view_fn, gecmis, haric=set(disi), aday_puanlari=puanlar)
+            if aday is None:
+                break
+            if _puan(aday) - _puan(en_zayif) < self.MANSET_TERSINELIK_MIN:
+                break
+            yeni_top3[yeni_top3.index(en_zayif)] = aday
+            havuz = [a for a in havuz if a != aday]
+            puanlar.pop(aday, None)
+            # İnen haber gövdenin başına döner; çıkan gövdeden düşer.
+            if en_zayif not in yeni_top10:
+                yeni_top10 = [en_zayif] + yeni_top10
+            yeni_top10 = [i for i in yeni_top10 if i != aday]
+            self._manset_karar_kaydet(
+                'manset_puan_tersinelik', en_zayif, aday,
+                f'gövdede {_puan(aday)} puanlı uygun haber vardı '
+                f'(manşet {_puan(en_zayif)})')
+            print(f"   📈 Puan tersinelik: manşetteki ID {en_zayif} "
+                  f"({_puan(en_zayif)}) → ID {aday} ({_puan(aday)}) ile "
+                  f"değiştirildi; fark eşiği {self.MANSET_TERSINELIK_MIN}.")
+
+        kalan = [i for i in remaining_ids if i not in yeni_top3]
+        return yeni_top3, yeni_top10, kalan
+
     def _son_grup_bosalmasi(self, top3_ids, top10_ids, remaining_ids,
                             records, content_by_id, articles_by_id,
                             eleme_nedeni):
@@ -7970,6 +8036,14 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             top3_ids, top10_ids, remaining_ids, score_records,
             content_by_id, articles_by_id, eleme_nedeni)
         top3_ids, top10_ids, remaining_ids = _senkron('son_grup_bosalmasi')
+
+        # PUAN TERSİNELİĞİ — bkz. _manset_puan_tersinelik. En sonda çalışır ki
+        # kendisinden sonra gelen bir katman kararını bozmasın; takas ortak
+        # yedek seçicisinden geçtiği için mükerrer güvenceleri korunur.
+        top3_ids, top10_ids, remaining_ids = self._manset_puan_tersinelik(
+            top3_ids, top10_ids, remaining_ids, score_records,
+            content_by_id, articles_by_id)
+        top3_ids, top10_ids, remaining_ids = _senkron('manset_puan_tersinelik')
 
         # Bekçinin bu koşudaki bulguları denetim kaydına taşınır.
         self._durum_ozeti = _durum.ozet()
