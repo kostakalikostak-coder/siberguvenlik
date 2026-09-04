@@ -32976,3 +32976,204 @@ Microsoft, Ekim 2026 tarihinden itibaren uygun cihazlarda Windows kalite güncel
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 04 SEPTEMBER 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Coder Altyapısının Kötü Amaçlı Terraform Modülleriyle Ele Geçirilmesi
+─────────────────────────────────────────────────────────
+Siber saldırganların, yazılım geliştirme platformu Coder'ın Cloudflare altyapısına sızarak sistem havuzuna yetkisiz IP adresleri eklediği ve sahte Terraform modülleri dağıttığı tespit edilmiştir. 31 Ağustos 2026 tarihinde 07:35 ile 21:45 UTC saatleri arasında gerçekleşen bu olayda; Dropbox, Mercedes-Benz, Square ve ABD savunma şirketleri gibi kritik kurumların kullandığı platform hedef alınmıştır. Saldırganlar, meşru kayıt defterini taklit ederek API anahtarlarını, terminal geçmişini ve 'coderd' içindeki veritabanı şifrelerini çalan kodları 'coder-infra[.]com' alan adına sızdırmıştır. Coder yetkilileri; 2.37.0 ve 2.36.4 gibi yamalı sürümlere geçilmesini ve DNS kayıtlarının kontrol edilmesini tavsiye etmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Thomson Reuters C-Track Platformunda Geniş Kapsamlı Veri İhlali
+─────────────────────────────────────────────────────────
+Thomson Reuters'ın West Publishing birimi tarafından sunulan C-Track mahkeme yönetim platformu, Mart 2026'da başlayıp 29 Haziran'a kadar süren geniş kapsamlı bir veri ihlaline uğramıştır. 30 Haziran 2026'da tespit edilen olay; ABD'deki 11 eyaleti, ABD Virjin Adaları'nı ve Kanada'nın Ontario bölgesindeki 24 farklı yargı kurumunu etkilemiştir. Sızdırılan veriler arasında sosyal güvenlik numaraları, sürücü belgeleri, tıbbi kayıtlar ve mühürlü mahkeme belgelerinin yanı sıra hata giderme amacıyla oluşturulan bulut tabanlı yedekleme dosyaları yer almaktadır. Minnesota Yargı Erki, Thomson Reuters'ın sistem erişimini sonlandırarak şifre yenileme zorunluluğu getirirken; Ohio Yüksek Mahkemesi ihlalin üretim platformunda gerçekleştiğini bildirmiştir. Adli soruşturması süren olay kapsamında etkilenen bireylere Experian ve TransUnion üzerinden 12 aylık kimlik izleme hizmeti sunulmaktadır.
+(XXXXXXX, AÇIK -thehackernews.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Yapay Zeka Destekli BraZetsu Zararlı Yazılımının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Group-IB araştırmacıları, Windows sistemleri hedef alan ve ele geçirilen ana bilgisayarları yeraltı pazarlarında ticari varlıklara dönüştüren BraZetsu adlı Python tabanlı bir zararlı yazılım iskeletini analiz etmiştir. Exilware olarak izlenen Portekizce konuşan aktörler tarafından geliştirilen yazılımın, veri önceliklendirme ve hedef analizi süreçlerinde üretken yapay zeka kullandığı tespit edilmiştir. BraZetsu'nun özellikle Brezilya'daki finansal işlemlerde kullanılan CNAB formatındaki dosyaları taradığı ve tarayıcı geçmişlerini ele geçirdiği belirtilmektedir. Yazılımın, 'Banco de Infects' adlı bir platform üzerinden diğer siber suçlulara sistem erişimi satışı sağladığı ve erişim başına yaklaşık 5,80 dolar talep edildiği kaydedilmiştir. Şubat 2026'dan bu yana gelişen framework'ün, kurban ağlarında derin keşif yapma ve ikincil zararlı yükleri uzaktan çalıştırma kabiliyetine sahip olduğu ifade edilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] Latin Amerika'da Kuruluşları Hedef Alan Yapay Zeka Destekli Saldırılar
+─────────────────────────────────────────────────────────
+Siber tehdit aktörlerinin Latin Amerika'daki kuruluşları hedef alan çok aşamalı ağ sızma ve veri sızdırma kampanyalarında yapay zeka araçlarını kullandığı tespit edilmiştir. Unit 42 tarafından yapılan incelemede, Meksika'daki ulaşım ve kamu kurumlarını hedef alan CL-CRI-1131 ile Brezilya finans sektörüne odaklanan CL-CRI-1163 kod adlı iki ayrı faaliyet kümesi belirlenmiştir. Meksika merkezli kampanyada saldırganların hassas verileri toplamak için yapay zeka tarafından oluşturulduğu değerlendirilen yinelemeli betikler kullandığı ifade edilmiştir. Brezilya'daki finans kuruluşlarına yönelik saldırılarda ise yapay zeka destekli olduğu düşünülen özel uzak erişim truva atları ve tünelleme araçlarının kullanıldığı bildirilmiştir. Tehdit aktörlerinin operasyonlarını koordine etmek için ticari büyük dil modellerinden yararlandığı ancak altyapılarını güvence altına alırken yaptıkları hatalar sayesinde faaliyetlerinin takip edilebildiği kaydedilmiştir.
+(XXXXXXX, AÇIK -unit42.paloaltonetworks.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Breeze Comet Grubunun Küresel Finans Sistemlerini Hedeflemesi
+─────────────────────────────────────────────────────────
+Brezilya merkezli siber tehdit aktörü Breeze Comet'in, ülkenin finansal sistemlerine sızarak yasa dışı işlemler gerçekleştirdiği tespit edilmiştir. Google Tehdit İstihbarat Grubu ve Mandiant tarafından yayımlanan rapor, grubun finansal hizmetler, fintech, perakende ve devlet kurumlarını hedef aldığını ortaya koymuştur. Saldırganların, 2024 yılından itibaren parola püskürtme ve sosyal mühendislik yöntemleriyle kurumsal ağlara sızdığı, bazı durumlarda ise perakende ağlarına fiziksel donanım bağladığı belirtilmiştir. Grubun, Pix ve STR gibi anlık ödeme sistemlerinde uzmanlaştığı ve tek seferde on binlerce dolar tutarında sahte işlem gerçekleştirdiği kaydedilmiştir. Ayrıca, operasyonlarında üretken yapay zeka kullandığı ifade edilen grubun, faaliyetlerini Nijerya ve Paraguay gibi ülkelere de yaymaya çalıştığı bildirilmiştir.
+(XXXXXXX, AÇIK -darkreading.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Saldırganların Node.js Yazılımını Zararlı Dağıtım Aracına Dönüştürmesi
+─────────────────────────────────────────────────────────
+Siber tehdit aktörlerinin, meşru Node.js çalışma zamanı ortamını kötü amaçlı yazılım yüklerini dağıtmak için kullandığı tespit edilmiştir. Symantec tarafından yayımlanan raporda, bu yöntemin Şubat 2026'dan bu yana teknoloji şirketleri, oteller ve devlet kurumlarını hedef alan saldırılarda kullanıldığı belirtilmiştir. Saldırganların, resmi Node.js yükleyicisini kullanarak tespit edilmesi zor olan betik tabanlı zararlı yazılımları sistemlere yerleştirdiği ifade edilmiştir. Özellikle Asya merkezli bir teknoloji şirketine yönelik saldırıda, uzun süreli erişim sağlamak amacıyla EtherHiding tekniğinin kullanıldığı kaydedilmiştir. Woodgnat olarak da bilinen KongTuke adlı erişim aracısının, bu yöntemle ModeloRAT ve Mistic gibi arka kapıları yaydığı bildirilmiştir. ClickFix kampanyalarıyla birleşen bu yöntemin, kripto para blok zincirlerini komuta kontrol altyapısı olarak kullandığı dikkat çekilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Yapay Zeka Modellerinin Otonom Siber Saldırı Kapasitesine Ulaşması
+─────────────────────────────────────────────────────────
+Booz Allen tarafından yürütülen araştırmada, ABD ve Çin menşeli 18 öncü yapay zeka modelinin otonom siber saldırı gerçekleştirme yeteneğine yaklaştığı tespit edilmiştir. Yapılan testlerde, Anthropic'in Claude Mythos modelinin bir kurumsal ağda tüm siber saldırı zincirini otonom olarak tamamladığı ve yönetici düzeyinde erişim sağladığı belirtilmiştir. Raporda, gelişmiş saldırıların maliyet ve uzmanlık gereksiniminin azaldığı, bu durumun kritik altyapı operatörleri için müdahale sürelerini daralttığı ifade edilmiştir. Modellerin yaklaşık üçte ikisinin savunulan ağlara ilk erişimi başarıyla sağladığı, ancak gerçek dünya zafiyetlerini keşfetme konusunda henüz sınırlı kaldıkları kaydedilmiştir. Şirket, kritik altyapıların yapay zeka destekli saldırılara karşı dayanıklılığını kanıtlaması için sektöre özel bağlayıcı standartların getirilmesini önermektedir.
+(XXXXXXX, AÇIK -industrialcyber.co, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] Kentucky Temyiz Mahkemesi Verilerinin Siber Saldırıda İfşa Olması
+─────────────────────────────────────────────────────────
+Kentucky İdari Mahkemeler Ofisi (AOC), eyalet temyiz mahkemesi verilerinin üçüncü taraf hizmet sağlayıcısı Thomson Reuters bünyesindeki bir siber güvenlik ihlali nedeniyle tehlikeye girdiğini doğrulamıştır. West Publishing Corporation tarafından işletilen C-Track dava yönetim platformundaki dosya sistemlerine yetkisiz erişim sağlandığı bildirilmiştir. İhlalin yalnızca Kentucky ile sınırlı kalmadığı, platformu kullanan birden fazla eyaletteki mahkeme verilerini kapsadığı ifade edilmiştir. AOC, Kentucky özelinde verilerin dışarıya sızdırıldığına dair henüz bir kanıt bulunmadığını ve mahkeme operasyonlarının aksamadığını açıklamıştır. Thomson Reuters, etkilenen kişilere 12 aylık ücretsiz kredi izleme ve kimlik hırsızlığı koruma hizmeti sunacağını taahhüt etmiştir. Olayla ilgili olarak kolluk kuvvetleri ve siber güvenlik uzmanlarıyla koordineli bir inceleme süreci yürütülmektedir.
+(XXXXXXX, AÇIK -thecyberexpress.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] Manchester Havalimanı Grubunun 8,8 Milyon Kişilik Verisinin Sızdırılması
+─────────────────────────────────────────────────────────
+Manchester Havalimanı Grubu (MAG), fidye ödemeyi reddetmesinin ardından 8,8 milyon kişiye ait verilerin internet ortamında sızdırıldığını açıklamıştır. FulcrumSec adlı fidye yazılımı çetesi, Manchester, Londra Stansted ve East Midlands havalimanlarının web sitelerindeki JavaScript kodlarında açıkta bırakılan yönetici anahtarlarını kullanarak sistemlere sızdığını iddia etmiştir. Sızdırılan 550 gigabaytlık veri setinde; e-posta adresleri, telefon numaraları, araç plakaları, posta kodları ve yaklaşık 2,5 milyon satın alma işlemine ait detayların yer aldığı belirtilmektedir. HaveIBeenPwned platformu, ihlalden etkilenen benzersiz e-posta adresi sayısının 8,8 milyon civarında olduğunu doğrulamıştır. MAG yetkilileri, çalınan verilerin üçüncü taraf bir veritabanında saklandığını ve operasyonel faaliyetlerin saldırıdan etkilenmediğini ifade etmiştir. Suç örgütünün, elde ettiği verileri platform yapılandırma bilgileriyle birlikte kamuya açık şekilde paylaştığı kaydedilmiştir.
+(XXXXXXX, AÇIK -securityweek.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] Fransa'da Bir Hastaneye Veri İhlali Nedeniyle Para Cezası Verilmesi
+─────────────────────────────────────────────────────────
+Fransa veri koruma otoritesi CNIL, Hôpital privé de la Loire (HPL) adlı sağlık kuruluşuna, hastaların ve yakınlarının verilerini yeterince koruyamadığı gerekçesiyle 500.000 Euro para cezası vermiştir. 2025 yılının yaz aylarında gerçekleşen güvenlik ihlali sonucunda, 524.867 hasta ve 202.246 üçüncü tarafın hassas verilerinin sızdırıldığı belirtilmiştir. Yapılan incelemelerde, hastanenin VPN veya çok faktörlü kimlik doğrulama kullanmadan sisteme erişime izin verdiği ve yetersiz erişim kontrolleri nedeniyle tek bir doktor hesabının tüm kayıtlara ulaşabildiği tespit edilmiştir. Ayrıca kurumun, saldırganın günlerce sistemde veri sızdırmasını engelleyecek gerçek zamanlı izleme mekanizmalarına sahip olmadığı ifade edilmiştir. CNIL, hastanenin etkilenen üçüncü tarafları doğrudan bilgilendirmeyerek Genel Veri Koruma Yönetmeliği (GDPR) yükümlülüklerini ihlal ettiğini kaydetmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Sahte Yazılım Yükleyicileriyle Kurumsal Ağlara Sızma Girişimlerinin Artması
+─────────────────────────────────────────────────────────
+Microsoft, saldırganların Microsoft Edge, Kaspersky ve Razer gibi popüler yazılımları taklit eden sahte web siteleri aracılığıyla kurumsal sistemlere sızdığı konusunda uyarıda bulunmuştur. Silver Fox veya Yinhu olarak bilinen kampanya kapsamında, kullanıcıların truva atı içeren yükleyicileri indirmeye teşvik edildiği belirtilmektedir. Bu kötü amaçlı yazılımların, sistemde kalıcılık sağladığı, güvenlik korumalarını zayıflattığı ve saldırgan kontrolündeki altyapıyla iletişim kurduğu ifade edilmiştir. Saldırganların, tespit edilmeyi zorlaştırmak için her indirmede dosya özetini (hash) değiştiren sunucu taraflı teknikler kullandığı kaydedilmiştir. Ayrıca, msiexec.exe gibi meşru Windows bileşenlerinin kötüye kullanılarak saldırıların normal sistem davranışları içinde gizlendiği bildirilmiştir. Sağlık, üretim ve kamu sektörlerini hedef alan bu faaliyetlerin, özellikle bölgesel yazılım tedarik farklılıkları olan küresel organizasyonlar için büyük risk oluşturduğu dikkat çekilmiştir.
+(XXXXXXX, AÇIK -csoonline.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] Claude Mythos Modelinin Yazılım Açıklarını Tespit Etmesi
+─────────────────────────────────────────────────────────
+Anthropic tarafından geliştirilen Claude Mythos Preview yapay zeka modelinin, 281 açık kaynaklı projede 23.019 potansiyel güvenlik açığı tespit ettiği bildirilmiştir. İncelenen 1.900 aday bulgunun yaklaşık yüzde 90,8'inin gerçek zafiyetler olduğu doğrulanmış ve bu süreç sonunda 88 adet resmi güvenlik duyurusu yayınlanmıştır. Ancak modelin zafiyet ciddiyet seviyelerini belirlemede insan uzmanlarla tutarsızlık yaşadığı, özellikle karmaşık saldırı ön koşullarını değerlendirirken riskleri olduğundan yüksek gösterdiği tespit edilmiştir. Anthropic, modelin Firefox'ta kullanılan SpiderMonkey motorundaki bilinen çökmeleri yüzde 72,4 oranında çalışan istismar kodlarına dönüştürebildiğini açıklamıştır. Yazılım tedarik zinciri güvenliği liderlerinin yüzde 37'si, giderilebilecek olandan daha fazla açığın tespit edilmesini temel bir engel olarak tanımlamıştır. Anthropic'in inceleme kapasitesi yetersizliği nedeniyle tespit edilen 21.000'den fazla aday bulgunun henüz dış uzmanlarca kontrol edilemediği bilgisi verilmiştir.
+(XXXXXXX, AÇIK -helpnetsecurity.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Abliteration.ai Girişiminin Yapay Zeka Güvenlik Duvarlarını Kaldırması
+─────────────────────────────────────────────────────────
+Abliteration.ai isimli yeni bir girişim, yapay zeka modellerinin zararlı talepleri reddetmesini sağlayan güvenlik mekanizmalarını (guardrails) sistematik olarak kaldıran bir hizmet başlattığını duyurmuştur. Platformun, Z.ai tarafından geliştirilen GLM-5.3 gibi gelişmiş modellerin kısıtlamasız sürümlerini web tarayıcısı veya API üzerinden sunduğu belirtilmiştir. Şirket kurucusu Devon, amaçlarının siber saldırı simülasyonları ve kırmızı takım çalışmaları için modellerin kısıtlanmadan kullanılmasını sağlamak olduğunu ifade etmiştir. Ancak yapılan testlerde, platformun Chrome şifrelerini çalan yazılımlar yazabildiği ve tehlikeli patojenlerin üretimiyle ilgili talimatlar verebildiği tespit edilmiştir. Güvenlik uzmanları, bu tür hizmetlerin yapay zekayı birer "sosyopat" haline getirdiğini ve kötü niyetli kullanım riskini artırdığını vurgulamıştır. Girişimin, İngiltere ve Avrupa'daki bazı siber güvenlik şirketlerine hizmet verdiği ve bulut sağlayıcılarıyla anlaşmalar yaptığı bildirilmiştir. Hükümetlerin, bu tür kısıtlamasız modellere erişimi denetlemek için GPU kiralama süreçlerinde kimlik doğrulama zorunluluğu getirmesi gerektiği tartışılmaktadır.
+(XXXXXXX, AÇIK -techcrunch.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] Brezilya'daki Bir Müzik Festivali Katılımcılarının Verilerinin Sızdırılması
+─────────────────────────────────────────────────────────
+Brezilya'nın São Paulo kentinde düzenlenen The Town 2025 festivaline bilet alan 412.000 kişinin verilerinin karanlık webde satışa sunulduğu bildirilmiştir. Rusça konuşulan bir forumda 10.000 Dolar karşılığında listelenen verilerin; isim, e-posta, telefon ve Brezilya ulusal kimlik numarası olan CPF bilgilerini içerdiği belirtilmiştir. Yapılan analizler, verilerin gerçek olduğunu ve kronolojik bir sırada sunulduğunu doğrulamıştır. Ancak tüm kayıtların aynı zaman damgasına sahip olması, sızıntının doğrudan bir sistem saldırısından ziyade etkinlik sonrası yapılan bir toplu veri dışa aktarımı sırasında gerçekleşmiş olabileceğine işaret etmektedir. Satıcının, CPF numaralarını özellikle banka dolandırıcılığı ve sahte kredi başvuruları için pazarladığı ifade edilmiştir. Uzmanlar, bu tür hassas kimlik bilgilerinin biletleme sektöründe toplanmasının büyük bir güvenlik riski oluşturduğunu ve etkilenen kişilerin kredi kayıtlarını yakından izlemeleri gerektiğini kaydetmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] Büyük İşletmeleri Hedef Alan Sahte Şirket Birleşmesi Dolandırıcılığı
+─────────────────────────────────────────────────────────
+Siber suçluların, "Phantom Deal" olarak adlandırılan bir kampanya ile üst düzey yöneticileri taklit ederek şirket çalışanlarını büyük miktarda para transferi yapmaya ikna etmeye çalıştığı bildirilmiştir. Gen adlı siber güvenlik firmasının da hedef alındığı bu saldırılarda, saldırganların WhatsApp üzerinden yöneticilerin kimliğine büründüğü ve gizli bir şirket satın alma süreci yürüttükleri izlenimi verdiği belirtilmiştir. Dolandırıcıların, inandırıcılığı artırmak için PwC ve KPMG gibi danışmanlık firmalarının logolarını taşıyan sahte gizlilik sözleşmeleri kullandığı ifade edilmiştir. Bir çalışandan, Hong Kong merkezli bir hesaba yaklaşık 626.735 Euro transfer etmesinin istendiği ancak dikkatli bir personelin sesli görüşme sırasında durumu fark etmesiyle saldırının engellendiği kaydedilmiştir. Yapılan araştırmalar sonucunda, özel sermaye, finans ve enerji sektörlerinden en az beş farklı şirketin benzer yöntemlerle hedef alındığı ve saldırıların her kurban için özel olarak tasarlandığı tespit edilmiştir.
+(XXXXXXX, AÇIK -darkreading.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] ABD Merkezli Geniş Kapsamlı Kimlik Avı Kampanyasının Tespiti
+─────────────────────────────────────────────────────────
+ANY.RUN araştırmacıları, 46 ülkeyi kapsayan ve ana hedefi Amerika Birleşik Devletleri olan geniş çaplı bir uzaktan izleme ve yönetim yazılımı kötüye kullanımı kampanyasını ortaya çıkarmıştır. Gözlemlenen faaliyetlerin yaklaşık yüzde 45'inin ABD ile ilişkili olduğu ve operasyonun toplam 601 vakayla bağlantılı olduğu tespit edilmiştir. Saldırganların, kurbanları yasal uzaktan yönetim yazılımlarını yüklemeye ikna etmek için vergi formları, kargo bildirimleri ve sosyal güvenlik temalı sahte belgeler kullandığı belirtilmiştir. Kampanya altyapısının tespit edilmesini zorlaştırmak amacıyla Vercel ve GitHub Pages gibi platformların kullanıldığı ve ana bilgisayarların yüzde 94'ünün yalnızca bir gün aktif kaldığı kaydedilmiştir. Eğitim, teknoloji ve kamu sektörlerinin en çok hedeflenen alanlar arasında yer aldığı ifade edilmiştir. Güvenlik ekiplerinin, yalnızca alan adlarına güvenmek yerine teslimat zinciri modellerine odaklanmaları gerektiği bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] Popüler Balıkçılık Uygulaması Fishbrain'de Kullanıcı Verilerinin Sızdırılması
+─────────────────────────────────────────────────────────
+Dünya genelinde 20 milyondan fazla kullanıcısı bulunan balıkçılık uygulaması Fishbrain, 19 Ağustos tarihinde gerçekleşen bir veri ihlalini kamuoyuna duyurmuştur. Saldırganların; kullanıcı isimleri, doğum tarihleri, e-posta adresleri, telefon numaraları ve şifre özetleri (hash) ile tuzlama (salt) verilerini ele geçirdiği belirtilmiştir. Şirket, şifrelerin açık metin olarak saklanmadığını ancak kullanılan algoritmaya bağlı olarak bazı özetlerin saldırganlar tarafından çözülme riski taşıdığını ifade etmiştir. İhlalin tespit edilmesinin ardından tüm kullanıcı şifrelerinin sıfırlandığı ve etkilenen ortamdaki güvenlik kontrollerinin artırıldığı bildirilmiştir. Kullanıcıların, aynı şifreyi kullandıkları diğer platformlardaki bilgilerini de güncellemeleri ve kimlik avı saldırılarına karşı dikkatli olmaları tavsiye edilmiştir. Fishbrain, ihlalin tam ölçeği ve kaç kullanıcının etkilendiği konusunda detaylı bir bilgi vermezken, veri güvenliği önlemlerinin kapsamlı bir incelemeye alındığını kaydetmiştir.
+(XXXXXXX, AÇIK -theregister.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] Jersey Adası'nda Revolut Kullanıcılarını Hedef Alan Telefon Dolandırıcılığı
+─────────────────────────────────────────────────────────
+Jersey Adası polisi, son dört hafta içinde bildirilen dolandırıcılık vakalarının %75'inin Revolut hesaplarını hedef aldığını duyurmuştur. Bu kısa süre zarfında bölge sakinlerinin yaklaşık 180.000 Sterlin tutarında maddi kayba uğradığı belirtilmiştir. Dolandırıcıların, bankanın güvenlik veya müşteri destek ekibinden aradıklarını iddia ederek kurbanları hesaplarında şüpheli işlemler olduğu konusunda ikna ettiği ifade edilmiştir. Mağdurların, hassas güvenlik bilgilerini paylaşmaya, paralarını "güvenli" olduğu iddia edilen hesaplara aktarmaya veya saldırganlara uzaktan erişim izni vermeye zorlandığı kaydedilmiştir. Revolut, bu tür dolandırıcılık faaliyetlerini ciddiye aldığını ve hiçbir bankanın müşterisinden şifre paylaşmasını veya para transferi yapmasını istemeyeceğini vurgulamıştır. Uzmanlar, saldırıların teknik bir açıktan ziyade gelişmiş sosyal mühendislik yöntemlerine dayandığını ve şüpheli durumlarda görüşmenin sonlandırılarak doğrudan resmi uygulama üzerinden iletişim kurulması gerektiğini hatırlatmıştır.
+(XXXXXXX, AÇIK -bitdefender.com, 02.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] Kimlik Avı Saldırılarında Filtreleri Atlatmak İçin ASCII Smuggling Kullanımı
+─────────────────────────────────────────────────────────
+Microsoft araştırmacıları, yapay zeka istem enjeksiyonu çalışmalarından bilinen "ASCII Smuggling" tekniğinin geleneksel kimlik avı saldırılarında kullanılmaya başlandığını tespit etmiştir. Bu yöntemde, saldırganların görünmez Unicode karakterlerini kullanarak finansal anahtar kelimeleri böldüğü ve böylece e-posta filtrelerinin bu kelimeleri algılamasını engellediği belirtilmiştir. Örneğin, "funding" gibi bir kelimenin arasına yerleştirilen görünmez karakterlerin, metin işleme sistemleri tarafından farklı algılanırken kullanıcı tarafından normal okunduğu ifade edilmiştir. Microsoft Defender verilerine göre, bu tekniği kullanan saldırı hacminin 9 Şubat 2026 tarihinden itibaren keskin bir artış gösterdiği ve günlük 2,3 milyon mesaj seviyesine ulaştığı kaydedilmiştir. Saldırıların hafta sonları durduğu ve hafta içi yoğunlaştığı bir düzen izlediği bildirilmiştir. Bu yöntemin, özellikle makine öğrenimi tabanlı sınıflandırıcıları yanıltmak amacıyla tasarlandığı ancak görünmez karakterlerin varlığının savunmacılar için bir tespit sinyali oluşturabileceği dikkat çekilmiştir.
+(XXXXXXX, AÇIK -microsoft.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[20] OpenAI'nın Kritik Altyapı Savunması İçin 1 Milyar Dolar Ayırması
+─────────────────────────────────────────────────────────
+OpenAI, kritik hizmetleri siber saldırılara karşı korumak amacıyla "Daybreak for Frontline Defenders" isimli 1 milyar dolarlık küresel bir girişim başlattığını duyurmuştur. OpenAI Başkanı Greg Brockman tarafından açıklanan programın, özellikle küçük su ve elektrik sağlayıcıları ile yerel yönetimleri ve bankaları hedeflediği belirtilmiştir. Girişim kapsamında, Daybreak siber modellerine sübvansiyonlu erişim, eğitim ve teknik destek sağlanacağı ifade edilmiştir. OpenAI, Multi-State Information Sharing and Analysis Center (MS-ISAC) ile iş birliği yaparak kamu sektörü savunucularına yönelik bir pilot uygulama başlatmıştır. Brockman, kritik altyapı kesintilerinin kalıcı hale gelmesini önlemek için yapay zeka destekli savunma araçlarının kullanımının zorunlu olduğunu vurgulamıştır. Programın, kaynakları kısıtlı olan ekiplerin eski sistemlerdeki güvenlik açıklarını tespit etmelerine yardımcı olması hedeflenmektedir.
+(XXXXXXX, AÇIK -csoonline.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[21] HPE'nin ArubaOS-CX İşletim Sistemindeki Kritik Güvenlik Açığını Yamalaması
+─────────────────────────────────────────────────────────
+Hewlett Packard Enterprise (HPE), ArubaOS-CX ağ işletim sisteminde uzaktan kod yürütülmesine izin veren kritik bir arabellek taşması açığını (CVE-2026-73749) gidermiştir. Yetkisiz bir uzaktan saldırganın, etkilenen bir sürece özel paketler göndererek yüksek ayrıcalıklarla kod çalıştırabileceği belirtilmiştir. Şirket, kurumsal anahtarlarda kullanılan bu işletim sisteminin 10.10 ile 10.18 arasındaki çeşitli sürümlerinin risk altında olduğunu açıklamıştır. Ayrıca, aynı bülten kapsamında 8.1 ile 8.8 arasında önem puanına sahip 23 farklı güvenlik açığı için de yamalar yayımlanmıştır. Bu açıklar arasında komut enjeksiyonu, siteler arası betik çalıştırma (XSS) ve kimlik doğrulama atlatma gibi kusurların bulunduğu ifade edilmiştir. HPE, müşterilerine yayımlanan güncel sürümlere derhal geçiş yapmaları konusunda güçlü bir tavsiyede bulunmuştur. Şu ana kadar bu açıkların aktif olarak istismar edildiğine dair bir bilgiye ulaşılmadığı kaydedilmiştir. Blue Report 2026 verilerine göre, saldırganların geçerli kimlik bilgileri elde ettikten sonra eylemlerinin yalnızca %37'sinin engellenebildiği bildirilmiştir.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[22] Google Chrome'daki Sıfır Gün Açığının Aktif Olarak İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Google, Chrome tarayıcısında aktif olarak istismar edildiği tespit edilen yüksek öncelikli bir sıfır gün açığını kapatmak için güvenlik güncellemeleri yayınlamıştır. CVE-2026-85046 koduyla takip edilen hatanın, Chrome'un JavaScript ve WebAssembly motoru olan V8'deki bir tür karışıklığı kusuru olduğu belirtilmiştir. Bu açığın, uzaktaki bir saldırganın özel olarak hazırlanmış bir HTML sayfası aracılığıyla korumalı alan içerisinde rastgele kod yürütmesine olanak tanıdığı ifade edilmiştir. Google, söz konusu açık için internet ortamında bir istismar kodunun bulunduğunu doğrulamış ancak saldırıların niteliğine dair ayrıntıları paylaşmamıştır. Kullanıcıların güvenliğini sağlamak amacıyla Windows, macOS ve Linux sistemlerinde tarayıcılarını en güncel sürüme yükseltmeleri tavsiye edilmiştir. Bu gelişmeyle birlikte Google'ın yıl başından bu yana Chrome'da düzelttiği aktif istismar edilen sıfır gün açığı sayısının altıya ulaştığı kaydedilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[23] SonicWall SMA 1000 Cihazlarında Sıfır Gün Açıklarının İstismar Edilmesi
+─────────────────────────────────────────────────────────
+SonicWall, SMA 1000 serisi cihazlarında aktif olarak istismar edilen CVE-2026-83548 ve CVE-2026-83549 kodlu iki yeni sıfır gün açığı tespit edildiğini açıklamıştır. Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), bu kusurları bilinen istismar edilen güvenlik açıkları kataloğuna eklemiştir. Araştırmacılar, sunucu tarafı istek sahteciliği ve işletim sistemi komut enjeksiyonu içeren bu iki açığın birleştirilerek kimlik doğrulaması gerektirmeyen uzaktan kod yürütme imkanı sağladığını belirtmiştir. SonicWall, etkilenen müşterilerine cihazlarını yeniden kurmalarını ve tüm parolaları sıfırlamalarını tavsiye etmiştir. Şirketin SMA 1000 ürün grubunun son dokuz ay içinde defalarca benzer saldırılara maruz kaldığı ve fidye yazılımı gruplarının bu cihazlara özel ilgi gösterdiği ifade edilmiştir. Özellikle Akira ve INC ransomware çetelerinin SonicWall açıklarını kullandığı bilinmektedir. Şirket, saldırıların arkasındaki aktörler veya etkilenen müşteri sayısı hakkında detaylı bilgi paylaşmamıştır.
+(XXXXXXX, AÇIK -cyberscoop.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[24] CrowdStrike Falcon Yazılımında Ayrıcalık Yükseltme Açığının Paylaşılması
+─────────────────────────────────────────────────────────
+Nightmare Eclipse takma adıyla bilinen siber güvenlik araştırmacısı, CrowdStrike Falcon uç nokta güvenlik platformunda FalconFlank olarak isimlendirilen bir sıfır gün açığına dair kavram kanıtlama kodu yayınlamıştır. Bu zafiyetin, platformun Microsoft Office belgelerindeki şüpheli makroları temizleyen otomatik güvenlik aracını suistimal ederek saldırganlara sistem üzerinde ayrıcalık yükseltme imkanı tanıdığı bildirilmiştir. CrowdStrike sözcüsü, iddiaların aktif olarak incelendiğini açıklamış ve müşterilerine geçici bir önlem olarak ilgili makro temizleme özelliğini devre dışı bırakmalarını tavsiye etmiştir. Araştırmacının son bir hafta içinde Kaspersky ve Avast gibi diğer güvenlik yazılımları için de benzer ayrıcalık yükseltme açıklarını paylaştığı ifade edilmiştir. Güvenlik uzmanı Kevin Beaumont, yayınlanan istismar kodlarının güncel sistemlerde çalıştığını teyit etmiş ve bu durumun güvenlik ürünlerinin kendi güvenliği konusundaki eksiklikleri gösterdiğini belirtmiştir.
+(XXXXXXX, AÇIK -theregister.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[25] PostgreSQL'de On Yıllık Kritik Bir Güvenlik Açığının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+PostgreSQL veri tabanı sisteminde, 2014 yılından bu yana fark edilmeyen ve "PostGREShell" olarak adlandırılan kritik bir güvenlik açığı tespit edilmiştir. CVE-2026-6471 koduyla takip edilen bu zafiyetin, düşük yetkili replikasyon hesaplarına sahip saldırganların rastgele kod yürütmesine ve tam süper kullanıcı yetkileri kazanmasına olanak tanıdığı belirtilmektedir. Cyera Research tarafından yapılan analizlerde, hatanın veri tabanının mantıksal replikasyon işlevindeki çıktı eklentilerinin işlenişinden kaynaklandığı ifade edilmiştir. Windows, Linux ve macOS sistemlerini etkileyen bu durumun, saldırganların kimlik doğrulama verilerini değiştirmesine ve sunucu üzerinde kalıcı arka kapılar oluşturmasına imkan verdiği bildirilmiştir. Geliştirici ekip, Ağustos 2026 tarihinde yayınladığı güncellemelerle desteklenen tüm sürümlerdeki hatayı gidermiştir. Kuruluşlara, replikasyon yetkisine sahip hesapları denetlemeleri ve sistemlerini derhal yamalamaları tavsiye edilmektedir.
+(XXXXXXX, AÇIK -csoonline.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[26] Cisco'nun Kritik Ağ Cihazlarındaki Güvenlik Açıklarını Yamalaması
+─────────────────────────────────────────────────────────
+Cisco, Secure Email ürününde bulunan ve şifreli e-posta içeriklerinin ele geçirilmesine yol açabilen iki adet yamalanmamış güvenlik açığına karşı uyarıda bulunmuştur. CVE-2026-20354 ve CVE-2026-20355 kodlu bu açıkların, S/MIME şifre çözme işlevindeki yetersiz doğrulama nedeniyle aradaki adam saldırılarına zemin hazırladığı ifade edilmiştir. Şirket ayrıca IOS XR ve Nexus 9000 serisi anahtarlarda uzaktan kod yürütme ve kimlik doğrulama atlatma risklerini barındıran kritik seviyedeki zafiyetler için güncellemeler yayınlamıştır. Özellikle Nexus 9000 serisindeki CVE-2026-20212 kodlu açığın, saldırganların root yetkileriyle kod çalıştırmasına izin verdiği belirtilmiştir. Cisco, söz konusu açıkların kamuoyuna açıklandığını ancak henüz sahada istismar edildiklerine dair bir bilgi bulunmadığını açıklamıştır. IP telefon modellerini etkileyen ve hizmet dışı bırakma saldırılarına neden olan bir diğer yüksek riskli açık için de yamalar sunulmuştur.
+(XXXXXXX, AÇIK -securityweek.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[27] Microsoft Edge Tarayıcısında Çok Sayıda Güvenlik Açığının Giderilmesi
+─────────────────────────────────────────────────────────
+Fransa Ulusal Siber Güvenlik Ajansı (ANSSI), Microsoft Edge tarayıcısında tespit edilen ve sistem bütünlüğünü tehdit eden çok sayıda güvenlik açığı hakkında bir bildiri yayınlamıştır. CVE-2026-58616 ve CVE-2026-79072 aralığındaki onlarca zafiyetin, saldırganlara uzaktan kod yürütme, veri gizliliğini ihlal etme ve güvenlik politikalarını atlatma imkanı tanıdığı belirtilmiştir. Bu hataların iOS, Windows ve diğer platformlardaki Edge sürümlerini etkilediği ifade edilmiştir. Microsoft'un 28 Ağustos 2026 tarihinde yayınladığı güvenlik bültenleriyle bu açıklar için gerekli düzeltmeleri sağladığı kaydedilmiştir. Kullanıcıların, verilerinin korunması ve sistem güvenliğinin sağlanması amacıyla tarayıcılarını belirtilen güncel sürümlere yükseltmeleri gerektiği vurgulanmıştır. ANSSI, yayınladığı dokümantasyonda her bir CVE kodu için ilgili teknik detaylara ve üretici tarafından sağlanan çözüm yollarına atıfta bulunarak kurumları önlem almaya çağırmıştır.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 31.08.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[28] Plex Kullanıcılarının Kritik Güvenlik Açıklarına Karşı Uyarılması
+─────────────────────────────────────────────────────────
+Plex, masaüstü istemcileri ve medya sunucularındaki kritik güvenlik açıklarını kapatmak için kullanıcılarına sistemlerini derhal güncellemeleri yönünde uyarıda bulunmuştur. Güvenlik sorunlarının Plex Media Server v1.43.2 ve önceki sürümlerini etkilediği, düzeltmelerin ise 1.43.3 ve 1.115.0 sürümleriyle sunulduğu bildirilmiştir. Şirketin, belirli bir güvenlik açığı için müşterilerine ilk kez doğrudan e-posta yoluyla bilgilendirme yaptığı dikkat çekmiştir. CISA'nın daha önce 2023 yılında benzer bir Plex açığının aktif olarak istismar edildiğini raporladığı ve bu durumun LastPass veri ihlaliyle ilişkilendirildiği hatırlatılmıştır. Kullanıcıların, saldırganlar yamaları tersine mühendislik yöntemiyle inceleyip istismar araçları geliştirmeden önce sistemlerini güvence altına almaları gerektiği vurgulanmıştır. Güncel sürümlerin resmi indirme sayfası veya sunucu yönetim paneli üzerinden temin edilebileceği açıklanmıştır.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 03.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
