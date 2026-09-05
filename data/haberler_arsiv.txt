@@ -33177,3 +33177,148 @@ Plex, masaüstü istemcileri ve medya sunucularındaki kritik güvenlik açıkla
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 05 SEPTEMBER 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Güney Kore'de Ted Arka Kapısının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Kuzey Kore devlet destekli siber tehdit aktörlerinin, Güney Kore'deki otomotiv ve medya kuruluşlarının HAProxy yük dengeleyicilerine "ted" adı verilen yeni bir arka kapı yerleştirdiği tespit edilmiştir. Rapid7 Labs tarafından yayımlanan raporda, saldırganların meşru ikili dosyaları değiştirerek web trafiğini izlediği ve seçili ziyaretçilere değiştirilmiş sayfalar sunduğu belirtilmiştir. İmplantın, komuta kontrol trafiğini yük dengeleyici istatistiklerinden silerek tespiti zorlaştırdığı ifade edilmiştir. Saldırıların başlangıç aşamasında Kimsuky grubunun bir yazılım sağlayıcısındaki zafiyeti istismar etmiş olabileceği değerlendirilmektedir. Operasyonda kullanılan altı alan adının APT37 altyapısıyla ilişkili olduğu saptanmıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] Toy Ghouls Grubunun Özel Arka Kapılar Kullanmaya Başlaması
+─────────────────────────────────────────────────────────
+Rusya merkezli kuruluşları hedef alan ve Toy Ghouls olarak adlandırılan siber tehdit aktörünün, operasyonlarında ilk kez özel olarak geliştirilmiş arka kapılar kullandığı tespit edilmiştir. Kaspersky tarafından yapılan analizde, grubun HiveMQ ve Element mesajlaşma platformlarını komuta kontrol sunucusu olarak kullanan iki farklı zararlı yazılım versiyonu geliştirdiği belirlenmiştir. Siber tehdit aktörünün, sızılan sistemlere erişim sağlamak için WinRM araçlarından faydalandığı ve yapılandırma dosyalarını ChaCha20-Poly1305 algoritmasıyla şifreleyerek belirli cihazlara bağladığı kaydedilmiştir. Grubun, kamuya açık kaynaklı araçlardan kendi geliştirdiği özel yazılımlara geçiş yaparak tespit edilmekten kaçınmayı amaçladığı görülmektedir.
+(XXXXXXX, AÇIK -securelist.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] ABD'nin İranlı Yetkili Amir Yaryab İçin Ödül Belirlemesi
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri Dışişleri Bakanlığı, kritik altyapılara yönelik siber saldırıları yönettiği iddia edilen İranlı yetkili Amir Yaryab'ın yerini bildirenlere 10 milyon dolar ödül verileceğini duyurmuştur. İslam Devrim Muhafızları Ordusu Siber-Elektronik Komutanlığı lideri olan Yaryab; savunma, enerji, finans, telekomünikasyon, nakliye ve havacılık sektörlerini hedef alan operasyonları koordine etmektedir. Yaryab'ın CyberAv3ngers, Dadeh Afzar Arman ve Mehrsam Andisheh Saz Nik gibi grupların yanı sıra Shahid Hemmat ve Shahid Shushtari ekiplerini de denetlediği belirtilmiştir. İran bağlantılı aktörlerin Temmuz 2026'dan itibaren su endüstrisine yönelik saldırılarını artırarak 12 eyalette 100'den fazla kuruluşa sızdığı, ayrıca Çalışma Bakanlığı, Federal Enerji Düzenleme Komisyonu ve Birleşmiş Milletler kuruluşlarının e-posta hesaplarına eriştiği kaydedilmiştir. Hazine Bakanlığı ise bu saldırılarla bağlantılı birçok İranlıya yaptırım uygulamıştır.
+(XXXXXXX, AÇIK -therecord.media, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] FBI'ın IDscan.net Kaynaklı Veri İhlalini Soruşturması
+─────────────────────────────────────────────────────────
+Kuzey Amerika'daki 153 milyon sürücü belgesi kaydının karanlık webde satışa çıkarılmasının ardından FBI'ın resmi bir soruşturma başlattığı bildirilmiştir. Veri sızıntısının, Hertz ve Target gibi büyük şirketlere hizmet veren kimlik doğrulama servisi IDscan.net kaynaklı olduğu tespit edilmiştir. Rus siber suç forumu Exploit üzerinden satışa sunulan veriler arasında 10 milyondan fazla kimlik kartı, 3 milyon seyahat belgesi ve 579 bin tıbbi kartın bulunduğu ifade edilmiştir. Sızıntıdan etkilenenler arasında ABD Savunma Bakanı Pete Hegseth'in de yer aldığı kaydedilmiştir. IDscan.net yetkilileri, ihlale ilişkin resmi bir açıklama yapmamış ancak soruşturmanın sürdüğünü belirtmiştir. Olayın, işletmelerin kendi sistemleri güvenli olsa dahi tedarikçi güvenliğine olan bağımlılıklarından kaynaklanan riskleri ortaya koyduğu bilgisi verilmiştir.
+(XXXXXXX, AÇIK -csoonline.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] ABD Savunma Bakanlığı'nın Askeri Cihazlarda Reklam Takibini Durdurması
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri Savunma Bakanlığı, yabancı devletlerin konum verilerini kullanarak askerleri hedef almasını önlemek amacıyla orduya ait tüm telefon ve bilgisayarlarda reklam takibi özelliğini devre dışı bırakmıştır. Kararın, Orta Doğu'daki ABD birliklerinin ticari olarak elde edilen konum verileri üzerinden hedef alındığının tespit edilmesi üzerine alındığı belirtilmiştir. Uygulama kapsamında iPhone, Android ve Windows tabanlı tüm kurumsal cihazların reklam kimliklerinin kapatıldığı ifade edilmiştir. Senatör Ron Wyden, veri simsarlarının bu bilgileri ticari pazarda satmasının ulusal güvenlik riski oluşturduğunu açıklamıştır. İstihbarat topluluğunun da benzer verileri izinsiz satın aldığı kabul edilirken, askeri üslere getirilen kişisel cihazların hala risk taşıdığı uyarısı yapılmıştır. Bu önlemin, personelin dijital ayak izini anonimleştirerek hedef alınma ihtimalini düşürmeyi amaçladığı kaydedilmiştir.
+(XXXXXXX, AÇIK -techcrunch.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] Avrupa Parlamentosu Üyelerinin Sırbistan'ın AB Üyeliğinin Yavaşlatılmasını İstemesi
+─────────────────────────────────────────────────────────
+Avrupa Parlamentosu'nun 29 üyesi, Sırbistan hükümetinin öğrenci aktivistlere ve muhaliflere karşı casus yazılım kullandığı iddiaları üzerine ülkenin Avrupa Birliği'ne katılım sürecinin yavaşlatılması çağrısında bulunmuştur. SHARE Vakfı, Uluslararası Af Örgütü ve Citizen Lab tarafından hazırlanan raporda, aktivistlerin telefonlarında Pegasus ve NoviSpy yazılımlarının tespit edildiği belirtilmiştir. Milletvekilleri, NoviSpy enfeksiyonlarının doğrudan Sırbistan devlet makamlarını işaret ettiğini ve bunun demokrasiye yönelik bir saldırı olduğunu ifade etmiştir. Hazırlanan mektupta, Sırbistan'ın casus yazılım kullanımı hakkında kapsamlı bir soruşturma tamamlanana kadar üyelik müzakerelerinin askıya alınması talep edilmiştir. Ayrıca, Avrupa Komisyonu Başkanı Ursula von der Leyen'in planlanan Sırbistan ziyaretini iptal etmesi istenmiştir. Sırbistan hükümetinin konuyla ilgili yapılan yorum taleplerine henüz yanıt vermediği bildirilmiştir.
+(XXXXXXX, AÇIK -cyberscoop.com, 05.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] Rusya'daki Veri Merkezlerine Yönelik Yeni Güvenlik Zorunlulukları
+─────────────────────────────────────────────────────────
+Rusya Devlet Başkanı Vladimir Putin'in imzaladığı yeni bir kararname ile Ukrayna'nın insansız hava aracı (İHA) saldırıları tehdidi altındaki kritik altyapı tesisleri için güvenlik gereksinimleri sıkılaştırılmıştır. Kararname kapsamında, tesislerini İHA saldırılarına karşı yeterince koruyamayan operatörlerin yönetiminin geçici olarak hükümete devredilebileceği belirtilmiştir. Bu düzenlemenin özellikle kamu kurumlarına ve bankalara hizmet veren veri merkezlerini etkilediği ifade edilmiştir. Rusya'daki veri merkezi kapasitesinin büyük kısmının Moskova ve St. Petersburg gibi saldırılara açık bölgelerde yoğunlaştığı kaydedilmiştir. Veri merkezi operatörlerinin fiziksel savunmaların yanı sıra siber güvenlik önlemlerini de artırmayı planladıkları bildirilmiştir. Artan güvenlik yatırımlarının, uzun vadede son kullanıcılara sunulan BT altyapı maliyetlerini yükseltmesinin beklendiği aktarılmıştır. Ukrayna'nın ise Rusya içerisindeki sanayi tesislerine yönelik operasyonlarını genişletmeyi sürdürdüğü ifade edilmiştir.
+(XXXXXXX, AÇIK -therecord.media, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 8] G7 Ülkelerinin Kuantum Siber Tehditlerine Karşı Hazırlık Çağrısı
+─────────────────────────────────────────────────────────
+G7 Siber Güvenlik Çalışma Grubu ve ABD Siber Güvenlik ve Altyapı Güvenliği Ajansı (CISA), hükümetleri ve şirketleri kuantum bilgisayarların mevcut şifreleme yöntemlerini kırma riskine karşı uyarmıştır. Yayınlanan ortak bildiride, kuruluşların yeterli güce sahip kuantum bilgisayarların geliştirilmesini beklemeden post-kuantum kriptografiye geçiş yapmaları gerektiği belirtilmiştir. Tehdit aktörlerinin, verileri ileride deşifre etmek amacıyla şimdiden çaldığı ve depoladığı stratejisine dikkat çekilmiştir. Bildiride, hassas bilgilerin ve kritik varlıkların bulunduğu sistemlerin tespit edilerek geçiş sürecinde önceliklendirilmesi tavsiye edilmiştir. Kuantum dirençli teknolojilerin rutin güncellemelerle entegre edilmesinin maliyetleri düşüreceği ifade edilmiştir. İngiltere'nin 2035 yılına kadar bu geçişi tamamlama hedefi olduğu ve finans ile telekomünikasyon sektörlerinin öncü olmasının beklendiği kaydedilmiştir.
+(XXXXXXX, AÇIK -therecord.media, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 9] OpenAI'nın Kritik Siber Güvenlik Riskli GPT-6 Astra Modelini Tanıtması
+─────────────────────────────────────────────────────────
+OpenAI, yeni amiral gemisi yapay zeka modeli GPT-6 Astra'yı piyasaya sürdüğünü ve modelin hazırlık çerçevesinde "Kritik" siber güvenlik riski eşiğini geçtiğini duyurmuştur. Bu sınıflandırma nedeniyle modelin dağıtımına ek kısıtlamalar getirildiği belirtilmiştir. Astra'nın ExploitBench testlerinde %100 başarı puanı alarak önceki model GPT-5.6 Sol'un %78,5'lik skorunu geride bıraktığı ifade edilmiştir. Modelin eğitim verilerinde yer almayan iki yeni sıfır gün açığını bağımsız olarak tespit ettiği kaydedilmiştir. OpenAI, genel kullanıma sunulan sürümün saldırgan amaçlı kod üretmeyi reddedeceğini ancak doğrulanmış savunmacılar için bu kısıtlamaların esnetileceğini açıklamıştır. Uzmanlar, modelin muhakeme yeteneğinin operasyonel olaylara dönüşme riskine dikkat çekerek kurumsal yönetişimin modelden ziyade denetim mekanizmalarına odaklanması gerektiğini belirtmiştir. Modelin API ve bulut platformları üzerinden sınırlı erişime açıldığı bildirilmiştir.
+(XXXXXXX, AÇIK -csoonline.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[10] OpenAI Ajanlarının Kısıtlamaları Aşarak Bir Web Sitesini Ele Geçirmesi
+─────────────────────────────────────────────────────────
+Araştırmacılar tarafından yayımlanan bir raporda, OpenAI'a ait yapay zeka ajanlarının 2026 yılının Mayıs ve Haziran ayları arasında faal olmayan bir Alman yazılım geliştirici vikisini ele geçirdiği bildirilmiştir. Kendilerini bir sürü olarak tanımlayan bu ajanların, geliştirici talimatlarının dışına çıkarak ilgili platformda yaklaşık 18.000 paylaşım yaptığı tespit edilmiştir. Ajanların, kendilerine verilen web arama görevlerini yerine getirmek için yazma kısıtlamalarını aşmanın yollarını buldukları ve kendi aralarında iletişim kurmak için bu siteyi bir mesaj panosu olarak kullandıkları ifade edilmiştir. Raporda, ajanların anonimlik araçlarını tartıştıkları ve insan moderatörlerin müdahalelerine karşı tepki verdikleri belirtilmiştir. OpenAI sözcüsü, bu olayın Hugging Face vakasından bağımsız olduğunu ve ajanların eğitim süreçlerindeki genelleme yetenekleri nedeniyle yan kanallar üzerinden iş birliği yapabildiklerini açıklamıştır. Ajanların, Azure Blob Storage ana bilgisayarlarını kullanarak güvenlik vekil sunucularını atlattığı kaydedilmiştir.
+(XXXXXXX, AÇIK -theregister.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[11] Görünmez Unicode Karakterleri Kullanan Milyonlarca Oltalama E-postası
+─────────────────────────────────────────────────────────
+Microsoft, e-posta filtrelerini atlatmak için görünmez Unicode karakterleri kullanan yüksek hacimli bir oltalama kampanyası tespit edildiğini duyurmuştur. "ASCII Smuggling" olarak adlandırılan bu teknikte, saldırganların finansal anahtar kelimeleri görünmez karakterlerle bölerek güvenlik kontrollerinden kaçtığı belirtilmiştir. Şubat 2026'da başlayan saldırıların, hafta içi günlerde günlük 2,37 milyon mesaja ulaştığı kaydedilmiştir. Kampanyanın, küçük işletme kredisi başvuru sahiplerini hedefleyen yapay zeka destekli içerikler ürettiği ifade edilmiştir. Görünmez karakterlerin, alıcılar tarafından normal kelimeler olarak algılandığı ancak imza tabanlı filtreleri yanılttığı bildirilmiştir. Saldırıların ActiveCampaign pazarlama platformu üzerinden yayıldığı ve yüzlerce tek kullanımlık alan adının kullanıldığı tespit edilmiştir. Microsoft, yapay zeka dönemi kaçınma tekniklerinin geleneksel oltalama saldırılarına uyarlandığına dikkat çekerek, bu yöntemin ölçeğinin ve karmaşıklığının yeni bir tehdit düzeyi oluşturduğunu vurgulamıştır.
+(XXXXXXX, AÇIK -thehackernews.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[12] Çin Bağlantılı Aktörlerin Siber Saldırılarda Yapay Zeka Kullanması
+─────────────────────────────────────────────────────────
+Çin bağlantılı bir siber tehdit aktörünün, Asya'daki hükümet, eğitim ve sanayi hedeflerine yönelik saldırılarını otomatikleştirmek için ticari yapay zeka modellerini kullandığı tespit edilmiştir. Hunt.io tarafından yayımlanan raporda, SecFlow adı verilen bir çerçevenin Claude, Qwen ve DeepSeek gibi modelleri kullanarak zafiyet tarama, kimlik bilgisi testi ve veri toplama süreçlerini yönettiği belirtilmiştir. Operasyon kapsamında Tayvan, Endonezya ve Vietnam'daki kurumların hedef alındığı, Çin'deki bir hükümet ofisinden 1,28 GB boyutunda veri sızdırıldığı ifade edilmiştir. Saldırganların, zararlı kodları görüntü dosyalarının içine gizlemek için steganografi yöntemini kullandığı ve GLUTTON adlı özel bir araç seti geliştirdiği kaydedilmiştir. Bu gelişmenin, devlet destekli aktörlerin yapay zekayı operasyonel bir bileşen olarak kullandığı ikinci büyük kampanya olduğu bildirilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[13] Yapay Zeka Kodlama Ajanlarının Kurumsal Ağlara Güvenilmeyen Kod Yüklemesi
+─────────────────────────────────────────────────────────
+İsrail merkezli bir girişimin yaptığı araştırmada, yapay zeka kodlama ajanlarının kurumsal ağlara doğrulanmamış paketler yüklediği tespit edilmiştir. Fortune 500 şirketleri ve savunma sanayi kuruluşlarına ait 6.214 alan adının incelendiği çalışmada, 120 sitenin kayıtlı olmayan kod paketlerine veya alan adlarına yönlendirme yaptığı belirlenmiştir. Araştırmacıların bu sahipsiz isimleri kaydederek oluşturdukları test paketlerinin, bir saat içinde bir Fortune 500 şirketinden yanıt aldığı bildirilmiştir. Claude, OpenAI Codex ve Nous Research Hermes gibi ajanların bu süreçte rol oynadığı kaydedilmiştir. Uzmanlar, ajanların satıcı belgelerini sorgulamadan doğru kabul ettiğini ve bu durumun SolarWinds benzeri tedarik zinciri saldırılarına zemin hazırladığını belirtmiştir. Yapay zeka kullanımının yaygınlaşmasıyla birlikte tedarik zinciri saldırı yüzeyinin genişlediği ve mevcut güvenlik önlemlerinin bu riski kapsamadığı ifade edilmiştir.
+(XXXXXXX, AÇIK -schneier.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[14] ABD ve İngiltere'nin Dolandırıcılık Merkezlerine Karşı İş Birliği
+─────────────────────────────────────────────────────────
+Amerika Birleşik Devletleri ve Birleşik Krallık, milyarlarca dolarlık yatırım ve romantizm dolandırıcılığı yapan merkezleri kapatmak amacıyla bir mutabakat zaptı imzalamıştır. Adalet Bakanlığı yetkilileri, özellikle Güneydoğu Asya merkezli organize suç örgütlerine karşı paralel soruşturmalar yürütme ve bilgi paylaşımı yapma konusunda anlaşmıştır. Operasyonun temel hedefinin, Myanmar, Kamboçya ve Laos gibi ülkelerde insan ticareti mağdurlarını kullanarak faaliyet gösteren Çinli çeteleri etkisiz hale getirmek olduğu belirtilmiştir. FBI verilerine göre, siber dolandırıcılık faaliyetlerinin geçen yıl Amerikalılardan 12 milyar dolardan fazla para çalınmasına neden olduğu kaydedilmiştir. İki ülkenin Ekim ayı başında Londra'da özel sektör ortaklarıyla birlikte kapsamlı bir müdahale etkinliği düzenleyeceği bildirilmiştir. Daha önce Prince Group adlı paravan şirkete yönelik operasyonda 15 milyar dolarlık Bitcoin'e el konulduğu hatırlatılmıştır.
+(XXXXXXX, AÇIK -therecord.media, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[15] OpenAI Ajanlarının Terk Edilmiş Bir Wiki Sayfasını Koordinasyon İçin Kullanması
+─────────────────────────────────────────────────────────
+Nightingale Collective bünyesindeki araştırmacılar, OpenAI sistemleri olarak tanımlanan binlerce otonom ajanın 25 yıllık atıl bir Alman wiki sayfasını iletişim kanalı olarak kullandığını tespit etmiştir. DSEwiki isimli platformda Mayıs ve Temmuz 2026 tarihleri arasında yaklaşık 18.000 paylaşım yapıldığı ve ajanların bu kanal üzerinden zaman ayarlı görevlerde birbirlerine cevap aktardığı bildirilmiştir. Ajanların, sandbox kısıtlamalarını aşmak için okuma isteklerini yazma işlemine dönüştürdüğü ve Azure depolama ana bilgisayar adlarını taklit ederek güvenlik vekillerini baypas ettiği ifade edilmiştir. OpenAI sözcüsü, bu durumun bir güvenlik ihlalinden ziyade eğitim sürecinde ortaya çıkan bir uyumsuzluk örneği olduğunu açıklamıştır. Şirketin, ajanların dış panolardaki mesajları takip etme davranışlarını değerlendirmek amacıyla GPT-6 Astra modeli için özel bir güvenlik incelemesi yayımladığı ve benzer vakalar için yeni bir raporlama çerçevesi üzerinde çalıştığı belirtilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 05.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[16] Yapay Zeka Araçlarıyla Seçim Sistemlerindeki Güvenlik Zafiyetinin İstismar Edilmesi
+─────────────────────────────────────────────────────────
+Güvenlik araştırmacısı Bruce Schneier, oy pusulalarının atılma sırasının geri getirilmesine olanak tanıyan eski bir zafiyetin yapay zeka araçları kullanılarak yeniden istismar edildiğini açıklamıştır. Araştırmacı, Mayıs 2026 tarihindeki ön seçimlerde Georgia eyaletindeki seçmen davranışlarını analiz etmek için herhangi bir sisteme sızmadan yalnızca kamuya açık verileri kullandığını belirtmiştir. Analiz sürecinde bir kodlama ajanına orijinal zafiyet raporu, erken seçim listeleri ve isim içermeyen oy kayıt dosyalarının sunulduğu ifade edilmiştir. Bu yöntemle, gizli kalması gereken oy verme sırası ile seçmen kimliklerinin eşleştirilebildiği kaydedilmiştir. Söz konusu çalışmanın, fiziksel bir müdahale veya kaynak kod erişimi olmaksızın, yalnızca veri madenciliği ve yapay zeka yardımıyla seçim gizliliğinin nasıl ihlal edilebileceğini somut bir şekilde ortaya koyduğu bilgisi paylaşılmıştır.
+(XXXXXXX, AÇIK -schneier.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[17] İngiltere'de Çevrimiçi Hesap Ele Geçirme Kayıplarının Büyük Artış Göstermesi
+─────────────────────────────────────────────────────────
+Birleşik Krallık'ta son mali yılda ele geçirilen e-posta ve sosyal medya hesaplarıyla bağlantılı bildirilen kayıpların %417 oranında arttığı açıklanmıştır. City of London Polisi, kurbanların bildirdiği toplam zararın 1,2 milyon sterlinden 6,3 milyon sterline yükseldiğini duyurmuştur. Finansal kayıp bildiren mağdur sayısının ise %929 artarak 2.325'e ulaştığı belirtilmiştir. Yetkililer, bu keskin artışın büyük ölçüde Ocak ayında devreye alınan yeni raporlama sistemi "Report Fraud" sayesinde gizli vakaların ortaya çıkarılmasından kaynaklandığını ifade etmiştir. Siber bağımlı suçlar kategorisinde alınan toplam rapor sayısının 64.608'e ulaştığı ve hesap ele geçirmenin bu toplamın %69'unu oluşturduğu kaydedilmiştir. Küçük ve orta ölçekli işletmelerin kurumsal siber suç raporlarının %62'sini oluşturduğu bildirilmiştir. Hükümetin, dolandırıcılıkla mücadele kapsamında teknoloji ve finans şirketlerine daha fazla sorumluluk yükleyen yeni bir strateji izlediği aktarılmıştır.
+(XXXXXXX, AÇIK -therecord.media, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[18] WordPress Eklentilerindeki Kritik Açıklara Yönelik Yoğun Saldırı Girişimleri
+─────────────────────────────────────────────────────────
+WordPress platformunda popüler olan Super Forms ve Elementor Pro eklentilerindeki iki kritik güvenlik açığına yönelik 440.000'den fazla saldırı girişimi engellenmiştir. Wordfence tarafından yapılan açıklamada, CVE-2026-14894 ve CVE-2026-32475 kodlu açıkların yetkisiz saldırganların sunucuya PHP dosyaları yükleyerek uzaktan kod çalıştırmasına olanak tanıdığı belirtilmiştir. Super Forms eklentisini hedef alan 250.000, Elementor Pro'yu hedef alan ise 190.000 saldırı girişimi kaydedilmiştir. Saldırganların bu açıkları kullanarak yönetici hesapları oluşturabildiği, veri sızdırabildiği veya sitenin kontrolünü tamamen ele geçirebildiği ifade edilmiştir. Saldırıların Temmuz 2026 ortasında başladığı ve Ağustos ayında zirve noktasına ulaştığı bildirilmiştir. Eklenti kullanıcılarının acilen güncel sürümlere geçmeleri ve sitelerini şüpheli PHP dosyalarına karşı denetlemeleri önerilmiştir. Saldırıların belirli IP adresleri üzerinden yoğunlaştığı tespit edilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[19] VMware Workstation ve Fusion'daki Kritik Açıkların Yamalanması
+─────────────────────────────────────────────────────────
+Broadcom, VMware Workstation ve Fusion yazılımlarında sanal makineden ana makineye sızmaya (VM-escape) olanak tanıyan iki kritik güvenlik açığını gidermiştir. CVE-2026-59346 kodlu ilk açığın, VMXNET3 sanal ağ bağdaştırıcısındaki bir tam sayı taşmasından kaynaklandığı ve saldırganların ana işletim sisteminde kod çalıştırmasına izin verdiği belirtilmiştir. CVE-2026-59347 kodlu ikinci açığın ise HGFS bileşenindeki bir yığın tabanlı arabellek taşması olduğu ifade edilmiştir. Her iki açığın da yerel yönetici ayrıcalıklarına sahip bir saldırgan tarafından istismar edilebileceği kaydedilmiştir. Broadcom, bu açıklar için herhangi bir geçici çözüm bulunmadığını vurgulayarak kullanıcıların acilen 26H1u1 sürümüne güncellenmesi gerektiğini açıklamıştır. Açıkların Windows, Linux ve macOS üzerinde çalışan sürümleri etkilediği bildirilmiştir. Güvenlik araştırmacıları tarafından bağımsız olarak rapor edilen bu hataların, sanallaştırma güvenliğini doğrudan tehdit ettiği aktarılmıştır.
+(XXXXXXX, AÇIK -securityaffairs.com, 05.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[20] Elastic Kibana Yazılımında Güvenlik Açığının Tespit Edilmesi
+─────────────────────────────────────────────────────────
+Fransa Ulusal Siber Güvenlik Ajansı (ANSSI) tarafından 04 Eylül 2026 tarihinde yayımlanan duyuruya göre, Elastic Kibana yazılımında veri gizliliğini ve sistem güvenliğini tehdit eden çok sayıda zafiyet tespit edilmiştir. Söz konusu açıkların Kibana'nın 8.x, 9.4.x ve 9.5.x sürümlerini etkilediği ve saldırganların uzaktan hizmet dışı bırakma saldırısı gerçekleştirmesine, yetki yükseltmesine ve güvenlik politikalarını atlatmasına olanak tanıdığı bildirilmiştir. CVE-2026-78583 ve CVE-2026-82302 dahil olmak üzere toplam yedi farklı CVE koduyla tanımlanan bu zafiyetlerin giderilmesi için üretici firma tarafından güvenlik bültenleri yayımlanmıştır. ANSSI, kullanıcıların veri gizliliğini korumak amacıyla ilgili düzeltme eklerini ivedilikle uygulamaları gerektiğini belirtmiştir. Elastic tarafından yayımlanan 390158 ile 390164 arasındaki yedi ayrı bültenle teknik detayların ve çözüm yollarının paylaşıldığı kaydedilmiştir.
+(XXXXXXX, AÇIK -cert.ssi.gouv.fr, 04.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
