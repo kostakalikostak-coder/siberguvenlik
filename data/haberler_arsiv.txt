@@ -33362,3 +33362,57 @@ Siber güvenlik kuruluşu Sansec, Magento Open Source ve Adobe Commerce platform
 
 ────────────────────────────────────────────────────────────────────────────────
 
+
+================================================================================
+📅 07 SEPTEMBER 2026 - EN ÖNEMLİ HABERLER (SEÇİLMİŞ)
+================================================================================
+
+[ 1] Liquid Network'ten Çalınan Bitcoinlerin İadesi İçin Şart Koşulması
+─────────────────────────────────────────────────────────
+Liquid Network platformundan yaklaşık 4.000 BTC çalan kimliği belirsiz aktörlerin, ağdaki güvenlik açığının giderilmesi şartıyla fonların büyük kısmını iade etmeyi teklif ettiği bildirilmiştir. Yaklaşık 320 milyon dolar değerindeki varlığın çalınmasının ardından saldırganların, blok zinciri üzerinden gönderdikleri mesajlarla kendilerini etik hacker (beyaz şapkalı) olarak tanımladıkları ifade edilmiştir. Blockstream yetkilileriyle şifreli mesajlar aracılığıyla iletişim kuran şahısların, iade işlemini gerçekleştirmeden önce istismar edilen hatanın düzeltilmesini talep ettiği belirtilmektedir. Güvenlik uzmanları, çalınan miktarın büyüklüğü ve yöntemi nedeniyle bu kişilerin gerçek niyetleri konusundaki şüphelerin sürdüğünü belirtmektedir.
+(XXXXXXX, AÇIK -thecyberexpress.com, 07.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 2] N-able N-central Platformundaki Kritik Güvenlik Açığının Yamalanması
+─────────────────────────────────────────────────────────
+N-able şirketi, uzaktan izleme ve yönetim platformu N-central'da tespit edilen ve en yüksek ciddiyet seviyesine sahip olan uzaktan kod yürütme (RCE) zafiyeti için acil bir yama yayınlamıştır. CVE-2026-86218 kodlu bu açığın, düşük karmaşıklıktaki saldırılarla yetkisiz kişilerin sistemlerde kötü amaçlı kod çalıştırmasına olanak tanıdığı belirtilmektedir. Güvenlik araştırmacıları, söz konusu açığın yanı sıra kimlik doğrulama atlatma imkanı veren iki farklı yüksek riskli zafiyetin de aktif olarak istismar edildiğine dair bulgular paylamıştır. Shadowserver Vakfı, internete açık durumda olan yaklaşık 1.500 N-central sunucusunun çoğunlukla ABD ve Avrupa'da bulunduğunu rapor etmiştir. Şirket, üretim ortamlarında istismara dair henüz kesin bir onay almadıklarını ancak yamasız sistemlerin büyük risk altında olduğunu ifade etmiştir. BT departmanları ve yönetilen hizmet sağlayıcılarına, sistemlerini korumak için 2026.3 Hotfix 4 sürümüne derhal yükseltme yapmaları çağrısında bulunulmuştur.
+(XXXXXXX, AÇIK -bleepingcomputer.com, 07.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 3] Berlin Eyalet Yönetiminden Çalınan Verilerin Karanlık Ağda Sızdırılması
+─────────────────────────────────────────────────────────
+Rhysida fidye yazılımı çetesi, Berlin eyalet yönetiminin 30 Bitcoin tutarındaki fidye talebini reddetmesi üzerine ele geçirdiği 5,79 terabayt boyutundaki 1,44 milyon dosyayı karanlık ağda sızdırmıştır. Ağustos 2026 sonundaki siber saldırıda; 12.076 kişiye ait özel veriler, 16.389 e-posta adresi, 148 IBAN ve GebäudAtlas ile PAYONE gibi sistemlere ait düz metin şifreler çalınmıştır. Sızdırılan belgeler; ulusal savunma planlarını, CBRN (kimyasal, biyolojik, radyolojik, nükleer) acil durum hazırlıklarını ve Berlin'in su temini altyapısına yönelik zafiyet analizlerini içermektedir. Ayrıca Bundesrat komite protokolleri ve gizli iletişim kanallarının ifşası, olayı ulusal güvenlik krizine dönüştürmüştür. Berlin hükümeti, GDPR ve KRITIS düzenlemelerini ihlal eden bu sızıntının etkilerini değerlendirmek ve vatandaşları bilgilendirmek amacıyla merkezi bir kriz birimi kurmuştur.
+(XXXXXXX, AÇIK -securityaffairs.com, 07.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 4] JSCeal Zararlı Yazılımının Google Kimlik Doğrulama Sistemini Atlatması
+─────────────────────────────────────────────────────────
+Siber güvenlik araştırmacıları, çalınan oturum çerezlerini kullanarak Google kimlik doğrulama sistemlerini atlatabilen JSCeal isimli gelişmiş bir JavaScript zararlı yazılımını analiz etmiştir. Check Point Research tarafından yayımlanan raporda, zararlı yazılımın kimlik bilgisi toplama, gözetleme ve trafik müdahalesi yeteneklerine sahip olduğu belirtilmiştir. JSCeal'in, Facebook ve Google üzerindeki sahte reklamlar aracılığıyla kullanıcıları sahte kripto para ticaret sitelerine yönlendirdiği ve kötü niyetli yükleyiciler aracılığıyla sisteme sızdığı ifade edilmiştir. SourTrade olarak adlandırılan operasyon kapsamında, zararlı yazılımın doğrudan kurbanın tarayıcı belleğinde oluşturulduğu ve ağ üzerinde bitmiş bir dosya bırakmadığı kaydedilmiştir. Araştırmacılar, yazılımın analiz edilmesini zorlaştırmak için karmaşık şifreleme ve gizleme tekniklerinin kullanıldığını açıklamıştır. Asya-Pasifik ve Latin Amerika bölgeleri başta olmak üzere 12 ülkede aktif olan kampanyanın sürdüğü bildirilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 07.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 5] Bilgi Çalıcı Yazılımların Claude Oturumlarını Ele Geçirmesi
+─────────────────────────────────────────────────────────
+Yapay zeka platformu Anthropic, çeşitli bilgi çalıcı zararlı yazılımların aktif Claude oturumlarını ele geçirerek kullanıcı aboneliklerini kötüye kullandığını doğrulamıştır. Yapılan incelemelerde Vidar, LummaC2, StealC ve RedLine gibi zararlı yazılım ailelerinin, iki faktörlü kimlik doğrulama ve tekli oturum açma mekanizmalarını atlatarak tarayıcı çerezlerini çaldığı tespit edilmiştir. Şirket, etkilenen kullanıcıların oturumlarını sonlandırdığını ve yetkisiz işlemleri önlemek amacıyla kayıtlı ödeme yöntemlerini sildiğini açıklamıştır. Anthropic tarafından yapılan açıklamada, yetkisiz kullanımdan kaynaklanan ücretlerin kullanıcılara iade edileceği bildirilmiştir. Güvenlik uzmanları, kullanıcıların sisteme tekrar giriş yapmadan önce tam kapsamlı bir zararlı yazılım taraması yapmaları ve parolalarını güncellemeleri gerektiğini belirtmektedir. Saldırıların özellikle Windows ve macOS işletim sistemine sahip bilgisayarları hedef aldığı kaydedilmiştir.
+(XXXXXXX, AÇIK -securityaffairs.com, 06.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 6] REVSTEALER Bağlantılı Modüllerin Windows Güvenlik Sistemlerini Devre Dışı Bırakması
+─────────────────────────────────────────────────────────
+Elastic Security Labs, REVSTEALER isimli bilgi çalıcı yazılımla bağlantılı olan ve bulaştığı sistemlerde Windows Update ile Microsoft Defender'ı devre dışı bırakan dört yeni program tespit etmiştir. ProManager, WinUpdate, SoftManager ve LockAppHost olarak adlandırılan bu modüllerin, ana zararlı yazılım kendini sildikten sonra bile sistemde kalmaya devam ettiği belirtilmiştir. Özellikle LockAppHost modülünün, yönetici yetkileri elde ederek güvenlik dışlamaları eklediği ve sistem kaynaklarını kripto para madenciliği için kullandığı ifade edilmiştir. Zararlı yazılımın, analiz süreçlerini zorlaştırmak amacıyla Polygon blokzinciri üzerindeki akıllı kontratları yedek komuta kontrol adresi olarak kullandığı kaydedilmiştir. Araştırmacılar, REVSTEALER'ın genellikle sahte oyun hileleri ve korsan yazılımlar aracılığıyla yayıldığını ve yaklaşık 4.700 örneğinin analiz edildiğini bildirmiştir. Enfeksiyon riskini azaltmak için resmi kanallar dışındaki yazılımlardan kaçınılması önerilmektedir.
+(XXXXXXX, AÇIK -thehackernews.com, 06.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+
+[ 7] MikroTik Yönlendiricilerin SSH Üzerinden Yetkisiz Ele Geçirilmesi
+─────────────────────────────────────────────────────────
+CERT Polska, internete açık durumdaki MikroTik yönlendiricilerin SSH hizmeti üzerinden kimlik doğrulama gerektirmeden tam yönetim kontrolü sağlayan bir yöntemle hedef alındığını duyurmuştur. 2 Eylül 2026 tarihinden itibaren gözlemlenen saldırılarda, saldırganların cihazlara tam erişim sağladığı ve bu durumun "MikroTrick" olarak adlandırıldığı belirtilmektedir. MikroTik, söz konusu açıkları gideren RouterOS güncellemelerini yayınlamış ve kullanıcılara acilen sistemlerini yükseltmeleri çağrısında bulunmuştur. Güncelleme yapılamayan durumlarda SSH, WWW ve bant genişliği testi gibi hizmetlerin internete kapatılması veya yalnızca güvenli ağlarla sınırlandırılması tavsiye edilmiştir. Cihazların güncellenmesinin ardından, sistemde yetkisiz oluşturulmuş kullanıcıların, betiklerin veya yapılandırma değişikliklerinin kontrol edilmesi gerektiği ifade edilmiştir. CERT, şüpheli bir durum tespit edilmesi halinde cihazın ağdan izole edilmesini, günlüklerin yedeklenmesini ve fabrika ayarlarına dönülerek güvenli bir yapılandırma ile yeniden kurulmasını önermiştir. Saldırıların sıfır-gün niteliğinde olup olmadığına dair incelemelerin sürdüğü kaydedilmiştir.
+(XXXXXXX, AÇIK -thehackernews.com, 06.09.2026)
+
+────────────────────────────────────────────────────────────────────────────────
+

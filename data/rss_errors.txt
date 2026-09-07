@@ -25,3 +25,6 @@
 2026-09-06 12:06 | DEDUP SIFIR - SecurityWeek: 10 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 6, daha önce raporlanmış: 4)
 2026-09-06 12:06 | DEDUP SIFIR - ANSSI (CERT-FR): 27 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 14, daha önce raporlanmış: 14)
 2026-09-06 12:06 | DEDUP SIFIR - The Cyber Express: 8 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 2, daha önce raporlanmış: 6)
+2026-09-07 12:05 | DEDUP SIFIR - SANS ISC: 3 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 2, daha önce raporlanmış: 1)
+2026-09-07 12:05 | DEDUP SIFIR - SecurityWeek: 10 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 6, daha önce raporlanmış: 4)
+2026-09-07 12:05 | DEDUP SIFIR - ANSSI (CERT-FR): 25 haberin tam metni çıktı ama hiçbiri dedup/pencere filtrelerinden geçemedi (benzerlik/hash/kod adı: 14, daha önce raporlanmış: 11)
