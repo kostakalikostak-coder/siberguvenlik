@@ -151,3 +151,27 @@ def test_ilgili_gecmis_ayni_haberi_iki_kez_tasimaz():
 
 def test_ilgili_gecmis_bos_girdide_bos_doner():
     assert _sistem([])._ilgili_gecmis([3], ICERIK, {}, []) == []
+
+
+def test_yedek_bulucu_TAM_gecmisi_gorur():
+    """Bağlam daraltma PROMPT içindir, denetim kapsamı değildir.
+
+    ÖLÇÜLDÜ (2026-09-07): "Berlin eyalet yönetiminden çalınan verilerin
+    karanlık ağda sızdırılması" (96 puan) manşete YEDEK olarak kondu; oysa
+    haber 08-30'daki Rhysida/Berlin haberinin devamıydı. Daraltılmış küme
+    ÇIKAN manşetlere göre kuruluyordu, GİREN adayın geçmişi kapsamda değildi.
+    Denetim aynı çifti kaçak diye bildirdi — tek koşuda iki bileşen zıt karar.
+    """
+    import inspect
+    kaynak = inspect.getsource(main.HaberSistemi._dedup_kritik3_cross_day_llm)
+    i_dar = kaynak.index('_ilgili_gecmis(')
+    i_yedek = kaynak.index('_kritik3_yedek_bul(')
+    assert 'tam_gecmis = list(recent_views)' in kaynak, \
+        'daraltmadan önce tam geçmiş saklanmıyor'
+    assert kaynak.index('tam_gecmis = list(recent_views)') < i_dar, \
+        'tam geçmiş daraltmadan SONRA alınıyor — zaten daralmış olur'
+    cagri = kaynak[i_yedek:i_yedek + 260]
+    assert 'tam_gecmis' in cagri, \
+        'yedek bulucuya daraltılmış küme veriliyor'
+    assert 'recent_views, haric' not in cagri, \
+        'yedek bulucu hâlâ daraltılmış kümeyi alıyor'

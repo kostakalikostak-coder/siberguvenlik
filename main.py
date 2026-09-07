@@ -4397,6 +4397,21 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         # aramak zorunda kalır — hem pahalı hem de dikkat dağıldığı için isabet
         # düşer. Konuca ilgisiz kayıtları önceden eleriz: bu bir KARAR değil,
         # yalnızca bağlam daraltmadır; kararı LLM verir.
+        # DARALTMA YALNIZCA PROMPT İÇİNDİR — DENETİM KAPSAMI DEĞİL.
+        #
+        # Bu satır eskiden `recent_views`in ÜZERİNE yazıyordu ve aşağıdaki
+        # `_kritik3_yedek_bul` çağrısı da o daraltılmış kümeyi alıyordu. Yani
+        # yedek adayın çapraz-gün kontrolü, ÇIKAN manşetlere konuca yakın
+        # birkaç geçmiş kayıtla sınırlı kalıyordu; GİREN adayın kendi geçmişi
+        # kapsamın dışındaydı.
+        #
+        # ÖLÇÜLDÜ (2026-09-07): "Berlin eyalet yönetiminden çalınan verilerin
+        # karanlık ağda sızdırılması" (96 puan) manşete YEDEK olarak kondu.
+        # Oysa haber 08-30'daki Rhysida/Berlin haberinin devamıydı
+        # (entity:berlin,rhysida) ve tam metinle yapılan kontrol onu REDDEDİYOR
+        # — o kayıt yalnızca daraltılmış kümede yoktu. Denetim aynı çifti
+        # kaçak olarak bildirdi: aynı koşuda iki bileşen zıt karar verdi.
+        tam_gecmis = list(recent_views)
         recent_views = self._ilgili_gecmis(top3_ids, content_by_id,
                                            articles_by_id, recent_views)
 
@@ -4426,7 +4441,7 @@ document.addEventListener('DOMContentLoaded', initDragFile);
         for aid in list(flagged):
             yedek = self._kritik3_yedek_bul(
                 yedek_ids, [o for o in sonuc if o != aid], records, view_fn,
-                recent_views, haric=flagged)
+                tam_gecmis, haric=flagged)
             if yedek is None:
                 print(f"   ⚠️  Manşet çapraz-gün: ID {aid} tekrar olarak işaretlendi "
                       f"ama uygun yedek aday yok — YERİNDE BIRAKILDI (KRİTİK 3 eksilmez).")
