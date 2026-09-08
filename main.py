@@ -82,6 +82,8 @@ from src.config import (
     get_manset_secim_prompt,
     get_executive_summary_prompt, get_title_rescue_prompt,
     get_kritik3_length_fix_prompt,
+    get_baslik_kisaltma_prompt,
+    get_govde_uzunluk_prompt,
     get_scoring_prompt, get_critique_prompt,
     SCORING_WEIGHTS, SCORING_CATEGORIES, ZAFIYET_KATEGORILERI,
     KRITIK3_HARIC_KATEGORILER, KATEGORI_ONCELIK,
@@ -6050,6 +6052,117 @@ document.addEventListener('DOMContentLoaded', initDragFile);
     # tek seferlik hedefli bir yeniden deneme tetikler (bkz. altındaki metod).
     KRITIK3_PARA_MIN_WORDS = 110
 
+    # Gövde paragrafı alt sınırı. KRİTİK 3'ünkiyle (KRITIK3_PARA_MIN_WORDS)
+    # AYNI hedeften gelir; prompt ikisinden de 110-130 kelime ister. Ayrı
+    # sabit, iki tarafın sessizce ayrışmasına izin verirdi.
+    GOVDE_PARA_MIN_WORDS = KRITIK3_PARA_MIN_WORDS
+
+    # Uzunluk/başlık onarımının koşu başına en fazla LLM çağrısı. Onarım
+    # ucuz olmalı: ihlal sayısı bazı günlerde 14'e çıkıyor ve hepsini
+    # düzeltmek koşuyu şişirir. En kötü ihlalden başlanır.
+    METIN_ONARIM_BUTCESI = 12
+
+    def _enforce_baslik_uzunlugu(self, ids, content_by_id, articles_by_id):
+        """Sınırı aşan başlıkları hedefli olarak YENİDEN YAZDIRIR.
+
+        `_enforce_title_length` deterministik ağdır ama yalnızca sabit bir
+        dolgu-sözcük listesini atabilir; atacak dolgu yoksa başlığı bilerek
+        olduğu gibi bırakır ("bozuk başlık, uzun başlıktan kötüdür"). Sonuç,
+        kuralın fiilen uygulanmaması.
+
+        ÖLÇÜLDÜ (18 rapor, 2026-08-20..09-08): başlıkların %9-66'sı sınırı
+        aşıyor; 08 Eylül'de 21 başlığın 14'ü 9-10 kelimeydi ve KRİTİK 3'ün
+        üçü de sınırın üstündeydi.
+
+        Güvenlik kuralları KRİTİK 3 uzunluk onarımıyla aynı felsefede:
+          - Yeni başlık hâlâ sınırı aşıyorsa REDDEDİLİR (regresyon olmasın).
+          - Boş/tek kelimelik yanıt reddedilir.
+          - Bütçe dolunca durulur; en uzun başlıklardan başlanır.
+        """
+        adaylar = []
+        for aid in ids:
+            c = content_by_id.get(aid) or {}
+            t = (c.get('tr_title') or '').strip()
+            n = len(t.split())
+            if t and n > TR_TITLE_MAX_WORDS:
+                adaylar.append((n, aid))
+        if not adaylar:
+            return
+        adaylar.sort(reverse=True)
+        for n, aid in adaylar[:self.METIN_ONARIM_BUTCESI]:
+            c = content_by_id.get(aid) or {}
+            print(f"   ✂️  ID {aid}: başlık {n} kelime "
+                  f"(>{TR_TITLE_MAX_WORDS}) — hedefli yeniden yazım...")
+            fixed = self._gemini_call_json(
+                get_baslik_kisaltma_prompt(
+                    tr_title=c.get('tr_title', ''),
+                    paragraph=' '.join((c.get('paragraph') or '').split()[:80]),
+                    current_wc=n, max_words=TR_TITLE_MAX_WORDS),
+                max_output_tokens=256, label=f'Başlık-Kısaltma-{aid}')
+            if not isinstance(fixed, dict):
+                continue
+            yeni = (fixed.get('tr_title') or '').strip().rstrip('.')
+            yn = len(yeni.split())
+            if yn < 2 or yn > TR_TITLE_MAX_WORDS:
+                print(f"      ⚠️  yeni başlık {yn} kelime — reddedildi, "
+                      f"orijinal korunuyor.")
+                continue
+            c['tr_title'] = yeni
+            content_by_id[aid] = c
+            print(f"      → {yn} kelime: {yeni[:60]}")
+
+    def _enforce_govde_paragraf_uzunlugu(self, ids, content_by_id,
+                                         articles_by_id):
+        """Gövde paragraflarını alt sınıra göre denetler ve uzatır.
+
+        KRİTİK 3 için bu denetim vardı, GÖVDE için hiç yoktu; oysa prompt
+        ikisinden de 110-130 kelime istiyor. ÖLÇÜLDÜ (2026-09-08): gövdedeki
+        18 paragrafın biri 83, ikisi 105 kelimeydi.
+
+        `_enforce_kritik3_paragraph_length` ile AYNI güvenlik kuralları:
+        kaynak metin kısaysa denenmez, kısalan sonuç reddedilir, hedef
+        tutturulamazsa en iyi deneme bırakılır ve içerik UYDURULMAZ.
+        """
+        adaylar = []
+        for aid in ids:
+            c = content_by_id.get(aid) or {}
+            n = len((c.get('paragraph') or '').split())
+            if 0 < n < self.GOVDE_PARA_MIN_WORDS:
+                adaylar.append((n, aid))
+        if not adaylar:
+            return
+        adaylar.sort()                       # en kısadan başla (en kötü ihlal)
+        for n, aid in adaylar[:self.METIN_ONARIM_BUTCESI]:
+            c = content_by_id.get(aid) or {}
+            full_text = (articles_by_id.get(aid, {}) or {}).get('full_text', '') or ''
+            if len(full_text.split()) < 60:
+                print(f"   📏 ID {aid}: gövde paragrafı {n} kelime "
+                      f"(<{self.GOVDE_PARA_MIN_WORDS}) ama kaynak metin kısa — "
+                      f"uzatma denenmedi.")
+                continue
+            print(f"   📏 ID {aid}: gövde paragrafı {n} kelime "
+                  f"(<{self.GOVDE_PARA_MIN_WORDS}) — hedefli yeniden deneme...")
+            fixed = self._gemini_call_json(
+                get_govde_uzunluk_prompt(
+                    tr_title=c.get('tr_title', ''),
+                    paragraph=(c.get('paragraph') or '').strip(),
+                    full_text=_cap_fulltext(full_text), current_wc=n,
+                    hedef=self.GOVDE_PARA_MIN_WORDS),
+                max_output_tokens=2048, label=f'Gövde-Uzunluk-{aid}')
+            if not isinstance(fixed, dict):
+                continue
+            yeni = (fixed.get('paragraph') or '').strip()
+            yn = len(yeni.split())
+            if yn <= n:
+                print(f"      ⚠️  yeniden deneme kısaldı/eşitti ({yn} kelime) "
+                      f"— orijinal korunuyor.")
+                continue
+            c['paragraph'] = yeni
+            content_by_id[aid] = c
+            ok = yn >= self.GOVDE_PARA_MIN_WORDS
+            print(f"      → {yn} kelime" +
+                  (" ✅" if ok else " (hâlâ hedefin altında, en iyi deneme)"))
+
     def _enforce_kritik3_paragraph_length(self, top3_ids, content_by_id, articles_by_id):
         """KRİTİK3 paragraflarını 110 kelime hedefine göre deterministik denetler.
 
@@ -8059,6 +8172,19 @@ document.addEventListener('DOMContentLoaded', initDragFile);
             top3_ids, top10_ids, remaining_ids, score_records,
             content_by_id, articles_by_id)
         top3_ids, top10_ids, remaining_ids = _senkron('manset_puan_tersinelik')
+
+        # ── METİN ÖLÇÜ DENETİMİ — rapor listesi KESİNLEŞTİKTEN sonra ────────
+        # Burada çalışır çünkü onarım LLM çağrısı harcar; daha erken
+        # çalıştırmak sonradan elenecek haberler için para ödemek olurdu.
+        # Sınırlar prompt'ta yazılı ama LLM kelime saymakta güvenilir değil;
+        # deterministik ağlar da yalnızca dolgu atabiliyor (bkz.
+        # _enforce_baslik_uzunlugu / _enforce_govde_paragraf_uzunlugu).
+        _rapor_ids = list(dict.fromkeys(
+            list(top3_ids) + list(top10_ids) + list(remaining_ids)))
+        self._enforce_govde_paragraf_uzunlugu(
+            [i for i in _rapor_ids if i not in set(top3_ids)],
+            content_by_id, articles_by_id)
+        self._enforce_baslik_uzunlugu(_rapor_ids, content_by_id, articles_by_id)
 
         # Bekçinin bu koşudaki bulguları denetim kaydına taşınır.
         self._durum_ozeti = _durum.ozet()

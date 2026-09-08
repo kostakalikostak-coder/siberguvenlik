@@ -1199,6 +1199,73 @@ YALNIZCA şu JSON'u döndür (başka metin ekleme):
 {{"paragraph": "..."}}"""
 
 
+def get_baslik_kisaltma_prompt(tr_title, paragraph, current_wc, max_words):
+    """Başlık kelime sınırını aşınca hedefli yeniden yazım.
+
+    NEDEN VAR: sınır prompt'ta "EN FAZLA 8 KELİME (kesin sınır)" diye yazılı ve
+    kodda deterministik bir ağ var (`_enforce_title_length`), ama o ağ yalnızca
+    SABİT bir dolgu-sözcük listesini atabiliyor. Atacak dolgu bulamayınca
+    başlığı bilerek olduğu gibi bırakıyor — "bozuk başlık, uzun başlıktan
+    kötüdür". Doğru çözüm daha agresif kırpma değil (Türkçe isim-fiil ekiyle
+    biten başlıkta sondan kesmek dilbilgisini bozar), başlığı yeniden YAZMAKTIR.
+
+    ÖLÇÜLDÜ (18 rapor, 2026-08-20..09-08): başlıkların %9-66'sı sınırı aşıyor;
+    08 Eylül raporunda 21 başlığın 14'ü 9-10 kelimeydi ve KRİTİK 3'ün ÜÇÜ de
+    sınırın üstündeydi. Yani kural fiilen uygulanmıyordu.
+    """
+    return f"""Sen bir siber güvenlik haber editörüsün. Aşağıdaki Türkçe başlık
+{current_wc} kelime — sınır olan {max_words} kelimeyi aşıyor.
+
+MEVCUT BAŞLIK ({current_wc} kelime):
+{tr_title}
+
+HABERİN ÖZETİ (bağlam; başlık bunu temsil etmeli):
+{paragraph}
+
+GÖREV: Aynı olayı anlatan, EN FAZLA {max_words} KELİMELİK tek bir başlık yaz.
+- Olayın ÖZNESİNİ ve NE OLDUĞUNU koru; ikisinden biri kaybolursa başlık bozulur.
+- Kurum/ürün/aktör adlarını KISALTMA ve DEĞİŞTİRME (Microsoft, CVE-2026-1234,
+  APT29 aynen kalır). Ad uzunsa cümlenin geri kalanını sadeleştir.
+- ⛔ YENİ BİLGİ EKLEME: özette geçmeyen sayı, tarih, kurum ya da iddia yazma.
+- Türkçe dilbilgisi bozulmasın; başlık isim öbeği ya da isim-fiil ile bitsin
+  (ör. "...Ele Geçirilmesi", "...Yamalanması"). Sondan kelime kırpıp yarım
+  bırakma.
+- Her kelimenin ilk harfi büyük yazılsın; nokta ile bitirme.
+
+YALNIZCA şu JSON'u döndür (başka metin ekleme):
+{{"tr_title": "..."}}"""
+
+
+def get_govde_uzunluk_prompt(tr_title, paragraph, full_text, current_wc, hedef):
+    """Gövde paragrafı alt sınırın altında kalınca hedefli yeniden yazım.
+
+    KRİTİK 3 paragrafları için bu denetim vardı (`get_kritik3_length_fix_prompt`)
+    ama GÖVDE için hiç yoktu; oysa prompt ikisinden de 110-130 kelime istiyor.
+    ÖLÇÜLDÜ (2026-09-08): gövdedeki 18 paragrafın biri 83 kelimeydi, ikisi 105.
+    """
+    return f"""Sen siber güvenlik analistisin. Aşağıdaki Türkçe özet {current_wc} kelime —
+hedef olan {hedef}-130 kelime aralığının ALTINDA kaldı.
+
+BAŞLIK: {tr_title}
+
+MEVCUT ÖZET ({current_wc} kelime):
+{paragraph}
+
+TAM METİN (genişletmek için ek somut ayrıntı buradan alınır):
+{full_text}
+
+GÖREV: Aynı olayı anlatan, {hedef}-130 KELİME arası TEK paragraf yeniden yaz.
+- Mevcut özetteki bilgileri KORU; TAM METİNDEN ek somut ayrıntı (tarih, sayı,
+  kurum/ürün adı, teknik detay, etkilenen kapsam) ekleyerek genişlet.
+- ⛔ UYDURMA YOK: yalnızca TAM METİNDE geçen bilgileri kullan. Yetecek somut
+  ayrıntı yoksa varolan cümleleri daha açıklayıcı biçimde yeniden ifade et.
+- Dolgu cümle/tekrar ekleme; her cümle yeni bilgi taşısın.
+- Resmî ve akıcı Türkçe üslup, tek paragraf (madde işareti/alt başlık yok).
+
+YALNIZCA şu JSON'u döndür (başka metin ekleme):
+{{"paragraph": "..."}}"""
+
+
 def get_summary_batch_prompt(articles_full, today=''):
     """
     Pass 3: Bir batch haberin TAM METNİ → Türkçe başlık + 110-130 kelime paragraf (JSON).
